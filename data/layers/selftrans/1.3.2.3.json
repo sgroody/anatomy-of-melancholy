@@ -1,0 +1,109 @@
+{
+  "1.3.2.3-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "The best way to discern this species, is to let them bleed, if the blood be corrupt, thick and black, and they withal free from those hypochondriacal symptoms, & not so grievously troubled with them, or those of the head",
+          "in": "1.3.2.3-p1",
+          "prefix": "lavi (saith Montaltus cap. 22). ",
+          "suffix": ", it argues they are melancholy "
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "8c47fcc8d867cbacc6e9a846045ed4aeb252ba23"
+  },
+  "1.3.2.3-f2": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "The fumes which arise from this corrupt blood, disturb the mind, and make them fearful and sorrowful, heavy-hearted, as the rest, dejected, discontented, solitary, silent, weary of their lives, dull & heavy, or merry, &c., and if far gone, that",
+          "in": "1.3.2.3-p1",
+          "prefix": " are melancholy a toto corpore. ",
+          "suffix": " which Apuleius wished to his en"
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "this species, is to let them bleed, if the blood be corrupt, thick and black, and they withal free from those hypochondriacal symptoms, & not so grievously troubled with them, or those of the head, it argues they are melancholy",
+          "in": "1.3.2.3-p1",
+          "prefix": "p. 22). The best way to discern ",
+          "suffix": " a toto corpore. The fumes which"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "0a4d62882d25cee10ccaf6d0e857bed3a3761607"
+  },
+  "1.3.2.3-f4": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Trallianus in the cure, would have carefully to be enquired, and withal to observe of what complexion the part is, of black or red",
+          "in": "1.3.2.3-p1",
+          "prefix": "oids, or months in women, which ",
+          "suffix": ". For as Forestus and Hollerius "
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "57b090adc6b0af5d5b164d1e32769d20a7f2892d"
+  },
+  "1.3.2.3-f5": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "fc2fc82fc0aa6a81169ff8c847011e47cfefa24a"
+  }
+}

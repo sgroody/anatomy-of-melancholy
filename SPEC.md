@@ -158,6 +158,8 @@ Layer files are under `data/layers/<layer>/<unit>.json`. They have sorted keys a
 
 Statuses are `parsed`, `partial` (author known, work or locus not) and `unidentified`. `display` contains only what was actually resolved. Burton's own book/chapter numbers are never renumbered to a modern scheme unless the mapping is recorded with a basis.
 
+**`selftrans/`**: self-translation signals per `foreign` passage (rules only, M2; §6.2). The M5 verdict is recorded in `translations/` under `self_translation`.
+
 **`xrefs/`**: target unit or element, status (`explicit-resolved`, `relative-proposed`, `relative-confirmed` or `unresolved`), method, and evidence quote.
 
 Explicit references (M2, `burton xrefs`):
@@ -297,6 +299,18 @@ Burton often renders his Latin himself ("*Quantum mutatus ab illo?* How much alt
 * **Gowland's practice.** He omits his bracket when Burton's rendering keeps most of the sense, and completes partial renderings in brackets. A Latin run with **no bracket** is a strong candidate. A bracket that is noticeably shorter than the Latin, next to English that overlaps it, suggests a partial rendering.
 * **Adjacent English.** The next clause or sentence, sometimes the preceding one, and sometimes a following verse block of Burton's own English verse.
 * **A model judgment.** It must return the **exact quotation** of Burton's English span. The validator rejects the judgment unless that quotation occurs exactly once within ±2 sentences of the foreign segment. This stops invented spans.
+
+**As implemented in M2** (`burton selftrans`, rules only, `data/layers/selftrans/<unit>.json`): one record per `foreign` passage, keyed by passage id, with `by: rules`, `method: rules/selftrans-v1` and the passage's `text_sha1` (a mismatch makes the record stale). The signals are:
+* `bracket`: `none`, `present` or `short`. Gowland's bracket is the `ed:trans`/`ed:verse-trans` whose `@for` names the passage. Only its presence and word count are read, never its text. `short` means a passage of 4+ words whose bracket has fewer than 0.8 × its words (the book's median ratio is about 1.5).
+* `candidates`: spans of Burton's English, each a text-quote selector `{in, exact, prefix, suffix}` into the public text of the nearest element with an id (paragraph, sidenote, verse group, or the unit), labelled `by: rules`:
+  * `following`: the next clause, or the next sentence when the passage ends one (`relation: clause | sentence`). A short attribution in between ("*…*, saith *Seneca*, …") is stepped over (`after_attribution`).
+  * `preceding`: the clause before the passage, unless it is only an attribution ("elsewhere he saith").
+  * `note-anchor`: for a passage in a sidenote, the clause that the note's anchor precedes in the main text ("*non meminit se aegrotum decubuisse*" → "could not remember that ever he was sick").
+  * `verse-following`: Burton's own English verse group (`lg[@type=translation-block]`) after a verse, past Gowland's verse translation.
+  * A prose span stops at the next foreign passage and is cut at 40 words. It needs at least 2 lowercase words (3 for `preceding`) and must not be Latin or a citation by the language rules.
+  * Each span records `words`, `cognates` (passage words sharing their first five letters with a word of the span: *infinita*/infinite), and for `following`/`note-anchor` a gloss `cue` ("that is", "i.e.", "to wit", …).
+* `signals`: a summary list (`no-gowland-bracket`, `short-gowland-bracket`, `english-follows`, `english-precedes`, `english-at-anchor`, `burton-verse-follows`, `gloss-cue`, `cognate-overlap`) that the M5 packets carry.
+* Every selector is checked to match exactly once before it is written. Square brackets and braces left in the public text are Gowland's matter that ingest did not separate (Burton uses neither), so a candidate touching one is dropped and counted. V7 re-checks both.
 
 Outcomes:
 * `full`: no new translation is shown. The relationship is marked (§7.3).

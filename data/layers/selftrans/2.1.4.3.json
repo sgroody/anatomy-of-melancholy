@@ -1,0 +1,124 @@
+{
+  "2.1.4.3-f1": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "so much controverted in these days",
+          "in": "2.1.4.3-p1",
+          "prefix": "s that Panacea, Aurum potabile, ",
+          "suffix": ", Herba solis, &c. Paracelsus re"
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Several prescripts and methods I find in several men, some take upon them to cure all maladies with one Medicine, severally applied, as that Panacea",
+          "in": "2.1.4.3-p1",
+          "prefix": "therefore fit to be understood. ",
+          "suffix": ", Aurum potabile, so much contro"
+        },
+        "words": 25
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "39c9ee1bd56d8b41e32c90509386c30f89110145"
+  },
+  "2.1.4.3-f2": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "grc",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "735a970f7ab18f945cf98dbc7d059c2516b73937"
+  },
+  "2.1.4.3-f4": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "so much controverted in these days",
+          "in": "2.1.4.3-p1",
+          "prefix": "s that Panacea, Aurum potabile, ",
+          "suffix": ", Herba solis, &c. Paracelsus re"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cbfa92924d0d351dc50748960fce9df5c8a9af22"
+  },
+  "2.1.4.3-f7": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4b5b6f01101c992b38e1aa7758a23130d621e9ac"
+  },
+  "2.1.4.3-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Diet or Living, Apothecary, Chirurgery, which Wecker, Crato, Guainerius, &c., and most prescribe",
+          "in": "2.1.4.3-p1",
+          "prefix": " Pharmaceutica, and Chirurgica, ",
+          "suffix": "; of which I will insist, and sp"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "061c70362d7b3830a80abf647b79cf03f7e459c8"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "1.2.5.3-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "3e79cab6feaae80fc59fa6dc6d16614a7fb09702"
+  },
+  "1.2.5.3-f2": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "hot by accident only",
+          "in": "1.2.5.3-p1",
+          "prefix": "a per accidens, frigida per se, ",
+          "suffix": "; I am of Capivaccius’ mind for "
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "782f8ee02dcef93e33980ec909e6a8abf9d1b37e"
+  },
+  "1.2.5.3-f3": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "from much use of spices, hot wines, hot meats",
+          "in": "1.2.5.3-p1",
+          "prefix": " the head, proceeding most part ",
+          "suffix": "; all which Montanus reckons up "
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "1830e031c8fa7dff3876845502a21e12d1d4bb97"
+  },
+  "1.2.5.3-f4": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "waking, &c., retention of seed or abundance, stopping of",
+          "in": "1.2.5.3-p1",
+          "prefix": "inerius, bad air, corrupt, much ",
+          "suffix": " haemorrogia, the Midriff misaff"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "8864a62230c01412657a8a53f46c7044d1dd28d8"
+  },
+  "1.2.5.3-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "the Midriff misaffected",
+          "in": "1.2.5.3-p1",
+          "prefix": "dance, stopping of haemorrogia, ",
+          "suffix": "; and according to Trallianus li"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "hot baths, Garlic, Onions, saith Guainerius, bad air, corrupt, much waking, &c., retention of seed or abundance, stopping of",
+          "in": "1.2.5.3-p1",
+          "prefix": "rnius repeats cap. 12 de Mania: ",
+          "suffix": " haemorrogia, the Midriff misaff"
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "789e31befeb1e267b94cf13a03e4558dee949ee5"
+  }
+}

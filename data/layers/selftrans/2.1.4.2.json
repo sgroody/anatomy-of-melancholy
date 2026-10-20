@@ -1,0 +1,132 @@
+{
+  "2.1.4.2-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "fd36a406e6c2df6fd3667264340d8d59cc603bc5"
+  },
+  "2.1.4.2-f2": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "’Tis a part of his cure to wish his own health",
+          "in": "2.1.4.2-p2",
+          "prefix": "tis velle sanari fuit (Seneca). ",
+          "suffix": "; and not to defer it too long."
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ec2751d703eab4c1b1d8708302a903e86728f516"
+  },
+  "2.1.4.2-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "verse-following",
+        "selector": {
+          "exact": "Helleborum frustra cum jam cutis aegra tumebit, / Poscentes videas; venienti occurrite morbo.",
+          "in": "2.1.4.2-lg5",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "burton-verse-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "20b125bdcc1a77fd6d5f5d0a3278fda60699e1fb"
+  },
+  "2.1.4.2-f4": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "20fc519e9bf549b72efb05372bb89ea15ed4e33c"
+  },
+  "2.1.4.2-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "095d9c1e1a64511f5a7257b492560e985322f382"
+  },
+  "2.1.4.2-f6": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Damascen the Arabian, requires likewise in the Physician himself, that he be confident he can cure him, otherwise his physic will not be effectual, and promise withal that he will certainly help him, make him believe so at least",
+          "in": "2.1.4.2-p4",
+          "prefix": "hat his Physician can help him. ",
+          "suffix": ". Galeottus gives this reason, b"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor"
+    ],
+    "text_sha1": "ad0bc86ed7dec2290e83163d29926df5240697a1"
+  },
+  "2.1.4.2-f7": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "580d39ab2cb3354a12280c25a80197cc837582f8"
+  }
+}
