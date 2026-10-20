@@ -40,6 +40,67 @@ def test_unmatched_bracket_is_counted_not_guessed():
     assert "".join(p.itertext()) == "an opening [bracket with no end"
 
 
+def div_of(blocks: str):
+    return etree.fromstring(f'<div xmlns="{TEI_NS}" xmlns:ed="{NSMAP["ed"]}">{blocks}</div>')
+
+
+SPANNING = ('<p><foreign>Latine dictum</foreign> [The translation begins'
+            '<note type="side" n="1">His English sidenote.</note> here,</p>'
+            '<quote type="block"><lg type="translation-block"><l>a verse he translated,</l></lg></quote>'
+            '<p>goes on</p><p>and ends here]. Burton again.</p>')
+
+
+def test_bracket_over_several_blocks_is_separated_piece_by_piece():
+    div = div_of(SPANNING)
+    before = "".join(div.itertext())
+    stats = gowland.separate(div)
+    assert "".join(div.itertext()) == before  # nothing lost or altered
+    assert stats["trans"] == 1 and stats["trans:across-blocks"] == 1
+    assert not any("unmatched" in k for k in stats)
+    assert [t.get("part") for t in div.iter(ED("trans"), ED("verse-trans"))] == ["I", "M", "M", "F"]
+    assert div.find(f".//{ED('verse-trans')}/{T('lg')}").get("type") is None  # not Burton's own verse
+    assert public_text(div, notes=True) == "Latine dictum. Burton again."  # his sidenote went with it
+
+
+def test_irregular_bracket_over_blocks_stays_unmatched():
+    div = div_of("<p>one [opens</p><p>with <hi>a stray ] inside</hi></p><p>closes]</p>")
+    stats = gowland.separate(div)
+    assert stats["trans:across-blocks"] == 0 and stats["trans:unmatched-open"] >= 1
+    assert div.find(f".//{ED('trans')}") is None
+
+
+def test_bracketed_verse_over_two_stanzas_and_before_a_full_stop():
+    from burton.ingest import convert
+
+    q = etree.fromstring(
+        f'<quote xmlns="{TEI_NS}" xmlns:ed="{NSMAP["ed"]}">'
+        '<lg><l>Latina carmina</l></lg>'
+        '<lg type="translation-block"><l>[Take this;</l><l>mix it].</l></lg>'
+        '<lg type="translation-block"><l>[First stanza,</l></lg><lg type="translation-block"><l>second.]</l></lg>'
+        '<lg type="translation-block"><l>[a] Burton [b]</l></lg></quote>')
+    convert._mark_gowland_verse(q)
+    wrapped = [(w.get("part"), "".join(w.itertext())) for w in q.iter(ED("verse-trans"))]
+    assert wrapped == [(None, "[Take this;mix it]."), ("I", "[First stanza,"), ("F", "second.]")]
+    assert q[-1].tag == T("lg")  # brackets closing mid-group are left to the inline pass
+
+
+def test_v8t_fails_on_a_bracket_left_in_public_text(tmp_path, monkeypatch):
+    from burton import paths
+    from burton.verify import checks
+
+    def unit(name: str, body: str) -> None:
+        (tmp_path / f"{name}.xml").write_text(
+            f'<TEI xmlns="{TEI_NS}" xmlns:ed="{NSMAP["ed"]}"><text><body><div n="{name}">{body}</div>'
+            '</body></text></TEI>', encoding="utf-8")
+
+    monkeypatch.setattr(paths, "TEXT", tmp_path)
+    unit("good", "<p>Latina <ed:trans>[English]</ed:trans>.</p>")
+    unit("bad", "<p>Latina [English</p><p>more]</p><p>a <hi>[stray</hi> b]</p>")
+    assert checks.v8_public_text(["good"]).ok
+    r = checks.v8_public_text(["good", "bad"])
+    assert not r.ok and r.counts["brackets_left"] == 4 and r.counts["trans"] == 1
+
+
 def test_public_text_never_contains_gowland():
     p = tei('<hi rend="i">Lethales</hi> <ed:trans>[fatal]</ed:trans>, <supplied resp="#gowland">{is}</supplied> x')
     assert "fatal" not in public_text(p) and "{is}" not in public_text(p)

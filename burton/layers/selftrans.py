@@ -15,9 +15,9 @@ Signals only (SPEC §6.2); verdicts come from the M5 translation pass. Rules, no
   A prose span needs lowercase words and must not be Latin or a citation by the language rules. Each span
   also records its cognates with the passage (`infinita`/`infinite`) and any gloss cue ("that is").
 
-Candidate text comes from `public_text`, so Gowland's marked matter cannot reach it. A few of his brackets
-were not separated by ingest and remain as plain `[…]` text; a candidate whose selector touches one is
-dropped and counted. Every selector is checked to match exactly once before it is written; one that cannot
+Candidate text comes from `public_text`, so Gowland's marked matter cannot reach it. As a guard, a candidate
+whose selector touches a plain `[…]` left unseparated is dropped and counted (there are none now: V8t fails
+on any bracket in public text). Every selector is checked to match exactly once before it is written; one that cannot
 be made unique is dropped and counted.
 """
 

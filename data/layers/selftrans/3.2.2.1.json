@@ -64,11 +64,28 @@
   "3.2.2.1-f102": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "virili tanquam syrtes & cautes consulto effugiat",
+          "in": "3.2.2.1-p10",
+          "prefix": " hos scopulos impingat, sed pro ",
+          "suffix": "."
+        },
+        "words": 6
+      }
+    ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "ca054d117173d11694cec4f9f5b04c74ce986b2c"
@@ -1120,18 +1137,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "e2170eaa9b47e49c18de3f09240a7873c1c080ef"
-  },
-  "3.2.2.1-f76": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "bfadd45e0dde593ccb06717dc495aeb3a9658aae"
   },
   "3.2.2.1-f77": {
     "bracket": "present",
