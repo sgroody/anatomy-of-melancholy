@@ -205,18 +205,15 @@ Steps:
 | D4 | **Pruned sidenotes are not restored for now.** | Sidenote counts are checked against the EPUB only |
 | D5 | **A local server or installed app is enough.** | `burton serve` plus a PWA with a service worker for offline use. No `file://` constraints (SPEC §7.5) |
 | D6 | **Obsolete-word glosses at my discretion.** | Gowland's endnote glosses where he gives one (private build only), then Webster 1913 (public domain), then labelled model drafts. Wiktionary may be consulted, never copied (SPEC §4.2) |
-| D10 | **Language-ID target deferred** (2026-10-20). | V5 stays below target on h2 (0.964 / 0.964 / 0.975). It still runs and reports `DEFER` (`data/manual/deferred-checks.yaml`). Remove that entry to make it blocking again |
+| D1 | **Private edition** (owner, 2026-10-20). | Build the private profile only. The public filter and its leak checks (V8, V8t) stay in place. No remote is set up |
+| D10 | **Language-ID target deferred** (2026-10-20; confirmed by the owner the same day). | V5 stays below target on h2 (0.964 / 0.964 / 0.975). It still runs and reports `DEFER` (`data/manual/deferred-checks.yaml`). Remove that entry to make it blocking again |
 | D9 | **Tools installed.** | Python 3.13.15 (via `py`), uv 0.13.1, git 2.56, Node 24, Claude Code 2.1.304. Bare `python` is the Store stub, so always use `uv run` |
 
 ### Still open (none blocks M0 or M1)
 
-**D1 — Private or public?** This decides the rights model (SPEC §2). The EPUB is © Penguin.
-* Its bracketed translations, braces, endnotes and introduction are Gowland's copyrighted editorial work.
-* Even the base text is his edited, modernized text.
-* Using Gowland's glosses (D6) already ties the gloss layer to the private build.
-* **Working assumption until you say otherwise:** build the **private profile** only, keep the public filter and its leak check in place, and push to no remote.
-* Answer when publishing becomes a question. If you then want a private GitHub remote, say so.
-
-**D7 — Gold-sample labelling (needed by M2).** I draft labels for 600 segments. Will you review all of them, or a random 25 % audit (passing only if zero disagreements, otherwise a full review)?
+**D7 — Gold-sample labelling.** There are 1,127 labels, all drafted by Claude: 677 in the tuning sample, 150 in h1, 300 in h2.
+* 2026-10-20: the owner asked for a 5-label spot check from h2 (the gate sample), drawn with a fixed seed. See `data/eval/audit-h2-spot5.md`.
+* This is a spot check, not the 25% audit. Any disagreement means a wider review.
+* **Result: the owner agreed with all 5 (0 disagreements).** The other 1,122 labels remain unreviewed.
 
 **D8 — Model for the full pass (needed after M4).** The default is `claude-opus-5-5`. The pilot also runs `claude-sonnet-5-5` on the same 50 passages, so you can choose on measured quality and usage-limit consumption.

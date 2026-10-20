@@ -1,19 +1,22 @@
 PASS  V1 text round-trip vs EPUB: main_words=484453, main_unexplained_diffs=0, notes_compared=5703, note_mismatches=0, editor_additions_excluded=5, units=158
 PASS  V2 per-unit counts EPUB = XML: sidenote_refs=5703/5703, endnote_refs=3907/3907, pagebreaks=956/956, paragraphs=1910/1910, verse_lines=5006/5006, greek_chars=862/862, heading_images=4/4, units=158
-PASS  V3 note integrity: sidenotes_resolved=5703/5703, ids=16752, units=158
+PASS  V3 note integrity: sidenotes_resolved=5703/5703, ids=16762, units=158
 PASS  V4 foreign scripts language-tagged: script_chars=1080, untagged=0, units=158
 PASS  V1f every EPUB page fully covered by its units: pages_checked=18, pages_total=18
 PASS  V3g Gowland endnotes: text and links: bodies=3907/3907, text_mismatches=0, anchors=3907, link_fixes_applied=1, orphans=0, referenced_twice=0
-FAIL  V5 language-ID vs gold samples (gate: held-out): tuning=P=0.995 R=0.978 B=0.967 n=677, heldout=P=0.957 R=0.957 B=0.978 n=150 tp=45 fp=2 fn=2
-      - held-out below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95
-      - held-out: false foreign [citation]: 'Grotius de verit' (h-italic-007)
-      - held-out: false foreign [citation]: 'Herc' (h-italic-020)
-      - held-out: missed la phrase: 'Quae quidem' (h-italic-030)
-      - held-out: missed la phrase: 'nec omnes dent ad foenus, sed ii qui in pecuniis bona habent' (h-sidenote-003)
+PASS  V8t public text has no Gowland brackets: trans=4345, trans_pieces=10, verse_trans=725, supplied=152, brackets_left=0, gowland_units=2, units=158
+DEFER  V5 language-ID vs gold samples (gate: held-out h2): heldout_h2=P=0.964 R=0.964 B=0.975 n=300 tp=80 fp=3 fn=3, seen_h1=P=1.0 R=1.0 B=0.979 n=150 tp=47 fp=0 fn=0, tuning=P=0.995 R=0.984 B=0.967 n=677 tp=183 fp=1 fn=3
+      ! deferred by D10 (2026-10-20): Language-ID is below target on held-out round h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95). The remaining errors are edge cases (roman words next to italics, sidenote abbreviations, two model rulings); the owner chose to move on and return to them later.
+      - held-out h2 below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95
+      - held-out h2: missed la term: 'Intestina' (h2-italic-054)
+      - held-out h2: missed mixed phrase: 'in secundis' (h2-roman-before-bracket-016)
+      - held-out h2: false foreign [en]: '’Tis an inevitable chance, the first statute in Magna Carta,' (h2-roman-before-bracket-023)
+      - held-out h2: missed mixed phrase: 'more aquilae factum' (h2-roman-before-bracket-033)
+      - held-out h2: false foreign [citation]: 'Ter' (h2-sidenote-003)
+      - held-out h2: false foreign [citation]: 'Vita ejus' (h2-sidenote-006)
       - tuning: missed la phrase: 'obscurorum virorum' (italic-212)
       - tuning: false foreign [citation]: 'ii' (italic-263)
       - tuning: missed mixed phrase: 'Chorus Sancti Viti' (roman-before-bracket-040)
-      - tuning: missed mixed phrase: 'qui indies hinc inde deferendis oneribus occumbunt, nam quod' (roman-before-bracket-057)
       - tuning: missed mixed phrase: 'Diuretica' (english-030)
-PASS  V7 layers keyed, labelled and honest: foreign=7775, with_record=7, machine_labelled=7, stale=0, orphan_keys=0, selectors_ok=4, selectors_bad=0, sources_unidentified=3, sources_other=4, untranslated=7768, units_without_layer=157, xrefs=21, xrefs_resolved=19, xrefs_unresolved=2
-FAILED -> verify/reports/text.json
+PASS  V7 layers keyed, labelled and honest: foreign=7785, with_record=7, machine_labelled=7, stale=0, orphan_keys=0, selectors_ok=4, selectors_bad=0, sources_unidentified=3, sources_other=4, selftrans_records=7785, selftrans_selectors_ok=8422, selftrans_selectors_bad=0, selftrans_stale=0, selftrans_missing=0, selftrans_orphan_keys=0, selftrans_units_missing=0, selftrans_gowland_overlap=0, untranslated=7778, units_without_layer=157, xrefs=21, xrefs_resolved=19, xrefs_unresolved=2
+OK -> verify/reports/text.json
