@@ -112,7 +112,7 @@ main { max-width: var(--page); margin: 0 auto; padding: 0 16px; }
 .toc-main { margin-top: 0.5rem; }
 
 /* ------------------------------------------------------------ text */
-.head-number, .head-partition, .head-other { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; text-indent: 0; }
+.head-number, .head-partition, .head-other, .unit p.head-number, .unit p.head-partition, .unit p.head-other { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; text-indent: 0; }
 .head-part_title3 { font-size: 1.15em; }
 .sc { font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
 h1.unit-title { font-weight: 400; font-size: 1.35em; line-height: 1.25; text-align: center; margin: 0.3rem 0 1.6rem; hyphens: manual; }
