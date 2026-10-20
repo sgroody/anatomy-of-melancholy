@@ -1,0 +1,180 @@
+/* The Anatomy of Melancholy — reading edition. Plain CSS, no build step. */
+
+:root {
+  --paper: #f7f3ea;
+  --ink: #23201b;
+  --muted: #6b6358;
+  --rule: #d9d0bf;
+  --accent: #8a2f1d;        /* rubric red: marks, never the only signal */
+  --note-ink: #3d372f;
+  --pop-bg: #fffdf8;
+  --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.16);
+  --measure: 34rem;
+  --margin-col: 15rem;
+  --gap: 2.5rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a59b8b; --rule: #3a352e; --accent: #e08a6e;
+    --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a59b8b; --rule: #3a352e; --accent: #e08a6e;
+  --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "EB Garamond", "Garamond", Georgia, serif;
+  font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.3rem);
+  line-height: 1.5;
+  font-kerning: normal;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 0.15em; }
+a:hover { text-decoration-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.3rem 0.6rem; z-index: 10; }
+
+/* ------------------------------------------------------------ chrome */
+header.site, footer.site { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 1rem 16px; }
+header.site { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule); font-size: 0.85em; }
+header.site .home { font-variant-caps: all-small-caps; letter-spacing: 0.06em; text-decoration: none; font-size: 1.15em; }
+.crumbs ol { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; color: var(--muted); }
+.crumbs li + li::before { content: "›"; padding: 0 0.4em; }
+.settings-toggle { margin-left: auto; font: inherit; color: inherit; background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; }
+.settings { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 0.5rem 16px 1rem; font-size: 0.85em; border-bottom: 1px solid var(--rule); display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.settings[hidden] { display: none; }
+.settings fieldset { border: none; margin: 0; padding: 0; }
+.settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.settings label { display: block; }
+footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.8em; color: var(--muted); }
+.pager { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
+
+main { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 0 16px; }
+.unit, .home-page { max-width: var(--measure); }
+
+/* ------------------------------------------------------------ text */
+.head-number, .head-partition { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; }
+.sc { font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+h1.unit-title { font-weight: 400; font-size: 1.35em; line-height: 1.25; text-align: center; margin: 0.3rem 0 1.6rem; hyphens: manual; }
+h1.unit-title[data-source="image"]::after { content: ""; }
+.unit p { margin: 0; text-indent: 1.4em; hyphens: auto; -webkit-hyphens: auto; text-align: justify; text-justify: inter-word; hanging-punctuation: first; }
+.unit p.no_indent, .unit .head-number + p, .unit h1 + p, .unit blockquote + p.no_indent { text-indent: 0; }
+.unit p + p { margin-top: 0; }
+blockquote.bq { margin: 0.8rem 0 0.8rem 2rem; }
+.lg { margin: 0.35rem 0; }
+.lg .l { display: block; padding-left: 1.5em; text-indent: -1.5em; }
+.l.TS, .l.TS1, .l.TS2 { margin-top: 0.3rem; }
+.burton-verse-tr { color: var(--ink); }
+[lang="grc"] { font-feature-settings: "liga" 0; }
+em [lang], [lang] em { font-style: italic; }
+
+/* ------------------------------------------------------------ sidenotes (Burton's marginal notes) */
+.nref {
+  font-size: 0.62em; vertical-align: 0.6em; line-height: 0; text-decoration: none;
+  color: var(--accent); padding: 0 0.12em; font-variant-numeric: lining-nums;
+}
+.sidenote {
+  display: none; text-indent: 0; text-align: left; hyphens: manual;
+  font-size: 0.78em; line-height: 1.35; color: var(--note-ink);
+}
+/* markers of notes that sit inside a foreign quotation are lifted out of it (so they survive
+   "Read in English"); a zero-height box keeps them at the start of the quotation's first line */
+blockquote .hoisted { display: block; height: 0; }
+blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em; }
+.sidenote .sn-n { color: var(--accent); font-variant-numeric: lining-nums; font-size: 0.85em; }
+.sidenote .sn-p { display: block; }
+.sidenote.open, .sidenote:target {
+  display: block; margin: 0.4rem 0 0.6rem 0.5rem; padding: 0.35rem 0.6rem;
+  border-left: 2px solid var(--accent); background: var(--pop-bg);
+}
+@media (min-width: 1100px) {
+  main { padding: 0 2rem; }
+  .unit { margin-right: calc(var(--margin-col) + var(--gap)); }
+  .sidenote, .sidenote.open, .sidenote:target {
+    display: block; float: right; clear: right;
+    width: var(--margin-col); margin: 0.15rem calc(-1 * (var(--margin-col) + var(--gap))) 0.5rem 0;
+    padding: 0; border: none; background: none;
+  }
+  .sidenote.flash { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+}
+
+/* ------------------------------------------------------------ foreign passages and translations */
+.fp { position: relative; }
+.fo { text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.22em; cursor: help; }
+.ft { display: none; }
+.ft-label, .ft-src, .ft-note { display: block; color: var(--muted); font-size: 0.85em; font-style: normal; }
+.ft-alt { display: block; margin-top: 0.3rem; font-size: 0.9em; }
+.ft-missing .ft-label { color: var(--accent); }
+
+/* mode 1: original + gloss on hover / focus / tap */
+.mode-gloss .fp:hover > .ft, .mode-gloss .fp:focus-within > .ft, .mode-gloss .fp.pinned > .ft {
+  display: block; position: absolute; z-index: 5; left: 0; top: calc(100% + 0.2rem);
+  width: min(22rem, 80vw); padding: 0.5rem 0.7rem; text-indent: 0; text-align: left; hyphens: manual;
+  background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px;
+  box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; font-style: normal;
+}
+.mode-gloss .fp-block:hover > .ft, .mode-gloss .fp-block:focus-within > .ft, .mode-gloss .fp-block.pinned > .ft { top: 100%; }
+
+/* mode 2: interlinear */
+.mode-interlinear .fp-short { display: inline-flex; flex-direction: column; vertical-align: top; text-indent: 0; }
+.mode-interlinear .fp-short > .ft { display: block; font-size: 0.72em; line-height: 1.2; color: var(--muted); text-align: left; }
+.mode-interlinear .fp-short > .ft .ft-label, .mode-interlinear .fp-short > .ft .ft-src,
+.mode-interlinear .fp-short > .ft .ft-note, .mode-interlinear .ft .ft-alt { display: none; }
+.mode-interlinear .fp-long > .ft { display: inline; font-size: 0.85em; color: var(--muted); }
+.mode-interlinear .fp-long > .ft .ft-text::before { content: " ⟨"; }
+.mode-interlinear .fp-long > .ft .ft-text::after { content: "⟩"; }
+.mode-interlinear .fp-long > .ft .ft-label, .mode-interlinear .fp-long > .ft .ft-src, .mode-interlinear .fp-long > .ft .ft-note { display: none; }
+.mode-interlinear .fp-block > .ft { display: block; margin: 0.25rem 0 0.4rem 1.5rem; font-size: 0.9em; color: var(--muted); }
+.mode-interlinear .fp-block > .ft .ft-label { display: inline; margin-left: 0.5em; }
+.mode-interlinear .fp-block > .ft .ft-src, .mode-interlinear .fp-block > .ft .ft-note { display: none; }
+
+/* mode 3: read in English — translations replace originals, visibly marked ⟨ ⟩ */
+.mode-english .fp > .fo { display: none; }
+.mode-english .fp > .ft { display: inline; cursor: pointer; }
+.mode-english .fp-block > .ft { display: block; margin: 0.25rem 0; }
+.mode-english .fp > .ft .ft-text::before { content: "⟨"; color: var(--accent); }
+.mode-english .fp > .ft .ft-text::after { content: "⟩"; color: var(--accent); }
+.mode-english .fp > .ft .ft-label, .mode-english .fp > .ft .ft-src, .mode-english .fp > .ft .ft-note, .mode-english .fp > .ft .ft-alt { display: none; }
+.mode-english .fp.show-orig > .fo { display: inline; }
+.mode-english .fp-block.show-orig > .fo { display: block; }
+.mode-english .fp.show-orig > .ft .ft-label { display: inline; margin-left: 0.4em; }
+/* Burton translates it himself: keep his English, hide the original behind a marker */
+.mode-english .st-full > .ft { display: none; }
+.mode-english .st-full::before { content: "⁂"; color: var(--accent); font-size: 0.7em; vertical-align: 0.3em; cursor: pointer; }
+.mode-english .st-full.show-orig::before { content: ""; }
+
+/* Burton's own rendering, linked to its original */
+.burton-tr { text-decoration: underline solid transparent; text-decoration-thickness: 1px; text-underline-offset: 0.22em; transition: text-decoration-color 0.15s; }
+.burton-tr.linked, .fp.linked > .fo { text-decoration-color: var(--accent); text-decoration-style: solid; }
+
+/* ------------------------------------------------------------ Gowland material (private build only) */
+.gowland-tr, .enref, .pb { display: none; }
+.show-gowland .gowland-tr { display: inline; color: var(--muted); }
+.show-gowland .gowland-verse { display: block; }
+.show-pages .pb { display: inline; }
+.show-pages .pb::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
+
+/* ------------------------------------------------------------ home */
+.home-page h1 { font-weight: 400; text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.08em; margin: 2.5rem 0 0.5rem; }
+.home-page .sub { text-align: center; color: var(--muted); margin-top: 0; }
+.home-page ol { padding-left: 1.2rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  header.site, .settings, footer .pager { display: none; }
+  .sidenote { display: block; float: none; width: auto; margin: 0.2rem 0 0.2rem 1rem; font-size: 0.8em; }
+}
