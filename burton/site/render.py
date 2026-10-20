@@ -8,10 +8,12 @@ come from the layer data, never from the template.
 import html
 import re
 
-from ..tei import ED, T, XML_ID, XML_LANG, public_id
+from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
+from .hyphenation import soft_hyphenate
 
 PUNCT_START = re.compile(r"^[,;:.)]")
+TRAIL_PUNCT = re.compile(r"^[,;:.!?)’”]+")
 
 
 def esc(s: str | None) -> str:
@@ -48,12 +50,15 @@ def label_of(t: dict) -> str:
 
 
 class Renderer:
-    def __init__(self, unit: str, profile: str, layer: dict):
+    def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None):
         self.unit, self.profile, self.layer = unit, profile, layer
+        self.image = image  # callback: graphic file name -> (src, alt, width, height)
+        self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
-                       "burton_spans": 0, "burton_spans_unplaced": 0}
+                       "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0}
         self.out: list[str] = []
         self.hoisted: set[str] = set()
+        self.langs: list[str] = []
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -61,6 +66,10 @@ class Renderer:
 
     def text(self, s: str | None) -> None:
         if s:
+            if self.langs and self.langs[-1] in ("la", "grc"):
+                h = soft_hyphenate(s, self.langs[-1])
+                self.counts["soft_hyphens"] += len(h) - len(s)
+                s = h
             self.w(esc(s))
 
     def drop_gowland(self) -> bool:
@@ -73,13 +82,25 @@ class Renderer:
         self.text(tail)
 
     def children(self, e) -> None:
+        lang = e.get(XML_LANG)
+        if lang:
+            self.langs.append(lang)
         self.text(e.text)
         for c in e:
+            if c.tag == T("foreign") and c.get("ana") == "foreign" and c.tail and TRAIL_PUNCT.match(c.tail):
+                # punctuation right after a passage goes inside its box, after the translation, so
+                # interlinear mode cannot open a gap between the word and its comma
+                punct = TRAIL_PUNCT.match(c.tail).group(0)
+                self.foreign(c, punct)
+                self.text(c.tail[len(punct):])
+                continue
             dropped = self.node(c)
             if dropped:
                 self.tail_after_drop(c.tail)
             else:
                 self.text(c.tail)
+        if lang:
+            self.langs.pop()
 
     # ---------------------------------------------------------------- dispatcher
     def node(self, e) -> bool:
@@ -94,9 +115,12 @@ class Renderer:
             self.children(e)
             self.w("</p>\n")
         elif tag == T("quote"):
-            self.w('<blockquote class="bq">')
-            self.children(e)
-            self.w("</blockquote>\n")
+            if e.get("ana") == "foreign":
+                self.foreign_block(e, "blockquote", "bq")
+            else:
+                self.w('<blockquote class="bq">')
+                self.children(e)
+                self.w("</blockquote>\n")
         elif tag == T("lg"):
             self.lg(e)
         elif tag == T("l"):
@@ -106,7 +130,12 @@ class Renderer:
         elif tag == T("hi"):
             self.hi(e)
         elif tag == T("foreign"):
-            self.foreign(e)
+            if e.get("ana") == "foreign":
+                self.foreign(e)
+            else:  # script tagging only (e.g. Greek inside Gowland's braces): a lang span, not a passage
+                self.w(f'<span lang="{attr(e.get(XML_LANG))}">')
+                self.children(e)
+                self.w("</span>")
         elif tag == T("note"):
             if e.get(XML_ID) in self.hoisted:
                 return True
@@ -143,6 +172,24 @@ class Renderer:
                    'title="Gowland 2021 (private build only)">')
             self.children(e)
             self.w("</div>")
+        elif tag == ED("block"):
+            if self.drop_gowland():
+                return True
+            self.counts["gowland_trans"] += 1
+            self.w('<div class="gowland-tr gowland-block" data-resp="gowland" '
+                   'title="Gowland 2021 (private build only)">')
+            self.children(e)
+            self.w("</div>\n")
+        elif tag == T("figure"):
+            self.figure(e)
+        elif tag == T("list"):
+            self.w(f'<ul class="list {attr(e.get("rend") or "")}">')
+            self.children(e)
+            self.w("</ul>\n")
+        elif tag == T("item"):
+            self.w(f'<li{self.cls(e.get("rend"))}>')
+            self.children(e)
+            self.w("</li>")
         elif tag == T("supplied"):
             if e.get("resp") == "#gowland" and self.drop_gowland():
                 return True
@@ -167,17 +214,24 @@ class Renderer:
         return f' class="{attr(rend)}"' if rend else ""
 
     # ---------------------------------------------------------------- elements
+    def figure(self, e) -> None:
+        g = e.find(T("graphic"))
+        src, alt, w, h = self.image(g.get("url"))
+        self.counts["images"] += 1
+        self.w(f'<figure class="plate"><a href="{attr(src)}"><img src="{attr(src)}" alt="{attr(alt)}" '
+               f'width="{w}" height="{h}" loading="lazy" decoding="async"></a></figure>\n')
+
     def head(self, e) -> bool:
         t = e.get("type")
         source = ' data-source="image"' if e.get("facs") else ""
-        if t == "title":
-            self.w(f'<h1 class="unit-title"{source}>')
-            self.children(e)
-            self.w("</h1>\n")
+        sub = f" head-{attr(e.get('subtype'))}" if e.get("subtype") else ""
+        tag, cls = ("h1", f"unit-title head-{attr(t)}") if e is self.h1_head else ("p", f"head-{attr(t)}{sub}")
+        self.w(f'<{tag} class="{cls}"{source}>')
+        if e.get("ana") == "foreign":  # a heading that is itself a foreign passage (Lectori male feriato)
+            self.foreign(e)
         else:
-            self.w(f'<p class="head-{attr(t)}"{source}>')
             self.children(e)
-            self.w("</p>\n")
+        self.w(f"</{tag}>\n")
         return False
 
     def hi(self, e) -> None:
@@ -217,7 +271,6 @@ class Renderer:
         trs = {t["by"]: t for t in rec["translations"]}
         pref = rec["preferred"]
         if pref == "burton" and st.get("burton_span"):
-            q = st["burton_span"]["exact"]
             # placeholder: filled in after mark_burton_spans, so the quote is not matched twice
             body = f'<span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
             label = "Burton’s own rendering"
@@ -236,9 +289,11 @@ class Renderer:
         if src["status"] in ("burton-cites", "probable", "identified"):
             word = {"burton-cites": "Burton cites", "probable": "Probably", "identified": "Source"}[src["status"]]
             where = ", ".join(x for x in (src.get("author"), src.get("work"), src.get("locus")) if x)
-            src_txt = f'<span class="ft-src">{word}: {esc_tagged(where)}{" (unverified)" if not src.get("verified") else ""}</span>'
+            unverified = "" if src.get("verified") else " (unverified)"
+            src_txt = f'<span class="ft-src">{word}: {esc_tagged(where)}{unverified}</span>'
         return (f'<{tag} class="ft" id="tr-{attr(fid)}" role="note" lang="en">'
-                f'<span class="sr-only">Translation: </span>{prefix}<span class="ft-text">{esc_tagged(t["text"])}</span>'
+                f'<span class="sr-only">Translation: </span>{prefix}'
+                f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
                 f'<span class="ft-label">{esc(label_of(t))}</span>{src_txt}{note}</{tag}>')
 
     def mode_class(self, fid: str) -> str:
@@ -258,7 +313,7 @@ class Renderer:
             self.hoisted.add(n.get(XML_ID))
         self.w("</span>")
 
-    def foreign(self, e) -> None:
+    def foreign(self, e, punct: str = "") -> None:
         self.counts["foreign"] += 1
         self.hoist_notes(e)
         fid, lang = self.pid(e), e.get(XML_LANG)
@@ -268,20 +323,27 @@ class Renderer:
         self.children(e)
         self.w("</span>")
         self.w(self.tr_markup(fid, block=False))
+        if punct:
+            self.w(f'<span class="fp-p">{esc(punct)}</span>')
         self.w("</span>")
+
+    def foreign_block(self, e, tag: str, cls: str) -> None:
+        """A block-level foreign passage (verse group or block quotation) with its translation."""
+        fid = self.pid(e)
+        self.counts["foreign"] += 1
+        self.hoist_notes(e)
+        lang = e.get(XML_LANG)
+        self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}">'
+               f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
+        self.children(e)
+        self.w("</div>")
+        self.w(self.tr_markup(fid, block=True))
+        self.w(f"</{tag}>\n")
 
     def lg(self, e) -> None:
         lgid = self.pid(e)
         if e.get("ana") == "foreign":
-            self.counts["foreign"] += 1
-            self.hoist_notes(e)
-            lang = e.get(XML_LANG)
-            self.w(f'<div class="lg fp fp-block{self.mode_class(lgid)}" id="{attr(lgid)}" data-fid="{attr(lgid)}">'
-                   f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(lgid)}">')
-            self.children(e)
-            self.w("</div>")
-            self.w(self.tr_markup(lgid, block=True))
-            self.w("</div>")
+            self.foreign_block(e, "div", "lg")
             return
         kind = " burton-verse-tr" if e.get("type") == "translation-block" else ""
         self.w(f'<div class="lg{kind}" id="{attr(lgid)}">')
@@ -311,8 +373,14 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
     return html_text
 
 
-def render_unit(div, unit: str, profile: str, layer: dict) -> tuple[str, dict]:
-    r = Renderer(unit, profile, layer)
+def h1_head(div):
+    """The head that becomes the page's only h1: the title, else the first heading."""
+    heads = list(div.iter(T("head")))
+    return next((h for h in heads if h.get("type") == "title"), heads[0] if heads else None)
+
+
+def render_unit(div, unit: str, profile: str, layer: dict, image=None) -> tuple[str, dict]:
+    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div))
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")
@@ -322,3 +390,35 @@ def render_unit(div, unit: str, profile: str, layer: dict) -> tuple[str, dict]:
         if sel:
             body = body.replace(f"\x00Q{fid}\x00", esc(sel["exact"]))
     return body, r.counts
+
+
+def inline_html(e) -> str:
+    """A heading as inline HTML for contents, breadcrumb and pager labels: Burton's words with their
+    italics and lang, without notes, Gowland's matter, page breaks or translations."""
+    out: list[str] = []
+
+    def walk(x, top=False):
+        tag = x.tag if isinstance(x.tag, str) else ""
+        skip = tag in (T("note"), T("pb"), ED("enref"), ED("trans"), ED("verse-trans")) or \
+            (tag == T("supplied") and x.get("resp") == "#gowland")
+        if not skip:
+            close = ""
+            if not top and x.get(XML_LANG):
+                out.append(f'<span lang="{attr(x.get(XML_LANG))}">')
+                close = "</span>"
+            if tag == T("hi") and x.get("rend") in ("i", "sc"):
+                out.append("<em>" if x.get("rend") == "i" else '<span class="sc">')
+                close = ("</em>" if x.get("rend") == "i" else "</span>") + close
+            if tag == T("lb"):
+                out.append(" ")
+            out.append(esc(x.text))
+            for c in x:
+                walk(c)
+            out.append(close)
+        if not top:
+            out.append(esc(x.tail))
+
+    walk(e, top=True)
+    lang = e.get(XML_LANG)
+    body = re.sub(r"\s+", " ", "".join(out)).strip()
+    return f'<span lang="{attr(lang)}">{body}</span>' if lang else body

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · The Anatomy of Melancholy</title>
+<meta name="description" content="{{ description }}">
+<link rel="manifest" href="{{ root }}manifest.webmanifest">
+<link rel="icon" href="{{ root }}assets/icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f7f3ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1a17" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="{{ root }}assets/fonts.css">
+<link rel="stylesheet" href="{{ root }}assets/edition.css">
+<script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;}catch(e){}</script>
+<script type="module" src="{{ root }}assets/edition.js"></script>
+</head>
+<body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings') else (page.kind if page else 'other') }}">
+<a class="skip" href="#main">Skip to text</a>
+<header class="site">
+  <div class="bar">
+    <a class="home" href="{{ root or './' }}"{% if key == "home" %} aria-current="page"{% endif %}>The Anatomy of Melancholy</a>
+    {% if toc %}
+    <details class="toc-panel">
+      <summary>Contents</summary>
+      <nav aria-label="Contents">{{ toc }}</nav>
+    </details>
+    {% endif %}
+    {% if key != "settings" %}
+    <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings">Reading options</button>
+    {% endif %}
+  </div>
+  {% if crumbs %}
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="{{ root or './' }}">Contents</a></li>
+    {% for label, href in crumbs %}
+    <li>{% if href %}<a href="{{ root }}{{ href }}">{{ label }}</a>{% else %}<span aria-current="page">{{ label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol></nav>
+  {% endif %}
+</header>
+{% if key != "settings" %}
+<div id="settings" class="settings" hidden>
+  {% include "options.html" %}
+  <p class="settings-more"><a href="{{ root }}settings/">All reading options</a></p>
+</div>
+{% endif %}
+<main id="main" tabindex="-1">
+{% block main %}{% endblock %}
+</main>
+<footer class="site">
+  {% if prev or next %}
+  <nav class="pager" aria-label="Previous and next">
+    {% if prev %}<a rel="prev" href="{{ root }}{{ prev.href }}"><span class="pager-dir">Previous</span> <span class="pager-t">{% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html }}</span></a>{% else %}<span></span>{% endif %}
+    {% if next %}<a rel="next" href="{{ root }}{{ next.href }}"><span class="pager-dir">Next</span> <span class="pager-t">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
+  </nav>
+  {% endif %}
+  <p class="colophon">Text: Burton’s sixth edition as edited by Angus Gowland (Penguin, 2021){% if profile == "public" %}, without Gowland’s editorial matter{% endif %}. Every translation is labelled with its source; machine translations name the model and prompt that produced them and are unreviewed unless marked otherwise. <a href="{{ root }}about/">About this edition</a> · <a href="{{ root }}settings/">Reading options</a></p>
+</footer>
+</body>
+</html>

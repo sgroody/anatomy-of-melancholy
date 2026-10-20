@@ -66,8 +66,12 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("check", help="ingest, verify, build both profiles and verify the site")
     s.add_argument("--unit", action="append")
     s.add_argument("--all", action="store_true")
+    s.add_argument("--no-browser", action="store_true", help="skip the browser checks (reported as FAIL)")
 
     args = p.parse_args(argv)
+    for stream in (sys.stdout, sys.stderr):  # problems quote Greek; a cp1252 console must not crash
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="backslashreplace")
 
     if args.cmd == "unpack":
         from .source import unpack
@@ -129,7 +133,7 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "build":
         from .site import build
 
-        build.build(_units(args), profile=args.profile)
+        build.build(None if args.all else _units(args), profile=args.profile)
     elif args.cmd == "serve":
         from .site import serve
 
@@ -137,7 +141,7 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "check":
         from .pipeline import check_all
 
-        return check_all(_units(args))
+        return check_all(_units(args), browser_checks=not args.no_browser)
     return 0
 
 

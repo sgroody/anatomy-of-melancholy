@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose">
+  <h1>Reading options</h1>
+  <p>These choices are kept in this browser and apply to every page. They need JavaScript; without it the text shows the originals, with each translation on hover or focus.</p>
+  <form class="settings settings-page" id="settings-form" aria-label="Reading options">
+    {% include "options.html" %}
+    <p><button type="button" class="reset">Restore the defaults</button> <span class="saved" role="status" aria-live="polite"></span></p>
+  </form>
+</article>
+{% endblock %}

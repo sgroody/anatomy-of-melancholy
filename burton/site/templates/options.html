@@ -1,0 +1,26 @@
+<fieldset>
+  <legend>Foreign-language passages</legend>
+  <label><input type="radio" name="mode" value="gloss" checked> Original, with glosses on tap or hover</label>
+  <label><input type="radio" name="mode" value="interlinear"> Interlinear: translation beneath</label>
+  <label><input type="radio" name="mode" value="english"> Read in English: translations replace originals, marked ⟨ ⟩</label>
+</fieldset>
+<fieldset>
+  <legend>Theme</legend>
+  <label><input type="radio" name="theme" value="auto" checked> Follow the system</label>
+  <label><input type="radio" name="theme" value="light"> Light</label>
+  <label><input type="radio" name="theme" value="dark"> Dark</label>
+</fieldset>
+<fieldset>
+  <legend>Type size</legend>
+  <label><input type="radio" name="size" value="s"> Smaller</label>
+  <label><input type="radio" name="size" value="m" checked> Normal</label>
+  <label><input type="radio" name="size" value="l"> Larger</label>
+  <label><input type="radio" name="size" value="xl"> Largest</label>
+</fieldset>
+{% if profile == "private" %}
+<fieldset>
+  <legend>Gowland 2021 material (private build)</legend>
+  <label><input type="checkbox" name="gowland"> Show Gowland’s bracketed translations</label>
+  <label><input type="checkbox" name="pages"> Show Penguin page numbers</label>
+</fieldset>
+{% endif %}
