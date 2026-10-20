@@ -22,7 +22,7 @@ XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 GREEK = re.compile(r"[Ͱ-Ͽἀ-῿]")
 HEBREW = re.compile(r"[֐-׿יִ-ﭏ]")
 ARABIC = re.compile(r"[؀-ۿ]")
-TEI_BLOCK = {f"{TEI}{t}" for t in ("head", "p", "l", "lg", "quote", "div")}
+TEI_BLOCK = {f"{TEI}{t}" for t in ("head", "p", "l", "lg", "quote", "div", "list", "item", "lb")}
 
 
 class Result:
@@ -49,6 +49,13 @@ def load_tei(unit: str):
     return etree.parse(str(paths.TEXT / f"{unit}.xml"))
 
 
+def is_editor_text(e) -> bool:
+    """Text WE added, absent from the EPUB: transcribed heading images, corrections, supplied words.
+    (resp="#editor" on other elements records an editorial *markup* decision, not added text.)"""
+    return ((e.tag == f"{TEI}head" and e.get("facs") is not None) or e.tag == f"{TEI}corr"
+            or (e.tag == f"{TEI}supplied" and e.get("resp") == "#editor"))
+
+
 def tei_text(root, *, notes: bool) -> tuple[str, list[str]]:
     """Plain text of the base text as the EPUB shows it: editor additions out, sic not corr,
     note-marker numbers absent. Returns (main text, [note texts in order])."""
@@ -58,7 +65,7 @@ def tei_text(root, *, notes: bool) -> tuple[str, list[str]]:
     def walk(e, out):
         if not isinstance(e.tag, str):
             return
-        if e.get("resp") == "#editor" or e.tag == f"{TEI}corr":
+        if is_editor_text(e):
             return
         if e.tag == f"{TEI}note":
             buf: list[str] = []
@@ -128,7 +135,7 @@ def v1_roundtrip(unit: str, ec: dict, root) -> Result:
         r.fail(f"{unit}: {len(ec['sidenote_texts'])} EPUB notes vs {len(notes)} XML notes")
     r.counts["notes_compared"] = len(notes)
     r.counts["note_mismatches"] = bad_notes
-    r.counts["editor_additions_excluded"] = len(root.xpath("//*[@resp='#editor']"))
+    r.counts["editor_additions_excluded"] = sum(1 for e in root.iter() if isinstance(e.tag, str) and is_editor_text(e))
     return r
 
 
@@ -212,39 +219,23 @@ def v4_scripts(unit: str, root) -> Result:
 
 
 def v5_langid(units: list[str]) -> Result:
-    """Rules vs the hand-checked gold sample, for the units that have gold labels."""
-    r = Result("V5", "language-ID vs gold sample")
-    gold_file = paths.DATA / "eval" / "langid-gold.jsonl"
-    rows = [json.loads(x) for x in gold_file.read_text(encoding="utf-8").splitlines()[1:]]
-    tp = fp = fn = 0
-    misses = []
-    for unit in units:
-        root = load_tei(unit)
-        tagged = []
-        for e in root.iter():
-            if isinstance(e.tag, str) and e.get("ana") == "foreign":
-                tagged.append(norm("".join(t for t in _text_without_notes(e))))
-        for g in (x for x in rows if x["unit"] == unit):
-            is_foreign = g["gold"] in ("la", "grc", "it", "fr", "es", "de", "nl", "enm", "he")
-            key = norm(g["text"])
-            hit = any(key == t or (g.get("match") == "lg" and t.startswith(key.split(" … ")[0]))
-                      or (key.startswith("———") and t == norm(key.replace("———", "", 1)))
-                      or t.replace("——— ", "") == key.replace("——— ", "") for t in tagged)
-            if is_foreign and hit:
-                tp += 1
-            elif is_foreign:
-                fn += 1
-                misses.append(f"missed {g['gold']} {g['kind']}: {g['text'][:50]!r}")
-            elif hit:
-                fp += 1
-                misses.append(f"false foreign: {g['text'][:50]!r}")
-    p = tp / (tp + fp) if tp + fp else 1.0
-    rec = tp / (tp + fn) if tp + fn else 1.0
-    r.counts.update({"gold_items": sum(1 for x in rows if x["unit"] in units), "tp": tp, "fp": fp, "fn": fn,
-                     "precision": f"{p:.3f}", "recall": f"{rec:.3f}"})
-    r.problems = misses
-    # M1 reports V5; the pass thresholds (P>=0.98, R>=0.97) gate M2, after model adjudication.
-    r.ok = True
+    """Language identification vs the hand-checked gold sample (SPEC §6.1), each item judged in place.
+    Thresholds: precision >= 0.98, recall >= 0.97, boundary exact-match >= 0.95."""
+    from . import gold
+
+    r = Result("V5", "language-ID vs gold samples (gate: held-out)")
+    tune = gold.evaluate(units)
+    held = gold.evaluate(units, holdout=True)
+    r.counts.update({"tuning": f"P={tune['precision']} R={tune['recall']} B={tune['boundary_exact']} "
+                               f"n={tune['items']}",
+                     "heldout": f"P={held['precision']} R={held['recall']} B={held['boundary_exact']} "
+                                f"n={held['items']} tp={held['tp']} fp={held['fp']} fn={held['fn']}"})
+    r.problems = ["held-out: " + m for m in held["misses"]] + ["tuning: " + m for m in tune["misses"]]
+    # The rules were tuned on the tuning sample, so only the held-out sample can show they meet the targets.
+    if held["tp"] + held["fn"] >= 40:
+        r.ok = held["precision"] >= 0.98 and held["recall"] >= 0.97 and held["boundary_exact"] >= 0.95
+        if not r.ok:
+            r.problems.insert(0, "held-out below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95")
     return r
 
 
@@ -260,6 +251,74 @@ def _text_without_notes(e):
 
 # ------------------------------------------------------------------ drivers
 
+def v1_files(units: list[str]) -> Result:
+    """Coverage: each EPUB page's whole text = its units' texts concatenated. Catches anything that
+    falls between unit boundaries (the per-unit V1 cannot, since it uses boundaries itself)."""
+    r = Result("V1f", "every EPUB page fully covered by its units")
+    by_file = epub_counts.units_by_file(paths.XHTML)
+    checked = 0
+    for fname, fu in by_file.items():
+        if not set(fu) <= set(units):
+            continue
+        epub_text = norm(epub_counts.file_text(paths.XHTML, fname))
+        xml_text = norm(" ".join(tei_text(load_tei(u), notes=True)[0] for u in fu))
+        checked += 1
+        if epub_text != xml_text:
+            for d in word_diff(epub_text, xml_text, limit=3):
+                r.fail(f"{fname}: {d}")
+    r.counts = {"pages_checked": checked, "pages_total": len(by_file)}
+    return r
+
+
+def v3_endnotes(units: list[str]) -> Result:
+    """Gowland's endnotes (private build): texts equal the EPUB's; every anchor resolves; on a whole-book
+    run every endnote is referenced exactly once. Link corrections must be recorded (@sic)."""
+    r = Result("V3g", "Gowland endnotes: text and links")
+    f = paths.TEXT / "gowland-endnotes.xml"
+    if not f.exists():
+        r.fail("data/text/gowland-endnotes.xml missing: run `burton ingest --all`")
+        return r
+    root = etree.parse(str(f)).getroot()
+    xml = {e.get(XML_ID): norm("".join(e.itertext())) for e in root.iter(f"{ED}endnote")}
+    epub = {}
+    for name in epub_counts.ENDNOTE_FILES:
+        for a in epub_counts.doc(paths.XHTML, name).getroot().iter("{http://www.w3.org/1999/xhtml}aside"):
+            epub[a.get("id")] = norm(epub_counts.plain(a))
+    mismatched = [k for k in epub if xml.get(k) != epub[k]]
+    for k in mismatched[:8]:
+        r.fail(f"endnote {k}: EPUB {epub[k][:50]!r} vs XML {xml.get(k, '')[:50]!r}")
+    refs: dict[str, int] = {}
+    fixed = 0
+    for unit in units:
+        for e in load_tei(unit).iter(f"{ED}enref"):
+            refs[e.get("target")] = refs.get(e.get("target"), 0) + 1
+            fixed += e.get("sic") is not None
+            if e.get("target") not in xml:
+                r.fail(f"{unit}: endnote anchor {e.get('target')} has no body")
+    full_book = len(units) >= len(epub_counts.units_by_file(paths.XHTML)) and len(units) > 150
+    if full_book:
+        orphans = [k for k in xml if k not in refs]
+        doubles = [k for k, n in refs.items() if n > 1]
+        for k in orphans[:8]:
+            r.fail(f"endnote {k} is referenced by no anchor")
+        for k in doubles[:8]:
+            r.fail(f"endnote {k} is referenced {refs[k]} times")
+        r.counts.update({"orphans": len(orphans), "referenced_twice": len(doubles)})
+    r.counts = {"bodies": f"{len(epub)}/{len(xml)}", "text_mismatches": len(mismatched),
+                "anchors": sum(refs.values()), "link_fixes_applied": fixed, **r.counts}
+    return r
+
+
+def _add(a, b):
+    """Sum counts across units; "x/y" fractions are summed part by part."""
+    if a is None:
+        return b
+    if isinstance(b, str) and "/" in b:
+        (a1, a2), (b1, b2) = (map(int, a.split("/")), map(int, b.split("/")))
+        return f"{a1 + b1}/{a2 + b2}"
+    return a + b if isinstance(b, int) else b
+
+
 def text_results(units: list[str]) -> list[Result]:
     results = []
     per = {code: Result(code, name) for code, name in (
@@ -274,8 +333,12 @@ def text_results(units: list[str]) -> list[Result]:
             agg.ok &= res.ok
             agg.problems += res.problems
             for k, v in res.counts.items():
-                agg.counts[k] = v if len(units) == 1 else agg.counts.get(k, 0) + (v if isinstance(v, int) else 0)
+                agg.counts[k] = _add(agg.counts.get(k), v)
+    for agg in per.values():
+        agg.counts["units"] = len(units)
     results += per.values()
+    results.append(v1_files(units))
+    results.append(v3_endnotes(units))
     results.append(v5_langid(units))
     from . import layers
 

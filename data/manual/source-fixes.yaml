@@ -1,0 +1,18 @@
+# Corrections of source defects (CLAUDE.md fidelity rule 1). Each becomes
+# <choice><sic>original</sic><corr resp="#editor">correction</corr></choice> in the base text; the
+# original stays in `sic` and V1 compares against it. Add an entry only for a demonstrable error.
+#
+# phrase: exact source text in which the defect sits (must occur exactly once in `in`)
+# sic / corr: the defective substring of `phrase` and its correction
+# lang: if set, the whole phrase is marked as a foreign passage in that language
+
+- unit: djr
+  in: nat0005847
+  phrase: "Mανία γὰρ οὐ πᾶσιν ὁμοία"
+  sic: "Mανία"
+  corr: "Μανία"
+  lang: grc
+  reason: >-
+    The first letter is Latin capital M (U+004D) in a Greek word; it should be Greek capital Mu
+    (U+039C). The mixed script breaks search, hyphenation and screen-reader pronunciation.
+  checked: "2026-10-20"

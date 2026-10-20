@@ -42,6 +42,7 @@
     <element name="div">
       <attribute name="type"><choice><value>subsection</value><value>front</value></choice></attribute>
       <attribute name="n"/>
+      <optional><attribute name="resp"><value>#gowland</value></attribute></optional>
       <ref name="id"/>
       <zeroOrMore><ref name="block"/></zeroOrMore>
     </element>
@@ -53,7 +54,50 @@
       <ref name="p"/>
       <ref name="lg"/>
       <ref name="quote"/>
+      <ref name="list"/>
+      <ref name="figure"/>
+      <ref name="gowlandBlock"/>
+      <element name="ed:endnote">
+        <a:documentation>One of Gowland's Explanatory Notes (data/text/gowland-endnotes.xml only).</a:documentation>
+        <ref name="id"/>
+        <attribute name="n"/>
+        <attribute name="src"/>
+        <ref name="inline"/>
+      </element>
     </choice>
+  </define>
+
+  <define name="figure">
+    <element name="figure">
+      <ref name="src"/>
+      <element name="graphic"><attribute name="url"/><empty/></element>
+    </element>
+  </define>
+
+  <define name="gowlandBlock">
+    <element name="ed:block">
+      <a:documentation>Unbracketed Gowland translation, marked from data/manual/blocks.yaml.</a:documentation>
+      <oneOrMore><ref name="block"/></oneOrMore>
+    </element>
+  </define>
+
+  <define name="foreignBlockAttrs">
+    <optional><ref name="id"/></optional>
+    <optional><ref name="lang"/><attribute name="ana"><value>foreign</value></attribute></optional>
+  </define>
+
+  <define name="list">
+    <element name="list">
+      <optional><attribute name="rend"/></optional>
+      <ref name="src"/>
+      <oneOrMore>
+        <element name="item">
+          <optional><attribute name="rend"/></optional>
+          <ref name="src"/>
+          <ref name="inline"/>
+        </element>
+      </oneOrMore>
+    </element>
   </define>
 
   <define name="head">
@@ -63,6 +107,7 @@
       </choice></attribute>
       <optional><attribute name="subtype"/></optional>
       <optional><attribute name="facs"/></optional>
+      <ref name="foreignBlockAttrs"/>
       <ref name="src"/><ref name="prov"/>
       <ref name="inline"/>
     </element>
@@ -80,8 +125,9 @@
   <define name="quote">
     <element name="quote">
       <attribute name="type"><value>block</value></attribute>
-      <ref name="src"/>
-      <oneOrMore><choice><ref name="lg"/><ref name="p"/><ref name="verseTrans"/></choice></oneOrMore>
+      <ref name="foreignBlockAttrs"/>
+      <ref name="src"/><ref name="prov"/>
+      <oneOrMore><choice><ref name="lg"/><ref name="p"/><ref name="verseTrans"/><ref name="quote"/></choice></oneOrMore>
     </element>
   </define>
 
@@ -115,8 +161,8 @@
         <text/>
         <element name="hi"><attribute name="rend"/><ref name="inline"/></element>
         <element name="foreign">
-          <ref name="id"/><ref name="lang"/>
-          <attribute name="ana"><value>foreign</value></attribute>
+          <optional><ref name="id"/></optional><ref name="lang"/>
+          <optional><attribute name="ana"><value>foreign</value></attribute></optional>
           <optional><attribute name="type"><value>script</value></attribute></optional>
           <ref name="prov"/>
           <ref name="inline"/>
@@ -158,6 +204,12 @@
         <element name="ed:enref">
           <attribute name="target"/>
           <attribute name="n"/>
+          <optional><attribute name="src"/></optional>
+          <optional><attribute name="sic"><a:documentation>EPUB's original (wrong) target, see data/manual/link-fixes.yaml</a:documentation></attribute></optional>
+          <empty/>
+        </element>
+        <element name="g">
+          <attribute name="ref"/>
           <empty/>
         </element>
       </choice>

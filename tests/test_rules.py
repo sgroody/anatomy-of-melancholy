@@ -54,7 +54,9 @@ def test_classify():
     assert langid.classify("Hercules de Saxonia", False)[0] == "name"
     assert langid.classify("Fern. Path. lib. 1 cap. 1", False)[0] == "citation"
     assert langid.classify("Oper. & dies", False, in_note=True)[0] == "citation"
-    assert langid.classify("parts", False)[0] == "undetermined"
+    # a lone English word: English by the book lexicon if it is built, otherwise undetermined, never Latin
+    assert langid.classify("parts", False)[0] in ("en", "undetermined")
+    assert langid.classify("&c", False)[0] != "la"
 
 
 def test_comma_list_is_split_into_items():

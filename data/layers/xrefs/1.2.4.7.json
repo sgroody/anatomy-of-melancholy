@@ -1,0 +1,34 @@
+{
+  "1.2.4.7-x1": {
+    "levels": {
+      "memb": 4,
+      "sect": 2,
+      "subsect": 3
+    },
+    "method": "rules/xref-v1",
+    "selector": {
+      "exact": "Sect. 2 Memb. 4 Subs. 3",
+      "in": "1.2.4.7",
+      "prefix": "is the cause of it himself: ¶ ",
+      "suffix": ". ¶ Polydor. ¶ Consil. 26 lib."
+    },
+    "status": "explicit-resolved",
+    "target": "1.2.4.3"
+  },
+  "1.2.4.7-x2": {
+    "levels": {
+      "part": 1,
+      "sect": 2,
+      "subsect": 3
+    },
+    "method": "rules/xref-v1",
+    "selector": {
+      "exact": "Part. 1 Sect. 2 Subsect. 3",
+      "in": "1.2.4.7",
+      "prefix": "7 cap. 2. ¶ Lib. de gemmis. ¶ ",
+      "suffix": ". ¶ His alias poteram, & plure"
+    },
+    "status": "unresolved",
+    "target": null
+  }
+}

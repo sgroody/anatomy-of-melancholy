@@ -160,6 +160,14 @@ Statuses are `parsed`, `partial` (author known, work or locus not) and `unidenti
 
 **`xrefs/`**: target unit or element, status (`explicit-resolved`, `relative-proposed`, `relative-confirmed` or `unresolved`), method, and evidence quote.
 
+Explicit references (M2, `burton xrefs`):
+* Taken only when they name Burton's own divisions (Part./Memb./Subs./Sub./Mem.), and have either a cue ("see", "before", "as I have…", "in the following…") or at least two levels.
+* Skipped and counted:
+  * citations of other books: a locator after (`cap.`, `lib.`, `quaest.`, …) or a book-title abbreviation before;
+  * a bare "Sect. N";
+  * headings.
+* Missing upper levels are inherited from the current subsection. A skipped middle level ("Part. 1 Subs. 2 Memb. 2") leaves the reference `unresolved` rather than guessed.
+
 **`glosses/`**: obsolete English words. Each record is a text-quote selector, a headword, a sense, a source, and a confidence.
 
 Source order (decided, D6, at my discretion):
@@ -257,6 +265,26 @@ Each step feeds a per-segment decision with a confidence:
    * A **hand-checked gold sample** of 600 segments, stratified: 300 italic runs, 100 roman runs next to brackets, 100 sidenote fragments, 50 verse lines, and 50 random English sentences as negatives. Labels are drafted, and the project owner reviews them all, or at minimum a random 25 % audit with zero disagreements [D7].
    * Report precision and recall per language, boundary exact-match rate, and a confusion matrix.
    * **Targets:** Latin precision ≥ 0.98 and recall ≥ 0.97; Greek 1.00/1.00; boundary exact-match ≥ 0.95.
+
+**As implemented in M2** (`burton/ingest/langid.py`, in this order):
+1. Greek, Hebrew and Arabic script runs. A verse group that is wholly Greek is tagged at `lg` level.
+2. Verse groups followed by a translation group (Gowland's bracketed one or Burton's own) and made of Latin italics are tagged Latin at `lg` level.
+3. Italic runs:
+   * Fragments are joined across spaces, commas, full stops and `&`, but never across `: ; ? !`. A comma-separated list of short items is split into one run per item.
+   * Each run is classified from function words, endings and the book lexicon, with the bracket rule first.
+   * A run before a bracket that isn't Latin as a whole is retried on its last fragments.
+   * A Latin run sheds leading citation or name fragments and a trailing name that starts Burton's English sentence.
+4. Roman text directly before a bracket, read backwards to the first English word.
+5. Roman Latin runs anywhere: at least 3 Latin words, no English word, at least 60% Latin.
+6. Model rulings (`burton adjudicate`) for runs the rules leave undetermined, and for capitalised runs that may be Latin terms. Low-confidence rulings are not applied.
+
+The **book lexicon** (`data/lexicon/`) is learned from the edition itself:
+* Latin: lowercase words from high-confidence rule decisions, mostly those followed by a Gowland bracket.
+* English: Burton's roman running text.
+
+It is rebuilt only by `burton lexicon`, from a rules-only ingest.
+
+**Gold sample:** 677 items (77 from M1 plus 600 stratified), labelled blind and judged in place by `burton/verify/gold.py`. Eight labels were corrected after a full-text review, because the labelling display had truncated them; each is noted in the file.
 
 ### 6.2 Self-translation detection
 

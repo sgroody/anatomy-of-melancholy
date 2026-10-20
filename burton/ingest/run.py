@@ -11,7 +11,7 @@ from .. import paths
 from ..ids import Registry
 from ..source import check_lock, read_lock
 from ..tei import ED, XML_ID, XML_LANG, T, el, local, xml_id
-from . import convert, epub, gowland, langid
+from . import convert, epub, gowland, langid, manual
 
 
 def fingerprint(e) -> str:
@@ -44,8 +44,9 @@ def assign_ids(div, unit: str, reg: Registry) -> Counter:
         while anc is not None and not anc.get("src"):
             anc = anc.getparent()
         base = anc.get("src") if anc is not None else unit
-        seen[base] += 1
-        give(f, "f", f"{base}|{seen[base]}", fingerprint(f))
+        fp = fingerprint(f)
+        seen[(base, fp)] += 1  # nth passage with this same text in this container (normally 1)
+        give(f, "f", f"{base}|{fp}|{seen[(base, fp)]}", fp)
     return counts
 
 
@@ -89,10 +90,14 @@ def validate(tree) -> None:
 
 def ingest_unit(unit: str, reg: Registry) -> dict:
     file, elements = epub.unit_range(unit)
-    div, ctx = convert.convert_unit(unit, file, elements)
+    resp = epub.FRONT[unit][2] if epub.is_front(unit) else None
+    div, ctx = convert.convert_unit(unit, file, elements, front=epub.is_front(unit), resp=resp)
     stats: Counter = Counter()
-    stats.update(gowland.separate(div))
-    decisions = langid.run(div, unit, stats)
+    stats.update(manual.apply(div, unit))
+    stats.update(manual.apply_fixes(div, unit))
+    if resp != "#gowland":
+        stats.update(gowland.separate(div))
+    decisions = langid.run(div, unit, stats, gowland_unit=resp == "#gowland")
     ids = assign_ids(div, unit, reg)
     link_translations(div)
     review = [" ".join("".join(t.itertext()).split()) for t in gowland.trans_without_foreign(div)]
@@ -117,11 +122,13 @@ def ingest_unit(unit: str, reg: Registry) -> dict:
     return report
 
 
-def ingest(units: list[str]) -> None:
+def ingest(units: list[str], quiet: bool = False) -> None:
     check_lock()
     reg = Registry()
     for unit in units:
         r = ingest_unit(unit, reg)
+        if quiet:
+            continue
         s = r["stats"]
         print(f"{unit}: {r['elements']} source blocks -> data/text/{unit}.xml (valid)")
         print("  ids:", ", ".join(f"{k}={v}" for k, v in sorted(r["ids"].items())), f"retired={r['retired_ids']}")

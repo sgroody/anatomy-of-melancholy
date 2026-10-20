@@ -1,0 +1,11 @@
+# Corrections of note links that point at the wrong target (SURVEY §4). The EPUB's original target is
+# kept on the element as @sic. Each entry was checked against both note texts.
+
+- ref: chapter003-02.xhtml#chi3_en30
+  wrong: chh3_en_30
+  right: chi3_en_30
+  reason: >-
+    The anchor after "And eke the Owl that of death bode bringeth" points to chh3_en_30 (a note on
+    Xenophon, already anchored earlier in the same file) instead of chi3_en_30 ("eke: Also. bode: Omen"),
+    which is otherwise referenced by nothing.
+  checked: "2026-10-20"

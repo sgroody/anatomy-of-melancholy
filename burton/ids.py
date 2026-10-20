@@ -47,6 +47,16 @@ class Registry:
                 r.status = "active"
                 self._seen.add(r.id)
                 return r.id
+        # Re-identification: the same text in the same container keeps its id even when the locator
+        # scheme or the passages around it changed (e.g. better detection inserted a passage before it).
+        if fingerprint:
+            base = locator.split("|", 1)[0]
+            for r in self.rows:
+                same = (r.unit, r.kind, r.fingerprint) == (unit, kind, fingerprint)
+                if same and r.id not in self._seen and r.locator.split("|", 1)[0] == base:
+                    r.locator, r.status = locator, "active"
+                    self._seen.add(r.id)
+                    return r.id
         new = Row(f"{unit}-{kind}{self._next_n(unit, kind)}", unit, kind, locator, fingerprint)
         self.rows.append(new)
         self._seen.add(new.id)

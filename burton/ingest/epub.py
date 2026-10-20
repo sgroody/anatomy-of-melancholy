@@ -73,6 +73,8 @@ def _belongs_before(e) -> bool:
 
 
 def unit_range(unit: str) -> tuple[str, list]:
+    if unit in FRONT:
+        return front_range(unit)
     units = nav()
     idx = next(i for i, u in enumerate(units) if u["unit"] == unit)
     u = units[idx]
@@ -93,3 +95,32 @@ def unit_range(unit: str) -> tuple[str, list]:
             out.append(e)
         e = e.getnext()
     return u["file"], out
+
+
+# Front matter in spine order: unit id -> (file, title used when the page has no heading, resp)
+FRONT = {
+    "argument": ("preface001", "The Argument of the Frontispiece", None),
+    "dedication": ("preface002", "Dedication", None),
+    "ad-librum": ("preface003", "Democritus Junior ad Librum suum", None),
+    "ad-librum-gowland": ("preface004", "Democritus Junior to His Book [Gowland's translation]", "#gowland"),
+    "abstract": ("preface005", "The Author's Abstract of Melancholy", None),
+    "djr": ("preface006", "Democritus Junior to the Reader", None),
+    "lectori": ("preface007", "Lectori male feriato", None),
+    "lectori-gowland": ("preface008", "To the Mischievously Idle Reader [Gowland's translation]", "#gowland"),
+    "heraclite": ("preface010", "Heraclite fleas, misero sic convenit aevo", None),
+}
+
+
+def all_units() -> list[str]:
+    """Every unit in reading order: front matter, then the three Partitions."""
+    return list(FRONT) + [u["unit"] for u in nav()]
+
+
+def is_front(unit: str) -> bool:
+    return unit in FRONT
+
+
+def front_range(unit: str) -> tuple[str, list]:
+    file = FRONT[unit][0]
+    sec = load(file).getroot().find(f"{{{XH}}}body/{{{XH}}}section")
+    return file, [k for k in sec if isinstance(k.tag, str)]

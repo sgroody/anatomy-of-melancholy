@@ -73,6 +73,16 @@ When a check fails, fix the cause. Do not add an `allowed-diffs` entry to make a
   * Built so far: `unpack`, `counts`, `ingest`, `verify`, `translate` (`--dry-run`, `--packet-size`, `--max-packets`), `fonts`, `build`, `serve`, `check`. Most take `--unit` (repeatable).
   * `uv run burton check --unit 1.1.1.2` is the "done" gate. It re-ingests, verifies, builds both profiles and checks the site; the report goes to `verify/reports/latest.json`.
   * `uv run python tests/manual/kill_resume.py <unit>` kills the translation runner mid-run and resumes it. It uses real `claude -p` calls, so it is not part of pytest.
+  * M2 added: `lexicon` (rebuilds the book's Latin/English word lists from a rules-only ingest; changes language decisions, so run it deliberately), `adjudicate` (model rulings on undecided language runs → `data/layers/langid-adjudication.json`), `xrefs`, and `ingest --all` (which also writes `data/text/gowland-endnotes.xml`).
+* **Hand-made decisions live in `data/manual/`**, never in code:
+  * `blocks.yaml`: block-level language and Gowland-block decisions;
+  * `source-fixes.yaml`: `sic`/`corr` corrections;
+  * `link-fixes.yaml`: mis-targeted note links (original kept as `@sic`);
+  * `heading-images.yaml`, `alt-text.yaml`, `known-source-defects.yaml`.
+* **`resp="#editor"` on markup means an editorial decision, not added text.** Text we add is only: transcribed heading images (`head[@facs]`), `corr`, and `supplied[@resp=#editor]`. V1 excludes exactly those.
+* **Passage ids are anchored on their text** (container + text fingerprint), so better detection elsewhere in a paragraph never renumbers them. Never change the locator scheme without the re-identification fallback in `burton/ids.py`.
+* **Language decisions record provenance.** `resp="#rules"` for rules and the book lexicon (never `cert="high"` from the lexicon); `resp="#model"` for adjudicated runs (high becomes `medium`, and low rulings are not applied); `resp="#editor"` for `blocks.yaml`.
+* **Editing code on Windows:** don't patch Python through shell heredocs; `\b`, `\d` and line continuations get mangled. Use the Edit tool or a script file. Write data files with `burton.fsutil.atomic_write_text`, which retries Windows' transient file locks.
 * **Translation runner facts** (learned in M1):
   * `claude -p` must run from a temp dir outside the repo, or it loads this CLAUDE.md.
   * `--bare` cannot authenticate with the subscription.

@@ -24,6 +24,26 @@ Decisions **[D#]** are listed at the end. D2–D6 and D9 are decided; D1, D7 and
 * V6: 50 links, 0 broken. V8: 0 Gowland leaks. V9: glyph coverage 118/118 and 115/115. V10: 0 parse errors, 0 accessibility issues.
 * Kill/resume test PASS (`verify/reports/m1-kill-resume.log`).
 
+**M2 mostly done (2026-10-20).** `uv run burton verify --all` over 158 units (149 subsections and 9 front-matter pages):
+* V1: 484,453 words, 0 unexplained differences; 5,703/5,703 sidenotes identical.
+* V1f: 18/18 EPUB pages fully covered by their units.
+* V2: sidenotes 5,703/5,703, endnote anchors 3,907/3,907, page markers 956/956, paragraphs 1,910/1,910, verse lines 5,006/5,006.
+* V4: 1,080/1,080 script characters tagged.
+* V3g: Gowland endnotes 3,907/3,907 identical, 0 orphans, 0 double references (1 recorded link fix).
+* V7: passes. The 7,768 untranslated passages are a count for M5, not a failure.
+
+Also in M2:
+* 7,775 foreign passages: 7,708 Latin, 63 Greek, 3 Greek in Latin letters, and a handful of other vernaculars.
+* Cross-references: 19 resolved, 2 unresolved (a level missing), 160 citations of other books skipped.
+* 1,025 model rulings on undecided language runs (`data/layers/langid-adjudication.json`, labelled).
+
+**M2 open: the language-identification target.**
+* On the tuning sample (677 items, used to develop the rules): precision 0.995, recall 0.978, boundary exact-match 0.967.
+* On the **held-out** sample (150 items, never tuned on): precision 0.957, recall 0.957, boundary 0.978. **Below target** (0.98 / 0.97).
+* Held-out errors: citations with a "de" title tagged Latin ("Grotius de verit"), a name fragment ("Herc."), and 2 missed Latin phrases.
+* Next: fix those error types, then confirm on a *new* held-out sample. The current hold-out must not be tuned on.
+* All gold labels await your review (D7).
+
 **Carried forward** (not done, with the milestone that takes each):
 * **Offline/PWA install not verified.** The service worker is served correctly, but the app's browser pane refuses registration and quick headless attempts were inconclusive. → M3, with a Playwright test.
 * EB Garamond lacks ℥, ℈ and the astrological signs. A fallback font is needed before units with recipes or synopses. → M3

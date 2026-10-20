@@ -156,8 +156,35 @@ def _unit_start(el):
     return start
 
 
+# Front-matter pages: one page = one unit (an independent copy of the mapping; not imported from ingest)
+FRONT_FILES = {"argument": "preface001", "dedication": "preface002", "ad-librum": "preface003",
+               "ad-librum-gowland": "preface004", "abstract": "preface005", "djr": "preface006",
+               "lectori": "preface007", "lectori-gowland": "preface008", "heraclite": "preface010"}
+PARTITION_FILES = ["chapter001-01", "chapter001-02", "chapter001-03", "chapter002-01", "chapter002-02",
+                   "chapter003-01", "chapter003-02", "chapter003-03", "chapter003-04"]
+
+
+def section_children(xhtml_dir: Path, fname: str) -> list:
+    sec = doc(xhtml_dir, fname).getroot().find(f"{{{XHTML_NS}}}body/{{{XHTML_NS}}}section")
+    return [k for k in sec if isinstance(k.tag, str)]
+
+
+def file_text(xhtml_dir: Path, fname: str) -> str:
+    """All visible text of a page's section, with no unit boundaries involved (coverage check)."""
+    return "\n".join(plain(k) for k in section_children(xhtml_dir, fname))
+
+
+def units_by_file(xhtml_dir: Path) -> dict[str, list[str]]:
+    out: dict[str, list[str]] = {f: [u] for u, f in FRONT_FILES.items()}
+    for unit, fname, _, _ in nav_units(xhtml_dir):
+        out.setdefault(fname, []).append(unit)
+    return out
+
+
 def unit_elements(xhtml_dir: Path, unit: str) -> tuple[str, list]:
     """Top-level elements belonging to a unit, by the counter's own boundary rule."""
+    if unit in FRONT_FILES:
+        return FRONT_FILES[unit], section_children(xhtml_dir, FRONT_FILES[unit])
     units = nav_units(xhtml_dir)
     keys = [u[0] for u in units]
     i = keys.index(unit)

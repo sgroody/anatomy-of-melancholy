@@ -9,7 +9,7 @@ from collections import Counter
 
 from ..tei import ED, T, el, local, put_items, take_items
 
-SKIP = {ED("verse-trans"), T("pb"), ED("enref"), T("lb")}
+SKIP = {ED("verse-trans"), ED("block"), T("pb"), ED("enref"), T("lb")}
 
 
 def _wrap_pairs(e, opener: str, closer: str, make, stats: Counter, key: str) -> None:
@@ -87,8 +87,11 @@ def trans_without_foreign(div) -> list:
     for t in div.iter(ED("trans")):
         prev = t.getprevious()
         between = (prev.tail if prev is not None else t.getparent().text) or ""
+        last = prev[-1] if prev is not None and len(prev) else None
         ok = (prev is not None and between.strip(" ,;:.") == ""
-              and (local(prev.tag) == "foreign" or prev.get("ana") == "foreign"))
+              and (local(prev.tag) == "foreign" or prev.get("ana") == "foreign"
+                   or (last is not None and last.get("ana") == "foreign"
+                       and not (last.tail or "").strip(" ,;:."))))
         if not ok:
             out.append(t)
     return out

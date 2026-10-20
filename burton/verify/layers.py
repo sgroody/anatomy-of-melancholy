@@ -57,7 +57,23 @@ def v7_layers(units: list[str]):
                 if src["status"] == "identified" and not src.get("verified"):
                     r.fail(f"{key}: identified without verification")
         missing = [k for k in foreign if k not in layer]
-        if missing:
-            r.fail(f"{unit}: {len(missing)} foreign passage(s) without a translation record: {missing}")
+        # Completeness is a count until the full translation pass (M5 exit: untranslated = 0);
+        # integrity problems above always fail.
+        c["untranslated"] = c.get("untranslated", 0) + len(missing)
+        c["units_without_layer"] = c.get("units_without_layer", 0) + (0 if layer else 1)
+        # cross-reference layer: resolved targets must exist; selectors must be found in the unit
+        xf = paths.LAYERS / "xrefs" / f"{unit}.json"
+        if xf.exists():
+            full = public_text(root.find(f".//{T('div')}"), notes=True)
+            for key, rec in json.loads(xf.read_text(encoding="utf-8")).items():
+                c["xrefs"] = c.get("xrefs", 0) + 1
+                if rec["status"] == "explicit-resolved":
+                    if not (paths.TEXT / f"{rec['target']}.xml").exists():
+                        r.fail(f"{key}: cross-reference target {rec['target']} does not exist")
+                    c["xrefs_resolved"] = c.get("xrefs_resolved", 0) + 1
+                else:
+                    c["xrefs_unresolved"] = c.get("xrefs_unresolved", 0) + 1
+                if rec["selector"]["exact"] not in full:
+                    r.fail(f"{key}: cross-reference text {rec['selector']['exact']!r} not found in {unit}")
     r.counts = c
     return r

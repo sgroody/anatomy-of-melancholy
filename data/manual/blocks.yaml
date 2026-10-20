@@ -1,0 +1,45 @@
+# Block-level decisions the rules cannot make. Each was checked against the EPUB on 2026-10-20.
+# `from`/`to` are EPUB ids of an element inside the first/last top-level block of the range.
+# These decisions add markup only (attributes, wrappers); they never change text.
+
+language:
+  # Whole blocks in a foreign language, set in roman type, so italics give no signal.
+  - unit: dedication
+    from: nat0005334
+    to: nat0005353
+    lang: la
+    note: Latin dedication to George, Lord Berkeley, set as capitals and small capitals.
+  - unit: ad-librum
+    head: nat0005362
+    lang: la
+    note: Latin title "Democritus Junior ad Librum suum".
+  - unit: ad-librum
+    from: nat0005364
+    to: nat0005364
+    lang: la
+    note: The Latin poem (one verse group).
+  - unit: lectori
+    head: nat0006284
+    lang: la
+    note: Latin title "Lectori male feriato".
+  - unit: lectori
+    from: nat0006285
+    to: nat0006289
+    lang: la
+    note: Latin prose address to the reader, with one verse quotation.
+  - unit: heraclite
+    from: nat0000010
+    to: nat0000010
+    lang: la
+    note: Latin poem "Heraclite fleas".
+
+gowland:
+  # Gowland's own translations that are not bracketed, so the bracket rule cannot see them.
+  - unit: dedication
+    from: nat0005354
+    to: nat0005361
+    note: '"[Translation]" heading and Gowland''s English version of the dedication.'
+  - unit: heraclite
+    from: nat0000020
+    to: END
+    note: '"[Translation]" heading and Gowland''s verse translation of the poem.'

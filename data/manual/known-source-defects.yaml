@@ -1,0 +1,37 @@
+# EPUB defects deliberately left as they are, or not yet handled, with the reason (SURVEY §3–§5).
+# Corrected defects live in source-fixes.yaml instead.
+
+- id: greek-breathing-modifiers
+  where: ["footnotesb.xhtml n.611 'ʼˋΗ πῖθι ἢ ἄπιθι'", "chapter002-01.xhtml#nat0007978 'ʼΑγαθὴ'",
+          "footnotesc.xhtml n.1296 'ʼΑφροδίτης'"]
+  what: Breathings and accents typed as spacing modifier letters (U+02BC, U+02CB) before a capital.
+  decision: left as is. The text is readable and all characters are Greek-tagged (V4). Normalising
+    to precomposed letters (Ἢ, Ἀ) happens only in search and comparison code.
+- id: greek-elision-marks
+  where: ["chapter001-01.xhtml#nat0001172", "chapter002-02.xhtml (fn1070)"]
+  what: Elision marked with U+02BC in some words and combining U+0313 in others, in the same line.
+  decision: left as is; normalised only for comparison and search.
+- id: endnote-mislink-chi3_en30
+  where: ["chapter003-02.xhtml ref id=chi3_en30"]
+  what: The ref after "And eke the Owl that of death bode bringeth" points to notes003#chh3_en_30
+    (a note on Xenophon) instead of #chi3_en_30 ("eke: Also. bode: Omen").
+  decision: corrected in M2 via data/manual/link-fixes.yaml (the original target stays as @sic on the
+    anchor). V3g checks that every endnote is referenced exactly once.
+- id: page-marker-gaps
+  where: ["81 in-file gaps, e.g. chapter001-01 148→150, chapter003-02 916→922"]
+  what: Penguin page numbers skipped within running text.
+  decision: left as is. Page markers are Gowland-edition metadata, shown only in the private build.
+- id: synopsis-hidden-text
+  where: ["chapter001.xhtml", "chapter002.xhtml", "chapter003.xhtml"]
+  what: Synopses are images; their hidden text tables are flat and partly reordered (P1 11 inversions),
+    with one duplicate line (nat0000034a / nat0000108).
+  decision: synopses are rebuilt as trees in M7; until then these three pages are outside the units
+    and outside V1f (reported as deferred).
+- id: nav-label-swap-p1
+  where: ["nav.xhtml"]
+  what: '"The Synopsis of the First Partition" links to chapter001-01 (the text), while the synopsis is chapter001.'
+  decision: irrelevant to the edition; units come from the numbering in nav labels, which are correct.
+- id: apothecary-semis
+  where: ["chapter002-02.xhtml (4)", "chapter003-02.xhtml (1)"]
+  what: "'ß' stands for the apothecary semis (½), e.g. '℥ ß'."
+  decision: kept as in the source; a gloss is added in the obsolete-word layer (M8).

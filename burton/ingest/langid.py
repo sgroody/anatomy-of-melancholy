@@ -8,6 +8,7 @@ No language-detector library is used. Every decision records its confidence and 
 import regex as re
 
 from ..tei import ED, XML_LANG, T, el, local, put_items, take_items
+from . import lexicon
 
 GREEK_CH = r"\p{Script=Greek}"
 # A run starts at a Greek letter (or a breathing typed as a modifier letter before one) and continues
@@ -37,16 +38,26 @@ quoniam quia dum donec mihi tibi sibi nos vos me te se eius ejus suus sua suum m
 tuus tua noster nostra vester qui quo qua quibus cui cuius cujus deus dei deo
 """.split())
 LA_ENDINGS = re.compile(r"(?:orum|arum|ibus|ntur|tur|bant|bunt|erunt|isse|iis|ae|um|que|ii|ium)$")
-CITATION = re.compile(r"\d|\b(?:lib|cap|sect|tom|epist|consil|fol|memb|subs|c|l)\.", re.I)
-PUNCT_ONLY = re.compile(r"^[\s,.;:!?&()\-—’']*$")
+CITATION = re.compile(r"\d|\b(?:lib|cap|sect|tom|epist|consil|fol|memb|subs|c|l)\.|^\s*(?:idem|ibid|ib)\b"
+                      r"|^\s*[ivxlcdm]{1,6}\s*$", re.I)
+ABBREV = {"lib", "cap", "sect", "tom", "epist", "ep", "consil", "fol", "memb", "subs", "subsect", "c", "l", "de",
+          "com", "hist", "lect", "ser", "serm", "hom", "sat", "dial", "art", "quaest", "tract", "prob", "aph",
+          "par", "vers", "pag", "num", "cent", "obs", "observ", "exercit", "med", "pract", "instit", "comment"}
+# Italic fragments are joined into one run across spaces, commas, full stops and &, but never across
+# : ; ? ! — Burton often italicises an English clause and then a Latin one ("…their souls: Pars fati fuit").
+PUNCT_ONLY = re.compile(r"^[\s,.&()\-—’']*$")
 WORD = re.compile(r"[\p{L}\p{M}’']+")
 
 
 # ------------------------------------------------------------------ scripts
 
-def _wrap_script_runs(e, stats) -> None:
+def _wrap_script_runs(e, stats, gowland: bool = False) -> None:
+    """Tag Greek/Hebrew/Arabic runs. Inside Gowland's matter they get a language but are not
+    translation passages (no ana="foreign"): they must never be queued for a model."""
     if e.tag in (ED("enref"), T("pb"), T("lb")):
         return
+    gowland = (gowland or e.tag in (ED("trans"), ED("verse-trans"), ED("block"))
+               or (e.tag == T("supplied") and e.get("resp") == "#gowland") or e.get("resp") == "#gowland")
     if e.get(XML_LANG) is not None and e.get(XML_LANG) != "en":
         return  # already language-marked as a whole
     items = take_items(e)
@@ -63,8 +74,8 @@ def _wrap_script_runs(e, stats) -> None:
             if s < pos:
                 continue
             out.append(it[pos:s])
-            f = el("foreign", {"lang-tmp": lang, "resp": "#rules", "cert": "high", "ana": "foreign",
-                               "type": "script"})
+            f = el("foreign", {"lang-tmp": lang, "resp": "#rules", "cert": "high",
+                               "ana": None if gowland else "foreign", "type": "script"})
             f.text = it[s:t]
             out.append(f)
             stats[f"script:{lang}"] += 1
@@ -73,7 +84,7 @@ def _wrap_script_runs(e, stats) -> None:
     put_items(e, out)
     for c in list(e):
         if isinstance(c.tag, str) and c.get("lang-tmp") is None:
-            _wrap_script_runs(c, stats)
+            _wrap_script_runs(c, stats, gowland)
 
 
 def _letters(s: str, script: str) -> int:
@@ -105,6 +116,7 @@ def _is_italic(x) -> bool:
     return not isinstance(x, str) and x.tag == T("hi") and x.get("rend") == "i"
 
 
+EN_LATIN_AMBIGUOUS = {"an", "his", "is", "do", "more", "me", "sub", "te", "nos", "per", "post", "sic", "ad"}
 NAME_PARTICLES = {"de", "a", "ab", "van", "von", "of", "the", "à", "la", "le", "du", "di", "da", "&"}
 
 
@@ -122,12 +134,24 @@ def classify(text: str, followed_by_bracket: bool, in_note: bool = False) -> tup
         return "citation", "medium", "locator abbreviation or digits"
     n_en = sum(w in EN_FUNCTION for w in lower)
     n_la = sum(w in LA_FUNCTION or bool(LA_ENDINGS.search(w)) for w in lower)
-    if followed_by_bracket and n_en == 0:
-        return "la", "high", f"Gowland bracket follows; la={n_la} en=0"
+    # words that are also common Latin forms do not count as English evidence before a bracket
+    n_en_strict = sum(w in EN_FUNCTION and w not in EN_LATIN_AMBIGUOUS for w in lower)
+    if followed_by_bracket and n_en_strict == 0:
+        return "la", "high", f"Gowland bracket follows; la={n_la} en={n_en}"
+    # book lexicon evidence (never yields "high": the lexicon is built from high-confidence decisions)
+    lex = [lexicon.latinness(w) for w in words if len(w) >= 3]
+    lx_la, lx_en = lex.count("la"), lex.count("en")
     content = [w for w in words if w.lower() not in NAME_PARTICLES]
     if content and len(content) <= 4 and all(w[:1].isupper() for w in content) and n_en == 0:
+        long = [w for w in content if len(w) >= 3]
+        if long and all(lexicon.latinness(w) == "la" for w in long):
+            # every word must be attested lowercase in Burton's Latin, so personal names
+            # (Donatus Altomarus) stay names while terms (Morbus Gallicus) become Latin
+            return "la", "medium", f"capitalised term attested in Burton's Latin (lexicon la={lx_la})"
         return "name", "medium", "capitalised words only (name or term)"
     if in_note and len(words) <= 6 and n_la < 2:
+        if lx_la >= 2 and not lx_en and not n_en:
+            return "la", "medium", f"sidenote run attested in Burton's Latin (lexicon la={lx_la})"
         # Gowland translated the Latin that survives in sidenotes, so unbracketed short runs
         # there are almost always titles or citations.
         return "citation", "medium", f"short unbracketed run in a sidenote (la={n_la} en={n_en})"
@@ -135,7 +159,76 @@ def classify(text: str, followed_by_bracket: bool, in_note: bool = False) -> tup
         return "la", ("high" if n_la >= 2 else "medium"), f"la={n_la} en={n_en}"
     if n_en:
         return "en", ("high" if n_en >= 2 else "medium"), f"la={n_la} en={n_en}"
-    return "undetermined", "low", f"no function words (la={n_la} en=0)"
+    if lx_la > lx_en:
+        return "la", "medium", f"no function words; lexicon la={lx_la} en={lx_en}"
+    if lx_en > lx_la:
+        return "en", "medium", f"no function words; lexicon la={lx_la} en={lx_en}"
+    return "undetermined", "low", f"no function words, lexicon silent (la={n_la} en=0)"
+
+
+ROMAN_TOKEN = re.compile(r"[\p{L}\p{M}]+(?:['’][\p{L}]+)?|&|[^\s\p{L}\p{M}]+")
+CLAUSE_STOP = set("():;?![]")
+
+
+def tag_roman_before_brackets(div, decisions: list, unit: str) -> None:
+    """Roman-type Latin directly before a Gowland bracket ("qui non Zelat, non amat [he who …]").
+
+    Scans backwards from the bracket through the immediately preceding text only (never across
+    elements), while words are Latin by the rules or the book lexicon; stops at the first English
+    word or clause break. Needs >= 2 Latin words making >= 50 % of the span (a bracket follows and the
+    span holds no English word). Confidence: medium.
+    """
+    for t in list(div.iter(ED("trans"))):
+        prev = t.getprevious()
+        if prev is not None and (prev.get("ana") == "foreign" or prev.tag == T("foreign")):
+            continue
+        # where the text before the bracket lives: the parent's text, the previous element's tail, or
+        # (when the bracket directly follows an untagged italic run) the end of that italic run
+        inside = prev is not None and _is_italic(prev) and len(prev) == 0 and not (prev.tail or "").strip(" ,.;:")
+        holder_is_tail = prev is not None and not inside
+        text = (prev.text if inside else prev.tail if holder_is_tail else t.getparent().text) or ""
+        toks = [m for m in ROMAN_TOKEN.finditer(text)]
+        start = len(text.rstrip())
+        la = other = 0
+        for m in reversed(toks):
+            w = m.group(0)
+            if not re.match(r"[\p{L}&]", w):
+                if any(ch in CLAUSE_STOP for ch in w) or (w.strip() in {".", "—"} and la):
+                    break
+                continue
+            low = w.lower()
+            is_la = w == "&" or low in LA_FUNCTION or bool(LA_ENDINGS.search(low)) or lexicon.latinness(w) == "la"
+            is_en = (low in EN_FUNCTION and low not in LA_FUNCTION) or lexicon.latinness(w) == "en"
+            if is_en and not is_la:
+                break
+            if is_la:
+                la += 1
+            else:
+                other += 1
+            start = m.start()
+        span = text[start:].rstrip()
+        span_len = len(text[start:len(text.rstrip())])
+        if la < 2 or la < 0.5 * (la + other) or not span:
+            decisions.append({"unit": unit, "text": text[-60:].strip(), "verdict": "undetermined",
+                              "confidence": "low", "why": f"roman text before bracket; la={la} other={other}",
+                              "in_note": any(a.tag == T("note") for a in t.iterancestors())})
+            continue
+        f = el("foreign", {"lang-tmp": "la", "resp": "#rules", "cert": "medium", "ana": "foreign"})
+        f.text = text[start:start + span_len]
+        rest = text[start + span_len:]
+        if inside:
+            prev.text = text[:start]
+            prev.insert(0, f)
+        elif holder_is_tail:
+            prev.tail = text[:start]
+            prev.addnext(f)
+        else:
+            t.getparent().text = text[:start]
+            t.getparent().insert(0, f)
+        f.tail = rest
+        decisions.append({"unit": unit, "text": f.text, "verdict": "la", "confidence": "medium",
+                          "why": f"roman text before Gowland bracket; la={la} other={other}",
+                          "in_note": any(a.tag == T("note") for a in t.iterancestors())})
 
 
 def _runs(items: list) -> list[tuple[int, int]]:
@@ -194,21 +287,64 @@ def _next_is_bracket(items: list, j: int) -> bool:
 
 
 def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
-    if e.tag in (ED("trans"), ED("verse-trans"), T("foreign")) or e.get("ana") == "foreign":
+    if e.tag in (ED("trans"), ED("verse-trans"), ED("block"), T("foreign"), T("supplied")) \
+            or e.get("ana") == "foreign":
         return
-    if e.get("resp") == "#editor":  # our own transcriptions are not source text
+    if e.get("facs") is not None:  # our own transcriptions of heading images are not source text
         return
     in_note = in_note or e.tag == T("note")
     items = take_items(e)
     out, last = [], 0
     for i, j in _runs(items):
         text = text_of(items[i:j])
-        verdict, conf, why = classify(text, _next_is_bracket(items, j), in_note)
+        bracket = _next_is_bracket(items, j)
+        verdict, conf, why = classify(text, bracket, in_note)
+        if not bracket and _dotted_citation(items, i, j):
+            verdict, conf, why = ("citation", "medium",
+                                  "short fragments separated by full stops (e.g. 'Donat. vita. ejus')")
+        elif not bracket and re.fullmatch(r"\s*\p{Lu}?\p{Ll}+-\p{Ll}+\s*", text):
+            verdict, conf, why = "en", "medium", "hyphenated compound (an English loan-word, e.g. 'Bona-roba')"
+        if verdict != "la" and bracket and j - i > 1:
+            # a Gowland bracket follows: the Latin may be only the run's last fragments
+            for k in range(j - 1, i, -1):
+                if not _is_italic(items[k]):
+                    continue
+                v2, c2, w2 = classify(text_of(items[k:j]), True, in_note)
+                if v2 == "la":
+                    decisions.append({"unit": unit, "text": text_of(items[i:k]), "verdict": verdict,
+                                      "confidence": conf, "why": why + " (prefix of a split run)",
+                                      "in_note": in_note})
+                    out.extend(items[last:k])
+                    i, text, verdict, conf, why = k, text_of(items[k:j]), v2, c2, w2 + " (suffix of a split run)"
+                    last = k
+                    break
+        lang, resp = "la", "#rules"
+        if verdict in ("undetermined", "name"):
+            # the rules cannot decide: use the model's ruling if there is one (machine layer, labelled)
+            adj = adjudicated(unit, text)
+            if adj and adj["confidence"] == "low":
+                adj = None  # the model was unsure: leave the rules' verdict and keep it for review
+            if re.fullmatch(r"\s*&c\.?\s*", text):
+                adj = None  # "&c" alone is "etc.": not a passage to translate
+                verdict, why = "en", "&c alone (etc.)"
+            if adj and adj["label"] in MODEL_LANGS:
+                verdict, lang, resp = "la", adj["label"], "#model"
+                if lang == "grc" and not re.search(r"\p{Script=Greek}", text):
+                    lang = "grc-Latn"  # Greek written in Latin letters (e.g. Aristophanes' frogs)
+                if lang == "he" and not re.search(r"\p{Script=Hebrew}", text):
+                    lang = "he-Latn"  # Hebrew written in Latin letters
+                conf = "medium" if adj["confidence"] == "high" else adj["confidence"]
+                why = f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']} {adj['kind']}"
+            elif adj:
+                verdict, why = adj["label"], f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
+        if verdict == "la" and j - i > 1 and resp == "#rules":
+            i, j = _trim_run(items, i, j, in_note)
+            text = text_of(items[i:j])
         decisions.append({"unit": unit, "text": text, "verdict": verdict, "confidence": conf, "why": why,
                           "in_note": in_note})
         out.extend(items[last:i])
         if verdict == "la":
-            f = el("foreign", {"lang-tmp": "la", "resp": "#rules", "cert": conf, "ana": "foreign"})
+            f = el("foreign", {"lang-tmp": lang, "resp": resp, "cert": conf, "ana": "foreign"})
             put_items(f, items[i:j])
             out.append(f)
         else:
@@ -219,6 +355,145 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
     for c in list(e):
         if isinstance(c.tag, str):
             tag_latin(c, decisions, unit, in_note)
+
+
+MODEL_LANGS = {"la", "grc", "it", "fr", "es", "de", "nl", "enm", "he"}
+
+
+def adjudicated(unit: str, text: str) -> dict | None:
+    from ..translate import adjudicate  # the layer file only; no model call happens during ingest
+
+    return adjudicate.lookup(unit, text)
+
+
+def correct_languages(div, unit: str, stats) -> None:
+    """Where the model ruled that a Latin-tagged passage is really another language, relabel it."""
+    from ..textview import public_text
+
+    for e in div.iter():
+        if isinstance(e.tag, str) and e.get("ana") == "foreign" and e.get(XML_LANG) == "la":
+            adj = adjudicated(unit, public_text(e))
+            if adj and adj["label"] in MODEL_LANGS - {"la"}:
+                e.set(XML_LANG, adj["label"])
+                e.set("resp", "#model")
+                stats[f"relabelled:{adj['label']}"] += 1
+
+
+def _dotted_citation(items: list, i: int, j: int) -> bool:
+    """A run made only of short fragments joined by full stops: an abbreviated reference."""
+    members = list(range(i, j, 2))
+    seps = [items[k] for k in range(i + 1, j, 2)]
+    after = items[j] if j < len(items) and isinstance(items[j], str) else ""
+    return (len(members) >= 2 and all(len(WORD.findall(text_of([items[m]]))) <= 2 for m in members)
+            and all(s.lstrip().startswith(".") for s in seps) and (after.lstrip().startswith((".", ",")) or not after))
+
+
+def _citation_like(items: list, k: int, in_note: bool) -> bool:
+    """A run member that is a citation fragment or a bare name, judged with the separator after it."""
+    t = text_of([items[k]]).strip()
+    sep = items[k + 1] if k + 1 < len(items) and isinstance(items[k + 1], str) else ""
+    words = WORD.findall(t)
+    if not words or CITATION.search(t):
+        return True
+    if t.endswith("&c"):  # "&c." is "etc.", not the citation abbreviation "c."
+        return classify(t, False, in_note)[0] in ("citation", "name")
+    if sep.lstrip().startswith(".") and ((words[-1].lower() in ABBREV and len(words) <= 3)
+                                         or (len(words) == 1 and len(t) <= 9)):
+        return True  # an abbreviation: "Path.", "Institut.", "expedit." (a one-word fragment before a stop)
+    return classify(t, False, in_note)[0] in ("citation", "name")
+
+
+def _trim_run(items: list, i: int, j: int, in_note: bool) -> tuple[int, int]:
+    """Shed leading citation/name fragments ("Eobanus Hessus. Quibus omnis…") and a trailing name that
+    starts Burton's English sentence ("…meliores, Sparta had many better men"). The trimmed run is used
+    only if it is still Latin."""
+    a, b = i, j
+    while b - a > 1 and _citation_like(items, a, in_note):
+        a += 2
+    tail = items[b] if b < len(items) and isinstance(items[b], str) else ""
+    while b - a > 1 and re.match(r"\s+\p{Ll}", tail):
+        last = text_of([items[b - 1]]).strip()
+        if len(WORD.findall(last)) == 1 and last[:1].isupper():
+            b -= 2
+            tail = " x"
+        else:
+            break
+    if (a, b) != (i, j) and classify(text_of(items[a:b]), _next_is_bracket(items, b), in_note)[0] == "la":
+        return a, b
+    return i, j
+
+
+ROMAN_SKIP = None  # filled lazily: element tags whose text the roman-run scan must not touch
+
+
+def _roman_spans(text: str) -> list[tuple[int, int, int, int]]:
+    """(start, end, latin, other) of runs of roman Latin in a string: >= 3 Latin words, no English word,
+    >= 60 % Latin. Latin = attested in Burton's Latin (lexicon), a Latin function word or ending."""
+    spans, cur = [], None
+    for m in ROMAN_TOKEN.finditer(text):
+        w = m.group(0)
+        if not re.match(r"[\p{L}&]", w):
+            if any(ch in CLAUSE_STOP for ch in w) and cur:
+                spans.append(cur)
+                cur = None
+            continue
+        low = w.lower()
+        is_la = w == "&" or low in LA_FUNCTION or lexicon.latinness(w) == "la" or \
+            (bool(LA_ENDINGS.search(low)) and lexicon.latinness(w) != "en")
+        is_en = lexicon.latinness(w) == "en" or (low in EN_FUNCTION and low not in EN_LATIN_AMBIGUOUS
+                                                  and low not in LA_FUNCTION)
+        if is_en and not is_la:
+            if cur:
+                spans.append(cur)
+            cur = None
+            continue
+        if cur is None:
+            if not is_la:
+                continue
+            cur = [m.start(), m.end(), 0, 0]
+        cur[1] = m.end()
+        cur[2 if is_la else 3] += 1
+    if cur:
+        spans.append(cur)
+    out = []
+    for s, e, la, other in spans:
+        # trim trailing non-Latin words (unknowns at the end are more likely English names)
+        if la >= 3 and la >= 0.6 * (la + other):
+            out.append((s, e, la, other))
+    return out
+
+
+def tag_roman_runs(div, decisions: list, unit: str) -> None:
+    """Roman-type Latin anywhere (not only before a bracket), e.g. a whole Latin sentence in a sidenote."""
+    skip = (T("hi"), T("foreign"), ED("trans"), ED("verse-trans"), ED("block"), T("supplied"), T("head"),
+            ED("enref"), T("pb"), T("lb"), T("choice"))
+
+    def visit(e):
+        if e.tag in skip or e.get("ana") == "foreign" or (e.get(XML_LANG) or "en") != "en" or e.get("facs"):
+            return
+        in_note = e.tag == T("note") or any(a.tag == T("note") for a in e.iterancestors())
+        items = take_items(e)
+        out = []
+        for it in items:
+            if not isinstance(it, str):
+                out.append(it)
+                continue
+            pos = 0
+            for s, t, la, other in _roman_spans(it):
+                out.append(it[pos:s])
+                f = el("foreign", {"lang-tmp": "la", "resp": "#rules", "cert": "medium", "ana": "foreign"})
+                f.text = it[s:t]
+                out.append(f)
+                decisions.append({"unit": unit, "text": it[s:t], "verdict": "la", "confidence": "medium",
+                                  "why": f"roman Latin run; la={la} other={other}", "in_note": in_note})
+                pos = t
+            out.append(it[pos:])
+        put_items(e, out)
+        for c in list(e):
+            if isinstance(c.tag, str) and c.get("lang-tmp") is None:
+                visit(c)
+
+    visit(div)
 
 
 def tag_verse_latin(div, decisions: list, unit: str) -> None:
@@ -244,16 +519,24 @@ def tag_verse_latin(div, decisions: list, unit: str) -> None:
 
 def finalize_lang(div) -> None:
     for f in div.iter(T("foreign")):
-        f.set(XML_LANG, f.attrib.pop("lang-tmp"))
+        if "lang-tmp" in f.attrib:  # set by the rules; manual/fix foreign elements carry xml:lang already
+            f.set(XML_LANG, f.attrib.pop("lang-tmp"))
 
 
-def run(div, unit: str, stats) -> list[dict]:
+def run(div, unit: str, stats, *, gowland_unit: bool = False) -> list[dict]:
     decisions: list[dict] = []
+    if gowland_unit:  # a whole page of Gowland's: tag scripts only, never make passages
+        _wrap_script_runs(div, stats, gowland=True)
+        finalize_lang(div)
+        return decisions
     tag_verse_groups(div, stats)
     _wrap_script_runs(div, stats)
     tag_verse_latin(div, decisions, unit)
     tag_latin(div, decisions, unit)
+    tag_roman_before_brackets(div, decisions, unit)
+    tag_roman_runs(div, decisions, unit)
     finalize_lang(div)
+    correct_languages(div, unit, stats)
     for d in decisions:
         stats[f"italic-run:{d['verdict']}"] += 1
     return decisions

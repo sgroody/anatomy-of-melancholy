@@ -12,6 +12,7 @@ from .epub import (
     NUMBER_HEAD,
     OPS_TYPE,
     SIDENOTE_FILES,
+    XH,
     by_id,
     heading_images,
     is_heading_image,
@@ -24,12 +25,24 @@ SPAN_REND = {"small_caps": "sc", "lucida": "lucida", "arial_bold": "symbol", "su
 VERSE_PREFIXES = ("verse", "poetry_line", "poemverse")
 
 
+def link_fixes() -> dict:
+    """Recorded corrections of mis-targeted note links (data/manual/link-fixes.yaml)."""
+    import yaml
+
+    from .. import paths
+
+    f = paths.MANUAL / "link-fixes.yaml"
+    rows = yaml.safe_load(f.read_text(encoding="utf-8")) if f.exists() else []
+    return {r["ref"]: r for r in rows or []}
+
+
 class Ctx:
     def __init__(self, unit: str, file: str):
         self.unit = unit
         self.file = file
         self.unknown: Counter = Counter()
         self.note_ordinal = 0
+        self.ignored: Counter = Counter()
 
 
 def src(file: str, e) -> str | None:
@@ -60,8 +73,15 @@ def inline(e, ctx: Ctx, file: str) -> list:
         if f in SIDENOTE_FILES:
             return [sidenote(f, frag, marker, ctx)]
         if f in ENDNOTE_FILES:
-            return [el(ED("enref"), {"target": frag, "n": marker})]
+            ref_src = f"{file}.xhtml#{e.get('id')}"
+            fix = link_fixes().get(ref_src)
+            if fix and fix["wrong"] == frag:
+                ctx.ignored["link-fix-applied"] += 1
+                return [el(ED("enref"), {"target": fix["right"], "n": marker, "src": ref_src, "sic": frag})]
+            return [el(ED("enref"), {"target": frag, "n": marker, "src": ref_src})]
         ctx.unknown[f"noteref->{f}"] += 1
+    if tag == "img":  # small inline images in Gowland's notes are glyphs (astrological signs)
+        return [el("g", {"ref": "img:" + e.get("src", "").rsplit("/", 1)[-1]})]
     if tag == "a" and cls == "backlink":
         return [el("hi", {"rend": "src:a.backlink"})]  # removed again by _drop_backlink
     if tag in ("em", "i"):
@@ -120,13 +140,22 @@ def head_type(e) -> tuple[str, str | None]:
     if NUMBER_HEAD.search(text):
         levels = [m.group(1).lower() for m in NUMBER_HEAD.finditer(text)]
         return "number", " ".join(levels)
-    if cls.startswith("HeadA"):
+    if cls.startswith(("HeadA", "booktitle", "poem_title")):
         return "title", None
     return "other", cls
 
 
 def block(e, ctx: Ctx, file: str):
     tag, cls = xlocal(e), (e.get("class") or "")
+    if tag == "hr":
+        ctx.ignored["hr"] += 1
+        return None
+    if tag == "figure":
+        img = e.find(f"{{{XH}}}img")
+        src_img = img.get("src", "") if img is not None else ""
+        if "prh_core_assets" in src_img:  # publisher's logo: not part of the book
+            ctx.ignored["publisher-logo"] += 1
+            return None
     if (img := is_heading_image(e)) is not None:
         spec = heading_images()[img]
         h = el("head", {"type": spec["role"], "facs": img, "resp": "#editor", "src": src(file, e)})
@@ -154,7 +183,23 @@ def block(e, ctx: Ctx, file: str):
         return p
     if tag == "blockquote":
         return quote(e, ctx, file)
-    if tag == "div" and cls == "poetry_stanza":
+    if tag in ("ol", "ul"):
+        lst = el("list", {"rend": cls or None, "src": src(file, e)})
+        for li in e:
+            if not isinstance(li.tag, str):
+                continue
+            if xlocal(li) != "li":
+                ctx.unknown[f"list-child:{xlocal(li)}"] += 1
+            item = el("item", {"rend": li.get("class") or None, "src": src(file, li)})
+            inline_into(li, item, ctx, file)
+            lst.append(item)
+        return lst
+    if tag == "figure" and is_heading_image(e) is None:
+        img = e.find(f"{{{XH}}}img")
+        fig = el("figure", {"src": src(file, e)})
+        fig.append(el("graphic", {"url": img.get("src", "").rsplit("/", 1)[-1]}))
+        return fig
+    if tag == "div" and cls.startswith("poetry_stanza"):
         lg = el("lg", {"src": src(file, e)})
         for c in e:
             if isinstance(c.tag, str):
@@ -187,7 +232,9 @@ def quote(e, ctx: Ctx, file: str):
             continue
         cls = c.get("class") or ""
         if xlocal(c) == "p" and cls.startswith(VERSE_PREFIXES):
-            if current is None or is_ts(c):
+            opens_bracket = "".join(c.itertext()).lstrip().startswith("[")
+            if current is None or is_ts(c) or (opens_bracket and len(current)):
+                # a new group starts at a TS line, or at a line opening a bracketed translation
                 current = el("lg", {"type": "translation-block" if is_ts(c) else None})
                 q.append(current)
             current.append(line(c, ctx, file))
@@ -212,11 +259,13 @@ def _mark_gowland_verse(q) -> None:
             lg.attrib.pop("type", None)
 
 
-def convert_unit(unit: str, file: str, elements: list) -> tuple:
+def convert_unit(unit: str, file: str, elements: list, *, front: bool = False, resp: str | None = None) -> tuple:
     ctx = Ctx(unit, file)
-    div = el("div", {"type": "subsection", "n": unit})
+    div = el("div", {"type": "front" if front else "subsection", "n": unit, "resp": resp})
     for e in elements:
         b = block(e, ctx, file)
+        if b is None:
+            continue
         b.tail = "\n"
         div.append(b)
     return div, ctx

@@ -75,7 +75,7 @@ def is_current(rec: dict | None, sha: str, model: str) -> bool:
 
 # ------------------------------------------------------------------ the model call
 
-def call_claude(model: str, sys_prompt: str, user: str) -> dict:
+def call_claude(model: str, sys_prompt: str, user: str, out_schema: dict | None = None) -> dict:
     exe = shutil.which("claude")
     if not exe:
         raise SystemExit("`claude` CLI not found on PATH")
@@ -85,7 +85,7 @@ def call_claude(model: str, sys_prompt: str, user: str) -> dict:
         with open(sp, "w", encoding="utf-8") as f:
             f.write(sys_prompt)
         cmd = [exe, "-p", "--model", model, "--output-format", "json",
-               "--json-schema", json.dumps(schema.PACKET_OUTPUT), "--tools", "", "--strict-mcp-config",
+               "--json-schema", json.dumps(out_schema or schema.PACKET_OUTPUT), "--tools", "", "--strict-mcp-config",
                "--no-session-persistence", "--system-prompt-file", sp]
         t0 = time.time()
         proc = subprocess.run(cmd, input=user, capture_output=True, text=True, encoding="utf-8",

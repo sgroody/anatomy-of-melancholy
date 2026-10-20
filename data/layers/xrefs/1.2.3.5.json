@@ -1,0 +1,50 @@
+{
+  "1.2.3.5-x1": {
+    "levels": {
+      "memb": 3,
+      "sect": 2,
+      "subsect": 2
+    },
+    "method": "rules/xref-v1",
+    "selector": {
+      "exact": "Sect. 2 Mem. 3 Subs. 2",
+      "in": "1.2.3.5",
+      "prefix": "tudine & virtute Alexandri. ¶ ",
+      "suffix": ". ¶ Sect. 2 Mem. 4 Subs. 3. ¶ "
+    },
+    "status": "explicit-resolved",
+    "target": "1.2.3.2"
+  },
+  "1.2.3.5-x2": {
+    "levels": {
+      "memb": 4,
+      "sect": 2,
+      "subsect": 3
+    },
+    "method": "rules/xref-v1",
+    "selector": {
+      "exact": "Sect. 2 Mem. 4 Subs. 3",
+      "in": "1.2.3.5",
+      "prefix": ". ¶ Sect. 2 Mem. 3 Subs. 2. ¶ ",
+      "suffix": ". ¶ Subtil. 18 lib. Timor attr"
+    },
+    "status": "explicit-resolved",
+    "target": "1.2.4.3"
+  },
+  "1.2.3.5-x3": {
+    "levels": {
+      "memb": 4,
+      "sect": 2,
+      "subsect": 7
+    },
+    "method": "rules/xref-v1",
+    "selector": {
+      "exact": "Sect. 2 Memb. 4 Subs. 7",
+      "in": "1.2.3.5",
+      "prefix": " minus timent. ¶ Vita ejus. ¶ ",
+      "suffix": ". ¶ De virt. & vitiis. ¶ Com. "
+    },
+    "status": "explicit-resolved",
+    "target": "1.2.4.7"
+  }
+}
