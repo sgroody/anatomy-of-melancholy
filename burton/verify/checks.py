@@ -10,6 +10,7 @@ import re
 import unicodedata
 from datetime import UTC, datetime
 
+import yaml
 from lxml import etree
 
 from .. import paths
@@ -31,6 +32,7 @@ class Result:
         self.ok = True
         self.counts: dict = {}
         self.problems: list[str] = []
+        self.deferred: str | None = None  # set by report() from data/manual/deferred-checks.yaml
 
     def fail(self, msg: str) -> None:
         self.ok = False
@@ -38,7 +40,8 @@ class Result:
 
     def line(self) -> str:
         c = ", ".join(f"{k}={v}" for k, v in self.counts.items())
-        return f"{'PASS' if self.ok else 'FAIL'}  {self.code} {self.name}: {c}"
+        status = "PASS" if self.ok else "DEFER" if self.deferred else "FAIL"
+        return f"{status}  {self.code} {self.name}: {c}"
 
 
 def norm(s: str) -> str:
@@ -356,15 +359,28 @@ def text_results(units: list[str]) -> list[Result]:
     return results
 
 
+def deferred_checks() -> dict:
+    """Owner decisions that a failing check does not fail the build (data/manual/deferred-checks.yaml)."""
+    f = paths.MANUAL / "deferred-checks.yaml"
+    return (yaml.safe_load(f.read_text(encoding="utf-8")) or {}) if f.exists() else {}
+
+
 def report(results: list[Result], name: str = "latest") -> bool:
-    ok = all(r.ok for r in results)
+    deferred = deferred_checks()
+    for r in results:
+        if not r.ok and r.code in deferred:
+            d = deferred[r.code]
+            r.deferred = f"deferred by {d['decision']} ({d['date']}): {' '.join(d['reason'].split())}"
+    ok = all(r.ok or r.deferred for r in results)
     for r in results:
         print(r.line())
+        if r.deferred:
+            print(f"      ! {r.deferred}")
         for p in r.problems[:12]:
             print(f"      - {p}")
     paths.REPORTS.mkdir(parents=True, exist_ok=True)
     data = {"when": datetime.now(UTC).isoformat(timespec="seconds"), "ok": ok,
-            "results": [{"code": r.code, "name": r.name, "ok": r.ok, "counts": r.counts,
+            "results": [{"code": r.code, "name": r.name, "ok": r.ok, "deferred": r.deferred, "counts": r.counts,
                          "problems": r.problems} for r in results]}
     (paths.REPORTS / f"{name}.json").write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

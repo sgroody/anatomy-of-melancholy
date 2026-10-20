@@ -1,11 +1,12 @@
 {
-  "when": "2026-10-20T09:51:31+00:00",
-  "ok": false,
+  "when": "2026-10-20T11:16:30+00:00",
+  "ok": true,
   "results": [
     {
       "code": "V1",
       "name": "text round-trip vs EPUB",
       "ok": true,
+      "deferred": null,
       "counts": {
         "main_words": 484453,
         "main_unexplained_diffs": 0,
@@ -20,6 +21,7 @@
       "code": "V2",
       "name": "per-unit counts EPUB = XML",
       "ok": true,
+      "deferred": null,
       "counts": {
         "sidenote_refs": "5703/5703",
         "endnote_refs": "3907/3907",
@@ -36,9 +38,10 @@
       "code": "V3",
       "name": "note integrity",
       "ok": true,
+      "deferred": null,
       "counts": {
         "sidenotes_resolved": "5703/5703",
-        "ids": 16752,
+        "ids": 16763,
         "units": 158
       },
       "problems": []
@@ -47,6 +50,7 @@
       "code": "V4",
       "name": "foreign scripts language-tagged",
       "ok": true,
+      "deferred": null,
       "counts": {
         "script_chars": 1080,
         "untagged": 0,
@@ -58,6 +62,7 @@
       "code": "V1f",
       "name": "every EPUB page fully covered by its units",
       "ok": true,
+      "deferred": null,
       "counts": {
         "pages_checked": 18,
         "pages_total": 18
@@ -68,6 +73,7 @@
       "code": "V3g",
       "name": "Gowland endnotes: text and links",
       "ok": true,
+      "deferred": null,
       "counts": {
         "bodies": "3907/3907",
         "text_mismatches": 0,
@@ -80,22 +86,25 @@
     },
     {
       "code": "V5",
-      "name": "language-ID vs gold samples (gate: held-out)",
+      "name": "language-ID vs gold samples (gate: held-out h2)",
       "ok": false,
+      "deferred": "deferred by D10 (2026-10-20): Language-ID is below target on held-out round h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95). The remaining errors are edge cases (roman words next to italics, sidenote abbreviations, two model rulings); the owner chose to move on and return to them later.",
       "counts": {
-        "tuning": "P=0.995 R=0.978 B=0.967 n=677",
-        "heldout": "P=0.957 R=0.957 B=0.978 n=150 tp=45 fp=2 fn=2"
+        "heldout_h2": "P=0.964 R=0.964 B=0.975 n=300 tp=80 fp=3 fn=3",
+        "seen_h1": "P=1.0 R=1.0 B=0.979 n=150 tp=47 fp=0 fn=0",
+        "tuning": "P=0.995 R=0.984 B=0.967 n=677 tp=183 fp=1 fn=3"
       },
       "problems": [
-        "held-out below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95",
-        "held-out: false foreign [citation]: 'Grotius de verit' (h-italic-007)",
-        "held-out: false foreign [citation]: 'Herc' (h-italic-020)",
-        "held-out: missed la phrase: 'Quae quidem' (h-italic-030)",
-        "held-out: missed la phrase: 'nec omnes dent ad foenus, sed ii qui in pecuniis bona habent' (h-sidenote-003)",
+        "held-out h2 below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95",
+        "held-out h2: missed la term: 'Intestina' (h2-italic-054)",
+        "held-out h2: missed mixed phrase: 'in secundis' (h2-roman-before-bracket-016)",
+        "held-out h2: false foreign [en]: '’Tis an inevitable chance, the first statute in Magna Carta,' (h2-roman-before-bracket-023)",
+        "held-out h2: missed mixed phrase: 'more aquilae factum' (h2-roman-before-bracket-033)",
+        "held-out h2: false foreign [citation]: 'Ter' (h2-sidenote-003)",
+        "held-out h2: false foreign [citation]: 'Vita ejus' (h2-sidenote-006)",
         "tuning: missed la phrase: 'obscurorum virorum' (italic-212)",
         "tuning: false foreign [citation]: 'ii' (italic-263)",
         "tuning: missed mixed phrase: 'Chorus Sancti Viti' (roman-before-bracket-040)",
-        "tuning: missed mixed phrase: 'qui indies hinc inde deferendis oneribus occumbunt, nam quod' (roman-before-bracket-057)",
         "tuning: missed mixed phrase: 'Diuretica' (english-030)"
       ]
     },
@@ -103,8 +112,9 @@
       "code": "V7",
       "name": "layers keyed, labelled and honest",
       "ok": true,
+      "deferred": null,
       "counts": {
-        "foreign": 7775,
+        "foreign": 7786,
         "with_record": 7,
         "machine_labelled": 7,
         "stale": 0,
@@ -113,7 +123,7 @@
         "selectors_bad": 0,
         "sources_unidentified": 3,
         "sources_other": 4,
-        "untranslated": 7768,
+        "untranslated": 7779,
         "units_without_layer": 157,
         "xrefs": 21,
         "xrefs_resolved": 19,

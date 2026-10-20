@@ -36,3 +36,16 @@ def test_labelled_round_is_never_redrawn():
             return
         raise AssertionError("draw_holdout overwrote a labelled round")
 
+
+def test_a_deferred_check_still_reports_but_does_not_fail(tmp_path, monkeypatch):
+    from burton.verify import checks
+
+    monkeypatch.setattr(checks.paths, "REPORTS", tmp_path)
+    monkeypatch.setattr(checks, "deferred_checks",
+                        lambda: {"V5": {"decision": "D10", "date": "2026-10-20", "reason": "owner chose to move on"}})
+    v5, v1 = checks.Result("V5", "language-ID"), checks.Result("V1", "text")
+    v5.fail("held-out below target")
+    assert checks.report([v5, v1], "t") is True
+    assert v5.line().startswith("DEFER") and v5.problems  # never PASS, problems kept
+    v1.fail("text differs")
+    assert checks.report([v5, v1], "t") is False  # only the listed check is deferred

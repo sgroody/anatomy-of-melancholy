@@ -78,7 +78,8 @@ When a check fails, fix the cause. Do not add an `allowed-diffs` entry to make a
   * `blocks.yaml`: block-level language and Gowland-block decisions;
   * `source-fixes.yaml`: `sic`/`corr` corrections;
   * `link-fixes.yaml`: mis-targeted note links (original kept as `@sic`);
-  * `heading-images.yaml`, `alt-text.yaml`, `known-source-defects.yaml`.
+  * `heading-images.yaml`, `alt-text.yaml`, `known-source-defects.yaml`;
+  * `deferred-checks.yaml`: checks the owner allows to fail for now (reported `DEFER`, never `PASS`; currently V5, D10).
 * **`resp="#editor"` on markup means an editorial decision, not added text.** Text we add is only: transcribed heading images (`head[@facs]`), `corr`, and `supplied[@resp=#editor]`. V1 excludes exactly those.
 * **Passage ids are anchored on their text** (container + text fingerprint), so better detection elsewhere in a paragraph never renumbers them. Never change the locator scheme without the re-identification fallback in `burton/ids.py`.
 * **Language decisions record provenance.** `resp="#rules"` for rules and the book lexicon (never `cert="high"` from the lexicon); `resp="#model"` for adjudicated runs (high becomes `medium`, and low rulings are not applied); `resp="#editor"` for `blocks.yaml`.

@@ -1,0 +1,10 @@
+# Checks the project owner has decided may fail without failing the build.
+# A deferred check still runs, prints its counts and problems, and is reported as DEFER (never PASS).
+# Remove an entry to make the check blocking again.
+V5:
+  decision: D10
+  date: 2026-10-20
+  reason: >-
+    Language-ID is below target on held-out round h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95).
+    The remaining errors are edge cases (roman words next to italics, sidenote abbreviations, two model
+    rulings); the owner chose to move on and return to them later.

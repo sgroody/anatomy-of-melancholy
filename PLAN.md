@@ -38,7 +38,7 @@ Also in M2:
 * Cross-references: 19 resolved, 2 unresolved (a level missing), 160 citations of other books skipped.
 * 1,025 model rulings on undecided language runs (`data/layers/langid-adjudication.json`, labelled).
 
-**M2 open: the language-identification target. V5 FAILS on the fresh hold-out.**
+**M2: the language-identification target is deferred (D10).** V5 still runs on the fresh hold-out and reports DEFER, not PASS:
 * Hardening (2026-10-20), general rules only (SPEC §6.1): `&c.` is not the locator `c.`; author-and-title lists ("*Grotius de verit.*") are citations; `de` before a capital is a name particle; English runs split at sentence breaks; citation prefixes shed before a bracket; a bracket after the run's closing stop counts.
 * Measured on a **new** held-out round h2 (300 items, seed 20261022, labelled blind before any scoring), against targets of 0.98 / 0.97 / 0.95:
 
@@ -57,13 +57,14 @@ Also in M2:
   * 1 false positive from a model ruling: *Magna Carta* was adjudicated "la title".
   * 1 miss with no model ruling: *Intestina*, left as a name.
 * Seen samples (reported, not gated): tuning 0.995 / 0.984 / 0.967 (677 items); h1 1.000 / 1.000 / 0.979 (150 items, seen 2026-10-20).
-* h2 has now been seen. Next: fix those error types (absorb adjacent roman Latin into an italic run; treat a lone capitalised sidenote word before a stop as an abbreviation; re-adjudicate capitalised terms), then draw round h3. Do not tune on h2.
+* h2 has now been seen. Later (D10): fix those error types (absorb adjacent roman Latin into an italic run; treat a lone capitalised sidenote word before a stop as an abbreviation; re-adjudicate capitalised terms), then draw round h3. Do not tune on h2.
 * All gold labels await your review (D7). h2 adds conventions to `data/eval/LABELLING.md`.
 
 **Carried forward** (not done, with the milestone that takes each):
 * **Offline/PWA install not verified.** The service worker is served correctly, but the app's browser pane refuses registration and quick headless attempts were inconclusive. → M3, with a Playwright test.
 * EB Garamond lacks ℥, ℈ and the astrological signs. A fallback font is needed before units with recipes or synopses. → M3
-* Gowland's endnote bodies are not ingested yet; only their anchors are. → M2 (private build)
+* Self-translation candidates are not flagged yet (M2 bullet: signals only, verdicts in M5). → M2
+* Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
 * A note marker can end a line apart from the word it precedes. In interlinear mode a space can appear before a comma. → M3
 * The model sometimes puts explanation inside a translation ("Curable (salutary)"). → prompt `tr-v2` in M4
 * The gold sample is labelled by Claude and awaits your review (D7).
@@ -197,6 +198,7 @@ Steps:
 | D4 | **Pruned sidenotes are not restored for now.** | Sidenote counts are checked against the EPUB only |
 | D5 | **A local server or installed app is enough.** | `burton serve` plus a PWA with a service worker for offline use. No `file://` constraints (SPEC §7.5) |
 | D6 | **Obsolete-word glosses at my discretion.** | Gowland's endnote glosses where he gives one (private build only), then Webster 1913 (public domain), then labelled model drafts. Wiktionary may be consulted, never copied (SPEC §4.2) |
+| D10 | **Language-ID target deferred** (2026-10-20). | V5 stays below target on h2 (0.964 / 0.964 / 0.975). It still runs and reports `DEFER` (`data/manual/deferred-checks.yaml`). Remove that entry to make it blocking again |
 | D9 | **Tools installed.** | Python 3.13.15 (via `py`), uv 0.13.1, git 2.56, Node 24, Claude Code 2.1.304. Bare `python` is the Store stub, so always use `uv run` |
 
 ### Still open (none blocks M0 or M1)
