@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block main %}
+{% if page.gowland %}
+<p class="banner" data-resp="gowland">This page is Angus Gowland’s translation (Penguin, 2021), shown in the private build only.</p>
+{% endif %}
+{% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
+{{ body }}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="landing">
+  <h1 class="landing-title">{{ page.title }}</h1>
+  {% if subtitle %}<p class="landing-sub">{{ subtitle }}</p>{% endif %}
+  <section aria-labelledby="synopsis-h">
+    <h2 id="synopsis-h">Synopsis</h2>
+    <p class="note">Burton’s synopsis, reproduced as the source prints it, in {{ sheets|length }} sheets. A text version with links into the book is planned.</p>
+    <div class="sheets">
+    {% for src, alt, w, h in sheets %}
+      <figure class="sheet"><a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"></a></figure>
+    {% endfor %}
+    </div>
+  </section>
+  <section aria-labelledby="contents-h">
+    <h2 id="contents-h">Contents</h2>
+    <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
+  </section>
+</article>
+{% endblock %}

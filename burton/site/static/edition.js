@@ -3,86 +3,244 @@
 
 const KEY = "burton-settings";
 const root = new URL("..", import.meta.url);
+const html = document.documentElement;
 const body = document.body;
-const narrow = window.matchMedia("(max-width: 1099px)");
+const wide = window.matchMedia("(min-width: 1100px)");
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false };
 
 function load() {
   try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { return {}; }
 }
 function save(s) {
-  try { localStorage.setItem(KEY, JSON.stringify(s)); } catch { /* private window: settings last for this page only */ }
+  try { localStorage.setItem(KEY, JSON.stringify(s)); return true; } catch { return false; /* private window */ }
 }
 
-const settings = Object.assign({ mode: "gloss", theme: "auto", gowland: false, pages: false }, load());
+const settings = Object.assign({}, DEFAULTS, load());
 
 function apply() {
   body.classList.remove("mode-gloss", "mode-interlinear", "mode-english");
   body.classList.add(`mode-${settings.mode}`);
-  if (settings.theme === "auto") delete document.documentElement.dataset.theme;
-  else document.documentElement.dataset.theme = settings.theme;
+  if (settings.theme === "auto") delete html.dataset.theme;
+  else html.dataset.theme = settings.theme;
+  if (settings.size === "m") delete html.dataset.size;
+  else html.dataset.size = settings.size;
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
+  scheduleLayout();
 }
 
-// ---------------------------------------------------------------- settings panel
-const panel = document.getElementById("settings");
-const toggle = document.querySelector(".settings-toggle");
-if (panel && toggle) {
-  toggle.addEventListener("click", () => {
-    const open = panel.hidden;
-    panel.hidden = !open;
-    toggle.setAttribute("aria-expanded", String(open));
-  });
-  for (const input of panel.querySelectorAll("input")) {
+// ---------------------------------------------------------------- reading options
+function syncInputs() {
+  for (const input of document.querySelectorAll(".settings input")) {
     if (input.type === "radio") input.checked = settings[input.name] === input.value;
     else input.checked = !!settings[input.name];
-    input.addEventListener("change", () => {
-      settings[input.name] = input.type === "radio" ? input.value : input.checked;
-      save(settings);
-      apply();
-    });
   }
 }
-apply();
-
-// ---------------------------------------------------------------- Burton's sidenotes
-let openNote = null;
-function closeNote(focusMarker) {
-  if (!openNote) return;
-  const { note, marker } = openNote;
-  note.classList.remove("open");
-  marker.setAttribute("aria-expanded", "false");
-  if (focusMarker) marker.focus();
-  openNote = null;
+for (const input of document.querySelectorAll(".settings input")) {
+  input.addEventListener("change", () => {
+    settings[input.name] = input.type === "radio" ? input.value : input.checked;
+    const kept = save(settings);
+    apply();
+    const status = document.querySelector(".settings .saved");
+    if (status) status.textContent = kept ? "Saved." : "Applied to this page only (this browser does not allow saving).";
+  });
 }
-for (const marker of document.querySelectorAll("a.nref")) {
-  const note = document.getElementById(marker.getAttribute("href").slice(1));
-  if (!note) continue;
-  marker.setAttribute("aria-controls", note.id);
-  marker.setAttribute("aria-expanded", "false");
-  marker.addEventListener("click", (ev) => {
-    ev.preventDefault();
-    if (narrow.matches) {
-      const isOpen = openNote && openNote.note === note;
-      closeNote(false);
-      if (!isOpen) {
-        note.classList.add("open");
-        marker.setAttribute("aria-expanded", "true");
-        openNote = { note, marker };
-      }
-    } else {
-      note.classList.add("flash");
-      setTimeout(() => note.classList.remove("flash"), 1200);
+const reset = document.querySelector(".settings .reset");
+if (reset) {
+  reset.addEventListener("click", () => {
+    Object.assign(settings, DEFAULTS);
+    save(settings);
+    syncInputs();
+    apply();
+    document.querySelector(".settings .saved").textContent = "Defaults restored.";
+  });
+}
+syncInputs();
+
+const panel = document.getElementById("settings");
+const toggle = document.querySelector(".settings-toggle");
+function setPanel(open, focusToggle) {
+  panel.hidden = !open;
+  toggle.setAttribute("aria-expanded", String(open));
+  if (open) panel.querySelector("input:checked, input")?.focus();
+  else if (focusToggle) toggle.focus();
+}
+if (panel && toggle) {
+  toggle.addEventListener("click", () => setPanel(panel.hidden, false));
+  panel.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") { ev.stopPropagation(); setPanel(false, true); }
+  });
+}
+
+// ---------------------------------------------------------------- contents panel
+const tocPanel = document.querySelector(".toc-panel");
+if (tocPanel) {
+  tocPanel.addEventListener("toggle", () => {
+    if (tocPanel.open) tocPanel.querySelector('[aria-current="page"]')?.scrollIntoView({ block: "center" });
+  });
+  tocPanel.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && tocPanel.open) {
+      ev.stopPropagation();
+      tocPanel.open = false;
+      tocPanel.querySelector("summary").focus();
     }
   });
 }
-document.addEventListener("keydown", (ev) => {
-  if (ev.key === "Escape") {
-    closeNote(true);
-    document.querySelectorAll(".fp.pinned").forEach((f) => f.classList.remove("pinned"));
+
+// ---------------------------------------------------------------- Burton's sidenotes
+// Wide screens: notes sit in the right margin beside their marker. A layout pass pushes each
+// note below the previous one; when a note would drift more than LIMIT below its marker, it
+// and the rest of its paragraph's notes collapse into a "more notes" stack at that paragraph.
+// Narrow screens (and stacked notes): the marker opens the note as a popover beside it.
+const article = document.querySelector("article.unit");
+const markers = [...document.querySelectorAll("a.nref")];
+const canPopover = typeof HTMLElement.prototype.showPopover === "function";
+const expanded = new Set(); // paragraphs whose stack the reader opened
+let openNote = null;
+
+function noteOf(marker) { return document.getElementById(marker.getAttribute("href").slice(1)); }
+function blockOf(marker) { return marker.closest("p, li, .lg, blockquote, h1") || article; }
+
+function asPopover(note, on) {
+  if (!canPopover) return;
+  if (on && !note.hasAttribute("popover")) note.setAttribute("popover", "auto");
+  if (!on && note.hasAttribute("popover")) {
+    if (note.matches(":popover-open")) note.hidePopover();
+    note.removeAttribute("popover");
   }
+}
+
+function placePopover(note, marker) {
+  const r = marker.getBoundingClientRect();
+  const w = Math.min(352, window.innerWidth - 32);
+  note.style.setProperty("--pop-w", `${w}px`);
+  note.style.setProperty("--pop-x", `${Math.max(16, Math.min(r.left - 24, window.innerWidth - w - 16))}px`);
+  const h = note.getBoundingClientRect().height;
+  const below = r.bottom + 6 + h < window.innerHeight || r.top < h + 12;
+  note.style.setProperty("--pop-y", `${below ? r.bottom + 6 : r.top - h - 6}px`);
+}
+
+function closeNote(focusMarker) {
+  if (!openNote) return;
+  const { note, marker } = openNote;
+  openNote = null;
+  if (canPopover && note.matches(":popover-open")) note.hidePopover();
+  note.classList.remove("open");
+  marker.setAttribute("aria-expanded", "false");
+  if (focusMarker) marker.focus();
+}
+
+function openAsPopover(note, marker) {
+  closeNote(false);
+  openNote = { note, marker };
+  marker.setAttribute("aria-expanded", "true");
+  if (canPopover) {
+    asPopover(note, true);
+    note.showPopover();
+    placePopover(note, marker);
+  } else {
+    note.classList.add("open"); // inline expansion fallback
+  }
+}
+
+for (const marker of markers) {
+  const note = noteOf(marker);
+  if (!note) continue;
+  marker.setAttribute("aria-controls", note.id);
+  marker.setAttribute("aria-expanded", "false");
+  note.addEventListener("toggle", (ev) => {
+    if (ev.newState === "closed" && openNote && openNote.note === note) {
+      openNote = null;
+      marker.setAttribute("aria-expanded", "false");
+    }
+  });
+  marker.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    if (openNote && openNote.note === note) { closeNote(false); return; }
+    if (wide.matches && !note.classList.contains("sn-stacked")) {
+      note.classList.add("flash");
+      setTimeout(() => note.classList.remove("flash"), 1200);
+    } else {
+      openAsPopover(note, marker);
+    }
+  });
+}
+
+document.addEventListener("keydown", (ev) => {
+  if (ev.key !== "Escape") return;
+  if (openNote) closeNote(true);
+  document.querySelectorAll(".fp.pinned").forEach((f) => f.classList.remove("pinned"));
 });
+
+function layoutNotes() {
+  if (!article) return;
+  article.querySelectorAll(".sn-more").forEach((b) => b.remove());
+  const notes = markers.map(noteOf).filter(Boolean);
+  if (!wide.matches) {
+    article.classList.remove("sn-laid");
+    article.style.minHeight = "";
+    notes.forEach((n) => { n.classList.remove("sn-stacked"); n.style.top = ""; asPopover(n, true); });
+    return;
+  }
+  closeNote(false);
+  article.classList.add("sn-laid");
+  const rem = parseFloat(getComputedStyle(article).fontSize);
+  const LIMIT = 14 * rem; // how far a note may drift below its marker
+  const GAP = 0.4 * rem;
+  const art = article.getBoundingClientRect();
+  let floor = -Infinity;
+  let stack = null; // {block, notes, button}
+  for (const marker of markers) {
+    const note = noteOf(marker);
+    if (!note) continue;
+    const block = blockOf(marker);
+    const anchor = marker.getBoundingClientRect().top - art.top;
+    const y = Math.max(anchor, floor + GAP);
+    const overflow = y - anchor > LIMIT && !expanded.has(block);
+    if (overflow || (stack && stack.block === block)) {
+      note.classList.add("sn-stacked");
+      note.style.top = "";
+      asPopover(note, true);
+      if (!stack || stack.block !== block) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "sn-more";
+        button.setAttribute("aria-expanded", "false");
+        button.style.top = `${y}px`;
+        article.appendChild(button);
+        button.addEventListener("click", () => { expanded.add(block); layoutNotes(); });
+        stack = { block, notes: [], button };
+        floor = y + button.getBoundingClientRect().height;
+      }
+      stack.notes.push(note);
+      const n = stack.notes.length;
+      stack.button.textContent = `${n} more note${n > 1 ? "s" : ""}`;
+      stack.button.setAttribute("aria-label", `${n} more note${n > 1 ? "s" : ""} for this paragraph: show them in the margin`);
+      continue;
+    }
+    stack = null;
+    note.classList.remove("sn-stacked");
+    asPopover(note, false);
+    note.style.top = `${y}px`;
+    floor = y + note.getBoundingClientRect().height;
+  }
+  article.style.minHeight = floor > 0 ? `${Math.ceil(floor)}px` : "";
+}
+
+let pending = 0;
+function scheduleLayout() {
+  if (!article) return;
+  cancelAnimationFrame(pending);
+  pending = requestAnimationFrame(layoutNotes);
+}
+if (article) {
+  wide.addEventListener("change", () => { expanded.clear(); scheduleLayout(); });
+  window.addEventListener("resize", scheduleLayout);
+  document.fonts?.ready.then(scheduleLayout);
+  window.addEventListener("load", scheduleLayout);
+  new ResizeObserver(scheduleLayout).observe(article);
+}
 
 // ---------------------------------------------------------------- translations
 for (const fp of document.querySelectorAll(".fp")) {
@@ -117,6 +275,8 @@ for (const fp of document.querySelectorAll(".fp")) {
     });
   }
 }
+
+apply();
 
 // ---------------------------------------------------------------- offline (installable app)
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {

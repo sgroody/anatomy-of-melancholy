@@ -3,7 +3,7 @@
 :root {
   --paper: #f7f3ea;
   --ink: #23201b;
-  --muted: #6b6358;
+  --muted: #645c51;
   --rule: #d9d0bf;
   --accent: #8a2f1d;        /* rubric red: marks, never the only signal */
   --note-ink: #3d372f;
@@ -12,20 +12,25 @@
   --measure: 34rem;
   --margin-col: 15rem;
   --gap: 2.5rem;
+  --page: calc(var(--measure) + var(--margin-col) + var(--gap));
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a59b8b; --rule: #3a352e; --accent: #e08a6e;
+    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
     --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a59b8b; --rule: #3a352e; --accent: #e08a6e;
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
   --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
   color-scheme: dark;
 }
+/* type size setting: scales everything, since sizes are in rem/em */
+:root[data-size="s"] { font-size: 90%; }
+:root[data-size="l"] { font-size: 112.5%; }
+:root[data-size="xl"] { font-size: 125%; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -33,7 +38,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "EB Garamond", "Garamond", Georgia, serif;
+  font-family: var(--font-text, "EB Garamond", Georgia, serif);
   font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.3rem);
   line-height: 1.5;
   font-kerning: normal;
@@ -41,55 +46,122 @@ body {
   font-feature-settings: "liga" 1, "kern" 1;
   text-rendering: optimizeLegibility;
 }
-a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 0.15em; }
+a { color: inherit; text-decoration-color: var(--muted); text-underline-offset: 0.15em; }
 a:hover { text-decoration-color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+main:focus { outline: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: -999px; }
-.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.3rem 0.6rem; z-index: 10; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.3rem 0.6rem; z-index: 30; }
+button { font: inherit; color: inherit; }
 
 /* ------------------------------------------------------------ chrome */
-header.site, footer.site { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 1rem 16px; }
-header.site { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; align-items: baseline; border-bottom: 1px solid var(--rule); font-size: 0.85em; }
-header.site .home { font-variant-caps: all-small-caps; letter-spacing: 0.06em; text-decoration: none; font-size: 1.15em; }
-.crumbs ol { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; color: var(--muted); }
+header.site, footer.site { max-width: var(--page); margin: 0 auto; padding: 0.8rem 16px; }
+header.site { border-bottom: 1px solid var(--rule); font-size: 0.85em; }
+header.site .bar { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; }
+header.site .home { font-variant-caps: all-small-caps; letter-spacing: 0.06em; text-decoration: none; font-size: 1.15em; margin-right: auto; }
+.crumbs ol { display: flex; flex-wrap: wrap; list-style: none; margin: 0.3rem 0 0; padding: 0; color: var(--muted); }
 .crumbs li + li::before { content: "›"; padding: 0 0.4em; }
-.settings-toggle { margin-left: auto; font: inherit; color: inherit; background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; }
-.settings { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 0.5rem 16px 1rem; font-size: 0.85em; border-bottom: 1px solid var(--rule); display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.crumbs a { text-decoration-color: var(--rule); }
+.settings-toggle, .toc-panel > summary, .sn-more, .settings .reset {
+  background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer;
+}
+.toc-panel { position: relative; }
+.toc-panel > summary { list-style: none; display: inline-block; }
+.toc-panel > summary::-webkit-details-marker { display: none; }
+.toc-panel > summary::after { content: ""; display: inline-block; margin-left: 0.4em; border: 0.28em solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: 0.15em; }
+.toc-panel[open] > summary::after { transform: rotate(180deg); }
+.toc-panel > nav {
+  position: absolute; z-index: 20; top: calc(100% + 0.3rem); right: 0; width: min(34rem, calc(100vw - 32px));
+  max-height: 70vh; overflow: auto; padding: 0.6rem 0.9rem; background: var(--pop-bg); border: 1px solid var(--rule);
+  border-radius: 4px; box-shadow: var(--pop-shadow);
+}
+.settings { max-width: var(--page); margin: 0 auto; padding: 0.5rem 16px 1rem; font-size: 0.85em; border-bottom: 1px solid var(--rule); display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .settings[hidden] { display: none; }
 .settings fieldset { border: none; margin: 0; padding: 0; }
 .settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .settings label { display: block; }
+.settings-more { grid-column: 1 / -1; margin: 0; }
+.settings-page { border: none; padding: 0; font-size: 1em; max-width: none; }
+.settings-page > p { grid-column: 1 / -1; }
 footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.8em; color: var(--muted); }
-.pager { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
+.pager { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+.pager a { display: block; max-width: 48%; text-decoration: none; color: var(--ink); }
+.pager a[rel="next"] { text-align: right; margin-left: auto; }
+.pager-dir { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.pager-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pager a:hover .pager-t { text-decoration: underline; text-decoration-color: var(--accent); }
 
-main { max-width: calc(var(--measure) + var(--margin-col) + var(--gap)); margin: 0 auto; padding: 0 16px; }
-.unit, .home-page { max-width: var(--measure); }
+main { max-width: var(--page); margin: 0 auto; padding: 0 16px; }
+.unit, .home-page, .landing, .prose { max-width: var(--measure); }
+.banner { margin: 1rem 0; padding: 0.4rem 0.7rem; border-left: 3px solid var(--accent); background: var(--pop-bg); font-size: 0.9em; }
+
+/* ------------------------------------------------------------ contents tree */
+.toc, .toc ol { list-style: none; margin: 0; padding: 0; }
+.toc ol { padding-left: 1.1rem; }
+.toc li { margin: 0.15rem 0; line-height: 1.3; }
+.toc a { text-decoration: none; display: inline-block; }
+.toc a:hover .toc-t { text-decoration: underline; text-decoration-color: var(--accent); }
+.toc a[aria-current="page"] { font-weight: 600; }
+.toc a[aria-current="page"]::before { content: "›"; color: var(--accent); margin-left: -0.7em; width: 0.7em; display: inline-block; }
+.toc-n { color: var(--muted); font-variant-numeric: lining-nums tabular-nums; font-size: 0.85em; margin-right: 0.2em; }
+.toc-gl { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.toc-part { margin-top: 0.7rem !important; }
+.toc-part > a, .toc-part > .toc-gl { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 1.05em; }
+.toc-tag { font-size: 0.8em; color: var(--muted); }
+.toc-main { margin-top: 0.5rem; }
 
 /* ------------------------------------------------------------ text */
-.head-number, .head-partition { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; }
+.head-number, .head-partition, .head-other, .unit p.head-number, .unit p.head-partition, .unit p.head-other { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; text-indent: 0; }
+.head-part_title3 { font-size: 1.15em; }
 .sc { font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
 h1.unit-title { font-weight: 400; font-size: 1.35em; line-height: 1.25; text-align: center; margin: 0.3rem 0 1.6rem; hyphens: manual; }
-h1.unit-title[data-source="image"]::after { content: ""; }
+h1.head-partition, h1.head-other { font-size: 1.25em; letter-spacing: 0.06em; margin-top: 2rem; }
 .unit p { margin: 0; text-indent: 1.4em; hyphens: auto; -webkit-hyphens: auto; text-align: justify; text-justify: inter-word; hanging-punctuation: first; }
 .unit p.no_indent, .unit .head-number + p, .unit h1 + p, .unit blockquote + p.no_indent { text-indent: 0; }
-.unit p + p { margin-top: 0; }
+.unit p.indent { text-indent: 1em; }
+.unit p.center_content, .unit p[class^="ded"], .unit p[class*=" ded"] { text-align: center; text-indent: 0; hyphens: manual; }
+.unit p.ded1, .unit p.dedf { font-size: 1.35em; }
+.unit p.ded2 { font-size: 1.2em; }
+.unit p.ded4 { font-size: 1.08em; }
+.unit p.dedf { margin-top: 2rem; }
+.unit p.TS1, .unit .TS1 { margin-top: 0.8rem; }
 blockquote.bq { margin: 0.8rem 0 0.8rem 2rem; }
+.list { list-style: none; padding-left: 1.5em; margin: 0.6rem 0; }
+.list li { text-indent: -1em; padding-left: 1em; }
 .lg { margin: 0.35rem 0; }
-.lg .l { display: block; padding-left: 1.5em; text-indent: -1.5em; }
-.l.TS, .l.TS1, .l.TS2 { margin-top: 0.3rem; }
+.lg .l { display: block; padding-left: 1.5em; text-indent: -1em; hyphens: manual; }
+/* verse indents follow the EPUB's classes, scaled to this measure */
+.lg .l.verse2 { padding-left: 0.5em; }
+.lg .l.verse1 { padding-left: 2.5em; }
+.lg .l.verse10, .lg .l.verse1_indent { padding-left: 4.5em; }
+.lg .l.verse10_indent { padding-left: 5.5em; }
+.lg .l.verse_R { padding-left: 30%; }
+.lg .l.verse_R1 { padding-left: 50%; }
+.lg .l.poetry_line { padding-left: 0.5em; text-indent: -0.5em; }
+.lg .l.poetry_line_indented, .lg .l.poemverse { padding-left: 1.5em; text-indent: -0.5em; }
+.lg .l.poemverse1 { padding-left: 2.5em; text-indent: -0.5em; }
+.lg .l.padd_left { padding-left: 6.5em; }
+.l.TS { margin-top: 0.3rem; }
+.l.TS1, .l.TS2 { margin-top: 0.6rem; }
 .burton-verse-tr { color: var(--ink); }
 [lang="grc"] { font-feature-settings: "liga" 0; }
 em [lang], [lang] em { font-style: italic; }
+.plate { margin: 1.2rem 0; text-align: center; }
+.plate img, .frontispiece img, .sheet img { max-width: 100%; height: auto; }
+.plate img, .frontispiece img { max-height: 85vh; width: auto; }
+.symbol { font-family: "Burton Symbols", var(--font-text, serif); }
 
 /* ------------------------------------------------------------ sidenotes (Burton's marginal notes) */
+/* The marker precedes the glossed word, as in the source; a word joiner keeps them on one line. */
 .nref {
   font-size: 0.62em; vertical-align: 0.6em; line-height: 0; text-decoration: none;
-  color: var(--accent); padding: 0 0.12em; font-variant-numeric: lining-nums;
+  color: var(--accent); padding: 0 0.12em; font-variant-numeric: lining-nums; white-space: nowrap;
 }
+.nref::after { content: "\2060"; }
 .sidenote {
-  display: none; text-indent: 0; text-align: left; hyphens: manual;
-  font-size: 0.78em; line-height: 1.35; color: var(--note-ink);
+  display: none; text-indent: 0; text-align: left; hyphens: manual; white-space: normal;
+  font-size: 0.78em; line-height: 1.35; color: var(--note-ink); font-style: normal; font-weight: 400;
 }
 /* markers of notes that sit inside a foreign quotation are lifted out of it (so they survive
    "Read in English"); a zero-height box keeps them at the start of the quotation's first line */
@@ -101,20 +173,39 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
   display: block; margin: 0.4rem 0 0.6rem 0.5rem; padding: 0.35rem 0.6rem;
   border-left: 2px solid var(--accent); background: var(--pop-bg);
 }
+/* the popover form (narrow screens and stacked notes), placed beside its marker by edition.js */
+.sidenote[popover]:popover-open {
+  display: block; position: fixed; inset: auto; left: var(--pop-x, 16px); top: var(--pop-y, 16px);
+  width: var(--pop-w, 22rem); max-height: 60vh; overflow: auto; margin: 0; padding: 0.5rem 0.7rem;
+  color: var(--note-ink); background: var(--pop-bg); border: 1px solid var(--rule); border-left: 2px solid var(--accent);
+  border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.8rem;
+}
 @media (min-width: 1100px) {
   main { padding: 0 2rem; }
-  .unit { margin-right: calc(var(--margin-col) + var(--gap)); }
+  .unit { margin-right: calc(var(--margin-col) + var(--gap)); position: relative; }
+  /* without script: floats, which never overlap but drift without limit */
   .sidenote, .sidenote.open, .sidenote:target {
     display: block; float: right; clear: right;
     width: var(--margin-col); margin: 0.15rem calc(-1 * (var(--margin-col) + var(--gap))) 0.5rem 0;
     padding: 0; border: none; background: none;
   }
+  /* with script: each note beside its marker, pushed down to avoid the one above */
+  .unit.sn-laid .sidenote:not(.sn-stacked) {
+    float: none; position: absolute; left: calc(100% + var(--gap)); margin: 0; width: var(--margin-col);
+  }
+  .unit.sn-laid .sidenote.sn-stacked:not(:popover-open) { display: none; }
   .sidenote.flash { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .sn-more {
+    position: absolute; left: calc(100% + var(--gap)); font-size: 0.75em; color: var(--note-ink);
+    padding: 0.05rem 0.5rem; text-indent: 0;
+  }
+  .sn-more::after { content: ""; display: inline-block; margin-left: 0.4em; border: 0.3em solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: 0.1em; }
 }
 
 /* ------------------------------------------------------------ foreign passages and translations */
 .fp { position: relative; }
 .fo { text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.22em; cursor: help; }
+.fo:focus-visible { outline-offset: 1px; }
 .ft { display: none; }
 .ft-label, .ft-src, .ft-note { display: block; color: var(--muted); font-size: 0.85em; font-style: normal; }
 .ft-alt { display: block; margin-top: 0.3rem; font-size: 0.9em; }
@@ -125,13 +216,17 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
   display: block; position: absolute; z-index: 5; left: 0; top: calc(100% + 0.2rem);
   width: min(22rem, 80vw); padding: 0.5rem 0.7rem; text-indent: 0; text-align: left; hyphens: manual;
   background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px;
-  box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; font-style: normal;
+  box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; font-style: normal; font-weight: 400;
 }
 .mode-gloss .fp-block:hover > .ft, .mode-gloss .fp-block:focus-within > .ft, .mode-gloss .fp-block.pinned > .ft { top: 100%; }
 
 /* mode 2: interlinear */
-.mode-interlinear .fp-short { display: inline-flex; flex-direction: column; vertical-align: top; text-indent: 0; }
-.mode-interlinear .fp-short > .ft { display: block; font-size: 0.72em; line-height: 1.2; color: var(--muted); text-align: left; }
+/* word and its punctuation on the first row, the gloss beneath across both columns; a gloss wider
+   than the word widens only the second column, so the comma stays against the word */
+.mode-interlinear .fp-short { display: inline-grid; grid-template-columns: max-content 1fr; vertical-align: top; text-indent: 0; }
+.mode-interlinear .fp-short > .fo { grid-row: 1; grid-column: 1; }
+.mode-interlinear .fp-short > .fp-p { grid-row: 1; grid-column: 2; }
+.mode-interlinear .fp-short > .ft { grid-row: 2; grid-column: 1 / span 2; display: block; font-size: 0.72em; line-height: 1.2; color: var(--muted); text-align: left; }
 .mode-interlinear .fp-short > .ft .ft-label, .mode-interlinear .fp-short > .ft .ft-src,
 .mode-interlinear .fp-short > .ft .ft-note, .mode-interlinear .ft .ft-alt { display: none; }
 .mode-interlinear .fp-long > .ft { display: inline; font-size: 0.85em; color: var(--muted); }
@@ -152,6 +247,11 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mode-english .fp.show-orig > .fo { display: inline; }
 .mode-english .fp-block.show-orig > .fo { display: block; }
 .mode-english .fp.show-orig > .ft .ft-label { display: inline; margin-left: 0.4em; }
+/* no translation yet: interlinear and English modes keep the original (the gloss says so on hover) */
+.mode-english .fp-untranslated > .fo, .mode-english .fp-untranslated.show-orig > .fo { display: inline; }
+.mode-english .fp-untranslated.fp-block > .fo { display: block; }
+.mode-english .fp-untranslated > .ft, .mode-interlinear .fp-untranslated > .ft { display: none; }
+.mode-interlinear .fp-untranslated.fp-short { display: inline; }
 /* Burton translates it himself: keep his English, hide the original behind a marker */
 .mode-english .st-full > .ft { display: none; }
 .mode-english .st-full::before { content: "⁂"; color: var(--accent); font-size: 0.7em; vertical-align: 0.3em; cursor: pointer; }
@@ -164,17 +264,30 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 /* ------------------------------------------------------------ Gowland material (private build only) */
 .gowland-tr, .enref, .pb { display: none; }
 .show-gowland .gowland-tr { display: inline; color: var(--muted); }
-.show-gowland .gowland-verse { display: block; }
+.show-gowland .gowland-verse, .show-gowland .gowland-block { display: block; }
 .show-pages .pb { display: inline; }
 .show-pages .pb::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
 
-/* ------------------------------------------------------------ home */
-.home-page h1 { font-weight: 400; text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.08em; margin: 2.5rem 0 0.5rem; }
-.home-page .sub { text-align: center; color: var(--muted); margin-top: 0; }
-.home-page ol { padding-left: 1.2rem; }
+/* ------------------------------------------------------------ home, landings, prose pages */
+.home-page h1, .landing-title { font-weight: 400; text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.08em; margin: 2.2rem 0 0.4rem; }
+.home-page .sub, .landing-sub { text-align: center; color: var(--muted); margin-top: 0; letter-spacing: 0.04em; }
+.frontispiece { margin: 1.5rem 0; text-align: center; }
+.frontispiece figcaption { font-size: 0.85em; color: var(--muted); margin-top: 0.4rem; }
+h2 { font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 1.2em; margin: 2rem 0 0.5rem; }
+.landing .note { color: var(--muted); font-size: 0.9em; }
+.sheets { display: grid; gap: 0.8rem; }
+.sheet { margin: 0; padding: 0.4rem; background: #fff; border: 1px solid var(--rule); }
+.prose p { margin: 0 0 0.8rem; }
+.prose dl.labels dt { font-weight: 600; margin-top: 0.6rem; }
+.prose dl.labels dd { margin: 0 0 0 1.2rem; }
+table.counts { border-collapse: collapse; font-size: 0.85em; margin: 0.5rem 0 1rem; }
+table.counts caption { text-align: left; color: var(--muted); }
+table.counts th, table.counts td { border-bottom: 1px solid var(--rule); padding: 0.2rem 0.6rem 0.2rem 0; text-align: left; }
+table.counts td:last-child { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+code { font-size: 0.85em; }
 
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 @media print {
-  header.site, .settings, footer .pager { display: none; }
-  .sidenote { display: block; float: none; width: auto; margin: 0.2rem 0 0.2rem 1rem; font-size: 0.8em; }
+  header.site, .settings, footer .pager, .sn-more { display: none; }
+  .sidenote, .unit.sn-laid .sidenote { display: block; position: static; float: none; width: auto; margin: 0.2rem 0 0.2rem 1rem; font-size: 0.8em; }
 }

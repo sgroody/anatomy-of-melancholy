@@ -14,3 +14,12 @@ pg003.png:
     imprint "Oxford, Printed for Henry Cripps, 1628". Planetary and astrological signs float in the
     clouds above the panels.
   checked: "2026-10-20, against the image"
+
+# The 20 synopsis sheets (chapter001-003.xhtml) share one pattern until M7 rebuilds each synopsis
+# as an accessible text tree, which then becomes the text alternative (SPEC §7.4).
+# {partition}, {i} and {n} are filled in by the site build.
+synopsis-sheets:
+  alt: >-
+    {partition}, Burton's synopsis, sheet {i} of {n}: a table of nested braces dividing the
+    subject into heads and sub-heads, each keyed to its Section, Member and Subsection.
+  checked: "2026-10-20, against pg131_01.png"

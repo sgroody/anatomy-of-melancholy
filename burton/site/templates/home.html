@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="home-page">
+  <h1>The Anatomy of Melancholy</h1>
+  <p class="sub">Robert Burton · a reading edition</p>
+  {% set src, alt, w, h = frontispiece %}
+  <figure class="frontispiece">
+    <a href="{{ argument.href if argument else src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" decoding="async"></a>
+    <figcaption>The engraved title page of 1628{% if argument %}; <a href="{{ argument.href }}">{{ argument.title }}</a> explains its ten panels{% endif %}.</figcaption>
+  </figure>
+  <section aria-labelledby="contents-h">
+    <h2 id="contents-h">Contents</h2>
+    <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
+  </section>
+</div>
+{% endblock %}
