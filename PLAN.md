@@ -67,12 +67,23 @@ Also in M2:
 * h2 has now been seen. Later (D10): fix those error types (absorb adjacent roman Latin into an italic run; treat a lone capitalised sidenote word before a stop as an abbreviation; re-adjudicate capitalised terms), then draw round h3. Do not tune on h2.
 * All gold labels await your review (D7). h2 adds conventions to `data/eval/LABELLING.md`.
 
+**M3 checks pass (2026-10-20); your typography sign-off is pending.** `uv run burton check --all`, private and public builds of 158 units:
+* Pages: home with frontispiece and contents, 9 front-matter pages (7 in public: Gowland's two translation pages are withheld), 3 Partition landings with the 20 synopsis sheets, 149 units, About this edition, Reading options. 164 pages private, 162 public.
+* Navigation: breadcrumbs, previous/next with titles, a contents panel with the current unit marked. Settings (language mode, theme, type size, Gowland toggles) persist in `localStorage`; light and dark themes.
+* V6: 326 pages, 69,070 links, 0 broken. V9: 203/203 glyphs private, 194/194 public; 13 come from the fallback face (Cardo, OFL): ⁂ ℈ ℥ ☉ ☌ ☾ ☿ ♀ ♂ ♃ ♄ ♎ ♏. V10: 326 pages, 0 parse errors, 0 static issues. V8: 0 leaks; V8t: 0 brackets left.
+* V10a (axe-core 4.13.0): 20 pages × light and dark = 40 runs, 0 violations of any impact. V10k keyboard walk-through: 17/17 steps.
+* L1 sidenote layout, prototyped on the densest unit 3.2.4.1 (25.2 notes per 1,000 words, 38 notes) and checked on 5 pages at 3 widths: 0 overlaps, maximum drift 13.4 rem (limit 14), 12 notes collapsed into "more notes" stacks; 0 of 11,028 markers on a different line from their word in the three modes at 4 widths.
+* HY: Chrome 155 and Edge 155 hyphenate none of en, la or grc themselves, so the build adds soft hyphens inside la (Beccari's patterns, MIT) and grc (Pyphen el_GR) only: 47,505, 0 outside those spans.
+* OFF: the service worker precaches 196/196 files; with the server stopped, 6/6 pages load with fonts and images.
+* Carried-forward fixes: the marker/word break happened in interlinear mode (62 markers without the word joiner, 0 with); the interlinear comma gap is 0 px in all 64 measured cases.
+* Found and fixed on the way: in "Read in English", passages with no translation yet (7,778) disappeared; they now keep the original.
+* **For your sign-off** (`uv run burton serve --profile private`, then open the URLs): 3.2.4.1 (densest sidenotes, Latin) http://127.0.0.1:8765/3.2.4.1/ · 3.2.3.1 (744 verse lines) http://127.0.0.1:8765/3.2.3.1/ · djr (front matter) http://127.0.0.1:8765/djr/
+
 **Carried forward** (not done, with the milestone that takes each):
-* **Offline/PWA install not verified.** The service worker is served correctly, but the app's browser pane refuses registration and quick headless attempts were inconclusive. → M3, with a Playwright test.
-* EB Garamond lacks ℥, ℈ and the astrological signs. A fallback font is needed before units with recipes or synopses. → M3
-* `burton/site/` is ignored by the `.gitignore` pattern `site/`, so the reader and build code is not in git. → next
+* Your typography sign-off on the three pages above. → M3 exit
+* The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
+* The "translation source order" setting waits for a second source (Dell & Jordan-Smith). → M5
 * Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
-* A note marker can end a line apart from the word it precedes. In interlinear mode a space can appear before a comma. → M3
 * The model sometimes puts explanation inside a translation ("Curable (salutary)"). → prompt `tr-v2` in M4
 * The gold sample is labelled by Claude and awaits your review (D7).
 
