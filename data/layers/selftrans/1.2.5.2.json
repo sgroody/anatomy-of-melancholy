@@ -1,0 +1,185 @@
+{
+  "1.2.5.2-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "3df2efc3b41eaeb5b80995e6a652da49eea1d9b2"
+  },
+  "1.2.5.2-f2": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "84a4312e317d9330a3ec7aac401a26b733c72b81"
+  },
+  "1.2.5.2-f3": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "hot distemperature of the Brain",
+          "in": "1.2.5.2-p2",
+          "prefix": "us, will have it proceed from a ",
+          "suffix": "; and Montaltus cap. 10 from the"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "9eeaf1fbfd6cb7828ce063b0174c8ed1c8a4ad71"
+  },
+  "1.2.5.2-f4": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "2c4841b1d00011e8ffef297943a18cd845fedbaa"
+  },
+  "1.2.5.2-f5": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "cause alone",
+          "in": "1.2.5.2-p3",
+          "prefix": "seraic veins to be a sufficient ",
+          "suffix": ". The spleen concurs to this mal"
+        },
+        "words": 2
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "5d5661c7fb8c4ddefbb7ab5e43c3d4172724ff5b"
+  },
+  "1.2.5.2-f6": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The spleen concurs to this malady, by all their consents, and suppression of Haemorrhoids",
+          "in": "1.2.5.2-p3",
+          "prefix": "to be a sufficient cause alone. ",
+          "suffix": ", dum non expurgat alter causa l"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3d06527052e6fa8a711650862f020a9b3006bd13"
+  },
+  "1.2.5.2-f7": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "because by his inflammation, the mind is much troubled with convulsions and dotage",
+          "in": "1.2.5.2-p4",
+          "prefix": "which the Greeks called φρένες: ",
+          "suffix": ". All these, most part, offend b"
+        },
+        "words": 13
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "or Midriff, Diaphragma, is a cause which the Greeks called",
+          "in": "1.2.5.2-p4",
+          "prefix": "The Mesenterium, ",
+          "suffix": " φρένες: because by his inflamma"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "grc",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b7c42b233abb7e7af6453a23ce9a9b3b181ef941"
+  },
+  "1.2.5.2-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or Midriff, Diaphragma, is a cause which the Greeks called",
+          "in": "1.2.5.2-p4",
+          "prefix": "The Mesenterium, ",
+          "suffix": " φρένες: because by his inflamma"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "61c922bd5c79c50b10b9c77858386a9e67b823d3"
+  }
+}

@@ -142,7 +142,10 @@ def site_results(units: list[str]) -> list[Result]:
         for unit in units:
             root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
             tree, _ = parse(site / unit / "index.html")
-            xml = {"sidenotes": len(root.findall(f".//{TEI}note")),
+            notes = root.findall(f".//{TEI}note")
+            if profile == "public":  # a sidenote inside Gowland's bracket is his (rendered privately only)
+                notes = [n for n in notes if not any(a.tag.startswith(ED) for a in n.iterancestors())]
+            xml = {"sidenotes": len(notes),
                    "foreign": len(root.xpath("//*[@ana='foreign']")),
                    "enrefs": len(root.findall(f".//{ED}enref")) if profile == "private" else 0,
                    "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0}

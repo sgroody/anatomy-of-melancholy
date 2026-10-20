@@ -322,6 +322,38 @@ def v3_endnotes(units: list[str]) -> Result:
     return r
 
 
+BRACKET = re.compile(r"[\[\]{}]")
+
+
+def v8_public_text(units: list[str]) -> Result:
+    """V8t: the public text view (what models and the public build get) has no Gowland bracket left.
+
+    Every [translation] and {interpolation} must be separated as ed:* / supplied[@resp=#gowland];
+    a bracket still in public_text means ingest missed one (CLAUDE.md rule 5). Units that are wholly
+    Gowland's (div[@resp=#gowland]) are never public and are only counted."""
+    from ..textview import public_text
+
+    r = Result("V8t", "public text has no Gowland brackets")
+    n = {"trans": 0, "trans_pieces": 0, "verse_trans": 0, "supplied": 0, "brackets_left": 0, "gowland_units": 0}
+    for unit in units:
+        div = load_tei(unit).getroot().find(f".//{TEI}div")
+        if div.get("resp") == "#gowland":
+            n["gowland_units"] += 1
+            continue
+        for t in div.iter(f"{ED}trans", f"{ED}verse-trans"):
+            key = "trans" if t.tag == f"{ED}trans" else "verse_trans"
+            n[key] += t.get("part") in (None, "I")  # a translation running over blocks counts once
+            n["trans_pieces"] += t.tag == f"{ED}trans" and t.get("part") is not None
+        n["supplied"] += sum(1 for s in div.iter(f"{TEI}supplied") if s.get("resp") == "#gowland")
+        text = public_text(div, notes=True)
+        for m in BRACKET.finditer(text):
+            n["brackets_left"] += 1
+            r.fail(f"{unit}: unseparated {m.group()!r} in public text: "
+                   f"{text[max(0, m.start() - 50):m.start() + 30]!r}")
+    r.counts = {**n, "units": len(units)}
+    return r
+
+
 def _add(a, b):
     """Sum counts across units; "x/y" fractions are summed part by part."""
     if a is None:
@@ -352,6 +384,7 @@ def text_results(units: list[str]) -> list[Result]:
     results += per.values()
     results.append(v1_files(units))
     results.append(v3_endnotes(units))
+    results.append(v8_public_text(units))
     results.append(v5_langid(units))
     from . import layers
 

@@ -44,6 +44,10 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("xrefs", help="Burton's explicit cross-references -> data/layers/xrefs/")
     s.add_argument("--unit", action="append")
 
+    s = sub.add_parser("selftrans", help="self-translation signals per foreign passage -> data/layers/selftrans/")
+    s.add_argument("--unit", action="append")
+    s.add_argument("--all", action="store_true", help="every unit in the book (the default without --unit)")
+
     s = sub.add_parser("adjudicate", help="model rules on language runs the rules left undecided")
     s.add_argument("--unit", action="append")
     s.add_argument("--all", action="store_true")
@@ -111,6 +115,12 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import xrefs
 
         print(dict(xrefs.build(_units(args) if args.unit else None)))
+    elif args.cmd == "selftrans":
+        from .layers import selftrans
+
+        stats = selftrans.build(args.unit if args.unit and not args.all else None)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
     elif args.cmd == "adjudicate":
         from .translate import adjudicate
 
