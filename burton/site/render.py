@@ -297,7 +297,9 @@ class Renderer:
                 f'<span class="ft-label">{esc(label_of(t))}</span>{src_txt}{note}</{tag}>')
 
     def mode_class(self, fid: str) -> str:
-        rec = self.layer.get(fid) or {}
+        rec = self.layer.get(fid)
+        if not rec:  # nothing to substitute: every mode keeps the original
+            return " fp-untranslated"
         st = (rec.get("self_translation") or {}).get("status", "none")
         return {"full": " st-full", "partial": " st-partial", "paraphrase": " st-paraphrase"}.get(st, "")
 

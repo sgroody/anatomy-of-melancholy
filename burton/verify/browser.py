@@ -248,14 +248,15 @@ LAYOUT_JS = """() => {
 }"""
 
 MARKER_LINE_JS = """() => {
-  // the first visible character after each marker (skipping its note) must start on the marker's line
+  // the first visible character after each marker (skipping its note; hidden text has no rect,
+  // so in English mode the translation that replaces a passage counts) must be on the marker's line
   const bad = [];
   for (const a of document.querySelectorAll('a.nref')) {
     const w = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);
     w.currentNode = a.lastChild || a;
     let t, rr = null;
     while ((t = w.nextNode())) {
-      if (t.parentElement.closest('.sidenote, .ft, .sr-only')) continue;
+      if (t.parentElement.closest('.sidenote, .sr-only')) continue;
       const i = t.data.search(/\\S/); if (i < 0) continue;
       const g = document.createRange(); g.setStart(t, i); g.setEnd(t, i + 1);
       rr = g.getBoundingClientRect(); if (rr.height) break;

@@ -247,6 +247,11 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mode-english .fp.show-orig > .fo { display: inline; }
 .mode-english .fp-block.show-orig > .fo { display: block; }
 .mode-english .fp.show-orig > .ft .ft-label { display: inline; margin-left: 0.4em; }
+/* no translation yet: interlinear and English modes keep the original (the gloss says so on hover) */
+.mode-english .fp-untranslated > .fo, .mode-english .fp-untranslated.show-orig > .fo { display: inline; }
+.mode-english .fp-untranslated.fp-block > .fo { display: block; }
+.mode-english .fp-untranslated > .ft, .mode-interlinear .fp-untranslated > .ft { display: none; }
+.mode-interlinear .fp-untranslated.fp-short { display: inline; }
 /* Burton translates it himself: keep his English, hide the original behind a marker */
 .mode-english .st-full > .ft { display: none; }
 .mode-english .st-full::before { content: "⁂"; color: var(--accent); font-size: 0.7em; vertical-align: 0.3em; cursor: pointer; }
