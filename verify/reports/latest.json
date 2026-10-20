@@ -1,11 +1,12 @@
 {
-  "when": "2026-10-20T10:57:13+00:00",
+  "when": "2026-10-20T15:14:16+00:00",
   "ok": true,
   "results": [
     {
       "code": "V1",
       "name": "text round-trip vs EPUB",
       "ok": true,
+      "deferred": null,
       "counts": {
         "main_words": 614,
         "main_unexplained_diffs": 0,
@@ -20,6 +21,7 @@
       "code": "V2",
       "name": "per-unit counts EPUB = XML",
       "ok": true,
+      "deferred": null,
       "counts": {
         "sidenote_refs": "11/11",
         "endnote_refs": "6/6",
@@ -36,6 +38,7 @@
       "code": "V3",
       "name": "note integrity",
       "ok": true,
+      "deferred": null,
       "counts": {
         "sidenotes_resolved": "11/11",
         "ids": 28,
@@ -47,6 +50,7 @@
       "code": "V4",
       "name": "foreign scripts language-tagged",
       "ok": true,
+      "deferred": null,
       "counts": {
         "script_chars": 85,
         "untagged": 0,
@@ -58,6 +62,7 @@
       "code": "V1f",
       "name": "every EPUB page fully covered by its units",
       "ok": true,
+      "deferred": null,
       "counts": {
         "pages_checked": 0,
         "pages_total": 18
@@ -68,6 +73,7 @@
       "code": "V3g",
       "name": "Gowland endnotes: text and links",
       "ok": true,
+      "deferred": null,
       "counts": {
         "bodies": "3907/3907",
         "text_mismatches": 0,
@@ -80,6 +86,7 @@
       "code": "V5",
       "name": "language-ID vs gold samples (gate: held-out h2)",
       "ok": true,
+      "deferred": null,
       "counts": {
         "heldout_h2": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
         "seen_h1": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
@@ -91,6 +98,7 @@
       "code": "V7",
       "name": "layers keyed, labelled and honest",
       "ok": true,
+      "deferred": null,
       "counts": {
         "foreign": 10,
         "with_record": 7,
@@ -110,6 +118,7 @@
       "code": "V2h",
       "name": "per-unit counts XML = HTML",
       "ok": true,
+      "deferred": null,
       "counts": {
         "private:sidenotes": "11/11",
         "private:foreign": "10/10",
@@ -126,6 +135,7 @@
       "code": "V3h",
       "name": "every note marker resolves",
       "ok": true,
+      "deferred": null,
       "counts": {
         "markers": 22,
         "resolved": 22
@@ -136,6 +146,7 @@
       "code": "V4h",
       "name": "HTML foreign scripts carry lang",
       "ok": true,
+      "deferred": null,
       "counts": {
         "script_chars": 198,
         "untagged": 0
@@ -146,6 +157,7 @@
       "code": "V6",
       "name": "links resolve",
       "ok": true,
+      "deferred": null,
       "counts": {
         "links": 50,
         "broken": 0
@@ -156,6 +168,7 @@
       "code": "V8",
       "name": "public build has no Gowland matter",
       "ok": true,
+      "deferred": null,
       "counts": {
         "leaks": 0
       },
@@ -165,6 +178,7 @@
       "code": "V9",
       "name": "font coverage",
       "ok": true,
+      "deferred": null,
       "counts": {
         "private:glyphs": "118/118",
         "public:glyphs": "115/115"
@@ -175,6 +189,7 @@
       "code": "V10",
       "name": "HTML validity and basic accessibility",
       "ok": true,
+      "deferred": null,
       "counts": {
         "pages": 4,
         "parse_errors": 0,

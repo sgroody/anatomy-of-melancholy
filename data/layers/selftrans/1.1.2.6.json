@@ -1,0 +1,155 @@
+{
+  "1.1.2.6-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Or if the object be not pleasing, as a bad sound to the ear, a stinking smell to the nose, &c.",
+          "in": "1.1.2.6-p1",
+          "prefix": "Visibile forte destruit sensum. ",
+          "suffix": " Of these five senses, Sight is "
+        },
+        "words": 21
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "according to that Axiom",
+          "in": "1.1.2.6-p1",
+          "prefix": "ct, as the eye by the sunbeams: ",
+          "suffix": ", Visibile forte destruit sensum"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "e3a671c8f4e68724932c59f4fdb5a87eea6aae07"
+  },
+  "1.1.2.6-f2": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "light, commonly called",
+          "in": "1.1.2.6-p1",
+          "prefix": "on of the air, which comes from ",
+          "suffix": " Diaphanum; for in dark we canno"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "480d85f2ade9bb37dd016606bf109fac49391ece"
+  },
+  "1.1.2.6-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "by receiving in the visible species, or sending of them out",
+          "in": "1.1.2.6-p1",
+          "prefix": "tendo, vel extra mittendo, &c., ",
+          "suffix": "; which Plato, Plutarch, Macrobi"
+        },
+        "words": 11
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "as whether this sight be caused",
+          "in": "1.1.2.6-p1",
+          "prefix": "nse, discussed by Philosophers: ",
+          "suffix": " intra mittendo, vel extra mitte"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "82504c807b6397bbf940c084d800c7647a0691cc"
+  },
+  "1.1.2.6-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "for in dark we cannot see",
+          "in": "1.1.2.6-p1",
+          "prefix": "ght, commonly called Diaphanum; ",
+          "suffix": ". The Organ is the eye, & chiefl"
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The Medium is the illumination of the air, which comes from light, commonly called",
+          "in": "1.1.2.6-p1",
+          "prefix": "olours, and all shining bodies. ",
+          "suffix": " Diaphanum; for in dark we canno"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b0f51dc4f950248571cc481f4b52b50e2e468b33"
+  }
+}

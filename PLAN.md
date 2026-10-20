@@ -24,19 +24,26 @@ Decisions **[D#]** are listed at the end. D2–D6 and D9 are decided; D1, D7 and
 * V6: 50 links, 0 broken. V8: 0 Gowland leaks. V9: glyph coverage 118/118 and 115/115. V10: 0 parse errors, 0 accessibility issues.
 * Kill/resume test PASS (`verify/reports/m1-kill-resume.log`).
 
-**M2 mostly done (2026-10-20).** `uv run burton verify --all` over 158 units (149 subsections and 9 front-matter pages):
+**M2 done (2026-10-20), with the language-ID target deferred (D10).** `uv run burton verify --all` over 158 units (149 subsections and 9 front-matter pages):
 * V1: 484,453 words, 0 unexplained differences; 5,703/5,703 sidenotes identical.
 * V1f: 18/18 EPUB pages fully covered by their units.
 * V2: sidenotes 5,703/5,703, endnote anchors 3,907/3,907, page markers 956/956, paragraphs 1,910/1,910, verse lines 5,006/5,006.
 * V4: 1,080/1,080 script characters tagged.
 * V3g: Gowland endnotes 3,907/3,907 identical, 0 orphans, 0 double references (1 recorded link fix).
-* V7: passes. The 7,779 untranslated passages are a count for M5, not a failure.
+* V7: passes. The 7,779 untranslated passages are a count for M5, not a failure. Self-translation layer: 7,786/7,786 records current, 8,421/8,421 candidate selectors match exactly once, 0 touch Gowland text.
 * These counts are unchanged by the language-ID hardening below (re-checked after `ingest --all`).
 
 Also in M2:
 * 7,786 foreign passages after the hardening (7,775 before; 73 new passage ids, 88 retired, none renumbered).
 * Cross-references: 19 resolved, 2 unresolved (a level missing), 160 citations of other books skipped.
 * 1,025 model rulings on undecided language runs (`data/layers/langid-adjudication.json`, labelled).
+* Self-translation candidates flagged (`burton selftrans`, rules only, SPEC §6.2; signals, not verdicts). Of the 7,785 foreign passages (after the bracket fix below):
+  * Gowland bracket: none 2,850; present 4,902; short (under 0.8 × the passage's words) 33.
+  * Candidate spans of Burton's English: next clause or sentence 4,008; preceding clause 2,812; text at a sidenote's anchor 1,332; Burton's English verse after a verse 270 (8,422 selectors). 5,977 passages have at least one candidate, including 2,246 of the 2,850 without a bracket.
+  * Supporting signals: cognate overlap 704; gloss cue ("that is", "i.e.") 10.
+  * Dropped and counted: 0 candidates touching unseparated Gowland brackets (5 before the bracket fix); 0 non-unique selectors. 2 passages nested in a longer passage get no prose candidates.
+  * The 4 self-translations the M1 model found in 1.1.1.2 are all among the candidates, with the same span.
+* Gowland brackets running over several blocks (2026-10-20). 6 brackets were left as plain text, each one translation over several paragraphs or stanzas (1.2.3.15, 3.1.1.1, 3.2.1.2, 3.2.2.1 prose with quoted verse between; 2.5.1.6, 3.4.2.3 verse, tagged as Burton's `translation-block`). General rules now separate them: a bracket over blocks is wrapped piece by piece (`ed:trans`/`ed:verse-trans` with `@part` I/M/F), and a bracketed verse run may span stanzas and end before punctuation. The 13 sidenotes anchored inside those runs are Gowland's English renderings of Burton's Latin sidenotes and go in with them (public build drops them; V2h counts accordingly). New check V8t: `public_text` of every unit has no `[ ] { }` (0 left; it reports all 12 on the old text). 1 passage id retired (3.2.2.1-f76, a title inside Gowland's translation).
 
 **M2: the language-identification target is deferred (D10).** V5 still runs on the fresh hold-out and reports DEFER, not PASS:
 * Hardening (2026-10-20), general rules only (SPEC §6.1): `&c.` is not the locator `c.`; author-and-title lists ("*Grotius de verit.*") are citations; `de` before a capital is a name particle; English runs split at sentence breaks; citation prefixes shed before a bracket; a bracket after the run's closing stop counts.
@@ -63,7 +70,7 @@ Also in M2:
 **Carried forward** (not done, with the milestone that takes each):
 * **Offline/PWA install not verified.** The service worker is served correctly, but the app's browser pane refuses registration and quick headless attempts were inconclusive. → M3, with a Playwright test.
 * EB Garamond lacks ℥, ℈ and the astrological signs. A fallback font is needed before units with recipes or synopses. → M3
-* Self-translation candidates are not flagged yet (M2 bullet: signals only, verdicts in M5). → M2
+* `burton/site/` is ignored by the `.gitignore` pattern `site/`, so the reader and build code is not in git. → next
 * Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
 * A note marker can end a line apart from the word it precedes. In interlinear mode a space can appear before a comma. → M3
 * The model sometimes puts explanation inside a translation ("Curable (salutary)"). → prompt `tr-v2` in M4

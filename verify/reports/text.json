@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-20T11:16:30+00:00",
+  "when": "2026-10-20T16:27:24+00:00",
   "ok": true,
   "results": [
     {
@@ -41,7 +41,7 @@
       "deferred": null,
       "counts": {
         "sidenotes_resolved": "5703/5703",
-        "ids": 16763,
+        "ids": 16762,
         "units": 158
       },
       "problems": []
@@ -85,6 +85,22 @@
       "problems": []
     },
     {
+      "code": "V8t",
+      "name": "public text has no Gowland brackets",
+      "ok": true,
+      "deferred": null,
+      "counts": {
+        "trans": 4345,
+        "trans_pieces": 10,
+        "verse_trans": 725,
+        "supplied": 152,
+        "brackets_left": 0,
+        "gowland_units": 2,
+        "units": 158
+      },
+      "problems": []
+    },
+    {
       "code": "V5",
       "name": "language-ID vs gold samples (gate: held-out h2)",
       "ok": false,
@@ -114,7 +130,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "foreign": 7786,
+        "foreign": 7785,
         "with_record": 7,
         "machine_labelled": 7,
         "stale": 0,
@@ -123,7 +139,15 @@
         "selectors_bad": 0,
         "sources_unidentified": 3,
         "sources_other": 4,
-        "untranslated": 7779,
+        "selftrans_records": 7785,
+        "selftrans_selectors_ok": 8422,
+        "selftrans_selectors_bad": 0,
+        "selftrans_stale": 0,
+        "selftrans_missing": 0,
+        "selftrans_orphan_keys": 0,
+        "selftrans_units_missing": 0,
+        "selftrans_gowland_overlap": 0,
+        "untranslated": 7778,
         "units_without_layer": 157,
         "xrefs": 21,
         "xrefs_resolved": 19,

@@ -1,0 +1,320 @@
+{
+  "1.2.1.1-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "2706b9f142a8257861d917cdf2a036dee104ff8f"
+  },
+  "1.2.1.1-f10": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "When that monster-taming Hercules overcame all in the Olympics, Jupiter at last in an unknown shape wrestled with him",
+          "in": "1.2.1.1-p3",
+          "prefix": "l: Non est reluctandum cum Deo. ",
+          "suffix": "; the victory was uncertain, til"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "06dccaec49507d8feed0f7bacb6c5a348b27bbc2"
+  },
+  "1.2.1.1-f11": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "c305ed93099825e30f3f6a75793da5aeb294dc76"
+  },
+  "1.2.1.1-f12": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as it is with them that are wounded with the spear of Achilles, he alone must help",
+          "in": "1.2.1.1-p4",
+          "prefix": "que manus vulnus opemque feret, ",
+          "suffix": "; otherwise our diseases are inc"
+        },
+        "words": 17
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "If he strike us",
+          "in": "1.2.1.1-p4",
+          "prefix": "ffences, call to him for mercy. ",
+          "suffix": ", una eademque manus vulnus opem"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "26684cddeaf70c7f7ec1cad14c56672466727c06"
+  },
+  "1.2.1.1-f13": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3469071a514968b1b75a77930a13a35b798fe7e8"
+  },
+  "1.2.1.1-f15": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "What an enemy is this",
+          "in": "1.2.1.1-p3",
+          "prefix": "elum! o terra! unde hostis hic? ",
+          "suffix": "? And pray with David, acknowled"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "023fe4bb059a4507e73c74abd877e5b0554d805b"
+  },
+  "1.2.1.1-f16": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "sacrilegious Frenchman, that would have stolen away a silver image of St. John, at Bourbourg, became frantic on a sudden, raging, and tyrannizing over his own flesh",
+          "in": "1.2.1.1-p2",
+          "prefix": "he body of St. Denis: and how a ",
+          "suffix": ": of a Lord of Radnor, that comi"
+        },
+        "words": 27
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor"
+    ],
+    "text_sha1": "fadc140669e6eb61c5df375535298fc021ca180f"
+  },
+  "1.2.1.1-f2": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and the common experience of others confirms, that those cures must be unperfect, lame, and to no purpose, wherein the causes have not first been searched, as Prosper Calanius well observes in his tract",
+          "in": "1.2.1.1-p1",
+          "prefix": "es, so Galen prescribes Glauco: ",
+          "suffix": " de atra bile to Cardinal Caesiu"
+        },
+        "words": 34
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7c4945ed3893e66493e264d578be035dd9238863"
+  },
+  "1.2.1.1-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "if the cause be removed, the effect is likewise vanquished",
+          "in": "1.2.1.1-p1",
+          "prefix": "tur effectus, as the saying is, ",
+          "suffix": ". It is a most difficult thing ("
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c8150047aa03950ed05031a2359da4e18bddd0f3"
+  },
+  "1.2.1.1-f4": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "He is happy that can perform it aright",
+          "in": "1.2.1.1-p1",
+          "prefix": " to say what the beginning was. ",
+          "suffix": ". I will adventure to guess as n"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "89fa2ae9b18ad5f1351abdf26fdf61b7a27d01ee"
+  },
+  "1.2.1.1-f6": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "He is God the avenger, as David styles him",
+          "in": "1.2.1.1-p2",
+          "prefix": " true, that ultor a tergo Deus, ",
+          "suffix": "; and that it is our crying sins"
+        },
+        "words": 9
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "we find it true, that",
+          "in": "1.2.1.1-p2",
+          "prefix": "e devil’s means may be deluded; ",
+          "suffix": " ultor a tergo Deus, He is God t"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "98c2cb583990ce95516d3f7b2e2393847c8b5fc8"
+  },
+  "1.2.1.1-f7": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "361ea7b4b785659f66f2952fb9004c1875c20f50"
+  },
+  "1.2.1.1-f8": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "He can make the proudest spirits stoop, and cry out with Julian the Apostate",
+          "in": "1.2.1.1-p3",
+          "prefix": "ny executioners of his justice. ",
+          "suffix": ", Vicisti Galileae: or with Apol"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes"
+    ],
+    "text_sha1": "fe39f4d96fc74663b2175d4a7f8e6949e1f70f01"
+  }
+}

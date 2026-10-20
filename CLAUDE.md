@@ -73,7 +73,7 @@ When a check fails, fix the cause. Do not add an `allowed-diffs` entry to make a
   * Built so far: `unpack`, `counts`, `ingest`, `verify`, `translate` (`--dry-run`, `--packet-size`, `--max-packets`), `fonts`, `build`, `serve`, `check`. Most take `--unit` (repeatable).
   * `uv run burton check --unit 1.1.1.2` is the "done" gate. It re-ingests, verifies, builds both profiles and checks the site; the report goes to `verify/reports/latest.json`.
   * `uv run python tests/manual/kill_resume.py <unit>` kills the translation runner mid-run and resumes it. It uses real `claude -p` calls, so it is not part of pytest.
-  * M2 added: `lexicon` (rebuilds the book's Latin/English word lists from a rules-only ingest; changes language decisions, so run it deliberately), `adjudicate` (model rulings on undecided language runs → `data/layers/langid-adjudication.json`), `xrefs`, and `ingest --all` (which also writes `data/text/gowland-endnotes.xml`).
+  * M2 added: `lexicon` (rebuilds the book's Latin/English word lists from a rules-only ingest; changes language decisions, so run it deliberately), `adjudicate` (model rulings on undecided language runs → `data/layers/langid-adjudication.json`), `xrefs`, `selftrans` (rules-only self-translation signals → `data/layers/selftrans/`; re-run after any ingest that changes passages, or V7 reports stale records), and `ingest --all` (which also writes `data/text/gowland-endnotes.xml`).
 * **Hand-made decisions live in `data/manual/`**, never in code:
   * `blocks.yaml`: block-level language and Gowland-block decisions;
   * `source-fixes.yaml`: `sic`/`corr` corrections;

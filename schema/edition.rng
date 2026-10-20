@@ -151,6 +151,7 @@
     <element name="ed:verse-trans">
       <a:documentation>Gowland's bracketed verse translation (resp=gowland by definition).</a:documentation>
       <optional><attribute name="for"/></optional>
+      <optional><attribute name="part"><a:documentation>Piece of one bracket running over several blocks: I(nitial), M(edial), F(inal).</a:documentation><choice><value>I</value><value>M</value><value>F</value></choice></attribute></optional>
       <ref name="lg"/>
     </element>
   </define>
@@ -199,6 +200,7 @@
         </element>
         <element name="ed:trans">
           <optional><attribute name="for"/></optional>
+        <optional><attribute name="part"><a:documentation>Piece of one bracket running over several blocks: I(nitial), M(edial), F(inal).</a:documentation><choice><value>I</value><value>M</value><value>F</value></choice></attribute></optional>
           <ref name="inline"/>
         </element>
         <element name="ed:enref">

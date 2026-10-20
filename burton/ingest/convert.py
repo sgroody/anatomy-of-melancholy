@@ -245,18 +245,62 @@ def quote(e, ctx: Ctx, file: str):
     return q
 
 
+def _verse_text(lg) -> str:
+    """Text of a verse group's lines, without sidenote text (a note's own brackets are not the verse's)."""
+    out: list[str] = []
+
+    def walk(e):
+        if xlocal(e) != "note":
+            out.append(e.text or "")
+            for c in e:
+                walk(c)
+        if e is not lg:
+            out.append(e.tail or "")
+
+    walk(lg)
+    return "".join(out)
+
+
+def _bracket_run(groups: list, i: int) -> int | None:
+    """Index of the last verse group of the bracketed run that opens group i, or None.
+
+    The '[' that starts group i must close at the very end of a group (only punctuation may follow),
+    with the brackets balanced in between; the run may span several groups (stanzas)."""
+    depth = 0
+    for k in range(i, len(groups)):
+        if xlocal(groups[k]) != "lg" or len(groups[k]) == 0:
+            return None
+        text = _verse_text(groups[k])
+        for pos, ch in enumerate(text):
+            if ch == "[":
+                depth += 1
+            elif ch == "]":
+                depth -= 1
+                if depth == 0:
+                    return k if text[pos + 1:].strip(" .,;:!?") == "" else None
+    return None
+
+
 def _mark_gowland_verse(q) -> None:
-    """A verse group whose first line opens '[' and last line closes ']' is Gowland's translation."""
-    for lg in list(q):
-        if xlocal(lg) != "lg" or len(lg) == 0:
+    """A run of verse groups opening '[' and closing ']' is Gowland's translation (one wrapper per group)."""
+    groups = list(q)
+    i = 0
+    while i < len(groups):
+        lg = groups[i]
+        end = None
+        if xlocal(lg) == "lg" and len(lg) and _verse_text(lg).lstrip().startswith("["):
+            end = _bracket_run(groups, i)
+        if end is None:
+            i += 1
             continue
-        first = "".join(lg[0].itertext()).lstrip()
-        last = "".join(lg[-1].itertext()).rstrip()
-        if first.startswith("[") and last.endswith("]"):
-            wrapper = el(ED("verse-trans"))
-            q.replace(lg, wrapper)
-            wrapper.append(lg)
-            lg.attrib.pop("type", None)
+        run = groups[i:end + 1]
+        for n, g in enumerate(run):
+            part = None if len(run) == 1 else "I" if n == 0 else "F" if n == len(run) - 1 else "M"
+            wrapper = el(ED("verse-trans"), {"part": part})
+            q.replace(g, wrapper)
+            wrapper.append(g)
+            g.attrib.pop("type", None)
+        i = end + 1
 
 
 def convert_unit(unit: str, file: str, elements: list, *, front: bool = False, resp: str | None = None) -> tuple:

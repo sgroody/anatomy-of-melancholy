@@ -1,0 +1,757 @@
+{
+  "2.4.1.1-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "some think Physicians kill as many as they save, and who can tell",
+          "in": "2.4.1.1-p1",
+          "prefix": "t might otherwise have escaped; ",
+          "suffix": ","
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "a70d40a2e3bbb5f798807030eeed323b333d81cb"
+  },
+  "2.4.1.1-f11": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "more danger there is from the Physician, than from the disease",
+          "in": "2.4.1.1-p3",
+          "prefix": "a medico quam a morbo periculi, ",
+          "suffix": ". Besides, there is much Impostu"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "288972c9a9c0680bdce2991234f0b03d823405b9"
+  },
+  "2.4.1.1-f12": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "binders for purgatives",
+          "in": "2.4.1.1-p3",
+          "prefix": ", pro purgantibus astringentia, ",
+          "suffix": ", omnia perturbabant. If the par"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "If he prescribed hot medicines, they would prescribe cold",
+          "in": "2.4.1.1-p3",
+          "prefix": " cross him in all his precepts. ",
+          "suffix": ", miscentes pro calidis frigida,"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9e70bacbbc1583a5569c61f44d97fb06c43c2548"
+  },
+  "2.4.1.1-f13": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "If the party miscarried",
+          "in": "2.4.1.1-p3",
+          "prefix": "purgatives, omnia perturbabant. ",
+          "suffix": ", Curtium damnabant, Curtius kil"
+        },
+        "words": 4
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "binders for purgatives",
+          "in": "2.4.1.1-p3",
+          "prefix": ", pro purgantibus astringentia, ",
+          "suffix": ", omnia perturbabant. If the par"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "08a36fde726ee546aeabe2dd0e3ef2455953f770"
+  },
+  "2.4.1.1-f14": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Curtius killed him, that disagreed from them",
+          "in": "2.4.1.1-p3",
+          "prefix": " miscarried, Curtium damnabant, ",
+          "suffix": ": if he recovered, then they cur"
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "If the party miscarried",
+          "in": "2.4.1.1-p3",
+          "prefix": "purgatives, omnia perturbabant. ",
+          "suffix": ", Curtium damnabant, Curtius kil"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "314a05cdbdd3dcd46dd8746990f942c2a543c06b"
+  },
+  "2.4.1.1-f15": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "they cured him themselves",
+          "in": "2.4.1.1-p3",
+          "prefix": "rom them: if he recovered, then ",
+          "suffix": ". Much emulation, imposture, mal"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "2201e847a42cac3294f1c2ccc934d211a50d878a"
+  },
+  "2.4.1.1-f16": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "if they be honest, and mean well, yet a knave Apothecary that administers the Physic, and makes the medicine, may do infinite harm, by his old obsolete doses, adulterine drugs, bad mixtures",
+          "in": "2.4.1.1-p3",
+          "prefix": " malice, there is amongst them: ",
+          "suffix": ", quid pro quo, &c. See Fuchsius"
+        },
+        "words": 32
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes"
+    ],
+    "text_sha1": "7a30a04496ddc966e630c01db372e53f25cad0de"
+  },
+  "2.4.1.1-f17": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and common executioners",
+          "in": "2.4.1.1-p3",
+          "prefix": "hysicians’ hangmen, carnifices, ",
+          "suffix": "; though to say truth, Physician"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Chirurgeons and Apothecaries especially, that are indeed the Physicians’ hangmen",
+          "in": "2.4.1.1-p3",
+          "prefix": "butchers, leeches, men-slayers; ",
+          "suffix": ", carnifices, and common executi"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "754bd790f65d0c2449436932b9032c841894aeb1"
+  },
+  "2.4.1.1-f18": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "0abb8a7dd05c6c0aefe84d2d1dbc692012c84ffa"
+  },
+  "2.4.1.1-f19": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "c08cc7e2809440aff05269ae591e6a4df58e3fdd"
+  },
+  "2.4.1.1-f2": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "b90195ef85b88d0cfcd0cf72929b602c2aee3f96"
+  },
+  "2.4.1.1-f20": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "the most deceitful thing of all, as Forestus & some other Physicians have proved at large",
+          "in": "2.4.1.1-p5",
+          "prefix": "ne, that is meretrix medicorum, ",
+          "suffix": ": I say nothing of Critic days, "
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "And for urine, that is",
+          "in": "2.4.1.1-p5",
+          "prefix": "observed nor understood of any. ",
+          "suffix": " meretrix medicorum, the most de"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "67d05612bb4c4d6b4fe35976dbf8861a195250ea"
+  },
+  "2.4.1.1-f21": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "wine and drunkenness are two distinct things",
+          "in": "2.4.1.1-p5",
+          "prefix": "s; aliud vinum, aliud ebrietas, ",
+          "suffix": ". I acknowledge it a most noble "
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1af9b9192033cea66c8b49ac94e1ca811f981016"
+  },
+  "2.4.1.1-f22": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "were worthily counted Gods by succeeding ages, for the excellency of their invention",
+          "in": "2.4.1.1-p5",
+          "prefix": " of it, merito pro diis habiti, ",
+          "suffix": ". And whereas Apollo at Delos, V"
+        },
+        "words": 13
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "I acknowledge it a most noble and divine science, insomuch that Apollo, Aesculapius, and the first founders of it",
+          "in": "2.4.1.1-p5",
+          "prefix": "enness are two distinct things. ",
+          "suffix": ", merito pro diis habiti, were w"
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7565f9c0721d3205c5b6582730ece27d8c627e7f"
+  },
+  "2.4.1.1-f25": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a multitude of Physicians hath killed the Emperor",
+          "in": "2.4.1.1-p3",
+          "prefix": "medicorum principem interfecit, ",
+          "suffix": "; plus a medico quam a morbo per"
+        },
+        "words": 8
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "one saith this, another that, out of singularity or opposition, as he said of Hadrian",
+          "in": "2.4.1.1-p3",
+          "prefix": "hey give quite contrary Physic; ",
+          "suffix": ", multitudo medicorum principem "
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ab01486d57a86f70ddff2bcdc32540455ee72e40"
+  },
+  "2.4.1.1-f26": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "yet one thing I will add, that this kind of Physic is very moderately and advisedly to be used, upon good occasion, when the former of diet will not take place",
+          "in": "2.4.1.1-p5",
+          "prefix": "quam pauca dicere; I have said, ",
+          "suffix": ". And ’tis no other which I say,"
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "47907fddf34b36b426ec5ba48166f3d054f93b17"
+  },
+  "2.4.1.1-f27": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "every Physician, Herbalist, &c., single out some of the chiefest",
+          "in": "2.4.1.1-p5",
+          "prefix": " I find in every Pharmacopoeia, ",
+          "suffix": "."
+        },
+        "words": 10
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "I will amongst that infinite variety of medicines, which I find in every",
+          "in": "2.4.1.1-p5",
+          "prefix": ", be they simples or compounds. ",
+          "suffix": " Pharmacopoeia, every Physician,"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170"
+  },
+  "2.4.1.1-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "that may freely kill folks and have a reward for it, and according to the Dutch proverb, a new Physician must have a new Churchyard",
+          "in": "2.4.1.1-p2",
+          "prefix": " impune licet hominem occidere, ",
+          "suffix": "; and who daily observes it not?"
+        },
+        "words": 25
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "How many murders they make in a year",
+          "in": "2.4.1.1-p2",
+          "prefix": "",
+          "suffix": ", quibus impune licet hominem oc"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3c0662767a8a552e2ce5daed0196d47a3c258eca"
+  },
+  "2.4.1.1-f4": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "4f6498f7d2a1b14a78236627243452f34ee60f62"
+  },
+  "2.4.1.1-f5": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and what was Apollo but the Devil",
+          "in": "2.4.1.1-p3",
+          "prefix": "st medicina meum, saith Apollo, ",
+          "suffix": "? The Greeks first made an Art o"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "67a733d9cefcb90f35f131d5e85c08326aaad4d3"
+  },
+  "2.4.1.1-f6": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "but as Cardan censures them, both immethodical and obscure, as all those old ones are, their precepts confused, their medicines obsolete, and now most part rejected",
+          "in": "2.4.1.1-p3",
+          "prefix": "ger calls Fimbriam Hippocratis, ",
+          "suffix": ". Those cures which they did, Pa"
+        },
+        "words": 26
+      },
+      {
+        "by": "rules",
+        "cognates": 1,
+        "position": "preceding",
+        "selector": {
+          "exact": "The first that ever wrote in Physic to any purpose, was Hippocrates, and his Disciple and Commentator Galen, whom Scaliger calls",
+          "in": "2.4.1.1-p3",
+          "prefix": " performed most of their cures. ",
+          "suffix": " Fimbriam Hippocratis, but as Ca"
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "181355ab5fccbaec8b6022f583a75a37fa41e9d3"
+  },
+  "2.4.1.1-f7": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a fair gown, a velvet cap, the name of a Doctor is all in all",
+          "in": "2.4.1.1-n8",
+          "prefix": "Opinio facit medicos: ",
+          "suffix": "."
+        },
+        "words": 15
+      },
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "and good opinion they had of them, than out of any skill of theirs, which was very small, he saith, they themselves Idiots and Infants, as are all their Academical followers",
+          "in": "2.4.1.1-p3",
+          "prefix": " of their Patients’ confidence, ",
+          "suffix": ". The Arabians received it from "
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "english-follows"
+    ],
+    "text_sha1": "cf709d3e39b6632d668131335ee9f58493d7fa1e"
+  },
+  "2.4.1.1-f8": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "disease, and causes of it, they give quite contrary Physic",
+          "in": "2.4.1.1-p3",
+          "prefix": "times the party’s constitution, ",
+          "suffix": "; one saith this, another that, "
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "13b02f9afb5a466e8b8db0cdfc6e6e78a2b85246"
+  },
+  "2.4.1.1-f9": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "another that, out of singularity or opposition, as he said of Hadrian",
+          "in": "2.4.1.1-p3",
+          "prefix": "ontrary Physic; one saith this, ",
+          "suffix": ", multitudo medicorum principem "
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "3f0ebb6c44547bb9c0e8c9aa56b8fd9078e6974c"
+  }
+}

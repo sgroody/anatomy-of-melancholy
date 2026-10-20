@@ -216,7 +216,10 @@ def site_results(units: list[str]) -> list[Result]:
                 v2.fail(f"{profile} {unit}: no page")
                 continue
             tree = trees.get(page.resolve(), parse(page))[0]
-            xml = {"sidenotes": len(root.findall(f".//{TEI}note")),
+            notes = root.findall(f".//{TEI}note")
+            if profile == "public":  # a sidenote inside Gowland's bracket is his (rendered privately only)
+                notes = [n for n in notes if not any(a.tag.startswith(ED) for a in n.iterancestors())]
+            xml = {"sidenotes": len(notes),
                    "foreign": len(root.xpath("//*[@ana='foreign']")),
                    "enrefs": len(root.findall(f".//{ED}enref")) if profile == "private" else 0,
                    "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0}
