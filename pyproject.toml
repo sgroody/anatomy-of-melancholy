@@ -1,0 +1,37 @@
+[project]
+name = "burton"
+version = "0.1.0"
+description = "Pipeline and reader for a digital edition of Burton's Anatomy of Melancholy"
+requires-python = ">=3.12"
+dependencies = [
+    "lxml>=5.3",
+    "jinja2>=3.1",
+    "regex>=2024.11.6",
+    "jsonschema>=4.23",
+    "pyyaml>=6.0",
+    "fonttools[woff]>=4.55",
+    "html5lib>=1.1",
+]
+
+[project.scripts]
+burton = "burton.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["burton"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

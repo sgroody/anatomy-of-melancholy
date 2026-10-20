@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "edition-private",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "burton", "serve", "--profile", "private", "--port", "8765"],
+      "port": 8765
+    },
+    {
+      "name": "edition-public",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "burton", "serve", "--profile", "public", "--port", "8766"],
+      "port": 8766
+    }
+  ]
+}

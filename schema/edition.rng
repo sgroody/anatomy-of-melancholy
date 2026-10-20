@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Schema for data/text/<unit>.xml: a small TEI subset plus the ed: namespace for Gowland's
+  editorial matter (SPEC §4.1). Validated on every ingest by lxml's RELAX NG.
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+         xmlns:ed="https://burton-edition.local/ns/gowland"
+         ns="http://www.tei-c.org/ns/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <start>
+    <element name="TEI">
+      <attribute name="xml:lang"><value>en</value></attribute>
+      <ref name="teiHeader"/>
+      <element name="text"><element name="body"><oneOrMore><ref name="div"/></oneOrMore></element></element>
+    </element>
+  </start>
+
+  <define name="teiHeader">
+    <element name="teiHeader">
+      <element name="fileDesc">
+        <element name="titleStmt"><element name="title"><text/></element></element>
+        <element name="publicationStmt"><element name="p"><text/></element></element>
+        <element name="sourceDesc"><element name="p"><text/></element></element>
+      </element>
+    </element>
+  </define>
+
+  <!-- common attributes -->
+  <define name="id"><attribute name="xml:id"><data type="ID"/></attribute></define>
+  <define name="src"><optional><attribute name="src"/></optional></define>
+  <define name="prov">
+    <optional><attribute name="resp"><choice>
+      <value>#rules</value><value>#editor</value><value>#gowland</value><value>#model</value>
+    </choice></attribute></optional>
+    <optional><attribute name="cert"><choice><value>high</value><value>medium</value><value>low</value></choice></attribute></optional>
+  </define>
+  <define name="lang"><attribute name="xml:lang"><data type="language"/></attribute></define>
+
+  <define name="div">
+    <element name="div">
+      <attribute name="type"><choice><value>subsection</value><value>front</value></choice></attribute>
+      <attribute name="n"/>
+      <ref name="id"/>
+      <zeroOrMore><ref name="block"/></zeroOrMore>
+    </element>
+  </define>
+
+  <define name="block">
+    <choice>
+      <ref name="head"/>
+      <ref name="p"/>
+      <ref name="lg"/>
+      <ref name="quote"/>
+    </choice>
+  </define>
+
+  <define name="head">
+    <element name="head">
+      <attribute name="type"><choice>
+        <value>partition</value><value>number</value><value>title</value><value>other</value>
+      </choice></attribute>
+      <optional><attribute name="subtype"/></optional>
+      <optional><attribute name="facs"/></optional>
+      <ref name="src"/><ref name="prov"/>
+      <ref name="inline"/>
+    </element>
+  </define>
+
+  <define name="p">
+    <element name="p">
+      <ref name="id"/>
+      <optional><attribute name="rend"/></optional>
+      <ref name="src"/>
+      <ref name="inline"/>
+    </element>
+  </define>
+
+  <define name="quote">
+    <element name="quote">
+      <attribute name="type"><value>block</value></attribute>
+      <ref name="src"/>
+      <oneOrMore><choice><ref name="lg"/><ref name="p"/><ref name="verseTrans"/></choice></oneOrMore>
+    </element>
+  </define>
+
+  <define name="lg">
+    <element name="lg">
+      <ref name="id"/>
+      <optional><attribute name="type"><value>translation-block</value></attribute></optional>
+      <optional><ref name="lang"/><attribute name="ana"><value>foreign</value></attribute></optional>
+      <ref name="src"/><ref name="prov"/>
+      <oneOrMore>
+        <element name="l">
+          <optional><attribute name="rend"/></optional>
+          <ref name="src"/>
+          <ref name="inline"/>
+        </element>
+      </oneOrMore>
+    </element>
+  </define>
+
+  <define name="verseTrans">
+    <element name="ed:verse-trans">
+      <a:documentation>Gowland's bracketed verse translation (resp=gowland by definition).</a:documentation>
+      <optional><attribute name="for"/></optional>
+      <ref name="lg"/>
+    </element>
+  </define>
+
+  <define name="inline">
+    <zeroOrMore>
+      <choice>
+        <text/>
+        <element name="hi"><attribute name="rend"/><ref name="inline"/></element>
+        <element name="foreign">
+          <ref name="id"/><ref name="lang"/>
+          <attribute name="ana"><value>foreign</value></attribute>
+          <optional><attribute name="type"><value>script</value></attribute></optional>
+          <ref name="prov"/>
+          <ref name="inline"/>
+        </element>
+        <element name="note">
+          <attribute name="type"><value>side</value></attribute>
+          <ref name="id"/>
+          <attribute name="n"><data type="positiveInteger"/></attribute>
+          <attribute name="src"/>
+          <attribute name="srcN"><data type="positiveInteger"/></attribute>
+          <choice>
+            <ref name="inline"/>
+            <oneOrMore><ref name="p"/></oneOrMore>
+          </choice>
+        </element>
+        <element name="pb">
+          <attribute name="n"/>
+          <attribute name="ed"><value>penguin2021</value></attribute>
+          <empty/>
+        </element>
+        <element name="lb"><empty/></element>
+        <element name="supplied">
+          <attribute name="resp"><choice><value>#gowland</value><value>#editor</value></choice></attribute>
+          <ref name="inline"/>
+        </element>
+        <element name="choice">
+          <element name="sic"><ref name="inline"/></element>
+          <element name="corr"><attribute name="resp"><value>#editor</value></attribute><ref name="inline"/></element>
+        </element>
+        <element name="ref">
+          <attribute name="type"><value>xref</value></attribute>
+          <optional><attribute name="target"/></optional>
+          <ref name="inline"/>
+        </element>
+        <element name="ed:trans">
+          <optional><attribute name="for"/></optional>
+          <ref name="inline"/>
+        </element>
+        <element name="ed:enref">
+          <attribute name="target"/>
+          <attribute name="n"/>
+          <empty/>
+        </element>
+      </choice>
+    </zeroOrMore>
+  </define>
+</grammar>

@@ -1,0 +1,27 @@
+removing stale runner lock (pid 14204 is not running)
+1.1.1.2: 7 passages, 2 current, 5 to translate
+  packet 1.1.1.2:a45e0349e68930e1: 2 passages written (11.3s, 0 issue(s) recorded)
+  packet 1.1.1.2:658b482bd8ad7d33: 2 passages written (12.1s, 0 issue(s) recorded)
+  packet 1.1.1.2:1688e822f9e46f6d: 1 passages written (6.9s, 0 issue(s) recorded)
+run 1: uv run burton translate --unit 1.1.1.2 --packet-size 2
+runner lock left behind by the kill: True
+killed with packet 1.1.1.2:a45e0349e68930e1 in flight; done before kill: ['1.1.1.2-f1', '1.1.1.2-f2']
+run 2: resume
+{
+  "passages_in_layer": 7,
+  "each_has_exactly_one_machine_translation": true,
+  "ids_translated_twice": [],
+  "done_before_kill_redone": [],
+  "ledger_statuses": [
+    "started",
+    "done",
+    "started",
+    "started",
+    "done",
+    "started",
+    "done",
+    "started",
+    "done"
+  ]
+}
+KILL/RESUME: PASS

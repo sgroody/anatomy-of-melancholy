@@ -1,0 +1,21 @@
+# Transcriptions of headings that exist in the EPUB only as images (alt=""), SURVEY §3.
+# These are editorial additions (resp="#editor"): V1 excludes them from the round-trip text.
+# `text` is the reading form used in the heading; `layout` records the brace arrangement.
+
+pg142.png:
+  epub: chapter001-01.xhtml#apg142
+  unit: 1.1.1.2
+  role: title
+  text: "The Definition, Number, Division of diseases."
+  italic: true
+  layout: "The { Definition / Number / Division } of diseases."
+  checked: "2026-10-20, against the image"
+
+pg135.png:
+  epub: chapter001-01.xhtml#ana00304
+  unit: 1.1.1.1
+  role: number
+  text: "The First Section, Member, Subsection."
+  italic: false
+  layout: "THE FIRST { SECTION. / MEMBER. / SUBSECTION. }"
+  checked: "2026-10-20, against the image"

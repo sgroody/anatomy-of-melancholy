@@ -1,0 +1,347 @@
+{
+  "1.1.1.2-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "their number is infinite",
+        "in": "1.1.1.2",
+        "near": "1.1.1.2-f1"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Pliny",
+      "basis": "Burton names Pliny in the text ('elsewhere he saith'); sidenote: 'Cap. 11 lib. 7.'",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Naturalis Historia"
+    },
+    "text": "morborum infinita multitudo",
+    "text_sha1": "5599f87a974925a2df8031e931355e25d29c19f8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton attributes the phrase to Pliny in his text. The sidenote 'Cap. 11 lib. 7.' may refer to the earlier figure of 300 diseases rather than to this phrase, so the locus is uncertain.",
+        "prompt": "tr-v1",
+        "text": "an infinite multitude of diseases",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f2": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Sidenote: 'Horat.'; the wording matches Horace, Odes 1.3.30–31 ('macies et nova febrium / terris incubuit cohors').",
+      "locus": "1.3.30–31",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "——— macies, & nova febrium, / Terris incubuit cohors.",
+    "text_sha1": "25bd207c67470efcedaacb6d5a2264dbec66dd7b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "——— leanness, and a new cohort of fevers / lay down upon the lands.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace is describing the diseases that followed Prometheus's theft of fire. Burton begins the quotation partway through the sentence; in the original, this line follows the words 'after fire was stolen from its heavenly home'.",
+        "prompt": "tr-v1",
+        "text": "——— wasting, and a new troop of fevers / settled down upon the earth.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "we have all our infirmities, first or last, more or less",
+        "in": "1.1.1.2",
+        "near": "1.1.1.2-f3"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The exact wording of Anchises' well-known line in the underworld, 'quisque suos patimur manes'.",
+      "locus": "6.743",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "Quisque suos patimur manes",
+    "text_sha1": "24d14e347c0748bb539e509f58efe9b527e3b555",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "Each [of us] we suffer our own shades",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In Virgil, 'manes' means the purgation each soul undergoes after death. Burton bends it to mean the infirmities each of us must bear.",
+        "prompt": "tr-v1",
+        "text": "Each of us suffers his own punishment",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "could not remember that ever he was sick",
+        "in": "1.1.1.2",
+        "near": "1.1.1.2-f4"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": "The main text says this is Leovitius's example of Otto Herwardus. A nearby sidenote in the same paragraph reads 'Praefixis Ephemer. cap. de infirmitat.', but that note is not attached to this passage. The exact wording has not been checked.",
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Qui, quoad pueritiae ultimam memoriam recordari potest, non meminit se aegrotum decubuisse",
+    "text_sha1": "ba2ecc09a3a3821c4050a2432e7b6953086dffbd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "Who, as far as he is able to recall the last memory of boyhood, does not remember himself sick to have lain down",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Pueritiae ultimam memoriam' means the furthest-back memory of childhood. 'Decubuisse' means being confined to bed by illness.",
+        "prompt": "tr-v1",
+        "text": "Who, as far back as he can recall his earliest memory of boyhood, does not remember ever having lain sick in bed.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f5": {
+    "kind": "verse",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Th’ earth’s full of maladies, and full the Sea, / Which set upon us both by night and day.",
+        "in": "1.1.1.2",
+        "near": "1.1.1.2-f5"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "The wording matches Hesiod's famous lines about the evils let out of Pandora's jar ('πλείη μὲν γὰρ γαῖα κακῶν, πλείη δὲ θάλασσα').",
+      "locus": "101–103",
+      "status": "probable",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Πλείη μὲν γὰρ γαῖα κακῶν, πλείη δὲ θάλασσα, / Νοῦσοι δʼ ἀνθρώποισιν ἐφ̓ ἡμέρῃ, ἠδ̓ ἐπὶ νυκτὶ / Αὐτόματοι φοιτῶσι. ———",
+    "text_sha1": "b204942445f1fe855651ebace043d4f1361ffbd6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "For full [is] the earth of evils, and full the sea; / diseases to men by day, and by night / of themselves roam.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's text has ἠδ' ('and') where Hesiod has αἳ δ' ('and others'), so in Hesiod some diseases come by day and others by night. The sense is the same. The dash cuts off the rest of the sentence, which goes on to say that diseases bring evils to mortals in silence. Burton's English verse leaves out 'of their own accord' (αὐτόματοι).",
+        "prompt": "tr-v1",
+        "text": "For the earth is full of evils, and full the sea; / and diseases come upon men by day, and by night, / of their own accord. ———",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": "The sidenote (Fernelius, Path. lib. 1; Fuchsius, Institut. lib. 3 sect. 1 cap. 7; Wecker) points to the scheme for classifying diseases in general. It is not the source of a quotation of this word.",
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lethales",
+    "text_sha1": "5995f9ab5de9af6d1afbfab5624cebd70fb5addb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Latin medical term for diseases that kill, set in a list against 'Salutres' (curable, healthful). The rest of Burton's list is in English.",
+        "prompt": "tr-v1",
+        "text": "Lethal",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v1",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Salutres",
+    "text_sha1": "2f474fada277357b3f6d2c567cd1434d9c618cb5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "corrupt-text",
+          "technical-medical"
+        ],
+        "literal": "Salutary",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Salutres' is not a regular Latin form. It is probably a misprint for 'Salubres' or 'Salutares', meaning diseases that are not fatal or can be cured. Burton pairs it with 'Lethales' (deadly), which supports this reading. The sidenote to Fernel, Fuchs and Wecker points to where physicians classify diseases generally; it does not cite this word specifically.",
+        "prompt": "tr-v1",
+        "text": "Curable (salutary)",
+        "warnings": []
+      }
+    ]
+  }
+}

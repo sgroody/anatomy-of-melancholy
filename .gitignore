@@ -1,0 +1,25 @@
+# Originals and downloads (hashes are recorded in data/source/*.lock)
+data/source/*
+!data/source/SOURCE.lock
+!data/source/FONTS.lock
+work/
+
+# Generated output
+site/
+
+# Runner scratch (ledgers and review queues are kept)
+state/translate/sandbox/
+state/translate/tmp/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Regenerable reports and runner scratch
+state/ingest/
+state/build/
+state/translate/dry-run/
+state/translate/runner.lock

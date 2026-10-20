@@ -1,0 +1,165 @@
+{
+  "when": "2026-10-20T05:54:11+00:00",
+  "ok": true,
+  "results": [
+    {
+      "code": "V1",
+      "name": "text round-trip vs EPUB",
+      "ok": true,
+      "counts": {
+        "main_words": 614,
+        "main_unexplained_diffs": 0,
+        "notes_compared": 11,
+        "note_mismatches": 0,
+        "editor_additions_excluded": 1
+      },
+      "problems": []
+    },
+    {
+      "code": "V2",
+      "name": "per-unit counts EPUB = XML",
+      "ok": true,
+      "counts": {
+        "sidenote_refs": "11/11",
+        "endnote_refs": "6/6",
+        "pagebreaks": "2/2",
+        "paragraphs": "4/4",
+        "verse_lines": "9/9",
+        "greek_chars": "85/85",
+        "heading_images": "1/1"
+      },
+      "problems": []
+    },
+    {
+      "code": "V3",
+      "name": "note integrity",
+      "ok": true,
+      "counts": {
+        "sidenotes_resolved": "11/11",
+        "ids": 25
+      },
+      "problems": []
+    },
+    {
+      "code": "V4",
+      "name": "foreign scripts language-tagged",
+      "ok": true,
+      "counts": {
+        "script_chars": 85,
+        "untagged": 0
+      },
+      "problems": []
+    },
+    {
+      "code": "V5",
+      "name": "language-ID vs gold sample",
+      "ok": true,
+      "counts": {
+        "gold_items": 77,
+        "tp": 7,
+        "fp": 0,
+        "fn": 3,
+        "precision": "1.000",
+        "recall": "0.700"
+      },
+      "problems": [
+        "missed la term: 'Scorbutum'",
+        "missed la term: 'Plica'",
+        "missed la term: 'Morbus Gallicus'"
+      ]
+    },
+    {
+      "code": "V7",
+      "name": "layers keyed, labelled and honest",
+      "ok": true,
+      "counts": {
+        "foreign": 7,
+        "with_record": 7,
+        "machine_labelled": 7,
+        "stale": 0,
+        "orphan_keys": 0,
+        "selectors_ok": 4,
+        "selectors_bad": 0,
+        "sources_unidentified": 3,
+        "sources_other": 4
+      },
+      "problems": []
+    },
+    {
+      "code": "V2h",
+      "name": "per-unit counts XML = HTML",
+      "ok": true,
+      "counts": {
+        "private:sidenotes": "11/11",
+        "private:foreign": "7/7",
+        "private:enrefs": "6/6",
+        "private:pbs": "2/2",
+        "public:sidenotes": "11/11",
+        "public:foreign": "7/7",
+        "public:enrefs": "0/0",
+        "public:pbs": "0/0"
+      },
+      "problems": []
+    },
+    {
+      "code": "V3h",
+      "name": "every note marker resolves",
+      "ok": true,
+      "counts": {
+        "markers": 22,
+        "resolved": 22
+      },
+      "problems": []
+    },
+    {
+      "code": "V4h",
+      "name": "HTML foreign scripts carry lang",
+      "ok": true,
+      "counts": {
+        "script_chars": 198,
+        "untagged": 0
+      },
+      "problems": []
+    },
+    {
+      "code": "V6",
+      "name": "links resolve",
+      "ok": true,
+      "counts": {
+        "links": 50,
+        "broken": 0
+      },
+      "problems": []
+    },
+    {
+      "code": "V8",
+      "name": "public build has no Gowland matter",
+      "ok": true,
+      "counts": {
+        "leaks": 0
+      },
+      "problems": []
+    },
+    {
+      "code": "V9",
+      "name": "font coverage",
+      "ok": true,
+      "counts": {
+        "private:glyphs": "118/118",
+        "public:glyphs": "115/115"
+      },
+      "problems": []
+    },
+    {
+      "code": "V10",
+      "name": "HTML validity and basic accessibility",
+      "ok": true,
+      "counts": {
+        "pages": 4,
+        "parse_errors": 0,
+        "a11y_issues": 0
+      },
+      "problems": []
+    }
+  ]
+}

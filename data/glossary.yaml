@@ -1,0 +1,47 @@
+# Project glossary (CLAUDE.md, "Glossary consistency").
+# Loaded into every translation prompt; translations are checked against `render` after each packet.
+# Add a term here BEFORE translating more passages that use it. Keep entries short.
+version: 1
+
+terms:
+  - latin: [melancholia, melancholicus, melancholici]
+    render: [melancholy, melancholic]
+    note: Burton's own English word; do not modernise to "depression".
+  - latin: [hypochondriacus, hypochondria, hypochondriaca]
+    render: [hypochondriacal, hypochondria]
+    note: Anatomical sense (the upper abdomen below the ribs), not the modern "health anxiety".
+  - latin: [humor, humores, humoribus]
+    render: [humour, humours]
+  - latin: [atra bilis, bilis atra]
+    render: [black bile]
+  - latin: [spiritus animales, spiritus animalis]
+    render: [animal spirits]
+    note: Physiological spirits of the brain and nerves, not "animal" as in beasts.
+  - latin: [spiritus vitales]
+    render: [vital spirits]
+  - latin: [phrenitis]
+    render: [phrensy, frenzy]
+  - latin: [morbus, morbi, morborum]
+    render: [disease, diseases, malady, maladies]
+  - latin: [manes]
+    render: [shade, shades, spirit, spirits, ghost, ghosts, punishment]
+    note: "Spirits of the dead; in Virgil's 'quisque suos patimur manes' also the purgation each soul undergoes."
+
+authorities:
+  # Canonical English names for authorities Burton cites by Latin or abbreviated forms.
+  - forms: [Hor., Horat., Horatius]
+    name: Horace
+  - forms: [Virg., Virgil., Virgilius]
+    name: Virgil
+  - forms: [Tully, Cic., Cicero]
+    name: Cicero
+  - forms: [Austin, August., Augustinus]
+    name: Augustine
+  - forms: [Fern., Fernelius]
+    name: Jean Fernel
+  - forms: [Fuch., Fuchsius]
+    name: Leonhart Fuchs
+  - forms: [Cardan, Cardanus]
+    name: Girolamo Cardano
+  - forms: [Plin., Pliny, Plinius]
+    name: Pliny (the Elder unless the context says otherwise)
