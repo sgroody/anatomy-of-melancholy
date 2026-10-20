@@ -4,6 +4,10 @@
 data/eval/langid-sample.jsonl WITHOUT the detector's verdicts (labels must be made blind).
 Labels are then added to data/eval/langid-gold.jsonl; `evaluate()` compares the detector's output
 (read from the XML, not from ingest logs) with the labels.
+
+Held-out samples are drawn in rounds (`HOLDOUTS`). Only the newest round has never been seen while
+the rules were changed, so V5 gates on it; earlier rounds are kept, excluded from later draws, and
+still scored and reported (as "seen"). A round is retired by drawing a new one, never by relabelling.
 """
 
 import json
@@ -119,17 +123,51 @@ def candidates() -> dict[str, list[dict]]:
     return out
 
 
-HOLDOUT_STRATA = {"italic": 70, "roman-before-bracket": 30, "sidenote": 30, "verse": 10, "english": 10}
-HOLDOUT_SEED = 20261021
-HOLDOUT_SAMPLE = paths.DATA / "eval" / "langid-holdout-sample.jsonl"
-HOLDOUT_GOLD = paths.DATA / "eval" / "langid-holdout-gold.jsonl"
+HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tuning), earlier ones are seen
+    {"name": "h1", "seed": 20261021, "prefix": "h-",
+     "strata": {"italic": 70, "roman-before-bracket": 30, "sidenote": 30, "verse": 10, "english": 10},
+     "sample": paths.DATA / "eval" / "langid-holdout-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout-gold.jsonl",
+     "seen": "2026-10-20: its errors were studied to change the rules (M2 hardening)"},
+    {"name": "h2", "seed": 20261022, "prefix": "h2-",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout2-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout2-gold.jsonl"},
+]
+GATE = HOLDOUTS[-1]["name"]
+HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]
+
+
+def holdout_round(name: str) -> dict:
+    return next(h for h in HOLDOUTS if h["name"] == name)
+
+
+def read_sample(path) -> list[dict]:
+    return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x] if path.exists() else []
+
+
+def _already_drawn() -> set[tuple[str, str]]:
+    """Every item in any sample or gold file (tuning and all hold-out rounds), labelled or not."""
+    rows = read_gold() + read_sample(SAMPLE)
+    for h in HOLDOUTS:
+        rows += read_gold(h["gold"]) + read_sample(h["sample"])
+    return {(r["unit"], norm(r["text"])) for r in rows}
+
+
+def draw_holdout(name: str) -> dict:
+    """Draw a hold-out round as specified in HOLDOUTS (refuses to overwrite a labelled round)."""
+    h = holdout_round(name)
+    if h["gold"].exists():
+        raise SystemExit(f"hold-out {name} is already labelled ({h['gold'].name}); draw a new round instead")
+    return draw(h["strata"], h["seed"], h["sample"], h["prefix"])
 
 
 def draw(strata: dict | None = None, seed: int = SEED, out=None, prefix: str = "") -> dict:
-    """Draw a stratified sample, excluding everything already labelled (tuning set and hold-out)."""
+    """Draw a stratified sample, excluding everything already drawn (tuning set and every hold-out)."""
     strata, out = strata or STRATA, out or SAMPLE
     rng = random.Random(seed)
-    labelled = {(r["unit"], norm(r["text"])) for r in read_gold() + read_gold(HOLDOUT_GOLD)}
+    labelled = _already_drawn()
+    labelled -= {(r["unit"], norm(r["text"])) for r in read_sample(out)}  # redrawing the same file
     pools = candidates()
     rows = []
     for stratum, n in strata.items():
@@ -218,16 +256,19 @@ class UnitIndex:
         return found
 
 
-def evaluate(units: list[str] | None = None, *, holdout: bool = False) -> dict:
-    """Score the detector on the tuning sample (default) or on the held-out sample (never tuned on)."""
-    gold_path, sample_path = (HOLDOUT_GOLD, HOLDOUT_SAMPLE) if holdout else (GOLD, SAMPLE)
+def evaluate(units: list[str] | None = None, *, holdout: bool | str = False) -> dict:
+    """Score the detector on the tuning sample (default), on a named hold-out round, or (True) on the
+    gate round, the newest hold-out (never seen while tuning)."""
+    name = (GATE if holdout is True else holdout) or "tuning"
+    if holdout:
+        h = holdout_round(name)
+        gold_path, sample_path = h["gold"], h["sample"]
+    else:
+        gold_path, sample_path = GOLD, SAMPLE
     rows = read_gold(gold_path)
     if units is not None:
         rows = [r for r in rows if r["unit"] in units]
-    sample = {}
-    if sample_path.exists():
-        sample = {json.loads(x)["sid"]: json.loads(x) for x in sample_path.read_text(encoding="utf-8").splitlines()
-                  if x}
+    sample = {r["sid"]: r for r in read_sample(sample_path)}
     idx: dict[str, UnitIndex] = {}
     tally: dict[str, dict] = {}
     misses, unlocated = [], []
@@ -246,7 +287,10 @@ def evaluate(units: list[str] | None = None, *, holdout: bool = False) -> dict:
         detected = False
         exact = False
         for block, _btext, foreign in blocks:
-            if r.get("kind") in (None, "phrase", "term", "verse") and stratum in ("italic", "sidenote"):
+            # an italic item is judged as a whole, unless only part of it is foreign ("…Cooks are
+            # Gentlemen: Venter Deus"): then, as elsewhere, by the foreign passages covering that part
+            if r.get("kind") in (None, "phrase", "term", "verse") and stratum in ("italic", "sidenote") \
+                    and not part:
                 tagged = ui.italic_tagged(block, r["text"])
                 if tagged is None:
                     continue
@@ -285,9 +329,20 @@ def evaluate(units: list[str] | None = None, *, holdout: bool = False) -> dict:
             else:
                 t["tn"] += 1
     total = {k: sum(t[k] for t in tally.values()) for k in ("tp", "fp", "fn", "tn", "boundary_ok")}
-    p = total["tp"] / (total["tp"] + total["fp"]) if total["tp"] + total["fp"] else 1.0
-    rec = total["tp"] / (total["tp"] + total["fn"]) if total["tp"] + total["fn"] else 1.0
-    b = total["boundary_ok"] / total["tp"] if total["tp"] else 1.0
-    return {"items": len(rows), "unlocated": len(unlocated), **total, "precision": round(p, 3),
-            "recall": round(rec, 3), "boundary_exact": round(b, 3), "by_stratum": tally, "misses": misses,
-            "unlocated_items": unlocated}
+    for t in tally.values():
+        t.update(_rates(t))
+    return {"sample": name, "labelled": gold_path.exists(), "items": len(rows), "unlocated": len(unlocated),
+            **total, **_rates(total), "by_stratum": tally, "misses": misses, "unlocated_items": unlocated}
+
+
+def _rates(t: dict) -> dict:
+    """Precision, recall and boundary exact-match (None where undefined: no positives or detections)."""
+    def ratio(a, b):
+        return round(a / b, 3) if b else None
+    return {"precision": ratio(t["tp"], t["tp"] + t["fp"]), "recall": ratio(t["tp"], t["tp"] + t["fn"]),
+            "boundary_exact": ratio(t["boundary_ok"], t["tp"])}
+
+
+def summary(r: dict) -> str:
+    return (f"P={r['precision']} R={r['recall']} B={r['boundary_exact']} n={r['items']} "
+            f"tp={r['tp']} fp={r['fp']} fn={r['fn']}")

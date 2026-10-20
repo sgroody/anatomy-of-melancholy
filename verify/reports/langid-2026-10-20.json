@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-20",
+  "gate": "h2",
+  "rounds": {
+    "h1": {
+      "boundary_exact": 0.979,
+      "boundary_ok": 46,
+      "by_stratum": {
+        "english": {
+          "boundary_exact": 0.0,
+          "boundary_ok": 0,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 9,
+          "tp": 1
+        },
+        "italic": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 10,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 60,
+          "tp": 10
+        },
+        "roman-before-bracket": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 23,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 7,
+          "tp": 23
+        },
+        "sidenote": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 5,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 25,
+          "tp": 5
+        },
+        "verse": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 8,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 2,
+          "tp": 8
+        }
+      },
+      "fn": 0,
+      "fp": 0,
+      "items": 150,
+      "labelled": true,
+      "misses": [],
+      "precision": 1.0,
+      "recall": 1.0,
+      "role": "seen hold-out: 2026-10-20: its errors were studied to change the rules (M2 hardening)",
+      "sample": "h1",
+      "tn": 103,
+      "tp": 47,
+      "unlocated": 0,
+      "unlocated_items": []
+    },
+    "h2": {
+      "boundary_exact": 0.975,
+      "boundary_ok": 78,
+      "by_stratum": {
+        "english": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 1,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 24,
+          "tp": 1
+        },
+        "italic": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 29,
+          "fn": 1,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.967,
+          "tn": 120,
+          "tp": 29
+        },
+        "roman-before-bracket": {
+          "boundary_exact": 0.971,
+          "boundary_ok": 34,
+          "fn": 2,
+          "fp": 1,
+          "precision": 0.972,
+          "recall": 0.946,
+          "tn": 12,
+          "tp": 35
+        },
+        "sidenote": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 2,
+          "fn": 0,
+          "fp": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "tn": 46,
+          "tp": 2
+        },
+        "verse": {
+          "boundary_exact": 0.923,
+          "boundary_ok": 12,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 12,
+          "tp": 13
+        }
+      },
+      "fn": 3,
+      "fp": 3,
+      "items": 300,
+      "labelled": true,
+      "misses": [
+        "missed la term: 'Intestina' (h2-italic-054)",
+        "missed mixed phrase: 'in secundis' (h2-roman-before-bracket-016)",
+        "false foreign [en]: '’Tis an inevitable chance, the first statute in Magna Carta,' (h2-roman-before-bracket-023)",
+        "missed mixed phrase: 'more aquilae factum' (h2-roman-before-bracket-033)",
+        "false foreign [citation]: 'Ter' (h2-sidenote-003)",
+        "false foreign [citation]: 'Vita ejus' (h2-sidenote-006)"
+      ],
+      "precision": 0.964,
+      "recall": 0.964,
+      "role": "gate (never seen while tuning)",
+      "sample": "h2",
+      "tn": 214,
+      "tp": 80,
+      "unlocated": 0,
+      "unlocated_items": []
+    },
+    "tuning": {
+      "boundary_exact": 0.967,
+      "boundary_ok": 177,
+      "by_stratum": {
+        "english": {
+          "boundary_exact": 0.857,
+          "boundary_ok": 6,
+          "fn": 1,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.875,
+          "tn": 42,
+          "tp": 7
+        },
+        "italic": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 45,
+          "fn": 1,
+          "fp": 1,
+          "precision": 0.978,
+          "recall": 0.978,
+          "tn": 253,
+          "tp": 45
+        },
+        "m1": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 8,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 67,
+          "tp": 8
+        },
+        "roman-before-bracket": {
+          "boundary_exact": 0.933,
+          "boundary_ok": 70,
+          "fn": 1,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.987,
+          "tn": 24,
+          "tp": 75
+        },
+        "sidenote": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 13,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 87,
+          "tp": 13
+        },
+        "verse": {
+          "boundary_exact": 1.0,
+          "boundary_ok": 35,
+          "fn": 0,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "tn": 15,
+          "tp": 35
+        }
+      },
+      "fn": 3,
+      "fp": 1,
+      "items": 677,
+      "labelled": true,
+      "misses": [
+        "missed la phrase: 'obscurorum virorum' (italic-212)",
+        "false foreign [citation]: 'ii' (italic-263)",
+        "missed mixed phrase: 'Chorus Sancti Viti' (roman-before-bracket-040)",
+        "missed mixed phrase: 'Diuretica' (english-030)"
+      ],
+      "precision": 0.995,
+      "recall": 0.984,
+      "role": "tuning",
+      "sample": "tuning",
+      "tn": 488,
+      "tp": 183,
+      "unlocated": 2,
+      "unlocated_items": [
+        "——— macies, & nova febrium,Terris incubu",
+        "Πλείη μὲν γὰρ γαῖα κακῶν … Αὐτόματοι φοι"
+      ]
+    }
+  },
+  "targets": {
+    "boundary_exact": 0.95,
+    "precision": 0.98,
+    "recall": 0.97
+  }
+}

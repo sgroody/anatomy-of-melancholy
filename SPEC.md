@@ -272,8 +272,11 @@ Each step feeds a per-segment decision with a confidence:
 3. Italic runs:
    * Fragments are joined across spaces, commas, full stops and `&`, but never across `: ; ? !`. A comma-separated list of short items is split into one run per item.
    * Each run is classified from function words, endings and the book lexicon, with the bracket rule first.
-   * A run before a bracket that isn't Latin as a whole is retried on its last fragments.
-   * A Latin run sheds leading citation or name fragments and a trailing name that starts Burton's English sentence.
+   * A bracket counts when it follows the run directly, or after the run's own closing stop or comma ("…&c. [Zanchius…"). The second case needs at least 3 words and a run that is not a string of abbreviations ("*Lat.* *10.* *Gr.* *Aust.* [At latitude 10° south]" is a locator).
+   * Citations: digits and locators (`lib.`, `cap.`…; `&c.` is "etc.", never the locator `c.`), and lists whose every piece is an author with an abbreviated title ("*Grotius de verit.*") or a bare name. The stop after a run is part of its abbreviation. `de` before a capital is a name particle (*Hercules de Saxonia*), not Latin evidence.
+   * A run that is not Latin as a whole is split and its pieces classified on their own: before a bracket, by shedding leading citation or name fragments; in a run judged English, at a sentence break ("…and all night. *Quae quidem*").
+   * A run before a bracket that still isn't Latin is retried on its last fragments.
+   * A Latin run sheds leading citation or name fragments and a trailing name that starts Burton's English sentence. Before a bracket it is never trimmed to a fragment with no word of 3+ letters ("Perseus P. Consuli. S.").
 4. Roman text directly before a bracket, read backwards to the first English word.
 5. Roman Latin runs anywhere: at least 3 Latin words, no English word, at least 60% Latin.
 6. Model rulings (`burton adjudicate`) for runs the rules leave undetermined, and for capitalised runs that may be Latin terms. Low-confidence rulings are not applied.
@@ -284,7 +287,9 @@ The **book lexicon** (`data/lexicon/`) is learned from the edition itself:
 
 It is rebuilt only by `burton lexicon`, from a rules-only ingest.
 
-**Gold sample:** 677 items (77 from M1 plus 600 stratified), labelled blind and judged in place by `burton/verify/gold.py`. Eight labels were corrected after a full-text review, because the labelling display had truncated them; each is noted in the file.
+**Gold samples** (`data/eval/`, conventions in `LABELLING.md`), labelled blind and judged in place by `burton/verify/gold.py`:
+* Tuning: 677 items (77 from M1 plus 600 stratified). Eight labels were corrected after a full-text review, because the labelling display had truncated them; each is noted in the file.
+* Held-out rounds (`HOLDOUTS`), each drawn with its own seed and excluding every item already drawn: h1 (150 items, seen on 2026-10-20 when its errors were used to change the rules) and h2 (300 items: 150 italic, 50 roman-before-bracket, 50 sidenote, 25 verse, 25 English). **V5 gates on the newest round**; seen rounds and the tuning sample are reported, never gated on. Results: `verify/reports/langid-<date>.json`.
 
 ### 6.2 Self-translation detection
 

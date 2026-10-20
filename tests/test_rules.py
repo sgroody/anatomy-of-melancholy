@@ -59,6 +59,43 @@ def test_classify():
     assert langid.classify("&c", False)[0] != "la"
 
 
+def test_etc_is_not_the_locator_c():
+    assert not langid.CITATION.search("trahunt, &c., id omne misellis Indis")
+    assert langid.CITATION.search("lib. 3 c. 4")
+
+
+def test_authors_and_abbreviated_titles_are_citations():
+    run = "Lessius, Morneus, Grotius de verit. Relig. Christianae, Savonarola de verit. fidei Christianae"
+    assert langid.classify(run, False)[0] == "citation"
+    assert langid.classify("&c. Cardan de subt", False, stop=True)[0] == "citation"
+    # a bracket means Gowland translated it: then it is a passage, whatever it looks like
+    assert langid.classify("Cardan de subt", True, stop=True)[0] == "la"
+
+
+def test_de_before_a_capital_is_a_name_particle():
+    assert langid.classify("Herc. de Saxonia, stillicidia", False)[0] != "la"
+
+
+def test_english_run_is_split_at_a_sentence_break():
+    p = tei('<hi rend="i">he forsook the City, and all night</hi>. <hi rend="i">Quae quidem</hi> (saith he)')
+    langid.tag_latin(p, [], "t")
+    assert [public_text(f) for f in p.iter(T("foreign"))] == ["Quae quidem"]
+
+
+def test_citation_fragments_are_shed_before_a_bracket_after_a_stop():
+    p = tei('<hi rend="i">Galen</hi>. <hi rend="i">lib</hi>. <hi rend="i">3 cap</hi>. '
+            '<hi rend="i">Animus maerens inde malum trahit</hi>. <ed:trans>[x]</ed:trans>')
+    langid.tag_latin(p, [], "t")
+    assert [public_text(f) for f in p.iter(T("foreign"))] == ["Animus maerens inde malum trahit"]
+
+
+def test_a_string_of_abbreviations_before_a_bracket_is_not_a_passage():
+    p = tei('<hi rend="i">Lat</hi>. <hi rend="i">10</hi>. <hi rend="i">Gr</hi>. <hi rend="i">Aust</hi>. '
+            '<ed:trans>[At latitude 10° south.]</ed:trans>')
+    langid.tag_latin(p, [], "t")
+    assert p.find(T("foreign")) is None
+
+
 def test_comma_list_is_split_into_items():
     p = tei('<hi rend="i">Savonarola</hi>, <hi rend="i">Capivaccius</hi>, <hi rend="i">Hercules de Saxonia</hi>')
     decisions = []

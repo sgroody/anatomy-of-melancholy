@@ -38,8 +38,13 @@ quoniam quia dum donec mihi tibi sibi nos vos me te se eius ejus suus sua suum m
 tuus tua noster nostra vester qui quo qua quibus cui cuius cujus deus dei deo
 """.split())
 LA_ENDINGS = re.compile(r"(?:orum|arum|ibus|ntur|tur|bant|bunt|erunt|isse|iis|ae|um|que|ii|ium)$")
-CITATION = re.compile(r"\d|\b(?:lib|cap|sect|tom|epist|consil|fol|memb|subs|c|l)\.|^\s*(?:idem|ibid|ib)\b"
-                      r"|^\s*[ivxlcdm]{1,6}\s*$", re.I)
+# "&c." is "etc.", not the locator "c." (chapter), hence the look-behind
+CITATION = re.compile(r"\d|(?<!&)\b(?:lib|cap|sect|tom|epist|consil|fol|memb|subs|c|l)\.|^\s*(?:idem|ibid|ib)\b"
+                      r"|^\s*[ivxlcdm]{1,6}\.?\s*$", re.I)
+# A work cited by author and title: "Grotius de verit.", "Levinus Lemnius de occult." — one to three
+# capitalised words, "de", and a title word cut off by an abbreviation stop.
+WORK_TITLE = re.compile(r"^\s*(?:\p{Lu}[\p{L}’']*\.?\s+){1,3}de\s+\p{L}+\.")
+TITLE_WORDS = {"de", "in", "&", "et"}
 ABBREV = {"lib", "cap", "sect", "tom", "epist", "ep", "consil", "fol", "memb", "subs", "subsect", "c", "l", "de",
           "com", "hist", "lect", "ser", "serm", "hom", "sat", "dial", "art", "quaest", "tract", "prob", "aph",
           "par", "vers", "pag", "num", "cent", "obs", "observ", "exercit", "med", "pract", "instit", "comment"}
@@ -120,20 +125,29 @@ EN_LATIN_AMBIGUOUS = {"an", "his", "is", "do", "more", "me", "sub", "te", "nos",
 NAME_PARTICLES = {"de", "a", "ab", "van", "von", "of", "the", "à", "la", "le", "du", "di", "da", "&"}
 
 
-def classify(text: str, followed_by_bracket: bool, in_note: bool = False) -> tuple[str, str, str]:
+def classify(text: str, followed_by_bracket: bool, in_note: bool = False,
+             stop: bool = False) -> tuple[str, str, str]:
     """-> (verdict, confidence, reason). verdict: la | en | name | citation | undetermined.
+    `stop`: a full stop follows the run (it may end in an abbreviation: "Austin de civ.").
 
     `undetermined` means the rules cannot decide; it is left untagged and goes to the review queue
     (model adjudication arrives in M2). It is never silently counted as English.
     """
-    words = WORD.findall(text)
+    words = WORD.findall(ETC.sub(" ", text))  # "&c" is "etc.": no evidence either way
     lower = [w.lower().strip("’'") for w in words]
     if not words:
         return "en", "high", "no words"
-    if CITATION.search(text) and not followed_by_bracket:
+    stopped = text.rstrip() + "." if stop else text
+    if CITATION.search(stopped) and not followed_by_bracket:
         return "citation", "medium", "locator abbreviation or digits"
+    if not followed_by_bracket and (ref := _reference_list(stopped)):
+        return ref, "medium", ("authors and abbreviated titles (e.g. 'Grotius de verit.')" if ref == "citation"
+                               else "a list of names")
     n_en = sum(w in EN_FUNCTION for w in lower)
-    n_la = sum(w in LA_FUNCTION or bool(LA_ENDINGS.search(w)) for w in lower)
+    # "de" before a capitalised word is a name particle (Hercules de Saxonia), not Latin evidence
+    n_la = sum((w in LA_FUNCTION or bool(LA_ENDINGS.search(w)))
+               and not (w == "de" and k + 1 < len(words) and words[k + 1][:1].isupper())
+               for k, w in enumerate(lower))
     # words that are also common Latin forms do not count as English evidence before a bracket
     n_en_strict = sum(w in EN_FUNCTION and w not in EN_LATIN_AMBIGUOUS for w in lower)
     if followed_by_bracket and n_en_strict == 0:
@@ -164,6 +178,42 @@ def classify(text: str, followed_by_bracket: bool, in_note: bool = False) -> tup
     if lx_en > lx_la:
         return "en", "medium", f"no function words; lexicon la={lx_la} en={lx_en}"
     return "undetermined", "low", f"no function words, lexicon silent (la={n_la} en=0)"
+
+
+ETC = re.compile(r"&\s*c\b\.?")
+
+
+def _capitalised(p: str) -> list[str] | None:
+    """The words of a piece made of capitalised words only (particles and abbreviation stops allowed)."""
+    words = [w for w in WORD.findall(p) if w.lower() not in NAME_PARTICLES]
+    return words if words and all(w[:1].isupper() for w in words) else None
+
+
+def _latin_term(words: list[str]) -> bool:
+    """Every longer word is attested lowercase in Burton's Latin ('Morbus Gallicus' is a term, not a name)."""
+    long = [w for w in words if len(w) >= 3]
+    return bool(long) and all(lexicon.latinness(w) == "la" for w in long)
+
+
+def _reference_list(text: str) -> str | None:
+    """A list of references and names: every comma-separated piece (ignoring '&c') is an author-and-title
+    reference ("Grotius de verit. Relig. Christianae") or a bare name ("Lessius, Morneus"), with no
+    function word beyond the title particles. -> 'citation' if any piece is a reference, 'name' for a
+    list of two or more names, else None."""
+    pieces = [p for p in (ETC.sub(" ", x).strip() for x in re.split(r",\s*", text)) if WORD.search(p)]
+    if not pieces:
+        return None
+    titles = [bool(WORK_TITLE.match(p)) for p in pieces]
+    caps = [_capitalised(p) for p, t in zip(pieces, titles, strict=True) if not t]
+    # every piece a reference or capitalised, and most capitalised pieces names rather than Latin terms
+    if not all(caps) or sum(_latin_term(c) for c in caps) * 2 > len(caps):
+        return None
+    lower = [w.lower() for w in WORD.findall(ETC.sub(" ", text))]
+    if any((w in LA_FUNCTION and w not in TITLE_WORDS) or w in EN_FUNCTION for w in lower):
+        return None
+    if any(titles):
+        return "citation"
+    return "name" if len(pieces) >= 2 else None
 
 
 ROMAN_TOKEN = re.compile(r"[\p{L}\p{M}]+(?:['’][\p{L}]+)?|&|[^\s\p{L}\p{M}]+")
@@ -279,11 +329,23 @@ def text_of(nodes: list) -> str:
     return "".join(out)
 
 
-def _next_is_bracket(items: list, j: int) -> bool:
+def _next_is_bracket(items: list, j: int, through_stop: bool = False) -> bool:
+    """A Gowland bracket follows directly, or (`through_stop`) after the run's own closing stop or comma."""
     k = j
-    while k < len(items) and isinstance(items[k], str) and not items[k].strip():
+    gap = r"\s*[.,]?\s*" if through_stop else r"\s*"
+    while k < len(items) and isinstance(items[k], str) and re.fullmatch(gap, items[k]):
         k += 1
     return k < len(items) and not isinstance(items[k], str) and items[k].tag == ED("trans")
+
+
+def _bracketed(items: list, i: int, j: int) -> bool:
+    """A Gowland bracket translates the run. A bracket after the run's closing stop ("…&c. [Zanchius…")
+    counts only for a run of >= 3 words that is not a string of abbreviations ("Lat. 10. Gr. Aust.
+    [At latitude 10° south]" is a locator, not a passage)."""
+    if _next_is_bracket(items, j):
+        return True
+    return (_next_is_bracket(items, j, through_stop=True) and len(WORD.findall(ETC.sub(" ", text_of(items[i:j])))) >= 3
+            and not _dotted_citation(items, i, j))
 
 
 def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
@@ -295,15 +357,20 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
     in_note = in_note or e.tag == T("note")
     items = take_items(e)
     out, last = [], 0
-    for i, j in _runs(items):
+    queue = _runs(items)
+    while queue:
+        i, j = queue.pop(0)
         text = text_of(items[i:j])
-        bracket = _next_is_bracket(items, j)
-        verdict, conf, why = classify(text, bracket, in_note)
+        bracket = _bracketed(items, i, j)
+        verdict, conf, why = classify(text, bracket, in_note, _stop_after(items, j) and not bracket)
         if not bracket and _dotted_citation(items, i, j):
             verdict, conf, why = ("citation", "medium",
                                   "short fragments separated by full stops (e.g. 'Donat. vita. ejus')")
         elif not bracket and re.fullmatch(r"\s*\p{Lu}?\p{Ll}+-\p{Ll}+\s*", text):
             verdict, conf, why = "en", "medium", "hyphenated compound (an English loan-word, e.g. 'Bona-roba')"
+        elif verdict != "la" and (pieces := _resplit(items, i, j, verdict, in_note)):
+            queue[:0] = pieces  # each piece is classified on its own
+            continue
         if verdict != "la" and bracket and j - i > 1:
             # a Gowland bracket follows: the Latin may be only the run's last fragments
             for k in range(j - 1, i, -1):
@@ -338,7 +405,7 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
             elif adj:
                 verdict, why = adj["label"], f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
         if verdict == "la" and j - i > 1 and resp == "#rules":
-            i, j = _trim_run(items, i, j, in_note)
+            i, j = _trim_run(items, i, j, in_note, bracket)
             text = text_of(items[i:j])
         decisions.append({"unit": unit, "text": text, "verdict": verdict, "confidence": conf, "why": why,
                           "in_note": in_note})
@@ -388,12 +455,56 @@ def _dotted_citation(items: list, i: int, j: int) -> bool:
             and all(s.lstrip().startswith(".") for s in seps) and (after.lstrip().startswith((".", ",")) or not after))
 
 
+def _sentence_break(items: list, k: int) -> bool:
+    """Between run members k and k + 2: a fragment of >= 3 words that does not end in an abbreviation,
+    a full stop, and a capitalised fragment ("…and all night. Quae quidem")."""
+    sep, nxt = items[k + 1], text_of([items[k + 2]]).lstrip()
+    words = WORD.findall(text_of([items[k]]))
+    return (sep.strip().startswith(".") and len(words) >= 3 and words[-1].lower() not in ABBREV
+            and nxt[:1].isupper())
+
+
+def _stop_after(items: list, j: int) -> bool:
+    return j < len(items) and isinstance(items[j], str) and items[j].lstrip().startswith(".")
+
+
+def _resplit(items: list, i: int, j: int, verdict: str, in_note: bool) -> list[tuple[int, int]] | None:
+    """A multi-fragment run that is not Latin as a whole may still hold a Latin passage:
+    * before a Gowland bracket, behind leading citation or name fragments ("Hoc fere Zanchius com. in 4
+      cap. ad Ephes. Aequissimam vocat usuram…"). Without a bracket the rest is usually a title
+      ("Lib. de vita longa"), so the rule needs the bracket;
+    * in a run judged English, after a sentence break ("…and all night. Quae quidem").
+    Returns the pieces to classify on their own, or None."""
+    if j - i <= 1:
+        return None
+    bracket = _bracketed(items, i, j)
+    if bracket:
+        a = i
+        while j - a > 1 and _citation_like(items, a, in_note):
+            a += 2
+        rest = text_of(items[a:j])
+        if a > i and len(WORD.findall(rest)) >= 3 and classify(rest, True, in_note)[0] == "la":
+            return [(i, a - 1), (a, j)]
+    if verdict != "en":
+        return None
+    cuts = [k for k in range(i, j - 2, 2) if _sentence_break(items, k)]
+    if not cuts:
+        return None
+    bounds = list(zip([i, *[k + 2 for k in cuts]], [*[k + 1 for k in cuts], j], strict=True))
+    if any(len(WORD.findall(text_of(items[s:e]))) >= 2 and
+           classify(text_of(items[s:e]), e == j and bracket, in_note, _stop_after(items, e))[0] == "la"
+           for s, e in bounds):
+        return bounds
+    return None
+
+
 def _citation_like(items: list, k: int, in_note: bool) -> bool:
     """A run member that is a citation fragment or a bare name, judged with the separator after it."""
     t = text_of([items[k]]).strip()
     sep = items[k + 1] if k + 1 < len(items) and isinstance(items[k + 1], str) else ""
     words = WORD.findall(t)
-    if not words or CITATION.search(t):
+    stopped = t + "." if sep.lstrip().startswith(".") else t
+    if not words or CITATION.search(stopped) or WORK_TITLE.match(stopped):
         return True
     if t.endswith("&c"):  # "&c." is "etc.", not the citation abbreviation "c."
         return classify(t, False, in_note)[0] in ("citation", "name")
@@ -403,10 +514,12 @@ def _citation_like(items: list, k: int, in_note: bool) -> bool:
     return classify(t, False, in_note)[0] in ("citation", "name")
 
 
-def _trim_run(items: list, i: int, j: int, in_note: bool) -> tuple[int, int]:
+def _trim_run(items: list, i: int, j: int, in_note: bool, bracket: bool = False) -> tuple[int, int]:
     """Shed leading citation/name fragments ("Eobanus Hessus. Quibus omnis…") and a trailing name that
     starts Burton's English sentence ("…meliores, Sparta had many better men"). The trimmed run is used
-    only if it is still Latin."""
+    only if it is still Latin, and (before a bracket, which translates the whole run) still holds a word
+    of >= 3 letters: "Perseus P. Consuli. S. [Perseus to Paullus the consul, greetings]" is not trimmed
+    to "S"."""
     a, b = i, j
     while b - a > 1 and _citation_like(items, a, in_note):
         a += 2
@@ -418,7 +531,10 @@ def _trim_run(items: list, i: int, j: int, in_note: bool) -> tuple[int, int]:
             tail = " x"
         else:
             break
-    if (a, b) != (i, j) and classify(text_of(items[a:b]), _next_is_bracket(items, b), in_note)[0] == "la":
+    rest = text_of(items[a:b])
+    if bracket and not any(len(w) >= 3 for w in WORD.findall(ETC.sub(" ", rest))):
+        return i, j
+    if (a, b) != (i, j) and classify(rest, bracket and b == j, in_note)[0] == "la":
         return a, b
     return i, j
 

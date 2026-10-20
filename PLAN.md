@@ -30,19 +30,35 @@ Decisions **[D#]** are listed at the end. D2–D6 and D9 are decided; D1, D7 and
 * V2: sidenotes 5,703/5,703, endnote anchors 3,907/3,907, page markers 956/956, paragraphs 1,910/1,910, verse lines 5,006/5,006.
 * V4: 1,080/1,080 script characters tagged.
 * V3g: Gowland endnotes 3,907/3,907 identical, 0 orphans, 0 double references (1 recorded link fix).
-* V7: passes. The 7,768 untranslated passages are a count for M5, not a failure.
+* V7: passes. The 7,779 untranslated passages are a count for M5, not a failure.
+* These counts are unchanged by the language-ID hardening below (re-checked after `ingest --all`).
 
 Also in M2:
-* 7,775 foreign passages: 7,708 Latin, 63 Greek, 3 Greek in Latin letters, and a handful of other vernaculars.
+* 7,786 foreign passages after the hardening (7,775 before; 73 new passage ids, 88 retired, none renumbered).
 * Cross-references: 19 resolved, 2 unresolved (a level missing), 160 citations of other books skipped.
 * 1,025 model rulings on undecided language runs (`data/layers/langid-adjudication.json`, labelled).
 
-**M2 open: the language-identification target.**
-* On the tuning sample (677 items, used to develop the rules): precision 0.995, recall 0.978, boundary exact-match 0.967.
-* On the **held-out** sample (150 items, never tuned on): precision 0.957, recall 0.957, boundary 0.978. **Below target** (0.98 / 0.97).
-* Held-out errors: citations with a "de" title tagged Latin ("Grotius de verit"), a name fragment ("Herc."), and 2 missed Latin phrases.
-* Next: fix those error types, then confirm on a *new* held-out sample. The current hold-out must not be tuned on.
-* All gold labels await your review (D7).
+**M2 open: the language-identification target. V5 FAILS on the fresh hold-out.**
+* Hardening (2026-10-20), general rules only (SPEC §6.1): `&c.` is not the locator `c.`; author-and-title lists ("*Grotius de verit.*") are citations; `de` before a capital is a name particle; English runs split at sentence breaks; citation prefixes shed before a bracket; a bracket after the run's closing stop counts.
+* Measured on a **new** held-out round h2 (300 items, seed 20261022, labelled blind before any scoring), against targets of 0.98 / 0.97 / 0.95:
+
+  | h2 stratum | TP | FP | FN | precision | recall | boundary |
+  |---|---|---|---|---|---|---|
+  | italic (150) | 29 | 0 | 1 | 1.000 | 0.967 | 1.000 |
+  | roman-before-bracket (50) | 35 | 1 | 2 | 0.972 | 0.946 | 0.971 |
+  | sidenote (50) | 2 | 2 | 0 | 0.500 | 1.000 | 1.000 |
+  | verse (25) | 13 | 0 | 0 | 1.000 | 1.000 | 0.923 |
+  | English (25) | 1 | 0 | 0 | 1.000 | 1.000 | 1.000 |
+  | **total (300)** | **80** | **3** | **3** | **0.964** | **0.964** | **0.975** |
+
+* **Below target** on precision and recall; boundary meets its target. The 6 errors:
+  * 2 misses where Burton's italics stop short of the Latin: roman "in" before *secundis*, and roman "more" before *aquilae factum*. The italic part is tagged, but it covers under 75 % of the phrase.
+  * 2 false positives from sidenote rules: *Ter.* (the lexicon knows *ter*), and *Vita ejus* (the sidenote-lexicon rule).
+  * 1 false positive from a model ruling: *Magna Carta* was adjudicated "la title".
+  * 1 miss with no model ruling: *Intestina*, left as a name.
+* Seen samples (reported, not gated): tuning 0.995 / 0.984 / 0.967 (677 items); h1 1.000 / 1.000 / 0.979 (150 items, seen 2026-10-20).
+* h2 has now been seen. Next: fix those error types (absorb adjacent roman Latin into an italic run; treat a lone capitalised sidenote word before a stop as an abbreviation; re-adjudicate capitalised terms), then draw round h3. Do not tune on h2.
+* All gold labels await your review (D7). h2 adds conventions to `data/eval/LABELLING.md`.
 
 **Carried forward** (not done, with the milestone that takes each):
 * **Offline/PWA install not verified.** The service worker is served correctly, but the app's browser pane refuses registration and quick headless attempts were inconclusive. → M3, with a Playwright test.

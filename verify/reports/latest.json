@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-20T05:54:11+00:00",
+  "when": "2026-10-20T10:57:13+00:00",
   "ok": true,
   "results": [
     {
@@ -11,7 +11,8 @@
         "main_unexplained_diffs": 0,
         "notes_compared": 11,
         "note_mismatches": 0,
-        "editor_additions_excluded": 1
+        "editor_additions_excluded": 1,
+        "units": 1
       },
       "problems": []
     },
@@ -26,7 +27,8 @@
         "paragraphs": "4/4",
         "verse_lines": "9/9",
         "greek_chars": "85/85",
-        "heading_images": "1/1"
+        "heading_images": "1/1",
+        "units": 1
       },
       "problems": []
     },
@@ -36,7 +38,8 @@
       "ok": true,
       "counts": {
         "sidenotes_resolved": "11/11",
-        "ids": 25
+        "ids": 28,
+        "units": 1
       },
       "problems": []
     },
@@ -46,34 +49,50 @@
       "ok": true,
       "counts": {
         "script_chars": 85,
-        "untagged": 0
+        "untagged": 0,
+        "units": 1
+      },
+      "problems": []
+    },
+    {
+      "code": "V1f",
+      "name": "every EPUB page fully covered by its units",
+      "ok": true,
+      "counts": {
+        "pages_checked": 0,
+        "pages_total": 18
+      },
+      "problems": []
+    },
+    {
+      "code": "V3g",
+      "name": "Gowland endnotes: text and links",
+      "ok": true,
+      "counts": {
+        "bodies": "3907/3907",
+        "text_mismatches": 0,
+        "anchors": 6,
+        "link_fixes_applied": 0
       },
       "problems": []
     },
     {
       "code": "V5",
-      "name": "language-ID vs gold sample",
+      "name": "language-ID vs gold samples (gate: held-out h2)",
       "ok": true,
       "counts": {
-        "gold_items": 77,
-        "tp": 7,
-        "fp": 0,
-        "fn": 3,
-        "precision": "1.000",
-        "recall": "0.700"
+        "heldout_h2": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
+        "seen_h1": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
+        "tuning": "P=1.0 R=1.0 B=1.0 n=77 tp=8 fp=0 fn=0"
       },
-      "problems": [
-        "missed la term: 'Scorbutum'",
-        "missed la term: 'Plica'",
-        "missed la term: 'Morbus Gallicus'"
-      ]
+      "problems": []
     },
     {
       "code": "V7",
       "name": "layers keyed, labelled and honest",
       "ok": true,
       "counts": {
-        "foreign": 7,
+        "foreign": 10,
         "with_record": 7,
         "machine_labelled": 7,
         "stale": 0,
@@ -81,7 +100,9 @@
         "selectors_ok": 4,
         "selectors_bad": 0,
         "sources_unidentified": 3,
-        "sources_other": 4
+        "sources_other": 4,
+        "untranslated": 3,
+        "units_without_layer": 0
       },
       "problems": []
     },
@@ -91,11 +112,11 @@
       "ok": true,
       "counts": {
         "private:sidenotes": "11/11",
-        "private:foreign": "7/7",
+        "private:foreign": "10/10",
         "private:enrefs": "6/6",
         "private:pbs": "2/2",
         "public:sidenotes": "11/11",
-        "public:foreign": "7/7",
+        "public:foreign": "10/10",
         "public:enrefs": "0/0",
         "public:pbs": "0/0"
       },

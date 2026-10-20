@@ -223,19 +223,29 @@ def v5_langid(units: list[str]) -> Result:
     Thresholds: precision >= 0.98, recall >= 0.97, boundary exact-match >= 0.95."""
     from . import gold
 
-    r = Result("V5", "language-ID vs gold samples (gate: held-out)")
+    r = Result("V5", f"language-ID vs gold samples (gate: held-out {gold.GATE})")
     tune = gold.evaluate(units)
     held = gold.evaluate(units, holdout=True)
-    r.counts.update({"tuning": f"P={tune['precision']} R={tune['recall']} B={tune['boundary_exact']} "
-                               f"n={tune['items']}",
-                     "heldout": f"P={held['precision']} R={held['recall']} B={held['boundary_exact']} "
-                                f"n={held['items']} tp={held['tp']} fp={held['fp']} fn={held['fn']}"})
-    r.problems = ["held-out: " + m for m in held["misses"]] + ["tuning: " + m for m in tune["misses"]]
-    # The rules were tuned on the tuning sample, so only the held-out sample can show they meet the targets.
+    seen = [gold.evaluate(units, holdout=h["name"]) for h in gold.HOLDOUTS[:-1]]
+    r.counts.update({f"heldout_{gold.GATE}": gold.summary(held),
+                     **{f"seen_{s['sample']}": gold.summary(s) for s in seen},
+                     "tuning": gold.summary(tune)})
+    r.problems = ([f"held-out {gold.GATE}: " + m for m in held["misses"]]
+                  + [f"seen {s['sample']}: " + m for s in seen for m in s["misses"]]
+                  + ["tuning: " + m for m in tune["misses"]])
+    # Only the newest hold-out round was never seen while the rules changed, so only it can show that
+    # they meet the targets. The tuning sample and earlier rounds are reported, never gated on.
+    if units is None or len(units) > 100:  # whole-book run: the gate round must exist and be labelled
+        if not held["labelled"]:
+            r.ok = False
+            r.problems.insert(0, f"held-out round {gold.GATE} is not labelled ({gold.HOLDOUT_GOLD.name} missing)")
+            return r
     if held["tp"] + held["fn"] >= 40:
-        r.ok = held["precision"] >= 0.98 and held["recall"] >= 0.97 and held["boundary_exact"] >= 0.95
+        r.ok = ((held["precision"] or 0) >= 0.98 and (held["recall"] or 0) >= 0.97
+                and (held["boundary_exact"] or 0) >= 0.95)
         if not r.ok:
-            r.problems.insert(0, "held-out below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95")
+            r.problems.insert(0, f"held-out {gold.GATE} below target: precision >= 0.98, recall >= 0.97, "
+                                 "boundary >= 0.95")
     return r
 
 
