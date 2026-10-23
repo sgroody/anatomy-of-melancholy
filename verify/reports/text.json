@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-20T16:44:05+00:00",
+  "when": "2026-10-23T23:29:11+00:00",
   "ok": true,
   "results": [
     {
@@ -41,7 +41,7 @@
       "deferred": null,
       "counts": {
         "sidenotes_resolved": "5703/5703",
-        "ids": 16762,
+        "ids": 16751,
         "units": 158
       },
       "problems": []
@@ -108,7 +108,7 @@
       "counts": {
         "heldout_h2": "P=0.964 R=0.964 B=0.975 n=300 tp=80 fp=3 fn=3",
         "seen_h1": "P=1.0 R=1.0 B=0.979 n=150 tp=47 fp=0 fn=0",
-        "tuning": "P=0.995 R=0.984 B=0.967 n=677 tp=183 fp=1 fn=3"
+        "tuning": "P=0.984 R=0.984 B=0.967 n=677 tp=183 fp=3 fn=3"
       },
       "problems": [
         "held-out h2 below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95",
@@ -121,6 +121,8 @@
         "tuning: missed la phrase: 'obscurorum virorum' (italic-212)",
         "tuning: false foreign [citation]: 'ii' (italic-263)",
         "tuning: missed mixed phrase: 'Chorus Sancti Viti' (roman-before-bracket-040)",
+        "tuning: false foreign [en]: 'His eyes hollow and grisly to behold,' (verse-041)",
+        "tuning: false foreign [en]: 'Swear and lie as women can.' (verse-049)",
         "tuning: missed mixed phrase: 'Diuretica' (english-030)"
       ]
     },
@@ -130,16 +132,16 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "foreign": 7785,
-        "with_record": 7,
-        "machine_labelled": 7,
+        "foreign": 7769,
+        "with_record": 147,
+        "machine_labelled": 192,
         "stale": 0,
         "orphan_keys": 0,
-        "selectors_ok": 4,
+        "selectors_ok": 140,
         "selectors_bad": 0,
-        "sources_unidentified": 3,
-        "sources_other": 4,
-        "selftrans_records": 7785,
+        "sources_unidentified": 46,
+        "sources_other": 101,
+        "selftrans_records": 7769,
         "selftrans_selectors_ok": 8422,
         "selftrans_selectors_bad": 0,
         "selftrans_stale": 0,
@@ -147,11 +149,13 @@
         "selftrans_orphan_keys": 0,
         "selftrans_units_missing": 0,
         "selftrans_gowland_overlap": 0,
-        "untranslated": 7778,
-        "units_without_layer": 157,
+        "untranslated": 7622,
+        "units_without_layer": 128,
         "xrefs": 21,
         "xrefs_resolved": 19,
-        "xrefs_unresolved": 2
+        "xrefs_unresolved": 2,
+        "gloss_records": 3,
+        "gloss_selectors_ok": 28
       },
       "problems": []
     }

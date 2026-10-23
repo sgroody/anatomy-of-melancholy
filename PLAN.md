@@ -96,14 +96,25 @@ Also in M2:
   * The first run found 1 marker break in "Read in English" (djr-f7, a verse Burton translates himself, with a hoisted note). Fixed by drawing the ⁂ as a real character rather than CSS content.
   * V10a first failed only because `tests/browser/node_modules` was missing; installed with `npm ci`.
 
+**M5 in progress (2026-10-23).** Session 1: the text fixes M4 found, runner hardening, calibration. The full run waits for the owner's usage budget (the weekly meter stood at 79 %).
+* Text fixes (`ingest --all`; ids retired, never renumbered):
+  * Chaucer: 83/83 `lucida` spans tagged `enm` (`resp="#rules"`, not passages). The 23 verse groups that hold them are queued as gloss-only items. The 1 inline quotation in prose (1.2.4.7) is not.
+  * General rules: (1) a verse group whose italic Latin lines are followed by roman English lines is split, and the English becomes Burton's `translation-block`. 2 cases: 3.2.5.1-f47 → f61, and 1.2.3.15, whose three line passages became one verse passage, f281. (2) A verse group's italics decide its language only if they cover ≥ 75 % of its letters. That untags 4 English verses whose italics were Latin names (3.2.3.1-f166, f279, f306; 3.2.5.5-f145).
+  * `blocks.yaml` gains `inline:` (phrase, whole block or verse group): Italian 3.3.2.1-f5 and 3.2.5.3-f163 (ids kept), French "à la mort" 1.3.1.4-f49, and the wholly Latin recipe paragraph 3.2.5.1-f62 (it replaces 13 fragments).
+  * Foreign passages: 7,785 → 7,769 (20 retired, 4 new). The 2 pilot records whose ids were retired moved to `data/layers/retired/translations/3.2.5.1.json`; the two Italian records were re-translated.
+* Runner: Chaucer gloss items in full runs; orphan records retired rather than deleted; a language change makes a record stale (runner and V7); `--budget-usd` (stop at a list-equivalent spend); `--wait-on-limit` (retry every 20 min instead of stopping); a hung call times out at 1,200 s and counts as failed (M4 follow-up).
+* Calibration, unit 1.2.3.14 (`state/translate/meter.jsonl`): 95 passages, 5 packets, 0 retries, 0 invalid, $1.58 list-equivalent, 284 s, 331 output tokens per passage (pilot: 636; the pilot chose hard passages). Meter: 5-hour window 0 → 5 %, weekly 79 → 80 %.
+* Projection for the rest (7,649 items): about **$127** list-equivalent; about **4 five-hour windows** (3.6–4.5); about 6.4 hours of model time; roughly 60–80 % of one week's allowance (range from the M4 ratio of 5–7 window points per weekly point; this run's weekly reading is too coarse to refine it). That is below the M4 estimate of 1–2 weeks.
+* Queue: 7,792 items (7,769 passages + 23 Chaucer groups); 143 current, 7,649 to do, about 380 packets.
+
 **Carried forward** (not done, with the milestone that takes each):
 * The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
 * The "translation source order" setting waits for a second source (Dell & Jordan-Smith). → M5
 * Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
 * ~~The model sometimes puts explanation inside a translation ("Curable (salutary)").~~ Fixed in M4 by `tr-v2` and the parenthesis check.
 * The gold sample is labelled by Claude and awaits your review (D7).
-* Chaucer's 83 `lucida` spans are not tagged `enm`; Italian 3.3.2.1-f5 and 3.2.5.3-f163 are tagged `la`; French "à la mort" (1.3.1.4) is untagged. → language-ID follow-up, before M5 reaches those units
-* Passage boundaries found by the pilot: 3.2.5.1-f47 includes Burton's English couplet, and 3.2.5.1-f31 cuts a wholly Latin paragraph. → before M5
+* ~~Chaucer untagged; Italian tagged `la`; French untagged; boundaries 3.2.5.1-f47 and f31.~~ Fixed in M5 session 1. Still open: djr-f1489 runs two citations and a quotation together (one passage, left as is). → M6 citation parser
+* The reader does not show the gloss layer yet; the M5 Chaucer glosses are stored for it. → M8
 * The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader (and the "translation source order" setting) needs a held-out accuracy check. → M5
 
 ## M0 — Setup (short)
