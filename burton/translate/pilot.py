@@ -29,7 +29,7 @@ def collect(selection_path) -> list[dict]:
     sel = yaml.safe_load(open(selection_path, encoding="utf-8"))
     rows = []
     cache: dict[str, dict] = {}
-    for it in sel["items"]:
+    for it in (i for i in sel["items"] if not i.get("retired")):
         unit = it["id"].rsplit("-", 1)[0]
         if unit not in cache:
             cache[unit] = {"tr": _load(selection_path, "translations", unit),

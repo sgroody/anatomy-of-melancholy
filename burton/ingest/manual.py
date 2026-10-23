@@ -67,6 +67,58 @@ def apply(div, unit: str) -> Counter:
     return stats
 
 
+def apply_inline(div, unit: str) -> Counter:
+    """Phrase-level language decisions (blocks.yaml `inline`): mark text as one foreign passage, which
+    the language rules then leave alone."""
+    from ..tei import put_items, take_items
+
+    stats: Counter = Counter()
+    for spec in (s for s in blocks().get("inline", []) if s["unit"] == unit):
+        hosts = [e for e in div.iter() if isinstance(e.tag, str) and (e.get("src") or "").endswith(f"#{spec['in']}")]
+        if len(hosts) != 1:
+            raise LookupError(f"blocks.yaml inline: {spec['in']} found {len(hosts)} times in {unit}")
+        host = hosts[0]
+        attrs = {XML_LANG: spec["lang"], "ana": "foreign", "resp": "#editor", "cert": "high"}
+        if spec.get("verse"):
+            lg = next((a for a in (host, *host.iterancestors()) if a.tag == T("lg")), None)
+            if lg is None:
+                raise LookupError(f"blocks.yaml inline: {spec['in']} is not in a verse group")
+            for k, v in attrs.items():
+                lg.set(k, v)
+        elif spec.get("whole"):
+            holder = el("foreign", attrs)
+            put_items(holder, take_items(host))
+            host.text = None
+            host.append(holder)
+        else:
+            def strings(o):  # the element's own text pieces, without detaching anything
+                return [o.text or "", *((c.tail or "") for c in o)]
+
+            hits = [o for o in host.iter() if isinstance(o.tag, str)
+                    for s in strings(o) for _ in range(s.count(spec["phrase"]))]
+            if len(hits) != 1:
+                raise LookupError(f"blocks.yaml inline: {spec['phrase']!r} found {len(hits)} times in {spec['in']}")
+            owner = hits[0]
+            if owner is not host and len(owner) == 0 and (owner.text or "") == spec["phrase"]:
+                # the phrase is a whole italic run: wrap the run, so the italic rules never see it
+                holder = el("foreign", attrs)
+                owner.addprevious(holder)
+                holder.tail, owner.tail = owner.tail, None
+                holder.append(owner)
+                stats["language-inline"] += 1
+                continue
+            out = []
+            for it in take_items(hits[0]):
+                if isinstance(it, str) and spec["phrase"] in it:
+                    before, after = it.split(spec["phrase"])
+                    out += [before, el("foreign", attrs, spec["phrase"]), after]
+                else:
+                    out.append(it)
+            put_items(hits[0], out)
+        stats["language-inline"] += 1
+    return stats
+
+
 @cache
 def source_fixes() -> list:
     return yaml.safe_load((paths.MANUAL / "source-fixes.yaml").read_text(encoding="utf-8")) or []

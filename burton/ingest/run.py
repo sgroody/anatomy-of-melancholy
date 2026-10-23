@@ -95,6 +95,7 @@ def ingest_unit(unit: str, reg: Registry) -> dict:
     stats: Counter = Counter()
     stats.update(manual.apply(div, unit))
     stats.update(manual.apply_fixes(div, unit))
+    stats.update(manual.apply_inline(div, unit))
     if resp != "#gowland":
         stats.update(gowland.separate(div))
     decisions = langid.run(div, unit, stats, gowland_unit=resp == "#gowland")

@@ -3064,18 +3064,6 @@
     ],
     "text_sha1": "eca2fe5042031825bf6d98d6ac8474f1272426ff"
   },
-  "1.2.3.15-f24": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "bd57dd27f1e974d0898e82241707ab30fbe118ae"
-  },
   "1.2.3.15-f240": {
     "bracket": "none",
     "by": "rules",
@@ -3212,18 +3200,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "e6ceb81f83425a60a53fbaa33c3d25992ce16471"
-  },
-  "1.2.3.15-f25": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9b2c3f9e908245408e6ababfa5af97520cce3de5"
   },
   "1.2.3.15-f250": {
     "bracket": "none",
@@ -3406,36 +3382,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3d2a76479b06659ce69078fa5f2a6592e500c49b"
-  },
-  "1.2.3.15-f26": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "/ Grief, labour, care, pale sickness, miseries, / Fear, filthy poverty, hunger that cries, / Terrible Monsters to be seen with eyes",
-          "in": "1.2.3.15-lg8",
-          "prefix": "s, / Terribiles visu formae ——— ",
-          "suffix": "."
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9fcd7b5a47464287db231c65fbcbb253a669c663"
   },
   "1.2.3.15-f260": {
     "bracket": "none",
@@ -3928,6 +3874,33 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "8420f32bfd9159df66add4b61079c68a92d27799"
+  },
+  "1.2.3.15-f281": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 1,
+        "position": "verse-following",
+        "selector": {
+          "exact": "Grief, labour, care, pale sickness, miseries, / Fear, filthy poverty, hunger that cries, / Terrible Monsters to be seen with eyes.",
+          "in": "1.2.3.15-lg46",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "burton-verse-follows",
+      "cognate-overlap",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ca8f24d891f5101ed72cae9c32074a498d15309d"
   },
   "1.2.3.15-f29": {
     "bracket": "present",

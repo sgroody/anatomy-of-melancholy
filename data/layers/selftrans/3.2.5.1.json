@@ -590,102 +590,6 @@
     ],
     "text_sha1": "3a9d74c79ab2b842c0e37f75e56bccc0355f0c03"
   },
-  "3.2.5.1-f31": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "41e407e9a38e88a05b555510458e2aa8242c607d"
-  },
-  "3.2.5.1-f32": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "℞ seminis lactuc. portulac. coriandri an. ʒ",
-          "in": "3.2.5.1-p12",
-          "prefix": "e, coitus appetitum sedant, &c. ",
-          "suffix": " i, menthae siccae ʒ ß, sacchari"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "80a634237a5bb8c3d238fe43846476d9e5a1d6f7"
-  },
-  "3.2.5.1-f33": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": ". ℞ seminis lactuc. portulac. coriandri an. ʒ",
-          "in": "3.2.5.1-p12",
-          "prefix": "tae, coitus appetitum sedant, &c",
-          "suffix": " i, menthae siccae ʒ ß, sacchari"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "71dcaa09d9ed1c55ea417c0a775f3b49ed2cd66e"
-  },
-  "3.2.5.1-f34": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "Innumera fere his similia petas ab Hildesheimo loco praedicto, Mizaldo",
-          "in": "3.2.5.1-p12",
-          "prefix": "is sumat mane unum quum surgat. ",
-          "suffix": ", Porta, caeterisque."
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cc08ce5a662d499a750134e4dfb68eb4a3cc1d41"
-  },
   "3.2.5.1-f36": {
     "bracket": "none",
     "by": "rules",
@@ -780,56 +684,6 @@
     ],
     "text_sha1": "ea47ac5cedfb0194611a44f862ec94be2a3818ce"
   },
-  "3.2.5.1-f44": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8f9d2bf1d69803f4fa9ab63435f25bfb63bce828"
-  },
-  "3.2.5.1-f46": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Innumera fere his similia petas ab Hildesheimo loco praedicto, Mizaldo",
-          "in": "3.2.5.1-p12",
-          "prefix": "is sumat mane unum quum surgat. ",
-          "suffix": ", Porta, caeterisque."
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "933d4f277e28d5b9401169dfcf1ea983f57f64ed"
-  },
-  "3.2.5.1-f47": {
-    "bracket": "short",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "short-gowland-bracket"
-    ],
-    "text_sha1": "80f07f59b976dbfd083f28c09ccd4fe29ed81cd6"
-  },
   "3.2.5.1-f48": {
     "bracket": "present",
     "by": "rules",
@@ -895,110 +749,6 @@
     "signals": [],
     "text_sha1": "a13de37ad73939cf6b2ccc3821ac2a587578bdcd"
   },
-  "3.2.5.1-f54": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Camphora exhibita idem praestant",
-          "in": "3.2.5.1-p12",
-          "prefix": "i commestum & semen Cannabis, & ",
-          "suffix": ". Verbena herba gestata libidine"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ba7b6b157dba9423010626b20043b1e9fdce22f"
-  },
-  "3.2.5.1-f55": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 1,
-        "position": "preceding",
-        "selector": {
-          "exact": "Verbena herba gestata libidinem extinguit",
-          "in": "3.2.5.1-p12",
-          "prefix": "mphora exhibita idem praestant. ",
-          "suffix": ", pulvisque ranae decollatae & e"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "92a4f6e65c13b8c2513ea895204ba3bd0c31e333"
-  },
-  "3.2.5.1-f56": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "06b3b99dfd2853731c6bb3450869ff788732cb23"
-  },
-  "3.2.5.1-f57": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "687e69832a6baf4bc2eab399047d23e373b5adbe"
-  },
-  "3.2.5.1-f58": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ed183985bcf7745e6a914517802b9e69eb4c5d7b"
-  },
-  "3.2.5.1-f59": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "91a789c74cc3c2f9a348672d9749c8ed9e142342"
-  },
   "3.2.5.1-f6": {
     "bracket": "none",
     "by": "rules",
@@ -1053,6 +803,44 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "cf42217d28dc52211073037f9f43e34f3bf7deff"
+  },
+  "3.2.5.1-f61": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "verse-following",
+        "selector": {
+          "exact": "It is an easy passage down to hell, / But to come back, once there, you cannot well.",
+          "in": "3.2.5.1-lg19",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "burton-verse-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f40143a5bdaee6ca4c4941b855f312014678f91f"
+  },
+  "3.2.5.1-f62": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "90300ab69b17021cea97a997add13cfed65e791b"
   },
   "3.2.5.1-f7": {
     "bracket": "none",

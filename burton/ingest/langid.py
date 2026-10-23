@@ -612,8 +612,59 @@ def tag_roman_runs(div, decisions: list, unit: str) -> None:
     visit(div)
 
 
+def _italic_text(e) -> str:
+    return "".join(text_of([h]) for h in e.iter(T("hi"))
+                   if h.get("rend") == "i" and not any(x.tag == T("note") for x in h.iterancestors()))
+
+
+def _n_letters(s: str) -> int:
+    return len(re.findall(r"\p{L}", s))
+
+
+def tag_chaucer(div, stats) -> None:
+    """The EPUB sets Chaucer in `span.lucida` (SURVEY): Middle English in Gowland's modernised spelling.
+    Tagged `enm` for language only (no ana="foreign": it gets glosses, never a translation)."""
+    for h in list(div.iter(T("hi"))):
+        if h.get("rend") != "lucida" or h.getparent().tag == T("foreign"):
+            continue
+        f = el("foreign", {XML_LANG: "enm", "resp": "#rules", "cert": "high"})
+        h.addprevious(f)
+        f.tail, h.tail = h.tail, None
+        f.append(h)
+        stats["script:enm"] += 1
+
+
+def split_english_tail(div, stats) -> None:
+    """A verse group whose italic Latin lines are followed, in the same group, by roman English lines
+    (3.2.5.1: "facilis descensus Averni; …" then "It is an easy passage down to hell, …") is two
+    groups in substance: the trailing lines become Burton's own `translation-block`. Markup only."""
+    for lg in list(div.iter(T("lg"))):
+        if lg.get("ana") == "foreign" or lg.get("type") == "translation-block" or \
+                lg.getparent().tag == ED("verse-trans"):
+            continue
+        lines = lg.findall(T("l"))
+        if len(lines) < 2 or len(lines) != len([k for k in lg if isinstance(k.tag, str)]):
+            continue
+        ital = [_n_letters(_italic_text(ln)) >= 0.75 * max(1, _n_letters(text_of([ln]))) for ln in lines]
+        k = ital.index(False) if False in ital else len(lines)
+        if k == 0 or k == len(lines) or any(ital[k:]):
+            continue
+        la, _, _ = classify(" ".join(text_of([ln]) for ln in lines[:k]), True)
+        en, conf, _ = classify(" ".join(text_of([ln]) for ln in lines[k:]), False)
+        if la != "la" or en != "en" or conf != "high":
+            continue
+        tail = el("lg", {"type": "translation-block"})
+        lg.addnext(tail)
+        tail.tail, lg.tail = lg.tail, None
+        for ln in lines[k:]:
+            tail.append(ln)
+        stats["lg:english-tail-split"] += 1
+
+
 def tag_verse_latin(div, decisions: list, unit: str) -> None:
-    """Verse groups followed by a translation group and made of Latin italics: lg-level Latin."""
+    """Verse groups followed by a translation group and made of Latin italics: lg-level Latin.
+    The italics decide only where they cover most of the group: in Burton's English verse the
+    italics are often just Latin names ("Wanton Propertius, and witty Gallus")."""
     for q in div.iter(T("quote")):
         kids = [k for k in q if isinstance(k.tag, str)]
         for a, b in zip(kids, kids[1:], strict=False):
@@ -621,8 +672,9 @@ def tag_verse_latin(div, decisions: list, unit: str) -> None:
                 continue
             followed = b.tag == ED("verse-trans") or b.get("type") == "translation-block"
             text = text_of([a])
-            ital = "".join(text_of([h]) for h in a.iter(T("hi"))
-                           if h.get("rend") == "i" and not any(x.tag == T("note") for x in h.iterancestors()))
+            ital = _italic_text(a)
+            if _n_letters(ital) < 0.75 * _n_letters(text):
+                ital = ""
             verdict, conf, why = classify(ital or text, followed)
             if followed and verdict == "la":
                 a.set(XML_LANG, "la")
@@ -647,6 +699,8 @@ def run(div, unit: str, stats, *, gowland_unit: bool = False) -> list[dict]:
         return decisions
     tag_verse_groups(div, stats)
     _wrap_script_runs(div, stats)
+    tag_chaucer(div, stats)
+    split_english_tail(div, stats)
     tag_verse_latin(div, decisions, unit)
     tag_latin(div, decisions, unit)
     tag_roman_before_brackets(div, decisions, unit)

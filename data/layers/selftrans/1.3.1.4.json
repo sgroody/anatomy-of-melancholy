@@ -837,6 +837,48 @@
     ],
     "text_sha1": "ca9bd829e7714ca0ee5fc63ec421d9144ac4c00a"
   },
+  "1.3.1.4-f49": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or carried away wholly with pleasant dreams and fantasies, but if once crossed and displeased",
+          "in": "1.3.1.4-p1",
+          "prefix": ": if idle, or alone, à la mort, ",
+          "suffix": ","
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "if idle, or alone",
+          "in": "1.3.1.4-p1",
+          "prefix": "cund, and of a good complexion: ",
+          "suffix": ", à la mort, or carried away who"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "fr",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4187316166a9d514190c5528f0b0368d315698c3"
+  },
   "1.3.1.4-f5": {
     "bracket": "present",
     "by": "rules",

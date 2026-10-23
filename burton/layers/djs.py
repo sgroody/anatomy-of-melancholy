@@ -252,7 +252,7 @@ def run(selection_path) -> dict:
 
     sel = yaml.safe_load(open(selection_path, encoding="utf-8"))
     by_unit: dict[str, list[str]] = {}
-    for it in sel["items"]:
+    for it in (i for i in sel["items"] if not i.get("retired")):
         if it.get("kind") != "gloss-only":
             by_unit.setdefault(it["id"].rsplit("-", 1)[0], []).append(it["id"])
     djs, counts = load(), Counter()

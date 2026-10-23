@@ -43,3 +43,33 @@ gowland:
     from: nat0000020
     to: END
     note: '"[Translation]" heading and Gowland''s verse translation of the poem.'
+
+inline:
+  # Phrase-level language decisions the rules get wrong (found by the M4 pilot, checked 2026-10-23).
+  # `in` is the EPUB id of the block that holds the text. One of:
+  #   phrase: exact text, found once in that block; it becomes one foreign passage
+  #   whole: true — the block's entire content is one foreign passage
+  #   verse: true — the verse group containing `in` is one foreign passage
+  # Markup only; the rules leave anything marked here alone.
+  - unit: 3.3.2.1
+    in: nat0015308
+    verse: true
+    lang: it
+    note: Italian proverb "Chi non tocca parentado, / Tocca mai e rado" (the rules said la).
+  - unit: 3.2.5.3
+    in: nat0014257
+    phrase: a bella Donna
+    lang: it
+    note: Italian "a bella Donna" (the rules said la).
+  - unit: 1.3.1.4
+    in: nat0002665
+    phrase: à la mort
+    lang: fr
+    note: French "à la mort", set in roman, so the italic rules never saw it.
+  - unit: 3.2.5.1
+    in: nat0014005
+    whole: true
+    lang: la
+    note: >-
+      "Huc faciunt medicamenta Venerem sopientia, …" is Latin from end to end (a recipe paragraph);
+      the rules cut it into a dozen passages and left Latin between them untagged.

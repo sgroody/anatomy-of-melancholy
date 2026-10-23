@@ -39,6 +39,7 @@ items:
     reason: '50-word autobiographical Latin with a chain of short clauses; English on both sides that does not render it.'
     expected_st: [none]
   - id: 3.2.5.1-f31
+    retired: '2026-10-23 (M5): the boundary was fixed and the id retired; its pilot records are in data/layers/retired/translations/3.2.5.1.json. Successor: 3.2.5.1-f62 (the whole paragraph).'
     stratum: long-prose
     reason: '60-word medical-sexual prose that Burton deliberately leaves untranslated; the passage boundary cuts a wholly Latin paragraph (Latin before and after it is not part of the passage).'
     expected_st: [none]
@@ -56,6 +57,7 @@ items:
     reason: 'Short Horatian fragment with "atra cura" (black care, not black bile); Gowland bracket present, no Burton rendering.'
     expected_st: [none]
   - id: 3.2.5.1-f47
+    retired: '2026-10-23 (M5): the boundary was fixed and the id retired; its pilot records are in data/layers/retired/translations/3.2.5.1.json. Successor: 3.2.5.1-f61 (the Latin lines only).'
     stratum: verse
     reason: 'Boundary defect - the passage wrongly includes Burton''s own English couplet after the Latin. Tests that the model translates only the Latin, flags the boundary, and does not re-translate Burton.'
     expected_st: [full]

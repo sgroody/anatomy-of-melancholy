@@ -1603,26 +1603,29 @@
   "3.2.3.1-f165": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 2,
+        "position": "verse-following",
+        "selector": {
+          "exact": "Whate’er is pretty, pleasant, facete, well, / Whate’er Pandora had, she doth excel.",
+          "in": "3.2.3.1-lg169",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 12
+      }
+    ],
     "lang": "la",
     "location": "verse",
     "method": "rules/selftrans-v1",
     "signals": [
+      "burton-verse-follows",
+      "cognate-overlap",
       "no-gowland-bracket"
     ],
     "text_sha1": "a1139d57a98d80677e30423deed457ab4d0a4c8c"
-  },
-  "3.2.3.1-f166": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "29414e579e9baae3dfb9b2bd51ab86759c8dec65"
   },
   "3.2.3.1-f167": {
     "bracket": "present",
@@ -4299,26 +4302,29 @@
   "3.2.3.1-f278": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 1,
+        "position": "verse-following",
+        "selector": {
+          "exact": "Come now my Galatea, scorn me not, / Nor my poor presents; for but yesterday / I saw myself i’th’ water, and methought / Full fair I was, then scorn me not I say.",
+          "in": "3.2.3.1-lg286",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 31
+      }
+    ],
     "lang": "la",
     "location": "verse",
     "method": "rules/selftrans-v1",
     "signals": [
+      "burton-verse-follows",
+      "cognate-overlap",
       "no-gowland-bracket"
     ],
     "text_sha1": "e60b8e241a265189fac7b20217fdadf359a7c939"
-  },
-  "3.2.3.1-f279": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "fed9c94bf5555e0aeffd015431da26cecaa6c171"
   },
   "3.2.3.1-f28": {
     "bracket": "present",
@@ -5142,26 +5148,29 @@
   "3.2.3.1-f305": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 7,
+        "position": "verse-following",
+        "selector": {
+          "exact": "Wanton Propertius, and witty Gallus, / Subtle Tibullus, and learned Catullus, / It was Cynthia, Lesbia, Lycoris, / That made you Poets all; and if Alexis, / Or Corinna chance my Paramour to be, / Virgil and Ovid shall not despise me.",
+          "in": "3.2.3.1-lg302",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 37
+      }
+    ],
     "lang": "la",
     "location": "verse",
     "method": "rules/selftrans-v1",
     "signals": [
+      "burton-verse-follows",
+      "cognate-overlap",
       "no-gowland-bracket"
     ],
     "text_sha1": "ec86df899cc71ac5a52b6b6983742eb2fa5cd1bd"
-  },
-  "3.2.3.1-f306": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "aa701e416eecbec16e235eaca150c8d408975912"
   },
   "3.2.3.1-f307": {
     "bracket": "present",
