@@ -1,7 +1,7 @@
 {
   "3.3.2.1-f5": {
     "kind": "verse",
-    "lang": "la",
+    "lang": "it",
     "location": "text",
     "preferred": "machine",
     "review": {
@@ -34,35 +34,6 @@
         "flags": [
           "language-mismatch"
         ],
-        "literal": "Who does not touch kindred, / touches never and seldom.",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The passage is Italian, not Latin. It is a proverbial couplet. The construction is ambiguous: 'tocca' can be read as active ('whoever does not touch a man's kin hardly touches him at all') or as meaning 'is touched'. Either way the point is the same: nothing wounds a man as deeply as an injury to his family, here meaning his wife. 'Mai e rado' is a set phrase meaning 'never or seldom'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "He who is not touched in his kindred / Is touched never, or but seldom.",
-        "warnings": []
-      },
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-20",
-        "flags": [
-          "language-mismatch"
-        ],
         "literal": null,
         "model": "claude-sonnet-5-5",
         "models_reported": [
@@ -83,6 +54,33 @@
           "work": null
         },
         "text": "He who does not touch kinship, touches seldom and rarely.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-23",
+        "flags": [],
+        "literal": "Who does not touch kindred, / Touches never and seldom.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This seems to be an Italian proverb. The sense is that nothing stings a man like an injury to his own family and household. Here that means his wife's honour, which is the root of jealousy. The verb 'tocca' could be active ('touches') or impersonal ('it touches him'), and 'mai e rado' ('never and seldom') is an odd phrase, so the exact sense is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "He who is not touched in his kindred / Is touched never, or but seldom.",
         "warnings": []
       }
     ]

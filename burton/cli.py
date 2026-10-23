@@ -41,6 +41,10 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--max-packets", type=int, default=None)
     s.add_argument("--dry-run", action="store_true", help="write packets to state/ without calling the model")
     s.add_argument("--select", type=Path, help="translate only the items in a selection file (data/eval/m4-pilot.yaml)")
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--wait-on-limit", action="store_true",
+                   help="at a usage limit, wait and try again instead of stopping")
 
     s = sub.add_parser("align-djs", help="align Dell & Jordan-Smith (1927) to selected passages -> data/layers/djs/")
     s.add_argument("--select", type=Path, required=True, help="selection file, e.g. data/eval/m4-pilot.yaml")
@@ -121,6 +125,7 @@ def main(argv: list[str] | None = None) -> int:
         return runner.run(
             _units(args), model=args.model, packet_size=args.packet_size,
             max_packets=args.max_packets, dry_run=args.dry_run, select=args.select,
+            budget_usd=args.budget_usd, wait_on_limit=args.wait_on_limit,
         )
     elif args.cmd == "align-djs":
         from .layers import djs

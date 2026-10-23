@@ -20,12 +20,15 @@ import yaml
 
 from .. import paths
 from ..fsutil import atomic_write_text
+from ..tei import XML_ID, XML_LANG, T, public_id
 from . import packets, schema, validate
 
 PROMPT = "tr-v2"
 LEDGER = paths.STATE / "translate" / "ledger.jsonl"
 REVIEW = paths.STATE / "review" / "translate.jsonl"
 LIMIT_WORDS = ("usage limit", "rate limit", "rate_limit", "overloaded", "quota")
+CALL_TIMEOUT = 1200  # a 20-passage Opus packet takes 2–4 minutes of generation
+LIMIT_POLL = 20 * 60  # --wait-on-limit: seconds between tries while the plan's limit is reached
 
 
 def now() -> str:
@@ -63,18 +66,48 @@ def write_layer(unit: str, data: dict, layer: str = "translations") -> None:
     atomic_write_text(layer_path(unit, layer), json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
 
 
-def is_current(rec: dict | None, sha: str, model: str) -> bool:
-    if not rec or rec.get("text_sha1") != sha:
+def is_current(rec: dict | None, sha: str, model: str, lang: str | None = None) -> bool:
+    if not rec or rec.get("text_sha1") != sha or (lang and rec.get("lang") != lang):
         return False
     return any(t.get("by") == "machine" and t.get("model") == model and t.get("prompt") == PROMPT
                for t in rec.get("translations", rec.get("glosses", [])))
+
+
+def retire_orphans(unit: str, keep: set[str], layer: str = "translations") -> list[str]:
+    """Records keyed by a passage id the base text no longer has (the id was retired by a re-ingest) move
+    to data/layers/retired/<layer>/<unit>.json with the date; they are kept, never re-keyed (rule 4)."""
+    live = read_layer(unit, layer)
+    gone = sorted(k for k in live if k not in keep)
+    if not gone:
+        return []
+    old = read_layer(unit, f"retired/{layer}")
+    for k in gone:
+        old[k] = {**live.pop(k), "retired": {"date": datetime.now(UTC).date().isoformat(),
+                                             "reason": "passage id retired by re-ingest"}}
+    write_layer(unit, old, f"retired/{layer}")
+    write_layer(unit, live, layer)
+    return gone
+
+
+def chaucer_items(unit: str) -> list[dict]:
+    """Gloss-only items for a full run: each verse group holding Chaucer (`enm`), keyed by its lg id.
+    Chaucer quoted inline in prose (1 case, 1.2.4.7) has no element of its own and is not queued."""
+    root = packets.load(unit)
+    ids = []
+    for f in root.iter(T("foreign")):
+        if f.get(XML_LANG) != "enm":
+            continue
+        lgs = [a for a in f.iterancestors() if a.tag == T("lg")]
+        if lgs and lgs[-1].get(XML_ID) not in ids:
+            ids.append(lgs[-1].get(XML_ID))
+    return [packets.gloss_item(unit, public_id(i)) for i in ids]
 
 
 def load_selection(path) -> dict[str, list[dict]]:
     """A pilot selection file (data/eval/m4-pilot.yaml): unit -> its items, in file order."""
     data = yaml.safe_load(open(path, encoding="utf-8"))
     out: dict[str, list[dict]] = {}
-    for it in data["items"]:
+    for it in (i for i in data["items"] if not i.get("retired")):
         out.setdefault(it["id"].rsplit("-", 1)[0], []).append(it)
     return out
 
@@ -83,7 +116,7 @@ def unit_items(unit: str, selected: list[dict] | None) -> list[dict]:
     """The unit's foreign passages, or only the selected ones (plus selected gloss-only elements)."""
     all_p = packets.passages(unit)
     if selected is None:
-        return all_p
+        return all_p + chaucer_items(unit)
     want = {s["id"] for s in selected if s.get("kind") != "gloss-only"}
     found = [p for p in all_p if p["packet_item"]["id"] in want]
     missing = want - {p["packet_item"]["id"] for p in found}
@@ -107,8 +140,12 @@ def call_claude(model: str, sys_prompt: str, user: str, out_schema: dict | None 
                "--json-schema", json.dumps(out_schema or schema.PACKET_OUTPUT), "--tools", "", "--strict-mcp-config",
                "--no-session-persistence", "--system-prompt-file", sp]
         t0 = time.time()
-        proc = subprocess.run(cmd, input=user, capture_output=True, text=True, encoding="utf-8",
-                              cwd=work, timeout=1800)
+        try:
+            proc = subprocess.run(cmd, input=user, capture_output=True, text=True, encoding="utf-8",
+                                  cwd=work, timeout=CALL_TIMEOUT)
+        except subprocess.TimeoutExpired:  # M4: one call hung for 618 s; a hung call is a failed packet
+            return {"ok": False, "error": f"no answer within {CALL_TIMEOUT} s", "limit": False,
+                    "seconds": round(time.time() - t0, 1)}
         took = round(time.time() - t0, 1)
     finally:
         shutil.rmtree(work, ignore_errors=True)
@@ -173,35 +210,43 @@ def release_lock() -> None:
 
 
 def run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool,
-        select=None) -> int:
+        select=None, **limits) -> int:
     acquire_lock()
     try:
         return _run(units, model=model, packet_size=packet_size, max_packets=max_packets, dry_run=dry_run,
-                    select=select)
+                    select=select, **limits)
     finally:
         release_lock()
 
 
 def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool,
-         select=None) -> int:
+         select=None, budget_usd: float | None = None, wait_on_limit: bool = False) -> int:
     gver, gtext, gdata = glossary()
     sys_prompt = system_prompt(gtext)
     selection = load_selection(select) if select else None
     if selection is not None:
         units = list(selection)
-    done_packets = 0
+    done_packets, spent = 0, 0.0
     for unit in units:
+        if selection is None and not dry_run:
+            for k in retire_orphans(unit, {p["packet_item"]["id"] for p in packets.passages(unit)}):
+                print(f"{unit}: record {k} retired (its passage id is no longer in the base text)")
         layer, glayer = read_layer(unit), read_layer(unit, "glosses")
         all_p = unit_items(unit, selection[unit] if selection is not None else None)
         queue = [p for p in all_p if not is_current(
             (glayer if p["packet_item"]["kind"] == "gloss-only" else layer).get(p["packet_item"]["id"]),
-            p["text_sha1"], model)]
+            p["text_sha1"], model, p["packet_item"]["lang"])]
         print(f"{unit}: {len(all_p)} passages, {len(all_p) - len(queue)} current, {len(queue)} to translate")
-        for k in range(0, len(queue), packet_size):
+        k = 0
+        while k < len(queue):
             if max_packets is not None and done_packets >= max_packets:
                 print(f"stopping after {done_packets} packet(s) (--max-packets)")
                 return 0
+            if budget_usd is not None and spent >= budget_usd:
+                print(f"stopping: ${spent:.2f} list-equivalent spent, budget ${budget_usd:.2f} (--budget-usd)")
+                return 0
             batch = queue[k:k + packet_size]
+            k += packet_size
             items = [b["packet_item"] for b in batch]
             ihash = packets.input_hash(items, PROMPT, model, gver)
             pid = f"{unit}:{ihash}"
@@ -217,23 +262,30 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                 continue
             append(LEDGER, {**base, "ts": now(), "status": "started"})
             res, errors = call_claude(model, sys_prompt, user), []
+            spent += res.get("cost_usd_list") or 0
             if res["ok"]:
                 errors = validate.check(res["output"], batch, gdata)
                 if validate.blocking(errors, final=False):
                     retry_user = user + "\n\nYour previous answer failed these checks; fix them:\n- " + \
                         "\n- ".join(e["msg"] for e in validate.blocking(errors, final=False))
-                    first = {k: res.get(k) for k in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
+                    first = {x: res.get(x) for x in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
                     append(LEDGER, {**base, **first, "ts": now(), "status": "retry", "errors": errors})
                     res = call_claude(model, sys_prompt, retry_user)
+                    spent += res.get("cost_usd_list") or 0
                     errors = validate.check(res["output"], batch, gdata) if res["ok"] else []
-            meta = {k: res.get(k) for k in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
+            meta = {x: res.get(x) for x in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
             if not res["ok"]:
                 status = "deferred" if res.get("limit") else "failed"
                 append(LEDGER, {**base, **meta, "ts": now(), "status": status, "error": res.get("error")})
-                print(f"  packet {pid}: {status}: {str(res.get('error'))[:200]}")
+                print(f"  packet {pid}: {status}: {str(res.get('error'))[:200]}", flush=True)
                 if status == "deferred":
-                    print("  usage or rate limit reached; stopping cleanly. Re-run later to continue.")
-                    return 3
+                    if not wait_on_limit:
+                        print("  usage or rate limit reached; stopping cleanly. Re-run later to continue.")
+                        return 3
+                    print(f"  usage or rate limit reached; trying again in {LIMIT_POLL // 60} min "
+                          f"(--wait-on-limit)", flush=True)
+                    time.sleep(LIMIT_POLL)
+                    k -= packet_size  # the same packet again
                 continue
             if validate.blocking(errors, final=True):
                 append(LEDGER, {**base, **meta, "ts": now(), "status": "invalid", "errors": errors})
@@ -258,5 +310,5 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
             append(LEDGER, {**base, **meta, "ts": now(), "status": "done", "issues": errors})
             done_packets += 1
             print(f"  packet {pid}: {len(items)} passages written ({res['seconds']}s, "
-                  f"{len(errors)} issue(s) recorded)")
+                  f"{len(errors)} issue(s) recorded; ${spent:.2f} so far)", flush=True)
     return 0

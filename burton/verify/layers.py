@@ -5,7 +5,7 @@ import json
 from lxml import etree
 
 from .. import paths
-from ..tei import XML_ID, T, public_id
+from ..tei import XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
 from ..translate.packets import sha1
 
@@ -127,6 +127,9 @@ def v7_layers(units: list[str]):
             if rec["text_sha1"] != sha1(public_text(foreign[key])):
                 c["stale"] += 1
                 r.fail(f"{key}: record is stale (base text changed); re-run translate")
+            elif rec["lang"] != foreign[key].get(XML_LANG):
+                c["stale"] += 1
+                r.fail(f"{key}: record is stale (language now {foreign[key].get(XML_LANG)}); re-run translate")
             spans = [rec["self_translation"].get("burton_span")]
             claims = [rec["source"]]
             for t in rec["translations"]:
