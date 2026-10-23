@@ -1,0 +1,102 @@
+{
+  "3.4.1.3-f106": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they make a slaughter of Scriptures, and turn it as a nose of wax to their own ends",
+        "in": "3.4.1.3",
+        "near": "3.4.1.3-f106"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Tertullian",
+      "basis": "text \"saith Tertullian\"; Burton gives no work. The work is identified from the known wording of De praescriptione haereticorum 38.",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De praescriptione haereticorum"
+    },
+    "text": "caedem scripturarum faciunt ad materiam suam",
+    "text_sha1": "c02083c40fb5ea15773e489034edb7fdf50ab4d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "they make a slaughter of the scriptures toward their own matter",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Adapted from Tertullian, De praescriptione haereticorum 38. There Tertullian says Marcion used a sword rather than a pen, 'since he made a slaughter of the Scriptures to suit his own subject-matter' ('ad materiam suam caedem scripturarum confecit'). Burton changes it to the plural, 'faciunt', so that it applies to heretics in general.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they make a slaughter of Scriptures, and turn it as a nose of wax to their own ends",
+            "in": "3.4.1.3",
+            "near": "3.4.1.3-f106"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Tertullian",
+          "basis": "text \"saith Tertullian\"; Burton gives no work. The work is identified from the known wording of De praescriptione haereticorum 38.",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De praescriptione haereticorum"
+        },
+        "text": "they make a slaughter of the Scriptures to suit their own subject-matter",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Burton attributes it to Tertullian in his text (\"saith Tertullian\"); the sentence is in Tertullian's De praescriptione haereticorum, but the locus is not given. Burton renders it right after: \"they make a slaughter of Scriptures, and turn it as a nose of wax to their own ends\" (the nose of wax is his addition).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they make a slaughter of Scriptures, and turn it as a nose of wax to their own ends",
+            "in": "3.4.1.3",
+            "near": "3.4.1.3-f106"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Tertullian",
+          "basis": "text \"saith Tertullian\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they make a slaughter of the Scriptures for the sake of their own subject matter",
+        "warnings": []
+      }
+    ]
+  }
+}

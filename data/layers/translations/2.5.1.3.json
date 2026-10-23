@@ -1,0 +1,90 @@
+{
+  "2.5.1.3-f13": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jason Pratensis, after Valescus",
+      "basis": "text \"Valescus admires pulvis Hali, and Jason Pratensis after him\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "℞ Epithymi semunc. lapidis Lazuli, agarici ana ʒ ii, / Scammonii, ʒ i, Chariophillorum numero 20, pulverisentur / Omnia, & ipsius pulveris scrup. 4 singulis septimanis assumat.",
+    "text_sha1": "a2cfa0142ba0e4532d95eed62cd21141bdf37f9f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the recipe for 'pulvis Hali' (Hali's powder), which Burton names just before it. Epithyme is dodder growing on thyme, and agaric is the purging larch fungus. Scammony is a purgative resin. 'Chariophillorum' stands for caryophyllorum, which means cloves. 'Semunc.' means half an ounce. 'Singulis septimanis' means 'each week'. It is printed as lines of verse, but it is a prose prescription.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jason Pratensis, after Valescus",
+          "basis": "text \"Valescus admires pulvis Hali, and Jason Pratensis after him\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take half an ounce of epithyme, of lapis lazuli and agaric 2 drachms each, / of scammony 1 drachm, cloves to the number of 20; let all be powdered, / and of this powder let him take 4 scruples every week.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Chariophillorum is read as caryophyllorum (cloves or clove-pinks); the sense is uncertain. Epithymum is dodder of thyme. 'Numero 20' means twenty in number. 'Assumat' is subjunctive, 'let him take'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take half an ounce of epithyme, of lapis lazuli and agaric 2 drachms each, of scammony 1 drachm, 20 clove-pinks; let all be powdered, and let him take 4 scruples of this powder every week.",
+        "warnings": []
+      }
+    ]
+  }
+}

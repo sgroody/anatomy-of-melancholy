@@ -72,6 +72,35 @@ def _selftrans(unit: str, root, foreign: dict, r, c: dict) -> None:
         r.fail(f"{unit}: {len(missing)} foreign passages without a self-translation record, e.g. {missing[0]}")
 
 
+def _glosses(unit: str, root, r, c: dict) -> None:
+    """Glosses of obsolete English (M4 pilot: Chaucer): keys are element ids in the base text, records are
+    current and labelled, and every selector matches exactly once in its element's public text."""
+    f = paths.LAYERS / "glosses" / f"{unit}.json"
+    if not f.exists():
+        return
+    by_id = {public_id(e.get(XML_ID)): e for e in root.iter()
+             if isinstance(e.tag, str) and (e.get(XML_ID) or "").startswith("u")}
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c["gloss_records"] = c.get("gloss_records", 0) + 1
+        el = by_id.get(key)
+        if el is None:
+            r.fail(f"{unit}: gloss key {key} not in base text")
+            continue
+        text = public_text(el)
+        if rec["text_sha1"] != sha1(text):
+            r.fail(f"{key}: gloss record is stale (base text changed)")
+        for g in rec["glosses"]:
+            if g.get("by") == "machine" and not all(g.get(k) for k in ("model", "prompt", "date")):
+                r.fail(f"{key}: machine gloss without model/prompt/date")
+            for it in g["items"]:
+                sel = it["selector"]
+                n = text.count(sel["prefix"] + sel["exact"] + sel["suffix"]) if sel["in"] == key else 0
+                k = "gloss_selectors_ok" if n == 1 else "gloss_selectors_bad"
+                c[k] = c.get(k, 0) + 1
+                if n != 1:
+                    r.fail(f"{key}: gloss selector {sel['exact']!r} matches {n} times")
+
+
 def v7_layers(units: list[str]):
     from .checks import Result
 
@@ -98,14 +127,21 @@ def v7_layers(units: list[str]):
             if rec["text_sha1"] != sha1(public_text(foreign[key])):
                 c["stale"] += 1
                 r.fail(f"{key}: record is stale (base text changed); re-run translate")
+            spans = [rec["self_translation"].get("burton_span")]
+            claims = [rec["source"]]
             for t in rec["translations"]:
                 if t["by"] == "machine":
                     if all(t.get(k) for k in ("model", "prompt", "date")):
                         c["machine_labelled"] += 1
                     else:
                         r.fail(f"{key}: machine translation without model/prompt/date")
-            sel = rec["self_translation"].get("burton_span")
-            if sel:
+                    # each model's own verdict and source claim (M4: two models per passage)
+                    spans.append((t.get("self_translation") or {}).get("burton_span"))
+                    if t.get("source"):
+                        claims.append(t["source"])
+            for sel in spans:
+                if not sel:
+                    continue
                 n = unit_text.count(sel["exact"])
                 if n == 1:
                     c["selectors_ok"] += 1
@@ -113,11 +149,9 @@ def v7_layers(units: list[str]):
                     c["selectors_bad"] += 1
                     r.fail(f"{key}: Burton-span selector matches {n} times")
             src = rec["source"]
-            if src["status"] == "unidentified":
-                c["sources_unidentified"] += 1
-            else:
-                c["sources_other"] += 1
-                if not (src.get("basis") or "").strip():
+            c["sources_unidentified" if src["status"] == "unidentified" else "sources_other"] += 1
+            for src in claims:
+                if src["status"] != "unidentified" and not (src.get("basis") or "").strip():
                     r.fail(f"{key}: source {src['status']} without basis")
                 if src["status"] == "identified" and not src.get("verified"):
                     r.fail(f"{key}: identified without verification")
@@ -141,5 +175,6 @@ def v7_layers(units: list[str]):
                 if rec["selector"]["exact"] not in full:
                     r.fail(f"{key}: cross-reference text {rec['selector']['exact']!r} not found in {unit}")
         _selftrans(unit, root, foreign, r, c)
+        _glosses(unit, root, r, c)
     r.counts = c
     return r

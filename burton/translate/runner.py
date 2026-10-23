@@ -19,9 +19,10 @@ from datetime import UTC, datetime
 import yaml
 
 from .. import paths
+from ..fsutil import atomic_write_text
 from . import packets, schema, validate
 
-PROMPT = "tr-v1"
+PROMPT = "tr-v2"
 LEDGER = paths.STATE / "translate" / "ledger.jsonl"
 REVIEW = paths.STATE / "review" / "translate.jsonl"
 LIMIT_WORDS = ("usage limit", "rate limit", "rate_limit", "overloaded", "quota")
@@ -49,28 +50,46 @@ def system_prompt(gloss_text: str) -> str:
 
 # ------------------------------------------------------------------ layer file
 
-def layer_path(unit: str):
-    return paths.LAYERS / "translations" / f"{unit}.json"
+def layer_path(unit: str, layer: str = "translations"):
+    return paths.LAYERS / layer / f"{unit}.json"
 
 
-def read_layer(unit: str) -> dict:
-    p = layer_path(unit)
+def read_layer(unit: str, layer: str = "translations") -> dict:
+    p = layer_path(unit, layer)
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
-def write_layer(unit: str, data: dict) -> None:
-    p = layer_path(unit)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    tmp = p.with_suffix(".tmp")
-    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    os.replace(tmp, p)
+def write_layer(unit: str, data: dict, layer: str = "translations") -> None:
+    atomic_write_text(layer_path(unit, layer), json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
 
 
 def is_current(rec: dict | None, sha: str, model: str) -> bool:
     if not rec or rec.get("text_sha1") != sha:
         return False
     return any(t.get("by") == "machine" and t.get("model") == model and t.get("prompt") == PROMPT
-               for t in rec.get("translations", []))
+               for t in rec.get("translations", rec.get("glosses", [])))
+
+
+def load_selection(path) -> dict[str, list[dict]]:
+    """A pilot selection file (data/eval/m4-pilot.yaml): unit -> its items, in file order."""
+    data = yaml.safe_load(open(path, encoding="utf-8"))
+    out: dict[str, list[dict]] = {}
+    for it in data["items"]:
+        out.setdefault(it["id"].rsplit("-", 1)[0], []).append(it)
+    return out
+
+
+def unit_items(unit: str, selected: list[dict] | None) -> list[dict]:
+    """The unit's foreign passages, or only the selected ones (plus selected gloss-only elements)."""
+    all_p = packets.passages(unit)
+    if selected is None:
+        return all_p
+    want = {s["id"] for s in selected if s.get("kind") != "gloss-only"}
+    found = [p for p in all_p if p["packet_item"]["id"] in want]
+    missing = want - {p["packet_item"]["id"] for p in found}
+    if missing:
+        raise SystemExit(f"selected ids not in the base text: {sorted(missing)}")
+    return found + [packets.gloss_item(unit, s["id"]) for s in selected if s.get("kind") == "gloss-only"]
 
 
 # ------------------------------------------------------------------ the model call
@@ -153,22 +172,30 @@ def release_lock() -> None:
         LOCK.unlink()
 
 
-def run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool) -> int:
+def run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool,
+        select=None) -> int:
     acquire_lock()
     try:
-        return _run(units, model=model, packet_size=packet_size, max_packets=max_packets, dry_run=dry_run)
+        return _run(units, model=model, packet_size=packet_size, max_packets=max_packets, dry_run=dry_run,
+                    select=select)
     finally:
         release_lock()
 
 
-def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool) -> int:
+def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool,
+         select=None) -> int:
     gver, gtext, gdata = glossary()
     sys_prompt = system_prompt(gtext)
+    selection = load_selection(select) if select else None
+    if selection is not None:
+        units = list(selection)
     done_packets = 0
     for unit in units:
-        layer = read_layer(unit)
-        all_p = packets.passages(unit)
-        queue = [p for p in all_p if not is_current(layer.get(p["packet_item"]["id"]), p["text_sha1"], model)]
+        layer, glayer = read_layer(unit), read_layer(unit, "glosses")
+        all_p = unit_items(unit, selection[unit] if selection is not None else None)
+        queue = [p for p in all_p if not is_current(
+            (glayer if p["packet_item"]["kind"] == "gloss-only" else layer).get(p["packet_item"]["id"]),
+            p["text_sha1"], model)]
         print(f"{unit}: {len(all_p)} passages, {len(all_p) - len(queue)} current, {len(queue)} to translate")
         for k in range(0, len(queue), packet_size):
             if max_packets is not None and done_packets >= max_packets:
@@ -180,7 +207,8 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
             pid = f"{unit}:{ihash}"
             user = packets.render_packet(unit, batch[0]["title"], items)
             base = {"packet": pid, "unit": unit, "ids": [i["id"] for i in items], "prompt": PROMPT,
-                    "model": model, "glossary": gver}
+                    "model": model, "glossary": gver, "chars_in": len(sys_prompt) + len(user),
+                    "selection": str(select) if select else None}
             if dry_run:
                 d = paths.STATE / "translate" / "dry-run"
                 d.mkdir(parents=True, exist_ok=True)
@@ -194,7 +222,8 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                 if validate.blocking(errors, final=False):
                     retry_user = user + "\n\nYour previous answer failed these checks; fix them:\n- " + \
                         "\n- ".join(e["msg"] for e in validate.blocking(errors, final=False))
-                    append(LEDGER, {**base, "ts": now(), "status": "retry", "errors": errors})
+                    first = {k: res.get(k) for k in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
+                    append(LEDGER, {**base, **first, "ts": now(), "status": "retry", "errors": errors})
                     res = call_claude(model, sys_prompt, retry_user)
                     errors = validate.check(res["output"], batch, gdata) if res["ok"] else []
             meta = {k: res.get(k) for k in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
@@ -212,12 +241,20 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                     append(REVIEW, {"ts": now(), "packet": pid, **e})
                 print(f"  packet {pid}: invalid after retry -> state/review/translate.jsonl")
                 continue
-            layer = read_layer(unit)  # re-read: never clobber concurrent edits by hand
+            # re-read: never clobber concurrent edits by hand
+            layer, glayer = read_layer(unit), read_layer(unit, "glosses")
             for entry in res["output"]["passages"]:
                 b = next(x for x in batch if x["packet_item"]["id"] == entry["id"])
-                layer[entry["id"]] = validate.to_record(layer.get(entry["id"]), entry, b, model, PROMPT,
-                                                        res["models"], errors)
-            write_layer(unit, layer)
+                if b["packet_item"]["kind"] == "gloss-only":
+                    glayer[entry["id"]] = validate.to_gloss_record(glayer.get(entry["id"]), entry, b, model,
+                                                                   PROMPT, res["models"], errors)
+                else:
+                    layer[entry["id"]] = validate.to_record(layer.get(entry["id"]), entry, b, model, PROMPT,
+                                                            res["models"], errors)
+            if layer:
+                write_layer(unit, layer)
+            if glayer:
+                write_layer(unit, glayer, "glosses")
             append(LEDGER, {**base, **meta, "ts": now(), "status": "done", "issues": errors})
             done_packets += 1
             print(f"  packet {pid}: {len(items)} passages written ({res['seconds']}s, "

@@ -1,0 +1,86 @@
+{
+  "1.3.1.2-f22": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 3 Od. 1.\"",
+      "locus": "book 3, Ode 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "——— post equitem sedet atra cura:",
+    "text_sha1": "7f5b14234970938b6cccdb772d0e75736e843e7e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace's image: care rides pillion behind the horseman, so no one can ride away from it. The dash marks where Burton begins partway through the line.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 3 Od. 1.\"",
+          "locus": "book 3, Ode 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "— behind the horseman sits black care:",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Horace, Odes 3.1, where the line reads 'post equitem sedet atra Cura'. Burton's English around it does not render it. 'Atra cura' is Horace's dark care, not black bile.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 3 Od. 1.\"",
+          "locus": "lib. 3 Od. 1.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "— behind the horseman sits black care.",
+        "warnings": []
+      }
+    ]
+  }
+}

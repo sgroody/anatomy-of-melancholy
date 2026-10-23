@@ -1,0 +1,92 @@
+{
+  "3.2.5.3-f163": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a bella Donna",
+    "text_sha1": "d462849d449671cd99822fa16c2af0a521806b99",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "language-mismatch"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase is Italian, not Latin: 'bella donna', a beautiful lady. It is one item in Burton's string of synonyms ('a fair and beautiful person, a brave Bona-roba, a bella Donna'). The English words around it say the same thing in other terms, but they do not translate it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a beautiful lady",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "language-mismatch"
+        ],
+        "literal": "a beautiful Donna",
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "The phrase is Italian (bella donna, 'fair lady'), not Latin, with the article given as 'a'. Burton's English 'brave Bona-roba' just before it is a parallel term, not a translation. The sidenotes (Cardan, Subtil. 13) belong to the later 'minus amant qui acute vident', not to this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a beautiful lady",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "3.2.2.1-lg9": {
+    "glosses": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "items": [
+          {
+            "headword": "For all to sicker",
+            "selector": {
+              "exact": "For all to sicker",
+              "in": "3.2.2.1-lg9",
+              "prefix": "",
+              "suffix": ", as cold engend"
+            },
+            "sense": "just as surely; Chaucer has 'al so siker'"
+          },
+          {
+            "headword": "engendreth",
+            "selector": {
+              "exact": "engendreth",
+              "in": "3.2.2.1-lg9",
+              "prefix": "sicker, as cold ",
+              "suffix": " hail, / A liquo"
+            },
+            "sense": "produces, begets"
+          },
+          {
+            "headword": "liquorish tongue",
+            "selector": {
+              "exact": "liquorish tongue",
+              "in": "3.2.2.1-lg9",
+              "prefix": "dreth hail, / A ",
+              "suffix": " must have a liq"
+            },
+            "sense": "a greedy palate, fond of rich food and drink"
+          },
+          {
+            "headword": "liquorish tail",
+            "selector": {
+              "exact": "liquorish tail",
+              "in": "3.2.2.1-lg9",
+              "prefix": "gue must have a ",
+              "suffix": "."
+            },
+            "sense": "lecherous sexual appetite; 'tail' is a bawdy word for the genitals"
+          }
+        ],
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "From the Wife of Bath's Prologue. Standard texts read roughly 'For al so siker as cold engendreth hayl, / A likerous mouth moste han a likerous tayl'. Burton has 'tongue' where Chaucer has 'mouth', and 'all to' where Chaucer has 'al so'. The sense: just as surely as cold produces hail, a greedy mouth goes with a lecherous tail.",
+        "prompt": "tr-v2",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "items": [
+          {
+            "headword": "sicker",
+            "selector": {
+              "exact": "sicker",
+              "in": "3.2.2.1-lg9",
+              "prefix": "For all to ",
+              "suffix": ", as cold engend"
+            },
+            "sense": "sure, certain"
+          },
+          {
+            "headword": "liquorish",
+            "selector": {
+              "exact": "liquorish",
+              "in": "3.2.2.1-lg9",
+              "prefix": "dreth hail, / A ",
+              "suffix": " tongue must hav"
+            },
+            "sense": "lecherous, lustful (also 'greedy for delicacies')"
+          }
+        ],
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Chaucer, Wife of Bath's Prologue (Middle English), not translated. Glossed only.",
+        "prompt": "tr-v2",
+        "warnings": []
+      }
+    ],
+    "kind": "gloss-only",
+    "lang": "enm",
+    "text": "For all to sicker, as cold engendreth hail, / A liquorish tongue must have a liquorish tail.",
+    "text_sha1": "90a5dd214b3dbbe25d73ced027d699e98d2deac0"
+  }
+}

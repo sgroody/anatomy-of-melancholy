@@ -1,0 +1,306 @@
+{
+  "3.2.3.1-f14": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Unhappy Dido could not sleep at all, / But lies awake, and takes no rest: / And up she gets again, whilst care and grief, / And raging love torments her breast.",
+        "in": "3.2.3.1",
+        "near": "3.2.3.1-f14"
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "Burton introduces it as the words of 'that Heroical Poet in the person of Dido', and the wording closely matches the well-known lines of Aeneid 4 ('At non infelix animi Phoenissa... ingeminant curae, rursusque resurgens saevit amor').",
+      "locus": "4.529–532",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "At non infaelix animi Phoenissa, nec unquam / Solvitur in somnos, oculisque ac pectore amores / Accipit; ingeminant curae, rursusque resurgens / Saevit amor, &c. ———",
+    "text_sha1": "5b13dad11cc949ece43345fc4f3f94c278fd5700",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Virgil, Aeneid 4.529–532, on Dido. The standard text reads 'oculisve aut pectore noctem / accipit', meaning she 'does not take night into her eyes or heart', that is, she cannot sleep. Burton's 'oculisque ac pectore amores' gives 'loves' in place of 'night'. Taken literally, it would say she takes love into her eyes and breast, which spoils the negative sense. The 'nec' that governs both verbs suggests the negative is still meant, so this rendering keeps it. Burton stops partway through line 532.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Unhappy Dido could not sleep at all, / But lies awake, and takes no rest: / And up she gets again, whilst care and grief, / And raging love torments her breast.",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f14"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Burton introduces it as the words of 'that Heroical Poet in the person of Dido', and the wording closely matches the well-known lines of Aeneid 4 ('At non infelix animi Phoenissa... ingeminant curae, rursusque resurgens saevit amor').",
+          "locus": "4.529–532",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "But the Phoenician queen, unhappy in mind, is never / released into sleep, nor takes love into her eyes and breast; / her cares redouble, and rising again / love rages, etc. —",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Burton's 'Heroical Poet' is Virgil, Aeneid 4.529–532. Burton's English verse is a loose paraphrase. The text is slightly abridged: Virgil has 'Solvitur in somnos oculisque aut pectore noctem accipit'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Unhappy Dido could not sleep at all, / But lies awake, and takes no rest: / And up she gets again, whilst care and grief, / And raging love torments her breast.",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f14"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Burton's text says 'that Heroical Poet in the person of Dido', and the wording is Aeneid 4 ('At non infelix animi Phoenissa'). The reading 'amores' for 'noctem' differs from the standard text.",
+          "locus": "4.529–532",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "But the Phoenician woman, unhappy in her mind, is never relaxed into sleep, nor takes the sight of love into her eyes and breast; her cares redouble, and love, rising again, rages anew, etc. —",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f417": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "she had rather be his vassal, his Quean, than the world’s Empress or Queen",
+        "in": "3.2.3.1",
+        "near": "3.2.3.1-f417"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Heloise",
+      "basis": "text \"as Heloissa writ to her Sweetheart Peter Abelardus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Peter Abelard"
+    },
+    "text": "Si me Augustus orbis imperator uxorem expeteret, mallem tua esse meretrix quam orbis imperatrix",
+    "text_sha1": "c12ebd8e47c12db0677792d083a8db59f63c90d6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a loose and shortened version of Heloise's letter to Abelard. In her original she says it would seem dearer and worthier to her to be called his whore than the empress of Augustus, ruler of the whole world. Burton adds the jingle 'meretrix … imperatrix' ('whore … empress').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "she had rather be his vassal, his Quean, than the world’s Empress or Queen",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f417"
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Heloise",
+          "basis": "text \"as Heloissa writ to her Sweetheart Peter Abelardus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Peter Abelard"
+        },
+        "text": "If Augustus, emperor of the world, sought me for his wife, I would rather be your whore than empress of the world.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Heloise's words to Abelard, from her letter in the Abelard–Heloise correspondence. 'Meretrix' means harlot or courtesan; Burton renders it 'Quean'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "she had rather be his vassal, his Quean, than the world’s Empress or Queen",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f417"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Heloise",
+          "basis": "text \"as Heloissa writ to her Sweetheart Peter Abelardus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "letter to Abelard"
+        },
+        "text": "If Augustus, emperor of the world, sought me as his wife, I would rather be your mistress than empress of the world",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f68": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "In love these vices are; suspicions, / Peace, war, and impudence, detractions, / Dreams, cares, and errors, terrors and affrights, / Immodest pranks, devices, sleights and flights, / Heart-burnings, wants, neglects, desire of wrong, / Loss continual, expense and hurt among.",
+        "in": "3.2.3.1",
+        "near": "3.2.3.1-f68"
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Terence; Plautus",
+      "basis": "sidenotes \"Ter. Eunucho.\" and \"Plautus Mercat.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Eunuchus; Mercator"
+    },
+    "text": "In amore haec insunt vitia, / Suspitiones, inimicitiae, audaciae, / Bellum, pax rursum, &c. / Insomnia, aerumna, error, terror, & fuga, / Excogitantia, excors immodestia, / Petulantia, cupiditas, & malevolentia; / Inhaeret etiam aviditias, desidia, injuria, / Inopia, contumelia & dispendium, &c.",
+    "text_sha1": "2d599788ecf79522e6804094341be834424c97dc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected",
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton joins two sources here. The first three lines are adapted from Terence, Eunuchus 59–61 ('In amore haec omnia insunt vitia: iniuriae, suspiciones, inimicitiae, indutiae, bellum, pax rursum'). Burton's 'audaciae' ('acts of daring') stands where Terence has other words. The rest comes from Plautus, Mercator, in the opening speech of the play. Plautus reads 'incogitantia' ('thoughtlessness'), while Burton has 'excogitantia', which would mean 'contriving'. Burton's own English 'devices' follows his reading, so the translation does too. 'Aviditias' is a misprint for 'aviditas' ('greed').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "In love these vices are; suspicions, / Peace, war, and impudence, detractions, / Dreams, cares, and errors, terrors and affrights, / Immodest pranks, devices, sleights and flights, / Heart-burnings, wants, neglects, desire of wrong, / Loss continual, expense and hurt among.",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f68"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Terence; Plautus",
+          "basis": "sidenotes \"Ter. Eunucho.\" and \"Plautus Mercat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Eunuchus; Mercator"
+        },
+        "text": "In love these vices are found: / suspicions, enmities, acts of daring, / war, then peace again, etc. / Sleeplessness, distress, straying, terror and flight, / scheming, senseless want of restraint, / wantonness, lust, and ill will; / there cling to it also greed, sloth, wrongdoing, / want, insult and loss, etc.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "A catalogue of the faults of love in loose Plautine iambics. 'Aviditias' is read as 'aviditas'; 'excogitantia' is an odd word, here 'scheming'. Burton's English is only a loose rendering. The sidenotes name Terence's Eunuchus and Plautus' Mercator, and the first lines are close to Terence, Eunuchus 59–61. The rest may come from Plautus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "In love these vices are; suspicions, / Peace, war, and impudence, detractions, / Dreams, cares, and errors, terrors and affrights, / Immodest pranks, devices, sleights and flights, / Heart-burnings, wants, neglects, desire of wrong, / Loss continual, expense and hurt among.",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f68"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Terence; Plautus",
+          "basis": "sidenotes \"Ter. Eunucho.\" and \"Plautus Mercat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Eunuchus; Mercator"
+        },
+        "text": "In love these faults are present: suspicions, enmities, rash daring, war, then peace again, etc. Sleeplessness, distress, wandering, terror and flight, scheming, senseless immodesty, wantonness, desire and ill-will; there also cling greed, idleness, injury, want, insult and loss, etc.",
+        "warnings": []
+      }
+    ]
+  }
+}

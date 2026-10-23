@@ -1,0 +1,182 @@
+{
+  "2.3.6.1-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "sed nihil labor tantus profecit; nam dum alios amicorum mors avocat, aliis ignotus sum, his invisus, alii large promittunt, intercedunt illi mecum solliciti, hi vana spe lactant; dum alios ambio, hos capto, illis innotesco, aetas perit, anni defluunt, amici fatigantur, ego deferor, & jam, mundi taesus, humanaeque satur infidelitatis acquiesco",
+    "text_sha1": "59de2ed1907443370549c58c51aef4a18e7b8a85",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "but nothing did so great labour profit; for while death calls away some of my friends, to others I am unknown, to these hateful, others promise largely, those intercede anxious with me, these suckle me with vain hope; while I solicit some, catch these, become known to those, age perishes, years flow away, friends are wearied, I am borne down, and now, weary of the world and full of human faithlessness, I acquiesce",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'ego deferor' is uncertain. It may mean 'I am let down', 'I sink' or 'I am passed over'. 'lactant' literally means 'suckle', and so 'cajole' or 'feed with hope'. Burton switches between present and past tenses.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "but all that labour profited nothing; for while death called some of my friends away, to others I was unknown, to these hateful; some promised liberally, those interceded for me with concern, these fed me with vain hope; while I court some, catch at these, make myself known to those, my life wastes away, the years slip by, my friends grow weary, I am let down, and now, weary of the world and sated with human faithlessness, I rest content",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "'taesus' is for 'taesus/taedio affectus' (weary, tired of). Burton's English nearby does not render this passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "but all that labour achieved nothing; for while the death of friends draws some away, I am unknown to others, disliked by these; some promise generously, others intercede, anxious on my behalf, and these feed me with vain hope; while I court some, win over others, and make myself known to yet others, life passes, the years slip away, my friends grow weary, I am cast aside, and now, tired of the world and sated with human faithlessness, I rest content",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.6.1-f35": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I am the same",
+        "in": "2.3.6.1",
+        "near": "2.3.6.1-f35"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "The well-known line 'nave ferar magna an parva, ferar unus et idem' from Horace's epistle to Florus.",
+      "locus": "2.2.200",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Nave ferar magna an parva, ferar unus & idem",
+    "text_sha1": "6b570b6598dfea9df6c0a9c41122c5babefaa82e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's following 'I am the same' gives only the second half. Horace has 'ego, utrum / nave ferar magna an parva'. Burton drops 'utrum' but the sense is unchanged.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I am the same",
+            "in": "2.3.6.1",
+            "near": "2.3.6.1-f35"
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "The well-known line 'nave ferar magna an parva, ferar unus et idem' from Horace's epistle to Florus.",
+          "locus": "2.2.200",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "whether I am carried in a great ship or a small one, I shall be carried one and the same",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Horace-like tag (Epistles 2.2?) not certain; left unattributed. Burton's English 'I am the same' renders the second half.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I am the same",
+            "in": "2.3.6.1",
+            "near": "2.3.6.1-f35"
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Whether I am borne in a great ship or a small, I am borne as one and the same",
+        "warnings": []
+      }
+    ]
+  }
+}

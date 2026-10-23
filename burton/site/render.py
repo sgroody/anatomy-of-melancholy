@@ -10,6 +10,7 @@ import re
 
 from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
+from ..translate.validate import primary_machine
 from .hyphenation import soft_hyphenate
 
 PUNCT_START = re.compile(r"^[,;:.)]")
@@ -268,7 +269,9 @@ class Renderer:
             return (f'<{tag} class="ft ft-missing" id="tr-{attr(fid)}" role="note">'
                     f'<span class="ft-label">No translation yet</span></{tag}>')
         st = rec["self_translation"]
-        trs = {t["by"]: t for t in rec["translations"]}
+        trs = {t["by"]: t for t in rec["translations"] if t["by"] != "machine"}
+        if (m := primary_machine(rec)) is not None:  # one model shown when several translated it
+            trs["machine"] = m
         pref = rec["preferred"]
         if pref == "burton" and st.get("burton_span"):
             # placeholder: filled in after mark_burton_spans, so the quote is not matched twice
@@ -303,6 +306,11 @@ class Renderer:
         st = (rec.get("self_translation") or {}).get("status", "none")
         return {"full": " st-full", "partial": " st-partial", "paraphrase": " st-paraphrase"}.get(st, "")
 
+    def st_mark(self, fid: str) -> str:
+        """The ⁂ that stands for an original Burton translates himself, shown in "Read in English". A real
+        character, not CSS content, so a note marker hoisted before the passage keeps a word on its line."""
+        return '<span class="st-mark" aria-hidden="true">⁂</span>' if "st-full" in self.mode_class(fid) else ""
+
     def hoist_notes(self, e) -> None:
         """Burton's notes inside a foreign passage are rendered just before it, so they stay visible
         when the passage is replaced by its translation ("Read in English")."""
@@ -320,7 +328,7 @@ class Renderer:
         self.hoist_notes(e)
         fid, lang = self.pid(e), e.get(XML_LANG)
         size = "short" if len(public_text(e)) <= 40 else "long"
-        self.w(f'<span class="fp fp-{size}{self.mode_class(fid)}" data-fid="{attr(fid)}">'
+        self.w(f'<span class="fp fp-{size}{self.mode_class(fid)}" data-fid="{attr(fid)}">{self.st_mark(fid)}'
                f'<span class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</span>")
@@ -336,6 +344,7 @@ class Renderer:
         self.hoist_notes(e)
         lang = e.get(XML_LANG)
         self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}">'
+               f'{self.st_mark(fid)}'
                f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</div>")

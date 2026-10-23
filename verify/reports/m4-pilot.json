@@ -1,0 +1,1379 @@
+{
+  "djs": {
+    "aligned_or_omitted": 22,
+    "by_status": {
+      "aligned": 10,
+      "below-threshold": 2,
+      "implausible-length": 3,
+      "no-anchor": 17,
+      "not-found": 3,
+      "omitted": 12
+    },
+    "foreign_items": 47
+  },
+  "djs_sidenotes": {
+    "counts": {
+      "anchor-not-found": 14,
+      "inline-attribution": 2,
+      "left-anchor-only, no attribution near": 10,
+      "nothing-at-anchor": 32,
+      "something-at-anchor": 2
+    },
+    "sample": 60,
+    "seed": 20261020
+  },
+  "full_pass": {
+    "packets": 475,
+    "passages": 7785,
+    "units": 158
+  },
+  "honesty": {
+    "claude-opus-5-5": {
+      "attributions": [
+        {
+          "author": "Martial",
+          "basis": "sidenote \"Martial.\" for the line 'Abderitanae pectora plebis habes'; the Hippocrates sentence is tied to the sidenote \"Hippoc. epist. Damageto\"",
+          "id": "lectori-f2",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Epigrams"
+        },
+        {
+          "author": "Plutarch",
+          "basis": "text \"quod apud Plutarchum Gryllus Ulyssi objecit\"; sidenote \"Tom. 2 Gryllo.\"",
+          "id": "3.2.1.2-f132",
+          "locus": "Tom. 2",
+          "status": "burton-cites",
+          "work": "Gryllus (Bruta animalia ratione uti)"
+        },
+        {
+          "author": "Virgil",
+          "basis": "Burton introduces it as the words of 'that Heroical Poet in the person of Dido', and the wording closely matches the well-known lines of Aeneid 4 ('At non infelix animi Phoenissa... ingeminant curae, rursusque resurgens saevit amor').",
+          "id": "3.2.3.1-f14",
+          "locus": "4.529–532",
+          "status": "probable",
+          "work": "Aeneid"
+        },
+        {
+          "author": "Virgil",
+          "basis": "text \"This was Virgil’s experiment\"",
+          "id": "1.2.2.5-f17",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Georgics"
+        },
+        {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 3 Od. 1.\"",
+          "id": "1.3.1.2-f22",
+          "locus": "book 3, Ode 1",
+          "status": "burton-cites",
+          "work": "Odes"
+        },
+        {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg. Aen. 6.\"",
+          "id": "3.2.5.1-f47",
+          "locus": "6",
+          "status": "burton-cites",
+          "work": "Aeneid"
+        },
+        {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"; the line is Works and Days 25",
+          "id": "1.2.3.8-f3",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Works and Days"
+        },
+        {
+          "author": "Palladas",
+          "basis": "The wording matches the well-known epigram in the Greek Anthology that begins 'Δακρυχέων γενόμην καὶ δακρύσας ἀποθνῄσκω', which is usually attributed to Palladas.",
+          "id": "1.2.3.10-f10",
+          "locus": "10.84",
+          "status": "probable",
+          "work": "Greek Anthology"
+        },
+        {
+          "author": "Anacreon (Anacreontea)",
+          "basis": "text \"so saith Anacreon\" immediately before the quotation",
+          "id": "2.5.1.5-f10",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Anacreontea"
+        },
+        {
+          "author": "Erasmus",
+          "basis": "sidenote \"Erasm. chil. 3 cent. 10.\"",
+          "id": "djr-f972",
+          "locus": "chil. 3 cent. 10",
+          "status": "burton-cites",
+          "work": "Adagia"
+        },
+        {
+          "author": "Felix Platter",
+          "basis": "text \"of whom Felix Plater speaks, that thought he had some of Aristophanes’ frogs in his belly\" and sidenote \"Observat. lib. 1.\"",
+          "id": "djr-f1468",
+          "locus": "lib. 1",
+          "status": "burton-cites",
+          "work": "Observationes"
+        },
+        {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "id": "djr-f324",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Persius",
+          "basis": "sidenote \"Pers. Sat. 3.\"; the line is Persius 3.85",
+          "id": "1.2.3.15-f58",
+          "locus": "Sat. 3",
+          "status": "burton-cites",
+          "work": "Satires"
+        },
+        {
+          "author": "Horace",
+          "basis": "Burton does not name the source. This is Horace's well-known line on nature and the pitchfork, \"Naturam expelles furca, tamen usque recurret\", and Burton's wording is almost the same.",
+          "id": "2.3.7.1-f52",
+          "locus": "1.10.24",
+          "status": "probable",
+          "work": "Epistles"
+        },
+        {
+          "author": "Terence",
+          "basis": "The wording is nearly identical to Terence's well-known line 'amantium irae amoris integratio est' in the Andria, and it became proverbial in this form.",
+          "id": "3.2.2.4-f92",
+          "locus": null,
+          "status": "probable",
+          "work": "Andria"
+        },
+        {
+          "author": "Carolus à Lorme",
+          "basis": "text \"Carolus à Lorme amongst other questions, discussed for his degree at Montpellier in France, hath this\"",
+          "id": "3.2.5.1-f27",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Salustio Salviano (Salust. Salvianus)",
+          "basis": "main text at the sidenote anchor: \"Salust. Salvianus, lib. 2 cap. 1\"",
+          "id": "1.2.2.4-f13",
+          "locus": "lib. 2 cap. 1",
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Filotheo Montalto (Montaltus)",
+          "basis": "main text at the sidenote anchor \"Montaltus terms them\"",
+          "id": "1.3.2.1-f5",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Jason Pratensis, after Valescus",
+          "basis": "text \"Valescus admires pulvis Hali, and Jason Pratensis after him\"",
+          "id": "2.5.1.3-f13",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Plutarch",
+          "basis": "sidenote \"Plutarch. cap. 30 Rom. hist.\"",
+          "id": "3.2.1.2-f90",
+          "locus": "cap. 30",
+          "status": "burton-cites",
+          "work": "Roman Questions"
+        },
+        {
+          "author": "Cyprian",
+          "basis": "text \"Which induceth Cyprian to call it\"",
+          "id": "3.3.3.1-f1",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Tertullian",
+          "basis": "text \"saith Tertullian\"; Burton gives no work. The work is identified from the known wording of De praescriptione haereticorum 38.",
+          "id": "3.4.1.3-f106",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "De praescriptione haereticorum"
+        },
+        {
+          "author": "Martial",
+          "basis": "sidenote \"Martialis lib. 10 epigr. 4.\"",
+          "id": "djr-f7",
+          "locus": "lib. 10 epigr. 4",
+          "status": "burton-cites",
+          "work": "Epigrams"
+        },
+        {
+          "author": "Terence; Plautus",
+          "basis": "sidenotes \"Ter. Eunucho.\" and \"Plautus Mercat.\"",
+          "id": "3.2.3.1-f68",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Eunuchus; Mercator"
+        },
+        {
+          "author": "Horace",
+          "basis": "The well-known line 'nave ferar magna an parva, ferar unus et idem' from Horace's epistle to Florus.",
+          "id": "2.3.6.1-f35",
+          "locus": "2.2.200",
+          "status": "probable",
+          "work": "Epistles"
+        },
+        {
+          "author": "Heloise",
+          "basis": "text \"as Heloissa writ to her Sweetheart Peter Abelardus\"",
+          "id": "3.2.3.1-f417",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Letter to Peter Abelard"
+        },
+        {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Card. subt. lib. 12, gives this cause\"",
+          "id": "1.2.1.6-f18",
+          "locus": "lib. 12",
+          "status": "burton-cites",
+          "work": "De subtilitate"
+        },
+        {
+          "author": "Hippocrates",
+          "basis": "sidenote \"Hippocrates 3 Aphorismorum idem ait\"",
+          "id": "1.2.2.5-f10",
+          "locus": "3",
+          "status": "burton-cites",
+          "work": "Aphorisms"
+        },
+        {
+          "author": "John Chrysostom",
+          "basis": "sidenote \"Tom. 2. Idem fere Chrysostomus com. in cap. 6. ad Roman. ser. 11.\"",
+          "id": "1.2.3.12-f47",
+          "locus": "Tom. 2, com. in cap. 6 ad Roman., ser. 11",
+          "status": "burton-cites",
+          "work": "Commentary on Romans"
+        },
+        {
+          "author": "Cyprian",
+          "basis": "text \"which Cyprian desired\" and sidenote \"Ad Donat. ep. 2 lib. 2.\"",
+          "id": "djr-f1484",
+          "locus": "ep. 2 lib. 2",
+          "status": "burton-cites",
+          "work": "Ad Donatum"
+        },
+        {
+          "author": "Hippolytus a Collibus; Plato",
+          "basis": "sidenote \"Hippol. à Collibus de increm. urb. cap. 20. Plato idem 8 de legibus\"",
+          "id": "djr-f1489",
+          "locus": "cap. 20; 8",
+          "status": "burton-cites",
+          "work": "De incremento urbium; Laws"
+        }
+      ],
+      "downgraded": [],
+      "flags": {
+        "boundary-suspect": 3,
+        "corrupt-text": 2,
+        "language-mismatch": 2,
+        "misquotation-suspected": 9,
+        "technical-medical": 9,
+        "truncated": 6,
+        "wordplay": 4
+      },
+      "source_status": {
+        "burton-cites": 26,
+        "probable": 5,
+        "unidentified": 16
+      },
+      "warnings": {
+        "glossary": 1
+      }
+    },
+    "claude-sonnet-5-5": {
+      "attributions": [
+        {
+          "author": "Martial",
+          "basis": "sidenote \"Martial.\" (for the line \"Abderitanae pectora plebis habes\"); sidenote \"Hippoc. epist. Damageto\" (for the Hippocrates episode); sidenote \"Si me commorit, melius non tangere clamo. Hor.\"",
+          "id": "lectori-f2",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Plutarch",
+          "basis": "sidenote \"Tom. 2 Gryllo.\" and text \"quod apud Plutarchum Gryllus Ulyssi objecit\"",
+          "id": "3.2.1.2-f132",
+          "locus": "Tom. 2 Gryllo",
+          "status": "burton-cites",
+          "work": "Gryllus (Bruta animalia ratione uti)"
+        },
+        {
+          "author": "Virgil",
+          "basis": "Burton's text says 'that Heroical Poet in the person of Dido', and the wording is Aeneid 4 ('At non infelix animi Phoenissa'). The reading 'amores' for 'noctem' differs from the standard text.",
+          "id": "3.2.3.1-f14",
+          "locus": "4.529–532",
+          "status": "probable",
+          "work": "Aeneid"
+        },
+        {
+          "author": "Virgil",
+          "basis": "text \"This was Virgil’s experiment\"",
+          "id": "1.2.2.5-f17",
+          "locus": "1.416-419",
+          "status": "burton-cites",
+          "work": "Georgics"
+        },
+        {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 3 Od. 1.\"",
+          "id": "1.3.1.2-f22",
+          "locus": "lib. 3 Od. 1.",
+          "status": "burton-cites",
+          "work": "Odes"
+        },
+        {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg. Aen. 6.\"",
+          "id": "3.2.5.1-f47",
+          "locus": "6",
+          "status": "burton-cites",
+          "work": "Aeneid"
+        },
+        {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"",
+          "id": "1.2.3.8-f3",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Works and Days"
+        },
+        {
+          "author": "Anacreon",
+          "basis": "text \"so saith Horace, so saith Anacreon,\"; sidenote \"26.\"",
+          "id": "2.5.1.5-f10",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Erasmus",
+          "basis": "sidenote \"Erasm. chil. 3 cent. 10.\"",
+          "id": "djr-f972",
+          "locus": "chil. 3 cent. 10",
+          "status": "burton-cites",
+          "work": "Adagia"
+        },
+        {
+          "author": "Aristophanes",
+          "basis": "Burton's text names \"Aristophanes’ frogs\" and the refrain is the famous frog chorus.",
+          "id": "djr-f1468",
+          "locus": null,
+          "status": "probable",
+          "work": "Frogs"
+        },
+        {
+          "author": "Horace",
+          "basis": "text \"Hor.\" after the passage",
+          "id": "djr-f324",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Satires"
+        },
+        {
+          "author": "Persius",
+          "basis": "sidenote \"Pers. Sat. 3.\"",
+          "id": "1.2.3.15-f58",
+          "locus": "Sat. 3",
+          "status": "burton-cites",
+          "work": "Satires"
+        },
+        {
+          "author": "Horace",
+          "basis": "Well-known proverbial line 'Naturam expellas furca, tamen usque recurret'; Burton gives no attribution here.",
+          "id": "2.3.7.1-f52",
+          "locus": "1.10",
+          "status": "probable",
+          "work": "Epistles"
+        },
+        {
+          "author": "Terence",
+          "basis": "Well-known tag 'Amantium irae amoris integratio est' in Terence's Andria; Burton's 'redintegratio' is the common proverbial variant, and he calls it 'the old saying'.",
+          "id": "3.2.2.4-f92",
+          "locus": null,
+          "status": "probable",
+          "work": "Andria"
+        },
+        {
+          "author": "Salvianus",
+          "basis": "text \"Salust. Salvianus, lib. 2 cap. 1\" in the main text at the sidenote anchor, naming him as master of a hospital of madmen",
+          "id": "1.2.2.4-f13",
+          "locus": "lib. 2 cap. 1",
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Montaltus",
+          "basis": "text \"digna, as ⟦sidenote⟧Montaltus terms them\" (main text at the sidenote anchor)",
+          "id": "1.3.2.1-f5",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Plutarch",
+          "basis": "sidenote \"Plutarch. cap. 30 Rom. hist.\"",
+          "id": "3.2.1.2-f90",
+          "locus": "cap. 30 Rom. hist.",
+          "status": "burton-cites",
+          "work": "Roman Questions (Quaestiones Romanae)"
+        },
+        {
+          "author": "Cyprian",
+          "basis": "text \"Which induceth Cyprian to call it\"",
+          "id": "3.3.3.1-f1",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Tertullian",
+          "basis": "text \"saith Tertullian\"",
+          "id": "3.4.1.3-f106",
+          "locus": null,
+          "status": "burton-cites",
+          "work": null
+        },
+        {
+          "author": "Martial",
+          "basis": "sidenote \"Martialis lib. 10 epigr. 4.\"",
+          "id": "djr-f7",
+          "locus": "lib. 10 epigr. 4",
+          "status": "burton-cites",
+          "work": "Epigrams"
+        },
+        {
+          "author": "Terence; Plautus",
+          "basis": "sidenotes \"Ter. Eunucho.\" and \"Plautus Mercat.\"",
+          "id": "3.2.3.1-f68",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "Eunuchus; Mercator"
+        },
+        {
+          "author": "Heloise",
+          "basis": "text \"as Heloissa writ to her Sweetheart Peter Abelardus\"",
+          "id": "3.2.3.1-f417",
+          "locus": null,
+          "status": "burton-cites",
+          "work": "letter to Abelard"
+        },
+        {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Card. subt. lib. 12, gives this cause\"",
+          "id": "1.2.1.6-f18",
+          "locus": "lib. 12",
+          "status": "burton-cites",
+          "work": "De subtilitate"
+        },
+        {
+          "author": "Hippocrates",
+          "basis": "sidenote \"Hippocrates 3 Aphorismorum idem ait\"",
+          "id": "1.2.2.5-f10",
+          "locus": "3",
+          "status": "burton-cites",
+          "work": "Aphorisms"
+        },
+        {
+          "author": "John Chrysostom",
+          "basis": "sidenote \"Idem fere Chrysostomus\" with \"Tom. 2. ... com. in cap. 6. ad Roman. ser. 11.\"",
+          "id": "1.2.3.12-f47",
+          "locus": "Tom. 2. com. in cap. 6. ad Roman. ser. 11.",
+          "status": "burton-cites",
+          "work": "Commentary on Romans"
+        },
+        {
+          "author": "Cyprian",
+          "basis": "text \"Cyprian desired\" at the anchor, and the passage begins \"Ad Donat. ep. 2 lib. 2.\"",
+          "id": "djr-f1484",
+          "locus": "ep. 2 lib. 2",
+          "status": "burton-cites",
+          "work": "Ad Donatum"
+        },
+        {
+          "author": "Hippolytus a Collibus",
+          "basis": "passage text \"à Collibus de increm. urb. cap. 20. Plato idem 8 de legibus\"",
+          "id": "djr-f1489",
+          "locus": "cap. 20",
+          "status": "burton-cites",
+          "work": "De incremento urbium"
+        }
+      ],
+      "downgraded": [],
+      "flags": {
+        "boundary-suspect": 2,
+        "language-mismatch": 2,
+        "misquotation-suspected": 1,
+        "technical-medical": 7,
+        "truncated": 4,
+        "wordplay": 3
+      },
+      "source_status": {
+        "burton-cites": 23,
+        "probable": 4,
+        "unidentified": 20
+      },
+      "warnings": {
+        "glossary": 1
+      }
+    }
+  },
+  "items": 50,
+  "strata": {
+    "chaucer": 3,
+    "citation-sidenote": 4,
+    "greek": 5,
+    "italian-french": 3,
+    "long-prose": 4,
+    "medical": 5,
+    "misquotation": 5,
+    "pun": 3,
+    "recipe": 4,
+    "self-translation": 10,
+    "verse": 4
+  },
+  "throughput": {
+    "claude-opus-5-5": {
+      "cache_write_per_packet_mean": 3025,
+      "calls": 31,
+      "cost_usd_list_per_passage": 0.028,
+      "cost_usd_list_total": 1.3982,
+      "input_tokens_per_packet_mean": 9053,
+      "output_tokens_per_passage": 636,
+      "packets": 30,
+      "packets_done": 30,
+      "passages": 50,
+      "per_packet": [
+        {
+          "cache_read": 0,
+          "cache_write": 8163,
+          "calls": 1,
+          "chars_in": 15237,
+          "cost": 0.1055,
+          "in": 2,
+          "n": 1,
+          "out": 2009,
+          "seconds": 27.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 4245,
+          "calls": 1,
+          "chars_in": 19947,
+          "cost": 0.0558,
+          "in": 2,
+          "n": 2,
+          "out": 1033,
+          "seconds": 14.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 3089,
+          "calls": 1,
+          "chars_in": 18067,
+          "cost": 0.0475,
+          "in": 2,
+          "n": 2,
+          "out": 1079,
+          "seconds": 17.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 5246,
+          "calls": 1,
+          "chars_in": 22960,
+          "cost": 0.084,
+          "in": 2,
+          "n": 4,
+          "out": 2042,
+          "seconds": 24.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 3539,
+          "calls": 1,
+          "chars_in": 18918,
+          "cost": 0.0933,
+          "in": 2,
+          "n": 4,
+          "out": 3187,
+          "seconds": 35.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2610,
+          "calls": 1,
+          "chars_in": 16788,
+          "cost": 0.0487,
+          "in": 2,
+          "n": 2,
+          "out": 1331,
+          "seconds": 16.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1548,
+          "calls": 1,
+          "chars_in": 14072,
+          "cost": 0.0204,
+          "in": 2,
+          "n": 1,
+          "out": 340,
+          "seconds": 8.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1867,
+          "calls": 1,
+          "chars_in": 14879,
+          "cost": 0.0303,
+          "in": 2,
+          "n": 1,
+          "out": 706,
+          "seconds": 10.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2644,
+          "calls": 1,
+          "chars_in": 16654,
+          "cost": 0.0434,
+          "in": 2,
+          "n": 2,
+          "out": 1050,
+          "seconds": 14.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2409,
+          "calls": 1,
+          "chars_in": 16028,
+          "cost": 0.0407,
+          "in": 2,
+          "n": 2,
+          "out": 1012,
+          "seconds": 14.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 9728,
+          "calls": 1,
+          "chars_in": 35741,
+          "cost": 0.1585,
+          "in": 2,
+          "n": 8,
+          "out": 3974,
+          "seconds": 40.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2901,
+          "calls": 1,
+          "chars_in": 18123,
+          "cost": 0.0435,
+          "in": 2,
+          "n": 1,
+          "out": 955,
+          "seconds": 17.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1565,
+          "calls": 1,
+          "chars_in": 14081,
+          "cost": 0.0242,
+          "in": 2,
+          "n": 1,
+          "out": 524,
+          "seconds": 8.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 3492,
+          "calls": 1,
+          "chars_in": 19707,
+          "cost": 0.0398,
+          "in": 2,
+          "n": 1,
+          "out": 533,
+          "seconds": 9.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2870,
+          "calls": 1,
+          "chars_in": 17674,
+          "cost": 0.0341,
+          "in": 2,
+          "n": 1,
+          "out": 494,
+          "seconds": 8.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1735,
+          "calls": 1,
+          "chars_in": 14603,
+          "cost": 0.028,
+          "in": 2,
+          "n": 1,
+          "out": 644,
+          "seconds": 12.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1766,
+          "calls": 1,
+          "chars_in": 14505,
+          "cost": 0.0328,
+          "in": 2,
+          "n": 1,
+          "out": 873,
+          "seconds": 12.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 12052,
+          "cache_write": 3439,
+          "calls": 2,
+          "chars_in": 14363,
+          "cost": 0.0607,
+          "in": 4,
+          "n": 1,
+          "out": 1536,
+          "seconds": 22.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 4233,
+          "calls": 1,
+          "chars_in": 20520,
+          "cost": 0.0585,
+          "in": 2,
+          "n": 2,
+          "out": 1169,
+          "seconds": 15.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2211,
+          "calls": 1,
+          "chars_in": 15502,
+          "cost": 0.0391,
+          "in": 2,
+          "n": 2,
+          "out": 1012,
+          "seconds": 13.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1715,
+          "calls": 1,
+          "chars_in": 14290,
+          "cost": 0.0307,
+          "in": 2,
+          "n": 1,
+          "out": 790,
+          "seconds": 11.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2931,
+          "calls": 1,
+          "chars_in": 17891,
+          "cost": 0.0371,
+          "in": 2,
+          "n": 1,
+          "out": 621,
+          "seconds": 11.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2972,
+          "calls": 1,
+          "chars_in": 18041,
+          "cost": 0.0392,
+          "in": 2,
+          "n": 1,
+          "out": 710,
+          "seconds": 13.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1714,
+          "calls": 1,
+          "chars_in": 14574,
+          "cost": 0.0245,
+          "in": 2,
+          "n": 1,
+          "out": 479,
+          "seconds": 14.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2611,
+          "calls": 1,
+          "chars_in": 16524,
+          "cost": 0.0354,
+          "in": 2,
+          "n": 1,
+          "out": 665,
+          "seconds": 11.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1668,
+          "calls": 1,
+          "chars_in": 14445,
+          "cost": 0.0276,
+          "in": 2,
+          "n": 1,
+          "out": 652,
+          "seconds": 10.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2849,
+          "calls": 1,
+          "chars_in": 17529,
+          "cost": 0.0329,
+          "in": 2,
+          "n": 1,
+          "out": 446,
+          "seconds": 8.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1650,
+          "calls": 1,
+          "chars_in": 14282,
+          "cost": 0.0303,
+          "in": 2,
+          "n": 1,
+          "out": 793,
+          "seconds": 12.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1903,
+          "calls": 1,
+          "chars_in": 15095,
+          "cost": 0.0319,
+          "in": 2,
+          "n": 1,
+          "out": 775,
+          "seconds": 11.4,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1426,
+          "calls": 1,
+          "chars_in": 13771,
+          "cost": 0.0199,
+          "in": 2,
+          "n": 1,
+          "out": 362,
+          "seconds": 7.6,
+          "status": "done"
+        }
+      ],
+      "retried_packets": 1,
+      "seconds_per_packet_median": 13.2,
+      "seconds_per_passage": 9.1,
+      "seconds_total": 455.8,
+      "statuses": {
+        "done": 30
+      }
+    },
+    "claude-sonnet-5-5": {
+      "cache_write_per_packet_mean": 3551,
+      "calls": 34,
+      "cost_usd_list_per_passage": 0.0134,
+      "cost_usd_list_total": 0.6697,
+      "input_tokens_per_packet_mean": 10559,
+      "output_tokens_per_passage": 445,
+      "packets": 30,
+      "packets_done": 30,
+      "passages": 50,
+      "per_packet": [
+        {
+          "cache_read": 0,
+          "cache_write": 8171,
+          "calls": 1,
+          "chars_in": 15237,
+          "cost": 0.0416,
+          "in": 2,
+          "n": 1,
+          "out": 887,
+          "seconds": 12.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 4250,
+          "calls": 1,
+          "chars_in": 19947,
+          "cost": 0.0253,
+          "in": 2,
+          "n": 2,
+          "out": 773,
+          "seconds": 9.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 3088,
+          "calls": 1,
+          "chars_in": 18067,
+          "cost": 0.0182,
+          "in": 2,
+          "n": 2,
+          "out": 521,
+          "seconds": 9.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 12052,
+          "cache_write": 10585,
+          "calls": 2,
+          "chars_in": 22960,
+          "cost": 0.0815,
+          "in": 4,
+          "n": 4,
+          "out": 3791,
+          "seconds": 36.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 9571,
+          "cache_write": 0,
+          "calls": 1,
+          "chars_in": 18918,
+          "cost": 0.0153,
+          "in": 2,
+          "n": 4,
+          "out": 1432,
+          "seconds": 618.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2622,
+          "calls": 1,
+          "chars_in": 16788,
+          "cost": 0.017,
+          "in": 2,
+          "n": 2,
+          "out": 592,
+          "seconds": 9.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1554,
+          "calls": 1,
+          "chars_in": 14072,
+          "cost": 0.0096,
+          "in": 2,
+          "n": 1,
+          "out": 278,
+          "seconds": 5.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1881,
+          "calls": 1,
+          "chars_in": 14879,
+          "cost": 0.0114,
+          "in": 2,
+          "n": 1,
+          "out": 322,
+          "seconds": 5.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 12052,
+          "cache_write": 5367,
+          "calls": 2,
+          "chars_in": 16654,
+          "cost": 0.0321,
+          "in": 4,
+          "n": 2,
+          "out": 944,
+          "seconds": 11.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2410,
+          "calls": 1,
+          "chars_in": 16028,
+          "cost": 0.0167,
+          "in": 2,
+          "n": 2,
+          "out": 647,
+          "seconds": 6.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 12052,
+          "cache_write": 19521,
+          "calls": 2,
+          "chars_in": 35741,
+          "cost": 0.1176,
+          "in": 4,
+          "n": 8,
+          "out": 3834,
+          "seconds": 28.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2907,
+          "calls": 1,
+          "chars_in": 18123,
+          "cost": 0.021,
+          "in": 2,
+          "n": 1,
+          "out": 873,
+          "seconds": 9.1,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1573,
+          "calls": 1,
+          "chars_in": 14081,
+          "cost": 0.0101,
+          "in": 2,
+          "n": 1,
+          "out": 317,
+          "seconds": 5.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 3491,
+          "calls": 1,
+          "chars_in": 19707,
+          "cost": 0.0177,
+          "in": 2,
+          "n": 1,
+          "out": 310,
+          "seconds": 5.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2878,
+          "calls": 1,
+          "chars_in": 17674,
+          "cost": 0.0149,
+          "in": 2,
+          "n": 1,
+          "out": 275,
+          "seconds": 4.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 13795,
+          "cache_write": 2551,
+          "calls": 1,
+          "chars_in": 14603,
+          "cost": 0.0212,
+          "in": 4,
+          "n": 1,
+          "out": 958,
+          "seconds": 9.5,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1767,
+          "calls": 1,
+          "chars_in": 14505,
+          "cost": 0.0112,
+          "in": 2,
+          "n": 1,
+          "out": 351,
+          "seconds": 5.0,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1684,
+          "calls": 1,
+          "chars_in": 14363,
+          "cost": 0.011,
+          "in": 2,
+          "n": 1,
+          "out": 365,
+          "seconds": 5.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 4233,
+          "calls": 1,
+          "chars_in": 20520,
+          "cost": 0.0227,
+          "in": 2,
+          "n": 2,
+          "out": 516,
+          "seconds": 6.9,
+          "status": "done"
+        },
+        {
+          "cache_read": 12052,
+          "cache_write": 4496,
+          "calls": 2,
+          "chars_in": 15502,
+          "cost": 0.0307,
+          "in": 4,
+          "n": 2,
+          "out": 1146,
+          "seconds": 14.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1719,
+          "calls": 1,
+          "chars_in": 14290,
+          "cost": 0.0108,
+          "in": 2,
+          "n": 1,
+          "out": 332,
+          "seconds": 6.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2939,
+          "calls": 1,
+          "chars_in": 17891,
+          "cost": 0.0151,
+          "in": 2,
+          "n": 1,
+          "out": 277,
+          "seconds": 4.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2977,
+          "calls": 1,
+          "chars_in": 18041,
+          "cost": 0.016,
+          "in": 2,
+          "n": 1,
+          "out": 348,
+          "seconds": 5.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1720,
+          "calls": 1,
+          "chars_in": 14574,
+          "cost": 0.01,
+          "in": 2,
+          "n": 1,
+          "out": 248,
+          "seconds": 6.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2613,
+          "calls": 1,
+          "chars_in": 16524,
+          "cost": 0.0144,
+          "in": 2,
+          "n": 1,
+          "out": 337,
+          "seconds": 4.6,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1683,
+          "calls": 1,
+          "chars_in": 14445,
+          "cost": 0.0106,
+          "in": 2,
+          "n": 1,
+          "out": 323,
+          "seconds": 6.3,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 2848,
+          "calls": 1,
+          "chars_in": 17529,
+          "cost": 0.0149,
+          "in": 2,
+          "n": 1,
+          "out": 294,
+          "seconds": 5.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1651,
+          "calls": 1,
+          "chars_in": 14282,
+          "cost": 0.0101,
+          "in": 2,
+          "n": 1,
+          "out": 285,
+          "seconds": 4.7,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1906,
+          "calls": 1,
+          "chars_in": 15095,
+          "cost": 0.0117,
+          "in": 2,
+          "n": 1,
+          "out": 342,
+          "seconds": 6.2,
+          "status": "done"
+        },
+        {
+          "cache_read": 6026,
+          "cache_write": 1431,
+          "calls": 1,
+          "chars_in": 13771,
+          "cost": 0.0096,
+          "in": 2,
+          "n": 1,
+          "out": 330,
+          "seconds": 5.0,
+          "status": "done"
+        }
+      ],
+      "retried_packets": 4,
+      "seconds_per_packet_median": 6.2,
+      "seconds_per_passage": 17.4,
+      "seconds_total": 871.7,
+      "statuses": {
+        "done": 30
+      }
+    }
+  },
+  "translated": {
+    "claude-opus-5-5": 50,
+    "claude-sonnet-5-5": 50
+  },
+  "verdicts": {
+    "claude-opus-5-5": {
+      "all_ok": 46,
+      "all_ok_as_drafted": 43,
+      "all_wrong": 1,
+      "gate_items": 12,
+      "gate_ok": 12,
+      "gate_ok_as_drafted": 11,
+      "wrong": [
+        {
+          "claimed": null,
+          "expected": [
+            "full"
+          ],
+          "gate": false,
+          "got": "none",
+          "id": "3.2.5.1-f47"
+        }
+      ]
+    },
+    "claude-sonnet-5-5": {
+      "all_ok": 44,
+      "all_ok_as_drafted": 41,
+      "all_wrong": 3,
+      "gate_items": 12,
+      "gate_ok": 10,
+      "gate_ok_as_drafted": 9,
+      "gate_wrong": 2,
+      "wrong": [
+        {
+          "claimed": null,
+          "expected": [
+            "full"
+          ],
+          "gate": false,
+          "got": "none",
+          "id": "3.2.5.1-f47"
+        },
+        {
+          "claimed": null,
+          "expected": [
+            "partial"
+          ],
+          "gate": true,
+          "got": "full",
+          "id": "2.3.3.1-f166"
+        },
+        {
+          "claimed": null,
+          "expected": [
+            "partial",
+            "paraphrase"
+          ],
+          "gate": true,
+          "got": "full",
+          "id": "3.2.3.1-f417"
+        }
+      ]
+    }
+  }
+}

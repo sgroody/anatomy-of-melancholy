@@ -1,0 +1,100 @@
+{
+  "1.2.3.8-f3": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "A Potter emulates a Potter, / One Smith envies another:",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f3"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "sidenote \"Hesiod. op. dies.\"; the line is Works and Days 25",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Καὶ κεραμεὺς κεραμεῖ κοτέει καὶ τέκτονι τέκτων",
+    "text_sha1": "513475d897df1695b887b95ca9453761a6d1e892",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is only the first of the two Greek lines Burton quotes. The second line (beggar envies beggar, singer envies singer) is in the paragraph but outside this passage. τέκτων means a carpenter or builder, a worker in wood; Burton's verse turns him into a 'Smith'. κοτέει means 'bears a grudge' or 'is resentful'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "A Potter emulates a Potter, / One Smith envies another:",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f3"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"; the line is Works and Days 25",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "And potter bears a grudge against potter, and carpenter against carpenter",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Hesiod, Works and Days 25–26. Burton's English verse that follows renders this line and the next (beggar/beggar, singer/singer), but only the first line is in this passage. κοτέει means 'bears a grudge, is angry'; Burton renders it 'emulates'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "A Potter emulates a Potter, / One Smith envies another:",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f3"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "And potter is angry with potter, and craftsman with craftsman.",
+        "warnings": []
+      }
+    ]
+  }
+}

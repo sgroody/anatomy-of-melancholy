@@ -1,0 +1,257 @@
+# M4 translation pilot: 50 hard passages (PLAN M4). Chosen 2026-10-20 by Claude from the
+# M2 base text and the self-translation signals in data/layers/selftrans/ (rules only).
+#
+# Choosing is not translating: nothing here renders the passages. Each item gives its stratum,
+# why it is hard, and the self-translation verdict a correct answer should give.
+#
+# `expected_st`: the verdicts (SPEC §6.2) that count as correct, read by Claude from Burton's
+#   text around the passage. Drafted, like the D7 gold labels: the owner reviews them with the
+#   rubric. `gate: true` marks the self-translation items for the M4 exit criterion.
+#   Three labels were revised after the runs, each toward the models' answer; the draft is kept as
+#   `expected_st_draft` with the reason in `revised`, and the report scores both. The owner confirmed
+#   the three revisions on 2026-10-23.
+# `kind: gloss-only` (Chaucer): Middle English in Gowland's modernised spelling. It gets glosses
+#   of obsolete words, never a translation. These items are keyed by their verse-group id,
+#   because ingest does not tag Chaucer's 83 `lucida` spans as `enm` passages (see notes below).
+#
+# Notes on the strata (counts are from the 7,785 foreign passages after M2):
+# * Italian and French: the base text has one passage tagged `it` (djr-f1477) and none tagged
+#   `fr`. The only Italian quotation found is tagged `la` (3.3.2.1-f5); "à la mort" (1.3.1.4) is
+#   French but untagged, so it is not a passage. The stratum therefore has 3 Italian items.
+# * Chaucer: not in the translation queue at all (no `enm` tagging yet; SURVEY §6 says to tag it).
+# * Long prose: only 2 prose passages in running text have 70+ words; 9 have 40-69.
+# * Misquotation notes give the standard text only as a reviewer's check; they are never sent to
+#   a model and are not attributions in any layer.
+version: 1
+prompt_from: tr-v2
+items:
+  # ---------------------------------------------------------------- long prose quotations (4)
+  - id: lectori-f2
+    stratum: long-prose
+    reason: 'The longest passage in the book (Burton''s own Latin address to the reader, no bracket, no candidate English). Tests sustained register and that no source is invented for Burton''s own composition.'
+    expected_st: [none]
+  - id: 3.2.1.2-f132
+    stratum: long-prose
+    reason: '74-word prose in a paragraph Burton keeps wholly in Latin (sexual matter); sidenotes name Lucian and Achilles Tatius for nearby sentences, not for this one. Tests restraint in attribution.'
+    expected_st: [none]
+  - id: 2.3.6.1-f20
+    stratum: long-prose
+    reason: '50-word autobiographical Latin with a chain of short clauses; English on both sides that does not render it.'
+    expected_st: [none]
+  - id: 3.2.5.1-f31
+    stratum: long-prose
+    reason: '60-word medical-sexual prose that Burton deliberately leaves untranslated; the passage boundary cuts a wholly Latin paragraph (Latin before and after it is not part of the passage).'
+    expected_st: [none]
+  # ---------------------------------------------------------------- verse (4)
+  - id: 3.2.3.1-f14
+    stratum: verse
+    reason: 'Virgilian hexameters ending in "&c." and a dash; Burton''s own English verse follows (rules signal burton-verse-follows).'
+    expected_st: [full, paraphrase]
+  - id: 1.2.2.5-f17
+    stratum: verse
+    reason: 'Verse with an astrological-meteorological sense of "humor" (glossary term in a non-medical sense); Burton''s English quatrain follows.'
+    expected_st: [full, paraphrase]
+  - id: 1.3.1.2-f22
+    stratum: verse
+    reason: 'Short Horatian fragment with "atra cura" (black care, not black bile); Gowland bracket present, no Burton rendering.'
+    expected_st: [none]
+  - id: 3.2.5.1-f47
+    stratum: verse
+    reason: 'Boundary defect - the passage wrongly includes Burton''s own English couplet after the Latin. Tests that the model translates only the Latin, flags the boundary, and does not re-translate Burton.'
+    expected_st: [full]
+    known_defect: 'Burton''s English couplet is inside the passage, so a correct quote cannot pass the "quote outside the passage" check; the record is expected to end undetermined unless the boundary is fixed.'
+  # ---------------------------------------------------------------- Greek (5)
+  - id: 1.2.3.8-f3
+    stratum: greek
+    reason: 'Hesiodic hexameter whose next line is a separate passage (f4); Burton''s English verse renders both lines, so the right quote is only the first half of it.'
+    expected_st: [full, partial]
+  - id: 1.2.3.10-f10
+    stratum: greek
+    reason: 'Greek epigram in a sidenote, followed in the same sidenote by Burton''s Latin version (not English); the English at the anchor is not a rendering.'
+    expected_st: [none, paraphrase]
+  - id: 2.5.1.5-f10
+    stratum: greek
+    reason: 'Anacreontic verse with only a bare numeral sidenote ("26."); bracket present.'
+    expected_st: [none]
+  - id: djr-f972
+    stratum: greek
+    reason: 'Carries the one recorded source correction (mixed-script Mανία -> Μανία, choice/sic/corr); English on both sides partly renders it.'
+    expected_st: [full, partial, paraphrase, none]
+    expected_st_draft: [partial, paraphrase, none]
+    revised: 'After the runs (both models said full): Burton''s preceding "They dote all, but not alike" renders the whole Greek line; the draft undervalued it.'
+  - id: djr-f1468
+    stratum: greek
+    reason: 'Aristophanes'' frog-chorus noise in Latin letters (grc-Latn); nothing to translate in the usual sense. Tests a sensible note instead of an invented meaning.'
+    expected_st: [none]
+  # ---------------------------------------------------------------- suspected misquotations (5)
+  - id: djr-f324
+    stratum: misquotation
+    reason: 'Horace, Satires 1.1.1-3, set as prose; the standard text reads "seu fors obiecerit", Burton "seu sors adjecerit". Sidenote is only "Hor.". Expected flag misquotation-suspected.'
+    expected_st: [none, paraphrase]
+  - id: 1.2.3.15-f58
+    stratum: misquotation
+    reason: 'Persius 3 (Burton''s sidenote "Pers. Sat. 3."); the standard text has "hoc est quod palles?". Burton''s next sentences loosely render it.'
+    expected_st: [paraphrase, partial]
+  - id: 2.3.7.1-f52
+    stratum: misquotation
+    reason: 'Horace, Epistles 1.10.24, quoted with "expellas ... licet" for "expelles ... tamen"; a sidenote with no author. The English at the anchor is a proverb, not a rendering.'
+    expected_st: [none, paraphrase]
+  - id: 3.2.2.4-f92
+    stratum: misquotation
+    reason: 'Terence''s "amantium irae amoris integratio" in its proverbial form "redintegratio"; no bracket, Burton renders it at once.'
+    expected_st: [full]
+    gate: true
+  - id: 2.3.1.1-f11
+    stratum: misquotation
+    reason: 'A proverb with no secure classical source that is often given to famous authors. The honest answer is unidentified (or proverbial, with no author).'
+    expected_st: [none, paraphrase]
+  # ---------------------------------------------------------------- puns and wordplay (3)
+  - id: djr-f387
+    stratum: pun
+    reason: 'Folk etymology "bellum quasi bellua" in a sidenote; the play cannot survive literal English, so it belongs in the note.'
+    expected_st: [none]
+  - id: 1.2.3.10-f1
+    stratum: pun
+    reason: 'The etymological pun "Cura quasi cor uro", which Burton introduces as "the common Etymology"; tests explanation kept out of the translation.'
+    expected_st: [none]
+  - id: 3.2.5.1-f27
+    stratum: pun
+    reason: 'amantes / amentes, which Burton renders at once without keeping the jingle.'
+    expected_st: [full]
+    gate: true
+  # ---------------------------------------------------------------- technical medical Latin (5)
+  - id: 1.2.2.4-f13
+    stratum: medical
+    reason: '38-word sidenote on phlebotomy (venam frontis, desipientia, Xenodochium); Burton''s text at the anchor paraphrases part of it.'
+    expected_st: [paraphrase, partial, none]
+  - id: 1.3.2.4-f43
+    stratum: medical
+    reason: 'Uterine theory of melancholy (menstrual exhalation, per essentiam / per consensum); Burton''s main text renders part of it ("not in essence, but by consent").'
+    expected_st: [partial, paraphrase]
+  - id: 1.3.2.1-f5
+    stratum: medical
+    reason: 'Head-melancholy diagnosis: ventriculus, pathemata, organs sharing an affection (sympathy); terms with false modern friends.'
+    expected_st: [partial, paraphrase]
+    expected_st_draft: [none, paraphrase]
+    revised: 'After the runs (both models said partial): Burton''s text at the anchor renders part of the note ("no notable signs in the stomach", "the passions of the stomach concur with them"); the draft missed it.'
+  - id: 1.2.1.6-f3
+    stratum: medical
+    reason: 'Humoral types (pituitosi, biliosi, lienosi, melancholici); glossary terms in adjectival form.'
+    expected_st: [none]
+  - id: 3.2.5.1-f29
+    stratum: medical
+    reason: 'Bloodletting and cupping for love-sickness (venae sectio, cucurbitulae).'
+    expected_st: [none, paraphrase, partial]
+  # ---------------------------------------------------------------- apothecary recipes (4)
+  - id: 2.5.1.5-f17
+    stratum: recipe
+    reason: '℞ ℥ ß ℈ with "confect. Alkermes", "lap. Bezor."; ß is the apothecary semis (half), not German.'
+    expected_st: [none]
+  - id: 2.5.1.6-f1
+    stratum: recipe
+    reason: 'Sleeping draught with ʒ ß and "℥ iii ß" (three and a half ounces); diacodium, diascordium.'
+    expected_st: [none]
+  - id: 2.5.1.3-f13
+    stratum: recipe
+    reason: 'Weights as "ana ʒ ii", "semunc.", "scrup. 4" and a count of cloves: quantities written three different ways.'
+    expected_st: [none]
+  - id: 2.5.1.6-f22
+    stratum: recipe
+    reason: 'Cryptic abbreviations ("per sic.", "ll. ii") that must not be guessed silently.'
+    expected_st: [none]
+  # ---------------------------------------------------------------- self-translations (10)
+  - id: 3.2.1.2-f90
+    stratum: self-translation
+    reason: 'No bracket; Burton renders it in the next clause.'
+    expected_st: [full]
+    gate: true
+  - id: 3.3.3.1-f1
+    stratum: self-translation
+    reason: 'No bracket; Burton renders it with the order of the last two members swapped.'
+    expected_st: [full]
+    gate: true
+  - id: 3.4.1.3-f106
+    stratum: self-translation
+    reason: 'No bracket; Burton renders it and extends the image ("as a nose of wax"); attribution in the running text ("saith Tertullian"), not in a sidenote.'
+    expected_st: [full, paraphrase]
+    gate: true
+  - id: djr-f7
+    stratum: self-translation
+    reason: 'Latin couplet followed by Burton''s English couplet (verse-following signal).'
+    expected_st: [full, paraphrase]
+    gate: true
+  - id: 3.2.3.1-f68
+    stratum: self-translation
+    reason: 'Eight-line list of vices; Burton''s six-line English verse compresses it.'
+    expected_st: [paraphrase, full]
+    gate: true
+  - id: 2.3.6.1-f35
+    stratum: self-translation
+    reason: 'Short Gowland bracket; Burton''s "I am the same" renders only the second half.'
+    expected_st: [partial]
+    gate: true
+  - id: 2.3.3.1-f166
+    stratum: self-translation
+    reason: 'Short Gowland bracket; Burton renders the second clause only.'
+    expected_st: [partial]
+    gate: true
+  - id: 2.4.1.3-f2
+    stratum: self-translation
+    reason: 'Short Gowland bracket; the rules candidate stops after the first clause of Burton''s rendering.'
+    expected_st: [full, paraphrase]
+    expected_st_draft: [partial, paraphrase]
+    revised: 'After the runs (both models said full): the draft was read from the rules candidate ("some herbs provoke lust"), which stops early; Burton''s sentence goes on "some again, as agnus Castus, water lily, quite extinguish seed" and so renders both halves.'
+    gate: true
+  - id: 3.2.3.1-f417
+    stratum: self-translation
+    reason: 'Short Gowland bracket; Burton renders the main clause and drops the conditional.'
+    expected_st: [partial, paraphrase]
+    gate: true
+  - id: 1.2.1.6-f18
+    stratum: self-translation
+    reason: 'No bracket; Burton''s rendering runs past the rules candidate span (which stops at a semicolon), so the right quote is longer than the hint.'
+    expected_st: [full, paraphrase]
+    gate: true
+  # ---------------------------------------------------------------- Italian and French (3)
+  - id: 3.3.2.1-f5
+    stratum: italian-french
+    reason: 'An Italian proverb couplet tagged la by the language rules. Tests that the model translates it and reports the language mismatch.'
+    expected_st: [none]
+  - id: 3.2.5.3-f163
+    stratum: italian-french
+    reason: 'Italian phrase inside an English list of near-synonyms; tagged la.'
+    expected_st: [none, paraphrase]
+  - id: djr-f1477
+    stratum: italian-french
+    reason: 'The one passage tagged it (model ruling, medium); a single word in a utopian city plan.'
+    expected_st: [none]
+  # ---------------------------------------------------------------- Chaucer, gloss only (3)
+  - id: 3.2.2.1-lg9
+    stratum: chaucer
+    kind: gloss-only
+    reason: 'Wife of Bath couplet; obsolete "to sicker", double-sense "liquorish".'
+  - id: 3.2.3.1-lg184
+    stratum: chaucer
+    kind: gloss-only
+    reason: 'Knight''s Tale (Emily); "to seen", "I not".'
+  - id: 3.2.5.5-lg77
+    stratum: chaucer
+    kind: gloss-only
+    reason: 'Seven-line stanza with "stound", "kind''s ordinance", "I wis"; easy to over-modernise.'
+  # ---------------------------------------------------------------- citation-only Latin in sidenotes (4)
+  - id: 1.2.2.5-f10
+    stratum: citation-sidenote
+    reason: 'Almost all citation ("Hippocrates 3 Aphorismorum idem ait"); tests expanding the reference without inventing a locus.'
+    expected_st: [none]
+  - id: 1.2.3.12-f47
+    stratum: citation-sidenote
+    reason: 'The words "Idem fere Chrysostomus" stand between two locator fragments that are not part of the passage.'
+    expected_st: [none]
+  - id: djr-f1484
+    stratum: citation-sidenote
+    reason: 'Reference plus incipit ending "&c."; the sidenote names the work, the text names the author.'
+    expected_st: [none, paraphrase]
+  - id: djr-f1489
+    stratum: citation-sidenote
+    reason: 'Two citations and a quotation run together in one sidenote; short Gowland bracket; Burton''s English at the anchor renders the law.'
+    expected_st: [paraphrase, partial, full]

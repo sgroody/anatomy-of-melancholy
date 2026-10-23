@@ -1,0 +1,98 @@
+{
+  "2.4.1.3-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "some herbs provoke lust; some again, as agnus Castus, water lily, quite extinguish seed",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f2"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Satyrium & eruca penem erigunt, vitex & nymphea semen extinguunt",
+    "text_sha1": "2c78f60da16c30e5e74c1fb1530541049487a4bc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Satyrium is an orchid thought to be an aphrodisiac; Burton's sidenote calls it \"Priest pintle\". Eruca is rocket. Vitex is the chaste tree (agnus castus), and nymphaea is the water lily. In his English that follows, Burton tones the first clause down to \"provoke lust\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "some herbs provoke lust; some again, as agnus Castus, water lily, quite extinguish seed",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f2"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Satyrion and rocket make the penis stand; agnus castus and water lily extinguish seed",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Satyrium is an orchid-like plant (Burton's sidenote glosses 'Priest pintle, rocket'); vitex is the chaste tree (agnus castus); nymphea is the water lily. Burton's English following ('some herbs provoke lust; some again, as agnus Castus, water lily, quite extinguish seed') renders it fully.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "some herbs provoke lust; some again, as agnus Castus, water lily, quite extinguish seed",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f2"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Satyrion and rocket raise the penis; vitex and water lily extinguish the seed",
+        "warnings": []
+      }
+    ]
+  }
+}

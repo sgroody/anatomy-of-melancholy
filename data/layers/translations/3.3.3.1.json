@@ -1,0 +1,100 @@
+{
+  "3.3.3.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a fruitful mischief, the seminary of offences, and fountain of murders",
+        "in": "3.3.3.1",
+        "near": "3.3.3.1-f1"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cyprian",
+      "basis": "text \"Which induceth Cyprian to call it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Foecundam & multiplicem perniciem, fontem cladium & seminarium delictorum",
+    "text_sha1": "5c2febe7097013a505c539d6755db58b856380ba",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "A fruitful and manifold destruction, a fountain of slaughters and a seed-plot of crimes",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Cyprian uses this language of envy and jealousy (zelus), almost certainly in his treatise De zelo et livore; Burton gives no title. Cladium means 'disasters' or 'slaughters', which Burton renders freely as 'murders'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a fruitful mischief, the seminary of offences, and fountain of murders",
+            "in": "3.3.3.1",
+            "near": "3.3.3.1-f1"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"Which induceth Cyprian to call it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A fruitful and manifold bane, a fountain of disasters and a seedbed of offences",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Burton attributes the phrase to Cyprian in his text but gives no work or locus. Burton's English follows immediately.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a fruitful mischief, the seminary of offences, and fountain of murders",
+            "in": "3.3.3.1",
+            "near": "3.3.3.1-f1"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"Which induceth Cyprian to call it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A fruitful and manifold destruction, a fountain of disasters and a seedbed of crimes",
+        "warnings": []
+      }
+    ]
+  }
+}

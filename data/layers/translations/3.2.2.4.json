@@ -1,0 +1,102 @@
+{
+  "3.2.2.4-f92": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the falling out of lovers is the renewing of love",
+        "in": "3.2.2.4",
+        "near": "3.2.2.4-f92"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "The wording is nearly identical to Terence's well-known line 'amantium irae amoris integratio est' in the Andria, and it became proverbial in this form.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Andria"
+    },
+    "text": "Amantium irae amoris redintegratio",
+    "text_sha1": "89aaa14fe51c78c27adedbfa1ad0b4cdd4984239",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "The angers of lovers [are] a renewal of love.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton gives it as 'the old saying'. It is the proverbial form of a line in Terence, Andria (Act 3, Scene 3), where the text reads 'amantium irae amoris integratio est' ('integratiost'). The later proverb, which Burton quotes here, has 'redintegratio'. The sense is the same.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the falling out of lovers is the renewing of love",
+            "in": "3.2.2.4",
+            "near": "3.2.2.4-f92"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "The wording is nearly identical to Terence's well-known line 'amantium irae amoris integratio est' in the Andria, and it became proverbial in this form.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Andria"
+        },
+        "text": "The quarrels of lovers are the renewal of love.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Proverbial saying (after Terence, Andria 555: 'amantium irae amoris integratio est'); Burton gives the form 'redintegratio'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the falling out of lovers is the renewing of love",
+            "in": "3.2.2.4",
+            "near": "3.2.2.4-f92"
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "Well-known tag 'Amantium irae amoris integratio est' in Terence's Andria; Burton's 'redintegratio' is the common proverbial variant, and he calls it 'the old saying'.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Andria"
+        },
+        "text": "The quarrels of lovers are the renewal of love",
+        "warnings": []
+      }
+    ]
+  }
+}

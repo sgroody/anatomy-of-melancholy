@@ -1,0 +1,86 @@
+{
+  "1.2.3.12-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "sidenote \"Tom. 2. Idem fere Chrysostomus com. in cap. 6. ad Roman. ser. 11.\"",
+      "locus": "Tom. 2, com. in cap. 6 ad Roman., ser. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Commentary on Romans"
+    },
+    "text": "Idem fere Chrysostomus",
+    "text_sha1": "9c85fdcf117186f0656261dc5dc3f0a0d976093a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "The same almost Chrysostom",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A cross-reference in the sidenote that goes with Plutarch's opinion in the main text: Chrysostom says nearly the same thing in volume 2, his commentary on chapter 6 of Romans, sermon 11. Here 'Idem' means 'the same thing', not 'the same author'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "sidenote \"Tom. 2. Idem fere Chrysostomus com. in cap. 6. ad Roman. ser. 11.\"",
+          "locus": "Tom. 2, com. in cap. 6 ad Roman., ser. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Commentary on Romans"
+        },
+        "text": "Chrysostom says much the same",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Sidenote with a reference: volume 2, commentary on Romans chapter 6, sermon 11. Burton's English at the anchor concerns Plutarch, not this note, so it does not render it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "sidenote \"Idem fere Chrysostomus\" with \"Tom. 2. ... com. in cap. 6. ad Roman. ser. 11.\"",
+          "locus": "Tom. 2. com. in cap. 6. ad Roman. ser. 11.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Commentary on Romans"
+        },
+        "text": "Chrysostom says almost the same",
+        "warnings": []
+      }
+    ]
+  }
+}

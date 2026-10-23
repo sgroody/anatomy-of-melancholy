@@ -2,7 +2,7 @@
 
 Every milestone ends with `burton check` passing for its scope, and with a short report of **counts** committed to `verify/reports/`.
 Each milestone's exit criteria are the definition of done.
-Decisions **[D#]** are listed at the end. D2–D6 and D9 are decided; D1, D7 and D8 are still open but do not block M0 or M1.
+Decisions **[D#]** are listed at the end. D1–D6, D8, D9 and D10 are decided; D7 is still open.
 
 ---
 
@@ -79,12 +79,32 @@ Also in M2:
 * Found and fixed on the way: in "Read in English", passages with no translation yet (7,778) disappeared; they now keep the original.
 * Typography signed off on (`uv run burton serve --profile private`): 3.2.4.1 (densest sidenotes, Latin) http://127.0.0.1:8765/3.2.4.1/ · 3.2.3.1 (744 verse lines) http://127.0.0.1:8765/3.2.3.1/ · djr (front matter) http://127.0.0.1:8765/djr/
 
+**M4 done (2026-10-23): the owner accepted the pilot results, confirmed the 3 revised self-translation labels, and chose Opus for the full pass (D8).** Full report: `verify/reports/m4-pilot.md`; review page: `verify/reports/m4-review.html`.
+* 50 passages in 11 strata (`data/eval/m4-pilot.yaml`, with the reason for each). The base text has only 3 Italian items and no French; the 3 Chaucer items are keyed by verse group because Chaucer is not tagged `enm`.
+* Prompt `tr-v2`, glossary v2 (25 terms, 24 authorities). The new check that retries added parentheses fired 3 times; **0 of 94 final records** put explanation inside the translation.
+* Both models ran through the real runner, 30 packets each, 0 invalid. Opus: 31 calls, 455.8 s, 636 output tokens per passage, $1.40 list-equivalent. Sonnet: 34 calls, 871.7 s (one packet took 618.5 s), 445 tokens per passage, $0.67. Both records are kept per passage, each labelled with its model.
+* Self-translation, 12 gate items: Opus **12/12**, Sonnet 10/12. Three labels were revised after the runs, toward the models' answer, so you need to confirm them; as drafted, the scores are 11/12 and 9/12.
+* Attributions, checked by hand: **0 invented** by either model (Opus 26 burton-cites, 5 probable; Sonnet 23 and 4). Misquotations: Opus flagged all 4 expected (and 5 more), Sonnet 0 of 4.
+* Dell & Jordan-Smith: downloaded with your consent (`data/source/DJS.lock`).
+  * Alignment (`burton align-djs`) gives 10 candidates (9 correct by hand) and 12 "omitted by them" (11 correct); 8 candidates are discarded. Coverage is 22/47, or 22/34 for passages in running text. These are tuning figures.
+  * Sidenotes: their edition drops Burton's marginal notes, apart from a few folded into the text and some author names given in brackets or parentheses. So the Latin sidenotes have no human translation.
+* Projection: the full pass (7,785 passages, 475 packets) is about $144 list-equivalent on Opus. That is roughly 6.5 five-hour windows, or 1–2 full weeks of your Pro allowance. Sonnet is about 3 windows. Calibrate on one unit in the first M5 session.
+* Checks (2026-10-21), `uv run burton check --all`: 20 PASS, V5 DEFER (D10), 0 FAIL.
+  * V7: 54 passages with records, 101 machine translations labelled, 74/74 Burton-span selectors, 0 stale; 3 gloss records, 28/28 gloss selectors.
+  * V1: 0 unexplained differences. V6: 69,070 links, 0 broken. V8: 0 leaks. V10a: 40 axe runs, 0 violations. L1: 0 marker breaks.
+  * Tests: pytest 59 passed (10 new in `tests/test_translate.py`); ruff clean.
+  * The first run found 1 marker break in "Read in English" (djr-f7, a verse Burton translates himself, with a hoisted note). Fixed by drawing the ⁂ as a real character rather than CSS content.
+  * V10a first failed only because `tests/browser/node_modules` was missing; installed with `npm ci`.
+
 **Carried forward** (not done, with the milestone that takes each):
 * The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
 * The "translation source order" setting waits for a second source (Dell & Jordan-Smith). → M5
 * Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
-* The model sometimes puts explanation inside a translation ("Curable (salutary)"). → prompt `tr-v2` in M4
+* ~~The model sometimes puts explanation inside a translation ("Curable (salutary)").~~ Fixed in M4 by `tr-v2` and the parenthesis check.
 * The gold sample is labelled by Claude and awaits your review (D7).
+* Chaucer's 83 `lucida` spans are not tagged `enm`; Italian 3.3.2.1-f5 and 3.2.5.3-f163 are tagged `la`; French "à la mort" (1.3.1.4) is untagged. → language-ID follow-up, before M5 reaches those units
+* Passage boundaries found by the pilot: 3.2.5.1-f47 includes Burton's English couplet, and 3.2.5.1-f31 cuts a wholly Latin paragraph. → before M5
+* The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader (and the "translation source order" setting) needs a held-out accuracy check. → M5
 
 ## M0 — Setup (short)
 * Python 3.13 and uv are installed (D9). `git init`. Create the package skeleton and the `burton` CLI stub, plus ruff and pytest.
@@ -202,6 +222,34 @@ Steps:
 
 **Exit:** V1–V11 pass on the whole site in the chosen profile(s).
 
+## Workflow: shorter session start-up, same checks
+
+Each session starts cold. These steps save start-up time without lowering any check: every saved fact can be reproduced, and every manual step that is dropped is replaced by an automatic one.
+
+**Orientation**
+1. `burton status`: one command for the current milestone, passage and translation counts, stale layers, and the last `burton check` result (`verify/reports/latest.json`). Computed live, so it cannot go out of date.
+2. `FACTS.md`: settled facts, each with the command that reproduces it (e.g. "French passages: 0" plus the command that counts them). If in doubt, re-run the command; do not re-survey.
+3. Keep PLAN.md to the current milestone and open decisions; move finished milestones' status blocks to `verify/reports/`. Keep CLAUDE.md to rules and conventions.
+4. Every milestone session ends with a handover note in the shared notes folder: decisions taken, what not to redo, open items.
+5. Briefs for spawned sessions name the sections to read, the settled facts, the files to start from, and what to skip.
+
+**Tools instead of throwaway scripts**
+6. `burton passages`: query passages by `--lang`, `--min-words`, `--bracket`, `--signal`, `--unit`, `--location`.
+7. `burton show <id>`: one passage with its paragraph, sidenotes, self-translation candidates, all translation records and the Dell & Jordan-Smith alignment.
+8. Make the pilot's ad-hoc checks permanent: the packet leak test (no Gowland translation text in any packet) as a `burton check` step, and the "no added parentheses" count in V7.
+
+**Manual review only where a judgement is needed**
+9. Attribution review list: the validator already proves every `burton-cites` quotes Burton's own words. Generate a list of only what it cannot prove: every `probable`, any work or locus not in Burton's words, and every disagreement between models. Review that list by hand.
+10. Score new prompt versions automatically against the expected verdicts in `data/eval/m4-pilot.yaml`. A label is revised only with its draft kept.
+11. Measure accuracy (alignment, verdicts) on held-out sets, as language ID does; do not re-check the items you tuned on.
+
+**Not repeating expensive runs**
+12. Incremental `burton check`: store input hashes (text, layers, code) with each report and re-verify only changed units. A full `--all` run is still required before a commit.
+13. Store usage-meter readings next to the ledger, so projections build on earlier measurements.
+14. Run long jobs in the background with a progress log, and read the log when they finish.
+
+Highest value first: 1, 6, 7, 9.
+
 ---
 
 ## Decisions
@@ -217,13 +265,12 @@ Steps:
 | D6 | **Obsolete-word glosses at my discretion.** | Gowland's endnote glosses where he gives one (private build only), then Webster 1913 (public domain), then labelled model drafts. Wiktionary may be consulted, never copied (SPEC §4.2) |
 | D1 | **Private edition** (owner, 2026-10-20). | Build the private profile only. The public filter and its leak checks (V8, V8t) stay in place. No remote is set up |
 | D10 | **Language-ID target deferred** (2026-10-20; confirmed by the owner the same day). | V5 stays below target on h2 (0.964 / 0.964 / 0.975). It still runs and reports `DEFER` (`data/manual/deferred-checks.yaml`). Remove that entry to make it blocking again |
+| D8 | **Opus for the full pass** (owner, 2026-10-23, after the M4 pilot). | M5 runs `claude-opus-5-5` (the runner's default). Pilot: self-translation 12/12 against Sonnet's 10/12, misquotations caught 4/4 against 0/4, 0 invented attributions for either; about $144 list-equivalent, roughly twice Sonnet's usage (`verify/reports/m4-pilot.md` §3–§6) |
 | D9 | **Tools installed.** | Python 3.13.15 (via `py`), uv 0.13.1, git 2.56, Node 24, Claude Code 2.1.304. Bare `python` is the Store stub, so always use `uv run` |
 
-### Still open (none blocks M0 or M1)
+### Still open
 
 **D7 — Gold-sample labelling.** There are 1,127 labels, all drafted by Claude: 677 in the tuning sample, 150 in h1, 300 in h2.
 * 2026-10-20: the owner asked for a 5-label spot check from h2 (the gate sample), drawn with a fixed seed. See `data/eval/audit-h2-spot5.md`.
 * This is a spot check, not the 25% audit. Any disagreement means a wider review.
 * **Result: the owner agreed with all 5 (0 disagreements).** The other 1,122 labels remain unreviewed.
-
-**D8 — Model for the full pass (needed after M4).** The default is `claude-opus-5-5`. The pilot also runs `claude-sonnet-5-5` on the same 50 passages, so you can choose on measured quality and usage-limit consumption.

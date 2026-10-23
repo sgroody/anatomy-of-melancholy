@@ -1,19 +1,25 @@
 # Project glossary (CLAUDE.md, "Glossary consistency").
 # Loaded into every translation prompt; translations are checked against `render` after each packet.
 # Add a term here BEFORE translating more passages that use it. Keep entries short.
-version: 1
+# v2 (2026-10-20, M4 pilot): humoral adjectives, bloodletting, stomach, "by consent", apothecary
+# signs, locator abbreviations and the authorities the 50 pilot passages cite.
+version: 2
 
 terms:
-  - latin: [melancholia, melancholicus, melancholici]
+  - latin: [melancholia, melancholicus, melancholici, melancholicis, melancholicos]
     render: [melancholy, melancholic]
     note: Burton's own English word; do not modernise to "depression".
   - latin: [hypochondriacus, hypochondria, hypochondriaca]
     render: [hypochondriacal, hypochondria]
     note: Anatomical sense (the upper abdomen below the ribs), not the modern "health anxiety".
-  - latin: [humor, humores, humoribus]
+  - latin: [humor, humores, humoribus, humoris]
     render: [humour, humours]
+    note: A bodily humour. In weather or astronomy (coeli humor) it is moisture; say so in the note.
   - latin: [atra bilis, bilis atra]
     render: [black bile]
+  - latin: [atra cura]
+    render: [black care]
+    note: Horace's dark care, not black bile.
   - latin: [spiritus animales, spiritus animalis]
     render: [animal spirits]
     note: Physiological spirits of the brain and nerves, not "animal" as in beasts.
@@ -26,6 +32,61 @@ terms:
   - latin: [manes]
     render: [shade, shades, spirit, spirits, ghost, ghosts, punishment]
     note: "Spirits of the dead; in Virgil's 'quisque suos patimur manes' also the purgation each soul undergoes."
+  - latin: [pituita, pituitosi, pituitosis, pituitosus]
+    render: [phlegm, phlegmatic]
+  - latin: [biliosi, biliosis, biliosus]
+    render: [choleric]
+    note: Of yellow bile (choler); "bilious" only if the context is digestive.
+  - latin: [lienosi, lienosis, lienosus]
+    render: [splenetic]
+    note: Diseased in the spleen, the seat of black bile.
+  - latin: [phlebotomia, phlebotomiae, venae sectio, venae sectione, sanguinis missio]
+    render: [bloodletting, blood-letting, letting blood]
+  - latin: [cucurbitula, cucurbitulae, cucurbitulis]
+    render: [cupping-glass, cupping-glasses, cupping]
+  - latin: [ventriculus, ventriculo, ventriculi]
+    render: [stomach]
+    note: The stomach, not a ventricle of the heart or brain.
+  - latin: [per consensum]
+    render: [by consent]
+    note: The old medical "consent" (sympathy) between organs; explain in the note if needed.
+  - latin: [per essentiam]
+    render: [in essence, essentially]
+  # apothecary signs and abbreviations (recipes)
+  - latin: ["℞"]
+    render: [take]
+  - latin: ["℥", "unc.", "unciam", "uncias"]
+    render: [ounce, ounces]
+  - latin: ["ʒ", "drachmam", "drachmas"]
+    render: [drachm, drachms]
+  - latin: ["℈", "scrup."]
+    render: [scruple, scruples]
+  - latin: ["ß", "semunc."]
+    render: [half, ½]
+    note: ß is the apothecary semis (a half), not German; "℥ ß" = half an ounce, "℥ iii ß" = three and a half ounces; semunc. = half an ounce.
+  - latin: [ana]
+    render: [of each, each]
+  - latin: ["gr."]
+    render: [grain, grains]
+
+formulae:
+  # renderings for recurring formulae; not checked, but use them
+  "&c.": etc.
+  "inquit": says he
+  "saith he": (Burton's English; never translate it)
+  "Idem": the same (author)
+
+locators:
+  # abbreviations in citations; expand only when certain, and never renumber Burton's figures
+  lib.: book
+  cap.: chapter
+  "cons., consil., consult.": consilium (case report)
+  "ep., epist.": letter
+  com.: commentary
+  ser.: sermon
+  tom.: volume
+  "Aph., Aphorism.": Aphorisms (Hippocrates)
+  "chil., cent.": chiliad, century (Erasmus, Adagia)
 
 authorities:
   # Canonical English names for authorities Burton cites by Latin or abbreviated forms.
@@ -41,7 +102,39 @@ authorities:
     name: Jean Fernel
   - forms: [Fuch., Fuchsius]
     name: Leonhart Fuchs
-  - forms: [Cardan, Cardanus]
+  - forms: [Cardan, Cardanus, Card.]
     name: Girolamo Cardano
   - forms: [Plin., Pliny, Plinius]
     name: Pliny (the Elder unless the context says otherwise)
+  - forms: [Hippoc., Hippocr., Hippocrates]
+    name: Hippocrates
+  - forms: [Gal., Galenus]
+    name: Galen
+  - forms: [Avicen., Avicenna]
+    name: Avicenna
+  - forms: [Rhasis, Rhazes]
+    name: Rhazes
+  - forms: [Plut., Plutarchus]
+    name: Plutarch
+  - forms: [Chrysost., Chrysostomus]
+    name: John Chrysostom
+  - forms: [Cyprian., Cyprianus]
+    name: Cyprian
+  - forms: [Tertul., Tertullianus]
+    name: Tertullian
+  - forms: [Pers., Persius]
+    name: Persius
+  - forms: [Ter., Terentius]
+    name: Terence
+  - forms: [Mart., Martialis]
+    name: Martial
+  - forms: [Sen., Seneca]
+    name: Seneca
+  - forms: [Erasm., Erasmus]
+    name: Erasmus
+  - forms: [Montaltus]
+    name: Filotheo Montalto (Montaltus)
+  - forms: [Mercatus, Lod. Mercatus]
+    name: Luis Mercado (Mercatus)
+  - forms: [Plater, Platerus, Felix Plater]
+    name: Felix Platter

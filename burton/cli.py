@@ -40,6 +40,13 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--packet-size", type=int, default=20)
     s.add_argument("--max-packets", type=int, default=None)
     s.add_argument("--dry-run", action="store_true", help="write packets to state/ without calling the model")
+    s.add_argument("--select", type=Path, help="translate only the items in a selection file (data/eval/m4-pilot.yaml)")
+
+    s = sub.add_parser("align-djs", help="align Dell & Jordan-Smith (1927) to selected passages -> data/layers/djs/")
+    s.add_argument("--select", type=Path, required=True, help="selection file, e.g. data/eval/m4-pilot.yaml")
+
+    s = sub.add_parser("pilot-report", help="M4 pilot: counts -> verify/reports/m4-pilot.json, review page")
+    s.add_argument("--select", type=Path, default=Path("data/eval/m4-pilot.yaml"))
 
     s = sub.add_parser("xrefs", help="Burton's explicit cross-references -> data/layers/xrefs/")
     s.add_argument("--unit", action="append")
@@ -113,8 +120,28 @@ def main(argv: list[str] | None = None) -> int:
 
         return runner.run(
             _units(args), model=args.model, packet_size=args.packet_size,
-            max_packets=args.max_packets, dry_run=args.dry_run,
+            max_packets=args.max_packets, dry_run=args.dry_run, select=args.select,
         )
+    elif args.cmd == "align-djs":
+        from .layers import djs
+
+        print(djs.run(args.select))
+    elif args.cmd == "pilot-report":
+        import json
+
+        from .fsutil import atomic_write_text
+        from .layers import djs
+        from .translate import pilot
+
+        rep = pilot.report(args.select)
+        rep["djs_sidenotes"] = {k: v for k, v in djs.sidenote_study().items() if k != "rows"}
+        out = paths.ROOT / "verify" / "reports"
+        atomic_write_text(out / "m4-pilot.json", json.dumps(rep, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+        pilot.review_page(args.select, out / "m4-review.html")
+        for m, v in rep["verdicts"].items():
+            print(m, {k: x for k, x in v.items() if k != "wrong"}, rep["honesty"][m]["source_status"])
+        print("djs:", rep["djs"], "sidenotes:", rep["djs_sidenotes"]["counts"])
+        print("wrote verify/reports/m4-pilot.json and verify/reports/m4-review.html")
     elif args.cmd == "xrefs":
         from .layers import xrefs
 

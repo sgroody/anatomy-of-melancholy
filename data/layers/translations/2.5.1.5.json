@@ -1,0 +1,174 @@
+{
+  "2.5.1.5-f10": {
+    "kind": "verse",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Anacreon (Anacreontea)",
+      "basis": "text \"so saith Anacreon\" immediately before the quotation",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Anacreontea"
+    },
+    "text": "Μεθύοντα γάρ με κεῖσθαι / Πολὺ κρεῖσσον ἢ θανόντα.",
+    "text_sha1": "4c284b3fe39687315eba118930c8bb18254d84a5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's next words, \"Let's drive down care with a cup of wine\", give the general point of Horace and Anacreon together. They do not translate this couplet. The lines are from the Anacreontea, the collection of poems written in Anacreon's manner and attributed to him in Burton's day.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Anacreon (Anacreontea)",
+          "basis": "text \"so saith Anacreon\" immediately before the quotation",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Anacreontea"
+        },
+        "text": "For it is far better / that I lie drunk than dead.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": "For me lying drunk (is) much better than (being) dead.",
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Anacreontic verse (Greek). Burton's 'after' text gives a Latin/English paraphrase of the wine-drinking sentiment ('Let's drive down care with a cup of wine') but not a rendering of this couplet.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Anacreon",
+          "basis": "text \"so saith Horace, so saith Anacreon,\"; sidenote \"26.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "For to lie drunk is far better for me than to be dead.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f17": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "℞. confect. Alkermes ℥ ß lap. Bezor. ℈ i / Succini albi subtilis. pulverisat. ℈ ii cum / Syrup. de cort. citri; fiat electuarium.",
+    "text_sha1": "d3b953acd3468a7c0928769ad1bfcb001ea52e0f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Succinum album is white amber. Cort. citri is citron (or lemon) peel. An electuary is a medicine made into a paste with syrup. The surrounding text links the recipe to Christophorus Ayrerus's preference for bezoar, Alkermes and amber, but Burton does not explicitly name him as its source.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take confection of Alkermes, half an ounce; bezoar stone, 1 scruple; / white amber, finely powdered, 2 scruples; with / syrup of citron peel; make an electuary.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Abbreviations expanded: confect. = confectio; lap. Bezor. = lapis bezoar; Syrup. de cort. citri = syrup of citron peel; fiat electuarium = let an electuary be made. The Latin 'Succini albi subtilis pulverisat.' is read as 'fine powdered white amber'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": "Apothecary prescription; Burton's text names Christophorus Ayrerus on Bezoar and Alkermes, but does not attribute this recipe to him explicitly.",
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take half an ounce of confection of Alkermes, one scruple of bezoar stone, two scruples of fine white amber, powdered, with syrup of citron peel; make an electuary.",
+        "warnings": []
+      }
+    ]
+  }
+}

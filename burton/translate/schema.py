@@ -1,17 +1,27 @@
 """JSON schema for one packet's model output (passed to `claude -p --json-schema`)."""
 
+FLAGS = ["corrupt-text", "misquotation-suspected", "wordplay", "technical-medical", "truncated",
+         "language-mismatch", "boundary-suspect"]
+
 ENTRY = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["id", "translation", "literal", "confidence", "flags", "note", "self_translation", "source"],
+    "required": ["id", "translation", "literal", "confidence", "flags", "note", "glosses", "self_translation",
+                 "source"],
     "properties": {
         "id": {"type": "string"},
         "translation": {"type": "string"},
         "literal": {"type": ["string", "null"]},
         "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-        "flags": {"type": "array", "items": {"type": "string", "enum": [
-            "corrupt-text", "misquotation-suspected", "wordplay", "technical-medical", "truncated"]}},
+        "flags": {"type": "array", "items": {"type": "string", "enum": FLAGS}},
         "note": {"type": ["string", "null"]},
+        "glosses": {
+            "type": "array",
+            "items": {
+                "type": "object", "additionalProperties": False, "required": ["word", "sense"],
+                "properties": {"word": {"type": "string"}, "sense": {"type": "string"}},
+            },
+        },
         "self_translation": {
             "type": "object", "additionalProperties": False, "required": ["status", "burton_quote"],
             "properties": {

@@ -26,6 +26,8 @@ def _block_of(e):
     x = e
     while x is not None and x.tag not in BLOCKS:
         x = x.getparent()
+    if x is None:  # verse or list items standing outside any paragraph: the outermost lg or item
+        x = [a for a in (e, *e.iterancestors()) if a.tag in (T("lg"), T("item"))][-1]
     return x
 
 
@@ -37,10 +39,20 @@ def _sibling_text(block, step: int, limit: int = 700) -> str:
     return t[:limit] + ("…" if len(t) > limit else "")
 
 
+def _selftrans(unit: str) -> dict:
+    f = paths.LAYERS / "selftrans" / f"{unit}.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+
+def _title(div) -> str:
+    return next((public_text(h) for h in div.iter(T("head")) if h.get("type") == "title"), "")
+
+
 def passages(unit: str) -> list[dict]:
     root = load(unit)
     div = root.find(f".//{T('div')}")
-    title = next((public_text(h) for h in div.iter(T("head")) if h.get("type") == "title"), "")
+    title = _title(div)
+    signals = _selftrans(unit)
     out = []
     for e in div.iter():
         if not isinstance(e.tag, str) or e.get("ana") != "foreign":
@@ -71,9 +83,30 @@ def passages(unit: str) -> list[dict]:
             nxt = e.getnext()
             if nxt is not None and nxt.get("type") == "translation-block":
                 item["burton_english_following"] = public_text(nxt)
+        st = signals.get(pid)
+        if st and st.get("text_sha1") == sha1(text):
+            # rules-only hints (SPEC §6.2): Burton's English spans that may render the passage
+            item["selftrans_signals"] = st["signals"]
+            item["burton_english_candidates"] = [{"position": c["position"], "text": c["selector"]["exact"]}
+                                                 for c in st["candidates"]]
         out.append({"packet_item": item, "text_sha1": sha1(text),
                     "bracket_follows": _gowland_follows(e)})
     return [dict(o, unit=unit, title=title) for o in out]
+
+
+def gloss_item(unit: str, element_id: str) -> dict:
+    """A gloss-only item (Chaucer): an element of Burton's English, keyed by its own id, that gets
+    glosses of obsolete words and no translation."""
+    root = load(unit)
+    div = root.find(f".//{T('div')}")
+    e = next(x for x in root.iter() if isinstance(x.tag, str) and x.get(XML_ID) == f"u{element_id}")
+    text = public_text(e)
+    block = _block_of(e)
+    item = {"id": element_id, "lang": "enm", "kind": "gloss-only", "location": "text", "text": text,
+            "paragraph": public_text(block, mark=e.get(XML_ID)),
+            "before": _sibling_text(block, -1), "after": _sibling_text(block, +1), "sidenotes": []}
+    return {"packet_item": item, "text_sha1": sha1(text), "bracket_follows": False, "unit": unit,
+            "title": _title(div)}
 
 
 def _gowland_follows(e) -> bool:

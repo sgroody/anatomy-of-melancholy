@@ -1,0 +1,92 @@
+{
+  "lectori-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martial",
+      "basis": "sidenote \"Martial.\" for the line 'Abderitanae pectora plebis habes'; the Hippocrates sentence is tied to the sidenote \"Hippoc. epist. Damageto\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Tu vero cavesis edico quisquis es, ne temere sugilles Authorem hujusce operis, aut cavillator irrideas. Imo ne vel ex aliorum censura tacite obloquaris (vis dicam verbo) nequid nasutulus inepte improbes, aut falso fingas. Nam si talis revera sit, qualem prae se fert Junior Democritus, seniori Democrito saltem affinis, aut ejus Genium vel tantillum sapiat; actum de te, censorem aeque ac delatorem aget econtra (petulanti splene cum sit) sufflabit te in jocos, comminuet in sales, addo etiam, & deo risui te sacrificabit. Iterum moneo, ne quid cavillere, ne dum Democritum Juniorem conviciis infames, aut ignominiose vituperes, de te non male sentientem, tu idem audias ab amico cordato, quod olim vulgus Abderitanum ab Hippocrate, concivem bene meritum & popularem suum Democritum, pro insano habens. Ne tu Democrite sapis, stulti autem & insani Abderitae. Abderitanae pectora plebis habes. Haec te paucis admonitum volo (male feriate Lector) abi.",
+    "text_sha1": "44493c04c1c6602e6943e11b5b7a9ff45fb5faa6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "But you, beware, I proclaim, whoever you are, lest you rashly bruise the author of this work, or as a caviller deride him. Nay, lest even from the censure of others you silently speak against him (do you wish me to say it in a word?), lest anything, little-nosed, you ineptly disapprove, or falsely feign. … he will blow you into jests, will crush you into salts, … and will sacrifice you to the god Laughter. … You have the breasts of the Abderite common people. These things I wish you, admonished in few words (ill-holidaying reader), go away.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's Latin address 'to the reader who ill employs his leisure' (male feriatus, 'keeping holiday badly'). 'Nasutulus' (literally 'little sharp-nosed one') means a sneering critic. 'Sales' are both salt and witticisms, which plays on 'grind you to pieces'. 'Petulanti splene' echoes Persius, Satires 1.12 ('sum petulanti splene cachinno'). The 'god of Laughter' is Risus, a deity whose festival Apuleius describes. The sentence 'Ne tu Democrite sapis…' comes from the pseudo-Hippocratic letters about Democritus, which Burton summarises in the sidenote 'Hippoc. epist. Damageto'. 'Abderitanae pectora plebis habes' is Martial, Epigrams 10.25.4; 'pectora' here means minds or wits.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Martial.\" for the line 'Abderitanae pectora plebis habes'; the Hippocrates sentence is tied to the sidenote \"Hippoc. epist. Damageto\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "But you, whoever you are, I charge you to beware that you do not rashly slander the author of this work, or mock him like a caviller. Nay, do not even silently speak against him on the strength of other men's censure (shall I put it in a word?), lest like a sneering critic you foolishly condemn anything, or falsely misrepresent it. For if he really is such as Democritus Junior presents himself to be, at least akin to the elder Democritus, or savours ever so little of his genius, it is all over with you: he will in turn play both censor and accuser against you (since he has a petulant spleen), he will blow you away into jests, grind you to pieces with witticisms, and, I add moreover, he will sacrifice you to the god of Laughter. Again I warn you, cavil at nothing, lest while you defame Democritus Junior with abuse, or disgracefully revile him, who thinks no ill of you, you should hear from some judicious friend the same that the people of Abdera once heard from Hippocrates, when they took their well-deserving fellow-citizen and countryman Democritus for a madman: Truly you, Democritus, are wise, but the Abderites are fools and mad. You have the wits of the Abdera mob. This much, in brief, I would have you warned of, reader ill at leisure: be gone.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-20",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "\"Male feriate\" (title and close) means roughly 'ill-idling' or 'with a bad holiday', i.e. a reader with time to waste and bad intentions. \"Genium\" is the guardian spirit or temperament. \"Sufflabit te in jocos\" is literally 'will puff you away into jests'. \"Deo risui\" refers to the Roman cult of the god Laughter (Risus). The Hippocrates words and the line \"Abderitanae pectora plebis habes\" (Martial 10.25) are embedded in Burton's own Latin. Sidenote 1 is Horace: 'If he provokes me, I cry it is better not to touch me.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Martial.\" (for the line \"Abderitanae pectora plebis habes\"); sidenote \"Hippoc. epist. Damageto\" (for the Hippocrates episode); sidenote \"Si me commorit, melius non tangere clamo. Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "But you, whoever you are, I give you warning: do not rashly revile the author of this work, nor mock him as a scoffer. Nay, do not even, on the censure of others, mutter against him in silence (shall I say it in a word?) lest, being a little too nice of nose, you foolishly condemn or falsely invent. For if he is in truth such as the Younger Democritus presents himself, at least akin to the elder Democritus, or has even a little of his Genius about him, it is all over with you: he will play the censor and the informer in turn; (being of a wanton spleen) he will blow you away into jests, crumble you into witticisms, and, I add, will sacrifice you to the god of laughter. Again I warn you: do not carp, lest, while you disgrace the Younger Democritus with abuse or shamefully vilify one who thinks no ill of you, you hear the same from a sensible friend that the Abderite commons once heard from Hippocrates, when they held their fellow citizen and well-deserving countryman Democritus to be mad: \"You, Democritus, are wise, but the Abderites are fools and mad.\" You have the heart of the Abderite rabble. This is the little warning I wished to give you, ill-starred Reader. Begone.",
+        "warnings": []
+      }
+    ]
+  }
+}

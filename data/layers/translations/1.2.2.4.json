@@ -1,0 +1,100 @@
+{
+  "1.2.2.4-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "and found by long experience, that this kind of evacuation, either in head, arm, or any other part, did more harm than good",
+        "in": "1.2.2.4",
+        "near": "1.2.2.4-f13"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Salustio Salviano (Salust. Salvianus)",
+      "basis": "main text at the sidenote anchor: \"Salust. Salvianus, lib. 2 cap. 1\"",
+      "locus": "lib. 2 cap. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Non laudo eos qui in desipientia docent secandam esse venam frontis, quia spiritus debilitatur inde, & ego longa experientia observavi in proprio Xenodochio, quod desipientes ex Phlebotomia magis laeduntur, & magis desipiunt, & melancholici saepe fiunt inde pejores",
+    "text_sha1": "6d887540ee3c3e7a55af0b3db814f29beaeabc1c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Xenodochium, literally a hostel for strangers, here means a hospital; Burton's main text calls Salvianus the 'Master of an Hospital of madmen'. Desipientia is folly or delirium; in this medical context it means madness.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and found by long experience, that this kind of evacuation, either in head, arm, or any other part, did more harm than good",
+            "in": "1.2.2.4",
+            "near": "1.2.2.4-f13"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Salustio Salviano (Salust. Salvianus)",
+          "basis": "main text at the sidenote anchor: \"Salust. Salvianus, lib. 2 cap. 1\"",
+          "locus": "lib. 2 cap. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "I do not approve of those who teach that in madness the vein of the forehead should be opened, because the spirit is weakened by it; and I have observed by long experience in my own hospital that the mad are harmed more by bloodletting, and grow madder, and melancholic people are often made worse by it.",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-sonnet-5-5",
+        "models_reported": [
+          "claude-sonnet-5-5"
+        ],
+        "note": "Burton's main text names Salvianus (lib. 2 cap. 1) as master of a hospital of madmen, and this is that passage. Xenodochium means a hospice or hospital. Burton's English at the anchor gives only the gist (more harm than good), not the vein of the forehead or the weakening of the spirit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and found by long experience, that this kind of evacuation, either in head, arm, or any other part, did more harm than good",
+            "in": "1.2.2.4",
+            "near": "1.2.2.4-f13"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Salvianus",
+          "basis": "text \"Salust. Salvianus, lib. 2 cap. 1\" in the main text at the sidenote anchor, naming him as master of a hospital of madmen",
+          "locus": "lib. 2 cap. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "I do not approve of those who teach that, in madness, the vein of the forehead should be cut, because the spirit is thereby weakened; and I have observed by long experience in my own hospital that madmen are harmed more by bloodletting, and grow more mad, and melancholics often become worse from it.",
+        "warnings": []
+      }
+    ]
+  }
+}

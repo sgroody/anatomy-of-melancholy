@@ -27,6 +27,8 @@ def public_text(e, *, notes: bool = False, mark: str | None = None, sep: str = "
             out.append("⟦sidenote⟧")
         elif x.tag == T("note") and not notes and x is not e:
             pass
+        elif x.tag == T("sic") and x.getparent() is not None and x.getparent().tag == T("choice"):
+            pass  # a recorded correction reads as its corr; the source's reading stays in the XML
         else:
             open_ = mark is not None and x.get(XML_ID) == mark
             if open_:
