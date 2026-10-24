@@ -1,4 +1,63 @@
 {
+  "lectori-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lectori male feriato.",
+    "text_sha1": "62a00563fbdcc172d8418f43eeab30d9c4741934",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "To the reader badly on holiday.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Feriatus means 'keeping holiday, at leisure'; male feriatus suggests someone whose idleness turns to mischief, here the carping critic warned off in the lines that follow.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "To the reader who makes ill use of his leisure.",
+        "warnings": []
+      }
+    ]
+  },
   "lectori-f2": {
     "kind": "phrase",
     "lang": "la",

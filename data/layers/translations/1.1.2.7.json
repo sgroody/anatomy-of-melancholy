@@ -1,0 +1,73 @@
+{
+  "1.1.2.7-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "all the reason they have",
+        "in": "1.1.2.7",
+        "near": "1.1.2.7-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ratio brutorum",
+    "text_sha1": "397063d6f0cfbe5e506e1b19d52889d036f15f20",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Right after the phrase Burton glosses it himself as \"all the reason they have\". The sidenote \"Phys. lib. 5 cap. 8.\" goes with the earlier citation of Fernelius in this paragraph, not with this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "all the reason they have",
+            "in": "1.1.2.7",
+            "near": "1.1.2.7-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the reason of brutes",
+        "warnings": []
+      }
+    ]
+  }
+}

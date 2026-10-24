@@ -13,10 +13,12 @@
       "burton_span": {
         "exact": "their number is infinite",
         "in": "1.1.1.2",
-        "near": "1.1.1.2-f1"
+        "near": "1.1.1.2-f1",
+        "prefix": "",
+        "suffix": ""
       },
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [
         "no-gowland-bracket"
       ],
@@ -24,11 +26,11 @@
     },
     "source": {
       "author": "Pliny",
-      "basis": "Burton names Pliny in the text ('elsewhere he saith'); sidenote: 'Cap. 11 lib. 7.'",
+      "basis": "text \"Pliny reckons up 300 from the crown of the head, to the sole of the foot: elsewhere he saith\"",
       "locus": null,
       "status": "burton-cites",
       "verified": false,
-      "work": "Naturalis Historia"
+      "work": "Natural History"
     },
     "text": "morborum infinita multitudo",
     "text_sha1": "5599f87a974925a2df8031e931355e25d29c19f8",
@@ -47,6 +49,161 @@
         "prompt": "tr-v1",
         "text": "an infinite multitude of diseases",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "an infinite multitude of diseases",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "their number is infinite",
+            "in": "1.1.1.2",
+            "near": "1.1.1.2-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Pliny",
+          "basis": "text \"Pliny reckons up 300 from the crown of the head, to the sole of the foot: elsewhere he saith\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural History"
+        },
+        "text": "the number of diseases is infinite",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Scorbutum",
+    "text_sha1": "64c35464ea838f58500d05ca742d1a4d9271a53c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Scorbutum is the New Latin name for scurvy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "scurvy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Plica",
+    "text_sha1": "d7ea85ff4b49fc752587343e04428a23a7f866e1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Plica (polonica), the 'Polish plait': a disease in which the hair becomes matted into a tangled mass. It was thought to be common in Poland. The name is kept because Burton uses it as a technical term.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Plica",
+        "warnings": []
       }
     ]
   },
@@ -63,14 +220,14 @@
     "self_translation": {
       "burton_span": null,
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "none"
     },
     "source": {
       "author": "Horace",
-      "basis": "Sidenote: 'Horat.'; the wording matches Horace, Odes 1.3.30–31 ('macies et nova febrium / terris incubuit cohors').",
-      "locus": "1.3.30–31",
+      "basis": "sidenote \"Horat.\"",
+      "locus": null,
       "status": "burton-cites",
       "verified": false,
       "work": "Odes"
@@ -94,6 +251,35 @@
         "prompt": "tr-v1",
         "text": "——— wasting, and a new troop of fevers / settled down upon the earth.",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Odes 1.3.30–31, quoted from mid-sentence; Burton's sidenote gives only the author's name.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Horat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "— wasting, and a new troop of fevers / has settled upon the earth.",
+        "warnings": []
       }
     ]
   },
@@ -111,16 +297,18 @@
       "burton_span": {
         "exact": "we have all our infirmities, first or last, more or less",
         "in": "1.1.1.2",
-        "near": "1.1.1.2-f3"
+        "near": "1.1.1.2-f3",
+        "prefix": "",
+        "suffix": ""
       },
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "paraphrase"
     },
     "source": {
       "author": "Virgil",
-      "basis": "The exact wording of Anchises' well-known line in the underworld, 'quisque suos patimur manes'.",
+      "basis": "Exact wording of Anchises' famous line 'quisque suos patimur manis' (Aeneid 6.743).",
       "locus": "6.743",
       "status": "probable",
       "verified": false,
@@ -143,6 +331,39 @@
         "prompt": "tr-v1",
         "text": "Each of us suffers his own punishment",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "each of us suffers his own shades",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In Virgil, manes here means the purgation each soul undergoes after death. Burton applies it loosely to everyone's bodily and mental infirmities.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "we have all our infirmities, first or last, more or less",
+            "in": "1.1.1.2",
+            "near": "1.1.1.2-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Exact wording of Anchises' famous line 'quisque suos patimur manis' (Aeneid 6.743).",
+          "locus": "6.743",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "Each of us suffers his own punishment",
+        "warnings": []
       }
     ]
   },
@@ -160,20 +381,22 @@
       "burton_span": {
         "exact": "could not remember that ever he was sick",
         "in": "1.1.1.2",
-        "near": "1.1.1.2-f4"
+        "near": "1.1.1.2-f4",
+        "prefix": "",
+        "suffix": ""
       },
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "partial"
     },
     "source": {
-      "author": null,
-      "basis": "The main text says this is Leovitius's example of Otto Herwardus. A nearby sidenote in the same paragraph reads 'Praefixis Ephemer. cap. de infirmitat.', but that note is not attached to this passage. The exact wording has not been checked.",
+      "author": "Cyprian Leovitius",
+      "basis": "text \"whom Leovitius the Astrologer brings in for an example\"; sidenote \"Praefixis Ephemer. cap. de infirmitat.\"",
       "locus": null,
-      "status": "unidentified",
+      "status": "burton-cites",
       "verified": false,
-      "work": null
+      "work": "Ephemerides (preface, chapter on infirmities)"
     },
     "text": "Qui, quoad pueritiae ultimam memoriam recordari potest, non meminit se aegrotum decubuisse",
     "text_sha1": "ba2ecc09a3a3821c4050a2432e7b6953086dffbd",
@@ -192,6 +415,39 @@
         "prompt": "tr-v1",
         "text": "Who, as far back as he can recall his earliest memory of boyhood, does not remember ever having lain sick in bed.",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "who, as far as he can recall the last memory of boyhood, does not remember that he lay down sick",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "could not remember that ever he was sick",
+            "in": "1.1.1.2",
+            "near": "1.1.1.2-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Cyprian Leovitius",
+          "basis": "text \"whom Leovitius the Astrologer brings in for an example\"; sidenote \"Praefixis Ephemer. cap. de infirmitat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ephemerides (preface, chapter on infirmities)"
+        },
+        "text": "Who, as far back as his earliest memory of boyhood can reach, does not remember that he ever lay sick.",
+        "warnings": []
       }
     ]
   },
@@ -199,7 +455,7 @@
     "kind": "verse",
     "lang": "grc",
     "location": "text",
-    "preferred": "machine",
+    "preferred": "burton",
     "review": {
       "by": null,
       "date": null,
@@ -209,19 +465,21 @@
       "burton_span": {
         "exact": "Th’ earth’s full of maladies, and full the Sea, / Which set upon us both by night and day.",
         "in": "1.1.1.2",
-        "near": "1.1.1.2-f5"
+        "near": "1.1.1.2-f5",
+        "prefix": "",
+        "suffix": ""
       },
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [
         "no-gowland-bracket",
         "burton-english-verse-follows"
       ],
-      "status": "partial"
+      "status": "full"
     },
     "source": {
       "author": "Hesiod",
-      "basis": "The wording matches Hesiod's famous lines about the evils let out of Pandora's jar ('πλείη μὲν γὰρ γαῖα κακῶν, πλείη δὲ θάλασσα').",
+      "basis": "Exact wording of Hesiod's well-known lines 'πλείη μὲν γὰρ γαῖα κακῶν, πλείη δὲ θάλασσα' on the evils released from Pandora's jar; Burton's preceding paragraph introduces it as 'that of Hesiod'.",
       "locus": "101–103",
       "status": "probable",
       "verified": false,
@@ -246,6 +504,41 @@
         "prompt": "tr-v1",
         "text": "For the earth is full of evils, and full the sea; / and diseases come upon men by day, and by night, / of their own accord. ———",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hesiod, Works and Days 101–103, which Burton introduces as 'that of Hesiod'. Standard texts read 'αἳ δ' ἐπὶ νυκτὶ' ('and others by night'), where Burton has 'ἠδ̓'. The line breaks off before 'bringing ills to mortals in silence'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Th’ earth’s full of maladies, and full the Sea, / Which set upon us both by night and day.",
+            "in": "1.1.1.2",
+            "near": "1.1.1.2-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "Exact wording of Hesiod's well-known lines 'πλείη μὲν γὰρ γαῖα κακῶν, πλείη δὲ θάλασσα' on the evils released from Pandora's jar; Burton's preceding paragraph introduces it as 'that of Hesiod'.",
+          "locus": "101–103",
+          "status": "probable",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "For the earth is full of evils, and full is the sea; / and diseases come upon men by day, and by night, / of their own accord. —",
+        "warnings": []
       }
     ]
   },
@@ -262,13 +555,13 @@
     "self_translation": {
       "burton_span": null,
       "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "none"
     },
     "source": {
       "author": null,
-      "basis": "The sidenote (Fernelius, Path. lib. 1; Fuchsius, Institut. lib. 3 sect. 1 cap. 7; Wecker) points to the scheme for classifying diseases in general. It is not the source of a quotation of this word.",
+      "basis": null,
       "locus": null,
       "status": "unidentified",
       "verified": false,
@@ -293,6 +586,35 @@
         "prompt": "tr-v1",
         "text": "Lethal",
         "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Diseases that end in death.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Lethal",
+        "warnings": []
       }
     ]
   },
@@ -309,7 +631,7 @@
     "self_translation": {
       "burton_span": null,
       "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v1",
+      "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "none"
     },
@@ -340,6 +662,97 @@
         "note": "'Salutres' is not a regular Latin form. It is probably a misprint for 'Salubres' or 'Salutares', meaning diseases that are not fatal or can be cured. Burton pairs it with 'Lethales' (deadly), which supports this reading. The sidenote to Fernel, Fuchs and Wecker points to where physicians classify diseases generally; it does not cite this word specifically.",
         "prompt": "tr-v1",
         "text": "Curable (salutary)",
+        "warnings": []
+      },
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-24",
+        "flags": [
+          "corrupt-text",
+          "technical-medical"
+        ],
+        "literal": "salutary",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Salutres' is apparently a misprint for 'salutares', diseases that end in recovery, set against 'Lethales'. It can also mean 'salutary', that is, wholesome.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Curable",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.1.2-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Morbus Gallicus",
+    "text_sha1": "09494e005af627d2e8251d57c9ca026ae7992019",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Morbus Gallicus, the 'French disease', was the usual early modern name for syphilis.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the French disease",
         "warnings": []
       }
     ]

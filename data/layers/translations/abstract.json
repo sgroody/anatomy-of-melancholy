@@ -1,0 +1,61 @@
+{
+  "abstract-f1": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Διαλογικῶς",
+    "text_sha1": "512ae665188673aca667a3244713eada7e2e3b36",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-23",
+        "flags": [],
+        "literal": "Dialogically",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a single Greek adverb in the title, meaning 'by way of dialogue'. It describes the poem that follows, whose stanzas alternate between the joys and the griefs of melancholy. The English verse after it is the poem itself, not Burton's rendering of the word.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "In dialogue form",
+        "warnings": []
+      }
+    ]
+  }
+}

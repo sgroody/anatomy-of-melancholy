@@ -107,6 +107,14 @@ Also in M2:
 * Projection for the rest (7,649 items): about **$127** list-equivalent; about **4 five-hour windows** (3.6–4.5); about 6.4 hours of model time; roughly 60–80 % of one week's allowance (range from the M4 ratio of 5–7 window points per weekly point; this run's weekly reading is too coarse to refine it). That is below the M4 estimate of 1–2 weeks.
 * Queue: 7,792 items (7,769 passages + 23 Chaucer groups); 143 current, 7,649 to do, about 380 packets.
 
+**M5 run, session 1 (2026-10-23/24), stopped by the owner's cap ("without going over 95 % of the weekly limit").** Four chunks with `--budget-usd` ($5, $10, $8, $6); the meter was read after each (`state/translate/meter.jsonl`, log `state/translate/m5-run.log`):
+* 1,386 passages for $29.04 list-equivalent: 104 calls, 17 retries, 0 failed, 0 invalid, 1 deferred (API 529 Overloaded, which ended chunk 2 early; the packet was redone), 5,119 s of model time. Done: front matter, djr (1,059), 1.1.1.1–1.2.1.2.
+* Meter: weekly 80 → 91 % (about 0.38 points per list-dollar), 5-hour window 8 → 92 % (about 2.9 points per dollar). djr cost $0.021 a passage, against $0.017 for the calibration unit (djr has many short sidenote passages).
+* V7 after the run: 1,526/7,769 passages with records, 6,243 untranslated, 0 stale, 0 orphans; 1,264/1,264 Burton-span selectors match once.
+* Found and fixed by V7: 24 Burton-span selectors (12 records) did not match once in the unit. 8 were short spans that recur ("at once" occurs 11 times in djr), and 4 were renderings in a sidenote. Selectors now get a prefix and suffix grown from the packet context until unique, and `view: with-notes` when the span stands in a sidenote. The main text is tried first, because a span may run across a note's anchor. Existing records were repaired from the base text (`runner.repair_spans`); the model's verdicts are unchanged.
+* Verdict tallies (Opus tr-v2, 1,526 records): self-translation none 905, paraphrase 261, full 254, partial 105, undetermined 1; source burton-cites 748, unidentified 615, probable 163; 4 burton-cites claims downgraded to unidentified (no checkable basis).
+* Remaining: about 6,270 items (with the 23 Chaucer groups), about $120–130 list-equivalent, about 45–50 weekly points and 3.5–4 five-hour windows. Resume after the weekly reset (2026-10-25 23:00 UTC) with `uv run burton translate --all --wait-on-limit`, plus `--budget-usd` if a cap is wanted.
+
 **Carried forward** (not done, with the milestone that takes each):
 * The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
 * The "translation source order" setting waits for a second source (Dell & Jordan-Smith). → M5

@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-23T23:37:36+00:00",
+  "when": "2026-10-24T01:28:50+00:00",
   "ok": true,
   "results": [
     {
@@ -133,14 +133,14 @@
       "deferred": null,
       "counts": {
         "foreign": 7769,
-        "with_record": 147,
-        "machine_labelled": 192,
+        "with_record": 1526,
+        "machine_labelled": 1578,
         "stale": 0,
         "orphan_keys": 0,
-        "selectors_ok": 140,
+        "selectors_ok": 1264,
         "selectors_bad": 0,
-        "sources_unidentified": 46,
-        "sources_other": 101,
+        "sources_unidentified": 615,
+        "sources_other": 911,
         "selftrans_records": 7769,
         "selftrans_selectors_ok": 8422,
         "selftrans_selectors_bad": 0,
@@ -149,8 +149,8 @@
         "selftrans_orphan_keys": 0,
         "selftrans_units_missing": 0,
         "selftrans_gowland_overlap": 0,
-        "untranslated": 7622,
-        "units_without_layer": 128,
+        "untranslated": 6243,
+        "units_without_layer": 103,
         "xrefs": 21,
         "xrefs_resolved": 19,
         "xrefs_unresolved": 2,
@@ -194,7 +194,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 5495,
+        "script_chars": 5619,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -230,10 +230,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "204/204",
+        "private:glyphs": "209/209",
         "private:fallback": 13,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+264E U+264F",
-        "public:glyphs": "195/195",
+        "public:glyphs": "202/202",
         "public:fallback": 13
       },
       "problems": []
@@ -284,9 +284,9 @@
         "densest_3.2.4.1": "38 notes, 0 stacked in 0 stacks",
         "pages": 15,
         "notes": 2757,
-        "stacked": 12,
+        "stacked": 55,
         "overlaps": 0,
-        "max_drift_rem": 13.4,
+        "max_drift_rem": 13.6,
         "marker_breaks": 0,
         "marker_checks": 11028
       },

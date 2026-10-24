@@ -1,0 +1,667 @@
+{
+  "1.1.3.2-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Synesius",
+      "basis": "text \"according to Synesius\" and sidenote \"In laud. calvit.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Praise of Baldness"
+    },
+    "text": "Anacreon’s cicada, sine sanguine & dolore, similes fere diis sunt",
+    "text_sha1": "c91692d2ccfd956a73ef52ce1cafc0f2ad1f4fbb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Anacreon's cicada' is Burton's English, so it is not translated. The Latin echoes the Anacreontic ode to the cicada, which calls it bloodless, free of suffering and almost like the gods. Synesius quotes that ode in his Praise of Baldness.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Synesius",
+          "basis": "text \"according to Synesius\" and sidenote \"In laud. calvit.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Praise of Baldness"
+        },
+        "text": "without blood and without pain, they are almost like gods",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Filotheo Montalto (Montaltus)",
+      "basis": "sidenote \"Cap. 3 de mel.\" anchored at \"Montaltus\" in the main text",
+      "locus": "Cap. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De melancholia"
+    },
+    "text": "Pars affecta cerebrum, sive per consensum, sive per cerebrum contingat, & procerum auctoritate & ratione stabilitur",
+    "text_sha1": "370bb0bf503e2e3f54bd4677c4e480522dcc5f32",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical",
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Per consensum' means by consent, the sympathy through which one organ is affected because another is diseased. 'Sive per cerebrum' is odd, because it repeats the subject. The expected contrast is 'per essentiam', the brain affected in its own substance, and Burton's text has 'be it by consent or essence'. The reading may be corrupt.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Filotheo Montalto (Montaltus)",
+          "basis": "sidenote \"Cap. 3 de mel.\" anchored at \"Montaltus\" in the main text",
+          "locus": "Cap. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De melancholia"
+        },
+        "text": "The part affected is the brain, whether it happens by consent or through the brain itself; and this is established both by the authority of the leading authors and by reason.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "middle age",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Piso",
+      "basis": "sidenote \"Piso.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Mediis convenit aetatibus",
+    "text_sha1": "a943c94fcc1c1bf856b7e7af103a531931eef926",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "It suits the middle ages.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "middle age",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Piso",
+          "basis": "sidenote \"Piso.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "It belongs to the middle years of life.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "have a fellow-feeling",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "compati",
+    "text_sha1": "65591389640b29d798cebb3dc84f2cd5be69dcb5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "to suffer with",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Compati' means to suffer along with, to sympathise. It is the medical idea of organs sharing an affection.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "have a fellow-feeling",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "suffer together",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Spleen, which are seldom free",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Piso",
+      "basis": "sidenote \"Piso.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Raro quisquam tumorem effugit lienis, qui hoc morbo afficitur",
+    "text_sha1": "ef7372c548fad884a7bee6fd66e8948ad5194dcb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Rarely anyone escapes a tumour of the spleen, who is affected by this disease.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Spleen, which are seldom free",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Piso",
+          "basis": "sidenote \"Piso.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hardly anyone who is affected by this disease escapes a swelling of the spleen.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Facultas imaginandi, non cogitandi, nec memorandi laesa hic",
+    "text_sha1": "639d1d8939fde602a76d29020c140ce17d0673a1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "The faculty of imagining, not of thinking, nor of remembering, is injured here.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The note supports the view of Hercules de Saxonia, which Burton reports in the text, that the fault lies in the imagination alone.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is the faculty of imagining that is injured here, not that of thinking or of remembering.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that have little heads",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aristotle (attributed)",
+      "basis": "sidenote \"Arist. in physiognomia.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Physiognomonica"
+    },
+    "text": "Qui parvum caput habent, insensati plerique sunt",
+    "text_sha1": "607803abc7c5aea92321aa94c552b09bc96af1f4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that have little heads",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aristotle (attributed)",
+          "basis": "sidenote \"Arist. in physiognomia.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Physiognomonica"
+        },
+        "text": "Those who have a small head are mostly without sense.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "middle age",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "sidenote \"Aret.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Qui prope statum sunt",
+    "text_sha1": "66ccc46422c80ac8cbb6cb23fdf3e868d7256385",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "Those who are near the standing-point",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Status' here is the peak, or settled point, of life: full maturity.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "middle age",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "sidenote \"Aret.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Those who are near the prime of life",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "involves all of all sorts",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Daniel Sennert",
+      "basis": "text \"Daniel Sennertus involves all of all sorts, out of common experience\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "in omnibus omnino Corporibus cujuscunque constitutionis dominatur",
+    "text_sha1": "110a120339f66a0094b3d2b378574f98e63daf18",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "involves all of all sorts",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Daniel Sennert",
+          "basis": "text \"Daniel Sennertus involves all of all sorts, out of common experience\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "it reigns in absolutely all bodies, of whatever constitution",
+        "warnings": []
+      }
+    ]
+  },
+  "1.1.3.2-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "are never troubled with any manner of passion",
+        "in": "1.1.3.2",
+        "near": "1.1.3.2-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Erasmus",
+      "basis": "sidenote \"Erasm.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Praise of Folly"
+    },
+    "text": "Nunquam sanitate mentis excidit, aut dolore capitur",
+    "text_sha1": "ea1a9d2a021294bcc226d5622d9ae79e4037a113",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Said of the fool, whom Erasmus exempts from melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "are never troubled with any manner of passion",
+            "in": "1.1.3.2",
+            "near": "1.1.3.2-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Erasmus",
+          "basis": "sidenote \"Erasm.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Praise of Folly"
+        },
+        "text": "He never falls from soundness of mind, nor is gripped by pain.",
+        "warnings": []
+      }
+    ]
+  }
+}
