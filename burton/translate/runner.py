@@ -89,6 +89,27 @@ def retire_orphans(unit: str, keep: set[str], layer: str = "translations") -> li
     return gone
 
 
+def repair_spans(unit: str, force: bool = False) -> int:
+    """Give Burton-span selectors written before they carried a prefix and suffix (M5 chunks 1–4) the
+    context that makes them match once in the unit (`force`: recompute every span). Deterministic, from
+    the base text; the model's verdicts are unchanged."""
+    layer = read_layer(unit)
+    if not layer:
+        return 0
+    items = {p["packet_item"]["id"]: p["packet_item"] for p in packets.passages(unit)}
+    text, fixed = packets.unit_text(unit), 0
+    for key, rec in layer.items():
+        for st in [rec["self_translation"], *(t.get("self_translation") or {} for t in rec["translations"])]:
+            span = st.get("burton_span")
+            if span and (force or "prefix" not in span) and key in items:
+                st["burton_span"] = {"in": span["in"], "near": span["near"],
+                                     **validate.span_selector(items[key], span["exact"], text)}
+                fixed += 1
+    if fixed:
+        write_layer(unit, layer)
+    return fixed
+
+
 def chaucer_items(unit: str) -> list[dict]:
     """Gloss-only items for a full run: each verse group holding Chaucer (`enm`), keyed by its lg id.
     Chaucer quoted inline in prose (1 case, 1.2.4.7) has no element of its own and is not queued."""
@@ -231,6 +252,9 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
         if selection is None and not dry_run:
             for k in retire_orphans(unit, {p["packet_item"]["id"] for p in packets.passages(unit)}):
                 print(f"{unit}: record {k} retired (its passage id is no longer in the base text)")
+            if n := repair_spans(unit):
+                print(f"{unit}: {n} Burton-span selector(s) given a prefix and suffix")
+        utext = packets.unit_text(unit)
         layer, glayer = read_layer(unit), read_layer(unit, "glosses")
         all_p = unit_items(unit, selection[unit] if selection is not None else None)
         queue = [p for p in all_p if not is_current(
@@ -302,7 +326,7 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                                                                    PROMPT, res["models"], errors)
                 else:
                     layer[entry["id"]] = validate.to_record(layer.get(entry["id"]), entry, b, model, PROMPT,
-                                                            res["models"], errors)
+                                                            res["models"], errors, utext)
             if layer:
                 write_layer(unit, layer)
             if glayer:

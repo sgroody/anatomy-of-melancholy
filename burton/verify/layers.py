@@ -114,7 +114,9 @@ def v7_layers(units: list[str]):
         root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
         foreign = {public_id(e.get(XML_ID)): e for e in root.iter()
                    if isinstance(e.tag, str) and e.get("ana") == "foreign"}
-        unit_text = public_text(root.find(f".//{T('div')}"))
+        # spans match in the main text, or (view: with-notes) in the text with its sidenotes
+        main_text = " ".join(public_text(root.find(f".//{T('div')}")).split())
+        span_text = " ".join(public_text(root.find(f".//{T('div')}"), notes=True).split())
         f = paths.LAYERS / "translations" / f"{unit}.json"
         layer = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
         c["foreign"] += len(foreign)
@@ -145,7 +147,8 @@ def v7_layers(units: list[str]):
             for sel in spans:
                 if not sel:
                     continue
-                n = unit_text.count(sel["exact"])
+                text = span_text if sel.get("view") == "with-notes" else main_text
+                n = text.count(sel.get("prefix", "") + sel["exact"] + sel.get("suffix", ""))
                 if n == 1:
                     c["selectors_ok"] += 1
                 else:

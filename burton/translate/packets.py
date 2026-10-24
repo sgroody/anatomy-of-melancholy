@@ -94,6 +94,15 @@ def passages(unit: str) -> list[dict]:
     return [dict(o, unit=unit, title=title) for o in out]
 
 
+def unit_text(unit: str) -> tuple[str, str]:
+    """The unit's public text without and with its sidenotes, whitespace-normalized: where Burton-span
+    selectors must match exactly once (V7)."""
+    from .validate import _n
+
+    div = load(unit).find(f".//{T('div')}")
+    return _n(public_text(div)), _n(public_text(div, notes=True))
+
+
 def gloss_item(unit: str, element_id: str) -> dict:
     """A gloss-only item (Chaucer): an element of Burton's English, keyed by its own id, that gets
     glosses of obsolete words and no translation."""

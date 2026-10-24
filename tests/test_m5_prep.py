@@ -95,3 +95,18 @@ def test_orphan_records_are_retired_not_deleted(tmp_path, monkeypatch):
     assert list(runner.read_layer("u")) == ["u-f1"]
     old = runner.read_layer("u", "retired/translations")
     assert old["u-f2"]["text"] == "b" and old["u-f2"]["retired"]["reason"]
+
+
+def test_burton_span_selector_grows_until_unique_and_knows_its_view():
+    from burton.translate import validate
+
+    item = {"paragraph": "a priest and a physician at once, and a man"}
+    main = "He was at once a priest and a physician at once, and a man at once."
+    sel = validate.span_selector(item, "physician at once", (main, main))
+    assert sel["prefix"] == "" and "view" not in sel  # already unique
+    sel = validate.span_selector(item, "at once", (main, main))
+    assert main.count(sel["prefix"] + "at once" + sel["suffix"]) == 1 and "physician ".endswith(sel["prefix"])
+    # Burton's rendering stands in a sidenote: found only in the text with notes
+    note_item = {"paragraph": "bank of charity, saith he"}
+    sel = validate.span_selector(note_item, "bank of charity", ("main text", "main text bank of charity, saith he"))
+    assert sel["view"] == "with-notes"

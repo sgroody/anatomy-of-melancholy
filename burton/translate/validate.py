@@ -137,14 +137,45 @@ def blocking(errors: list[dict], final: bool) -> list[dict]:
     return [e for e in errors if e["severity"] in keep]
 
 
-def _verdict(item: dict, p: dict, unit: str) -> dict:
+def _flat(s: str) -> str:
+    """Context text without the packet's markers, for building selectors against the unit's text."""
+    return _n((s or "").replace("⟦sidenote⟧", " "))
+
+
+def span_selector(item: dict, exact: str, unit_texts: tuple[str, str] | None) -> dict:
+    """Burton's span as a text-quote selector: `exact`, plus a prefix and suffix taken from the context
+    field it was found in, grown until the quote matches exactly once in the unit's text.
+    `unit_texts` = (main text without sidenotes, text with sidenotes), both normalized by _n. The main
+    text is tried first (a span may run across a note's anchor); `view: with-notes` marks a selector
+    that matches only with the notes (Burton's rendering in a sidenote). Without unit_texts: `exact`."""
+    sel = {"exact": exact}
+    if unit_texts is None:
+        return sel
+    for view, text in zip(("main", "with-notes"), unit_texts, strict=True):
+        tag = {} if view == "main" else {"view": view}
+        if text.count(exact) == 1:
+            return {**sel, "prefix": "", "suffix": "", **tag}
+        for k in NEARBY:
+            field = _flat(item.get(k, ""))
+            if field.count(exact) != 1:
+                continue
+            at = field.index(exact)
+            for n in range(8, len(field) + 8, 8):
+                pre, suf = field[max(0, at - n):at], field[at + len(exact):at + len(exact) + n]
+                for p, s in ((pre, suf), ("", suf), (pre, "")):
+                    if text.count(p + exact + s) == 1:
+                        return {**sel, "prefix": p, "suffix": s, **tag}
+    return sel  # still ambiguous: V7 reports it
+
+
+def _verdict(item: dict, p: dict, unit: str, unit_text: tuple[str, str] | None = None) -> dict:
     st = p["self_translation"]
     status = st["status"]
     if status != "none" and not quote_ok(item, st["burton_quote"]):
         status = "undetermined"  # claimed but not verifiable: downgrade, never accept
     span = None
     if status in ("full", "partial", "paraphrase"):
-        span = {"in": unit, "near": item["id"], "exact": _n(st["burton_quote"])}
+        span = {"in": unit, "near": item["id"], **span_selector(item, _n(st["burton_quote"]), unit_text)}
     out = {"status": status, "burton_span": span}
     if status == "undetermined":
         out["claimed"] = st["status"]
@@ -165,10 +196,10 @@ def _source(item: dict, p: dict) -> dict:
 
 
 def to_record(existing: dict | None, p: dict, b: dict, model: str, prompt: str, models_used: list,
-              errors: list[dict]) -> dict:
+              errors: list[dict], unit_text: tuple[str, str] | None = None) -> dict:
     item = b["packet_item"]
     mine = [e for e in errors if e.get("id") == p["id"]]
-    verdict, src = _verdict(item, p, b["unit"]), _source(item, p)
+    verdict, src = _verdict(item, p, b["unit"], unit_text), _source(item, p)
     signals = ["no-gowland-bracket"] if not b["bracket_follows"] else []
     if item.get("burton_english_following"):
         signals.append("burton-english-verse-follows")
