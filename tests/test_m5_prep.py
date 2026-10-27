@@ -110,3 +110,41 @@ def test_burton_span_selector_grows_until_unique_and_knows_its_view():
     note_item = {"paragraph": "bank of charity, saith he"}
     sel = validate.span_selector(note_item, "bank of charity", ("main text", "main text bank of charity, saith he"))
     assert sel["view"] == "with-notes"
+
+
+def _fake_calls(monkeypatch, results):
+    calls = []
+
+    def fake(model, sys_prompt, user, out_schema=None):
+        calls.append(user)
+        return results[len(calls) - 1]
+
+    monkeypatch.setattr(runner, "call_claude", fake)
+    monkeypatch.setattr(runner.time, "sleep", lambda s: None)
+    return calls
+
+
+OAUTH = ("Failed to refresh OAuth token: another Claude Code process is refreshing it or exited mid-refresh. "
+         "This is usually temporary")
+
+
+def test_oauth_refresh_failure_is_retried_on_the_same_packet(monkeypatch):
+    assert runner._is_transient(OAUTH) and not runner._is_limit(OAUTH)
+    calls = _fake_calls(monkeypatch, [{"ok": False, "error": OAUTH, "transient": True},
+                                      {"ok": True, "output": {"passages": []}}])
+    told = []
+    res = runner.call_with_retry("m", "s", "packet", lambda r, wait: told.append(wait))
+    assert res["ok"] and calls == ["packet", "packet"] and told == [runner.TRANSIENT_WAITS[0]]
+
+
+def test_a_call_that_keeps_timing_out_fails_after_three_tries(monkeypatch):
+    hung = {"ok": False, "error": f"no answer within {runner.CALL_TIMEOUT} s", "transient": True}
+    calls = _fake_calls(monkeypatch, [hung, hung, hung])
+    res = runner.call_with_retry("m", "s", "packet")
+    assert not res["ok"] and len(calls) == 1 + len(runner.TRANSIENT_WAITS)
+
+
+def test_a_usage_limit_is_not_retried_here(monkeypatch):
+    limit = {"ok": False, "error": "You've hit your session limit", "limit": True, "transient": False}
+    calls = _fake_calls(monkeypatch, [limit])
+    assert runner.call_with_retry("m", "s", "packet")["limit"] and len(calls) == 1

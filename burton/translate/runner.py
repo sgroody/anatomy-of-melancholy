@@ -29,6 +29,8 @@ REVIEW = paths.STATE / "review" / "translate.jsonl"
 LIMIT_WORDS = ("usage limit", "rate limit", "rate_limit", "overloaded", "quota")
 CALL_TIMEOUT = 1200  # a 20-passage Opus packet takes 2–4 minutes of generation
 LIMIT_POLL = 20 * 60  # --wait-on-limit: seconds between tries while the plan's limit is reached
+TRANSIENT_WORDS = ("oauth token", "no answer within")
+TRANSIENT_WAITS = (60, 300)  # pauses before the 2nd and 3rd try of a call that failed transiently
 
 
 def now() -> str:
@@ -164,17 +166,18 @@ def call_claude(model: str, sys_prompt: str, user: str, out_schema: dict | None 
         try:
             proc = subprocess.run(cmd, input=user, capture_output=True, text=True, encoding="utf-8",
                                   cwd=work, timeout=CALL_TIMEOUT)
-        except subprocess.TimeoutExpired:  # M4: one call hung for 618 s; a hung call is a failed packet
+        except subprocess.TimeoutExpired:  # M4: one call hung for 618 s; a hung call is retried, then failed
             return {"ok": False, "error": f"no answer within {CALL_TIMEOUT} s", "limit": False,
-                    "seconds": round(time.time() - t0, 1)}
+                    "transient": True, "seconds": round(time.time() - t0, 1)}
         took = round(time.time() - t0, 1)
     finally:
         shutil.rmtree(work, ignore_errors=True)
     try:
         out = json.loads(proc.stdout)
     except json.JSONDecodeError:
-        return {"ok": False, "error": (proc.stderr or proc.stdout)[-800:], "seconds": took, "limit": _is_limit(
-            proc.stderr + proc.stdout)}
+        text = proc.stderr + proc.stdout
+        return {"ok": False, "error": (proc.stderr or proc.stdout)[-800:], "seconds": took,
+                "limit": _is_limit(text), "transient": _is_transient(text)}
     meta = {"session_id": out.get("session_id"), "seconds": took,
             "usage": {k: out.get("usage", {}).get(k) for k in
                       ("input_tokens", "output_tokens", "cache_read_input_tokens", "cache_creation_input_tokens")},
@@ -183,13 +186,33 @@ def call_claude(model: str, sys_prompt: str, user: str, out_schema: dict | None 
     if out.get("is_error") or out.get("subtype") != "success" or out.get("structured_output") is None:
         msg = str(out.get("result") or out.get("api_error_status") or out.get("terminal_reason"))
         return {"ok": False, "error": msg[-800:], "limit": _is_limit(msg) or out.get("api_error_status") == 429,
-                **meta}
+                "transient": _is_transient(msg), **meta}
     return {"ok": True, "output": out["structured_output"], **meta}
 
 
 def _is_limit(text: str) -> bool:
     t = (text or "").lower()
     return any(w in t for w in LIMIT_WORDS)
+
+
+def _is_transient(text: str) -> bool:
+    t = (text or "").lower()
+    return any(w in t for w in TRANSIENT_WORDS)
+
+
+def call_with_retry(model: str, sys_prompt: str, user: str, on_transient=None) -> dict:
+    """call_claude, tried again after a pause when the failure is transient: a call with no answer, or
+    the login token being refreshed by another Claude process. On 2026-10-26 six packets in a row failed
+    on a token refresh within nine seconds and were skipped until the next run. `on_transient(res, wait)`
+    is told of each failure that will be retried."""
+    for wait in (*TRANSIENT_WAITS, None):
+        res = call_claude(model, sys_prompt, user)
+        if res["ok"] or not res.get("transient") or wait is None:
+            return res
+        if on_transient:
+            on_transient(res, wait)
+        time.sleep(wait)
+    return res
 
 
 # ------------------------------------------------------------------ main loop
@@ -285,7 +308,13 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                 print(f"  dry run: wrote packet {pid} ({len(items)} passages)")
                 continue
             append(LEDGER, {**base, "ts": now(), "status": "started"})
-            res, errors = call_claude(model, sys_prompt, user), []
+
+            def transient(r, wait, base=base, pid=pid):
+                append(LEDGER, {**base, **{x: r.get(x) for x in ("seconds", "cost_usd_list")}, "ts": now(),
+                                "status": "transient", "error": r.get("error"), "retry_in_s": wait})
+                print(f"  packet {pid}: {str(r.get('error'))[:120]}; trying again in {wait} s", flush=True)
+
+            res, errors = call_with_retry(model, sys_prompt, user, transient), []
             spent += res.get("cost_usd_list") or 0
             if res["ok"]:
                 errors = validate.check(res["output"], batch, gdata)
@@ -294,7 +323,7 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
                         "\n- ".join(e["msg"] for e in validate.blocking(errors, final=False))
                     first = {x: res.get(x) for x in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
                     append(LEDGER, {**base, **first, "ts": now(), "status": "retry", "errors": errors})
-                    res = call_claude(model, sys_prompt, retry_user)
+                    res = call_with_retry(model, sys_prompt, retry_user, transient)
                     spent += res.get("cost_usd_list") or 0
                     errors = validate.check(res["output"], batch, gdata) if res["ok"] else []
             meta = {x: res.get(x) for x in ("session_id", "seconds", "usage", "cost_usd_list", "models")}
