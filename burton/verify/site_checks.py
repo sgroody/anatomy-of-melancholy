@@ -37,6 +37,19 @@ def by_class(tree, cls: str) -> list:
     return tree.xpath(f"//*[contains(concat(' ', normalize-space(@class), ' '), ' {cls} ')]")
 
 
+def drop_keeping_tail(e) -> None:
+    """Remove e from its tree; the text after it stays where it was."""
+    parent, prev = e.getparent(), e.getprevious()
+    if parent is None:
+        return
+    if e.tail:
+        if prev is not None:
+            prev.tail = (prev.tail or "") + e.tail
+        else:
+            parent.text = (parent.text or "") + e.tail
+    parent.remove(e)
+
+
 def lang_of(e) -> str | None:
     while e is not None:
         if e.get("lang"):
@@ -219,12 +232,17 @@ def site_results(units: list[str]) -> list[Result]:
             notes = root.findall(f".//{TEI}note")
             if profile == "public":  # a sidenote inside Gowland's bracket is his (rendered privately only)
                 notes = [n for n in notes if not any(a.tag.startswith(ED) for a in n.iterancestors())]
+            # Gowland's translations offered as a version of their passage: one per bracket linked to a
+            # foreign passage (@for), private build only
+            linked = {t.get("for") for t in root.iter(f"{ED}trans", f"{ED}verse-trans") if t.get("for")}
             xml = {"sidenotes": len(notes),
                    "foreign": len(root.xpath("//*[@ana='foreign']")),
                    "enrefs": len(root.findall(f".//{ED}enref")) if profile == "private" else 0,
-                   "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0}
+                   "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0,
+                   "gowland_versions": len(linked) if profile == "private" else 0}
             htm = {"sidenotes": len(by_class(tree, "sidenote")), "foreign": len(by_class(tree, "fp")),
-                   "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb"))}
+                   "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb")),
+                   "gowland_versions": len(by_class(tree, "ft-gowland"))}
             for k in xml:
                 v2.counts[f"{profile}:{k}"] = v2.counts.get(f"{profile}:{k}", 0) + htm[k]
                 if xml[k] != htm[k]:
@@ -239,9 +257,22 @@ def site_results(units: list[str]) -> list[Result]:
                 root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
                 shown = re.sub(r"<[^>]+>", "", page.read_text(encoding="utf-8")).replace(chr(0xAD), "")
                 shown = " ".join(shown.split())
+                # the page's own text, without the translation boxes: a machine translation may match a
+                # literal bracket word for word ("I came to Athens, and no one knew me"); a Gowland version
+                # rendered in a box is caught by its data-resp="gowland" markup above
+                tree = parse(page)[0]
+                for ft in by_class(tree, "ft"):
+                    drop_keeping_tail(ft)
+                own = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)
+                               .replace(chr(0xAD), "").split())
                 for t in root.iter(f"{ED}trans", f"{ED}verse-trans", f"{ED}block"):
                     s = " ".join(html.escape("".join(t.itertext()), quote=False).split())
-                    if len(s) > 3 and s in shown:
+                    # also without his brackets and braces (the form the private reader shows), line by
+                    # line for verse; only long segments, since short bare words also occur in Burton
+                    segs = [ln for ln in t.iter(f"{TEI}l")] or [t]
+                    bare = [" ".join(re.sub(r"[\[\]{}]", "", html.escape("".join(x.itertext()), quote=False)).split())
+                            for x in segs]
+                    if (len(s) > 3 and s in shown) or any(len(b) >= 30 and b in own for b in bare):
                         tot["leaks"] += 1
                         v8.fail(f"public/{unit}: Gowland text present: {s[:50]!r}")
 

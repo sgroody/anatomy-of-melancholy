@@ -6,7 +6,13 @@ const root = new URL("..", import.meta.url);
 const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
-const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false };
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default" };
+// Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only.
+const ORDERS = {
+  default: ["editor", "djs1927", "machine", "gowland"],
+  gowland: ["gowland", "editor", "djs1927", "machine"],
+  machine: ["machine", "editor", "djs1927", "gowland"],
+};
 
 function load() {
   try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { return {}; }
@@ -27,7 +33,20 @@ function apply() {
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
+  orderVersions();
   scheduleLayout();
+}
+
+// Each passage's translations, reordered to the chosen source order: the box lists them all, and
+// the interlinear and English modes show the first. Without this script the build's default order stands.
+function orderVersions() {
+  const order = ORDERS[settings.order] || ORDERS.default;
+  const rank = (v) => { const i = order.indexOf(v.dataset.src); return i < 0 ? order.length : i; };
+  for (const vs of document.querySelectorAll(".ft-vs")) {
+    const items = [...vs.children].sort((a, b) => rank(a) - rank(b));
+    items.forEach((v) => vs.appendChild(v));
+    vs.closest(".fp")?.classList.toggle("first-gowland", items[0]?.dataset.src === "gowland");
+  }
 }
 
 // ---------------------------------------------------------------- reading options

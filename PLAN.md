@@ -2,7 +2,7 @@
 
 Every milestone ends with `burton check` passing for its scope, and with a short report of **counts** committed to `verify/reports/`.
 Each milestone's exit criteria are the definition of done.
-Decisions **[D#]** are listed at the end. D1–D6, D8, D9 and D10 are decided; D7 is still open.
+Decisions **[D#]** are listed at the end. D1–D6 and D8–D11 are decided; D7 is still open.
 
 ---
 
@@ -115,15 +115,23 @@ Also in M2:
 * Verdict tallies (Opus tr-v2, 1,526 records): self-translation none 905, paraphrase 261, full 254, partial 105, undetermined 1; source burton-cites 748, unidentified 615, probable 163; 4 burton-cites claims downgraded to unidentified (no checkable basis).
 * Remaining: about 6,270 items (with the 23 Chaucer groups), about $120–130 list-equivalent, about 45–50 weekly points and 3.5–4 five-hour windows. Resume after the weekly reset (2026-10-25 23:00 UTC) with `uv run burton translate --all --wait-on-limit`, plus `--budget-usd` if a cap is wanted.
 
+**Reader: Gowland as a private translation source (D11, 2026-10-27).**
+* Private build: 4,934 passages have a Gowland version (every bracket linked to a passage by `@for`; 2 are brackets over several blocks, joined from their pieces). It is read from the base text when the site is built, without his brackets and braces, sidenotes, endnote anchors or page breaks. It is never written to a layer and never sent to a model. A passage whose only translation is Gowland's is no longer "untranslated" in the private build.
+* The passage box lists every version, each labelled, in the default order of SPEC §6.3: editor, Dell & Jordan-Smith, machine, Gowland. The model's attribution and note travel with its own version. Burton's own rendering, where he gives one, comes before the list.
+* New setting "Translation shown first": human, then machine, then Gowland (default); Gowland first (private only); machine first. It is kept in `localStorage`. `edition.js` reorders the versions, and interlinear and "Read in English" show the first one. When that is Gowland's, his inline bracket is hidden so it is not shown twice. The "Show Gowland's bracketed translations" toggle is unchanged.
+* Owner's condition: a translation standing in for the original is marked with its language. "from Latin" (in interlinear under a word, "Lat.") in muted small capitals, a faint tint behind the text (about 14:1 contrast in light, 13:1 in dark), and ⟨ ⟩ in "Read in English". Screen readers hear "Translation from Latin:". The About page explains both.
+* Checks: V2h counts Gowland versions per unit, XML = HTML: private 4,934, public 0. V8 also searches the public pages' own text (outside the translation boxes) for Gowland's text without brackets, line by line for verse, for segments of 30+ characters. The first version of that search reported 40 "leaks": machine translations that match a literal bracket word for word ("I came to Athens, and no one knew me"). Those are independent translations, so translation boxes are excluded; a Gowland version rendered into a box is caught by its `data-resp="gowland"` markup.
+* Verified in the browser pane (private build, light and dark): the box, interlinear, "Read in English" with each order. On 1.2.3.14 with Gowland first, 71 passages show his version and 0 inline brackets are duplicated; the 1 bracket left visible belongs to Latin that is not a detected passage.
+
 **Carried forward** (not done, with the milestone that takes each):
 * The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
-* The "translation source order" setting waits for a second source (Dell & Jordan-Smith). → M5
+* ~~The "translation source order" setting waits for a second source.~~ Built with Gowland as the second source (D11).
 * Language-ID edge cases deferred by D10 (see the M2 status above). → later, with a new hold-out round h3
 * ~~The model sometimes puts explanation inside a translation ("Curable (salutary)").~~ Fixed in M4 by `tr-v2` and the parenthesis check.
 * The gold sample is labelled by Claude and awaits your review (D7).
 * ~~Chaucer untagged; Italian tagged `la`; French untagged; boundaries 3.2.5.1-f47 and f31.~~ Fixed in M5 session 1. Still open: djr-f1489 runs two citations and a quotation together (one passage, left as is). → M6 citation parser
 * The reader does not show the gloss layer yet; the M5 Chaucer glosses are stored for it. → M8
-* The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader (and the "translation source order" setting) needs a held-out accuracy check. → M5
+* The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader needs a held-out accuracy check; the box and the order setting already take a `djs1927` version. → M5
 
 ## M0 — Setup (short)
 * Python 3.13 and uv are installed (D9). `git init`. Create the package skeleton and the `burton` CLI stub, plus ruff and pytest.
@@ -285,6 +293,7 @@ Highest value first: 1, 6, 7, 9.
 | D1 | **Private edition** (owner, 2026-10-20). | Build the private profile only. The public filter and its leak checks (V8, V8t) stay in place. No remote is set up |
 | D10 | **Language-ID target deferred** (2026-10-20; confirmed by the owner the same day). | V5 stays below target on h2 (0.964 / 0.964 / 0.975). It still runs and reports `DEFER` (`data/manual/deferred-checks.yaml`). Remove that entry to make it blocking again |
 | D8 | **Opus for the full pass** (owner, 2026-10-23, after the M4 pilot). | M5 runs `claude-opus-5-5` (the runner's default). Pilot: self-translation 12/12 against Sonnet's 10/12, misquotations caught 4/4 against 0/4, 0 invented attributions for either; about $144 list-equivalent, roughly twice Sonnet's usage (`verify/reports/m4-pilot.md` §3–§6) |
+| D11 | **Gowland as a private translation source** (owner, 2026-10-26). | In the private build Gowland's translations are a translation source (SPEC §6.3), read from the base text when the site is built; they are never copied into a layer and never sent to a model. His brackets and braces are dropped on display only. The passage box lists every version, each labelled, preferred first. A "Translation shown first" setting chooses the order. The owner's condition: any translation standing in for the original is visibly marked with the language it is from |
 | D9 | **Tools installed.** | Python 3.13.15 (via `py`), uv 0.13.1, git 2.56, Node 24, Claude Code 2.1.304. Bare `python` is the Store stub, so always use `uv run` |
 
 ### Still open

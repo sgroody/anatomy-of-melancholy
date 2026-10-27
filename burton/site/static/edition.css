@@ -9,6 +9,7 @@
   --note-ink: #3d372f;
   --pop-bg: #fffdf8;
   --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.16);
+  --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
   --measure: 34rem;
   --margin-col: 15rem;
   --gap: 2.5rem;
@@ -208,8 +209,14 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .fo:focus-visible { outline-offset: 1px; }
 .ft { display: none; }
 .ft-label, .ft-src, .ft-note { display: block; color: var(--muted); font-size: 0.85em; font-style: normal; }
-.ft-alt { display: block; margin-top: 0.3rem; font-size: 0.9em; }
 .ft-missing .ft-label { color: var(--accent); }
+/* every version of the passage, preferred first (edition.js reorders them to the chosen source order) */
+.ft-vs, .ft-v, .ft-burton-own { display: block; }
+.ft-burton-own { margin-bottom: 0.35rem; }
+.ft-v + .ft-v { margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px solid var(--rule); font-size: 0.92em; }
+/* the language a translation is from: "from Latin" (short form "Lat." under a word in interlinear mode) */
+.ft-from { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); font-size: 0.85em; font-style: normal; }
+.ft-from-short { display: none; }
 
 /* mode 1: original + gloss on hover / focus / tap */
 .mode-gloss .fp:hover > .ft, .mode-gloss .fp:focus-within > .ft, .mode-gloss .fp.pinned > .ft {
@@ -228,7 +235,7 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mode-interlinear .fp-short > .fp-p { grid-row: 1; grid-column: 2; }
 .mode-interlinear .fp-short > .ft { grid-row: 2; grid-column: 1 / span 2; display: block; font-size: 0.72em; line-height: 1.2; color: var(--muted); text-align: left; }
 .mode-interlinear .fp-short > .ft .ft-label, .mode-interlinear .fp-short > .ft .ft-src,
-.mode-interlinear .fp-short > .ft .ft-note, .mode-interlinear .ft .ft-alt { display: none; }
+.mode-interlinear .fp-short > .ft .ft-note { display: none; }
 .mode-interlinear .fp-long > .ft { display: inline; font-size: 0.85em; color: var(--muted); }
 .mode-interlinear .fp-long > .ft .ft-text::before { content: " ⟨"; }
 .mode-interlinear .fp-long > .ft .ft-text::after { content: "⟩"; }
@@ -237,13 +244,34 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mode-interlinear .fp-block > .ft .ft-label { display: inline; margin-left: 0.5em; }
 .mode-interlinear .fp-block > .ft .ft-src, .mode-interlinear .fp-block > .ft .ft-note { display: none; }
 
+/* a translation standing in for the original (interlinear and English modes): only the first version,
+   set on a faint tint and introduced by its language, so it never passes for Burton's own English */
+.mode-interlinear .ft-vs, .mode-interlinear .ft-v, .mode-english .ft-vs, .mode-english .ft-v { display: inline; }
+.mode-interlinear .ft-vs > .ft-v ~ .ft-v, .mode-english .ft-vs > .ft-v ~ .ft-v { display: none; }
+.mode-interlinear .fp-block .ft-vs, .mode-interlinear .fp-block .ft-v,
+.mode-english .fp-block .ft-vs, .mode-english .fp-block .ft-v { display: block; }
+.mode-interlinear .ft-v + .ft-v, .mode-english .ft-v + .ft-v { margin: 0; padding: 0; border: none; font-size: 1em; }
+.mode-interlinear .ft-v .ft-text, .mode-english .ft-v .ft-text {
+  background: var(--tr-bg); border-radius: 2px; padding: 0 0.12em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.mode-interlinear .ft-from, .mode-english .ft-from { display: inline; font-size: 0.72em; margin-right: 0.3em; }
+.mode-interlinear .fp-block .ft-from, .mode-english .fp-block .ft-from { display: block; margin: 0; }
+.mode-interlinear .fp-long > .ft .ft-from { margin-left: 0.35em; }
+.mode-interlinear .fp-long > .ft .ft-text::before { content: "⟨"; }
+.mode-interlinear .fp-short .ft-from-long { display: none; }
+.mode-interlinear .fp-short .ft-from-short { display: inline; }
+.mode-interlinear .ft-own .ft-vs, .mode-interlinear .ft-own .ft-from { display: none; }
+.mode-interlinear .ft-partial { display: none; }
+/* Gowland's inline bracket repeats the translation when his version is the one shown in its place */
+.mode-interlinear .fp.first-gowland + .gowland-tr, .mode-english .fp.first-gowland + .gowland-tr { display: none; }
+
 /* mode 3: read in English — translations replace originals, visibly marked ⟨ ⟩ */
 .mode-english .fp > .fo { display: none; }
 .mode-english .fp > .ft { display: inline; cursor: pointer; }
 .mode-english .fp-block > .ft { display: block; margin: 0.25rem 0; }
 .mode-english .fp > .ft .ft-text::before { content: "⟨"; color: var(--accent); }
 .mode-english .fp > .ft .ft-text::after { content: "⟩"; color: var(--accent); }
-.mode-english .fp > .ft .ft-label, .mode-english .fp > .ft .ft-src, .mode-english .fp > .ft .ft-note, .mode-english .fp > .ft .ft-alt { display: none; }
+.mode-english .fp > .ft .ft-label, .mode-english .fp > .ft .ft-src, .mode-english .fp > .ft .ft-note { display: none; }
 .mode-english .fp.show-orig > .fo { display: inline; }
 .mode-english .fp-block.show-orig > .fo { display: block; }
 .mode-english .fp.show-orig > .ft .ft-label { display: inline; margin-left: 0.4em; }

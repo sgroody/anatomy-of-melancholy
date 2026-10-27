@@ -2,7 +2,13 @@
   <legend>Foreign-language passages</legend>
   <label><input type="radio" name="mode" value="gloss" checked> Original, with glosses on tap or hover</label>
   <label><input type="radio" name="mode" value="interlinear"> Interlinear: translation beneath</label>
-  <label><input type="radio" name="mode" value="english"> Read in English: translations replace originals, marked ⟨ ⟩</label>
+  <label><input type="radio" name="mode" value="english"> Read in English: translations replace originals, marked ⟨ ⟩ with their language</label>
+</fieldset>
+<fieldset>
+  <legend>Translation shown first</legend>
+  <label><input type="radio" name="order" value="default" checked> Human translation, then machine{% if profile == "private" %}, then Gowland{% endif %}</label>
+  {% if profile == "private" %}<label><input type="radio" name="order" value="gowland"> Gowland 2021 first</label>{% endif %}
+  <label><input type="radio" name="order" value="machine"> Machine translation first</label>
 </fieldset>
 <fieldset>
   <legend>Theme</legend>

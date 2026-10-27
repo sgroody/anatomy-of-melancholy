@@ -47,7 +47,55 @@ def label_of(t: dict) -> str:
         return "Dell & Jordan-Smith (1927)"
     if t["by"] == "editor":
         return "Editor's translation"
+    if t["by"] == "gowland":
+        return "Gowland 2021 (private build)"
     return t["by"]
+
+
+# SPEC §6.3: the default order of translation sources (Burton's own rendering is not a source here:
+# where he translates a passage himself his English stays in the text). The reader can reorder them.
+SOURCE_ORDER = ["editor", "djs1927", "machine", "gowland"]
+LANG_NAMES = {"la": ("Latin", "Lat."), "grc": ("Greek", "Gk."), "it": ("Italian", "It."), "fr": ("French", "Fr."),
+              "es": ("Spanish", "Sp."), "de": ("German", "Ger."), "nl": ("Dutch", "Du."), "he": ("Hebrew", "Heb."),
+              "ar": ("Arabic", "Ar."), "enm": ("Middle English", "ME")}
+GOWLAND_SKIP = (T("note"), ED("enref"), T("pb"))
+
+
+def _flat(x) -> str:
+    """Text of a Gowland translation element without the sidenotes, endnote anchors and page breaks
+    inside it (their tails are kept)."""
+    parts = [x.text or ""]
+    for c in x:
+        if isinstance(c.tag, str) and c.tag not in GOWLAND_SKIP:
+            parts.append(_flat(c))
+        parts.append(c.tail or "")
+    return "".join(parts)
+
+
+def gowland_versions(div) -> dict[str, str]:
+    """Gowland's translation of each foreign passage (ed:trans / ed:verse-trans @for), read from the base
+    text at build time for the private build. Never written to a layer, never sent to a model. His
+    brackets and braces are dropped for display only; a bracket that runs over several blocks
+    (@part I … M … F) is joined from its pieces."""
+    pieces = [t for t in div.iter(ED("trans"), ED("verse-trans"))]
+    out = {}
+    for i, t in enumerate(pieces):
+        target = t.get("for")
+        if not target:
+            continue
+        run = [t]
+        if t.get("part") == "I":
+            for u in pieces[i + 1:]:
+                run.append(u)
+                if u.get("part") == "F":
+                    break
+        texts = []
+        for piece in run:
+            lines = list(piece.iter(T("l")))
+            texts.append(" / ".join(_flat(ln) for ln in lines) if lines else _flat(piece))
+        text = re.sub(r"[\[\]{}]", "", " ".join(texts))
+        out[public_id(target)] = " ".join(text.split())
+    return out
 
 
 class Renderer:
@@ -56,7 +104,9 @@ class Renderer:
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
         self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
-                       "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0}
+                       "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0,
+                       "gowland_versions": 0}
+        self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
         self.langs: list[str] = []
@@ -262,48 +312,69 @@ class Renderer:
         self.w("</span>")
 
     # ---------------------------------------------------------------- foreign passages
-    def tr_markup(self, fid: str, block: bool) -> str:
+    def versions(self, fid: str) -> list[dict]:
+        """Every translation of the passage, in the default source order (SPEC §6.3): the layer's human
+        and machine translations (one model shown when several translated it) and, in the private
+        build, Gowland's."""
+        rec = self.layer.get(fid)
+        trs = {t["by"]: t for t in (rec or {}).get("translations", []) if t["by"] != "machine"}
+        if rec and (m := primary_machine(rec)) is not None:
+            trs["machine"] = m
+        if fid in self.gowland:
+            trs["gowland"] = {"by": "gowland", "text": self.gowland[fid]}
+        return [trs[s] for s in SOURCE_ORDER if s in trs]
+
+    def has_translation(self, fid: str) -> bool:
+        return fid in self.layer or fid in self.gowland
+
+    def tr_markup(self, fid: str, block: bool, lang: str | None) -> str:
         rec = self.layer.get(fid)
         tag = "div" if block else "span"
-        if not rec:
+        vs = self.versions(fid)
+        if not vs:
             return (f'<{tag} class="ft ft-missing" id="tr-{attr(fid)}" role="note">'
                     f'<span class="ft-label">No translation yet</span></{tag}>')
-        st = rec["self_translation"]
-        trs = {t["by"]: t for t in rec["translations"] if t["by"] != "machine"}
-        if (m := primary_machine(rec)) is not None:  # one model shown when several translated it
-            trs["machine"] = m
-        pref = rec["preferred"]
-        if pref == "burton" and st.get("burton_span"):
+        name, abbr = LANG_NAMES.get(lang or "", (lang or "another language", lang or "?"))
+        # the source language, shown wherever a translation stands in for the original (owner, 2026-10-26)
+        head = (f'<span class="sr-only">Translation from {esc(name)}: </span>'
+                f'<span class="ft-from" aria-hidden="true"><span class="ft-from-long">from {esc(name)}</span>'
+                f'<span class="ft-from-short">{esc(abbr)}</span></span>')
+        st = (rec or {}).get("self_translation") or {"status": "none"}
+        burton = ""
+        if rec and rec["preferred"] == "burton" and st.get("burton_span"):
             # placeholder: filled in after mark_burton_spans, so the quote is not matched twice
-            body = f'<span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
-            label = "Burton’s own rendering"
-            other = trs.get("machine")
-            extra = (f'<span class="ft-alt"><span class="ft-label">{esc(label_of(other))}:</span> '
-                     f'{esc_tagged(other["text"])}</span>') if other else ""
-            return (f'<{tag} class="ft ft-burton" id="tr-{attr(fid)}" role="note" lang="en">{body}'
-                    f'<span class="ft-label">{esc(label)}</span>{extra}</{tag}>')
-        t = trs.get(pref) or trs.get("machine")
-        prefix = ""
-        if st["status"] == "partial":
-            prefix = '<span class="ft-label">Completing Burton’s rendering: </span>'
-        note = f'<span class="ft-note">{esc_tagged(t["note"])}</span>' if t.get("note") else ""
-        src = rec["source"]
-        src_txt = ""
-        if src["status"] in ("burton-cites", "probable", "identified"):
-            word = {"burton-cites": "Burton cites", "probable": "Probably", "identified": "Source"}[src["status"]]
-            where = ", ".join(x for x in (src.get("author"), src.get("work"), src.get("locus")) if x)
-            unverified = "" if src.get("verified") else " (unverified)"
-            src_txt = f'<span class="ft-src">{word}: {esc_tagged(where)}{unverified}</span>'
-        return (f'<{tag} class="ft" id="tr-{attr(fid)}" role="note" lang="en">'
-                f'<span class="sr-only">Translation: </span>{prefix}'
-                f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
-                f'<span class="ft-label">{esc(label_of(t))}</span>{src_txt}{note}</{tag}>')
+            burton = (f'<span class="ft-burton-own"><span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
+                      f'<span class="ft-label">Burton’s own rendering</span></span>')
+        elif st["status"] == "partial":
+            burton = '<span class="ft-label ft-partial">Completing Burton’s rendering:</span>'
+        items = []
+        for t in vs:
+            src = t["by"]
+            extra = ""
+            if src == "machine":  # the model's own claims travel with its translation
+                s = rec["source"]
+                if s["status"] in ("burton-cites", "probable", "identified"):
+                    word = {"burton-cites": "Burton cites", "probable": "Probably", "identified": "Source"}[s["status"]]
+                    where = ", ".join(x for x in (s.get("author"), s.get("work"), s.get("locus")) if x)
+                    unverified = "" if s.get("verified") else " (unverified)"
+                    extra += f'<span class="ft-src">{word}: {esc_tagged(where)}{unverified}</span>'
+                if t.get("note"):
+                    extra += f'<span class="ft-note">{esc_tagged(t["note"])}</span>'
+            resp = ' data-resp="gowland"' if src == "gowland" else ""
+            if src == "gowland":
+                self.counts["gowland_versions"] += 1
+            items.append(f'<span class="ft-v ft-{attr(src)}" data-src="{attr(src)}"{resp}>'
+                         f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
+                         f'<span class="ft-label">{esc(label_of(t))}</span>{extra}</span>')
+        own = " ft-own" if burton.startswith('<span class="ft-burton-own"') else ""
+        return (f'<{tag} class="ft{own}" id="tr-{attr(fid)}" role="note" lang="en">{head}{burton}'
+                f'<span class="ft-vs">{"".join(items)}</span></{tag}>')
 
     def mode_class(self, fid: str) -> str:
         rec = self.layer.get(fid)
-        if not rec:  # nothing to substitute: every mode keeps the original
+        if not self.has_translation(fid):  # nothing to substitute: every mode keeps the original
             return " fp-untranslated"
-        st = (rec.get("self_translation") or {}).get("status", "none")
+        st = ((rec or {}).get("self_translation") or {}).get("status", "none")
         return {"full": " st-full", "partial": " st-partial", "paraphrase": " st-paraphrase"}.get(st, "")
 
     def st_mark(self, fid: str) -> str:
@@ -332,7 +403,7 @@ class Renderer:
                f'<span class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</span>")
-        self.w(self.tr_markup(fid, block=False))
+        self.w(self.tr_markup(fid, block=False, lang=lang))
         if punct:
             self.w(f'<span class="fp-p">{esc(punct)}</span>')
         self.w("</span>")
@@ -348,7 +419,7 @@ class Renderer:
                f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</div>")
-        self.w(self.tr_markup(fid, block=True))
+        self.w(self.tr_markup(fid, block=True, lang=lang))
         self.w(f"</{tag}>\n")
 
     def lg(self, e) -> None:
@@ -392,6 +463,8 @@ def h1_head(div):
 
 def render_unit(div, unit: str, profile: str, layer: dict, image=None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div))
+    if profile == "private":
+        r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")
