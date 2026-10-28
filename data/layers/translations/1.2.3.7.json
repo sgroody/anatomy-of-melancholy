@@ -1,0 +1,1342 @@
+{
+  "1.2.3.7-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the Sicilian tyrants never invented",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Siculi non invenere tyranni",
+    "text_sha1": "3fb5e7d10cfc60ba0ced6f0a8b179dee6bbfa477",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Horace's lines run 'invidia Siculi non invenere tyranni / maius tormentum' ('the Sicilian tyrants invented no greater torment than envy'); Burton leaves out 'invidia'. The locus is not given in Burton's sidenote; the passage is Horace, Epistles 1.2.58–59.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the Sicilian tyrants never invented",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "the Sicilian tyrants did not invent",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Basil",
+      "basis": "sidenote \"Statuis cereis Basilius eos comparat\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De invidia"
+    },
+    "text": "Statuis cereis Basilius eos comparat, qui liquefiunt ad praesentiam solis, qua alii gaudent & ornantur. Muscis alii quae ulceribus gaudent amoena praetereunt, sistunt in foetidis",
+    "text_sha1": "2d1d1d5579414aa8afbe293e855cc7236c778210",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The second sentence is elliptical: 'Muscis alii' literally means 'others [compare them] to flies'. It could also mean 'others [Basil compares] to flies'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Basil",
+          "basis": "sidenote \"Statuis cereis Basilius eos comparat\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De invidia"
+        },
+        "text": "Basil compares them to wax statues, which melt in the presence of the sun, in which others rejoice and are adorned. Others compare them to flies, which delight in sores, pass over pleasant things, and settle on foul ones.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "it was his brother’s good fortune galled him",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Theodoret",
+      "basis": "text \"saith Theodoret\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "sed fratris prosperitas",
+    "text_sha1": "e8b8bc0f20cab5e8db485a289dd38eac481dd2dc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "it was his brother’s good fortune galled him",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Theodoret",
+          "basis": "text \"saith Theodoret\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "but his brother's prosperity",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "downgraded_from": "burton-cites",
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Urebat me, aemulatio propter stultos",
+    "text_sha1": "88ab9cf9298f1c36c0c05c5be0f2b83558da87d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton is citing Psalm 73:3 (Vulgate Psalm 72), which in the English Bible reads 'For I was envious at the foolish'. His Latin is not the Vulgate wording.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "downgraded_from": "burton-cites",
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Envy burned me because of the foolish.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Platina",
+      "basis": "sidenote \"Platina dial. amorum.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogus de amore"
+    },
+    "text": "Periturae dolore et invidia, si quem viderint ornatiorem: se in publicum prodiisse",
+    "text_sha1": "404d045e39dabc44857f67c4eae31c2826a297b5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "Ready to perish with grief and envy, if they have seen anyone more adorned: that they had gone out in public.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The final accusative-and-infinitive clause ('se in publicum prodiisse') hangs loosely. It most likely depends on the idea of grief: they regret having appeared in public.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Platina",
+          "basis": "sidenote \"Platina dial. amorum.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogus de amore"
+        },
+        "text": "Ready to die of grief and envy if they see anyone more finely dressed, and sorry that they ever went out in public.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Musaeus",
+      "basis": "text \"(Musaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "ob pulchritudinem invidae sunt faeminae",
+    "text_sha1": "b49176e9b4376c44e0db4352e3a826fc33f569b1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Musaeus",
+          "basis": "text \"(Musaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "women are envious on account of beauty",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Implacabiles plerumque laesae mulieres",
+    "text_sha1": "386d6497c40665d04b9ee7db5e45631007db08f3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton attaches this to Agrippina. The paragraph has a sidenote 'Agrip. lib. 1 cap. 63.', but its link to this phrase is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Women who have been wronged are for the most part implacable",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Tacitus",
+    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is only the name of the historian Tacitus inside Burton's English sentence. There is nothing to translate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Tacitus",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the like torment",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Majus tormentum",
+    "text_sha1": "add03111a58a3fae92a4ff48e6072af3b8dc90a0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This continues the Horace line before it (Epistles 1.2.59).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the like torment",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "a greater torment",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Agricola",
+    "text_sha1": "e1f2a11798b7f81ce44a5696e9ede0a420b89108",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is only a proper name (Gnaeus Julius Agricola) inside Burton's English sentence. There is nothing to translate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Agricola",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Tacitus",
+      "basis": "text \"so the Roman Ladies in Tacitus\" and sidenote \"Tacit. Hist. lib. 2 part. 6.\"",
+      "locus": "lib. 2 part. 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Histories"
+    },
+    "text": "Tacitus",
+    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text is only the author's name, which stands inside Burton's English sentence. It is not a Latin quotation, so there is nothing to translate; the name is kept as it is. The anecdote of the Roman ladies offended by Salonina, the wife of Caecina, and her finely harnessed horse comes from Tacitus' Histories, book 2.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Tacitus",
+          "basis": "text \"so the Roman Ladies in Tacitus\" and sidenote \"Tacit. Hist. lib. 2 part. 6.\"",
+          "locus": "lib. 2 part. 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Histories"
+        },
+        "text": "Tacitus",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cyprian",
+      "basis": "text \"Cyprian, vulnus occultum\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "vulnus occultum",
+    "text_sha1": "ac107a2e2418a0a1be0e18ca7d4ae9720137587c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"Cyprian, vulnus occultum\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "a hidden wound",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cyprian",
+      "basis": "text \"Cyprian ser. 2 de zelo & livore\"",
+      "locus": "ser. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De zelo et livore"
+    },
+    "text": "His vultus minax, torvus aspectus, pallor in facie, in labiis tremor, stridor in dentibus, &c",
+    "text_sha1": "9d14e4806773a8373fbfb8aec58d19569edf6eca",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"Cyprian ser. 2 de zelo & livore\"",
+          "locus": "ser. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De zelo et livore"
+        },
+        "text": "Their look is threatening, their aspect grim, there is pallor in the face, trembling on the lips, gnashing of the teeth, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f31": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Theodoret",
+      "basis": "text \"saith Theodoret\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "angebat illum non proprium peccatum",
+    "text_sha1": "a444266e5082ba4441e14d0f935e9b70057fb5e9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Said of Cain. The sentence goes on in the next passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Theodoret",
+          "basis": "text \"saith Theodoret\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "it was not his own sin that tormented him",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "They love, or hate, no medium amongst them",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f32",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Granatensis",
+      "basis": "text \"(Granatensis)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "aut amat, aut odit, nihil est tertium (Granatensis",
+    "text_sha1": "dd50235bf1c6e59c49f810d958b3771ce9a1d1ee",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked span includes Burton's parenthetical attribution '(Granatensis', which is a name and has not been translated. Granatensis is probably Luis de Granada.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "They love, or hate, no medium amongst them",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f32",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Granatensis",
+          "basis": "text \"(Granatensis)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "she either loves or hates; there is no third way",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "The wording is that of Ovid's description of Envy: 'pallor in ore sedet, macies in corpore toto, / nusquam recta acies, livent rubigine dentes'.",
+      "locus": "2.775–776",
+      "status": "probable",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "Pallor in ore sedet, macies in corpore toto. Nusquam recta acies, livent rubigine dentes",
+    "text_sha1": "d5ca048f7961a47cb48bfc4c7d3d325cfd7377b8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "These lines are Ovid's portrait of Envy (Invidia).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "The wording is that of Ovid's description of Envy: 'pallor in ore sedet, macies in corpore toto, / nusquam recta acies, livent rubigine dentes'.",
+          "locus": "2.775–776",
+          "status": "probable",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "Pallor sits on the face, leanness on the whole body. / Nowhere is the gaze straight; the teeth are livid with rust.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "sidenote \"Austin Domin. prima. Advent.\"",
+      "locus": "Domin. prima Advent.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Diaboli expressa Imago, toxicum charitatis, venenum amicitiae, abyssus mentis, non est eo monstrosius monstrum, damnosius damnum, urit, torret, discruciat, macie & squalore conficit",
+    "text_sha1": "e23a5ca812f3716683c034025f2126072fa9d115",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Two jingles: 'monstrosius monstrum' ('a more monstrous monster') and 'damnosius damnum' ('a more damaging damage').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "sidenote \"Austin Domin. prima. Advent.\"",
+          "locus": "Domin. prima Advent.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "The express image of the Devil, the poison of charity, the venom of friendship, an abyss of the mind; there is no monster more monstrous, no harm more harmful; it burns, scorches, tortures, consumes with leanness and squalor.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f6": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "sidenote \"Ovid.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "——— intabescitque videndo / Successus hominum ——— suppliciumque suum est.",
+    "text_sha1": "fee6bff8a53b6f237888232aa3dce93428189dde",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "In Ovid's text, Envy pines at men's successes, 'carpitque et carpitur una' ('she gnaws and is gnawed at once'). Burton's dash leaves those words out.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "sidenote \"Ovid.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "— and she pines away at the sight / of men's successes — and is her own punishment.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "will damage himself, to do another a mischief",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "atque cadet subito, dum super hoste cadat",
+    "text_sha1": "4afcb05e6f3f598d64c1d9eb28bec3fea54da67d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a pentameter line. Its source is not identified here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "will damage himself, to do another a mischief",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and he will fall at once, so long as he falls on top of his enemy.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "sorrow for other men’s good",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John of Damascus",
+      "basis": "text \"so Damascen defines it, lib. 2 de orthod. fid.\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De fide orthodoxa"
+    },
+    "text": "tristitia de bonis alienis",
+    "text_sha1": "78586d11791c718649480d9816214601ca1ab5c9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the standard scholastic definition of envy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "sorrow for other men’s good",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John of Damascus",
+          "basis": "text \"so Damascen defines it, lib. 2 de orthod. fid.\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De fide orthodoxa"
+        },
+        "text": "sorrow at the goods of others",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.7-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "and joy at their harms",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John of Damascus",
+      "basis": "text \"so Damascen defines it, lib. 2 de orthod. fid.\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De fide orthodoxa"
+    },
+    "text": "& gaudium de adversis",
+    "text_sha1": "72764534a17a69b7392f7a430fd66f104b07f45f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and joy at their harms",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John of Damascus",
+          "basis": "text \"so Damascen defines it, lib. 2 de orthod. fid.\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De fide orthodoxa"
+        },
+        "text": "and joy at their adversities",
+        "warnings": []
+      }
+    ]
+  }
+}

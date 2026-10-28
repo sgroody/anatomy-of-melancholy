@@ -1,4 +1,965 @@
 {
+  "3.2.5.1-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Savonarola",
+      "basis": "text \"’Tis Savonarola’s third rule\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Occupari in multis & magnis negotiis",
+    "text_sha1": "05c8031085f0ed5ee7799cd994d26d709d430f0b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Savonarola",
+          "basis": "text \"’Tis Savonarola’s third rule\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "To be occupied in many and great affairs",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f11": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "sidenote \"Ovid. lib. 1 remed.\"",
+      "locus": "lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Remedia Amoris"
+    },
+    "text": "Cedit amor rebus; res age, tutus eris.",
+    "text_sha1": "34b2f55fb2ed0622a7e7df7d0d9d27d78ea7486f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "sidenote \"Ovid. lib. 1 remed.\"",
+          "locus": "lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Remedia Amoris"
+        },
+        "text": "Love yields to business; be busy, and you will be safe.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f12": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "For if thou dost not ply thy book, / By candlelight to study bent, / Employ’d about some honest thing, / Envy or Love shall thee torment.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 1 Epist. 2.\"",
+      "locus": "lib. 1 Epist. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "——— & ni / Poscas ante diem librum cum lumine, si non / Intendas animum studiis, & rebus honestis, / Invidia vel amore miser torquebere. ———",
+    "text_sha1": "e4e888a41ac2b873c02e807e3e7c071cf855bd2a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace's standard text reads 'posces', 'intendes' and 'vigil' (wakeful). Burton has 'Poscas', 'Intendas' and 'miser' (wretched).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "For if thou dost not ply thy book, / By candlelight to study bent, / Employ’d about some honest thing, / Envy or Love shall thee torment.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 1 Epist. 2.\"",
+          "locus": "lib. 1 Epist. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "— and unless / you call for your book and a lamp before daybreak, unless / you bend your mind to studies and honest pursuits, / you will be wretchedly tormented by envy or by love. —",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f13": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Why dost thou ask, poor folks are often free, / And dainty places still molested be?",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"; the lines are from the Nurse's speech in Phaedra",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Cur in penates rarius tenues subit, / Haec delicatas eligens pestis domus, / Mediumque sanos vulgus affectus tenet? &c.",
+    "text_sha1": "9f2f5be78dacf4c0e77abbc385169e2c2a840704",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Seneca's text reads 'domos'; Burton's 'domus' may be a printing variant. Burton's English covers only the first two lines.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Why dost thou ask, poor folks are often free, / And dainty places still molested be?",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"; the lines are from the Nurse's speech in Phaedra",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "Why does this plague less often enter humble homes, / choosing luxurious houses instead, / and why do the common folk of middle station keep their passions sound? etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f14": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "The line matches Ovid's Remedia Amoris word for word: 'non habet unde suum paupertas pascat amorem'.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Remedia Amoris"
+    },
+    "text": "Non habet unde suum paupertas pascat amorem,",
+    "text_sha1": "4b4af61caafed069b56d0aacdc90ae79c2499368",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "The line matches Ovid's Remedia Amoris word for word: 'non habet unde suum paupertas pascat amorem'.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Remedia Amoris"
+        },
+        "text": "Poverty has nothing with which to feed its love,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "often baths, much exercise and sweat",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Hildesheim",
+      "basis": "text \"Hildesheim spicil. 2\"",
+      "locus": "spicil. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Victus sit attenuatus, balnei frequens usus & sudationes",
+    "text_sha1": "bcd6b7900047082842adac4fae9dfa2f07b0302b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "often baths, much exercise and sweat",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Hildesheim",
+          "basis": "text \"Hildesheim spicil. 2\"",
+          "locus": "spicil. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Let the diet be thin, with frequent use of baths, and sweatings",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "animae virus & vitiorum fomes",
+    "text_sha1": "0a8258c2f1a087b6c4940e85ee1df2267b745aae",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Fomes' means tinder: whatever feeds a fire.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the poison of the soul and the tinder of vices",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f18": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Eryngoes are not good for to be taken, / And all lascivious meats must be forsaken.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "The couplet matches Ovid's Remedia Amoris: 'Nec minus erucas aptum vitare salaces, / et quicquid Veneri corpora nostra parat'.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Remedia Amoris"
+    },
+    "text": "Nec minus erucas aptum est vitare salaces, / Et quicquid Veneri corpora nostra parat.",
+    "text_sha1": "756663f713b3b7835c9956b4816080364d2e46f8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Eruca' is rocket (colewort), a herb thought to rouse lust. Burton renders it as 'Eryngoes'. Burton also adds 'est', which Ovid's text does not have.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Eryngoes are not good for to be taken, / And all lascivious meats must be forsaken.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "The couplet matches Ovid's Remedia Amoris: 'Nec minus erucas aptum vitare salaces, / et quicquid Veneri corpora nostra parat'.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Remedia Amoris"
+        },
+        "text": "No less fitting is it to avoid lustful rocket, / and whatever makes our bodies ready for Venus.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Valescus de Taranta",
+      "basis": "text \"as Valescus adviseth\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "cum alia honesta venerem saepe exercendo",
+    "text_sha1": "a6457f63f35c17fab1f32460a8b9be5107885977",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "with another honest woman by often exercising venery",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Venerem exercere' means to engage in sexual intercourse. 'Alia' implies a woman other than the one loved.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Valescus de Taranta",
+          "basis": "text \"as Valescus adviseth\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "by often making love with some other respectable woman",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "very profitable remedy",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Guainerius",
+      "basis": "text \"Guainerius seconds it, cap. 16 tract. 16\"; sidenote \"Idem Laurentius cap. 11.\"",
+      "locus": "cap. 16 tract. 16",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cum muliere aliqua gratiosa saepe coire erit utilissimum",
+    "text_sha1": "725f7314c10f88af9312505f8120ba5b3e24ed84",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In the main text Burton renders only 'utilissimum', as 'very profitable remedy'. The rest of the sidenote reads 'Laurentius says the same, chapter 11.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "very profitable remedy",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Guainerius",
+          "basis": "text \"Guainerius seconds it, cap. 16 tract. 16\"; sidenote \"Idem Laurentius cap. 11.\"",
+          "locus": "cap. 16 tract. 16",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "To lie often with some agreeable woman will be most beneficial.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f22": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "——— tument tibi quum inguina, cum si / Ancilla, aut verna praesto est, tentigine rumpi / Malis? non ego. Namque, &c. ———",
+    "text_sha1": "1f55128dcf9e104c28313fa392f6e9b70683d894",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Satires 1.2.116–119. Horace's text reads 'tument tibi cum inguina, num, si / ancilla aut verna est praesto puer, impetus in quem / continuo fiat, malis tentigine rumpi? / non ego: namque parabilem amo venerem facilemque.' Burton leaves out 'num', 'puer' and the clause 'impetus in quem continuo fiat' ('on whom you might make an immediate assault'), and he cuts the quotation off at 'Namque'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "— when your groin swells, if a maidservant or a house-born slave is at hand, / would you rather burst with the strain? / Not I. For, etc. —",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jason Pratensis",
+      "basis": "text \"Jason Pratensis subscribes to this counsel\"; sidenote \"Cap. 29 de morb. cereb.\"",
+      "locus": "Cap. 29",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De cerebri morbis"
+    },
+    "text": "Excretio enim aut tollit prorsus aut lenit aegritudinem",
+    "text_sha1": "8255874468a358ddfde294e337d834703d230f72",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Excretio' here means the emission of seed.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jason Pratensis",
+          "basis": "text \"Jason Pratensis subscribes to this counsel\"; sidenote \"Cap. 29 de morb. cereb.\"",
+          "locus": "Cap. 29",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De cerebri morbis"
+        },
+        "text": "For emission either removes the malady altogether or eases it.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Filippo Beroaldo",
+      "basis": "sidenote \"Beroaldus orat. de Amore.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Oratio de Amore"
+    },
+    "text": "qui ad impatientiam amoris leniendam, per singulas fere noctes novas puellas devirginavit",
+    "text_sha1": "653979ffaf9f52601f914a74131b88bf699fdffd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote that most likely belongs to this passage is the one to Beroaldus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Filippo Beroaldo",
+          "basis": "sidenote \"Beroaldus orat. de Amore.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Oratio de Amore"
+        },
+        "text": "who, to soothe the impatience of his love, deflowered new girls almost every night",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "still have a pleasant companion",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Fernando de Rojas (Latin version by Caspar Barth)",
+      "basis": "sidenote \"Celestinae Act. 2 Barthio interpret.\"; text \"as Sempronius adviseth Calisto his lovesick master\"",
+      "locus": "Act. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Celestina"
+    },
+    "text": "Semper tecum sit",
+    "text_sha1": "d09e04321f533a5222a13f1045e126c5861fe596",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence continues in the Latin after Burton's parenthesis: 'qui sermones joculares moveat…'. The source is the Latin version of Celestina by Caspar Barth.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "still have a pleasant companion",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Fernando de Rojas (Latin version by Caspar Barth)",
+          "basis": "sidenote \"Celestinae Act. 2 Barthio interpret.\"; text \"as Sempronius adviseth Calisto his lovesick master\"",
+          "locus": "Act. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Celestina"
+        },
+        "text": "Let there always be with you",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "still have a pleasant companion to sing and tell merry tales, songs and facete histories, sweet discourse, &c.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f26",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Fernando de Rojas (Latin version by Caspar Barth)",
+      "basis": "sidenote \"Celestinae Act. 2 Barthio interpret.\"",
+      "locus": "Act. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Celestina"
+    },
+    "text": "qui sermones joculares moveat, coram ludat, &c",
+    "text_sha1": "fcf814f3a1e72272801740321f01219339f49830",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "who may move jocular talk, may play before you, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This continues 'Semper tecum sit'. Burton's English expands the clause freely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "still have a pleasant companion to sing and tell merry tales, songs and facete histories, sweet discourse, &c.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f26",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Fernando de Rojas (Latin version by Caspar Barth)",
+          "basis": "sidenote \"Celestinae Act. 2 Barthio interpret.\"",
+          "locus": "Act. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Celestina"
+        },
+        "text": "someone to start jesting talk and to play in your presence, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.1-f27": {
     "kind": "phrase",
     "lang": "la",
@@ -105,6 +1066,77 @@
       }
     ]
   },
+  "3.2.5.1-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Avicenna confirms as much if need require, and bloodletting above the rest",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f28",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Avicenna",
+      "basis": "text \"Avicenna confirms as much\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Purgetur si ejus dispositio venerit ad adust. humoris, & phlebotomisetur",
+    "text_sha1": "c3bc714350871189c0d5e6949e7319180f110657",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'adust.' is abbreviated. It is taken here as 'adustionem' (the burning of a humour, which turns it to black choler), but the exact form is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Avicenna confirms as much if need require, and bloodletting above the rest",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f28",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Avicenna",
+          "basis": "text \"Avicenna confirms as much\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Let him be purged if his condition has come to adustion of the humour, and let him be bled.",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.1-f29": {
     "kind": "phrase",
     "lang": "la",
@@ -189,6 +1221,1064 @@
           "work": null
         },
         "text": "The disease of lovers, like an itch, is relieved by bloodletting and cupping-glasses.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "Terence's well-known line 'sine Cerere et Libero friget Venus', which became a proverb.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Eunuchus"
+    },
+    "text": "Sine Cerere & Baccho friget Venus",
+    "text_sha1": "d382fecae97f3d05f7196e766aff4c5ef5c63981",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ceres stands for food, Bacchus for wine and Venus for love. The line was proverbial. Terence's line reads 'Libero' (Liber) where Burton has 'Baccho'; the two names mean the same god.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "Terence's well-known line 'sine Cerere et Libero friget Venus', which became a proverb.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Eunuchus"
+        },
+        "text": "Without Ceres and Bacchus, Venus grows cold",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f30": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Lovers to come to themselves, and keep in their right minds",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f30",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "amantes ne sint amentes",
+    "text_sha1": "3a9d74c79ab2b842c0e37f75e56bccc0355f0c03",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a jingle on 'amantes' (lovers) and 'amentes' (madmen), which differ by one letter. English cannot keep it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Lovers to come to themselves, and keep in their right minds",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f30",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "that lovers may not be madmen",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f36": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "And whate’er is done by Art, / To bewitch a Lover’s heart.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f36",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "George Buchanan",
+      "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hendecasyllabi"
+    },
+    "text": "Blandis ebria fascinat venenis",
+    "text_sha1": "6572064664d4f21e1f5011130c77e1d006ca5498",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "bewitches [them] drunk with sweet poisons",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This finishes the clause begun in the line before: 'whatever bewitches the unsound hearts of lovers, drunk with alluring poisons'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "And whate’er is done by Art, / To bewitch a Lover’s heart.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f36",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "George Buchanan",
+          "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hendecasyllabi"
+        },
+        "text": "bewitches them, drunk with alluring poisons",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "This is the opening of Ovid's line 'Vina parant animum Veneri, nisi plurima sumas'.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Remedia Amoris"
+    },
+    "text": "Vina parant animos Veneri, &c",
+    "text_sha1": "ecba40cb09c2431d525b85eb302b2be7eeba4671",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Wines prepare minds for Venus",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ovid's text reads 'animum' (singular). The line goes on 'unless you take a great deal'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "This is the opening of Ovid's line 'Vina parant animum Veneri, nisi plurima sumas'.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Remedia Amoris"
+        },
+        "text": "Wines prepare the mind for Venus, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "sidenote \"Otium naufragium castitatis. Austin.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Otium naufragium castitatis",
+    "text_sha1": "e5f2ef8f1693d551d53fe5f0e9ec133ab9ca7852",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "sidenote \"Otium naufragium castitatis. Austin.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Idleness is the shipwreck of chastity",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vitex",
+    "text_sha1": "ea47ac5cedfb0194611a44f862ec94be2a3818ce",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Vitex is the chaste-tree (Vitex agnus-castus), long held to dampen lust. Burton gives its other Latin name, Agnus castus, straight afterwards.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Vitex",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Gordonius would have them soundly whipped",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f48",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Bernard of Gordon (Gordonius)",
+      "basis": "text \"Gordonius would have them soundly whipped\"; sidenote \"Cap. 2 part. 2.\"",
+      "locus": "Cap. 2 part. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Si sit juvenis, & non vult obedire, flagelletur frequenter & fortiter, dum incipiat foetere",
+    "text_sha1": "d95ca5884dabec950ab235bce305c95d33895fa1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Foetere' means to stink, presumably from the sores raised by the whipping. Burton's 'Gordonius' is Bernard of Gordon.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Gordonius would have them soundly whipped",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f48",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Bernard of Gordon (Gordonius)",
+          "basis": "text \"Gordonius would have them soundly whipped\"; sidenote \"Cap. 2 part. 2.\"",
+          "locus": "Cap. 2 part. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "If he is young and will not obey, let him be whipped often and hard, until he begins to stink",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f5": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Take idleness away, and put to flight / Are Cupid’s Arts, his Torches give no light.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "This couplet of the Remedia Amoris is well known; its only difference here is 'artes' for 'arcus'.",
+      "locus": "139–140",
+      "status": "probable",
+      "verified": false,
+      "work": "Remedia Amoris"
+    },
+    "text": "Otia si tollas, periere Cupidinis artes, / Contemptaeque jacent, & sine luce faces.",
+    "text_sha1": "436b3f224683bc946ac4dd51fe625ff02c1307e4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The standard text of Ovid reads 'arcus' (bows), where Burton has 'artes' (arts).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Take idleness away, and put to flight / Are Cupid’s Arts, his Torches give no light.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "This couplet of the Remedia Amoris is well known; its only difference here is 'artes' for 'arcus'.",
+          "locus": "139–140",
+          "status": "probable",
+          "verified": false,
+          "work": "Remedia Amoris"
+        },
+        "text": "If you take away idleness, Cupid's arts are undone, / and his torches lie scorned and without light.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rhazes, as reported by Johannes Langius",
+      "basis": "text \"which Langius Epist. med. lib. 1 epist. 24 approves out of Rhasis\"",
+      "locus": "lib. 1 epist. 24",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistolae medicinales"
+    },
+    "text": "ad assiduationem coitus invitat",
+    "text_sha1": "a13de37ad73939cf6b2ccc3821ac2a587578bdcd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "invites to assiduity of coition",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Langius is reporting Rhazes' advice.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rhazes, as reported by Johannes Langius",
+          "basis": "text \"which Langius Epist. med. lib. 1 epist. 24 approves out of Rhasis\"",
+          "locus": "lib. 1 epist. 24",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistolae medicinales"
+        },
+        "text": "he urges frequent intercourse",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "In vain are all your flatteries",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "George Buchanan",
+      "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hendecasyllabi"
+    },
+    "text": "Frustra blanditiae appulistis ad has,",
+    "text_sha1": "be8f1f67c05257ebf34933116255f5825d8b4cc8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "In vain, flatteries, you have put in to these [women],",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'has' is feminine plural ('these women'). It refers to the chaste goddesses and Muses named just before. 'appulistis' is a sailing word: to bring a ship to land.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "In vain are all your flatteries",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "George Buchanan",
+          "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hendecasyllabi"
+        },
+        "text": "In vain, you flatteries, have you landed on these women;",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f60": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Agnus castus",
+    "text_sha1": "cf42217d28dc52211073037f9f43e34f3bf7deff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "chaste lamb",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Agnus castus is the standard name of the chaste-tree (Vitex agnus-castus), long thought to suppress sexual desire. Burton gives the name as a synonym of 'Vitex'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "chaste-tree",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f61": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "It is an easy passage down to hell, / But to come back, once there, you cannot well.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f61",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "sidenote \"Virg. Aen. 6.\"",
+      "locus": "6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "——— facilis descensus Averni; / Sed revocare gradum, superasque evadere ad auras; / Hic labor, hoc opus est. ———",
+    "text_sha1": "f40143a5bdaee6ca4c4941b855f312014678f91f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Avernus, the lake near Cumae, stands for the underworld. Standard texts of Virgil read 'Averno' (with 'Averni' as a variant) and 'hoc opus, hic labor est'. Burton swaps the order of the two phrases.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "It is an easy passage down to hell, / But to come back, once there, you cannot well.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f61",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg. Aen. 6.\"",
+          "locus": "6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "— the descent to Avernus is easy; / but to retrace your steps and escape to the upper air, / this is the toil, this the task. —",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f62": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Huc faciunt medicamenta Venerem sopientia, ut Camphora pudendis alligata, & in bracha gestata (quidam ait) membrum flaccidum reddit. Laboravit hoc morbo virgo nobilis, cui inter caetera praescripsit Medicus, ut laminam plumbeam multis foraminibus pertusam ad dies viginti portaret in dorso; ad exiccandum vero sperma jussit eam quam parcissime cibari, & manducare frequenter coriandrum praeparatum, et semen lactucae et acetosae, et sic eam a morbo liberavit. Porro impediunt & remittunt coitum folia salicis trita & epota, & si frequentius usurpentur ipsa in totum auferunt. Idem praestat Topatius annulo gestatus, dexterum lupi testiculum attritum, & oleo vel aqua rosata exhibitum Veneris taedium inducere scribit Alexander Benedictus: lac butyri commestum & semen Cannabis, & Camphora exhibita idem praestant. Verbena herba gestata libidinem extinguit, pulvisque ranae decollatae & exiccatae. Ad extinguendum coitum, ungantur membra genitalia, & renes & pecten aqua in qua opium Thebaicum sit dissolutum; libidini maxime contraria Camphora est, & coriandrum siccum frangit coitum, & erectionem virgae impedit; idem efficit synapium ebibitum. Da verbenam in potu et non erigetur virga sex diebus; utere mentha sicca cum aceto, genitalia illinita succo Hyoscyami aut cicutae, coitus appetitum sedant, &c. ℞ seminis lactuc. portulac. coriandri an. ʒ i, menthae siccae ʒ ß, sacchari albiss. ℥ iiii, pulveriscentur omnia subtiliter, & post ea simul misce aqua Nenupharis, f. confec. solida in morsulis. Ex his sumat mane unum quum surgat. Innumera fere his similia petas ab Hildesheimo loco praedicto, Mizaldo, Porta, caeterisque.",
+    "text_sha1": "90300ab69b17021cea97a997add13cfed65e791b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Bracha' is taken as 'braca', breeches. 'Lac butyri' means buttermilk. 'Synapium' is 'sinapi', mustard. 'Pecten' means the pubic region. 'Nenuphar' is the water-lily. 'f. confec.' is read as 'fiat confectio' ('make a confection'). The passage is a compilation; Burton names Alexander Benedictus only for the remedy of the wolf's testicle, and he refers to Hildesheim, Mizaldus and Porta for more.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "To this purpose serve medicines that lull desire to sleep: camphor, for instance, bound to the privy parts and carried in the breeches (says one), makes the member flaccid. A noble maiden laboured under this disease, for whom the physician prescribed, among other things, that she should wear on her back for twenty days a plate of lead pierced with many holes; and to dry up the seed he ordered that she be fed as sparingly as possible and eat often of prepared coriander, and lettuce and sorrel seed; and so he freed her from the disease. Moreover, willow leaves bruised and drunk hinder and abate coition, and if used more often they take it away altogether. A topaz worn in a ring does the same; Alexander Benedictus writes that the right testicle of a wolf, ground and given in oil or rose-water, brings on a loathing of venery; buttermilk eaten, hemp seed, and camphor given do the same. The herb vervain carried about extinguishes lust, and so does the powder of a frog beheaded and dried. To extinguish coition, let the genitals, the kidneys and the pubic region be anointed with water in which Theban opium has been dissolved; camphor is the thing most contrary to lust, and dried coriander breaks coition and hinders the erection of the yard; mustard drunk does the same. Give vervain in drink and the yard will not rise for six days; use dried mint with vinegar; the genitals smeared with the juice of henbane or hemlock allay the appetite for coition, etc. Take of the seeds of lettuce, purslane and coriander, of each 1 drachm; of dried mint half a drachm; of the whitest sugar 4 ounces; let them all be finely powdered, and afterwards mix them together with water-lily water; make a solid confection in small morsels. Let him take one of these in the morning when he rises. You may find almost countless remedies like these in Hildesheim in the place aforesaid, in Mizaldus, Porta, and the rest.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "In vain are all your knaveries",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "George Buchanan",
+      "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hendecasyllabi"
+    },
+    "text": "Frustra nequitiae venistis ad has,",
+    "text_sha1": "8ae93c7ffd04543d90bdb4adff2df636485213f2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "In vain are all your knaveries",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "George Buchanan",
+          "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hendecasyllabi"
+        },
+        "text": "in vain, you knaveries, have you come at these women;",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Sighs, kisses, and conspiracies",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "George Buchanan",
+      "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hendecasyllabi"
+    },
+    "text": "Et suspiria, & oscula, & susurri,",
+    "text_sha1": "8f7a5ce355a0e71696d58e387bd2bfc59c07da4e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This line belongs with the one before it: 'in vain [besiege] these women, enticements and wantonness, and sighs…'. Burton renders 'susurri' (whispers) loosely as 'conspiracies'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Sighs, kisses, and conspiracies",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "George Buchanan",
+          "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hendecasyllabi"
+        },
+        "text": "and sighs, and kisses, and whispers,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "And whate’er is done by Art, / To bewitch a Lover’s heart.",
+        "in": "3.2.5.1",
+        "near": "3.2.5.1-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "George Buchanan",
+      "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hendecasyllabi"
+    },
+    "text": "Et quisquis male sana corda amantum",
+    "text_sha1": "552c2718c84ec6814aebe37500ba7fd11b481611",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence runs on into the next line ('Blandis ebria fascinat venenis'). Taken together: 'and whatever bewitches the unsound hearts of lovers, drunk with alluring poisons'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "And whate’er is done by Art, / To bewitch a Lover’s heart.",
+            "in": "3.2.5.1",
+            "near": "3.2.5.1-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "George Buchanan",
+          "basis": "sidenote \"Buchanan. Hendecasyl.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hendecasyllabi"
+        },
+        "text": "and whatever, the unsound hearts of lovers",
         "warnings": []
       }
     ]

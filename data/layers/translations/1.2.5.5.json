@@ -1,0 +1,338 @@
+{
+  "1.2.5.5-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "bad diet, as Piso thinks",
+        "in": "1.2.5.5",
+        "near": "1.2.5.5-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Piso",
+      "basis": "text at the note anchor: \"bad diet, as Piso thinks\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Melancholiam, quae fit a redundantia humoris in toto corpore, victus imprimis generat qui eum humorem parit",
+    "text_sha1": "f0d55823d949166d50813f6f19c4889418c70b30",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text gives only the gist of this, as 'bad diet, as Piso thinks', and then lists the foods.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "bad diet, as Piso thinks",
+            "in": "1.2.5.5",
+            "near": "1.2.5.5-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Piso",
+          "basis": "text at the note anchor: \"bad diet, as Piso thinks\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Melancholy which arises from an excess of the humour throughout the whole body is produced above all by a diet that breeds that humour",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.5-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paul",
+      "basis": "Close to the Vulgate wording 'videat ne cadat' of 1 Corinthians 10:12",
+      "locus": "10:12",
+      "status": "probable",
+      "verified": false,
+      "work": "1 Corinthians"
+    },
+    "text": "Qui stat videat ne cadat",
+    "text_sha1": "285492bdc638e5d8b97c52c22a79f3ffbe0b2ed2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Who stands, let him see that he not fall.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A shortened form of the Vulgate, which reads 'qui se existimat stare, videat ne cadat' ('let him that thinketh he standeth take heed lest he fall').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paul",
+          "basis": "Close to the Vulgate wording 'videat ne cadat' of 1 Corinthians 10:12",
+          "locus": "10:12",
+          "status": "probable",
+          "verified": false,
+          "work": "1 Corinthians"
+        },
+        "text": "Let him who stands take heed lest he fall.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.5-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "goods of body, mind, and fortune",
+        "in": "1.2.5.5",
+        "near": "1.2.5.5-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "bona animi, corporis, & fortunae",
+    "text_sha1": "7cca622d313a2f5829ce012083a7a3aec0dd3486",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English rendering puts body before mind. The threefold division of goods is a commonplace of classical ethics.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "goods of body, mind, and fortune",
+            "in": "1.2.5.5",
+            "near": "1.2.5.5-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "goods of mind, body, and fortune",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.5-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "thou knowest not what storms and tempests the late evening may bring with it",
+        "in": "1.2.5.5",
+        "near": "1.2.5.5-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Varro",
+      "basis": "The well-known title 'Nescis quid vesper serus vehat', which Burton reworded slightly",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Menippean Satires (title, quoted in Gellius, Attic Nights 13.11)"
+    },
+    "text": "nescis quid serus secum vesper ferat",
+    "text_sha1": "f8c466ce6e830ddcb2a81fd4a4a95dca853f622e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Varro's Menippean satire had the title 'Nescis quid vesper serus vehat' (Gellius, Attic Nights 13.11), and the phrase echoes Virgil, Georgics 1.461. Burton has 'secum ferat' where the original has 'vehat'. His English adds 'storms and tempests'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "thou knowest not what storms and tempests the late evening may bring with it",
+            "in": "1.2.5.5",
+            "near": "1.2.5.5-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Varro",
+          "basis": "The well-known title 'Nescis quid vesper serus vehat', which Burton reworded slightly",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Menippean Satires (title, quoted in Gellius, Attic Nights 13.11)"
+        },
+        "text": "you do not know what the late evening may bring with it",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.5-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ausonius",
+      "basis": "sidenote \"Ausonius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "fortunam reverenter habe",
+    "text_sha1": "1ed631a93f10b4581313185250450b3816317089",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "have fortune reverently",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Ausonius's epigram opens 'Fortunam reverenter habe, quicumque repente / dives ab exili progrediere loco' ('treat your fortune with reverence, whoever you are who suddenly rise from a humble place to wealth').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ausonius",
+          "basis": "sidenote \"Ausonius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "treat your fortune with reverence",
+        "warnings": []
+      }
+    ]
+  }
+}

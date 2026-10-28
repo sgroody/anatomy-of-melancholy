@@ -1,4 +1,627 @@
 {
+  "1.2.3.8-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the saws of the soul",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "serrae animae",
+    "text_sha1": "093208850f3ebf1fd4299a9932b4e944d644ed3f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the saws of the soul",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "saws of the soul",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that he cavilled at all his proceedings",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Johannes Herold",
+      "basis": "text \"saith mine Author\" with sidenote \"Johannes Heroldus lib. 2 cap. 12 de bello sacro.\"",
+      "locus": "lib. 2 cap. 12",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De bello sacro"
+    },
+    "text": "tam aegre ferebat Richardi gloriam, ut carpere dicta, calumniari facta",
+    "text_sha1": "0432ae11b7fe3766adae76d40f06661917955c96",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that he cavilled at all his proceedings",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Johannes Herold",
+          "basis": "text \"saith mine Author\" with sidenote \"Johannes Heroldus lib. 2 cap. 12 de bello sacro.\"",
+          "locus": "lib. 2 cap. 12",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De bello sacro"
+        },
+        "text": "he took Richard's glory so ill that he carped at his words and slandered his deeds",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Velleius Paterculus",
+      "basis": "sidenote \"Paterculus vol. 1.\"",
+      "locus": "vol. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Roman History"
+    },
+    "text": "Nulla dies tantum poterit lenire furorem. Aeterna bella pace sublata gerunt. Jurat odium, nec ante invisum esse desinit, quam esse desiit",
+    "text_sha1": "5cc627c9162164968fe9b38108ab43069f209f39",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "Hatred swears, and it does not cease to be hated before it has ceased to be.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A string of sayings. The last echoes Velleius Paterculus on Carthage, which 'ceased to be hated only when it ceased to exist'. 'Jurat odium' is compressed, so its exact sense is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Velleius Paterculus",
+          "basis": "sidenote \"Paterculus vol. 1.\"",
+          "locus": "vol. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Roman History"
+        },
+        "text": "No day will be able to soften such fury. With peace taken away they wage everlasting wars. Hatred is sworn, and the hated thing does not stop being hated until it has stopped existing.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many times, that it subverts not men only, and families, but even populous Cities, Carthage and Corinth can witness as much, nay flourishing Kingdoms are brought into a wilderness by it",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ita saevit haec stygia ministra ut urbes subvertat aliquando, deleat populos, provincias alioqui florentes redigat in solitudines, mortales vero miseros in profunda miserarium valle miserabiliter immergat",
+    "text_sha1": "d88ec98ed5ebbea33459d78fd8678b327092a724",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'miserarium' is evidently a misprint for 'miseriarum' (of miseries). The 'Stygian handmaid' is hatred or faction.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many times, that it subverts not men only, and families, but even populous Cities, Carthage and Corinth can witness as much, nay flourishing Kingdoms are brought into a wilderness by it",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "This Stygian handmaid rages so fiercely that she sometimes overthrows cities, wipes out peoples, turns provinces that were otherwise flourishing into wildernesses, and plunges wretched mortals miserably into the deep valley of miseries.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Sallust",
+      "basis": "sidenote \"Sallust. Catil.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Catiline"
+    },
+    "text": "Carthago aemula Romani imperii funditus interiit",
+    "text_sha1": "bc9873987efcf8507a78c8cfa24f221f6983c409",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Sallust reads 'Carthago aemula imperi Romani ab stirpe interiit'. Burton has 'funditus' (utterly) for 'ab stirpe' (root and branch) and reverses the order of 'Romani imperii'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Sallust",
+          "basis": "sidenote \"Sallust. Catil.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Catiline"
+        },
+        "text": "Carthage, the rival of the Roman empire, perished utterly.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "affections full of desperate amazement",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "consternationis pleni affectus",
+    "text_sha1": "b7fbca47a20a9c24a917c4f34c0797ef820806fe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "affections full of consternation",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton renders consternatio more strongly as 'desperate amazement'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "affections full of desperate amazement",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "passions full of consternation",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "maul and vex one another",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f16",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "invicem angariare",
+    "text_sha1": "07df5a13265f2671f99ed9fa54edd8e905221e2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "impress one another into forced service",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "angariare: to press into forced labour, hence to oppress or harass.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "maul and vex one another",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f16",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "harass one another",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "it so galled Philip",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johannes Herold",
+      "basis": "text \"saith mine Author\" with sidenote \"Johannes Heroldus lib. 2 cap. 12 de bello sacro.\"",
+      "locus": "lib. 2 cap. 12",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De bello sacro"
+    },
+    "text": "Francum urebat Regis victoria",
+    "text_sha1": "32760abfa554a0147cc251f516a831361ffffc53",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "the King's victory burned the Frenchman",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The King is Richard I; the Frenchman is Philip.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "it so galled Philip",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johannes Herold",
+          "basis": "text \"saith mine Author\" with sidenote \"Johannes Heroldus lib. 2 cap. 12 de bello sacro.\"",
+          "locus": "lib. 2 cap. 12",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De bello sacro"
+        },
+        "text": "the King's victory galled the Frenchman",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f2": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "A Potter emulates a Potter, / One Smith envies another: / A beggar emulates a beggar, / A singing man his brother.",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "sidenote \"Hesiod. op. dies.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Καὶ κεραμεὺς κεραμεῖ κοτέει καὶ τέκτονι τέκτων, / Καὶ πτωχὸς πτωχῷ φθονέει καὶ ἀοιδὸς ἀοιδῷ.",
+    "text_sha1": "a97ccc4a2e6e93d3140d5913554e77cabd699990",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "language-mismatch"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage is in Greek, not Latin.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "A Potter emulates a Potter, / One Smith envies another: / A beggar emulates a beggar, / A singing man his brother.",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "Potter is angry with potter, and carpenter with carpenter; / beggar envies beggar, and singer singer.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.8-f3": {
     "kind": "phrase",
     "lang": "grc",
@@ -99,6 +722,420 @@
           "work": "Works and Days"
         },
         "text": "And potter is angry with potter, and craftsman with craftsman.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f4": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "A beggar emulates a beggar, / A singing man his brother.",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "sidenote \"Hesiod. op. dies.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Καὶ πτωχὸς πτωχῷ φθονέει καὶ ἀοιδὸς ἀοιδῷ",
+    "text_sha1": "65f84fc924dd74cd138dd7ee49ef3a394ab26eb0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Second line of the Hesiod couplet.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "A beggar emulates a beggar, / A singing man his brother.",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op. dies.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "and beggar envies beggar, and singer singer",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "jar, private grudge, heart-burning",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "simultas",
+    "text_sha1": "959a2c051f663d05c4df0610e1584905f8b2b9e1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "simultas: a hidden grudge or rivalry between people.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "jar, private grudge, heart-burning",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "feud",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Juvenal",
+      "basis": "Distinctive phrase 'ambitiosa paupertate ... omnes' from Juvenal's third satire",
+      "locus": "3.182–183",
+      "status": "probable",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "ambitiosa paupertate laboramus omnes",
+    "text_sha1": "0aa5e4e888e8b40b3e8c7bc6fbc2f9db37e915d9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Adapted from Juvenal, who has 'hic vivimus ambitiosa / paupertate omnes' ('here we all live in a pretentious poverty'). Burton puts 'laboramus' (we labour, we suffer) in place of 'vivimus'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Juvenal",
+          "basis": "Distinctive phrase 'ambitiosa paupertate ... omnes' from Juvenal's third satire",
+          "locus": "3.182–183",
+          "status": "probable",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "we all labour under a pretentious poverty",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the nurse of wit",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Velleius Paterculus",
+      "basis": "sidenote \"Paterculus poster. vol.\"",
+      "locus": "poster. vol.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Roman History"
+    },
+    "text": "Aemulatio alit ingenia",
+    "text_sha1": "ada4c10889268ff79abf04f9d0656d07e104512f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Velleius Paterculus (1.17) reads 'alit aemulatio ingenia'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the nurse of wit",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Velleius Paterculus",
+          "basis": "sidenote \"Paterculus poster. vol.\"",
+          "locus": "poster. vol.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Roman History"
+        },
+        "text": "Emulation nourishes talents.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the whetstone of wit",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ingeniorum cos",
+    "text_sha1": "980b6124aee91315ddbbc886104f2cae5b15927c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the whetstone of wit",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the whetstone of wits",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.8-f9": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis a sluggish humour not to emulate or to sue at all",
+        "in": "1.2.3.8",
+        "near": "1.2.3.8-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Hugo Grotius",
+      "basis": "sidenote \"Grotius Epig. lib. 1.\"",
+      "locus": "lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Ambire semper stulta confidentia est, / Ambire nunquam deses arrogantia est,",
+    "text_sha1": "ae39fc53e7c8f34d1b92531799bf536a502b085a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "To canvass always is foolish confidence, / to canvass never is slothful arrogance,",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "ambire: to go round canvassing, to seek office or honours.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis a sluggish humour not to emulate or to sue at all",
+            "in": "1.2.3.8",
+            "near": "1.2.3.8-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Hugo Grotius",
+          "basis": "sidenote \"Grotius Epig. lib. 1.\"",
+          "locus": "lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "Always to seek office is foolish presumption; / never to seek it is idle arrogance,",
         "warnings": []
       }
     ]

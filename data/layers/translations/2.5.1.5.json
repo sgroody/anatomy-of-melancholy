@@ -1,4 +1,63 @@
 {
+  "2.5.1.5-f1": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 2 Od. 11.\"",
+      "locus": "lib. 2 Od. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "Curas edates dissipat Euius.",
+    "text_sha1": "3ba3fafa32cf477efec52205cd6146e3fe7a1cbb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Euius (Euhius) is a cult name of Bacchus, from the Bacchic cry 'euhoi'. 'edates' is evidently a misprint for 'edaces', gnawing or devouring; Horace's line runs 'dissipat Euhius / curas edaces', so Burton has also changed the word order.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 2 Od. 11.\"",
+          "locus": "lib. 2 Od. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "Euius scatters gnawing cares.",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.1.5-f10": {
     "kind": "verse",
     "lang": "grc",
@@ -79,6 +138,288 @@
           "work": null
         },
         "text": "For to lie drunk is far better for me than to be dead.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis for mirth wine, but not for madness",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+      "locus": "ser. 19 in cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Homilies on Ephesians"
+    },
+    "text": "ad laetitiam datum est vinum, non ad ebrietatem",
+    "text_sha1": "fbf332c0d4a0baddea32da356e8844a348f123b5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis for mirth wine, but not for madness",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+          "locus": "ser. 19 in cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Homilies on Ephesians"
+        },
+        "text": "wine was given for gladness, not for drunkenness",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "will you know where, when, and how that is to be understood?",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+      "locus": "ser. 19 in cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Homilies on Ephesians"
+    },
+    "text": "Vis discere ubi bonum sit vinum?",
+    "text_sha1": "892db3efae9aa6e8e5258ddf64ccdb2c3140600f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Do you wish to learn where wine is good?",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'ubi' can mean 'where' or 'when'. Burton's own lead-in covers both: 'where, when, and how'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "will you know where, when, and how that is to be understood?",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+          "locus": "ser. 19 in cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Homilies on Ephesians"
+        },
+        "text": "Do you want to learn when wine is good?",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "hear the Scriptures",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+      "locus": "ser. 19 in cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Homilies on Ephesians"
+    },
+    "text": "Audi quid dicat Scriptura",
+    "text_sha1": "6b8a258b252e25cc4e4609aebd6dc5c07ce3b8a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "hear the Scriptures",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"as Chrysostom well comments on that place\"; sidenote \"Ephes. 5. 18 ser. 19 in cap. 5.\"",
+          "locus": "ser. 19 in cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Homilies on Ephesians"
+        },
+        "text": "Hear what Scripture says",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that are hot or inflamed",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Renodaeus (Jean de Renou)",
+      "basis": "sidenote \"Renodaeus.\" probably attached to text \"as one observes\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "qui a causa calida male habent",
+    "text_sha1": "997f046ccdec807d3828bcfda22177a1e5bc3ad1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "who from a hot cause are badly",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton glosses the phrase at once as 'that are hot or inflamed'. The bare sidenote 'Renodaeus.' probably belongs to 'as one observes'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that are hot or inflamed",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Renodaeus (Jean de Renou)",
+          "basis": "sidenote \"Renodaeus.\" probably attached to text \"as one observes\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "who are ill from a hot cause",
         "warnings": []
       }
     ]
@@ -167,6 +508,2240 @@
           "work": null
         },
         "text": "Take half an ounce of confection of Alkermes, one scruple of bezoar stone, two scruples of fine white amber, powdered, with syrup of citron peel; make an electuary.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that which helps one, is pernicious to another",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f19",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Thucydides",
+      "basis": "text \"as Thucydides of the plague at Athens\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "History of the Peloponnesian War"
+    },
+    "text": "nam quod uni profuit, hoc aliis erat exitio",
+    "text_sha1": "94545818fc125600a40d7992e8be85c99509b48a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Latin version of Thucydides' account of the Athenian plague. The passage is probably History 2.51, though Burton gives no locus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that which helps one, is pernicious to another",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f19",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Thucydides",
+          "basis": "text \"as Thucydides of the plague at Athens\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "History of the Peloponnesian War"
+        },
+        "text": "for what did good to one was the ruin of others",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f2": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "sidenote \"Odyss. Δ.\"",
+      "locus": "Δ",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Δ",
+    "text_sha1": "851e599a87abdf3189d7611197d1149692dc68a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Delta",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Greek letter Δ numbers the fourth book of the Odyssey. In that book Helen mixes nepenthes into the wine.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "sidenote \"Odyss. Δ.\"",
+          "locus": "Δ",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "Book 4",
+        "warnings": [
+          "length ratio 6.00"
+        ]
+      }
+    ]
+  },
+  "2.5.1.5-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Diamargaritum frigidum, Diambra, Diaboraginatum, Electuarium laetificans Galeni & Rhasis, de Gemmis, Dianthus, Diamoschum dulce & amarum, Electuarium Conciliatoris, syrup. Cidoniorum de pomis",
+    "text_sha1": "622fb258e9a1d0f8571a5566b0cf0004f0e1af10",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are names of compound medicines from the apothecary tradition: a pearl confection, an amber confection, a borage confection, a gem electuary, a carnation (?) confection and a musk confection. The 'Conciliator' is Pietro d'Abano. 'syrup. Cidoniorum de pomis' probably lists two syrups, of quinces and of apples, though it could be read as a single quince syrup.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Cold Diamargaritum, Diambra, Diaboraginatum, the gladdening electuary of Galen and Rhazes, the electuary of gems, Dianthus, sweet and bitter Diamoschum, the electuary of the Conciliator, syrup of quinces, of apples",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f21": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "℞. Diamoschi dulcis & amari ana ʒ ii / Diabuglossati, Diaboraginati, sacchari violacei / ana ℥ i, misce cum syrupo de pomis.",
+    "text_sha1": "9bc861b8c950c9cc574ceac0f5879bebb49bda87",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Diamoschum is a musk confection. Diabuglossatum and Diaboraginatum are confections of bugloss and of borage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take of sweet and bitter Diamoschum, of each 2 drachms; / of Diabuglossatum, Diaboraginatum, and violet sugar, / of each 1 ounce; mix with syrup of apples.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Marsilio Ficino",
+      "basis": "text at anchor \"let Ficinus lib. 2 cap. 18 decide it\"",
+      "locus": "lib. 2 cap. 18",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Instat in matrice, quod sursum & deorsum ad odores sensum praecipitatur",
+    "text_sha1": "b4cee7f66a0c1cd86a7e7a92a22343aa2d9b9673",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "He insists on the womb, which up and down to odours sense is hurled",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to the old belief that the wandering womb rises or sinks in response to sweet or foul smells. Ficino uses it as an argument that odours act on the body. The construction 'ad odores sensum' is awkward, so the rendering is approximate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Marsilio Ficino",
+          "basis": "text at anchor \"let Ficinus lib. 2 cap. 18 decide it\"",
+          "locus": "lib. 2 cap. 18",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "He presses the case of the womb, which is driven upward and downward according to its sense of odours.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as if he had given them drink",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f24",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Ferrerius (Auger Ferrier)",
+      "basis": "text \"Ferrerius lib. 2 meth.\"",
+      "locus": "lib. 2 meth.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "aeque fere profuisse olfactu ac potu",
+    "text_sha1": "3d1ae08089ed6ac1b2369bd983d09f620a27bd69",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as if he had given them drink",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f24",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Ferrerius (Auger Ferrier)",
+          "basis": "text \"Ferrerius lib. 2 meth.\"",
+          "locus": "lib. 2 meth.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "that it had done almost as much good by smelling as by drinking",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Francis Bacon",
+      "basis": "text \"Our noble and learned Lord Verulam, in his book de vita & morte\" and sidenote \"Viscount St. Albans.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Historia vitae et mortis"
+    },
+    "text": "de vita & morte",
+    "text_sha1": "59d0e2459b1063a1e65d34877755706379cc13fb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's short title for Bacon's Historia vitae et mortis (1623).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Francis Bacon",
+          "basis": "text \"Our noble and learned Lord Verulam, in his book de vita & morte\" and sidenote \"Viscount St. Albans.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Historia vitae et mortis"
+        },
+        "text": "Of Life and Death",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f27": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a Sheep or Kid’s skin, whom a Wolf worried",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f27",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Martial",
+      "basis": "sidenote \"Mart.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Haedus inhumani raptus ab ore Lupi,",
+    "text_sha1": "2faeadd4041a3a425690e9ce05f4be133c08cdc3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "A kid snatched from the mouth of the inhuman wolf",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Probably Martial 10.48, a line from a dinner menu, which Burton fits into his sentence about a kid's skin. Burton gives no locus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a Sheep or Kid’s skin, whom a Wolf worried",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f27",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Mart.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "A kid snatched from the cruel wolf's mouth,",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quid Aranea cum febre?",
+    "text_sha1": "4a9222c4909fe58f73433360aa07ecaf500b67c1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "What [has a] spider with a fever?",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's own rhetorical question about his mother's spider amulet for an ague. Latin febris covers fever in general, including the ague in the English text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "What has a spider to do with a fever?",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Scio",
+    "text_sha1": "03b52f8907053e325299ac26d7bd9fb8714e64c9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "language-mismatch",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This word is part of Burton's own English verse translation, not Latin. 'Scio' is the Italian name for the island of Chios, current in English at the time, and renders Horace's 'Chia vina'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Chios",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ana",
+    "text_sha1": "72019bbac0b3dac88beac9ddfef0ca808919104f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The apothecary's term: half an ounce of each spice.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of each",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johann Schenck",
+      "basis": "sidenote \"Schenkius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cinis testudinis ustus, & vino potus melancholiam curat, & rasura cornu Rhinocerotis, &c",
+    "text_sha1": "bd8fea88279294c74401d46e38c47a8ba0ee7271",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johann Schenck",
+          "basis": "sidenote \"Schenkius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "The ash of a burnt tortoise, drunk in wine, cures melancholy, and so do scrapings of rhinoceros horn, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "blandus daemon",
+    "text_sha1": "3427e48940a76861c24f68ff6c92b2489c6df20a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton places the phrase among words he credits to Pliny, but it is better known from a saying on drunkenness often attributed to Augustine ('blandus daemon, dulce venenum'). The source is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a flattering demon",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "an odores nutriant",
+    "text_sha1": "be761af28144d92d39681ae8685cfad7eea0a640",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the form of a scholastic disputation question.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "whether odours nourish",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "The ode to the wine-jar: 'narratur et prisci Catonis / saepe mero caluisse virtus'.",
+      "locus": "3.21.11–12",
+      "status": "probable",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "Legitur & prisci Catonis, saepe mero caluisse virtus",
+    "text_sha1": "34018b9527ad6fd114384604621387fa3c826623",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace has 'narratur' ('it is said'), where Burton has 'Legitur' ('it is read').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "The ode to the wine-jar: 'narratur et prisci Catonis / saepe mero caluisse virtus'.",
+          "locus": "3.21.11–12",
+          "status": "probable",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "We read too that the virtue of old Cato often grew warm with wine.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f42": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "hilaritatis dulce seminarium",
+    "text_sha1": "638852acad0fc51c8af2dc1eadb2d02fbffd0f77",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the sweet seed-bed of cheerfulness",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f43": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Liber pater a liberando",
+    "text_sha1": "12411883291c90cf7a05c43c87f35d0a750ed4b8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "Liber father, from freeing",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An etymological jingle: Bacchus' Latin name Liber is derived from liberare, 'to set free', because wine frees the mind from cares.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Father Liber, from 'liberating'",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f44": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "Dido's prayer at the banquet: 'adsit laetitiae Bacchus dator'.",
+      "locus": "1.734",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "laetitiae Bacchus dator",
+    "text_sha1": "8dc9bcd73ca10c011ef2cca915a7e254e7dac396",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Dido's prayer at the banquet: 'adsit laetitiae Bacchus dator'.",
+          "locus": "1.734",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "Bacchus, giver of joy",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Mercuriale",
+      "basis": "sidenote \"Mercurialis consil. 25.\"",
+      "locus": "consil. 25",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "Vinum frigida optimum & pessimum ferina melancholia",
+    "text_sha1": "30f8aea549e1118b5c30a199f9e27393791eb179",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Wine for cold best, and worst for feral melancholy",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'ferina melancholia' is 'wild' or 'beast-like' melancholy, meaning the raging, hot kind as opposed to cold melancholy. The exact technical sense of 'ferina' is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Mercuriale",
+          "basis": "sidenote \"Mercurialis consil. 25.\"",
+          "locus": "consil. 25",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "Wine is best for cold melancholy, and worst for savage melancholy.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f46": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jean Fernel",
+      "basis": "sidenote \"Fernelius consil. 44 & 45.\"",
+      "locus": "consil. 44 & 45",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "Vinum prohibet assiduum, & aromata",
+    "text_sha1": "c32cb66952bd499f0aa7841a022f7113902212a8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text makes the same point: melancholics 'must not use wine as an ordinary drink or in their diet'. The sidenote marker falls in the middle of that clause, so it cannot be quoted here as a self-translation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jean Fernel",
+          "basis": "sidenote \"Fernelius consil. 44 & 45.\"",
+          "locus": "consil. 44 & 45",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "He forbids the constant use of wine, and spices.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Garcia ab Horto brags how many desperate cures he hath done upon melancholy men by this alone, when all Physicians had forsaken them",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f47",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Garcia de Orta (Garcia ab Horto)",
+      "basis": "sidenote \"Garcia ab Horto aromatum lib. 1 cap. 15.\"",
+      "locus": "lib. 1 cap. 15",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aromatum historia"
+    },
+    "text": "Adversus omnes morbos melancholicos conducit & venenum. Ego (inquit) utor in morbis melancholicis, &c., & deploratos hujus usu, ad pristinam sanitatem restitui",
+    "text_sha1": "37ed568261f1ec29f3a19d47ab5d0494555aa61b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'It' is the bezoar stone.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Garcia ab Horto brags how many desperate cures he hath done upon melancholy men by this alone, when all Physicians had forsaken them",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f47",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Garcia de Orta (Garcia ab Horto)",
+          "basis": "sidenote \"Garcia ab Horto aromatum lib. 1 cap. 15.\"",
+          "locus": "lib. 1 cap. 15",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aromatum historia"
+        },
+        "text": "It is good against all melancholic diseases, and against poison. I, says he, use it in melancholic diseases, etc., and by its use I have restored to their former health patients who had been given up for lost.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "an appropriate medicine against dotage, head-melancholy, and such diseases of the brain",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f48",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Johann Schenck",
+      "basis": "sidenote \"Schenkius lib. 1.\"",
+      "locus": "lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Observationes"
+    },
+    "text": "Observat de Mania, ad mentis alienationem & desipientiam vitio cerebri obortam, in manuscripto codice Germanico, tale medicamentum reperi",
+    "text_sha1": "d1299c198e092df286334d4ca4fff3dfad38865e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Observat' is short for Schenck's Observationes.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "an appropriate medicine against dotage, head-melancholy, and such diseases of the brain",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f48",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Johann Schenck",
+          "basis": "sidenote \"Schenkius lib. 1.\"",
+          "locus": "lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Observationes"
+        },
+        "text": "Observations, on Mania: for derangement of mind and foolishness arising from a defect of the brain, I found the following medicine in a German manuscript book.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f49": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Felix Platter",
+      "basis": "text \"Platerus\" and sidenote \"Cap. de melan.\"",
+      "locus": "Cap. de melan.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "amuleta inquit non negliganda",
+    "text_sha1": "1c3974c882980d91f4655063c84dff2867e10c3b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'negliganda' is a misspelling of 'negligenda'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Felix Platter",
+          "basis": "text \"Platerus\" and sidenote \"Cap. de melan.\"",
+          "locus": "Cap. de melan.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "amulets, says he, are not to be neglected",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f5": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Wine makes a troubled soul to rest, / Though feet with fetters be oppressed.",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Tibullus",
+      "basis": "The first line matches Tibullus' praise of Bacchus word for word: 'Bacchus et adflictis requiem mortalibus adfert'.",
+      "locus": "1.7.41–42",
+      "status": "probable",
+      "verified": false,
+      "work": "Elegies"
+    },
+    "text": "Bacchus & afflictis requiem mortalibus affert, / Crura licet duro compede vincta forent.",
+    "text_sha1": "dfc295223ed89f494e4b696e54ffbec4a6807663",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Tibullus' second line reads 'crura licet dura compede pulsa sonent' ('though their legs clank, struck by the hard fetter'). Burton's line differs from this.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Wine makes a troubled soul to rest, / Though feet with fetters be oppressed.",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Tibullus",
+          "basis": "The first line matches Tibullus' praise of Bacchus word for word: 'Bacchus et adflictis requiem mortalibus adfert'.",
+          "locus": "1.7.41–42",
+          "status": "probable",
+          "verified": false,
+          "work": "Elegies"
+        },
+        "text": "Bacchus brings rest to afflicted mortals too, / though their legs were bound in hard fetters.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+      "locus": "lib. 1 Od. 27",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "usum laetitiae scyphis",
+    "text_sha1": "23cee81b7f61772f55a2e37c7aaaa5a99f303b2b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "use of gladness, with cups",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text leaves out the first word, 'Natis'. The whole phrase, 'Natis in usum laetitiae scyphis', means 'with cups born for the service of gladness', and it opens Horace's ode against brawling over wine. Burton makes it part of his English sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+          "locus": "lib. 1 Od. 27",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "the service of gladness, with cups",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f51": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "text \"so saith Horace\"; sidenote \"Od. 7 lib. 1.\"",
+      "locus": "Od. 7 lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "Nunc vino pellite curas",
+    "text_sha1": "5d09fa60c78f2103d60aa721af94d5c83674762c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Teucer's words to his companions.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "text \"so saith Horace\"; sidenote \"Od. 7 lib. 1.\"",
+          "locus": "Od. 7 lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "Now drive away your cares with wine",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f53": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Guaiacum",
+    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The name of a drug, the wood of the guaiacum tree (lignum vitae). It is the same in English and needs no translation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Guaiacum",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f54": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Guaiacum",
+    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The name of a drug, the wood of the guaiacum tree (lignum vitae). It is the same in English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Guaiacum",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f55": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Guaiacum",
+    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The name of a drug, the wood of the guaiacum tree (lignum vitae). It is the same in English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Guaiacum",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f56": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "it easeth a burdened soul",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f56",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "From the praise of drink in the letter to Torquatus: 'sollicitis animis onus eximit, addocet artes'.",
+      "locus": "1.5.18",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Sollicitis animis onus eximit",
+    "text_sha1": "c169139c7a58e055e4bcebbc0da591f52ff53384",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace is speaking of what drinking does.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "it easeth a burdened soul",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f56",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "From the praise of drink in the letter to Torquatus: 'sollicitis animis onus eximit, addocet artes'.",
+          "locus": "1.5.18",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "It lifts the burden from anxious minds",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f57": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jodocus Sincerus (Justus Zinzerling)",
+      "basis": "text \"Jodocus Sincerus Itinerario Galliae\" and sidenote \"Edit. 1617.\"",
+      "locus": "edition of 1617",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Itinerarium Galliae"
+    },
+    "text": "Monspelii electuarium fit preciossimum Alchermes, &c",
+    "text_sha1": "3648eba380d4cd573642bfc5a87314efad179c53",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'preciossimum' is a misspelling of 'pretiosissimum'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jodocus Sincerus (Justus Zinzerling)",
+          "basis": "text \"Jodocus Sincerus Itinerario Galliae\" and sidenote \"Edit. 1617.\"",
+          "locus": "edition of 1617",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Itinerarium Galliae"
+        },
+        "text": "At Montpellier the most precious electuary Alkermes is made, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f58": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Porta, Albertus, &c. Besardus Vesontinus ant. philos",
+    "text_sha1": "e36673d1e11251df5e1cc8edb8a35b2da5929482",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Mostly authors' names (Giambattista della Porta, Albertus Magnus, Jean-Baptiste Besard). 'Vesontinus' means 'of Besançon'. 'ant. philos.' is most likely Besard's Antrum philosophicum, but it is left abbreviated here as Burton gives it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Porta, Albertus, etc. Besardus of Besançon, ant. philos.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a grace cup came in to cheer their hearts, and they drank healths to one another again and again",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Bartholomaeus Anglicus",
+      "basis": "text \"in Bartholomaeus Anglicus\"; sidenote \"Lib. 6 cap. 23 & 24 de rerum proprietat.\"",
+      "locus": "Lib. 6 cap. 23 & 24",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De proprietatibus rerum"
+    },
+    "text": "exhilarationis gratia, pocula iterum atque iterum offeruntur",
+    "text_sha1": "e508cc1c4b1b383e72ad1d7dbd910dab0865560d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a grace cup came in to cheer their hearts, and they drank healths to one another again and again",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Bartholomaeus Anglicus",
+          "basis": "text \"in Bartholomaeus Anglicus\"; sidenote \"Lib. 6 cap. 23 & 24 de rerum proprietat.\"",
+          "locus": "Lib. 6 cap. 23 & 24",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De proprietatibus rerum"
+        },
+        "text": "for the sake of good cheer, cups are offered again and again",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they be not enforced",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "bibere per violentiam",
+    "text_sha1": "d4af84d7eb7e3526290d4e4609dd053c7cb18926",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "to drink through violence",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton gives the phrase in the course of reporting Matenesius. Compare Esther 1:8, which Burton cites in a sidenote: at Ahasuerus' feast no one was compelled to drink.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they be not enforced",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to drink under compulsion",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"Seneca the Philosopher in his book de tranquil. animae lib. 1 cap. 15\" and \"so concludes his Tract\"",
+      "locus": "lib. 1 cap. 15",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De tranquillitate animi"
+    },
+    "text": "habes, Serene charissime, quae ad tranquillitatem animae pertinent",
+    "text_sha1": "c97e0827b760455e67f347f092434c78edda21d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Seneca's closing sentence reads 'Habes, Serene carissime, quae possint tranquillitatem tueri, quae restituere…' ('the things that can guard tranquillity, and restore it…'). Burton's version is a loose summary. Serenus is the friend to whom the work is addressed.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"Seneca the Philosopher in his book de tranquil. animae lib. 1 cap. 15\" and \"so concludes his Tract\"",
+          "locus": "lib. 1 cap. 15",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De tranquillitate animi"
+        },
+        "text": "there you have, dearest Serenus, the things that pertain to tranquillity of mind",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f9": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Come lusty Lyda, fill’s a cup of sack, / And sirrah Drawer, bigger pots we lack, / And Scio wines that have so good a smack.",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Prome reconditum Lyde strenua caecubum, / Capaciores puer huc affer Scyphos, / Et Chia vina aut Lesbia.",
+    "text_sha1": "60a196578892379c27950cacc78aed69d8c526f4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton joins two separate Horace passages: Odes 3.28.2–3 ('prome reconditum, / Lyde strenua, Caecubum') and Epodes 9.33–34 ('capaciores adfer huc, puer, scyphos / et Chia vina aut Lesbia'). Caecuban, Chian and Lesbian were prized wines.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Come lusty Lyda, fill’s a cup of sack, / And sirrah Drawer, bigger pots we lack, / And Scio wines that have so good a smack.",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Bring out the hidden-away Caecuban, brisk Lyde; / bring larger cups here, boy, / and Chian wines or Lesbian.",
         "warnings": []
       }
     ]

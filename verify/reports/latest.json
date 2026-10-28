@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-24T01:28:50+00:00",
+  "when": "2026-10-28T04:30:40+00:00",
   "ok": true,
   "results": [
     {
@@ -133,14 +133,14 @@
       "deferred": null,
       "counts": {
         "foreign": 7769,
-        "with_record": 1526,
-        "machine_labelled": 1578,
+        "with_record": 7769,
+        "machine_labelled": 7821,
         "stale": 0,
         "orphan_keys": 0,
-        "selectors_ok": 1264,
+        "selectors_ok": 6916,
         "selectors_bad": 0,
-        "sources_unidentified": 615,
-        "sources_other": 911,
+        "sources_unidentified": 2767,
+        "sources_other": 5002,
         "selftrans_records": 7769,
         "selftrans_selectors_ok": 8422,
         "selftrans_selectors_bad": 0,
@@ -149,13 +149,13 @@
         "selftrans_orphan_keys": 0,
         "selftrans_units_missing": 0,
         "selftrans_gowland_overlap": 0,
-        "untranslated": 6243,
-        "units_without_layer": 103,
+        "untranslated": 0,
+        "units_without_layer": 4,
         "xrefs": 21,
         "xrefs_resolved": 19,
         "xrefs_unresolved": 2,
-        "gloss_records": 3,
-        "gloss_selectors_ok": 28
+        "gloss_records": 23,
+        "gloss_selectors_ok": 98
       },
       "problems": []
     },
@@ -169,10 +169,12 @@
         "private:foreign": 7769,
         "private:enrefs": 3907,
         "private:pbs": 956,
+        "private:gowland_versions": 4934,
         "public:sidenotes": 5687,
         "public:foreign": 7769,
         "public:enrefs": 0,
         "public:pbs": 0,
+        "public:gowland_versions": 0,
         "units": 158
       },
       "problems": []
@@ -194,7 +196,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 5619,
+        "script_chars": 6161,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -230,10 +232,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "209/209",
+        "private:glyphs": "226/226",
         "private:fallback": 13,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+264E U+264F",
-        "public:glyphs": "202/202",
+        "public:glyphs": "221/221",
         "public:fallback": 13
       },
       "problems": []
@@ -284,9 +286,9 @@
         "densest_3.2.4.1": "38 notes, 0 stacked in 0 stacks",
         "pages": 15,
         "notes": 2757,
-        "stacked": 55,
+        "stacked": 52,
         "overlaps": 0,
-        "max_drift_rem": 13.6,
+        "max_drift_rem": 13.7,
         "marker_breaks": 0,
         "marker_checks": 11028
       },

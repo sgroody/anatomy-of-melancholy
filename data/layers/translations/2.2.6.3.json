@@ -1,0 +1,1560 @@
+{
+  "2.2.6.3-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "make stocks and stones, as well as beasts, and other animals dance after their pipes",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Exact wording of Horace's line on Amphion: 'saxa movere sono testudinis et prece blanda'",
+      "locus": "394–395",
+      "status": "probable",
+      "verified": false,
+      "work": "Ars Poetica"
+    },
+    "text": "saxa movere sono testudinis",
+    "text_sha1": "96d1f3d220900ab5ed91946be3ba541db17b9252",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "to move rocks with the sound of the tortoise-shell",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "testudo, literally a tortoise, here means the lyre, which was traditionally made from a tortoise shell. Horace says this of Amphion. Burton gives the phrase just after naming Ovid, but the words are Horace's.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "make stocks and stones, as well as beasts, and other animals dance after their pipes",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Exact wording of Horace's line on Amphion: 'saxa movere sono testudinis et prece blanda'",
+          "locus": "394–395",
+          "status": "probable",
+          "verified": false,
+          "work": "Ars Poetica"
+        },
+        "text": "move stones with the sound of the lyre",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Philostratus",
+      "basis": "text \"as Philostratus describes it in his images\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Imagines"
+    },
+    "text": "vicinumque lupo praebuit agna latus; clamosus graculus, stridula cornix, & Jovis aquila",
+    "text_sha1": "02da5d0ac5a0e36490d4e3a07712459b61f1c64d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The first clause is a pentameter line from an unidentified source. The list of birds is what Burton attributes to Philostratus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Philostratus",
+          "basis": "text \"as Philostratus describes it in his images\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Imagines"
+        },
+        "text": "and the lamb offered her side next to the wolf; the clamorous jackdaw, the shrill crow, and the eagle of Jove",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f12": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Et comitem quercum pinus amica trahit.",
+    "text_sha1": "9facc8ec6bc6ceadcfd4e36ace0fbf4c4c54470c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A pentameter line about trees following Orpheus's music.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "And the friendly pine draws along its companion oak.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Numen inest numeris",
+    "text_sha1": "1488e44afb3130ac02453fea5331d674093cf377",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A jingle on numen ('divine power') and numeri ('numbers', which also means musical measures or rhythms). Proverbial.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "There is divinity in numbers.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Saepe graves morbos modulatum carmen abegit, & desperatis conciliavit opem",
+    "text_sha1": "4aa71ed44e86e2000ee56acd88acf4fc8b421de1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "An elegiac couplet.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Often a measured song has driven away grievous diseases, and has brought help to the desperate.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to skip up and down, and leave his dinner",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f16",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "sidenote \"Cardan, subtil. lib. 13.\"",
+      "locus": "lib. 13",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De subtilitate"
+    },
+    "text": "Exilire e convivio",
+    "text_sha1": "691df73e6d593b9e85d7f48cdc5d06f44edd4cb7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to skip up and down, and leave his dinner",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f16",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "sidenote \"Cardan, subtil. lib. 13.\"",
+          "locus": "lib. 13",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De subtilitate"
+        },
+        "text": "to leap up from the banquet",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "helped many frantic persons by this means",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Censorinus",
+      "basis": "text \"Censorinus de natali cap. 12\"",
+      "locus": "cap. 12",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De die natali"
+    },
+    "text": "phreneticorum mentes morbo turbatas",
+    "text_sha1": "0ccc8088980141b8dbf28d0ec932efb8612ab4e0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton breaks off the quotation with a dash.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "helped many frantic persons by this means",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Censorinus",
+          "basis": "text \"Censorinus de natali cap. 12\"",
+          "locus": "cap. 12",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De die natali"
+        },
+        "text": "the minds of the frenzied, disturbed by disease —",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "text \"Lucian in his book de saltatione\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De saltatione"
+    },
+    "text": "de saltatione",
+    "text_sha1": "6bc3ad94402550aeba8652890e42f40d0aa643d2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Title of Lucian's dialogue, usually called in English 'On the Dance' or 'On Pantomime'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "text \"Lucian in his book de saltatione\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De saltatione"
+        },
+        "text": "On Dancing",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "incitamentum enim amoris musica",
+    "text_sha1": "3b471401da8f0bfbd644a2ab3e349f3b78424e04",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English that follows, 'for Music enchants, as Menander holds', goes on with the argument rather than rendering this phrase. It is not clear whether the attribution to Menander covers the Latin as well.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for music is an incitement to love",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "inform our manners",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Giraldus Cambrensis",
+      "basis": "text \"Girald. Camb. cap. 12 Topog. Hiber.\"",
+      "locus": "cap. 12",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Topographia Hiberniae"
+    },
+    "text": "Barbariem facit deponere gentes",
+    "text_sha1": "8658f58d6e57ae92373cf8c3387577ac51fa63da",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'inform our manners' gives the gist loosely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "inform our manners",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Giraldus Cambrensis",
+          "basis": "text \"Girald. Camb. cap. 12 Topog. Hiber.\"",
+          "locus": "cap. 12",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Topographia Hiberniae"
+        },
+        "text": "It makes nations lay aside their barbarism.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "lest one fire increase another",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Plato",
+      "basis": "text \"Plato for this reason forbids Music and wine to all young men\"; sidenote \"3 De legibus.\"",
+      "locus": "3 De legibus",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De legibus (Laws)"
+    },
+    "text": "ne ignis addatur igni",
+    "text_sha1": "9c2e3fea3a812a85b2b005c8ff3b4fcc97e50677",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial. Plato's Laws forbids wine to the young on the grounds that one should not pour fire upon fire.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "lest one fire increase another",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Plato",
+          "basis": "text \"Plato for this reason forbids Music and wine to all young men\"; sidenote \"3 De legibus.\"",
+          "locus": "3 De legibus",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De legibus (Laws)"
+        },
+        "text": "lest fire be added to fire",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Philostratus",
+      "basis": "text \"a Rhodian Fiddler in Philostratus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Canus",
+    "text_sha1": "c094ecbe8b51de87cdd3be0d6fd649b9a7730a18",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a personal name, not a Latin phrase: Canus, the Rhodian piper in Philostratus's Life of Apollonius. It stays as written.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Philostratus",
+          "basis": "text \"a Rhodian Fiddler in Philostratus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Canus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Musica est mentis medicina maestae",
+    "text_sha1": "28f61095167b97bffb9cca2d6fe3edf2f9b1acc9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Music is the medicine of a sorrowful mind.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Eobanus Hessus",
+      "basis": "text \"Eobanus Hessus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "dulcisonum reficit tristia corda melos",
+    "text_sha1": "5a94027e9032762958f1ca405ff6c60eb1ead122",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A pentameter line.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Eobanus Hessus",
+          "basis": "text \"Eobanus Hessus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "sweet-sounding melody restores sorrowful hearts",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a most forcible medicine",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f38",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Leonardus Jacchinus",
+      "basis": "sidenote \"In 9 Rhasis.\" and text \"Jacchinus calls it\"",
+      "locus": "In 9 Rhasis",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "commentary on Rhazes, book 9"
+    },
+    "text": "Magnam vim habet Musica",
+    "text_sha1": "684c61f698ac2e08f9bc9e420140944295dbdfb9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text loosely renders this as Jacchinus calling music 'a most forcible medicine'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a most forcible medicine",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f38",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Leonardus Jacchinus",
+          "basis": "sidenote \"In 9 Rhasis.\" and text \"Jacchinus calls it\"",
+          "locus": "In 9 Rhasis",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "commentary on Rhazes, book 9"
+        },
+        "text": "Music has great power.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that are troubled with St. Vitus’ Bedlam dance",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f39",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Jean Bodin",
+      "basis": "sidenote \"Lib. 5 de rep.\" and text \"saith Bodin\"",
+      "locus": "Lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De republica"
+    },
+    "text": "Curat musica furorem Sancti Viti",
+    "text_sha1": "5447f0c3c1f944198a899cb9b9d2133f90e80163",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Refers to St Vitus' dance.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that are troubled with St. Vitus’ Bedlam dance",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f39",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Jean Bodin",
+          "basis": "sidenote \"Lib. 5 de rep.\" and text \"saith Bodin\"",
+          "locus": "Lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De republica"
+        },
+        "text": "Music cures the madness of Saint Vitus.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cassiodorus",
+      "basis": "text \"Cassiodorus epist. 4\"",
+      "locus": "epist. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quae a spiritu, sine manuum dexteritate gubernetur, &c",
+    "text_sha1": "9f27f44c2c86de357a380a9cd5db0974f3f83378",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Describes wind instruments, which are played by the breath rather than by skill of hand.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cassiodorus",
+          "basis": "text \"Cassiodorus epist. 4\"",
+          "locus": "epist. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "which is governed by the breath, without dexterity of the hands, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Music makes some men mad as a tiger",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f40",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "text \"saith Plutarch\"; sidenote \"Sympos. quaest. 5.\"",
+      "locus": "Sympos. quaest. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Symposiaca (Table Talk)"
+    },
+    "text": "Musica magis dementat quam vinum",
+    "text_sha1": "87703724341456847669c962cd88bd1802c3505c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Music maddens more than wine",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'mad as a tiger' is a loose expansion of his own.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Music makes some men mad as a tiger",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f40",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "text \"saith Plutarch\"; sidenote \"Sympos. quaest. 5.\"",
+          "locus": "Sympos. quaest. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Symposiaca (Table Talk)"
+        },
+        "text": "Music drives men madder than wine",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f41": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a table without music a manger",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f41",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Epictetus",
+      "basis": "text \"Epictetus calls\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "mensam mutam praesepe",
+    "text_sha1": "4f95781cb5c2541ba71a9e23b5571648e6a3dfd2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a table without music a manger",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f41",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Epictetus",
+          "basis": "text \"Epictetus calls\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "a silent table a manger",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "whom terror of death cannot so much affright, as the sound of trumpet, drum, fife, and such-like music animates",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Censorinus",
+      "basis": "text \"as Censorinus informeth us\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De die natali"
+    },
+    "text": "metus enim mortis",
+    "text_sha1": "435439716445d391bac6a39913dc03204de3b79d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence is completed by 'musica depellitur' after Burton's interjection: 'for the fear of death is driven away by music'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "whom terror of death cannot so much affright, as the sound of trumpet, drum, fife, and such-like music animates",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Censorinus",
+          "basis": "text \"as Censorinus informeth us\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De die natali"
+        },
+        "text": "for the fear of death",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "whom terror of death cannot so much affright, as the sound of trumpet, drum, fife, and such-like music animates",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Censorinus",
+      "basis": "text \"as Censorinus informeth us\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De die natali"
+    },
+    "text": "musica depellitur",
+    "text_sha1": "bcf09f5da710097d5faa6e2376ba18ee97b34ab0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The end of the sentence begun by 'metus enim mortis': 'for the fear of death is driven away by music'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "whom terror of death cannot so much affright, as the sound of trumpet, drum, fife, and such-like music animates",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Censorinus",
+          "basis": "text \"as Censorinus informeth us\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De die natali"
+        },
+        "text": "is driven away by music",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the Queen of the senses",
+        "in": "2.2.6.3",
+        "near": "2.2.6.3-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "regina sensuum",
+    "text_sha1": "6164ee489bbf53bf5cd2d7e06d6f98e11b34260b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the Queen of the senses",
+            "in": "2.2.6.3",
+            "near": "2.2.6.3-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the queen of the senses",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "sine ore loquens, dominatum in animam exercet",
+    "text_sha1": "b170c8067b045b5ec0567f586fe5038f6a55adcb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "speaking without a mouth, it exercises dominion over the soul",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.3-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "text \"Ovid calls them\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "faelices animas",
+    "text_sha1": "449be24b9a9a425f2825cbfce9caec0b8f3b1734",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "faelices is a variant spelling of felices.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "text \"Ovid calls them\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "happy souls",
+        "warnings": []
+      }
+    ]
+  }
+}

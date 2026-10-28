@@ -1,0 +1,275 @@
+{
+  "1.3.2.3-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they may be as well of any other colour: red, yellow, pale, as black",
+        "in": "1.3.2.3",
+        "near": "1.3.2.3-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Filotheo Montalto (Montaltus)",
+      "basis": "text \"saith Montaltus cap. 22\"",
+      "locus": "cap. 22",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "praerubi colore saepe sunt tales, saepe flavi",
+    "text_sha1": "8c47fcc8d867cbacc6e9a846045ed4aeb252ba23",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The word \"praerubi\" is irregular. It is probably meant for praerubri or praerubei, \"very red\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they may be as well of any other colour: red, yellow, pale, as black",
+            "in": "1.3.2.3",
+            "near": "1.3.2.3-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Filotheo Montalto (Montaltus)",
+          "basis": "text \"saith Montaltus cap. 22\"",
+          "locus": "cap. 22",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "such people are often very red in colour, and often yellow",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.2.3-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a toto corpore",
+    "text_sha1": "0a4d62882d25cee10ccaf6d0e857bed3a3761607",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This means melancholy that arises from the whole body, as opposed to the head or the hypochondria.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "from the whole body",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.2.3-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Trallianus in the cure, would have carefully to be enquired, and withal to observe of what complexion the part is, of black or red",
+        "in": "1.3.2.3",
+        "near": "1.3.2.3-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Alexander of Tralles (Trallianus)",
+      "basis": "text \"Trallianus in the cure\"; sidenote \"Lib. 1 cap. 16.\"",
+      "locus": "Lib. 1 cap. 16",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Interrogare convenit, an aliqua evacuationis retentio obvenerit, viri in haemorroides mulierum menstruis, & vide faciem similiter an sit rubicunda",
+    "text_sha1": "57b090adc6b0af5d5b164d1e32769d20a7f2892d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "To ask it is fitting, whether some retention of evacuation has occurred, of a man in haemorrhoids, of women in menses, and see the face likewise whether it be ruddy",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin's grammar is loose (\"viri in haemorroides mulierum menstruis\"), but the sense is clear. Where the Latin says to check whether the face is ruddy, Burton's text speaks of the complexion of \"the part\", black or red.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Trallianus in the cure, would have carefully to be enquired, and withal to observe of what complexion the part is, of black or red",
+            "in": "1.3.2.3",
+            "near": "1.3.2.3-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Alexander of Tralles (Trallianus)",
+          "basis": "text \"Trallianus in the cure\"; sidenote \"Lib. 1 cap. 16.\"",
+          "locus": "Lib. 1 cap. 16",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is proper to inquire whether any evacuation has been held back: in men, the haemorrhoids; in women, the menses. And likewise see whether the face is ruddy.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.2.3-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "The best way to discern this species, is to let them bleed, if the blood be corrupt, thick and black",
+        "in": "1.3.2.3",
+        "near": "1.3.2.3-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Montaltus; Piso",
+      "basis": "sidenote \"Montaltus cap. 22. Piso.\"",
+      "locus": "Montaltus cap. 22",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ex colore sanguinis si minuas venas, si fluat niger, &c",
+    "text_sha1": "fc2fc82fc0aa6a81169ff8c847011e47cfefa24a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical",
+          "truncated"
+        ],
+        "literal": "From the colour of the blood, if you lessen the veins, if it flows black, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase \"minuere venas\" means to let blood. The sentence breaks off at \"&c.\"",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "The best way to discern this species, is to let them bleed, if the blood be corrupt, thick and black",
+            "in": "1.3.2.3",
+            "near": "1.3.2.3-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Montaltus; Piso",
+          "basis": "sidenote \"Montaltus cap. 22. Piso.\"",
+          "locus": "Montaltus cap. 22",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "From the colour of the blood, if you open the veins: if it flows black, etc.",
+        "warnings": []
+      }
+    ]
+  }
+}

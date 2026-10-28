@@ -1,0 +1,383 @@
+{
+  "2.4.1.2-f1": {
+    "kind": "verse",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Diseases steal both day and night on men, / For Jupiter hath taken voice from them",
+        "in": "2.4.1.2",
+        "near": "2.4.1.2-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "sidenote \"Hesiod. op.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Νοῦσοι δʼ ἀνθρώποισιν ἐφ̓ ἡμέρῃ ἠδʼ ἐπὶ νυκτὶ / Αὐτόματοι φοιτῶσι, κακὰ θνητοῖσι φέρουσαι / Σιγῇ, ἐπεὶ φωνὴν ἐξείλετο μητίετα Ζεὺς.",
+    "text_sha1": "bd435c6e425ad1b8d065c6d0aae1719e8852c517",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hesiod, Works and Days 102–104. The standard text reads 'αἳ δ᾽ ἐπὶ νυκτὶ' ('and others by night') where Burton has 'ἠδ᾽ ἐπὶ νυκτὶ' ('and by night'). The sense is hardly affected.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Diseases steal both day and night on men, / For Jupiter hath taken voice from them",
+            "in": "2.4.1.2",
+            "near": "2.4.1.2-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. op.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "Diseases come to men by day, and by night, / of their own accord, bringing evils to mortals / in silence, since Zeus the counsellor took away their voice.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "fieri",
+    "text_sha1": "a946c946c8fc609b011cbfcb212d94851f46b66b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "to be made / to become",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only 'fieri' is marked, but the phrase is the scholastic 'in fieri', 'in the course of being made, not yet complete'. The Oxford Physic Garden was then being laid out. The English 'in' before it is part of the Latin phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the making",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Giulio Cesare Baricelli (Baricellus)",
+      "basis": "text \"Baricellus Horto geniali\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hortus genialis"
+    },
+    "text": "Baricellus Horto geniali",
+    "text_sha1": "1f112fac082f04d60b1874fc7eb84320990857bf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Baricellus in the Genial Garden",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hortus genialis is the title of a book by Giulio Cesare Baricelli; Burton gives it in the ablative ('in the Hortus genialis').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Giulio Cesare Baricelli (Baricellus)",
+          "basis": "text \"Baricellus Horto geniali\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hortus genialis"
+        },
+        "text": "Baricellus, in his Hortus Genialis",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "our own simples agree best with us",
+        "in": "2.4.1.2",
+        "near": "2.4.1.2-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Johannes Vochs (J. Voschius)",
+      "basis": "text \"I conclude with J. Voschius\"; sidenote \"Part. 2 de pest. cap. 17.\"",
+      "locus": "Part. 2 cap. 17",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De pestilentia"
+    },
+    "text": "a capite ad calcem, nostrae regionis herbae nostris corporibus magis conducunt",
+    "text_sha1": "841233c36203d246848c11b6ca6bbb3225a68f38",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "from the head to the heel, the herbs of our region are of more benefit to our bodies",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'A capite ad calcem' belongs with the preceding 'a full cure… of all diseases': a cure of every disease from head to foot.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "our own simples agree best with us",
+            "in": "2.4.1.2",
+            "near": "2.4.1.2-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Johannes Vochs (J. Voschius)",
+          "basis": "text \"I conclude with J. Voschius\"; sidenote \"Part. 2 de pest. cap. 17.\"",
+          "locus": "Part. 2 cap. 17",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De pestilentia"
+        },
+        "text": "from head to heel, the herbs of our own region are more beneficial to our bodies",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Melchior Adam",
+      "basis": "sidenote \"Melch. Adamus vit. ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Cornarius (in his Vitae)"
+    },
+    "text": "Exotica rejecit, domesticis solum nos contentos esse voluit",
+    "text_sha1": "3ad5569554230170b6bee82c81d52f79bfe09721",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "He rejected exotic things; he wished us to be content with domestic things only.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Refers to Janus Cornarius, at whose name the sidenote is anchored.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Melchior Adam",
+          "basis": "sidenote \"Melch. Adamus vit. ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Cornarius (in his Vitae)"
+        },
+        "text": "He rejected exotic remedies, and wanted us to be content with home-grown ones alone.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Munster Mons maior",
+    "text_sha1": "e8e70ec54a3f90c5988281d69a2958f8a06ff972",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Munster, the Greater Mountain",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Munster' is Sebastian Münster, the cosmographer, not Latin. Mons maior ('the greater mountain') is the Monte Maggiore (Učka) in Istria, which Münster commends for its simples. The verb 'commends' carries over from earlier in Burton's sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Münster, Monte Maggiore",
+        "warnings": []
+      }
+    ]
+  }
+}

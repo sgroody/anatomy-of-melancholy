@@ -1,4 +1,134 @@
 {
+  "2.3.1.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "if our barren wits were dried up, they might be copiously irrigated from those wellsprings",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Jerome",
+      "basis": "text \"as Jerome in like case said\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "si nostrum areret ingenium, de illorum posset fontibus irrigari",
+    "text_sha1": "15a5461aa883369b04284f4588ae372f2da837d2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "if our wit should be dry, it could be irrigated from their springs",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "if our barren wits were dried up, they might be copiously irrigated from those wellsprings",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Jerome",
+          "basis": "text \"as Jerome in like case said\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "if our own wit were to run dry, it could be watered from their springs",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The exact wording of a well-known line in Anchises' speech in the underworld",
+      "locus": "6.743",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "quisque suos patimur manes",
+    "text_sha1": "dd5b476951ca09dd3b9367bf592d3c9309ba6ac8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "each of us suffers our own shades",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "In Virgil, manes is the purgation each soul undergoes after death. Burton uses it to mean that everyone has his own share of suffering.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "The exact wording of a well-known line in Anchises' speech in the underworld",
+          "locus": "6.743",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "each of us suffers his own punishment",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.1.1-f11": {
     "kind": "phrase",
     "lang": "la",
@@ -97,6 +227,2844 @@
           "work": null
         },
         "text": "it is a comfort to the wretched to have had companions in grief",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that which is necessary, cannot be grievous",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"as Tully deems out of an old Poet\"; sidenote \"In Tusc.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Tusculan Disputations"
+    },
+    "text": "Grave nihil est homini quod fert necessitas",
+    "text_sha1": "3274ff51e4a544153936c71ec8dd3d56be59e9de",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that which is necessary, cannot be grievous",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"as Tully deems out of an old Poet\"; sidenote \"In Tusc.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Tusculan Disputations"
+        },
+        "text": "Nothing that necessity brings is grievous to a man",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If it be long, ’tis light; if grievous, it cannot last.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Si longa est, levis est; si gravis est, brevis est",
+    "text_sha1": "afa0b447280f46ae9121308ea578cea0249b4317",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The jingle longa/levis, gravis/brevis is lost in English. The maxim is Epicurean in origin. Linking it to the sidenote 'Seneca.' is likely but not certain, so confidence is medium.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If it be long, ’tis light; if grievous, it cannot last.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "If it is long, it is light; if it is heavy, it is short",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "time will wear it out",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "dies dolorem minuit",
+    "text_sha1": "84d4a82e676b72bf045508dee927f5e5bd544e82",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "the day lessens grief",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial. Here dies means time or the passing days.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "time will wear it out",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "time lessens grief",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "oblivion is a common medicine for all losses, injuries, griefs, and detriments whatsoever",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Omni dolori tempus est medicina; ipsum luctum extinguit, injurias delet, omnis mali oblivionem affert",
+    "text_sha1": "726de6d32d8362798c5f715c0de95fff9823b1b4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "oblivion is a common medicine for all losses, injuries, griefs, and detriments whatsoever",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Time is the medicine for every grief; it extinguishes mourning itself, wipes out injuries, and brings forgetfulness of every ill.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f16": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "sidenote \"Ovid.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "——— Usque adeo nulla est sincera voluptas, / Sollicitumque aliquid laetis intervenit. ———",
+    "text_sha1": "d5b81adac468553e1feec23cf5e68b6bcd1d4ffd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "sidenote \"Ovid.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "— So true it is that no pleasure is unmixed, / and some anxiety intrudes upon our joys. —",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "We must not therefore hope to have all things answer our own expectation, to have a continuance of good success and fortunes",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Fortuna nunquam perpetuo est bona",
+    "text_sha1": "1d0ddd9f8702473791120b0d94315cb72360621a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial in form.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "We must not therefore hope to have all things answer our own expectation, to have a continuance of good success and fortunes",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Fortune is never good for ever",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "There’s no perfection is so absolute, / That some impurity doth not pollute.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "The well-known line 'nihil est ab omni / parte beatum' from Horace's ode to Grosphus",
+      "locus": "2.16",
+      "status": "probable",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "Nihil est ab omni partem beatum",
+    "text_sha1": "b260df3674b3b8ec28109ed21156dd744422cdc7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Horace's text has 'ab omni parte'. Burton's 'partem' is ungrammatical after 'ab' and is probably a slip.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "There’s no perfection is so absolute, / That some impurity doth not pollute.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "The well-known line 'nihil est ab omni / parte beatum' from Horace's ode to Grosphus",
+          "locus": "2.16",
+          "status": "probable",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "Nothing is blessed in every part",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Well be’t so then: you master soldier / Shall be a merchant",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f19",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+      "locus": "lib. 1 Sat. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Jam faciam quod vultis; eris tu qui modo miles,",
+    "text_sha1": "269df65f861477eb2b121ffde381544107e24baf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Jupiter speaks to the discontented. The sentence runs on into the next line.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Well be’t so then: you master soldier / Shall be a merchant",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f19",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+          "locus": "lib. 1 Sat. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "\"Now I will do what you wish: you, who were just now a soldier, shall be",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "actum agere",
+    "text_sha1": "0aef8bd62f7be695541f48cd02798d426e52ae3a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "to do a thing done",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial phrase for wasted labour, doing over again what is already finished.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "do what has already been done",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Shall be a merchant; you sir Lawyer / A country Gentleman",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+      "locus": "lib. 1 Sat. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Mercator; tu consultus modo rusticus; hinc vos,",
+    "text_sha1": "8e09ef712ef9b8a3a74a1900065b93fd5b0043a9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'Consultus' means one learned in the law, a lawyer.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Shall be a merchant; you sir Lawyer / A country Gentleman",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+          "locus": "lib. 1 Sat. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "a merchant; you, just now a lawyer, a countryman; you from here,",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "go you to this, / That side you",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+      "locus": "lib. 1 Sat. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Vos hinc mutatis discedite partibus; eia",
+    "text_sha1": "e00a3c97c6939bf09d41b51e1ebc69a0c95a1593",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Each 'hinc' marks one of the two groups sent off to swap places.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "go you to this, / That side you",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+          "locus": "lib. 1 Sat. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "you from there, change your parts and be off; come now,",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "why stand ye? It’s well as ’tis.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+      "locus": "lib. 1 Sat. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Quid statis? nolunt",
+    "text_sha1": "b061a21653db4c4c546745dedf08bd105133058c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The usual text of Horace has 'nolint' ('they would refuse'), not 'nolunt'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "why stand ye? It’s well as ’tis.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. ser. lib. 1 Sat. 1.\"",
+          "locus": "lib. 1 Sat. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "why do you stand there?\" They will not.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "thou art most happy if thou couldst be content, and acknowledge thy happiness",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f23",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The famous line 'O fortunatos nimium, sua si bona norint, agricolas'",
+      "locus": "2.458",
+      "status": "probable",
+      "verified": false,
+      "work": "Georgics"
+    },
+    "text": "O fortunatos nimium bona si sua norint",
+    "text_sha1": "ec0211aa9fadc2d90384ae0bf14ee00d2447824d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected",
+          "truncated"
+        ],
+        "literal": "O fortunate exceedingly, if their own good things they knew",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Virgil's line reads 'sua si bona norint', followed by 'agricolas' ('the farmers'). Burton changes the word order and drops the object, so the line applies to anyone.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "thou art most happy if thou couldst be content, and acknowledge thy happiness",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f23",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "The famous line 'O fortunatos nimium, sua si bona norint, agricolas'",
+          "locus": "2.458",
+          "status": "probable",
+          "verified": false,
+          "work": "Georgics"
+        },
+        "text": "O too fortunate, if they but knew their own blessings",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "when thou shalt hereafter come to want, that which thou now loathest, abhorrest, and art weary of, and tired with, when ’tis past thou wilt say thou werst most happy",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f24",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "rem carendo, non fruendo cognoscimus",
+    "text_sha1": "1c269cf89ebc8a467503d914d95927e97bf9ada6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "we know a thing by lacking, not by enjoying",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "when thou shalt hereafter come to want, that which thou now loathest, abhorrest, and art weary of, and tired with, when ’tis past thou wilt say thou werst most happy",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f24",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "we know the worth of a thing by lacking it, not by enjoying it",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "comfort thyself with other men’s misfortunes",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f26",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "desine, intuensque in aliorum infortunia solare mentem",
+    "text_sha1": "e4ea01c92a92b7c1c4ceffdf71411bd86504fe53",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "cease, and looking into the misfortunes of others console your mind",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "comfort thyself with other men’s misfortunes",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f26",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "stop, and comfort your mind by looking at the misfortunes of others",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "you complain of toys, but I am blind, be quiet",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f27",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Aesop",
+      "basis": "text \"as the mouldwarp in Aesop told the fox\"; sidenote \"Aesopi fab.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Fables"
+    },
+    "text": "tacete, quando me oculis captum videtis",
+    "text_sha1": "11190b972ffc2076d006a035689c4ab5cd6e5676",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "be silent, since you see me captured in my eyes",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'Oculis captus' is the idiom for 'blind'. The mole speaks.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "you complain of toys, but I am blind, be quiet",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f27",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Aesop",
+          "basis": "text \"as the mouldwarp in Aesop told the fox\"; sidenote \"Aesopi fab.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Fables"
+        },
+        "text": "be silent, since you see that I am deprived of my eyes",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Confer thine estate with others’",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f28",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Similes aliorum respice casus, mitius ista feres",
+    "text_sha1": "400d8d4db766a7a977842dec884a878bf5af9510",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Sounds like a line of elegiac verse, but the source is not identified here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Confer thine estate with others’",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f28",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Look at the like misfortunes of others; you will bear these more gently",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he may choose whether he will desire that which he hath not",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f29",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "illud potest nolle quod non habet",
+    "text_sha1": "513023c57f2f21f07e13a23c75a62f2e5da7ed40",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "he can not-want that which he does not have",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he may choose whether he will desire that which he hath not",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f29",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "he can refuse to want what he does not have",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"as Cardan said of his book de consol.\"; sidenote \"Lib. de lib. propriis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De consolatione"
+    },
+    "text": "de consol",
+    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "An abbreviated book title, De consolatione. Here it is Cardano's De consolatione. The sidenote 'Lib. de lib. propriis' points to Cardano's De libris propriis ('On his own books'), where he discusses the book.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"as Cardan said of his book de consol.\"; sidenote \"Lib. de lib. propriis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De consolatione"
+        },
+        "text": "On Consolation",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f30": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sic expedit, medicus non dat quod patiens vult, sed quod ipse bonum scit",
+    "text_sha1": "d5dcf8ea3f5951561d3d2d5aef1d91ab91eaa139",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "So it is expedient: the physician gives not what the patient wants, but what he himself knows to be good",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f31": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "hadst thou not been so visited, thou hadst been utterly undone",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f31",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Periisses nisi periisses",
+    "text_sha1": "1ddcdc09af3663b08a9409ea92799a6912ac43a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial paradox: had you not been ruined, you would have been lost. The repetition of the verb is kept in English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "hadst thou not been so visited, thou hadst been utterly undone",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f31",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "You would have perished, had you not perished",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Tribulatio ditat",
+    "text_sha1": "bbaf5ef17ba3109f30e38b1ce88a8eaf73cebe0e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Tribulation enriches",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f33": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "As threshing separates from straw the corn, / By crosses from the world’s chaff are we born.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f33",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Si tritura absit paleis sunt abdita grana, / Nos crux mundanis separat a paleis:",
+    "text_sha1": "a3e9640e04db3683ce1f3d7b897f54ef62b8bfb2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "In the preceding sentence Burton links this couplet to Camerarius's emblem of a thresher and corn. The emblem's text is not checked here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "As threshing separates from straw the corn, / By crosses from the world’s chaff are we born.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f33",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "If there is no threshing, the grains stay hidden in the chaff; / The cross separates us from the chaff of the world",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Non est poena damnantis sed flagellum corrigentis",
+    "text_sha1": "841883bd3efeb8acb390056687b53da48d8c72cc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote is anchored at Burton's mention of Cyprian, Sermon 4 on Mortality, but the sidenote itself names no source.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is not the punishment of one who condemns, but the scourge of one who corrects",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f35": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Nocumentum documentum",
+    "text_sha1": "a989ebf208fb2df3b2d12f8b43429b78e0e0a4c8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "a hurt, a teaching",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A proverb built on the rhyme nocumentum/documentum ('harm'/'lesson'). A rough English equivalent is 'what hurts, teaches'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Harm is a lesson",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f36": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "God, saith Austin, hath one son without sin, none without correction",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f36",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "text \"saith Austin\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Deus unicum habet filium sine peccato, nullum sine flagello",
+    "text_sha1": "af6442dc05c3813cfe8a733bfdad9208bfd96246",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton renders flagellum, literally 'whip' or 'scourge', as 'correction'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "God, saith Austin, hath one son without sin, none without correction",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f36",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "text \"saith Austin\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "God has one only Son without sin, but none without the scourge.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Sen. Herc. fur.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hercules Furens"
+    },
+    "text": "Non est ad astra mollis e terris via",
+    "text_sha1": "efc7a8b5cba726e4ef223522b16f221b10b63088",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Sen. Herc. fur.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hercules Furens"
+        },
+        "text": "There is no easy way from the earth to the stars.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f38": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Go on then merrily to heaven.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f38",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Boethius",
+      "basis": "sidenote \"Boethius lib. 4 met. ult.\"",
+      "locus": "book 4, last metre",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "The Consolation of Philosophy"
+    },
+    "text": "Ite nunc fortes, ubi celsa magni / Ducit exempli via, cur inertes / Terga nudatis? superata tellus / Sydera donat.",
+    "text_sha1": "487b4d1a28463a008126d76a172d256d8c1be357",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Go now, brave ones, where the lofty way of great example leads; why, inert, do you bare your backs? The earth overcome grants the stars.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'Bare your backs' means to turn and flee. Burton spells sidera as 'Sydera'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Go on then merrily to heaven.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f38",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Boethius",
+          "basis": "sidenote \"Boethius lib. 4 met. ult.\"",
+          "locus": "book 4, last metre",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "The Consolation of Philosophy"
+        },
+        "text": "Go now, you brave, where the lofty road of great example leads! Why, sluggards, / do you turn your backs? The earth, once overcome, / gives you the stars.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f4": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Insana stultae mentis haec solatia.",
+    "text_sha1": "5de44acd797912c95cdd8a09710dff78f5593ab7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "These are the mad consolations of a foolish mind.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Stella",
+    "text_sha1": "0ab73ab5f1ffe95b96a02d91a5831ebb860ac9ab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is not a Latin phrase but the name of an author in Burton's list of modern writers on consolation, probably Diego de Estella (Didacus Stella). It is given unchanged.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Stella",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "sidenote \"Virg.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "atque haec olim meminisse juvabit",
+    "text_sha1": "1641b5bcca782dd541b98a34b36bfad9a57e150a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Virgil, Aeneid 1.203, reads 'forsan et haec olim meminisse iuvabit' ('perhaps one day...'). Burton has 'atque' and drops 'forsan'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "and one day it will be a pleasure to remember these things",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "either say something that I never read nor heard of before or else hold thy peace",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Pliny the Younger",
+      "basis": "text \"Plinius Secundus ... wrote to his fellow Tiro\"; sidenote \"Epist. 13 lib. 1.\"",
+      "locus": "Epist. 13 lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "adhibe solatia, sed nova aliqua, sed fortia, quae audierim nunquam, legerim nunquam: nam quae audivi, quae legi omnia, tanto dolore superantur",
+    "text_sha1": "7c70cf0a4472502f0b68f945784db0455685e0a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English gives the gist only and adds 'or else hold thy peace'. In Pliny's letter the dead friend is Corellius Rufus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "either say something that I never read nor heard of before or else hold thy peace",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Pliny the Younger",
+          "basis": "text \"Plinius Secundus ... wrote to his fellow Tiro\"; sidenote \"Epist. 13 lib. 1.\"",
+          "locus": "Epist. 13 lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "offer me consolations, but new ones, strong ones, such as I have never heard and never read; for everything I have heard and read is overpowered by so great a grief",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f51": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "no man can have what he will",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f51",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quicquid vult habere nemo potest",
+    "text_sha1": "ac65134431fe9e1a130e982bd6820971034e949a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "no man can have what he will",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f51",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "No one can have whatever he wants",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f53": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "eternity is at hand",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f53",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Immortalitas adest",
+    "text_sha1": "c74718ecdd5e603edd7b21dc018dc378628bc0ab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "eternity is at hand",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f53",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Immortality is at hand",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f56": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hesiod",
+      "basis": "sidenote \"Hesiod. 1 oper.\"",
+      "locus": "1 oper.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Works and Days"
+    },
+    "text": "Esto quod es; quod sunt alii, sine quemlibet esse, Quod non es, nolis; quod potes esse, velis",
+    "text_sha1": "3c0eed5a4e0e36e29cc558a6bbf42470d1ca87c6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A Latin elegiac couplet that Burton attaches to his reference to Hesiod.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hesiod",
+          "basis": "sidenote \"Hesiod. 1 oper.\"",
+          "locus": "1 oper.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Works and Days"
+        },
+        "text": "Be what you are; let others be whatever they are; / Do not wish to be what you are not; wish to be what you can be",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f57": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "God sees thee, he takes notice of thee",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f57",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Boethius",
+      "basis": "sidenote \"Boeth. pros. ult.\"",
+      "locus": "last prose",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "The Consolation of Philosophy"
+    },
+    "text": "Manet spectator cunctorum desuper praescius deus, bonis praemia, malis supplicia dispensans",
+    "text_sha1": "5a377463595b752f944141ca66aec9d9770fbb0d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text, 'God sees thee, he takes notice of thee', renders only the first part of the sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "God sees thee, he takes notice of thee",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f57",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Boethius",
+          "basis": "sidenote \"Boeth. pros. ult.\"",
+          "locus": "last prose",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "The Consolation of Philosophy"
+        },
+        "text": "Boethius, last prose: God, foreknowing all things, remains on high as the beholder of all, dealing out rewards to the good and punishments to the wicked.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f58": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If it be common to all, why should one man be more disquieted than another",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f58",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "omnes, nemo recuset",
+    "text_sha1": "5bd2b5eb178b4e51678f89eef9f8ebab3d9d3b66",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This completes 'Ferre quam sortem patiuntur omnes, nemo recuset': 'Let no one refuse to bear the lot which all endure.' Burton's English recasts it as a question.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If it be common to all, why should one man be more disquieted than another",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f58",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "all, let no one refuse",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f59": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If it be common to all, why should one man be more disquieted than another",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f59",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ferre quam sortem patiuntur",
+    "text_sha1": "9c6fe00b1c8b3a4cb467821fde6dca3e1d7c4213",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the first half of the sentence 'Ferre quam sortem patiuntur omnes, nemo recuset', which has been split across two passages. 'omnes' belongs here: in full, 'Let no one refuse to bear the lot which all endure.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If it be common to all, why should one man be more disquieted than another",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f59",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "To bear the lot which all endure",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis not my speech this",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Non meus hic sermo",
+    "text_sha1": "ab5a1a819a94d4b92c1fa82425d19c47b3ca7fcf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Satires 2.2.2, reads 'nec meus hic sermo est' ('nor is this discourse mine'). Burton adapts the wording.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis not my speech this",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "This discourse is not my own",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero, Girolamo Cardano, Boethius",
+      "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De consolatione"
+    },
+    "text": "de consol",
+    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "An abbreviated title, De consolatione. Burton uses it for consolatory works by Cicero, Cardano and Boethius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero, Girolamo Cardano, Boethius",
+          "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De consolatione"
+        },
+        "text": "On Consolation",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as cares, crosses, losses, death of friends, poverty, want, sickness, orbities, injuries, abuses, &c.",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "sidenote \"Card.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Alium paupertas, alium orbitas, hunc morbi, illum timor, alium injuriae, hunc insidiae, illum uxor, filii distrahunt",
+    "text_sha1": "04fb157bfa341d7f3bb5351c8a05987e5d053e78",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "one poverty, another childlessness, this one diseases, that one fear, another injuries, this one plots, that one wife, children distract",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "orbitas means bereavement, especially the loss of children. Burton's English list at the anchor follows the same idea loosely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as cares, crosses, losses, death of friends, poverty, want, sickness, orbities, injuries, abuses, &c.",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "sidenote \"Card.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Poverty torments one man, bereavement another; diseases this man, fear that one; injuries another, plots this man; that one his wife and children.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Boethius",
+      "basis": "sidenote \"Boethius lib. 1 met. 5.\"",
+      "locus": "lib. 1 met. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "The Consolation of Philosophy"
+    },
+    "text": "homines quatimur fortunae salo",
+    "text_sha1": "61c8be822ef06d2305d5e3002046567ffcd49210",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Boethius",
+          "basis": "sidenote \"Boethius lib. 1 met. 5.\"",
+          "locus": "lib. 1 met. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "The Consolation of Philosophy"
+        },
+        "text": "we men are tossed on the sea of fortune",
         "warnings": []
       }
     ]

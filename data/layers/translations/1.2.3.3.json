@@ -1,0 +1,524 @@
+{
+  "1.2.3.3-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Prosper Calanius",
+      "basis": "sidenote \"Prosper Calanius, lib. de atra bile.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De atra bile"
+    },
+    "text": "Mala consuetudine depravatur ingenium ne bene faciat",
+    "text_sha1": "855e6d57f2f8bbea0f43aae4bd3c3328133f58a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "By bad custom the disposition is depraved so that it may not do well",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "ingenium: natural disposition or wit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Prosper Calanius",
+          "basis": "sidenote \"Prosper Calanius, lib. de atra bile.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De atra bile"
+        },
+        "text": "By bad custom the mind is so depraved that it cannot do well.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "do more out of custom, self-will, than out of Reason",
+        "in": "1.2.3.3",
+        "near": "1.2.3.3-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "sidenote \"Ovid.\" after \"Video meliora proboque deteriora sequor\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "Plura faciunt homines e consuetudine, quam e rationa. A teneris assuescere multum est. Video meliora proboque deteriora sequor",
+    "text_sha1": "91ea191967fd8aefc74b79e3ea07e46b339365d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": "Men do more things from custom than from reason. To grow accustomed from tender years is much. I see the better things and approve them, I follow the worse.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "\"rationa\" is a misprint for \"ratione\". The second sentence echoes Virgil, Georgics 2.272 (\"adeo a teneris assuescere multum est\"). Burton's \"Ovid.\" belongs to the last sentence, Medea's words in Metamorphoses 7.20–21. Burton's main text renders only the first sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "do more out of custom, self-will, than out of Reason",
+            "in": "1.2.3.3",
+            "near": "1.2.3.3-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "sidenote \"Ovid.\" after \"Video meliora proboque deteriora sequor\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "Men do more from custom than from reason. Habit formed from tender years counts for much. I see the better and approve it; I follow the worse.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petrarch",
+      "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+      "locus": "preface",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De remediis utriusque fortunae"
+    },
+    "text": "de Remediis, &c",
+    "text_sha1": "ae4b5b59a495a1805aebc40e36f4f163e46b0ae2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Short title of Petrarch's De remediis utriusque fortunae (On the Remedies for Both Kinds of Fortune).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petrarch",
+          "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+          "locus": "preface",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De remediis utriusque fortunae"
+        },
+        "text": "On Remedies, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "this stubborn will of ours perverts judgement, which sees and knows what should and ought to be done, and yet will not do it",
+        "in": "1.2.3.3",
+        "near": "1.2.3.3-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Philipp Melanchthon",
+      "basis": "text \"as Melanchthon calls it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "malum facit",
+    "text_sha1": "c3418d603af27933de015eb63080fae95bad8975",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Continues \"Contumax voluntas … malum facit\": \"a stubborn will does evil.\" Burton's English expands the idea rather than rendering it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "this stubborn will of ours perverts judgement, which sees and knows what should and ought to be done, and yet will not do it",
+            "in": "1.2.3.3",
+            "near": "1.2.3.3-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Philipp Melanchthon",
+          "basis": "text \"as Melanchthon calls it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "does evil",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "slaves to their several lusts, and appetite",
+        "in": "1.2.3.3",
+        "near": "1.2.3.3-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Mancipia gulae",
+    "text_sha1": "e500e0df74c069e07b455f766a5bbef37d41458b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "gula: throat or gullet, and so gluttony or appetite. Burton widens it to lusts in general.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "slaves to their several lusts, and appetite",
+            "in": "1.2.3.3",
+            "near": "1.2.3.3-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Slaves of the gullet",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "The wording matches the standard Latin title of Chrysostom's treatise.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Quod nemo laeditur nisi a seipso"
+    },
+    "text": "Nemo laeditur nisi a seipso",
+    "text_sha1": "860c7e5f97e0e2124f0f2e7a02bc74e3f9942238",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the Latin title of a treatise by John Chrysostom (Quod nemo laeditur nisi a seipso).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "The wording matches the standard Latin title of Chrysostom's treatise.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Quod nemo laeditur nisi a seipso"
+        },
+        "text": "No one is harmed except by himself.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petrarch",
+      "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+      "locus": "preface",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De remediis utriusque fortunae"
+    },
+    "text": "Tanto studio miserarium causas, & alimenta dolorum quaerimus, vitamque secus felicissimam, tristem & miserabilem efficimus",
+    "text_sha1": "fe3e4ff394ec4ce203864d603d7af6d1382986fa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "\"miserarium\" is a misprint for \"miseriarum\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petrarch",
+          "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+          "locus": "preface",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De remediis utriusque fortunae"
+        },
+        "text": "With such zeal do we seek out the causes of our miseries and the food of our sorrows, and make a life that would otherwise be most happy sad and wretched.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.3-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "this stubborn will of ours",
+        "in": "1.2.3.3",
+        "near": "1.2.3.3-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Philipp Melanchthon",
+      "basis": "text \"as Melanchthon calls it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Contumax voluntas",
+    "text_sha1": "88871009654971043404ffa0b77250fa263277b5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "this stubborn will of ours",
+            "in": "1.2.3.3",
+            "near": "1.2.3.3-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Philipp Melanchthon",
+          "basis": "text \"as Melanchthon calls it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A stubborn will",
+        "warnings": []
+      }
+    ]
+  }
+}

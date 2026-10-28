@@ -102,5 +102,119 @@
         "warnings": []
       }
     ]
+  },
+  "3.3.3.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Herodotus",
+      "basis": "sidenote \"Herod. Euterp.\"",
+      "locus": "Euterp.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Histories, book 2 (Euterpe)"
+    },
+    "text": "Phaerus Aegypti rex de caecitate oraculum consulens, visum ei rediturum accepit, si oculos abluisset lotio mulieris, quae aliorum virorum esset expers, uxoris urinam expertus nihil profecit & aliarum frustra, eas omnes (ea excepta per quam curatus fuit) unum in locum coactas concremavit",
+    "text_sha1": "b2f1edbcef1dd5e961bf375183cb9d3c38405ab7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Pheros king of Egypt, consulting the oracle about blindness, received that sight would return to him if he had washed his eyes with the urine of a woman who was without share of other men; having tried his wife's urine he profited nothing, and of others in vain; all of them (that one excepted by whom he was cured), driven together into one place, he burned up.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton summarises the story in his own Latin; it is not a quotation of Herodotus' wording. In Herodotus the king then married the woman whose urine cured him. The parenthesis is in the source.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Herodotus",
+          "basis": "sidenote \"Herod. Euterp.\"",
+          "locus": "Euterp.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Histories, book 2 (Euterpe)"
+        },
+        "text": "Pheros, king of Egypt, consulted the oracle about his blindness and was told that his sight would return if he washed his eyes with the urine of a woman who had had nothing to do with any man but her husband. He tried his wife's urine and got no benefit, and other women's in vain; so he gathered them all into one place, except the one by whom he was cured, and burned them.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.3.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"Tully saith\" and sidenote \"Offic. lib. 2.\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Officiis"
+    },
+    "text": "ob pellicatus suspitionem",
+    "text_sha1": "5e3c68dec01f65d1cddfbaec80c33b4182890f50",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "on account of suspicion of concubinage",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "pellicatus means keeping a concubine, or adultery with one. In Cicero the wife is named Thebe.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"Tully saith\" and sidenote \"Offic. lib. 2.\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Officiis"
+        },
+        "text": "on suspicion that he kept a mistress",
+        "warnings": []
+      }
+    ]
   }
 }

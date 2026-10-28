@@ -1,0 +1,489 @@
+{
+  "2.1.4.2-f1": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Exact wording of Horace's line 'stultorum incurata pudor malus ulcera celat'.",
+      "locus": "1.16.24",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Stultorum incurata pudor malus ulcera celat.",
+    "text_sha1": "fd36a406e6c2df6fd3667264340d8d59cc603bc5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "Of fools uncured evil shame sores hides.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Exact wording of Horace's line 'stultorum incurata pudor malus ulcera celat'.",
+          "locus": "1.16.24",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "The false shame of fools hides their uncured sores.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’Tis a part of his cure to wish his own health",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"(Seneca\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Pars sanitatis velle sanari fuit (Seneca",
+    "text_sha1": "ec2751d703eab4c1b1d8708302a903e86728f516",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage includes Burton's citation '(Seneca', with the closing parenthesis left outside the marked span. The line is from Seneca's Phaedra, where it reads 'pars sanitatis velle sanari fuit'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’Tis a part of his cure to wish his own health",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"(Seneca\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "It has been part of health to wish to be healed (Seneca",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f3": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "He that by cherishing a mischief doth provoke, / Too late at last refuseth to cast off his yoke.",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Qui blandiendo dulce nutrivit malum, / Sero recusat ferre quod subiit jugum.",
+    "text_sha1": "20b125bdcc1a77fd6d5f5d0a3278fda60699e1fb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "He who by flattering has nourished a sweet evil / too late refuses to bear the yoke which he went under.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Spoken by the Nurse in Seneca's Phaedra (lines 134–135). The sense is that it is too late to throw off a yoke once accepted.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "He that by cherishing a mischief doth provoke, / Too late at last refuseth to cast off his yoke.",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "He who by indulgence has nursed a sweet evil / refuses too late to bear the yoke he has bowed under.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f4": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Et",
+    "text_sha1": "20fc519e9bf549b72efb05372bb89ea15ed4e33c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is only Burton's connecting word introducing the next quotation, from Persius; it is not part of either verse.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "And",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "When the skin swells, to seek it to appease / With Hellebore, is vain",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Persius",
+      "basis": "sidenote \"Per. 3 Sat.\"",
+      "locus": "3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Helleborum frustra cum jam cutis aegra tumebit,",
+    "text_sha1": "095d9c1e1a64511f5a7257b492560e985322f382",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "truncated",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the first line of a two-line sentence; 'hellebore' is the object of 'poscentes' (demanding) in the next line: 'you may see them demanding hellebore in vain when the sick skin is already swelling'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "When the skin swells, to seek it to appease / With Hellebore, is vain",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Persius",
+          "basis": "sidenote \"Per. 3 Sat.\"",
+          "locus": "3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "hellebore in vain, when the sick skin is already swelling,",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Damascen the Arabian, requires likewise in the Physician himself, that he be confident he can cure him, otherwise his physic will not be effectual, and promise withal that he will certainly help him, make him believe so at least",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Damascen the Arabian",
+      "basis": "main text at anchor \"Damascen the Arabian, requires likewise in the Physician himself\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Oportet infirmo imprimere salutem utcunque promittere, etsi ipse desperet. Nullum medicamentum efficax, nisi medicus etiam fuerit fortis imaginationis",
+    "text_sha1": "ad0bc86ed7dec2290e83163d29926df5240697a1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'Ipse' most naturally refers to the physician, as Burton's text implies.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Damascen the Arabian, requires likewise in the Physician himself, that he be confident he can cure him, otherwise his physic will not be effectual, and promise withal that he will certainly help him, make him believe so at least",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Damascen the Arabian",
+          "basis": "main text at anchor \"Damascen the Arabian, requires likewise in the Physician himself\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "One must impress health upon the sick man and promise it by whatever means, even if the physician himself despairs. No medicine is effective unless the physician is also of a strong imagination.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "meet your disease",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Persius",
+      "basis": "sidenote \"Per. 3 Sat.\"",
+      "locus": "3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Poscentes videas; venienti occurrite morbo",
+    "text_sha1": "580d39ab2cb3354a12280c25a80197cc837582f8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "demanding you may see; the coming disease meet.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This continues the previous line: 'you may see them demanding hellebore in vain'. 'Venienti occurrite morbo' means meeting the disease at its onset.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "meet your disease",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Persius",
+          "basis": "sidenote \"Per. 3 Sat.\"",
+          "locus": "3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "you may see them demanding it; meet the disease as it comes.",
+        "warnings": []
+      }
+    ]
+  }
+}

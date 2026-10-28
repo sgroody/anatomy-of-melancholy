@@ -1,0 +1,1954 @@
+{
+  "1.2.4.4-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernard of Clairvaux",
+      "basis": "sidenote \"Leviter volant graviter vulnerant, Bernardus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Leviter volant graviter vulnerant",
+    "text_sha1": "946d492469e9f7bc5662a9205bfa89176c5e3340",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "Lightly they fly, heavily they wound",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Bernard is saying this of arrows; Burton applies it to bitter words. Burton's 'A blow with a word strikes deeper than a blow with a sword' renders the companion saying in the same sidenote, not this one.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernard of Clairvaux",
+          "basis": "sidenote \"Leviter volant graviter vulnerant, Bernardus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They fly lightly, they wound deeply",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "soft fellows, stark noddies; and such as were foolish, quite mad before he left them",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Paolo Giovio (Jovius)",
+      "basis": "text \"as Jovius hath registered in the 4th book of his life\"",
+      "locus": "book 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Leo X"
+    },
+    "text": "ex stolidis stultissimos, & maxime ridiculos, ex stultis insanos",
+    "text_sha1": "2b02c20fc0f73cda268874b27e9eeccc5bafc889",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "out of dullards most foolish, and most ridiculous; out of fools, madmen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "soft fellows, stark noddies; and such as were foolish, quite mad before he left them",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Paolo Giovio (Jovius)",
+          "basis": "text \"as Jovius hath registered in the 4th book of his life\"",
+          "locus": "book 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Leo X"
+        },
+        "text": "utter fools, and most ridiculous, out of dullards; madmen out of fools",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "Demea's line 'pro Iuppiter, tu homo adigis me ad insaniam'; Burton says 'in the Comedy'.",
+      "locus": "111",
+      "status": "probable",
+      "verified": false,
+      "work": "Adelphoe"
+    },
+    "text": "Proh Jupiter, tu homo me adigas ad insaniam",
+    "text_sha1": "33d492a40d37c00930ac6a3e57c254b8a6e441b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton writes the subjunctive 'adigas' where Terence has the indicative 'adigis' ('you are driving me mad'). He also puts 'me' before the verb.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "Demea's line 'pro Iuppiter, tu homo adigis me ad insaniam'; Burton says 'in the Comedy'.",
+          "locus": "111",
+          "status": "probable",
+          "verified": false,
+          "work": "Adelphoe"
+        },
+        "text": "O Jupiter! You, man, would drive me to madness!",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernard of Clairvaux",
+      "basis": "text \"as Bernard of an arrow\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "leviter enim volat",
+    "text_sha1": "408fd3205a4ecdac3080f9065690c7d1db7798d0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton splits Bernard's saying about an arrow in two; the second half follows as 'sed graviter vulnerat'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernard of Clairvaux",
+          "basis": "text \"as Bernard of an arrow\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "for it flies lightly",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernard of Clairvaux",
+      "basis": "text \"as Bernard of an arrow\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "sed graviter vulnerat",
+    "text_sha1": "cf178cd070ab79868855619bfb7748e17aecece1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "but wounds heavily",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernard of Clairvaux",
+          "basis": "text \"as Bernard of an arrow\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "but wounds deeply",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "an excellent thing to enjoy another man’s madness",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "optimum aliena frui insania",
+    "text_sha1": "7de921a7ee24984abc5245db95c1c50ccecc74e3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "best to enjoy another's madness",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase looks like Pliny the Elder's 'optimum est aliena insania frui' (Natural History, book 18), but that identification is not secure.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "an excellent thing to enjoy another man’s madness",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "it is best to profit by another man's madness",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they multiply grief",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "aerumnarum incrementa sunt",
+    "text_sha1": "a4feab9756fc9ccec4c6e2bbf488184c3c701196",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they multiply grief",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "they are increases of their miseries",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "and yours with Dobessus",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f16",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Martin Cromer (Cromerus)",
+      "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+      "locus": "book 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "history of Poland"
+    },
+    "text": "Et tua cum Dobesso",
+    "text_sha1": "079a865be5b0fb311a96f5447a2e35bc007338f2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and yours with Dobessus",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f16",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Martin Cromer (Cromerus)",
+          "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+          "locus": "book 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "history of Poland"
+        },
+        "text": "And yours with Dobessus",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "these words of his so galled the Prince",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Martin Cromer (Cromerus)",
+      "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+      "locus": "book 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "history of Poland"
+    },
+    "text": "Tetigit id dictum Principis animum",
+    "text_sha1": "fa97bd8fbfe559da81c4d469b75f44eaf8571555",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "That saying touched the Prince's mind",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "these words of his so galled the Prince",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Martin Cromer (Cromerus)",
+          "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+          "locus": "book 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "history of Poland"
+        },
+        "text": "That remark touched the Prince to the quick",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "Distinctive wording 'rumpantur ut ilia Codro' from Virgil's seventh Eclogue",
+      "locus": "7.26",
+      "status": "probable",
+      "verified": false,
+      "work": "Eclogues"
+    },
+    "text": "rumpantur & ilia Codro",
+    "text_sha1": "1cb87c070a50296fae21eadf3f38bba79ac89877",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "and let the guts be burst for Codrus",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton adapts Virgil, Eclogue 7.26, 'invidia rumpantur ut ilia Codro' ('so that Codrus may burst his guts with envy'). He drops the envy and turns the line into bursting with laughter.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Distinctive wording 'rumpantur ut ilia Codro' from Virgil's seventh Eclogue",
+          "locus": "7.26",
+          "status": "probable",
+          "verified": false,
+          "work": "Eclogues"
+        },
+        "text": "and let Codrus burst his sides",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "no jesting with a discontented person",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f19",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Baldassare Castiglione",
+      "basis": "text \"’tis Castilio’s caveat\"; sidenote \"Balthasar Castilio lib. 2 de aulico.\"",
+      "locus": "book 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "The Courtier (De aulico)"
+    },
+    "text": "non jocandum cum iis qui miseri sunt, & aerumnosi",
+    "text_sha1": "4bc6d35af5fcef3fb794012fde8beb86f2a48ab4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "no jesting with a discontented person",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f19",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Baldassare Castiglione",
+          "basis": "text \"’tis Castilio’s caveat\"; sidenote \"Balthasar Castilio lib. 2 de aulico.\"",
+          "locus": "book 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "The Courtier (De aulico)"
+        },
+        "text": "there must be no jesting with those who are wretched and afflicted",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Comitas",
+    "text_sha1": "0a815e65b49be6f766e45e9e5494ed36f9641d66",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Comitas means courtesy, affability or good-humoured friendliness. Here it is the mean between boorishness and buffoonery, as in Aristotle's account of wit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Courtesy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f21": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "innocency",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "sidenote \"Tully. Tusc. quaest.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Tusculan Disputations"
+    },
+    "text": "ἀβλάβεια",
+    "text_sha1": "25ebe8c04a2aba5cd1d58681e9ecdca3b902fe53",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Greek for 'harmlessness'. Cicero uses the word in the Tusculan Disputations (book 3) to define innocentia.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "innocency",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "sidenote \"Tully. Tusc. quaest.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Tusculan Disputations"
+        },
+        "text": "harmlessness",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "hurts no man, abhors all offer of injury",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "sidenote \"Tully. Tusc. quaest.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Tusculan Disputations"
+    },
+    "text": "quae nemini nocet, omnem injuriae oblationem abhorrens",
+    "text_sha1": "22c44c8f33ea59ff217c04100d3ec31983165e40",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "hurts no man, abhors all offer of injury",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "sidenote \"Tully. Tusc. quaest.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Tusculan Disputations"
+        },
+        "text": "which harms no one, and shrinks from every offer of injury",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "turpis in reum omnis exprobatio",
+    "text_sha1": "d2ddb846d325d0c7876d74118cbfec6430cf1461",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton calls it 'an old axiom'. It is proverbial in character.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "all reproach of an accused man is shameful",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f24": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martial",
+      "basis": "sidenote \"Mart. lib. 1 epig. 35.\"",
+      "locus": "book 1, epigram 35",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Ludit qui stolida procacitate, / Non est Sestius ille sed caballus;",
+    "text_sha1": "81e3cec1225965ffcf9a43207ab85565383c2546",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "caballus means a work-horse or nag, a jibe against heavy, coarse wit. Burton follows it with 'horse-play'. Modern editions of Martial give the name differently, and number the epigram 1.41.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Mart. lib. 1 epig. 35.\"",
+          "locus": "book 1, epigram 35",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "He who jests with stupid impudence / is no Sestius, but a nag;",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "biting jests",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Giovanni della Casa",
+      "basis": "sidenote \"Galateus fol. 55.\"",
+      "locus": "fol. 55",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Galateo"
+    },
+    "text": "mordentes & aculeati",
+    "text_sha1": "1c2e3d618e94f02d1793675d08ac1c8a619855c5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'biting jests' renders mordentes, and 'leave a sting behind them' picks up aculeati.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "biting jests",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Giovanni della Casa",
+          "basis": "sidenote \"Galateus fol. 55.\"",
+          "locus": "fol. 55",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Galateo"
+        },
+        "text": "biting and stinging",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "sidenote \"Tull. ad Attic. lib. 11.\"",
+      "locus": "book 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters to Atticus"
+    },
+    "text": "Ego huius miser fatuitate & dementia conflictor",
+    "text_sha1": "03d813a42453c09179ab5b3edb84471815dc43c2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "sidenote \"Tull. ad Attic. lib. 11.\"",
+          "locus": "book 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters to Atticus"
+        },
+        "text": "I, wretched man, am harassed by this man's folly and madness. Cicero, Letters to Atticus, book 11.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paolo Giovio (Jovius)",
+      "basis": "sidenote \"Jovius in vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Adrian VI"
+    },
+    "text": "Jovius in vita ejus",
+    "text_sha1": "b707e8572b619f79b4fb41689674804a901c7bde",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to Paolo Giovio's life of Pope Adrian VI.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paolo Giovio (Jovius)",
+          "basis": "sidenote \"Jovius in vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Adrian VI"
+        },
+        "text": "Jovius, in his Life",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Genius",
+    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Used in the Latin sense of a person's innate spirit or natural bent: their peculiar talent.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "genius",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quibus potentia sceleris impunitatem fecit",
+    "text_sha1": "f9304cf063aaab5aaf87ef637b2cf41f72335397",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "to whom power has made impunity of crime",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "whose power has given them impunity for their crimes",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many are ashamed, many vexed, angered",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f34",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "In multis pudos, in multi iracundia, &c",
+    "text_sha1": "477ab998dd2018005aade313115e8dc8ac739d80",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The text is garbled: 'pudos' and 'multi' should almost certainly read 'pudor' and 'multis'. The translation follows that corrected reading.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many are ashamed, many vexed, angered",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f34",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "In many it stirs shame, in many anger, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "very sad & melancholy",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f37",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Martin Cromer (Cromerus)",
+      "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+      "locus": "book 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "history of Poland"
+    },
+    "text": "tristis & cogitabundus",
+    "text_sha1": "0acb81c952034cd7b01a4e7ba7e1ca02467f52a1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'very sad & melancholy for many months' renders the phrase loosely. The months are his own addition.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "very sad & melancholy",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f37",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Martin Cromer (Cromerus)",
+          "basis": "text \"Martin Cromerus in the 6th book of his history\"",
+          "locus": "book 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "history of Poland"
+        },
+        "text": "sad and brooding",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Famous Horatian phrase 'genus irritabile vatum'.",
+      "locus": "2.2.102",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Genus irritabile vatum",
+    "text_sha1": "05b9ba9f8123860ef51f2fdb8791d0e7597b3da7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "the irritable race of bards",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Famous Horatian phrase 'genus irritabile vatum'.",
+          "locus": "2.2.102",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "the touchy tribe of poets",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "A blow with a word strikes deeper than a blow with a sword",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f40",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ensis sauciat corpus, mentem sermo",
+    "text_sha1": "913f5a45fe6bd706d860c4fb9328e332412ee67c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text gives the gist of this saying in a looser form.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "A blow with a word strikes deeper than a blow with a sword",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f40",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The sword wounds the body, a word the mind",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hinc quam sit calamus saevior ense patet",
+    "text_sha1": "6cee4406d77fae0e7abfbda8f2c05bfb658baf9f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A pentameter line, perhaps from the Barthius preface cited in the sidenotes, but this is not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hence it is plain how much crueller the pen is than the sword",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "petulant a spleen",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Persius",
+      "basis": "Exact wording of Persius' line 'sum petulanti splene cachinno'.",
+      "locus": "1.12",
+      "status": "probable",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Petulanti splene cachinno",
+    "text_sha1": "e198aa07f27a5fc876f7ff08ebf6b81490dab170",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "a loud laugher with a wanton spleen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The spleen was thought to be the seat of laughter. In Persius the full line reads 'sum petulanti splene cachinno' ('I am a guffawer with a petulant spleen').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "petulant a spleen",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Persius",
+          "basis": "Exact wording of Persius' line 'sum petulanti splene cachinno'.",
+          "locus": "1.12",
+          "status": "probable",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "a guffawer with a petulant spleen",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a mope or a noddy",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "sidenote \"Ter. Eunuch.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Eunuchus"
+    },
+    "text": "ex stulto insanum",
+    "text_sha1": "8ae7fd1b2ad0cef07a29d46a8256fd90f149359b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "out of a fool, a madman",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a mope or a noddy",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "sidenote \"Ter. Eunuch.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Eunuchus"
+        },
+        "text": "a madman out of a fool",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f8": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. Ser. lib. 1 Sat. 4.\"",
+      "locus": "Book 1, Satire 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "——— dummodo risum / Excutiat sibi; non hic cuiquam parcet amico,",
+    "text_sha1": "d0bbbdaccf5de5f5eef1cbe2a3ea6875a273d30a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. Ser. lib. 1 Sat. 4.\"",
+          "locus": "Book 1, Satire 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "— so long as he can raise a laugh for himself, / he will spare no friend at all,",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.4-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the froth of wit",
+        "in": "1.2.4.4",
+        "near": "1.2.4.4-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"as Tully holds\" and sidenote \"De orat.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De oratore"
+    },
+    "text": "levissimus ingenii fructus",
+    "text_sha1": "c0d088deb007237acea559bc4905a13476db9897",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the froth of wit",
+            "in": "1.2.4.4",
+            "near": "1.2.4.4-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"as Tully holds\" and sidenote \"De orat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De oratore"
+        },
+        "text": "the lightest fruit of wit",
+        "warnings": []
+      }
+    ]
+  }
+}

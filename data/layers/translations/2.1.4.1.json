@@ -1,0 +1,964 @@
+{
+  "2.1.4.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Herophilus",
+      "basis": "text \"saith Herophilus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Manus Dei",
+    "text_sha1": "7e50fa9b5ec80be3935017378ed3c0252ed1fe12",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Herophilus",
+          "basis": "text \"saith Herophilus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the hand of God",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to oppugn nature",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Naturae bellum inferre",
+    "text_sha1": "56dbdcf177f3dc717e92ccd51d7fcab609a03521",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to oppugn nature",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to make war on nature",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that purge to the halves, tire nature, and molest the body to no purpose",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Giovanni Battista Montanus",
+      "basis": "text \"Montanus consil. 30 inveighs against such perturbations\"",
+      "locus": "consil. 30",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "Qui melancholicis praebent remedia non satis valida. Longiores morbi imprimis solertiam medici postulant, & fidelitatem, qui enim tumultuarie hos tractant, vires absque ullo commodo laedunt & frangunt, &c",
+    "text_sha1": "8075582e63247d7ea6ed7fdc8438709a09fdf9c0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The note seems to give Montanus's words, since he is named in the text right after the anchor. vires: the patient's strength.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that purge to the halves, tire nature, and molest the body to no purpose",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Giovanni Battista Montanus",
+          "basis": "text \"Montanus consil. 30 inveighs against such perturbations\"",
+          "locus": "consil. 30",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "Those who give melancholic patients remedies that are not strong enough. Long diseases above all demand skill and faithfulness in the physician; for those who treat them haphazardly injure and break the patient's strength without any benefit, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "their lash",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Besardus",
+      "basis": "text \"Besardus, flagellum medicorum\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "flagellum medicorum",
+    "text_sha1": "3fee96ef267d88082c7003a154f7c690340a82f9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "their lash",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Besardus",
+          "basis": "text \"Besardus, flagellum medicorum\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the scourge of physicians",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to give nature rest",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Nicolas Piso; Donatus Altomarus",
+      "basis": "text \"’Tis that which Nic. Piso, Donatus Altomarus, still inculcate\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "dare requiem Naturae",
+    "text_sha1": "83e5ee5cce2c612f16bd981893fc4bc0973ec22a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to give nature rest",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Nicolas Piso; Donatus Altomarus",
+          "basis": "text \"’Tis that which Nic. Piso, Donatus Altomarus, still inculcate\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "to give nature rest",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they can purge fantastical imaginations, & the devil by physic",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Arnald of Villanova",
+      "basis": "text \"Arnaldus in his 8th & 11th Aphorisms\"; sidenote \"Brev. lib. 1 cap. 18.\"",
+      "locus": "lib. 1 cap. 18",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Breviarium"
+    },
+    "text": "longis syrupis expugnare daemones & animi phantasmata",
+    "text_sha1": "bda807614fc270e180415abad3a319131cab93f8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "to overcome demons and phantasms of the mind with long syrups",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The 'he' in 'In another place he' is Arnaldus (Arnald of Villanova).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they can purge fantastical imaginations, & the devil by physic",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Arnald of Villanova",
+          "basis": "text \"Arnaldus in his 8th & 11th Aphorisms\"; sidenote \"Brev. lib. 1 cap. 18.\"",
+          "locus": "lib. 1 cap. 18",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Breviarium"
+        },
+        "text": "to drive out demons and the phantoms of the mind with long courses of syrups",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many of them cannot be cured but by Magic",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Paracelsus",
+      "basis": "text \"Paracelsus will have to be a Magician\"; sidenote \"Tom. 4 Tract. 1, de morbis amentium.\"",
+      "locus": "Tom. 4 Tract. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de morbis amentium"
+    },
+    "text": "Horum multi non nisi a Magis curandi & Astrologis, quoniam origo ejus a coelis petenda est",
+    "text_sha1": "9b6c40415ec280aa7015058dc66b3cb568e01923",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote gives the reference (volume 4, tract 1, on the diseases of the insane) for Paracelsus's view in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many of them cannot be cured but by Magic",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Paracelsus",
+          "basis": "text \"Paracelsus will have to be a Magician\"; sidenote \"Tom. 4 Tract. 1, de morbis amentium.\"",
+          "locus": "Tom. 4 Tract. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de morbis amentium"
+        },
+        "text": "Many of these are to be cured only by magicians and astrologers, since the origin of the disease is to be sought from the heavens.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "which by good counsel, good advice alone, might have been happily composed, or by rectification of those six non-natural things otherwise cured",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f19",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "sidenote \"Heurnius\" (the sidenote also gives \"lib. 3 cap. 1\")",
+      "locus": "lib. 3 cap. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Frustra fatigant remediis aegros, qui victus ratione curari possunt",
+    "text_sha1": "2f1910cb4a6d0aab3c708c0d376e7d279ff8f06c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "victus ratio: a regimen of diet and way of living, i.e. the six non-naturals that Burton mentions.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "which by good counsel, good advice alone, might have been happily composed, or by rectification of those six non-natural things otherwise cured",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f19",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "sidenote \"Heurnius\" (the sidenote also gives \"lib. 3 cap. 1\")",
+          "locus": "lib. 3 cap. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They weary the sick with remedies to no purpose, when they could be cured by a regimen of diet.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Many Physicians explode Astrology in physic (saith he), there is no use of it",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Giovanni Antonio Magini",
+      "basis": "text \"Maginus in the preface to his Mathematical physic\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "preface to his Mathematical physic"
+    },
+    "text": "vanam artem ac quasi temerariam insectantur, ac gloriam sibi ab ejus imperitia aucupantur",
+    "text_sha1": "f97c1a86fff538b4e44cc956f13e71a375070cdc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'saith he' refers to Maginus, named just before.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Many Physicians explode Astrology in physic (saith he), there is no use of it",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Giovanni Antonio Magini",
+          "basis": "text \"Maginus in the preface to his Mathematical physic\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "preface to his Mathematical physic"
+        },
+        "text": "they attack it as a vain and, as it were, reckless art, and hunt for glory for themselves out of their ignorance of it",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that count them butchers without it",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Giovanni Antonio Magini",
+      "basis": "text \"Maginus in the preface to his Mathematical physic\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "preface to his Mathematical physic"
+    },
+    "text": "homicidas medicos Astrologiae ignaros, &c",
+    "text_sha1": "30f3ffb8f30d647004cd1a51d1c957bd6ef29c42",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "murderous physicians ignorant of astrology, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Still part of the argument Burton draws from Maginus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that count them butchers without it",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Giovanni Antonio Magini",
+          "basis": "text \"Maginus in the preface to his Mathematical physic\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "preface to his Mathematical physic"
+        },
+        "text": "physicians ignorant of astrology are murderers, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johann Jacob Wecker",
+      "basis": "text \"as Wecker notes\"; sidenote \"Antid. gen. lib. 3 cap. 2.\"",
+      "locus": "lib. 3 cap. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Antidotarium generale"
+    },
+    "text": "Carnificis namque est",
+    "text_sha1": "46b1aec80e71829a31a24676e652129fe8da3d5e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence goes on in f6 after Burton's parenthesis.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johann Jacob Wecker",
+          "basis": "text \"as Wecker notes\"; sidenote \"Antid. gen. lib. 3 cap. 2.\"",
+          "locus": "lib. 3 cap. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Antidotarium generale"
+        },
+        "text": "For it is the part of an executioner",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as an hungry Chirurgeon often produce and wire-draw his cure, so long as there is any hope of pay",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Johann Jacob Wecker",
+      "basis": "text \"as Wecker notes\"; sidenote \"Antid. gen. lib. 3 cap. 2.\"",
+      "locus": "lib. 3 cap. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Antidotarium generale"
+    },
+    "text": "inter ipsos cruciatus ingens precium exposcere",
+    "text_sha1": "fbff2888a5ef0624772d7c2d57fbe502e1b60495",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Continues 'Carnificis namque est' (f5): 'For it is the part of an executioner to demand a huge fee in the very midst of the torments.' Burton's English that follows takes the idea further rather than rendering it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as an hungry Chirurgeon often produce and wire-draw his cure, so long as there is any hope of pay",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Johann Jacob Wecker",
+          "basis": "text \"as Wecker notes\"; sidenote \"Antid. gen. lib. 3 cap. 2.\"",
+          "locus": "lib. 3 cap. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Antidotarium generale"
+        },
+        "text": "to demand a huge fee in the very midst of the torments",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f7": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Exact wording of the famous last line of the Ars Poetica",
+      "locus": "476",
+      "status": "probable",
+      "verified": false,
+      "work": "Ars Poetica"
+    },
+    "text": "Non missura cutem, nisi plena cruoris hirudo.",
+    "text_sha1": "0a3a01e08442e31d831d6b5b3b1212691583c466",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Horace applies this image to the poet who reads his verses aloud and will not stop. Burton applies it to greedy physicians.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Exact wording of the famous last line of the Ars Poetica",
+          "locus": "476",
+          "status": "probable",
+          "verified": false,
+          "work": "Ars Poetica"
+        },
+        "text": "a leech that will not let go of the skin until it is full of blood.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "stir up a silent disease",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "text \"as Heurnius complains\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "irritare silentem morbum",
+    "text_sha1": "03a3bf9b5511aa64bf340e81513efa0fddf0189e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "to provoke a silent disease",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "stir up a silent disease",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "text \"as Heurnius complains\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "to stir up a dormant disease",
+        "warnings": []
+      }
+    ]
+  }
+}

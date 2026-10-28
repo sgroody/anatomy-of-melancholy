@@ -1,4 +1,2206 @@
 {
+  "3.2.1.2-f1": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "How it tickles the hearts of mortal men",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "sidenote \"Virg.\"; the line is Aeneid 4.412",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "Improbe amor quid non mortalia pectora cogis?",
+    "text_sha1": "d2a6a364627bcc51cd262e7cea607c7e7c756ef3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Wicked love, what do you not compel mortal breasts [to]?",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Virgil's line is about Dido's love driving her to desperate measures. Burton's following English, 'How it tickles the hearts of mortal men', changes the sense quite a lot.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "How it tickles the hearts of mortal men",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg.\"; the line is Aeneid 4.412",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "Cruel Love, to what do you not drive mortal hearts?",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quae virorum concubitum illicitum calceo in oppositam partem verso magistratui indicant",
+    "text_sha1": "f9eb75fd6bb2ec33e7584b4066620bf4b06fac0f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "which the unlawful lying of the men, by a shoe turned to the opposite side, indicate to the magistrate",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Turkish custom described in Busbecq's Turkish letters (a Busbequius sidenote is attached to the preceding paragraph). There, a wife complains to the judge by turning her shoe upside down. 'Virorum concubitum illicitum' could also be read more generally as 'the men's unlawful intercourse', which is why confidence is medium.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in which wives make known to the magistrate their husbands' unlawful intercourse with men by turning a shoe the opposite way",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f100": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "pulchrorum Adolescentum causa frequens Gymnasium obibat, flagitiosoque spectaculo pascebat oculos, quod &",
+    "text_sha1": "c252a1347078fae0ad34838a3409c603afe64e81",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "for the sake of beautiful youths frequently visited the gymnasium, and fed his eyes with the shameful spectacle, which both",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject, Socrates, comes just before the passage. 'Quod &' introduces the list of Plato's dialogues that follows: 'which both the Philebus and the Phaedo ... attest'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for the sake of handsome youths often went to the gymnasium, and fed his eyes on the shameful spectacle, as both",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f101": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "satis superque testatum faciunt",
+    "text_sha1": "29a8b837dc35d8bf03fb4a9c48f8b10f22b7a5ba",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "make [it] attested enough and more than enough",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "bear more than ample witness",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f102": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "tantum incitamentum praebet libidini",
+    "text_sha1": "8bca87dbf8e889eac265c7c41c30163d4bfde294",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'It' is what Alcibiades says about Socrates in Plato's Symposium. Burton says he gladly passes over it in silence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "such an incitement does it give to lust",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f103": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quin & ipse",
+    "text_sha1": "be6c2003c29036f5f52a034eebf271661e6ba523",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment that opens a sentence. It continues 'Plato suum demiratur Agathonem', 'Nay, even Plato himself admires his Agathon'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Nay, even ... himself",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f104": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quod autem de",
+    "text_sha1": "22a7b83eb6ebb653c188d1a965ac01a9b13c74a0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "but what about",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment. In full it reads 'quod autem de Nerone, Claudio ... memoriae proditum': 'but what has been handed down to memory about the monstrous lust of Nero, Claudius and the rest'. I have supplied 'is recorded', which in the Latin comes later in the clause, so that the English makes sense.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "but as for what is recorded of",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f105": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "caeterisque petatis, quando omnem fidem excedat, quam",
+    "text_sha1": "f57129b9206e3a9fbe70a2727aafd0ae595ee55c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of a longer sentence: 'what is recorded of the monstrous lust of Nero, Claudius and the rest, I would rather you sought from Petronius, Suetonius and the others, since it passes all belief, than expected it from me.' The marked words begin and end in mid-construction.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and the rest, since it passes all belief, than",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f106": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ogier Ghiselin de Busbecq",
+      "basis": "sidenote \"Busbequius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "officinae horum alicubi apud",
+    "text_sha1": "c23fcb68953cb24a0a7b7ff0a4bc627a0fb24c0a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment: 'their workshops [i.e. houses for this vice] in some places among the Turks'. 'Turcas' falls outside the marked text, and the sentence continues after the paragraph break. Medium confidence because officinae ('workshops') is used figuratively, probably meaning brothels.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ogier Ghiselin de Busbecq",
+          "basis": "sidenote \"Busbequius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "their workshops, in some places among",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f107": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "querelae, etiam inter ipsos conjuges hac de re",
+    "text_sha1": "736bfaaad13edfabce5b6238ea3dd8539a33f793",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This continues 'frequentes' ('frequent [complaints]'), which comes just before the marked text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "complaints, even between husbands and wives themselves, about this matter",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f108": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "nullum apud Italos familiare magis peccatum, qui & post",
+    "text_sha1": "11b6e703a5fbee43ee0fe55613f0306df6da73f5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "no sin more familiar among the Italians, who also after",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence continues: '…following Lucian and [Achilles] Tatius, defend it in written volumes.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "no sin is more familiar among the Italians, who, following",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f109": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "divinum opus vocat, suave scelus, adeoque jactat se non alia usum Venere. Nihil usitatius apud",
+    "text_sha1": "3219c8fab2b83368e524e996d167051ab152870b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "calls it a divine work, a sweet crime, and so boasts himself to have used no other Venus. Nothing more usual among",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject is Giovanni della Casa, Archbishop of Benevento. The charge refers to his notorious burlesque verses (the 'Capitolo del forno'). The last sentence continues '…among monks, cardinals, petty priests.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "calls it a divine work, a sweet crime, and even boasts that he has practised no other kind of love. Nothing is more common among",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martial",
+      "basis": "sidenote \"Non est haec mentula demens. Mart.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Non est haec mentula demens. Mart",
+    "text_sha1": "0f6812a1dfdb317288c61c3788f492789c4ee343",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "This is not a mad prick. Martial",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The line comes from Martial, Epigrams 3.76, where it is a question: 'hoc, rogo, non furor est, non haec est mentula demens?' ('Is this not frenzy, is this not a mad prick?'). Burton leaves out the question form and changes the word order. Read as a bare statement, the line would say the opposite of what he means. The sidenote is anchored at 'furor' ('frenzy').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Non est haec mentula demens. Mart.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "Is not this a mad prick? Martial",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f110": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "furor hic ad mortem, ad insaniam",
+    "text_sha1": "e2d8d3ea28c51237eeeb961682405eb733b512ad",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "this fury to death, to madness",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The verb is understood: this frenzy goes as far as death and madness.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "this frenzy, even to death, even to madness",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f111": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paolo Giovio",
+      "basis": "sidenote \"Jovius Musc.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "ob pueri amorem, violentas sibi manus injecit. Et horrendum sane dictu, quantum apud nos patrum memoria, scelus detestandum hoc saevierit",
+    "text_sha1": "0c0072a404ca72a707f6d5cbe10e33afb0fe5e2c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject is Angelo Poliziano (Politian), named just before the marked text. Burton's sidenote refers to Paolo Giovio's Elogia, written for his 'Musaeum'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paolo Giovio",
+          "basis": "sidenote \"Jovius Musc.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "for love of a boy, laid violent hands on himself. And it is truly horrible to tell how this detestable crime has raged among us within our fathers' memory",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f112": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Bale",
+      "basis": "text \"apud eundem Baleum\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sed vide si lubet eorundem Catalogum apud eundem",
+    "text_sha1": "52ea7995893f5c375d40ec5972aebb96dba2f2b5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence ends 'Baleum' ('Bale'), which falls outside the marked text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Bale",
+          "basis": "text \"apud eundem Baleum\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "But see, if you please, the catalogue of them in the same",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f113": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Haec si apud votarios",
+    "text_sha1": "70a8d418c435f41e6eca06db3a2e93033e54ef8f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence continues: '…the monks, those holy little men forsooth, what would you suspect is done in the market-place, what at court?'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "If these things among the votaries",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f114": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quid apud nobiles, quid inter fornices, quam non foeditatem, quam non spurcitiem",
+    "text_sha1": "ee5f10e4cfd02b86712e22d264961edafeecf5c2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "What among the nobles, what among the brothels, what foulness not, what filth not",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The words that follow ('Sileo interim turpes illas') are Latin, not an English rendering by Burton.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "What among the nobles, what in the brothels—what foulness, what filth would there not be",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f115": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "& ne nominandas quidem monachorum",
+    "text_sha1": "61527232e0d41bd482f9bcca69e4845bdbea167f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase depends on the noun that follows outside the marked text, 'mastrupationes' (masturbations): 'and the monks' not-even-to-be-named masturbations.' The preceding 'Sileo interim turpes illas' ('Meanwhile I pass over those foul…') is Latin, not Burton's English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and the not even nameable … of the monks",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f116": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Herodotus",
+      "basis": "sidenote \"Herodotus lib. 2 Euterpe: Uxores insignium virorum non statim vita functas tradunt condiendas, ac ne eas quidem foeminas quae formosae sunt, sed quatriduo ante defunctas, ne cum iis salinarii concumbant, &c.\"",
+      "locus": "lib. 2 Euterpe",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Histories"
+    },
+    "text": "qui cum formosarum cadaveribus concumbunt",
+    "text_sha1": "d79c8b508a6c443d9f1a7c3e8a07a9fd6c7e59ac",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject is the Egyptian embalmers ('Salinarii', literally 'salters'). Herodotus reports that beautiful women were handed over for embalming only after some days, to prevent this.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Herodotus",
+          "basis": "sidenote \"Herodotus lib. 2 Euterpe: Uxores insignium virorum non statim vita functas tradunt condiendas, ac ne eas quidem foeminas quae formosae sunt, sed quatriduo ante defunctas, ne cum iis salinarii concumbant, &c.\"",
+          "locus": "lib. 2 Euterpe",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Histories"
+        },
+        "text": "who lie with the corpses of beautiful women",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f117": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quem suspicor eum esse qui Christum crucifixit, picturis",
+    "text_sha1": "8294a51c2d8ac6b879c2114d8abeacc9cd64326d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is Burton's own aside about Pontius, the legate of Gaius Caesar, mentioned by Pliny. He guesses that this Pontius was Pontius Pilate. 'Picturis' goes with what follows: 'so inflamed with lust by the paintings of Atalanta and Helen'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "who I suspect is the same man who crucified Christ, by the paintings",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f118": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "alius Bonae deae, & ne qua pars probro vacet",
+    "text_sha1": "5e5809e34fdd7b51f150cf79563929757e433105",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "another of the Good Goddess, and lest any part be empty of disgrace",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'alius Bonae deae' continues 'alius statuam … deperiit': another man fell in love with the statue of the Good Goddess (Bona Dea). The clause 'ne qua pars probro vacet' is unfinished here; it runs on into the next sentence ('carried off to debaucheries … not even the mouth exempted from lust').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "another with that of the Good Goddess; and, that no part might be free of disgrace,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f119": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lampridius",
+      "basis": "text \"Lamprid. vita ejus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Heliogabalus"
+    },
+    "text": "per omnia cava corporis",
+    "text_sha1": "bccd6a97d74a211636d8cd33ed89b8df8162dba4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "through all the hollows of the body",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of the sentence 'Heliogabalus per omnia cava corporis libidinem recepit': Heliogabalus received lust through every hollow of the body.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lampridius",
+          "basis": "text \"Lamprid. vita ejus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Heliogabalus"
+        },
+        "text": "through every hollow of the body",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f120": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+      "locus": "1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Natural Questions"
+    },
+    "text": "quidam specula fecit, & ita disposuit, ut quum virum ipse pateretur, aversus omnes admissarii motus",
+    "text_sha1": "af2b1d7b8fc45a53343f2cbb537a51a8452285b0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "a certain one made mirrors, and so disposed them, that when he himself suffered a man, turned away, all the movements of the stallion",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is Hostius Quadra. The passage breaks off in mid-clause: the verb 'videret' ('he might see') and 'in speculo' ('in the mirror') come after it, and 'see' is supplied here for sense. 'Admissarius' means a stallion kept for breeding, used here of the man's partner. The 'in speculo' that follows is Latin, not Burton's English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+          "locus": "1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural Questions"
+        },
+        "text": "a certain man made mirrors and so arranged them that, while he himself was submitting to a man, he could, with his back turned, see all the movements of the stud",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f121": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+      "locus": "1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Natural Questions"
+    },
+    "text": "videret, ac deinde falsa magnitudine ipsius membri",
+    "text_sha1": "ec2f4126ebaff6a16215a83a9034137cd4e9ff4d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment. The sentence goes on 'tanquam vera gauderet': he delighted in the false, mirror-magnified size of the member as though it were real.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+          "locus": "1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural Questions"
+        },
+        "text": "might see, and then in the counterfeit size of the member itself",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f122": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+      "locus": "1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Natural Questions"
+    },
+    "text": "tanquam vera gauderet, simul virum &",
+    "text_sha1": "8345c522c487457503998f1a97d0b9b9a82176d1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment. It completes with 'foeminam passus': having played both the man's and the woman's part at once.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca 1 nat. quaest.\"",
+          "locus": "1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural Questions"
+        },
+        "text": "might delight as though it were real, at once both man and",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f123": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quod dictu foedum & abominandum. Ut verum plane sit, quod apud",
+    "text_sha1": "1a3b827308878d4b1352131d5090b3145f90a077",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "which is foul and abominable to say. So that it may be plainly true, what in",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment. The sentence goes on 'Plutarchum Gryllus Ulyssi objecit': so that what Gryllus threw at Ulysses in Plutarch is plainly true.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a thing foul and abominable to tell. So that what is found in",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f124": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sed ne confutando doceam, aut ea foras efferam, quae non omnes scire convenit",
+    "text_sha1": "51f292c63b79149af51571b860593bf084fc6adb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "But lest by refuting I should teach, or carry abroad things which it is not fitting for everyone to know",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f125": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "haec enim doctis solummodo, quod causa non absimili",
+    "text_sha1": "c3f98925e662719737cfc9bc710cded77edc3c34",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of a parenthesis. The full parenthesis reads 'for I would have these things written for the learned only, as Rodericus [a Castro] did for a like reason'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for these things only for the learned, as, for a not dissimilar reason,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f126": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "then they do offer themselves, and some plainly rage",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f126",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Levinus Lemnius",
+      "basis": "sidenote \"Epictetus cap. 42. Mulieres statim ab anno 14. movere incipiunt, &c., attrectari se sinunt & exponunt. Levinus Lemnius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "movere incipiunt, &c., attrectari se sinunt & exponunt",
+    "text_sha1": "42372165453fd9cef5b644d93831b42f3e779c18",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Movere' is probably sexual, meaning to stir with desire. The sidenote names both Epictetus (cap. 42) and Levinus Lemnius, and it is not certain which wording belongs to which. The Latin phrasing appears to be Lemnius's.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "then they do offer themselves, and some plainly rage",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f126",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Levinus Lemnius",
+          "basis": "sidenote \"Epictetus cap. 42. Mulieres statim ab anno 14. movere incipiunt, &c., attrectari se sinunt & exponunt. Levinus Lemnius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they begin to stir, etc., they let themselves be handled and offer themselves",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f127": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Fracastorius; Guastavinius",
+      "basis": "text \"Fracastorius agrees in this with Gordonius\" and \"addit Guastavinius Comment. 4 Sect. prob. 27 Arist.\"",
+      "locus": "Comment. 4 Sect. prob. 27",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Guastavinius, Commentary on the Aristotelian Problems"
+    },
+    "text": "inde primitus imaginatio venerea, erectio, &c., titillatissimam partem vocat, ita ut nisi extruso semine gestiens voluptas non cessat, nec assidua veneris recordatio, addit",
+    "text_sha1": "3e72d52de85ffb317416cc4f93de2568256dca38",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The final 'addit' ('adds') goes with the citation that follows, 'Guastavinius Comment. 4 Sect. prob. 27 Arist.' So it is not clear which part comes from Fracastorius and which from Guastavinius. 'The part' means the testicles, named by Gordonius just before. The non-classical 'non cessat' after 'nisi' is rendered as the sense requires.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Fracastorius; Guastavinius",
+          "basis": "text \"Fracastorius agrees in this with Gordonius\" and \"addit Guastavinius Comment. 4 Sect. prob. 27 Arist.\"",
+          "locus": "Comment. 4 Sect. prob. 27",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Guastavinius, Commentary on the Aristotelian Problems"
+        },
+        "text": "from there first arise venereal imagination, erection, etc.; he calls it the most ticklish part, so that unless the seed is expelled, the eager pleasure does not cease, nor the constant remembrance of venery, adds",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f128": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sciatica",
+    "text_sha1": "35958a63a5644071ff859a5954e43198fae359cc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a medical Latin term used as an ordinary word in Burton's English list of diseases. It does not really need translating.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "sciatica",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f129": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sodomiae",
+    "text_sha1": "58dd1cf0b52a6e10aa29711c7eb4805fa58ce8ed",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a single word from a longer clause: 'quod peccatum Sodomiae vulgo dicitur', 'which is commonly called the sin of Sodomy'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of Sodomy",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Raptus ad stupra",
+    "text_sha1": "951f85ec5bef8aece80f02108738093d344ad32d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Carried off to defilements",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton adds 'quod ait ille' ('as he says'), which marks a quotation, but he does not name the author.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Dragged into debaucheries",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f130": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Bale",
+      "basis": "text \"(Balei verbis utor)\"; sidenote \"Praefat. lectori lib. de vitiis pontif.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "prudentissimus Rex Henricus Octavus cucullatorum coenobia, & sacrificorum collegia, votariorum, per venerabiles legum Doctores Thomam Leum, Richardum Laytonum visitari fecerat, &c., tanto numero reperti sunt apud eos scortatores, cinaedi, ganeones, paedicones, puerarii, paederastae, Sodomitae",
+    "text_sha1": "5b6277560f6d580681a338964f3c769774391541",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text starts after 'Quum enim Anno 1538' ('For when in the year 1538'), so the main clause depends on words outside it. The list of vices continues with 'Ganimedes, etc.' Burton says he is using John Bale's own words.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Bale",
+          "basis": "text \"(Balei verbis utor)\"; sidenote \"Praefat. lectori lib. de vitiis pontif.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the most prudent King Henry the Eighth had caused the monasteries of the cowled monks, and the colleges of priests and votaries, to be visited by the venerable Doctors of Law Thomas Lee and Richard Layton, etc., there were found among them, in such numbers, whoremongers, catamites, debauchees, buggerers, boy-lovers, pederasts, sodomites",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f131": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ut in unoquoque eorum novam credideris Gomorrham",
+    "text_sha1": "63bde7f3e0a55c8dd5daa11f7ebdb40dee2f47ee",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "that in each one of them you would have believed a new Gomorrah",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "so that you would have thought each one of them a new Gomorrah",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.1.2-f132": {
     "kind": "phrase",
     "lang": "la",
@@ -83,6 +2285,4021 @@
           "work": "Gryllus (Bruta animalia ratione uti)"
         },
         "text": "To this day among us neither has a man loved a man, nor a woman a woman, as many memorable and illustrious men among you have done—to say nothing of the common sort: Hercules, pursuing a beardless companion, deserted his friends, etc. Your lusts cannot be kept within the bounds of nature, but like an overflowing river they breed dreadful foulness, tumult and confusion of nature in matters of love: for men and women have mated with goats, swine and horses, and have burned with a mad passion for beasts, whence Minotaurs, Centaurs, Sylvans, Sphinxes, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "& ne",
+    "text_sha1": "2a2c1063d1320351f04f292892f281578d5783eb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment. With the words that follow ('os quidem a libidine exceptum'), 'ne … quidem' means 'not even': 'and not even the mouth exempted from lust'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and not",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a secret snare to captivate the hearts of men",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f16",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Cristóbal de Fonseca",
+      "basis": "text \"as Christopher Fonseca proves\"; sidenote \"Amphitheat. amor. cap. 4 interpret. Curtio.\"",
+      "locus": "cap. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Amphitheatrum amoris"
+    },
+    "text": "laqueus occultus captivans corda hominum, ut a mulieribus non possint separari",
+    "text_sha1": "c626e08766b3fc587fc039763136d1b665bd515e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a secret snare to captivate the hearts of men",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f16",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Cristóbal de Fonseca",
+          "basis": "text \"as Christopher Fonseca proves\"; sidenote \"Amphitheat. amor. cap. 4 interpret. Curtio.\"",
+          "locus": "cap. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Amphitheatrum amoris"
+        },
+        "text": "a hidden snare that captivates the hearts of men, so that they cannot be parted from women",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "He is not a man but a block, a very stone",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aeneas Silvius",
+      "basis": "sidenote \"Aeneas Silvius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Et qui vim non sensit amoris, aut lapis est, aut bellua",
+    "text_sha1": "e551a626ba0b945c3b1f62426cdc53be047ca996",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "He is not a man but a block, a very stone",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aeneas Silvius",
+          "basis": "sidenote \"Aeneas Silvius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "And he who has not felt the force of love is either a stone or a beast",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "aut Numen, aut Nebuchadnezzar",
+    "text_sha1": "ff64c5781107f437fe356d068aa3718566b1c25e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Nebuchadnezzar was turned out to live like a beast (Daniel 4). The phrase recalls the commonplace that a man who stands apart from human society is either a beast or a god.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "either a god or Nebuchadnezzar",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f19": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Juvenal",
+      "basis": "sidenote \"Juvenal.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Qui nunquam visae flagravit amore puellae:",
+    "text_sha1": "5b4af75bdb6be544b2bc56c39565e3ba4dde94b4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Who never burned with love of a seen girl",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The line is from Juvenal, Satire 4, where it describes a blind flatterer who 'burned with love for a girl he never saw'. Burton bends it to mean a rare man who never fell in love with any girl he saw. The standard text has 'flagrabat'; Burton has 'flagravit'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Juvenal",
+          "basis": "sidenote \"Juvenal.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "Who never burned with love for a girl he had seen:",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f2": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I am almost afraid to relate",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "Virgil's well-known words 'horresco referens'",
+      "locus": "2.204",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "Horresco referens, ———",
+    "text_sha1": "f6dc1db3ef310d5a3a7d3e575c6737fa2bba9f05",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Aeneas uses these words when he tells of the serpents that came for Laocoön. Burton cuts the line off with a dash.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I am almost afraid to relate",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Virgil's well-known words 'horresco referens'",
+          "locus": "2.204",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "I shudder to tell it, —",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "dote we either young or old",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Baptista Mantuanus",
+      "basis": "The familiar line 'Id commune malum; semel insanivimus omnes' from Mantuan's first eclogue.",
+      "locus": "1",
+      "status": "probable",
+      "verified": false,
+      "work": "Eclogues"
+    },
+    "text": "semel insanavimus omnes",
+    "text_sha1": "eb327abcfccc23d33cfbb6957aba1b8c4795113c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A well-known tag. Burton follows it with a related English phrase that he credits to Chaucer.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "dote we either young or old",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Baptista Mantuanus",
+          "basis": "The familiar line 'Id commune malum; semel insanivimus omnes' from Mantuan's first eclogue.",
+          "locus": "1",
+          "status": "probable",
+          "verified": false,
+          "work": "Eclogues"
+        },
+        "text": "we have all been mad once",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ut materia appetit formam, sic mulier virum",
+    "text_sha1": "88f2258b02bf212ce7a2a8ec424a402a48f0c80c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "as matter seeks form, so woman man",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A scholastic commonplace that derives from Aristotle's comparison of matter longing for form to the female longing for the male.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "as matter desires form, so does woman desire man",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "text \"as Daphnaeus in Plutarch\"; sidenote \"In amator. dialog.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogue on Love"
+    },
+    "text": "qua nulla est aut fuit unquam sanctior conjunctio",
+    "text_sha1": "00bced79e356fca20d20ceb098949b144b76c474",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "text \"as Daphnaeus in Plutarch\"; sidenote \"In amator. dialog.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogue on Love"
+        },
+        "text": "than which no union is, or ever was, more holy",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "text \"as Daphnaeus in Plutarch\"; sidenote \"In amator. dialog.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogue on Love"
+    },
+    "text": "& quae generi humano immortalitatem parat",
+    "text_sha1": "4dd6d7d77ba2aa088a6e61f0f30d9a65bc3543d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "text \"as Daphnaeus in Plutarch\"; sidenote \"In amator. dialog.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogue on Love"
+        },
+        "text": "and which secures immortality for the human race",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f25": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Thrice happy they, and more than that, / Whom bonds of love so firmly ties, / That without brawls till death them part, / ’Tis undissolv’d and never dies.",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"; the wording matches Odes 1.13.17–20",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "Felices ter & amplius / Quos irrupta tenet copula, nec ullis / Divulsus querimoniis, / Suprema citius solvit amor die.",
+    "text_sha1": "86e78b7456115e62ae3228434d7dc187beffcf42",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Happy thrice and more whom unbroken holds a bond, nor by any torn-apart complaints, sooner than the last day releases love.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Odes 1.13.17–20. The standard text reads 'nec malis' (no evil quarrels) where Burton has 'nec ullis' (no quarrels at all), and the future 'solvet' (will release) where he has 'solvit'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Thrice happy they, and more than that, / Whom bonds of love so firmly ties, / That without brawls till death them part, / ’Tis undissolv’d and never dies.",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"; the wording matches Odes 1.13.17–20",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "Thrice happy, and more, are those whom an unbroken bond holds, and whose love, torn apart by no quarrels, will not release them before their last day.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "summum mortalitatis bonum",
+    "text_sha1": "5504ded369b47ec0e1471ac7164e8b5005683159",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "the highest good of mortality",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the highest good of mortal life",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucretius",
+      "basis": "sidenote \"Lucretius.\"; the wording matches De rerum natura 1.1–2",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De rerum natura"
+    },
+    "text": "hominum divumque voluptas, Alma Venus",
+    "text_sha1": "9f8494d4a66ea2aae48197ba091582d0fa5d419d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Lucretius, On the Nature of Things 1.1–2, the opening invocation to Venus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucretius",
+          "basis": "sidenote \"Lucretius.\"; the wording matches De rerum natura 1.1–2",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De rerum natura"
+        },
+        "text": "delight of men and gods, nurturing Venus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "there’s something in a woman beyond all human delight",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f28",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Fonseca",
+      "basis": "text \"as one holds\" with sidenote \"Fonseca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "latet enim in muliere aliquid majus potentiusque omnibus aliis humanis voluptatibus",
+    "text_sha1": "8847790be7514885a3277ff9ce368bc801aa39ff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "there’s something in a woman beyond all human delight",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f28",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Fonseca",
+          "basis": "text \"as one holds\" with sidenote \"Fonseca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "for there lies hidden in a woman something greater and more powerful than all other human pleasures",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f29": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Propertius",
+      "basis": "sidenote \"Propert.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Elegies"
+    },
+    "text": "Omnis amor magnus, sed aperto in conjuge major,",
+    "text_sha1": "a63fe5b4c2ece60be49131285096e00b6b477748",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "All love great, but in an open spouse greater,",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Propertius 4.3.49. 'Aperto' means openly declared, i.e. lawfully wedded, as opposed to secret love.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Propertius",
+          "basis": "sidenote \"Propert.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Elegies"
+        },
+        "text": "All love is great, but greater in an acknowledged spouse,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a disease, Frenzy, Madness, Hell",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "sidenote \"Plutarch. amator. lib.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Amatorius"
+    },
+    "text": "Est orcus ille, vis est immedicabilis, est rabies insana",
+    "text_sha1": "74af78adfadd5c4b53aa9355057d6daa3d5d3f00",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "It is Orcus, it is an incurable force, it is insane rage",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Orcus is the underworld. This is a Latin version of verses by Sophocles about Aphrodite's power, which Plutarch quotes in his Amatorius (Dialogue on Love).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a disease, Frenzy, Madness, Hell",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "sidenote \"Plutarch. amator. lib.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Amatorius"
+        },
+        "text": "It is Hell itself, a force past all cure, a raging madness",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f30": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Semonides",
+      "basis": "sidenote \"Semonides graec.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Charaque charo consenescit conjugi,",
+    "text_sha1": "44aea9049e8a0faee72102fb7f790b7e976af735",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Latin version of Semonides of Amorgos (fragment 7), from his praise of the good 'bee-woman' wife.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Semonides",
+          "basis": "sidenote \"Semonides graec.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "and, dear herself, she grows old together with her dear husband,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f31": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Dear wife, let’s live in love, and die together, / As hitherto we have in all good will: / Let no day change or alter our affections, / But let’s be young to one another still.",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f31",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Ausonius",
+      "basis": "sidenote \"Ausonius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Uxor vivamus quod viximus, & moriamur, / Servantes nomen sumpsimus in thalamo; / Nec ferat ulla dies ut commutemur in aevo, / Quin tibi sim juvenis, tuque puella mihi.",
+    "text_sha1": "d355bc52aa0e1e8e60a438fd19b64c15ec876955",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected",
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ausonius, epigram to his wife Sabina. The standard text reads 'ut viximus, et teneamus / nomina quae primo sumpsimus in thalamo' (as we have lived, and let us keep the names we first took in the bridal chamber). Burton's 'quod viximus, & moriamur, / Servantes nomen sumpsimus' is garbled, so lines 1–2 are rendered by their evident sense.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Dear wife, let’s live in love, and die together, / As hitherto we have in all good will: / Let no day change or alter our affections, / But let’s be young to one another still.",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f31",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Ausonius",
+          "basis": "sidenote \"Ausonius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Wife, let us live as we have lived, and die, / keeping the name we took in the bridal chamber; / and let no day ever bring it about that we change with age, / but let me be a young man to you, and you a girl to me.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Geryon amicitiae symbolum",
+    "text_sha1": "915c07e758dcb7b75a556aa55f25dd49c6be1260",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Geryon was the three-bodied giant of myth, and so stood for several bodies joined in one will.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Geryon, the emblem of friendship",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "have one heart in two bodies",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f33",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "corpus coalescere in unum",
+    "text_sha1": "cdbf5f5bfd19c0c838d2a8beb55b45845178bf18",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The infinitive phrase stands loosely in Burton's sentence, meaning that their bodies grow together into one. Burton's 'have one heart in two bodies' gives the idea freely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "have one heart in two bodies",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f33",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for the body to grow together into one",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f34": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "No age shall part my love from thee sweet wife, / Though I live Nestor or Tithonus’ life.",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f34",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Propertius",
+      "basis": "sidenote \"Propertius lib. 2.\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Elegies"
+    },
+    "text": "Et me ab amore tu deducet nulla senectus, / Sive ego Tythonus, sive ego Nestor ero.",
+    "text_sha1": "af99e9cc20a0c55bd397e935c4fd892797d24747",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'tu deducet' is evidently a corruption of 'tuo deducet' (from your love), and it is read that way here. Tithonus and Nestor were proverbial for great age.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "No age shall part my love from thee sweet wife, / Though I live Nestor or Tithonus’ life.",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f34",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Propertius",
+          "basis": "sidenote \"Propertius lib. 2.\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Elegies"
+        },
+        "text": "No old age shall draw me away from your love, / whether I shall be a Tithonus or a Nestor.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f36": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "never remembered she was a maid",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f36",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Petronius",
+      "basis": "text \"Quartilla in Petronius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satyricon"
+    },
+    "text": "Junonem habeam iratam, si unquam meminerim me virginem fuisse. Infans enim paribus inquinata sum, & subinde majoribus me applicui, donec ad aetatem perveni, ut Milo vitulum, inde taurum, &c",
+    "text_sha1": "32504d3328ee9714ad68cd7605a2a28db26fddfe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Petronius, Satyricon 25, much condensed. In Petronius the proverb is 'he who has carried a calf can carry a bull'; Burton attaches it to Milo of Croton, who was said to have carried a calf daily until it became a bull.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "never remembered she was a maid",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f36",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Petronius",
+          "basis": "text \"Quartilla in Petronius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satyricon"
+        },
+        "text": "May I have Juno angry with me if I ever remember having been a virgin. For as an infant I was defiled with those of my own age, and then attached myself to older ones, until I reached this age; as Milo with the calf, then with the bull, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pietro Aretino",
+      "basis": "sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\" with text \"Aretine’s Lucretia\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pornodidascalus"
+    },
+    "text": "Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital",
+    "text_sha1": "d2ff6084ca18805243b5e60d0055c055cef84677",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Caspar Barth's Latin version (1623) of a dialogue from Pietro Aretino's Ragionamenti.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pietro Aretino",
+          "basis": "sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\" with text \"Aretine’s Lucretia\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pornodidascalus"
+        },
+        "text": "Pornodidascalus, a dialogue, translated into Latin from the Italian by Caspar Barth",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Aretine’s Lucretia sold her maidenhead a thousand times before she was twenty-four years old",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f38",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Pietro Aretino",
+      "basis": "text \"Aretine’s Lucretia\" with sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pornodidascalus"
+    },
+    "text": "plus millies vendideram virginitatem, &c., neque te celabo, non deerant qui ut integram ambirent",
+    "text_sha1": "83998c70a082ff320f47ac992e3fab1acadd5e42",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Aretine’s Lucretia sold her maidenhead a thousand times before she was twenty-four years old",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f38",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Pietro Aretino",
+          "basis": "text \"Aretine’s Lucretia\" with sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pornodidascalus"
+        },
+        "text": "I had sold my virginity more than a thousand times, etc., and I will not hide it from you: there was no lack of men who courted me as though I were untouched",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "pubescere",
+    "text_sha1": "eafb5b7c4e5932ad6ee47adbd3f7926317591208",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to reach puberty",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Alexis, quoted in Athenaeus",
+      "basis": "text \"as Alexis in Athenaeus sets it out\" and sidenote \"Lib. 13.\"",
+      "locus": "Lib. 13",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Deipnosophists"
+    },
+    "text": "viriliter audax, muliebriter timidum, furore praeceps, labore infractum, mel felleum, blanda percussio, &c",
+    "text_sha1": "2f06a28e962efd51d68a594a7c80042f60685fc6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "in a manly way bold, in a womanly way timid, headlong with fury, unbroken by labour, gall-like honey, a soothing stroke, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The adjectives are neuter because they describe love as a 'monster' (monstrum). 'Mel felleum' means literally 'gall-honey', a sweetness that is bitter.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Alexis, quoted in Athenaeus",
+          "basis": "text \"as Alexis in Athenaeus sets it out\" and sidenote \"Lib. 13.\"",
+          "locus": "Lib. 13",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Deipnosophists"
+        },
+        "text": "manfully bold, womanishly fearful, headlong in fury, unbroken by toil, honey mixed with gall, a caressing blow, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Julius Pollux",
+      "basis": "text \"as Julius Pollux cites, lib. 2 cap. 3 onomast. out of Aristophanes\"",
+      "locus": "lib. 2 cap. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Onomasticon"
+    },
+    "text": "catullire",
+    "text_sha1": "e09cd8c6c70ee02cfab1b9f5a3b7e0ed2ba11dbf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "to be in heat like a bitch",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Catullire', from catulus (a whelp), is used properly of bitches in heat. Pollux's original term is Greek; this is a Latin equivalent.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Julius Pollux",
+          "basis": "text \"as Julius Pollux cites, lib. 2 cap. 3 onomast. out of Aristophanes\"",
+          "locus": "lib. 2 cap. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Onomasticon"
+        },
+        "text": "to be on heat",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f42": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Si mihi sint centum linguae, sint oraque centum,",
+    "text_sha1": "8e56c0d63e393968ff2b9beb8be9908ce71ad7bd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This echoes the epic formula of Virgil (Aeneid 6.625, Georgics 2.43: 'non, mihi si linguae centum sint oraque centum'), but it is not quoted exactly.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "If I had a hundred tongues, and a hundred mouths,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f43": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Catullus",
+      "basis": "sidenote \"Catullus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Caelius Auphilenum, sed Quintius Auphelinam depereunt, &c",
+    "text_sha1": "086d434ace53a8fc57944edf5acfa96d60be8621",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Caelius Aufillenus, but Quintius Aufillena, are perishing for",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Catullus 100.1–2, where Caelius loves the brother and Quintius the sister. Catullus has 'et' where Burton has 'sed', and spells the names Aufillenus/Aufillena.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Catullus",
+          "basis": "sidenote \"Catullus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Caelius is dying for love of Aufillenus, and Quintius of Aufillena, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f44": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "raptores virginum & viduarum",
+    "text_sha1": "b04ef8f722f5ff0f07fd40998a1aa12cb8d00930",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "ravishers of virgins and widows",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Human, divine laws, precepts, exhortations, fear of God and men, fair, foul means, fame, fortunes, shame, disgrace, honour cannot oppose, stave off, or withstand the fury of it",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f45",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The famous words 'omnia vincit Amor' from Gallus's speech in Virgil's tenth Eclogue.",
+      "locus": "10.69",
+      "status": "probable",
+      "verified": false,
+      "work": "Eclogues"
+    },
+    "text": "omnia vincit amor, &c",
+    "text_sha1": "b2f768cb13e39cbf876a3c81b6caed5b2844fc2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton quotes only the opening of the phrase; the line goes on 'and let us too yield to Love'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Human, divine laws, precepts, exhortations, fear of God and men, fair, foul means, fame, fortunes, shame, disgrace, honour cannot oppose, stave off, or withstand the fury of it",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f45",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "The famous words 'omnia vincit Amor' from Gallus's speech in Virgil's tenth Eclogue.",
+          "locus": "10.69",
+          "status": "probable",
+          "verified": false,
+          "work": "Eclogues"
+        },
+        "text": "love conquers all, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f46": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Propertius",
+      "basis": "These are the opening lines of Propertius 2.30, 'Quo fugis, a demens? nulla est fuga…'",
+      "locus": "2.30.1–2",
+      "status": "probable",
+      "verified": false,
+      "work": "Elegies"
+    },
+    "text": "Quo fugis ah demens, nulla est fuga, tu licet usque / Ad Tanaim fugias, usque sequetur amor.",
+    "text_sha1": "411332a38fb05896db74567dffe51c90842d2664",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Tanais is the river Don, taken as the far edge of the known world. The sidenote 'Euripides.' does not seem to belong to these lines.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Propertius",
+          "basis": "These are the opening lines of Propertius 2.30, 'Quo fugis, a demens? nulla est fuga…'",
+          "locus": "2.30.1–2",
+          "status": "probable",
+          "verified": false,
+          "work": "Elegies"
+        },
+        "text": "Where are you fleeing, ah madman? There is no escape; though you flee / as far as the Tanais, Love will follow you all the way.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "unsatiable lust, what Country, what Village doth not complain",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f47",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Stephanus",
+      "basis": "sidenote \"Stephanus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "De mulierum inexhausta libidine luxuque insatiabili omnes aeque regiones conqueri posse existimo",
+    "text_sha1": "862c721087a3236c5289a56d25d2d57342aa7b03",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "unsatiable lust, what Country, what Village doth not complain",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f47",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Stephanus",
+          "basis": "sidenote \"Stephanus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "I think all regions alike can complain of women's inexhaustible lust and insatiable wantonness.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f48": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "——— Sed amor, sed effrenata libido, / Quid castum in terris intentatumque reliquit?",
+    "text_sha1": "6321409bdc9af0e30d3f80bcc7cf8fc9241dcb70",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "— But love, but unbridled lust, / what has it left on earth chaste and unassailed?",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f49": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "some dote then more than ever they did in their youth",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f49",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Plautus",
+      "basis": "sidenote \"Plautus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Amare ea aetate si occeperint, multo insaniunt acrius,",
+    "text_sha1": "b0e53916af4d5d87e2508d64cb21a62b91050e6a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The line refers to old men.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "some dote then more than ever they did in their youth",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f49",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Plautus",
+          "basis": "sidenote \"Plautus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "If they begin to love at that age, they rave far more fiercely,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Horace's well-known line 'nam fuit ante Helenam cunnus taeterrima belli causa'",
+      "locus": "1.3.107",
+      "status": "probable",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "fuit ante Helenam",
+    "text_sha1": "bdc56ac6a52fd883127b6b9fe09d0d05a40391bb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton breaks off before the obscene end of Horace's line. In full, it says that before Helen a woman's sex was already the foulest cause of war.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Horace's well-known line 'nam fuit ante Helenam cunnus taeterrima belli causa'",
+          "locus": "1.3.107",
+          "status": "probable",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "before Helen there was",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "an old widow, a mother so long since (in Pliny’s opinion), she doth very unseemly seek to marry",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f50",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Pliny (the Younger)",
+      "basis": "text \"(in Pliny’s opinion)\"; sidenote \"Lib. 8 epist. Ruffinus.\"",
+      "locus": "Lib. 8",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "aetate declivis, diu vidua, mater olim, parum decore matrimonium sequi videtur",
+    "text_sha1": "caff36fb57ea446d4aaa5122135370538848bbf5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "an old widow, a mother so long since (in Pliny’s opinion), she doth very unseemly seek to marry",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f50",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Pliny (the Younger)",
+          "basis": "text \"(in Pliny’s opinion)\"; sidenote \"Lib. 8 epist. Ruffinus.\"",
+          "locus": "Lib. 8",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "declining in years, long a widow, a mother long ago, she seems to seek marriage with little decorum",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f51": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "Horace's distinctive line in his invective against an old woman: 'hietque turpis inter aridas natis / podex'.",
+      "locus": "8.5–6",
+      "status": "probable",
+      "verified": false,
+      "work": "Epodes"
+    },
+    "text": "Hiatque turpis inter aridas nates podex",
+    "text_sha1": "c3996c75a32eb132e123e88bbce211e696e5ea45",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace has the subjunctive 'hietque' and goes on to compare the sight to a raw cow's. Burton writes 'Hiatque' and leaves out the comparison.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "Horace's distinctive line in his invective against an old woman: 'hietque turpis inter aridas natis / podex'.",
+          "locus": "8.5–6",
+          "status": "probable",
+          "verified": false,
+          "work": "Epodes"
+        },
+        "text": "and a foul anus gapes between her withered buttocks",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f52": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "carcass, a witch, and scarce feel; she caterwauls",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f52",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Erasmus",
+      "basis": "sidenote \"Erasmus mor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Moriae Encomium (Praise of Folly)"
+    },
+    "text": "Cadaverosa adeo ut ab inferis reversa videri possit, vult adhuc catullire",
+    "text_sha1": "119472e196c12f1ecd8bc08f0916ff3643564c68",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "…she still wants to be in heat like a bitch.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Catullire means to be in heat, as a bitch is (from catulus, 'puppy'). Burton's 'caterwauls' matches it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "carcass, a witch, and scarce feel; she caterwauls",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f52",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Erasmus",
+          "basis": "sidenote \"Erasmus mor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Moriae Encomium (Praise of Folly)"
+        },
+        "text": "So cadaverous that she might seem to have come back from the dead, she still wants to go on heat.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f53": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aeneas Silvius",
+      "basis": "sidenote \"Aeneas Silvius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Nam & matrimoniis est despectum senium",
+    "text_sha1": "a68b8fbaea33684dc42460ba4629cb26307793d9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aeneas Silvius",
+          "basis": "sidenote \"Aeneas Silvius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "For old age is despised in marriages too.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f54": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "It rageth with all sorts and conditions of men",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f54",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Aeneas Silvius",
+      "basis": "sidenote \"Aeneas Silvius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quid toto terrarum orbe communius? Quae civitas, quod oppidum, quae familia vacat amatorum exemplis?",
+    "text_sha1": "d3bb1d32e8c961e59a26d44eb8302f9a5d6d9465",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "It rageth with all sorts and conditions of men",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f54",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Aeneas Silvius",
+          "basis": "sidenote \"Aeneas Silvius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "What is more common in the whole world? What city, what town, what family is free of examples of lovers?",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f57": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they that are in love are likewise sick",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f57",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Julius Pollux",
+      "basis": "text \"Julius Pollux Onomast. lib. 6 cap. 44 determines it\"",
+      "locus": "lib. 6 cap. 44",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Onomasticon"
+    },
+    "text": "lascivus, salax, lasciviens, & qui in venerem furit, vere est aegrotus",
+    "text_sha1": "0e087d751696be3a5803f686600814591d55f780",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Pollux wrote in Greek, so this is a Latin version of his list of terms.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they that are in love are likewise sick",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f57",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Julius Pollux",
+          "basis": "text \"Julius Pollux Onomast. lib. 6 cap. 44 determines it\"",
+          "locus": "lib. 6 cap. 44",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Onomasticon"
+        },
+        "text": "the lascivious man, the lecherous, the wanton, and he who rages after sexual love, is truly sick",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f58": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Anacreon",
+      "basis": "text \"as Cupid in Anacreon\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Anacreontea"
+    },
+    "text": "Medium ferit per epar",
+    "text_sha1": "c61a5728e1f4c0a69799d320acdf529beaf32522",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Epar is a Latinised form of Greek hēpar, 'liver'. In the Anacreontic poem Cupid shoots the poet in the midst of the liver.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Anacreon",
+          "basis": "text \"as Cupid in Anacreon\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Anacreontea"
+        },
+        "text": "He strikes through the middle of the liver",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "e contra",
+    "text_sha1": "3e9fd43bafba024a5109215cfb8babb7ae62da43",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "from the contrary",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This means rewards and exhortations offered on the other side, against these vices.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "on the other side",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f60": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Philipp Melanchthon",
+      "basis": "text \"Melanchthon de anima confutes those that make the liver a part affected\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De anima"
+    },
+    "text": "Melanchthon de anima",
+    "text_sha1": "2a1f52505b3ce2a4e5fb6c2391ef356f096203e3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A book title used as a citation: Philipp Melanchthon's Liber de anima (Commentarius de anima).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Philipp Melanchthon",
+          "basis": "text \"Melanchthon de anima confutes those that make the liver a part affected\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De anima"
+        },
+        "text": "Melanchthon, On the Soul",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f61": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "downgraded_from": "burton-cites",
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Est in sanguine melancholico hujusmodi aestus",
+    "text_sha1": "ce15d33a07215b6c0c8152704f59877d3e42a27d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "There is in melancholic blood a heat of this sort.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote supports Ficino's view, given in the main text, that the blood is the part affected. Aestus can mean heat, fever or seething.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "downgraded_from": "burton-cites",
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "There is a heat of this kind in melancholic blood.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f62": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "because of his corrupt judgement, and continual meditation of that which he desires, he may truly be said to be melancholy",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f62",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Est corruptio imaginativae & aestimativae facultatis, ob formam fortiter affixam, corruptumque judicium, ut semper de eo cogitet, ideoque recte melancholicus appellatur",
+    "text_sha1": "bd59b6400bb12812a9e7d08fd65039ecebf1f9f0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The 'estimative faculty' (aestimativa) is the scholastic internal sense that judges what is harmful or beneficial. The 'form' is the image of the beloved, fixed in the mind.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "because of his corrupt judgement, and continual meditation of that which he desires, he may truly be said to be melancholy",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f62",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is a corruption of the imaginative and estimative faculty, because of a form firmly fixed in it and a corrupted judgement, so that he thinks of it always; and therefore he is rightly called melancholic.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f63": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Concupiscentia vehemens ex corrupto judicio aestimativae virtutis",
+    "text_sha1": "e8d7c0b23ca8db7b45c0869bea63a933b40f70dc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Virtus here means a faculty or power, not virtue. This is the standard medieval medical definition of amor hereos.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "A vehement desire arising from a corrupted judgement of the estimative power.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f64": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "claimed": "paraphrase",
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "undetermined"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "imaginatio laesa",
+    "text_sha1": "99974deb98e1cff17c39db210a3bb386914a40e6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Laesa means hurt, damaged or impaired. The term comes from the medical vocabulary for the 'injured' faculties.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "claimed": "paraphrase",
+          "status": "undetermined"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "an injured imagination",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f67": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lilio Gregorio Giraldi",
+      "basis": "sidenote \"Lilius Giraldus vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lilius Giraldus vita ejus",
+    "text_sha1": "92f8293073fb539b54ff7aa42e5c3fb943f60037",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Lilio Gregorio Giraldi was an Italian humanist who wrote on mythology. The note is attached to the list of Hercules's male lovers, so 'his life' is the life of Hercules.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lilio Gregorio Giraldi",
+          "basis": "sidenote \"Lilius Giraldus vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Lilius Giraldus, in his life of him.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f68": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hercule",
+    "text_sha1": "71d5da60c4608f1d1a04a435f3f1a567c7f391e9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "by Hercules",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a single word from 'alii & Euristium ab Hercule amatum tradunt', 'others report that Eurystheus too was loved by Hercules'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hercules",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they go down headlong to their own perdition",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f7",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "Virgil's well-known words 'facilis descensus Averno/Averni'",
+      "locus": "6.126",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "facilis descensus Averni",
+    "text_sha1": "59ec636628d85e8ec68523073fcf6481525c9aaa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Avernus was a lake believed to be the entrance to the underworld, so the phrase means the descent to Hell.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they go down headlong to their own perdition",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f7",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "Virgil's well-known words 'facilis descensus Averno/Averni'",
+          "locus": "6.126",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "easy is the descent to Avernus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f70": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aelian",
+      "basis": "text \"(Aelianus lib. 9 cap. 37)\"",
+      "locus": "lib. 9 cap. 37",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Fortunae",
+    "text_sha1": "17fe9f1ae775cbdab201bc15ae4ae224546eb8b1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "of Fortune",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is part of 'statuam bonae Fortunae' ('a statue of Good Fortune'), which another man fell madly in love with. The story is in Aelian's Varia Historia. Burton cites it as book 9, chapter 37; in modern editions it is usually 9.39.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aelian",
+          "basis": "text \"(Aelianus lib. 9 cap. 37)\"",
+          "locus": "lib. 9 cap. 37",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Fortune",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f74": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a sweet wife",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f74",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "placens uxor",
+    "text_sha1": "b49f6cc1bb8739d648bbbd87d7c6aa921ba0a9fe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Odes 2.14.21–22 ('linquenda tellus et domus et placens uxor'). Burton does not give the ode number.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a sweet wife",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f74",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "a pleasing wife",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f75": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Marcus Antoninus compressit Faustinam sororem, Caracalla Juliam Novercam, Nero Matrem, Caligula sorores, Cyneras Mirrham filiam, &c",
+    "text_sha1": "ab00d8939f929563ac01b0eeb744ab6d611dcf50",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Marcus Antoninus pressed Faustina his sister...",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Compressit' means 'lay with' or 'violated'. Historically Faustina was Marcus Aurelius's wife, not his sister, but Burton's charge is rendered as given. 'Cyneras' is Cinyras, Myrrha's father in Ovid.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Marcus Antoninus lay with his sister Faustina, Caracalla with his stepmother Julia, Nero with his mother, Caligula with his sisters, Cinyras with his daughter Myrrha, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f76": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "this mad and beastly passion",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f76",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ferinus, insanus amor",
+    "text_sha1": "9fee08f7483fcd222bd394c7e4fecc7f7e084a2d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "this mad and beastly passion",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f76",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "bestial, insane love",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f77": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Savonarola",
+      "basis": "text \"as Savonarola styles it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Practica major"
+    },
+    "text": "Amor nobilis",
+    "text_sha1": "35fd8f2d58f7fa41b040bf63edeefb600c1765f2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Savonarola",
+          "basis": "text \"as Savonarola styles it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Practica major"
+        },
+        "text": "Noble love",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f78": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "genus",
+    "text_sha1": "834549b9b43b4b28cd5ba46fa3895c17c5fda6ba",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A term of logic: the general class that a definition places its object in, as distinct from a symptom or property.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "genus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "sidenote \"Lucianus dial. Amorum.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Amores"
+    },
+    "text": "Pueros amare solis Philosophis relinquendum vult, Lucianus dial. Amorum",
+    "text_sha1": "45fe00692499ef3dac8209b081390b8b71c9910d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "At the end of Lucian's dialogue on loves, the judge rules that everyone should marry and that the love of boys should be left to philosophers only.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "sidenote \"Lucianus dial. Amorum.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Amores"
+        },
+        "text": "Lucian, in the dialogue Amores, would have the love of boys left to philosophers alone.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f80": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Bale",
+      "basis": "text \"apud eundem Baleum; puellae (inquit)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "puellae (inquit) in lectis dormire non poterant ob fratres necromanticos",
+    "text_sha1": "46e0a2478c201da69112b9c22926bb7979388dc9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Necromantic friars' are friars said to use magic arts to get at women.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Bale",
+          "basis": "text \"apud eundem Baleum; puellae (inquit)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the girls, says he, could not sleep in their beds for the necromantic friars",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f82": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "cogit amare jecur",
+    "text_sha1": "c76faaee0c638f7d027f776e6380199c21387df0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial tag from a medieval mnemonic verse that assigns each passion to an organ ('the heart is wise, the lungs speak, the gall stirs anger, the spleen makes us laugh, the liver compels us to love').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the liver compels one to love",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f88": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "os quidem a libidine exceptum",
+    "text_sha1": "f2f62e81deb8063ad6c2a862c27fe0c4e263b1ea",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This completes the 'ne … quidem' ('not even') begun by the preceding '& ne'. The full sense is 'and not even the mouth was exempted from lust'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "even the mouth exempted from lust",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f89": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Lucian complains to his mother Venus, that amongst all the rest, his arrows could not pierce them",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f89",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "sidenote \"Tom. 1 dial. deorum Lucianus.\"",
+      "locus": "Tom. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogues of the Gods"
+    },
+    "text": "Amore non ardent Musae",
+    "text_sha1": "68974295181d40215819afd358273252dcda2de1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Lucian complains to his mother Venus, that amongst all the rest, his arrows could not pierce them",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f89",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "sidenote \"Tom. 1 dial. deorum Lucianus.\"",
+          "locus": "Tom. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogues of the Gods"
+        },
+        "text": "The Muses do not burn with love.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "qui saxis semina mandant",
+    "text_sha1": "d822be6a0d47418795fe94df525b2f309e8b5ace",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A figure for sterile sodomy, sowing seed where nothing can grow. It is paired with the 'arenas arantes' ('ploughing the sands') that follows. Burton sets it off with dashes as a quotation, but the source is not identified here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "— who commit their seed to stones —",
         "warnings": []
       }
     ]
@@ -187,6 +6404,317 @@
           "work": "Roman Questions (Quaestiones Romanae)"
         },
         "text": "Where you are Gaius, I am always Gaia",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f94": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aeneas Silvius",
+      "basis": "sidenote \"Aeneas Silvius.\" (preceding this sentence in the same note)",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quis trigesimum annum natus nullum amoris causa peregit insigne facinus, ego de me facio conjecturam quem amor in mille pericula misit",
+    "text_sha1": "ea28664cec60e57b0451ffde784b2bf4d24cc6e0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In the sidenote this sentence comes after the name 'Aeneas Silvius', so the attribution may belong only to the sentence before it. Aeneas Silvius (Pope Pius II) did, however, write of his own amorous youth.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aeneas Silvius",
+          "basis": "sidenote \"Aeneas Silvius.\" (preceding this sentence in the same note)",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Who that is thirty years old has not done some notable deed for love's sake? I judge by myself, whom love sent into a thousand dangers.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f95": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "because noblemen and women make a common practice of it, and are so ordinarily affected with it",
+        "in": "3.2.1.2",
+        "near": "3.2.1.2-f95",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Savonarola",
+      "basis": "sidenote \"Pract. major. Tract. 6 cap. 1 Rub. 11 de aegrit. capt.\"",
+      "locus": "Tract. 6 cap. 1 Rub. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Practica major"
+    },
+    "text": "Quod his multum contingat",
+    "text_sha1": "6530065bb04d17437397a2425b50bf449f9474f0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Them = noblemen. The phrase explains the name 'amor nobilis'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "because noblemen and women make a common practice of it, and are so ordinarily affected with it",
+            "in": "3.2.1.2",
+            "near": "3.2.1.2-f95",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Savonarola",
+          "basis": "sidenote \"Pract. major. Tract. 6 cap. 1 Rub. 11 de aegrit. capt.\"",
+          "locus": "Tract. 6 cap. 1 Rub. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Practica major"
+        },
+        "text": "Because it befalls them often.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f97": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "equae, alii canibus, capris, &c., unde monstra nascuntur aliquando, Centauri, Sylvani, & ad terrorem hominum prodigiosa spectra",
+    "text_sha1": "959e29de6414843c356305c9575bb0bacb30d389",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins in the middle of a clause. The sentence starts 'Semiramis [coupled] with a horse, Pasiphae with a bull, Aristo of Ephesus with a she-ass, Fulvius', and 'equae' (with a mare) completes the clause about Fulvius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "with a mare; others with dogs, with she-goats, etc., from which monsters are sometimes born, Centaurs, Sylvans, and prodigious apparitions to the terror of mankind",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f98": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "nec cum brutis, sed ipsis hominibus rem habent, quod peccatum",
+    "text_sha1": "4b91a2833ab95f1940956afd2f0b5d3b13a19148",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "nor with brutes, but with men themselves they have the matter, which sin",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage breaks off mid-clause. It continues 'Sodomiae vulgo dicitur', 'is commonly called [the sin] of Sodomy'. 'Rem habere cum' is a euphemism for having sexual relations with someone.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "nor do they have to do with beasts only, but with men themselves, which sin",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f99": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "& frequens olim vitium apud",
+    "text_sha1": "7f19aa1bb70ced6bac28e6bbb4f44785b8b5148d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment. The sentence goes on 'Orientales illos fuit, Graecos nimirum, Italos, Afros, Asianos': 'it was ... among those Eastern peoples, namely the Greeks, Italians, Africans, Asians'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and a frequent vice formerly among",
         "warnings": []
       }
     ]

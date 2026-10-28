@@ -1,0 +1,717 @@
+{
+  "2.3.8.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "sometimes well, and sometimes ill",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "lucida intervalla",
+    "text_sha1": "38cbbfac876c80a89e134484e7a5bf56ff9e328a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A medical and legal term for periods of clear-headedness between bouts of mental disorder. Burton's 'sometimes well, and sometimes ill' gives the idea loosely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "sometimes well, and sometimes ill",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "lucid intervals",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "ignorance is a downright remedy of evils",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "The exact wording of Seneca's line 'iners malorum remedium ignorantia est'.",
+      "locus": "515",
+      "status": "probable",
+      "verified": false,
+      "work": "Oedipus"
+    },
+    "text": "iners malorum remedium ignorantia",
+    "text_sha1": "7f5f12ed9ef5450d58bdd1a10543b5967b9dbbdc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'iners' means idle, sluggish or feeble, so the original is less approving than Burton's 'downright'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "ignorance is a downright remedy of evils",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "The exact wording of Seneca's line 'iners malorum remedium ignorantia est'.",
+          "locus": "515",
+          "status": "probable",
+          "verified": false,
+          "work": "Oedipus"
+        },
+        "text": "ignorance is a sluggish remedy for ills",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to be wise and still vexed",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "The distinctive close of Horace's line 'quam sapere et ringi'.",
+      "locus": "2.2.128",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "quam sapere & ringi",
+    "text_sha1": "eda8fcf744e93c77513a58e7899ab2a9c79bcdde",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "than to be wise and snarl",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'ringi' means to show the teeth or snarl, hence to fret and chafe. This is the tail of a comparison: in Horace the speaker would rather seem a foolish writer and be content.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to be wise and still vexed",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "The distinctive close of Horace's line 'quam sapere et ringi'.",
+          "locus": "2.2.128",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "than to be wise and fret",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis the pleasantest life to know nothing",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Sophocles",
+      "basis": "text \"as Ajax in Sophocles\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Ajax"
+    },
+    "text": "Nihil scire vita jucundissima",
+    "text_sha1": "155791f934e52483c852b6a8f0840fadb68692be",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Latin version of Sophocles, Ajax, from Ajax's speech to his son: 'the sweetest life lies in knowing nothing'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis the pleasantest life to know nothing",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Sophocles",
+          "basis": "text \"as Ajax in Sophocles\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ajax"
+        },
+        "text": "To know nothing is the most pleasant life",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a more durable enemy than dangerous",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Livy",
+      "basis": "sidenote \"Livius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "hostis magis assiduus quam gravis",
+    "text_sha1": "f1c0544bcce967b9548310da90927959e0e46037",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Livy uses this phrase of the Veientes, the people of Veii, in their long wars with Rome.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a more durable enemy than dangerous",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Livy",
+          "basis": "sidenote \"Livius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "an enemy more persistent than serious",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f3": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "sidenote \"Ter. Scen. 2 Adelphus.\"",
+      "locus": "Scen. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Adelphoe"
+    },
+    "text": "Haec si neque ego neque tu fecimus, / Non sinit egestas facere nos.",
+    "text_sha1": "65dec3c7645586d6a1c9ca3fe5c958c2ffec1651",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "These things if neither I nor you did, / poverty does not allow us to do.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Terence, Adelphoe, in Micio's speech to Demea. The standard text probably reads 'ea' rather than 'Haec', but this is not certain. Burton's next sentence applies the line rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "sidenote \"Ter. Scen. 2 Adelphus.\"",
+          "locus": "Scen. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Adelphoe"
+        },
+        "text": "If neither you nor I have done these things, / it is because poverty did not let us do them.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f4": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Non deerat voluntas sed facultas.",
+    "text_sha1": "a94eccbf70182317e90a84020ef5bcbab5bbc654",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial-sounding phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "It was not the will that was lacking, but the means.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he that takes most heed, is often circumvented & overtaken",
+        "in": "2.3.8.1",
+        "near": "2.3.8.1-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Plautus",
+      "basis": "sidenote \"Plautus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "nam pol qui maxime cavet, is saepe cautor captus est",
+    "text_sha1": "72c02a95b82b1e7335d440706943fae36c00fb45",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "for by Pollux who most is wary, he often, the more cautious, is caught",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'pol' is a mild oath, 'by Pollux'. The line seems to be adapted from Plautus, Captivi ('etiam quom cavisse ratus est, saepe is cautor captus est'), but Burton's wording differs.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he that takes most heed, is often circumvented & overtaken",
+            "in": "2.3.8.1",
+            "near": "2.3.8.1-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Plautus",
+          "basis": "sidenote \"Plautus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "for, by Pollux, he who is most on his guard is often caught for all his caution",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "sicarii",
+    "text_sha1": "11a938e9770a19ac2a8eb47c346abe87dd1500ab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "daggermen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "From sica, 'dagger': hired assassins or murderers. Burton's following words add to the list rather than translating this word.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "cut-throats",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "insensati",
+    "text_sha1": "77b4196069e08e96689550ec5fb9a0ce4a01b924",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Without sense or feeling. Burton's following English expands on the idea rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "senseless",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.8.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petronius",
+      "basis": "sidenote \"Petronius Catal.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Catalecta"
+    },
+    "text": "hic furor o superi, sit mihi perpetuus",
+    "text_sha1": "5e7b9af0c6a50c121324fcc8225784dc1d4151a9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "this madness, O gods above, may it be to me perpetual",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton gives the line as a praise of folly. It comes from a short poem in the Petronian 'Catalecta'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petronius",
+          "basis": "sidenote \"Petronius Catal.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Catalecta"
+        },
+        "text": "O gods above, may this madness be mine forever",
+        "warnings": []
+      }
+    ]
+  }
+}

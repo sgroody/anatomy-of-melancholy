@@ -1,0 +1,73 @@
+{
+  "2.5.1.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Excrements daily to be avoided by art or nature",
+        "in": "2.5.1.1",
+        "near": "2.5.1.1-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Beneficium ventris",
+    "text_sha1": "8101bfb56ad92e16f4d15c961cd9431bcec6148e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "The benefit of the belly",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A standard medical phrase for a regular bowel movement. Burton's main text at the anchor gives the idea in his own words: 'avoided' there means 'voided', i.e. passed from the body.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Excrements daily to be avoided by art or nature",
+            "in": "2.5.1.1",
+            "near": "2.5.1.1-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The relief of the belly",
+        "warnings": []
+      }
+    ]
+  }
+}

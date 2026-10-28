@@ -1,0 +1,1414 @@
+{
+  "3.3.1.1-f1": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "Opening lines of Micio's speech in the Adelphoe; Burton's following words 'the old man in the Comedy ... his adopted son' fit.",
+      "locus": "26–27",
+      "status": "probable",
+      "verified": false,
+      "work": "Adelphoe"
+    },
+    "text": "Storax non rediit hac nocte a coena Aeschinus, / Neque servulorum quispiam qui adversum ierant?",
+    "text_sha1": "39adfeb40de64aca8de1a208bf0603138503828e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The old man Micio calls his slave Storax, worried about his adopted son Aeschinus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "Opening lines of Micio's speech in the Adelphoe; Burton's following words 'the old man in the Comedy ... his adopted son' fit.",
+          "locus": "26–27",
+          "status": "probable",
+          "verified": false,
+          "work": "Adelphoe"
+        },
+        "text": "Storax! — Aeschinus has not come back from dinner tonight, / nor any of the slaves who went to meet him?",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f10": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "In Venus’ cause what mighty battles make / Your raving Bulls, and stirs for their herd’s sake? / And Harts and Bucks that are so timorous, / Will fight and roar, if once they be but jealous.",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Venere instructi quam magna gerunt / Grege pro toto bella juvenci, / Si conjugio timuere suo, / Poscunt timidi praelia cervi, / Et mugitus dant concepti signa furoris.",
+    "text_sha1": "ecf291bde7e53d70291d6a64c02178e264254cc7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton has 'instructi' ('equipped, armed'); the standard text of Seneca's Phaedra reads 'instincti' ('stirred up, roused by Venus'), and 'mugitu' (singular) for 'mugitus'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "In Venus’ cause what mighty battles make / Your raving Bulls, and stirs for their herd’s sake? / And Harts and Bucks that are so timorous, / Will fight and roar, if once they be but jealous.",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "Armed by Venus, what mighty wars young bulls wage / for the whole herd! / If they fear for their mates, / even timid stags call for battle, / and with bellowing give signs of the fury conceived within.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he will not admit another Bull to feed in the same pasture",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Oppian",
+      "basis": "text \"saith Oppian\"; sidenote \"Lib. 11 Cyneget.\"",
+      "locus": "Lib. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Cynegetica"
+    },
+    "text": "alium in pascuis non admittit",
+    "text_sha1": "05ebbc04867fa809749ae2eeba088eec8117ab9f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he will not admit another Bull to feed in the same pasture",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Oppian",
+          "basis": "text \"saith Oppian\"; sidenote \"Lib. 11 Cyneget.\"",
+          "locus": "Lib. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Cynegetica"
+        },
+        "text": "he does not admit another into the pastures",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Regnum non capit duos",
+    "text_sha1": "fb63e6ff6b2ae0289b3fe86654dbc9331ecd6bdc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial; used as a motto by Stephen Báthory, king of Poland.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "A kingdom does not hold two.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Fidem suam liberet",
+    "text_sha1": "bc9f052691a9d2dfaa2d52320176c9fe52ea0dfe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Let him free his own faith.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An idiom meaning that the truth of the story rests on the teller's word, not Burton's. The exact nuance of 'liberet' (discharge, make good) is slightly uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Let him vouch for it on his own credit.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he will quarrel and fight with whosoever come next, man or beast, in his jealous fits",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Pierio Valeriano (Pierius)",
+      "basis": "text \"as Pierius informeth us\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hieroglyphica"
+    },
+    "text": "& in quoscunque obvios insurgit, zelotypiae stimulis agitatus",
+    "text_sha1": "cf4bee8bbe68cc109454a4ce71c252d678e0334c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he will quarrel and fight with whosoever come next, man or beast, in his jealous fits",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Pierio Valeriano (Pierius)",
+          "basis": "text \"as Pierius informeth us\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hieroglyphica"
+        },
+        "text": "and he rises against whoever he meets, goaded by the stings of jealousy",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a metaphor derived from a River",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Acron; Donatus",
+      "basis": "text \"saith Acron in Hor. art. Poet. and Donat. in Ter. Eunuch.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "rivales a rivo",
+    "text_sha1": "9d77bfe06599d65d9ee9f81692178104e8b55218",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "rivals from a stream",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An etymology: 'rivales' (rivals) derived from 'rivus' (a stream), since those sharing one stream are rivals.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a metaphor derived from a River",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Acron; Donatus",
+          "basis": "text \"saith Acron in Hor. art. Poet. and Donat. in Ter. Eunuch.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "rivals, from rivus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "being corrival with Largus at Terracina, bit him by the arm",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f16",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"as Tully tells the story de oratore lib. 2\"; sidenote \"Erasmus chil. 1 Cent. 9 adag. 99.\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De oratore"
+    },
+    "text": "Lacerat lacertum Largi mordax Memmius",
+    "text_sha1": "2be77e5ad56224887032bad88817fa5b782d5e22",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "Memmius, given to biting, tears the arm of Largus.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An alliterative jingle (lacerat lacertum Largi); 'lacertus' means the upper arm, echoing 'lacerat'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "being corrival with Largus at Terracina, bit him by the arm",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f16",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"as Tully tells the story de oratore lib. 2\"; sidenote \"Erasmus chil. 1 Cent. 9 adag. 99.\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De oratore"
+        },
+        "text": "Biting Memmius mangles Largus's arm.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a furious emulation",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Petronius",
+      "basis": "text \"Petronius calleth this passion\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "amantium furiosam aemulationem",
+    "text_sha1": "bac8e1098c2d224b7a9d706b4e632755507e8c2d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "the furious emulation of lovers",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "aemulatio here means jealous rivalry. Burton's 'a furious emulation' leaves out amantium, 'of lovers'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a furious emulation",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Petronius",
+          "basis": "text \"Petronius calleth this passion\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the furious rivalry of lovers",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f18": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Stab me with sword, or poison strong / Give me to work my bane; / So thou court not my lass, so thou / From mistress mine refrain. / Command myself, my body, purse, / As thine own goods take all, / And as my nearest dearest friend, / I ever use thee shall. / O spare my Love, to have alone / Her to myself I crave, / Nay, Jove himself I’ll not endure / My Rival for to have.",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket",
+        "burton-english-verse-follows"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Propertius",
+      "basis": "Recognisable wording of Propertius 2.34 ('rivalem possum non ego ferre Iovem'). Burton introduces it in the preceding paragraph as 'an Elegy' of Propertius.",
+      "locus": "2.34",
+      "status": "probable",
+      "verified": false,
+      "work": "Elegies"
+    },
+    "text": "Tu mihi vel ferro pectus, vel perde veneno, / A domina tantum te modo tolle mea: / Te socium vitae, te corporis esse licebit, / Te dominum admitto rebus amice meis. / Lecto te solum, lecto te deprecor uno, / Rivalem possum non ego ferre Jovem.",
+    "text_sha1": "320ec722702359c4bd420580bbcfc6714c5f292e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English verse after the Latin is a free, expanded rendering. In the preceding paragraph he introduces the lines as Propertius's: 'as Propertius well describes it in an Elegy of his'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Stab me with sword, or poison strong / Give me to work my bane; / So thou court not my lass, so thou / From mistress mine refrain. / Command myself, my body, purse, / As thine own goods take all, / And as my nearest dearest friend, / I ever use thee shall. / O spare my Love, to have alone / Her to myself I crave, / Nay, Jove himself I’ll not endure / My Rival for to have.",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Propertius",
+          "basis": "Recognisable wording of Propertius 2.34 ('rivalem possum non ego ferre Iovem'). Burton introduces it in the preceding paragraph as 'an Elegy' of Propertius.",
+          "locus": "2.34",
+          "status": "probable",
+          "verified": false,
+          "work": "Elegies"
+        },
+        "text": "Destroy my breast with the sword, or with poison, / only take yourself away from my mistress: / you may be the companion of my life, of my body; / I admit you, my friend, as master of my goods. / Only from my bed, from my bed alone, I beg you to keep away: / I cannot bear even Jove as a rival.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "We are still apt to suspect the worst in such doubtful cases",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Senec. in Herc. fur.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hercules Furens"
+    },
+    "text": "Prona est timori semper in pejus fides",
+    "text_sha1": "e331df13ac9b6d5c0d41a38cf9e7e182a4872038",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Belief is always prone, for fear, towards the worse.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "We are still apt to suspect the worst in such doubtful cases",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Senec. in Herc. fur.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hercules Furens"
+        },
+        "text": "Fear is always inclined to believe the worst.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paolo Giovio",
+      "basis": "sidenote \"Jovius vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Jovius vita ejus",
+    "text_sha1": "e6a7ee50f437baaab620dd1ebfaab1de35fbd337",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Paolo Giovio (Paulus Jovius), the historian; 'his life' presumably means the life of the sultan named in the text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paolo Giovio",
+          "basis": "sidenote \"Jovius vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Jovius, in his life",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Largus",
+    "text_sha1": "051e345400eb4d35548bfc02535e4f08165ba861",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Roman personal name, kept as it stands; the man bitten by Memmius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Largus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Whether he would command him any more service",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f27",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Terence",
+      "basis": "sidenote \"Ter. Eun. act. 1 sc. 1.\"",
+      "locus": "act. 1 sc. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Eunuchus"
+    },
+    "text": "numquid aliud imperas?",
+    "text_sha1": "3095bef9b8a6b8871219c4cff6819aa77632c23a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Whether he would command him any more service",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f27",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Terence",
+          "basis": "sidenote \"Ter. Eun. act. 1 sc. 1.\"",
+          "locus": "act. 1 sc. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Eunuchus"
+        },
+        "text": "Is there anything else you command?",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "No love without a mixture of Jealousy",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f29",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Benedetto Varchi",
+      "basis": "text \"as Benedetto Varchi holds\"; sidenote \"In his Oration of Jealousy, put out by Fran. Sansovino.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Oration of Jealousy"
+    },
+    "text": "qui non Zelat, non amat",
+    "text_sha1": "469964bb4a517485d052af3875d11a1710002f6b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A commonplace; the phrase also occurs in Augustine. Burton attributes the idea to Varchi.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "No love without a mixture of Jealousy",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f29",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Benedetto Varchi",
+          "basis": "text \"as Benedetto Varchi holds\"; sidenote \"In his Oration of Jealousy, put out by Fran. Sansovino.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Oration of Jealousy"
+        },
+        "text": "he who is not jealous does not love",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "inde simultates, plerumque contentiones & inimicitiae",
+    "text_sha1": "663928faa112ca43b5f30fe7a5d0acd5f46f67a8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "hence grudges, and very often quarrels and enmities",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f31": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Alexander Guagninus; Dr. Fletcher",
+      "basis": "sidenote \"Alexander Guagninus Muscov. hist. descript. cap. 5. Dr. Fletcher\"",
+      "locus": "Muscov. hist. descript. cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Timet omnes ne insidiae essent",
+    "text_sha1": "3dea39c4d61ac66700a50a23e40ac4a324e1c469",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "He fears all, lest there be ambushes.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Refers to the Muscovite tsar 'Jo. Basilius' (Ivan IV). Fletcher wrote in English, so the Latin is probably Burton's own summary.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Alexander Guagninus; Dr. Fletcher",
+          "basis": "sidenote \"Alexander Guagninus Muscov. hist. descript. cap. 5. Dr. Fletcher\"",
+          "locus": "Muscov. hist. descript. cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "He fears everyone, lest there should be plots against him.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he durst not trust his children, every man about him he suspected for a traitor",
+        "in": "3.3.1.1",
+        "near": "3.3.1.1-f32",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Philippe de Commines (Cominaeus)",
+      "basis": "text \"Cominaeus telleth of him\"; sidenote \"Neapol. belli lib. 5.\"",
+      "locus": "Neapol. belli lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Nulli prorsus homini fidebat, omnes insidiari sibi putabat",
+    "text_sha1": "1f568cc1f4b486a27363a9a96425f9c2b0c40c8b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Said of Louis XI of France.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he durst not trust his children, every man about him he suspected for a traitor",
+            "in": "3.3.1.1",
+            "near": "3.3.1.1-f32",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Philippe de Commines (Cominaeus)",
+          "basis": "text \"Cominaeus telleth of him\"; sidenote \"Neapol. belli lib. 5.\"",
+          "locus": "Neapol. belli lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "He trusted absolutely no man; he thought everyone was plotting against him.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Peter Martyr",
+      "basis": "text \"if Peter Martyr’s authority be authentic, legat. Babylonicae lib. 3\"",
+      "locus": "lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Legatio Babylonica"
+    },
+    "text": "Crocodili zelotypi & uxorum amantissimi, &c",
+    "text_sha1": "9d470497e8d85c1f0f5165162bb29b638e6fc125",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Peter Martyr",
+          "basis": "text \"if Peter Martyr’s authority be authentic, legat. Babylonicae lib. 3\"",
+          "locus": "lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Legatio Babylonica"
+        },
+        "text": "Crocodiles are jealous and most loving towards their wives, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucan",
+      "basis": "sidenote \"Lucan.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pharsalia"
+    },
+    "text": "Omnisque potestas impatiens consortis erit",
+    "text_sha1": "2fa6b7f71d3f060a93eddc40a432682520e80f9a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucan",
+          "basis": "sidenote \"Lucan.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pharsalia"
+        },
+        "text": "and all power will be impatient of a partner",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in despotico Imperio",
+    "text_sha1": "dbdf16b02db0fe27459656f2a8e7cd0f0571c712",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in a despotic empire",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quod civibus tenere te invitis scias, &c",
+    "text_sha1": "bfef7c55d81aa89e5bbd7697fdb468c31a49f6f6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton breaks off the sentence with '&c.'; the sense is that power held against the people's will must be kept by fear.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "What you know you hold against your citizens' will, etc.",
+        "warnings": []
+      }
+    ]
+  }
+}

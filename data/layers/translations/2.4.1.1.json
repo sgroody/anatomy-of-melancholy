@@ -1,0 +1,1540 @@
+{
+  "2.4.1.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pliny",
+      "basis": "sidenote \"Plinius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Natural History"
+    },
+    "text": "Per mortes agunt experimenta & animas nostras negotiantur, & quod aliis exitiale hominem occidere, iis impunitas summa",
+    "text_sha1": "a70d40a2e3bbb5f798807030eeed323b333d81cb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Pliny's text (Natural History 29) runs roughly 'discunt periculis nostris et experimenta per mortes agunt, medicoque tantum hominem occidisse impunitas summa est'; Burton's version is a loose adaptation, and the phrase about trafficking in our souls is not Pliny's wording.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pliny",
+          "basis": "sidenote \"Plinius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural History"
+        },
+        "text": "They make their experiments by means of deaths and traffic in our souls, and what for others is a capital crime, to kill a man, is for them complete impunity",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "more danger there is from the Physician, than from the disease",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "plus a medico quam a morbo periculi",
+    "text_sha1": "288972c9a9c0680bdce2991234f0b03d823405b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "more danger there is from the Physician, than from the disease",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "more danger from the physician than from the disease",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If he prescribed hot medicines, they would prescribe cold",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f12",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"saith Cardan\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "miscentes pro calidis frigida, pro frigidis humida, pro purgantibus astringentia",
+    "text_sha1": "9e70bacbbc1583a5569c61f44d97fb06c43c2548",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English renders the first and last clauses separately: 'If he prescribed hot medicines, they would prescribe cold' and 'binders for purgatives'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If he prescribed hot medicines, they would prescribe cold",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"saith Cardan\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "mixing cold things in place of hot, moist in place of cold, astringents in place of purgatives",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"saith Cardan\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "omnia perturbabant",
+    "text_sha1": "08a36fde726ee546aeabe2dd0e3ef2455953f770",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"saith Cardan\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they threw everything into confusion",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Curtius killed him",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"saith Cardan\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Curtium damnabant",
+    "text_sha1": "314a05cdbdd3dcd46dd8746990f942c2a543c06b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Curtius killed him",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"saith Cardan\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they condemned Curtius",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Agrippa",
+      "basis": "sidenote \"Agrippa.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Omnis aegrotus, propria culpa perit, sed nemo nisi medici beneficio restituitur",
+    "text_sha1": "2201e847a42cac3294f1c2ccc934d211a50d878a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton attributes this to Agrippa, presumably his attack on physicians in De incertitudine et vanitate scientiarum.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Agrippa",
+          "basis": "sidenote \"Agrippa.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Every sick man dies by his own fault, but no one is restored except by the kindness of the physician",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quid pro quo, &c",
+    "text_sha1": "7a30a04496ddc966e630c01db372e53f25cad0de",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "what for what",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In apothecaries' usage, 'quid pro quo' meant putting one drug in place of the one prescribed.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "one thing for another, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "common executioners",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "carnifices",
+    "text_sha1": "754bd790f65d0c2449436932b9032c841894aeb1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "common executioners",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "executioners",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f18": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Chirurgus medico quo differt? scilicet isto, / Enecat hic succis, enecat ille manu: / Carnifice hoc ambo tantum differre videntur, / Tardius hi faciunt, quod facit ille cito.",
+    "text_sha1": "0abb8a7dd05c6c0aefe84d2d1dbc692012c84ffa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Surgeon from physician how differs? namely in this, / kills this one with juices, kills that one with hand: / from the executioner in this both only to differ seem, / more slowly these do what does he quickly.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In the preceding sentence Burton introduces this as 'that facete Epigram of Maximilianus Vrientius'. 'Hic' (with potions) is the physician and 'ille' (by hand) the surgeon.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "How does the surgeon differ from the physician? In this: / the one kills with potions, the other with his hand. / From the hangman both seem to differ only in this, / that they do slowly what he does quickly.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f19": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "Ovid's line 'tollere nodosam nescit medicina podagram', which Burton quotes word for word",
+      "locus": "1.3.23",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistulae ex Ponto"
+    },
+    "text": "Tollere nodosam nescit medicina Podagram;",
+    "text_sha1": "c08cc7e2809440aff05269ae591e6a4df58e3fdd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "Ovid's line 'tollere nodosam nescit medicina podagram', which Burton quotes word for word",
+          "locus": "1.3.23",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistulae ex Ponto"
+        },
+        "text": "Medicine knows not how to remove the knotty gout;",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f2": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "How many murders they make in a year",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Juvenal",
+      "basis": "sidenote \"Juven.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Quot Themison aegros autumno occiderit uno?",
+    "text_sha1": "b90195ef85b88d0cfcd0cf72929b602c2aee3f96",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Themison was a physician. Burton's 'How many murders they make in a year' adapts the line rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "How many murders they make in a year",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Juvenal",
+          "basis": "sidenote \"Juven.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "How many sick men Themison killed in a single autumn?",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the most deceitful thing of all",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "meretrix medicorum",
+    "text_sha1": "67d05612bb4c4d6b4fe35976dbf8861a195250ea",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial name for urine as a diagnostic sign: it is fickle and deceives physicians.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the most deceitful thing of all",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the physicians' harlot",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "wine and drunkenness are two distinct things",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "sidenote \"Chrysost. hom.\", which by its position probably belongs to this phrase",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Homilies"
+    },
+    "text": "aliud vinum, aliud ebrietas",
+    "text_sha1": "1af9b9192033cea66c8b49ac94e1ca811f981016",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial distinction. The sidenote \"Chrysost. hom.\" is placed in this part of the paragraph, between the notes for Xenophon and Ayrerer, so it probably belongs to this phrase. Chrysostom makes the same point: wine is not to blame, drunkenness is.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "wine and drunkenness are two distinct things",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "sidenote \"Chrysost. hom.\", which by its position probably belongs to this phrase",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Homilies"
+        },
+        "text": "wine is one thing, drunkenness another",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "were worthily counted Gods",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "merito pro diis habiti",
+    "text_sha1": "7565f9c0721d3205c5b6582730ece27d8c627e7f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "were worthily counted Gods",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "deservedly held to be gods",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a multitude of Physicians hath killed the Emperor",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "multitudo medicorum principem interfecit",
+    "text_sha1": "ab01486d57a86f70ddff2bcdc32540455ee72e40",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the dying words traditionally given to the emperor Hadrian, in the form 'a crowd of physicians killed the king'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a multitude of Physicians hath killed the Emperor",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a multitude of physicians has killed the prince",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Sallust",
+      "basis": "text \"as Sallust said of Carthage\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Jugurthine War"
+    },
+    "text": "praestat silere, quam pauca dicere",
+    "text_sha1": "47907fddf34b36b426ec5ba48166f3d054f93b17",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "it is better to be silent than to say few things",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton paraphrases Sallust. In Sallust, Jugurtha 19, the wording is \"de Carthagine silere melius puto quam parum dicere\" (\"about Carthage I think it better to be silent than to say too little\").",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Sallust",
+          "basis": "text \"as Sallust said of Carthage\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Jugurthine War"
+        },
+        "text": "it is better to keep silent than to say too little",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pharmacopoeia",
+    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Greek-derived Latin term for an official book of drug formulas and preparations. The word also passed into English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "pharmacopoeia",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that may freely kill folks and have a reward for it",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quibus impune licet hominem occidere",
+    "text_sha1": "3c0662767a8a552e2ce5daed0196d47a3c258eca",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This echoes the Pliny passage quoted in the earlier sidenote. Burton's English adds 'and have a reward for it'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that may freely kill folks and have a reward for it",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "who are permitted to kill a man with impunity",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f4": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Juridicis, medicis, fisco, fas vivere rapto,",
+    "text_sha1": "4f6498f7d2a1b14a78236627243452f34ee60f62",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "For lawyers, physicians and the treasury it is lawful to live by plunder,",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "Apollo's well-known boast to Daphne, 'inventum medicina meum est', which Burton quotes with the words reordered",
+      "locus": "1.521",
+      "status": "probable",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "inventum est medicina meum",
+    "text_sha1": "67a733d9cefcb90f35f131d5e85c08326aaad4d3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Apollo's words in Ovid read 'inventum medicina meum est'. Burton changes the word order.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "Apollo's well-known boast to Daphne, 'inventum medicina meum est', which Burton quotes with the words reordered",
+          "locus": "1.521",
+          "status": "probable",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "medicine is my invention",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Julius Caesar Scaliger",
+      "basis": "text \"whom Scaliger calls\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Fimbriam Hippocratis",
+    "text_sha1": "181355ab5fccbaec8b6022f583a75a37fa41e9d3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase dismisses Galen as a mere border or appendage hanging from Hippocrates' garment.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Julius Caesar Scaliger",
+          "basis": "text \"whom Scaliger calls\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the fringe of Hippocrates",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a fair gown, a velvet cap, the name of a Doctor is all in all",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f7",
+        "prefix": "",
+        "suffix": "",
+        "view": "with-notes"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Opinio facit medicos",
+    "text_sha1": "cf709d3e39b6632d668131335ee9f58493d7fa1e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "It is reputation, not skill, that makes a physician. Burton's English expands the point rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a fair gown, a velvet cap, the name of a Doctor is all in all",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f7",
+            "prefix": "",
+            "suffix": "",
+            "view": "with-notes"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Opinion makes physicians",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Morbus alius pro alio curatur aliud remedium pro alio",
+    "text_sha1": "13b02f9afb5a466e8b8db0cdfc6e6e78a2b85246",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "a disease other for other is cured, another remedy for another",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "One disease is treated in place of another, one remedy given in place of another",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "one saith this, another that",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "sidenote \"Contrarias proferunt sententias. Cardan.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Contrarias proferunt sententias",
+    "text_sha1": "3f0ebb6c44547bb9c0e8c9aa56b8fd9078e6974c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "one saith this, another that",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "sidenote \"Contrarias proferunt sententias. Cardan.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They put forward contrary opinions",
+        "warnings": []
+      }
+    ]
+  }
+}

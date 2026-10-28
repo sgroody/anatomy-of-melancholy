@@ -1,4 +1,262 @@
 {
+  "2.5.1.3-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "make the body clean before we can hope to do any good",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Augeae stabulum purgare",
+    "text_sha1": "1326f46581550e94143f1ef52036e6bba0baff6d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Proverbial, after Hercules' labour of cleaning King Augeas' stables. It is an adage in Erasmus's collection. Burton applies it to purging the body.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "make the body clean before we can hope to do any good",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to cleanse the Augean stable",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Helleborismus Matthioli",
+    "text_sha1": "9f395d6c6135b38a07bdf1be0d7f2a777bb6a3fa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A 'helleborism' is a course of treatment, or a preparation, based on hellebore. Matthiolus is Pietro Andrea Mattioli.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Matthiolus's helleborism",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "and not unfit to be given children",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Quercetan",
+      "basis": "sidenote \"Idem responsione ad Aubertum\"; text \"Quercetan prefers a Syrup of Hellebore\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "reply to Aubert"
+    },
+    "text": "Idem responsione ad Aubertum, Veratrum nigrum, alias timidum & periculosum, vini spiritu etiam & oleo commodum sic usui redditur ut etiam pueris tuto administrari possit",
+    "text_sha1": "3b32e323f304c95bc8ab2c67a4aa7274c2a6ddf3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "The same, in the reply to Aubert: black veratrum, otherwise timid and dangerous, with spirit of wine also and oil is thus rendered fit for use, that it can safely be administered even to boys.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Idem' refers to Quercetan, who is named in the main text. 'Timidum' is odd when applied to a drug. It is taken here as 'feared, fearsome'; it may be a corruption. 'Veratrum nigrum' is black hellebore.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and not unfit to be given children",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Quercetan",
+          "basis": "sidenote \"Idem responsione ad Aubertum\"; text \"Quercetan prefers a Syrup of Hellebore\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "reply to Aubert"
+        },
+        "text": "The same, in his reply to Aubert: black hellebore, otherwise a fearsome and dangerous drug, is by spirit of wine and also by oil made so fit for use that it may safely be given even to children.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f12": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aelianus Montaltus",
+      "basis": "text \"Aelianus Montaltus in his exquisite work de morb. capitis, cap. 31 de mel. sets a special receipt of Hellebore of his own\"",
+      "locus": "cap. 31 de mel.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de morbis capitis"
+    },
+    "text": "℞ Syrupe de pomis ℥ ii, aquae borag. ℥ iiii, / Ellebori nigri per noctem infusi in ligatura / 6 vel. 8 gr. mane facta collatura exhibe.",
+    "text_sha1": "20dc96b7cfcfcdd9af860a45b2adb2dc531c11f8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Syrupe' is presumably meant for 'syrupi' (of syrup). 'Ligatura' is taken as a small cloth bag tied up for the infusion. 'Aquae borag.' is expanded as borage water.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aelianus Montaltus",
+          "basis": "text \"Aelianus Montaltus in his exquisite work de morb. capitis, cap. 31 de mel. sets a special receipt of Hellebore of his own\"",
+          "locus": "cap. 31 de mel.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de morbis capitis"
+        },
+        "text": "Take syrup of apples 2 ounces, borage water 4 ounces, / of black hellebore, steeped overnight tied in a bag, / 6 or 8 grains; in the morning strain it and give it.",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.1.3-f13": {
     "kind": "verse",
     "lang": "la",
@@ -83,6 +341,1592 @@
           "work": null
         },
         "text": "Take half an ounce of epithyme, of lapis lazuli and agaric 2 drachms each, of scammony 1 drachm, 20 clove-pinks; let all be powdered, and let him take 4 scruples of this powder every week.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Borage wine",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Arnaldi vinum Buglossatum",
+    "text_sha1": "38a03cae42d3dfc1640d563911b349ab8f81b9bf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Arnold is presumably Arnold of Villanova. Burton calls it 'Borage wine'. Borage and bugloss were closely related and often confused.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Borage wine",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Arnold's bugloss wine",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a wonderful wine",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Mizaldus",
+      "basis": "text \"which Mizaldus calls\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "vinum mirabile",
+    "text_sha1": "1b4f222cbafd99018630b657157d40c2bf49a877",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a wonderful wine",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Mizaldus",
+          "basis": "text \"which Mizaldus calls\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "wonderful wine",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cardan’s Pulvis Hyacinthi",
+    "text_sha1": "33cb70474f1e0151f6373bb04394ba0e69713ec9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": "powder of hyacinth",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Cardan’s' is Burton's English and is left untranslated. 'Hyacinthus' here probably means the jacinth gemstone, a common ingredient in cordial powders, rather than the flower.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Jacinth Powder",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"Cardan’s Pulvis Hyacinthi, with which in his book de curis admirandis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de curis admirandis"
+    },
+    "text": "de curis admirandis",
+    "text_sha1": "7b7e61ddd1f5c0f2c86590912b5da8048b2ce4a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's title for a book by Cardano.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Cardan’s Pulvis Hyacinthi, with which in his book de curis admirandis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de curis admirandis"
+        },
+        "text": "On Wonderful Cures",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martin Ruland (Rulandus)",
+      "basis": "text \"Rulandus’ admirable water for melancholy, which cent. 2 cap. 96 he names\"",
+      "locus": "cent. 2 cap. 96",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Spiritum vitae aureum, Panaceam",
+    "text_sha1": "203451f6045c966ec94a3a708b6369e164c4ea0d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Rulandus's grand names for his water for melancholy. A panacea is a cure-all.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martin Ruland (Rulandus)",
+          "basis": "text \"Rulandus’ admirable water for melancholy, which cent. 2 cap. 96 he names\"",
+          "locus": "cent. 2 cap. 96",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the golden spirit of life, the panacea",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Electuarium lenitivum",
+    "text_sha1": "9df063d722b5602f7e8d854154dc2c8b3ce5c4e3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A standard pharmacy preparation: a mild laxative electuary.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "lenitive electuary",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f20": {
+    "kind": "verse",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "℞ Epithymi, thymi, ana drachmas duas, sacchari albi unciam / unam, croci grana tria, Cinamomi drachmam unam; misce, fiat / pulvis.",
+    "text_sha1": "749205ba94a0639356287b4535c46f54e7ca65c7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Epithyme is dodder of thyme, a parasitic plant, much used as a purge against melancholy. Burton's text does not say whose powder this is. In context it is probably the powder taken with the egg remedy he has just described.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take of epithyme and thyme, two drachms of each; of white sugar one / ounce; of saffron 3 grains; of cinnamon one drachm; mix, and make / a powder.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Aurum potabile",
+    "text_sha1": "39c9ee1bd56d8b41e32c90509386c30f89110145",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "drinkable gold",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An alchemical medicine of gold made drinkable. Francis Anthony, named in the next sentence, was its best-known promoter in England.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "potable gold",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johannes Rhenanus",
+      "basis": "text \"Rhenanus, a Dutch Chemist in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de Sole e puteo emergente"
+    },
+    "text": "de Sole e puteo emergente",
+    "text_sha1": "62fc3f866d9b421b6fdb8463b278f851756b9f0c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a book title. Johannes Rhenanus's chemical treatise has a title beginning 'Solis e puteo emergentis…' (1613). Burton gives a shortened form of it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johannes Rhenanus",
+          "basis": "text \"Rhenanus, a Dutch Chemist in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de Sole e puteo emergente"
+        },
+        "text": "On the Sun Rising out of the Well",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Giovanni Battista Codronchi (Codronchus)",
+      "basis": "sidenote \"Codronchus de sale absinthii.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De sale absinthii"
+    },
+    "text": "Codronchus de sale absinthii",
+    "text_sha1": "3205d5cad0a1fb8c57a05482216713b8ad7b54f6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a citation of Giovanni Battista Codronchi's treatise on salt of wormwood. It is the source for the claim at the anchor point, not a rendering of it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Giovanni Battista Codronchi (Codronchus)",
+          "basis": "sidenote \"Codronchus de sale absinthii.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De sale absinthii"
+        },
+        "text": "Codronchus, On the Salt of Wormwood",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "pro",
+    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Pro and con' was already an English idiom ('for and against'). Only 'pro' is marked here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "A famous line: 'grammatici certant et adhuc sub iudice lis est.'",
+      "locus": "78",
+      "status": "probable",
+      "verified": false,
+      "work": "Ars Poetica"
+    },
+    "text": "con, & adhuc subjudice lis est",
+    "text_sha1": "cb6be8b6043002b266af5b2521794630d9510437",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'con' is the English short form of contra ('against'), part of the idiom 'pro and con'. The Latin quotation begins at '& adhuc'. 'subjudice' is printed as one word, for 'sub judice'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "A famous line: 'grammatici certant et adhuc sub iudice lis est.'",
+          "locus": "78",
+          "status": "probable",
+          "verified": false,
+          "work": "Ars Poetica"
+        },
+        "text": "against, and the case is still before the judge",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lapis Armenus",
+    "text_sha1": "69b889618b8033c9cc478e0f2a2b99b9c1cea78c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A blue copper mineral, azurite, used as a purge for melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Armenian stone",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "pulvis Hali",
+    "text_sha1": "490716d9610d3de2e477caeb1b6ce9cef4ebf19d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A compound powder named after Hali, probably the Arabic physician Haly Abbas.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hali's powder",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Aqua Chelidonia",
+    "text_sha1": "ba8c9fb6eb87edf554cd0e6d5db1e2c186a93578",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A chemical water distilled from celandine (Chelidonium).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "celandine water",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "hot medicines increase the disease by drying too much",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f34",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ne insaniores inde fiant",
+    "text_sha1": "15b146e2f3f57f97c06021d01c8927b0297fc7dc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "lest they become more insane from it",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English that follows gives the reason (drying too much) rather than rendering the phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "hot medicines increase the disease by drying too much",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f34",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "lest they be made madder by them",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f35": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "To be Sea-sick first is very good at seasonable times",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f35",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Pliny",
+      "basis": "sidenote \"Plinius lib. 31 cap. 6.\"",
+      "locus": "book 31 chapter 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Natural History"
+    },
+    "text": "Navigationes ob vomitionem prosunt plurimis morbis capitis, & omnibus ob quae Helleborum bibitur",
+    "text_sha1": "0bda1f528fedfcca83c946674171f871b8b98728",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "To be Sea-sick first is very good at seasonable times",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f35",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Pliny",
+          "basis": "sidenote \"Plinius lib. 31 cap. 6.\"",
+          "locus": "book 31 chapter 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Natural History"
+        },
+        "text": "Sea voyages, because of the vomiting they cause, benefit very many diseases of the head, and all those for which hellebore is drunk.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f36": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he calls God so solemnly to witness, he hath in this kind done many excellent cures",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f36",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Donatus ab Altomari (Donato Antonio Altomare)",
+      "basis": "sidenote \"Donatus ab Altomari cap. 7.\"",
+      "locus": "cap. 7",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Testor Deum, me multos melancholicos, hujus solius syrupi usu curasse, facta prius purgatione",
+    "text_sha1": "332687174d49ce16cbe05db05a46ea21fe646fff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "I call God to witness, I many melancholics, by use of this sole syrup, to have cured, a purgation having been made first",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he calls God so solemnly to witness, he hath in this kind done many excellent cures",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f36",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Donatus ab Altomari (Donato Antonio Altomare)",
+          "basis": "sidenote \"Donatus ab Altomari cap. 7.\"",
+          "locus": "cap. 7",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "I call God to witness that I have cured many melancholic persons by the use of this syrup alone, after first giving a purge.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "verbatim",
+    "text_sha1": "d99a2118f45121587f2aa88f0bbe3e6a0222afec",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "word for word",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Diaphenicum",
+    "text_sha1": "cbff1c190aaf887cf42615c227507dad41ee56d5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The name of a compound medicine, kept as written. It is generally taken to be diaphoenicon, a purging electuary made with dates.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Diaphenicum",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cassia",
+    "text_sha1": "5b6c03e2db1d3a66bd86b8bab442a814ba3e6e3b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A drug name: cassia fistula, the pulp of the purging cassia pod, a mild laxative.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Cassia",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to stir up the humour (as one purge commonly doth) and not to prosecute, doth more harm than good",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "movere & non educere in omnibus malum est",
+    "text_sha1": "3c48bd2735c175a985480e6b8e7b6bad229100f4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'as one observes' may refer to the sidenote 'Piso.', but it is not certain which sidenote belongs to this passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to stir up the humour (as one purge commonly doth) and not to prosecute, doth more harm than good",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to stir up and not to draw out is bad in every case",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they must now and then remit, and let nature have some rest",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "danda quies naturae",
+    "text_sha1": "854a82340afbb0857a7d5443fb299367682b923b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they must now and then remit, and let nature have some rest",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "nature must be given rest",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rhazes",
+      "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Rhasis, Saepe valent ex Helleboro",
+    "text_sha1": "d066bdabeb92b90dd09b05f9d291a496b8456102",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Rhazes: often they are well from hellebore.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rhazes",
+          "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Rhazes: they often recover by means of hellebore.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "party be strong, and it warily given",
+        "in": "2.5.1.3",
+        "near": "2.5.1.3-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Modo caute detur & robustis",
+    "text_sha1": "205cf8d2da2d8305995d8bcdf68fcae59b973edd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English at the anchor begins 'if the party be strong', but the sidenote marker splits those words, so only the words after the marker can be quoted.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "party be strong, and it warily given",
+            "in": "2.5.1.3",
+            "near": "2.5.1.3-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Provided it be given cautiously, and to the strong.",
         "warnings": []
       }
     ]

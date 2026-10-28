@@ -1,0 +1,937 @@
+{
+  "1.3.1.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Melanelius, out of Galen",
+      "basis": "sidenote \"Melanel. e Gal.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Nigrescit hic humor aliquando supercalefactus, aliquando superfrigefactus",
+    "text_sha1": "07a89e3412c1cd7ad2bea70736aba1ed2e047b7e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Melanelius, out of Galen",
+          "basis": "sidenote \"Melanel. e Gal.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "This humour turns black, sometimes when overheated, sometimes when overchilled.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "mighty and often watchings",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ingentes habent & crebras vigilias (Aretaeus",
+    "text_sha1": "e2e46425b00847cfb63e969b7dae3113cdbb2ce7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage includes the author's name, Aretaeus, but not its closing parenthesis.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "mighty and often watchings",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They have great and frequent wakings (Aretaeus)",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "not much in quantity",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "urina pauca, acris, biliosa (Aretaeus",
+    "text_sha1": "83bfee63c3eccc1a03a56336d8f35cb9dc8cb788",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage includes the author's name but not its closing parenthesis. 'biliosa' means tinged with yellow bile (choler).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "not much in quantity",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "urine scanty, sharp, choleric (Aretaeus)",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "much twinkling of their eyes",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f14",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Avicenna",
+      "basis": "text \"and so doth Avicenna\" and \"lib. 3 Fen 1 Tract. 4 cap. 18\"",
+      "locus": "lib. 3 Fen 1 Tract. 4 cap. 18",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Canon"
+    },
+    "text": "oculos habentes palpitantes, trauli, vehementer rubicundi, &c",
+    "text_sha1": "a4e5cb55bc387ea6aa13be3629fb61d0da1e295c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "having eyes palpitating, lisping/stammering, vehemently ruddy, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'trauli' means lisping or stammering, which matches Burton's 'They stut most part'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "much twinkling of their eyes",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f14",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Avicenna",
+          "basis": "text \"and so doth Avicenna\" and \"lib. 3 Fen 1 Tract. 4 cap. 18\"",
+          "locus": "lib. 3 Fen 1 Tract. 4 cap. 18",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Canon"
+        },
+        "text": "having twitching eyes, stammering, very ruddy, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jacchinus",
+      "basis": "sidenote \"saith Jacchinus in 15, 9 Rhasis\"",
+      "locus": "in 15, 9 Rhasis",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Commentary on Rhazes"
+    },
+    "text": "annum",
+    "text_sha1": "3a51b5158a763372323c146a73bc43f616ba5bec",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Only the last word of 'Post. 40 aetat. annum' is marked. The whole phrase means 'after the fortieth year of age'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jacchinus",
+          "basis": "sidenote \"saith Jacchinus in 15, 9 Rhasis\"",
+          "locus": "in 15, 9 Rhasis",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Commentary on Rhazes"
+        },
+        "text": "year",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nicolas Piso",
+      "basis": "sidenote \"Nic. Piso.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Inflatio carotidum, &c",
+    "text_sha1": "93fa49afda53d7bf68260cced7c6883ac68fba01",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nicolas Piso",
+          "basis": "sidenote \"Nic. Piso.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Swelling of the carotids, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "very red and high-coloured",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Montaltus, out of Galen",
+      "basis": "text \"as Montaltus cap. 16 observes out of Galen. lib. 3 de locis affectis\"",
+      "locus": "Montaltus cap. 16; Galen lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De locis affectis"
+    },
+    "text": "impense rubri",
+    "text_sha1": "368261c4f9b9cd35fa09ca29d78f9c4303e3528c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "very red and high-coloured",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Montaltus, out of Galen",
+          "basis": "text \"as Montaltus cap. 16 observes out of Galen. lib. 3 de locis affectis\"",
+          "locus": "Montaltus cap. 16; Galen lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De locis affectis"
+        },
+        "text": "exceedingly red",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hippocrates",
+      "basis": "text \"Hippocrates in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De insania et melancholia"
+    },
+    "text": "de insania & melan",
+    "text_sha1": "ceb60ae8d752991dd33504b452923bed5b54d854",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A book title; 'melan.' is Burton's abbreviation, read here as melancholia. The title is as Burton gives it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hippocrates",
+          "basis": "text \"Hippocrates in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De insania et melancholia"
+        },
+        "text": "On Madness and Melancholy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "sidenote \"Virg. Aen.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "Anna soror, quae me suspensam insomnia terrent?",
+    "text_sha1": "447d08dd08c0fbb485d63371555f8d35c5ae45b1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Dido's words to her sister. Burton quotes the line for its 'insomnia' (dreams), to illustrate fearful dreams.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "sidenote \"Virg. Aen.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "Sister Anna, what dreams are these that frighten me and keep me in suspense?",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a leaping in many parts of the body",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f4",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "saltum in multis corporis partibus",
+    "text_sha1": "adac231a63c973fdf5c2c48a1cf1ea31f3151cad",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a leaping in many parts of the body",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f4",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a leaping in many parts of the body",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Aliqui tamen fixis oculis plerumque sunt",
+    "text_sha1": "050c8118fba1c7cebc262526110e7a68a692d8ef",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Some, however, mostly have fixed eyes.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they covet to eat, but cannot digest",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Rhazes",
+      "basis": "text \"as Rhasis hath it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "multa appetunt, pauca digerunt",
+    "text_sha1": "aaff04b3317967c36d049bf947da1bd24e3093fd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they covet to eat, but cannot digest",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Rhazes",
+          "basis": "text \"as Rhasis hath it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they crave much, digest little",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "laughing, weeping",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Gordonius",
+      "basis": "sidenote \"Gordonius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Gordonius: Modo rident, modo flent, silent, &c",
+    "text_sha1": "b7a094fbfdb47487e6449baba6c9ebaf9db4da94",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "laughing, weeping",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Gordonius",
+          "basis": "sidenote \"Gordonius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Gordonius: Now they laugh, now they weep, they are silent, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "diversity of melancholy signs",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aetius",
+      "basis": "text \"so will Aetius have\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "melancholica deliria multiformia",
+    "text_sha1": "fe7e3e9714cb5b21ca51113cb5abea1687983de3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Burton renders it loosely as 'diversity of melancholy signs'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "diversity of melancholy signs",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aetius",
+          "basis": "text \"so will Aetius have\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "melancholy deliria of many forms",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -1,4 +1,321 @@
 {
+  "2.4.1.3-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+      "locus": "4.220–226",
+      "status": "probable",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Si germanus ei charus, materque paterque",
+    "text_sha1": "477e7a40354fe4b3f9a6e7b9489828815760242c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+          "locus": "4.220–226",
+          "status": "probable",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "not though his dear brother, and his mother and father",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "it preserves both body and mind, from fears, cares, griefs",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Antonius Musa",
+      "basis": "text \"Antonius Musa that renowned Physician to Caesar Augustus, in his book which he writ of the virtues of Betony, cap. 6\"",
+      "locus": "cap. 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De herba vettonica"
+    },
+    "text": "animas hominum & corpora custodit, securas de metu reddit",
+    "text_sha1": "1a5165af93a2932998792f8ba3e50c8c8f785e63",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "it preserves both body and mind, from fears, cares, griefs",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Antonius Musa",
+          "basis": "text \"Antonius Musa that renowned Physician to Caesar Augustus, in his book which he writ of the virtues of Betony, cap. 6\"",
+          "locus": "cap. 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De herba vettonica"
+        },
+        "text": "it guards the souls and bodies of men, and makes them secure from fear",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "will cause a sudden alteration, drive away dumps, and cheer up the heart",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Optimum medicamentum in celeri cordis confortatione, & ad omnes qui tristantur",
+    "text_sha1": "7e053c1f6d7b78d650b57570fd8b34113f63bccd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to the balm that Penotus takes from Aponensis (Pietro d'Abano).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "will cause a sudden alteration, drive away dumps, and cheer up the heart",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The best medicine for the swift comforting of the heart, and for all who are sad",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+      "locus": "4.220–226",
+      "status": "probable",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Oppetat, ante oculos ferro confossus atroci",
+    "text_sha1": "ff67324188d83b6bcbf59e0584b9d0e07fb7755b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+          "locus": "4.220–226",
+          "status": "probable",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "should perish before his eyes, pierced through by cruel steel",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Herba solis",
+    "text_sha1": "cbfa92924d0d351dc50748960fce9df5c8a9af22",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Penotus's name for his favourite plant. Burton equates it with 'Dutch Sindaw' (probably the plant known in Dutch as sindauw, i.e. lady's mantle). The exact identification is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "herb of the sun",
+        "warnings": []
+      }
+    ]
+  },
   "2.4.1.3-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -97,6 +414,846 @@
           "work": null
         },
         "text": "Satyrion and rocket raise the penis; vitex and water lily extinguish the seed",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "of a Wolf’s liver",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Galen",
+      "basis": "sidenote \"Galen lib. Epar lupi epaticos curat.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Epar lupi epaticos curat",
+    "text_sha1": "0afe0fcf7ac099a1db737375a1706e8ce5958681",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "epar and epaticos are spellings without the h of hepar and hepaticos.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "of a Wolf’s liver",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Galen",
+          "basis": "sidenote \"Galen lib. Epar lupi epaticos curat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A wolf's liver cures those who are sick in the liver",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Oswald Croll",
+      "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De signaturis internis rerum"
+    },
+    "text": "de Internis rerum signaturis, de herbis particularibus parti cuique convenientibus",
+    "text_sha1": "f6c7d83c56aaba998339e4d581ef12b0cddb18bb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to Oswald Croll's treatise on signatures, which assigns herbs to the parts of the body they were held to resemble or suit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Oswald Croll",
+          "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De signaturis internis rerum"
+        },
+        "text": "On the Internal Signatures of Things, on particular herbs suited to each part",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernardus Penottus",
+      "basis": "sidenote \"Praef. denar. med.\" with text \"Bernardus Penottus prefers his Herba solis\"",
+      "locus": "preface",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Denarius medicus"
+    },
+    "text": "Omnes capitis dolores & phantasmata tollit",
+    "text_sha1": "cc3574b29a94a0e1cc768474e5c887d575ca01e0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'phantasmata' means apparitions or false imaginations.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernardus Penottus",
+          "basis": "sidenote \"Praef. denar. med.\" with text \"Bernardus Penottus prefers his Herba solis\"",
+          "locus": "preface",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Denarius medicus"
+        },
+        "text": "It removes all pains of the head and phantasms",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Guillaume Rondelet",
+      "basis": "sidenote \"Rondoletius.\" followed by \"Schenkius observ. med. cen. 5 obser. 86.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Elenum quod vim habet miram ad hilaritatem, & multi pro secreto habent",
+    "text_sha1": "4721a9877966dfc76d2e570b468340cc141f8fea",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Elenum is helenium, elecampane. 'pro secreto habent' means they treat it as a secret remedy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Guillaume Rondelet",
+          "basis": "sidenote \"Rondoletius.\" followed by \"Schenkius observ. med. cen. 5 obser. 86.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Elecampane, which has a wonderful power to produce cheerfulness, and which many keep as a secret",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "excrements of beasts, all good against several diseases",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f24",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Stercus pecoris ad Epilepsiam, &c",
+    "text_sha1": "ad9848f5fc47438d254741ba229d8598bf889be2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "pecus can mean cattle or sheep, or livestock in general.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "excrements of beasts, all good against several diseases",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f24",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Dung of cattle for epilepsy, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "agnus Castus",
+    "text_sha1": "66e50b83d1ee30a46f753831dc5e3e55eacab351",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "chaste lamb",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The standard herbal name of the chaste tree (Vitex agnus-castus), which was thought to suppress sexual desire. It is the 'vitex' of the Latin earlier in the sentence. Burton uses it as the plant's English name.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "agnus castus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Joannes de Laet",
+      "basis": "sidenote \"Laet. occid. Indiae descrip. lib. 10 cap. 2.\"",
+      "locus": "lib. 10 cap. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Description of the West Indies"
+    },
+    "text": "monstrosa facultate, &c",
+    "text_sha1": "18a5da02c448d23cbd063be2b76b7b28599648a3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase is cut short with '&c.'. 'monstrosa' means prodigious or unnatural, referring to the plant's intoxicating effects.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Joannes de Laet",
+          "basis": "sidenote \"Laet. occid. Indiae descrip. lib. 10 cap. 2.\"",
+          "locus": "lib. 10 cap. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Description of the West Indies"
+        },
+        "text": "of monstrous power, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Scolopendria",
+    "text_sha1": "79eea9201f669db6bb35098a5c106ed5e9fcf6f4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The herbalists' name for hart's-tongue fern (or the related spleenwort), which was traditionally used for the spleen. It is kept as a plant name.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Scolopendria",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sabina foetum educit",
+    "text_sha1": "57cc9dea5d84692d2fa7555ac75a910602ee50d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Savin (Juniperus sabina) was a well-known abortifacient. In the main text Burton lists savin among the herbs for the womb.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Savin brings out the foetus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Dicor Borago, gaudia semper ago",
+    "text_sha1": "4da8df876685c61d8e3294a73bdca364fd1a3c88",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "I am called Borago, I always drive joys",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A rhyming jingle on Borago / ago. Proverbial: a version of the old saying 'Ego Borago gaudia semper ago'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "I am called Borage; I always bring joys",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vino infusum hilaritatem facit",
+    "text_sha1": "0b0684e16977cd1e8cc035e3f7904e909c981d85",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Steeped in wine, it produces cheerfulness",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f7": {
+    "kind": "phrase",
+    "lang": "grc",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "sidenote \"Odyss. Δ.\"",
+      "locus": "Δ",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Δ",
+    "text_sha1": "851e599a87abdf3189d7611197d1149692dc68a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Delta",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Δ (Delta) is the conventional Greek letter-number for Book 4 of the Odyssey, where Helen gives the Nepenthes.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "sidenote \"Odyss. Δ.\"",
+          "locus": "Δ",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "Book 4",
+        "warnings": [
+          "length ratio 6.00"
+        ]
+      }
+    ]
+  },
+  "2.4.1.3-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "A Latin rendering of Homer's description of Helen's drug: a man who drinks it would shed no tear even if mother, father, brother or son were killed before his eyes. The Latin translator is not identified.",
+      "locus": "4.220–226",
+      "status": "probable",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Qui semel id patera mistum Nepenthes Iaccho",
+    "text_sha1": "02125d02432a689fa10b31204fcecf2f134ea5a3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Who once that from-the-bowl mixed Nepenthes with-Iacchus",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Iacchus is a name of Bacchus, used here for wine. The verb 'hauserit' (has drained) begins the next line. These lines are a Latin verse version of Homer.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "A Latin rendering of Homer's description of Helen's drug: a man who drinks it would shed no tear even if mother, father, brother or son were killed before his eyes. The Latin translator is not identified.",
+          "locus": "4.220–226",
+          "status": "probable",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "Whoever, once, that Nepenthes mixed with wine in the bowl",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+      "locus": "4.220–226",
+      "status": "probable",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Hauserit, hic lachrymam, non si suavissima proles,",
+    "text_sha1": "db824b5ac20a12154ca593ad314c784aec9e7644",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "has drained, he a tear, not if sweetest offspring,",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The verb governing 'lachrymam' (tear) is left unstated and is understood as 'would shed'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "The same Latin verse rendering of Homer's Nepenthes passage.",
+          "locus": "4.220–226",
+          "status": "probable",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "has drained, he will shed no tear, not though his sweetest offspring,",
         "warnings": []
       }
     ]
