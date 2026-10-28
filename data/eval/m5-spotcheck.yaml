@@ -1,0 +1,424 @@
+purpose: 'M5 spot-check of the machine translation layer: a random 2 % of all passages, plus every record the runner''s
+  post-checks flagged. Drawn, and the rules below fixed, before any labelling.'
+drawn: '2026-10-28'
+seed: 20261030
+population: 7769
+raters: 'first: Claude in session (claude-opus-5-5); second: claude-opus-5-5 blind via `burton tr-audit` (prompt
+  tr-audit-v1). Disagreements adjudicated with reasons. The translator is the same model, so errors the model makes
+  systematically may be missed by both raters.'
+labels:
+  translation:
+    good: accurate and complete
+    minor: a small slip (a word, a nuance, number or tense) that does not mislead about the sense
+    error: the sense is wrong, or part of the passage is missing or added, or it misleads
+  self_translation:
+    ok: the verdict (none/full/partial/paraphrase/undetermined) fits Burton's text
+    wrong: it claims a rendering that is not there, or misses one plainly beside the passage, or misjudges full
+      vs partial vs paraphrase so that the reader would be misled
+  source:
+    ok: 'unidentified; or the claim is supported (burton-cites: Burton''s own words name that source; probable:
+      a stated basis that holds)'
+    unsupported: an attribution that the evidence does not support, or that is wrong
+rules:
+  R1: 'random sample: translation errors at most 5 % (at most 7 of 156) after adjudication'
+  R2: 'random sample: unsupported source claims at most 2 % of the attributed claims in it; and every unsupported
+    claim found anywhere in this check is downgraded to unidentified, recorded as a decision in data/manual/'
+  R3: 'random sample: wrong self-translation verdicts at most 5 % (at most 7 of 156)'
+  on_failure: a failed R1 or R3 is reported with its numbers and a corrective pass is proposed to the owner; nothing
+    is re-run automatically
+  errors: every translation adjudicated `error` (sample or flagged) is re-translated through the runner and the
+    new version checked by the same two raters; one still in error is queued in state/review/translate.jsonl and
+    reported as deferred
+sample:
+- 1.1.1.1-f8
+- 1.1.2.11-f6
+- 1.1.3.2-f8
+- 1.2.1.2-f174
+- 1.2.1.2-f228
+- 1.2.1.2-f276
+- 1.2.1.2-f300
+- 1.2.1.2-f47
+- 1.2.1.3-f23
+- 1.2.2.2-f11
+- 1.2.2.2-f19
+- 1.2.2.2-f28
+- 1.2.2.3-f36
+- 1.2.2.4-f17
+- 1.2.2.5-f17
+- 1.2.2.5-f29
+- 1.2.2.6-f18
+- 1.2.2.6-f51
+- 1.2.3.1-f12
+- 1.2.3.10-f13
+- 1.2.3.10-f46
+- 1.2.3.10-f72
+- 1.2.3.14-f28
+- 1.2.3.14-f78
+- 1.2.3.15-f185
+- 1.2.3.15-f192
+- 1.2.3.15-f22
+- 1.2.3.15-f258
+- 1.2.3.15-f277
+- 1.2.3.15-f38
+- 1.2.3.15-f50
+- 1.2.3.2-f1
+- 1.2.4.3-f5
+- 1.2.4.4-f6
+- 1.2.4.6-f100
+- 1.2.4.6-f96
+- 1.2.4.7-f100
+- 1.2.4.7-f4
+- 1.2.5.3-f3
+- 1.3.1.1-f2
+- 1.3.1.2-f94
+- 1.3.1.4-f38
+- 1.3.1.4-f7
+- 1.4.1.1-f115
+- 1.4.1.1-f53
+- 1.4.1.1-f77
+- 1.4.1.1-f9
+- 2.1.2.1-f18
+- 2.1.2.1-f7
+- 2.1.3.1-f14
+- 2.1.4.1-f14
+- 2.2.2.1-f36
+- 2.2.3.1-f126
+- 2.2.3.1-f146
+- 2.2.3.1-f42
+- 2.2.4.1-f137
+- 2.2.4.1-f322
+- 2.2.4.1-f55
+- 2.2.5.1-f10
+- 2.2.6.1-f17
+- 2.2.6.1-f32
+- 2.2.6.4-f33
+- 2.2.6.4-f6
+- 2.3.2.1-f123
+- 2.3.2.1-f2
+- 2.3.3.1-f100
+- 2.3.3.1-f125
+- 2.3.3.1-f150
+- 2.3.3.1-f154
+- 2.3.3.1-f68
+- 2.3.3.1-f81
+- 2.3.7.1-f104
+- 2.3.7.1-f110
+- 2.3.7.1-f140
+- 2.3.7.1-f163
+- 2.3.7.1-f75
+- 2.4.1.3-f24
+- 2.4.1.5-f40
+- 2.5.1.5-f7
+- 2.5.1.6-f1
+- 3.1.1.1-f7
+- 3.1.2.2-f1
+- 3.1.2.2-f8
+- 3.1.2.3-f37
+- 3.2.1.1-f16
+- 3.2.1.1-f2
+- 3.2.1.1-f30
+- 3.2.2.1-f50
+- 3.2.2.2-f100
+- 3.2.2.2-f111
+- 3.2.2.2-f66
+- 3.2.2.2-f77
+- 3.2.2.3-f18
+- 3.2.2.4-f110
+- 3.2.2.4-f152
+- 3.2.2.4-f57
+- 3.2.2.4-f65
+- 3.2.3.1-f190
+- 3.2.3.1-f207
+- 3.2.3.1-f218
+- 3.2.3.1-f342
+- 3.2.3.1-f422
+- 3.2.3.1-f425
+- 3.2.3.1-f434
+- 3.2.5.1-f18
+- 3.2.5.2-f21
+- 3.2.5.3-f13
+- 3.2.5.3-f181
+- 3.2.5.3-f188
+- 3.2.5.3-f51
+- 3.2.5.3-f89
+- 3.2.5.4-f17
+- 3.2.5.5-f17
+- 3.2.5.5-f40
+- 3.3.1.1-f10
+- 3.3.1.2-f52
+- 3.3.1.2-f58
+- 3.3.1.2-f62
+- 3.3.4.1-f35
+- 3.3.4.2-f3
+- 3.3.4.2-f39
+- 3.3.4.2-f64
+- 3.4.1.1-f114
+- 3.4.1.1-f43
+- 3.4.1.2-f103
+- 3.4.1.3-f205
+- 3.4.1.3-f75
+- 3.4.2.1-f86
+- 3.4.2.4-f1
+- 3.4.2.4-f4
+- djr-f1159
+- djr-f1207
+- djr-f1234
+- djr-f1266
+- djr-f1323
+- djr-f1344
+- djr-f1359
+- djr-f1374
+- djr-f146
+- djr-f1480
+- djr-f280
+- djr-f39
+- djr-f425
+- djr-f448
+- djr-f449
+- djr-f58
+- djr-f6
+- djr-f61
+- djr-f618
+- djr-f63
+- djr-f690
+- djr-f75
+- djr-f758
+- djr-f79
+- djr-f816
+- djr-f885
+flagged:
+  1.1.2.4-f5:
+  - burton_quote 'a part worthy of admiration, that can yield such variety of affections' does not occur exactly
+    once in Burton's nearby English; copy it exactly or use status none
+  1.2.1.1-f1:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.1.1-f13:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.1.2-f113:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.1.2-f119:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.1.2-f291:
+  - burton_quote 'he rageth while he may to comfort himself, as Lactantius thinks, with other men’s falls, he labours
+    all he can to bring them into the same pit of perdition with him' does not occur exactly once in Burton's nearby
+    English; copy it exactly or use status none
+  1.2.1.2-f309:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.1.2-f32:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.2.5-f1:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.2.6-f19:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.2.6-f20:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.3.1-f15:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.3.10-f72:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.3.13-f8:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.3.15-f16:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.3.2-f22:
+  - 'glossary: morbus not rendered as [''disease'', ''diseases'', ''malady'', ''maladies'']'
+  1.2.3.7-f13:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.4.7-f104:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.2.4.7-f54:
+  - 4+ source words left untranslated
+  1.3.1.2-f126:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.3.1.2-f24:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.3.1.2-f25:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.3.1.2-f26:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.3.1.2-f27:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.3.1.2-f93:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.4.1.1-f67:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  1.4.1.1-f70:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.1.3.1-f19:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.1.3.1-f24:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.1.2-f13:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.2.1-f37:
+  - 'glossary: humor not rendered as [''humour'', ''humours'']'
+  2.2.3.1-f16:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.4.1-f158:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.4.1-f159:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.4.1-f39:
+  - length ratio 6.00
+  2.2.4.1-f5:
+  - burton_quote 'the nutriment is well concocted in the stomach' does not occur exactly once in Burton's nearby
+    English; copy it exactly or use status none
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.2.4.1-f58:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.3.6.1-f25:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  2.4.1.3-f7:
+  - length ratio 6.00
+  2.5.1.5-f2:
+  - length ratio 6.00
+  3.1.1.1-f27:
+  - burton_quote 'more willing to read such toys, than I am to write' does not occur exactly once in Burton's nearby
+    English; copy it exactly or use status none
+  3.1.1.2-f13:
+  - length ratio 5.00
+  3.2.1.1-f3:
+  - length ratio 5.00
+  3.2.1.2-f61:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.2.1.2-f64:
+  - burton_quote 'both imagination and reason are misaffected' does not occur exactly once in Burton's nearby English;
+    copy it exactly or use status none
+  3.2.2.1-f12:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.2.2.1-f4:
+  - length ratio 6.50
+  3.2.3.1-f288:
+  - 4+ source words left untranslated
+  3.2.3.1-f32:
+  - 4+ source words left untranslated
+  3.2.3.1-f410:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.2.3.1-f49:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.2.5.4-f9:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.2.5.5-f6:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.3.2.1-f21:
+  - length ratio 5.00
+  3.3.2.1-f30:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.4.1.1-f108:
+  - burton_quote 'for to that end were we born, to love this object, as Melanchthon discourseth, and to enjoy it.
+    And him our will would have loved and sought alone as our summum bonum, or principal good, and all other good
+    things for God’s sake' does not occur exactly once in Burton's nearby English; copy it exactly or use status
+    none
+  3.4.1.1-f20:
+  - burton_quote 'an habit infused of God, as Thomas holds, 2. 1 quaest. 23, by which a man is inclined to love
+    God above all' does not occur exactly once in Burton's nearby English; copy it exactly or use status none
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.4.1.2-f186:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.4.1.3-f220:
+  - explanatory phrase in translation
+  3.4.2.1-f59:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+  3.4.2.3-f44:
+  - length ratio 3.67
+  3.4.2.3-f45:
+  - length ratio 3.67
+  3.4.2.4-f16:
+  - length ratio 3.67
+  3.4.2.6-f80:
+  - explanatory phrase in translation
+  djr-f380:
+  - length ratio 0.23
+  djr-f922:
+  - burton-cites needs a basis that quotes, in double quotation marks, Burton's own words naming the source (his
+    sidenote or his text); otherwise use unidentified or probable
+result:
+  second_rater: claude-opus-5-5, prompt tr-audit-v1, blind; `burton tr-audit`; labels in m5-spotcheck-rater2.jsonl;
+    26 calls (2 refused for a mistyped or missing id and redone), ledger state/tr-audit/ledger.jsonl
+  agreement:
+    translation: 218/221
+    self_translation: 212/221
+    source: 219/221
+  adjudication:
+    translation:
+      1.3.1.2-f26: 'good / minor -> good: line-by-line rendering; ''zealously'' sits in its Latin line and reads
+        with ''did'' in the next'
+      1.3.1.2-f27: 'good / minor -> good: ''each of them ... did all he could'' is idiomatic English for the plural;
+        ''to soften'' is a purpose infinitive'
+      1.3.1.4-f7: 'good / minor -> good: our text quotes only this line; a free-standing rendering is right for
+        what is there'
+    self_translation:
+      1.1.2.4-f5: 'ok / wrong -> wrong: undetermined, but Burton''s main text at the anchor plainly paraphrases
+        the note'
+      1.2.1.2-f291: 'ok / wrong -> wrong: undetermined, but Burton''s main text paraphrases it'
+      1.2.1.2-f309: 'ok / wrong -> wrong: none, but Burton''s main text paraphrases it (''fling down platters, stools,
+        chests ... black Dogs'')'
+      1.2.3.15-f22: 'ok / wrong -> wrong: none, but ''he was much abashed'' renders rubore confusus'
+      2.3.3.1-f154: 'ok / wrong -> wrong: none, but ''beyond all hope and expectation many things fall out'' paraphrases
+        it'
+      2.3.7.1-f110: 'ok / wrong -> wrong: paraphrase claimed for ''but not familiar'', which is Burton''s own precept'
+      3.1.1.1-f27: 'ok / wrong -> wrong: undetermined, but Burton''s main text renders it'
+      3.4.1.1-f108: 'ok / wrong -> wrong: undetermined, but Burton''s main text renders it'
+      3.4.1.1-f20: 'ok / wrong -> wrong: undetermined, but Burton''s main text renders it'
+    source:
+      1.2.3.1-f12: 'ok / unsupported -> unsupported: the sidenote ''Virg.'' is anchored at the next quotation, not
+        at this one'
+      2.2.6.4-f33: 'unsupported / ok -> ok: the sidenote ''Athen. dipnosop. lib. 1.'' is anchored immediately before
+        the passage in the base text; the first rater''s objection was wrong'
+  random_sample:
+    R1_translation_errors: '0/156 (minor 0): met'
+    R2_unsupported_sources: '1/94 attributed claims (as the raters saw them): met'
+    R3_wrong_self_translation: '3/156: met'
+  flagged:
+    translation_errors: 0
+    wrong_self_translation: 6
+    unsupported_sources: 0
+  actions:
+  - '1.2.3.1-f12: source claim withdrawn (data/manual/source-downgrades.yaml), as R2 requires'
+  - 'the 9 wrong verdicts, and the other 2 undetermined records in the book (2.2.4.1-f5, 3.2.1.2-f64), re-run through
+    the runner (data/eval/m5-redo.yaml, `translate --redo`, $0.37): all 11 now have a verdict checked against Burton''s
+    text (6 partial or paraphrase, 1 more paraphrase, 2 none); 0 undetermined left in the book; the new source claims
+    (Scherertzius, Thomas Aquinas, Fulgosus) quote Burton at the anchor'
+  - 'review queue: 0 items; nothing deferred'

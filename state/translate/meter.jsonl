@@ -10,3 +10,5 @@
 {"ts": "2026-10-28T02:11:50Z", "event": "after", "run": "m5 finish, capped", "plan": "Pro", "window_5h_pct": 41, "weekly_pct": 79, "passages": 431, "cost_usd_list": 11.66, "note": "pass complete: 0 passages without a record; 23/23 Chaucer groups glossed; under the owner's 92 % cap", "model": "claude-opus-5-5", "prompt": "tr-v2"}
 {"ts": "2026-10-28T16:13:13Z", "event": "before", "run": "djs-audit h2 (second rater)", "plan": "Pro", "window_5h_pct": 5, "weekly_pct": 83}
 {"ts": "2026-10-28T16:16:39Z", "event": "after", "run": "djs-audit h2 (second rater)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 83, "items": 100, "cost_usd_list": 0.64, "model": "claude-opus-5-5", "prompt": "djs-audit-v1"}
+{"ts": "2026-10-28T16:28:21Z", "event": "before", "run": "tr-audit m5 spot-check (second rater)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 83}
+{"ts": "2026-10-28T16:47:16Z", "event": "after", "run": "tr-audit m5 spot-check + redo of 11 verdicts", "plan": "Pro", "weekly_pct": 88, "window_5h_pct": 64, "note": "weekly 83 -> 88 includes this session labelling 221 items in context", "cost_usd_list": 3.39}

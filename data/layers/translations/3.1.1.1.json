@@ -1046,16 +1046,21 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "full",
+      "burton_span": {
+        "exact": "more willing to read such toys, than",
+        "in": "3.1.1.1",
+        "near": "3.1.1.1-f27",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "partial"
     },
     "source": {
       "author": "Lucian",
-      "basis": "sidenote \"saith Lucian.\"",
+      "basis": "sidenote text \"saith Lucian\"",
       "locus": null,
       "status": "burton-cites",
       "verified": false,
@@ -1067,23 +1072,28 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "flags": [],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": null,
+        "note": "Burton renders this himself in the main text where the sidenote is anchored: \"more willing to read such toys, than I am to write\". The sidenote marker splits that sentence, so only the part before the marker is quoted here.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "full",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "more willing to read such toys, than",
+            "in": "3.1.1.1",
+            "near": "3.1.1.1-f27",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
         },
         "source": {
           "author": "Lucian",
-          "basis": "sidenote \"saith Lucian.\"",
+          "basis": "sidenote text \"saith Lucian\"",
           "locus": null,
           "status": "burton-cites",
           "verified": false,

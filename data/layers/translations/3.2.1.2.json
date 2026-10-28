@@ -5324,11 +5324,10 @@
     },
     "self_translation": {
       "burton_span": null,
-      "claimed": "paraphrase",
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "none"
     },
     "source": {
       "author": null,
@@ -5344,19 +5343,18 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "flags": [],
-        "literal": null,
+        "literal": "imagination injured",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "Laesa means hurt, damaged or impaired. The term comes from the medical vocabulary for the 'injured' faculties.",
+        "note": "Laesa means 'hurt, injured', the usual medical term for a damaged faculty. The English after it ('both imagination and reason are misaffected') carries the argument further rather than rendering the phrase, so it does not count as Burton's own translation.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
-          "claimed": "paraphrase",
-          "status": "undetermined"
+          "status": "none"
         },
         "source": {
           "author": null,
@@ -5366,7 +5364,7 @@
           "verified": false,
           "work": null
         },
-        "text": "an injured imagination",
+        "text": "imagination impaired",
         "warnings": []
       }
     ]

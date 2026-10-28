@@ -7287,12 +7287,17 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "paraphrase",
+      "burton_span": {
+        "exact": "with other men’s falls, he labours all he can to bring them into the same pit of perdition with him",
+        "in": "1.2.1.2",
+        "near": "1.2.1.2-f291",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "paraphrase"
     },
     "source": {
       "author": "Lactantius",
@@ -7308,20 +7313,24 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-26",
+        "date": "2026-10-28",
         "flags": [],
-        "literal": "and they work the solace of their perdition by men to be destroyed",
+        "literal": "These malignant spirits through all the earth wander, and solace of their perdition by men-to-be-ruined they work.",
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": null,
+        "note": "There is a play between perditionis ('perdition') and perdendis ('to be destroyed'). Burton's main text gives the gist loosely ('to comfort himself… with other men's falls').",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "paraphrase",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "with other men’s falls, he labours all he can to bring them into the same pit of perdition with him",
+            "in": "1.2.1.2",
+            "near": "1.2.1.2-f291",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
         },
         "source": {
           "author": "Lactantius",
@@ -7331,7 +7340,7 @@
           "verified": false,
           "work": "Divine Institutes, book 2 (De origine erroris)"
         },
-        "text": "These malign spirits wander over the whole earth, and seek a solace for their own perdition in the destruction of men",
+        "text": "These malignant spirits wander over the whole earth, and find a comfort for their own perdition in the ruin of men.",
         "warnings": []
       }
     ]
@@ -8305,51 +8314,60 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
+      "burton_span": {
+        "exact": "fling down platters, stools, chests, sometime appear in the likeness of Hares, Crows, black Dogs, &c.",
+        "in": "1.2.1.2",
+        "near": "1.2.1.2-f309",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "none"
+      "status": "paraphrase"
     },
     "source": {
-      "author": null,
-      "basis": null,
-      "downgraded_from": "burton-cites",
-      "locus": null,
-      "status": "unidentified",
+      "author": "Sigismund Scherertz",
+      "basis": "sidenote anchored at text \"Sigismundus Scherertzius lib. de spectris, part. 1 cap. 1\"",
+      "locus": "part. 1 cap. 1",
+      "status": "burton-cites",
       "verified": false,
-      "work": null
+      "work": "De spectris"
     },
     "text": "Quidam lemures domesticis instrumentis noctu ludunt: patinas, ollas, cantharas, et alia vasa dejiciunt, et quidam voces emittunt, ejulant, risum emittunt, &c., ut canes nigri, feles, variis formis, &c",
     "text_sha1": "ae7159a20c9f314150eeac4f2351c6ff09481643",
     "translations": [
       {
         "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
+        "confidence": "high",
+        "date": "2026-10-28",
         "flags": [],
-        "literal": null,
+        "literal": "Certain lemures with domestic instruments by night play: platters, pots, tankards, and other vessels they throw down, and certain ones voices emit, howl, laughter emit, etc., as dogs black, cats, in various forms, etc.",
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "Lemures were Roman ghosts of the dead; here, house-haunting spirits. The closing 'ut canes nigri, feles, variis formis' is elliptical: they appear as black dogs and cats, in various shapes.",
+        "note": "Lemures are restless spirits of the dead or night-goblins, here household spirits like poltergeists. The Latin's 'ut canes nigri, feles' is compressed, so 'appearing' is added for sense. The note is anchored at Burton's reference to Scherertzius, De spectris, which is probably its source.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "status": "none"
+          "burton_span": {
+            "exact": "fling down platters, stools, chests, sometime appear in the likeness of Hares, Crows, black Dogs, &c.",
+            "in": "1.2.1.2",
+            "near": "1.2.1.2-f309",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
         },
         "source": {
-          "author": null,
-          "basis": null,
-          "downgraded_from": "burton-cites",
-          "locus": null,
-          "status": "unidentified",
+          "author": "Sigismund Scherertz",
+          "basis": "sidenote anchored at text \"Sigismundus Scherertzius lib. de spectris, part. 1 cap. 1\"",
+          "locus": "part. 1 cap. 1",
+          "status": "burton-cites",
           "verified": false,
-          "work": null
+          "work": "De spectris"
         },
-        "text": "Some goblins play at night with household utensils: they throw down dishes, pots, tankards and other vessels; and some utter voices, wail, laugh, etc., as black dogs, cats, in various shapes, etc.",
+        "text": "Some lemures play with household utensils at night: they throw down dishes, pots, tankards and other vessels, and some utter voices, howl, and laugh, etc., appearing as black dogs or cats, in various shapes, etc.",
         "warnings": []
       }
     ]

@@ -45,6 +45,8 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--wait-on-limit", action="store_true",
                    help="at a usage limit, wait and try again instead of stopping")
+    s.add_argument("--redo", action="store_true",
+                   help="with --select: translate the selected items again even if their records are current")
 
     s = sub.add_parser("align-djs", help="align Dell & Jordan-Smith (1927) to selected passages -> data/layers/djs/")
     s.add_argument("--select", type=Path, help="selection file, e.g. data/eval/m4-pilot.yaml")
@@ -53,6 +55,9 @@ def main(argv: list[str] | None = None) -> int:
 
     s = sub.add_parser("djs-audit", help="second rater (model, blind) for a Dell & Jordan-Smith held-out round")
     s.add_argument("--round", default="h2")
+    s.add_argument("--compare-only", action="store_true")
+
+    s = sub.add_parser("tr-audit", help="M5 spot-check: blind second rater (model) for data/eval/m5-spotcheck.yaml")
     s.add_argument("--compare-only", action="store_true")
 
     s = sub.add_parser("pilot-report", help="M4 pilot: counts -> verify/reports/m4-pilot.json, review page")
@@ -131,7 +136,7 @@ def main(argv: list[str] | None = None) -> int:
         return runner.run(
             _units(args), model=args.model, packet_size=args.packet_size,
             max_packets=args.max_packets, dry_run=args.dry_run, select=args.select,
-            budget_usd=args.budget_usd, wait_on_limit=args.wait_on_limit,
+            budget_usd=args.budget_usd, wait_on_limit=args.wait_on_limit, redo=args.redo,
         )
     elif args.cmd == "align-djs":
         from .layers import djs
@@ -146,6 +151,12 @@ def main(argv: list[str] | None = None) -> int:
 
         rep = djs_audit.compare(args.round) if args.compare_only else djs_audit.run(args.round)
         print(json.dumps(rep, ensure_ascii=False, indent=2))
+    elif args.cmd == "tr-audit":
+        import json
+
+        from .translate import audit
+
+        print(json.dumps(audit.compare() if args.compare_only else audit.run(), ensure_ascii=False, indent=2))
     elif args.cmd == "pilot-report":
         import json
 

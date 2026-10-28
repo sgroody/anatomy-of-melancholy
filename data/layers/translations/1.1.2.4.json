@@ -1111,12 +1111,17 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "paraphrase",
+      "burton_span": {
+        "exact": "admiration, that can yield such variety of affections",
+        "in": "1.1.2.4",
+        "near": "1.1.2.4-f5",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "partial"
     },
     "source": {
       "author": null,
@@ -1132,19 +1137,24 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-24",
+        "date": "2026-10-28",
         "flags": [],
-        "literal": "...that all sad and glad things immediately strike and move hearts",
+        "literal": "This thing is especially worthy of admiration, that by so great a variety of affections the heart is stirred, that all things sad and glad immediately strike and move hearts.",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "Burton's main text gives the gist and adds the dilating and contracting of the heart. The paragraph also has a sidenote 'Melanchthon.', which may point to the source, but it is not certain that it belongs to this note.",
+        "note": "Burton's main text, at the point where this note is anchored, renders the first half loosely ('a part worthy of admiration, that can yield such variety of affections'). The second clause, about sad and joyful things striking the heart at once, has no counterpart in his English. The plural 'corda' (hearts) is rendered as a singular for natural English.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "paraphrase",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "admiration, that can yield such variety of affections",
+            "in": "1.1.2.4",
+            "near": "1.1.2.4-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
         },
         "source": {
           "author": null,

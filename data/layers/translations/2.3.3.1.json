@@ -3582,11 +3582,17 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
+      "burton_span": {
+        "exact": "beyond all hope and expectation many things fall out",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f154",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "none"
+      "status": "paraphrase"
     },
     "source": {
       "author": null,
@@ -3602,18 +3608,24 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "flags": [],
-        "literal": null,
+        "literal": "Many things fall between the cup and the topmost lips,",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "A proverb, like 'there's many a slip 'twixt cup and lip'.",
+        "note": "A proverb, the Latin form of the Greek saying that gives us \"there's many a slip 'twixt the cup and the lip.\" It means that much can happen before something is finally achieved. Here Burton uses it in a hopeful sense: unexpected turns can bring good fortune as well as bad.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "status": "none"
+          "burton_span": {
+            "exact": "beyond all hope and expectation many things fall out",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f154",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
         },
         "source": {
           "author": null,

@@ -1,0 +1,11 @@
+# Source claims withdrawn by a check (CLAUDE.md honesty rules: a wrong attribution is worse than none).
+# Each listed passage's record shows `unidentified`, with the claim it replaced kept in `downgraded_from`
+# and the reason in `decision`. The model's own claim stays in its translation entry, as provenance.
+# Applied whenever the runner writes the record (burton/translate/validate.py); V7 checks every entry.
+- id: 1.2.3.1-f12
+  reason: >-
+    burton-cites Virgil, on the sidenote "Virg."; but that note is anchored at the next quotation
+    ("Fertur equis auriga", Georgics 1.514), so Burton names no source for "sternit agros, sternit sata".
+    The words are Aeneid 2.306, but that needs the source verifier (M6), not a burton-cites claim.
+  check: M5 spot-check (data/eval/m5-spotcheck.yaml), second rater, adjudicated
+  date: 2026-10-28

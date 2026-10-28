@@ -1,0 +1,26 @@
+purpose: 'M5 spot-check follow-up: self-translation verdicts found wrong or unverified, re-run through the runner
+  (`burton translate --select data/eval/m5-redo.yaml --redo`). The new verdicts are checked again.'
+items:
+- id: 1.2.1.2-f309
+  reason: verdict none; Burton's main text paraphrases the note ('fling down platters, stools, chests ... black
+    Dogs')
+- id: 1.2.3.15-f22
+  reason: verdict none; Burton's 'his head busied about other matters ... he was much abashed' paraphrases it
+- id: 2.3.3.1-f154
+  reason: verdict none; Burton's next words 'beyond all hope and expectation many things fall out' paraphrase it
+- id: 2.3.7.1-f110
+  reason: verdict paraphrase on 'but not familiar', which is Burton's own precept, not a rendering of the proverb
+- id: 1.1.2.4-f5
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 1.2.1.2-f291
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 2.2.4.1-f5
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 3.1.1.1-f27
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 3.2.1.2-f64
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 3.4.1.1-f108
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'
+- id: 3.4.1.1-f20
+  reason: 'verdict undetermined: the model''s claimed rendering did not match Burton''s text exactly'

@@ -264,7 +264,9 @@ def run(units: list[str], *, model: str, packet_size: int, max_packets: int | No
 
 
 def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | None, dry_run: bool,
-         select=None, budget_usd: float | None = None, wait_on_limit: bool = False) -> int:
+         select=None, budget_usd: float | None = None, wait_on_limit: bool = False, redo: bool = False) -> int:
+    if redo and not select:
+        raise SystemExit("--redo needs --select: it re-translates only the items named in a selection file")
     gver, gtext, gdata = glossary()
     sys_prompt = system_prompt(gtext)
     selection = load_selection(select) if select else None
@@ -280,7 +282,7 @@ def _run(units: list[str], *, model: str, packet_size: int, max_packets: int | N
         utext = packets.unit_text(unit)
         layer, glayer = read_layer(unit), read_layer(unit, "glosses")
         all_p = unit_items(unit, selection[unit] if selection is not None else None)
-        queue = [p for p in all_p if not is_current(
+        queue = [p for p in all_p if redo or not is_current(
             (glayer if p["packet_item"]["kind"] == "gloss-only" else layer).get(p["packet_item"]["id"]),
             p["text_sha1"], model, p["packet_item"]["lang"])]
         print(f"{unit}: {len(all_p)} passages, {len(all_p) - len(queue)} current, {len(queue)} to translate")

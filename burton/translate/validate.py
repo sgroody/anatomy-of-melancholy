@@ -15,6 +15,8 @@ import re
 import unicodedata
 from datetime import UTC, datetime
 
+from .. import paths
+
 PRIMARY_MODEL = "claude-opus-5-5"  # the default until the owner decides D8
 
 
@@ -195,6 +197,22 @@ def _source(item: dict, p: dict) -> dict:
     return src
 
 
+def source_downgrades() -> dict[str, dict]:
+    """Source claims withdrawn by a check (data/manual/source-downgrades.yaml), by passage id."""
+    import yaml
+
+    f = paths.ROOT / "data" / "manual" / "source-downgrades.yaml"
+    return {d["id"]: d for d in (yaml.safe_load(f.read_text(encoding="utf-8")) or [])} if f.exists() else {}
+
+
+def apply_downgrade(pid: str, src: dict, decisions: dict[str, dict] | None = None) -> dict:
+    d = (source_downgrades() if decisions is None else decisions).get(pid)
+    if not d or src["status"] == "unidentified":
+        return src
+    return {"status": "unidentified", "author": None, "work": None, "locus": None, "basis": None,
+            "verified": False, "downgraded_from": src["status"], "decision": " ".join(d["reason"].split())}
+
+
 def to_record(existing: dict | None, p: dict, b: dict, model: str, prompt: str, models_used: list,
               errors: list[dict], unit_text: tuple[str, str] | None = None) -> dict:
     item = b["packet_item"]
@@ -224,7 +242,7 @@ def to_record(existing: dict | None, p: dict, b: dict, model: str, prompt: str, 
         "text": item["text"], "text_sha1": b["text_sha1"],
         "self_translation": top_st,
         "translations": others + [machine],
-        "source": top_src,
+        "source": apply_downgrade(item["id"], top_src),
         "review": (existing or {}).get("review", {"state": "unreviewed", "by": None, "date": None}),
     }
     rec["preferred"] = preferred(rec)

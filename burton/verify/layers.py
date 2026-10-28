@@ -8,6 +8,7 @@ from .. import paths
 from ..tei import XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
 from ..translate.packets import sha1
+from ..translate.validate import source_downgrades
 
 
 def _inside_brackets(text: str, a: int, b: int) -> bool:
@@ -137,6 +138,7 @@ def v7_layers(units: list[str]):
          "selftrans_records": 0, "selftrans_selectors_ok": 0, "selftrans_selectors_bad": 0, "selftrans_stale": 0,
          "selftrans_missing": 0, "selftrans_orphan_keys": 0, "selftrans_units_missing": 0,
          "selftrans_gowland_overlap": 0}
+    downgrades = source_downgrades()
     for unit in units:
         root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
         foreign = {public_id(e.get(XML_ID)): e for e in root.iter()
@@ -188,6 +190,11 @@ def v7_layers(units: list[str]):
                     r.fail(f"{key}: source {src['status']} without basis")
                 if src["status"] == "identified" and not src.get("verified"):
                     r.fail(f"{key}: identified without verification")
+        for key in (k for k in downgrades if k.rsplit("-", 1)[0] == unit):
+            if key not in layer or layer[key]["source"]["status"] != "unidentified":
+                r.fail(f"{key}: source downgrade in data/manual/source-downgrades.yaml is not applied")
+            else:
+                c["source_downgrades"] = c.get("source_downgrades", 0) + 1
         missing = [k for k in foreign if k not in layer]
         # Completeness is a count until the full translation pass (M5 exit: untranslated = 0);
         # integrity problems above always fail.

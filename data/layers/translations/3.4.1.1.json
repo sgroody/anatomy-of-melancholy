@@ -451,16 +451,21 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "full",
-      "confidence": "high",
+      "burton_span": {
+        "exact": "And him our will would have loved and sought alone as our summum bonum, or principal good, and all other good things for God’s sake",
+        "in": "3.4.1.1",
+        "near": "3.4.1.1-f108",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "partial"
     },
     "source": {
       "author": "Philipp Melanchthon",
-      "basis": "sidenote \"Lib. de anima.\" and text \"as Melanchthon discourseth\"",
+      "basis": "text \"Melanchthon discourseth\" at the anchor; sidenote \"Lib. de anima.\"",
       "locus": null,
       "status": "burton-cites",
       "verified": false,
@@ -471,30 +476,37 @@
     "translations": [
       {
         "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
+        "confidence": "medium",
+        "date": "2026-10-28",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "To this object to-be-loved and enjoyed we have been born, and him would-have-sought alone, him would-have-loved the human will, as highest good, and other things all in that order",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "The masculine 'hunc' (him) refers to God, the object of love. The sentence ends abruptly at 'eo ordine' (in that order).",
+        "note": "The masculine 'hunc' (him) refers to God, although the antecedent 'objectum' is neuter. The sentence seems to break off after 'eo ordine'. Burton's main text gives the missing sense: other good things are to be loved 'for God's sake'.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "full",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "And him our will would have loved and sought alone as our summum bonum, or principal good, and all other good things for God’s sake",
+            "in": "3.4.1.1",
+            "near": "3.4.1.1-f108",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
         },
         "source": {
           "author": "Philipp Melanchthon",
-          "basis": "sidenote \"Lib. de anima.\" and text \"as Melanchthon discourseth\"",
+          "basis": "text \"Melanchthon discourseth\" at the anchor; sidenote \"Lib. de anima.\"",
           "locus": null,
           "status": "burton-cites",
           "verified": false,
           "work": "Liber de anima"
         },
-        "text": "We were born to love and enjoy this object; and the human will would have sought him alone, loved him, as the highest good, and all other things in their due order",
+        "text": "We were born to love and enjoy this object, and the human will would have sought him alone and loved him as the highest good, and all other things in that order.",
         "warnings": []
       }
     ]
@@ -1694,21 +1706,25 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "full",
+      "burton_span": {
+        "exact": "by which a man is inclined to love God above all",
+        "in": "3.4.1.1",
+        "near": "3.4.1.1-f20",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "partial"
     },
     "source": {
-      "author": null,
-      "basis": null,
-      "downgraded_from": "burton-cites",
-      "locus": null,
-      "status": "unidentified",
+      "author": "Thomas Aquinas",
+      "basis": "text \"Thomas holds, 2. 1 quaest. 23\" at the anchor",
+      "locus": "2. 1 quaest. 23",
+      "status": "burton-cites",
       "verified": false,
-      "work": null
+      "work": "Summa theologiae"
     },
     "text": "Habitus a deo infusus per quem inclinatur homo ad diligendum deum super omnia",
     "text_sha1": "c72da87b4334c281e73ecf7d0da8346b272d6532",
@@ -1716,30 +1732,34 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "flags": [],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "'Habit' is used in the scholastic sense: a settled disposition of the soul.",
+        "note": "Burton paraphrases Thomas Aquinas's definition of charity. He gives the reference in his main text: Summa theologiae 2.1, question 23. His English also renders the first clause, 'is an habit infused of God', but the sidenote marker breaks up his sentence, so only the second clause is quoted.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "full",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "by which a man is inclined to love God above all",
+            "in": "3.4.1.1",
+            "near": "3.4.1.1-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
         },
         "source": {
-          "author": null,
-          "basis": null,
-          "downgraded_from": "burton-cites",
-          "locus": null,
-          "status": "unidentified",
+          "author": "Thomas Aquinas",
+          "basis": "text \"Thomas holds, 2. 1 quaest. 23\" at the anchor",
+          "locus": "2. 1 quaest. 23",
+          "status": "burton-cites",
           "verified": false,
-          "work": null
+          "work": "Summa theologiae"
         },
-        "text": "A habit infused by God, through which a man is inclined to love God above all things",
+        "text": "A habit infused by God, through which a man is inclined to love God above all things.",
         "warnings": []
       }
     ]

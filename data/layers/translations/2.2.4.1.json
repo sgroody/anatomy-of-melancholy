@@ -9085,17 +9085,21 @@
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
-      "claimed": "full",
+      "burton_span": {
+        "exact": "or at any time when the body is empty",
+        "in": "2.2.4.1",
+        "near": "2.2.4.1-f5",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "undetermined"
+      "status": "paraphrase"
     },
     "source": {
       "author": null,
       "basis": null,
-      "downgraded_from": "burton-cites",
       "locus": null,
       "status": "unidentified",
       "verified": false,
@@ -9107,33 +9111,34 @@
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "technical-medical"
-        ],
+        "date": "2026-10-28",
+        "flags": [],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "'Concocted' means digested, in the old physiology of 'concoction'. The sidenote is anchored later in the text, but it matches Burton's earlier English about Crato.",
+        "note": "The sidenote glosses the point in the main text where Burton says exercise may be taken \"at any time when the body is empty\". That is, once the meal has been digested. Ventriculus means the stomach.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "claimed": "full",
-          "status": "undetermined"
+          "burton_span": {
+            "exact": "or at any time when the body is empty",
+            "in": "2.2.4.1",
+            "near": "2.2.4.1-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
         },
         "source": {
           "author": null,
           "basis": null,
-          "downgraded_from": "burton-cites",
           "locus": null,
           "status": "unidentified",
           "verified": false,
           "work": null
         },
-        "text": "the food having been properly concocted in the stomach",
+        "text": "When the food has been well digested in the stomach",
         "warnings": []
       }
     ]
