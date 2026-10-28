@@ -330,3 +330,18 @@ rounds:
       - djr-f962
     result: 'correct 95, kept 2, boundary 1, wrong 2: precision 95/100 = 0.95 (Wilson 95 % interval 0.89-0.98);
       gate met, at the margin. Labels by Claude in session; not yet reviewed by the owner.'
+    second_rater:
+      who: claude-opus-5-5, prompt djs-audit-v1 (burton/translate/prompts/), blind to the first labels and the alignment
+        score; `burton djs-audit --round h2`; labels in djs-holdout-rater2.jsonl; $0.64 list-equivalent
+      decision_rule: 'fixed before the second rating: if precision after adjudication is below 0.95, the reader
+        stops showing Dell & Jordan-Smith versions until a better rule passes a fresh round'
+      agreement: 97/100 labels; 98/100 on correct vs not correct
+      second_rater_correct: 95
+      adjudication:
+        2.5.3.1-f15: 'first correct, second kept -> correct: their gloss in brackets is an English rendering of
+          the term, and the reader shows exactly what they print in its place'
+        2.5.3.2-f5: first wrong, second kept -> not correct either way
+        3.2.2.4-f34: 'first boundary, second correct -> boundary: our text splits one couplet into two passages
+          (f34, f35) and their one line renders both'
+      result: precision after adjudication 95/100 (decision rule met); 94/100 if both raters must say correct; 96/100
+        if either may

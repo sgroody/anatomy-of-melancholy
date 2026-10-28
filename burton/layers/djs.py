@@ -211,22 +211,42 @@ def anchors(item: dict, others: list[str]) -> tuple[list[str], list[str]]:
     return lw[-ANCHOR_WORDS:], rw[:ANCHOR_WORDS]
 
 
+def _pick(item: dict, others: list[str], djs: Djs):
+    """Anchors, their placings, and the chosen pair (score, left score, right score, end of the left
+    anchor, start of the right one) or None."""
+    words = len(item["text"].split())
+    lw, rw = anchors(item, others)
+    L, R = djs.locate(lw), djs.locate(rw)
+    pairs = [(min(ls, rs), ls, rs, le, rb) for ls, _, le in L for rs, rb, _ in R if 0 <= rb - le <= 6 * words + 80]
+    # prefer anchor pairs whose gap could be a rendering of the passage (or nothing at all)
+    best = max(pairs, key=lambda p: (_gap_kind(p[4] - p[3], words) != "implausible", p[0])) if pairs else None
+    return lw, rw, L, R, best
+
+
+def context(item: dict, others: list[str], djs: Djs, n: int = 30) -> tuple[str, str, str] | None:
+    """Their text around the chosen span: (n words before, the span, n words after)."""
+    best = _pick(item, others, djs)[4]
+    if not best:
+        return None
+    le, rb = best[3], best[4]
+    w0 = djs.kpos[le]
+    w1 = djs.kpos[rb - 1] + 1 if rb > le else w0
+    return (" ".join(djs.words[max(0, w0 - n):w0]), " ".join(djs.words[w0:w1]), " ".join(djs.words[w1:w1 + n]))
+
+
 def align(item: dict, others: list[str], djs: Djs | None = None) -> dict:
     djs = djs or load()
     words = len(item["text"].split())
     if item["location"] == "sidenote":
         return {"status": "no-anchor", "reason": "sidenote: no English of Burton's around it to anchor on"}
-    lw, rw = anchors(item, others)
-    L, R = djs.locate(lw), djs.locate(rw)
+    lw, rw, L, R, best = _pick(item, others, djs)
     if not L or not R:
         return {"status": "no-anchor" if (len(lw) < MIN_ANCHOR or len(rw) < MIN_ANCHOR) else "not-found",
                 "left_anchor": " ".join(lw), "right_anchor": " ".join(rw)}
-    pairs = [(min(ls, rs), ls, rs, le, rb) for ls, _, le in L for rs, rb, _ in R if 0 <= rb - le <= 6 * words + 80]
     base = {"left_anchor": " ".join(lw), "right_anchor": " ".join(rw)}
-    if not pairs:
+    if not best:
         return {**base, "status": "not-found", "left_score": L[0][0], "right_score": R[0][0]}
-    # prefer anchor pairs whose gap could be a rendering of the passage (or nothing at all)
-    score, ls, rs, le, rb = max(pairs, key=lambda p: (_gap_kind(p[4] - p[3], words) != "implausible", p[0]))
+    score, ls, rs, le, rb = best
     base.update(left_score=round(ls, 3), right_score=round(rs, 3), align_score=round(score, 3))
     if score < THRESHOLD:
         return {**base, "status": "below-threshold"}  # the candidate is discarded, never shown
