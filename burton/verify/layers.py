@@ -101,6 +101,33 @@ def _glosses(unit: str, root, r, c: dict) -> None:
                     r.fail(f"{key}: gloss selector {sel['exact']!r} matches {n} times")
 
 
+DJS_STATUSES = {"aligned", "omitted", "kept-original", "no-anchor", "not-found", "below-threshold",
+                "implausible-length", "ocr-noise", "broken-span"}
+
+
+def _djs(unit: str, foreign: dict, r, c: dict) -> None:
+    """Dell & Jordan-Smith alignments: keyed by foreign passages, current, labelled with their method, and a
+    text for every aligned or omitted record (never for a discarded candidate)."""
+    f = paths.LAYERS / "djs" / f"{unit}.json"
+    if not f.exists():
+        return
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c["djs_records"] = c.get("djs_records", 0) + 1
+        if key not in foreign:
+            c["djs_orphan_keys"] = c.get("djs_orphan_keys", 0) + 1
+            r.fail(f"{unit}: Dell & Jordan-Smith key {key} not in base text")
+            continue
+        if rec["text_sha1"] != sha1(public_text(foreign[key])):
+            c["djs_stale"] = c.get("djs_stale", 0) + 1
+            r.fail(f"{key}: Dell & Jordan-Smith record is stale (base text changed); re-run `burton align-djs`")
+        st = rec["status"]
+        c[f"djs_{st}"] = c.get(f"djs_{st}", 0) + 1
+        if st not in DJS_STATUSES or rec.get("by") != "djs1927" or not rec.get("method"):
+            r.fail(f"{key}: Dell & Jordan-Smith record without a known status, source or method")
+        if (st in ("aligned", "kept-original")) != bool(rec.get("text")):
+            r.fail(f"{key}: Dell & Jordan-Smith text present on a {st} record, or missing on an aligned one")
+
+
 def v7_layers(units: list[str]):
     from .checks import Result
 
@@ -182,5 +209,6 @@ def v7_layers(units: list[str]):
                     r.fail(f"{key}: cross-reference text {rec['selector']['exact']!r} not found in {unit}")
         _selftrans(unit, root, foreign, r, c)
         _glosses(unit, root, r, c)
+        _djs(unit, foreign, r, c)
     r.counts = c
     return r

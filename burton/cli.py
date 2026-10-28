@@ -47,7 +47,9 @@ def main(argv: list[str] | None = None) -> int:
                    help="at a usage limit, wait and try again instead of stopping")
 
     s = sub.add_parser("align-djs", help="align Dell & Jordan-Smith (1927) to selected passages -> data/layers/djs/")
-    s.add_argument("--select", type=Path, required=True, help="selection file, e.g. data/eval/m4-pilot.yaml")
+    s.add_argument("--select", type=Path, help="selection file, e.g. data/eval/m4-pilot.yaml")
+    s.add_argument("--unit", action="append")
+    s.add_argument("--all", action="store_true", help="every unit in the book")
 
     s = sub.add_parser("pilot-report", help="M4 pilot: counts -> verify/reports/m4-pilot.json, review page")
     s.add_argument("--select", type=Path, default=Path("data/eval/m4-pilot.yaml"))
@@ -130,7 +132,9 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "align-djs":
         from .layers import djs
 
-        print(djs.run(args.select))
+        if not (args.select or args.unit or args.all):
+            p.error("align-djs needs --select, --unit or --all")
+        print(djs.run(args.select, _units(args) if (args.unit or args.all) else None))
     elif args.cmd == "pilot-report":
         import json
 

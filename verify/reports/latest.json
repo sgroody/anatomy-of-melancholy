@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-28T04:30:40+00:00",
+  "when": "2026-10-28T05:03:20+00:00",
   "ok": true,
   "results": [
     {
@@ -151,9 +151,19 @@
         "selftrans_gowland_overlap": 0,
         "untranslated": 0,
         "units_without_layer": 4,
+        "djs_records": 7769,
+        "djs_no-anchor": 2375,
+        "djs_aligned": 2149,
+        "djs_omitted": 1621,
+        "djs_below-threshold": 407,
+        "djs_kept-original": 194,
+        "djs_not-found": 798,
+        "djs_implausible-length": 201,
+        "djs_ocr-noise": 17,
         "xrefs": 21,
         "xrefs_resolved": 19,
         "xrefs_unresolved": 2,
+        "djs_broken-span": 7,
         "gloss_records": 23,
         "gloss_selectors_ok": 98
       },
@@ -170,11 +180,13 @@
         "private:enrefs": 3907,
         "private:pbs": 956,
         "private:gowland_versions": 4934,
+        "private:djs_versions": 1992,
         "public:sidenotes": 5687,
         "public:foreign": 7769,
         "public:enrefs": 0,
         "public:pbs": 0,
         "public:gowland_versions": 0,
+        "public:djs_versions": 1992,
         "units": 158
       },
       "problems": []
@@ -232,10 +244,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "226/226",
+        "private:glyphs": "229/229",
         "private:fallback": 13,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+264E U+264F",
-        "public:glyphs": "221/221",
+        "public:glyphs": "226/226",
         "public:fallback": 13
       },
       "problems": []

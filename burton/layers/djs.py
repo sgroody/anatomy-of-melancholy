@@ -41,15 +41,83 @@ def kw(w: str) -> str:
     return re.sub(r"[^a-z0-9]", "", w.lower().replace("&", "and"))
 
 
+CHUNK = re.compile(r"(?:[^\n]|\n(?![ \t]*\n))+")  # blocks of the OCR text, separated by blank lines
+PAGE_NO = re.compile(r"^(\d{1,4})\s*\]|\[\s*(\d{1,4})\s*$")
+
+
+def _is_furniture(c: str) -> bool:
+    """A page number, a running head ("132 ] Anatomy of Melancholy [Part. 1, Sect. 1",
+    "Memb. 2, Subs. 3 ] DIGRESSION OF SPIRITS [173"), or OCR debris of one: one short line."""
+    if "\n" in c or len(c) > 100:
+        return False
+    if re.search(r"[\[\]]", c) and len(re.sub(r"[\[\]\s]", "", c)) <= 5:
+        return True
+    if re.search(r"Anatomy\s+of\s+Melancholy\s*\[", c):
+        return True
+    # recto heads; the OCR sometimes reads the bracket as "J"
+    return bool(re.match(r"\S{0,5}\s*(Memb|Mem|Subs|Sect|Part)\b", c) and re.search(r"[\]J]|[A-Z]{4,}", c))
+
+
+RUNNING_TITLE = re.compile(r"^(Democritus\s+to\s+the\s+Reader|Anatomy\s+of\s+Melancholy)$")
+# a recto head printed inside a line of text: "(horace) Mcmb.3] Remedies Against Discontents [525"
+INLINE_HEAD = re.compile(r"M[ce]mb\.\s*\d[^\n\]]{0,12}\]\s+[A-Z][A-Za-z ,'&-]{3,60}\[\s*\d{1,4}")
+
+
+def _is_debris(c: str) -> bool:
+    """A running title, a capitals-only title or stamp of at most two lines ("MARIN COUNTY FREE LIBRARY /
+    SAN RAFAEL, CALIFORNIA", a library's stamp in the scanned copy), or a stray mark of a few characters.
+    Furniture only when it stands beside furniture."""
+    if len(re.sub(r"\s", "", c)) <= 4 or RUNNING_TITLE.match(" ".join(c.split())):
+        return True
+    letters = [ch for ch in c if ch.isalpha()]
+    return c.count("\n") <= 1 and len(c) <= 80 and len(letters) >= 4 and \
+        sum(ch.isupper() for ch in letters) >= 0.7 * len(letters)
+
+
+def furniture(raw: str) -> tuple[list[tuple[int, int]], list[tuple[int, int]]]:
+    """Character ranges of the edition's page furniture, which interrupts the running text: page numbers,
+    running heads, and the footnotes printed just above a page break (their own and "Burton's note").
+    Returns (ranges, page heads as (offset, page number))."""
+    chunks = [(m.start(), m.end(), m.group().strip()) for m in CHUNK.finditer(raw) if m.group().strip()]
+    furn = [_is_furniture(c) for _, _, c in chunks]
+    changed = True
+    while changed:  # titles, stamps and stray marks beside a page number or head
+        changed = False
+        for i, (_, _, c) in enumerate(chunks):
+            if not furn[i] and _is_debris(c) and ((i and furn[i - 1]) or (i + 1 < len(chunks) and furn[i + 1])):
+                furn[i] = changed = True
+    for i in range(len(chunks) - 1, 0, -1):  # footnotes: marked blocks just before the furniture
+        if furn[i] and not furn[i - 1]:
+            j = i - 1
+            while j >= 0 and chunks[j][2][:1] in "*†‡" and not furn[j]:
+                furn[j] = True
+                j -= 1
+    ranges = sorted([(a, b) for (a, b, _), f in zip(chunks, furn, strict=True) if f] +
+                    [m.span() for m in INLINE_HEAD.finditer(raw)])
+    heads = []
+    for (a, _, c), f in zip(chunks, furn, strict=True):
+        m = PAGE_NO.search(c) if f else None
+        if m:
+            heads.append((a, int(m.group(1) or m.group(2))))
+    return ranges, heads
+
+
 class Djs:
-    """The OCR text as words (hyphenated line breaks rejoined), with a trigram index over key words."""
+    """The OCR text as words (page furniture skipped, hyphenated line breaks rejoined), with a trigram
+    index over key words."""
 
     def __init__(self, raw: str):
         self.raw = raw
         self.words: list[str] = []
         self.offs: list[int] = []
+        skip, self.heads = furniture(raw)
+        si = 0
         prev_end = -1
         for m in re.finditer(r"\S+", raw):
+            while si < len(skip) and skip[si][1] <= m.start():
+                si += 1
+            if si < len(skip) and skip[si][0] <= m.start():
+                continue
             w = m.group()
             if self.words and self.words[-1].endswith("-") and "\n" in raw[prev_end:m.start()]:
                 self.words[-1] = self.words[-1][:-1] + w
@@ -67,8 +135,6 @@ class Djs:
         for i in range(len(self.keys) - 2):
             self.index.setdefault(tuple(self.keys[i:i + 3]), []).append(i)
         self.line_starts = [0] + [m.end() for m in re.finditer("\n", raw)]
-        self.heads = [(m.start(), int(m.group(1) or m.group(2))) for m in re.finditer(
-            r"(?m)^\s*(\d{1,4})\]|\[(\d{1,4})\s*$", raw)]
 
     def locate(self, anchor: list[str], top: int = 6) -> list[tuple[float, int, int]]:
         """Best places for a word sequence: (score 0-1, first key index, end key index)."""
@@ -169,7 +235,57 @@ def align(item: dict, others: list[str], djs: Djs | None = None) -> dict:
         return {**base, "status": "omitted", "text": "", "residue": djs.text(le, rb), "where": djs.where(le)}
     if kind == "implausible":
         return {**base, "status": "implausible-length", "gap_words": rb - le}  # discarded, never shown
-    return {**base, "status": "aligned", "text": djs.text(le, rb), "where": djs.where(le)}
+    text, attribution = split_attribution(djs.text(le, rb))
+    out = {**base, "status": "aligned", "text": text, "where": djs.where(le)}
+    if re.search(r"[*†‡]$", text):  # their footnote mark; the footnote itself is page furniture
+        out.update(text=text.rstrip("*†‡"), footnote_mark=text[-1])
+    if attribution:
+        out["attribution"] = attribution
+    if not _is_words(out["text"]):
+        return {**base, "status": "ocr-noise", "gap_words": rb - le}  # discarded, never shown
+    if _kept(item["text"], out["text"]):
+        # they print the original ("os sacrum", a name): a fact about their edition, not a translation
+        return {**out, "status": "kept-original"}
+    if _broken_brackets(out["text"]):
+        # the span starts or ends inside one of their [bracketed insertions]: the anchors slipped
+        return {**base, "status": "broken-span", "gap_words": rb - le}  # discarded, never shown
+    return out
+
+
+def _kept(original: str, candidate: str) -> bool:
+    a = " ".join(k for k in (kw(w) for w in original.split()) if k)
+    b = " ".join(k for k in (kw(w) for w in candidate.split()) if k)
+    return bool(a) and fuzz.ratio(a, b) >= 90
+
+
+def _broken_brackets(text: str) -> bool:
+    depth = 0
+    for ch in text:
+        if ch == "[":
+            depth += 1
+        elif ch == "]":
+            depth -= 1
+            if depth < 0:
+                return True
+    return depth != 0
+
+
+def _is_words(text: str) -> bool:
+    """English words, not OCR debris ("E«5,"): mostly letters, with at least one word of 3+ letters."""
+    letters = sum(ch.isalpha() or ch.isspace() for ch in text)
+    return bool(re.search(r"[A-Za-z]{3,}", text)) and letters >= 0.75 * len(text)
+
+
+ATTRIBUTION = re.compile(r"\s*\(([a-z][a-z .'-]{2,40})\)\s*([.,;:]?)$")
+
+
+def split_attribution(text: str) -> tuple[str, str | None]:
+    """Their attribution after a verse, "(ovid)" (Burton's sidenote, kept in lower case), is their
+    note, not part of the translation: kept apart, as printed."""
+    m = ATTRIBUTION.search(text)
+    if not m or not text[:m.start()].strip():
+        return text, None
+    return text[:m.start()] + m.group(2), m.group(1)
 
 
 def _gap_kind(gap: int, words: int) -> str:
@@ -180,6 +296,25 @@ def _gap_kind(gap: int, words: int) -> str:
     if 0.3 * words <= gap <= 3 * words + 8:
         return "aligned"
     return "implausible"
+
+
+def shown(rec: dict | None, tr: dict | None) -> bool:
+    """Does the reader show this alignment as a translation? Only an aligned span (never kept-original,
+    omitted or a discarded candidate), current with the passage's text, and not where Burton renders the
+    passage in full himself: there his English is shown, they usually drop the passage, and a span found
+    there was most often something else (held-out round h1: 3 of 8 correct). Held-out round h2 measured
+    exactly this set: 95/100 correct (data/eval/djs-holdout.yaml)."""
+    return bool(rec and tr and rec["status"] == "aligned" and rec["text_sha1"] == tr["text_sha1"]
+                and tr["self_translation"]["status"] != "full")
+
+
+def version(rec: dict) -> dict:
+    """The translation version the reader shows: their text, with the page in their edition."""
+    m = re.search(r"pp?\. ([\d-]+)", rec.get("where", ""))
+    v = {"by": "djs1927", "text": rec["text"], "method": rec["method"], "page": m.group(1) if m else None}
+    if rec.get("attribution"):
+        v["attribution"] = rec["attribution"]
+    return v
 
 
 def sidenote_study(n: int = 60, seed: int = 20261020) -> dict:
@@ -243,32 +378,39 @@ def sidenote_study(n: int = 60, seed: int = 20261020) -> dict:
     return {"sample": n, "seed": seed, "counts": dict(c), "rows": rows}
 
 
-def run(selection_path) -> dict:
-    """Align the passages of a selection file; write data/layers/djs/<unit>.json; return counts."""
+def run(selection_path=None, units: list[str] | None = None) -> dict:
+    """Align the passages of a selection file, or every passage of the given units; write
+    data/layers/djs/<unit>.json; return counts. A whole-unit run rewrites the unit's layer, so records keyed
+    by retired ids do not linger."""
     import yaml
 
     from ..translate import packets
     from ..translate.packets import sha1
 
-    sel = yaml.safe_load(open(selection_path, encoding="utf-8"))
-    by_unit: dict[str, list[str]] = {}
-    for it in (i for i in sel["items"] if not i.get("retired")):
-        if it.get("kind") != "gloss-only":
-            by_unit.setdefault(it["id"].rsplit("-", 1)[0], []).append(it["id"])
+    by_unit: dict[str, list[str] | None] = {}
+    if selection_path:
+        sel = yaml.safe_load(open(selection_path, encoding="utf-8"))
+        for it in (i for i in sel["items"] if not i.get("retired")):
+            if it.get("kind") != "gloss-only":
+                by_unit.setdefault(it["id"].rsplit("-", 1)[0], []).append(it["id"])
+    for u in units or []:
+        by_unit[u] = None
     djs, counts = load(), Counter()
     for unit, ids in by_unit.items():
         ps = packets.passages(unit)
+        if not ps:
+            continue
         others_all = [p["packet_item"]["text"] for p in ps]
         f = LAYER / f"{unit}.json"
-        layer = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+        layer = json.loads(f.read_text(encoding="utf-8")) if f.exists() and ids is not None else {}
         for p in ps:
             item = p["packet_item"]
-            if item["id"] not in ids:
+            if ids is not None and item["id"] not in ids:
                 continue
             others = [o for o in others_all if o != item["text"]]
             res = align(item, others, djs)
             counts[res["status"]] += 1
-            layer[item["id"]] = {"by": "djs1927", "method": "rules/djs-align-v1", "threshold": THRESHOLD,
+            layer[item["id"]] = {"by": "djs1927", "method": "rules/djs-align-v3", "threshold": THRESHOLD,
                                  "text_sha1": sha1(item["text"]), **res}
         atomic_write_text(f, json.dumps(layer, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
     return dict(counts)

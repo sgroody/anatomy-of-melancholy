@@ -125,6 +125,19 @@ Also in M2:
 * `burton check --all` (2026-10-28): 20 PASS, 1 DEFER (V5, D10), 0 FAIL. V7: 7,769/7,769 passages with a record, untranslated 0, stale 0, orphan keys 0, 7,821 machine translations labelled, 6,916/6,916 Burton-span selectors and 8,422/8,422 self-translation selectors match once, 23 gloss records with 98/98 selectors. V2h: 7,769 foreign passages in both builds.
 * Still to do for the M5 exit: Dell & Jordan-Smith alignment over the whole book with a held-out accuracy check, and the 2 % spot-check (about 155 passages) plus the 68 flagged records.
 
+**Dell & Jordan-Smith across the whole book (2026-10-28).** `burton align-djs --all` (rules, no model calls, 11 s). Method `rules/djs-align-v3`, threshold 0.85 as in M4.
+* What changed from the M4 rules, each found on the first whole-book run or on held-out round h1:
+  * Their page furniture is skipped before anchoring: page numbers, running heads (also printed inside a line, "Memb. 3] Remedies Against Discontents [525"), the footnotes printed just above a page break, and a library stamp in the scanned copy ("MARIN COUNTY FREE LIBRARY"). Before this, running heads stood inside about 100 candidates. Hyphenated words rejoin across a page break ("beg- … gar's" → "beggar's").
+  * Their lower-case attribution after a verse, "(ovid)", is kept apart as `attribution` (196), and a trailing footnote mark as `footnote_mark`.
+  * New statuses, never shown as a translation: `kept-original` 194 (they print the original: "os sacrum", a name), `broken-span` 7 (the span starts or ends inside one of their [bracketed insertions]), `ocr-noise` 17 (mostly Greek they printed, which the OCR garbled).
+* Whole book, 7,769 passages: aligned 2,149, omitted 1,621 (they print nothing; usually Burton renders it himself), kept-original 194; no candidate: no-anchor 2,375 (mostly sidenotes, which their edition does not translate), not-found 798, below-threshold 407, implausible-length 201, ocr-noise 17, broken-span 7.
+* Held-out check (`data/eval/djs-holdout.yaml`, labels in `djs-holdout-gold.jsonl`; sample and pass mark written before labelling; the M4 pilot, the items seen while tuning and earlier rounds excluded):
+  * Round h1 (v2, 100 aligned + 60 omitted): aligned **87/100 correct**, below the pass mark of 0.95: 8 kept the original, 4 wrong, 1 boundary (a running head inside the line). Omitted **60/60 correct**. All 4 wrong ones were passages that Burton renders in full himself (of those 8 in the sample, 3 were correct). h1 then became tuning data for v3.
+  * Round h2 (v3, 100 drawn from what the reader shows): **95/100 correct**, which meets the pass mark exactly (Wilson 95 % interval 0.89–0.98). 2 kept the original (names below the kept threshold), 1 boundary (the passage opens a longer quotation), 2 wrong (a one-letter passage, and a span of Burton's English).
+  * Labels are Claude's, made in session, and await the owner's review (like D7).
+* Reader: a Dell & Jordan-Smith version is shown when the alignment is `aligned`, current with the text, and Burton does not render the passage in full himself (there his English is shown and theirs is usually absent): **1,992 passages**, in both profiles (SPEC §2: public domain in the USA). Label "Dell & Jordan-Smith (1927, p. N), aligned by rule"; their attribution is shown as "They attribute it: …". It comes before the machine version (SPEC §6.3). V2h counts it per unit, XML = HTML. V7 checks the layer (keys, currency, statuses, text only where a span is kept).
+* Still to do for the M5 exit: the 2 % spot-check (about 155 passages) plus the 68 flagged records.
+
 **Reader: Gowland as a private translation source (D11, 2026-10-27).**
 * Private build: 4,934 passages have a Gowland version (every bracket linked to a passage by `@for`; 2 are brackets over several blocks, joined from their pieces). It is read from the base text when the site is built, without his brackets and braces, sidenotes, endnote anchors or page breaks. It is never written to a layer and never sent to a model. A passage whose only translation is Gowland's is no longer "untranslated" in the private build.
 * The passage box lists every version, each labelled, in the default order of SPEC §6.3: editor, Dell & Jordan-Smith, machine, Gowland. The model's attribution and note travel with its own version. Burton's own rendering, where he gives one, comes before the list.
@@ -141,7 +154,7 @@ Also in M2:
 * The gold sample is labelled by Claude and awaits your review (D7).
 * ~~Chaucer untagged; Italian tagged `la`; French untagged; boundaries 3.2.5.1-f47 and f31.~~ Fixed in M5 session 1. Still open: djr-f1489 runs two citations and a quotation together (one passage, left as is). → M6 citation parser
 * The reader does not show the gloss layer yet; the M5 Chaucer glosses are stored for it. → M8
-* The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader needs a held-out accuracy check; the box and the order setting already take a `djs1927` version. → M5
+* ~~The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader needs a held-out accuracy check.~~ Done in M5: whole book, held-out 95/100, shown for 1,992 passages. The layer stays separate; the build reads it.
 
 ## M0 — Setup (short)
 * Python 3.13 and uv are installed (D9). `git init`. Create the package skeleton and the `burton` CLI stub, plus ruff and pytest.

@@ -38,8 +38,8 @@ def env() -> Environment:
     return e
 
 
-def layer_for(unit: str) -> dict:
-    f = paths.LAYERS / "translations" / f"{unit}.json"
+def layer_for(unit: str, layer: str = "translations") -> dict:
+    f = paths.LAYERS / layer / f"{unit}.json"
     return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
 
@@ -187,7 +187,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
         div = xml.find(f".//{T('div')}")
         body, counts = render_unit(div, unit, profile, layer_for(unit),
-                                   image=lambda n: images.get(n, "../"))
+                                   image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"))
         report["units"][unit] = counts
         words = len(public_text(div).split())
         if counts["sidenotes"]:

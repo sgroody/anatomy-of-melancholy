@@ -6,6 +6,7 @@ The browser half of V10 (axe-core, keyboard walk-through) is in burton.verify.br
 """
 
 import html
+import json
 import re
 import unicodedata
 from pathlib import Path
@@ -16,10 +17,16 @@ from fontTools.ttLib import TTFont
 from lxml import etree
 
 from .. import paths
+from ..layers import djs
 from .checks import ARABIC, ED, GREEK, HEBREW, TEI, Result
 
 XH = "{http://www.w3.org/1999/xhtml}"
 HEADINGS = [f"{XH}h{i}" for i in range(1, 7)]
+
+
+def _layer(unit: str, name: str) -> dict:
+    f = paths.LAYERS / name / f"{unit}.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
 
 def parse(path: Path):
@@ -235,14 +242,18 @@ def site_results(units: list[str]) -> list[Result]:
             # Gowland's translations offered as a version of their passage: one per bracket linked to a
             # foreign passage (@for), private build only
             linked = {t.get("for") for t in root.iter(f"{ED}trans", f"{ED}verse-trans") if t.get("for")}
+            # Dell & Jordan-Smith versions: the alignments the reader may show (both profiles)
+            tr_layer, djs_layer = _layer(unit, "translations"), _layer(unit, "djs")
             xml = {"sidenotes": len(notes),
                    "foreign": len(root.xpath("//*[@ana='foreign']")),
                    "enrefs": len(root.findall(f".//{ED}enref")) if profile == "private" else 0,
                    "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0,
-                   "gowland_versions": len(linked) if profile == "private" else 0}
+                   "gowland_versions": len(linked) if profile == "private" else 0,
+                   "djs_versions": sum(1 for k, r in djs_layer.items() if djs.shown(r, tr_layer.get(k)))}
             htm = {"sidenotes": len(by_class(tree, "sidenote")), "foreign": len(by_class(tree, "fp")),
                    "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb")),
-                   "gowland_versions": len(by_class(tree, "ft-gowland"))}
+                   "gowland_versions": len(by_class(tree, "ft-gowland")),
+                   "djs_versions": len(by_class(tree, "ft-djs1927"))}
             for k in xml:
                 v2.counts[f"{profile}:{k}"] = v2.counts.get(f"{profile}:{k}", 0) + htm[k]
                 if xml[k] != htm[k]:
@@ -255,12 +266,17 @@ def site_results(units: list[str]) -> list[Result]:
                 if unit in gow or not page.exists():
                     continue
                 root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
-                shown = re.sub(r"<[^>]+>", "", page.read_text(encoding="utf-8")).replace(chr(0xAD), "")
-                shown = " ".join(shown.split())
+                # Dell & Jordan-Smith's versions are left out of the bracket search: their text comes only
+                # from the 1927 OCR (data/source/djs/), and their own bracketed glosses can coincide with
+                # Gowland's ("[saviours] servatores", 2.1.1.1)
+                tree = parse(page)[0]
+                for v in by_class(tree, "ft-djs1927"):
+                    drop_keeping_tail(v)
+                shown = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)
+                                 .replace(chr(0xAD), "").split())
                 # the page's own text, without the translation boxes: a machine translation may match a
                 # literal bracket word for word ("I came to Athens, and no one knew me"); a Gowland version
                 # rendered in a box is caught by its data-resp="gowland" markup above
-                tree = parse(page)[0]
                 for ft in by_class(tree, "ft"):
                     drop_keeping_tail(ft)
                 own = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)

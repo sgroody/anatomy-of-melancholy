@@ -8,6 +8,7 @@ come from the layer data, never from the template.
 import html
 import re
 
+from ..layers import djs as djs_layer
 from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
 from ..translate.validate import primary_machine
@@ -44,7 +45,8 @@ def label_of(t: dict) -> str:
     if t["by"] == "machine":
         return f"Machine translation ({t['model']}, prompt {t['prompt']}, {t['date']})"
     if t["by"] == "djs1927":
-        return "Dell & Jordan-Smith (1927)"
+        page = f", p. {t['page']}" if t.get("page") else ""
+        return f"Dell & Jordan-Smith (1927{page}), aligned by rule"
     if t["by"] == "editor":
         return "Editor's translation"
     if t["by"] == "gowland":
@@ -99,13 +101,14 @@ def gowland_versions(div) -> dict[str, str]:
 
 
 class Renderer:
-    def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None):
+    def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None):
         self.unit, self.profile, self.layer = unit, profile, layer
+        self.djs = {k: djs_layer.version(r) for k, r in (djs or {}).items() if djs_layer.shown(r, layer.get(k))}
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
         self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
                        "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0,
-                       "gowland_versions": 0}
+                       "gowland_versions": 0, "djs_versions": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
@@ -320,6 +323,8 @@ class Renderer:
         trs = {t["by"]: t for t in (rec or {}).get("translations", []) if t["by"] != "machine"}
         if rec and (m := primary_machine(rec)) is not None:
             trs["machine"] = m
+        if fid in self.djs:
+            trs["djs1927"] = self.djs[fid]
         if fid in self.gowland:
             trs["gowland"] = {"by": "gowland", "text": self.gowland[fid]}
         return [trs[s] for s in SOURCE_ORDER if s in trs]
@@ -360,9 +365,13 @@ class Renderer:
                     extra += f'<span class="ft-src">{word}: {esc_tagged(where)}{unverified}</span>'
                 if t.get("note"):
                     extra += f'<span class="ft-note">{esc_tagged(t["note"])}</span>'
+            if src == "djs1927" and t.get("attribution"):  # their own attribution, as they print it
+                extra += f'<span class="ft-src">They attribute it: {esc(t["attribution"])}</span>'
             resp = ' data-resp="gowland"' if src == "gowland" else ""
             if src == "gowland":
                 self.counts["gowland_versions"] += 1
+            if src == "djs1927":
+                self.counts["djs_versions"] += 1
             items.append(f'<span class="ft-v ft-{attr(src)}" data-src="{attr(src)}"{resp}>'
                          f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
                          f'<span class="ft-label">{esc(label_of(t))}</span>{extra}</span>')
@@ -461,8 +470,8 @@ def h1_head(div):
     return next((h for h in heads if h.get("type") == "title"), heads[0] if heads else None)
 
 
-def render_unit(div, unit: str, profile: str, layer: dict, image=None) -> tuple[str, dict]:
-    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div))
+def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None) -> tuple[str, dict]:
+    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs)
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
