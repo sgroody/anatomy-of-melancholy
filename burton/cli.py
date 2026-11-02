@@ -89,6 +89,8 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true", help="only count the candidates")
 
+    sub.add_parser("corpora", help="convert downloaded corpora to data/source/corpora/ for verify-sources")
+
     s = sub.add_parser("verify-sources", help="verify quotation sources against local corpora (rules)")
     s.add_argument("--unit", action="append")
 
@@ -233,6 +235,10 @@ def main(argv: list[str] | None = None) -> int:
 
         print(dict(xrefs_relative.run(model=args.model, packet_size=args.packet_size, budget_usd=args.budget_usd,
                                       dry_run=args.dry_run)))
+    elif args.cmd == "corpora":
+        from .layers import corpora
+
+        print(dict(corpora.convert()))
     elif args.cmd == "verify-sources":
         from .layers import sources
 

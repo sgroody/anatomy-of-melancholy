@@ -13,7 +13,8 @@ def _corpus(tmp_path):
 
 
 def test_norm_merges_spellings():
-    assert S.norm("Jupiter, vitæ  Æneas") == ["iupiter", "uitae", "aeneas"]
+    assert S.norm("Jupiter, vitæ  Æneas") == ["iupiter", "uite", "eneas"]
+    assert S.norm("coelum foelix quum") == S.norm("caelum felix cum")
 
 
 def test_verified_match_with_burtons_spelling(tmp_path):

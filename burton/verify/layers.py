@@ -189,6 +189,29 @@ def _citations(unit: str, root, r, c: dict) -> None:
         r.fail(f"{unit}: {len(missing)} sidenotes without a citation record, e.g. {missing[0]}; run `burton citations`")
 
 
+SV_STATUSES = {"verified", "conflict", "unchecked", "matched-unmapped"}
+
+
+def _source_verification(unit: str, foreign: dict, r, c: dict) -> None:
+    """Verified sources (M6): keyed by passages, current with the text, labelled with their rule, and a
+    verified match only with a recorded text-match basis and a run that meets the rule (>= 5 words, >= 80 %)."""
+    f = paths.LAYERS / "source-verification" / f"{unit}.json"
+    if not f.exists():
+        return
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c[f"sources_{rec['status']}"] = c.get(f"sources_{rec['status']}", 0) + 1
+        if key not in foreign:
+            r.fail(f"{unit}: source-verification key {key} not in base text")
+            continue
+        if rec["text_sha1"] != sha1(public_text(foreign[key])):
+            r.fail(f"{key}: source verification is stale (base text changed); re-run `burton verify-sources`")
+        if rec["status"] not in SV_STATUSES or rec.get("by") != "rules" or not rec.get("method"):
+            r.fail(f"{key}: source verification without a known status or rule label")
+        if rec["status"] == "verified" and not (rec.get("basis", "").startswith("text-match:")
+                                                and rec["run"] >= 5 and rec["cover"] >= 0.8):
+            r.fail(f"{key}: verified source without a text-match basis that meets the rule")
+
+
 XREL_STATUSES = {"relative-proposed", "relative-confirmed", "unresolved", "not-a-reference"}
 
 
@@ -306,5 +329,6 @@ def v7_layers(units: list[str]):
         _djs(unit, foreign, r, c)
         _citations(unit, root, r, c)
         _xrefs_relative(unit, root, r, c)
+        _source_verification(unit, foreign, r, c)
     r.counts = c
     return r

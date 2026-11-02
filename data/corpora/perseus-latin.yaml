@@ -1,0 +1,50 @@
+# Perseus canonical-latinLit textgroups -> the edition's author ids (data/abbreviations.yaml), for
+# `burton corpora` and `burton verify-sources`. Drafted 2026-11-02 by claude-opus-5-5 from each group's
+# <ti:groupname> (or the TEI title statement where the group has none). A group not listed here is converted
+# with the author `perseus-<code>`: a match to it is reported but never upgrades a source.
+corpus: perseus-latin
+authors:
+  phi0119: plautus
+  phi0134: terence
+  phi0472: catullus
+  phi0474: cicero
+  phi0550: lucretius
+  phi0620: propertius
+  phi0631: sallust
+  phi0660: tibullus
+  phi0690: virgil
+  phi0836: celsus
+  phi0845: columella
+  phi0860: curtius
+  phi0893: horace
+  phi0914: livy
+  phi0917: lucan
+  phi0959: ovid
+  phi0969: persius
+  phi0972: petronius
+  phi0975: phaedrus
+  phi0978: pliny-elder
+  phi1002: quintilian
+  phi1014: seneca-elder
+  phi1017: seneca-younger
+  phi1020: statius
+  phi1038: valerius-maximus
+  phi1056: vitruvius
+  phi1212: apuleius
+  phi1254: gellius
+  phi1276: juvenal
+  phi1294: martial
+  phi1318: pliny-younger
+  phi1345: silius-italicus
+  phi1348: suetonius
+  phi1351: tacitus
+  stoa0023: ammianus
+  stoa0040: augustine
+  stoa0045: ausonius
+  stoa0054: bede
+  stoa0058: boethius
+  stoa0089: claudian
+  stoa0162: jerome
+  stoa0203: minucius-felix
+  stoa0255: seneca-younger   # dialogues (De brevitate vitae, ...), catalogued apart from phi1017
+  stoa0275: tertullian

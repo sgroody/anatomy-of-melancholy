@@ -190,7 +190,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         div = xml.find(f".//{T('div')}")
         body, counts = render_unit(div, unit, profile, layer_for(unit),
                                    image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"),
-                                   cites=layer_for(unit, "citations"), cite_label=cite_label)
+                                   cites=layer_for(unit, "citations"), cite_label=cite_label,
+                                   verified=layer_for(unit, "source-verification"))
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))
         words = len(public_text(div).split())

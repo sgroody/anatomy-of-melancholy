@@ -102,15 +102,16 @@ def gowland_versions(div) -> dict[str, str]:
 
 class Renderer:
     def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None,
-                 cites: dict | None = None, cite_label: str = ""):
+                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None):
         self.unit, self.profile, self.layer = unit, profile, layer
+        self.verified = {k: v for k, v in (verified or {}).items() if v["status"] == "verified"}
         self.cites, self.cite_label = cites or {}, cite_label  # M6 citation layer, shown on request
         self.djs = {k: djs_layer.version(r) for k, r in (djs or {}).items() if djs_layer.shown(r, layer.get(k))}
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
         self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
                        "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0,
-                       "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0}
+                       "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0, "verified_sources": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
@@ -392,7 +393,14 @@ class Renderer:
                          f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
                          f'<span class="ft-label">{esc(label_of(t))}</span>{extra}</span>')
         own = " ft-own" if burton.startswith('<span class="ft-burton-own"') else ""
-        return (f'<{tag} class="ft{own}" id="tr-{attr(fid)}" role="note" lang="en">{head}{burton}'
+        vsrc = ""
+        if v := self.verified.get(fid):  # the only "Source": a verified text match (M6 verifier)
+            self.counts["verified_sources"] += 1
+            where = ", ".join(x for x in (v.get("author_name"), v.get("title"),
+                                          None if v["locus"] == "all" else v["locus"]) if x)
+            vsrc = (f'<span class="ft-src ft-verified">Source: {esc(where)} '
+                    f'<span class="lbl">text matched by rule in {esc(v["corpus"])} ({esc(v["method"])})</span></span>')
+        return (f'<{tag} class="ft{own}" id="tr-{attr(fid)}" role="note" lang="en">{head}{burton}{vsrc}'
                 f'<span class="ft-vs">{"".join(items)}</span></{tag}>')
 
     def mode_class(self, fid: str) -> str:
@@ -487,8 +495,9 @@ def h1_head(div):
 
 
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
-                cites: dict | None = None, cite_label: str = "") -> tuple[str, dict]:
-    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label)
+                cites: dict | None = None, cite_label: str = "", verified: dict | None = None) -> tuple[str, dict]:
+    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
+                 verified=verified)
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
