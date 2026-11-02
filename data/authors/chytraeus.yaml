@@ -1,7 +1,7 @@
 # Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
 # data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
 id: chytraeus
-name: David Chytraeus
+name: Nathan Chytraeus
 status: machine-draft
 wikidata: null
 identification: null
@@ -12,18 +12,18 @@ review:
   date: null
   note: null
 draft:
-  identification: David Chytraeus (1530–1600) was a Lutheran theologian and historian at Rostock. However, the work
-    Burton cites, 'Variorum in Europa itinerum deliciae' (1594), a collection of inscriptions and epitaphs gathered
-    on travels in Europe, was compiled by his brother Nathan Chytraeus (1543–1598).
+  identification: Nathan Chytraeus (1543–1598) was a German humanist scholar and Latin poet, and the younger brother
+    of the theologian David Chytraeus. He taught at Rostock and later headed the school at Bremen. His *Variorum
+    in Europa itinerum deliciae* (first published 1594) collects inscriptions, epitaphs and similar texts that he
+    copied out on his travels through Europe.
   field: humanist
-  why_cited: Burton cites the 'Deliciae Europae' for inscriptions, epitaphs and similar curiosities from European
-    towns.
-  identity_doubt: Every example cites the 'Deliciae Europae', which was compiled by Nathan Chytraeus, not David,
-    so the person Burton means is probably Nathan.
-  confidence: low
+  why_cited: Burton cites the *Deliciae* of European travel as his source for inscriptions and epitaphs from places
+    across Europe, and quotes them as curiosities or illustrations.
+  identity_doubt: null
+  confidence: high
   by: machine
   model: claude-opus-5-5
   prompt: authors-v1
   date: '2026-11-02'
-  input_hash: fc0a0f2ef0237cf6
+  input_hash: b049eef123731c8e
   status: machine-draft

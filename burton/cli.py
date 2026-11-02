@@ -91,6 +91,14 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("corpora", help="convert downloaded corpora to data/source/corpora/ for verify-sources")
 
+    s = sub.add_parser("m6-audit", help="independent model checkers for the M6 review items")
+    s.add_argument("kind", choices=["authors", "xrefs", "sources", "report"])
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--packet-size", type=int, default=15)
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--dry-run", action="store_true")
+
     s = sub.add_parser("verify-sources", help="verify quotation sources against local corpora (rules)")
     s.add_argument("--unit", action="append")
 
@@ -239,6 +247,16 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import corpora
 
         print(dict(corpora.convert()))
+    elif args.cmd == "m6-audit":
+        from .layers import m6_audit
+
+        if args.kind == "report":
+            import json
+
+            print(json.dumps(m6_audit.report(), indent=1))
+            return 0
+        print(dict(m6_audit.run(args.kind, model=args.model, packet_size=args.packet_size,
+                                budget_usd=args.budget_usd, dry_run=args.dry_run)))
     elif args.cmd == "verify-sources":
         from .layers import sources
 

@@ -79,6 +79,20 @@ def index(units: list[dict]) -> dict[int, set[int]]:
     return ix
 
 
+def run_at(a: list[str], b: list[str]) -> tuple[int, int]:
+    """Length of the longest shared run of words and where it ends in b."""
+    best, end, prev = 0, 0, [0] * (len(b) + 1)
+    for x in a:
+        cur = [0] * (len(b) + 1)
+        for j, y in enumerate(b, 1):
+            if x == y:
+                cur[j] = prev[j - 1] + 1
+                if cur[j] > best:
+                    best, end = cur[j], j
+        prev = cur
+    return best, end
+
+
 def longest_run(a: list[str], b: list[str]) -> int:
     best, prev = 0, [0] * (len(b) + 1)
     for x in a:

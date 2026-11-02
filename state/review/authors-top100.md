@@ -108,7 +108,7 @@ To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agre
 | 95 | Aretaeus of Cappadocia | `aretaeus` | Aretaeus | 9 | 9 | 8 | — | high | — |
 | 96 | Ogier Ghiselin de Busbecq (Busbequius) | `busbecq` | Busbequius | 9 | 9 | 8 | — | high | — |
 | 97 | Baldassare Castiglione (Castilio) | `castiglione` | Castilio | 9 | 9 | 6 | — | high | — |
-| 98 | David Chytraeus | `chytraeus` | Chytraeus | 9 | 9 | 6 | — | low | Every example cites the 'Deliciae Europae', which was compiled by Nathan Chytraeus, not David, so the person Burton means is probably Nathan. |
+| 98 | Nathan Chytraeus | `chytraeus` | Chytraeus | 9 | 9 | 6 | — | high | — |
 | 99 | Marsilio Ficino (Ficinus) | `ficino` | Ficinus, Ficin, Marsilius Ficinus, Mars Ficinus | 9 | 9 | 9 | — | high | — |
 | 100 | Heliodorus of Emesa | `heliodorus` | Heliodorus, Heliodor | 9 | 9 | 6 | — | high | — |
 
@@ -405,8 +405,8 @@ To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agre
 **97. Baldassare Castiglione (Castilio)** (`castiglione`): Castilio lib. 2 de aulico. (1.2.4.4-n13); Castilio de aulic. lib. 1 fol. 72. (2.2.6.3-n5); Castilio de aulico lib. 3 fol. 228. (3.2.2.2-n142); Castilio de aulic. lib. 1. (3.2.2.3-n38)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Baldassare Castiglione (1478–1529) was an Italian courtier and diplomat. He wrote 'Il Cortegiano' (The Courtier, 1528), which Burton cites in its Latin version, 'De aulico'. *Why cited:* Burton cites 'The Courtier' by book and folio, most likely for its discussions of love, women, courtly behaviour and conversation.
 
-**98. David Chytraeus** (`chytraeus`): Chytraeus delit. Europae. (1.2.3.10-n23); Chytraeus Europ. delitiis. (2.3.2.1-n17); Chytraeus in Europae delitiis. (2.3.3.1-n76); Chytraeus (2.3.3.1-n85)
-> Draft (claude-opus-5-5, authors-v1, 2026-11-02; low): David Chytraeus (1530–1600) was a Lutheran theologian and historian at Rostock. However, the work Burton cites, 'Variorum in Europa itinerum deliciae' (1594), a collection of inscriptions and epitaphs gathered on travels in Europe, was compiled by his brother Nathan Chytraeus (1543–1598). *Why cited:* Burton cites the 'Deliciae Europae' for inscriptions, epitaphs and similar curiosities from European towns.
+**98. Nathan Chytraeus** (`chytraeus`): Chytraeus delit. Europae. (1.2.3.10-n23); Chytraeus Europ. delitiis. (2.3.2.1-n17); Chytraeus in Europae delitiis. (2.3.3.1-n76); Chytraeus (2.3.3.1-n85)
+> Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Nathan Chytraeus (1543–1598) was a German humanist scholar and Latin poet, and the younger brother of the theologian David Chytraeus. He taught at Rostock and later headed the school at Bremen. His *Variorum in Europa itinerum deliciae* (first published 1594) collects inscriptions, epitaphs and similar texts that he copied out on his travels through Europe. *Why cited:* Burton cites the *Deliciae* of European travel as his source for inscriptions and epitaphs from places across Europe, and quotes them as curiosities or illustrations.
 
 **99. Marsilio Ficino (Ficinus)** (`ficino`): Lib. 1 cap. 6 de sanit. tuenda. (1.1.3.3-n4); Comment. in dial. Plat. de amore cap. 5. (1.2.1.2-n42); Marsilius Ficinus lib. 13 cap. 18 de theolog. Platonica. (1.2.3.2-n23); Lib. 1 cap. 7. (2.2.2.1-n16)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Marsilio Ficino (1433–1499) was a Florentine Platonist philosopher and physician who translated Plato into Latin. His works include 'De vita libri tres' (1489), whose first book deals with keeping scholars healthy; a commentary on Plato's 'Symposium' on love ('De amore'); and the 'Theologia Platonica'. *Why cited:* Burton uses him as an authority on the melancholy of scholars and how to preserve their health, and on Platonic ideas of love.

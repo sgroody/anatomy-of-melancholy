@@ -8,6 +8,7 @@ downloaded files are untrusted data: parsed with entities and network access off
 """
 
 import json
+import shutil
 from collections import Counter
 
 import yaml
@@ -64,6 +65,8 @@ units.recovered = 0
 
 def convert() -> Counter:
     authors = yaml.safe_load(MAP.read_text(encoding="utf-8"))["authors"]
+    if OUT.exists():  # a re-run must not leave files under an author's old (unmapped) name
+        shutil.rmtree(OUT)
     stats: Counter = Counter()
     index = {}
     for f in sorted(RAW.glob("*/*/*lat*.xml")):

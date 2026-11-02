@@ -3,13 +3,10 @@
 From `uv run burton verify-sources` (text-match-v1, Perseus Latin @ 8b536bd). None of these is shown as a source.
 `conflict`: the passage matches a different author than the record claims (often the claimed author is quoted
 by the matched one, or is not in the corpus). `unchecked`: the claimed name is not in the edition's tables.
-`matched-unmapped`: the matched corpus author has no edition id.
 
 | Passage | Status | Claimed | Matched in corpus | Words matched |
 |---|---|---|---|---|
-| `1.2.1.2-f74` | matched-unmapped | — (unidentified) | perseus-stoa0203, stoa0203.stoa001.perseus-lat2 13.1 | 6/6 |
 | `1.2.4.6-f7` | conflict | Euripides (burton-cites) | Seneca the Younger, Epistulae 19.115.14 | 6/6 |
-| `1.2.4.7-f60` | matched-unmapped | — (unidentified) | perseus-stoa0203, stoa0203.stoa001.perseus-lat2 13.1 | 6/6 |
 | `1.3.3.1-f9` | conflict | Aristotle (burton-cites) | Seneca the Younger, De Tranquilitate Animi 9.17.10 | 6/6 |
 | `1.4.1.1-f131` | unchecked | Fabius (burton-cites) | Quintilian, Institutio Oratoria 6.pr.14 | 6/6 |
 | `1.4.1.1-f68` | conflict | Horace (burton-cites) | Martial, Epigrammata 10.47 | 6/6 |
