@@ -1,0 +1,71 @@
+{
+  "1.1.3.4-p1-r3528": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": null,
+    "input_hash": "edf00102153510e2",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "Points to Partition 3 as a whole (love melancholy in 3.2, religious melancholy in 3.4); the outline gives no single id for it.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "in my third Partition",
+      "in": "1.1.3.4-p1",
+      "prefix": " speak of apart by themselves ",
+      "suffix": ". The three precedent species "
+    },
+    "status": "unresolved",
+    "target": null
+  },
+  "1.1.3.4-p1-r369": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": "Madness no other than Melancholy in extent, differing (as I have said) in degrees",
+    "input_hash": "17139a63b82cb4bf",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "The difference in degree between madness and melancholy was discussed in the subsection on dotage, frenzy and madness.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "as I have said",
+      "in": "1.1.3.4-p1",
+      "prefix": "ancholy in extent, differing (",
+      "suffix": ") in degrees. Some make two di"
+    },
+    "status": "relative-proposed",
+    "target": "1.1.1.4"
+  },
+  "1.1.3.4-p2-r1224": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": "Herc. de Saxonia attributes wholly to distempered spirits, & those immaterial",
+    "input_hash": "77e8cc9508be295f",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "Hercules de Saxonia's view that melancholy comes from distempered spirits without humours is discussed in the subsection on the matter of melancholy.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "as I have said",
+      "in": "1.1.3.4-p2",
+      "prefix": " spirits, & those immaterial, ",
+      "suffix": ". Sometimes they cannot well d"
+    },
+    "status": "relative-proposed",
+    "target": "1.1.3.3"
+  }
+}

@@ -1,0 +1,72 @@
+# Relative cross-references: owner review (M6)
+
+Generated 2026-11-02 by `uv run burton xrefs-relative`. Proposals are a
+machine draft (prompt `xref-rel-v1`); none is linked in the reader until you confirm it. To confirm, set
+the record's `status` to `relative-confirmed` and `review` to your name and date in
+`data/layers/xrefs-relative/<unit>.json`; to reject, set `status: unresolved`.
+
+| Phrase | In | Proposed target | Evidence | Reason | Confidence |
+|---|---|---|---|---|---|
+| as I have said | `1.1.2.4-p5-r100` | — | — | The midriff dividing the lower belly from the chest is described earlier in the same subsection, in the account of the lower belly. | medium |
+| In the precedent Subsections | `1.1.2.9-p1-r0` | — | — | The inferior faculties are covered over several subsections (1.1.2.5 to 1.1.2.8), so no single target can be given. | medium |
+| hereafter shall | `1.1.3.1-p1-r3575` | — | — | Melancholy people who laugh or are free from fear are discussed among the symptoms, but 1.3.1.2 and 1.3.1.3 are both plausible targets. | low |
+| before mentioned | `1.1.3.3-p1-r639` | 1.1.2.2 | the material is one of the four humours before mentioned | The four humours are described in the subsection on the division of the body, humours and spirits. | high |
+| in my third Partition | `1.1.3.4-p1-r3528` | — | — | Points to Partition 3 as a whole (love melancholy in 3.2, religious melancholy in 3.4); the outline gives no single id for it. | medium |
+| as I have said | `1.1.3.4-p1-r369` | 1.1.1.4 | Madness no other than Melancholy in extent, differing (as I have said) in degrees | The difference in degree between madness and melancholy was discussed in the subsection on dotage, frenzy and madness. | medium |
+| as I have said | `1.1.3.4-p2-r1224` | 1.1.3.3 | Herc. de Saxonia attributes wholly to distempered spirits, & those immaterial | Hercules de Saxonia's view that melancholy comes from distempered spirits without humours is discussed in the subsection on the matter of melancholy. | medium |
+| as I have proved | `1.2.1.3-p2-r2309` | 1.2.1.2 | They can cause tempests, storms, which is familiarly practised by Witches in Norway, Iceland | Spirits raising storms and northern witches selling winds were treated in the preceding digression of spirits. | medium |
+| before quoted | `1.2.2.5-p2-r234` | — | — | The northern witches ascribed to melancholy could be the ones cited in either 1.2.1.2 or 1.2.1.3, so no single target is clear. | low |
+| as I have said | `1.2.2.7-p1-r1062` | — | — | The earlier statement may be in this same subsection or elsewhere; it cannot be placed with certainty. | low |
+| as I shall prove | `1.2.3.10-p10-r1131` | 2.3.3.1 | Rich men are in the same predicament: what their pains are, stulti nesciunt, ipsi sentiunt | The cares and miseries of riches are argued at length in the consolation against poverty. | medium |
+| formerly said | `1.2.3.2-p1-r2175` | — | — | Witches' illusions are discussed in both 1.2.1.2 and 1.2.1.3, so no single target can be chosen. | low |
+| in his place | `1.2.3.4-p1-r495` | 1.3.1.2 | How it is a Symptom shall be showed | Sorrow as a symptom is treated among the symptoms in the mind. | medium |
+| in the precedent member | `1.2.4.1-p1-r84` | — | — | The preceding member, 1.2.3, closes the treatment of the necessary causes (non-naturals ending with the perturbations); a member-level id is given because no single subsection applies. | medium |
+| in his place | `1.2.4.6-p1-r410` | 2.3.3.1 | much to be preferred before riches (as shall be showed in his place) | The praise of poverty over riches comes in the consolation against poverty and want. | high |
+| as I have said | `1.2.4.6-p6-r528` | — | — | The earlier remark about the rich being wise by inheritance cannot be placed securely and may be in this same subsection. | low |
+| which I have before | `1.2.4.7-p12-r91` | 1.2.4.3 | besides those Terrors which I have before touched | Terrors and affrights are the subject of 1.2.4.3. | high |
+| formerly said | `1.2.5.1-p1-r574` | 1.2.3.1 | Plato, Cyprian, and some others, as I have formerly said, lay the greatest fault upon the soul | How the mind's passions work on the body, putting the fault on the soul, is discussed in 1.2.3.1. | medium |
+| already declared | `1.2.5.2-p3-r1454` | 1.2.2.4 | seed too long detained | Retention of seed and menstrual blood as a cause was treated under retention and evacuation. | medium |
+| which I have formerly | `1.2.5.4-p1-r80` | — | — | Points back to the general causes treated across Partition 1 Section 2, which covers many units, so no single target can be chosen. | medium |
+| in the following discourse | `1.3.1.1-p4-r1008` | — | — | Same forward reference as the preceding phrase; 1.3.1.2 and 1.3.3.1 are both plausible, so no target is given. | low |
+| as shall be proved | `1.3.1.1-p4-r989` | — | — | A forward reference to the discussion of false perceptions, which could be the symptoms in the mind (1.3.1.2) or the immediate cause of symptoms (1.3.3.1); too ambiguous to choose. | low |
+| as I have said | `1.3.1.2-p2-r1805` | — | — | Refers back to an earlier remark about self-application of what they hear and read, possibly in the treatment of imagination (1.2.3.2) or earlier in this subsection; can't be placed with confidence. | low |
+| as I have said | `1.3.2.1-p1-r1988` | — | — | Refers back to the distinguishing mark of head-melancholy, which could be earlier in this subsection or in the discussion of species (1.1.3.4) or causes (1.2.5.3); can't be fixed. | low |
+| which I have before | `1.3.2.2-p1-r1211` | 1.1.3.1 | Hercules de Saxonia (to whom I subscribe) is of the same mind | In the definition of melancholy Burton notes Hercules de Saxonia's objection that fear and sorrow are not found in all melancholy people. | medium |
+| which I have already | `1.3.2.4-p1-r397` | 1.1.3.4 | as a peculiar species of melancholy | The kinds of melancholy, including that of maids, nuns and widows, are listed in the subsection on the species of melancholy. | medium |
+| as I have said | `1.3.3.1-p1-r3718` | — | — | Refers back to an earlier citation of Bayrus's plank example, probably in the discussion of imagination (1.2.3.2), but I can't confirm where. | low |
+| which I have formerly | `2.1.1.1-p2-r71` | — | — | Points back to the method of the whole treatment of causes (Partition 1 Section 2), not to a single unit. | medium |
+| which I have before | `2.2.1.1-p1-r111` | — | — | The six non-natural things were set out as causes across the whole of 1.2.2 (1.2.2.1–1.2.2.7), so no single subsection can be chosen. | medium |
+| as I have said | `2.2.3.1-p12-r73` | — | — | The advice to change the air probably refers to earlier in this same Air subsection, but the exact place can't be confirmed from the context. | low |
+| formerly showed | `2.2.3.1-p8-r784` | 1.2.2.5 | What harm those extremities of heat or cold do in this malady | The harm done by hot or cold air was shown in 'Bad Air a cause of Melancholy'. | high |
+| before mentioned | `2.2.6.2-p6-r1824` | — | — | The earlier mention of the Advocate could be among the symptoms or in the subsection on imagination; I can't tell which from the context. | low |
+| in the precedent Section | `2.3.1.1-p1-r8` | 2.2.6.2 | I have made mention of good counsel, comfortable speeches, persuasion | Counsel and comfort from friends are treated in 2.2.6.2, at the end of the preceding Section. | high |
+| in their place | `2.4.1.4-p8-r64` | 2.4.2.2 | Lapis Lazuli and Armenus because they purge | The purging stones are treated among the simples that purge melancholy downward. | medium |
+| in his place | `2.4.2.3-p8-r93` | — | — | The uses are shown across the particular cures in 2.5, which covers several subsections. | medium |
+| as I have said | `2.5.1.1-p1-r670` | 2.2.1.1 | not only in choice of meat and drink, but of all those other non-natural things | 2.2.1.1 opens by defining diet as covering all six non-natural things. | high |
+| before mentioned | `2.5.1.3-p7-r61` | 2.4.1.3 | Borage wine | Borage and bugloss are discussed among the herbal alteratives in 2.4.1.3. | medium |
+| as I have showed | `2.5.1.5-p7-r1414` | — | — | Spices as a cause could refer to 'Bad diet a cause' (1.2.2.1) or to 'Causes of Head-Melancholy' (1.2.5.3); I can't choose between them. | low |
+| in the first Partition | `3.1.1.2-p1-r452` | — | — | This points to the perturbations in 1.2.3 in general, which covers several subsections. | medium |
+| in his place | `3.1.1.2-p3-r4455` | — | — | This points forward to several later Sections (3.2 and 3.4), so no single unit can be chosen. | medium |
+| in his place | `3.1.1.2-p4-r370` | — | — | The particular kinds of love-melancholy are treated in several Sections (3.2 and 3.4), so no single unit can be chosen. | medium |
+| as I have showed | `3.1.2.1-p7-r267` | 1.2.3.11 | Ambition tyrannizeth over our souls | Ambition as a cause is treated in 'Concupiscible Appetite, as Desires, Ambition, Causes'. | medium |
+| as I have said | `3.1.2.2-p1-r1325` | 1.2.3.13 | bewitching sports of gaming, hawking, hunting, and such vain pleasures | Gaming, hunting and other immoderate pleasures as a cause of melancholy were treated in 'Love of Gaming, &c., and pleasures immoderate'. | high |
+| in the next Section | `3.1.2.2-p3-r2309` | 3.2.1.1 | this love deserves a longer explication, and shall be dilated apart | The next Section (3.2) on Heroical love-melancholy begins at 3.2.1.1. | medium |
+| In the precedent Section | `3.2.1.1-p1-r0` | 3.1.2.2 | mention was made amongst other pleasant objects, of this comeliness and beauty | Beauty as the last of the pleasant objects of love was mentioned at the end of 'Pleasant Objects of Love'. | high |
+| as I have said | `3.2.1.1-p1-r596` | — | — | This could point to the division of love in 3.1.1.2 or to the 'κατʼ ἐξοχὴν is termed Heroical' passage in 3.1.2.2, so I have not chosen one. | low |
+| as will appear | `3.2.1.2-p23-r2202` | 3.2.3.1 | as will appear by the Symptoms | Points forward to the symptoms of love-melancholy. | high |
+| as I have said | `3.2.1.2-p23-r399` | 3.2.1.1 | is named by our Physicians, Heroical love | The opening of 3.2.1.1 already explained that this love is called Heroical because gallants and noblemen are possessed with it. | medium |
+| in the precedent partitions | `3.2.1.2-p24-r1962` | 1.1.3.2 | both imagination and reason are misaffected, first one, then the other | In Partition 1, 'Of the part affected' explained that imagination is hurt first and then reason. | medium |
+| which I have formerly | `3.2.2.5-p7-r415` | 3.2.2.2 | there is no other fascination than that which comes by the eyes | Fascination through the eyes was discussed in 3.2.2.2, the subsection on sight and how beauty pierces. | medium |
+| as I have proved | `3.2.4.1-p5-r638` | 3.2.1.2 | no better than beasts, irrational, stupid, headstrong | How love tyrannizes over men and turns them into beasts was shown in 3.2.1.2. | medium |
+| in his place | `3.2.4.1-p5-r75` | 3.2.5.1 | whether Love may be cured or no, and by what means | Points forward to the cure of love-melancholy, which begins at 3.2.5.1. | medium |
+| formerly handled | `3.2.5.1-p11-r463` | 2.4.1.1 | is either inward or outward, as hath been formerly handled in the precedent partition in the cure of Melancholy | Physic, inward or outward, for melancholy is treated in Partition 2, Section 4 (medicines and surgical remedies); that section has no id of its own, so its first subsection is used. | medium |
+| in the precedent partition | `3.2.5.1-p11-r480` | 2.4.1.1 | Such Physic then as is prescribed, is either inward or outward | 'The precedent partition' is Partition 2, the cure of melancholy, and physic by medicines starts at 2.4.1.1. | medium |
+| in my former section | `3.3.3.1-p2-r2439` | 3.3.2.1 | that of Joanna of Spain which I treated in my former section | The section just before Prognostics is Symptoms of Jealousy, where the Joanna story most likely appears; 3.3.1.2 (Causes) is also possible. | low |
+| in its place | `3.4.1.1-p2-r2516` | 3.4.1.3 | the several furies of our Fatidici dii, Pythonissas, Sibyls, Enthusiasts, Pseudoprophets, Heretics and Schismatics | The symptoms subsection of religious melancholy covers prophets, enthusiasts, heretics and schismatics. | high |
+| in the next place | `3.4.1.1-p8-r497` | — | — | He announces the following treatment of both extremes, religious melancholy in excess (3.4.1.2 onward) and in defect (3.4.2), so no single unit can be chosen. | medium |
+| formerly declared | `3.4.2.6-p17-r182` | — | — | Visions coming from inward causes could refer to 1.3.1.2 (symptoms in the mind) or 1.3.3.1 (immediate cause of symptoms); the outline cannot decide between them. | medium |
+| as I have said | `3.4.2.6-p17-r822` | — | — | Melancholy as the devil's bath may be discussed both in the digression of spirits (1.2.1.2) and in the causes of despair (3.4.2.3), so the target cannot be fixed. | low |
+| before mentioned | `djr-p114-r78` | — | — | The verse about transgressors being fools was quoted earlier in a different paragraph of the preface itself. | medium |
+| as I have said | `djr-p150-r1450` | — | — | Points back to an earlier mention of Claudius's work at Ostia, but the earlier passage can't be found from the context and outline, so no target is given. | low |
+| as shall be proved | `djr-p180-r116` | 1.2.3.12 | Covetous men amongst others, are most mad | Covetousness as a cause of melancholy, with its fear and suspicion, is treated in the subsection on covetousness. | medium |
+| in his proper place | `djr-p180-r135` | 1.2.3.12 | Covetous men amongst others, are most mad | 'His proper place' for covetous men is the subsection on covetousness as a cause. | medium |

@@ -82,6 +82,16 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true", help="count what would be sent, without calling the model")
 
+    s = sub.add_parser("xrefs-relative", help="relative cross-references: model proposals for the owner's review")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--packet-size", type=int, default=15)
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--dry-run", action="store_true", help="only count the candidates")
+
+    s = sub.add_parser("verify-sources", help="verify quotation sources against local corpora (rules)")
+    s.add_argument("--unit", action="append")
+
     s = sub.add_parser("selftrans", help="self-translation signals per foreign passage -> data/layers/selftrans/")
     s.add_argument("--unit", action="append")
     s.add_argument("--all", action="store_true", help="every unit in the book (the default without --unit)")
@@ -218,6 +228,15 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         print(dict(author_drafts.run(top=args.top, model=args.model, packet_size=args.packet_size,
                                      budget_usd=args.budget_usd, max_packets=args.max_packets)))
+    elif args.cmd == "xrefs-relative":
+        from .layers import xrefs_relative
+
+        print(dict(xrefs_relative.run(model=args.model, packet_size=args.packet_size, budget_usd=args.budget_usd,
+                                      dry_run=args.dry_run)))
+    elif args.cmd == "verify-sources":
+        from .layers import sources
+
+        print(dict(sources.run(args.unit)))
     elif args.cmd == "selftrans":
         from .layers import selftrans
 

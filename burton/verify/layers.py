@@ -189,6 +189,33 @@ def _citations(unit: str, root, r, c: dict) -> None:
         r.fail(f"{unit}: {len(missing)} sidenotes without a citation record, e.g. {missing[0]}; run `burton citations`")
 
 
+XREL_STATUSES = {"relative-proposed", "relative-confirmed", "unresolved", "not-a-reference"}
+
+
+def _xrefs_relative(unit: str, root, r, c: dict) -> None:
+    """Relative cross-references (M6): selectors match once in their block, known statuses, every machine
+    record labelled, and a proposed or confirmed target that exists and has its evidence."""
+    f = paths.LAYERS / "xrefs-relative" / f"{unit}.json"
+    if not f.exists():
+        return
+    by_id = {public_id(e.get(XML_ID)): e for e in root.iter()
+             if isinstance(e.tag, str) and (e.get(XML_ID) or "").startswith("u")}
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c[f"xrefs_rel_{rec['status']}"] = c.get(f"xrefs_rel_{rec['status']}", 0) + 1
+        sel = rec["selector"]
+        el = by_id.get(sel["in"])
+        n = public_text(el).count(sel["prefix"] + sel["exact"] + sel["suffix"]) if el is not None else 0
+        if n != 1:
+            r.fail(f"{key}: relative cross-reference selector matches {n} times")
+        if rec["status"] not in XREL_STATUSES:
+            r.fail(f"{key}: unknown relative cross-reference status {rec['status']!r}")
+        if rec.get("by") == "machine" and not all(rec.get(k) for k in ("model", "prompt", "date")):
+            r.fail(f"{key}: machine cross-reference proposal without model/prompt/date")
+        if rec["status"] in ("relative-proposed", "relative-confirmed") and not (
+                rec.get("target") and (paths.TEXT / f"{rec['target']}.xml").exists() and rec.get("evidence")):
+            r.fail(f"{key}: {rec['status']} without an existing target and evidence")
+
+
 def v7_layers(units: list[str]):
     from .checks import Result
 
@@ -278,5 +305,6 @@ def v7_layers(units: list[str]):
         _glosses(unit, root, r, c)
         _djs(unit, foreign, r, c)
         _citations(unit, root, r, c)
+        _xrefs_relative(unit, root, r, c)
     r.counts = c
     return r

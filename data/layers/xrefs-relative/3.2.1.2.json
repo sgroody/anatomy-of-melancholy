@@ -1,0 +1,71 @@
+{
+  "3.2.1.2-p23-r2202": {
+    "by": "machine",
+    "confidence": "high",
+    "date": "2026-11-02",
+    "evidence": "as will appear by the Symptoms",
+    "input_hash": "25d6be8f24b3f012",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "Points forward to the symptoms of love-melancholy.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "as will appear",
+      "in": "3.2.1.2-p23",
+      "prefix": "ecies, or kind of melancholy (",
+      "suffix": " by the Symptoms) and treat of"
+    },
+    "status": "relative-proposed",
+    "target": "3.2.3.1"
+  },
+  "3.2.1.2-p23-r399": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": "is named by our Physicians, Heroical love",
+    "input_hash": "704a68e8e268dfb8",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "The opening of 3.2.1.1 already explained that this love is called Heroical because gallants and noblemen are possessed with it.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "as I have said",
+      "in": "3.2.1.2-p23",
+      "prefix": "this mad and beastly passion, ",
+      "suffix": ", is named by our Physicians, "
+    },
+    "status": "relative-proposed",
+    "target": "3.2.1.1"
+  },
+  "3.2.1.2-p24-r1962": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": "both imagination and reason are misaffected, first one, then the other",
+    "input_hash": "569e27b32c1cc19b",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "In Partition 1, 'Of the part affected' explained that imagination is hurt first and then reason.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "in the precedent partitions",
+      "in": "3.2.1.2-p24",
+      "prefix": "eterate, as I have determined ",
+      "suffix": ", both imagination and reason "
+    },
+    "status": "relative-proposed",
+    "target": "1.1.3.2"
+  }
+}

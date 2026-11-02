@@ -1,0 +1,71 @@
+{
+  "1.3.2.4-p1-r397": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": "as a peculiar species of melancholy",
+    "input_hash": "10cd4aba24027a06",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "The kinds of melancholy, including that of maids, nuns and widows, are listed in the subsection on the species of melancholy.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "which I have already",
+      "in": "1.3.2.4-p1",
+      "prefix": "culiar species of melancholy (",
+      "suffix": " specified) distinct from the "
+    },
+    "status": "relative-proposed",
+    "target": "1.1.3.4"
+  },
+  "1.3.2.4-p2-r1288": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": null,
+    "input_hash": "e591958d0cc72929",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "Refers to the causes given earlier in this same subsection.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "above said",
+      "in": "1.3.2.4-p2",
+      "prefix": "e barren Women for the causes ",
+      "suffix": ", ’tis more familiar, crebrius"
+    },
+    "status": "not-a-reference",
+    "target": null
+  },
+  "1.3.2.4-p5-r86": {
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-02",
+    "evidence": null,
+    "input_hash": "f90cec6aeae17bed",
+    "model": "claude-opus-5-5",
+    "prompt": "xref-rel-v1",
+    "reason": "Refers to the single cause set out earlier in this same subsection.",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "selector": {
+      "exact": "above specified",
+      "in": "1.3.2.4-p5",
+      "prefix": "ut of that one and only cause ",
+      "suffix": ", many feral diseases. I will "
+    },
+    "status": "not-a-reference",
+    "target": null
+  }
+}
