@@ -319,6 +319,8 @@ def _body(toks: list[str], start: int, end: int) -> tuple[list[str], list[list[s
 def _resolve(spec: dict, work: list[str], locus: list[list[str]]) -> tuple[str | None, str | None]:
     """Author id and how an ambiguous form was resolved."""
     cands = spec["candidates"]
+    if spec.get("needs_locus") and not any(name != "n" or not re.fullmatch(r"1[4-7]\d\d", n) for name, n in locus):
+        return None, None  # "Basil." alone, or with a year ("Basil. 1553."), is Basle; "Basil. ep. 141" is St Basil
     if len(cands) == 1:
         return cands[0], None
     by_work = {a for a in cands if _work(a, work)}
@@ -415,6 +417,14 @@ def _anchor_author(note) -> str | None:
     return found.pop()[0] if len(found) == 1 and len(next(iter(found))) == 1 else None
 
 
+@cache
+def decisions() -> dict[tuple[str, str], dict]:
+    """Hand decisions for citations the rules cannot resolve, keyed by (sidenote id, exact citation text)."""
+    f = paths.MANUAL / "citation-decisions.yaml"
+    rows = (_load(f) or {}).get("decisions", []) if f.exists() else []
+    return {(d["note"], d["raw"]): d for d in rows}
+
+
 def build(units: list[str] | None = None) -> Counter:
     units = units or all_units()
     stats: Counter = Counter()
@@ -456,6 +466,9 @@ def build(units: list[str] | None = None) -> Counter:
                         c["author_basis"] = "work-title"
                     if c.get("work"):
                         c["work_words"] = words
+                if d := decisions().get((nid, c["raw"])):  # data/manual/citation-decisions.yaml
+                    c["author"], c["author_basis"] = d["author"], "decision"
+                    stats["decisions_applied"] += 1
                 if c.get("author") and c["author"] != "bible" and not c.get("work"):
                     c["work"] = _work(c["author"], c["work_words"])
                 rec = {"id": f"{nid}-c{k}", "raw": c["raw"], "author": c.get("author"), "work": c.get("work"),

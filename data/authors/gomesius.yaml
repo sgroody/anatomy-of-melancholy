@@ -1,7 +1,7 @@
 # Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
 # data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
 id: gomesius
-name: Bernardinus Gomesius
+name: Bernardino Gómez Miedes (Gomesius)
 status: machine-draft
 wikidata: null
 identification: null
@@ -11,3 +11,18 @@ review:
   by: null
   date: null
   note: null
+draft:
+  identification: Bernardino Gómez Miedes (d. 1589) was a Spanish humanist and churchman who became bishop of Albarracín.
+    His Latin commentaries De sale (on salt) cover salt in its natural, medical and figurative senses, including
+    'salt' meaning wit.
+  field: humanist
+  why_cited: Burton cites De sale by book and chapter, using it as a learned source on salt and its uses and possibly
+    on wit and jesting.
+  identity_doubt: null
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: d9b8b657e3dd8601
+  status: machine-draft

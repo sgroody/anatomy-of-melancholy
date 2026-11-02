@@ -4,33 +4,34 @@ Each checker is a fresh `claude -p` call with its own versioned prompt and no sh
 first pass; it is the same model family, so a shared systematic error could escape both. Answers:
 `data/eval/m6-audit-<kind>.jsonl`. Nothing here changes a layer.
 
-## Author drafts (100, prompt `author-audit-v1`)
+## Author drafts (254, prompt `author-audit-v1`)
 
-Identity: {'ok': 99, 'doubtful': 1}. Facts: {'ok': 97, 'minor': 3}. Wikidata match: {'none': 68, 'ok': 32}.
+Identity: {'ok': 250, 'doubtful': 4}. Facts: {'ok': 251, 'minor': 3}. Wikidata match: {'none': 222, 'ok': 32}.
 
 | Author | Identity | Facts | Wikidata | Problems | Reason |
 |---|---|---|---|---|---|
 | `busbecq` | ok | minor | none | When Busbecq was sent to Suleiman in 1554, Ferdinand was King of the Romans; he only became emperor in 1556/58. | The citations are to Busbecq's Turkish letters and the entry is accurate apart from Ferdinand's title. |
+| `cesalpino` | doubtful | ok | none | — | The biography is broadly right, though some sources give his birth as 1524/25, but 'hist. lib. 1' matches no known Cesalpino title, so the attribution needs checking. |
+| `freitag` | doubtful | ok | none | — | With no work named, 'Freitagius' could be the physician Johann Freitag or Arnold Freitag of the Mythologia ethica; the draft's doubt is justified. |
 | `gordon` | ok | minor | none | Gordon is usually thought to have died around 1320, so 'fl. c. 1270–1330' runs slightly late. | The citations by particula and the de conservatione vitae humanae citation are Bernard de Gordon's; the only issue is a slightly imprecise date range. |
-| `martial` | doubtful | ok | ok | — | Most examples are Martial's Epigrams, but 'Mart. in Apol. pro Christianis' (Justin Martyr) and 'Mart. in Sam.' (Peter Martyr) are other authors, as the draft notes. |
+| `peter-martyr-vermigli` | doubtful | ok | none | — | 'Pet. Mart. in Sam.' is Vermigli's Samuel commentary, but the bare 'P. Mart.' could be d'Anghiera, as the draft notes; the biographical facts are correct. |
+| `quintilian` | doubtful | ok | none | — | The biography is correct, but the example 'Lib. 1 cap. 11.' has no author name, so identification depends on unseen context. |
 | `zanchi` | ok | minor | none | The work's title is 'De operibus Dei intra spatium sex dierum creatis', not 'creatorum'. | The 'de malis angelis' citations are Zanchi's treatise on angels; the only problem is a small slip in the title. |
 
 ## Relative cross-references (83, blind second rater, prompt `xref-audit-v1`)
 
-Targets: {'neither': 44, 'same target': 29, 'second only': 6, 'first only': 4}. Second rater's kinds: {'same-place': 14, 'too-vague': 14, 'reference': 47, 'not-a-reference': 8}.
+Targets: {'neither': 46, 'same target': 29, 'second only': 5, 'different targets': 1, 'first only': 2}. Second rater's kinds: {'same-place': 14, 'too-vague': 14, 'reference': 47, 'not-a-reference': 8}.
 
 | Item | Phrase | First proposal | Second rater | Second rater's reason |
 |---|---|---|---|---|
 | `1.1.3.3-p2-r3232` | in their place | — | 1.1.3.4 (reference) | The kinds of madness and dotage that come from different melancholy matter are treated in the next subsection, on the kinds of melancholy. |
-| `1.2.3.10-p10-r1131` | as I shall prove | 2.3.3.1 | — (reference) | The miseries of rich men are proved later, but the covetousness subsection and the consolation against poverty are both plausible. |
 | `1.2.3.2-p1-r2175` | formerly said | — | 1.2.1.3 (reference) | Witches' journeys and transformations put down to imagination and the Devil's illusions are discussed in the subsection on witches. |
 | `1.3.1.1-p4-r1008` | in the following discourse | — | 1.3.1.2 (reference) | 'The following discourse' on troubled senses and imaginations is the next subsection, symptoms in the mind. |
 | `1.3.1.1-p4-r989` | as shall be proved | — | 1.3.1.2 (reference) | The false perceptions of the senses are set out next, in the symptoms of the mind. |
-| `2.2.1.1-p1-r111` | which I have before | — | 1.2.2.1 (reference) | The six non-natural things were set out as causes at the start of the bad-diet Member, which opens with 1.2.2.1. |
-| `3.2.1.2-p23-r399` | as I have said | 3.2.1.1 | — (same-place) | Calling love a mad and beastly passion repeats what Burton says earlier in this same subsection about love's tyranny. |
+| `2.5.1.3-p7-r61` | before mentioned | 2.4.1.5 | 2.4.1.3 (reference) | Borage and borage wine were discussed among the herb alteratives. |
 | `3.2.5.1-p11-r463` | formerly handled | 2.4.1.1 | — (reference) | This points to the cures of melancholy by physic in Partition 2, which run across 2.4 and 2.5, so no single unit can be named. |
 | `3.2.5.1-p11-r480` | in the precedent partition | 2.4.1.1 | — (reference) | The 'precedent partition' is Partition 2, whose physic cures span several members (2.4, 2.5), so no single unit id applies. |
-| `3.4.1.1-p8-r497` | in the next place | — | 3.4.1.2 (reference) | At the end of 3.4.1.1 Burton promises to show next how men run into errors and madness, which the following subsection on causes of religious melancholy takes up. |
+| `3.4.1.1-p2-r2516` | in its place | — | 3.4.1.3 (reference) | The furies of Sibyls, Enthusiasts, Pseudoprophets, Heretics and Schismatics are treated in the Symptoms of Religious Melancholy, whose title lists Heretics, Schismatics, Prophets and Enthusiasts. |
 
 ## Source conflicts (17, prompt `source-audit-v1`)
 

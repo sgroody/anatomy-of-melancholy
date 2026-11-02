@@ -1,0 +1,26 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: justin-martyr
+name: Justin Martyr
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Justin Martyr (c.100–c.165) was an early Christian apologist, born at Flavia Neapolis in Samaria
+    and martyred at Rome. His Apologies defending Christians and his Dialogue with Trypho survive.
+  field: Church Father
+  why_cited: Burton cites his Apology for the Christians, most likely for what it says about demons and pagan religion.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: d6928939d37ec589
+  status: machine-draft

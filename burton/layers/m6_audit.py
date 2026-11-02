@@ -1,7 +1,7 @@
 """`burton m6-audit`: independent model checkers for what M6 left to the owner (owner, 2026-11-02:
 "Run independent checkers for these").
 
-* `authors`: the 100 drafted author entries, audited for identity and factual errors (prompt `author-audit-v1`);
+* `authors`: every drafted author entry, audited for identity and factual errors (prompt `author-audit-v1`);
   the checker sees the draft, Burton's citations and the Wikidata match.
 * `xrefs`: the 83 relative cross-reference candidates, re-rated blind (prompt `xref-audit-v1`): the checker does
   the task again without seeing the first proposals, and the two are compared.
@@ -56,7 +56,7 @@ def items(kind: str) -> tuple[list[dict], str]:
     """Items to check and a preamble sent with every packet."""
     if kind == "authors":
         out = []
-        for aid, d in authors.ranked()[:100]:
+        for aid, d in authors.ranked():  # every drafted author
             rec = authors.load(aid)
             dr = rec.get("draft")
             if not dr:

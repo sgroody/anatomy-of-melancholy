@@ -1047,22 +1047,12 @@
   "1.2.1.2-n38": {
     "citations": [
       {
-        "author": "martial",
-        "display": "Martial",
+        "author": "martianus-capella",
+        "display": "Martianus Capella",
         "id": "1.2.1.2-n38-c1",
         "locus": [],
         "method": "rules/abbrev-v1",
-        "raw": "Mart.",
-        "status": "parsed",
-        "work": null
-      },
-      {
-        "author": "martianus-capella",
-        "display": "Martianus Capella",
-        "id": "1.2.1.2-n38-c2",
-        "locus": [],
-        "method": "rules/abbrev-v1",
-        "raw": "Capella.",
+        "raw": "Mart. Capella.",
         "status": "parsed",
         "work": null
       }
@@ -1484,17 +1474,17 @@
         "id": "1.2.1.2-n55-c2",
         "locus": [],
         "method": "rules/abbrev-v1",
-        "raw": "Idem Just.",
+        "raw": "Idem",
         "status": "unidentified",
         "work": null
       },
       {
-        "author": "martial",
-        "display": "Martial",
+        "author": "justin-martyr",
+        "display": "Justin Martyr",
         "id": "1.2.1.2-n55-c3",
         "locus": [],
         "method": "rules/abbrev-v1",
-        "raw": "Mart. in Apol. pro Christianis.",
+        "raw": "Just. Mart. in Apol. pro Christianis.",
         "status": "partial",
         "work": null
       }
@@ -2358,8 +2348,8 @@
         "work": null
       },
       {
-        "author": null,
-        "display": "letter 141",
+        "author": "basil",
+        "display": "Basil of Caesarea, letter 141",
         "id": "1.2.1.2-n88-c7",
         "locus": [
           [
@@ -2369,7 +2359,7 @@
         ],
         "method": "rules/abbrev-v1",
         "raw": "Basil. ep. 141.",
-        "status": "unidentified",
+        "status": "parsed",
         "work": null
       },
       {
@@ -2476,14 +2466,19 @@
         "work": null
       },
       {
-        "author": "martial",
-        "display": "Martial",
+        "ambiguous_with": [
+          "peter-martyr",
+          "peter-martyr-vermigli"
+        ],
+        "author": "peter-martyr-vermigli",
+        "display": "Peter Martyr Vermigli, In duos libros Samuelis commentarii",
         "id": "1.2.1.2-n88-c13",
         "locus": [],
         "method": "rules/abbrev-v1",
-        "raw": "Mart. in Sam.",
-        "status": "partial",
-        "work": null
+        "raw": "Pet. Mart. in Sam.",
+        "resolved_by": "work",
+        "status": "parsed",
+        "work": "peter-martyr-vermigli.samuel"
       }
     ],
     "raw": "Dominus mendacii a seipso deceptus alios decipere cupit, adversarius humani generis, Inventor mortis, superbiae institutor, radix malitiae, scelerum caput, princeps omnium vitiorum, furit inde in dei contumeliam, hominum perniciem: de horum conatibus & operationibus lege Epiphanium 2 Tom. lib. 2. Dionysium cap. 4. Ambros. Epistol. lib. 10 ep. 8 & 84. August. de civ. dei lib. 5 cap. 9, lib. 8 cap. 22, lib. 9 cap. 18, lib. 10 cap. 21. Theophil. in 12 Mat. Basil. ep. 141. Leonem Ser. 60. Theodoret. in 2 Cor. ep. 2. Chrys. hom. 53 in 19 Genes. Greg. in 1 cap. Job. Barthol. de prop. lib. 2 cap. 20. Zanch. lib. 4 de malis angelis. Perer. in Gen. lib. 8 in cap. 6 ver. 2. Origen. Saepe praeliis intersunt, itinera & negotia nostra quaecunque dirigunt clandestinis subsidiis optatos saepe praebent successus, Pet. Mart. in Sam., &c. Ruscam de Inferno.",

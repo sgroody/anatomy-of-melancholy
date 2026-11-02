@@ -11,3 +11,20 @@ review:
   by: null
   date: null
   note: null
+draft:
+  identification: 'Hyginus is the name attached to two Latin handbooks of mythology: the Fabulae, a collection of
+    short myth summaries, and the De astronomia (also called Poetica astronomica), which tells the myths behind
+    the constellations. Tradition credits them to Gaius Julius Hyginus, a freedman and librarian of Augustus, but
+    that attribution is disputed.'
+  field: mythographer
+  why_cited: Burton cites him as a source for classical myths, using both the numbered fables and the second book
+    of the astronomy, where the celestial Dog and Hare appear.
+  identity_doubt: Whether the Fabulae and De astronomia were written by the Augustan Hyginus or by a later writer
+    of the same name is uncertain. Burton's references themselves clearly point to these two works.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 913323b51ed1530e
+  status: machine-draft

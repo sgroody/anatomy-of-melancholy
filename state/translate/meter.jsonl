@@ -22,3 +22,5 @@
 {"ts": "2026-11-02T21:27:08Z", "event": "session", "run": "M6: Perseus Latin corpus and source verifier (rules, no model calls)", "plan": "Pro", "window_5h_pct": 19, "weekly_pct": 14}
 {"ts": "2026-11-02T21:39:00Z", "event": "before", "run": "m6-audit authors+xrefs+sources", "plan": "Pro", "window_5h_pct": 22, "weekly_pct": 15}
 {"ts": "2026-11-02T21:49:11Z", "event": "after", "run": "m6-audit authors+xrefs+sources (+ sources rerun, chytraeus redraft)", "plan": "Pro", "window_5h_pct": 31, "weekly_pct": 16, "cost_usd_list": 1.97, "model": "claude-opus-5-5", "prompt": "author-audit-v1, xref-audit-v1, source-audit-v1"}
+{"ts": "2026-11-02T23:17:40Z", "event": "before", "run": "author-drafts rest + m6-audit authors rest", "plan": "Pro", "window_5h_pct": 52, "weekly_pct": 19}
+{"ts": "2026-11-02T23:32:14Z", "event": "after", "run": "author-drafts rest + m6-audit authors rest + 6 redrafts/rechecks", "plan": "Pro", "window_5h_pct": 62, "weekly_pct": 20, "cost_usd_list": 2.32, "model": "claude-opus-5-5", "prompt": "authors-v1, author-audit-v1"}

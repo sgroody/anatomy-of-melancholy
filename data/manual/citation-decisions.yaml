@@ -1,0 +1,27 @@
+# Citation decisions the rules cannot make (M6). Keyed by sidenote and the citation's exact text, so a decision
+# never attaches to a different citation if parsing changes; V7 fails on a decision that no longer matches.
+# Decided by claude-opus-5-5 in session on the owner's delegation ("Just say it's one or the other on the Mart.
+# citation. If you can't tell, say so!"), 2026-11-02.
+decisions:
+  - note: 2.1.1.1-n10
+    raw: P. Mart.
+    author: peter-martyr-vermigli
+    confidence: medium
+    basis: >-
+      "P. Mart." could be Peter Martyr Vermigli or Peter Martyr d'Anghiera. It closes a note of theology on
+      consulting sorcerers ("Hoc pacto a Deo deficitur ad diabolum"), Vermigli's field; d'Anghiera wrote
+      histories of the New World. The form alone does not settle it: this rests on the context.
+  - note: 3.2.1.1-n3
+    raw: Phaedrus orat. in laudem amoris
+    author: plato
+    confidence: high
+    basis: >-
+      The note continues "Platonis convivio": Phaedrus's speech in praise of love in Plato's Symposium, not the
+      fabulist Phaedrus (independent checker, m6-audit, agreed).
+  - note: 3.3.4.1-n4
+    raw: Gomesius lib. 3 de reb. gestis Ximenii.
+    author: gomez-castro
+    confidence: high
+    basis: >-
+      De rebus gestis a Francisco Ximenio is by Alvar Gómez de Castro; Burton's other "Gomesius" citations
+      (De sale) are Bernardino Gómez Miedes (independent checker, m6-audit, agreed).

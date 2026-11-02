@@ -1,0 +1,26 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: gomez-castro
+name: Alvar Gómez de Castro (Gomesius)
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Alvar Gómez de Castro (1515–1580) was a Spanish humanist from the Toledo area. He wrote a Latin
+    life of Cardinal Francisco Jiménez (Ximenes) de Cisneros, De rebus gestis a Francisco Ximenio Cisnerio.
+  field: historian
+  why_cited: Burton cites his life of Cardinal Ximenes for an episode from the Cardinal's career.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 6d696a2b12d31414
+  status: machine-draft

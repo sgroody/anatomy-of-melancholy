@@ -183,6 +183,17 @@ def _citations(unit: str, root, r, c: dict) -> None:
                 r.fail(f"{cit['id']}: Idem/ibid resolved from {src}, not an earlier citation")
             if cit.get("author_basis"):
                 add(f"citation_author_{cit['author_basis']}")
+    import yaml
+
+    df = paths.MANUAL / "citation-decisions.yaml"
+    for d in ((yaml.safe_load(df.read_text(encoding="utf-8")) or {}).get("decisions", []) if df.exists() else []):
+        if d["note"].rsplit("-", 1)[0] != unit:
+            continue
+        hit = [c for c in (layer.get(d["note"]) or {}).get("citations", []) if c["raw"] == d["raw"]]
+        if not hit or any(c.get("author") != d["author"] or c.get("author_basis") != "decision" for c in hit):
+            r.fail(f"{d['note']}: citation decision for {d['raw']!r} no longer matches the layer")
+        else:
+            add("citation_decisions")
     missing = [k for k in notes if k not in layer]
     if missing:
         add("citation_sidenotes_missing", len(missing))

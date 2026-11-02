@@ -25,12 +25,12 @@ To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agre
 | 12 | Cicero | `cicero` | Tully, Tullius, Tul, Cic, Cicero | 47 | 45 | 25 | Q1541 | high | — |
 | 13 | Justus Lipsius | `lipsius` | Lipsius, Lips | 41 | 41 | 27 | Q315871 | high | — |
 | 14 | Petronius | `petronius` | Petronius, Petron | 38 | 37 | 17 | ambiguous | medium | The 'Catalecta' poems were attributed to Petronius in Renaissance collections, but their authorship is uncertain. The example 'Fol. 5.' cannot be checked from the information given. |
-| 15 | Martial | `martial` | Mart, Martial, Martialis | 35 | 35 | 21 | Q2098 | medium | Not all 'Mart.' citations belong to the poet. 'Mart. in Apol. pro Christianis' points to Justin Martyr's Apology, and 'Mart. in Sam.' probably points to Peter Martyr Vermigli's commentary on Samuel. |
+| 15 | Plato | `plato` | Plato, Platonis | 35 | 33 | 16 | Q859 | high | — |
 | 16 | Apuleius | `apuleius` | Apuleius, Apul | 34 | 34 | 18 | Q170512 | high | — |
 | 17 | Aristotle | `aristotle` | Arist, Aristot, Aristotle, Aristoteles | 34 | 34 | 16 | none | high | — |
-| 18 | Plato | `plato` | Plato, Platonis | 34 | 33 | 16 | Q859 | high | — |
-| 19 | André du Laurens (Laurentius) | `laurentius` | Laurentius | 33 | 33 | 26 | Q426294 | high | The bare form 'Laurentius' could occasionally refer to another writer of that name, although all the examples given fit du Laurens. |
-| 20 | John Chrysostom | `chrysostom` | Chrys, Chrysost, Chrysostom, Chrysostomus | 31 | 31 | 17 | Q43706 | high | — |
+| 18 | André du Laurens (Laurentius) | `laurentius` | Laurentius | 33 | 33 | 26 | Q426294 | high | The bare form 'Laurentius' could occasionally refer to another writer of that name, although all the examples given fit du Laurens. |
+| 19 | John Chrysostom | `chrysostom` | Chrys, Chrysost, Chrysostom, Chrysostomus | 31 | 31 | 17 | Q43706 | high | — |
+| 20 | Martial | `martial` | Mart, Martial, Martialis | 31 | 31 | 19 | Q2098 | high | — |
 | 21 | Levinus Lemnius | `lemnius` | Lemnius, Lemn | 29 | 29 | 21 | none | high | — |
 | 22 | Rhazes | `rhazes` | Rhasis, Rhazes, Rasis | 29 | 27 | 24 | Q169234 | high | — |
 | 23 | Galen | `galen` | Galen, Galenus, Galeni, Gal | 28 | 28 | 22 | Q8778 | high | — |
@@ -156,8 +156,8 @@ To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agre
 **14. Petronius** (`petronius`): Petron. (1.2.3.10-n39); Petronius. (1.2.3.15-n20); Petronius Arbiter. (1.2.3.15-n41); Petronius Catalec. (2.3.3.1-n100)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; medium): Petronius Arbiter was the Roman author of the Satyricon, a comic novel in prose and verse. He is traditionally identified with the courtier of Nero who died in AD 66. *Why cited:* Burton quotes the Satyricon and short poems from the 'Catalecta' attributed to Petronius, mostly on love, lust and luxury.
 
-**15. Martial** (`martial`): Mart. (1.2.1.2-n38); Mart. in Apol. pro Christianis. (1.2.1.2-n55); Mart. in Sam. (1.2.1.2-n88); Mart. lib. 5. 52. (1.2.3.14-n32)
-> Draft (claude-opus-5-5, authors-v1, 2026-11-02; medium): Marcus Valerius Martialis (c. AD 40–c. 104) was a Latin poet from Bilbilis in Spain. He wrote twelve books of Epigrams and some smaller collections. *Why cited:* Burton quotes his epigrams for witty, satirical comments on vice, love and everyday life in Rome.
+**15. Plato** (`plato`): Plato. (1.2.1.2-n32); Plato lib. 13 de legibus. (1.2.4.4-n4); Plato 9 de legibus (1.4.1.1-n57); De Legibus. (2.2.1.1-n17)
+> Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Plato (c. 428–348 BC) was an Athenian philosopher, a pupil of Socrates and founder of the Academy. His surviving works are dialogues, among them the Republic, the Laws, the Symposium, the Phaedrus and the Charmides. *Why cited:* Burton cites Plato often, especially the Laws, for laws, government and the ordering of the state, and the Charmides, which joins the health of the body to the health of the soul. He also uses Plato as a general authority on love and on the soul.
 
 **16. Apuleius** (`apuleius`): Apuleius 4 florid. (1.1.1.5-n10); De Deo Socratis. (1.2.1.2-n32); Apuleius: (1.2.1.2-n8); Lib. 2. (1.2.4.4-n9)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Apuleius (c. 124–after 170 CE) was a Latin writer and Platonist philosopher from Madauros in North Africa. He wrote the Metamorphoses (the Golden Ass), the Florida (a collection of extracts from his speeches), the treatise De Deo Socratis on daemons, and the Apologia. *Why cited:* Burton uses De Deo Socratis as an authority on the nature of spirits and daemons. He draws on the Metamorphoses (the 'Milesian' tales) and the Florida for stories and sayings.
@@ -165,14 +165,14 @@ To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agre
 **17. Aristotle** (`aristotle`): cap. 1. (1.1.2.5-n1); Aristot. (1.1.2.5-n6); Arist. in physiognomia. (1.1.3.2-n16); Arist. lib. 3 polit. cap. ult. Keckerm. (1.1.3.4-n16)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Aristotle (384–322 BCE), from Stagira, was a Greek philosopher and a pupil of Plato. His works relevant to Burton include De anima and the Politics. The Problemata and the Physiognomonica were attributed to him in Burton's time, but modern scholars regard them as works of his school. *Why cited:* Burton cites him on the soul and its faculties, on physiognomy and on politics. He also cites the Problemata, which includes the well-known discussion of why exceptional men are melancholic.
 
-**18. Plato** (`plato`): Plato. (1.2.1.2-n32); Plato lib. 13 de legibus. (1.2.4.4-n4); Plato 9 de legibus (1.4.1.1-n57); De Legibus. (2.2.1.1-n17)
-> Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Plato (c. 428–348/347 BCE) was an Athenian philosopher and a pupil of Socrates. His dialogues include the Laws, the Republic and the Charmides. *Why cited:* Burton cites the Laws on government, education and conduct, and the Charmides, where Socrates argues that the body cannot be cured without the soul. In 'lib. 13 de legibus' Burton apparently refers to the Epinomis, which was traditionally treated as a thirteenth book of the Laws.
-
-**19. André du Laurens (Laurentius)** (`laurentius`): Cap. 2 de Melanchol. (1.1.1.3-n3); Cap. 4 de mel. (1.1.1.4-n1); Anat. lib. 1 cap. 18. (1.1.2.2-n1); Laurentius cap. 20 lib. 1 Anat. (1.1.2.3-n1)
+**18. André du Laurens (Laurentius)** (`laurentius`): Cap. 2 de Melanchol. (1.1.1.3-n3); Cap. 4 de mel. (1.1.1.4-n1); Anat. lib. 1 cap. 18. (1.1.2.2-n1); Laurentius cap. 20 lib. 1 Anat. (1.1.2.3-n1)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): André du Laurens (1558–1609) was a French physician who taught medicine at Montpellier and was later chief physician to Henri IV. He wrote a discourse on diseases of the sight, melancholy, catarrhs and old age, which circulated widely in Latin and English translations, and the Historia anatomica humani corporis. *Why cited:* He is one of Burton's main medical authorities on melancholy: its causes, symptoms and kinds. Burton also cites his anatomy on the parts and faculties of the body.
 
-**20. John Chrysostom** (`chrysostom`): Chrys. 23 Gen. (1.1.1.1-n10); Hom. 5 ad populum Antioch. (1.1.1.1-n15); Chrys. hom. 53 in 19 Genes. Greg. in 1 cap. Job. (1.2.1.2-n88); Hom. 10. (1.2.3.10-n12)
+**19. John Chrysostom** (`chrysostom`): Chrys. 23 Gen. (1.1.1.1-n10); Hom. 5 ad populum Antioch. (1.1.1.1-n15); Chrys. hom. 53 in 19 Genes. Greg. in 1 cap. Job. (1.2.1.2-n88); Hom. 10. (1.2.3.10-n12)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): John Chrysostom (c. 349–407) was a Greek Church Father and preacher at Antioch who later became archbishop of Constantinople. He is known for his many homilies, including those on Genesis, the Homilies on the Statues to the people of Antioch, and his homilies on Paul's Epistle to the Romans. *Why cited:* Burton quotes his homilies on moral and spiritual matters, such as sin, the vanity of the world, and patience in affliction. These passages are often grouped with other patristic authorities.
+
+**20. Martial** (`martial`): Mart. (1.2.3.10-n2); Mart. lib. 5. 52. (1.2.3.14-n32); Mart. lib. 1 epig. 35. (1.2.4.4-n17); Martial. (1.4.1.1-n56)
+> Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Marcus Valerius Martialis (c. 40–c. 104 AD) was a Latin poet born at Bilbilis in Spain who spent most of his career in Rome. His main work is the Epigrams, a collection of short satirical and occasional poems in twelve books, along with some smaller collections. *Why cited:* Burton quotes Martial's epigrams, which he cites by book and number, for sharp, witty lines on human vices, manners and folly.
 
 **21. Levinus Lemnius** (`lemnius`): Lemn. lib. 2 cap. 29 de occult. nat. mir. (1.1.1.1-n28); Lemnius (1.1.2.9-n2); De occult. nat. mir. (1.2.1.6-n16); Lib. 2 cap. 8 de occult. nat. mir. (1.2.1.6-n18)
 > Draft (claude-opus-5-5, authors-v1, 2026-11-02; high): Levinus Lemnius (1505–1568) was a Dutch physician from Zierikzee in Zeeland. His best-known work is De occultis naturae miraculis (On the Hidden Wonders of Nature). He also wrote on bodily constitution and the complexions. *Why cited:* Burton draws often on De occultis naturae miraculis, using it on the effects of the passions, imagination, diet and humours on body and mind.

@@ -125,6 +125,16 @@ bible:
 # a locator in `by_locus` points to, else to `default` where one is given with its `basis`; otherwise it stays
 # unidentified and records `ambiguous_with`.
 ambiguous:
+  # St Basil only with a locus: "Basil. Editionis." is the Basle edition (held-out round c2)
+  Basil:
+    candidates: [basil]
+    needs_locus: true
+  # Peter Martyr d'Anghiera (the New World decades) or Peter Martyr Vermigli (the theologian)
+  P Mart: &petermartyr
+    candidates: [peter-martyr, peter-martyr-vermigli]
+  Pet Mart: *petermartyr
+  P Martyr: *petermartyr
+  Pet Martyr: *petermartyr
   Scaliger: &scaliger
     candidates: [scaliger-julius-caesar, scaliger-joseph-justus]
     by_locus: {exercitation: scaliger-julius-caesar}
@@ -245,6 +255,8 @@ authors:
   marco-polo: {name: Marco Polo, forms: [M Polus, Marcus Polus, M Paulus Venetus, Marcus Paulus Venetus]}
   varthema: {name: Ludovico di Varthema (Vertomannus), forms: [Vertomannus, Lod Vertomannus]}
   peter-martyr: {name: Peter Martyr d'Anghiera, forms: [P Martyr Ocean, Pet Martyr Ocean]}
+  peter-martyr-vermigli: {name: Peter Martyr Vermigli, forms: []}
+  justin-martyr: {name: Justin Martyr, forms: [Just Mart, Justin Martyr, Justinus Martyr]}
   velleius: {name: Velleius Paterculus, forms: [Paterculus, Vell Paterculus, Velleius Paterculus]}
   boethius-hector: {name: Hector Boece (Boethius), forms: [Hector Boethius, Hect Boethius]}
   curtius: {name: Quintus Curtius Rufus, forms: [Curtius, Q Curtius]}
@@ -292,12 +304,14 @@ authors:
   freitag: {name: Johann Freitag (Freitagius), forms: [Freitagius]}
   bruyerin: {name: Jean Bruyérin-Champier (Bruyerinus), forms: [Bruyerinus, Bruyerin]}
   nicephorus: {name: Nicephorus Callistus Xanthopoulos, forms: [Nicephorus, Niceph]}
+  nicephorus-gregoras: {name: Nicephorus Gregoras, forms: [Nicephorus Greg, Niceph Greg, Nicephorus Gregoras]}
   weyer: {name: Johann Weyer (Wierus), forms: [Wierus, Wier]}
   thucydides: {name: Thucydides, forms: [Thucydides]}
   estienne-henri: {name: Henri Estienne, forms: [Hen Steph, Hen Stephanus, Henricus Stephanus]}
   prodromus: {name: Theodore Prodromos, forms: [Prodromus, Theod Prodromus]}
   xenophon: {name: Xenophon, forms: [Xenophon]}
-  gomesius: {name: Bernardinus Gomesius, forms: [Gomesius]}
+  gomesius: {name: Bernardino Gómez Miedes (Gomesius), forms: [Gomesius]}
+  gomez-castro: {name: Alvar Gómez de Castro (Gomesius), forms: []}
   guainerio: {name: Antonio Guainerio (Guianerius), forms: [Guainerius, Guainer, Guianerius]}
   forestus: {name: Pieter van Foreest (Forestus), forms: [Forestus]}
   gordon: {name: Bernard de Gordon (Gordonius), forms: [Gordonius, Gordon, Gord]}
@@ -311,7 +325,7 @@ authors:
   puteanus: {name: Erycius Puteanus, forms: [Puteanus, Putean]}
   epictetus: {name: Epictetus, forms: [Epictetus]}
   aesop: {name: Aesop, forms: [Aesop, Aesopus]}
-  martianus-capella: {name: Martianus Capella, forms: [Martianus Capella, Capella]}
+  martianus-capella: {name: Martianus Capella, forms: [Martianus Capella, Mart Capella, Capella]}
   heliodorus: {name: Heliodorus of Emesa, forms: [Heliodorus, Heliodor]}
   shakespeare: {name: William Shakespeare, forms: [Shakespeare]}
   bossus: {name: Matthaeus Bossus, forms: [Bossus]}
@@ -356,7 +370,7 @@ authors:
   bude: {name: Guillaume Budé (Budaeus), forms: [Budaeus]}
   aldrovandi: {name: Ulisse Aldrovandi, forms: [Aldrovandus]}
   vossius: {name: Gerardus Vossius, forms: [Vossius]}
-  cesalpino: {name: Andrea Cesalpino (Caesalpinus), forms: [Caesalp, Caesalpinus]}
+  cesalpino: {name: Andrea Cesalpino (Caesalpinus), forms: [Caesalpinus]}  # 'Caesalp. hist.' fits no work of his: withdrawn (m6-audit)
   damhouder: {name: Joost de Damhouder (Damhoderius), forms: [Damhoderius]}
   folengo: {name: Teofilo Folengo (Merlinus Cocaius), forms: [Merlin Cocc, Merlinus Cocaius]}
   aretaeus: {name: Aretaeus of Cappadocia, forms: [Aretaeus]}
