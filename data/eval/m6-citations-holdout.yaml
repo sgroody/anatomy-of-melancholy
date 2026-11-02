@@ -1,0 +1,825 @@
+# M6 held-out check of the citation parser's author resolutions. Sample and rule fixed before labelling.
+round: c1
+written: '2026-11-02'
+method_under_test: rules/abbrev-v1 (data/abbreviations.yaml abbrev-v1, data/works.yaml works-v1)
+design: 'Random citations with a resolved author (Bible and Burton''s own cross-references excluded), seed 20261102,
+  stratified by how the author was found: 30 by an author form in the note, 20 from the name at the note''s anchor (text-at-anchor),
+  15 from a work title (work-title). Drawn after the parser rules were fixed; none of these items was looked at while
+  tuning (the 30 anchor items seen while tuning were drawn with seed 5 and are not excluded by id, so overlap is checked
+  below).'
+rule: Written before labelling. PASS if at least 95 % of the 65 authors are correct (at most 3 wrong), and no stratum
+  has more than 2 wrong. A wrong author means the record names someone Burton is not citing there. 'unsure' counts as
+  wrong. The work, where named, is judged too and reported, but not gated.
+labeller: Claude (claude-opus-5-5) in session, from the note text and the main text at its anchor.
+items:
+- id: djr-n623-c1
+  stratum: form
+  author: plato
+  work: null
+  raw: Plato.
+  label: correct
+- id: 1.2.3.10-n4-c1
+  stratum: form
+  author: lucian
+  work: null
+  raw: Lucian. Podag.
+  label: correct
+  note: author right; work Podagra not in works.yaml (partial)
+- id: 3.2.3.1-n211-c1
+  stratum: form
+  author: xenophon
+  work: xenophon.cyropaedia
+  raw: Xenophon Cyropaed. lib. 5.
+  label: correct
+- id: 1.3.2.3-n4-c1
+  stratum: form
+  author: montalto
+  work: null
+  raw: Montaltus cap. 22.
+  label: correct
+- id: 1.2.4.6-n23-c1
+  stratum: form
+  author: boemus
+  work: null
+  raw: Bohemus de Turcis
+  label: correct
+- id: 3.2.5.3-n12-c1
+  stratum: form
+  author: ovid
+  work: null
+  raw: Ovid.
+  label: correct
+- id: 1.2.2.1-n10-c1
+  stratum: form
+  author: piso
+  work: null
+  raw: Piso. Altomar.
+  label: correct
+  note: 'author right; ''Altomar.'' (a second author) was taken as a work word: segmentation error, not gated'
+- id: 2.2.6.1-n6-c1
+  stratum: form
+  author: fracastoro
+  work: null
+  raw: Fracastorius.
+  label: correct
+- id: 3.2.5.1-n3-c1
+  stratum: form
+  author: buchanan
+  work: null
+  raw: Buchanan. Hendecasyl.
+  label: correct
+- id: djr-n215-c2
+  stratum: form
+  author: cyprian
+  work: null
+  raw: Cyprian.
+  label: correct
+- id: 3.3.4.2-n49-c1
+  stratum: form
+  author: marullus
+  work: null
+  raw: Marullus.
+  label: correct
+- id: 2.2.4.1-n19-c1
+  stratum: form
+  author: maximus-tyrius
+  work: null
+  raw: Maximus Tyrius.
+  label: correct
+- id: 2.2.3.1-n39-c1
+  stratum: form
+  author: ortelius
+  work: null
+  raw: Ortelius
+  label: correct
+- id: djr-n566-c2
+  stratum: form
+  author: plato
+  work: null
+  raw: Plato
+  label: correct
+- id: 3.2.5.2-n20-c1
+  stratum: form
+  author: curtius
+  work: null
+  raw: Curtius lib. 3.
+  label: correct
+- id: djr-n613-c2
+  stratum: form
+  author: plato
+  work: plato.laws
+  raw: Plato 12 de legibus
+  label: correct
+- id: 3.2.5.5-n95-c1
+  stratum: form
+  author: euripides
+  work: null
+  raw: Euripides.
+  label: correct
+- id: 3.2.2.2-n50-c1
+  stratum: form
+  author: angeriano
+  work: null
+  raw: Angerianus.
+  label: correct
+- id: 2.2.5.1-n1-c1
+  stratum: form
+  author: altomari
+  work: null
+  raw: Altomarus cap. 7.
+  label: correct
+- id: djr-n457-c1
+  stratum: form
+  author: plutarch
+  work: plutarch.lives
+  raw: Plutarch. vit. Cat.
+  label: correct
+- id: 3.4.2.6-n14-c1
+  stratum: form
+  author: augustine
+  work: null
+  raw: Austin.
+  label: correct
+- id: 1.2.2.5-n10-c1
+  stratum: form
+  author: maginus
+  work: null
+  raw: Maginus
+  label: correct
+- id: 1.2.3.14-n7-c1
+  stratum: form
+  author: jerome
+  work: null
+  raw: Jerome.
+  label: correct
+- id: 1.2.3.4-n11-c1
+  stratum: form
+  author: hildesheim
+  work: hildesheim.spicilegia
+  raw: Hildesheim spicil. 2 de melancholia.
+  label: correct
+- id: 1.2.3.12-n27-c1
+  stratum: form
+  author: pliny-elder
+  work: null
+  raw: Plin.
+  label: correct
+- id: djr-n291-c1
+  stratum: form
+  author: more
+  work: more.utopia
+  raw: Morus Utopia.
+  label: correct
+- id: djr-n430-c1
+  stratum: form
+  author: sabellico
+  work: null
+  raw: Sabellicus.
+  label: correct
+- id: 1.1.1.1-n47-c1
+  stratum: form
+  author: horace
+  work: null
+  raw: Hor. lib. 3 Od. 6.
+  label: correct
+- id: 1.1.3.4-n12-c1
+  stratum: form
+  author: hildesheim
+  work: hildesheim.spicilegia
+  raw: Hildesheim spicil. 2 fol. 166.
+  label: correct
+- id: 3.3.1.2-n79-c1
+  stratum: form
+  author: euripides
+  work: null
+  raw: Euripides.
+  label: correct
+- id: 3.1.2.2-n8-c1
+  stratum: text-at-anchor
+  author: cicogna
+  work: cicogna.magiae-omnifariae
+  raw: Omnif. mag. lib. 2 cap. 3.
+  label: correct
+- id: djr-n452-c1
+  stratum: text-at-anchor
+  author: livy
+  work: null
+  raw: Lib. 3.
+  label: correct
+- id: djr-n168-c1
+  stratum: text-at-anchor
+  author: lactantius
+  work: null
+  raw: Lib. 3 de sap. cap. 17 & 20.
+  label: correct
+- id: 1.2.1.2-n64-c1
+  stratum: text-at-anchor
+  author: lavater
+  work: null
+  raw: Part. 1 cap. 19.
+  label: correct
+- id: 3.2.3.1-n165-c1
+  stratum: text-at-anchor
+  author: aristaenetus
+  work: null
+  raw: Epist. 24.
+  label: correct
+- id: 1.2.3.1-n5-c1
+  stratum: text-at-anchor
+  author: plutarch
+  work: plutarch.de-sanitate
+  raw: Lib. de sanit. tuend.
+  label: correct
+- id: 1.4.1.1-n30-c1
+  stratum: text-at-anchor
+  author: ammianus
+  work: null
+  raw: Lib. 29.
+  label: correct
+- id: 3.3.4.2-n73-c1
+  stratum: text-at-anchor
+  author: tertullian
+  work: null
+  raw: Cap. 46. Apol.
+  label: correct
+- id: 1.2.2.1-n27-c1
+  stratum: text-at-anchor
+  author: bruyerin
+  work: null
+  raw: Lib. 11 cap. 3.
+  label: correct
+- id: 2.2.6.4-n1-c1
+  stratum: text-at-anchor
+  author: vives
+  work: vives.de-anima
+  raw: Lib. 3 de Anima.
+  label: correct
+- id: djr-n417-c1
+  stratum: text-at-anchor
+  author: boterus
+  work: null
+  raw: De politia illustrium lib. 1 cap. 4.
+  label: correct
+- id: 3.4.1.2-n61-c1
+  stratum: text-at-anchor
+  author: cicero
+  work: cicero.de-natura-deorum
+  raw: Lib. 1 de nat. Deorum.
+  label: correct
+- id: 3.4.2.1-n1-c1
+  stratum: text-at-anchor
+  author: melanchthon
+  work: melanchthon.de-anima
+  raw: De anima
+  label: correct
+- id: 3.2.3.1-n206-c1
+  stratum: text-at-anchor
+  author: ovid
+  work: null
+  raw: Eleg. 2. 15.
+  label: correct
+- id: 1.2.3.11-n20-c1
+  stratum: text-at-anchor
+  author: bodin
+  work: null
+  raw: Lib. 5 de rep. cap. 1.
+  label: correct
+- id: 2.2.6.2-n17-c1
+  stratum: text-at-anchor
+  author: altomari
+  work: null
+  raw: Cap. 7.
+  label: correct
+- id: djr-n462-c1
+  stratum: text-at-anchor
+  author: cicero
+  work: cicero.ad-atticum
+  raw: Lib. 10 epist. ad Atticum, epist. 11.
+  label: correct
+- id: 1.2.4.3-n12-c1
+  stratum: text-at-anchor
+  author: plutarch
+  work: null
+  raw: Lib. de auditione.
+  label: correct
+- id: 2.2.4.1-n51-c1
+  stratum: text-at-anchor
+  author: josephus
+  work: null
+  raw: Lib. 6 cap. 14 de bello. Jud.
+  label: correct
+- id: 2.3.5.1-n50-c1
+  stratum: text-at-anchor
+  author: lucian
+  work: lucian.de-luctu
+  raw: Tom. 1 Tract. de luctu.
+  label: correct
+- id: djr-n627-c2
+  stratum: work-title
+  author: pliny-younger
+  work: pliny-younger.panegyricus
+  raw: Panegyr. Trajano.
+  label: correct
+- id: 1.2.3.12-n15-c1
+  stratum: work-title
+  author: hesiod
+  work: hesiod.theogony
+  raw: Theog.
+  label: wrong
+  why: 'unsure: ''Theog.'' alone may be Theognis (an author Burton cites) rather than Hesiod''s Theogony; the prefix
+    rule cannot tell'
+- id: 3.2.2.3-n41-c2
+  stratum: work-title
+  author: terence
+  work: terence.eunuchus
+  raw: Eunuch. Act. 2 Scen. 3.
+  label: correct
+- id: 3.4.2.3-n30-c2
+  stratum: work-title
+  author: boethius-hector
+  work: boethius-hector.historia
+  raw: Scot.
+  label: wrong
+  why: 'unsure: ''Scot.'' alone may be Buchanan''s history as well as Boece''s; works.yaml simply lacks the other'
+- id: 1.1.2.11-n7-c1
+  stratum: work-title
+  author: seneca-younger
+  work: seneca-younger.medea
+  raw: Medea
+  label: wrong
+  why: 'wrong: ''Medea'' names the speaker; the verse ''Trahit invitam nova vis'' is Ovid, Met. 7, not Seneca''s Medea'
+- id: 3.2.2.4-n62-c2
+  stratum: work-title
+  author: terence
+  work: terence.eunuchus
+  raw: Eunuc. act. 4 sc. 7.
+  label: correct
+- id: 1.2.4.4-n16-c2
+  stratum: work-title
+  author: cicero
+  work: cicero.tusculans
+  raw: Tusc. quaest.
+  label: correct
+- id: 3.3.3.1-n6-c1
+  stratum: work-title
+  author: cicero
+  work: cicero.de-officiis
+  raw: Offic. lib. 2.
+  label: correct
+- id: djr-n127-c2
+  stratum: work-title
+  author: terence
+  work: terence.adelphi
+  raw: Adelph.
+  label: correct
+- id: 2.3.1.1-n34-c2
+  stratum: work-title
+  author: seneca-younger
+  work: seneca-younger.hercules-furens
+  raw: Herc. fur.
+  label: correct
+- id: 2.2.6.4-n38-c2
+  stratum: work-title
+  author: lucian
+  work: lucian.necyomantia
+  raw: Necyomantia. Tom. 2.
+  label: correct
+- id: 3.2.3.1-n131-c2
+  stratum: work-title
+  author: virgil
+  work: virgil.aeneid
+  raw: Aen. 4.
+  label: correct
+- id: djr-n510-c1
+  stratum: work-title
+  author: more
+  work: more.utopia
+  raw: Utop. Lib. 1.
+  label: correct
+- id: 2.5.1.5-n36-c1
+  stratum: work-title
+  author: lucan
+  work: lucan.pharsalia
+  raw: Phar. lib. 1 cap. 12.
+  label: wrong
+  why: 'wrong: ''Phar.'' after Renodaeus is his Pharmacopoeia (Dispensatorium), not Lucan''s Pharsalia'
+- id: 1.2.3.2-n15-c1
+  stratum: work-title
+  author: ricci
+  work: ricci.de-expeditione
+  raw: Expedit. in Sinas, lib. 1 cap. 9.
+  label: correct
+result:
+  form: 30/30
+  text-at-anchor: 20/20
+  work-title: 11/15
+  total: 61/65 (0.938)
+  verdict: 'FAIL: below 0.95 overall and 4 wrong in the work-title stratum (limit 2)'
+  action: The work-title rule matched a lone abbreviation to a work by prefix (any work in works.yaml). Replaced in abbrev-v1
+    by explicit stand-alone forms per work (`alone:` in works.yaml, exact match). The work-title stratum must be re-measured
+    on a fresh round (c2); c1 is now tuning data.
+c2:
+  written: '2026-11-02'
+  design: Same strata, sizes and rule as c1; seed 20261103; the 65 c1 items excluded. Drawn after the `alone:` rule replaced
+    prefix matching for lone titles, before labelling.
+  items:
+  - id: 1.2.3.15-n22-c1
+    stratum: form
+    author: virgil
+    work: virgil.aeneid
+    raw: Virg. 6 Aen.
+    label: correct
+  - id: 1.3.1.2-n16-c1
+    stratum: form
+    author: hippocrates
+    work: null
+    raw: Hippocrates.
+    label: correct
+  - id: 1.4.1.1-n28-c1
+    stratum: form
+    author: seneca-younger
+    work: seneca-younger.hercules-oetaeus
+    raw: Seneca Act. 4 Herc. oet.
+    label: correct
+  - id: 1.4.1.1-n34-c1
+    stratum: form
+    author: persius
+    work: null
+    raw: Persius.
+    label: correct
+    note: Burton's attribution (Persius) is what is checked; the line is Juvenal 10.188
+  - id: 2.2.4.1-n59-c1
+    stratum: form
+    author: lipsius
+    work: lipsius.amphitheatrum
+    raw: Lipsius Amphitheatrum.
+    label: correct
+  - id: 1.2.4.7-n52-c1
+    stratum: form
+    author: terence
+    work: null
+    raw: Ter. Act. 5 Scen. 4
+    label: correct
+  - id: 1.2.2.4-n11-c1
+    stratum: form
+    author: gordon
+    work: null
+    raw: Gord. cap. 10 lib. 1
+    label: correct
+  - id: djr-n350-c1
+    stratum: form
+    author: horace
+    work: null
+    raw: Hor. Epist. 2.
+    label: correct
+  - id: 2.3.7.1-n45-c1
+    stratum: form
+    author: epictetus
+    work: null
+    raw: Epictetus.
+    label: correct
+  - id: djr-n359-c1
+    stratum: form
+    author: seneca-younger
+    work: null
+    raw: Seneca.
+    label: correct
+  - id: djr-n187-c1
+    stratum: form
+    author: plato
+    work: null
+    raw: Plato
+    label: correct
+  - id: 1.2.4.4-n1-c1
+    stratum: form
+    author: bernard-clairvaux
+    work: null
+    raw: Bernardus.
+    label: correct
+  - id: 2.2.3.1-n104-c1
+    stratum: form
+    author: kepler
+    work: null
+    raw: Kepler. fol. 26.
+    label: correct
+  - id: 3.3.2.1-n20-c1
+    stratum: form
+    author: barth
+    work: null
+    raw: Barthius.
+    label: correct
+  - id: 2.2.4.1-n117-c1
+    stratum: form
+    author: seneca-younger
+    work: null
+    raw: Seneca.
+    label: correct
+  - id: 3.2.2.2-n80-c1
+    stratum: form
+    author: lucian
+    work: lucian.charidemus
+    raw: Lucian Charidemo.
+    label: correct
+  - id: djr-n112-c1
+    stratum: form
+    author: eusebius
+    work: null
+    raw: Eusebius eccles. Hist. lib. 6.
+    label: correct
+  - id: 2.2.3.1-n115-c1
+    stratum: form
+    author: kepler
+    work: null
+    raw: Kepler. fol. 16.
+    label: correct
+  - id: 3.2.2.2-n108-c1
+    stratum: form
+    author: prodromus
+    work: prodromus.amaranthus
+    raw: Theod. Prodromus Amor. lib. 1.
+    label: correct
+  - id: 3.2.2.2-n5-c1
+    stratum: form
+    author: lipsius
+    work: null
+    raw: Lipsius cent. 2 epist. 22.
+    label: correct
+  - id: 3.3.3.1-n4-c2
+    stratum: form
+    author: ovid
+    work: null
+    raw: Ovid.
+    label: correct
+  - id: 3.2.2.4-n22-c1
+    stratum: form
+    author: aristaenetus
+    work: null
+    raw: Aristaenetus lib. 2 epist. 5.
+    label: correct
+  - id: 3.3.2.1-n4-c1
+    stratum: form
+    author: aeneas-silvius
+    work: null
+    raw: Aeneas Silv.
+    label: correct
+  - id: 2.2.6.4-n30-c1
+    stratum: form
+    author: athenaeus
+    work: null
+    raw: Athenaeus lib. 12 & 14.
+    label: correct
+  - id: 2.3.5.1-n26-c1
+    stratum: form
+    author: tacitus
+    work: null
+    raw: Tacitus lib. 4.
+    label: correct
+  - id: djr-n35-c1
+    stratum: form
+    author: horace
+    work: null
+    raw: Hor.
+    label: correct
+  - id: 1.2.4.5-n15-c1
+    stratum: form
+    author: camden
+    work: camden.britannia
+    raw: Camden in Wiltsh.
+    label: correct
+  - id: 1.2.1.2-n4-c2
+    stratum: form
+    author: breydenbach
+    work: null
+    raw: Breydenbachius.
+    label: correct
+  - id: 1.2.3.13-n13-c2
+    stratum: form
+    author: lemnius
+    work: lemnius.de-institutione
+    raw: Lemnius instit. cap. 44.
+    label: correct
+  - id: 3.2.2.1-n6-c2
+    stratum: form
+    author: basil
+    work: null
+    raw: Basil. Editionis.
+    label: wrong
+    why: '''Basil. Editionis.'' after Cardan''s words about himself is the Basle edition of his book, not Basil of Caesarea'
+  - id: 2.1.1.1-n1-c1
+    stratum: text-at-anchor
+    author: montanus
+    work: null
+    raw: Consil. 230 pro Abbate Italo.
+    label: correct
+  - id: djr-n111-c1
+    stratum: text-at-anchor
+    author: lucian
+    work: lucian.philopseudes
+    raw: Tom. 3 Philopseud.
+    label: correct
+  - id: 3.3.4.2-n48-c1
+    stratum: text-at-anchor
+    author: john-salisbury
+    work: john-salisbury.policraticus
+    raw: Polycrat. lib. 8 cap. 11.
+    label: correct
+  - id: 2.1.4.2-n4-c1
+    stratum: text-at-anchor
+    author: melanchthon
+    work: melanchthon.de-anima
+    raw: De anima.
+    label: correct
+  - id: 1.2.3.1-n16-c1
+    stratum: text-at-anchor
+    author: augustine
+    work: null
+    raw: Epist. 105.
+    label: correct
+  - id: 3.2.2.4-n25-c1
+    stratum: text-at-anchor
+    author: plutarch
+    work: plutarch.amatorius
+    raw: Amatorio Dialogo.
+    label: correct
+  - id: 3.2.2.2-n112-c1
+    stratum: text-at-anchor
+    author: petronius
+    work: null
+    raw: Fol. 5.
+    label: correct
+  - id: 1.1.3.3-n14-c1
+    stratum: text-at-anchor
+    author: capivaccio
+    work: null
+    raw: Lib. 1 cap. 10 de affect. cap.
+    label: correct
+  - id: 1.2.1.6-n24-c1
+    stratum: text-at-anchor
+    author: lemnius
+    work: lemnius.de-occultis
+    raw: Lib. 1 cap. 4 de occult. nat. mir.
+    label: correct
+  - id: 3.3.4.2-n55-c1
+    stratum: text-at-anchor
+    author: stobaeus
+    work: null
+    raw: Ser. 72.
+    label: correct
+  - id: 1.2.3.13-n18-c1
+    stratum: text-at-anchor
+    author: cyprian
+    work: cyprian.de-aleatoribus
+    raw: Tom. 3 Ser. de Alea.
+    label: correct
+  - id: 1.3.1.4-n18-c1
+    stratum: text-at-anchor
+    author: rhazes
+    work: rhazes.ad-almansorem
+    raw: Lib. 9 ad Almansorem.
+    label: correct
+  - id: 2.2.6.3-n15-c1
+    stratum: text-at-anchor
+    author: livy
+    work: null
+    raw: Lib. 9 cap. 1.
+    label: correct
+  - id: 2.2.4.1-n2-c1
+    stratum: text-at-anchor
+    author: xenophon
+    work: null
+    raw: Lib. 3 de dictis Socratis.
+    label: correct
+  - id: 1.1.3.4-n11-c1
+    stratum: text-at-anchor
+    author: trincavelli
+    work: null
+    raw: Consil. 12.
+    label: correct
+  - id: 1.2.2.6-n18-c1
+    stratum: text-at-anchor
+    author: gellius
+    work: null
+    raw: Lib. 19 cap. 10.
+    label: correct
+  - id: 2.5.1.5-n16-c1
+    stratum: text-at-anchor
+    author: horace
+    work: null
+    raw: Od. 7 lib. 1.
+    label: correct
+  - id: 1.3.3.1-n35-c1
+    stratum: text-at-anchor
+    author: montalto
+    work: null
+    raw: Cap. 9.
+    label: correct
+  - id: 3.2.4.1-n6-c1
+    stratum: text-at-anchor
+    author: achilles-tatius
+    work: null
+    raw: Lib. 2.
+    label: correct
+  - id: 2.2.1.1-n3-c1
+    stratum: text-at-anchor
+    author: crato
+    work: null
+    raw: Consil. 99 lib. 2.
+    label: correct
+  - id: 3.2.3.1-n94-c2
+    stratum: work-title
+    author: virgil
+    work: virgil.aeneid
+    raw: Aen. 4.
+    label: correct
+  - id: 1.2.1.2-n47-c1
+    stratum: work-title
+    author: virgil
+    work: virgil.aeneid
+    raw: Aen. 4.
+    label: correct
+  - id: djr-n185-c1
+    stratum: work-title
+    author: terence
+    work: terence.adelphi
+    raw: Adelph. act. 5 scen. 8.
+    label: correct
+  - id: 3.3.4.1-n25-c2
+    stratum: work-title
+    author: xenophon
+    work: xenophon.cyropaedia
+    raw: Cyropaed. lib. 3.
+    label: correct
+  - id: 3.2.5.1-n1-c2
+    stratum: work-title
+    author: virgil
+    work: virgil.aeneid
+    raw: Aen. 6.
+    label: correct
+  - id: 1.3.1.2-n25-c2
+    stratum: work-title
+    author: terence
+    work: terence.heautontimorumenos
+    raw: Heautont. Act. 1 sc. 1.
+    label: correct
+  - id: djr-n636-c1
+    stratum: work-title
+    author: terence
+    work: terence.adelphi
+    raw: Adelph. act. 4 sc. 7.
+    label: correct
+  - id: 1.2.2.3-n9-c1
+    stratum: work-title
+    author: ricci
+    work: ricci.de-expeditione
+    raw: Expedit. in Sinas lib. 1 cap. 3.
+    label: correct
+  - id: 1.2.4.6-n96-c2
+    stratum: work-title
+    author: terence
+    work: terence.eunuchus
+    raw: Eunuch. Act. 2 Scen. 2.
+    label: correct
+  - id: 3.2.5.2-n21-c1
+    stratum: work-title
+    author: xenophon
+    work: xenophon.cyropaedia
+    raw: Cyropaedia.
+    label: correct
+  - id: 1.2.4.6-n13-c2
+    stratum: work-title
+    author: plautus
+    work: plautus.pseudolus
+    raw: Pseud.
+    label: correct
+  - id: djr-n508-c2
+    stratum: work-title
+    author: more
+    work: more.utopia
+    raw: Utop. Lib. 1.
+    label: correct
+  - id: 3.2.3.1-n14-c2
+    stratum: work-title
+    author: terence
+    work: terence.eunuchus
+    raw: Eunuch.
+    label: correct
+  - id: djr-n395-c1
+    stratum: work-title
+    author: cicero
+    work: cicero.de-officiis
+    raw: Offic. 3 cap. 9.
+    label: correct
+  - id: 3.2.5.5-n52-c2
+    stratum: work-title
+    author: virgil
+    work: virgil.aeneid
+    raw: Aen.
+    label: correct
+  result:
+    form: 29/30
+    text-at-anchor: 20/20
+    work-title: 15/15
+    total: 64/65 (0.985)
+    verdict: PASS (at least 0.95 overall, at most 2 wrong per stratum)
+    action: The bare form 'Basil' was removed from data/abbreviations.yaml after this round (it also abbreviates Basileae,
+      Basle); 'Basilius' stays. c2 is now seen.

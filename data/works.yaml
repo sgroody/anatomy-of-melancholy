@@ -1,0 +1,295 @@
+# Works Burton cites, by author (SPEC §4.2). Read by `burton citations`.
+#
+# Provenance: drafted by Claude (claude-opus-5-5) in session on 2026-11-02 (M6), from the work words of the
+# citations the parser left `partial`. Status: machine-draft. A citation's work words match a work when each
+# word is a prefix of the matching word of its title or of one of its `forms` ("de occult. nat. mir." ->
+# "De occultis naturae miraculis"); a leading "Lib."/"Tract." is ignored. A citation names a work only when
+# exactly one work of its author matches; otherwise it stays `partial`. Titles are the conventional Latin ones.
+# `alone`: the exact forms by which the title alone names its author in a note ("Eunuch." -> Terence), listed
+# only for distinctive titles. Without one, a lone title resolves only through the author named at the anchor
+# (held-out round c1 showed that matching a lone abbreviation by prefix is not safe).
+version: works-v1
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: machine-draft}
+
+works:
+  burton.anatomy: {author: burton, title: The Anatomy of Melancholy}
+  # --- Latin poets and playwrights
+  ovid.metamorphoses: {author: ovid, title: Metamorphoses, forms: [Metamor fab]}
+  ovid.fasti: {author: ovid, title: Fasti}
+  ovid.tristia: {author: ovid, title: Tristia, forms: [de Tristibus, in Tristibus], alone: [Trist, de Trist]}
+  ovid.amores: {author: ovid, title: Amores}
+  ovid.ars: {author: ovid, title: Ars amatoria, forms: [de arte amandi, art amandi, ars amandi], alone: [de arte amandi, art amandi]}
+  ovid.remedia: {author: ovid, title: Remedia amoris, forms: [de remedio amoris, remed amoris], alone: [de rem amor, rem amor, de remed amor]}
+  ovid.heroides: {author: ovid, title: Heroides, forms: [Heroidum epistolae], alone: [Heroid]}
+  ovid.ponto: {author: ovid, title: Epistulae ex Ponto, forms: [de Ponto, ex Ponto], alone: [de Ponto, ex Ponto]}
+  virgil.aeneid: {author: virgil, title: Aeneid, forms: [Aeneis], alone: [Aen, Aeneid, Aeneis]}
+  virgil.eclogues: {author: virgil, title: Eclogues, forms: [Eclogae]}
+  virgil.georgics: {author: virgil, title: Georgics, forms: [Georgica], alone: [Georg, Geor, Georgic]}
+  horace.odes: {author: horace, title: Odes, forms: [Carmina]}
+  horace.epodes: {author: horace, title: Epodes}
+  horace.satires: {author: horace, title: Satires, forms: [Sermones]}
+  horace.epistles: {author: horace, title: Epistles, forms: [Epistolae]}
+  horace.ars: {author: horace, title: Ars poetica, forms: [de arte poetica]}
+  juvenal.satires: {author: juvenal, title: Satires}
+  martial.epigrams: {author: martial, title: Epigrams}
+  plautus.menaechmi: {author: plautus, title: Menaechmi, forms: [Menechmi], alone: [Menech, Menaech, Menaechmi, Menechmi]}
+  plautus.aulularia: {author: plautus, title: Aulularia, alone: [Aulular, Aulularia]}
+  plautus.curculio: {author: plautus, title: Curculio, alone: [Curculio, Curcul]}
+  plautus.amphitruo: {author: plautus, title: Amphitruo, forms: [Amphitryo], alone: [Amphitruo, Amphitryo]}
+  plautus.bacchides: {author: plautus, title: Bacchides, alone: [Bacchides, Bacch]}
+  plautus.casina: {author: plautus, title: Casina, alone: [Casina]}
+  plautus.asinaria: {author: plautus, title: Asinaria, alone: [Asinar, Asinaria]}
+  plautus.cistellaria: {author: plautus, title: Cistellaria, alone: [Cistel, Cistellaria]}
+  plautus.mercator: {author: plautus, title: Mercator}
+  plautus.miles: {author: plautus, title: Miles gloriosus, forms: [de milite], alone: [Mil glor, Miles glor, Miles gloriosus]}
+  plautus.mostellaria: {author: plautus, title: Mostellaria, alone: [Mostel, Mostell, Mostellaria]}
+  plautus.pseudolus: {author: plautus, title: Pseudolus, alone: [Pseudolus, Pseud]}
+  plautus.trinummus: {author: plautus, title: Trinummus, alone: [Trinum, Trinummus]}
+  plautus.captivi: {author: plautus, title: Captivi, alone: [Captivi]}
+  plautus.poenulus: {author: plautus, title: Poenulus, alone: [Poenulus]}
+  plautus.rudens: {author: plautus, title: Rudens, alone: [Rudens]}
+  plautus.stichus: {author: plautus, title: Stichus, alone: [Stichus]}
+  plautus.truculentus: {author: plautus, title: Truculentus, alone: [Truculentus, Trucul]}
+  terence.adelphi: {author: terence, title: Adelphoe, forms: [Adelphi], alone: [Adelph, Adel, Adelphi, Adelphoe]}
+  terence.andria: {author: terence, title: Andria, alone: [Andria]}
+  terence.eunuchus: {author: terence, title: Eunuchus, alone: [Eunuch, Eunuc, Eunuchus]}
+  terence.heautontimorumenos: {author: terence, title: Heautontimorumenos, alone: [Heautont, Heauton, Heautontimorumenos]}
+  terence.phormio: {author: terence, title: Phormio, alone: [Phormio]}
+  terence.hecyra: {author: terence, title: Hecyra, alone: [Hecyra]}
+  petronius.satyricon: {author: petronius, title: Satyricon}
+  petronius.catalecta: {author: petronius, title: Catalecta, forms: [Catalecton]}
+  apuleius.metamorphoses: {author: apuleius, title: Metamorphoses, forms: [de asino aureo, aureus asinus, Milesiae, Miles], alone: [de aur asin, de asino aureo, asin aur]}
+  apuleius.florida: {author: apuleius, title: Florida}
+  apuleius.apologia: {author: apuleius, title: Apologia}
+  apuleius.catalecta: {author: apuleius, title: Catalecta}
+  lucan.pharsalia: {author: lucan, title: Pharsalia, forms: [de bello civili], alone: [Pharsal, Pharsalia]}
+  statius.thebaid: {author: statius, title: Thebaid, forms: [Thebais], alone: [Thebaid, Theb]}
+  statius.silvae: {author: statius, title: Silvae, forms: [Sylvae]}
+  ausonius.idylls: {author: ausonius, title: Idyllia, forms: [Idyllium]}
+  ausonius.epigrams: {author: ausonius, title: Epigrammata}
+  # --- Greek poets
+  theocritus.idylls: {author: theocritus, title: Idylls, forms: [Idyllia]}
+  hesiod.works: {author: hesiod, title: Opera et dies, forms: [Works and Days, op dies], alone: [op dies, opera dies]}
+  hesiod.theogony: {author: hesiod, title: Theogonia}
+  homer.iliad: {author: homer, title: Iliad, forms: [Ilias], alone: [Iliad, Ilias]}
+  homer.odyssey: {author: homer, title: Odyssey, forms: [Odyssea], alone: [Odyss, Odyssea, Odyssey]}
+  # --- Seneca, Cicero, Pliny
+  seneca-younger.epistles: {author: seneca-younger, title: Epistulae morales, forms: [Epistolae]}
+  seneca-younger.de-ira: {author: seneca-younger, title: De ira}
+  seneca-younger.de-beneficiis: {author: seneca-younger, title: De beneficiis}
+  seneca-younger.de-providentia: {author: seneca-younger, title: De providentia}
+  seneca-younger.de-vita-beata: {author: seneca-younger, title: De vita beata, forms: [de beata vita]}
+  seneca-younger.de-tranquillitate: {author: seneca-younger, title: De tranquillitate animi}
+  seneca-younger.de-brevitate: {author: seneca-younger, title: De brevitate vitae}
+  seneca-younger.ad-helviam: {author: seneca-younger, title: Consolatio ad Helviam, forms: [consol ad Helviam]}
+  seneca-younger.ad-marciam: {author: seneca-younger, title: Consolatio ad Marciam, forms: [consol ad Marciam]}
+  seneca-younger.ad-polybium: {author: seneca-younger, title: Consolatio ad Polybium, forms: [consol ad Polybium]}
+  seneca-younger.naturales-quaestiones: {author: seneca-younger, title: Naturales quaestiones, forms: [nat quaest]}
+  seneca-younger.hippolytus: {author: seneca-younger, title: Hippolytus, forms: [Phaedra]}
+  seneca-younger.hercules-furens: {author: seneca-younger, title: Hercules furens, forms: [Herc fur], alone: [Herc fur]}
+  seneca-younger.hercules-oetaeus: {author: seneca-younger, title: Hercules Oetaeus, forms: [Herc oet, Her oetaeo, in Herc oet], alone: [Herc oet]}
+  seneca-younger.thyestes: {author: seneca-younger, title: Thyestes, alone: [Thyestes, Thyest]}
+  seneca-younger.medea: {author: seneca-younger, title: Medea}
+  seneca-younger.troades: {author: seneca-younger, title: Troades}
+  seneca-younger.agamemnon: {author: seneca-younger, title: Agamemnon}
+  seneca-younger.oedipus: {author: seneca-younger, title: Oedipus}
+  seneca-elder.controversiae: {author: seneca-elder, title: Controversiae}
+  seneca-elder.suasoriae: {author: seneca-elder, title: Suasoriae}
+  cicero.tusculans: {author: cicero, title: Tusculanae disputationes, forms: [Tusc quaest, Tusculan quaest, Tusculanae quaestiones], alone: [Tusc, Tusc quaest, Tusculan, Tusculan quaest]}
+  cicero.de-legibus: {author: cicero, title: De legibus}
+  cicero.de-natura-deorum: {author: cicero, title: De natura deorum}
+  cicero.de-officiis: {author: cicero, title: De officiis, forms: [Offic], alone: [Offic, de Offic]}
+  cicero.de-oratore: {author: cicero, title: De oratore}
+  cicero.de-senectute: {author: cicero, title: De senectute}
+  cicero.de-amicitia: {author: cicero, title: De amicitia}
+  cicero.de-divinatione: {author: cicero, title: De divinatione}
+  cicero.de-finibus: {author: cicero, title: De finibus}
+  cicero.somnium: {author: cicero, title: Somnium Scipionis}
+  cicero.ad-familiares: {author: cicero, title: Epistulae ad familiares, forms: [fam epist, ad familiares]}
+  cicero.ad-atticum: {author: cicero, title: Epistulae ad Atticum, forms: [ad Atticum]}
+  cicero.paradoxa: {author: cicero, title: Paradoxa Stoicorum}
+  pliny-elder.natural-history: {author: pliny-elder, title: Naturalis historia, forms: [Nat hist]}
+  pliny-younger.epistles: {author: pliny-younger, title: Epistulae}
+  pliny-younger.panegyricus: {author: pliny-younger, title: Panegyricus, forms: [Panegyr Trajano], alone: [Panegyr Trajano]}
+  # --- Greek prose
+  plutarch.lives: {author: plutarch, title: Vitae parallelae, forms: [vita ejus, in vita, vit ejus, vita Marcelli, in Timoleonte, vita Alexandri, vita Antonii, vita Catonis, vita Lycurgi, vita Pompeii, vita Caesaris, vita Ciceronis, vita Demetrii, vita Solonis, vita Periclis, vita Agesilai, vita Alcibiadis]}
+  plutarch.de-placitis: {author: plutarch, title: De placitis philosophorum}
+  plutarch.gryllus: {author: plutarch, title: Gryllus, forms: [in Grillo, Grillus]}
+  plutarch.de-defectu: {author: plutarch, title: De defectu oraculorum}
+  plutarch.de-educatione: {author: plutarch, title: De educatione liberorum, forms: [de educ liberis]}
+  plutarch.de-iside: {author: plutarch, title: De Iside et Osiride, forms: [de Iside Osyride]}
+  plutarch.de-tranquillitate: {author: plutarch, title: De tranquillitate animi, forms: [De tranquil animae]}
+  plutarch.de-sanitate: {author: plutarch, title: De tuenda sanitate, forms: [de sanit tuend, de sanitate tuenda]}
+  plutarch.amatorius: {author: plutarch, title: Amatorius, forms: [Amatorio dialogo]}
+  plutarch.symposiaca: {author: plutarch, title: Quaestiones convivales, forms: [Symposiaca, Sympos]}
+  plutarch.moralia: {author: plutarch, title: Moralia, forms: [Opuscula]}
+  plato.laws: {author: plato, title: Laws, forms: [de legibus, de leg]}
+  plato.republic: {author: plato, title: Republic, forms: [de repub, de republica, Politeia]}
+  plato.symposium: {author: plato, title: Symposium, forms: [Convivium, Convivio]}
+  plato.apology: {author: plato, title: Apology, forms: [Apologia]}
+  plato.phaedo: {author: plato, title: Phaedo, forms: [Phaedone]}
+  plato.timaeus: {author: plato, title: Timaeus}
+  plato.critias: {author: plato, title: Critias, forms: [in Critia]}
+  plato.phaedrus: {author: plato, title: Phaedrus, forms: [Phaedro]}
+  plato.gorgias: {author: plato, title: Gorgias}
+  plato.theaetetus: {author: plato, title: Theaetetus}
+  plato.charmides: {author: plato, title: Charmides}
+  plato.alcibiades: {author: plato, title: Alcibiades}
+  aristotle.politics: {author: aristotle, title: Politics, forms: [Politica, polit cap ult]}
+  aristotle.de-anima: {author: aristotle, title: De anima}
+  aristotle.physiognomics: {author: aristotle, title: Physiognomonica, forms: [in physiognomia]}
+  aristotle.mirabilibus: {author: aristotle, title: De mirabilibus auscultationibus, forms: [de reb mir, de rebus mirabilibus]}
+  aristotle.history-animals: {author: aristotle, title: Historia animalium, forms: [hist animal]}
+  aristotle.rhetoric: {author: aristotle, title: Rhetoric, forms: [Rhetorica]}
+  aristotle.ethics: {author: aristotle, title: Nicomachean Ethics, forms: [Ethica, Ethic, Eth]}
+  aristotle.problems: {author: aristotle, title: Problemata}
+  aristotle.physics: {author: aristotle, title: Physica}
+  aristotle.meteorology: {author: aristotle, title: Meteorologica}
+  aristotle.de-somno: {author: aristotle, title: De somno et vigilia}
+  aristotle.metaphysics: {author: aristotle, title: Metaphysica}
+  lucian.dialogues-courtesans: {author: lucian, title: Dialogi meretricii, forms: [dial meret, meret dial, dial meretr]}
+  lucian.amores: {author: lucian, title: Amores, forms: [dial amorum]}
+  lucian.charidemus: {author: lucian, title: Charidemus, forms: [Charidemo], alone: [Charidemo, Charidemus]}
+  lucian.de-luctu: {author: lucian, title: De luctu}
+  lucian.timon: {author: lucian, title: Timon}
+  lucian.toxaris: {author: lucian, title: Toxaris, forms: [Toxari], alone: [Toxaris, Toxari]}
+  lucian.imagines: {author: lucian, title: Imagines}
+  lucian.de-saltatione: {author: lucian, title: De saltatione, forms: [de salt]}
+  lucian.de-sacrificiis: {author: lucian, title: De sacrificiis}
+  lucian.navigium: {author: lucian, title: Navigium, forms: [in votis, Vota]}
+  lucian.necyomantia: {author: lucian, title: Necyomantia, alone: [Necyomantia]}
+  lucian.charon: {author: lucian, title: Charon}
+  lucian.icaromenippus: {author: lucian, title: Icaromenippus, alone: [Icaromenippus]}
+  lucian.gallus: {author: lucian, title: Gallus}
+  lucian.philopseudes: {author: lucian, title: Philopseudes, alone: [Philopseudes]}
+  pausanias.laconica: {author: pausanias, title: Laconica, forms: [Lacon, de Laconicis, in Laconicis]}
+  pausanias.achaica: {author: pausanias, title: Achaica, forms: [in Achaicis, de Achaicis]}
+  pausanias.attica: {author: pausanias, title: Attica}
+  # --- medicine
+  galen.de-sanitate: {author: galen, title: De sanitate tuenda, forms: [de san tuend]}
+  galen.de-locis: {author: galen, title: De locis affectis, forms: [de loc affect]}
+  galen.de-bonitate-aquae: {author: galen, title: De bonitate aquae}
+  galen.de-attenuante: {author: galen, title: De victu attenuante, forms: [de subtiliss dieta, de subtilissima diaeta]}
+  galen.de-humoribus: {author: galen, title: De humoribus}
+  galen.methodus: {author: galen, title: Methodus medendi, forms: [meth med, methodo medendi]}
+  galen.de-temperamentis: {author: galen, title: De temperamentis}
+  galen.de-atra-bile: {author: galen, title: De atra bile}
+  hippocrates.de-insania: {author: hippocrates, title: De insania, forms: [libros de insania]}
+  hippocrates.prognostics: {author: hippocrates, title: Prognostica, forms: [Prognostic]}
+  hippocrates.epistles: {author: hippocrates, title: Epistulae}
+  hippocrates.aphorisms: {author: hippocrates, title: Aphorismi}
+  hippocrates.de-aere: {author: hippocrates, title: De aere aquis et locis}
+  rhazes.continens: {author: rhazes, title: Continens, forms: [Arab cont]}
+  rhazes.ad-almansorem: {author: rhazes, title: Liber ad Almansorem, forms: [ad Almansor, ad Almansorem]}
+  laurentius.de-melancholia: {author: laurentius, title: De melancholia, forms: [de Melanchol, de Melanch]}
+  laurentius.anatomia: {author: laurentius, title: Historia anatomica, forms: [Anat]}
+  laurentius.de-risu: {author: laurentius, title: De risu}
+  platter.de-mentis-alienatione: {author: platter, title: De mentis alienatione, forms: [de alien mentis, de mentis alien], alone: [de mentis alienat, de mentis alien]}
+  platter.observationes: {author: platter, title: Observationes, forms: [observat, obser]}
+  platter.praxis: {author: platter, title: Praxis medica, forms: [Tractat]}
+  hildesheim.spicilegia: {author: hildesheim, title: Spicilegia, forms: [spicil, spicil de mel, spicil de melancholia, spicil de Mania], alone: [Spicil]}
+  mercuriale.de-affectibus: {author: mercuriale, title: De affectibus, forms: [de affect, de affectibus capitis]}
+  mercuriale.de-compositione: {author: mercuriale, title: De compositione medicamentorum, forms: [de composit med]}
+  mercuriale.de-priapismo: {author: mercuriale, title: De Satyriasi et Priapismo, forms: [de Priapismo, Cap de Satyr Priapis, cap de Priapismo]}
+  mercuriale.consilia: {author: mercuriale, title: Consilia}
+  lemnius.de-occultis: {author: lemnius, title: De occultis naturae miraculis, forms: [de occult nat mir, de occult nat mirac, de occult nat], alone: [de occult nat mir, de occult nat]}
+  lemnius.de-complexionibus: {author: lemnius, title: De habitu et constitutione corporis, forms: [de complex, de complexionibus]}
+  lemnius.de-institutione: {author: lemnius, title: De vita cum animi et corporis incolumitate recte instituenda, forms: [instit, de vit instit, instit ad optimam vitam]}
+  lemnius.herbarum: {author: lemnius, title: Herbarum atque arborum quae in bibliis passim obviae sunt explicatio, forms: [her bib, herb bibl]}
+  bright.treatise: {author: bright, title: A Treatise of Melancholy, forms: [in his Tract of Melancholy, in his Tract of, Treat]}
+  # --- church fathers
+  augustine.de-civitate: {author: augustine, title: De civitate Dei, forms: [de civit, de civ Dei]}
+  augustine.confessions: {author: augustine, title: Confessiones, forms: [conf, confess]}
+  augustine.de-trinitate: {author: augustine, title: De Trinitate, forms: [de Trinit]}
+  augustine.de-genesi: {author: augustine, title: De Genesi ad litteram, forms: [de Gen ad literam, in de Gen ad literam]}
+  augustine.de-libero-arbitrio: {author: augustine, title: De libero arbitrio, forms: [de lib arbit]}
+  augustine.de-cura: {author: augustine, title: De cura pro mortuis gerenda}
+  augustine.ad-fratres-eremo: {author: augustine, title: Sermones ad fratres in eremo, forms: [ad frat in Eremo]}
+  augustine.enarrationes: {author: augustine, title: Enarrationes in Psalmos, forms: [in psal, in Psalmos]}
+  augustine.de-ecclesiasticis: {author: augustine, title: De ecclesiasticis dogmatibus, forms: [De eccles dog]}
+  cyprian.ad-donatum: {author: cyprian, title: Ad Donatum, forms: [ad Donat, Epist ad Donat, ad Donat ep]}
+  cyprian.de-zelo: {author: cyprian, title: De zelo et livore, forms: [de Livore, de zelo livore]}
+  cyprian.de-habitu: {author: cyprian, title: De habitu virginum, forms: [De virginali habitu]}
+  cyprian.de-aleatoribus: {author: cyprian, title: De aleatoribus, forms: [Ser de Alea, de Alea]}
+  # --- humanists and moderns
+  cardano.de-consolatione: {author: cardano, title: De consolatione, forms: [de consol, de cons]}
+  cardano.de-sapientia: {author: cardano, title: De sapientia, forms: [de sap, de sapient]}
+  cardano.de-varietate: {author: cardano, title: De rerum varietate, forms: [de rer var]}
+  cardano.de-subtilitate: {author: cardano, title: De subtilitate, forms: [De subtil]}
+  cardano.de-libris: {author: cardano, title: De libris propriis}
+  cardano.de-gemmis: {author: cardano, title: De gemmis et coloribus, forms: [de gemmis]}
+  cardano.de-aqua: {author: cardano, title: De aqua}
+  cardano.contradicentia: {author: cardano, title: Contradicentia medica, forms: [contradic]}
+  boethius.consolation: {author: boethius, title: De consolatione philosophiae, forms: [de consol phil, consol, De consol]}
+  boethius-hector.historia: {author: boethius-hector, title: Scotorum historiae, forms: [Hist, hist de vet, De veterum Scotorum morbis, de insulis Orchad]}
+  vives.de-anima: {author: vives, title: De anima et vita, forms: [de Anima, de anima cap de mel]}
+  vives.de-causis: {author: vives, title: De causis corruptarum artium, forms: [de causis corr art, de causis corrupt artium, de causis corrup artium]}
+  vives.de-veritate: {author: vives, title: De veritate fidei Christianae, forms: [de verit]}
+  melanchthon.de-anima: {author: melanchthon, title: Liber de anima, forms: [De anima, Lib de anima, Cap de humor lib de Anima, Lib de anima cap de humorib, De anima cap de humor]}
+  agrippa.de-occulta: {author: agrippa, title: De occulta philosophia, forms: [de occul, occult, de occult Philos, occult philos, de occul ph, De occult Philosop]}
+  agrippa.de-vanitate: {author: agrippa, title: De incertitudine et vanitate scientiarum, forms: [de vanit scient, de vanit sci]}
+  cicogna.magiae-omnifariae: {author: cicogna, title: Magiae omnifariae theatrum, forms: [omnif mag, omnifariae Mag, mag], alone: [Omnif mag]}
+  boterus.ragion-di-stato: {author: boterus, title: Della ragion di stato, forms: [polit, Polit]}
+  boterus.grandezza-citta: {author: boterus, title: Delle cause della grandezza delle città, forms: [De increm urb, de augment urb, de increm, de In urbium]}
+  boterus.relationi: {author: boterus, title: Relationi universali, forms: [Relat]}
+  boterus.amphitheatridion: {author: boterus, title: Amphitheatridion}
+  lipsius.epistolicae-quaestiones: {author: lipsius, title: Epistolicae quaestiones, forms: [epist quaest]}
+  lipsius.physiologia: {author: lipsius, title: Physiologia Stoicorum, forms: [Physiol, manuduc ad Phys]}
+  lipsius.manuductio: {author: lipsius, title: Manuductio ad Stoicam philosophiam}
+  lipsius.de-aquaeductibus: {author: lipsius, title: De aquaeductibus, forms: [De aqueduct]}
+  lipsius.de-peregrinatione: {author: lipsius, title: De peregrinatione}
+  lipsius.amphitheatrum: {author: lipsius, title: De amphitheatro, forms: [Amphitheatrum]}
+  lipsius.de-constantia: {author: lipsius, title: De constantia}
+  lipsius.admiranda: {author: lipsius, title: Admiranda, forms: [admir]}
+  lipsius.antiquae-lectiones: {author: lipsius, title: Antiquae lectiones, forms: [antiq Lect]}
+  lipsius.electa: {author: lipsius, title: Electorum libri, forms: [elect]}
+  erasmus.moria: {author: erasmus, title: Moriae encomium, forms: [mor, Moria], alone: [Mor Encom, Moriae Encom, Moria]}
+  erasmus.adagia: {author: erasmus, title: Adagia, forms: [Adag, chil, chil adag, Adag chil]}
+  erasmus.colloquia: {author: erasmus, title: Colloquia, forms: [dial, Colloq]}
+  jovius.historiae: {author: jovius, title: Historiae sui temporis, forms: [hist]}
+  jovius.elogia: {author: jovius, title: Elogia virorum illustrium, forms: [Elog vir, elogia]}
+  jovius.vitae: {author: jovius, title: Vitae illustrium virorum, forms: [vita ejus, vit ejus, in vita ejus, de vitis illustrium]}
+  jovius.moscovia: {author: jovius, title: De legatione Moschovitarum, forms: [Musc, Moscov]}
+  camden.britannia: {author: camden, title: Britannia, forms: [Brit, in Wiltshire, in Staffordshire, in Gloucestershire, in Lincolnshire, in Cheshire, in Norfolk]}
+  camden.annales: {author: camden, title: Annales, forms: [Annal]}
+  heinsius.austriacus: {author: heinsius, title: Austriacus, forms: [Austriaco, Austriac]}
+  heinsius.primerius: {author: heinsius, title: Primerius, forms: [Primerio]}
+  mantuan.eclogues: {author: mantuan, title: Eclogae, forms: [Eclog]}
+  mantuan.fasti: {author: mantuan, title: Fasti}
+  chaucer.knights-tale: {author: chaucer, title: The Knight's Tale, forms: [in the Knight’s tale, in the Knights tale]}
+  chaucer.romaunt: {author: chaucer, title: The Romaunt of the Rose, forms: [in Romance of the Rose]}
+  chaucer.parliament: {author: chaucer, title: The Parliament of Fowls, forms: [in his assembly of fowls]}
+  spenser.faerie-queene: {author: spenser, title: The Faerie Queene, forms: [Faerie Queene], alone: [Faerie Queene]}
+  more.utopia: {author: more, title: Utopia, forms: [Utop], alone: [Utop, Utopia]}
+  xenophon.cyropaedia: {author: xenophon, title: Cyropaedia, forms: [Cyropaed], alone: [Cyropaed, Cyropaedia]}
+  xenophon.memorabilia: {author: xenophon, title: Memorabilia}
+  xenophon.oeconomicus: {author: xenophon, title: Oeconomicus}
+  xenophon.symposium: {author: xenophon, title: Symposium, forms: [Convivium]}
+  john-salisbury.policraticus: {author: john-salisbury, title: Policraticus, forms: [Polycrat, Policrat], alone: [Polycrat, Policrat]}
+  munster.cosmographia: {author: munster, title: Cosmographia, forms: [Cosmog]}
+  maginus.geographia: {author: maginus, title: Geographia, forms: [Geog]}
+  barclay.euphormio: {author: barclay, title: Euphormionis Satyricon, forms: [Euphormio, Satyr, Satyricon], alone: [Euphormio]}
+  barclay.argenis: {author: barclay, title: Argenis, alone: [Argenis]}
+  leo-africanus.descriptio: {author: leo-africanus, title: Descrittione dell'Africa, forms: [descrip Africae, de Africa]}
+  knolles.turks: {author: knolles, title: The Generall Historie of the Turkes, forms: [Turk]}
+  scaliger-julius-caesar.exercitationes: {author: scaliger-julius-caesar, title: Exotericae exercitationes, forms: [exercit, exerc]}
+  scaliger-julius-caesar.poetice: {author: scaliger-julius-caesar, title: Poetices libri septem, forms: [Poet]}
+  scaliger-joseph-justus.de-emendatione: {author: scaliger-joseph-justus, title: De emendatione temporum}
+  herodotus.histories: {author: herodotus, title: Historiae, forms: [Clio, Euterpe, Thalia, Melpomene, Terpsichore, Erato, Polymnia, Urania, Calliope, Euterp], alone: [Clio, Euterp, Euterpe, Melpomene, Terpsichore, Polymnia]}
+  heliodorus.aethiopica: {author: heliodorus, title: Aethiopica}
+  achilles-tatius.leucippe: {author: achilles-tatius, title: Leucippe and Clitophon}
+  athenaeus.deipnosophistae: {author: athenaeus, title: Deipnosophistae, forms: [Dipnosophist], alone: [Dipnosophist, Deipnosoph]}
+  macrobius.saturnalia: {author: macrobius, title: Saturnalia, forms: [Saturnal], alone: [Saturnal, Saturnalia]}
+  macrobius.somnium: {author: macrobius, title: Commentarii in Somnium Scipionis, forms: [in Somn Scip]}
+  gellius.noctes: {author: gellius, title: Noctes Atticae, forms: [Noct Att], alone: [Noct Att]}
+  valerius-maximus.facta: {author: valerius-maximus, title: Facta et dicta memorabilia}
+  wecker.syntaxes: {author: wecker, title: Medicinae utriusque syntaxes, forms: [Syntax, Syntaxi]}
+  laet.novus-orbis: {author: laet, title: Novus orbis seu descriptio Indiae occidentalis, forms: [descrip occid Indiae, descript Amer, descript occid, occident, Americae]}
+  ricci.de-expeditione: {author: ricci, title: De Christiana expeditione apud Sinas, forms: [expedit ad Sinas, expedit in Sinas, Expedit], alone: [Expedit in Sinas, Expedit ad Sinas]}
+  calcagnini.apologi: {author: calcagnini, title: Apologi, forms: [Apol]}
+  prodromus.amaranthus: {author: prodromus, title: Amaranthus, forms: [Amor]}
+  parthenius.erotica: {author: parthenius, title: Erotica pathemata, forms: [Erot]}
+  angeriano.erotopaegnion: {author: angeriano, title: Erotopaegnion}
+  palingenius.zodiacus: {author: palingenius, title: Zodiacus vitae, forms: [Zodiac]}
+  giraldus-cambrensis.itinerarium: {author: giraldus-cambrensis, title: Itinerarium Cambriae, forms: [Itin Cambriae, Cambriae]}
+  giraldus-cambrensis.topographia: {author: giraldus-cambrensis, title: Topographia Hibernica, forms: [Topog Hib]}

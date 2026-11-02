@@ -1,0 +1,408 @@
+# Abbreviations Burton uses in his sidenotes (SPEC §4.2). Read by `burton citations` (burton/layers/citations.py).
+#
+# Provenance: drafted by Claude (claude-opus-5-5) in session on 2026-11-02 (M6), from token counts over the
+# 5,703 sidenotes' public text. Status: machine-draft; the owner reviews the authors through the top-100 list
+# (state/review/authors-top100.md). A form is listed only where its reading in Burton is certain; a form that
+# could name two people goes under `ambiguous` and resolves only by its work (or not at all). Unknown forms
+# are simply absent: the parser then records the citation as `unidentified`, never as a guess.
+version: abbrev-v1
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: machine-draft}
+
+# Locus abbreviations. `en` is the display label. A locator counts only when a number follows it.
+locators:
+  book: {en: book, forms: [lib, l, liber, libro, book]}
+  chapter: {en: chapter, forms: [cap, c, caput, capite, chap, ch]}
+  section: {en: section, forms: [sect, sec, sectio, s]}
+  part: {en: part, forms: [part, par, pars, partit]}
+  member: {en: member, forms: [memb, mem]}
+  subsection: {en: subsection, forms: [subs, subsect]}
+  volume: {en: volume, forms: [tom, tomo, vol]}
+  letter: {en: letter, forms: [epist, ep, epistola, epistle]}
+  satire: {en: satire, forms: [sat, satyr, satira]}
+  dialogue: {en: dialogue, forms: [dial, dialog]}
+  folio: {en: folio, forms: [fol, folio]}
+  page: {en: page, forms: [p, pag, page]}
+  consilium: {en: consilium, forms: [consil, cons, consult]}
+  treatise: {en: treatise, forms: [tract, tr, tractat]}
+  homily: {en: homily, forms: [hom, homil]}
+  sermon: {en: sermon, forms: [serm, ser, sermo]}
+  lecture: {en: lecture, forms: [lect, lectio]}
+  problem: {en: problem, forms: [prob, probl]}
+  aphorism: {en: aphorism, forms: [aph, aphor, aphoris]}
+  distinction: {en: distinction, forms: [dist, distinct]}
+  question: {en: question, forms: [quaest, q, qu, quaestio]}
+  article: {en: article, forms: [art, artic]}
+  disputation: {en: disputation, forms: [disp, disput]}
+  exercitation: {en: exercitation, forms: [exercit, exerc]}
+  controversy: {en: controversia, forms: [cont, contr, controv]}
+  elegy: {en: elegy, forms: [eleg, el]}
+  ode: {en: ode, forms: [od, ode, carm]}
+  epigram: {en: epigram, forms: [epig, epigr, epigram]}
+  act: {en: act, forms: [act, actu]}
+  scene: {en: scene, forms: [sc, scen, scena]}
+  verse: {en: verse, forms: [v, ver, vers, versu]}
+  observation: {en: observation, forms: [obs, observ, observat]}
+  century: {en: century, forms: [cent]}
+  text: {en: text, forms: [text, tex]}
+  comment: {en: commentary, forms: [com, comment]}
+  number: {en: number, forms: [num, nu]}
+  canto: {en: canto, forms: [cant, canto]}
+  stanza: {en: stanza, forms: [stanz, staff]}
+  decade: {en: decade, forms: [dec, decad]}
+  oration: {en: oration, forms: [orat, or]}
+  epistle-dedicatory: {en: preface, forms: [praef, praefat]}
+  year: {en: year, forms: [anno, an]}
+
+special:
+  idem: [Idem, Id]
+  ibid: [ib, ibid, ibidem, Ib, Ibid, Ibidem]
+
+# Books of the Bible and Apocrypha. A form counts only when a number follows ("Gen. 3. 17"); "Phil." with a
+# work after it is not Philippians.
+bible:
+  genesis: {name: Genesis, forms: [Gen, Genes, Genesis]}
+  exodus: {name: Exodus, forms: [Exod, Exo, Exodus]}
+  leviticus: {name: Leviticus, forms: [Lev, Levit]}
+  numbers: {name: Numbers, forms: [Num, Numb]}
+  deuteronomy: {name: Deuteronomy, forms: [Deut, Deu]}
+  joshua: {name: Joshua, forms: [Josh, Jos, Joshua]}
+  judges: {name: Judges, forms: [Judg, Jud, Judges]}
+  ruth: {name: Ruth, forms: [Ruth]}
+  samuel: {name: Samuel, forms: [Sam, Samuel]}
+  kings: {name: Kings, forms: [Kings, King, Reg, Regum]}
+  chronicles: {name: Chronicles, forms: [Chron, Chro, Paral]}
+  ezra: {name: Ezra, forms: [Ezra, Esdr, Esd]}
+  nehemiah: {name: Nehemiah, forms: [Neh, Nehem]}
+  esther: {name: Esther, forms: [Esth, Est, Esther, Hester]}
+  job: {name: Job, forms: [Job]}
+  psalms: {name: Psalms, forms: [Psal, Ps, Psalm, Psalms, Psa]}
+  proverbs: {name: Proverbs, forms: [Prov, Proverbs]}
+  ecclesiastes: {name: Ecclesiastes, forms: [Eccles, Eccl, Ecclesiastes]}
+  song: {name: Song of Songs, forms: [Cant, Cantic, Canticles]}
+  isaiah: {name: Isaiah, forms: [Isa, Isai, Esa, Esay, Isaiah]}
+  jeremiah: {name: Jeremiah, forms: [Jer, Jerem, Jeremiah]}
+  lamentations: {name: Lamentations, forms: [Lam, Lament]}
+  ezekiel: {name: Ezekiel, forms: [Ezek, Ezech, Ezekiel]}
+  daniel: {name: Daniel, forms: [Dan, Daniel]}
+  hosea: {name: Hosea, forms: [Hos, Hosea, Osee]}
+  joel: {name: Joel, forms: [Joel]}
+  amos: {name: Amos, forms: [Amos]}
+  jonah: {name: Jonah, forms: [Jonah, Jon, Jonas]}
+  micah: {name: Micah, forms: [Mic, Micah, Mich]}
+  nahum: {name: Nahum, forms: [Nah, Nahum]}
+  habakkuk: {name: Habakkuk, forms: [Hab, Habak, Abac]}
+  zephaniah: {name: Zephaniah, forms: [Zeph, Zephan]}
+  haggai: {name: Haggai, forms: [Hag, Haggai, Agg]}
+  zechariah: {name: Zechariah, forms: [Zech, Zach, Zachar]}
+  malachi: {name: Malachi, forms: [Mal, Malach, Malachi]}
+  matthew: {name: Matthew, forms: [Matt, Mat, Matth, Matthew]}
+  mark: {name: Mark, forms: [Mark, Marc]}
+  luke: {name: Luke, forms: [Luke]}
+  john: {name: John, forms: [John, Joh, Johan]}
+  acts: {name: Acts, forms: [Acts]}
+  romans: {name: Romans, forms: [Rom, Roman, Romans]}
+  corinthians: {name: Corinthians, forms: [Cor, Corinth]}
+  galatians: {name: Galatians, forms: [Gal, Galat]}
+  ephesians: {name: Ephesians, forms: [Ephes, Eph]}
+  philippians: {name: Philippians, forms: [Phil, Philip, Philipp]}
+  colossians: {name: Colossians, forms: [Col, Coloss]}
+  thessalonians: {name: Thessalonians, forms: [Thess, Thes]}
+  timothy: {name: Timothy, forms: [Tim, Timoth]}
+  titus: {name: Titus, forms: [Tit, Titus]}
+  hebrews: {name: Hebrews, forms: [Heb, Hebr]}
+  james: {name: James, forms: [James, Jam, Jac, Jacob]}
+  peter: {name: Peter, forms: [Pet, Peter]}
+  jude: {name: Jude, forms: [Jude]}
+  revelation: {name: Revelation, forms: [Rev, Apoc, Apocal, Revel]}
+  ecclesiasticus: {name: Ecclesiasticus, forms: [Ecclus, Eccius, Sirach, Syr]}
+  wisdom: {name: Wisdom, forms: [Wisd, Sap, Sapient]}
+  tobit: {name: Tobit, forms: [Tob, Tobit, Tobias]}
+  judith: {name: Judith, forms: [Judith]}
+  maccabees: {name: Maccabees, forms: [Mac, Macc, Machab]}
+  baruch: {name: Baruch, forms: [Bar, Baruch]}
+
+# Ambiguous forms. A citation resolves to the candidate whose work (data/works.yaml) it names, else to the one
+# a locator in `by_locus` points to, else to `default` where one is given with its `basis`; otherwise it stays
+# unidentified and records `ambiguous_with`.
+ambiguous:
+  Scaliger: &scaliger
+    candidates: [scaliger-julius-caesar, scaliger-joseph-justus]
+    by_locus: {exercitation: scaliger-julius-caesar}
+  Scalig: *scaliger
+  Plin: &pliny
+    candidates: [pliny-elder, pliny-younger]
+    by_locus: {letter: pliny-younger}
+    default: pliny-elder
+    basis: Burton cites the Natural History by book and chapter; the Younger only by his letters (epist.).
+  Plinius: *pliny
+  Pliny: *pliny
+  Seneca: &seneca
+    candidates: [seneca-younger, seneca-elder]
+    by_locus: {controversy: seneca-elder}
+    default: seneca-younger
+    basis: Burton's bare "Seneca" is the philosopher and tragedian; the Elder appears by his Controversiae (cont.).
+  Senec: *seneca
+  Sen: *seneca
+  # the philosopher (De consolatione) or Hector Boece (the Scottish history)
+  Boethius: &boethius
+    candidates: [boethius, boethius-hector]
+  Boeth: *boethius
+  Herod:
+    candidates: [herodotus, herodian]
+
+# Authors: id -> display name and Burton's forms (case-sensitive, without the stop). Multi-word forms are
+# written with spaces ("Lod Vives"). Dates and Wikidata ids live in data/authors/<id>.yaml.
+authors:
+  burton: {name: Robert Burton, The Anatomy of Melancholy (this book), forms: []}
+  horace: {name: Horace, forms: [Hor, Horat, Horatius, Horace]}
+  ovid: {name: Ovid, forms: [Ovid, Ovidius, Naso]}
+  virgil: {name: Virgil, forms: [Virg, Virgil, Virgilius, Maro]}
+  juvenal: {name: Juvenal, forms: [Juven, Juv, Juvenal, Juvenalis]}
+  martial: {name: Martial, forms: [Mart, Martial, Martialis]}
+  seneca-younger: {name: Seneca the Younger, forms: []}
+  seneca-elder: {name: Seneca the Elder, forms: []}
+  plautus: {name: Plautus, forms: [Plautus, Plaut]}
+  terence: {name: Terence, forms: [Ter, Terent, Terence, Terentius]}
+  catullus: {name: Catullus, forms: [Catullus, Catul, Catull]}
+  lucan: {name: Lucan, forms: [Lucan, Lucanus]}
+  lucretius: {name: Lucretius, forms: [Lucretius, Lucret]}
+  persius: {name: Persius, forms: [Persius, Pers]}
+  propertius: {name: Propertius, forms: [Propertius, Propert]}
+  tibullus: {name: Tibullus, forms: [Tibullus, Tibul]}
+  statius: {name: Statius, forms: [Statius]}
+  petronius: {name: Petronius, forms: [Petronius, Petron]}
+  ausonius: {name: Ausonius, forms: [Ausonius, Auson, Aus]}
+  claudian: {name: Claudian, forms: [Claudian, Claudianus]}
+  apuleius: {name: Apuleius, forms: [Apuleius, Apul]}
+  lucian: {name: Lucian, forms: [Lucian, Lucianus]}
+  plutarch: {name: Plutarch, forms: [Plutarch, Plut, Plutarchus]}
+  aristotle: {name: Aristotle, forms: [Arist, Aristot, Aristotle, Aristoteles]}
+  plato: {name: Plato, forms: [Plato, Platonis]}
+  cicero: {name: Cicero, forms: [Tully, Tullius, Tul, Cic, Cicero]}
+  pliny-elder: {name: Pliny the Elder, forms: []}
+  pliny-younger: {name: Pliny the Younger, forms: []}
+  livy: {name: Livy, forms: [Livy, Livius, Liv]}
+  tacitus: {name: Tacitus, forms: [Tacitus, Tacit]}
+  suetonius: {name: Suetonius, forms: [Suetonius, Sueton, Suet]}
+  sallust: {name: Sallust, forms: [Sallust, Salust, Sallustius]}
+  herodotus: {name: Herodotus, forms: [Herodotus]}
+  homer: {name: Homer, forms: [Homer, Homerus]}
+  hesiod: {name: Hesiod, forms: [Hesiod, Hesiodus]}
+  euripides: {name: Euripides, forms: [Euripides, Eurip]}
+  sophocles: {name: Sophocles, forms: [Sophocles]}
+  aristophanes: {name: Aristophanes, forms: [Aristophanes]}
+  menander: {name: Menander, forms: [Menander]}
+  theocritus: {name: Theocritus, forms: [Theocritus]}
+  athenaeus: {name: Athenaeus, forms: [Athenaeus]}
+  aelian: {name: Aelian, forms: [Aelian, Aelianus]}
+  pausanias: {name: Pausanias, forms: [Pausanias]}
+  strabo: {name: Strabo, forms: [Strabo]}
+  galen: {name: Galen, forms: [Galen, Galenus, Galeni, Gal]}
+  hippocrates: {name: Hippocrates, forms: [Hippocrates, Hippocr, Hippoc, Hipp]}
+  avicenna: {name: Avicenna, forms: [Avicenna, Avicen]}
+  rhazes: {name: Rhazes, forms: [Rhasis, Rhazes, Rasis]}
+  augustine: {name: Augustine of Hippo, forms: [Austin, Aug, August, Augustinus, Augustine]}
+  jerome: {name: Jerome, forms: [Hierom, Hieron, Hieronymus, Jerome]}
+  chrysostom: {name: John Chrysostom, forms: [Chrys, Chrysost, Chrysostom, Chrysostomus]}
+  ambrose: {name: Ambrose, forms: [Ambrose, Ambros]}
+  cyprian: {name: Cyprian, forms: [Cyprian, Cyprianus, Cyp, Cypr]}
+  bernard-clairvaux: {name: Bernard of Clairvaux, forms: [Bernard, Bernardus, Bern]}
+  lactantius: {name: Lactantius, forms: [Lactantius, Lactant]}
+  boethius: {name: Boethius, forms: [Severinus Boethius]}
+  erasmus: {name: Desiderius Erasmus, forms: [Erasmus, Erasm, Eras]}
+  lipsius: {name: Justus Lipsius, forms: [Lipsius, Lips]}
+  cardano: {name: Girolamo Cardano, forms: [Cardan, Cardanus, Card]}
+  lemnius: {name: Levinus Lemnius, forms: [Lemnius, Lemn]}
+  agrippa: {name: Heinrich Cornelius Agrippa, forms: [Agrippa, Corn Agrippa]}
+  vives: {name: Juan Luis Vives, forms: [Vives, Lod Vives, Ludovicus Vives]}
+  melanchthon: {name: Philipp Melanchthon, forms: [Melancthon, Melanchthon, Melanct]}
+  mercuriale: {name: Girolamo Mercuriale, forms: [Mercurialis, Mercurial]}
+  montanus: {name: Giovanni Battista da Monte (Montanus), forms: [Montanus]}
+  montalto: {name: Filotheo Elião de Montalto (Montaltus), forms: [Montaltus, Aelianus Montaltus]}
+  laurentius: {name: André du Laurens (Laurentius), forms: [Laurentius]}
+  piso: {name: Nicolas Le Pois (Piso), forms: [Piso]}
+  fernel: {name: Jean Fernel, forms: [Fernelius, Fernel]}
+  platter: {name: Felix Platter (Platerus), forms: [Platerus, Plater]}
+  heurnius: {name: Johannes Heurnius, forms: [Heurnius]}
+  hildesheim: {name: Franz Hildesheim, forms: [Hildesheim, Hildesheimius]}
+  altomari: {name: Donato Antonio Altomari (Altomarus), forms: [Altomarus, Altomar]}
+  crato: {name: Johannes Crato von Krafftheim, forms: [Crato]}
+  bright: {name: Timothy Bright, forms: [Bright, Dr Bright]}
+  buchanan: {name: George Buchanan, forms: [Buchanan, Buchananus]}
+  petrarch: {name: Petrarch, forms: [Petrarch, Petrarcha, Petrarchus]}
+  mantuan: {name: Baptista Mantuanus, forms: [Mantuan, Mantuanus, Mant]}
+  ariosto: {name: Ludovico Ariosto, forms: [Ariosto, Ariostus]}
+  chaucer: {name: Geoffrey Chaucer, forms: [Chaucer]}
+  jovius: {name: Paolo Giovio (Jovius), forms: [Jovius, Paulus Jovius]}
+  camden: {name: William Camden, forms: [Camden, Camdenus]}
+  ortelius: {name: Abraham Ortelius, forms: [Ortelius]}
+  boterus: {name: Giovanni Botero (Boterus), forms: [Boterus, Botero]}
+  cicogna: {name: Strozzi Cicogna, forms: [Cicogna, Strozzius Cicogna]}
+  heinsius: {name: Daniel Heinsius, forms: [Heinsius]}
+  scaliger-julius-caesar: {name: Julius Caesar Scaliger, forms: [J C Scaliger, Jul Scaliger]}
+  scaliger-joseph-justus: {name: Joseph Justus Scaliger, forms: [Jos Scaliger, Joseph Scaliger]}
+  james-vi-i: {name: James VI and I, forms: [Rex Jacobus]}
+  marco-polo: {name: Marco Polo, forms: [M Polus, Marcus Polus, M Paulus Venetus, Marcus Paulus Venetus]}
+  varthema: {name: Ludovico di Varthema (Vertomannus), forms: [Vertomannus, Lod Vertomannus]}
+  peter-martyr: {name: Peter Martyr d'Anghiera, forms: [P Martyr Ocean, Pet Martyr Ocean]}
+  velleius: {name: Velleius Paterculus, forms: [Paterculus, Vell Paterculus, Velleius Paterculus]}
+  boethius-hector: {name: Hector Boece (Boethius), forms: [Hector Boethius, Hect Boethius]}
+  curtius: {name: Quintus Curtius Rufus, forms: [Curtius, Q Curtius]}
+  gellius: {name: Aulus Gellius, forms: [Gellius, Gell, A Gellius, Agellius]}
+  valerius-maximus: {name: Valerius Maximus, forms: [Valerius, Valer, Val Max, Valerius Maximus]}
+  caelius-rhodiginus: {name: Lodovico Ricchieri (Caelius Rhodiginus), forms: [Caelius Rhodiginus, Rhodiginus, Cael Rhodig]}
+  aeneas-silvius: {name: Aeneas Silvius Piccolomini (Pius II), forms: [Aeneas Silvius, Aeneas Silv, Aeneas Sylvius, Aen Silvius]}
+  leech-john: {name: John Leech (Leochaeus), forms: [Leochaeus, Joh Leochaeus]}
+  angeriano: {name: Girolamo Angeriano (Angerianus), forms: [Angerianus]}
+  palingenius: {name: Marcellus Palingenius Stellatus, forms: [Palingenius]}
+  brisson: {name: Barnabé Brisson (Brissonius), forms: [Brissonius]}
+  spartianus: {name: Aelius Spartianus, forms: [Spartian, Spartianus]}
+  lampridius: {name: Aelius Lampridius, forms: [Lampridius]}
+  abernethy: {name: John Abernethy, forms: [Abernethy]}
+  commynes: {name: Philippe de Commynes (Cominaeus), forms: [Cominaeus, Comineus, Comines, Cominius]}
+  busbecq: {name: Ogier Ghiselin de Busbecq (Busbequius), forms: [Busbequius]}
+  achilles-tatius: {name: Achilles Tatius, forms: [Tatius, Achilles Tatius, Ach Tatius]}
+  velcurio: {name: Johannes Velcurio, forms: [Velcurio]}
+  aetius: {name: Aetius of Amida, forms: [Aetius]}
+  leo-africanus: {name: Leo Africanus, forms: [Leo Afer, Leo Africanus]}
+  alciato: {name: Andrea Alciato (Alciatus), forms: [Alciat, Alciatus, Alciati]}
+  theognis: {name: Theognis, forms: [Theognis]}
+  wecker: {name: Johann Jacob Wecker, forms: [Wecker, Weckerus]}
+  laet: {name: Joannes de Laet, forms: [Laet, Laetius]}
+  fracastoro: {name: Girolamo Fracastoro (Fracastorius), forms: [Fracastorius]}
+  ricci: {name: Matteo Ricci (Riccius), forms: [Riccius, Matth Riccius]}
+  marullus: {name: Michael Marullus, forms: [Marullus]}
+  seyssel: {name: Claude de Seyssel (Sesellius), forms: [Sesellius, Sesel]}
+  maximus-tyrius: {name: Maximus of Tyre, forms: [Tyrius, Max Tyrius, Maximus Tyrius]}
+  marlowe: {name: Christopher Marlowe, forms: [Marlowe]}
+  musaeus: {name: Musaeus, forms: [Musaeus]}
+  knolles: {name: Richard Knolles, forms: [Knolles]}
+  aristaenetus: {name: Aristaenetus, forms: [Aristaenetus]}
+  spenser: {name: Edmund Spenser, forms: [Spenser]}
+  munster: {name: Sebastian Münster, forms: [Munster, Munsterus]}
+  trincavelli: {name: Vettore Trincavelli (Trincavellius), forms: [Trincavellius]}
+  godelmann: {name: Johann Georg Godelmann, forms: [Godelmannus]}
+  pererius: {name: Benedictus Pererius, forms: [Pererius]}
+  synesius: {name: Synesius of Cyrene, forms: [Synesius]}
+  erastus: {name: Thomas Erastus, forms: [Erastus]}
+  boissard: {name: Jean-Jacques Boissard, forms: [Boissardus, Boissardum]}
+  leovitius: {name: Cyprianus Leovitius, forms: [Leovitius, Leovitii]}
+  maginus: {name: Giovanni Antonio Magini (Maginus), forms: [Maginus, Magin]}
+  magninus: {name: Maino de' Maineri (Magninus), forms: [Magninus, Magnin]}
+  freitag: {name: Johann Freitag (Freitagius), forms: [Freitagius]}
+  bruyerin: {name: Jean Bruyérin-Champier (Bruyerinus), forms: [Bruyerinus, Bruyerin]}
+  nicephorus: {name: Nicephorus Callistus Xanthopoulos, forms: [Nicephorus, Niceph]}
+  weyer: {name: Johann Weyer (Wierus), forms: [Wierus, Wier]}
+  thucydides: {name: Thucydides, forms: [Thucydides]}
+  estienne-henri: {name: Henri Estienne, forms: [Hen Steph, Hen Stephanus, Henricus Stephanus]}
+  prodromus: {name: Theodore Prodromos, forms: [Prodromus, Theod Prodromus]}
+  xenophon: {name: Xenophon, forms: [Xenophon]}
+  gomesius: {name: Bernardinus Gomesius, forms: [Gomesius]}
+  guainerio: {name: Antonio Guainerio (Guianerius), forms: [Guainerius, Guainer, Guianerius]}
+  forestus: {name: Pieter van Foreest (Forestus), forms: [Forestus]}
+  gordon: {name: Bernard de Gordon (Gordonius), forms: [Gordonius, Gordon, Gord]}
+  fuchs: {name: Leonhart Fuchs (Fuchsius), forms: [Fuchsius, Fuchs, Fuch]}
+  rosinus: {name: Johannes Rosinus, forms: [Rosinus]}
+  sandys: {name: George Sandys, forms: [Sandys]}
+  moryson: {name: Fynes Moryson, forms: [Fynes Moryson, Fynes Morys]}
+  john-salisbury: {name: John of Salisbury, forms: [Sarisburiensis, Joh Sarisburiensis]}
+  aretino: {name: Pietro Aretino, forms: [Aretine, Aretinus]}
+  castiglione: {name: Baldassare Castiglione (Castilio), forms: [Castilio]}
+  puteanus: {name: Erycius Puteanus, forms: [Puteanus, Putean]}
+  epictetus: {name: Epictetus, forms: [Epictetus]}
+  aesop: {name: Aesop, forms: [Aesop, Aesopus]}
+  martianus-capella: {name: Martianus Capella, forms: [Martianus Capella, Capella]}
+  heliodorus: {name: Heliodorus of Emesa, forms: [Heliodorus, Heliodor]}
+  shakespeare: {name: William Shakespeare, forms: [Shakespeare]}
+  bossus: {name: Matthaeus Bossus, forms: [Bossus]}
+  grotius: {name: Hugo Grotius, forms: [Grotius]}
+  parthenius: {name: Parthenius of Nicaea, forms: [Parthenius]}
+  hyginus: {name: Hyginus, forms: [Hyginus]}
+  calcagnini: {name: Celio Calcagnini (Calcagninus), forms: [Calcagninus]}
+  drexel: {name: Jeremias Drexel (Drexelius), forms: [Drexelius]}
+  polydore-vergil: {name: Polydore Vergil, forms: [Polydore Virgil, Polydorus, Polydor, Polyd]}
+  vanini: {name: Giulio Cesare Vanini (Vaninus), forms: [Vaninus]}
+  zanchi: {name: Girolamo Zanchi (Zanchius), forms: [Zanchius, Zanch]}
+  campanella: {name: Tommaso Campanella, forms: [Campanella]}
+  gerbel: {name: Nikolaus Gerbel (Gerbelius), forms: [Gerbelius]}
+  more: {name: Thomas More, forms: [Morus, Th Morus, Thomas Morus]}
+  muret: {name: Marc-Antoine Muret (Muretus), forms: [Muretus]}
+  giraldus-cambrensis: {name: Gerald of Wales (Giraldus Cambrensis), forms: [Giraldus Cambrensis, Giraldus Cambrens, Cambrensis]}
+  dousa: {name: Janus Dousa, forms: [Janus Dousa, Dousa]}
+  crooke: {name: Helkiah Crooke, forms: [Dr Crooke, Crooke]}
+  gaguin: {name: Robert Gaguin (Gaguinus), forms: [Gaguinus]}
+  delrio: {name: Martin Delrio, forms: [Delrio, Del Rio]}
+  breydenbach: {name: Bernhard von Breydenbach, forms: [Breydenbachius]}
+  eusebius: {name: Eusebius of Caesarea, forms: [Eusebius, Euseb]}
+  olaus-magnus: {name: Olaus Magnus, forms: [Olaus Magnus, Olaus]}
+  basil: {name: Basil of Caesarea, forms: [Basilius, Basil Magnus]}
+  psellus: {name: Michael Psellos (Psellus), forms: [Psellus]}
+  vairo: {name: Leonardo Vairo (Vairus), forms: [Vairus]}
+  lavater: {name: Ludwig Lavater, forms: [Lavater]}
+  suda: {name: The Suda (Suidas), forms: [Suidas, Suidam]}
+  scribonius: {name: Wilhelm Adolf Scribonius, forms: [Adolphus Scribonius, Scribonius]}
+  meteren: {name: Emanuel van Meteren (Meteranus), forms: [Meteran, Meteranus]}
+  buxtorf: {name: Johannes Buxtorf, forms: [Buxtorfius]}
+  drusius: {name: Johannes Drusius, forms: [Drusius]}
+  bede: {name: Bede, forms: [Beda, Bede]}
+  sabellico: {name: Marcantonio Sabellico (Sabellicus), forms: [Sabellicus, Sabel]}
+  barclay: {name: John Barclay, forms: [Barclay, Barclaius]}
+  cogan: {name: Thomas Cogan, forms: [Cogan]}
+  scholz: {name: Lorenz Scholz (Scholtzius), forms: [Scholtzius, Scholtzium, Scholtzii]}
+  stobaeus: {name: Joannes Stobaeus, forms: [Stobaeus, Stobaeum]}
+  linschoten: {name: Jan Huyghen van Linschoten, forms: [Linschoten]}
+  luis-granada: {name: Luis de Granada (Granatensis), forms: [Granatensis, Lud Granatensis]}
+  holcot: {name: Robert Holcot, forms: [Holcot]}
+  bude: {name: Guillaume Budé (Budaeus), forms: [Budaeus]}
+  aldrovandi: {name: Ulisse Aldrovandi, forms: [Aldrovandus]}
+  vossius: {name: Gerardus Vossius, forms: [Vossius]}
+  cesalpino: {name: Andrea Cesalpino (Caesalpinus), forms: [Caesalp, Caesalpinus]}
+  damhouder: {name: Joost de Damhouder (Damhoderius), forms: [Damhoderius]}
+  folengo: {name: Teofilo Folengo (Merlinus Cocaius), forms: [Merlin Cocc, Merlinus Cocaius]}
+  aretaeus: {name: Aretaeus of Cappadocia, forms: [Aretaeus]}
+  bodin: {name: Jean Bodin, forms: [Bodin, Bodine, Bodinus]}
+  boemus: {name: Johann Boemus (Bohemus), forms: [Bohemus, Boemus]}
+  chytraeus: {name: David Chytraeus, forms: [Chytraeus]}
+  barth: {name: Caspar Barth (Barthius), forms: [Barthius, Barthio]}
+  macrobius: {name: Macrobius, forms: [Macrobius, Macrob]}
+  diogenes-laertius: {name: Diogenes Laertius, forms: [Laertius, Laert, Diog Laertius, Diogenes Laertius]}
+  josephus: {name: Flavius Josephus, forms: [Josephus]}
+  quintilian: {name: Quintilian, forms: [Quintilian, Quintilianus, Quintil]}
+  tertullian: {name: Tertullian, forms: [Tertullian, Tertul, Tertullianus]}
+  aquinas: {name: Thomas Aquinas, forms: [Aquinas, Th Aquinas, Thomas Aquinas]}
+  ficino: {name: Marsilio Ficino (Ficinus), forms: [Ficinus, Ficin, Marsilius Ficinus, Mars Ficinus]}
+  paracelsus: {name: Paracelsus, forms: [Paracelsus]}
+  celsus: {name: Aulus Cornelius Celsus, forms: [Celsus, Cornelius Celsus]}
+  savonarola-michele: {name: Michele Savonarola, forms: [Savonarola]}
+  valesius: {name: Francisco Vallés (Valesius), forms: [Fr Vales, Franciscus Valesius, Valesius, Vales]}
+  gesner: {name: Conrad Gessner (Gesner), forms: [Gesner, Gesnerus]}
+  sennert: {name: Daniel Sennert (Sennertus), forms: [Sennertus]}
+  arculanus: {name: Giovanni Arcolani (Arculanus), forms: [Arculanus]}
+  jason-pratensis: {name: Jason Pratensis, forms: [Jason Pratensis, Pratensis]}
+  schenck: {name: Johann Schenck von Grafenberg (Schenkius), forms: [Schenkius, Skenkius, Schenckius, Schenkium]}
+  valleriola: {name: François Valleriole (Valleriola), forms: [Valleriola]}
+  capivaccio: {name: Girolamo Capivaccio (Capivaccius), forms: [Capivaccius]}
+  hercules-saxonia: {name: Ercole Sassonia (Hercules de Saxonia), forms: [Hercules de Saxonia, Herc de Saxonia]}
+  remy: {name: Nicolas Remy (Remigius), forms: [Remigius, Nic Remigius]}
+  baronius: {name: Caesar Baronius, forms: [Baronius]}
+  sleidan: {name: Johannes Sleidanus, forms: [Sleidan, Sleidanus]}
+  thuanus: {name: Jacques-Auguste de Thou (Thuanus), forms: [Thuanus]}
+  machiavelli: {name: Niccolò Machiavelli, forms: [Machiavel, Machiavellus, Machiavelli]}
+  procopius: {name: Procopius, forms: [Procopius]}
+  zonaras: {name: Joannes Zonaras, forms: [Zonaras]}
+  ammianus: {name: Ammianus Marcellinus, forms: [Ammianus, Ammianus Marcellinus]}
+  polybius: {name: Polybius, forms: [Polybius]}
+  diodorus: {name: Diodorus Siculus, forms: [Diodorus Siculus, Diodorus, Diod Sic]}
+  vitruvius: {name: Vitruvius, forms: [Vitruv, Vitruvius]}
+  varro: {name: Marcus Terentius Varro, forms: [Varro]}
+  columella: {name: Columella, forms: [Columella]}
+  porta: {name: Giambattista della Porta, forms: [Baptista Porta, Jo Bapt Porta]}
+  pierio: {name: Pierio Valeriano (Pierius), forms: [Pierius, Pierius Valerianus]}
+  herodian: {name: Herodian, forms: [Herodian, Herodianus]}
+  kepler: {name: Johannes Kepler, forms: [Kepler, Keplerus]}
+  solinus: {name: Gaius Julius Solinus, forms: [Solinus]}
+  capitolinus: {name: Julius Capitolinus, forms: [Julius Capitol, Jul Capitolinus, Capitolinus]}
+  hospinian: {name: Rudolf Hospinian, forms: [Hospinian, Hospinianus]}
+  keckermann: {name: Bartholomaeus Keckermann, forms: [Keckermann, Keckermannus]}
+  leone-ebreo: {name: Leone Ebreo (Leo Hebraeus), forms: [Leon Hebraeus, Leo Hebraeus]}
+  ens: {name: Caspar Ens, forms: [Gaspar Ens, Caspar Ens]}

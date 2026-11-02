@@ -129,6 +129,66 @@ def _djs(unit: str, foreign: dict, r, c: dict) -> None:
             r.fail(f"{key}: Dell & Jordan-Smith text present on a {st} record, or missing on an aligned one")
 
 
+CITATION_STATUSES = {"parsed", "partial", "unidentified"}
+NOTE_STATUSES = CITATION_STATUSES | {"no-citation"}
+
+
+def _registries() -> tuple[set, set, set]:
+    """Author ids, work ids and Bible books, read straight from the yaml (not through the parser)."""
+    import yaml
+
+    a = yaml.safe_load((paths.DATA / "abbreviations.yaml").read_text(encoding="utf-8"))
+    w = yaml.safe_load((paths.DATA / "works.yaml").read_text(encoding="utf-8"))
+    return set(a["authors"]), set(w["works"]), set(a["bible"])
+
+
+def _citations(unit: str, root, r, c: dict) -> None:
+    """Sidenote citations (M6): one current record per sidenote, known statuses, every author and work id in
+    the registries, Idem/ibid pointing at an earlier citation, and nothing displayed that was not resolved."""
+    def add(k, n=1):
+        c[k] = c.get(k, 0) + n
+
+    notes = {public_id(n.get(XML_ID)): n for n in root.iter(T("note")) if n.get("type") == "side"}
+    f = paths.LAYERS / "citations" / f"{unit}.json"
+    layer = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    authors, works, books = _registries()
+    order = {k: i for i, k in enumerate(notes)}  # document order; the layer's keys are sorted as text
+    ids = {cit["id"]: (order.get(k, -1), j) for k, rec in layer.items() for j, cit in enumerate(rec["citations"])}
+    for key, rec in layer.items():
+        if key not in notes:
+            add("citation_orphan_keys")
+            r.fail(f"{unit}: citation key {key} is not a sidenote in the base text")
+            continue
+        if rec["raw"] != public_text(notes[key], notes=True):
+            add("citation_stale")
+            r.fail(f"{key}: citation record is stale (base text changed); re-run `burton citations`")
+        if rec["status"] not in NOTE_STATUSES or (rec["status"] == "no-citation") != (not rec["citations"]):
+            r.fail(f"{key}: sidenote status {rec['status']!r} does not fit its citations")
+        add(f"sidenotes_{rec['status']}")
+        for cit in rec["citations"]:
+            add(f"citations_{cit['status']}")
+            if cit["status"] not in CITATION_STATUSES or not cit.get("method"):
+                r.fail(f"{cit['id']}: citation without a known status or method")
+            a, w = cit.get("author"), cit.get("work")
+            if a and a != "bible" and a not in authors:
+                r.fail(f"{cit['id']}: author {a} is not in data/abbreviations.yaml")
+            if w and not (w in works or (a == "bible" and w.split(".", 1)[1] in books)):
+                r.fail(f"{cit['id']}: work {w} is not in data/works.yaml")
+            if (cit["status"] == "unidentified") != (not a):
+                r.fail(f"{cit['id']}: status {cit['status']} with author {a}")
+            if cit.get("display") and not (a or cit["locus"]):
+                r.fail(f"{cit['id']}: display text with nothing resolved")
+            src = cit.get("resolved_from")
+            if src and not (src in ids and ids[src] < ids[cit["id"]]):
+                r.fail(f"{cit['id']}: Idem/ibid resolved from {src}, not an earlier citation")
+            if cit.get("author_basis"):
+                add(f"citation_author_{cit['author_basis']}")
+    missing = [k for k in notes if k not in layer]
+    if missing:
+        add("citation_sidenotes_missing", len(missing))
+        r.fail(f"{unit}: {len(missing)} sidenotes without a citation record, e.g. {missing[0]}; run `burton citations`")
+
+
 def v7_layers(units: list[str]):
     from .checks import Result
 
@@ -217,5 +277,6 @@ def v7_layers(units: list[str]):
         _selftrans(unit, root, foreign, r, c)
         _glosses(unit, root, r, c)
         _djs(unit, foreign, r, c)
+        _citations(unit, root, r, c)
     r.counts = c
     return r

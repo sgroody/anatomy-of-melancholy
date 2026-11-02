@@ -66,6 +66,22 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("xrefs", help="Burton's explicit cross-references -> data/layers/xrefs/")
     s.add_argument("--unit", action="append")
 
+    s = sub.add_parser("citations", help="parse Burton's sidenote citations (rules only) -> data/layers/citations/")
+    s.add_argument("--unit", action="append")
+
+    s = sub.add_parser("authors", help="author registry skeletons (data/authors/) and the owner's top-100 list")
+    s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
+    s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
+
+    s = sub.add_parser("author-drafts", help="model-drafted author entries (machine-draft) -> data/authors/")
+    s.add_argument("--top", type=int, default=None, help="only the N most-cited authors")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--packet-size", type=int, default=15)
+    s.add_argument("--max-packets", type=int, default=None)
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--dry-run", action="store_true", help="count what would be sent, without calling the model")
+
     s = sub.add_parser("selftrans", help="self-translation signals per foreign passage -> data/layers/selftrans/")
     s.add_argument("--unit", action="append")
     s.add_argument("--all", action="store_true", help="every unit in the book (the default without --unit)")
@@ -177,6 +193,31 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import xrefs
 
         print(dict(xrefs.build(_units(args) if args.unit else None)))
+    elif args.cmd == "citations":
+        from .layers import citations
+
+        stats = citations.build(args.unit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "authors":
+        from .layers import authors
+
+        print(dict(authors.build()))
+        if args.wikidata:
+            from .layers import wikidata
+
+            print("wikidata:", dict(wikidata.run()))
+        if args.review:
+            print(dict(authors.review_list()))
+    elif args.cmd == "author-drafts":
+        from .layers import author_drafts
+
+        if args.dry_run:
+            items = author_drafts.todo(args.top, args.model)
+            print(len(items), "authors to draft; first:", [i["id"] for i in items[:10]])
+            return 0
+        print(dict(author_drafts.run(top=args.top, model=args.model, packet_size=args.packet_size,
+                                     budget_usd=args.budget_usd, max_packets=args.max_packets)))
     elif args.cmd == "selftrans":
         from .layers import selftrans
 
