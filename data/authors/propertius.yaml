@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: propertius
+name: Propertius
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Sextus Propertius (born c. 50 BC, died after 16 BC) was a Latin elegiac poet from Umbria. His
+    four books of elegies are largely about his love for a woman he calls Cynthia.
+  field: Latin poet
+  why_cited: Burton quotes Propertius's elegies, mainly from books 1 and 2, for verses on love and the sufferings
+    of lovers.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 0384b6e3f82dc2f1
+  status: machine-draft

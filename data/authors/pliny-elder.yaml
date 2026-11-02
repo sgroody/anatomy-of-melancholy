@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: pliny-elder
+name: Pliny the Elder
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q82778
+  label: Pliny the Elder
+  description: Roman military commander and writer (AD23/24–79)
+  born: 20
+  died: 79
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Pliny the Elder (23/24–79 CE) was a Roman writer, naturalist and official. He died during the
+    eruption of Vesuvius. His Naturalis historia, in 37 books, is an encyclopaedia of the natural world, medicine
+    and the arts.
+  field: natural historian
+  why_cited: Burton uses the Naturalis historia as a source of facts and marvels about nature, human beings, remedies
+    and curious anecdotes.
+  identity_doubt: The bare 'Plin.' could sometimes mean Pliny the Younger, whose letters Burton also uses. 'lib.
+    57' cannot refer to the 37-book Natural History and is probably a misprint.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: d5f206e3143a6432
+  status: machine-draft

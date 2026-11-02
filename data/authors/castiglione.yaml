@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: castiglione
+name: Baldassare Castiglione (Castilio)
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Baldassare Castiglione (1478–1529) was an Italian courtier and diplomat. He wrote 'Il Cortegiano'
+    (The Courtier, 1528), which Burton cites in its Latin version, 'De aulico'.
+  field: courtier
+  why_cited: Burton cites 'The Courtier' by book and folio, most likely for its discussions of love, women, courtly
+    behaviour and conversation.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 801298d8056d3426
+  status: machine-draft

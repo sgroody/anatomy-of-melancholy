@@ -1,0 +1,34 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: piso
+name: Nicolas Le Pois (Piso)
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Nicolas Le Pois (Nicolaus Piso, c.1527–1587) was a French physician of Nancy in Lorraine. He wrote
+    a general handbook on recognising and treating internal diseases, De cognoscendis et curandis praecipue internis
+    humani corporis morbis (1580).
+  field: physician
+  why_cited: Burton cites him as a medical authority on the causes, symptoms and cure of melancholy, often in lists
+    of physicians with others such as Hercules de Saxonia and Bruele.
+  identity_doubt: The bare form 'Piso' could in a few sidenotes refer to one of the Roman Pisos. The medical company
+    it keeps in the examples points to Le Pois.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 4b70ce6999a66280
+  status: machine-draft

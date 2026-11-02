@@ -1,0 +1,36 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: virgil
+name: Virgil
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q1398
+  label: Virgil
+  description: Roman poet (1st century BC)
+  born: -70
+  died: -19
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Publius Vergilius Maro (70–19 BC) was a Roman poet born near Mantua. His works are the Eclogues,
+    the Georgics and the Aeneid.
+  field: Latin poet
+  why_cited: Burton quotes his verses often, especially Aeneid 4 on Dido's love and despair, as well as the Eclogues
+    and Georgics.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 085470aa1e6ae8ab
+  status: machine-draft

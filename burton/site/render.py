@@ -101,14 +101,16 @@ def gowland_versions(div) -> dict[str, str]:
 
 
 class Renderer:
-    def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None):
+    def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None,
+                 cites: dict | None = None, cite_label: str = ""):
         self.unit, self.profile, self.layer = unit, profile, layer
+        self.cites, self.cite_label = cites or {}, cite_label  # M6 citation layer, shown on request
         self.djs = {k: djs_layer.version(r) for k, r in (djs or {}).items() if djs_layer.shown(r, layer.get(k))}
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
         self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
                        "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0,
-                       "gowland_versions": 0, "djs_versions": 0}
+                       "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
@@ -312,7 +314,21 @@ class Renderer:
                 self.w("</span>")
         else:
             self.children(e)
+        self.cite_expansion(nid)
         self.w("</span>")
+
+    def cite_expansion(self, nid: str) -> None:
+        """The note's resolved citations, hidden unless the reader asks for them ("Expand citations"). Only
+        what the rules resolved is shown; an author links to the author page, Scripture to nothing."""
+        shown = [c for c in (self.cites.get(nid) or {}).get("citations", [])
+                 if c.get("display") and c.get("author") and c["author"] != "burton"]
+        if not shown:
+            return
+        self.counts["cite_expansions"] += 1
+        items = [esc(c["display"]) if c["author"] == "bible" else
+                 f'<a href="../authors/{attr(c["author"])}/">{esc(c["display"])}</a>' for c in shown]
+        self.w(f'<span class="sn-cite" data-method="{attr(shown[0]["method"])}">'
+               f'<span class="lbl">{esc(self.cite_label)}:</span> {"; ".join(items)}</span>')
 
     # ---------------------------------------------------------------- foreign passages
     def versions(self, fid: str) -> list[dict]:
@@ -470,8 +486,9 @@ def h1_head(div):
     return next((h for h in heads if h.get("type") == "title"), heads[0] if heads else None)
 
 
-def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None) -> tuple[str, dict]:
-    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs)
+def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
+                cites: dict | None = None, cite_label: str = "") -> tuple[str, dict]:
+    r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label)
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')

@@ -99,7 +99,8 @@ class Book:
             mem.children.append(pg)
             self._add(pg)
         self.extra = [Page("about", "about", "About this edition", "about/"),
-                      Page("settings", "settings", "Reading options", "settings/")]
+                      Page("settings", "settings", "Reading options", "settings/"),
+                      Page("authors", "authors", "Authors cited", "authors/")]
         for pg in self.extra:
             self.pages[pg.key] = pg
 

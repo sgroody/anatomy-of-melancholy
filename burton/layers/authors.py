@@ -98,13 +98,14 @@ def review_list(n: int = 100) -> Counter:
         f"Generated {date.today().isoformat()} by `uv run burton authors --review`. Counts are from the rules-only",
         "citation layer (`data/layers/citations/`, method `rules/abbrev-v1`). Everything below is a draft until you",
         "check it: the identification of Burton's form, the Wikidata match, and the model-drafted identification",
-        "and \"why Burton cites them\" (labelled `machine-draft`).",
+        "and \"why Burton cites them\" (labelled `machine-draft`). Wikidata shows the QID when exactly one",
+        "candidate matched by rule, else `ambiguous`/`none`, or `—` where the lookup has not run yet.",
         "",
         "To record your check, edit `data/authors/<id>.yaml`: set `review.state` to `agreed` or `corrected`",
         "(with `review.note`), and `status: checked`. Corrections to a form go in `data/abbreviations.yaml`.",
         "",
-        "| # | Author | id | Burton's forms | Citations | Sidenotes | Units | Wikidata | Draft |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| # | Author | id | Burton's forms | Citations | Sidenotes | Units | Wikidata | Draft | Doubt stated |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     stats: Counter = Counter()
     for k, (aid, d) in enumerate(rows, 1):
@@ -112,16 +113,24 @@ def review_list(n: int = 100) -> Counter:
         amb = [" ".join(f) + " (ambiguous)" for f, spec in t["forms"].items()
                if len(spec["candidates"]) > 1 and aid in spec["candidates"]]
         forms = ", ".join([*t["authors"][aid]["forms"], *amb]) or "(by work only)"
-        wd = (rec.get("wikidata") or {}).get("qid") or "—"
-        draft = "yes" if rec.get("identification") else "—"
-        stats["with_wikidata"] += wd != "—"
-        stats["with_draft"] += draft == "yes"
+        w = rec.get("wikidata") or {}
+        wd = w.get("qid") if w.get("status") == "matched" else (w.get("status") or "—")
+        dr = rec.get("draft") or {}
+        draft = dr.get("confidence", "—")
+        doubt = (dr.get("identity_doubt") or "").replace("|", "/") or "—"
+        stats["with_wikidata"] += w.get("status") == "matched"
+        stats["with_draft"] += bool(dr)
+        stats["doubt_stated"] += doubt != "—"
         lines.append(f"| {k} | {t['authors'][aid]['name']} | `{aid}` | {forms} | {d['citations']} | "
-                     f"{len(d['notes'])} | {len(d['units'])} | {wd} | {draft} |")
+                     f"{len(d['notes'])} | {len(d['units'])} | {wd} | {draft} | {doubt} |")
     lines += ["", "## Examples of each author's citations", ""]
     for k, (aid, d) in enumerate(rows, 1):
+        dr = load(aid).get("draft") or {}
         lines.append(f"**{k}. {t['authors'][aid]['name']}** (`{aid}`): "
                      + "; ".join(f"{e['raw']} ({e['note']})" for e in d["examples"][:4]))
+        if dr:
+            lines.append(f"> Draft ({dr['model']}, {dr['prompt']}, {dr['date']}; {dr['confidence']}): "
+                         f"{dr['identification']} *Why cited:* {dr['why_cited']}")
         lines.append("")
     REVIEW.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_text(REVIEW, "\n".join(lines) + "\n")

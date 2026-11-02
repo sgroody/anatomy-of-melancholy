@@ -1,0 +1,36 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: martial
+name: Martial
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q2098
+  label: Martial
+  description: 1st-century Latin poet from Hispania
+  born: 40
+  died: 104
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Marcus Valerius Martialis (c. AD 40–c. 104) was a Latin poet from Bilbilis in Spain. He wrote
+    twelve books of Epigrams and some smaller collections.
+  field: Latin poet
+  why_cited: Burton quotes his epigrams for witty, satirical comments on vice, love and everyday life in Rome.
+  identity_doubt: Not all 'Mart.' citations belong to the poet. 'Mart. in Apol. pro Christianis' points to Justin
+    Martyr's Apology, and 'Mart. in Sam.' probably points to Peter Martyr Vermigli's commentary on Samuel.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: fea7f59181f868a3
+  status: machine-draft

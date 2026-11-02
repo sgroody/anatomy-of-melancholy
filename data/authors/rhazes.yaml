@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: rhazes
+name: Rhazes
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q169234
+  label: Abu Bakr al-Razi
+  description: Persian polymath, physician, chemist and philosopher (854-925)
+  born: 866
+  died: 925
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Abu Bakr Muhammad ibn Zakariya al-Razi (died c. 925), known in Latin as Rhazes, was a Persian
+    physician and philosopher. His medical works were known in Latin as the Continens (al-Hawi) and the Liber ad
+    Almansorem.
+  field: physician
+  why_cited: Burton cites him as one of the Arabic medical authorities on melancholy, its causes and its cure, mainly
+    from the Continens and the book addressed to Almansor.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: f5c8f88ee83d348d
+  status: machine-draft

@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: crato
+name: Johannes Crato von Krafftheim
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q87688
+  label: Johannes Crato von Krafftheim
+  description: Silesian physician (1519-1585)
+  born: 1519
+  died: 1585
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Johannes Crato von Krafftheim (1519–1585) was a physician from Breslau who served the emperors
+    Ferdinand I, Maximilian II and Rudolf II. His medical consilia and letters were published in collections edited
+    by Lorenz Scholz.
+  field: physician
+  why_cited: Burton cites his consilia and letters, including those in Scholz's collection, for case advice on treating
+    melancholy and related complaints.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 4c91b257cf6758af
+  status: machine-draft

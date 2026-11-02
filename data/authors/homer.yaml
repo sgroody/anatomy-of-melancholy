@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: homer
+name: Homer
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q6691
+  label: Homer
+  description: reputed author of the Iliad and the Odyssey
+  born: -900
+  died: -800
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Homer is the name traditionally given to the Greek epic poet of the Iliad and the Odyssey, probably
+    composed in the eighth or seventh century BCE.
+  field: Greek poet
+  why_cited: Burton quotes the Iliad and Odyssey for verses and examples. The references to Iliad 6 and Odyssey
+    4 (δ) probably point to Bellerophon's solitary wandering and to the grief-easing drug nepenthe, both themes
+    Burton treats.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: dfd2d63353634d5f
+  status: machine-draft

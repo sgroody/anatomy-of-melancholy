@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: augustine
+name: Augustine of Hippo
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q8018
+  label: Augustine of Hippo
+  description: Christian theologian, philosopher, and saint (354–430)
+  born: 354
+  died: 430
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Augustine (354–430) was a Church Father and bishop of Hippo in North Africa. His works include
+    the Confessions, The City of God, On the Trinity, The Literal Meaning of Genesis, De beata vita and the Expositions
+    on the Psalms.
+  field: Church Father
+  why_cited: Burton cites him as a theological authority on the soul, spirits and divine matters, and on the happy
+    life and the comfort of religion.
+  identity_doubt: Some works cited under his name were not written by him. De ecclesiasticis dogmatibus, for example,
+    is now credited to Gennadius of Marseilles.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 1eb3cd5af0dc9649
+  status: machine-draft

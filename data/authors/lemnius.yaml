@@ -1,0 +1,33 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: lemnius
+name: Levinus Lemnius
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Levinus Lemnius (1505–1568) was a Dutch physician from Zierikzee in Zeeland. His best-known work
+    is De occultis naturae miraculis (On the Hidden Wonders of Nature). He also wrote on bodily constitution and
+    the complexions.
+  field: physician
+  why_cited: Burton draws often on De occultis naturae miraculis, using it on the effects of the passions, imagination,
+    diet and humours on body and mind.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 277a2aa0acebdf1c
+  status: machine-draft

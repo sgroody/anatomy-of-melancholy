@@ -1,0 +1,42 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: melanchthon
+name: Philipp Melanchthon
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q76325
+    label: Philipp Melanchthon
+    description: German reformer (1497-1560)
+    born: 1497
+    died: 1560
+  - qid: Q58218487
+    label: Philipp Melanchthon
+    description: (1525-1605)
+    born: 1525
+    died: 1605
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Philipp Melanchthon (1497–1560) was a German humanist and Protestant reformer at Wittenberg, and
+    Luther's close colleague. His Liber de anima is a textbook of natural philosophy on the soul and the body.
+  field: theologian
+  why_cited: Burton cites De anima for the physiology of the humours, the faculties of the soul and the anatomy
+    underlying melancholy.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 8abe2a86ce3771c5
+  status: machine-draft

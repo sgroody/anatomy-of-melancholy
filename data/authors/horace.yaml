@@ -1,0 +1,36 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: horace
+name: Horace
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q6197
+  label: Horace
+  description: Roman lyric poet (65–8 BC)
+  born: -65
+  died: -8
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Quintus Horatius Flaccus (65–8 BC) was a Roman poet from Venusia in southern Italy. His works
+    are the Odes, the Satires (Sermones), the Epistles and the Ars Poetica.
+  field: Latin poet
+  why_cited: Burton quotes him often, mostly from the Satires, Odes and Epistles, for moral comments on greed, discontent,
+    folly and how to live calmly.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 78e7c068b02b5c11
+  status: machine-draft

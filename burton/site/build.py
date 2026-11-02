@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import fonts
+from . import authors_pages, fonts
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -168,10 +168,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         shutil.rmtree(out)
     (out / "assets").mkdir(parents=True)
     book = Book(profile, units)
+    cite_label = authors_pages.tables_label()["short"]
     images = Images(out)
     jenv = env()
     pages: dict[str, str] = {}
     report = {"profile": profile, "units": {}, "density": {}}
+    shown_notes: set[str] = set()  # sidenote ids rendered in this profile, for the author pages' links
 
     def page(key: str, rel: str, template: str, **kw) -> None:
         root = "../" * rel.count("/")
@@ -187,8 +189,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
         div = xml.find(f".//{T('div')}")
         body, counts = render_unit(div, unit, profile, layer_for(unit),
-                                   image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"))
+                                   image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"),
+                                   cites=layer_for(unit, "citations"), cite_label=cite_label)
         report["units"][unit] = counts
+        shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))
         words = len(public_text(div).split())
         if counts["sidenotes"]:
             report["density"][unit] = round(1000 * counts["sidenotes"] / max(words, 1), 1)
@@ -225,6 +229,19 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     page("settings", "settings/index.html", "settings.html", page=book.pages["settings"],
          crumbs=[("Reading options", None)], title="Reading options",
          description="Language mode, theme and type size")
+
+    # the author index and one page per cited author (M6)
+    apages, astats = authors_pages.collect(book.units, shown_notes)
+    alpha = sorted(apages.values(), key=lambda a: a["name"].lower())
+    page("authors", "authors/index.html", "authors.html", page=book.pages["authors"],
+         crumbs=[("Authors cited", None)], title="Authors cited",
+         description="The authors Burton cites in his sidenotes", authors=alpha, stats=astats,
+         tables=authors_pages.tables_label())
+    for a in alpha:
+        page(f"author:{a['id']}", f"authors/{a['id']}/index.html", "author.html", page=None,
+             crumbs=[("Authors cited", "authors/"), (a["name"], None)], title=a["name"],
+             description=f"{a['name']}, as cited by Burton in The Anatomy of Melancholy", a=a)
+    report["authors"] = {"pages": len(alpha), **astats}
 
     # fonts: subset to exactly what the pages and the stylesheet show
     css_src = (HERE / "static" / "edition.css").read_text(encoding="utf-8")

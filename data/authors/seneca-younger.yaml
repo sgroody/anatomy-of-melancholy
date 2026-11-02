@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: seneca-younger
+name: Seneca the Younger
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q2054
+  label: Seneca
+  description: Roman Stoic philosopher, statesman and dramatist (c. 4 BCE–65 CE)
+  born: -4
+  died: 65
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Lucius Annaeus Seneca (c. 4 BC–AD 65) was a Roman Stoic philosopher and statesman from Corduba
+    in Spain, and tutor to Nero. He wrote moral essays and consolations, including the Consolation to Helvia, the
+    Letters to Lucilius and a set of tragedies.
+  field: Stoic philosopher
+  why_cited: Burton draws on him for Stoic advice and consolation against grief, fear and discontent. He also quotes
+    the tragedies, such as Hercules Oetaeus, whose authorship is disputed.
+  identity_doubt: The input gives no Burton name forms, and a bare citation such as 'Senec. lib. 1 cap. 18.' could
+    in principle refer to Seneca the Elder, whom early modern writers sometimes confused with his son.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 85132ea2075b87c7
+  status: machine-draft

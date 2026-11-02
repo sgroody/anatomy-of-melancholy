@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: jerome
+name: Jerome
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q44248
+  label: Jerome
+  description: 4th and 5th-century Catholic and Eastern Orthodox saint and Doctor of the Church
+  born: 345
+  died: 420
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Jerome (Eusebius Hieronymus, c.347–420) was a Latin Church Father and biblical scholar, best known
+    for the Vulgate translation of the Bible. He also wrote many letters and biblical commentaries, including one
+    on Ephesians.
+  field: Church Father
+  why_cited: Burton quotes his letters and commentaries for moral and ascetic teaching, for example on solitude,
+    the dangers of idleness and religious life.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 4c2a70f0671f8eb5
+  status: machine-draft

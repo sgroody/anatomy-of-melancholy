@@ -1,0 +1,33 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: aristotle
+name: Aristotle
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Aristotle (384–322 BCE), from Stagira, was a Greek philosopher and a pupil of Plato. His works
+    relevant to Burton include De anima and the Politics. The Problemata and the Physiognomonica were attributed
+    to him in Burton's time, but modern scholars regard them as works of his school.
+  field: philosopher
+  why_cited: Burton cites him on the soul and its faculties, on physiognomy and on politics. He also cites the Problemata,
+    which includes the well-known discussion of why exceptional men are melancholic.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: c1a9e7f655587296
+  status: machine-draft

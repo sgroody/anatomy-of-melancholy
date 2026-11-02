@@ -1,0 +1,33 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: hippocrates
+name: Hippocrates
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Hippocrates (c.460–c.370 BC) was a Greek physician of Cos and the founder figure of Greek medicine.
+    The Hippocratic writings include the Aphorisms, the Prognostics and the Epidemics (cited as 'de morbis vulgaribus').
+  field: physician
+  why_cited: Burton cites him as the foundational medical authority, using the Aphorisms, the Prognostics and the
+    Epidemics. 'Lib. de insania' most likely refers to the pseudo-Hippocratic letters about the supposed madness
+    of Democritus, which matter to Burton's persona of 'Democritus Junior'.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: daeaa3bfa19a09ef
+  status: machine-draft

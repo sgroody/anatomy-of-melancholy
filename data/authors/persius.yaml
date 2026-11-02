@@ -1,0 +1,42 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: persius
+name: Persius
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q332785
+    label: Persius
+    description: Roman poet and satirist (AD 34-62)
+    born: 34
+    died: 62
+  - qid: Q207363
+    label: Perseus of Macedon
+    description: King of Macedonia from 179 to 168 BC
+    born: -212
+    died: -166
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Aulus Persius Flaccus (AD 34–62) was a Roman satirist from Etruria who wrote under Stoic influence.
+    He left a single book of six satires.
+  field: Latin poet
+  why_cited: Burton quotes Persius's satires, cited by number, for short moral lines on human folly, vice and the
+    state of the mind.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: db7dc2e63da051aa
+  status: machine-draft

@@ -1,0 +1,36 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: lipsius
+name: Justus Lipsius
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q315871
+  label: Justus Lipsius
+  description: Flemish philologist, philosopher and legal scholar (1547-1606)
+  born: 1547
+  died: 1606
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Justus Lipsius (1547–1606) was a Flemish humanist and classical scholar who revived Stoic philosophy.
+    His works include De constantia, the Physiologia Stoicorum and several published centuries of letters.
+  field: humanist scholar
+  why_cited: Burton cites his letters and his Physiologia Stoicorum for learned opinions, anecdotes and Stoic ideas
+    about nature and fortune.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 0eadec081d897647
+  status: machine-draft

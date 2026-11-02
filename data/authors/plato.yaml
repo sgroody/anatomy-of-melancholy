@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: plato
+name: Plato
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q859
+  label: Plato
+  description: 4th-century BCE Greek philosopher
+  born: -427
+  died: -347
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Plato (c. 428–348/347 BCE) was an Athenian philosopher and a pupil of Socrates. His dialogues
+    include the Laws, the Republic and the Charmides.
+  field: philosopher
+  why_cited: Burton cites the Laws on government, education and conduct, and the Charmides, where Socrates argues
+    that the body cannot be cured without the soul. In 'lib. 13 de legibus' Burton apparently refers to the Epinomis,
+    which was traditionally treated as a thirteenth book of the Laws.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: bcb0cded4c9fc453
+  status: machine-draft

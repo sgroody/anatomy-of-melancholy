@@ -1,0 +1,32 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: plautus
+name: Plautus
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Titus Maccius Plautus (d. c. 184 BC) was a Roman comic playwright. About twenty of his comedies
+    survive, including the Pseudolus, the Mostellaria and the Curculio.
+  field: Latin playwright
+  why_cited: Burton quotes lines from the comedies on lovers, misers, servants and human folly, often as proverbial
+    sayings.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 080670c5408395d2
+  status: machine-draft

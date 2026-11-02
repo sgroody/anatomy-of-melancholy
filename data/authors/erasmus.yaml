@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: erasmus
+name: Desiderius Erasmus
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q43499
+  label: Erasmus
+  description: Dutch Renaissance humanist, Catholic priest, and theologian (1466-1536)
+  born: 1466
+  died: 1536
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Desiderius Erasmus (c. 1466–1536), of Rotterdam, was a humanist scholar and theologian. His works
+    include the Adagia, a large annotated collection of proverbs, the Moriae encomium (Praise of Folly), and an
+    extensive correspondence.
+  field: humanist
+  why_cited: Burton draws on the Adagia for proverbs and their explanations, and on the Praise of Folly for satire
+    on human folly. He also cites Erasmus's letters.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: e573d574bc914c41
+  status: machine-draft

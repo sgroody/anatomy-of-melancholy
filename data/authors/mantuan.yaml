@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: mantuan
+name: Baptista Mantuanus
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q810973
+  label: Baptista Mantuanus
+  description: Italian poet, carmelite and Roman Catholic blessed (1448-1516)
+  born: 1447
+  died: 1516
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Baptista Mantuanus (Battista Spagnoli, 1447–1516) was a Carmelite friar of Mantua and a prolific
+    Latin poet, who became prior general of his order. His best-known works are the ten eclogues of the Adulescentia,
+    which were widely read in schools, and the Fasti, a verse calendar of saints' feasts.
+  field: Latin poet
+  why_cited: Burton quotes Mantuan's eclogues, which deal with love and include attacks on women, and in one example
+    the Fasti on St George.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 3d4352d7cd35d50f
+  status: machine-draft

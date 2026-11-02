@@ -1,0 +1,43 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: lucan
+name: Lucan
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q320980
+    label: Lucas van Leyden
+    description: Dutch artist, painter (1494-1533)
+    born: 1494
+    died: 1533
+  - qid: Q188646
+    label: Lucan
+    description: Roman poet (39–65)
+    born: 39
+    died: 65
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Marcus Annaeus Lucanus (AD 39–65) was a Latin poet born at Corduba in Spain and a nephew of the
+    philosopher Seneca. He was forced to take his own life after the Pisonian conspiracy against Nero. His epic
+    on the civil war between Caesar and Pompey (Bellum civile, also called Pharsalia) survives in ten books.
+  field: Latin poet
+  why_cited: Burton quotes lines from the books of the Pharsalia; book 6, which contains the Thessalian witch Erictho,
+    is a classical source on witchcraft and necromancy.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 8cfb6327100ac952
+  status: machine-draft

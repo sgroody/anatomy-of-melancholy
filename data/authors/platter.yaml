@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: platter
+name: Felix Platter (Platerus)
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Felix Platter (1536–1614) was a Swiss physician and professor of medicine at Basel. His main works
+    are the Praxis medica (1602) and the Observationes (1614), both of which give much attention to mental disorders.
+  field: physician
+  why_cited: Burton relies on Platter's chapter 'de mentis alienatione' as an authority on the causes, kinds and
+    symptoms of madness and melancholy.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 624c7577c2951e6a
+  status: machine-draft

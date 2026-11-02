@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: buchanan
+name: George Buchanan
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q715169
+  label: George Buchanan
+  description: Scottish historian and humanist scholar (1506–1582)
+  born: 1506
+  died: 1582
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: George Buchanan (1506–1582) was a Scottish humanist, Latin poet and historian, and tutor to the
+    young James VI. His works include the Latin tragedy Baptistes, books of elegies, silvae and hendecasyllables,
+    Latin paraphrases of the Psalms, and a history of Scotland (Rerum Scoticarum historia).
+  field: Latin poet
+  why_cited: Burton quotes Buchanan's Latin verse from the Baptistes, the elegies, the silvae and the hendecasyllables,
+    using a modern poet's lines to illustrate his points much as he uses the classical poets.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 03bda608e4194085
+  status: machine-draft

@@ -1,0 +1,32 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: catullus
+name: Catullus
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Gaius Valerius Catullus (c. 84–c. 54 BCE) was a Roman lyric poet from Verona. He is best known
+    for his poems to his beloved 'Lesbia'.
+  field: Latin poet
+  why_cited: Burton quotes him for verses on love, especially the poem to Lesbia asking for a thousand kisses (poem
+    5, which Burton cites by the book-and-elegy numbering of older editions).
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: ba0291390f7823a2
+  status: machine-draft

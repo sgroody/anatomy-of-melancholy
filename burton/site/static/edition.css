@@ -295,6 +295,10 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .show-gowland .gowland-tr { display: inline; color: var(--muted); }
 .show-gowland .gowland-verse, .show-gowland .gowland-block { display: block; }
 .show-pages .pb { display: inline; }
+.sn-cite { display: none; }
+.show-cites .sidenote .sn-cite { display: block; margin-top: 0.15em; color: var(--muted); }
+.lbl { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
+.cite-list li { margin: 0.15em 0; }
 .show-pages .pb::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
 
 /* ------------------------------------------------------------ home, landings, prose pages */

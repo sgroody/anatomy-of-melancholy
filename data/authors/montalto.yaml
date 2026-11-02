@@ -1,0 +1,33 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: montalto
+name: Filotheo Elião de Montalto (Montaltus)
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Filotheo Elião de Montalto (Philotheus Elianus Montaltus, c.1567–1616) was a Portuguese Jewish
+    physician who became physician to Marie de' Medici in France. His Archipathologia (1614) deals with diseases
+    of the head, including melancholy.
+  field: physician
+  why_cited: Burton cites the chapters of the Archipathologia on melancholy as a leading recent authority on its
+    causes, symptoms and cure.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 69210c2e5729af91
+  status: machine-draft

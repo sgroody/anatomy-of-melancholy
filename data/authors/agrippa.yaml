@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: agrippa
+name: Heinrich Cornelius Agrippa
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q76568
+  label: Heinrich Cornelius Agrippa
+  description: German polymath, physician, legal scholar and soldier (1486–1535)
+  born: 1486
+  died: 1535
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Heinrich Cornelius Agrippa von Nettesheim (1486–1535) was a German humanist, physician and writer
+    on the occult. His works include De occulta philosophia, De incertitudine et vanitate scientiarum and a collection
+    of letters.
+  field: occult philosopher
+  why_cited: Burton cites De occulta philosophia, especially book 3, chapter 18, on spirits, demons and magic, and
+    De vanitate for its satire on learning and the professions.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 0467d1515a0c5321
+  status: machine-draft

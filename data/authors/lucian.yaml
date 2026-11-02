@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: lucian
+name: Lucian
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q177847
+  label: Lucian of Samosata
+  description: 2nd-century Syrian satirist and rhetorician
+  born: 120
+  died: 200
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Lucian of Samosata (c. AD 120–after 180) was a Greek satirist and rhetorician. He wrote many comic
+    dialogues and essays, including Timon, Toxaris, Menippus or Necyomantia, On Mourning and the mock-tragedy Podagra
+    (on gout).
+  field: Greek satirist
+  why_cited: Burton uses him for satire on human folly, wealth, mourning and the vanity of life, and enjoys his
+    comic dialogues.
+  identity_doubt: Some pieces Burton cites under Lucian's name, possibly including the Podagra pieces, have been
+    doubted as his work.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 8385be90d81d7423
+  status: machine-draft

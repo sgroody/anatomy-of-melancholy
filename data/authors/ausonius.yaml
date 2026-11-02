@@ -1,0 +1,28 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: ausonius
+name: Ausonius
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Decimus Magnus Ausonius (c. 310–c. 395) was a Latin poet and teacher of rhetoric from Bordeaux.
+    He was tutor to the future emperor Gratian and became consul in 379. His works include epigrams, idylls, the
+    Mosella and the Ludus septem sapientum ('Play of the Seven Sages').
+  field: Latin poet
+  why_cited: Burton quotes Ausonius's epigrams, idylls and the sayings of the seven sages for short moral verses
+    and memorable lines.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 87ba9bd9a835fff4
+  status: machine-draft

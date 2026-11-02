@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: fracastoro
+name: Girolamo Fracastoro (Fracastorius)
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Girolamo Fracastoro (c. 1478–1553) was a physician and poet from Verona. His works include the
+    poem Syphilis, De contagione, De sympathia et antipathia rerum (1546), and a dialogue on the intellect (De intellectione).
+  field: physician
+  why_cited: Burton cites De intellectione, Book 2, on the mind and the passions, and De sympathia et antipathia
+    on natural attractions and aversions.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: b74dc99830b1d50a
+  status: machine-draft

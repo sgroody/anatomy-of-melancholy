@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: plutarch
+name: Plutarch
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q41523
+  label: Plutarch
+  description: Greek philosopher and historian (c. AD 46 – after AD 119)
+  born: 40
+  died: 120
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Plutarch of Chaeronea (c. AD 46–after 119) was a Greek philosopher and biographer. He wrote the
+    Parallel Lives and many essays collected as the Moralia, including On Isis and Osiris, On the Obsolescence of
+    Oracles and Gryllus.
+  field: Greek moralist
+  why_cited: Burton uses the Moralia for moral and philosophical points, for opinions about the soul, spirits and
+    oracles, and for stories and anecdotes.
+  identity_doubt: Some works cited under his name, such as On the Opinions of the Philosophers (De placitis philosophorum)
+    and On the Education of Children, are now thought to be by other writers.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: '6489905975047933'
+  status: machine-draft

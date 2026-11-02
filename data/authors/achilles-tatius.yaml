@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: achilles-tatius
+name: Achilles Tatius
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Achilles Tatius was a Greek novelist of the Roman imperial period, probably of the second century
+    AD, said to have come from Alexandria. His surviving work is the romance Leucippe and Clitophon, in eight books.
+  field: Greek novelist
+  why_cited: Burton quotes the romance, by book number, for its descriptions of love, beauty and the passions and
+    stratagems of lovers in his section on love-melancholy.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 732e0371ad66a570
+  status: machine-draft

@@ -1,0 +1,37 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: terence
+name: Terence
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q172048
+  label: Terence
+  description: Roman comic playwright (2nd cent. BC)
+  born: -185
+  died: -159
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Publius Terentius Afer (d. 159 BC) was a Roman comic playwright, said to have been born in Carthage
+    and brought to Rome as a slave. Six of his comedies survive, including the Eunuchus and the Adelphoe.
+  field: Latin playwright
+  why_cited: Burton quotes lines from the comedies, especially the Eunuchus and Adelphoe, as proverbial wisdom on
+    love, lovers' folly and everyday life.
+  identity_doubt: Most forms clearly mean the playwright, but the example 'Ter. sanctae.' does not fit Terence and
+    may be a different author or a garbled reference.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 05f5b15727bc0101
+  status: machine-draft

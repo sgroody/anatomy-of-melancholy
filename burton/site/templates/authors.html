@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose authors">
+  <h1>Authors cited in the sidenotes</h1>
+  <p>Burton’s sidenotes name {{ "{:,}".format(stats.authors) }} authors in {{ "{:,}".format(stats.citations) }} citations that the edition’s rules could tie to an author, plus {{ "{:,}".format(stats.bible) }} citations of Scripture. The citations were read by rule from the sidenotes’ text, using abbreviation and title tables that are a {{ tables.label }}. Of the {{ "{:,}".format(stats.notes) }} sidenotes, {{ "{:,}".format(stats.parsed) }} are fully parsed, {{ "{:,}".format(stats.partial) }} partly, {{ "{:,}".format(stats.unidentified) }} cite someone the rules could not identify, and {{ "{:,}".format(stats.none) }} carry no citation. Unidentified citations are not guessed.</p>
+  <p>Dates and identifiers come from Wikidata (CC0) where one candidate matched by rule. Descriptions marked “machine draft” were written by a language model, which the entry names, and are unreviewed unless the entry says otherwise.</p>
+  <table class="counts author-index">
+    <caption>Authors, alphabetically</caption>
+    <thead><tr><th scope="col">Author</th><th scope="col">Dates</th><th scope="col">Field</th><th scope="col">Citations</th></tr></thead>
+    <tbody>
+    {% for a in authors %}
+      <tr><td><a href="{{ a.id }}/">{{ a.name }}</a></td><td>{{ a.dates or "" }}</td><td>{% if a.field %}{{ a.field }} <span class="lbl">machine draft</span>{% endif %}</td><td>{{ a.citations }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</article>
+{% endblock %}

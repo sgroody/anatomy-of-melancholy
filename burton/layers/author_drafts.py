@@ -1,6 +1,6 @@
 """`burton author-drafts`: model-drafted author entries (identification, field, "why Burton cites them").
 
-Input per author: the edition's name for them, Burton's forms, the Wikidata candidate (if any) and up to six of
+Input per author: the edition's name for them, Burton's forms and up to six of
 Burton's own sidenote citations (public text from the citation layer: nothing of Gowland's). The model answers
 through `claude -p` with a JSON schema; every call goes to state/authors/ledger.jsonl and a run resumes from
 the author files. Each draft is written into data/authors/<id>.yaml under `draft`, labelled `by: machine` with
@@ -27,11 +27,9 @@ SCHEMA = {"type": "object", "required": ["authors"], "additionalProperties": Fal
 
 
 def item(aid: str, d: dict) -> dict:
+    # The Wikidata match is not sent: the draft stays independent of it, so the owner can compare the two
     t = citations.tables()
-    wd = authors.load(aid).get("wikidata") or {}
     return {"id": aid, "name": t["authors"][aid]["name"], "burton_forms": t["authors"][aid]["forms"],
-            "wikidata": ({k: wd.get(k) for k in ("qid", "label", "description", "born", "died")}
-                         if wd.get("status") == "matched" else None),
             "citations": d["citations"], "examples": [e["raw"] for e in d["examples"][:6]]}
 
 

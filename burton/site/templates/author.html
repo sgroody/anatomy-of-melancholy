@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose author">
+  <h1>{{ a.name }}</h1>
+  <dl class="labels">
+    <dt>Burton writes</dt><dd>{{ a.forms or "the name in full, or the title of a work" }}</dd>
+    {% if a.wikidata %}
+    <dt>Dates</dt><dd>{{ a.dates or "not given" }} <span class="lbl">Wikidata (CC0), {{ a.wikidata.qid }}, matched by rule {{ a.wikidata.date }}</span></dd>
+    {% endif %}
+    <dt>Citations</dt><dd>{{ a.citations }} in {{ a.notes }} sidenotes ({{ a.parsed }} fully parsed, {{ a.partial }} partly)</dd>
+  </dl>
+  {% if a.draft %}
+  <section class="draft" aria-labelledby="draft-h">
+    <h2 id="draft-h">Who they are</h2>
+    <p class="lbl">Machine draft by {{ a.draft.model }} (prompt {{ a.draft.prompt }}, {{ a.draft.date }}){% if a.review_state == "unreviewed" %}, not yet reviewed{% else %}, reviewed: {{ a.review_state }}{% endif %}.</p>
+    <p>{{ a.draft.identification }}</p>
+    <p><strong>Why Burton cites them:</strong> {{ a.draft.why_cited }}</p>
+    {% if a.draft.identity_doubt %}<p><strong>Doubt about the identification:</strong> {{ a.draft.identity_doubt }}</p>{% endif %}
+  </section>
+  {% endif %}
+  {% if a.works %}
+  <h2>Works cited</h2>
+  <ul>{% for title, n in a.works %}<li><cite>{{ title }}</cite>: {{ n }}</li>{% endfor %}</ul>
+  {% endif %}
+  <h2>Where Burton cites them</h2>
+  <ul class="cite-list">
+  {% for c in a.cites %}
+    <li><a href="../../{{ c.unit }}/#{{ c.note }}">{{ c.where }}</a>: {{ c.raw }}{% if c.basis %} <span class="lbl">{{ c.basis }}</span>{% endif %}</li>
+  {% endfor %}
+  </ul>
+</article>
+{% endblock %}

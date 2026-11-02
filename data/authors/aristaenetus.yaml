@@ -1,0 +1,47 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: aristaenetus
+name: Aristaenetus
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q664196
+    label: Aristaenetus
+    description: ancient Greek epistolographer
+    born: 400
+    died: 500
+  - qid: Q2696736
+    label: Aristaenetus
+    description: Roman consul 404 AD
+    born: 364
+    died: null
+  - qid: Q2064484
+    label: Aristaenos of Megalopolis
+    description: ancient Greek general
+    born: null
+    died: -200
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Aristaenetus was a Greek writer of fictional love letters, probably of the late fifth or early
+    sixth century CE. His letters survive in two books.
+  field: Greek letter-writer
+  why_cited: Burton quotes the love letters in his treatment of love melancholy, for scenes and descriptions of
+    lovers, beauty and courtship.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: d59c1e9f3dc29027
+  status: machine-draft

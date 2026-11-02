@@ -1,0 +1,38 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: laurentius
+name: André du Laurens (Laurentius)
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q426294
+  label: André du Laurens
+  description: physician
+  born: 1558
+  died: 1609
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: André du Laurens (1558–1609) was a French physician who taught medicine at Montpellier and was
+    later chief physician to Henri IV. He wrote a discourse on diseases of the sight, melancholy, catarrhs and old
+    age, which circulated widely in Latin and English translations, and the Historia anatomica humani corporis.
+  field: physician
+  why_cited: 'He is one of Burton''s main medical authorities on melancholy: its causes, symptoms and kinds. Burton
+    also cites his anatomy on the parts and faculties of the body.'
+  identity_doubt: The bare form 'Laurentius' could occasionally refer to another writer of that name, although all
+    the examples given fit du Laurens.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 2b17f7047e8bcd0e
+  status: machine-draft

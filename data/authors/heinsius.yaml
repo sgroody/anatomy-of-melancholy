@@ -1,0 +1,33 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: heinsius
+name: Daniel Heinsius
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Daniel Heinsius (1580–1655) was a Dutch classical scholar and Latin poet who taught at Leiden.
+    Among his works are Latin poems and orations, including a funeral oration for Joseph Scaliger.
+  field: classical scholar
+  why_cited: Burton draws on his orations, poems, prefaces and letters for literary and moral material, such as
+    praise of scholarship and the scholar's life.
+  identity_doubt: The work Burton cites as 'Austriacus' and the letter 'to Primerius' have not been checked against
+    Heinsius's bibliography, so the editor should confirm them.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: a9dd8bcdb1d0b81a
+  status: machine-draft

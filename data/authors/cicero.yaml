@@ -1,0 +1,36 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: cicero
+name: Cicero
+status: machine-draft
+wikidata:
+  status: matched
+  qid: Q1541
+  label: Cicero
+  description: Roman statesman, lawyer, orator, and philosopher (106–43 BC)
+  born: -106
+  died: -43
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Marcus Tullius Cicero (106–43 BC) was a Roman statesman, orator and philosopher. His philosophical
+    works include De officiis, the Tusculan Disputations and the Dream of Scipio, which closes his De re publica.
+  field: Roman orator
+  why_cited: Burton, who calls him 'Tully', draws on his moral philosophy. He uses the Tusculan Disputations on
+    grief and disturbances of the mind, De officiis on duty and the Dream of Scipio on the soul and the heavens.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 89bfbb70a06958df
+  status: machine-draft

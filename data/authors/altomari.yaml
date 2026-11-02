@@ -1,0 +1,32 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: altomari
+name: Donato Antonio Altomari (Altomarus)
+status: machine-draft
+wikidata:
+  status: none
+  candidates: []
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Donato Antonio Altomari was a sixteenth-century physician of Naples who wrote a general medical
+    work on the treatment of diseases.
+  field: physician
+  why_cited: Burton cites him by chapter as a medical authority on melancholy and on related conditions such as
+    hydrophobia.
+  identity_doubt: null
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 79cb2d537675fd2b
+  status: machine-draft

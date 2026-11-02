@@ -1,0 +1,27 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: lucretius
+name: Lucretius
+status: machine-draft
+wikidata: null
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Titus Lucretius Carus (c. 99–c. 55 BCE) was a Roman poet and Epicurean. His one work is De rerum
+    natura, a philosophical poem in six books setting out Epicurean physics and ethics.
+  field: Latin poet
+  why_cited: Burton quotes De rerum natura mainly from Book 4, which attacks the passion of love (including the
+    line on the bitterness that rises from pleasure, 4.1134), and from Book 3, on the soul and the fear of death.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: ddbe72a808662e9e
+  status: machine-draft

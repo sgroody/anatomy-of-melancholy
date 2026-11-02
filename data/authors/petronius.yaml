@@ -1,0 +1,43 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: petronius
+name: Petronius
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q47180
+    label: Petronius
+    description: 1st century AD Roman courtier and author of the Satyricon (27–66)
+    born: 27
+    died: 66
+  - qid: Q126370067
+    label: Petronius of Egypt
+    description: 4th-century Egyptian Christian monk
+    born: null
+    died: 346
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Petronius Arbiter was the Roman author of the Satyricon, a comic novel in prose and verse. He
+    is traditionally identified with the courtier of Nero who died in AD 66.
+  field: Latin novelist
+  why_cited: Burton quotes the Satyricon and short poems from the 'Catalecta' attributed to Petronius, mostly on
+    love, lust and luxury.
+  identity_doubt: The 'Catalecta' poems were attributed to Petronius in Renaissance collections, but their authorship
+    is uncertain. The example 'Fol. 5.' cannot be checked from the information given.
+  confidence: medium
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 8b53ce6a2ee2b94b
+  status: machine-draft

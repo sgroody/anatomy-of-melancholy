@@ -1,0 +1,42 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: juvenal
+name: Juvenal
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q193800
+    label: Juvenal
+    description: early 2nd century Roman poet
+    born: 55
+    died: 200
+  - qid: Q2060508
+    label: Paul Juvenell the Elder
+    description: German painter (1579-1643)
+    born: 1579
+    died: 1643
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Decimus Iunius Iuvenalis was a Roman satirist active in the late first and early second centuries
+    AD. He wrote sixteen verse Satires.
+  field: Latin satirist
+  why_cited: Burton quotes the Satires, especially 1, 10 and 14, for attacks on vice, greed and the vanity of human
+    wishes.
+  identity_doubt: null
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: bd2027207799ee4e
+  status: machine-draft

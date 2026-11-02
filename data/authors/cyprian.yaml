@@ -1,0 +1,44 @@
+# Author registry entry (SPEC §4.2). Burton's forms: data/abbreviations.yaml. Counts: computed from
+# data/layers/citations/ by `burton authors`. Set `status: checked` only after the owner's review.
+id: cyprian
+name: Cyprian
+status: machine-draft
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q74767
+    label: Cyprian, bishop of Lebus and Wrocław
+    description: bishop of Lebus and Wrocław (died 1207)
+    born: 1150
+    died: 1207
+  - qid: Q190240
+    label: Cyprian
+    description: Bishop of Carthage and Christian writer (c.210-258)
+    born: 200
+    died: 258
+  by: wikidata
+  method: wikidata-match-v1
+  date: '2026-11-02'
+identification: null
+why_cited: null
+review:
+  state: unreviewed
+  by: null
+  date: null
+  note: null
+draft:
+  identification: Cyprian (Thascius Caecilius Cyprianus, c. 200–258) was bishop of Carthage and died a martyr. He
+    was a Latin Church Father whose works include the letter Ad Donatum, many other letters, and moral and pastoral
+    treatises.
+  field: Church Father
+  why_cited: Burton quotes him on the miseries and corruption of the world, notably from Ad Donatum, and uses his
+    letters on moral and spiritual matters.
+  identity_doubt: Some works printed under Cyprian's name in Burton's time are now thought to be spurious, so the
+    reference to a prologue to sermons in tome 2 may be to a work wrongly attributed to him.
+  confidence: high
+  by: machine
+  model: claude-opus-5-5
+  prompt: authors-v1
+  date: '2026-11-02'
+  input_hash: 500c1172555ad2d9
+  status: machine-draft

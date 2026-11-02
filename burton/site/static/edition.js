@@ -6,7 +6,7 @@ const root = new URL("..", import.meta.url);
 const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
-const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default" };
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only.
 const ORDERS = {
   default: ["editor", "djs1927", "machine", "gowland"],
@@ -32,6 +32,7 @@ function apply() {
   else html.dataset.size = settings.size;
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
+  body.classList.toggle("show-cites", !!settings.cites);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
   scheduleLayout();
