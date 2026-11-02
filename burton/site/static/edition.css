@@ -296,6 +296,7 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .show-gowland .gowland-verse, .show-gowland .gowland-block { display: block; }
 .show-pages .pb { display: inline; }
 .sn-cite { display: none; }
+a.xref { color: inherit; text-decoration-style: dotted; text-decoration-thickness: 1px; }
 .show-cites .sidenote .sn-cite { display: block; margin-top: 0.15em; color: var(--muted); }
 .lbl { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
 .cite-list li { margin: 0.15em 0; }

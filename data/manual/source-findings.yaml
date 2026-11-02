@@ -1,0 +1,304 @@
+# Source findings beside the recorded attribution (M6, owner 2026-11-02: "record both Burton's attribution and
+# your disagreement with it"). Hand decisions: made by Claude (claude-opus-5-5) in session on the owner's
+# delegation, from the verifier's text match and the independent checker (prompt source-audit-v1). The
+# attribution is copied as recorded and never changed; the reader shows both. V7 checks that each attribution
+# still equals the translation layer's claim and that the text match stands.
+# finding: agrees (the attributed author is the source; the corpus has the words as quoted by `text_found_in`)
+#          agrees-locus-differs (same author, Burton's book or chapter differs)
+#          words-of-transmitter (Burton names the author his source names; the Latin words are the source's own)
+#          cites-intermediary (Burton cites where he read it; the words are `text_found_in`'s)
+#          disagrees (the words are `text_found_in`'s, not the attributed author's)
+decided: {by: claude-opus-5-5 (in session, delegated by the owner), date: "2026-11-02"}
+findings:
+  1.2.4.6-f7:
+    attribution:
+      author: Euripides
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: words-of-transmitter
+    note: The Latin is Seneca's version (Ep. 115.14) of lines he gives to Euripides; Burton's 'Euripides' follows Seneca.
+    text_found_in:
+      author: seneca-younger
+      basis: text-match:perseus-latin:seneca-younger.phi1017.phi015.perseus-lat2:19.115.14
+      locus: 19.115.14
+      work: Epistulae
+  1.3.3.1-f9:
+    attribution:
+      author: Aristotle
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: words-of-transmitter
+    note: The Latin sentence is Seneca's (De tranquillitate animi 17.10); Seneca credits the thought to Aristotle, and
+      Burton follows him.
+    text_found_in:
+      author: seneca-younger
+      basis: text-match:perseus-latin:seneca-younger.stoa0255.stoa013.perseus-lat2:9.17.10
+      locus: 9.17.10
+      work: De Tranquilitate Animi
+  1.4.1.1-f131:
+    attribution:
+      author: Fabius
+      by: burton
+      locus: Praefat. 7
+      status: burton-cites
+      work: Institutio
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: agrees-locus-differs
+    note: '''Fabius'' is Quintilian; the words are in the preface to book 6, not 7.'
+    text_found_in:
+      author: quintilian
+      basis: text-match:perseus-latin:quintilian.phi1002.phi001.perseus-lat2:6.pr.14
+      locus: 6.pr.14
+      work: Institutio Oratoria
+  1.4.1.1-f68:
+    attribution:
+      author: Horace
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The line is Martial's (Epigrams 10.47), not Horace's.
+    text_found_in:
+      author: martial
+      basis: text-match:perseus-latin:martial.phi1294.phi002.perseus-lat2:10.47
+      locus: '10.47'
+      work: Epigrammata
+  2.2.5.1-f18:
+    attribution:
+      author: Claudian
+      by: machine
+      locus: null
+      status: probable
+      work: Panegyric on the Sixth Consulship of Honorius, preface
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The line ends Petronius's poem on dreams; the edition's earlier guess (Claudian) was a machine 'probable',
+      not Burton's.
+    text_found_in:
+      author: petronius
+      basis: text-match:perseus-latin:petronius.phi0972.phi001p.perseus-lat1:all
+      locus: all
+      work: null
+  2.3.3.1-f165:
+    attribution:
+      author: Ennius, quoted by Cicero
+      by: machine
+      locus: '1.38'
+      status: probable
+      work: De officiis
+    checker:
+      prompt: source-audit-v1
+      verdict: claim-quoted-in-match
+    finding: agrees
+    note: 'Ennius, as recorded: his lines survive as Cicero quotes them (De officiis 1.38).'
+    text_found_in:
+      author: cicero
+      basis: text-match:perseus-latin:cicero.phi0474.phi055.perseus-lat2:1.38
+      locus: '1.38'
+      work: De Officiis
+  2.3.3.1-f35:
+    attribution:
+      author: Horace
+      by: burton
+      locus: lib. 1 Sat. 2
+      status: burton-cites
+      work: Satires
+    checker:
+      prompt: source-audit-v1
+      verdict: claim-quoted-in-match
+    finding: agrees
+    note: Horace, Satires 1.2, as Burton says; the corpus match is Seneca quoting the lines (Ep. 119.13).
+    text_found_in:
+      author: seneca-younger
+      basis: text-match:perseus-latin:seneca-younger.phi1017.phi015.perseus-lat2:20.119.13
+      locus: 20.119.13
+      work: Epistulae
+  2.3.7.1-f24:
+    attribution:
+      author: Joachim Camerarius
+      by: burton
+      locus: Emblem 21, cent. 1
+      status: burton-cites
+      work: Emblems
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: cites-intermediary
+    note: Burton cites Camerarius's emblem, whose verses are Ovid's (Ars amatoria 2).
+    text_found_in:
+      author: ovid
+      basis: text-match:perseus-latin:ovid.phi0959.phi004.perseus-lat2:2
+      locus: '2'
+      work: Ars Amatoria
+  3.2.1.1-f15:
+    attribution:
+      author: Caecilius Statius
+      by: burton
+      locus: null
+      status: burton-cites
+      work: quoted in Cicero, Tusculan Disputations
+    checker:
+      prompt: source-audit-v1
+      verdict: claim-quoted-in-match
+    finding: agrees
+    note: 'Caecilius, as Burton says (''in Tully''s Tusculans''): Cicero quotes him (Tusculans 4.68).'
+    text_found_in:
+      author: cicero
+      basis: text-match:perseus-latin:cicero.phi0474.phi049.perseus-lat2:4.68
+      locus: '4.68'
+      work: Tusculanae Disputationes
+  3.2.2.2-f193:
+    attribution:
+      author: Quintus Curtius
+      by: burton
+      locus: Lib. 5
+      status: burton-cites
+      work: History of Alexander
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: agrees-locus-differs
+    note: Curtius, as Burton says; the passage is in book 6, not 5, and Burton condenses it.
+    text_found_in:
+      author: curtius
+      basis: text-match:perseus-latin:curtius.phi0860.phi001.perseus-lat2:6.5.29
+      locus: 6.5.29
+      work: Historiarum Alexandri Magni
+  3.2.2.2-f196:
+    attribution:
+      author: Musaeus
+      by: burton
+      locus: null
+      status: burton-cites
+      work: Hero and Leander
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The words are Ovid's (Metamorphoses 6, of Tereus watching Philomela), which Burton applies to Musaeus's Leander.
+    text_found_in:
+      author: ovid
+      basis: text-match:perseus-latin:ovid.phi0959.phi006.perseus-lat2:6
+      locus: '6'
+      work: Metamorphoses
+  3.2.2.4-f129:
+    attribution:
+      author: Catullus
+      by: burton
+      locus: lib. 1 eleg. 5
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The line is Tibullus 1.5 (Burton's book and elegy numbers fit Tibullus), not Catullus.
+    text_found_in:
+      author: tibullus
+      basis: text-match:perseus-latin:tibullus.phi0660.phi001.perseus-lat2:1.5
+      locus: '1.5'
+      work: Elegiae
+  3.2.3.1-f106:
+    attribution:
+      author: Petronius
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The line is Ovid's (Heroides 16, Paris to Helen), Burton writing 'requiro' for 'videbam'; no Petronian source
+      is known. Medium confidence.
+    text_found_in:
+      author: ovid
+      basis: text-match:perseus-latin:ovid.phi0959.phi002.perseus-lat2:16
+      locus: '16'
+      work: Epistulae
+  3.2.3.1-f186:
+    attribution:
+      author: Quintus Lutatius Catulus
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: claim-quoted-in-match
+    finding: agrees
+    note: 'Catulus, as Burton says: his epigram on Roscius survives in Cicero (De natura deorum 1.79).'
+    text_found_in:
+      author: cicero
+      basis: text-match:perseus-latin:cicero.phi0474.phi050.perseus-lat2:1.79
+      locus: '1.79'
+      work: De Natura Deorum
+  3.3.1.2-f105:
+    attribution:
+      author: Tibullus
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: disagrees
+    note: The line is Propertius 2.33, not Tibullus.
+    text_found_in:
+      author: propertius
+      basis: text-match:perseus-latin:propertius.phi0620.phi001.perseus-lat3:2.33b
+      locus: 2.33b
+      work: Elegiae
+  djr-f728:
+    attribution:
+      author: Virgil
+      by: machine
+      locus: '1.53'
+      status: probable
+      work: Georgics
+    checker:
+      prompt: source-audit-v1
+      verdict: claim-quoted-in-match
+    finding: agrees
+    note: Virgil, Georgics 1.53, as recorded; the corpus match is Columella working the line into his prose.
+    text_found_in:
+      author: columella
+      basis: text-match:perseus-latin:columella.phi0845.phi002.perseus-lat3:5.5.7
+      locus: 5.5.7
+      work: Res Rustica
+  djr-f826:
+    attribution:
+      author: Aristotle (as reported by Seneca)
+      by: burton
+      locus: null
+      status: burton-cites
+      work: null
+    checker:
+      prompt: source-audit-v1
+      verdict: match-is-source
+    finding: words-of-transmitter
+    note: 'As 1.3.3.1-f9: Seneca''s sentence, credited by Seneca to Aristotle.'
+    text_found_in:
+      author: seneca-younger
+      basis: text-match:perseus-latin:seneca-younger.stoa0255.stoa013.perseus-lat2:9.17.10
+      locus: 9.17.10
+      work: De Tranquilitate Animi

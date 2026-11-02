@@ -43,6 +43,20 @@ def layer_for(unit: str, layer: str = "translations") -> dict:
     return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
 
 
+def xrefs_for(unit: str, titles: dict) -> list[dict]:
+    """Cross-references to show: explicit ones (linked when resolved, marked when not) and relative ones the
+    owner (or a delegated reviewer) confirmed. Proposals awaiting review are not shown."""
+    out = []
+    for rec in layer_for(unit, "xrefs").values():
+        ok = rec["status"] == "explicit-resolved"
+        out.append({"selector": rec["selector"], "target": rec["target"] if ok else None,
+                    "title": titles.get(rec["target"]) if ok else None})
+    for rec in layer_for(unit, "xrefs-relative").values():
+        if rec["status"] == "relative-confirmed":
+            out.append({"selector": rec["selector"], "target": rec["target"], "title": titles.get(rec["target"])})
+    return out
+
+
 def visible_codepoints(html_text: str) -> set[int]:
     """Code points a page shows: its text, attribute text a user can see (alt, title, aria-label),
     and CSS generated content. Format characters (soft hyphen, joiners) draw no glyph."""
@@ -169,6 +183,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     (out / "assets").mkdir(parents=True)
     book = Book(profile, units)
     cite_label = authors_pages.tables_label()["short"]
+    titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front")}
+    findings = yaml.safe_load((paths.MANUAL / "source-findings.yaml").read_text(encoding="utf-8"))
+    findings["names"] = {a: s["name"] for a, s in authors_pages.citations.tables()["authors"].items()}
     images = Images(out)
     jenv = env()
     pages: dict[str, str] = {}
@@ -191,7 +208,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         body, counts = render_unit(div, unit, profile, layer_for(unit),
                                    image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"),
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
-                                   verified=layer_for(unit, "source-verification"))
+                                   verified=layer_for(unit, "source-verification"), findings=findings,
+                                   xrefs=xrefs_for(unit, titles))
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))
         words = len(public_text(div).split())

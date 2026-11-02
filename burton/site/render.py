@@ -102,9 +102,11 @@ def gowland_versions(div) -> dict[str, str]:
 
 class Renderer:
     def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None,
-                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None):
+                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
+                 findings: dict | None = None):
         self.unit, self.profile, self.layer = unit, profile, layer
         self.verified = {k: v for k, v in (verified or {}).items() if v["status"] == "verified"}
+        self.findings = findings or {}  # data/manual/source-findings.yaml: a finding beside the attribution
         self.cites, self.cite_label = cites or {}, cite_label  # M6 citation layer, shown on request
         self.djs = {k: djs_layer.version(r) for k, r in (djs or {}).items() if djs_layer.shown(r, layer.get(k))}
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
@@ -394,7 +396,9 @@ class Renderer:
                          f'<span class="ft-label">{esc(label_of(t))}</span>{extra}</span>')
         own = " ft-own" if burton.startswith('<span class="ft-burton-own"') else ""
         vsrc = ""
-        if v := self.verified.get(fid):  # the only "Source": a verified text match (M6 verifier)
+        if fd := self.findings.get("findings", {}).get(fid):
+            vsrc = self.finding_line(fd)
+        elif v := self.verified.get(fid):  # the only "Source": a verified text match (M6 verifier)
             self.counts["verified_sources"] += 1
             where = ", ".join(x for x in (v.get("author_name"), v.get("title"),
                                           None if v["locus"] == "all" else v["locus"]) if x)
@@ -402,6 +406,24 @@ class Renderer:
                     f'<span class="lbl">text matched by rule in {esc(v["corpus"])} ({esc(v["method"])})</span></span>')
         return (f'<{tag} class="ft{own}" id="tr-{attr(fid)}" role="note" lang="en">{head}{burton}{vsrc}'
                 f'<span class="ft-vs">{"".join(items)}</span></{tag}>')
+
+    def finding_line(self, fd: dict) -> str:
+        """A source finding shown beside the attribution it differs from (or confirms); both stay visible."""
+        self.counts["source_findings"] = self.counts.get("source_findings", 0) + 1
+        t = fd["text_found_in"]
+        found = ", ".join(x for x in (self.findings["names"].get(t["author"], t["author"]), t.get("work"),
+                                      None if t["locus"] == "all" else t["locus"]) if x)
+        a = fd["attribution"]
+        whose = "Burton’s attribution" if a["by"] == "burton" else "Earlier machine attribution"
+        attr_ = ", ".join(x for x in (a.get("author"), a.get("work"), a.get("locus")) if x)
+        text = {"agrees": f"Source: {attr_}; the words survive as quoted in {found}",
+                "agrees-locus-differs": f"Source: {found} ({whose.lower()}: {attr_})",
+                "words-of-transmitter": f"Words: {found}, who gives them to {a.get('author')}",
+                "cites-intermediary": f"Words: {found} ({whose.lower()}: {attr_}, where Burton read them)",
+                "disagrees": f"Source: {found}. {whose}: {attr_}"}[fd["finding"]]
+        d = self.findings["decided"]
+        return (f'<span class="ft-src ft-verified" data-finding="{attr(fd["finding"])}">{esc(text)} '
+                f'<span class="lbl">finding by {esc(d["by"])}, {esc(d["date"])}; text matched by rule</span></span>')
 
     def mode_class(self, fid: str) -> str:
         rec = self.layer.get(fid)
@@ -488,6 +510,115 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
     return html_text
 
 
+SKIP_MAIN = ("nref", "sidenote", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb")
+SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb")
+
+
+def _visible(html_text: str, skip: tuple[str, ...] = ()) -> tuple[str, list[int]]:
+    """The page's visible text and, for each of its characters, the index in the HTML where it starts (tags
+    and soft hyphens skipped, an entity counted as one character). Elements whose class is in `skip` are left
+    out with their content (note markers, sidenotes, translation boxes), so they do not interrupt a phrase."""
+    out, pos, i = [], [], 0
+    skipping: list[str] = []  # tag names open inside a skipped element
+    while i < len(html_text):
+        ch = html_text[i]
+        if ch == "<":
+            j = html_text.index(">", i) + 1
+            m = re.match(r"<(/?)([a-zA-Z0-9]+)([^>]*)>", html_text[i:j])
+            if m and not m.group(3).endswith("/") and m.group(2) not in ("br", "img", "wbr"):
+                close, tag, rest = m.groups()
+                if skipping:
+                    if close:
+                        skipping.pop()
+                    else:
+                        skipping.append(tag)
+                elif not close and (c := re.search(r'class="([^"]*)"', rest)) and \
+                        set(c.group(1).split()) & set(skip):
+                    skipping.append(tag)
+            i = j
+            continue
+        if skipping:
+            i += 1
+            continue
+        if ch == "&" and (m := re.match(r"&(#?\w+);", html_text[i:])):
+            out.append(html.unescape(m.group(0)))
+            pos.append(i)
+            i += len(m.group(0))
+            continue
+        if ch != "\u00ad":  # soft hyphen
+            out.append(ch)
+            pos.append(i)
+        i += 1
+    return "".join(out), pos
+
+
+def _balanced(fragment: str) -> bool:
+    stack = []
+    for m in re.finditer(r"<(/?)([a-zA-Z0-9]+)[^>]*?(/?)>", fragment):
+        close, tag, selfclose = m.groups()
+        if selfclose or tag in ("br", "img", "wbr"):
+            continue
+        if tag == "a":
+            return False  # never nest a link
+        if close:
+            if not stack or stack.pop() != tag:
+                return False
+        else:
+            stack.append(tag)
+    return not stack
+
+
+def mark_xrefs(html_text: str, refs: list[dict], counts: dict) -> str:
+    """Link Burton's cross-references: explicit ones resolved by rule (M2) and relative ones confirmed on review
+    (M6). The selector's words are found in the page's visible text, where they must occur once (tried with
+    their context, then shorter), so token-by-token italics in a sidenote do not hide them. The link is
+    inserted only where the tags inside it balance; a reference that cannot be placed is counted, never
+    guessed. Unresolved explicit references are marked, not linked."""
+    for r in refs:
+        sel = r["selector"]
+        pre, ex, suf = (sel.get("prefix", "").split(" ¶ ")[-1], sel["exact"], sel.get("suffix", "").split(" ¶ ")[0])
+        at = None
+        for skip in (SKIP_MAIN, SKIP_NOTES):  # the main text first, then with the sidenotes
+            text, pos = _visible(html_text, skip)
+            for a, b in ((pre, suf), ("", suf), (pre, ""), ("", "")):
+                if text.count(a + ex + b) == 1:
+                    at = text.index(a + ex + b) + len(a)
+                    break
+            if at is not None:
+                break
+        if at is None:
+            counts["xrefs_unplaced"] = counts.get("xrefs_unplaced", 0) + 1
+            continue
+        hs, he = pos[at], pos[at + len(ex) - 1]
+        he = html_text.index(";", he) + 1 if html_text[he] == "&" else he + 1
+        while (m := re.search(r"<[a-zA-Z][^>]*>$", html_text[:hs])) and not m.group(0).startswith("<a "):
+            hs = m.start()  # take in opening tags right before the first word ...
+        while (m := re.match(r"</[a-zA-Z0-9]+>", html_text[he:])) and m.group(0) != "</a>":
+            he += len(m.group(0))  # ... and closing tags right after the last
+        if r.get("target"):
+            title = f' title="{attr(r["title"])}"' if r.get("title") else ""
+            o, c, key = f'<a class="xref" href="../{attr(r["target"])}/"{title}>', "</a>", "xrefs_linked"
+        else:
+            o, c, key = '<span class="xref-unresolved">', "</span>", "xrefs_unresolved_marked"
+        inner = html_text[hs:he]
+        if _balanced(inner):
+            html_text = html_text[:hs] + o + inner + c + html_text[he:]
+        else:
+            # a note or a translation box stands between the words: wrap each run of words, leave it alone
+            runs, k = [], at
+            while k < at + len(ex):
+                j = k
+                while j + 1 < at + len(ex) and pos[j + 1] == pos[j] + 1:
+                    j += 1
+                runs.append((pos[k], pos[j] + 1))
+                k = j + 1
+            for a_, b_ in reversed(runs):
+                html_text = html_text[:a_] + o + html_text[a_:b_] + c + html_text[b_:]
+            key += "_split"
+        counts[key] = counts.get(key, 0) + 1
+    return html_text
+
+
 def h1_head(div):
     """The head that becomes the page's only h1: the title, else the first heading."""
     heads = list(div.iter(T("head")))
@@ -495,15 +626,17 @@ def h1_head(div):
 
 
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
-                cites: dict | None = None, cite_label: str = "", verified: dict | None = None) -> tuple[str, dict]:
+                cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
+                findings: dict | None = None, xrefs: list[dict] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
-                 verified=verified)
+                 verified=verified, findings=findings)
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")
     body = mark_burton_spans("".join(r.out), layer, r.counts)
+    body = mark_xrefs(body, xrefs or [], r.counts)
     for fid, rec in layer.items():
         sel = rec["self_translation"].get("burton_span")
         if sel:

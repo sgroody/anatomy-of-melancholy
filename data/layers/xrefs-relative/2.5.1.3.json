@@ -3,15 +3,17 @@
     "by": "machine",
     "confidence": "medium",
     "date": "2026-11-02",
-    "evidence": "Borage wine",
+    "evidence": "m Buglossatum, or Borage wine before mentioned, which Mizaldus calls vinum m",
     "input_hash": "30b1aa3530396b5d",
     "model": "claude-opus-5-5",
     "prompt": "xref-rel-v1",
     "reason": "Borage and bugloss are discussed among the herbal alteratives in 2.4.1.3.",
     "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
+      "by": "claude-opus-5-5 (in session, delegated by the owner)",
+      "date": "2026-11-02",
+      "first_proposal": "2.4.1.3",
+      "note": "Both raters proposed 2.4.1.3; the wine (Buglossatum, 'wine made of Borage and bugloss') is first described in 2.4.1.5.",
+      "state": "confirmed"
     },
     "selector": {
       "exact": "before mentioned",
@@ -19,7 +21,7 @@
       "prefix": "m Buglossatum, or Borage wine ",
       "suffix": ", which Mizaldus calls vinum m"
     },
-    "status": "relative-proposed",
-    "target": "2.4.1.3"
+    "status": "relative-confirmed",
+    "target": "2.4.1.5"
   }
 }

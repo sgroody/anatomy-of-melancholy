@@ -212,6 +212,34 @@ def _source_verification(unit: str, foreign: dict, r, c: dict) -> None:
             r.fail(f"{key}: verified source without a text-match basis that meets the rule")
 
 
+FINDINGS = {"agrees", "agrees-locus-differs", "words-of-transmitter", "cites-intermediary", "disagrees"}
+
+
+def _source_findings(unit: str, layer: dict, r, c: dict) -> None:
+    """data/manual/source-findings.yaml: the attribution is copied unchanged from the translation layer, the
+    finding is a known kind, and the text match it rests on still stands in the verification layer."""
+    import yaml
+
+    f = paths.MANUAL / "source-findings.yaml"
+    if not f.exists():
+        return
+    found = (yaml.safe_load(f.read_text(encoding="utf-8")) or {}).get("findings", {})
+    sv = paths.LAYERS / "source-verification" / f"{unit}.json"
+    ver = json.loads(sv.read_text(encoding="utf-8")) if sv.exists() else {}
+    for key, fd in found.items():
+        if key.rsplit("-", 1)[0] != unit:
+            continue
+        c["source_findings"] = c.get("source_findings", 0) + 1
+        src = (layer.get(key) or {}).get("source") or {}
+        a = fd["attribution"]
+        if not src or any(a.get(k) != src.get(k) for k in ("status", "author", "work", "locus")):
+            r.fail(f"{key}: source finding's attribution differs from the translation layer's claim")
+        if fd["finding"] not in FINDINGS:
+            r.fail(f"{key}: unknown source finding {fd['finding']!r}")
+        if (ver.get(key) or {}).get("basis") != fd["text_found_in"]["basis"]:
+            r.fail(f"{key}: source finding rests on a text match that no longer stands; re-check it")
+
+
 XREL_STATUSES = {"relative-proposed", "relative-confirmed", "unresolved", "not-a-reference"}
 
 
@@ -330,5 +358,6 @@ def v7_layers(units: list[str]):
         _citations(unit, root, r, c)
         _xrefs_relative(unit, root, r, c)
         _source_verification(unit, foreign, r, c)
+        _source_findings(unit, layer, r, c)
     r.counts = c
     return r

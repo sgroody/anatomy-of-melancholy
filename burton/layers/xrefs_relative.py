@@ -163,9 +163,12 @@ def review(by_unit: dict) -> None:
              f"machine draft (prompt `{PROMPT}`); none is linked in the reader until you confirm it. To confirm, set",
              "the record's `status` to `relative-confirmed` and `review` to your name and date in",
              "`data/layers/xrefs-relative/<unit>.json`; to reject, set `status: unresolved`.", "",
-             "| Phrase | In | Proposed target | Evidence | Reason | Confidence |", "|---|---|---|---|---|---|"]
+             "| Phrase | In | Target | Evidence | Reason | Confidence | Decision |", "|---|---|---|---|---|---|---|"]
     for k, r in rows:
+        rv = r.get("review") or {}
+        dec = "—" if rv.get("state", "unreviewed") == "unreviewed" else \
+            f"{rv['state']} ({rv['by']}, {rv['date']}){': ' + rv['note'] if rv.get('note') else ''}"
         lines.append(f"| {r['selector']['exact']} | `{k}` | {r['target'] or '—'} | {r['evidence'] or '—'} | "
-                     f"{r['reason']} | {r['confidence']} |")
+                     f"{r['reason']} | {r['confidence']} | {dec} |")
     REVIEW.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_text(REVIEW, "\n".join(lines) + "\n")
