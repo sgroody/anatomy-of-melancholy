@@ -1,5 +1,5 @@
 {
-  "when": "2026-10-28T16:56:20+00:00",
+  "when": "2026-11-02T19:23:59+00:00",
   "ok": true,
   "results": [
     {
@@ -153,6 +153,7 @@
         "units_without_layer": 4,
         "djs_records": 7769,
         "djs_no-anchor": 2375,
+        "sidenotes_no-citation": 1205,
         "djs_aligned": 2149,
         "djs_omitted": 1621,
         "djs_below-threshold": 407,
@@ -160,8 +161,20 @@
         "djs_not-found": 798,
         "djs_implausible-length": 201,
         "djs_ocr-noise": 17,
+        "sidenotes_partial": 781,
+        "citations_partial": 621,
+        "sidenotes_unidentified": 1507,
+        "citations_unidentified": 1868,
+        "sidenotes_parsed": 2210,
+        "citations_parsed": 2675,
+        "citation_author_text-at-anchor": 602,
+        "citation_author_work-title": 106,
+        "xrefs_rel_unresolved": 30,
+        "xrefs_rel_relative-proposed": 33,
+        "xrefs_rel_not-a-reference": 20,
         "xrefs": 21,
         "xrefs_resolved": 19,
+        "citation_author_own-divisions": 22,
         "source_downgrades": 1,
         "xrefs_unresolved": 2,
         "djs_broken-span": 7,
@@ -209,7 +222,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 6161,
+        "script_chars": 11129,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -221,8 +234,8 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 326,
-        "links": 69070,
+        "pages": 822,
+        "links": 168306,
         "broken": 0,
         "unresolved_xrefs_unlinked": 0
       },
@@ -245,10 +258,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "229/229",
+        "private:glyphs": "230/230",
         "private:fallback": 13,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+264E U+264F",
-        "public:glyphs": "226/226",
+        "public:glyphs": "227/227",
         "public:fallback": 13
       },
       "problems": []
@@ -259,7 +272,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 326,
+        "pages": 822,
         "parse_errors": 0,
         "a11y_issues": 0
       },
@@ -329,7 +342,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "precached": "196/196",
+        "precached": "444/444",
         "offline_pages_loaded": "6/6"
       },
       "problems": []
