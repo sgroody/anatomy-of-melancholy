@@ -85,3 +85,33 @@ def test_v11_rejects_an_unexplained_duplicate(tmp_path, monkeypatch):
     tree["duplicates"][0]["reason"] = ""
     f.write_text(json.dumps(tree, ensure_ascii=False), encoding="utf-8")
     assert any("unexplained duplicate nat0000108" in p for p in _p1_problems())
+
+
+def test_ordinal_labels_and_a_leading_number_at_a_given_level():
+    units = ["2.2.1.1", "2.2.1.2", "2.2.2.1", "2.4.1.4"]
+    refs, after = S.resolve("Diet rectified 1st Memb.", [2, 2, None, None], units)
+    assert [r["unit"] for r in refs] == ["2.2.1.1"] and after == [2, 2, 1, None]
+    refs, _ = S.resolve("2nd. Quantity.", [2, 2, 1, 1], units, num="subsect")
+    assert [(r["label"], r["unit"]) for r in refs] == [("2nd.", "2.2.1.2")]
+    refs, _ = S.resolve("2nd. Rectification of Retention and Evacuation", [2, 2, 1, None], units, num="memb")
+    assert [r["unit"] for r in refs] == ["2.2.2.1"]
+    refs, _ = S.resolve("4th. Subsect. Precious stones", [2, 4, 1, 3], units)
+    assert [r["unit"] for r in refs] == ["2.4.1.4"]
+    refs, _ = S.resolve("2nd. Quantity.", [2, 2, 1, 1], units)
+    assert refs == []  # without `num` a bare number is not a label
+
+
+@needs_epub
+def test_v11_wants_a_reason_for_a_supplied_key(tmp_path, monkeypatch):
+    if not (paths.DATA / "synopses" / "p2.json").exists():
+        pytest.skip("p2 not built")
+    shutil.copytree(paths.DATA / "synopses", tmp_path / "all")
+    _copy(tmp_path, monkeypatch)
+    f = tmp_path / "synopses" / "p2.json"
+    tree = json.loads((tmp_path / "all" / "p2.json").read_text(encoding="utf-8"))
+    supplied = next(t for t in tree["children"] if t.get("key", {}).get("supplied"))
+    f.write_text(json.dumps(tree, ensure_ascii=False), encoding="utf-8")
+    assert not [p for p in V.v11_synopses().problems if p.startswith("p2:")]
+    supplied["key"]["supplied"] = ""
+    f.write_text(json.dumps(tree, ensure_ascii=False), encoding="utf-8")
+    assert any("does not print, with no reason" in p for p in V.v11_synopses().problems)

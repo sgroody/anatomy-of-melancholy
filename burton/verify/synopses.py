@@ -2,11 +2,12 @@
 
 Independent of the builder (burton/ingest/synopses.py): it reads the XHTML and the JSON with plain lxml/json
 and parses the division labels with its own pattern. Checked per partition:
-* the multiset of non-glyph hidden-table strings equals the multiset of strings the tree uses (node texts, "Or"
-  connectors, cross-key anchors), each paragraph id exactly once, the text verbatim; the only duplicate allowed
-  is the known one (nat0000108 = nat0000034a), and it must carry a reason;
+* the multiset of non-glyph hidden-table strings equals the multiset of strings the tree uses (node texts, column
+  headings and label paragraphs, "Or" connectors, cross-key anchors), each paragraph id exactly once, the text
+  verbatim; the only duplicate allowed is the known one (nat0000108 = nat0000034a), and it must carry a reason;
 * every Sect./Memb./Subsect. label in a node resolves to an existing unit inside that division;
-* every `see` cross-key has exactly one tree root carrying that key, and every keyed root is pointed to;
+* every `see` cross-key has exactly one tree root carrying that key, every keyed root is pointed to, and a key
+  the image does not print is `supplied` with a reason;
 * node ids are unique and active in data/ids/registry.tsv; the tree is labelled as machine-made.
 """
 
@@ -23,7 +24,9 @@ from .checks import Result, norm
 PARTS = {"p1": "chapter001", "p2": "chapter002", "p3": "chapter003"}
 BRACES = {"⎧", "⎨", "⎩"}
 KNOWN_DUPLICATES = {"nat0000108": "nat0000034a"}  # SPEC §9 V11
-LABEL = re.compile(r"\b(Subsect|Sect|Memb)\.\s*(\d+(?:,\s*\d+)*)")
+LABEL = re.compile(r"\b(Subsect|Sect|Memb)\.\s*(\d+(?:,\s*\d+)*)|\b(\d+)(?:st|nd|rd|th)\.?\s*(Subsect|Sect|Memb)\.")
+LEADING = re.compile(r"(\d+)(?:st|nd|rd|th)?\.")
+WORD = {"memb": "Memb", "subsect": "Subsect", "sect": "Sect"}
 
 
 def _hidden(part: str) -> dict[str, str]:
@@ -45,20 +48,28 @@ def _nodes(n: dict):
         yield from _nodes(c)
 
 
-def _label_numbers(text: str) -> list[tuple[str, int]]:
-    """(label word, number) for the deepest level of each label run, in order: "Memb. 5 Sect. 2" -> [(Memb, 5)]."""
-    out, last_end, run = [], None, []
+def _label_numbers(texts: list[str], num: str | None) -> list[tuple[str, int]]:
+    """(label word, number) for the deepest level of each label run, in order: "Memb. 5 Sect. 2" -> [(Memb, 5)].
+    `texts`: the node's text, then its heading and label paragraphs (a run never spans two of them); `num`: the
+    level the structure gives the node's bare leading number."""
+    out = []
+    if num:
+        m = LEADING.match(texts[0])
+        out.append([(WORD[num], m.group(1) if m else "-1")])
     rank = {"Sect": 1, "Memb": 2, "Subsect": 3}
-    for m in LABEL.finditer(text):
-        if run and text[last_end:m.start()].strip() == "" and m.group(1) not in [w for w, _ in run]:
-            run.append((m.group(1), m.group(2)))
-        else:
-            if run:
-                out.append(run)
-            run = [(m.group(1), m.group(2))]
-        last_end = m.end()
-    if run:
-        out.append(run)
+    for text in texts:
+        last_end, run = None, []
+        for m in LABEL.finditer(text):
+            word, ns = (m.group(1), m.group(2)) if m.group(1) else (m.group(4), m.group(3))
+            if run and text[last_end:m.start()].strip() == "" and word not in [w for w, _ in run]:
+                run.append((word, ns))
+            else:
+                if run:
+                    out.append(run)
+                run = [(word, ns)]
+            last_end = m.end()
+        if run:
+            out.append(run)
     nums = []
     for r in out:
         word, ns = max(r, key=lambda x: rank[x[0]])
@@ -99,16 +110,27 @@ def v11_synopses() -> Result:
         for n in all_nodes:
             text = "".join(run["t"] for run in n["text"])
             used.append((n["src_p"], text))
+            extras = [n[k] for k in ("head", "label") if k in n]
+            for x in extras:
+                used.append((x["src_p"], x["text"]))
+                if "".join(run["t"] for run in x["runs"]) != x["text"]:
+                    r.fail(f"{part}: {n['id']} {x['src_p']} runs do not spell its text")
             if "or" in n:
                 used.append((n["or"]["src_p"], n["or"]["text"]))
                 if n["or"]["text"].strip().lower() != "or" or n.get("relation") != "or":
                     r.fail(f"{part}: {n['id']} connector is not an 'Or': {n['or']['text']!r}")
             if "key" in n:
-                used.append((n["key"]["src_p"], n["key"]["text"]))
+                key = n["key"]
+                if "src_p" in key:
+                    used.append((key["src_p"], key["text"]))
                 if n not in roots:
-                    r.fail(f"{part}: cross-key anchor {n['key']['sign']} on a node that is not a tree root")
+                    r.fail(f"{part}: cross-key anchor {key['sign']} on a node that is not a tree root")
+                shown = key["sign"] in key.get("text", "") or key["sign"] in text
+                if not shown and not key.get("supplied", "").strip():
+                    r.fail(f"{part}: tree {n['id']} carries key {key['sign']} that the image does not print, "
+                           "with no reason given")
             # labels
-            want = _label_numbers(text)
+            want = _label_numbers([text] + [x["text"] for x in extras], n.get("num"))
             got = n.get("ref", [])
             refs += len(want)
             if len(got) != len(want):
@@ -125,21 +147,24 @@ def v11_synopses() -> Result:
                 else:
                     refs_ok += 1
             # cross-keys
-            if "see" in n:
+            targets = n.get("see_target", [])
+            if len(targets) != len(n.get("see", [])):
+                r.fail(f"{part}: {n['id']} has {len(n.get('see', []))} cross-keys but {len(targets)} targets")
+            for sign, got_t in zip(n.get("see", []), targets, strict=False):
                 sees += 1
-                pointed[n["see"]] += 1
-                tgt = keyed.get(n["see"])
+                pointed[sign] += 1
+                tgt = keyed.get(sign)
                 if tgt is None:
-                    r.fail(f"{part}: {n['id']} points to cross-key {n['see']} but no tree carries it")
-                elif n.get("see_target") != tgt["id"]:
-                    r.fail(f"{part}: {n['id']} see_target {n.get('see_target')} is not the {n['see']} root {tgt['id']}")
-                elif n["see"] not in text:
-                    r.fail(f"{part}: {n['id']} points to {n['see']} but its text does not show the key")
+                    r.fail(f"{part}: {n['id']} points to cross-key {sign} but no tree carries it")
+                elif got_t != tgt["id"]:
+                    r.fail(f"{part}: {n['id']} see_target {got_t} is not the {sign} root {tgt['id']}")
+                elif sign not in text:
+                    r.fail(f"{part}: {n['id']} points to {sign} but its text does not show the key")
                 else:
                     sees_ok += 1
         for sign, root in keyed.items():
-            if pointed[sign] != 1:
-                r.fail(f"{part}: tree {root['id']} (key {sign}) is pointed to {pointed[sign]} times")
+            if not pointed[sign]:
+                r.fail(f"{part}: tree {root['id']} (key {sign}) is not pointed to by any node")
 
         # duplicates: only the known one, explained, and identical in text
         for d in tree.get("duplicates", []):

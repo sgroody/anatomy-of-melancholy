@@ -21,6 +21,8 @@ GLYPHS = {"⎧", "⎨", "⎩"}  # brace pieces: drawing, not text
 OUT = paths.DATA / "synopses"
 # Burton's own division labels in a node: "Sect. 2", "Memb. 5", "Subsect. 6, 7, 8" ("Member," is not a label)
 PAIR = re.compile(r"\b(Subsect|Sect|Memb)\.\s*(\d+(?:,\s*\d+)*)")
+ORDINAL = re.compile(r"\b(\d+)(?:st|nd|rd|th)\.?\s*(Subsect|Sect|Memb)\.")  # "2nd Memb.", "4th. Subsect."
+LEAD = re.compile(r"(\d+)(?:st|nd|rd|th)?\.")  # a bare leading number: "1. From the Devil", "2nd. Quantity."
 LEVEL = {"sect": 1, "memb": 2, "subsect": 3}
 
 
@@ -87,15 +89,27 @@ def _division(target: list[int], units: list[str]) -> str | None:
     return next((u for u in units if u.startswith(div + ".")), None)
 
 
-def resolve(text: str, ctx: list, units: list[str]) -> tuple[list[dict], list]:
+def _pairs(text: str) -> list[tuple[int, list[int], re.Match]]:
+    found = [(LEVEL[m.group(1).lower()], [int(n) for n in m.group(2).split(",")], m) for m in PAIR.finditer(text)]
+    found += [(LEVEL[m.group(2).lower()], [int(m.group(1))], m) for m in ORDINAL.finditer(text)]
+    return sorted(found, key=lambda f: f[2].start())
+
+
+def resolve(text: str, ctx: list, units: list[str], num: str | None = None) -> tuple[list[dict], list]:
     """The division labels in a node's text, resolved against ctx = [partition, sect, memb, subsect] (levels
     a label leaves out are inherited, as a reader of the synopsis does). Returns (refs, ctx after the node).
-    Adjacent labels ("Memb. 5 Sect. 2") are one reference. A label whose levels cannot all be known stays
-    unresolved (unit null), never guessed."""
+    Adjacent labels ("Memb. 5 Sect. 2") are one reference. `num` names the level of a bare leading number
+    ("2nd. Quantity." under "1st Subsect."), as the structure file records it from the image. A label whose
+    levels cannot all be known stays unresolved (unit null), never guessed."""
     groups: list[dict] = []
-    for m in PAIR.finditer(text):
-        lvl, nums = LEVEL[m.group(1).lower()], [int(n) for n in m.group(2).split(",")]
-        if groups and not text[groups[-1]["end"]:m.start()].strip() and lvl not in groups[-1]["given"]:
+    if num:
+        m = LEAD.match(text)
+        if not m:
+            raise SystemExit(f"num: {num} given but no leading number in {text[:40]!r}")
+        groups.append({"given": {LEVEL[num]: [int(m.group(1))]}, "start": 0, "end": 0, "label": m.group(0)})
+    for lvl, nums, m in _pairs(text):
+        if groups and groups[-1]["end"] and not text[groups[-1]["end"]:m.start()].strip() \
+                and lvl not in groups[-1]["given"]:
             g = groups[-1]
             g["given"][lvl], g["end"], g["label"] = nums, m.end(), text[g["start"]:m.end()]
         else:
@@ -119,7 +133,6 @@ def build(part: str, units: list[str], reg: Registry) -> dict:
     paras = paragraphs(part)
     unit = f"{part}-synopsis"
     used: list[str] = []
-    see_ctx: dict[str, list] = {}  # cross-key -> context at the node that points to it
     key_root: dict[str, str] = {}  # cross-key -> id of the tree root carrying it
     pending_see: list[dict] = []
 
@@ -129,23 +142,36 @@ def build(part: str, units: list[str], reg: Registry) -> dict:
         used.append(pid)
         return "".join(paras[pid].itertext())
 
+    def extra(pid: str) -> dict:
+        return {"src_p": pid, "text": take(pid), "runs": runs(paras[pid])}
+
     def node(n: dict, ctx: list, img: str | None = None) -> tuple[dict, list]:
         text = take(n["p"])
-        refs, after = resolve(text, ctx, units)
         out = {"id": reg.assign(unit, "s", f"{FILES[part]}.xhtml#{n['p']}"), "src_p": n["p"],
-               "text": runs(paras[n["p"]]), "ref": refs}
+               "text": runs(paras[n["p"]])}
+        for k in ("head", "label"):  # a column heading printed above the node; a label paragraph printed with it
+            if k in n:
+                out[k] = extra(n[k])
+        if "num" in n:
+            out["num"] = n["num"]
+        # the node's own text first (a `num` reads its leading number); " ¶ " keeps labels in different
+        # paragraphs from merging into one reference
+        whole = " ¶ ".join([text] + [out[k]["text"] for k in ("head", "label") if k in out])
+        out["ref"], after = resolve(whole, ctx, units, n.get("num"))
         if "or" in n:
             out["relation"] = "or"
             out["or"] = {"src_p": n["or"], "text": take(n["or"])}
-        if "key" in n:
-            sign = take(n["key"]).strip().rstrip(".")
-            out["key"] = {"src_p": n["key"], "text": "".join(paras[n["key"]].itertext()), "sign": sign}
-            key_root[sign] = out["id"]
+        if "key" in n or "sign" in n:
+            key = {"src_p": n["key"], "text": take(n["key"])} if "key" in n else {}
+            key["sign"] = n.get("sign") or key["text"].strip().rstrip(".")
+            if "supplied" in n:
+                key["supplied"] = " ".join(n["supplied"].split())
+            if key["sign"] in key_root:
+                raise SystemExit(f"{part}: two trees carry cross-key {key['sign']}")
+            out["key"] = key
+            key_root[key["sign"]] = out["id"]
         if "see" in n:
-            if n["see"] in see_ctx:
-                raise SystemExit(f"{part}: two nodes point to cross-key {n['see']}")
-            out["see"] = n["see"]
-            see_ctx[n["see"]] = after
+            out["see"] = n["see"] if isinstance(n["see"], list) else [n["see"]]
             pending_see.append(out)
         if "note" in n:
             out["note"] = " ".join(n["note"].split())
@@ -158,25 +184,17 @@ def build(part: str, units: list[str], reg: Registry) -> dict:
         out["children"] = kids
         return out, after
 
-    base = [int(part[1:]), None, None, None]
-    trees: list = [None] * len(spec["trees"])
-    todo = list(range(len(spec["trees"])))
-    while todo:  # a keyed tree takes its context from the node that points to it, which may come later
-        progressed = False
-        for i in list(todo):
-            t = spec["trees"][i]
-            sign = "".join(paras[t["key"]].itertext()).strip().rstrip(".") if "key" in t else None
-            if sign is not None and sign not in see_ctx:
-                continue
-            trees[i], _ = node(t, see_ctx[sign] if sign else base, t.get("img"))
-            todo.remove(i)
-            progressed = True
-        if not progressed:
-            raise SystemExit(f"{part}: no node points to the cross-keys of trees {todo}")
+    # Each tree continues the numbering of the one printed before it ("♊ Chirurgical physic ... Memb. 3." follows
+    # Sect. 4 Memb. 2, though Sect. 1 points to it), so a root inherits from the previous root.
+    trees, ctx = [], [int(part[1:]), None, None, None]
+    for t in spec["trees"]:
+        tree, ctx = node(t, ctx, t.get("img"))
+        trees.append(tree)
     for n in pending_see:
-        if n["see"] not in key_root:
-            raise SystemExit(f"{part}: cross-key {n['see']} has no tree")
-        n["see_target"] = key_root[n["see"]]
+        missing = [s for s in n["see"] if s not in key_root]
+        if missing:
+            raise SystemExit(f"{part}: cross-key {missing} has no tree")
+        n["see_target"] = [key_root[s] for s in n["see"]]
     reg.finish_unit(unit)
 
     dups = []

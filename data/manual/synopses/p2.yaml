@@ -1,0 +1,332 @@
+# The Synopsis of the Second Partition: the tree's shape (M7). Words are never written here: each node names a
+# hidden-table paragraph (chapter002.xhtml) by id, and `burton synopses` takes its text from there verbatim.
+#   p:        the paragraph that is this node's text
+#   or:       the "or" paragraph Burton sets before this node (its relation to the sibling before it)
+#   head:     a column heading printed above this node ("Memb.", "Subsect.", "1st Subsect.")
+#   label:    a second paragraph printed as part of this node ("Matter & quality." + "1st Subsect.")
+#   num:      the level of the node's bare leading number, as the image shows it (a "Memb." heading over the
+#             column, or the explicit "1st Memb." of the first sibling): memb or subsect
+#   key:      on a tree root, the standalone cross-key paragraph above it; `sign` when the key is inside the
+#             root's own text ("♈ Sect. 2. Dietetical ..."); `supplied` when the image prints no key (with why)
+#   see:      the cross-key(s) this node points to; each target is the tree root carrying that key
+#   img:      the image a tree root starts on
+#   children: the brace hanging from this node, top to bottom as printed
+# Where one image has several identical "or" paragraphs and the hidden order does not say which is which, each
+# is given to the brace nearest the column it follows in the hidden order; the text is the same either way.
+part: p2
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-03", status: machine-draft,
+             method: "read in session from each of the 8 images (pg427_01-pg430_02) against the hidden-table checklist"}
+trees:
+  - p: nat0006705
+    img: pg427_01
+    children:
+      - p: nat0006693
+        children:
+          - p: nat0006682
+            children:
+              - p: nat0006666
+                head: nat0006655
+                num: memb
+                children:
+                  - {p: nat0006667}
+                  - {p: nat0006668}
+          - p: nat0006721
+            or: nat0006722
+            children:
+              - {p: nat0006669, num: memb}
+              - p: nat0006680
+                num: memb
+                children: [{p: nat0006681}]
+              - p: nat0006720
+                or: nat0006719
+                num: memb
+                children:
+                  - {p: nat0006717, head: nat0006706, num: subsect}
+                  - {p: nat0006718, num: subsect}
+                  - p: nat0006736
+                    num: subsect
+                    children:
+                      - {p: nat0006723, see: ♈}
+                      - {p: nat0006734, see: ♉}
+                      - {p: nat0006735, see: ♊}
+      - {p: nat0006737, or: nat0006704, see: [♋, ♌, ♍]}
+
+  - p: nat0006837
+    sign: ♈
+    img: pg427_02
+    children:
+      - p: nat0006791
+        children:
+          - p: nat0006752
+            label: nat0006763
+            children:
+              - {p: nat0006738}
+              - {p: nat0006739}
+              - {p: nat0006740}
+              - {p: nat0006751}
+              - p: nat0006787
+                children:
+                  - {p: nat0006764}
+                  - {p: nat0006775}
+              - p: nat0006788
+                children: [{p: nat0006776}]
+              - p: nat0006789
+                children: [{p: nat0006802}]
+              - p: nat0006790
+                children: [{p: nat0006813}]
+          - p: nat0006836
+            or: nat0006824
+            num: subsect
+            children: [{p: nat0006825}]
+      - {p: nat0006838, num: memb}
+      - p: nat0006851
+        num: memb
+        children:
+          - {p: nat0006839}
+          - {p: nat0006850}
+      - p: nat0006864
+        num: memb
+        children:
+          - {p: nat0006852}
+          - {p: nat0006863}
+      - {p: nat0006865, num: memb}
+      - {p: nat0006866, num: memb, see: ♎}
+
+  - p: nat0006907
+    key: nat0006906
+    img: pg428_01
+    children:
+      - p: nat0006895
+        children:
+          - {p: nat0006879, head: nat0006868, num: subsect}
+          - {p: nat0006880}
+          - {p: nat0006881}
+      - p: nat0006929
+        or: nat0006908
+        children:
+          - {p: nat0006882, num: subsect}
+          - {p: nat0006883, num: subsect}
+          - {p: nat0006894, num: subsect}
+          - p: nat0006928
+            children:
+              - {p: nat0006920, head: nat0006909, num: memb}
+              - {p: nat0006921, num: memb}
+              - {p: nat0006922, num: memb}
+              - {p: nat0006923, num: memb}
+              - {p: nat0006924, num: memb}
+              - {p: nat0006925, num: memb}
+              - {p: nat0006926, num: memb}
+              - {p: nat0006927, num: memb}
+
+  - p: nat0006993
+    key: nat0006982
+    img: pg428_02
+    children:
+      - p: nat0006979
+        children:
+          - p: nat0006980
+            children:
+              - p: nat0006947
+                children:
+                  - p: nat0006968
+                    children:
+                      - {p: nat0006930}
+                      - {p: nat0006941}
+                      - {p: nat0006942}
+                      - {p: nat0006943}
+                      - {p: nat0006944}
+                      - {p: nat0006945}
+                      - {p: nat0006946}
+                  - {p: nat0006981}
+              - p: nat0007036
+                or: nat0007035
+                children:
+                  - p: nat0007032
+                    children:
+                      - p: nat0007018
+                        children:
+                          - p: nat0007019
+                            children:
+                              - {p: nat0006994}
+                              - {p: nat0007005}
+                          - p: nat0007031
+                            or: nat0007030
+                            children:
+                              - {p: nat0007006}
+                              - {p: nat0007017}
+                      - p: nat0007069
+                        or: nat0007067
+                        children:
+                          - p: nat0007065
+                            children:
+                              - {p: nat0007037}
+                              - {p: nat0007048}
+                              - {p: nat0007049}
+                              - {p: nat0007050}
+                              - {p: nat0007051}
+                          - p: nat0007080
+                            or: nat0007068
+                            children:
+                              - {p: nat0007052}
+                              - {p: nat0007053}
+                              - {p: nat0007054}
+                          - {p: nat0007081}
+                  - p: nat0007105
+                    or: nat0007066
+                    children:
+                      - {p: nat0007092}
+                      - {p: nat0007103}
+                      - {p: nat0007104}
+          - {p: nat0007116, or: nat0007034, see: ☾}
+      - {p: nat0007117, or: nat0007033, see: [♋, ♌, ♍]}
+
+  - p: nat0007191
+    sign: ☾
+    supplied: >-
+      The image prints no ☾ at this tree, but "Purging ☾" (Sect. 4, beside "Alterative") can only lead here: this is
+      the next sheet's tree on purging medicines, and its "Memb. 2." continues Sect. 4 Memb. 1. The key is
+      recorded so the link can be followed; no text is added.
+    img: pg429_01
+    children:
+      - p: nat0007155
+        children:
+          - p: nat0007119
+            children: [{p: nat0007132}]
+          - p: nat0007131
+            or: nat0007130
+            children:
+              - {p: nat0007143}
+              - {p: nat0007154}
+      - p: nat0007216
+        or: nat0007192
+        children:
+          - p: nat0007193
+            children:
+              - p: nat0007180
+                children:
+                  - p: nat0007166
+                    children:
+                      - {p: nat0007167}
+                      - {p: nat0007178}
+                      - {p: nat0007179}
+                  - p: nat0007205
+                    note: >-
+                      Its "or" is printed as part of the vertical "swallowed, or" above it, so no separate connector.
+              - {p: nat0007218, or: nat0007217}
+          - {p: nat0007219, or: nat0007204}
+
+  - p: nat0007236
+    sign: ♊
+    img: pg429_01
+    children:
+      - {p: nat0007220}
+      - {p: nat0007221}
+      - {p: nat0007232}
+      - {p: nat0007233}
+      - {p: nat0007234}
+      - {p: nat0007235}
+
+  - p: nat0007283
+    sign: ♋
+    img: pg429_02
+    children:
+      - {p: nat0007245, head: nat0007237}
+      - {p: nat0007246}
+      - {p: nat0007247}
+      - {p: nat0007248}
+      - {p: nat0007249}
+      - {p: nat0007250, num: subsect}
+      - p: nat0007282
+        num: subsect
+        children:
+          - {p: nat0007251}
+          - {p: nat0007262}
+      - p: nat0007284
+        num: subsect
+        children:
+          - {p: nat0007263}
+          - {p: nat0007274}
+          - {p: nat0007275}
+      - p: nat0007286
+        num: subsect
+        note: >-
+          The brace runs on to the next sheet (pg430_01), where five more items stand without a head (Odoraments of
+          Roses ... Baths of sweet water). They are read as the rest of this list, the outward cordials: they sit in
+          the column of these children, before "6th." and outside its brace.
+        children:
+          - {p: nat0007276}
+          - {p: nat0007277}
+          - {p: nat0007278}
+          - {p: nat0007279}
+          - {p: nat0007280}
+          - {p: nat0007281}
+          - {p: nat0007289}
+          - {p: nat0007290}
+          - {p: nat0007295}
+          - {p: nat0007296}
+          - {p: nat0007297}
+      - p: nat0007332
+        num: subsect
+        children:
+          - p: nat0007331
+            children:
+              - p: nat0007318
+                children:
+                  - p: nat0007312
+                    children: [{p: nat0007299}]
+                  - p: nat0007333
+                    or: nat0007335
+                    children:
+                      - {p: nat0007300}
+                      - {p: nat0007311}
+              - p: nat0007353
+                or: nat0007329
+                children:
+                  - {p: nat0007336}
+                  - {p: nat0007347}
+                  - {p: nat0007348}
+                  - {p: nat0007349}
+                  - {p: nat0007350}
+                  - {p: nat0007351}
+          - {p: nat0007354}
+          - {p: nat0007355}
+
+  - p: nat0007399
+    key: nat0007398
+    img: pg430_02
+    children:
+      - {p: nat0007357}
+      - {p: nat0007358}
+      - {p: nat0007359}
+
+  - p: nat0007402
+    key: nat0007401
+    img: pg430_02
+    children:
+      - {p: nat0007381, head: nat0007370}
+      - {p: nat0007382}
+      - {p: nat0007383}
+      - {p: nat0007384}
+      - {p: nat0007385}
+      - {p: nat0007386}
+      - {p: nat0007387}
+      - p: nat0007476
+        children:
+          - p: nat0007440
+            children:
+              - p: nat0007437
+                children:
+                  - p: nat0007400
+                    note: >-
+                      Printed vertically as "Roots, Herbs, Spices, Seeds," with one small brace for each word; the
+                      hidden table gives the four words as one paragraph, which is kept whole, so the four lists
+                      hang from it in that order.
+                    children:
+                      - {p: nat0007403}
+                      - {p: nat0007414}
+                      - {p: nat0007415}
+                      - {p: nat0007426}
+              - p: nat0007463
+                or: nat0007464
+                children: [{p: nat0007465}]
+          - {p: nat0007477, or: nat0007452}
