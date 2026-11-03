@@ -6,7 +6,7 @@ and parses the division labels with its own pattern. Checked per partition:
   headings and label paragraphs, "Or" connectors, cross-key anchors), each paragraph id exactly once, the text
   verbatim; the only duplicate allowed is the known one (nat0000108 = nat0000034a), and it must carry a reason;
 * every Sect./Memb./Subsect. label in a node resolves to an existing unit inside that division;
-* every `see` cross-key has exactly one tree root carrying that key, every keyed root is pointed to, and a key
+* every `see` cross-key has exactly one node carrying that key, every keyed node is pointed to, and a key
   the image does not print is `supplied` with a reason;
 * node ids are unique and active in data/ids/registry.tsv; the tree is labelled as machine-made.
 """
@@ -98,8 +98,11 @@ def v11_synopses() -> Result:
         used: list[tuple[str, str]] = []  # (paragraph id, text as the tree carries it)
         all_nodes = list(_nodes(tree))
         nodes += len(all_nodes)
-        roots = tree.get("children", [])
-        keyed = {n["key"]["sign"]: n for n in roots if "key" in n}
+        keys = Counter(n["key"]["sign"] for n in all_nodes if "key" in n)
+        for sign, k in keys.items():
+            if k > 1:
+                r.fail(f"{part}: {k} nodes carry cross-key {sign}")
+        keyed = {n["key"]["sign"]: n for n in all_nodes if "key" in n}
         pointed = Counter()
         ids = Counter(n["id"] for n in all_nodes)
         for nid, k in ids.items():
@@ -123,8 +126,6 @@ def v11_synopses() -> Result:
                 key = n["key"]
                 if "src_p" in key:
                     used.append((key["src_p"], key["text"]))
-                if n not in roots:
-                    r.fail(f"{part}: cross-key anchor {key['sign']} on a node that is not a tree root")
                 shown = key["sign"] in key.get("text", "") or key["sign"] in text
                 if not shown and not key.get("supplied", "").strip():
                     r.fail(f"{part}: tree {n['id']} carries key {key['sign']} that the image does not print, "
@@ -157,14 +158,14 @@ def v11_synopses() -> Result:
                 if tgt is None:
                     r.fail(f"{part}: {n['id']} points to cross-key {sign} but no tree carries it")
                 elif got_t != tgt["id"]:
-                    r.fail(f"{part}: {n['id']} see_target {got_t} is not the {sign} root {tgt['id']}")
+                    r.fail(f"{part}: {n['id']} see_target {got_t} is not the {sign} node {tgt['id']}")
                 elif sign not in text:
                     r.fail(f"{part}: {n['id']} points to {sign} but its text does not show the key")
                 else:
                     sees_ok += 1
         for sign, root in keyed.items():
             if not pointed[sign]:
-                r.fail(f"{part}: tree {root['id']} (key {sign}) is not pointed to by any node")
+                r.fail(f"{part}: node {root['id']} (key {sign}) is not pointed to by any node")
 
         # duplicates: only the known one, explained, and identical in text
         for d in tree.get("duplicates", []):

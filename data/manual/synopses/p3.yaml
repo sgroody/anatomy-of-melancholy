@@ -1,0 +1,163 @@
+# The Analysis of the Third Partition: the tree's shape (M7). Words are never written here: each node names a
+# hidden-table paragraph (chapter003.xhtml) by id, and `burton synopses` takes its text from there verbatim.
+# Fields as in p2.yaml (p, or, head, key/sign, see, img, note, children). Here a cross-key can sit on an inner
+# node: ♋ marks "In defect, as Memb. 2." inside the ♊ tree, the target of "In defect, vide ♋".
+part: p3
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-03", status: machine-draft,
+             method: "read in session from each of the 4 images (pg667_01-pg668_02) against the hidden-table checklist"}
+trees:
+  - p: nat0010704
+    img: pg667_01
+    children:
+      - {p: nat0010594}
+      - {p: nat0010605}
+      - p: nat0010664
+        children:
+          - {p: nat0010606}
+          - {p: nat0010617}
+          - p: nat0010680
+            or: nat0010665
+            children:
+              - p: nat0010653
+                children:
+                  - p: nat0010640
+                    children: [{p: nat0010618}]
+                  - p: nat0010651
+                    children:
+                      - {p: nat0010629}
+                      - p: nat0010666
+                        children:
+                          - {p: nat0010667, see: ♈}
+                          - {p: nat0010678, see: ♉}
+                  - p: nat0010652
+                    children: [{p: nat0010681}]
+              - p: nat0010703
+                or: nat0010679
+                children:
+                  - {p: nat0010692}
+                  - p: nat0010706
+                    or: nat0010705
+                    children:
+                      - {p: nat0010707, see: ♊}
+                      - {p: nat0010718, see: ♋}
+
+  - p: nat0010750
+    key: nat0010749
+    img: pg667_02
+    children:
+      - {p: nat0010730, head: nat0010719}
+      - {p: nat0010731}
+      - p: nat0010748
+        children:
+          - {p: nat0010732}
+          - {p: nat0010733}
+          - {p: nat0010744}
+          - {p: nat0010745}
+          - {p: nat0010746}
+          - {p: nat0010747}
+      - p: nat0010803
+        children:
+          - p: nat0010763
+            children:
+              - {p: nat0010751}
+              - {p: nat0010762}
+          - p: nat0010775
+            or: nat0010774
+            children:
+              - p: nat0010776
+                children:
+                  - {p: nat0010789}
+                  - {p: nat0010790}
+                  - {p: nat0010791}
+              - p: nat0010788
+                or: nat0010787
+                children: [{p: nat0010792}]
+      - {p: nat0010807}
+      - p: nat0010822
+        children:
+          - {p: nat0010808}
+          - {p: nat0010809}
+          - {p: nat0010820}
+          - {p: nat0010821}
+
+  - p: nat0010935
+    sign: ♉
+    img: pg668_01
+    children:
+      - {p: nat0010824}
+      - p: nat0010863
+        children:
+          - p: nat0010825
+            children:
+              - {p: nat0010838}
+              - {p: nat0010849}
+              - {p: nat0010850}
+          - p: nat0010837
+            or: nat0010836
+            children:
+              - {p: nat0010851}
+              - {p: nat0010862}
+      - p: nat0010898
+        children:
+          - p: nat0010874
+            children:
+              - {p: nat0010875}
+              - {p: nat0010886}
+          - p: nat0010910
+            or: nat0010899
+            children: [{p: nat0010887}]
+      - p: nat0010911
+        children: [{p: nat0010913}]
+      - p: nat0010912
+        children: [{p: nat0010924}]
+      - p: nat0010950
+        children:
+          - {p: nat0010936}
+          - {p: nat0010947}
+          - {p: nat0010948}
+          - {p: nat0010949}
+
+  - p: nat0011056
+    sign: ♊
+    img: pg668_02
+    children:
+      - p: nat0011011
+        children:
+          - {p: nat0010951}
+          - p: nat0010988
+            children:
+              - p: nat0010975
+                children: [{p: nat0010953}]
+              - p: nat0010987
+                or: nat0010986
+                children: [{p: nat0010964}]
+          - p: nat0011013
+            children:
+              - p: nat0011000
+                children: [{p: nat0010989}]
+              - p: nat0011051
+                or: nat0011050
+                children:
+                  - {p: nat0011014}
+                  - {p: nat0011025}
+                  - {p: nat0011026}
+          - p: nat0011052
+            children: [{p: nat0011027}]
+          - p: nat0011054
+            children: [{p: nat0011038}]
+      - p: nat0011077
+        key: nat0011076
+        children:
+          - p: nat0011057
+            children: [{p: nat0011058}]
+          - p: nat0011079
+            or: nat0011078
+            children:
+              - {p: nat0011063}
+              - p: nat0011080
+                children: [{p: nat0011065}]
+              - p: nat0011095
+                children: [{p: nat0011084}]
+              - {p: nat0011096}
+              - p: nat0011097
+                children: [{p: nat0011098}]
