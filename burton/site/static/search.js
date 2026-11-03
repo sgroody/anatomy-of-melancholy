@@ -170,7 +170,7 @@ async function run(q, scope) {
     const n = norms[i];
     if (ts.every((t) => n.includes(t))) found.push(i);
   }
-  render(`“${q}”`, ts, scope, found, SHOW);
+  render(/^["“].*["”]$/.test(q) ? q : `“${q}”`, ts, scope, found, SHOW);
 }
 
 function scopeOf() {

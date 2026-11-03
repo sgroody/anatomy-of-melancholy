@@ -93,20 +93,30 @@ def new_page(b, *, width=1280, height=900, theme=None, settings=None):
 
 
 # ---------------------------------------------------------------- V10a: axe-core
-def axe_check(profile: str = "private") -> Result:
-    r = Result("V10a", f"axe-core on {len(SAMPLE)} pages, light and dark (serious/critical = 0)")
+def all_pages(site: Path) -> list[str]:
+    """Every page of a build, as the directory URLs the sample uses ("" for home)."""
+    rels = (p.parent.relative_to(site).as_posix() for p in site.rglob("index.html"))
+    return sorted("" if rel == "." else rel + "/" for rel in rels)
+
+
+def axe_check(profile: str = "private", *, full: bool = False) -> Result:
+    """axe-core in both themes: on the sample (every `burton check`), or on every page (`burton axe --all`,
+    M8), then with the optional text a reader can turn on shown too (glosses, expanded citations)."""
+    site = paths.SITE / profile
+    sample = all_pages(site) if full else SAMPLE
+    what = f"all {len(sample)} pages of the {profile} build" if full else f"{len(SAMPLE)} pages"
+    r = Result("V10A" if full else "V10a", f"axe-core on {what}, light and dark (serious/critical = 0)")
     if not AXE.exists():
         r.fail(f"{AXE} missing: run `npm ci --prefix tests/browser`")
         return r
     axe_src = AXE.read_text(encoding="utf-8")
-    site = paths.SITE / profile
     runs = serious = minor = 0
     rules: dict[str, int] = {}
     with serve(site) as (_, base), browser() as b:
         for theme in ("light", "dark"):
-            settings = {"theme": theme}
+            settings = {"theme": theme, **({"glosses": True, "cites": True} if full else {})}
             ctx, pg = new_page(b, theme=theme, settings=settings)
-            for rel in built(site, SAMPLE):
+            for rel in built(site, sample):
                 pg.goto(base + rel, wait_until="load")
                 pg.add_script_tag(content=axe_src)
                 res = pg.evaluate("""async () => {
@@ -125,7 +135,7 @@ def axe_check(profile: str = "private") -> Result:
                     else:
                         minor += v["n"]
             ctx.close()
-    r.counts = {"runs": runs, "pages": f"{len(built(site, SAMPLE))}/{len(SAMPLE)}", "serious_or_critical": serious, "moderate_or_minor": minor,
+    r.counts = {"runs": runs, "pages": f"{len(built(site, sample))}/{len(sample)}", "serious_or_critical": serious, "moderate_or_minor": minor,
                 "rules": ", ".join(f"{k}:{v}" for k, v in sorted(rules.items())) or "none"}
     return r
 

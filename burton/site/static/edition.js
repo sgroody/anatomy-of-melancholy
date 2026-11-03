@@ -6,7 +6,7 @@ const root = new URL("..", import.meta.url);
 const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
-const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false };
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only.
 const ORDERS = {
   default: ["editor", "djs1927", "machine", "gowland"],
@@ -33,6 +33,7 @@ function apply() {
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
   body.classList.toggle("show-cites", !!settings.cites);
+  body.classList.toggle("show-glosses", !!settings.glosses);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
   scheduleLayout();
@@ -205,22 +206,27 @@ function layoutNotes() {
   }
   closeNote(false);
   article.classList.add("sn-laid");
+  // Three passes, so the browser lays the page out once rather than once per note (M8: the longest page
+  // took 1.4 s): (1) every note into the margin; (2) read every marker's place and every note's height,
+  // which do not depend on each other, since laid-out notes are out of the flow; (3) place them.
+  const pairs = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
+  for (const [, note] of pairs) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
   const rem = parseFloat(getComputedStyle(article).fontSize);
   const LIMIT = 14 * rem; // how far a note may drift below its marker
   const GAP = 0.4 * rem;
   const art = article.getBoundingClientRect();
+  const anchors = pairs.map(([m]) => m.getBoundingClientRect().top - art.top);
+  const heights = pairs.map(([, n]) => n.getBoundingClientRect().height);
+  let buttonH = null;
   let floor = -Infinity;
   let stack = null; // {block, notes, button}
-  for (const marker of markers) {
-    const note = noteOf(marker);
-    if (!note) continue;
+  pairs.forEach(([marker, note], i) => {
     const block = blockOf(marker);
-    const anchor = marker.getBoundingClientRect().top - art.top;
+    const anchor = anchors[i];
     const y = Math.max(anchor, floor + GAP);
     const overflow = y - anchor > LIMIT && !expanded.has(block);
     if (overflow || (stack && stack.block === block)) {
       note.classList.add("sn-stacked");
-      note.style.top = "";
       asPopover(note, true);
       if (!stack || stack.block !== block) {
         const button = document.createElement("button");
@@ -231,20 +237,19 @@ function layoutNotes() {
         article.appendChild(button);
         button.addEventListener("click", () => { expanded.add(block); layoutNotes(); });
         stack = { block, notes: [], button };
-        floor = y + button.getBoundingClientRect().height;
+        if (buttonH === null) { button.textContent = "1 more note"; buttonH = button.getBoundingClientRect().height; }
+        floor = y + buttonH;
       }
       stack.notes.push(note);
       const n = stack.notes.length;
       stack.button.textContent = `${n} more note${n > 1 ? "s" : ""}`;
       stack.button.setAttribute("aria-label", `${n} more note${n > 1 ? "s" : ""} for this paragraph: show them in the margin`);
-      continue;
+      return;
     }
     stack = null;
-    note.classList.remove("sn-stacked");
-    asPopover(note, false);
     note.style.top = `${y}px`;
-    floor = y + note.getBoundingClientRect().height;
-  }
+    floor = y + heights[i];
+  });
   article.style.minHeight = floor > 0 ? `${Math.ceil(floor)}px` : "";
 }
 
