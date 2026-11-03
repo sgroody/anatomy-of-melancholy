@@ -155,6 +155,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--port", type=int, default=8765)
     s.add_argument("--open", action="store_true", help="open the edition in the default browser")
 
+    s = sub.add_parser("export-artifact", help="adjust a built site for hosting as a claude.ai Artifact")
+    s.add_argument("--profile", choices=["private", "public"], default="private")
+
     s = sub.add_parser("axe", help="axe-core on every page of a built site, both themes (M8: full-site V10)")
     s.add_argument("--profile", choices=["private", "public"], default="private")
     s.add_argument("--all", action="store_true", help="every page (the default is the 22-page sample)")
@@ -362,6 +365,10 @@ def main(argv: list[str] | None = None) -> int:
         from .site import serve
 
         serve.serve(args.profile, args.port, open_browser=args.open)
+    elif args.cmd == "export-artifact":
+        from .site import export
+
+        print(export.export(args.profile))
     elif args.cmd == "axe":
         from .verify import browser, checks
 
