@@ -21,7 +21,18 @@ def serve(profile: str, port: int, open_browser: bool = False) -> None:
     if not (root / "index.html").exists():
         raise SystemExit(f"site/{profile} is not built: run `burton build --profile {profile}`")
     handler = functools.partial(Handler, directory=str(root))
-    with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:
+    for p in range(port, port + 10):  # a busy port (another server) moves to the next free one
+        try:
+            httpd = http.server.ThreadingHTTPServer(("127.0.0.1", p), handler)
+            break
+        except OSError:
+            print(f"port {p} is in use; trying {p + 1}")
+    else:
+        raise SystemExit(f"no free port in {port}-{port + 9}")
+    if p != port:
+        print("(reading options and the offline copy belong to each port, so they start afresh on this one)")
+    port = p
+    with httpd:
         print(f"serving site/{profile} at http://127.0.0.1:{port}/  (Ctrl+C to stop)")
         if open_browser:
             import webbrowser
