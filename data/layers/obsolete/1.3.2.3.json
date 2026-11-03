@@ -1,0 +1,52 @@
+{
+  "1.3.2.3-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "7fc1f794e9868cb5",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.3.2.3-p1",
+      "prefix": "ed, and ",
+      "suffix": " to obse"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  },
+  "1.3.2.3-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "2d51d3506a54d6fb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.3.2.3-p1",
+      "prefix": "nd they ",
+      "suffix": " free fr"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

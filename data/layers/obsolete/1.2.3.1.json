@@ -1,0 +1,65 @@
+{
+  "1.2.3.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "d0dd742892db6cc5",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.2.3.1-p2",
+      "prefix": "t is so ",
+      "suffix": ", in a w"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.3.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "nat",
+    "input_hash": "2475739fe6ddbdb8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "1.2.3.1-p3",
+      "prefix": "occult. ",
+      "suffix": ". mir. &"
+    },
+    "verdict": "not-english"
+  },
+  "1.2.3.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "cd3a73d17760fb78",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.2.3.1-p3",
+      "prefix": "it; and ",
+      "suffix": ", drawet"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

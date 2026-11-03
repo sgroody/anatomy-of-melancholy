@@ -1,6 +1,7 @@
 """V7: layer integrity (SPEC §9). Reads layer JSON and the base text; imports nothing from ingest."""
 
 import json
+import re
 
 from lxml import etree
 
@@ -254,6 +255,67 @@ def _source_findings(unit: str, layer: dict, r, c: dict) -> None:
 XREL_STATUSES = {"relative-proposed", "relative-confirmed", "unresolved", "not-a-reference"}
 
 
+OBS_VERDICTS = {"webster", "ordinary", "other-obsolete", "not-english"}
+
+
+def _webster_text() -> str:
+    """Webster 1913 as one string, read straight from the pinned file (not through the gloss code), so that
+    every sense the layer attributes to Webster can be found in it: whitespace collapsed and usage labels
+    ("[R.]", "[Obs.]") left out, as the reader leaves them out of a sense."""
+    global _WEBSTER
+    if _WEBSTER is None:
+        f = paths.SOURCE / "webster" / "29765.txt.utf-8"
+        _WEBSTER = _unlabelled(f.read_text(encoding="utf-8")) if f.exists() else ""
+    return _WEBSTER
+
+
+def _unlabelled(s: str) -> str:
+    return " ".join(re.sub(r"\[[^\[\]\n]*\]", " ", s).split())  # within a line: Webster has unclosed "["
+
+
+_WEBSTER: str | None = None
+
+
+def _obsolete(unit: str, root, r, c: dict) -> None:
+    """Obsolete-word glosses (M8): keys are this unit's registry ids, selectors match once in their block's
+    public text, verdicts are known, a Webster sense is Webster's own words, a drafted sense and every ruling
+    name their model, prompt and date."""
+    f = paths.LAYERS / "obsolete" / f"{unit}.json"
+    if not f.exists():
+        return
+    by_id = {public_id(e.get(XML_ID)): e for e in root.iter()
+             if isinstance(e.tag, str) and (e.get(XML_ID) or "").startswith("u")}
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c["obsolete_records"] = c.get("obsolete_records", 0) + 1
+        c[f"obsolete_{rec.get('verdict')}"] = c.get(f"obsolete_{rec.get('verdict')}", 0) + 1
+        if not key.startswith(f"{unit}-g"):
+            r.fail(f"{unit}: obsolete-word key {key} is not a gloss id of this unit")
+        sel = rec["selector"]
+        el = by_id.get(sel["in"])
+        n = public_text(el).count(sel["prefix"] + sel["exact"] + sel["suffix"]) if el is not None else 0
+        c["obsolete_selectors_ok" if n == 1 else "obsolete_selectors_bad"] = \
+            c.get("obsolete_selectors_ok" if n == 1 else "obsolete_selectors_bad", 0) + 1
+        if n != 1:
+            r.fail(f"{key}: obsolete-word selector {sel['exact']!r} matches {n} times")
+        if sel["exact"] != rec["headword"]:
+            r.fail(f"{key}: selector {sel['exact']!r} is not the headword {rec['headword']!r}")
+        if rec.get("verdict") not in OBS_VERDICTS:
+            r.fail(f"{key}: unknown verdict {rec.get('verdict')!r}")
+        ru = rec.get("ruling") or {}
+        if not all(ru.get(k) for k in ("model", "prompt", "date")):
+            r.fail(f"{key}: ruling without model/prompt/date")
+        if rec.get("verdict") == "webster":
+            sense = rec.get("sense") or ""
+            if rec.get("source") != "webster1913" or not sense or _unlabelled(sense) not in _webster_text():
+                r.fail(f"{key}: Webster sense {sense[:40]!r} not found in Webster 1913")
+        elif rec.get("verdict") == "other-obsolete":
+            if rec.get("source") != "machine" or not (rec.get("sense") or "").strip() or \
+                    not all(rec.get(k) for k in ("model", "prompt", "date")):
+                r.fail(f"{key}: drafted sense without its text or model/prompt/date")
+        elif rec.get("sense"):
+            r.fail(f"{key}: a {rec.get('verdict')} ruling carries a sense")
+
+
 def _xrefs_relative(unit: str, root, r, c: dict) -> None:
     """Relative cross-references (M6): selectors match once in their block, known statuses, every machine
     record labelled, and a proposed or confirmed target that exists and has its evidence."""
@@ -365,6 +427,7 @@ def v7_layers(units: list[str]):
                     r.fail(f"{key}: cross-reference text {rec['selector']['exact']!r} not found in {unit}")
         _selftrans(unit, root, foreign, r, c)
         _glosses(unit, root, r, c)
+        _obsolete(unit, root, r, c)
         _djs(unit, foreign, r, c)
         _citations(unit, root, r, c)
         _xrefs_relative(unit, root, r, c)

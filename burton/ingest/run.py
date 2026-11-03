@@ -13,6 +13,9 @@ from ..source import check_lock, read_lock
 from ..tei import ED, XML_ID, XML_LANG, T, el, local, xml_id
 from . import convert, epub, gowland, langid, manual
 
+INGEST_KINDS = ("p", "lg", "n", "f")  # the id kinds assign_ids gives; other kinds belong to layers
+
+
 def fingerprint(e) -> str:
     text = " ".join(unicodedata.normalize("NFC", "".join(e.itertext())).split())
     return hashlib.sha1(text.encode()).hexdigest()[:12]
@@ -102,7 +105,7 @@ def ingest_unit(unit: str, reg: Registry) -> dict:
     ids = assign_ids(div, unit, reg)
     link_translations(div)
     review = [" ".join("".join(t.itertext()).split()) for t in gowland.trans_without_foreign(div)]
-    retired = reg.finish_unit(unit)
+    retired = reg.finish_unit(unit, INGEST_KINDS)
     tree = wrap_document(div, unit, file)
     validate(tree)
     paths.TEXT.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,128 @@
+{
+  "2.4.1.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "9fd18c2418a77663",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "2.4.1.4-p11",
+      "prefix": "dy hill ",
+      "suffix": " this go"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "2.4.1.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "mends",
+    "input_hash": "d621a4dca1c4379e",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "mends",
+      "in": "2.4.1.4-p7",
+      "prefix": "e mind, ",
+      "suffix": " manners"
+    },
+    "verdict": "ordinary"
+  },
+  "2.4.1.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "meth",
+    "input_hash": "fb2b014cb1e924a2",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "meth",
+      "in": "2.4.1.4-p11",
+      "prefix": "Fernel. ",
+      "suffix": ". med. l"
+    },
+    "verdict": "not-english"
+  },
+  "2.4.1.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "nat",
+    "input_hash": "2475739fe6ddbdb8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "2.4.1.4-p11",
+      "prefix": "occult. ",
+      "suffix": ". mir. c"
+    },
+    "verdict": "not-english"
+  },
+  "2.4.1.4-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unperfect",
+    "input_hash": "ee0c944570456352",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unperfect",
+      "in": "2.4.1.4-p2",
+      "prefix": "ate, an ",
+      "suffix": " kind of"
+    },
+    "sense": "Imperfect.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w2"
+    }
+  },
+  "2.4.1.4-g6": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wonders",
+    "input_hash": "1695d4f24aec6123",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wonders",
+      "in": "2.4.1.4-p1",
+      "prefix": "ork any ",
+      "suffix": ", let th"
+    },
+    "verdict": "ordinary"
+  }
+}

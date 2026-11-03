@@ -1,0 +1,115 @@
+{
+  "2.5.3.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "condite",
+    "input_hash": "98bac19ebe99e6bc",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "condite",
+      "in": "2.5.3.2-p2",
+      "prefix": ", Iris, ",
+      "suffix": " Ginger,"
+    },
+    "sense": "Preserved; pickled.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.5.3.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "condite",
+    "input_hash": "0844546e4241797b",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "condite",
+      "in": "2.5.3.2-p7",
+      "prefix": "f Sene, ",
+      "suffix": " Prunes,"
+    },
+    "sense": "Preserved; pickled.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.5.3.2-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "curat",
+    "input_hash": "9a4c8584ed363022",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "curat",
+      "in": "2.5.3.2-p5",
+      "prefix": "cent. 4 ",
+      "suffix": ". 54 for"
+    },
+    "verdict": "not-english"
+  },
+  "2.5.3.2-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "flatuous",
+    "input_hash": "ffff3ccc381e3abe",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "flatuous",
+      "in": "2.5.3.2-p5",
+      "prefix": "of this ",
+      "suffix": " melanch"
+    },
+    "sense": "Windy; generating wind.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.5.3.2-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "10763a7cc22b4a2f",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "2.5.3.2-p2",
+      "prefix": "y, that ",
+      "suffix": " they co"
+    },
+    "verdict": "ordinary"
+  }
+}

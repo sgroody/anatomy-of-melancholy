@@ -1,0 +1,96 @@
+{
+  "1.1.1.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "acquisite",
+    "input_hash": "f986edb1da26456b",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "acquisite",
+      "in": "1.1.1.4-p1",
+      "prefix": "e it is ",
+      "suffix": ", and ap"
+    },
+    "sense": "Acquired.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.1.1.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "07acb9dfea438cf0",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "1.1.1.4-p4",
+      "prefix": "k. Such ",
+      "suffix": " or litt"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "1.1.1.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "goodwife",
+    "input_hash": "2b0e60abfa8e98cf",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "goodwife",
+      "in": "1.1.1.4-p5",
+      "prefix": "; every ",
+      "suffix": " can pre"
+    },
+    "sense": "The mistress of a house.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "1.1.1.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "nat",
+    "input_hash": "2475739fe6ddbdb8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "1.1.1.4-p4",
+      "prefix": ", spec. ",
+      "suffix": ". lib. 3"
+    },
+    "verdict": "not-english"
+  }
+}

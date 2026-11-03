@@ -1,0 +1,102 @@
+{
+  "1.3.2.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "flatuous",
+    "input_hash": "f3321e14278065fd",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "flatuous",
+      "in": "1.3.2.2-p1",
+      "prefix": "acal or ",
+      "suffix": " melanch"
+    },
+    "sense": "Windy; generating wind.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.3.2.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "flatuous",
+    "input_hash": "926dafc9668207bf",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "flatuous",
+      "in": "1.3.2.2-p1",
+      "prefix": "e windy ",
+      "suffix": " have, l"
+    },
+    "sense": "Windy; generating wind.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.3.2.2-g3": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "leaping",
+    "input_hash": "e76d540f20e8f173",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "leaping",
+      "in": "1.3.2.2-p1",
+      "prefix": "re is a ",
+      "suffix": " all ove"
+    },
+    "sense": "Twitching or throbbing of the flesh",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.3.2.2-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "obnubilate",
+    "input_hash": "1a0f17573ee38897",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "obnubilate",
+      "in": "1.3.2.2-p1",
+      "prefix": " vapour ",
+      "suffix": " the min"
+    },
+    "sense": "To cloud; to obscure.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  }
+}

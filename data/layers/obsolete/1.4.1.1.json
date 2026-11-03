@@ -1,0 +1,140 @@
+{
+  "1.4.1.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "441911c2e0aa00d0",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "1.4.1.1-p7",
+      "prefix": "f human ",
+      "suffix": ", the qu"
+    },
+    "verdict": "ordinary"
+  },
+  "1.4.1.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "dehort",
+    "input_hash": "7d8e586657a3e2fa",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "dehort",
+      "in": "1.4.1.1-p9",
+      "prefix": "seek to ",
+      "suffix": " him fro"
+    },
+    "sense": "To urge to abstain or refrain; to dissuade.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  },
+  "1.4.1.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "a26d598e70e7488a",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.4.1.1-p9",
+      "prefix": "’s sake ",
+      "suffix": " the way"
+    },
+    "verdict": "ordinary"
+  },
+  "1.4.1.1-g4": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "216302f306bb7eb9",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.4.1.1-p8",
+      "prefix": " all is ",
+      "suffix": " here, b"
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.4.1.1-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "morphew",
+    "input_hash": "fcad5c20b67dc32c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "morphew",
+      "in": "1.4.1.1-p1",
+      "prefix": "eprosy, ",
+      "suffix": ", or is "
+    },
+    "sense": "A scurfy eruption.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "1.4.1.1-g6": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unsufferable",
+    "input_hash": "a4cb2ed10247fd74",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unsufferable",
+      "in": "1.4.1.1-p4",
+      "prefix": "erable, ",
+      "suffix": ", grievo"
+    },
+    "sense": "Insufferable.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

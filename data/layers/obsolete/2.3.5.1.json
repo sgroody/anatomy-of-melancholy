@@ -1,0 +1,46 @@
+{
+  "2.3.5.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "sorrowed",
+    "input_hash": "7209c34ce5b02996",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "sorrowed",
+      "in": "2.3.5.1-p7",
+      "prefix": " loins, ",
+      "suffix": " for his"
+    },
+    "verdict": "ordinary"
+  },
+  "2.3.5.1-g2": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "undecent",
+    "input_hash": "b6c0aa4ddf3bc9ec",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "undecent",
+      "in": "2.3.5.1-p1",
+      "prefix": "it many ",
+      "suffix": " actions"
+    },
+    "sense": "Unseemly, unbecoming",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  }
+}

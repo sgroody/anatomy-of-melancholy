@@ -1,0 +1,102 @@
+{
+  "2.2.6.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "dehort",
+    "input_hash": "52fb2eaa45d09270",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "dehort",
+      "in": "2.2.6.2-p3",
+      "prefix": "him, to ",
+      "suffix": " him, to"
+    },
+    "sense": "To urge to abstain or refrain; to dissuade.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "exceeding",
+    "input_hash": "49c61fc0ea4fa259",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "exceeding",
+      "in": "2.2.6.2-p1",
+      "prefix": "el, was ",
+      "suffix": " peevish"
+    },
+    "sense": "In a very great degree; extremely; exceedingly.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  },
+  "2.2.6.2-g3": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "starting",
+    "input_hash": "4b5fbe3ea888b0e6",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "starting",
+      "in": "2.2.6.2-p4",
+      "prefix": "do by a ",
+      "suffix": " horse, "
+    },
+    "sense": "Skittish, apt to shy",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.2.6.2-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unsufferable",
+    "input_hash": "3e733b573a284c27",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unsufferable",
+      "in": "2.2.6.2-p4",
+      "prefix": "through ",
+      "suffix": " anguish"
+    },
+    "sense": "Insufferable.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

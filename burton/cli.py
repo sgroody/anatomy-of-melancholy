@@ -73,6 +73,15 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
     s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
 
+    s = sub.add_parser("obsolete", help="obsolete-word glosses: Webster 1913 candidates, model ruling -> "
+                                        "data/layers/obsolete/")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--packet-size", type=int, default=40)
+    s.add_argument("--max-packets", type=int, default=None)
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--dry-run", action="store_true", help="count the candidates, without calling the model")
+
     s = sub.add_parser("author-drafts", help="model-drafted author entries (machine-draft) -> data/authors/")
     s.add_argument("--top", type=int, default=None, help="only the N most-cited authors")
     s.add_argument("--model", default="claude-opus-5-5")
@@ -135,6 +144,10 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("serve", help="serve the built site on 127.0.0.1")
     s.add_argument("--profile", choices=["private", "public"], default="private")
     s.add_argument("--port", type=int, default=8765)
+
+    s = sub.add_parser("axe", help="axe-core on every page of a built site, both themes (M8: full-site V10)")
+    s.add_argument("--profile", choices=["private", "public"], default="private")
+    s.add_argument("--all", action="store_true", help="every page (the default is the 22-page sample)")
 
     s = sub.add_parser("check", help="ingest, verify, build both profiles and verify the site")
     s.add_argument("--unit", action="append")
@@ -240,6 +253,11 @@ def main(argv: list[str] | None = None) -> int:
             print("wikidata:", dict(wikidata.run()))
         if args.review:
             print(dict(authors.review_list()))
+    elif args.cmd == "obsolete":
+        from .layers import obsolete
+
+        print(dict(obsolete.run(model=args.model, packet_size=args.packet_size, budget_usd=args.budget_usd,
+                                max_packets=args.max_packets, dry_run=args.dry_run)))
     elif args.cmd == "author-drafts":
         from .layers import author_drafts
 
@@ -319,6 +337,11 @@ def main(argv: list[str] | None = None) -> int:
         from .site import serve
 
         serve.serve(args.profile, args.port)
+    elif args.cmd == "axe":
+        from .verify import browser, checks
+
+        res = browser.axe_check(args.profile, full=args.all)
+        return 0 if checks.report([res], name=f"axe-{args.profile}{'-all' if args.all else ''}") else 1
     elif args.cmd == "check":
         from .pipeline import check_all
 

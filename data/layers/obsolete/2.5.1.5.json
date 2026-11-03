@@ -1,0 +1,96 @@
+{
+  "2.5.1.5-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "condite",
+    "input_hash": "c4d3e09d39551519",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "condite",
+      "in": "2.5.1.5-p10",
+      "prefix": "a roots ",
+      "suffix": ". Garcia"
+    },
+    "sense": "Preserved; pickled.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.5.1.5-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "condite",
+    "input_hash": "dda2f40f3110083d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "condite",
+      "in": "2.5.1.5-p12",
+      "prefix": "e-pills ",
+      "suffix": ", &c., h"
+    },
+    "sense": "Preserved; pickled.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.5.1.5-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "meth",
+    "input_hash": "2fb269bec3e497b8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "meth",
+      "in": "2.5.1.5-p14",
+      "prefix": " lib. 2 ",
+      "suffix": ". speaks"
+    },
+    "verdict": "not-english"
+  },
+  "2.5.1.5-g4": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffect",
+    "input_hash": "2c79e8701bd56375",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffect",
+      "in": "2.5.1.5-p1",
+      "prefix": "utually ",
+      "suffix": " one ano"
+    },
+    "sense": "To affect injuriously; disorder",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  }
+}

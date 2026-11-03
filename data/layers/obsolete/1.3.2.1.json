@@ -1,0 +1,71 @@
+{
+  "1.3.2.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "chiefest",
+    "input_hash": "2626d70c69894037",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "chiefest",
+      "in": "1.3.2.1-p1",
+      "prefix": "But the ",
+      "suffix": " symptom"
+    },
+    "sense": "First or foremost; chief; principal.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.3.2.1-g2": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "d53dd17a82647290",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.3.2.1-p1",
+      "prefix": "lood be ",
+      "suffix": ", and fe"
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.3.2.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wondered",
+    "input_hash": "e069c805fd034ab8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wondered",
+      "in": "1.3.2.1-p1",
+      "prefix": "e to be ",
+      "suffix": " at, and"
+    },
+    "verdict": "ordinary"
+  }
+}

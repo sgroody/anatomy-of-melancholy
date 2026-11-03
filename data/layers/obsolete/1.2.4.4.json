@@ -1,0 +1,96 @@
+{
+  "1.2.4.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "bending",
+    "input_hash": "54edf1d83159e002",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "bending",
+      "in": "1.2.4.4-p6",
+      "prefix": " boars, ",
+      "suffix": " all our"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.4.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "corse",
+    "input_hash": "a2c9b843923a78e2",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "corse",
+      "in": "1.2.4.4-p3",
+      "prefix": " a dead ",
+      "suffix": " in the "
+    },
+    "sense": "A corpse; the dead body of a human being.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w2"
+    }
+  },
+  "1.2.4.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "facete",
+    "input_hash": "df73115d7c5b0c96",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "facete",
+      "in": "1.2.4.4-p1",
+      "prefix": "anus, a ",
+      "suffix": " compani"
+    },
+    "sense": "Facetious; witty; humorous.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.2.4.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "facete",
+    "input_hash": "1fab7dc2a8ed4aa7",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "facete",
+      "in": "1.2.4.4-p3",
+      "prefix": "es, and ",
+      "suffix": " Compani"
+    },
+    "sense": "Facetious; witty; humorous.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

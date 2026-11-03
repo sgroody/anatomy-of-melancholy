@@ -34,3 +34,10 @@
 {"ts": "2026-11-03T06:33:56Z", "event": "end", "run": "M7 built (trees, V11, spot check, reader, burton check --all)", "plan": "Pro", "window_5h_pct": 41, "weekly_pct": 28}
 {"ts": "2026-11-03T08:20:34Z", "event": "before", "run": "M8 translate table (5 passages)", "plan": "Pro", "window_5h_pct": 68, "weekly_pct": 32}
 {"ts": "2026-11-03T08:20:57Z", "event": "after", "run": "M8 translate table (5 passages)", "plan": "Pro", "window_5h_pct": 68, "weekly_pct": 32, "cost_usd_list": 0.09, "model": "claude-opus-5-5", "prompt": "tr-v2"}
+{"ts": "2026-11-03T08:28:28Z", "event": "before", "run": "M8 obsolete obs-v1 (2 packets, calibration)", "plan": "Pro", "window_5h_pct": 76, "weekly_pct": 33}
+{"ts": "2026-11-03T08:29:34Z", "event": "after", "run": "M8 obsolete obs-v1 (2 packets, calibration)", "plan": "Pro", "window_5h_pct": 78, "weekly_pct": 33, "cost_usd_list": 0.23, "model": "claude-opus-5-5", "prompt": "obs-v1"}
+{"ts": "2026-11-03T08:33:44Z", "event": "after", "run": "M8 obsolete obs-v1 (8 packets)", "plan": "Pro", "window_5h_pct": 85, "weekly_pct": 34, "cost_usd_list": 0.96, "model": "claude-opus-5-5", "prompt": "obs-v1"}
+{"ts": "2026-11-03T08:38:30Z", "event": "after", "run": "M8 obsolete obs-v1 (4 packets; 188 occurrences left for after the 5-hour reset)", "plan": "Pro", "window_5h_pct": 90, "weekly_pct": 35, "cost_usd_list": 0.46, "model": "claude-opus-5-5", "prompt": "obs-v1"}
+{"ts": "2026-11-03T16:24:58Z", "event": "before", "run": "M8 obsolete obs-v1 (last 188)", "plan": "Pro", "window_5h_pct": 0, "weekly_pct": 36}
+{"ts": "2026-11-03T16:27:03Z", "event": "after", "run": "M8 obsolete obs-v1 (last 188)", "plan": "Pro", "window_5h_pct": 11, "weekly_pct": 38, "cost_usd_list": 0.57, "model": "claude-opus-5-5", "prompt": "obs-v1"}
+{"ts": "2026-11-03T16:28:58Z", "event": "after", "run": "M8 obsolete obs-v1 (2 single-item retries)", "plan": "Pro", "window_5h_pct": 12, "weekly_pct": 38, "cost_usd_list": 0.04, "model": "claude-opus-5-5", "prompt": "obs-v1"}

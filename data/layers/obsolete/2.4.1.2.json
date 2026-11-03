@@ -1,0 +1,102 @@
+{
+  "2.4.1.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "3dfda070d2e405b1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "2.4.1.2-p2",
+      "prefix": "t cause ",
+      "suffix": " that le"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "2.4.1.2-g2": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "informed",
+    "input_hash": "bdef000d3d7f1f4d",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "informed",
+      "in": "2.4.1.2-p2",
+      "prefix": " sooner ",
+      "suffix": " in the "
+    },
+    "sense": "Instructed, taught",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.4.1.2-g3": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "76143c4a335d20a5",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "2.4.1.2-p2",
+      "prefix": "they be ",
+      "suffix": " with ho"
+    },
+    "sense": "Afflicted, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.4.1.2-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unperfect",
+    "input_hash": "23eb9ab820f1bfe8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unperfect",
+      "in": "2.4.1.2-p2",
+      "prefix": "e weak, ",
+      "suffix": ", not so"
+    },
+    "sense": "Imperfect.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w2"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "1.2.1.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "b4c82425ba35616c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "1.2.1.1-p3",
+      "prefix": " causes ",
+      "suffix": " Hippocr"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "1.2.1.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "stablish",
+    "input_hash": "aaedf8c74e8bd1f7",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "stablish",
+      "in": "1.2.1.1-p3",
+      "prefix": "on, and ",
+      "suffix": " me with"
+    },
+    "sense": "To settle permanently in a state; to make firm; to establish; to fix.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  },
+  "1.2.1.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unperfect",
+    "input_hash": "d2b1158ff1609ccb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unperfect",
+      "in": "1.2.1.1-p1",
+      "prefix": "must be ",
+      "suffix": ", lame, "
+    },
+    "sense": "Imperfect.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w2"
+    }
+  }
+}

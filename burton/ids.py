@@ -62,10 +62,13 @@ class Registry:
         self._seen.add(new.id)
         return new.id
 
-    def finish_unit(self, unit: str) -> int:
-        """Retire rows of this unit that were not matched in this ingest. Returns how many."""
+    def finish_unit(self, unit: str, kinds: tuple[str, ...] | None = None) -> int:
+        """Retire rows of this unit that were not matched in this run. Returns how many. `kinds` limits it to
+        the kinds the run assigns (an ingest never sees the layers' own ids, such as glosses, `g`)."""
         n = 0
         for r in self.rows:
+            if kinds is not None and r.kind not in kinds:
+                continue
             if r.unit == unit and r.id not in self._seen and r.status != "retired":
                 r.status = "retired"
                 n += 1

@@ -1,0 +1,52 @@
+{
+  "2.5.1.2-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "0a11b31123cd9bb6",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "2.5.1.2-p1",
+      "prefix": "rom the ",
+      "suffix": " brain, "
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.5.1.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "sited",
+    "input_hash": "5ae24842f659fa8c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "sited",
+      "in": "2.5.1.2-p1",
+      "prefix": "holy be ",
+      "suffix": " in the "
+    },
+    "sense": "Having a site; situated.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

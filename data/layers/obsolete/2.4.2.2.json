@@ -1,0 +1,65 @@
+{
+  "2.4.2.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "dizzard",
+    "input_hash": "27a55fae7da8cd6f",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "dizzard",
+      "in": "2.4.2.2-p6",
+      "prefix": "o bid a ",
+      "suffix": " or a ma"
+    },
+    "sense": "A blockhead.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "2.4.2.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "meth",
+    "input_hash": "36c708c82b22418b",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "meth",
+      "in": "2.4.2.2-p6",
+      "prefix": "rnelius ",
+      "suffix": ". med. l"
+    },
+    "verdict": "not-english"
+  },
+  "2.4.2.2-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wonders",
+    "input_hash": "3f4c4527d9b019a8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wonders",
+      "in": "2.4.2.2-p6",
+      "prefix": "s, tell ",
+      "suffix": " of the "
+    },
+    "verdict": "ordinary"
+  }
+}

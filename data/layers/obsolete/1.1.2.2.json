@@ -1,0 +1,52 @@
+{
+  "1.1.2.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "acquisite",
+    "input_hash": "230616c1cdfcaf5f",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "acquisite",
+      "in": "1.1.2.2-p2",
+      "prefix": "ous and ",
+      "suffix": ". The ra"
+    },
+    "sense": "Acquired.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.1.2.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "acquisite",
+    "input_hash": "3e50221007faf2ef",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "acquisite",
+      "in": "1.1.2.2-p2",
+      "prefix": " it: or ",
+      "suffix": ", to mai"
+    },
+    "sense": "Acquired.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

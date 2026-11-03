@@ -1,0 +1,90 @@
+{
+  "1.3.1.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "d7881a3590999acb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.3.1.4-p1",
+      "prefix": " to one ",
+      "suffix": " about a"
+    },
+    "verdict": "ordinary"
+  },
+  "1.3.1.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "superparticular",
+    "input_hash": "13c13120894f33e9",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "superparticular",
+      "in": "1.3.1.4-p1",
+      "prefix": "y. ’Tis ",
+      "suffix": ", sesqui"
+    },
+    "sense": "Of or pertaining to a ratio when the excess of the greater term over the less is a unit, as the ratio of 1 to 2, or of 3 to 4.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.3.1.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "6dce8ed56864cae9",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.3.1.4-p1",
+      "prefix": "th, and ",
+      "suffix": " acts a "
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  },
+  "1.3.1.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wondered",
+    "input_hash": "3d4725bfe15de7b9",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wondered",
+      "in": "1.3.1.4-p1",
+      "prefix": "d to be ",
+      "suffix": " at in t"
+    },
+    "verdict": "ordinary"
+  }
+}

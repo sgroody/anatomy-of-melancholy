@@ -1,0 +1,78 @@
+{
+  "lectori-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ne",
+    "input_hash": "35860d5fb46492c5",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ne",
+      "in": "lectori-p1",
+      "prefix": "uis es, ",
+      "suffix": " temere "
+    },
+    "verdict": "not-english"
+  },
+  "lectori-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ne",
+    "input_hash": "4faa292606914217",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ne",
+      "in": "lectori-p1",
+      "prefix": "as. Imo ",
+      "suffix": " vel ex "
+    },
+    "verdict": "not-english"
+  },
+  "lectori-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ne",
+    "input_hash": "eee7dfe71ecb42c8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ne",
+      "in": "lectori-p2",
+      "prefix": " moneo, ",
+      "suffix": " quid ca"
+    },
+    "verdict": "not-english"
+  },
+  "lectori-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ne",
+    "input_hash": "65c7da5e3ec169ac",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ne",
+      "in": "lectori-p2",
+      "prefix": "illere, ",
+      "suffix": " dum Dem"
+    },
+    "verdict": "not-english"
+  }
+}

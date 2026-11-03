@@ -1,0 +1,46 @@
+{
+  "1.2.3.4-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "175581a35ec7e908",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.2.3.4-p1",
+      "prefix": "hat are ",
+      "suffix": " with it"
+    },
+    "sense": "Afflicted, affected",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.2.3.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vers",
+    "input_hash": "2ce0a4743cce245e",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vers",
+      "in": "1.2.3.4-p2",
+      "prefix": "viness, ",
+      "suffix": ". 83, I "
+    },
+    "verdict": "not-english"
+  }
+}

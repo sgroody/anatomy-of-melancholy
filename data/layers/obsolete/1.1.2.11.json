@@ -1,0 +1,40 @@
+{
+  "1.1.2.11-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "2fefa98dd6b6812e",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.1.2.11-p1",
+      "prefix": "te, and ",
+      "suffix": " by the "
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.2.11-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "a4a95777788f7673",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.1.2.11-p1",
+      "prefix": " we are ",
+      "suffix": " headlon"
+    },
+    "verdict": "ordinary"
+  }
+}

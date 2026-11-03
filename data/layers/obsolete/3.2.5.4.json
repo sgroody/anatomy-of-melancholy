@@ -1,0 +1,52 @@
+{
+  "3.2.5.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "ffcdbb440745d0a1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "3.2.5.4-p4",
+      "prefix": "oldness ",
+      "suffix": "), he wa"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "3.2.5.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "statua",
+    "input_hash": "92e4c8d746485457",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "statua",
+      "in": "3.2.5.4-p4",
+      "prefix": "er; his ",
+      "suffix": " was to "
+    },
+    "sense": "A statue.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  }
+}

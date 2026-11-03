@@ -1,0 +1,12 @@
+# Words the obsolete-word glosses leave alone (M8, SPEC §4.2): common archaisms a reader of Burton knows,
+# which Gowland too leaves unglossed. Hand-made decisions; each has its reason.
+words:
+  - word: saith
+    reason: Common archaism ("says"); named in SPEC §4.2 as not glossed.
+  - word: hath
+    reason: Common archaism ("has"); named in SPEC §4.2 as not glossed.
+  - word: lib
+    reason: >-
+      In Burton's English main text only as "lib.", his abbreviation of Latin liber (book) in references, never
+      Webster's obsolete verb (to castrate): 896 of 896 candidate occurrences are followed by a full stop
+      (counted 2026-11-03 with `burton obsolete --dry-run`'s candidate list).

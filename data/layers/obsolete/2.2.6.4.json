@@ -1,0 +1,96 @@
+{
+  "2.2.6.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "36cd30d14bda74b2",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "2.2.6.4-p4",
+      "prefix": "ignity (",
+      "suffix": " at some"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "facete",
+    "input_hash": "ff1500e53f1ca628",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "facete",
+      "in": "2.2.6.4-p5",
+      "prefix": "ic, and ",
+      "suffix": " jesters"
+    },
+    "sense": "Facetious; witty; humorous.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "pleasance",
+    "input_hash": "812f483d50019f0a",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "pleasance",
+      "in": "2.2.6.4-p2",
+      "prefix": "procure ",
+      "suffix": ", sweet "
+    },
+    "sense": "Pleasure; merriment; gayety; delight; kindness.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "7fad161aae8619c7",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "2.2.6.4-p13",
+      "prefix": "oppers, ",
+      "suffix": " they si"
+    },
+    "verdict": "ordinary"
+  }
+}

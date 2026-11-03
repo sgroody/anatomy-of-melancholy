@@ -1,0 +1,153 @@
+{
+  "3.2.2.5-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "gest",
+    "input_hash": "4529ca1fd5db8cfa",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "gest",
+      "in": "3.2.2.5-p9",
+      "prefix": "b. 4 de ",
+      "suffix": ". Alphon"
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.5-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "inescate",
+    "input_hash": "b3b6dc706e063f0d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "inescate",
+      "in": "3.2.2.5-p6",
+      "prefix": "ght, to ",
+      "suffix": " and beg"
+    },
+    "sense": "To allure; to lay a bait for.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  },
+  "3.2.2.5-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "informed",
+    "input_hash": "04fb30608755b777",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "informed",
+      "in": "3.2.2.5-p7",
+      "prefix": " better ",
+      "suffix": ", read C"
+    },
+    "verdict": "ordinary"
+  },
+  "3.2.2.5-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "da9b61fb2bcf4b6e",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "3.2.2.5-p3",
+      "prefix": " by she ",
+      "suffix": " me into"
+    },
+    "verdict": "ordinary"
+  },
+  "3.2.2.5-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "pullen",
+    "input_hash": "8de12e7696925dcc",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "pullen",
+      "in": "3.2.2.5-p9",
+      "prefix": "s their ",
+      "suffix": "), ’tis "
+    },
+    "sense": "Poultry.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "3.2.2.5-g6": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "tom",
+    "input_hash": "2ebc4bff3f1695b3",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "tom",
+      "in": "3.2.2.5-p10",
+      "prefix": " Delrio ",
+      "suffix": ". 2 quae"
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.5-g7": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vigilancy",
+    "input_hash": "360258876c738dd1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vigilancy",
+      "in": "3.2.2.5-p3",
+      "prefix": " Argo’s ",
+      "suffix": " can kee"
+    },
+    "sense": "Vigilance.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  }
+}

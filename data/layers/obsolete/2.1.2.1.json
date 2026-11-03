@@ -1,0 +1,96 @@
+{
+  "2.1.2.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "a237fc0c4b3abe59",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "2.1.2.1-p3",
+      "prefix": "s error ",
+      "suffix": ", advise"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "2.1.2.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "penitency",
+    "input_hash": "aa60f8b171b442ec",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "penitency",
+      "in": "2.1.2.1-p3",
+      "prefix": "ion and ",
+      "suffix": ", to con"
+    },
+    "sense": "Penitence.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "2.1.2.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vers",
+    "input_hash": "e433176d77062f62",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vers",
+      "in": "2.1.2.1-p3",
+      "prefix": "ul: and ",
+      "suffix": ". 7, In "
+    },
+    "verdict": "not-english"
+  },
+  "2.1.2.1-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "c8735d058b8a9ee6",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "2.1.2.1-p1",
+      "prefix": " horses ",
+      "suffix": ", and pu"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

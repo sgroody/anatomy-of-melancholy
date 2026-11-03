@@ -1,0 +1,52 @@
+{
+  "2.1.4.2-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "difficile",
+    "input_hash": "6186d4cd28e76b96",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "difficile",
+      "in": "2.1.4.2-p4",
+      "prefix": "ous and ",
+      "suffix": " to be c"
+    },
+    "sense": "Difficult; hard to manage; stubborn.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.1.4.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "96fb30437d79fa48",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "2.1.4.2-p4",
+      "prefix": "promise ",
+      "suffix": " that he"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

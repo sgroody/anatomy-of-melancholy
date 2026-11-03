@@ -1,0 +1,46 @@
+{
+  "1.1.2.9-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "rejourn",
+    "input_hash": "26c8d1a3ea2be549",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "rejourn",
+      "in": "1.1.2.9-p7",
+      "prefix": "lves, I ",
+      "suffix": " all suc"
+    },
+    "sense": "To refer, direct (to)",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.1.2.9-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "3befa302275f946d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "1.1.2.9-p6",
+      "prefix": "antime, ",
+      "suffix": " the bod"
+    },
+    "verdict": "ordinary"
+  }
+}

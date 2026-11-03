@@ -1,0 +1,71 @@
+{
+  "3.4.2.2-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "compassed",
+    "input_hash": "5cdb2fea8411cb39",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "compassed",
+      "in": "3.4.2.2-p2",
+      "prefix": "s being ",
+      "suffix": " in by t"
+    },
+    "sense": "Hemmed in, surrounded",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "3.4.2.2-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "unproper",
+    "input_hash": "3ebcaf0926c68cbb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "unproper",
+      "in": "3.4.2.2-p2",
+      "prefix": "ivocal, ",
+      "suffix": ". When I"
+    },
+    "sense": "Not proper or peculiar; improper.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "3.4.2.2-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "23dfe94ea51c0d05",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "3.4.2.2-p1",
+      "prefix": "ar; for ",
+      "suffix": " evil is"
+    },
+    "verdict": "ordinary"
+  }
+}

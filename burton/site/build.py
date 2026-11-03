@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts, frontispiece, search, synopsis
+from . import authors_pages, fonts, frontispiece, glosses, search, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -172,6 +172,13 @@ def machine_labels() -> dict:
     return {"translations": sorted(tr.items()), "adjudication": sorted(adj.items())}
 
 
+def gloss_model() -> str:
+    """The model that ruled on the obsolete-word glosses, read from the layer."""
+    models = sorted({rec["ruling"]["model"] for f in (paths.LAYERS / "obsolete").glob("*.json")
+                     for rec in json.loads(f.read_text(encoding="utf-8")).values()})
+    return ", ".join(models) or "none yet"
+
+
 def source_hash() -> str:
     for line in paths.SOURCE_LOCK.read_text(encoding="utf-8").splitlines():
         if line and not line.startswith("#"):
@@ -218,6 +225,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     def plate(name, src, alt, w, h):  # the frontispiece on the Argument page, its panels linked to the stanzas
         return frontispiece.figure_html(src, alt, w, h, "", here=True) if name == frontispiece.load()["image"] else None
 
+    gstats: dict = {}  # Gowland's glosses found and placed (private build)
+
     # units and front matter
     for unit in book.units:
         xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
@@ -227,7 +236,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
                                    verified=layer_for(unit, "source-verification"), findings=findings,
                                    xrefs=xrefs_for(unit, titles), plate=plate if unit == "argument" else None,
-                                   pagemap=pagemap)
+                                   pagemap=pagemap, glosses=glosses.items_for(unit, profile, gstats))
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         report["units"][unit] = counts
@@ -283,7 +292,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     page("about", "about/index.html", "about.html", page=book.pages["about"], crumbs=[("About this edition", None)],
          title="About this edition", description="Sources, provenance labels and rights",
-         labels=machine_labels(), source_hash=source_hash(), n_units=len(book.units),
+         labels=machine_labels(), source_hash=source_hash(), n_units=len(book.units), gloss_model=gloss_model(),
          built=date.today().isoformat())
     page("settings", "settings/index.html", "settings.html", page=book.pages["settings"],
          crumbs=[("Reading options", None)], title="Reading options",
@@ -295,6 +304,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     index, sstats = search.build_index(book.units, labels, profile, layer_for)
     sstats["bytes"] = search.write_index(index, out / "assets" / "search-index.json")
     report["search"] = sstats
+    report["glosses"] = {**gstats, **{k: sum(c.get(k, 0) for c in report["units"].values())
+                                      for k in ("glosses", "glosses_gowland", "glosses_webster1913", "glosses_machine",
+                                                "glosses_unplaced")}}
     page("search", "search/index.html", "search.html", page=book.pages["search"], crumbs=[("Search", None)],
          title="Search", description="Search Burton’s text, sidenotes and translations", stats=sstats)
 

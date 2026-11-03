@@ -1,0 +1,40 @@
+{
+  "1.1.2.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "informed",
+    "input_hash": "35e057b3fa4f4043",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "informed",
+      "in": "1.1.2.1-p1",
+      "prefix": "ciently ",
+      "suffix": " in all "
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.2.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "sited",
+    "input_hash": "da8767aa12700b3c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "sited",
+      "in": "1.1.2.1-p1",
+      "prefix": "re, how ",
+      "suffix": ", and to"
+    },
+    "verdict": "ordinary"
+  }
+}

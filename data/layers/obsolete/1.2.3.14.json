@@ -1,0 +1,90 @@
+{
+  "1.2.3.14-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "8432e2818356f96c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "1.2.3.14-p16",
+      "prefix": "d be in ",
+      "suffix": ", becaus"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.3.14-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "inhabited",
+    "input_hash": "e569fb3da2e05f60",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "inhabited",
+      "in": "1.2.3.14-p9",
+      "prefix": "im, all ",
+      "suffix": "; what p"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.3.14-g3": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "3822ce56be3c5142",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.2.3.14-p1",
+      "prefix": "hat are ",
+      "suffix": " with it"
+    },
+    "sense": "Afflicted, affected",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.2.3.14-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "venditate",
+    "input_hash": "99c77c98c7be86b8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "venditate",
+      "in": "1.2.3.14-p2",
+      "prefix": "rag and ",
+      "suffix": " our own"
+    },
+    "sense": "To cry up. as if for sale; to blazon.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "v. t",
+      "sense": "w1"
+    }
+  }
+}

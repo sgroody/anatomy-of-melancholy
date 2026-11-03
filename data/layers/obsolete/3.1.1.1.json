@@ -1,0 +1,27 @@
+{
+  "3.1.1.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "pontificial",
+    "input_hash": "4bb52f22680b1ce4",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "pontificial",
+      "in": "3.1.1.1-p9",
+      "prefix": "r Latin ",
+      "suffix": " writers"
+    },
+    "sense": "Papal; pontifical.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  }
+}

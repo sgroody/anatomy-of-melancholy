@@ -1,0 +1,52 @@
+{
+  "1.2.4.3-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "corse",
+    "input_hash": "8a8bae26f0050adb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "corse",
+      "in": "1.2.4.3-p3",
+      "prefix": "where a ",
+      "suffix": " hath be"
+    },
+    "sense": "A corpse; the dead body of a human being.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w2"
+    }
+  },
+  "1.2.4.3-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "631806194f61dd1b",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.2.4.3-p3",
+      "prefix": "s noise ",
+      "suffix": ", like t"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

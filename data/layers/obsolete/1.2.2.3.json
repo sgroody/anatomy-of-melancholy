@@ -1,0 +1,40 @@
+{
+  "1.2.2.3-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wondered",
+    "input_hash": "9e18275497c396c0",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wondered",
+      "in": "1.2.2.3-p1",
+      "prefix": " bread, ",
+      "suffix": ", quomod"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.2.3-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wonders",
+    "input_hash": "9a9ca46c8238597c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wonders",
+      "in": "1.2.2.3-p2",
+      "prefix": "h Pliny ",
+      "suffix": " at, was"
+    },
+    "verdict": "ordinary"
+  }
+}

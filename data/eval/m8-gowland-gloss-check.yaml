@@ -1,0 +1,13 @@
+# Held-out check of rule gowland-gloss-v1 (burton/site/glosses.py: is_word_gloss), M8, 2026-11-03.
+# Gowland's endnote glosses are shown in the private build only and are never written to a layer, so this
+# file records only the result: which segments were drawn (endnote id and lemma) and the verdicts, not his notes.
+round: g1
+population: "6,116 lemma: note segments in data/text/gowland-endnotes.xml; the rule accepts 901, rejects 5,215"
+draw: "random.Random(20261104): 30 accepted, 15 rejected (the 30 read while writing the rule were a different draw)"
+labeller: Claude in session (claude-opus-5-5)
+rule: "Pass if at most 3 of the 30 accepted segments are not glosses of an English word."
+result:
+  accepted_word_glosses: 30/30
+  accepted_with_stray_text: 1   # 'arrearages': the next lemma, not in italics, ran into the sense; the sense is now cut there
+  rejected_gloss_like: 6/15     # 1 quoted gloss ('for a piece of good'), 5 'See above, n. …' pointers to an earlier gloss
+  verdict: PASS (precision); recall is lower by design (quoted senses and back-references are not taken)

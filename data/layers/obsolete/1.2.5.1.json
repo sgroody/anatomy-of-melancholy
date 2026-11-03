@@ -1,0 +1,71 @@
+{
+  "1.2.5.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "chiefest",
+    "input_hash": "a223b8f633ca7053",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "chiefest",
+      "in": "1.2.5.1-p1",
+      "prefix": "Now the ",
+      "suffix": " causes "
+    },
+    "sense": "First or foremost; chief; principal.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.2.5.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "nat",
+    "input_hash": "2475739fe6ddbdb8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "1.2.5.1-p1",
+      "prefix": "occult. ",
+      "suffix": ". mira. "
+    },
+    "verdict": "not-english"
+  },
+  "1.2.5.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "obtrectation",
+    "input_hash": "cf99fb2704d34359",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "obtrectation",
+      "in": "1.2.5.1-p1",
+      "prefix": "sorrow, ",
+      "suffix": ", emulat"
+    },
+    "sense": "Slander; detraction; calumny.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  }
+}

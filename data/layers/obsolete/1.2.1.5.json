@@ -1,0 +1,46 @@
+{
+  "1.2.1.5-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "congenite",
+    "input_hash": "5277e116e2462d1d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "congenite",
+      "in": "1.2.1.5-p1",
+      "prefix": "e born: ",
+      "suffix": " or born"
+    },
+    "sense": "Congenital; connate; inborn. See Congenital.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.2.1.5-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wonders",
+    "input_hash": "bce21e86dfa86184",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wonders",
+      "in": "1.2.1.5-p1",
+      "prefix": "no such ",
+      "suffix": " at all,"
+    },
+    "verdict": "ordinary"
+  }
+}

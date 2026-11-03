@@ -1,0 +1,52 @@
+{
+  "3.2.5.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "facete",
+    "input_hash": "4d6c0afe9a772700",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "facete",
+      "in": "3.2.5.1-p10",
+      "prefix": "ngs and ",
+      "suffix": " histori"
+    },
+    "sense": "Facetious; witty; humorous.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "3.2.5.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "woolward",
+    "input_hash": "f99db6662a9362af",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "woolward",
+      "in": "3.2.5.1-p7",
+      "prefix": "ard, go ",
+      "suffix": " and bar"
+    },
+    "sense": "In wool; with woolen raiment next the skin.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  }
+}

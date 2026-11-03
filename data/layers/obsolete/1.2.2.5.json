@@ -1,0 +1,90 @@
+{
+  "1.2.2.5-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "5f9b67ae97043dc7",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "1.2.2.5-p2",
+      "prefix": "annicus ",
+      "suffix": ", puts m"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "1.2.2.5-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "cooling",
+    "input_hash": "ac52e712efeee92d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "cooling",
+      "in": "1.2.2.5-p1",
+      "prefix": " green, ",
+      "suffix": " showers"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.2.5-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "curat",
+    "input_hash": "568f8c72acb810bc",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "curat",
+      "in": "1.2.2.5-p1",
+      "prefix": "cent. 1 ",
+      "suffix": ". 45, re"
+    },
+    "verdict": "not-english"
+  },
+  "1.2.2.5-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "headword": "withal",
+    "input_hash": "85354ee851f8e867",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.2.2.5-p2",
+      "prefix": " be dry ",
+      "suffix": ". In tho"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

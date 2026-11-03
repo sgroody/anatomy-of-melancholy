@@ -221,7 +221,7 @@ def site_results(units: list[str]) -> list[Result]:
             if profile == "public":
                 raw = page.read_text(encoding="utf-8")
                 for needle in ('data-resp="gowland"', "gowland-tr", 'class="pb"', 'class="enref"', 'class="supplied"',
-                               "toc-tag", 'class="locs"', 'class="pageref'):
+                               "toc-tag", 'class="locs"', 'class="pageref', "gl-gowland"):
                     if needle in raw:
                         tot["leaks"] += 1
                         v8.fail(f"public/{rel}: contains {needle}")

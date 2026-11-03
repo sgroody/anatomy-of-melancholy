@@ -1,0 +1,21 @@
+{
+  "2.5.1.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "informed",
+    "input_hash": "372b3910cafb67f5",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "informed",
+      "in": "2.5.1.4-p1",
+      "prefix": "s I was ",
+      "suffix": " not lon"
+    },
+    "verdict": "ordinary"
+  }
+}

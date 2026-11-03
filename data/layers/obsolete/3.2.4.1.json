@@ -1,0 +1,21 @@
+{
+  "3.2.4.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "1df03ebfcd6ade86",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "3.2.4.1-lg19",
+      "prefix": "And ",
+      "suffix": " he doth"
+    },
+    "verdict": "ordinary"
+  }
+}

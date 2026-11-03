@@ -1,0 +1,71 @@
+{
+  "1.3.2.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "06adb1487db84b5d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.3.2.4-p6",
+      "prefix": "istibly ",
+      "suffix": ", to the"
+    },
+    "verdict": "ordinary"
+  },
+  "1.3.2.4-g2": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "92ed23a0463df4f9",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.3.2.4-p1",
+      "prefix": "ties so ",
+      "suffix": "."
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.3.2.4-g3": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "2d4645a1f8127e19",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.3.2.4-p5",
+      "prefix": "art are ",
+      "suffix": ", and pr"
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  }
+}

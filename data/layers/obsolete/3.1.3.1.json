@@ -1,0 +1,65 @@
+{
+  "3.1.3.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "cc1a6628ba3a068c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "3.1.3.1-p5",
+      "prefix": " easeth ",
+      "suffix": ", correc"
+    },
+    "verdict": "ordinary"
+  },
+  "3.1.3.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "dilection",
+    "input_hash": "5b9dda63a9fd8389",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "dilection",
+      "in": "3.1.3.1-p1",
+      "prefix": " piety, ",
+      "suffix": ", benevo"
+    },
+    "sense": "Love; choice.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  },
+  "3.1.3.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ones",
+    "input_hash": "22312bc1e908ee52",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ones",
+      "in": "3.1.3.1-p1",
+      "prefix": "r young ",
+      "suffix": "; an hen"
+    },
+    "verdict": "ordinary"
+  }
+}

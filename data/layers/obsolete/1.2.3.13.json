@@ -1,0 +1,90 @@
+{
+  "1.2.3.13-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "21419670cbdb9960",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.2.3.13-p5",
+      "prefix": "beasts, ",
+      "suffix": " like Ox"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.3.13-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "liquorish",
+    "input_hash": "89ba24b019da059f",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "liquorish",
+      "in": "1.2.3.13-p2",
+      "prefix": " eye, a ",
+      "suffix": " tongue,"
+    },
+    "sense": "See Lickerish.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.2.3.13-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "tetty",
+    "input_hash": "ca809e43a94e4614",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "tetty",
+      "in": "1.2.3.13-p1",
+      "prefix": "ric and ",
+      "suffix": " that no"
+    },
+    "sense": "Testy; irritable.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "1.2.3.13-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "8ebc8130bae08ea5",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "1.2.3.13-p1",
+      "prefix": "person; ",
+      "suffix": " they wi"
+    },
+    "verdict": "ordinary"
+  }
+}

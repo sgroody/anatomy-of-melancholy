@@ -1,0 +1,78 @@
+{
+  "3.4.1.4-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "b5e393586ee047e0",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "3.4.1.4-p1",
+      "prefix": ", to be ",
+      "suffix": " into ca"
+    },
+    "verdict": "ordinary"
+  },
+  "3.4.1.4-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vers",
+    "input_hash": "4cd964b0e7b51e30",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vers",
+      "in": "3.4.1.4-p1",
+      "prefix": " cap. 4 ",
+      "suffix": ". 9, 10,"
+    },
+    "verdict": "not-english"
+  },
+  "3.4.1.4-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vers",
+    "input_hash": "2402f4e8a6d3c8d4",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vers",
+      "in": "3.4.1.4-p1",
+      "prefix": "houses, ",
+      "suffix": ". 9, the"
+    },
+    "verdict": "not-english"
+  },
+  "3.4.1.4-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "e273e3626446237d",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "3.4.1.4-p1",
+      "prefix": "us, and ",
+      "suffix": " we make"
+    },
+    "verdict": "ordinary"
+  }
+}

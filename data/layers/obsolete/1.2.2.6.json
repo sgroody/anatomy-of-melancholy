@@ -1,0 +1,65 @@
+{
+  "1.2.2.6-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "coact",
+    "input_hash": "7b056f4e2ddb5129",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "coact",
+      "in": "1.2.2.6-p5",
+      "prefix": " either ",
+      "suffix": ", enforc"
+    },
+    "sense": "Forced, compelled; involuntary",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.2.2.6-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "3ce44f94273af576",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.2.2.6-p6",
+      "prefix": "that is ",
+      "suffix": " round a"
+    },
+    "verdict": "ordinary"
+  },
+  "1.2.2.6-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "whilst",
+    "input_hash": "47c40b186a2789cc",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "whilst",
+      "in": "1.2.2.6-p2",
+      "prefix": "nt; for ",
+      "suffix": " they ar"
+    },
+    "verdict": "ordinary"
+  }
+}

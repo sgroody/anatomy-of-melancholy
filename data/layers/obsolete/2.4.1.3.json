@@ -1,0 +1,71 @@
+{
+  "2.4.1.3-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "chiefest",
+    "input_hash": "c1f0a692ed4b0ff0",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "chiefest",
+      "in": "2.4.1.3-p2",
+      "prefix": "nge the ",
+      "suffix": " place, "
+    },
+    "sense": "First or foremost; chief; principal.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.4.1.3-g2": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "a1ffe6361e5bfe5c",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "2.4.1.3-p10",
+      "prefix": "e often ",
+      "suffix": " in mela"
+    },
+    "sense": "Disordered, diseased",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.4.1.3-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "wonders",
+    "input_hash": "4f2e06e0a5777d53",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "wonders",
+      "in": "2.4.1.3-p8",
+      "prefix": "ioscor. ",
+      "suffix": " the Phy"
+    },
+    "verdict": "ordinary"
+  }
+}

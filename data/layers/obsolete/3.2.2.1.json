@@ -1,0 +1,153 @@
+{
+  "3.2.2.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "aspected",
+    "input_hash": "ee0f6b2edd6d60d1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "aspected",
+      "in": "3.2.2.1-p1",
+      "prefix": "utually ",
+      "suffix": ", or suc"
+    },
+    "sense": "Having an aspect.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "3.2.2.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "fere",
+    "input_hash": "f7ea8b223f2734ab",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "fere",
+      "in": "3.2.2.1-p9",
+      "prefix": "uicquid ",
+      "suffix": " medici "
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "fere",
+    "input_hash": "f564033a54f11941",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "fere",
+      "in": "3.2.2.1-p9",
+      "prefix": "quaeque ",
+      "suffix": " officin"
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.1-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "flatuous",
+    "input_hash": "f6c36dc07de7fe06",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "flatuous",
+      "in": "3.2.2.1-p2",
+      "prefix": "opinion ",
+      "suffix": " or hypo"
+    },
+    "sense": "Windy; generating wind.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "3.2.2.1-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "nat",
+    "input_hash": "2475739fe6ddbdb8",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "3.2.2.1-p10",
+      "prefix": "it mag. ",
+      "suffix": ". lib. 2"
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.1-g6": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "ne",
+    "input_hash": "6e9beb790234846b",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "ne",
+      "in": "3.2.2.1-p10",
+      "prefix": "m feci, ",
+      "suffix": " quis im"
+    },
+    "verdict": "not-english"
+  },
+  "3.2.2.1-g7": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "27565ea6a2252717",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "3.2.2.1-p4",
+      "prefix": "nd idle ",
+      "suffix": ", it is "
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

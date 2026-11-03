@@ -1,0 +1,90 @@
+{
+  "1.1.1.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "50e5e1f655af3c12",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "1.1.1.1-p4",
+      "prefix": "y other ",
+      "suffix": ", seriou"
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.1.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "9fd2284750e7af3a",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "1.1.1.1-p3",
+      "prefix": "nd this ",
+      "suffix": " is that"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "1.1.1.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "sorrowed",
+    "input_hash": "beb9a25735b7d34a",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "sorrowed",
+      "in": "1.1.1.1-p3",
+      "prefix": "ave not ",
+      "suffix": ", they h"
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.1.1-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "vigilancy",
+    "input_hash": "56f4d821041e807c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "vigilancy",
+      "in": "1.1.1.1-p8",
+      "prefix": "ert, no ",
+      "suffix": " foresee"
+    },
+    "sense": "Vigilance.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "n",
+      "sense": "w1"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "1.1.2.8-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "leaping",
+    "input_hash": "e161f4eaeda57c66",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "leaping",
+      "in": "1.1.2.8-p2",
+      "prefix": "unning, ",
+      "suffix": ", dancin"
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.2.8-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "f7ee80d39ea9e72c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.1.2.8-p1",
+      "prefix": "men are ",
+      "suffix": " like be"
+    },
+    "verdict": "ordinary"
+  },
+  "1.1.2.8-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "ae40cbf0983f0486",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "1.1.2.8-p1",
+      "prefix": "soul is ",
+      "suffix": " or incl"
+    },
+    "verdict": "ordinary"
+  }
+}

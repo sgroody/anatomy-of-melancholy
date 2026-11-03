@@ -1,0 +1,71 @@
+{
+  "1.2.4.1-g1": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "low",
+    "date": "2026-11-03",
+    "headword": "misaffected",
+    "input_hash": "6f7d422814196a0e",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "misaffected",
+      "in": "1.2.4.1-p2",
+      "prefix": "wise be ",
+      "suffix": "; which "
+    },
+    "sense": "Disordered, impaired",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "1.2.4.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "nat",
+    "input_hash": "f0fb8e3864f42b10",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "nat",
+      "in": "1.2.4.1-p2",
+      "prefix": "stro de ",
+      "suffix": ". mulier"
+    },
+    "verdict": "not-english"
+  },
+  "1.2.4.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "withal",
+    "input_hash": "d403fe258eaccc10",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "withal",
+      "in": "1.2.4.1-p2",
+      "prefix": "careful ",
+      "suffix": ", let Fa"
+    },
+    "sense": "Together with this; likewise; at the same time; in addition; also.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w2"
+    }
+  }
+}

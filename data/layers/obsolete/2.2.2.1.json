@@ -1,0 +1,96 @@
+{
+  "2.2.2.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "belike",
+    "input_hash": "ceddfa36acdcf944",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "belike",
+      "in": "2.2.2.1-p2",
+      "prefix": "bsterge ",
+      "suffix": " that fu"
+    },
+    "sense": "It is likely or probably; perhaps.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "adv",
+      "sense": "w1"
+    }
+  },
+  "2.2.2.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "condite",
+    "input_hash": "9e552d7d80c959c6",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "condite",
+      "in": "2.2.2.1-p1",
+      "prefix": "tories, ",
+      "suffix": " prunes,"
+    },
+    "sense": "Preserved; pickled.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.2.2.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "flatuous",
+    "input_hash": "fb9451244bb6302e",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "flatuous",
+      "in": "2.2.2.1-p4",
+      "prefix": "be very ",
+      "suffix": ", and ha"
+    },
+    "sense": "Windy; generating wind.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.2.2.1-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "mends",
+    "input_hash": "488e6c0675cb739c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "mends",
+      "in": "2.2.2.1-p4",
+      "prefix": "arriage ",
+      "suffix": " all. Ma"
+    },
+    "verdict": "ordinary"
+  }
+}

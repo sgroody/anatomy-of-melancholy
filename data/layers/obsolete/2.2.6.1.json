@@ -1,0 +1,172 @@
+{
+  "2.2.6.1-g1": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "69f10e90ba8087cb",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "2.2.6.1-p4",
+      "prefix": " or any ",
+      "suffix": " that ha"
+    },
+    "verdict": "ordinary"
+  },
+  "2.2.6.1-g2": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "d558c9b6d716fd40",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "2.2.6.1-p4",
+      "prefix": "against ",
+      "suffix": ", as we "
+    },
+    "verdict": "ordinary"
+  },
+  "2.2.6.1-g3": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "adversity",
+    "input_hash": "a5d60b7b4402f70c",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "adversity",
+      "in": "2.2.6.1-p6",
+      "prefix": "es. All ",
+      "suffix": " finds e"
+    },
+    "verdict": "ordinary"
+  },
+  "2.2.6.1-g4": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "chiefest",
+    "input_hash": "9885768bd8413bf4",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "chiefest",
+      "in": "2.2.6.1-p1",
+      "prefix": "nd; the ",
+      "suffix": " cure co"
+    },
+    "sense": "First or foremost; chief; principal.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.1-g5": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "chiefest",
+    "input_hash": "c44e420e9bdb5106",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "chiefest",
+      "in": "2.2.6.1-p3",
+      "prefix": "rst and ",
+      "suffix": " remedy "
+    },
+    "sense": "First or foremost; chief; principal.",
+    "source": "webster1913",
+    "verdict": "webster",
+    "webster": {
+      "pos": "a",
+      "sense": "w1"
+    }
+  },
+  "2.2.6.1-g6": {
+    "by": "machine",
+    "candidate": "rules/obs-v1",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "headword": "informed",
+    "input_hash": "1d96a508c2c2beef",
+    "model": "claude-opus-5-5",
+    "prompt": "obs-v1",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "informed",
+      "in": "2.2.6.1-p1",
+      "prefix": "ciently ",
+      "suffix": " him in "
+    },
+    "sense": "Instructed, directed",
+    "source": "machine",
+    "verdict": "other-obsolete"
+  },
+  "2.2.6.1-g7": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "e42e203626657662",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "2.2.6.1-p5",
+      "prefix": " we are ",
+      "suffix": " captive"
+    },
+    "verdict": "ordinary"
+  },
+  "2.2.6.1-g8": {
+    "candidate": "rules/obs-v1",
+    "confidence": "high",
+    "headword": "led",
+    "input_hash": "496684c0dc43e137",
+    "ruling": {
+      "by": "machine",
+      "date": "2026-11-03",
+      "model": "claude-opus-5-5",
+      "prompt": "obs-v1"
+    },
+    "selector": {
+      "exact": "led",
+      "in": "2.2.6.1-p5",
+      "prefix": " be not ",
+      "suffix": " by our "
+    },
+    "verdict": "ordinary"
+  }
+}

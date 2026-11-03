@@ -592,6 +592,65 @@ def _balanced(fragment: str) -> bool:
     return not stack
 
 
+def _locate(html_text: str, sel: dict, skips=(SKIP_MAIN, SKIP_NOTES), views=None) -> tuple | None:
+    """Where a selector's words stand in the page: (index in the visible text, the visible text's positions,
+    HTML start, HTML end), or None. The words must occur once in the visible text, tried with their context,
+    then shorter; the main text first, then with the sidenotes. `views` caches the visible texts."""
+    pre, ex, suf = (sel.get("prefix", "").split(" ¶ ")[-1], sel["exact"], sel.get("suffix", "").split(" ¶ ")[0])
+    at = None
+    for skip in skips:
+        text, pos = views[skip] if views is not None else _visible(html_text, skip)
+        for a, b in ((pre, suf), ("", suf), (pre, ""), ("", "")):
+            if text.count(a + ex + b) == 1:
+                at = text.index(a + ex + b) + len(a)
+                break
+        if at is not None:
+            break
+    if at is None:
+        return None
+    hs, he = pos[at], pos[at + len(ex) - 1]
+    he = html_text.index(";", he) + 1 if html_text[he] == "&" else he + 1
+    while (m := re.search(r"<[a-zA-Z][^>]*>$", html_text[:hs])) and not m.group(0).startswith("<a "):
+        hs = m.start()  # take in opening tags right before the first word ...
+    while (m := re.match(r"</[a-zA-Z0-9]+>", html_text[he:])) and m.group(0) != "</a>":
+        he += len(m.group(0))  # ... and closing tags right after the last
+    return at, pos, hs, he
+
+
+def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
+    """Obsolete-word glosses (M8): the word is wrapped, and its sense follows it, hidden until the reader turns
+    glosses on. Placed like cross-references, in the main text only (all found on the page as it is, then
+    inserted from the end); a gloss that cannot be placed, is split by other markup or overlaps another is
+    counted and left out."""
+    views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
+    edits = []
+    for it in items:
+        found = _locate(html_text, it["selector"], (SKIP_MAIN,), views)
+        inner = html_text[found[2]:found[3]] if found else ""
+        if found is None or not _balanced(inner) or "<a " in inner:
+            counts["glosses_unplaced"] = counts.get("glosses_unplaced", 0) + 1
+            continue
+        edits.append((found[2], found[3], it))
+    edits.sort(key=lambda x: x[0])
+    keep, end = [], -1
+    for hs, he, it in edits:
+        if hs < end:
+            counts["glosses_unplaced"] = counts.get("glosses_unplaced", 0) + 1
+            continue
+        keep.append((hs, he, it))
+        end = he
+    for hs, he, it in reversed(keep):
+        src = attr(it["source"])
+        note = (f'<span class="gl-s" data-src="{src}"><span class="sr-only">gloss: </span>{esc(it["sense"])}'
+                f'<span class="gl-l"> · {esc(it["label"])}</span></span>')
+        resp = ' data-resp="gowland"' if it["source"] == "gowland" else ""
+        word = f'<span class="gl gl-{src}"{resp}><span class="gl-w">{html_text[hs:he]}</span>{note}</span>'
+        html_text = html_text[:hs] + word + html_text[he:]
+        counts["glosses"] = counts.get("glosses", 0) + 1
+        counts[f"glosses_{it['source']}"] = counts.get(f"glosses_{it['source']}", 0) + 1
+    return html_text
+
+
 def mark_xrefs(html_text: str, refs: list[dict], counts: dict) -> str:
     """Link Burton's cross-references: explicit ones resolved by rule (M2) and relative ones confirmed on review
     (M6). The selector's words are found in the page's visible text, where they must occur once (tried with
@@ -600,25 +659,12 @@ def mark_xrefs(html_text: str, refs: list[dict], counts: dict) -> str:
     guessed. Unresolved explicit references are marked, not linked."""
     for r in refs:
         sel = r["selector"]
-        pre, ex, suf = (sel.get("prefix", "").split(" ¶ ")[-1], sel["exact"], sel.get("suffix", "").split(" ¶ ")[0])
-        at = None
-        for skip in (SKIP_MAIN, SKIP_NOTES):  # the main text first, then with the sidenotes
-            text, pos = _visible(html_text, skip)
-            for a, b in ((pre, suf), ("", suf), (pre, ""), ("", "")):
-                if text.count(a + ex + b) == 1:
-                    at = text.index(a + ex + b) + len(a)
-                    break
-            if at is not None:
-                break
-        if at is None:
+        ex = sel["exact"]
+        found = _locate(html_text, sel)
+        if found is None:
             counts["xrefs_unplaced"] = counts.get("xrefs_unplaced", 0) + 1
             continue
-        hs, he = pos[at], pos[at + len(ex) - 1]
-        he = html_text.index(";", he) + 1 if html_text[he] == "&" else he + 1
-        while (m := re.search(r"<[a-zA-Z][^>]*>$", html_text[:hs])) and not m.group(0).startswith("<a "):
-            hs = m.start()  # take in opening tags right before the first word ...
-        while (m := re.match(r"</[a-zA-Z0-9]+>", html_text[he:])) and m.group(0) != "</a>":
-            he += len(m.group(0))  # ... and closing tags right after the last
+        at, pos, hs, he = found
         if r.get("target"):
             title = f' title="{attr(r["title"])}"' if r.get("title") else ""
             o, c, key = f'<a class="xref" href="../{attr(r["target"])}/"{title}>', "</a>", "xrefs_linked"
@@ -652,7 +698,7 @@ def h1_head(div):
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
-                pagemap: dict | None = None) -> tuple[str, dict]:
+                pagemap: dict | None = None, glosses: list[dict] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap = plate, pagemap or {}
@@ -663,6 +709,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.w("</article>\n")
     body = mark_burton_spans("".join(r.out), layer, r.counts)
     body = mark_xrefs(body, xrefs or [], r.counts)
+    body = mark_glosses(body, glosses or [], r.counts)
     for fid, rec in layer.items():
         sel = rec["self_translation"].get("burton_span")
         if sel:

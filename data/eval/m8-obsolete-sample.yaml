@@ -1,0 +1,538 @@
+round: o1
+drawn: '2026-11-03'
+seed: 20261103
+population: burton obsolete candidates (rules/obs-v1), 748 occurrences
+labeller: Claude in session (claude-opus-5-5), labelled before the obs-v1 run, from the sentence and Webster's senses
+  only
+rule: Pass if gloss-or-not agrees on >= 45 of the 50 (an 'either' label agrees with both), and at most 2 glosses
+  the reader would see have a wrong sense (a Webster sense other than the labelled one, or a drafted sense where
+  the label names a Webster sense that fits). 'gloss' = verdict webster or other-obsolete; 'none' = ordinary or
+  not-english.
+items:
+- n: 1
+  unit: 1.1.2.10
+  word: acquisite
+  selector:
+    in: 1.1.2.10-p1
+    exact: acquisite
+    prefix: 'nd five '
+    suffix: ', the re'
+  gloss: gloss
+  sense: w1
+- n: 2
+  unit: 1.2.2.3
+  word: wondered
+  selector:
+    in: 1.2.2.3-p1
+    exact: wondered
+    prefix: ' bread, '
+    suffix: ', quomod'
+  gloss: none
+  sense: null
+- n: 3
+  unit: 1.2.3.2
+  word: goodwife
+  selector:
+    in: 1.2.3.2-p1
+    exact: goodwife
+    prefix: 'another '
+    suffix: ', that w'
+  gloss: gloss
+  sense: w1
+- n: 4
+  unit: 1.2.3.14
+  word: misaffected
+  selector:
+    in: 1.2.3.14-p1
+    exact: misaffected
+    prefix: 'hat are '
+    suffix: ' with it'
+  gloss: gloss
+  sense: w1
+- n: 5
+  unit: 3.2.5.5
+  word: whilst
+  selector:
+    in: 3.2.5.5-p66
+    exact: whilst
+    prefix: 'morosa, '
+    suffix: ' thou ar'
+  gloss: either
+  sense: null
+  note: '''whilst'' is still current: gloss or no gloss both acceptable'
+- n: 6
+  unit: 3.2.5.5
+  word: ones
+  selector:
+    in: 3.2.5.5-p57
+    exact: ones
+    prefix: 'me good '
+    suffix: ' again, '
+  gloss: none
+  sense: null
+- n: 7
+  unit: 1.2.2.1
+  word: ones
+  selector:
+    in: 1.2.2.1-p12
+    exact: ones
+    prefix: 'r young '
+    suffix: ' are mor'
+  gloss: none
+  sense: null
+- n: 8
+  unit: djr
+  word: liquorish
+  selector:
+    in: djr-p166
+    exact: liquorish
+    prefix: 'lirt, a '
+    suffix: ', prodig'
+  gloss: gloss
+  sense: other
+  note: 'lickerish (lecherous, greedy): Webster''s only sense is a cross-reference, so a gloss must be drafted'
+- n: 9
+  unit: 3.2.2.4
+  word: coll
+  selector:
+    in: 3.2.2.4-p7
+    exact: coll
+    prefix: ', kiss, '
+    suffix: ', to use'
+  gloss: gloss
+  sense: w1
+- n: 10
+  unit: 1.3.1.2
+  word: misaffected
+  selector:
+    in: 1.3.1.2-p12
+    exact: misaffected
+    prefix: 'of mind '
+    suffix: ', it so '
+  gloss: gloss
+  sense: w1
+- n: 11
+  unit: 3.2.2.4
+  word: belike
+  selector:
+    in: 3.2.2.4-p12
+    exact: belike
+    prefix: 'nacreon '
+    suffix: ;
+  gloss: gloss
+  sense: w1
+- n: 12
+  unit: 3.4.1.3
+  word: belike
+  selector:
+    in: 3.4.1.3-p2
+    exact: belike
+    prefix: 'e Devil '
+    suffix: ' (nam su'
+  gloss: gloss
+  sense: w1
+- n: 13
+  unit: 3.4.2.1
+  word: whilst
+  selector:
+    in: 3.4.2.1-lg18
+    exact: whilst
+    prefix: 'se that '
+    suffix: ' he thus'
+  gloss: either
+  sense: null
+  note: as 5
+- n: 14
+  unit: 3.2.2.2
+  word: belike
+  selector:
+    in: 3.2.2.2-p1
+    exact: belike
+    prefix: ' Lucian '
+    suffix: ', which '
+  gloss: gloss
+  sense: w1
+- n: 15
+  unit: 1.2.1.2
+  word: belike
+  selector:
+    in: 1.2.1.2-p8
+    exact: belike
+    prefix: 'eign in '
+    suffix: ' or busi'
+  gloss: gloss
+  sense: w1
+- n: 16
+  unit: 1.2.3.10
+  word: adversity
+  selector:
+    in: 1.2.3.10-p6
+    exact: adversity
+    prefix: 'ity and '
+    suffix: ; they a
+  gloss: none
+  sense: null
+- n: 17
+  unit: 2.5.1.5
+  word: meth
+  selector:
+    in: 2.5.1.5-p14
+    exact: meth
+    prefix: ' lib. 2 '
+    suffix: . speaks
+  gloss: none
+  sense: null
+- n: 18
+  unit: 1.2.3.12
+  word: scrat
+  selector:
+    in: 1.2.3.12-p4
+    exact: scrat
+    prefix: ' a Crow '
+    suffix: ' upon th'
+  gloss: gloss
+  sense: w1
+- n: 19
+  unit: 2.2.3.1
+  word: sited
+  selector:
+    in: 2.2.3.1-p10
+    exact: sited
+    prefix: 'ber) is '
+    suffix: ' in a Ch'
+  gloss: either
+  sense: w1
+  note: '''sited'' (situated) is current: either; if glossed, w1'
+- n: 20
+  unit: 3.3.4.1
+  word: diverb
+  selector:
+    in: 3.3.4.1-p7
+    exact: diverb
+    prefix: ' as the '
+    suffix: ' is,'
+  gloss: gloss
+  sense: w1
+- n: 21
+  unit: 3.2.2.1
+  word: aspected
+  selector:
+    in: 3.2.2.1-p1
+    exact: aspected
+    prefix: 'utually '
+    suffix: ', or suc'
+  gloss: gloss
+  sense: w1
+- n: 22
+  unit: 1.2.3.10
+  word: unperfect
+  selector:
+    in: 1.2.3.10-p6
+    exact: unperfect
+    prefix: 'ame and '
+    suffix: '. Hadst '
+  gloss: gloss
+  sense: w2
+- n: 23
+  unit: 2.2.3.1
+  word: vastity
+  selector:
+    in: 2.2.3.1-p5
+    exact: vastity
+    prefix: 'f their '
+    suffix: ' and gre'
+  gloss: gloss
+  sense: w1
+- n: 24
+  unit: 2.2.3.1
+  word: gigantical
+  selector:
+    in: 2.2.3.1-p7
+    exact: gigantical
+    prefix: 't these '
+    suffix: ' Cyclope'
+  gloss: gloss
+  sense: w1
+- n: 25
+  unit: 2.5.1.6
+  word: nat
+  selector:
+    in: 2.5.1.6-p12
+    exact: nat
+    prefix: 'ta Mag. '
+    suffix: . lib. 2
+  gloss: none
+  sense: null
+- n: 26
+  unit: 2.2.4.1
+  word: vers
+  selector:
+    in: 2.2.4.1-p23
+    exact: vers
+    prefix: ' works, '
+    suffix: . 22. Fo
+  gloss: none
+  sense: null
+- n: 27
+  unit: 2.5.1.6
+  word: goodwife
+  selector:
+    in: 2.5.1.6-p9
+    exact: goodwife
+    prefix: 'o every '
+    suffix: ', Rose w'
+  gloss: gloss
+  sense: w1
+- n: 28
+  unit: 1.2.3.15
+  word: wondered
+  selector:
+    in: 1.2.3.15-p18
+    exact: wondered
+    prefix: 'ch many '
+    suffix: ' at), as'
+  gloss: none
+  sense: null
+- n: 29
+  unit: 1.2.5.4
+  word: flatuous
+  selector:
+    in: 1.2.5.4-p1
+    exact: flatuous
+    prefix: 'acal or '
+    suffix: ' Melanch'
+  gloss: gloss
+  sense: w1
+- n: 30
+  unit: 1.2.1.2
+  word: sublunary
+  selector:
+    in: 1.2.1.2-p8
+    exact: sublunary
+    prefix: 'f these '
+    suffix: ' Devils,'
+  gloss: either
+  sense: other
+  note: adjective 'sublunary' (beneath the moon); Webster's sense is the noun, so w1 is wrong; no gloss or a drafted
+    one
+- n: 31
+  unit: djr
+  word: dizzard
+  selector:
+    in: djr-p108
+    exact: dizzard
+    prefix: 'iety, a '
+    suffix: ' himself'
+  gloss: gloss
+  sense: w1
+- n: 32
+  unit: 1.1.1.4
+  word: belike
+  selector:
+    in: 1.1.1.4-p4
+    exact: belike
+    prefix: 'k. Such '
+    suffix: ' or litt'
+  gloss: gloss
+  sense: w1
+- n: 33
+  unit: 2.2.3.1
+  word: inhabited
+  selector:
+    in: 2.2.3.1-p5
+    exact: inhabited
+    prefix: ' alike, '
+    suffix: ' alike, '
+  gloss: none
+  sense: null
+- n: 34
+  unit: 1.2.4.4
+  word: facete
+  selector:
+    in: 1.2.4.4-p1
+    exact: facete
+    prefix: 'anus, a '
+    suffix: ' compani'
+  gloss: gloss
+  sense: w1
+- n: 35
+  unit: 3.2.2.3
+  word: chiefest
+  selector:
+    in: 3.2.2.3-p29
+    exact: chiefest
+    prefix: ' to the '
+    suffix: ' nobles '
+  gloss: either
+  sense: w1
+  note: '''chiefest'': either'
+- n: 36
+  unit: 3.2.1.1
+  word: wonders
+  selector:
+    in: 3.2.1.1-p13
+    exact: wonders
+    prefix: '. tells '
+    suffix: ' of a Tr'
+  gloss: none
+  sense: null
+- n: 37
+  unit: 1.2.4.7
+  word: chiefest
+  selector:
+    in: 1.2.4.7-p1
+    exact: chiefest
+    prefix: ' of the '
+    suffix: . Amongs
+  gloss: either
+  sense: w1
+  note: as 35
+- n: 38
+  unit: 1.2.1.2
+  word: belike
+  selector:
+    in: 1.2.1.2-p6
+    exact: belike
+    prefix: ': which '
+    suffix: ' is that'
+  gloss: gloss
+  sense: w1
+- n: 39
+  unit: 2.3.3.1
+  word: vers
+  selector:
+    in: 2.3.3.1-p52
+    exact: vers
+    prefix: 'sal. 27 '
+    suffix: . 14.
+  gloss: none
+  sense: null
+- n: 40
+  unit: 2.2.6.3
+  word: belike
+  selector:
+    in: 2.2.6.3-p3
+    exact: belike
+    prefix: 'irtues, '
+    suffix: ' Homer b'
+  gloss: gloss
+  sense: w1
+- n: 41
+  unit: djr
+  word: informed
+  selector:
+    in: djr-p138
+    exact: informed
+    prefix: '(we are '
+    suffix: ' by Siml'
+  gloss: none
+  sense: null
+- n: 42
+  unit: 1.1.2.8
+  word: led
+  selector:
+    in: 1.1.2.8-p1
+    exact: led
+    prefix: 'soul is '
+    suffix: ' or incl'
+  gloss: none
+  sense: null
+- n: 43
+  unit: 3.2.1.1
+  word: whilst
+  selector:
+    in: 3.2.1.1-p14
+    exact: whilst
+    prefix: 'imself; '
+    suffix: ' he play'
+  gloss: either
+  sense: null
+  note: as 5
+- n: 44
+  unit: 1.2.1.6
+  word: belike
+  selector:
+    in: 1.2.1.6-p2
+    exact: belike
+    prefix: 'reasons '
+    suffix: ' the Chu'
+  gloss: gloss
+  sense: w1
+- n: 45
+  unit: 1.2.3.14
+  word: inhabited
+  selector:
+    in: 1.2.3.14-p9
+    exact: inhabited
+    prefix: 'im, all '
+    suffix: ; what p
+  gloss: none
+  sense: null
+- n: 46
+  unit: 3.2.5.3
+  word: venerous
+  selector:
+    in: 3.2.5.3-p10
+    exact: venerous
+    prefix: 'medy of '
+    suffix: ' passion'
+  gloss: gloss
+  sense: w1|other
+  note: Webster's 'Venereous' or a drafted 'lustful'
+- n: 47
+  unit: 1.4.1.1
+  word: adversity
+  selector:
+    in: 1.4.1.1-p7
+    exact: adversity
+    prefix: 'f human '
+    suffix: ', the qu'
+  gloss: none
+  sense: null
+- n: 48
+  unit: 1.3.2.1
+  word: misaffected
+  selector:
+    in: 1.3.2.1-p1
+    exact: misaffected
+    prefix: 'lood be '
+    suffix: ', and fe'
+  gloss: gloss
+  sense: w1
+- n: 49
+  unit: djr
+  word: gest
+  selector:
+    in: djr-p147
+    exact: gest
+    prefix: 'e Rebus '
+    suffix: '. Eman. '
+  gloss: none
+  sense: null
+- n: 50
+  unit: 3.2.5.2
+  word: belike
+  selector:
+    in: 3.2.5.2-p7
+    exact: belike
+    prefix: 't cause '
+    suffix: ' Alexand'
+  gloss: gloss
+  sense: w1
+result:
+  scored: "2026-11-03, against data/layers/obsolete/ after all 748 occurrences were ruled (obs-v1, claude-opus-5-5); labels unchanged"
+  gloss_or_not_agree: 50/50
+  wrong_senses_shown: 6
+  verdict: FAIL (the rule allows at most 2 wrong senses shown)
+  misses:
+    - {n: 8, word: liquorish, got: "Webster w1 'See Lickerish.'", why: "a cross-reference, not a sense: a real defect"}
+    - {n: 18, word: scrat, got: "Webster w2 'To rake; to search.'", why: "label w1 'To scratch'; w2 is arguable for a crow on a muckhill"}
+    - {n: 4, word: misaffected, got: "drafted 'Afflicted, affected'", why: "label Webster w1 'Ill disposed'; the draft is not wrong in meaning"}
+    - {n: 10, word: misaffected, got: "drafted 'Disturbed in mind'", why: "as n 4"}
+    - {n: 48, word: misaffected, got: "drafted 'Disordered, diseased'", why: "as n 4"}
+    - {n: 20, word: diverb, got: "drafted 'A proverb, common saying'", why: "label Webster w1 (an antithetical saying); the draft is arguably closer"}
+  after: >-
+    Not tuned or re-scored on this sample. One fix by rule for the defect class: the reader never shows a Webster
+    cross-reference ("See …") as a sense (2 occurrences, both 'liquorish', left unglossed). 4 of the 6 are a choice
+    of source (a labelled draft where Webster fits), not a wrong meaning; whether that is acceptable is the owner's
+    decision. Glosses stay off by default. A changed rule or prompt needs a fresh round (o2).
