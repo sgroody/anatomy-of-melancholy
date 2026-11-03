@@ -1,10 +1,11 @@
 """`burton corpora`: convert downloaded corpora to the verifier's plain format (data/source/corpora/).
 
-Perseus canonical-latinLit (TEI, CTS): every Latin edition file becomes
-data/source/corpora/perseus-latin/<author-id>/<textgroup>.<work>.txt, one `locus<TAB>text` line per innermost
-citable unit (div[@type=textpart], loci joined from the ancestors' @n, e.g. "1.4" for a poem in book 1). Text
-excludes notes, headings and bibliographic matter. Author ids come from data/corpora/perseus-latin.yaml. The
-downloaded files are untrusted data: parsed with entities and network access off, never executed.
+Perseus canonical-latinLit and canonical-greekLit (TEI, CTS; Greek approved by the owner 2026-11-03): every
+Latin (or Greek) edition file becomes data/source/corpora/<corpus>/<author-id>/<textgroup>.<work>.txt, one
+`locus<TAB>text` line per innermost citable unit (div[@type=textpart], loci joined from the ancestors' @n, e.g.
+"1.4" for a poem in book 1). Text excludes notes, headings and bibliographic matter. Author ids come from
+data/corpora/<corpus>.yaml. The downloaded files are untrusted data: parsed with entities and network access
+off, never executed.
 """
 
 import json
@@ -16,9 +17,7 @@ from lxml import etree
 
 from .. import paths
 
-RAW = paths.SOURCE / "corpora-raw" / "perseus-latin" / "data"
-OUT = paths.SOURCE / "corpora" / "perseus-latin"
-MAP = paths.DATA / "corpora" / "perseus-latin.yaml"
+CORPORA = {"perseus-latin": "*lat*.xml", "perseus-greek": "*grc*.xml"}  # corpus -> its edition files
 TEI = "{http://www.tei-c.org/ns/1.0}"
 SKIP = {f"{TEI}{t}" for t in ("note", "head", "bibl", "ref", "del", "gap", "milestone", "lb", "pb")}
 
@@ -63,13 +62,20 @@ def units(path) -> list[tuple[str, str]]:
 units.recovered = 0
 
 
-def convert() -> Counter:
-    authors = yaml.safe_load(MAP.read_text(encoding="utf-8"))["authors"]
+def convert() -> dict:
+    return {c: dict(convert_one(c)) for c in CORPORA if (paths.SOURCE / "corpora-raw" / c / "data").exists()}
+
+
+def convert_one(corpus: str) -> Counter:
+    RAW = paths.SOURCE / "corpora-raw" / corpus / "data"
+    OUT = paths.SOURCE / "corpora" / corpus
+    authors = yaml.safe_load((paths.DATA / "corpora" / f"{corpus}.yaml").read_text(encoding="utf-8"))["authors"]
     if OUT.exists():  # a re-run must not leave files under an author's old (unmapped) name
         shutil.rmtree(OUT)
     stats: Counter = Counter()
+    units.recovered = 0
     index = {}
-    for f in sorted(RAW.glob("*/*/*lat*.xml")):
+    for f in sorted(RAW.glob(f"*/*/{CORPORA[corpus]}")):
         group, work = f.parent.parent.name, f.parent.name
         author = authors.get(group, f"perseus-{group}")
         rows = units(f)

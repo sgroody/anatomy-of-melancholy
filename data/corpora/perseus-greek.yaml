@@ -1,0 +1,38 @@
+# Perseus canonical-greekLit textgroups -> the edition's author ids (data/abbreviations.yaml), for
+# `burton corpora` and `burton verify-sources` (M8; Greek approved by the owner 2026-11-03). Made by rule on
+# 2026-11-03: a group whose <ti:groupname> equals an edition author's name (28), plus three checked by hand
+# (Lucian of Samosata, Athenaeus of Naucratis, Basil of Caesarea). A group not listed here is converted with the
+# author `perseus-<code>`: a match to it is reported but never upgrades a source.
+corpus: perseus-greek
+authors:
+  tlg0003: thucydides
+  tlg0004: diogenes-laertius
+  tlg0005: theocritus
+  tlg0006: euripides
+  tlg0007: plutarch
+  tlg0008: athenaeus
+  tlg0011: sophocles
+  tlg0012: homer
+  tlg0016: herodotus
+  tlg0019: aristophanes
+  tlg0020: hesiod
+  tlg0032: xenophon
+  tlg0057: galen
+  tlg0059: plato
+  tlg0060: diodorus
+  tlg0062: lucian
+  tlg0086: aristotle
+  tlg0099: strabo
+  tlg0525: pausanias
+  tlg0526: josephus
+  tlg0532: achilles-tatius
+  tlg0543: polybius
+  tlg0545: aelian
+  tlg0557: epictetus
+  tlg0627: hippocrates
+  tlg0655: parthenius
+  tlg0719: aretaeus
+  tlg2018: eusebius
+  tlg2040: basil
+  tlg3135: zonaras
+  tlg4029: procopius

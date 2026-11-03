@@ -9,7 +9,8 @@ per work: data/source/corpora/<corpus>/<author-id>/<work-id>.txt, one `locus<TAB
 Until the owner approves a download there are none, and the verifier reports 0 corpora and verifies nothing.
 
 Matching, on normalised text (lower case, i/j and u/v merged, æ/œ spelled out, accents and punctuation
-dropped): a candidate unit shares a 4-word sequence with the passage; the match is `verified` when the passage
+dropped; Greek with accents, breathings and iota subscript dropped and final sigma merged): a candidate unit
+shares a 4-word sequence with the passage; the match is `verified` when the passage
 (at least 5 words) and the corpus text share a run of at least 5 consecutive words that covers at least 80 % of
 the passage's words. A verified match whose author differs from the record's own claim is a `conflict` for
 review, not an upgrade.
@@ -32,7 +33,7 @@ from ..translate.packets import sha1
 
 CORPORA = paths.SOURCE / "corpora"
 LAYER = "source-verification"
-METHOD = "text-match-v1"
+METHOD = "text-match-v2"  # v2 (M8): Greek words are compared too; Latin as in v1
 MIN_WORDS, MIN_RUN, MIN_COVER, N = 5, 5, 0.8, 4
 
 
@@ -44,8 +45,8 @@ def norm(s: str) -> list[str]:
     "foelix" = "felix"), accents and punctuation dropped."""
     s = unicodedata.normalize("NFD", s.lower().replace("æ", "ae").replace("œ", "oe"))
     s = "".join(ch for ch in s if not unicodedata.combining(ch)).replace("j", "i").replace("v", "u")
-    s = s.replace("ae", "e").replace("oe", "e").replace("y", "i")
-    return [SPELLING.get(w, w) for w in re.findall(r"[a-z]+", s)]
+    s = s.replace("ae", "e").replace("oe", "e").replace("y", "i").replace("ς", "σ")
+    return [SPELLING.get(w, w) for w in re.findall(r"[a-z]+|[α-ω]+", s)]
 
 
 def load_corpora(root=CORPORA) -> list[dict]:
