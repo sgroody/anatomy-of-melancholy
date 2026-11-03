@@ -236,11 +236,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
                                    verified=layer_for(unit, "source-verification"), findings=findings,
                                    xrefs=xrefs_for(unit, titles), plate=plate if unit == "argument" else None,
-                                   pagemap=pagemap, glosses=glosses.items_for(unit, profile, gstats))
+                                   pagemap=pagemap, glosses=glosses.items_for(unit, profile, gstats),
+                                   restored=layer_for(unit, "restored-notes"))
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         report["units"][unit] = counts
-        shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))
+        shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
         words = len(public_text(div).split())
         if counts["sidenotes"]:
             report["density"][unit] = round(1000 * counts["sidenotes"] / max(words, 1), 1)
@@ -304,9 +305,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     index, sstats = search.build_index(book.units, labels, profile, layer_for)
     sstats["bytes"] = search.write_index(index, out / "assets" / "search-index.json")
     report["search"] = sstats
+    report["restored_notes"] = {k: sum(c.get(k, 0) for c in report["units"].values())
+                                for k in ("restored_notes", "restored_unplaced")}
     report["glosses"] = {**gstats, **{k: sum(c.get(k, 0) for c in report["units"].values())
                                       for k in ("glosses", "glosses_gowland", "glosses_webster1913", "glosses_machine",
-                                                "glosses_unplaced")}}
+                                                "glosses_unplaced", "glosses_unplaced_notfound",
+                                                "glosses_unplaced_markup", "glosses_unplaced_overlap")}}
     page("search", "search/index.html", "search.html", page=book.pages["search"], crumbs=[("Search", None)],
          title="Search", description="Search Burton’s text, sidenotes and translations", stats=sstats)
 

@@ -16,11 +16,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 
-def serve(profile: str, port: int) -> None:
+def serve(profile: str, port: int, open_browser: bool = False) -> None:
     root = paths.SITE / profile
     if not (root / "index.html").exists():
         raise SystemExit(f"site/{profile} is not built: run `burton build --profile {profile}`")
     handler = functools.partial(Handler, directory=str(root))
     with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:
         print(f"serving site/{profile} at http://127.0.0.1:{port}/  (Ctrl+C to stop)")
+        if open_browser:
+            import webbrowser
+
+            webbrowser.open(f"http://127.0.0.1:{port}/")
         httpd.serve_forever()

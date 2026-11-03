@@ -255,7 +255,8 @@ def site_results(units: list[str]) -> list[Result]:
                    "djs_versions": sum(1 for k, r in djs_layer.items() if djs.shown(r, tr_layer.get(k))),
                    # the Table's Penguin page numbers (private build only)
                    "pagerefs": len(root.findall(f".//{ED}pageref")) if profile == "private" else 0}
-            htm = {"sidenotes": len(by_class(tree, "sidenote")), "foreign": len(by_class(tree, "fp")),
+            htm = {"sidenotes": len(by_class(tree, "sidenote")) - len(by_class(tree, "sn-restored")),
+                   "foreign": len(by_class(tree, "fp")),
                    "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb")),
                    "gowland_versions": len(by_class(tree, "ft-gowland")),
                    "djs_versions": len(by_class(tree, "ft-djs1927")),

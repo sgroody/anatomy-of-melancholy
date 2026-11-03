@@ -342,9 +342,13 @@ Steps:
 * Full-text search (index loaded on demand, precached for offline use).
 * Print stylesheet and performance pass.
 * Full-site axe run and an "About this edition" page.
-* (Deferred by D4: restoring pruned sidenotes.)
+* ~~(Deferred by D4: restoring pruned sidenotes.)~~ Done 2026-11-03 (D4 revised).
 
 **Exit:** V1–V11 pass on the whole site in the chosen profile(s).
+
+## Future improvements (owner, 2026-11-03: noted, not scheduled)
+
+* **Language ID to target (D10).** V5 is below target on held-out h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95) and reports `DEFER`. The remaining errors: roman words beside italics (mixed phrases before a bracket), sidenote abbreviations taken for foreign ("Ter", "Vita ejus"), and two model rulings. Found since: 1.2.3.8-f2, a Greek couplet of Hesiod's tagged `la` around its two `grc` lines (its box says "from Latin"; the Greek source check matched it to *Works and Days*). Work: fix the rules on the tuning sample only, then score a fresh held-out round h3 (h1 and h2 are seen); remove the V5 entry from `data/manual/deferred-checks.yaml` when it passes.
 
 ## Workflow: shorter session start-up, same checks
 
@@ -384,7 +388,7 @@ Highest value first: 1, 6, 7, 9.
 |---|---|---|
 | D2 | **No API key.** | The translation runner drives `claude -p` headless as a subprocess under your subscription: tools disabled, `--json-schema` output, sequential packets. It stops cleanly on usage limits and resumes from the ledger (SPEC §6.4) |
 | D3 | **Gowland's modernized text is the base.** | No old-spelling layer |
-| D4 | **Pruned sidenotes are not restored for now.** | Sidenote counts are checked against the EPUB only |
+| D4 | **Pruned sidenotes restored, distinguished** (was "not restored for now"; owner, 2026-11-03: "Restore Burton's sidenotes that Gowland cut, but distinguish them"). | Base text and sidenote counts stay the EPUB's (V2). A separate layer, `data/layers/restored-notes/` (`burton restore-notes`, rules `restore-v1`), adds the notes of Project Gutenberg #10800 (pinned in `BURTON-PG.lock`) where Gowland has none: 1,235 restored (held-out r1 30/30 placed right); 156 English notes without a reference left out as most likely that 19th-century editor's translations. Shown with a grey ° marker and their source |
 | D5 | **A local server or installed app is enough.** | `burton serve` plus a PWA with a service worker for offline use. No `file://` constraints (SPEC §7.5) |
 | D6 | **Obsolete-word glosses at my discretion.** | Gowland's endnote glosses where he gives one (private build only), then Webster 1913 (public domain), then labelled model drafts. Wiktionary may be consulted, never copied (SPEC §4.2) |
 | D1 | **Private edition** (owner, 2026-10-20). | Build the private profile only. The public filter and its leak checks (V8, V8t) stay in place. No remote is set up |
@@ -400,3 +404,4 @@ Highest value first: 1, 6, 7, 9.
 * 2026-10-20: the owner asked for a 5-label spot check from h2 (the gate sample), drawn with a fixed seed. See `data/eval/audit-h2-spot5.md`.
 * This is a spot check, not the 25% audit. Any disagreement means a wider review.
 * **Result: the owner agreed with all 5 (0 disagreements).** The other 1,122 labels remain unreviewed.
+* 2026-11-03, owner: "Run an independent reviewer for D7." `burton gold-audit` (prompt `gold-audit-v1`, claude-opus-5-5, blind: text and context only, Gowland's matter removed and leak-tested; $3.70): **agreement 1,092/1,127 (96.9 %)**; tuning 648/677, h1 148/150, h2 296/300. Of the 35 disagreements, 31 are between non-foreign labels (name → en 15, mostly early M1 labels such as *Acute*, *Chronic*; citation ↔ name 14; en/citation 2), which do not change V5; 4 are *mixed* vs *la* where Latin follows a locator number (foreign either way). List: `state/review/d7-gold-audit.md`; labels `data/eval/langid-rater2.jsonl`. Same model family as the first rater, so this is a consistency check, not independent proof. No label changed.

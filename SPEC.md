@@ -160,6 +160,8 @@ Statuses are `parsed`, `partial` (author known, work or locus not) and `unidenti
 
 **`selftrans/`**: self-translation signals per `foreign` passage (rules only, M2; §6.2). The M5 verdict is recorded in `translations/` under `self_translation`.
 
+**`restored-notes/`** (D4 revised, `burton restore-notes`): Burton's sidenotes that Gowland's edition leaves out, from Project Gutenberg #10800, keyed by registry id (`<unit>-rN`): a text-quote selector on the word the marker precedes, the Gutenberg note number, the note's text, source and method. Never in the base text; V2 counts only Gowland's notes, V7 checks the layer.
+
 **`xrefs/`**: target unit or element, status (`explicit-resolved`, `relative-proposed`, `relative-confirmed` or `unresolved`), method, and evidence quote.
 
 Explicit references (M2, `burton xrefs`):

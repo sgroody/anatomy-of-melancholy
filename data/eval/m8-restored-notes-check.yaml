@@ -1,0 +1,14 @@
+# Held-out check of rule restore-v1 (burton/layers/restored_notes.py), 2026-11-03.
+round: r1
+population: "1,235 restored notes (data/layers/restored-notes/)"
+draw: "random.Random(20261105).shuffle of all records in unit-file order; the first 30"
+labeller: Claude in session (claude-opus-5-5), comparing each note's context in Project Gutenberg #10800 with its place here
+rule: "Pass if at most 2 of the 30 are placed at the wrong words."
+result:
+  placed_right: 30/30
+  cosmetic: "2 markers fell between an apostrophe and its word ('Tis); the rule now puts the marker before the apostrophe"
+  verdict: PASS
+not_checked: >-
+  Whether each restored note is absent from Burton's 1651 text (the Gutenberg text follows a later printing), and
+  whether a Latin note was itself altered by that editor. English notes without a reference (156) are left out as
+  most likely the editor's translations: state/review/restored-notes-left-out.json.

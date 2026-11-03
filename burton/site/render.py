@@ -626,16 +626,31 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
     edits = []
     for it in items:
         found = _locate(html_text, it["selector"], (SKIP_MAIN,), views)
-        inner = html_text[found[2]:found[3]] if found else ""
-        if found is None or not _balanced(inner) or "<a " in inner:
+        why = None
+        if found is None:
+            why = "notfound"
+        else:
+            at, pos, hs, he = found
+            inner = html_text[hs:he]
+            if not _balanced(inner) or "<a " in inner:
+                # the tags taken in around the words do not balance (a word that ends an italic run): wrap the
+                # word's own characters instead, if no tag stands inside them
+                n = len(it["selector"]["exact"])
+                hs, he = pos[at], pos[at + n - 1]
+                he = html_text.index(";", he) + 1 if html_text[he] == "&" else he + 1
+                if "<" in html_text[hs:he]:
+                    why = "markup"
+        if why:
             counts["glosses_unplaced"] = counts.get("glosses_unplaced", 0) + 1
+            counts[f"glosses_unplaced_{why}"] = counts.get(f"glosses_unplaced_{why}", 0) + 1
             continue
-        edits.append((found[2], found[3], it))
+        edits.append((hs, he, it))
     edits.sort(key=lambda x: x[0])
     keep, end = [], -1
     for hs, he, it in edits:
         if hs < end:
             counts["glosses_unplaced"] = counts.get("glosses_unplaced", 0) + 1
+            counts["glosses_unplaced_overlap"] = counts.get("glosses_unplaced_overlap", 0) + 1
             continue
         keep.append((hs, he, it))
         end = he
@@ -648,6 +663,59 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
         html_text = html_text[:hs] + word + html_text[he:]
         counts["glosses"] = counts.get("glosses", 0) + 1
         counts[f"glosses_{it['source']}"] = counts.get(f"glosses_{it['source']}", 0) + 1
+    return html_text
+
+
+RESTORED_LABEL = "Not in Gowland’s edition: restored from"
+TAG = re.compile(r"<(/?)([a-zA-Z0-9]+)([^>]*)>")
+
+
+def _outside_passage(html_text: str, at: int) -> int:
+    """`at`, or the start of the outermost foreign-passage box (class "fp") open there: a note inside the box
+    would be laid out against it and vanish with it in "Read in English", so it goes before it, as Gowland's
+    notes in a quotation are lifted out of it."""
+    stack: list[tuple[str, int, bool]] = []
+    for m in TAG.finditer(html_text, 0, at):
+        close, tag, rest = m.groups()
+        if rest.endswith("/") or tag in ("br", "img", "wbr"):
+            continue
+        if close:
+            while stack and stack.pop()[0] != tag:
+                pass
+        else:
+            c = re.search(r'class="([^"]*)"', rest)
+            stack.append((tag, m.start(), bool(c) and "fp" in c.group(1).split()))
+    outer = [start for _, start, fp in stack if fp]
+    return outer[0] if outer else at
+
+
+def mark_restored(html_text: str, notes: dict, counts: dict) -> str:
+    """Burton's sidenotes that Gowland's edition leaves out (data/layers/restored-notes/): a marker ° before the
+    word and the note beside it, styled apart and labelled with its source; placed like glosses, found on the
+    page as it is and inserted from the end. One that cannot be placed is counted."""
+    views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
+    edits = []
+    for rid, rec in notes.items():
+        found = _locate(html_text, rec["selector"], (SKIP_MAIN,), views)
+        if found is None:
+            counts["restored_unplaced"] = counts.get("restored_unplaced", 0) + 1
+            continue
+        at, pos = found[0], found[1]
+        word = pos[at]  # at the word itself, inside its paragraph and any italics (not before the tags around it)
+        hs = _outside_passage(html_text, word)
+        counts["restored_hoisted"] = counts.get("restored_hoisted", 0) + (hs != word)
+        edits.append((hs, rid, rec, hs != word))
+    for hs, rid, rec, hoisted in sorted(edits, key=lambda x: x[0], reverse=True):
+        note = (f'<a class="nref nref-restored" id="ref-{attr(rid)}" href="#{attr(rid)}" role="doc-noteref" '
+                f'aria-label="Note not in Gowland’s edition">°</a>'
+                f'<span class="sidenote sn-restored" id="{attr(rid)}" role="doc-footnote">'
+                f'<span class="sn-n">°</span> {esc_tagged(rec["text"])}'
+                f'<span class="sn-src">{RESTORED_LABEL} {esc(rec["source"])}, note {rec["pg_note"]} '
+                f'(a 19th-century text checked against the 1638 edition)</span></span>')
+        if hoisted:  # before a passage box, held to its first line as Gowland's lifted-out notes are
+            note = f'<span class="hoisted">{note}</span>'
+        html_text = html_text[:hs] + note + html_text[hs:]
+        counts["restored_notes"] = counts.get("restored_notes", 0) + 1
     return html_text
 
 
@@ -698,7 +766,8 @@ def h1_head(div):
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
-                pagemap: dict | None = None, glosses: list[dict] | None = None) -> tuple[str, dict]:
+                pagemap: dict | None = None, glosses: list[dict] | None = None,
+                restored: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap = plate, pagemap or {}
@@ -710,6 +779,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_burton_spans("".join(r.out), layer, r.counts)
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
+    body = mark_restored(body, restored or {}, r.counts)
     for fid, rec in layer.items():
         sel = rec["self_translation"].get("burton_span")
         if sel:

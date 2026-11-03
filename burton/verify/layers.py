@@ -316,6 +316,29 @@ def _obsolete(unit: str, root, r, c: dict) -> None:
             r.fail(f"{key}: a {rec.get('verdict')} ruling carries a sense")
 
 
+def _restored(unit: str, root, r, c: dict) -> None:
+    """Restored sidenotes (M8): keys are this unit's registry ids (`<unit>-rN`), selectors match once in their
+    block's public text, and every record has text and names its source and method."""
+    f = paths.LAYERS / "restored-notes" / f"{unit}.json"
+    if not f.exists():
+        return
+    by_id = {public_id(e.get(XML_ID)): e for e in root.iter()
+             if isinstance(e.tag, str) and (e.get(XML_ID) or "").startswith("u")}
+    for key, rec in json.loads(f.read_text(encoding="utf-8")).items():
+        c["restored_records"] = c.get("restored_records", 0) + 1
+        if not key.startswith(f"{unit}-r"):
+            r.fail(f"{unit}: restored-note key {key} is not a restored-note id of this unit")
+        sel = rec["selector"]
+        el = by_id.get(sel["in"])
+        n = public_text(el).count(sel["prefix"] + sel["exact"] + sel["suffix"]) if el is not None else 0
+        c["restored_selectors_ok" if n == 1 else "restored_selectors_bad"] = \
+            c.get("restored_selectors_ok" if n == 1 else "restored_selectors_bad", 0) + 1
+        if n != 1:
+            r.fail(f"{key}: restored-note selector {sel['exact']!r} matches {n} times")
+        if not (rec.get("text") or "").strip() or not rec.get("source") or not rec.get("method"):
+            r.fail(f"{key}: restored note without text, source or method")
+
+
 def _xrefs_relative(unit: str, root, r, c: dict) -> None:
     """Relative cross-references (M6): selectors match once in their block, known statuses, every machine
     record labelled, and a proposed or confirmed target that exists and has its evidence."""
@@ -428,6 +451,7 @@ def v7_layers(units: list[str]):
         _selftrans(unit, root, foreign, r, c)
         _glosses(unit, root, r, c)
         _obsolete(unit, root, r, c)
+        _restored(unit, root, r, c)
         _djs(unit, foreign, r, c)
         _citations(unit, root, r, c)
         _xrefs_relative(unit, root, r, c)

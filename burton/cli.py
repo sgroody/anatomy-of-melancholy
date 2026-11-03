@@ -73,6 +73,15 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
     s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
 
+    sub.add_parser("restore-notes", help="Burton's sidenotes missing from Gowland's edition, from Project Gutenberg "
+                                         "#10800 (rules) -> data/layers/restored-notes/")
+
+    s = sub.add_parser("gold-audit", help="D7: blind second rater on the language-ID gold labels")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--report", action="store_true", help="compare the raters -> state/review/d7-gold-audit.md")
+    s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
+
     s = sub.add_parser("obsolete", help="obsolete-word glosses: Webster 1913 candidates, model ruling -> "
                                         "data/layers/obsolete/")
     s.add_argument("--model", default="claude-opus-5-5")
@@ -144,6 +153,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("serve", help="serve the built site on 127.0.0.1")
     s.add_argument("--profile", choices=["private", "public"], default="private")
     s.add_argument("--port", type=int, default=8765)
+    s.add_argument("--open", action="store_true", help="open the edition in the default browser")
 
     s = sub.add_parser("axe", help="axe-core on every page of a built site, both themes (M8: full-site V10)")
     s.add_argument("--profile", choices=["private", "public"], default="private")
@@ -253,6 +263,21 @@ def main(argv: list[str] | None = None) -> int:
             print("wikidata:", dict(wikidata.run()))
         if args.review:
             print(dict(authors.review_list()))
+    elif args.cmd == "restore-notes":
+        from .layers import restored_notes
+
+        print(dict(restored_notes.run()))
+    elif args.cmd == "gold-audit":
+        from .layers import gold_audit
+
+        if args.report:
+            print(gold_audit.report())
+        elif args.dry_run:
+            its = gold_audit.items()
+            bad = [i["id"] for i in its if gold_audit.leaks(i["unit"], i["text"] + " " + i["context"])]
+            print(f"{len(its)} items; leak test: {len(bad)} with Gowland text {bad[:5]}")
+        else:
+            print(gold_audit.run(model=args.model, budget_usd=args.budget_usd))
     elif args.cmd == "obsolete":
         from .layers import obsolete
 
@@ -275,7 +300,7 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "corpora":
         from .layers import corpora
 
-        print(dict(corpora.convert()))
+        print(corpora.convert())
     elif args.cmd == "syn-audit":
         import json
 
@@ -336,7 +361,7 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "serve":
         from .site import serve
 
-        serve.serve(args.profile, args.port)
+        serve.serve(args.profile, args.port, open_browser=args.open)
     elif args.cmd == "axe":
         from .verify import browser, checks
 

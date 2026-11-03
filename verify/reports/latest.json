@@ -1,5 +1,5 @@
 {
-  "when": "2026-11-03T16:53:31+00:00",
+  "when": "2026-11-03T16:53:38+00:00",
   "ok": true,
   "results": [
     {
@@ -162,6 +162,8 @@
         "obsolete_webster": 386,
         "obsolete_not-english": 72,
         "obsolete_other-obsolete": 83,
+        "restored_records": 1235,
+        "restored_selectors_ok": 1235,
         "djs_omitted": 1621,
         "djs_below-threshold": 407,
         "djs_kept-original": 194,
@@ -179,7 +181,7 @@
         "xrefs_rel_unresolved": 32,
         "xrefs_rel_relative-confirmed": 32,
         "xrefs_rel_not-a-reference": 19,
-        "sources_verified": 416,
+        "sources_verified": 421,
         "sources_conflict": 10,
         "sources_unchecked": 7,
         "source_findings": 17,
@@ -191,6 +193,7 @@
         "djs_broken-span": 7,
         "citation_author_decision": 3,
         "citation_decisions": 3,
+        "sources_matched-unmapped": 1,
         "gloss_records": 23,
         "gloss_selectors_ok": 98
       },
@@ -239,8 +242,8 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "markers": 11390,
-        "resolved": 11390
+        "markers": 13860,
+        "resolved": 13860
       },
       "problems": []
     },
@@ -263,7 +266,7 @@
       "deferred": null,
       "counts": {
         "pages": 844,
-        "links": 176616,
+        "links": 179086,
         "broken": 0,
         "unresolved_xrefs_unlinked": 4,
         "search_results": 43707,
@@ -288,11 +291,11 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "237/237",
-        "private:fallback": 19,
-        "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F",
-        "public:glyphs": "235/235",
-        "public:fallback": 19
+        "private:glyphs": "240/240",
+        "private:fallback": 20,
+        "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F U+2653",
+        "public:glyphs": "239/239",
+        "public:fallback": 20
       },
       "problems": []
     },
@@ -339,14 +342,14 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "densest_3.2.4.1": "38 notes, 0 stacked in 0 stacks",
+        "densest_3.2.4.1": "42 notes, 0 stacked in 0 stacks",
         "pages": 15,
-        "notes": 2757,
-        "stacked": 55,
+        "notes": 3054,
+        "stacked": 81,
         "overlaps": 0,
-        "max_drift_rem": 13.7,
+        "max_drift_rem": 13.8,
         "marker_breaks": 0,
-        "marker_checks": 11028
+        "marker_checks": 12216
       },
       "problems": []
     },

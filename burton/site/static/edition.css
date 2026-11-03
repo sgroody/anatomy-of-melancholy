@@ -404,6 +404,14 @@ header.site .search-link { text-decoration-color: var(--rule); }
 .search-help { font-size: 0.85em; color: var(--muted); }
 .sr-orig { display: block; font-style: italic; font-size: 0.9em; }
 
+/* ------------------------------------------------------------ restored sidenotes (not in Gowland's edition) */
+.nref-restored { color: var(--muted); }
+.sidenote.sn-restored { color: var(--muted); }
+.sidenote.sn-restored .sn-n { color: var(--muted); }
+.sn-restored .sn-src { display: block; margin-top: 0.15em; font-size: 0.85em; font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
+.sidenote.sn-restored.open, .sidenote.sn-restored:target, .sidenote.sn-restored[popover]:popover-open { border-left-style: dashed; }
+@media (min-width: 1100px) { .unit.sn-laid .sidenote.sn-restored:not(.sn-stacked) { border-left: 1px dashed var(--rule); padding-left: 0.4rem; } }
+
 /* ------------------------------------------------------------ the Table (M8) */
 .page-back .unit p.tabl { margin: 0; padding-left: 1.2em; text-indent: -1.2em; text-align: left; hyphens: manual; }
 .page-back .unit h2.head-other { text-align: center; font-style: italic; margin: 1.4rem 0 0.4rem; }

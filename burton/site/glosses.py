@@ -20,7 +20,7 @@ from ..layers import obsolete
 from ..tei import ED, XML_ID, T, public_id
 from ..textview import public_text
 
-GOWLAND_RULE = "gowland-gloss-v1"
+GOWLAND_RULE = "gowland-gloss-v2"
 NOT_A_GLOSS = re.compile(r"^(?:A |An |The |See |Cf\.|I\.e\.|That is|Literally|Burton|Here |Or |Probably|Possibly"
                          r"|Perhaps|Presumably|Translated|Quoted|Proverbial|[‘“'\"(\[])")
 LEMMA = re.compile(r"^[a-z][a-z’'\- ]*$")
@@ -78,38 +78,55 @@ def _text_with_anchors(e) -> tuple[str, list[tuple[str, int]]]:
     return text, [(t, p) for t, p in zip(targets, pos, strict=False)]
 
 
+def _last_word(text: str, lemma: str, start: int, end: int) -> int:
+    """Where the lemma last occurs as whole words in text[start:end], or -1 (case-insensitive)."""
+    ms = list(re.finditer(rf"(?<![\w’'-]){re.escape(lemma)}(?![\w’'-])", text[start:end], re.I))
+    return start + ms[-1].start() if ms else -1
+
+
 def gowland_items(unit: str, stats: dict) -> list[dict]:
-    """Gowland's glosses on this unit's paragraphs and verse groups (private build only)."""
+    """Gowland's glosses on this unit's paragraphs and verse groups (private build only). Rule gowland-gloss-v2:
+    his endnote anchor closes the stretch the note covers, so the lemma is looked for, as whole words, between
+    the previous anchor (or the start of the block) and this one, nearest first; failing that, in the previous
+    block after its last anchor."""
     notes = _endnotes()
     div = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot().find(f".//{T('div')}")
     out = []
+    prev = None  # (block id, text, position after its last anchor)
     for e in div.iter(T("p"), T("lg")):
-        if not e.get(XML_ID) or e.find(f".//{ED('enref')}") is None:
+        if not e.get(XML_ID) or any(a.tag == T("note") for a in e.iterancestors()):
+            continue
+        cid = public_id(e.get(XML_ID))
+        if e.find(f".//{ED('enref')}") is None:
+            prev = (cid, public_text(e), 0)
             continue
         text, anchors = _text_with_anchors(e)
         if text != public_text(e):
             stats["gowland_text_mismatch"] = stats.get("gowland_text_mismatch", 0) + 1
+            prev = None
             continue
-        cid = public_id(e.get(XML_ID))
+        start = 0
         for target, at in anchors:
             en = notes.get(target)
             for lemma, note in note_segments(en) if en is not None else []:
                 if not is_word_gloss(lemma, note):
                     continue
                 stats["gowland_glosses"] = stats.get("gowland_glosses", 0) + 1
-                window = text[max(0, at - 300):at]
-                k = window.lower().rfind(lemma.lower())
+                where, k = (cid, text), _last_word(text, lemma, start, at)
+                if k < 0 and start == 0 and prev is not None:
+                    where, k = (prev[0], prev[1]), _last_word(prev[1], lemma, prev[2], len(prev[1]))
                 if k < 0:
                     stats["gowland_lemma_not_found"] = stats.get("gowland_lemma_not_found", 0) + 1
                     continue
-                a = at - len(window) + k
-                sel = obsolete._selector(cid, text, a, a + len(lemma))
+                sel = obsolete._selector(where[0], where[1], k, k + len(lemma))
                 if sel is None:
                     stats["gowland_no_selector"] = stats.get("gowland_no_selector", 0) + 1
                     continue
                 sense = re.split(r"\.\s+(?=[a-z])", note)[0]  # not the next lemma, where it is not set in italics
                 out.append({"selector": sel, "headword": lemma, "sense": sense.rstrip(" ."), "source": "gowland",
                             "label": "Gowland 2021"})
+            start = at
+        prev = (cid, text, anchors[-1][1] if anchors else 0)
     return out
 
 
