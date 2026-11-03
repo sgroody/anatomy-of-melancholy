@@ -536,3 +536,8 @@ result:
     cross-reference ("See …") as a sense (2 occurrences, both 'liquorish', left unglossed). 4 of the 6 are a choice
     of source (a labelled draft where Webster fits), not a wrong meaning; whether that is acceptable is the owner's
     decision. Glosses stay off by default. A changed rule or prompt needs a fresh round (o2).
+rescored_d12:
+  decision: 'D12 (owner, 2026-11-03): "drafted senses should be allowed where a Webster sense would fit"'
+  rule: "as above, except that a drafted sense where a Webster sense fits is not counted as wrong"
+  wrong_senses_shown: 2   # n 8 liquorish (Webster cross-reference, no longer shown), n 18 scrat (arguable, counted)
+  verdict: PASS (limit 2); the labels and the layer are unchanged
