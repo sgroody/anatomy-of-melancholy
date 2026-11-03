@@ -91,6 +91,12 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("corpora", help="convert downloaded corpora to data/source/corpora/ for verify-sources")
 
+    s = sub.add_parser("syn-audit", help="M7: blind model reading of the sampled synopsis strings' parents "
+                                         "(images + hidden text only); --report compares with the trees")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--report", action="store_true")
+    s.add_argument("--dry-run", action="store_true")
+
     s = sub.add_parser("m6-audit", help="independent model checkers for the M6 review items")
     s.add_argument("kind", choices=["authors", "xrefs", "sources", "report"])
     s.add_argument("--model", default="claude-opus-5-5")
@@ -252,6 +258,15 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import corpora
 
         print(dict(corpora.convert()))
+    elif args.cmd == "syn-audit":
+        import json
+
+        from .layers import syn_audit
+
+        if args.report:
+            print(json.dumps(syn_audit.report(), indent=1))
+        else:
+            print(syn_audit.run(args.model, dry_run=args.dry_run))
     elif args.cmd == "m6-audit":
         from .layers import m6_audit
 

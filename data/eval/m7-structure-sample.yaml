@@ -12,233 +12,587 @@ items:
 - part: p1
   id: nat0000109
   text: Dotage.
-  parent: null
-  label: null
+  parent: nat0000107
+  label: agree
+  structure_parent: nat0000107
+  rater:
+    reason: Dotage is the first item under the brace whose point sits just right of 'Habits, as Subsect. 4.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000144
   text: Its Causes in general. Sect. 2, A.
-  parent: null
-  label: null
+  parent: nat0000212
+  label: agree
+  structure_parent: nat0000212
+  rater:
+    reason: 'Listed in the large main brace hanging from ''Melancholy: in which consider''.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000172
   text: Vegetal. Subsect. 5.
-  parent: null
-  label: null
+  parent: nat0000197
+  label: agree
+  structure_parent: nat0000197
+  rater:
+    reason: First of three items under the brace beside 'Soul and his faculties, as'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000197
   text: Soul and his faculties, as
-  parent: null
-  label: null
+  parent: nat0000129
+  label: agree
+  structure_parent: nat0000129
+  rater:
+    reason: Lower branch of the brace beside the 'Memb. 2 … parts of Subsect. 1' block, set against 'Body hath parts' with
+      'Or' between them.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000210
   text: containing
-  parent: null
-  label: null
+  parent: nat0000185
+  label: agree
+  structure_parent: nat0000185
+  rater:
+    reason: Lower branch of the brace beside 'Body hath parts Subsect. 2', paired with 'Contained as' via 'or'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000212
   text: 'Melancholy: in which consider'
-  parent: null
-  label: null
+  parent: root
+  label: agree
+  structure_parent: root
+  rater:
+    reason: Leftmost heading of the tree; the ♈ above it is only a cross-key sign.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000344
   text: Education, Subsect. 2.
-  parent: null
-  label: null
+  parent: nat0000368
+  label: agree
+  structure_parent: nat0000368
+  rater:
+    reason: Listed with Nurses, Terrors, etc. under the brace to the right of the vertical heading 'Not necessary, as Memb.
+      4 Sect. 2.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000366
   text: General, as Memb. 1.
-  parent: null
-  label: null
+  parent: nat0000365
+  label: agree
+  structure_parent: nat0000365
+  rater:
+    reason: Sits under the large leftmost brace beside 'Sect. 2. Causes of Melancholy are either', together with 'Particular
+      to the three species'; the 'A' above that heading is only a cross-key sign.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000668
   text: Body, as ill digestion, crudity, wind, dry brains, hard belly, thick blood, much waking, heaviness and palpitation
     of heart, leaping in many places, &c., Subsect. 1.
-  parent: null
-  label: null
+  parent: nat0000737
+  label: agree
+  structure_parent: nat0000737
+  rater:
+    reason: It is the first item in the brace that hangs from the vertical 'General, as of Memb. 1.', paired with 'Mind' by
+      the connector 'or'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000731
   text: Phlegmatic, slothful, dull, heavy, &c.
-  parent: null
-  label: null
+  parent: nat0000735
+  label: agree
+  structure_parent: nat0000735
+  rater:
+    reason: It is the second of the four humours grouped by the brace beside 'Humours'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000808
   text: In mind
-  parent: null
-  label: null
+  parent: nat0000809
+  label: agree
+  structure_parent: nat0000809
+  rater:
+    reason: Last item under the brace beside 'Head-melancholy. Subsect. 1.', below 'In body' and 'Or'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000809
   text: Head-melancholy. Subsect. 1.
-  parent: null
-  label: null
+  parent: nat0000857
+  label: agree
+  structure_parent: nat0000857
+  rater:
+    reason: First item under the large brace beside 'Particular symptoms to the three distinct species'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000918
   text: A reason of these symptoms. Memb. 3.
-  parent: null
-  label: null
+  parent: nat0000857
+  label: agree
+  structure_parent: nat0000857
+  rater:
+    reason: Last item under the large brace beside 'Particular symptoms to the three distinct species'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000933
   text: Tending to good, as
-  parent: null
-  label: null
+  parent: nat0000959
+  label: agree
+  structure_parent: nat0000959
+  rater:
+    reason: First item under the large brace beside 'Prognostics of melancholy. Sect. 4.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p1
   id: nat0000974
   text: How a melancholy or mad man offering violence to himself, is to be censured.
-  parent: null
-  label: null
+  parent: nat0000975
+  label: agree
+  structure_parent: nat0000975
+  rater:
+    reason: Last item under the brace beside 'Corollaries and questions.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0006864
   text: 4th. Exercise.
-  parent: null
-  label: null
+  parent: nat0006837
+  label: agree
+  structure_parent: nat0006837
+  rater:
+    reason: '''4th. Exercise.'' is one of the six numbered items under the large brace beside ''♈ Sect. 2. Dietetical, which
+      consists in reforming those six non-natural things, as in''.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0006868
   text: Subsect.
-  parent: null
-  label: null
+  parent: nat0006895
+  label: agree
+  structure_parent: nat0006895
+  rater:
+    reason: '''Subsect.'' is the column heading at the top of the block under the brace beside ''From himself'', so it takes
+      that block''s parent.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0006882
   text: 2. By fair and foul means, counsel, comfort, good persuasion, witty devices, fictions, and if it be possible to satisfy
     his mind.
-  parent: null
-  label: null
+  parent: from his friends
+  label: disagree
+  structure_parent: nat0006929
+  rater:
+    reason: Under the large second-level brace beside 'from his friends', which is on the image but has no id in the list,
+      so its text is given instead.
+    confidence: low
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
+  settlement: 'Settled 2026-11-03 by re-reading pg428_01: the rater named the parent by its text (''from his friends'' = nat0006929)
+    because that string is printed on pg428_01 but sits in the hidden table behind pg428_02, so the packet''s id list lacked
+    it. Same parent as the structure: a packet defect, not a disagreement.'
+  label_settled: agree
 - part: p2
   id: nat0006924
   text: 5. Against vain fears, sorrows for death of friends, or otherwise.
-  parent: null
-  label: null
+  parent: Sect. 3. A consolatory digression, containing remedies to all discontents and passions of the mind.
+  label: disagree
+  structure_parent: nat0006928
+  rater:
+    reason: Under the brace beside 'Sect. 3. A consolatory digression…', which is on the image but has no id in the list,
+      so its text is given instead.
+    confidence: low
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
+  settlement: 'Settled 2026-11-03 by re-reading pg428_01: the rater named the parent by its text (''Sect. 3. A consolatory
+    digression ...'' = nat0006928) because that string is printed on pg428_01 but sits in the hidden table behind pg428_02,
+    so the packet''s id list lacked it. Same parent as the structure: a packet defect, not a disagreement.'
+  label_settled: agree
 - part: p2
   id: nat0006993
   text: Sect. 4. Pharmaceutice, or Physic which cureth with medicines, with a digression of this kind of Physic, is either
     Memb. 1 Subsect. 1.
-  parent: null
-  label: null
+  parent: root
+  label: agree
+  structure_parent: root
+  rater:
+    reason: This is the leftmost heading of the sheet; only the cross-key sign ♉ sits above it.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007005
   text: Syrups of borage, bugloss, hops, Epithyme, endive, succory, &c.
-  parent: null
-  label: null
+  parent: nat0007019
+  label: agree
+  structure_parent: nat0007019
+  rater:
+    reason: It is in the small brace beside 'fluid', together with 'Wines'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007006
   text: Conserves of violets, maidenhair, borage, bugloss, roses, &c.
-  parent: null
-  label: null
+  parent: nat0007031
+  label: agree
+  structure_parent: nat0007031
+  rater:
+    reason: It is in the small brace beside 'consisting', together with 'Confections'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007019
   text: fluid
-  parent: null
-  label: null
+  parent: nat0007018
+  label: agree
+  structure_parent: nat0007018
+  rater:
+    reason: It is in the brace beside the vertical 'Liquid', set against 'consisting' with 'or' between them.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007167
   text: Liquid, as Potions, Juleps, Syrups, wine of Hellebore, bugloss, &c.
-  parent: null
-  label: null
+  parent: nat0007166
+  label: agree
+  structure_parent: nat0007166
+  rater:
+    reason: Under the brace that hangs from the vertical 'swallowed, or' text beside Mouth's branch, grouping Liquid, Solid,
+      Electuaries.
+    confidence: medium
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007178
   text: Solid, as lapis Armenus, & lazuli, pills of Indy, pills of Fumitory, &c.
-  parent: null
-  label: null
+  parent: nat0007166
+  label: agree
+  structure_parent: nat0007166
+  rater:
+    reason: Second item under the brace pointing at the vertical 'swallowed, or' heading.
+    confidence: medium
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007233
   text: Cauteries, and searing with hot Irons, boring.
-  parent: null
-  label: null
+  parent: nat0007236
+  label: agree
+  structure_parent: nat0007236
+  rater:
+    reason: In the lower brace (Phlebotomy…Issues) whose point is beside 'Chirurgical physic'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007247
   text: Sleep more than ordinary.
-  parent: null
-  label: null
+  parent: nat0007283
+  label: agree
+  structure_parent: nat0007283
+  rater:
+    reason: Sits in the large left brace beside '♋ Sect. 5. Cure of head-melancholy. Memb. 1.', in the list under the '1st
+      Subsect.' column heading, which isn't a parent itself.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007331
   text: To procure sleep, and are
-  parent: null
-  label: null
+  parent: nat0007332
+  label: agree
+  structure_parent: nat0007332
+  rater:
+    reason: The vertical text 'To procure sleep, and are' sits inside the tall brace that points out of '6th. Correctors of
+      accidents, as,'; that brace also holds the Odoraments/Irrigations items above and the 'Against…' items below.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007402
   text: Cure of Hypochondriacal, or windy melancholy, 3rd Memb.
-  parent: null
-  label: null
+  parent: root
+  label: agree
+  structure_parent: root
+  rater:
+    reason: It sits at the far left edge under the cross-key ♍, with no brace to its left on this sheet, and its own large
+      brace holds Subsect. 1 and Subsect. 2.
+    confidence: medium
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p2
   id: nat0007437
   text: Simples,
-  parent: null
-  label: null
+  parent: nat0007440
+  label: agree
+  structure_parent: nat0007440
+  rater:
+    reason: It is the first item under the brace beside 'Inwardly taken', which groups 'Simples,' or 'Compounds, as'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010617
   text: Sensible, as of Beasts, for pleasure, preservation of kind, mutual agreement, custom, bringing up together, &c.
-  parent: null
-  label: null
+  parent: nat0010664
+  label: agree
+  structure_parent: nat0010664
+  rater:
+    reason: '''Sensible'' sits under the brace beside ''Division or kinds Subsect. 2.'', between ''Natural'' and ''Rational.'''
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010629
   text: Things without life, made by art, pictures, sports, games, sensible objects, as hawks, hounds, horses. Or men themselves
     for similitude of manners, natural affection, as to friends, children, kinsmen, &c., for glory, such as commend us.
-  parent: null
-  label: null
+  parent: nat0010651
+  label: agree
+  structure_parent: nat0010651
+  rater:
+    reason: This text is under the brace beside 'Pleasant. Subsect. 2.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010653
   text: Simple which hath 3 objects, as Memb. 2.
-  parent: null
-  label: null
+  parent: nat0010680
+  label: agree
+  structure_parent: nat0010680
+  rater:
+    reason: '''Simple which hath 3 objects'' sits under the brace beside the vertical ''Rational.'''
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010664
   text: Division or kinds Subsect. 2.
-  parent: null
-  label: null
+  parent: nat0010704
+  label: agree
+  structure_parent: nat0010704
+  rater:
+    reason: '''Division or kinds'' sits under the large brace beside the vertical title ''Love and Love-Melancholy, Memb.
+      1 Sect. 1.'''
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010680
   text: Rational.
-  parent: null
-  label: null
+  parent: nat0010664
+  label: agree
+  structure_parent: nat0010664
+  rater:
+    reason: The vertical 'Rational.' is the third member of the brace beside 'Division or kinds Subsect. 2.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010681
   text: Fucate in show, by some error or hypocrisy; some seem and are not; or truly for virtue, honesty, good parts, learning,
     eloquence, &c.
-  parent: null
-  label: null
+  parent: nat0010652
+  label: agree
+  structure_parent: nat0010652
+  rater:
+    reason: '''Fucate in show...'' is under the small brace beside ''Honest. Subsect. 3.'''
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010692
   text: Common good, our neighbour, country, friends, which is charity; the defect of which is cause of much discontent and
     Melancholy.
-  parent: null
-  label: null
+  parent: nat0010703
+  label: agree
+  structure_parent: nat0010703
+  rater:
+    reason: '''Common good...'' is under the brace beside ''Mixed of all three which extends to Memb. 3.'''
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010744
   text: Artificial allurements, and provocations of lust and love, gestures, apparel, dowry, money, &c.
-  parent: null
-  label: null
+  parent: nat0010748
+  label: agree
+  structure_parent: nat0010748
+  rater:
+    reason: It sits inside the brace that hangs from 'Causes Memb. 2.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010746
   text: Opportunity of time and place, conference, discourse, music, singing, dancing, amorous tales, lascivious objects,
     familiarity, gifts, promises, &c., Subsect. 4.
-  parent: null
-  label: null
+  parent: nat0010748
+  label: agree
+  structure_parent: nat0010748
+  rater:
+    reason: It sits inside the brace that hangs from 'Causes Memb. 2.', below the Quaest. line.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010789
   text: Fear, sorrow, suspicion, anxiety, &c.
-  parent: null
-  label: null
+  parent: nat0010776
+  label: agree
+  structure_parent: nat0010776
+  rater:
+    reason: It is the first line in the brace beside 'Bad, as'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010809
   text: To withstand the beginnings, avoid occasions, fair and foul means, change of place, contrary passion, witty inventions,
     discommend the former, bring in another, Subsect. 2.
-  parent: null
-  label: null
+  parent: nat0010822
+  label: agree
+  structure_parent: nat0010822
+  rater:
+    reason: It sits inside the brace that hangs from 'Cures Memb. 5.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010824
   text: His name, definition, extent, power, tyranny, Memb. 1.
-  parent: null
-  label: null
+  parent: nat0010935
+  label: agree
+  structure_parent: nat0010935
+  rater:
+    reason: First line under the large main brace that hangs from the vertical heading '♉ Jealousy. Sect. 3.'
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010886
   text: They have been naught themselves. Hard usage, unkindness, wantonness, Inequality of years, persons, fortunes, &c.
-  parent: null
-  label: null
+  parent: nat0010874
+  label: agree
+  structure_parent: nat0010874
+  rater:
+    reason: Second item in the small brace beside 'In the parties themselves', together with 'Idleness, impotency…'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010887
   text: Outward enticements and provocations of others.
-  parent: null
-  label: null
+  parent: nat0010910
+  label: agree
+  structure_parent: nat0010910
+  rater:
+    reason: Under the small brace that points at 'From others', below the 'or'.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
 - part: p3
   id: nat0010912
   text: Prognostics Memb. 3.
-  parent: null
-  label: null
+  parent: nat0010935
+  label: agree
+  structure_parent: nat0010935
+  rater:
+    reason: An item under the main brace beside 'Jealousy. Sect. 3.', alongside Symptoms and Cures.
+    confidence: high
+    model: claude-opus-5-5
+    prompt: syn-audit-v1
+    date: '2026-11-03'
+result:
+  p1:
+    agree: 15
+    disagree: 0
+    unanswered: 0
+  p2:
+    agree: 13
+    disagree: 2
+    unanswered: 0
+  p3:
+    agree: 15
+    disagree: 0
+    unanswered: 0
+result_settled:
+  p1: 15/15
+  p2: 15/15 (13/15 by id; 2 settled above)
+  p3: 15/15
+  verdict: 'PASS (rule: at least 14/15 per partition, every disagreement settled)'
