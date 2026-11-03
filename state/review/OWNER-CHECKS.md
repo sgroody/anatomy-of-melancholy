@@ -1,5 +1,7 @@
 # M6: what the owner still needs to look at
 
+**Done: the owner accepted both on 2026-11-02 ("Accept both").** Nothing is waiting.
+
 Everything else in M6 has been decided (by you, or by Claude on your delegation, recorded as such) or checked
 by rule. Two items remain, both sign-offs on machine drafts that have already been tested.
 

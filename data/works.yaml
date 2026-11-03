@@ -9,7 +9,8 @@
 # only for distinctive titles. Without one, a lone title resolves only through the author named at the anchor
 # (held-out round c1 showed that matching a lone abbreviation by prefix is not safe).
 version: works-v1
-provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: machine-draft}
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: checked,
+             checked_by: owner, checked_date: "2026-11-02"}
 
 works:
   burton.anatomy: {author: burton, title: The Anatomy of Melancholy}

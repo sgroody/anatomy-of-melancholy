@@ -52,8 +52,11 @@ def dates(wd: dict | None) -> str | None:
 
 def tables_label() -> dict:
     p = citations._load(citations.ABBREV)["provenance"]
-    return {"label": f"machine draft ({p['model']}, {p['date']}), not yet reviewed",
-            "short": f"expanded by rule; tables a machine draft ({p['model']})", "method": citations.METHOD}
+    checked = p.get("status") == "checked"
+    review = f"checked by the {p['checked_by']} ({p['checked_date']})" if checked else "not yet reviewed"
+    return {"label": f"machine draft ({p['model']}, {p['date']}), {review}",
+            "short": f"expanded by rule; tables a machine draft ({p['model']}){', checked' if checked else ''}",
+            "method": citations.METHOD}
 
 
 def collect(units: list[str], shown: set[str] | None = None) -> tuple[dict, dict]:
@@ -110,6 +113,7 @@ def collect(units: list[str], shown: set[str] | None = None) -> tuple[dict, dict
                       "dates": dates(rec.get("wikidata")), "draft": draft,
                       "field": (draft or {}).get("field"),
                       "review_state": (rec.get("review") or {}).get("state", "unreviewed"),
+                      "review": rec.get("review") or {},
                       "citations": len(d["cites"]), "notes": len(d["notes"]),
                       "parsed": d["status"]["parsed"], "partial": d["status"]["partial"],
                       "works": [(titles[w], n) for w, n in d["works"].most_common()], "cites": d["cites"]}

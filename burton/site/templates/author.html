@@ -12,7 +12,7 @@
   {% if a.draft %}
   <section class="draft" aria-labelledby="draft-h">
     <h2 id="draft-h">Who they are</h2>
-    <p class="lbl">Machine draft by {{ a.draft.model }} (prompt {{ a.draft.prompt }}, {{ a.draft.date }}){% if a.review_state == "unreviewed" %}, not yet reviewed{% else %}, reviewed: {{ a.review_state }}{% endif %}.</p>
+    <p class="lbl">Machine draft by {{ a.draft.model }} (prompt {{ a.draft.prompt }}, {{ a.draft.date }}){% if a.review_state == "unreviewed" %}, not yet reviewed{% else %}; {{ a.review_state }} by the {{ a.review.by }} ({{ a.review.date }}){% endif %}.</p>
     <p>{{ a.draft.identification }}</p>
     <p><strong>Why Burton cites them:</strong> {{ a.draft.why_cited }}</p>
     {% if a.draft.identity_doubt %}<p><strong>Doubt about the identification:</strong> {{ a.draft.identity_doubt }}</p>{% endif %}

@@ -6,7 +6,8 @@
 # could name two people goes under `ambiguous` and resolves only by its work (or not at all). Unknown forms
 # are simply absent: the parser then records the citation as `unidentified`, never as a guess.
 version: abbrev-v1
-provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: machine-draft}
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-02", status: checked,
+             checked_by: owner, checked_date: "2026-11-02"}
 
 # Locus abbreviations. `en` is the display label. A locator counts only when a number follows it.
 locators:
