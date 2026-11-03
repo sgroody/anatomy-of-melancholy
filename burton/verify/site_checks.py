@@ -102,7 +102,7 @@ def site_results(units: list[str]) -> list[Result]:
     v10 = Result("V10", "HTML validity and static accessibility")
     tot = {k: 0 for k in ("pages", "markers", "resolved", "script_chars", "untagged", "links", "broken",
                           "parse_errors", "a11y_issues", "leaks", "uncovered", "unresolved_xrefs",
-                          "title_script_chars")}
+                          "title_script_chars", "search_docs", "search_broken")}
     gow = gowland_units(units)
 
     def a11y(profile, rel, msg):
@@ -163,6 +163,9 @@ def site_results(units: list[str]) -> list[Result]:
                     continue
                 if "xref-unresolved" in (e.get("class") or ""):
                     tot["unresolved_xrefs"] += 1
+                if "pageref-unlinked" in (e.get("class") or ""):  # every Table locator must find its page
+                    tot["broken"] += 1
+                    v6.fail(f"{profile}/{rel}: Table page {''.join(e.itertext())} has no page marker in the build")
                 for att in ("href", "src"):
                     url = e.get(att)
                     if url is None or re.match(r"^[a-z]+:", url):
@@ -218,7 +221,7 @@ def site_results(units: list[str]) -> list[Result]:
             if profile == "public":
                 raw = page.read_text(encoding="utf-8")
                 for needle in ('data-resp="gowland"', "gowland-tr", 'class="pb"', 'class="enref"', 'class="supplied"',
-                               "toc-tag"):
+                               "toc-tag", 'class="locs"', 'class="pageref'):
                     if needle in raw:
                         tot["leaks"] += 1
                         v8.fail(f"public/{rel}: contains {needle}")
@@ -249,11 +252,14 @@ def site_results(units: list[str]) -> list[Result]:
                    "enrefs": len(root.findall(f".//{ED}enref")) if profile == "private" else 0,
                    "pbs": len(root.findall(f".//{TEI}pb")) if profile == "private" else 0,
                    "gowland_versions": len(linked) if profile == "private" else 0,
-                   "djs_versions": sum(1 for k, r in djs_layer.items() if djs.shown(r, tr_layer.get(k)))}
+                   "djs_versions": sum(1 for k, r in djs_layer.items() if djs.shown(r, tr_layer.get(k))),
+                   # the Table's Penguin page numbers (private build only)
+                   "pagerefs": len(root.findall(f".//{ED}pageref")) if profile == "private" else 0}
             htm = {"sidenotes": len(by_class(tree, "sidenote")), "foreign": len(by_class(tree, "fp")),
                    "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb")),
                    "gowland_versions": len(by_class(tree, "ft-gowland")),
-                   "djs_versions": len(by_class(tree, "ft-djs1927"))}
+                   "djs_versions": len(by_class(tree, "ft-djs1927")),
+                   "pagerefs": len(by_class(tree, "pageref"))}
             for k in xml:
                 v2.counts[f"{profile}:{k}"] = v2.counts.get(f"{profile}:{k}", 0) + htm[k]
                 if xml[k] != htm[k]:
@@ -292,7 +298,41 @@ def site_results(units: list[str]) -> list[Result]:
                         tot["leaks"] += 1
                         v8.fail(f"public/{unit}: Gowland text present: {s[:50]!r}")
 
-        # V9: every visible code point (pages and CSS generated content) is in a served font
+        # The search index (M8): V6, every result links to an id on its page; V8, the public index has
+        # no Gowland label and none of his bracketed text, by the same rule as the pages
+        idx_file = site / "assets" / "search-index.json"
+        idx = json.loads(idx_file.read_text(encoding="utf-8")) if idx_file.exists() else None
+        if idx is None:
+            v6.fail(f"{profile}: assets/search-index.json missing")
+        else:
+            by_unit: dict[str, list] = {}
+            for d in idx["docs"]:
+                unit = idx["units"][d[0]][0]
+                by_unit.setdefault(unit, []).append(d)
+                tot["search_docs"] += 1
+                target = (site / unit / "index.html").resolve()
+                if not target.exists() or d[2] not in ids_of(target):
+                    tot["search_broken"] += 1
+                    v6.fail(f"{profile}: search result {unit}#{d[2]} does not resolve")
+            if profile == "public":
+                for lab in idx["labels"]:
+                    if "gowland" in lab.lower():
+                        tot["leaks"] += 1
+                        v8.fail(f"public search index: translation label {lab!r}")
+                for unit, docs in by_unit.items():
+                    root = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
+                    trs = [d for d in docs if d[1] == 2]
+                    own = " ".join([d[3] for d in docs if d[1] != 2] + [idx["origs"][d[4]][1] for d in trs])
+                    shown = " ".join([own] + [d[3] for d in trs if not idx["labels"][d[5]].startswith("Dell")])
+                    for t in root.iter(f"{ED}trans", f"{ED}verse-trans", f"{ED}block"):
+                        seg = " ".join("".join(t.itertext()).split())
+                        segs = [ln for ln in t.iter(f"{TEI}l")] or [t]
+                        bare = [" ".join(re.sub(r"[\[\]{}]", "", "".join(x.itertext())).split()) for x in segs]
+                        if (len(seg) > 3 and seg in shown) or any(len(b) >= 30 and b in own for b in bare):
+                            tot["leaks"] += 1
+                            v8.fail(f"public search index, {unit}: Gowland text present: {seg[:50]!r}")
+
+        # V9: every visible code point (pages, CSS generated content, search results) is in a served font
         covered, fallback = set(), set()
         for f in (site / "assets" / "fonts").glob("*.woff2"):
             cm = set(TTFont(str(f)).getBestCmap())
@@ -304,6 +344,10 @@ def site_results(units: list[str]) -> list[Result]:
             used |= shown_codepoints(page.read_text(encoding="utf-8"))
         for css in (site / "assets").glob("*.css"):
             used |= css_codepoints(css.read_text(encoding="utf-8"))
+        if idx is not None:
+            for text in [*(d[3] for d in idx["docs"]), *(o[1] for o in idx["origs"]), *idx["labels"],
+                         *(u[1] for u in idx["units"])]:
+                used |= {ord(c) for c in text if not c.isspace() and unicodedata.category(c) != "Cf"}
         missing = sorted(used - covered)
         tot["uncovered"] += len(missing)
         v9.counts[f"{profile}:glyphs"] = f"{len(used) - len(missing)}/{len(used)}"
@@ -318,7 +362,8 @@ def site_results(units: list[str]) -> list[Result]:
     v4.counts = {"script_chars": tot["script_chars"], "untagged": tot["untagged"],
                  "in_document_titles": tot["title_script_chars"]}
     v6.counts = {"pages": tot["pages"], "links": tot["links"], "broken": tot["broken"],
-                 "unresolved_xrefs_unlinked": tot["unresolved_xrefs"]}
+                 "unresolved_xrefs_unlinked": tot["unresolved_xrefs"], "search_results": tot["search_docs"],
+                 "search_broken": tot["search_broken"]}
     v8.counts = {"leaks": tot["leaks"], "gowland_pages_withheld": len(gow)}
     v10.counts = {"pages": tot["pages"], "parse_errors": tot["parse_errors"], "a11y_issues": tot["a11y_issues"]}
     return [v2, v3, v4, v6, v8, v9, v10]

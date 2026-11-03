@@ -14,7 +14,7 @@
 <script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;}catch(e){}</script>
 <script type="module" src="{{ root }}assets/edition.js"></script>
 </head>
-<body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings') else (page.kind if page else 'other') }}">
+<body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings', 'search') else (page.kind if page else 'other') }}">
 <a class="skip" href="#main">Skip to text</a>
 <header class="site">
   <div class="bar">
@@ -25,6 +25,7 @@
       <nav aria-label="Contents">{{ toc }}</nav>
     </details>
     {% endif %}
+    <a class="search-link" href="{{ root }}search/"{% if key == "search" %} aria-current="page"{% endif %}>Search</a>
     {% if key != "settings" %}
     <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings">Reading options</button>
     {% endif %}
@@ -54,7 +55,7 @@
     {% if next %}<a rel="next" href="{{ root }}{{ next.href }}"><span class="pager-dir">Next</span> <span class="pager-t">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
   </nav>
   {% endif %}
-  <p class="colophon">Text: Burton’s sixth edition as edited by Angus Gowland (Penguin, 2021){% if profile == "public" %}, without Gowland’s editorial matter{% endif %}. Every translation is labelled with its source; machine translations name the model and prompt that produced them and are unreviewed unless marked otherwise. <a href="{{ root }}about/">About this edition</a> · <a href="{{ root }}authors/">Authors cited</a> · <a href="{{ root }}settings/">Reading options</a></p>
+  <p class="colophon">Text: Burton’s sixth edition as edited by Angus Gowland (Penguin, 2021){% if profile == "public" %}, without Gowland’s editorial matter{% endif %}. Every translation is labelled with its source; machine translations name the model and prompt that produced them and are unreviewed unless marked otherwise. <a href="{{ root }}about/">About this edition</a> · <a href="{{ root }}authors/">Authors cited</a> · <a href="{{ root }}search/">Search</a> · <a href="{{ root }}settings/">Reading options</a></p>
 </footer>
 </body>
 </html>

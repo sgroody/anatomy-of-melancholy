@@ -110,10 +110,13 @@ class Renderer:
         self.cites, self.cite_label = cites or {}, cite_label  # M6 citation layer, shown on request
         self.djs = {k: djs_layer.version(r) for k, r in (djs or {}).items() if djs_layer.shown(r, layer.get(k))}
         self.image = image  # callback: graphic file name -> (src, alt, width, height)
+        self.plate = None  # callback: (file name, src, alt, width, height) -> the figure's inner HTML, or None
+        self.pagemap: dict[str, str] = {}  # Penguin page number -> the unit where that page begins (the Table)
         self.h1_head = h1_head  # the head element rendered as the page's h1
         self.counts = {"sidenotes": 0, "foreign": 0, "gowland_trans": 0, "enrefs": 0, "pbs": 0,
                        "burton_spans": 0, "burton_spans_unplaced": 0, "soft_hyphens": 0, "images": 0,
-                       "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0, "verified_sources": 0}
+                       "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0, "verified_sources": 0,
+                       "pagerefs": 0, "pagerefs_linked": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
@@ -203,9 +206,25 @@ class Renderer:
             if self.drop_gowland():
                 return True
             self.counts["pbs"] += 1
-            self.w(f'<span class="pb" data-resp="gowland" data-n="{attr(e.get("n"))}" aria-hidden="true"></span>')
+            self.w(f'<span class="pb" id="pg-{attr(e.get("n"))}" data-resp="gowland" data-n="{attr(e.get("n"))}" '
+                   'aria-hidden="true"></span>')
         elif tag == T("lb"):
             self.w("<br>")
+        elif tag == ED("locs"):  # the Table's Penguin page numbers (M8): private build only
+            if self.drop_gowland():
+                return True
+            self.w('<span class="locs" data-resp="gowland">')
+            self.children(e)
+            self.w("</span>")
+        elif tag == ED("pageref"):
+            n = e.get("n")
+            self.counts["pagerefs"] += 1
+            if n in self.pagemap:
+                self.counts["pagerefs_linked"] += 1
+                self.w(f'<a class="pageref" href="../{attr(self.pagemap[n])}/#pg-{attr(n)}" '
+                       f'aria-label="page {attr(n)}">{esc(e.text)}</a>')
+            else:
+                self.w(f'<span class="pageref pageref-unlinked">{esc(e.text)}</span>')
         elif tag == ED("enref"):
             if self.drop_gowland():
                 return True
@@ -277,6 +296,9 @@ class Renderer:
         g = e.find(T("graphic"))
         src, alt, w, h = self.image(g.get("url"))
         self.counts["images"] += 1
+        if self.plate and (mapped := self.plate(g.get("url"), src, alt, w, h)):  # the frontispiece's panels (M8)
+            self.w(f'<figure class="plate plate-mapped">{mapped}</figure>\n')
+            return
         self.w(f'<figure class="plate"><a href="{attr(src)}"><img src="{attr(src)}" alt="{attr(alt)}" '
                f'width="{w}" height="{h}" loading="lazy" decoding="async"></a></figure>\n')
 
@@ -285,6 +307,8 @@ class Renderer:
         source = ' data-source="image"' if e.get("facs") else ""
         sub = f" head-{attr(e.get('subtype'))}" if e.get("subtype") else ""
         tag, cls = ("h1", f"unit-title head-{attr(t)}") if e is self.h1_head else ("p", f"head-{attr(t)}{sub}")
+        if e.get("subtype") == "tableHeadA":  # the Table's letters: real headings, for navigation
+            tag = "h2"
         self.w(f'<{tag} class="{cls}"{source}>')
         if e.get("ana") == "foreign":  # a heading that is itself a foreign passage (Lectori male feriato)
             self.foreign(e)
@@ -627,9 +651,11 @@ def h1_head(div):
 
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
-                findings: dict | None = None, xrefs: list[dict] | None = None) -> tuple[str, dict]:
+                findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
+                pagemap: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
+    r.plate, r.pagemap = plate, pagemap or {}
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')

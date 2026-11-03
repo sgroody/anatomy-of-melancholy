@@ -73,7 +73,7 @@ def _belongs_before(e) -> bool:
 
 
 def unit_range(unit: str) -> tuple[str, list]:
-    if unit in FRONT:
+    if unit in MATTER:
         return front_range(unit)
     units = nav()
     idx = next(i for i, u in enumerate(units) if u["unit"] == unit)
@@ -111,16 +111,29 @@ FRONT = {
 }
 
 
+# Back matter in spine order (M8): Burton's alphabetical Table of 1624, whose locators are the Penguin
+# edition's page numbers (Gowland's matter, marked ed:locs).
+BACK = {
+    "table": ("index", "The Table", None),
+}
+MATTER = {**FRONT, **BACK}
+
+
 def all_units() -> list[str]:
-    """Every unit in reading order: front matter, then the three Partitions."""
-    return list(FRONT) + [u["unit"] for u in nav()]
+    """Every unit in reading order: front matter, the three Partitions, back matter."""
+    return list(FRONT) + [u["unit"] for u in nav()] + list(BACK)
 
 
 def is_front(unit: str) -> bool:
     return unit in FRONT
 
 
+def is_back(unit: str) -> bool:
+    return unit in BACK
+
+
 def front_range(unit: str) -> tuple[str, list]:
-    file = FRONT[unit][0]
+    """The blocks of a front- or back-matter page: its file's section, whole."""
+    file = MATTER[unit][0]
     sec = load(file).getroot().find(f"{{{XH}}}body/{{{XH}}}section")
     return file, [k for k in sec if isinstance(k.tag, str)]

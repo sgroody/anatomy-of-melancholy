@@ -291,16 +291,16 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .burton-tr.linked, .fp.linked > .fo { text-decoration-color: var(--accent); text-decoration-style: solid; }
 
 /* ------------------------------------------------------------ Gowland material (private build only) */
-.gowland-tr, .enref, .pb { display: none; }
+.gowland-tr, .enref { display: none; }
+.pb { display: inline; } /* empty unless page numbers are shown, but always a link target for the Table */
 .show-gowland .gowland-tr { display: inline; color: var(--muted); }
 .show-gowland .gowland-verse, .show-gowland .gowland-block { display: block; }
-.show-pages .pb { display: inline; }
 .sn-cite { display: none; }
 a.xref { color: inherit; text-decoration-style: dotted; text-decoration-thickness: 1px; }
 .show-cites .sidenote .sn-cite { display: block; margin-top: 0.15em; color: var(--muted); }
 .lbl { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
 .cite-list li { margin: 0.15em 0; }
-.show-pages .pb::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
+.show-pages .pb::before, .pb:target::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
 
 /* ------------------------------------------------------------ home, landings, prose pages */
 .home-page h1, .landing-title { font-weight: 400; text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.08em; margin: 2.2rem 0 0.4rem; }
@@ -358,3 +358,45 @@ a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: v
   header.site, .settings, footer .pager, .sn-more { display: none; }
   .sidenote, .unit.sn-laid .sidenote { display: block; position: static; float: none; width: auto; margin: 0.2rem 0 0.2rem 1rem; font-size: 0.8em; }
 }
+
+/* ------------------------------------------------------------ search (M8) */
+header.site .search-link { text-decoration-color: var(--rule); }
+.search-row { display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: baseline; }
+.search-row label { flex: 1 1 14rem; display: flex; flex-wrap: wrap; min-width: 0; }
+.search-lbl { flex-basis: 100%; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.search-row input { flex: 1 1 auto; min-width: 0; font: inherit; color: inherit; background: var(--pop-bg); border: 1px solid var(--muted); border-radius: 3px; padding: 0.2rem 0.5rem; }
+.search-row button, .sr-more button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.15rem 0.8rem; cursor: pointer; }
+.search-scope { border: none; margin: 0.4rem 0 0; padding: 0; font-size: 0.9em; }
+.search-scope legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); padding: 0; }
+.search-scope label { margin-right: 1rem; white-space: nowrap; }
+.search-status { color: var(--muted); }
+.search-results { list-style: none; padding: 0; margin: 0; }
+.sr { padding: 0.6rem 0; border-top: 1px solid var(--rule); }
+.sr > a { font-size: 0.9em; }
+.sr-kind { display: block; font-size: 0.8em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.sr-text { margin: 0.2rem 0 0; }
+.sr-translation .sr-text { background: var(--tr-bg); padding: 0 0.3em; }
+.sr mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: inherit; border-radius: 2px; }
+.sr-more { padding: 0.8rem 0; border-top: 1px solid var(--rule); }
+.search-help { font-size: 0.85em; color: var(--muted); }
+.sr-orig { display: block; font-style: italic; font-size: 0.9em; }
+
+/* ------------------------------------------------------------ the Table (M8) */
+.page-back .unit p.tabl { margin: 0; padding-left: 1.2em; text-indent: -1.2em; text-align: left; hyphens: manual; }
+.page-back .unit h2.head-other { text-align: center; font-style: italic; margin: 1.4rem 0 0.4rem; }
+.pb { scroll-margin-top: 35vh; }
+.locs { font-variant-numeric: lining-nums tabular-nums; font-size: 0.9em; }
+a.pageref { color: var(--accent); text-decoration-color: var(--rule); }
+.pb:target::before { color: var(--accent); font-size: 0.8em; }
+
+/* ------------------------------------------------------------ the frontispiece's panels (M8) */
+.fs-map { position: relative; display: inline-block; max-width: 100%; line-height: 0; }
+.fs-map img { display: block; max-width: 100%; height: auto; }
+.plate-mapped .fs-map img { max-height: 85vh; width: auto; }
+.fs-panel { position: absolute; display: block; border: 2px solid transparent; border-radius: 2px; }
+.fs-panel:hover, .fs-panel:focus-visible, .fs-panel:target { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); outline: none; }
+.fs-n { position: absolute; top: 0.2rem; left: 0.2rem; line-height: 1.4; font-size: 0.8rem; padding: 0 0.35em; border-radius: 2px; background: var(--paper); color: var(--ink); opacity: 0; }
+.fs-panel:hover .fs-n, .fs-panel:focus-visible .fs-n, .fs-panel:target .fs-n { opacity: 1; }
+.fs-label { font-size: 0.8em; color: var(--muted); margin-top: 0.4rem; line-height: 1.4; }
+.to-panel { font-size: 0.8em; color: var(--muted); margin: 0 0 0.2rem; text-indent: 0; }
+@media (prefers-reduced-motion: no-preference) { .fs-panel { transition: border-color 0.15s, background 0.15s; } }

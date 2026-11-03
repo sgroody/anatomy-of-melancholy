@@ -6,7 +6,7 @@ No text is altered here. Gowland's bracketed material and language tagging are l
 import re
 from collections import Counter
 
-from ..tei import ED, el, put_items
+from ..tei import ED, T, el, put_items
 from .epub import (
     ENDNOTE_FILES,
     NUMBER_HEAD,
@@ -82,6 +82,8 @@ def inline(e, ctx: Ctx, file: str) -> list:
         ctx.unknown[f"noteref->{f}"] += 1
     if tag == "img":  # small inline images in Gowland's notes are glyphs (astrological signs)
         return [el("g", {"ref": "img:" + e.get("src", "").rsplit("/", 1)[-1]})]
+    if tag == "a" and "#pg" in (e.get("href") or "") and not e.get(OPS_TYPE):  # a page reference (the Table)
+        return [el(ED("pageref"), {"n": e.get("href").rsplit("#pg", 1)[1]}, "".join(e.itertext()))]
     if tag == "a" and cls == "backlink":
         return [el("hi", {"rend": "src:a.backlink"})]  # removed again by _drop_backlink
     if tag in ("em", "i"):
@@ -303,13 +305,37 @@ def _mark_gowland_verse(q) -> None:
         i = end + 1
 
 
-def convert_unit(unit: str, file: str, elements: list, *, front: bool = False, resp: str | None = None) -> tuple:
+def convert_unit(unit: str, file: str, elements: list, *, kind: str = "subsection", resp: str | None = None) -> tuple:
     ctx = Ctx(unit, file)
-    div = el("div", {"type": "front" if front else "subsection", "n": unit, "resp": resp})
+    div = el("div", {"type": kind, "n": unit, "resp": resp})
     for e in elements:
         b = block(e, ctx, file)
         if b is None:
             continue
+        if kind == "back" and b.tag == T("head") and b.get("type") == "partition":
+            b.set("type", "title")  # the back matter's chapter_title heading names the page, not a Partition
         b.tail = "\n"
         div.append(b)
+    if kind == "back":
+        group_locators(div)
     return div, ctx
+
+
+def group_locators(div) -> None:
+    """In the Table, each run of page references ("458, 481") becomes one ed:locs, so that a build
+    without Gowland's matter drops the numbers with their commas and leaves Burton's words."""
+    for p in div.iter(T("p")):
+        refs = [r for r in p if r.tag == ED("pageref")]
+        runs, run = [], []
+        for r in refs:
+            if run and run[-1].getnext() is r and (run[-1].tail or "") == ", ":
+                run.append(r)
+            else:
+                run = [r]
+                runs.append(run)
+        for run in runs:
+            locs = el(ED("locs"))
+            run[0].addprevious(locs)
+            for r in run:
+                locs.append(r)  # moves r with its tail; the last tail goes back outside the run
+            locs.tail, run[-1].tail = run[-1].tail, None

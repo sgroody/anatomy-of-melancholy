@@ -43,6 +43,13 @@ gowland:
     from: nat0000020
     to: END
     note: '"[Translation]" heading and Gowland''s verse translation of the poem.'
+  # Not a translation, but the edition's own matter in the same way (checked 2026-11-03 against index.xhtml).
+  - unit: table
+    from: inx00001
+    to: inx00001
+    note: >-
+      The ebook's note on the Table ("The page references in this index correspond to the print edition …
+      use the search feature of your ebook reader"): Penguin's, not Burton's.
 
 inline:
   # Phrase-level language decisions the rules get wrong (found by the M4 pilot, checked 2026-10-23).

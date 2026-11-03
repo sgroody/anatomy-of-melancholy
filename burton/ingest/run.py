@@ -13,7 +13,6 @@ from ..source import check_lock, read_lock
 from ..tei import ED, XML_ID, XML_LANG, T, el, local, xml_id
 from . import convert, epub, gowland, langid, manual
 
-
 def fingerprint(e) -> str:
     text = " ".join(unicodedata.normalize("NFC", "".join(e.itertext())).split())
     return hashlib.sha1(text.encode()).hexdigest()[:12]
@@ -90,8 +89,9 @@ def validate(tree) -> None:
 
 def ingest_unit(unit: str, reg: Registry) -> dict:
     file, elements = epub.unit_range(unit)
-    resp = epub.FRONT[unit][2] if epub.is_front(unit) else None
-    div, ctx = convert.convert_unit(unit, file, elements, front=epub.is_front(unit), resp=resp)
+    resp = epub.MATTER[unit][2] if unit in epub.MATTER else None
+    kind = "front" if epub.is_front(unit) else "back" if epub.is_back(unit) else "subsection"
+    div, ctx = convert.convert_unit(unit, file, elements, kind=kind, resp=resp)
     stats: Counter = Counter()
     stats.update(manual.apply(div, unit))
     stats.update(manual.apply_fixes(div, unit))

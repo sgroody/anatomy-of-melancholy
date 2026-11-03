@@ -11,7 +11,7 @@ from lxml import etree
 from markupsafe import Markup, escape
 
 from .. import paths
-from ..ingest.epub import FRONT
+from ..ingest.epub import BACK, FRONT, MATTER
 from ..tei import T
 from ..textview import public_text
 from .render import inline_html
@@ -56,7 +56,7 @@ def unit_title(unit: str) -> tuple[str, str | None]:
     for h in div.iter(T("head")):
         if h.get("type") == "title":
             return public_text(h), inline_html(h)
-    return (FRONT[unit][1] if unit in FRONT else unit), None
+    return (MATTER[unit][1] if unit in MATTER else unit), None
 
 
 def is_gowland_unit(unit: str) -> bool:
@@ -64,11 +64,11 @@ def is_gowland_unit(unit: str) -> bool:
 
 
 def text_units() -> list[str]:
-    """Every unit with a base-text file, in reading order (front matter, then the Partitions)."""
+    """Every unit with a base-text file, in reading order (front matter, the Partitions, back matter)."""
     have = {p.stem for p in paths.TEXT.glob("*.xml")}
     front = [u for u in FRONT if u in have]
     subs = sorted((u for u in have if u[:1].isdigit()), key=unit_sort_key)
-    return front + subs
+    return front + subs + [u for u in BACK if u in have]
 
 
 @dataclass
@@ -82,12 +82,13 @@ class Book:
         self.order: list[str] = []  # reading order of front, partition and unit pages
         self.front: list[Page] = []
         self.partitions: list[Page] = []
+        self.back: list[Page] = []
         for u in self.units:
             if u in FRONT:
                 pg = Page(u, "front", FRONT[u][1], f"{u}/", gowland=is_gowland_unit(u))
                 self.front.append(pg)
                 self._add(pg)
-        subs = [u for u in self.units if u not in FRONT]
+        subs = [u for u in self.units if u not in MATTER]
         for u in subs:
             p, s, m, _ = (int(x) for x in u.split("."))
             if not self.partitions or self.partitions[-1].key != f"p{p}":
@@ -102,9 +103,15 @@ class Book:
             pg = Page(u, "unit", *unit_title(u)[:1], f"{u}/", html=unit_title(u)[1])
             mem.children.append(pg)
             self._add(pg)
+        for u in self.units:
+            if u in BACK:
+                pg = Page(u, "back", BACK[u][1], f"{u}/")
+                self.back.append(pg)
+                self._add(pg)
         self.extra = [Page("about", "about", "About this edition", "about/"),
                       Page("settings", "settings", "Reading options", "settings/"),
-                      Page("authors", "authors", "Authors cited", "authors/")]
+                      Page("authors", "authors", "Authors cited", "authors/"),
+                      Page("search", "search", "Search", "search/")]
         for pg in self.extra:
             self.pages[pg.key] = pg
 
@@ -141,6 +148,8 @@ class Book:
             return [(partition_label(p), f"p{p}/"), (SYNOPSIS[p - 1], None)]
         if pg.kind == "front":
             return [("Front matter", "#toc-front"), (pg.title, None)]
+        if pg.kind == "back":
+            return [("Back matter", "#toc-back"), (pg.title, None)]
         return [(pg.title, None)]
 
     def partition_of(self, key: str) -> Page | None:

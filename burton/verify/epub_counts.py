@@ -160,6 +160,8 @@ def _unit_start(el):
 FRONT_FILES = {"argument": "preface001", "dedication": "preface002", "ad-librum": "preface003",
                "ad-librum-gowland": "preface004", "abstract": "preface005", "djr": "preface006",
                "lectori": "preface007", "lectori-gowland": "preface008", "heraclite": "preface010"}
+# Back matter (M8): Burton's Table, one page = one unit. Not in BURTON_FILES, whose counts are SURVEY's.
+BACK_FILES = {"table": "index"}
 PARTITION_FILES = ["chapter001-01", "chapter001-02", "chapter001-03", "chapter002-01", "chapter002-02",
                    "chapter003-01", "chapter003-02", "chapter003-03", "chapter003-04"]
 
@@ -175,7 +177,7 @@ def file_text(xhtml_dir: Path, fname: str) -> str:
 
 
 def units_by_file(xhtml_dir: Path) -> dict[str, list[str]]:
-    out: dict[str, list[str]] = {f: [u] for u, f in FRONT_FILES.items()}
+    out: dict[str, list[str]] = {f: [u] for u, f in (FRONT_FILES | BACK_FILES).items()}
     for unit, fname, _, _ in nav_units(xhtml_dir):
         out.setdefault(fname, []).append(unit)
     return out
@@ -183,8 +185,9 @@ def units_by_file(xhtml_dir: Path) -> dict[str, list[str]]:
 
 def unit_elements(xhtml_dir: Path, unit: str) -> tuple[str, list]:
     """Top-level elements belonging to a unit, by the counter's own boundary rule."""
-    if unit in FRONT_FILES:
-        return FRONT_FILES[unit], section_children(xhtml_dir, FRONT_FILES[unit])
+    pages = FRONT_FILES | BACK_FILES
+    if unit in pages:
+        return pages[unit], section_children(xhtml_dir, pages[unit])
     units = nav_units(xhtml_dir)
     keys = [u[0] for u in units]
     i = keys.index(unit)
@@ -207,7 +210,7 @@ def unit_elements(xhtml_dir: Path, unit: str) -> tuple[str, list]:
 def unit_counts(xhtml_dir: Path, unit: str) -> dict:
     fname, els = unit_elements(xhtml_dir, unit)
     c = {"sidenote_refs": 0, "endnote_refs": 0, "pagebreaks": 0, "paragraphs": 0, "verse_lines": 0,
-         "greek_chars": 0, "heading_images": 0}
+         "greek_chars": 0, "heading_images": 0, "page_refs": 0}
     sidenote_ids: list[str] = []
     sidenote_numbers: list[int] = []
     for top in els:
@@ -225,6 +228,8 @@ def unit_counts(xhtml_dir: Path, unit: str) -> dict:
                     c["endnote_refs"] += 1
             elif el.get(EPUB_TYPE) == "pagebreak":
                 c["pagebreaks"] += 1
+            elif tag == "a" and "#pg" in (el.get("href") or ""):  # a page reference in the Table
+                c["page_refs"] += 1
             elif tag == "p":
                 if cls.startswith(("verse", "poetry_line", "poemverse")):
                     c["verse_lines"] += 1

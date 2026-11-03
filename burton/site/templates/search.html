@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose search-page">
+  <h1>Search</h1>
+  <form class="search-form" role="search" action="./" method="get">
+    <p class="search-row">
+      <label><span class="search-lbl">Words or a “quoted phrase”</span>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"></label>
+      <button type="submit">Search</button>
+    </p>
+    <fieldset class="search-scope">
+      <legend>Search in</legend>
+      <label><input type="checkbox" name="in" value="text" checked> Burton’s text</label>
+      <label><input type="checkbox" name="in" value="note" checked> Sidenotes</label>
+      <label><input type="checkbox" name="in" value="translation"> Translations (each labelled with its source)</label>
+    </fieldset>
+  </form>
+  <p class="search-status" role="status" aria-live="polite">Search needs JavaScript.</p>
+  <ol class="search-results"></ol>
+  <p class="search-help">The index holds {{ "{:,}".format(stats.docs) }} passages ({{ "{:,}".format(stats.text) }} paragraphs and verse groups, {{ "{:,}".format(stats.note) }} sidenotes, {{ "{:,}".format(stats.translation) }} translations). It is loaded when you first search and then kept for offline use.</p>
+  <p class="search-help">Matching ignores case, and Greek accents and breathings, so <em lang="grc">εντελεχεια</em> finds <em lang="grc">ἐντελέχεια</em>. Every word must occur in the same paragraph, verse group, sidenote or translation; put words in quotation marks to find them together. A translation is found in the passage it translates and is labelled with its source.</p>
+</article>
+<script type="module" src="{{ root }}assets/search.js"></script>
+{% endblock %}

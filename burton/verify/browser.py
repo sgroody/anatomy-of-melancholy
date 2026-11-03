@@ -17,8 +17,9 @@ from .checks import Result
 
 AXE = paths.ROOT / "tests" / "browser" / "node_modules" / "axe-core" / "axe.min.js"
 
-# 21 pages: every page type, the densest and longest units, Greek, verse, lists, a Gowland page, a synopsis.
-SAMPLE = ["", "about/", "settings/", "p1/", "p2/", "p3/", "p1/synopsis/", "argument/", "dedication/", "abstract/", "djr/",
+# 22 pages: every page type, the densest and longest units, Greek, verse, lists, a Gowland page, a synopsis,
+# the search page.
+SAMPLE = ["", "about/", "settings/", "search/", "p1/", "p2/", "p3/", "p1/synopsis/", "argument/", "dedication/", "abstract/", "djr/",
           "lectori/", "heraclite/", "1.1.1.1/", "1.1.1.2/", "1.1.3.2/", "3.2.4.1/", "1.2.4.6/", "2.3.3.1/",
           "3.2.5.5/", "2.4.1.3/"]
 LIMIT_REM = 14  # must match edition.js: the furthest a laid-out note may drift below its marker
@@ -455,6 +456,17 @@ def offline_check(profile: str = "private") -> Result:
             except Exception as e:  # noqa: BLE001
                 r.fail(f"offline {rel or 'home'}: {str(e).splitlines()[0][:120]}")
         r.counts["offline_pages_loaded"] = f"{loaded}/{len(targets)}"
+        # search (M8): the index is precached, so a search still finds Burton's words with the server down
+        if (site / "search" / "index.html").exists():
+            try:
+                pg.goto(base + "search/?q=%22black+choler%22&in=text&in=note", wait_until="load", timeout=15000)
+                pg.wait_for_selector(".search-results .sr", timeout=30000)
+                n = pg.locator(".search-results .sr").count()
+                r.counts["offline_search_results"] = n
+                if not n:
+                    r.fail("offline search found nothing for \"black choler\"")
+            except Exception as e:  # noqa: BLE001
+                r.fail(f"offline search: {str(e).splitlines()[0][:120]}")
         ctx.close()
     return r
 

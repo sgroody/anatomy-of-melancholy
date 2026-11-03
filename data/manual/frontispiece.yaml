@@ -1,0 +1,22 @@
+# The frontispiece's panels (M8), each tied to the stanza of "The Argument of the Frontispiece" that
+# describes it. Only the shape is recorded here: a rectangle in the image's own pixels (pg003.png,
+# 1151 x 1900; x, y = top left), a name for the panel (editorial, the forms used in alt-text.yaml; not a
+# transcription of the engraved caption), and the stanza's verse group id in the base text. The stanza
+# text itself is never copied here; the site takes it from data/text/argument.xml.
+# Stanzas 8 and 9 are one verse group ("8 9 Borage and Hellebore fill two scenes"), so two panels
+# share it. The centre panel (the printed title) and the imprint below it have no stanza.
+image: pg003.png
+size: [1151, 1900]
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-03", status: machine-draft,
+             method: "rectangles read in session from pg003.png; panels follow the engraved rules"}
+panels:
+  - {n: 1, stanza: argument-lg2, name: "Democritus Abderites", rect: [292, 0, 563, 505]}
+  - {n: 2, stanza: argument-lg3, name: "Zelotypia", rect: [0, 0, 290, 505]}
+  - {n: 3, stanza: argument-lg4, name: "Solitudo", rect: [858, 0, 293, 505]}
+  - {n: 4, stanza: argument-lg5, name: "Inamorato", rect: [0, 505, 290, 757]}
+  - {n: 5, stanza: argument-lg6, name: "Hypocondriacus", rect: [858, 505, 293, 757]}
+  - {n: 6, stanza: argument-lg7, name: "Superstitiosus", rect: [0, 1262, 290, 428]}
+  - {n: 7, stanza: argument-lg8, name: "Maniacus", rect: [858, 1262, 293, 428]}
+  - {n: 8, stanza: argument-lg9, name: "Borago", rect: [0, 1690, 290, 210]}
+  - {n: 9, stanza: argument-lg9, name: "Helleborus", rect: [858, 1690, 293, 210]}
+  - {n: 10, stanza: argument-lg10, name: "Democritus Junior", rect: [292, 1262, 563, 428]}

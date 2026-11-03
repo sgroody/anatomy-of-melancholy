@@ -153,6 +153,7 @@ def v2_counts(unit: str, ec: dict, root) -> Result:
         "verse_lines": len(div.findall(f".//{TEI}l")),
         "greek_chars": len(GREEK.findall(tei_text(root, notes=True)[0])),
         "heading_images": len(div.xpath(".//*[@facs]")),
+        "page_refs": len(div.findall(f".//{ED}pageref")),
     }
     for k, v in xml.items():
         r.counts[k] = f"{ec[k]}/{v}"

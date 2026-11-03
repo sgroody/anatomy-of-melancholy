@@ -40,7 +40,7 @@
 
   <define name="div">
     <element name="div">
-      <attribute name="type"><choice><value>subsection</value><value>front</value></choice></attribute>
+      <attribute name="type"><choice><value>subsection</value><value>front</value><value>back</value></choice></attribute>
       <attribute name="n"/>
       <optional><attribute name="resp"><value>#gowland</value></attribute></optional>
       <ref name="id"/>
@@ -185,6 +185,10 @@
           <empty/>
         </element>
         <element name="lb"><empty/></element>
+        <element name="ed:locs">
+          <a:documentation>A run of the Table's page references: Penguin 2021 page numbers (Gowland's matter).</a:documentation>
+          <oneOrMore><choice><text/><element name="ed:pageref"><attribute name="n"/><text/></element></choice></oneOrMore>
+        </element>
         <element name="supplied">
           <attribute name="resp"><choice><value>#gowland</value><value>#editor</value></choice></attribute>
           <ref name="inline"/>

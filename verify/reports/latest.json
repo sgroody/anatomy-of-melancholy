@@ -1,5 +1,5 @@
 {
-  "when": "2026-11-03T06:49:33+00:00",
+  "when": "2026-11-03T08:32:08+00:00",
   "ok": true,
   "results": [
     {
@@ -8,12 +8,12 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "main_words": 484453,
+        "main_words": 489093,
         "main_unexplained_diffs": 0,
         "notes_compared": 5703,
         "note_mismatches": 0,
         "editor_additions_excluded": 5,
-        "units": 158
+        "units": 159
       },
       "problems": []
     },
@@ -25,12 +25,13 @@
       "counts": {
         "sidenote_refs": "5703/5703",
         "endnote_refs": "3907/3907",
-        "pagebreaks": "956/956",
-        "paragraphs": "1910/1910",
+        "pagebreaks": "957/957",
+        "paragraphs": "2485/2485",
         "verse_lines": "5006/5006",
         "greek_chars": "862/862",
         "heading_images": "4/4",
-        "units": 158
+        "page_refs": "943/943",
+        "units": 159
       },
       "problems": []
     },
@@ -41,8 +42,8 @@
       "deferred": null,
       "counts": {
         "sidenotes_resolved": "5703/5703",
-        "ids": 16751,
-        "units": 158
+        "ids": 17332,
+        "units": 159
       },
       "problems": []
     },
@@ -54,7 +55,7 @@
       "counts": {
         "script_chars": 1080,
         "untagged": 0,
-        "units": 158
+        "units": 159
       },
       "problems": []
     },
@@ -64,8 +65,8 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages_checked": 18,
-        "pages_total": 18
+        "pages_checked": 19,
+        "pages_total": 19
       },
       "problems": []
     },
@@ -96,7 +97,7 @@
         "supplied": 152,
         "brackets_left": 0,
         "gowland_units": 2,
-        "units": 158
+        "units": 159
       },
       "problems": []
     },
@@ -132,17 +133,17 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "foreign": 7769,
-        "with_record": 7769,
-        "machine_labelled": 7821,
+        "foreign": 7774,
+        "with_record": 7774,
+        "machine_labelled": 7826,
         "stale": 0,
         "orphan_keys": 0,
         "selectors_ok": 6932,
         "selectors_bad": 0,
-        "sources_unidentified": 2766,
+        "sources_unidentified": 2771,
         "sources_other": 5003,
-        "selftrans_records": 7769,
-        "selftrans_selectors_ok": 8422,
+        "selftrans_records": 7774,
+        "selftrans_selectors_ok": 8425,
         "selftrans_selectors_bad": 0,
         "selftrans_stale": 0,
         "selftrans_missing": 0,
@@ -151,14 +152,14 @@
         "selftrans_gowland_overlap": 0,
         "untranslated": 0,
         "units_without_layer": 4,
-        "djs_records": 7769,
-        "djs_no-anchor": 2375,
+        "djs_records": 7774,
+        "djs_no-anchor": 2376,
         "sidenotes_no-citation": 1204,
         "djs_aligned": 2149,
         "djs_omitted": 1621,
         "djs_below-threshold": 407,
         "djs_kept-original": 194,
-        "djs_not-found": 798,
+        "djs_not-found": 802,
         "djs_implausible-length": 201,
         "djs_ocr-noise": 17,
         "sidenotes_partial": 785,
@@ -209,18 +210,20 @@
       "deferred": null,
       "counts": {
         "private:sidenotes": 5703,
-        "private:foreign": 7769,
+        "private:foreign": 7774,
         "private:enrefs": 3907,
-        "private:pbs": 956,
+        "private:pbs": 957,
         "private:gowland_versions": 4934,
         "private:djs_versions": 1992,
+        "private:pagerefs": 943,
         "public:sidenotes": 5687,
-        "public:foreign": 7769,
+        "public:foreign": 7774,
         "public:enrefs": 0,
         "public:pbs": 0,
         "public:gowland_versions": 0,
         "public:djs_versions": 1992,
-        "units": 158
+        "public:pagerefs": 0,
+        "units": 159
       },
       "problems": []
     },
@@ -241,7 +244,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 11329,
+        "script_chars": 11409,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -253,10 +256,12 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 840,
-        "links": 172382,
+        "pages": 844,
+        "links": 176610,
         "broken": 0,
-        "unresolved_xrefs_unlinked": 4
+        "unresolved_xrefs_unlinked": 4,
+        "search_results": 43707,
+        "search_broken": 0
       },
       "problems": []
     },
@@ -280,7 +285,7 @@
         "private:glyphs": "237/237",
         "private:fallback": 19,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F",
-        "public:glyphs": "234/234",
+        "public:glyphs": "235/235",
         "public:fallback": 19
       },
       "problems": []
@@ -291,7 +296,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 840,
+        "pages": 844,
         "parse_errors": 0,
         "a11y_issues": 0
       },
@@ -299,12 +304,12 @@
     },
     {
       "code": "V10a",
-      "name": "axe-core on 21 pages, light and dark (serious/critical = 0)",
+      "name": "axe-core on 22 pages, light and dark (serious/critical = 0)",
       "ok": true,
       "deferred": null,
       "counts": {
-        "runs": 42,
-        "pages": "21/21",
+        "runs": 44,
+        "pages": "22/22",
         "serious_or_critical": 0,
         "moderate_or_minor": 0,
         "rules": "none"
@@ -350,7 +355,7 @@
         "browser_grc": "no",
         "soft_hyphens_break_la": true,
         "soft_hyphens_break_grc": true,
-        "soft_hyphens": 47550,
+        "soft_hyphens": 47560,
         "stray_soft_hyphens": 0
       },
       "problems": []
@@ -361,8 +366,9 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "precached": "453/453",
-        "offline_pages_loaded": "6/6"
+        "precached": "457/457",
+        "offline_pages_loaded": "6/6",
+        "offline_search_results": 12
       },
       "problems": []
     }

@@ -24,12 +24,12 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts, synopsis
+from . import authors_pages, fonts, frontispiece, search, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
 HERE = Path(__file__).parent
-STATIC = ("edition.css", "edition.js", "icon.svg")
+STATIC = ("edition.css", "edition.js", "search.js", "icon.svg")
 
 
 def env() -> Environment:
@@ -143,8 +143,13 @@ def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Pag
     fid = ' id="toc-front"' if ids else ""
     front = "".join(item(p, 1) for p in book.front)
     parts = "".join(item(p, 0) for p in book.partitions)
+    back = ""
+    if book.back:
+        bid = ' id="toc-back"' if ids else ""
+        back = (f'<li class="toc-part"{bid}><span class="toc-gl">Back matter</span>'
+                f'<ol>{"".join(item(p, 1) for p in book.back)}</ol></li>')
     return (f'<ol class="toc"><li class="toc-part"{fid}><span class="toc-gl">Front matter</span>'
-            f'<ol>{front}</ol></li>{parts}</ol>')
+            f'<ol>{front}</ol></li>{parts}{back}</ol>')
 
 
 # ---------------------------------------------------------------- about page data
@@ -183,7 +188,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     (out / "assets").mkdir(parents=True)
     book = Book(profile, units)
     cite_label = authors_pages.tables_label()["short"]
-    titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front")}
+    titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front", "back")}
     findings = yaml.safe_load((paths.MANUAL / "source-findings.yaml").read_text(encoding="utf-8"))
     findings["names"] = {a: s["name"] for a, s in authors_pages.citations.tables()["authors"].items()}
     images = Images(out)
@@ -203,6 +208,16 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     back = synopsis.back_links([pg.key for pg in book.partitions], book.units)  # unit -> its node in the synopsis
 
+    # where each Penguin page begins, for the Table's locators (private build only: the numbers are Gowland's)
+    pagemap = {}
+    if profile == "private":
+        for u in book.units:
+            for pb in etree.parse(str(paths.TEXT / f"{u}.xml")).getroot().iter(T("pb")):
+                pagemap[pb.get("n")] = u
+
+    def plate(name, src, alt, w, h):  # the frontispiece on the Argument page, its panels linked to the stanzas
+        return frontispiece.figure_html(src, alt, w, h, "", here=True) if name == frontispiece.load()["image"] else None
+
     # units and front matter
     for unit in book.units:
         xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
@@ -211,7 +226,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"),
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
                                    verified=layer_for(unit, "source-verification"), findings=findings,
-                                   xrefs=xrefs_for(unit, titles))
+                                   xrefs=xrefs_for(unit, titles), plate=plate if unit == "argument" else None,
+                                   pagemap=pagemap)
+        if unit == "argument":
+            body, counts["panel_links"] = frontispiece.add_back_links(body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))
         words = len(public_text(div).split())
@@ -223,7 +241,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         page(unit, f"{unit}/index.html", "unit.html", page=pg, body=Markup(body),
              hidden_h1=None if has_h1 else pg.title,
              synopsis_href=f"../{here[0]}/synopsis/#{here[1]}" if here else None,
-             title=pg.title if pg.kind == "front" else f"{unit} {pg.title}",
+             title=pg.title if pg.kind in ("front", "back") else f"{unit} {pg.title}",
              description=f"Burton, The Anatomy of Melancholy, {pg.title}")
 
     # Partition landings: title, synopsis sheets, contents of the Partition
@@ -251,9 +269,15 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     # home
     front = images.get("pg003.png", "")
+    front_map = None
+    if "argument" in book.pages:
+        arg = book.pages["argument"]
+        cap = (f'The engraved title page of 1628; <a href="{attr(arg.href)}">{esc(arg.title)}</a> explains its '
+               f'ten panels. ')
+        front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=cap))
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
-        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front,
+        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
         argument=book.pages.get("argument"), title="Contents",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
@@ -264,6 +288,15 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     page("settings", "settings/index.html", "settings.html", page=book.pages["settings"],
          crumbs=[("Reading options", None)], title="Reading options",
          description="Language mode, theme and type size")
+
+    # full-text search (M8): the index is a file of its own, fetched by the search page when used
+    labels = {u: (f"{u} {book.pages[u].title}" if book.pages[u].kind == "unit" else book.pages[u].title)
+              for u in book.units}
+    index, sstats = search.build_index(book.units, labels, profile, layer_for)
+    sstats["bytes"] = search.write_index(index, out / "assets" / "search-index.json")
+    report["search"] = sstats
+    page("search", "search/index.html", "search.html", page=book.pages["search"], crumbs=[("Search", None)],
+         title="Search", description="Search Burton’s text, sidenotes and translations", stats=sstats)
 
     # the author index and one page per cited author (M6)
     apages, astats = authors_pages.collect(book.units, shown_notes)
@@ -281,6 +314,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     # fonts: subset to exactly what the pages and the stylesheet show
     css_src = (HERE / "static" / "edition.css").read_text(encoding="utf-8")
     used = set().union(*(visible_codepoints(p) for p in pages.values())) | css_content_codepoints(css_src)
+    used |= search.codepoints(index)
     faces = fonts.build_subsets(used, out / "assets" / "fonts")
     css = []
     for f in faces:

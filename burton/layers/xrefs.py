@@ -53,7 +53,7 @@ def _groups(text: str) -> list[tuple[int, int, list[tuple[int, int]]]]:
 
 def resolve(here: str, pairs: list[tuple[int, int]], keys: set[str]) -> tuple[str | None, str]:
     """Target unit id (or a division prefix like '1.2.3') and status."""
-    if here in FRONT:
+    if here in FRONT or not here[:1].isdigit():  # front and back matter have no division of their own
         cur = [None, None, None, None]
     else:
         cur = [int(x) for x in here.split(".")]
