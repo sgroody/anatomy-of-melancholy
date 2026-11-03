@@ -191,17 +191,23 @@ Wiktionary may be consulted to check a sense but is not copied, to avoid CC BY-S
 
   Loaded into every translation prompt and checked after each response (§6.5).
 
-**Synopses**: `data/synopses/p1.json`, a tree:
+**Synopses**: `data/synopses/p1.json`, a tree built by `burton synopses` from the shape in `data/manual/synopses/p1.yaml` (hidden-table paragraph ids only, read from the images; machine-made, with its `provenance` label) and the words of the hidden table, verbatim:
 
 ```json
-{"id": "p1-syn", "children": [
-  {"id": "p1-syn-1", "text": [{"t": "In diseases consider "}, {"t": "Sect. 1 Memb. 1.", "i": true}],
-   "ref": "1.1.1", "relation": "or",
-   "children": [{"id": "p1-syn-1-1", "text": "…", "ref": "1.1.1.1", "children": []}]}
-]}
+{"id": "p1-syn", "part": "p1", "provenance": {"by": "machine", "model": "…", "date": "…", "status": "machine-draft"},
+ "duplicates": [{"src_p": "nat0000108", "same_as": "nat0000034a", "reason": "…"}],
+ "children": [
+  {"id": "p1-synopsis-s1", "src_p": "nat0000034a", "img": "pg131_01",
+   "text": [{"t": "In diseases consider "}, {"t": "Sect. 1 Memb. 1", "i": true}, {"t": "."}],
+   "ref": [{"label": "Sect. 1 Memb. 1", "div": "1.1.1", "unit": "1.1.1.1"}],
+   "children": [
+     {"id": "p1-synopsis-s7", "src_p": "nat0000046", "relation": "or", "or": {"src_p": "nat0000045", "text": "Or"}, "…": "…"},
+     {"id": "p1-synopsis-s22", "src_p": "nat0000127", "see": "♈", "see_target": "p1-synopsis-s23", "…": "…"}]},
+  {"id": "p1-synopsis-s23", "src_p": "nat0000212", "key": {"src_p": "nat0000211", "text": "♈", "sign": "♈"}, "…": "…"}
+ ]}
 ```
 
-`relation` (`and`/`or`) records Burton's "Or" connectors between siblings. `see` records glyph cross-keys such as "See ♈". Each node keeps `src_p` (the hidden-table `<p>` id it consumes) for verification.
+Node ids are permanent: minted through the registry (unit `pN-synopsis`, kind `s`, located by the hidden-table paragraph). Text runs carry `i` (italic) and `sym` (`span.arial_bold` symbols). `ref` lists one entry per division number in the node's labels (`Subsect. 6, 7, 8` gives three); a label's missing upper levels are inherited from ancestors, from earlier siblings ("Memb. 3." heads a list) and, for a tree reached by a cross-key, from the node that points to it. A section or member resolves to its first unit; a label that cannot be fully known keeps `unit: null`. `relation: "or"` with `or` records Burton's "Or" connector before a node, so the connector paragraph is used exactly once. `see` records a cross-key ("See ♈", "Sect. 2, A."), resolved to the tree root whose `key` carries it. Each node keeps `src_p` (the hidden-table `<p>` id it consumes) for verification.
 
 ### 4.3 Manual inputs (hand-maintained, never generated)
 

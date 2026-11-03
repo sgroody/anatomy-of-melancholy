@@ -99,8 +99,10 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true")
 
-    s = sub.add_parser("synopses", help="M7 synopses: --checklist writes the word-level checklists to state/m7/")
+    s = sub.add_parser("synopses", help="M7 synopses: structure + hidden text -> data/synopses/<pN>.json "
+                                        "(--checklist writes the word-level checklists to state/m7/)")
     s.add_argument("--checklist", action="store_true")
+    s.add_argument("--part", action="append", choices=["p1", "p2", "p3"])
 
     s = sub.add_parser("verify-sources", help="verify quotation sources against local corpora (rules)")
     s.add_argument("--unit", action="append")
@@ -267,6 +269,8 @@ def main(argv: list[str] | None = None) -> int:
 
         if args.checklist:
             print(json.dumps(synopses.checklist(), indent=1))
+        else:
+            print(json.dumps(synopses.run(args.part), ensure_ascii=False, indent=1))
     elif args.cmd == "verify-sources":
         from .layers import sources
 

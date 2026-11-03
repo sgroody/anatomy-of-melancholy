@@ -1,0 +1,244 @@
+# M7 held-out spot check of the synopsis structure. Sample and rule fixed before labelling.
+round: s1
+written: '2026-11-03'
+method_under_test: data/manual/synopses/pN.yaml (structure read from the images by claude-opus-5-5 in session)
+design: '15 random non-connector, non-key strings per partition from the hidden tables, seed 20261103, drawn before any structure
+  file was written. A blind rater (a fresh subagent that sees only the images and the hidden-table checklist, never the structure
+  file) names each item''s parent: the id of the string the brace containing it hangs from, or ''root'' for a tree root.'
+rule: Written before labelling. PASS if, per partition, at least 14 of 15 parents agree with the structure file, and every
+  disagreement is settled by re-reading the image, with the settlement recorded here (a fix to the structure file, or a rater
+  error).
+items:
+- part: p1
+  id: nat0000109
+  text: Dotage.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000144
+  text: Its Causes in general. Sect. 2, A.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000172
+  text: Vegetal. Subsect. 5.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000197
+  text: Soul and his faculties, as
+  parent: null
+  label: null
+- part: p1
+  id: nat0000210
+  text: containing
+  parent: null
+  label: null
+- part: p1
+  id: nat0000212
+  text: 'Melancholy: in which consider'
+  parent: null
+  label: null
+- part: p1
+  id: nat0000344
+  text: Education, Subsect. 2.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000366
+  text: General, as Memb. 1.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000668
+  text: Body, as ill digestion, crudity, wind, dry brains, hard belly, thick blood, much waking, heaviness and palpitation
+    of heart, leaping in many places, &c., Subsect. 1.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000731
+  text: Phlegmatic, slothful, dull, heavy, &c.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000808
+  text: In mind
+  parent: null
+  label: null
+- part: p1
+  id: nat0000809
+  text: Head-melancholy. Subsect. 1.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000918
+  text: A reason of these symptoms. Memb. 3.
+  parent: null
+  label: null
+- part: p1
+  id: nat0000933
+  text: Tending to good, as
+  parent: null
+  label: null
+- part: p1
+  id: nat0000974
+  text: How a melancholy or mad man offering violence to himself, is to be censured.
+  parent: null
+  label: null
+- part: p2
+  id: nat0006864
+  text: 4th. Exercise.
+  parent: null
+  label: null
+- part: p2
+  id: nat0006868
+  text: Subsect.
+  parent: null
+  label: null
+- part: p2
+  id: nat0006882
+  text: 2. By fair and foul means, counsel, comfort, good persuasion, witty devices, fictions, and if it be possible to satisfy
+    his mind.
+  parent: null
+  label: null
+- part: p2
+  id: nat0006924
+  text: 5. Against vain fears, sorrows for death of friends, or otherwise.
+  parent: null
+  label: null
+- part: p2
+  id: nat0006993
+  text: Sect. 4. Pharmaceutice, or Physic which cureth with medicines, with a digression of this kind of Physic, is either
+    Memb. 1 Subsect. 1.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007005
+  text: Syrups of borage, bugloss, hops, Epithyme, endive, succory, &c.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007006
+  text: Conserves of violets, maidenhair, borage, bugloss, roses, &c.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007019
+  text: fluid
+  parent: null
+  label: null
+- part: p2
+  id: nat0007167
+  text: Liquid, as Potions, Juleps, Syrups, wine of Hellebore, bugloss, &c.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007178
+  text: Solid, as lapis Armenus, & lazuli, pills of Indy, pills of Fumitory, &c.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007233
+  text: Cauteries, and searing with hot Irons, boring.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007247
+  text: Sleep more than ordinary.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007331
+  text: To procure sleep, and are
+  parent: null
+  label: null
+- part: p2
+  id: nat0007402
+  text: Cure of Hypochondriacal, or windy melancholy, 3rd Memb.
+  parent: null
+  label: null
+- part: p2
+  id: nat0007437
+  text: Simples,
+  parent: null
+  label: null
+- part: p3
+  id: nat0010617
+  text: Sensible, as of Beasts, for pleasure, preservation of kind, mutual agreement, custom, bringing up together, &c.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010629
+  text: Things without life, made by art, pictures, sports, games, sensible objects, as hawks, hounds, horses. Or men themselves
+    for similitude of manners, natural affection, as to friends, children, kinsmen, &c., for glory, such as commend us.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010653
+  text: Simple which hath 3 objects, as Memb. 2.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010664
+  text: Division or kinds Subsect. 2.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010680
+  text: Rational.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010681
+  text: Fucate in show, by some error or hypocrisy; some seem and are not; or truly for virtue, honesty, good parts, learning,
+    eloquence, &c.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010692
+  text: Common good, our neighbour, country, friends, which is charity; the defect of which is cause of much discontent and
+    Melancholy.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010744
+  text: Artificial allurements, and provocations of lust and love, gestures, apparel, dowry, money, &c.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010746
+  text: Opportunity of time and place, conference, discourse, music, singing, dancing, amorous tales, lascivious objects,
+    familiarity, gifts, promises, &c., Subsect. 4.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010789
+  text: Fear, sorrow, suspicion, anxiety, &c.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010809
+  text: To withstand the beginnings, avoid occasions, fair and foul means, change of place, contrary passion, witty inventions,
+    discommend the former, bring in another, Subsect. 2.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010824
+  text: His name, definition, extent, power, tyranny, Memb. 1.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010886
+  text: They have been naught themselves. Hard usage, unkindness, wantonness, Inequality of years, persons, fortunes, &c.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010887
+  text: Outward enticements and provocations of others.
+  parent: null
+  label: null
+- part: p3
+  id: nat0010912
+  text: Prognostics Memb. 3.
+  parent: null
+  label: null

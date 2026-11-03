@@ -1,0 +1,307 @@
+# The Synopsis of the First Partition: the tree's shape (M7). Words are never written here: each node names a
+# hidden-table paragraph (chapter001.xhtml) by id, and `burton synopses` takes its text from there verbatim.
+#   p:        the paragraph that is this node's text
+#   or:       the "Or" paragraph Burton sets before this node (its relation to the sibling before it)
+#   key:      on a tree root, the standalone cross-key paragraph above it (♈, A, ...)
+#   see:      the cross-key this node points to; the target is the tree root carrying that key
+#   img:      the image a tree root starts on
+#   children: the brace hanging from this node, top to bottom as printed
+part: p1
+provenance: {by: machine, model: claude-opus-5-5, date: "2026-11-03", status: machine-draft,
+             method: "read in session from each of the 8 images (pg131_01-pg134_02) against the hidden-table checklist"}
+duplicates:
+  nat0000108:
+    same_as: nat0000034a
+    reason: >-
+      The hidden table behind pg131_01 lists "In diseases consider Sect. 1 Memb. 1." twice (the copies differ only in
+      how the italics are split). The image prints it once, as the root of the first tree, so only nat0000034a is a
+      node.
+trees:
+  - p: nat0000034a
+    img: pg131_01
+    children:
+      - p: nat0000034
+        children:
+          - p: nat0000047
+            children: [{p: nat0000072}]
+          - p: nat0000058
+            children: [{p: nat0000077}]
+      - p: nat0000046
+        or: nat0000045
+        children:
+          - p: nat0000059
+            children:
+              - {p: nat0000082}
+              - {p: nat0000084, or: nat0000083}
+          - p: nat0000071
+            or: nat0000070
+            children:
+              - {p: nat0000095}
+              - p: nat0000107
+                or: nat0000106
+                children:
+                  - {p: nat0000109}
+                  - {p: nat0000120}
+                  - {p: nat0000121}
+                  - {p: nat0000122}
+                  - {p: nat0000123}
+                  - {p: nat0000124}
+                  - {p: nat0000125}
+                  - {p: nat0000126}
+                  - {p: nat0000127, see: ♈}
+
+  - p: nat0000212
+    key: nat0000211
+    img: pg131_02
+    children:
+      - {p: nat0000128}
+      - p: nat0000129
+        children:
+          - p: nat0000185
+            children:
+              - p: nat0000198
+                children:
+                  - {p: nat0000148}
+                  - {p: nat0000149}
+              - p: nat0000210
+                or: nat0000209
+                children:
+                  - {p: nat0000160}
+                  - {p: nat0000161}
+          - p: nat0000197
+            or: nat0000196
+            children:
+              - {p: nat0000172}
+              - {p: nat0000173}
+              - {p: nat0000174}
+      - {p: nat0000140}
+      - {p: nat0000141}
+      - {p: nat0000142}
+      - p: nat0000143
+        children:
+          - p: nat0000235
+            children:
+              - p: nat0000224
+                note: >-
+                  The image sets three species here in one brace (of the head alone; hypochondriacal, or windy;
+                  of the whole body); the hidden table gives them as one paragraph, which is kept whole.
+                children: [{p: nat0000213}]
+          - {p: nat0000247, or: nat0000246}
+      - {p: nat0000144, see: A}
+      - {p: nat0000145, see: B}
+      - {p: nat0000146, see: C}
+      - {p: nat0000147}
+
+  - p: nat0000365
+    key: nat0000364
+    img: pg132_01
+    children:
+      - p: nat0000366
+        children:
+          - p: nat0000273
+            children:
+              - {p: nat0000249}
+              - {p: nat0000260}
+              - {p: nat0000261}
+          - p: nat0000295
+            or: nat0000284
+            children:
+              - {p: nat0000262}
+              - p: nat0000367
+                or: nat0000363
+                children:
+                  - p: nat0000308
+                    children:
+                      - {p: nat0000296}
+                      - {p: nat0000297}
+                  - p: nat0000320
+                    or: nat0000319
+                    children:
+                      - p: nat0000350
+                        children:
+                          - {p: nat0000321, see: ♉}
+                          - p: nat0000368
+                            children:
+                              - {p: nat0000333}
+                              - {p: nat0000344}
+                              - {p: nat0000345}
+                              - {p: nat0000346}
+                              - {p: nat0000347}
+                              - {p: nat0000348}
+                              - {p: nat0000349}
+                      - p: nat0000362
+                        or: nat0000361
+                        children:
+                          - {p: nat0000369}
+                          - {p: nat0000380}
+      - {p: nat0000381, see: ♊}
+
+  - p: nat0000439
+    key: nat0000438
+    img: pg132_02
+    children:
+      - p: nat0000410
+        children:
+          - p: nat0000397
+            children:
+              - {p: nat0000382}
+              - {p: nat0000393}
+              - {p: nat0000394}
+              - {p: nat0000395}
+              - {p: nat0000396}
+          - p: nat0000409
+            or: nat0000408
+            children:
+              - {p: nat0000423}
+              - {p: nat0000434}
+              - {p: nat0000435}
+              - {p: nat0000436}
+              - {p: nat0000437}
+      - p: nat0000421
+        children:
+          - p: nat0000457
+            children:
+              - {p: nat0000440}
+              - {p: nat0000451}
+          - p: nat0000469
+            or: nat0000468
+            children: [{p: nat0000452}]
+      - p: nat0000422
+        children:
+          - p: nat0000470
+            children: [{p: nat0000483}]
+          - p: nat0000482
+            or: nat0000481
+            children: [{p: nat0000494}]
+
+  - p: nat0000617
+    key: nat0000616
+    img: pg133_01
+    children:
+      - p: nat0000570
+        children:
+          - p: nat0000533
+            children:
+              - {p: nat0000506}
+              - {p: nat0000517}
+              - {p: nat0000518}
+              - p: nat0000519
+                children:
+                  - {p: nat0000521}
+                  - p: nat0000532
+                    children: [{p: nat0000546}]
+              - p: nat0000520
+                children:
+                  - {p: nat0000557}
+                  - {p: nat0000558}
+                  - {p: nat0000559}
+          - p: nat0000544
+            children: [{p: nat0000581}]
+          - p: nat0000545
+            children:
+              - {p: nat0000592}
+              - {p: nat0000593}
+      - p: nat0000604
+        children: [{p: nat0000605}]
+      - {p: nat0000618}
+      - p: nat0000619
+        children: [{p: nat0000621}]
+      - {p: nat0000620}
+      - p: nat0000667
+        children:
+          - p: nat0000654
+            children: [{p: nat0000632}]
+          - p: nat0000666
+            or: nat0000665
+            children: [{p: nat0000643}]
+
+  - p: nat0000740
+    key: nat0000739
+    img: pg133_02
+    children:
+      - p: nat0000737
+        children:
+          - {p: nat0000668}
+          - p: nat0000754
+            or: nat0000734
+            children:
+              - p: nat0000690
+                children: [{p: nat0000679}]
+              - p: nat0000753
+                or: nat0000736
+                children:
+                  - {p: nat0000719}
+                  - p: nat0000735
+                    children:
+                      - {p: nat0000720}
+                      - {p: nat0000731}
+                      - {p: nat0000732}
+                      - {p: nat0000733}
+                  - {p: nat0000738}
+                  - p: nat0000752
+                    children: [{p: nat0000741}]
+                  - p: nat0000766
+                    children:
+                      - {p: nat0000755}
+                      - p: nat0000767
+                        children:
+                          - {p: nat0000768}
+                          - {p: nat0000769}
+                          - {p: nat0000770}
+                      - {p: nat0000781}
+                  - {p: nat0000782}
+      - {p: nat0000783, see: ♋}
+
+  - p: nat0000857
+    key: nat0000856
+    img: pg134_01
+    children:
+      - p: nat0000809
+        children:
+          - p: nat0000796
+            children: [{p: nat0000785}]
+          - p: nat0000808
+            or: nat0000807
+            children: [{p: nat0000820}]
+      - p: nat0000855
+        children:
+          - p: nat0000842
+            children: [{p: nat0000831}]
+          - p: nat0000854
+            or: nat0000853
+            children: [{p: nat0000858}]
+      - p: nat0000893
+        children:
+          - p: nat0000880
+            children: [{p: nat0000869}]
+          - p: nat0000892
+            or: nat0000891
+            children: [{p: nat0000894}]
+      - {p: nat0000905}
+      - p: nat0000918
+        children:
+          - {p: nat0000906}
+          - {p: nat0000907}
+
+  - p: nat0000959
+    key: nat0000958
+    img: pg134_02
+    children:
+      - p: nat0000933
+        children:
+          - {p: nat0000919}
+          - {p: nat0000930}
+          - {p: nat0000931}
+          - {p: nat0000932}
+      - p: nat0000960
+        children:
+          - {p: nat0000944}
+          - {p: nat0000955}
+          - {p: nat0000956}
+          - {p: nat0000957}
+      - p: nat0000975
+        children:
+          - {p: nat0000961}
+          - {p: nat0000972}
+          - {p: nat0000973}
+          - {p: nat0000974}

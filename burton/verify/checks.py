@@ -389,6 +389,9 @@ def text_results(units: list[str]) -> list[Result]:
     from . import layers
 
     results.append(layers.v7_layers(units))
+    from . import synopses
+
+    results.append(synopses.v11_synopses())
     return results
 
 

@@ -25,3 +25,5 @@
 {"ts": "2026-11-02T23:17:40Z", "event": "before", "run": "author-drafts rest + m6-audit authors rest", "plan": "Pro", "window_5h_pct": 52, "weekly_pct": 19}
 {"ts": "2026-11-02T23:32:14Z", "event": "after", "run": "author-drafts rest + m6-audit authors rest + 6 redrafts/rechecks", "plan": "Pro", "window_5h_pct": 62, "weekly_pct": 20, "cost_usd_list": 2.32, "model": "claude-opus-5-5", "prompt": "authors-v1, author-audit-v1"}
 {"ts": "2026-11-03T00:21:57Z", "event": "end", "run": "M6 done", "plan": "Pro", "window_5h_pct": 79, "weekly_pct": 22}
+{"ts": "2026-11-03T05:34:55Z", "event": "before", "run": "M7 P1 structure (in-session image reading)", "plan": "Pro", "window_5h_pct": 3, "weekly_pct": 23}
+{"ts": "2026-11-03T05:44:15Z", "event": "after", "run": "M7 P1 structure (8 images read in session) + builder + V11", "plan": "Pro", "window_5h_pct": 11, "weekly_pct": 24}
