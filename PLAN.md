@@ -198,7 +198,7 @@ Also in M2:
 * `burton synopses --checklist` (`burton/ingest/synopses.py`) writes the word-level checklists `state/m7/pN-checklist.tsv`.
 * Method fixed in `state/m7/BRIEF.md`: words only from the hidden table, verbatim; only the tree's shape from the images, as ids in `data/manual/synopses/pN.yaml` (machine-made, labelled); a builder, an independent V11, then the reader. **Next session starts from that brief.**
 
-**M7 built (2026-11-03), awaiting the owner's visual review.** One session, from `state/m7/BRIEF.md`:
+**M7 done (2026-11-03).** One session, from `state/m7/BRIEF.md`:
 * Trees: `data/manual/synopses/p1–p3.yaml` (shape only, as hidden-table ids; machine-draft, labelled) → `burton synopses` → `data/synopses/pN.json`. 489 nodes (191 / 193 / 105). Node ids minted through the registry (`pN-synopsis-sN`).
 * **V11 PASS: 561/561 strings used once and verbatim** (the one duplicate, `nat0000108` = `nat0000034a`, explained), **labels resolved 192/192** (87 / 54 / 51; every unit compared by eye with its title: all agree), **cross-keys linked 22/22**.
 * P2 needed three structure fields, each recording what the image shows: `head` (a column heading such as "Memb."), `label` (a second paragraph printed with a node) and `num` (the level of a bare leading number such as "2nd."). Ordinal labels ("2nd Memb.") are parsed. A tree root inherits from the root printed before it, not from the node pointing to it: "♊ Chirurgical physic … Memb. 3." is pointed to from Sect. 1 but is Sect. 4's.
@@ -207,6 +207,8 @@ Also in M2:
 * Reader: `/pN/synopsis/` (in reading order after each partition landing) as nested lists. Script adds disclosure buttons, Open/Close all, and opens the path to a node reached by a link. Unit chips link each head into the text (only units in the build); cross-keys are in-page links; the printed sheets stay below with their alt text. The machine label is read from the tree's provenance. **149/149 units link back** ("Where this stands in Burton's synopsis"; 3.2.1.2, which has no head of its own, links to "Memb. 1."). `burton check` now re-runs `synopses`.
 * Also fixed: a partial build (`burton build` without `--all`, i.e. 1.1.1.2 alone) crashed on the authors page (a count missing when zero).
 * `burton check --all` (2026-11-03): **21 PASS, V5 DEFER (D10), 0 FAIL**. V11 561/561; V6 840 pages, 172,382 links, 0 broken; V10 0 issues; V10a axe 21 pages (now including `p1/synopsis/`), 0 serious/critical in both themes; V10k 21/21 steps (4 new: branch buttons, a cross-key, a unit's back-link). A first run failed V10a on colour-only cross-key links; they are now underlined.
+* **Owner's visual review of P2 (2026-11-03): "All accepted"**, including the three flagged readings (the supplied ☾, the five headless items as the 5th's list, the undivided "Roots, Herbs, Spices, Seeds,"). `p2.yaml` provenance is now `status: checked` (`checked_by: owner`), and the reader says "checked against the sheets by the owner". P1 and P3 stay `machine-draft`, backed by V11 and the blind round s1 (15/15 each).
+* **M7 exit met:** V11 passes: 561/561 non-glyph strings used once (the duplicate explained) and 192/192 labels resolve to units.
 
 **Carried forward** (not done, with the milestone that takes each):
 * ~~The synopsis is shown as the source's images with pattern alt text until the text tree exists.~~ Done in M7: linked trees, the images kept as facsimile.

@@ -115,6 +115,7 @@ def back_links(parts: list[str], units: list[str]) -> dict[str, tuple[str, str]]
 
 def label(tree: dict) -> Markup:
     p = tree["provenance"]
+    review = (f"checked against the sheets by the {esc(p['checked_by'])} ({esc(p['checked_date'])})"
+              if p.get("status") == "checked" else "not yet reviewed")
     return Markup(f'Branching read from the printed sheets by {esc(p["model"])} ({esc(p["by"])}, {esc(p["date"])}), '
-                  f'{"not yet reviewed" if p.get("status") == "machine-draft" else esc(p.get("status", ""))}. '
-                  "The words are Burton’s, taken verbatim from the source’s text of the sheets.")
+                  f"{review}. The words are Burton’s, taken verbatim from the source’s text of the sheets.")

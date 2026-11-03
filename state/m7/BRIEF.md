@@ -1,6 +1,6 @@
 # M7 brief: the synopses (start a fresh session with this)
 
-**Status 2026-11-03: done in one session** (PLAN.md, "M7 built"). All three trees, V11, the spot check and the reader are in place. Left: the owner's visual review of one partition and the three flagged readings listed there.
+**Status 2026-11-03: done in one session** (PLAN.md, "M7 built"). All three trees, V11, the spot check and the reader are in place. The owner reviewed P2 against the sheets and accepted it, flagged readings included ("All accepted"). M7 is closed.
 
 Owner, 2026-11-02: "Yes, start M7". M6 is done (PLAN.md, M6 status). Read CLAUDE.md, the PLAN.md M7 section,
 SPEC §4.2 "Synopses", §7.3 (links both ways) and §9 V11, SURVEY §6. Skip everything else.
