@@ -210,6 +210,10 @@ Also in M2:
 * **Owner's visual review of P2 (2026-11-03): "All accepted"**, including the three flagged readings (the supplied ☾, the five headless items as the 5th's list, the undivided "Roots, Herbs, Spices, Seeds,"). `p2.yaml` provenance is now `status: checked` (`checked_by: owner`), and the reader says "checked against the sheets by the owner". P1 and P3 stay `machine-draft`, backed by V11 and the blind round s1 (15/15 each).
 * **M7 exit met:** V11 passes: 561/561 non-glyph strings used once (the duplicate explained) and 192/192 labels resolve to units.
 
+**M8 started (2026-11-03).** Owner: "Begin M8". Session 1 stopped at the 5-hour usage limit; the handover is `state/m8/BRIEF.md`.
+* Committed, with `burton check --all` passing (21 PASS, V5 DEFER, 0 FAIL): full-text search (24,494 documents; V6 43,707 result links, 0 broken; works offline), Burton's *Table* (unit `table`; 943/943 Penguin page references, linked in the private build, dropped in the public), frontispiece panels tied to the *Argument*'s stanzas.
+* Built, not yet committed: obsolete-word glosses (Webster 1913 downloaded with the owner's consent; model cap $5, $1.65 spent, 560/748 occurrences ruled), print stylesheet, sidenote-layout speed-up, full-site axe command, About page. Next steps are in the brief.
+
 **Carried forward** (not done, with the milestone that takes each):
 * ~~The synopsis is shown as the source's images with pattern alt text until the text tree exists.~~ Done in M7: linked trees, the images kept as facsimile.
 * ~~The "translation source order" setting waits for a second source.~~ Built with Gowland as the second source (D11).
