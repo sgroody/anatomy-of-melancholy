@@ -3,7 +3,22 @@
 id: machiavelli
 name: Niccolò Machiavelli
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q1399
+    label: Niccolò Machiavelli
+    description: Florentine statesman, diplomat, and political theorist (1469–1527)
+    born: 1469
+    died: 1527
+  - qid: Q15311816
+    label: Niccolò Machiavelli
+    description: Florentine politician
+    born: 1449
+    died: null
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

@@ -3,7 +3,22 @@
 id: theognis
 name: Theognis
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q336115
+    label: Theognis of Megara
+    description: Greek lyric poet active in approximately the sixth century BC
+    born: -569
+    died: -484
+  - qid: Q4891440
+    label: Theognis
+    description: Athenian statesman and playwright (?)
+    born: -450
+    died: -500
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

@@ -3,7 +3,22 @@
 id: herodian
 name: Herodian
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q313056
+    label: Herodian
+    description: Greco-Roman official and historian (c.170–c.240)
+    born: 170
+    died: 250
+  - qid: Q380826
+    label: Aelius Herodianus
+    description: 2nd-century Roman-Egyptian grammarian and writer
+    born: 180
+    died: 250
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

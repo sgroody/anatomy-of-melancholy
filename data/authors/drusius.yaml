@@ -3,7 +3,22 @@
 id: drusius
 name: Johannes Drusius
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q104118784
+    label: Johannes van den Driesche
+    description: (1588-1609)
+    born: 1588
+    died: 1609
+  - qid: Q2243667
+    label: Johannes van den Driesche
+    description: Flemish Protestant clergyman and scholar
+    born: 1550
+    died: 1616
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

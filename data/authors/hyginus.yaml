@@ -3,7 +3,32 @@
 id: hyginus
 name: Hyginus
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q1231590
+    label: Hyginus Mythographus
+    description: ancient Roman writer
+    born: 50
+    died: 300
+  - qid: Q221223
+    label: Hyginus Gromaticus
+    description: Latin writer
+    born: 100
+    died: 200
+  - qid: Q298376
+    label: Gaius Julius Hyginus
+    description: Roman freedman and writer (c. 64 BC – AD 17)
+    born: -63
+    died: 17
+  - qid: Q80604
+    label: Hyginus
+    description: Pope and Bishop of Rome from c.138 to c.142
+    born: null
+    died: 142
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

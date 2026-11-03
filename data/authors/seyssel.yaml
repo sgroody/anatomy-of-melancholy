@@ -3,7 +3,22 @@
 id: seyssel
 name: Claude de Seyssel (Sesellius)
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q105567093
+    label: Claude de Seyssel
+    description: Marshal of Savoy
+    born: 1427
+    died: null
+  - qid: Q348597
+    label: Claude de Seyssel
+    description: French archbishop and author (1450-1520)
+    born: 1450
+    died: 1520
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

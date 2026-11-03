@@ -4,15 +4,21 @@ id: jerome
 name: Jerome
 status: checked
 wikidata:
-  status: matched
-  qid: Q44248
-  label: Jerome
-  description: 4th and 5th-century Catholic and Eastern Orthodox saint and Doctor of the Church
-  born: 345
-  died: 420
+  status: ambiguous
+  candidates:
+  - qid: Q434550
+    label: Jerome of Prague
+    description: Czech philosopher
+    born: 1380
+    died: 1416
+  - qid: Q44248
+    label: Jerome
+    description: 4th and 5th-century Catholic and Eastern Orthodox saint and Doctor of the Church
+    born: 345
+    died: 420
   by: wikidata
-  method: wikidata-match-v1
-  date: '2026-11-02'
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

@@ -3,7 +3,22 @@
 id: leone-ebreo
 name: Leone Ebreo (Leo Hebraeus)
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q353633
+    label: Gersonides
+    description: medieval Jewish philosopher
+    born: 1288
+    died: 1344
+  - qid: Q467062
+    label: Judah Leon Abravanel
+    description: Portuguese Jewish philosopher, physician and poet
+    born: 1460
+    died: 1521
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

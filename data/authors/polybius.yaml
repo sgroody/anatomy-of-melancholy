@@ -3,7 +3,22 @@
 id: polybius
 name: Polybius
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q131169
+    label: Polybius
+    description: Ancient Greek historian and politician of the 2nd century BC
+    born: -199
+    died: -119
+  - qid: Q1364198
+    label: Polybius
+    description: freedman of Emperor Claudius
+    born: 50
+    died: 47
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

@@ -3,7 +3,22 @@
 id: strabo
 name: Strabo
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q143595
+    label: Stradanus
+    description: Flemish painter, draughtsman and tapestry designer (1523–1605)
+    born: 1523
+    died: 1605
+  - qid: Q45936
+    label: Strabo
+    description: Greek geographer, philosopher and historian (64/63 BC–c.24 AD)
+    born: -62
+    died: 23
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

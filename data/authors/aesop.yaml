@@ -3,7 +3,22 @@
 id: aesop
 name: Aesop
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q43423
+    label: Aesop
+    description: ancient Greek storyteller (619 BC–563 BC)
+    born: -619
+    died: -563
+  - qid: Q558402
+    label: Clodius Aesopus
+    description: 1st century BC Roman tragedian
+    born: -50
+    died: -100
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

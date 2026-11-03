@@ -3,7 +3,22 @@
 id: boethius
 name: Boethius
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q102851
+    label: Boethius
+    description: Roman senator and philosopher of the early 6th century (480–524)
+    born: 480
+    died: 524
+  - qid: Q110588675
+    label: Buíte of Monasterboice
+    description: 6th-century Irish saint
+    born: null
+    died: 519
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

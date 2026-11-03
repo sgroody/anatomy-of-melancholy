@@ -4,15 +4,26 @@ id: plato
 name: Plato
 status: checked
 wikidata:
-  status: matched
-  qid: Q859
-  label: Plato
-  description: 4th-century BCE Greek philosopher
-  born: -427
-  died: -347
+  status: ambiguous
+  candidates:
+  - qid: Q2035656
+    label: Plato
+    description: Exarch of Ravenna (645-649)
+    born: 550
+    died: 700
+  - qid: Q446098
+    label: Plato the Comic
+    description: 5th/4th century BC Athenian Old Comedy poet
+    born: -499
+    died: null
+  - qid: Q859
+    label: Plato
+    description: 4th-century BCE Greek philosopher
+    born: -428
+    died: -348
   by: wikidata
-  method: wikidata-match-v1
-  date: '2026-11-02'
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

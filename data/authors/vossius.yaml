@@ -3,7 +3,27 @@
 id: vossius
 name: Gerardus Vossius
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q1887584
+    label: Gerardus Vossius
+    description: Belgian diplomat
+    born: 1547
+    died: 1609
+  - qid: Q21545210
+    label: Gerhard Vossius
+    description: philologist (1620-1640)
+    born: 1619
+    died: 1640
+  - qid: Q785925
+    label: Gerardus Vossius
+    description: Dutch Protestant theologian, linguist, historian and humanist (1577-1649)
+    born: 1577
+    died: 1649
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

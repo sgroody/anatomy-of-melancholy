@@ -3,7 +3,27 @@
 id: phaedrus
 name: Phaedrus
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q1050414
+    label: Phaedrus the Epicurean
+    description: ancient Greek philosopher
+    born: -137
+    died: -69
+  - qid: Q52166
+    label: Phaedrus
+    description: Latin fabulist and probably a Thracian slave
+    born: -20
+    died: 50
+  - qid: Q554535
+    label: Phaedrus
+    description: Athenian aristocrat, friend of Socrates (c. 444 – 393 BC)
+    born: -500
+    died: -392
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

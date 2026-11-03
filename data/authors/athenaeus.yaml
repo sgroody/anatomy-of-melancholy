@@ -3,7 +3,27 @@
 id: athenaeus
 name: Athenaeus
 status: checked
-wikidata: null
+wikidata:
+  status: ambiguous
+  candidates:
+  - qid: Q294923
+    label: Athenaeus
+    description: late 2nd/early 3rd century Greek rhetorician and grammarian
+    born: 170
+    died: 223
+  - qid: Q4813399
+    label: Athenaeus
+    description: ancient Greek composer
+    born: -110
+    died: null
+  - qid: Q547379
+    label: Athenaeus
+    description: 4th century BC Macedonian general
+    born: -350
+    died: -400
+  by: wikidata
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

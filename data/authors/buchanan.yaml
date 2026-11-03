@@ -4,15 +4,21 @@ id: buchanan
 name: George Buchanan
 status: checked
 wikidata:
-  status: matched
-  qid: Q715169
-  label: George Buchanan
-  description: Scottish historian and humanist scholar (1506–1582)
-  born: 1506
-  died: 1582
+  status: ambiguous
+  candidates:
+  - qid: Q5537386
+    label: George Buchanan
+    description: Officer in the Scottish army during the Wars of the Three Kingdoms and politician
+    born: null
+    died: 1651
+  - qid: Q715169
+    label: George Buchanan
+    description: Scottish historian and humanist scholar (1506–1582)
+    born: 1506
+    died: 1582
   by: wikidata
-  method: wikidata-match-v1
-  date: '2026-11-02'
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

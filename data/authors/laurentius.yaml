@@ -4,15 +4,36 @@ id: laurentius
 name: André du Laurens (Laurentius)
 status: checked
 wikidata:
-  status: matched
-  qid: Q426294
-  label: André du Laurens
-  description: physician
-  born: 1558
-  died: 1609
+  status: ambiguous
+  candidates:
+  - qid: Q141944569
+    label: Lawrence of Nagasaki
+    description: lay martyr of Nagasaki (1628), Lawrence Yamada
+    born: null
+    died: 1628
+  - qid: Q17590
+    label: Lawrence of Rome
+    description: Christian saint, martyr and a deacon of Rome (225-258)
+    born: 225
+    died: 258
+  - qid: Q2419830
+    label: Lorcán Ua Tuathail
+    description: Roman Catholic Irish archbishop and saint
+    born: 1128
+    died: 1180
+  - qid: Q295509
+    label: Laurentius
+    description: archpriest, antipope elected in 498
+    born: 500
+    died: 507
+  - qid: Q347940
+    label: Laurence of Canterbury
+    description: second Archbishop of Canterbury
+    born: 550
+    died: 619
   by: wikidata
-  method: wikidata-match-v1
-  date: '2026-11-02'
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:

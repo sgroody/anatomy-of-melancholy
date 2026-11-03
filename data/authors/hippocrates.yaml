@@ -4,11 +4,36 @@ id: hippocrates
 name: Hippocrates
 status: checked
 wikidata:
-  status: none
-  candidates: []
+  status: ambiguous
+  candidates:
+  - qid: Q1377877
+    label: Hippocrates of Syracuse
+    description: pro-Carthaginian politician in Sicily
+    born: -300
+    died: -211
+  - qid: Q1619991
+    label: Hippocrates
+    description: Spartan admiral
+    born: null
+    died: -407
+  - qid: Q1620003
+    label: Hippocrates of Athens
+    description: Athenian general (c. 459 – 424 BC)
+    born: -500
+    died: -423
+  - qid: Q312629
+    label: Hippocrates of Chios
+    description: 5th-century BC Greek mathematician and astronomer
+    born: -469
+    died: -409
+  - qid: Q5264
+    label: Hippocrates
+    description: Ancient Greek physician (c. 460 – c. 370 BCE)
+    born: -459
+    died: -369
   by: wikidata
-  method: wikidata-match-v1
-  date: '2026-11-02'
+  method: wikidata-match-v2
+  date: '2026-11-03'
 identification: null
 why_cited: null
 review:
