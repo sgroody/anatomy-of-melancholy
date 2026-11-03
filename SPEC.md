@@ -170,7 +170,9 @@ Explicit references (M2, `burton xrefs`):
   * headings.
 * Missing upper levels are inherited from the current subsection. A skipped middle level ("Part. 1 Subs. 2 Memb. 2") leaves the reference `unresolved` rather than guessed.
 
-**`glosses/`**: obsolete English words. Each record is a text-quote selector, a headword, a sense, a source, and a confidence.
+**`glosses/`**: the M5 Chaucer (`enm`) glosses, keyed by verse group, written by the translation runner.
+
+**`obsolete/`** (M8, `burton obsolete`): obsolete English words, one record per occurrence, keyed by a registry id (`<unit>-gN`): a text-quote selector, the headword, the verdict (`webster`, `ordinary`, `other-obsolete`, `not-english`), the sense and its source, the confidence, and the ruling's model, prompt and date. Candidates are found by rule (`rules/obs-v1`: every sense in Webster 1913 marked obsolete or archaic, less `data/manual/gloss-stoplist.yaml`); a model rules on each occurrence in its sentence (prompt `obs-v1`). Gowland's glosses are not in this layer: the private build reads them from his endnotes (rule `gowland-gloss-v1`). V7 checks that every Webster sense is Webster's own words.
 
 Source order (decided, D6, at my discretion):
 1. **`gowland`**: Gowland's endnote glosses ("*hie*: Urge, hasten"). They are read from the endnotes at build time, never copied into the layer, and appear in the private build only.

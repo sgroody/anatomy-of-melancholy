@@ -1,3 +1,5 @@
+**Superseded: M8 finished 2026-11-03 (second sitting); see PLAN.md's M8 status.**
+
 # M8 handover (2026-11-03, session 1; stopped at the 5-hour usage limit)
 
 ## Done and committed
@@ -26,8 +28,9 @@
     * `data/eval/m8-gowland-gloss-check.yaml` (round g1): **PASS**, 30/30 accepted are word glosses.
 * Print stylesheet (edition.css `@media print`): margin sidenotes as floats, light colours, controls hidden.
 * Performance: sidenote layout in three passes; desktop djr longest task 1,389 ms → 234–511 ms, 3.2.3.1 298 → ~90 ms.
-* `burton axe --all` (full-site V10, both themes, glosses and citations on): was running at the stop;
-  log `state/m8-axe-all.log`, report `verify/reports/axe-private-all.json`.
+* `burton axe --all` (full-site V10, both themes, glosses and citations on): **PASS, 423/423 pages, 846 runs,
+  0 serious/critical, 0 moderate/minor** (log `state/m8-axe-all.log`, report `verify/reports/axe-private-all.json`).
+  Built before the last 188 glosses were ruled: re-run it only if the reader's markup changes again.
 * About page: search, Table, frontispiece, glosses explained (the gloss model name is read from the layer).
 
 ## Next session, in order

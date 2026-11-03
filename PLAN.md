@@ -210,9 +210,15 @@ Also in M2:
 * **Owner's visual review of P2 (2026-11-03): "All accepted"**, including the three flagged readings (the supplied ☾, the five headless items as the 5th's list, the undivided "Roots, Herbs, Spices, Seeds,"). `p2.yaml` provenance is now `status: checked` (`checked_by: owner`), and the reader says "checked against the sheets by the owner". P1 and P3 stay `machine-draft`, backed by V11 and the blind round s1 (15/15 each).
 * **M7 exit met:** V11 passes: 561/561 non-glyph strings used once (the duplicate explained) and 192/192 labels resolve to units.
 
-**M8 started (2026-11-03).** Owner: "Begin M8". Session 1 stopped at the 5-hour usage limit; the handover is `state/m8/BRIEF.md`.
-* Committed, with `burton check --all` passing (21 PASS, V5 DEFER, 0 FAIL): full-text search (24,494 documents; V6 43,707 result links, 0 broken; works offline), Burton's *Table* (unit `table`; 943/943 Penguin page references, linked in the private build, dropped in the public), frontispiece panels tied to the *Argument*'s stanzas.
-* Built, not yet committed: obsolete-word glosses (Webster 1913 downloaded with the owner's consent; model cap $5, $1.65 spent, 560/748 occurrences ruled), print stylesheet, sidenote-layout speed-up, full-site axe command, About page. Next steps are in the brief.
+**M8 done (2026-11-03).** Owner: "Begin M8", then "Can we finish up?". Two sittings (the first stopped at the 5-hour limit; handover `state/m8/BRIEF.md`).
+* **Search**: `assets/search-index.json`, 24,494 documents (4,096 paragraphs and verse groups, 5,703 sidenotes, 14,695 translations, each labelled with its source and shown with its original), fetched on the first search (about 0.8 s, then about 6 ms a query) and precached. Case and Greek accents ignored. Gowland's verse translations are never indexed as Burton's text (the extended V8 caught it on the first run); in the private build his translations are a labelled source.
+* **Burton's *Table***: back-matter unit `table`, 575 paragraphs; its 943 locators are Penguin page numbers, hence Gowland's matter (`ed:locs`/`ed:pageref`): linked to the page markers in the private build (943/943 resolve), dropped in the public. The ebook's note on it is marked in `blocks.yaml`. 5 Latin phrases translated ($0.09).
+* **Frontispiece**: ten panels (`data/manual/frontispiece.yaml`, rectangles read by machine, labelled) link to their stanzas of the *Argument*; each stanza links back.
+* **Obsolete-word glosses** (off by default): Gowland's in the private build (rule `gowland-gloss-v1`, read at build time; held-out g1 **PASS**, 30/30), then Webster 1913 (downloaded with consent, `WEBSTER.lock`), then model drafts. `burton obsolete`: 748 occurrences of 161 words ruled (obs-v1, $2.26 of the $5 cap): webster 386, other-obsolete 83, ordinary 207, not-english 72. Placed: private 1,178 (Gowland 699, Webster 340, machine 139; 65 unplaced, counted), public 530. **Held-out o1 FAIL** (gloss-or-not 50/50, but 6 wrong senses shown against a limit of 2: 1 Webster cross-reference, now never shown; 4 drafts where Webster fits; 1 arguable). Not tuned on o1; any change needs round o2. **For the owner:** whether drafted senses may stand where a Webster sense fits.
+* **Print** stylesheet (sidenotes in a printed margin); **layout** in three passes (djr's longest task 1,389 → 234–511 ms); **About** page covers all of the above.
+* `burton check --all` (2026-11-03): **21 PASS, V5 DEFER (D10), 0 FAIL.** V1 489,093 words, 0 unexplained; V2 page_refs 943/943; V6 844 pages, 176,616 links and 43,707 search results, 0 broken; V7 748/748 gloss selectors, every Webster sense found in the pinned text; V8 0 leaks; V9 237/237 and 235/235; V10 0 issues; OFF 457/457 precached, offline search 12 results. **Full-site axe** (`burton axe --all`): 423/423 private pages, both themes, glosses and citations shown, 0 serious/critical, 0 moderate/minor.
+* **M8 exit met:** V1–V11 pass on the whole private site (V5 deferred by D10), and the full axe run passes.
+* **Not defined yet: M9.** The carried-forward items below are the candidates.
 
 **Carried forward** (not done, with the milestone that takes each):
 * ~~The synopsis is shown as the source's images with pattern alt text until the text tree exists.~~ Done in M7: linked trees, the images kept as facsimile.
@@ -221,7 +227,7 @@ Also in M2:
 * ~~The model sometimes puts explanation inside a translation ("Curable (salutary)").~~ Fixed in M4 by `tr-v2` and the parenthesis check.
 * The gold sample is labelled by Claude and awaits your review (D7).
 * ~~Chaucer untagged; Italian tagged `la`; French untagged; boundaries 3.2.5.1-f47 and f31.~~ Fixed in M5 session 1. Still open: djr-f1489 runs two citations and a quotation together (one passage, left as is). → M6 citation parser
-* The reader does not show the gloss layer yet; the M5 Chaucer glosses are stored for it. → M8
+* ~~The reader does not show the gloss layer yet; the M5 Chaucer glosses are stored for it.~~ Done in M8 (with the obsolete-word glosses).
 * ~~The Dell & Jordan-Smith alignment lives in `data/layers/djs/`, separate from `translations/`. Merging it into the reader needs a held-out accuracy check.~~ Done in M5: whole book, held-out 95/100, shown for 1,992 passages. The layer stays separate; the build reads it.
 
 ## M0 — Setup (short)
