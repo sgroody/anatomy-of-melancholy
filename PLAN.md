@@ -193,6 +193,11 @@ Also in M2:
 * **M6 exit met:** every sidenote has a status (5,703/5,703: parsed 2,212, partial 785, unidentified 1,502, no citation 1,204); every author link resolves (V6, 0 broken); zero `identified` without a verifier basis (only the 416 verified matches and the 17 recorded findings show a source). **Carried forward:** the Wikidata v2 run (`uv run burton authors --wikidata`) once the query service has recovered; the 66 Greek passages stay unverified unless Greek corpora are approved.
 * **Do not redo:** the c1/c2 held-out rounds are seen; a new parser rule needs a fresh round c3. Do not re-draft the top 100 unless the prompt changes (bump `authors-v1`).
 
+**M7 started (2026-11-02).** Owner: "Yes, start M7". Groundwork only in the M6 session (its context was 71 % full; the 20 images need a fresh one):
+* Survey reproduced: 561 non-glyph hidden strings (P1 219, P2 224, P3 118), every hidden `<p>` with a unique id; 20 images of about 1,400 × 900 px.
+* `burton synopses --checklist` (`burton/ingest/synopses.py`) writes the word-level checklists `state/m7/pN-checklist.tsv`.
+* Method fixed in `state/m7/BRIEF.md`: words only from the hidden table, verbatim; only the tree's shape from the images, as ids in `data/manual/synopses/pN.yaml` (machine-made, labelled); a builder, an independent V11, then the reader. **Next session starts from that brief.**
+
 **Carried forward** (not done, with the milestone that takes each):
 * The synopsis is shown as the source's images with pattern alt text until the text tree exists. → M7
 * ~~The "translation source order" setting waits for a second source.~~ Built with Gowland as the second source (D11).

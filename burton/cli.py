@@ -99,6 +99,9 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true")
 
+    s = sub.add_parser("synopses", help="M7 synopses: --checklist writes the word-level checklists to state/m7/")
+    s.add_argument("--checklist", action="store_true")
+
     s = sub.add_parser("verify-sources", help="verify quotation sources against local corpora (rules)")
     s.add_argument("--unit", action="append")
 
@@ -257,6 +260,13 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         print(dict(m6_audit.run(args.kind, model=args.model, packet_size=args.packet_size,
                                 budget_usd=args.budget_usd, dry_run=args.dry_run)))
+    elif args.cmd == "synopses":
+        import json
+
+        from .ingest import synopses
+
+        if args.checklist:
+            print(json.dumps(synopses.checklist(), indent=1))
     elif args.cmd == "verify-sources":
         from .layers import sources
 
