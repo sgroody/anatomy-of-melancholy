@@ -320,6 +320,39 @@ table.counts th, table.counts td { border-bottom: 1px solid var(--rule); padding
 table.counts td:last-child { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
 code { font-size: 0.85em; }
 
+/* ------------------------------------------------------------ synopsis tree (M7) */
+.syn-tree, .syn-kids { list-style: none; margin: 0; padding: 0; }
+.syn-tree { margin: 1.2rem 0 2rem; padding-left: 1.4em; }
+.syn-tree > .syn-n { margin-bottom: 1.6rem; }
+.syn-n { margin: 0.15rem 0; }
+.syn-n:target > .syn-row, .syn-n:focus > .syn-row { background: var(--tr-bg); outline: none; }
+.syn-n:focus { outline: none; }
+.syn-row { line-height: 1.4; }
+/* each brace: a curved rule down the left of the list it groups */
+.syn-kids { position: relative; margin: 0.25rem 0 0.4rem 0.6rem; padding: 0.1rem 0 0.1rem 1.5em; }
+.syn-kids::before { content: ""; position: absolute; left: 0; top: 0.25em; bottom: 0.25em; width: 0.45rem;
+  border: 1.5px solid var(--muted); border-right: 0; border-radius: 0.5rem 0 0 0.5rem; }
+.syn-kids[hidden] { display: none; }
+.syn-or { display: block; font-style: italic; color: var(--muted); font-size: 0.85em; margin: 0.25rem 0 0.05rem; }
+.syn-head { display: block; font-size: 0.9em; color: var(--muted); }
+.syn-key, .syn-see { color: var(--accent); }
+.syn-key { margin-right: 0.1em; }
+.syn-see { text-decoration: underline; text-decoration-color: currentColor; padding: 0 0.15em; }
+.syn-ref { font-size: 0.72em; font-variant-numeric: lining-nums; white-space: nowrap; padding: 0 0.3em; margin-left: 0.15em;
+  border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; color: var(--muted); vertical-align: 0.1em; }
+a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: var(--ink); }
+.syn-note, .syn-flag { font-size: 0.78em; color: var(--muted); }
+.syn-tg { display: inline-block; width: 1.3em; height: 1.2em; padding: 0; margin: 0 0.15em 0 -1.45em; border: 0;
+  background: none; color: var(--muted); cursor: pointer; vertical-align: -0.1em; }
+.syn-tg::before { content: ""; display: inline-block; border: 0.32em solid transparent; border-top-color: currentColor;
+  border-bottom-width: 0; transition: transform 0.12s; }
+.syn-tg[aria-expanded="false"]::before { transform: rotate(-90deg); }
+.syn-tg:hover { color: var(--accent); }
+.syn-tools { display: flex; gap: 0.5rem; font-size: 0.85em; }
+.syn-tools[hidden] { display: none; }
+.syn-tools button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; color: inherit; font: inherit; }
+.syn-here { font-size: 0.85em; color: var(--muted); margin: 0.8rem 0; }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 @media print {
   header.site, .settings, footer .pager, .sn-more { display: none; }

@@ -1,5 +1,5 @@
 {
-  "when": "2026-11-03T00:21:26+00:00",
+  "when": "2026-11-03T06:33:22+00:00",
   "ok": true,
   "results": [
     {
@@ -190,6 +190,19 @@
       "problems": []
     },
     {
+      "code": "V11",
+      "name": "synopsis completeness",
+      "ok": true,
+      "deferred": null,
+      "counts": {
+        "strings": "561/561",
+        "nodes": 489,
+        "labels resolved": "192/192",
+        "cross-keys linked": "22/22"
+      },
+      "problems": []
+    },
+    {
       "code": "V2h",
       "name": "per-unit counts XML = HTML",
       "ok": true,
@@ -228,7 +241,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 11249,
+        "script_chars": 11329,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -240,8 +253,8 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 834,
-        "links": 170530,
+        "pages": 840,
+        "links": 172382,
         "broken": 0,
         "unresolved_xrefs_unlinked": 4
       },
@@ -264,11 +277,11 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "231/231",
-        "private:fallback": 13,
-        "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+264E U+264F",
-        "public:glyphs": "228/228",
-        "public:fallback": 13
+        "private:glyphs": "237/237",
+        "private:fallback": 19,
+        "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F",
+        "public:glyphs": "234/234",
+        "public:fallback": 19
       },
       "problems": []
     },
@@ -278,7 +291,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages": 834,
+        "pages": 840,
         "parse_errors": 0,
         "a11y_issues": 0
       },
@@ -286,12 +299,12 @@
     },
     {
       "code": "V10a",
-      "name": "axe-core on 20 pages, light and dark (serious/critical = 0)",
+      "name": "axe-core on 21 pages, light and dark (serious/critical = 0)",
       "ok": true,
       "deferred": null,
       "counts": {
-        "runs": 40,
-        "pages": "20/20",
+        "runs": 42,
+        "pages": "21/21",
         "serious_or_critical": 0,
         "moderate_or_minor": 0,
         "rules": "none"
@@ -304,7 +317,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "steps": 17,
+        "steps": 21,
         "failed": 0
       },
       "problems": []
@@ -348,7 +361,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "precached": "450/450",
+        "precached": "453/453",
         "offline_pages_loaded": "6/6"
       },
       "problems": []

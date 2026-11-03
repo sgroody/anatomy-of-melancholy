@@ -296,6 +296,51 @@ for (const fp of document.querySelectorAll(".fp")) {
   }
 }
 
+// ---------------------------------------------------------------- synopsis tree (M7)
+// The page is a fully open nested list; script adds a disclosure button to every branch, opens the branches
+// above a node reached by a link (a cross-key such as ♈, or a unit's "where this stands" link) and focuses it.
+const synTree = document.querySelector(".syn-tree");
+if (synTree) {
+  const setOpen = (li, open) => {
+    const btn = li.querySelector(":scope > .syn-row > .syn-tg");
+    const kids = li.querySelector(":scope > .syn-kids");
+    if (!btn || !kids) return;
+    btn.setAttribute("aria-expanded", String(open));
+    kids.hidden = !open;
+  };
+  for (const li of synTree.querySelectorAll(".syn-n")) {
+    const kids = li.querySelector(":scope > .syn-kids");
+    if (!kids) continue;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "syn-tg";
+    btn.setAttribute("aria-expanded", "true");
+    btn.setAttribute("aria-controls", kids.id);
+    btn.setAttribute("aria-labelledby", li.id + "-t");
+    btn.addEventListener("click", () => setOpen(li, btn.getAttribute("aria-expanded") !== "true"));
+    li.querySelector(":scope > .syn-row").prepend(btn);
+  }
+  const reveal = () => {
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!target || !synTree.contains(target)) return;
+    for (let li = target.parentElement.closest(".syn-n"); li; li = li.parentElement.closest(".syn-n")) setOpen(li, true);
+    target.tabIndex = -1;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ block: "center" });
+  };
+  window.addEventListener("hashchange", reveal);
+  reveal();
+  const tools = document.querySelector(".syn-tools");
+  if (tools) {
+    tools.hidden = false;
+    tools.addEventListener("click", (ev) => {
+      const b = ev.target.closest("button[data-syn]");
+      if (!b) return;
+      for (const li of synTree.querySelectorAll(".syn-n")) setOpen(li, b.dataset.syn === "open");
+    });
+  }
+}
+
 apply();
 
 // ---------------------------------------------------------------- offline (installable app)

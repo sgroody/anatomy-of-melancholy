@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="landing synopsis">
+  <h1 class="landing-title">{{ page.title }}</h1>
+  <p class="note machine-label">{{ label }}</p>
+  <p class="note">Each head links to the place in the book it names; a sign such as ♈ leads to the branch carrying the same sign.</p>
+  <div class="syn-tools" hidden>
+    <button type="button" data-syn="open">Open all</button>
+    <button type="button" data-syn="close">Close all</button>
+  </div>
+  {{ tree }}
+  <section aria-labelledby="sheets-h">
+    <h2 id="sheets-h">The printed sheets</h2>
+    <p class="note">The synopsis as the source prints it, in {{ sheets|length }} sheets.</p>
+    <div class="sheets">
+    {% for src, alt, w, h in sheets %}
+      <figure class="sheet"><a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"></a></figure>
+    {% endfor %}
+    </div>
+  </section>
+</article>
+{% endblock %}

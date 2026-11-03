@@ -115,3 +115,18 @@ def test_v11_wants_a_reason_for_a_supplied_key(tmp_path, monkeypatch):
     supplied["key"]["supplied"] = ""
     f.write_text(json.dumps(tree, ensure_ascii=False), encoding="utf-8")
     assert any("does not print, with no reason" in p for p in V.v11_synopses().problems)
+
+
+@needs_epub
+def test_reader_links_only_built_units_and_every_unit_has_a_node():
+    from burton.site import synopsis as R
+
+    tree = R.load("p1")
+    html = R.tree_html(tree, "../../", {"1.1.1.1": "1.1.1.1 Of the Causes"})
+    assert 'href="../../1.1.1.1/"' in html and 'href="../../1.1.1.2/"' not in html
+    assert '<span class="syn-ref">1.1.1.2</span>' in html  # named, but unlinked in a partial build
+    assert '<span lang="grc">Φιλαργυρία</span>' in html
+    units = sorted(p.stem for p in paths.TEXT.glob("[123].*.xml"))
+    back = R.back_links(["p1", "p2", "p3"], units)
+    assert set(back) == set(units)
+    assert back["3.2.1.2"] == back["3.2.1.1"]  # no head of its own: it links to "Memb. 1."

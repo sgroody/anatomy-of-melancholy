@@ -116,7 +116,7 @@ def run(model: str = "claude-opus-5-5", dry_run: bool = False) -> dict:
             continue
         stats["packets"] += 1
         stats["cost_usd_list"] += res.get("cost_usd_list") or 0
-        with OUT.open("a", encoding="utf-8") as f:
+        with OUT.open("a", encoding="utf-8", newline="\n") as f:
             for a in res["output"]["items"]:
                 if a["id"] in p["ask"] and a["id"] not in done:
                     done.add(a["id"])

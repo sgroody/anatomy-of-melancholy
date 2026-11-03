@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts
+from . import authors_pages, fonts, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -201,6 +201,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             root=root, profile=profile, key=key, prev=prev, next=nxt,
             toc=Markup(toc_html(book, root, key, ids=False)), **kw)
 
+    back = synopsis.back_links([pg.key for pg in book.partitions], book.units)  # unit -> its node in the synopsis
+
     # units and front matter
     for unit in book.units:
         xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
@@ -217,8 +219,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             report["density"][unit] = round(1000 * counts["sidenotes"] / max(words, 1), 1)
         pg = book.pages[unit]
         has_h1 = "<h1" in body
+        here = back.get(unit)
         page(unit, f"{unit}/index.html", "unit.html", page=pg, body=Markup(body),
              hidden_h1=None if has_h1 else pg.title,
+             synopsis_href=f"../{here[0]}/synopsis/#{here[1]}" if here else None,
              title=pg.title if pg.kind == "front" else f"{unit} {pg.title}",
              description=f"Burton, The Anatomy of Melancholy, {pg.title}")
 
@@ -228,10 +232,22 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         first = next(c for c in book.units if c.startswith(f"{p}."))
         div = etree.parse(str(paths.TEXT / f"{first}.xml")).getroot().find(f".//{T('div')}")
         sub = next((public_text(h) for h in div.iter(T("head")) if h.get("subtype") == "part_title3"), None)
+        syn_key = f"{part.key}-synopsis"
         page(part.key, f"{part.key}/index.html", "partition.html", page=part, subtitle=sub,
              sheets=images.synopsis(p, "../", part.title),
+             synopsis=book.pages.get(syn_key),
              contents=Markup(toc_html(book, "../", None, ids=True, only=part)),
              title=part.title, description=f"Burton, The Anatomy of Melancholy: {part.title}")
+
+        # the synopsis as a tree (M7): Burton's words, the branching read from the sheets, links both ways
+        if syn_key in book.pages:
+            tree = synopsis.load(part.key)
+            built = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
+            spg = book.pages[syn_key]
+            page(syn_key, f"{part.key}/synopsis/index.html", "synopsis.html", page=spg,
+                 tree=Markup(synopsis.tree_html(tree, "../../", built)), label=synopsis.label(tree),
+                 sheets=images.synopsis(p, "../../", part.title), title=spg.title,
+                 description=f"Burton, The Anatomy of Melancholy: {spg.title}, as a linked tree")
 
     # home
     front = images.get("pg003.png", "")

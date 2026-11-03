@@ -17,8 +17,8 @@ from .checks import Result
 
 AXE = paths.ROOT / "tests" / "browser" / "node_modules" / "axe-core" / "axe.min.js"
 
-# 20 pages: every page type, the densest and longest units, Greek, verse, lists, a Gowland page.
-SAMPLE = ["", "about/", "settings/", "p1/", "p2/", "p3/", "argument/", "dedication/", "abstract/", "djr/",
+# 21 pages: every page type, the densest and longest units, Greek, verse, lists, a Gowland page, a synopsis.
+SAMPLE = ["", "about/", "settings/", "p1/", "p2/", "p3/", "p1/synopsis/", "argument/", "dedication/", "abstract/", "djr/",
           "lectori/", "heraclite/", "1.1.1.1/", "1.1.1.2/", "1.1.3.2/", "3.2.4.1/", "1.2.4.6/", "2.3.3.1/",
           "3.2.5.5/", "2.4.1.3/"]
 LIMIT_REM = 14  # must match edition.js: the furthest a laid-out note may drift below its marker
@@ -93,7 +93,7 @@ def new_page(b, *, width=1280, height=900, theme=None, settings=None):
 
 # ---------------------------------------------------------------- V10a: axe-core
 def axe_check(profile: str = "private") -> Result:
-    r = Result("V10a", "axe-core on 20 pages, light and dark (serious/critical = 0)")
+    r = Result("V10a", f"axe-core on {len(SAMPLE)} pages, light and dark (serious/critical = 0)")
     if not AXE.exists():
         r.fail(f"{AXE} missing: run `npm ci --prefix tests/browser`")
         return r
@@ -220,6 +220,39 @@ def keyboard_check(profile: str = "private") -> Result:
         pg.reload()
         step(pg.evaluate("document.documentElement.dataset.theme") is None, "reset should restore the system theme")
         ctx.close()
+
+        # 4. synopsis (M7): a branch button closes and opens its list; a cross-key moves focus to its branch,
+        # opening the branches above it; a unit's "where this stands" link lands on its node
+        syn = built(site, ["p1/synopsis/"])
+        if syn:
+            ctx, pg = new_page(b)
+            pg.goto(base + syn[0])
+            btn = pg.locator(".syn-tg").nth(1)
+            btn.focus()
+            pg.keyboard.press("Enter")
+            kids = btn.get_attribute("aria-controls")
+            step(btn.get_attribute("aria-expanded") == "false" and pg.evaluate(f"document.getElementById({kids!r}).hidden"),
+                 "Enter on a branch button should close its list")
+            pg.keyboard.press("Space")
+            step(btn.get_attribute("aria-expanded") == "true", "Space on a closed branch button should open it")
+            pg.click('button[data-syn="close"]')
+            pg.click('button[data-syn="open"]')
+            see = pg.locator("a.syn-see").first
+            target = see.get_attribute("href")[1:]
+            pg.click('button[data-syn="close"]')
+            pg.evaluate(f"location.hash = {('#' + target)!r}")
+            pg.wait_for_timeout(200)
+            step(focused(pg).startswith(f"li#{target}") and pg.is_visible(f"#{target} > .syn-row"),
+                 f"a cross-key should reveal and focus its branch, got {focused(pg)}")
+            link = pg.evaluate("""async () => { const r = await fetch('../../1.2.3.12/'); if (!r.ok) return null;
+                const m = (await r.text()).match(/class="syn-here"><a href="([^"]+)"/); return m && m[1]; }""")
+            if link:
+                pg.goto(base + "1.2.3.12/")
+                pg.click(".syn-here a")
+                pg.wait_for_timeout(200)
+                step(focused(pg).startswith("li#" + link.split("#")[1]),
+                     f"a unit's synopsis link should land on its node, got {focused(pg)}")
+            ctx.close()
     r.counts = {"steps": steps, "failed": len(r.problems)}
     return r
 

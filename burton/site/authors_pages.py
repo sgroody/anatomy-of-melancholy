@@ -118,4 +118,6 @@ def collect(units: list[str], shown: set[str] | None = None) -> tuple[dict, dict
                       "parsed": d["status"]["parsed"], "partial": d["status"]["partial"],
                       "works": [(titles[w], n) for w, n in d["works"].most_common()], "cites": d["cites"]}
     stats["authors"] = len(pages)
-    return pages, dict(stats)
+    # every count the index prints, 0 when a partial build has none (1.1.1.2 alone cites no Scripture)
+    return pages, {k: stats[k] for k in ("notes", "citations", "bible", "parsed", "partial", "unidentified",
+                                         "none", "authors")} | dict(stats)

@@ -5,12 +5,14 @@ live in burton.verify and never import the code they check.
 """
 
 from .ingest import run as ingest_run
+from .ingest import synopses
 from .site import build
 from .verify import browser, checks, site_checks
 
 
 def check_all(units: list[str], *, browser_checks: bool = True) -> int:
     ingest_run.ingest(units)
+    synopses.run()  # the trees from data/manual/synopses/ (V11 then checks them against the EPUB)
     results = checks.text_results(units)
     for profile in ("private", "public"):
         build.build(units, profile=profile)

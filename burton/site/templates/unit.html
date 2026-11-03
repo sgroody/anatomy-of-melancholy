@@ -4,5 +4,6 @@
 <p class="banner" data-resp="gowland">This page is Angus Gowland’s translation (Penguin, 2021), shown in the private build only.</p>
 {% endif %}
 {% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
+{% if synopsis_href %}<p class="syn-here"><a href="{{ synopsis_href }}">Where this stands in Burton’s synopsis</a></p>{% endif %}
 {{ body }}
 {% endblock %}

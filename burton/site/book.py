@@ -17,6 +17,7 @@ from ..textview import public_text
 from .render import inline_html
 
 ORDINAL = ["First", "Second", "Third"]
+SYNOPSIS = ["Synopsis", "Synopsis", "Analysis"]  # the source's own word for each
 
 
 def partition_label(p: int) -> str:
@@ -26,7 +27,7 @@ def partition_label(p: int) -> str:
 @dataclass
 class Page:
     key: str  # unit id, "p1"…, or "home" / "about" / "settings"
-    kind: str  # home | front | partition | unit | about | settings
+    kind: str  # home | front | partition | synopsis | unit | about | settings
     title: str  # plain-text title (source text where the source has one)
     href: str  # directory URL relative to the site root ("" for home)
     gowland: bool = False  # a whole page of Gowland's matter (private build only)
@@ -92,6 +93,9 @@ class Book:
             if not self.partitions or self.partitions[-1].key != f"p{p}":
                 self._add(Page(f"p{p}", "partition", partition_label(p), f"p{p}/"))
                 self.partitions.append(self.pages[f"p{p}"])
+                if (paths.DATA / "synopses" / f"p{p}.json").exists():  # Burton prints it after the title
+                    self._add(Page(f"p{p}-synopsis", "synopsis", f"{SYNOPSIS[p - 1]} of the {ORDINAL[p - 1]} Partition",
+                                   f"p{p}/synopsis/"))
             part = self.partitions[-1]
             sec = self._group(part, f"{p}.{s}", f"Section {s}")
             mem = self._group(sec, f"{p}.{s}.{m}", f"Member {m}")
@@ -132,6 +136,9 @@ class Book:
                     (f"Member {m}", f"{land}#toc-{p}.{s}.{m}"), (f"Subsection {u}", None)]
         if pg.kind == "partition":
             return [(pg.title, None)]
+        if pg.kind == "synopsis":
+            p = int(pg.key[1])
+            return [(partition_label(p), f"p{p}/"), (SYNOPSIS[p - 1], None)]
         if pg.kind == "front":
             return [("Front matter", "#toc-front"), (pg.title, None)]
         return [(pg.title, None)]
