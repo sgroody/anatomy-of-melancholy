@@ -83,6 +83,13 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
 
+    s = sub.add_parser("cite-audit", help="held-out check of the citation expansions, with Gowland's notes as "
+                                          "evidence (private-only)")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--report", action="store_true", help="compare -> state/review/cite-audit.md")
+    s.add_argument("--dry-run", action="store_true", help="draw the sample and count, no model")
+
     s = sub.add_parser("authors", help="author registry skeletons (data/authors/) and the owner's top-100 list")
     s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
     s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
@@ -274,6 +281,13 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import citations_inline
 
         stats = citations_inline.build(args.unit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "cite-audit":
+        from .layers import cite_audit
+
+        stats = cite_audit.report(args.model) if args.report else \
+            cite_audit.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run)
         for k in sorted(stats):
             print(f"  {k}: {stats[k]}")
     elif args.cmd == "expand-citations":
