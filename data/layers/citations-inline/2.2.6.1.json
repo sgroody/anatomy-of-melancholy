@@ -1,0 +1,90 @@
+{
+  "2.2.6.1-p1-ic860": {
+    "author": "fernel",
+    "display": "Jean Fernel, consilium 43",
+    "locus": [
+      [
+        "consilium",
+        "43"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Fernelius consil. 43",
+    "selector": {
+      "exact": "Fernelius consil. 43",
+      "in": "2.2.6.1-p1",
+      "prefix": "well pleased, Gualter Bruele. ",
+      "suffix": ", Mercurialis consil. 6, Piso,"
+    },
+    "status": "parsed",
+    "work": null
+  },
+  "2.2.6.1-p1-ic882": {
+    "author": "mercuriale",
+    "display": "Girolamo Mercuriale, consilium 6",
+    "locus": [
+      [
+        "consilium",
+        "6"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Mercurialis consil. 6",
+    "selector": {
+      "exact": "Mercurialis consil. 6",
+      "in": "2.2.6.1-p1",
+      "prefix": "Bruele. Fernelius consil. 43, ",
+      "suffix": ", Piso, Jacchinus cap. 15 in 9"
+    },
+    "status": "parsed",
+    "work": null
+  },
+  "2.2.6.1-p3-ic552": {
+    "author": "bible",
+    "display": "Ecclesiasticus, 25, 25",
+    "locus": [
+      [
+        "n",
+        "25"
+      ],
+      [
+        "n",
+        "25"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Ecclus. 25. 25.",
+    "selector": {
+      "exact": "Ecclus. 25. 25.",
+      "in": "2.2.6.1-p3",
+      "prefix": "ter passage, no not a little, ",
+      "suffix": " If they open a little, they w"
+    },
+    "status": "parsed",
+    "work": "bible.ecclesiasticus"
+  },
+  "2.2.6.1-p4-ic1047": {
+    "author": "gordon",
+    "display": "Bernard de Gordon (Gordonius), book 1, chapter 15",
+    "locus": [
+      [
+        "book",
+        "1"
+      ],
+      [
+        "chapter",
+        "15"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Gordonius lib. 1 cap. 15 de conser. vit.",
+    "selector": {
+      "exact": "Gordonius lib. 1 cap. 15 de conser. vit.",
+      "in": "2.2.6.1-p4",
+      "prefix": " with all courage sustain it (",
+      "suffix": "). Tu contra audentior ito. If"
+    },
+    "status": "partial",
+    "work": null
+  }
+}

@@ -69,6 +69,10 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("citations", help="parse Burton's sidenote citations (rules only) -> data/layers/citations/")
     s.add_argument("--unit", action="append")
 
+    s = sub.add_parser("citations-inline", help="citations in Burton's running text (rules only) -> "
+                                                "data/layers/citations-inline/")
+    s.add_argument("--unit", action="append")
+
     s = sub.add_parser("authors", help="author registry skeletons (data/authors/) and the owner's top-100 list")
     s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
     s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
@@ -254,6 +258,12 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import citations
 
         stats = citations.build(args.unit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "citations-inline":
+        from .layers import citations_inline
+
+        stats = citations_inline.build(args.unit)
         for k in sorted(stats):
             print(f"  {k}: {stats[k]}")
     elif args.cmd == "authors":

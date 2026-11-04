@@ -53,6 +53,9 @@ locators:
   oration: {en: oration, forms: [orat, or]}
   epistle-dedicatory: {en: preface, forms: [praef, praefat]}
   year: {en: year, forms: [anno, an]}
+  # added 2026-11-03 (Claude, claude-opus-5-5, in session; not yet checked by the owner): the Canon of Avicenna
+  # is divided into books, fens, treatises and chapters ("lib. 3 Fen 1 Tract. 4 cap. 18")
+  fen: {en: fen, forms: [fen]}
 
 special:
   idem: [Idem, Id]

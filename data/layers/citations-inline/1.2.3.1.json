@@ -1,0 +1,98 @@
+{
+  "1.2.3.1-p2-ic2879": {
+    "author": "bible",
+    "display": "Matthew, 26, 41",
+    "locus": [
+      [
+        "n",
+        "26"
+      ],
+      [
+        "n",
+        "41"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Mat. 26. 41",
+    "selector": {
+      "exact": "Mat. 26. 41",
+      "in": "1.2.3.1-p2",
+      "prefix": " we find that of our Saviour, ",
+      "suffix": ", most true, The spirit is wil"
+    },
+    "status": "parsed",
+    "work": "bible.matthew"
+  },
+  "1.2.3.1-p3-ic103": {
+    "author": "cardano",
+    "display": "Girolamo Cardano, book 14",
+    "locus": [
+      [
+        "book",
+        "14"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Cardan. lib. 14 subtil.",
+    "selector": {
+      "exact": "Cardan. lib. 14 subtil.",
+      "in": "1.2.3.1-p3",
+      "prefix": "cult. Philos. lib. 1 cap. 63, ",
+      "suffix": ", Lemnius, lib. 1 cap. 12 de o"
+    },
+    "status": "partial",
+    "work": null
+  },
+  "1.2.3.1-p3-ic128": {
+    "author": "lemnius",
+    "display": "Levinus Lemnius, De occultis naturae miraculis, book 1, chapter 12, book 1, chapter 16",
+    "locus": [
+      [
+        "book",
+        "1"
+      ],
+      [
+        "chapter",
+        "12"
+      ],
+      [
+        "book",
+        "1"
+      ],
+      [
+        "chapter",
+        "16"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Lemnius, lib. 1 cap. 12 de occult. nat. mir. & lib. 1 cap. 16",
+    "selector": {
+      "exact": "Lemnius, lib. 1 cap. 12 de occult. nat. mir. & lib. 1 cap. 16",
+      "in": "1.2.3.1-p3",
+      "prefix": " 63, Cardan. lib. 14 subtil., ",
+      "suffix": ", Suarez, Met. disput. 18 sect"
+    },
+    "status": "parsed",
+    "work": "lemnius.de-occultis"
+  },
+  "1.2.3.1-p3-ic235": {
+    "author": "bright",
+    "display": "Timothy Bright, chapter 12",
+    "locus": [
+      [
+        "chapter",
+        "12"
+      ]
+    ],
+    "method": "rules/inline-v1",
+    "raw": "Bright, cap. 12",
+    "selector": {
+      "exact": "Bright, cap. 12",
+      "in": "1.2.3.1-p3",
+      "prefix": "isput. 18 sect. 1 art. 25, T. ",
+      "suffix": " of his Melancholy Treatise, W"
+    },
+    "status": "parsed",
+    "work": null
+  }
+}
