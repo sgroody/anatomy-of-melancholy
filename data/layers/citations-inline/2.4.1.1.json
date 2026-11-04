@@ -16,7 +16,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Fuchsius lib. 1 sect. 1 cap. 8",
     "selector": {
       "exact": "Fuchsius lib. 1 sect. 1 cap. 8",
@@ -29,7 +29,7 @@
   },
   "2.4.1.1-p5-ic2748": {
     "author": "bible",
-    "display": "Ecclesiasticus, 38, 1",
+    "display": "Ecclesiasticus 38:1",
     "locus": [
       [
         "n",
@@ -40,8 +40,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 38. 1.",
+    "ref": {
+      "chapter": 38,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 38. 1.",
       "in": "2.4.1.1-p5",

@@ -6,7 +6,7 @@
         "display": "Virgil",
         "id": "3.2.1.2-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Virg.",
         "status": "parsed",
         "work": null
@@ -27,7 +27,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Achilles Tatius lib. 2.",
         "status": "parsed",
         "work": null
@@ -43,7 +43,7 @@
         "display": "Martial",
         "id": "3.2.1.2-n11-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mart.",
         "status": "parsed",
         "work": null
@@ -59,7 +59,7 @@
         "display": "Paolo Giovio (Jovius), De legatione Moschovitarum",
         "id": "3.2.1.2-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jovius Musc.",
         "status": "parsed",
         "work": "jovius.moscovia"
@@ -80,7 +80,7 @@
         "display": "Girolamo Mercuriale, De Satyriasi et Priapismo",
         "id": "3.2.1.2-n14-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mercurialis cap. de Priapismo.",
         "status": "parsed",
         "work": "mercuriale.de-priapismo"
@@ -99,7 +99,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Caelius lib. 11 antiq. lect. cap. 14.",
         "status": "unidentified",
         "work": null
@@ -114,7 +114,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Galenus 6 de locis aff.",
         "status": "parsed",
         "work": "galen.de-locis"
@@ -139,7 +139,7 @@
             "15"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De morb. mulier. lib. 1 cap. 15.",
         "status": "unidentified",
         "work": null
@@ -160,7 +160,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Herodotus lib. 2",
         "status": "parsed",
         "work": null
@@ -181,7 +181,7 @@
             "10"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Metamor. 10.",
         "status": "unidentified",
         "work": null
@@ -210,7 +210,7 @@
             "18"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Seneca de ira, lib. 11 cap. 18.",
         "resolved_by": "work",
         "status": "parsed",
@@ -236,7 +236,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Clemens Alex. paedag. lib. 3 cap. 3.",
         "status": "unidentified",
         "work": null
@@ -249,7 +249,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Ephesians, 5, 12",
+        "display": "Ephesians 5:12",
         "id": "3.2.1.2-n2-c1",
         "locus": [
           [
@@ -261,8 +261,14 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Eph. 5. 12.",
+        "ref": {
+          "chapter": 5,
+          "verses": [
+            12
+          ]
+        },
         "status": "parsed",
         "work": "bible.ephesians"
       }
@@ -286,7 +292,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Seneca 1 nat. quaest.",
         "resolved_by": "work",
         "status": "parsed",
@@ -308,7 +314,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tom. 2 Gryllo.",
         "status": "unidentified",
         "work": null
@@ -333,7 +339,7 @@
             "15"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De morbis mulierum lib. 1 cap. 15.",
         "status": "unidentified",
         "work": null
@@ -374,7 +380,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "interpret. Curtio.",
         "raw": "Amphitheat. amor. cap. 4 interpret. Curtio.",
         "status": "unidentified",
@@ -391,7 +397,7 @@
         "display": "Aeneas Silvius Piccolomini (Pius II)",
         "id": "3.2.1.2-n28-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aeneas Silvius.",
         "status": "parsed",
         "work": null
@@ -416,7 +422,7 @@
             "40"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "adversus Marc.",
         "raw": "Tertul. proverb. lib. 4 adversus Marc. cap. 40.",
         "status": "partial",
@@ -433,7 +439,7 @@
         "display": "Plutarch",
         "id": "3.2.1.2-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch. amator. lib.",
         "status": "partial",
         "work": null
@@ -449,7 +455,7 @@
         "display": "Juvenal",
         "id": "3.2.1.2-n30-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juvenal.",
         "status": "parsed",
         "work": null
@@ -465,7 +471,7 @@
         "display": "Geoffrey Chaucer",
         "id": "3.2.1.2-n31-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Chaucer.",
         "status": "parsed",
         "work": null
@@ -487,7 +493,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tom. 1 dial.",
         "status": "partial",
         "work": null
@@ -497,7 +503,7 @@
         "display": "Lucian",
         "id": "3.2.1.2-n32-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucianus.",
         "status": "parsed",
         "work": null
@@ -518,7 +524,7 @@
         "display": "Horace",
         "id": "3.2.1.2-n34-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -534,7 +540,7 @@
         "display": "Lucretius",
         "id": "3.2.1.2-n35-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucretius.",
         "status": "parsed",
         "work": null
@@ -550,7 +556,7 @@
         "display": null,
         "id": "3.2.1.2-n36-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fonseca.",
         "status": "unidentified",
         "work": null
@@ -566,7 +572,7 @@
         "display": "Horace",
         "id": "3.2.1.2-n37-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -582,7 +588,7 @@
         "display": "Propertius",
         "id": "3.2.1.2-n38-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Propert.",
         "status": "parsed",
         "work": null
@@ -598,7 +604,7 @@
         "display": null,
         "id": "3.2.1.2-n39-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Semonides graec.",
         "status": "unidentified",
         "work": null
@@ -620,7 +626,7 @@
             "13"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 13.",
         "status": "parsed",
         "work": null
@@ -636,7 +642,7 @@
         "display": "Ausonius",
         "id": "3.2.1.2-n40-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ausonius.",
         "status": "parsed",
         "work": null
@@ -662,7 +668,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Propertius lib. 2.",
         "status": "parsed",
         "work": null
@@ -683,7 +689,7 @@
             "30"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch. cap. 30 Rom. hist.",
         "status": "partial",
         "work": null
@@ -704,7 +710,7 @@
         "display": "Caspar Barth (Barthius)",
         "id": "3.2.1.2-n45-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Barthio",
         "status": "parsed",
         "work": null
@@ -714,7 +720,7 @@
         "display": null,
         "id": "3.2.1.2-n45-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ital.",
         "status": "unidentified",
         "work": null
@@ -730,7 +736,7 @@
         "display": null,
         "id": "3.2.1.2-n46-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Anglico scriptur. concentu.",
         "status": "unidentified",
         "work": null
@@ -751,7 +757,7 @@
             "42"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epictetus cap. 42.",
         "status": "parsed",
         "work": null
@@ -761,7 +767,7 @@
         "display": null,
         "id": "3.2.1.2-n47-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Levinus",
         "status": "unidentified",
         "work": null
@@ -771,7 +777,7 @@
         "display": "Levinus Lemnius",
         "id": "3.2.1.2-n47-c3",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lemnius.",
         "status": "parsed",
         "work": null
@@ -797,7 +803,7 @@
             "126"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 3 fol. 126.",
         "status": "parsed",
         "work": null
@@ -813,7 +819,7 @@
         "display": "Catullus",
         "id": "3.2.1.2-n49-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Catullus.",
         "status": "parsed",
         "work": null
@@ -826,7 +832,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Romans, 1, 27",
+        "display": "Romans 1:27",
         "id": "3.2.1.2-n5-c1",
         "locus": [
           [
@@ -838,8 +844,14 @@
             "27"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Rom. 1. 27.",
+        "ref": {
+          "chapter": 1,
+          "verses": [
+            27
+          ]
+        },
         "status": "parsed",
         "work": "bible.romans"
       }
@@ -854,7 +866,7 @@
         "display": "Euripides",
         "id": "3.2.1.2-n50-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Euripides.",
         "status": "parsed",
         "work": null
@@ -870,7 +882,7 @@
         "display": null,
         "id": "3.2.1.2-n51-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De mulierum inexhausta libidine luxuque insatiabili omnes aeque regiones",
         "status": "unidentified",
         "work": null
@@ -880,7 +892,7 @@
         "display": null,
         "id": "3.2.1.2-n51-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Stephanus.",
         "status": "unidentified",
         "work": null
@@ -896,7 +908,7 @@
         "display": "Plautus",
         "id": "3.2.1.2-n52-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plautus.",
         "status": "parsed",
         "work": null
@@ -912,7 +924,7 @@
         "display": "Cyprian",
         "id": "3.2.1.2-n53-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cyprian.",
         "status": "parsed",
         "work": null
@@ -933,7 +945,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 8 epist. Ruffinus.",
         "status": "unidentified",
         "work": null
@@ -954,7 +966,7 @@
         "display": "Desiderius Erasmus, Moriae encomium",
         "id": "3.2.1.2-n56-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Erasmus mor.",
         "status": "parsed",
         "work": "erasmus.moria"
@@ -970,7 +982,7 @@
         "display": "Aeneas Silvius Piccolomini (Pius II)",
         "id": "3.2.1.2-n57-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aeneas Silvius.",
         "status": "parsed",
         "work": null
@@ -986,7 +998,7 @@
         "display": "Aeneas Silvius Piccolomini (Pius II)",
         "id": "3.2.1.2-n58-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aeneas Silvius.",
         "status": "parsed",
         "work": null
@@ -1002,7 +1014,7 @@
         "display": "Pieter van Foreest (Forestus)",
         "id": "3.2.1.2-n59-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Forestus,",
         "status": "parsed",
         "work": null
@@ -1012,7 +1024,7 @@
         "display": "Plato",
         "id": "3.2.1.2-n59-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plato.",
         "status": "parsed",
         "work": null
@@ -1046,7 +1058,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "de aegrit. capt.",
         "raw": "Pract. major. Tract. 6 cap. 1 Rub. 11 de aegrit. capt.",
         "status": "unidentified",
@@ -1069,7 +1081,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Odyss. & Metamor. 4",
         "status": "parsed",
         "work": "homer.odyssey"
@@ -1079,7 +1091,7 @@
         "display": "Ovid",
         "id": "3.2.1.2-n61-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid.",
         "status": "parsed",
         "work": null
@@ -1096,7 +1108,7 @@
         "display": "Philipp Melanchthon",
         "id": "3.2.1.2-n62-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. de affectibus.",
         "status": "partial",
         "work": null
@@ -1122,7 +1134,7 @@
         "display": "Lucian, Amores",
         "id": "3.2.1.2-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucianus dial. Amorum.",
         "status": "parsed",
         "work": "lucian.amores"
@@ -1138,7 +1150,7 @@
         "display": "Ogier Ghiselin de Busbecq (Busbequius)",
         "id": "3.2.1.2-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Busbequius.",
         "status": "parsed",
         "work": null
@@ -1154,7 +1166,7 @@
         "display": "Lucian, Charidemus",
         "id": "3.2.1.2-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucianus Charidemo.",
         "status": "parsed",
         "work": "lucian.charidemus"

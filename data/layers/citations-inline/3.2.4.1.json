@@ -12,7 +12,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Valleriola lib. 2 observ. 7",
     "selector": {
       "exact": "Valleriola lib. 2 observ. 7",
@@ -32,7 +32,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Plater. med. observ. lib. 1",
     "selector": {
       "exact": "Plater. med. observ. lib. 1",
@@ -45,7 +45,7 @@
   },
   "3.2.4.1-p6-ic264": {
     "author": "bible",
-    "display": "Proverbs, 5, 4, 5",
+    "display": "Proverbs 5:4–5",
     "locus": [
       [
         "n",
@@ -60,8 +60,15 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 5. 4, 5",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        4,
+        5
+      ]
+    },
     "selector": {
       "exact": "Prov. 5. 4, 5",
       "in": "3.2.4.1-p6",
@@ -73,7 +80,7 @@
   },
   "3.2.4.1-p6-ic364": {
     "author": "bible",
-    "display": "Ecclesiastes, 7, 28",
+    "display": "Ecclesiastes 7:28",
     "locus": [
       [
         "n",
@@ -84,8 +91,14 @@
         "28"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eccles. 7. 28",
+    "ref": {
+      "chapter": 7,
+      "verses": [
+        28
+      ]
+    },
     "selector": {
       "exact": "Eccles. 7. 28",
       "in": "3.2.4.1-p6",

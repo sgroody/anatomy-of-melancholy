@@ -11,7 +11,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Laurentius cap. 6.",
         "status": "parsed",
         "work": null
@@ -28,7 +28,7 @@
         "display": "Galen, De humoribus",
         "id": "1.3.1.4-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de humoribus.",
         "status": "parsed",
         "work": "galen.de-humoribus"
@@ -44,7 +44,7 @@
         "display": "Antonio Guainerio (Guianerius)",
         "id": "1.3.1.4-n11-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Guainerius.",
         "status": "parsed",
         "work": null
@@ -66,7 +66,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De mentis alienat. cap. 3.",
         "status": "parsed",
         "work": "platter.de-mentis-alienatione"
@@ -82,7 +82,7 @@
         "display": null,
         "id": "1.3.1.4-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Levinus Lemnius",
         "status": "unidentified",
         "work": null
@@ -98,7 +98,7 @@
         "display": "Horace",
         "id": "1.3.1.4-n14-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -119,7 +119,7 @@
         "display": "Virgil",
         "id": "1.3.1.4-n16-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Virg.",
         "status": "parsed",
         "work": null
@@ -132,7 +132,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 67",
+        "display": "Psalms 67",
         "id": "1.3.1.4-n17-c1",
         "locus": [
           [
@@ -140,8 +140,12 @@
             "67"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 67.",
+        "ref": {
+          "chapter": 67,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -162,7 +166,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 9 ad Almansorem.",
         "status": "parsed",
         "work": "rhazes.ad-almansorem"
@@ -178,7 +182,7 @@
         "display": null,
         "id": "1.3.1.4-n19-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Practica majore.",
         "status": "unidentified",
         "work": null
@@ -203,7 +207,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 3 cap. 14.",
         "status": "unidentified",
         "work": null
@@ -229,7 +233,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 19 Partic. 2.",
         "status": "partial",
         "work": null
@@ -244,7 +248,7 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aug. cap. 12 lib. de cura pro mortuis gerenda.",
         "status": "parsed",
         "work": "augustine.de-cura"
@@ -254,7 +258,7 @@
         "display": "Rhazes",
         "id": "1.3.1.4-n20-c3",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Rhasis.",
         "status": "parsed",
         "work": null
@@ -279,7 +283,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lavater de spectris part. 3 cap. 2.",
         "status": "partial",
         "work": null
@@ -304,7 +308,7 @@
             "31"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Wierus lib. 3 cap. 31.",
         "status": "parsed",
         "work": null
@@ -325,7 +329,7 @@
         "display": null,
         "id": "1.3.1.4-n24-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Malleo Malef.",
         "status": "unidentified",
         "work": null
@@ -341,7 +345,7 @@
         "display": null,
         "id": "1.3.1.4-n25-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de atra bile.",
         "status": "unidentified",
         "work": null
@@ -371,7 +375,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Part. 1 Subs. 2 Memb. 2.",
         "status": "parsed",
         "work": "burton.anatomy"
@@ -388,7 +392,7 @@
         "display": "Franz Hildesheim",
         "id": "1.3.1.4-n27-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De delirio",
         "status": "partial",
         "work": null
@@ -405,7 +409,7 @@
         "display": "Athenaeus, Deipnosophistae",
         "id": "1.3.1.4-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Dipnosophist. lib.",
         "status": "parsed",
         "work": "athenaeus.deipnosophistae"
@@ -430,7 +434,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De hist. Med. mirab. lib. 2 cap. 1.",
         "status": "unidentified",
         "work": null
@@ -446,7 +450,7 @@
         "display": "Bernard de Gordon (Gordonius)",
         "id": "1.3.1.4-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gordonius.",
         "status": "parsed",
         "work": null
@@ -462,7 +466,7 @@
         "display": "Pieter van Foreest (Forestus)",
         "id": "1.3.1.4-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Forestus.",
         "status": "parsed",
         "work": null
@@ -478,7 +482,7 @@
         "display": "Bernard de Gordon (Gordonius)",
         "id": "1.3.1.4-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gordonius.",
         "status": "parsed",
         "work": null
@@ -503,7 +507,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Trallianus lib. 1. 16.",
         "status": "unidentified",
         "work": null

@@ -1,7 +1,7 @@
 {
   "3.4.2.6-p11-ic3943": {
     "author": "bible",
-    "display": "Romans, 7, 19",
+    "display": "Romans 7:19",
     "locus": [
       [
         "n",
@@ -12,8 +12,14 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 7. 19",
+    "ref": {
+      "chapter": 7,
+      "verses": [
+        19
+      ]
+    },
     "selector": {
       "exact": "Rom. 7. 19",
       "in": "3.4.2.6-p11",
@@ -25,7 +31,7 @@
   },
   "3.4.2.6-p11-ic4765": {
     "author": "bible",
-    "display": "Proverbs, 4, 23",
+    "display": "Proverbs 4:23",
     "locus": [
       [
         "n",
@@ -36,8 +42,14 @@
         "23"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 4. 23",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        23
+      ]
+    },
     "selector": {
       "exact": "Prov. 4. 23",
       "in": "3.4.2.6-p11",
@@ -49,15 +61,19 @@
   },
   "3.4.2.6-p11-ic4930": {
     "author": "bible",
-    "display": "Psalms, 1",
+    "display": "Psalms 1",
     "locus": [
       [
         "n",
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 1",
+    "ref": {
+      "chapter": 1,
+      "verses": []
+    },
     "selector": {
       "exact": "Psal. 1",
       "in": "3.4.2.6-p11",
@@ -88,7 +104,7 @@
         "14"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 20. 16 and 22. 14",
     "selector": {
       "exact": "Mat. 20. 16 and 22. 14",
@@ -99,9 +115,71 @@
     "status": "parsed",
     "work": "bible.matthew"
   },
+  "3.4.2.6-p12-ic825": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Peter 4:18",
+    "locus": [
+      [
+        "n",
+        "4"
+      ],
+      [
+        "n",
+        "18"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Pet. 4. 18.",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        18
+      ]
+    },
+    "selector": {
+      "exact": "1 Pet. 4. 18.",
+      "in": "3.4.2.6-p12",
+      "prefix": "e ungodly and sinners appear? ",
+      "suffix": " Who knows, saith Solomon, whe"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
+  "3.4.2.6-p13-ic1097": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Timothy 2:4",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "4"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Tim. 2. 4",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        4
+      ]
+    },
+    "selector": {
+      "exact": "1 Tim. 2. 4",
+      "in": "3.4.2.6-p13",
+      "prefix": "an in particular, and to all. ",
+      "suffix": ", God will that all men be sav"
+    },
+    "status": "parsed",
+    "work": "bible.timothy"
+  },
   "3.4.2.6-p13-ic1314": {
     "author": "bible",
-    "display": "John, 3, 17",
+    "display": "John 3:17",
     "locus": [
       [
         "n",
@@ -112,8 +190,14 @@
         "17"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "John 3. 17.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        17
+      ]
+    },
     "selector": {
       "exact": "John 3. 17.",
       "in": "3.4.2.6-p13",
@@ -125,7 +209,7 @@
   },
   "3.4.2.6-p13-ic1449": {
     "author": "bible",
-    "display": "Ezekiel, 33, 11",
+    "display": "Ezekiel 33:11",
     "locus": [
       [
         "n",
@@ -136,8 +220,14 @@
         "11"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ezek. 33. 11",
+    "ref": {
+      "chapter": 33,
+      "verses": [
+        11
+      ]
+    },
     "selector": {
       "exact": "Ezek. 33. 11",
       "in": "3.4.2.6-p13",
@@ -149,7 +239,7 @@
   },
   "3.4.2.6-p13-ic1692": {
     "author": "bible",
-    "display": "John, 6, 40",
+    "display": "John 6:40",
     "locus": [
       [
         "n",
@@ -160,8 +250,14 @@
         "40"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "John 6. 40.",
+    "ref": {
+      "chapter": 6,
+      "verses": [
+        40
+      ]
+    },
     "selector": {
       "exact": "John 6. 40.",
       "in": "3.4.2.6-p13",
@@ -171,9 +267,40 @@
     "status": "parsed",
     "work": "bible.john"
   },
+  "3.4.2.6-p13-ic1761": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Peter 3:9",
+    "locus": [
+      [
+        "n",
+        "3"
+      ],
+      [
+        "n",
+        "9"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Pet. 3. 9.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        9
+      ]
+    },
+    "selector": {
+      "exact": "2 Pet. 3. 9.",
+      "in": "3.4.2.6-p13",
+      "prefix": ", but all come to repentance, ",
+      "suffix": " Besides, the remission of sin"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
   "3.4.2.6-p13-ic1923": {
     "author": "bible",
-    "display": "Matthew, 28, 19",
+    "display": "Matthew 28:19",
     "locus": [
       [
         "n",
@@ -184,8 +311,14 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Matth. 28. 19.",
+    "ref": {
+      "chapter": 28,
+      "verses": [
+        19
+      ]
+    },
     "selector": {
       "exact": "Matth. 28. 19.",
       "in": "3.4.2.6-p13",
@@ -197,7 +330,7 @@
   },
   "3.4.2.6-p13-ic2002": {
     "author": "bible",
-    "display": "Mark, 16, 15",
+    "display": "Mark 16:15",
     "locus": [
       [
         "n",
@@ -208,8 +341,14 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mark 16. 15.",
+    "ref": {
+      "chapter": 16,
+      "verses": [
+        15
+      ]
+    },
     "selector": {
       "exact": "Mark 16. 15.",
       "in": "3.4.2.6-p13",
@@ -221,7 +360,7 @@
   },
   "3.4.2.6-p15-ic1589": {
     "author": "bible",
-    "display": "Psalms, 119, 137",
+    "display": "Psalms 119:137",
     "locus": [
       [
         "n",
@@ -232,8 +371,14 @@
         "137"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 119. 137",
+    "ref": {
+      "chapter": 119,
+      "verses": [
+        137
+      ]
+    },
     "selector": {
       "exact": "Psal. 119. 137",
       "in": "3.4.2.6-p15",
@@ -245,7 +390,7 @@
   },
   "3.4.2.6-p15-ic1684": {
     "author": "bible",
-    "display": "Luke, 18, 13",
+    "display": "Luke 18:13",
     "locus": [
       [
         "n",
@@ -256,8 +401,14 @@
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Luke 18. 13",
+    "ref": {
+      "chapter": 18,
+      "verses": [
+        13
+      ]
+    },
     "selector": {
       "exact": "Luke 18. 13",
       "in": "3.4.2.6-p15",
@@ -269,7 +420,7 @@
   },
   "3.4.2.6-p15-ic2681": {
     "author": "bible",
-    "display": "Ecclesiasticus, 5, 4",
+    "display": "Ecclesiasticus 5:4",
     "locus": [
       [
         "n",
@@ -280,8 +431,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 5. 4",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 5. 4",
       "in": "3.4.2.6-p15",
@@ -293,7 +450,7 @@
   },
   "3.4.2.6-p15-ic2952": {
     "author": "bible",
-    "display": "Matthew, 5, 4",
+    "display": "Matthew 5:4",
     "locus": [
       [
         "n",
@@ -304,8 +461,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Matth. 5. 4",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Matth. 5. 4",
       "in": "3.4.2.6-p15",
@@ -317,15 +480,19 @@
   },
   "3.4.2.6-p15-ic3089": {
     "author": "bible",
-    "display": "Psalms, 119",
+    "display": "Psalms 119",
     "locus": [
       [
         "n",
         "119"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 119",
+    "ref": {
+      "chapter": 119,
+      "verses": []
+    },
     "selector": {
       "exact": "Psal. 119",
       "in": "3.4.2.6-p15",
@@ -337,7 +504,7 @@
   },
   "3.4.2.6-p15-ic3206": {
     "author": "bible",
-    "display": "Romans, 5, 4",
+    "display": "Romans 5:4",
     "locus": [
       [
         "n",
@@ -348,8 +515,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 5. 4",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Rom. 5. 4",
       "in": "3.4.2.6-p15",
@@ -361,15 +534,19 @@
   },
   "3.4.2.6-p15-ic4282": {
     "author": "bible",
-    "display": "Romans, 8",
+    "display": "Romans 8",
     "locus": [
       [
         "n",
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 8",
+    "ref": {
+      "chapter": 8,
+      "verses": []
+    },
     "selector": {
       "exact": "Rom. 8",
       "in": "3.4.2.6-p15",
@@ -381,7 +558,7 @@
   },
   "3.4.2.6-p15-ic5064": {
     "author": "bible",
-    "display": "Job, 6, 4",
+    "display": "Job 6:4",
     "locus": [
       [
         "n",
@@ -392,8 +569,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Job 6. 4.",
+    "ref": {
+      "chapter": 6,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Job 6. 4.",
       "in": "3.4.2.6-p15",
@@ -405,7 +588,7 @@
   },
   "3.4.2.6-p15-ic5334": {
     "author": "bible",
-    "display": "Psalms, 6, 7",
+    "display": "Psalms 6:7",
     "locus": [
       [
         "n",
@@ -416,8 +599,14 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 6. 7.",
+    "ref": {
+      "chapter": 6,
+      "verses": [
+        7
+      ]
+    },
     "selector": {
       "exact": "Psal. 6. 7.",
       "in": "3.4.2.6-p15",
@@ -429,7 +618,7 @@
   },
   "3.4.2.6-p15-ic5637": {
     "author": "bible",
-    "display": "Job, 1, 21",
+    "display": "Job 1:21",
     "locus": [
       [
         "n",
@@ -440,8 +629,14 @@
         "21"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Job 1. 21.",
+    "ref": {
+      "chapter": 1,
+      "verses": [
+        21
+      ]
+    },
     "selector": {
       "exact": "Job 1. 21.",
       "in": "3.4.2.6-p15",
@@ -453,7 +648,7 @@
   },
   "3.4.2.6-p15-ic5708": {
     "author": "bible",
-    "display": "Job, 39, 37",
+    "display": "Job 39:37",
     "locus": [
       [
         "n",
@@ -464,8 +659,14 @@
         "37"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Job 39. 37.",
+    "ref": {
+      "chapter": 39,
+      "verses": [
+        37
+      ]
+    },
     "selector": {
       "exact": "Job 39. 37.",
       "in": "3.4.2.6-p15",
@@ -477,15 +678,19 @@
   },
   "3.4.2.6-p15-ic5743": {
     "author": "bible",
-    "display": "Psalms, 31",
+    "display": "Psalms 31",
     "locus": [
       [
         "n",
         "31"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 31",
+    "ref": {
+      "chapter": 31,
+      "verses": []
+    },
     "selector": {
       "exact": "Psal. 31",
       "in": "3.4.2.6-p15",
@@ -497,7 +702,7 @@
   },
   "3.4.2.6-p15-ic6274": {
     "author": "bible",
-    "display": "Psalms, 34, 18",
+    "display": "Psalms 34:18",
     "locus": [
       [
         "n",
@@ -508,8 +713,14 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 34. 18.",
+    "ref": {
+      "chapter": 34,
+      "verses": [
+        18
+      ]
+    },
     "selector": {
       "exact": "Psal. 34. 18.",
       "in": "3.4.2.6-p15",
@@ -521,7 +732,7 @@
   },
   "3.4.2.6-p15-ic6325": {
     "author": "bible",
-    "display": "Matthew, 15, 24",
+    "display": "Matthew 15:24",
     "locus": [
       [
         "n",
@@ -532,8 +743,14 @@
         "24"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 15. 24.",
+    "ref": {
+      "chapter": 15,
+      "verses": [
+        24
+      ]
+    },
     "selector": {
       "exact": "Mat. 15. 24.",
       "in": "3.4.2.6-p15",
@@ -543,9 +760,40 @@
     "status": "parsed",
     "work": "bible.matthew"
   },
+  "3.4.2.6-p15-ic6981": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Corinthians 12:9",
+    "locus": [
+      [
+        "n",
+        "12"
+      ],
+      [
+        "n",
+        "9"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Cor. 12. 9.",
+    "ref": {
+      "chapter": 12,
+      "verses": [
+        9
+      ]
+    },
+    "selector": {
+      "exact": "2 Cor. 12. 9.",
+      "in": "3.4.2.6-p15",
+      "prefix": "sin, his grace is sufficient, ",
+      "suffix": " Despair not then, faint not a"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.4.2.6-p15-ic7201": {
     "author": "bible",
-    "display": "James, 4, 8",
+    "display": "James 4:8",
     "locus": [
       [
         "n",
@@ -556,8 +804,14 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "James 4. 8.",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        8
+      ]
+    },
     "selector": {
       "exact": "James 4. 8.",
       "in": "3.4.2.6-p15",
@@ -569,7 +823,7 @@
   },
   "3.4.2.6-p16-ic1981": {
     "author": "bible",
-    "display": "Psalms, 44, 23",
+    "display": "Psalms 44:23",
     "locus": [
       [
         "n",
@@ -580,8 +834,14 @@
         "23"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 44. 23.",
+    "ref": {
+      "chapter": 44,
+      "verses": [
+        23
+      ]
+    },
     "selector": {
       "exact": "Psal. 44. 23.",
       "in": "3.4.2.6-p16",
@@ -593,7 +853,7 @@
   },
   "3.4.2.6-p16-ic2090": {
     "author": "bible",
-    "display": "Psalms, 69, 3",
+    "display": "Psalms 69:3",
     "locus": [
       [
         "n",
@@ -604,8 +864,14 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 69. 3.",
+    "ref": {
+      "chapter": 69,
+      "verses": [
+        3
+      ]
+    },
     "selector": {
       "exact": "Psal. 69. 3.",
       "in": "3.4.2.6-p16",
@@ -615,9 +881,40 @@
     "status": "parsed",
     "work": "bible.psalms"
   },
+  "3.4.2.6-p16-ic2855": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Corinthians 10:13",
+    "locus": [
+      [
+        "n",
+        "10"
+      ],
+      [
+        "n",
+        "13"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Cor. 10. 13",
+    "ref": {
+      "chapter": 10,
+      "verses": [
+        13
+      ]
+    },
+    "selector": {
+      "exact": "1 Cor. 10. 13",
+      "in": "3.4.2.6-p16",
+      "prefix": "e that thou art able to bear, ",
+      "suffix": ", but will give an issue to te"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.4.2.6-p16-ic2957": {
     "author": "bible",
-    "display": "Romans, 8, 28",
+    "display": "Romans 8:28",
     "locus": [
       [
         "n",
@@ -628,8 +925,14 @@
         "28"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 8. 28.",
+    "ref": {
+      "chapter": 8,
+      "verses": [
+        28
+      ]
+    },
     "selector": {
       "exact": "Rom. 8. 28.",
       "in": "3.4.2.6-p16",
@@ -641,7 +944,7 @@
   },
   "3.4.2.6-p16-ic3222": {
     "author": "bible",
-    "display": "Psalms, 91, 15",
+    "display": "Psalms 91:15",
     "locus": [
       [
         "n",
@@ -652,8 +955,14 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 91. 15.",
+    "ref": {
+      "chapter": 91,
+      "verses": [
+        15
+      ]
+    },
     "selector": {
       "exact": "Psal. 91. 15.",
       "in": "3.4.2.6-p16",
@@ -665,7 +974,7 @@
   },
   "3.4.2.6-p16-ic3318": {
     "author": "bible",
-    "display": "Psalms, 34, 19",
+    "display": "Psalms 34:19",
     "locus": [
       [
         "n",
@@ -676,8 +985,14 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 34. 19.",
+    "ref": {
+      "chapter": 34,
+      "verses": [
+        19
+      ]
+    },
     "selector": {
       "exact": "Psal. 34. 19.",
       "in": "3.4.2.6-p16",
@@ -687,9 +1002,40 @@
     "status": "parsed",
     "work": "bible.psalms"
   },
+  "3.4.2.6-p16-ic3422": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Corinthians 4:17",
+    "locus": [
+      [
+        "n",
+        "4"
+      ],
+      [
+        "n",
+        "17"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Cor. 4. 17.",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        17
+      ]
+    },
+    "selector": {
+      "exact": "2 Cor. 4. 17.",
+      "in": "3.4.2.6-p16",
+      "prefix": "s an eternal weight of glory, ",
+      "suffix": " Not answerable to that glory "
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.4.2.6-p17-ic1291": {
     "author": "bible",
-    "display": "Psalms, 91, 11, 12",
+    "display": "Psalms 91:11–12",
     "locus": [
       [
         "n",
@@ -704,8 +1050,15 @@
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 91. 11, 12.",
+    "ref": {
+      "chapter": 91,
+      "verses": [
+        11,
+        12
+      ]
+    },
     "selector": {
       "exact": "Psal. 91. 11, 12.",
       "in": "3.4.2.6-p17",
@@ -724,7 +1077,7 @@
         "57, 58"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lemnius cap. 57 & 58 exhort. ad vit. op. instit.",
     "selector": {
       "exact": "Lemnius cap. 57 & 58 exhort. ad vit. op. instit.",
@@ -748,7 +1101,7 @@
         "29"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Caelius Rhodiginus lib. 1 cap. 29",
     "selector": {
       "exact": "Caelius Rhodiginus lib. 1 cap. 29",
@@ -772,7 +1125,7 @@
         "10, 1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Tit. 3 cap. 10, 1.",
     "selector": {
       "exact": "Tit. 3 cap. 10, 1.",
@@ -785,7 +1138,7 @@
   },
   "3.4.2.6-p4-ic1136": {
     "author": "bible",
-    "display": "Matthew, 11, 28",
+    "display": "Matthew 11:28",
     "locus": [
       [
         "n",
@@ -796,8 +1149,14 @@
         "28"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 11. 28",
+    "ref": {
+      "chapter": 11,
+      "verses": [
+        28
+      ]
+    },
     "selector": {
       "exact": "Mat. 11. 28",
       "in": "3.4.2.6-p4",
@@ -809,7 +1168,7 @@
   },
   "3.4.2.6-p4-ic1212": {
     "author": "bible",
-    "display": "Ezekiel, 18, 27",
+    "display": "Ezekiel 18:27",
     "locus": [
       [
         "n",
@@ -820,8 +1179,14 @@
         "27"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ezek. 18. 27",
+    "ref": {
+      "chapter": 18,
+      "verses": [
+        27
+      ]
+    },
     "selector": {
       "exact": "Ezek. 18. 27",
       "in": "3.4.2.6-p4",
@@ -833,7 +1198,7 @@
   },
   "3.4.2.6-p4-ic1387": {
     "author": "bible",
-    "display": "Isaiah, 43, 25",
+    "display": "Isaiah 43:25",
     "locus": [
       [
         "n",
@@ -844,8 +1209,14 @@
         "25"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Isaiah 43. 25",
+    "ref": {
+      "chapter": 43,
+      "verses": [
+        25
+      ]
+    },
     "selector": {
       "exact": "Isaiah 43. 25",
       "in": "3.4.2.6-p4",
@@ -857,7 +1228,7 @@
   },
   "3.4.2.6-p4-ic1526": {
     "author": "bible",
-    "display": "Psalms, 103, 13",
+    "display": "Psalms 103:13",
     "locus": [
       [
         "n",
@@ -868,8 +1239,14 @@
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 103. 13",
+    "ref": {
+      "chapter": 103,
+      "verses": [
+        13
+      ]
+    },
     "selector": {
       "exact": "Psal. 103. 13",
       "in": "3.4.2.6-p4",
@@ -881,7 +1258,7 @@
   },
   "3.4.2.6-p4-ic1878": {
     "author": "bible",
-    "display": "Psalms, 103, 8",
+    "display": "Psalms 103:8",
     "locus": [
       [
         "n",
@@ -892,8 +1269,14 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 103. 8.",
+    "ref": {
+      "chapter": 103,
+      "verses": [
+        8
+      ]
+    },
     "selector": {
       "exact": "Psal. 103. 8.",
       "in": "3.4.2.6-p4",
@@ -905,7 +1288,7 @@
   },
   "3.4.2.6-p4-ic2333": {
     "author": "bible",
-    "display": "Psalms, 145, 9",
+    "display": "Psalms 145:9",
     "locus": [
       [
         "n",
@@ -916,8 +1299,14 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 145. 9",
+    "ref": {
+      "chapter": 145,
+      "verses": [
+        9
+      ]
+    },
     "selector": {
       "exact": "Psal. 145. 9",
       "in": "3.4.2.6-p4",
@@ -927,9 +1316,40 @@
     "status": "parsed",
     "work": "bible.psalms"
   },
+  "3.4.2.6-p4-ic2395": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Timothy 2:6",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "6"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Tim. 2. 6.",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        6
+      ]
+    },
+    "selector": {
+      "exact": "1 Tim. 2. 6.",
+      "in": "3.4.2.6-p4",
+      "prefix": "r all men’s sins, antilutron, ",
+      "suffix": " His mercy is a panacea, a bal"
+    },
+    "status": "parsed",
+    "work": "bible.timothy"
+  },
   "3.4.2.6-p4-ic4849": {
     "author": "bible",
-    "display": "Romans, 3, 24",
+    "display": "Romans 3:24",
     "locus": [
       [
         "n",
@@ -940,8 +1360,14 @@
         "24"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 3. 24.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        24
+      ]
+    },
     "selector": {
       "exact": "Rom. 3. 24.",
       "in": "3.4.2.6-p4",
@@ -953,7 +1379,7 @@
   },
   "3.4.2.6-p4-ic611": {
     "author": "bible",
-    "display": "Romans, 5, 20",
+    "display": "Romans 5:20",
     "locus": [
       [
         "n",
@@ -964,8 +1390,14 @@
         "20"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 5. 20.",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        20
+      ]
+    },
     "selector": {
       "exact": "Rom. 5. 20.",
       "in": "3.4.2.6-p4",
@@ -977,7 +1409,7 @@
   },
   "3.4.2.6-p4-ic6478": {
     "author": "bible",
-    "display": "Psalms, 102, 19, 20",
+    "display": "Psalms 102:19–20",
     "locus": [
       [
         "n",
@@ -992,8 +1424,15 @@
         "20"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 102. 19, 20",
+    "ref": {
+      "chapter": 102,
+      "verses": [
+        19,
+        20
+      ]
+    },
     "selector": {
       "exact": "Psal. 102. 19, 20",
       "in": "3.4.2.6-p4",
@@ -1005,7 +1444,7 @@
   },
   "3.4.2.6-p4-ic6574": {
     "author": "bible",
-    "display": "Isaiah, 1, 18",
+    "display": "Isaiah 1:18",
     "locus": [
       [
         "n",
@@ -1016,8 +1455,14 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Isaiah 1. 18.",
+    "ref": {
+      "chapter": 1,
+      "verses": [
+        18
+      ]
+    },
     "selector": {
       "exact": "Isaiah 1. 18.",
       "in": "3.4.2.6-p4",
@@ -1027,9 +1472,40 @@
     "status": "parsed",
     "work": "bible.isaiah"
   },
+  "3.4.2.6-p4-ic674": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Corinthians 12:9",
+    "locus": [
+      [
+        "n",
+        "12"
+      ],
+      [
+        "n",
+        "9"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Cor. 12. 9",
+    "ref": {
+      "chapter": 12,
+      "verses": [
+        9
+      ]
+    },
+    "selector": {
+      "exact": "2 Cor. 12. 9",
+      "in": "3.4.2.6-p4",
+      "prefix": "d unto Paul in his extremity, ",
+      "suffix": ", My grace is sufficient for t"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.4.2.6-p4-ic985": {
     "author": "bible",
-    "display": "Matthew, 9, 12, 13",
+    "display": "Matthew 9:12–13",
     "locus": [
       [
         "n",
@@ -1044,8 +1520,15 @@
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Matth. 9. 12, 13",
+    "ref": {
+      "chapter": 9,
+      "verses": [
+        12,
+        13
+      ]
+    },
     "selector": {
       "exact": "Matth. 9. 12, 13",
       "in": "3.4.2.6-p4",
@@ -1057,7 +1540,7 @@
   },
   "3.4.2.6-p5-ic3174": {
     "author": "bible",
-    "display": "Matthew, 5, 6",
+    "display": "Matthew 5:6",
     "locus": [
       [
         "n",
@@ -1068,8 +1551,14 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 5. 6.",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        6
+      ]
+    },
     "selector": {
       "exact": "Mat. 5. 6.",
       "in": "3.4.2.6-p5",
@@ -1081,7 +1570,7 @@
   },
   "3.4.2.6-p5-ic3279": {
     "author": "bible",
-    "display": "Psalms, 10, 17",
+    "display": "Psalms 10:17",
     "locus": [
       [
         "n",
@@ -1092,8 +1581,14 @@
         "17"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 10. 17",
+    "ref": {
+      "chapter": 10,
+      "verses": [
+        17
+      ]
+    },
     "selector": {
       "exact": "Psal. 10. 17",
       "in": "3.4.2.6-p5",
@@ -1105,7 +1600,7 @@
   },
   "3.4.2.6-p5-ic474": {
     "author": "bible",
-    "display": "Romans, 2, 5",
+    "display": "Romans 2:5",
     "locus": [
       [
         "n",
@@ -1116,8 +1611,14 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 2. 5.",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        5
+      ]
+    },
     "selector": {
       "exact": "Rom. 2. 5.",
       "in": "3.4.2.6-p5",
@@ -1129,7 +1630,7 @@
   },
   "3.4.2.6-p5-ic605": {
     "author": "bible",
-    "display": "Romans, 2, 4",
+    "display": "Romans 2:4",
     "locus": [
       [
         "n",
@@ -1140,8 +1641,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 2. 4",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Rom. 2. 4",
       "in": "3.4.2.6-p5",

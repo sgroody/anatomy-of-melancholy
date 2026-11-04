@@ -12,7 +12,7 @@
         "497"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Munster Cosmog. lib. 3 cap. 497",
     "selector": {
       "exact": "Munster Cosmog. lib. 3 cap. 497",
@@ -25,7 +25,7 @@
   },
   "3.3.4.2-p25-ic334": {
     "author": "bible",
-    "display": "Genesis, 34, 2",
+    "display": "Genesis 34:2",
     "locus": [
       [
         "n",
@@ -36,8 +36,14 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gen. 34. 2",
+    "ref": {
+      "chapter": 34,
+      "verses": [
+        2
+      ]
+    },
     "selector": {
       "exact": "Gen. 34. 2",
       "in": "3.3.4.2-p25",
@@ -56,7 +62,7 @@
         "54"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lemnius cap. 54 de institut. Christ.",
     "selector": {
       "exact": "Lemnius cap. 54 de institut. Christ.",
@@ -69,15 +75,19 @@
   },
   "3.3.4.2-p3-ic719": {
     "author": "bible",
-    "display": "Proverbs, 19",
+    "display": "Proverbs 19",
     "locus": [
       [
         "n",
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 19",
+    "ref": {
+      "chapter": 19,
+      "verses": []
+    },
     "selector": {
       "exact": "Prov. 19",
       "in": "3.3.4.2-p3",
@@ -89,7 +99,7 @@
   },
   "3.3.4.2-p7-ic90": {
     "author": "bible",
-    "display": "Ecclesiasticus, 30, 20",
+    "display": "Ecclesiasticus 30:20",
     "locus": [
       [
         "n",
@@ -100,8 +110,14 @@
         "20"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 30. 20",
+    "ref": {
+      "chapter": 30,
+      "verses": [
+        20
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 30. 20",
       "in": "3.3.4.2-p7",

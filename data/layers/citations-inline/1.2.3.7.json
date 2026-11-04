@@ -12,7 +12,7 @@
         "22"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Galen 3 Aphorism. com. 22",
     "selector": {
       "exact": "Galen 3 Aphorism. com. 22",
@@ -25,7 +25,7 @@
   },
   "1.2.3.7-p1-ic388": {
     "author": "bible",
-    "display": "Proverbs, 14, 13",
+    "display": "Proverbs 14:13",
     "locus": [
       [
         "n",
@@ -36,8 +36,14 @@
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 14. 13",
+    "ref": {
+      "chapter": 14,
+      "verses": [
+        13
+      ]
+    },
     "selector": {
       "exact": "Prov. 14. 13",
       "in": "1.2.3.7-p1",
@@ -60,7 +66,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Guainerius Tract. 15 cap. 2",
     "selector": {
       "exact": "Guainerius Tract. 15 cap. 2",
@@ -80,7 +86,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cyprian ser. 2 de zelo & livore.",
     "selector": {
       "exact": "Cyprian ser. 2 de zelo & livore.",
@@ -104,7 +110,7 @@
         "4, 10"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Aristotle lib. 2 Rhet. cap. 4 & 10",
     "selector": {
       "exact": "Aristotle lib. 2 Rhet. cap. 4 & 10",
@@ -124,7 +130,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cardan lib. 2 de sap.",
     "selector": {
       "exact": "Cardan lib. 2 de sap.",
@@ -137,15 +143,19 @@
   },
   "1.2.3.7-p3-ic2243": {
     "author": "bible",
-    "display": "Genesis, 30",
+    "display": "Genesis 30",
     "locus": [
       [
         "n",
         "30"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gen. 30",
+    "ref": {
+      "chapter": 30,
+      "verses": []
+    },
     "selector": {
       "exact": "Gen. 30",
       "in": "1.2.3.7-p3",
@@ -157,15 +167,19 @@
   },
   "1.2.3.7-p3-ic2275": {
     "author": "bible",
-    "display": "Genesis, 37",
+    "display": "Genesis 37",
     "locus": [
       [
         "n",
         "37"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gen. 37",
+    "ref": {
+      "chapter": 37,
+      "verses": []
+    },
     "selector": {
       "exact": "Gen. 37",
       "in": "1.2.3.7-p3",
@@ -177,15 +191,19 @@
   },
   "1.2.3.7-p3-ic2436": {
     "author": "bible",
-    "display": "Psalms, 75",
+    "display": "Psalms 75",
     "locus": [
       [
         "n",
         "75"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 75",
+    "ref": {
+      "chapter": 75,
+      "verses": []
+    },
     "selector": {
       "exact": "Psal. 75",
       "in": "1.2.3.7-p3",

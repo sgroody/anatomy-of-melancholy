@@ -15,7 +15,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hip. Aphoris. 23 lib. 6.",
         "status": "unidentified",
         "work": null
@@ -26,7 +26,7 @@
         "head": "idem",
         "id": "1.2.3.4-n1-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Idem",
         "status": "unidentified",
         "work": null
@@ -41,7 +41,7 @@
             "19"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Montaltus cap. 19.",
         "status": "parsed",
         "work": null
@@ -57,7 +57,7 @@
         "display": "Plautus",
         "id": "1.2.3.4-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plaut.",
         "status": "parsed",
         "work": null
@@ -78,7 +78,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "de melancholia.",
         "raw": "Hildesheim spicil. 2 de melancholia.",
         "status": "parsed",
@@ -100,7 +100,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vives 3 de anima",
         "status": "parsed",
         "work": "vives.de-anima"
@@ -110,7 +110,7 @@
         "display": "Ovid",
         "id": "1.2.3.4-n12-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid.",
         "status": "parsed",
         "work": null
@@ -131,7 +131,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Herodian lib. 3.",
         "status": "parsed",
         "work": null
@@ -161,7 +161,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lemn. lib. 1 cap. 16.",
         "status": "parsed",
         "work": null
@@ -182,7 +182,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 3 de mentis alien.",
         "status": "unidentified",
         "work": null
@@ -203,7 +203,7 @@
         "display": null,
         "id": "1.2.3.4-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Nat.",
         "status": "unidentified",
         "work": null
@@ -222,7 +222,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Comes Mythol. lib. 4 cap. 6.",
         "status": "unidentified",
         "work": null
@@ -243,7 +243,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tully 3 Tusc.",
         "status": "parsed",
         "work": "cicero.tusculans"
@@ -273,7 +273,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Crato consil. 21 lib. 2.",
         "status": "parsed",
         "work": null
@@ -283,8 +283,40 @@
     "status": "parsed"
   },
   "1.2.3.4-n9": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Maccabees 6:10–11",
+        "id": "1.2.3.4-n9-c1",
+        "locus": [
+          [
+            "n",
+            "6"
+          ],
+          [
+            "n",
+            "10"
+          ],
+          [
+            "n",
+            "11"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Macc. 6. 10, 11.",
+        "ref": {
+          "chapter": 6,
+          "verses": [
+            10,
+            11
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.maccabees"
+      }
+    ],
     "raw": "1 Macc. 6. 10, 11.",
-    "status": "no-citation"
+    "status": "parsed"
   }
 }

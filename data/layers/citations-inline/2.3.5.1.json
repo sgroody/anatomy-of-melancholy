@@ -1,7 +1,38 @@
 {
+  "2.3.5.1-p12-ic232": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Thessalonians 4:13",
+    "locus": [
+      [
+        "n",
+        "4"
+      ],
+      [
+        "n",
+        "13"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Thes. 4. 13",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        13
+      ]
+    },
+    "selector": {
+      "exact": "1 Thes. 4. 13",
+      "in": "2.3.5.1-p12",
+      "prefix": " whom Paul taxed in his time, ",
+      "suffix": ", that have no hope? ’Tis fit "
+    },
+    "status": "parsed",
+    "work": "bible.thessalonians"
+  },
   "2.3.5.1-p15-ic70": {
     "author": "bible",
-    "display": "Ecclesiasticus, 38, 17",
+    "display": "Ecclesiasticus 38:17",
     "locus": [
       [
         "n",
@@ -12,8 +43,14 @@
         "17"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 38. 17.",
+    "ref": {
+      "chapter": 38,
+      "verses": [
+        17
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 38. 17.",
       "in": "2.3.5.1-p15",
@@ -23,9 +60,40 @@
     "status": "parsed",
     "work": "bible.ecclesiasticus"
   },
+  "2.3.5.1-p27-ic360": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Samuel 12:22",
+    "locus": [
+      [
+        "n",
+        "12"
+      ],
+      [
+        "n",
+        "22"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Sam. 12. 22",
+    "ref": {
+      "chapter": 12,
+      "verses": [
+        22
+      ]
+    },
+    "selector": {
+      "exact": "2 Sam. 12. 22",
+      "in": "2.3.5.1-p27",
+      "prefix": "m we have lost. So David did, ",
+      "suffix": ", While the child was yet aliv"
+    },
+    "status": "parsed",
+    "work": "bible.samuel"
+  },
   "2.3.5.1-p7-ic335": {
     "author": "bible",
-    "display": "Genesis, 37, 34",
+    "display": "Genesis 37:34",
     "locus": [
       [
         "n",
@@ -36,8 +104,14 @@
         "34"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gen. 37. 34.",
+    "ref": {
+      "chapter": 37,
+      "verses": [
+        34
+      ]
+    },
     "selector": {
       "exact": "Gen. 37. 34.",
       "in": "2.3.5.1-p7",

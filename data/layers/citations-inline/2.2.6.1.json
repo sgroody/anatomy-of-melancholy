@@ -8,7 +8,7 @@
         "43"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Fernelius consil. 43",
     "selector": {
       "exact": "Fernelius consil. 43",
@@ -28,7 +28,7 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mercurialis consil. 6",
     "selector": {
       "exact": "Mercurialis consil. 6",
@@ -41,7 +41,7 @@
   },
   "2.2.6.1-p3-ic552": {
     "author": "bible",
-    "display": "Ecclesiasticus, 25, 25",
+    "display": "Ecclesiasticus 25:25",
     "locus": [
       [
         "n",
@@ -52,8 +52,14 @@
         "25"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 25. 25.",
+    "ref": {
+      "chapter": 25,
+      "verses": [
+        25
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 25. 25.",
       "in": "2.2.6.1-p3",
@@ -76,7 +82,7 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gordonius lib. 1 cap. 15 de conser. vit.",
     "selector": {
       "exact": "Gordonius lib. 1 cap. 15 de conser. vit.",

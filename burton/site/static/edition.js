@@ -169,10 +169,32 @@ function openAsPopover(note, marker) {
   if (canPopover) {
     asPopover(note, true);
     note.showPopover();
+    checkFolds(note);
     placePopover(note, marker);
   } else {
     note.classList.add("open"); // inline expansion fallback
+    checkFolds(note);
   }
+}
+
+// Bible verses (KJV, stage 6) are folded after three lines; "more" shows only where the fold hides something.
+// Without this script they are shown whole.
+function checkFolds(scope) {
+  for (const k of scope.querySelectorAll(".kjv.fold:not(.open)")) {
+    const t = k.querySelector(".kjv-t");
+    k.querySelector(".kjv-more").hidden = !(t && t.scrollHeight > t.clientHeight + 1);
+  }
+}
+for (const k of document.querySelectorAll(".kjv")) {
+  k.classList.add("fold");
+  const more = k.querySelector(".kjv-more");
+  more?.addEventListener("click", (ev) => {
+    ev.stopPropagation();
+    const open = k.classList.toggle("open");
+    more.textContent = open ? "less" : "more";
+    more.setAttribute("aria-expanded", String(open));
+    scheduleLayout();
+  });
 }
 
 for (const marker of markers.filter((m) => m.matches("a.nref"))) {
@@ -222,6 +244,7 @@ function layoutNotes() {
   // which do not depend on each other, since laid-out notes are out of the flow; (3) place them.
   const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
   for (const [, note] of all) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
+  checkFolds(article);
   const rem = parseFloat(getComputedStyle(article).fontSize);
   const LIMIT = 14 * rem; // how far a note may drift below its marker
   const GAP = 0.4 * rem;
@@ -382,7 +405,7 @@ if (article) {
     try { const r = spanOf(m); if (r && !r.collapsed) spans.set(item, r); } catch { /* a block the walker cannot read */ }
     item.addEventListener("mouseenter", () => light(item));
     item.addEventListener("mouseleave", () => light(pinned));
-    item.addEventListener("click", (ev) => { if (!ev.target.closest("a, summary, .prov")) pin(item); });
+    item.addEventListener("click", (ev) => { if (!ev.target.closest("a, summary, .prov, button")) pin(item); });
   }
   const at = (ev) => {
     const pos = document.caretPositionFromPoint?.(ev.clientX, ev.clientY);
@@ -529,7 +552,7 @@ function preview(href) {
     previews.set(href, fetch(href).then((r) => r.text()).then((t) => {
       const d = new DOMParser().parseFromString(t, "text/html");
       const art = d.querySelector("article.unit");
-      art?.querySelectorAll(".sidenote, .nref, .mn-pool, .mref, .ft, .gowland-tr, .cx-b, .sr-only, .ini, script")
+      art?.querySelectorAll(".sidenote, .nref, .mn-pool, .mref, .ft, .gowland-tr, .cx-b, .ic-m, .sr-only, .ini, script")
         .forEach((x) => x.remove());
       const p = art && [...art.querySelectorAll("p")].find((x) => !x.matches("[class*=head]") && x.textContent.trim());
       const text = (p?.textContent || "").replace(/­/g, "").replace(/\s+/g, " ").trim();

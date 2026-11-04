@@ -1,7 +1,7 @@
 {
   "3.2.2.4-p15-ic103": {
     "author": "bible",
-    "display": "Ecclesiasticus, 9, 10",
+    "display": "Ecclesiasticus 9:10",
     "locus": [
       [
         "n",
@@ -12,8 +12,14 @@
         "10"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 9. 10.",
+    "ref": {
+      "chapter": 9,
+      "verses": [
+        10
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 9. 10.",
       "in": "3.2.2.4-p15",
@@ -36,7 +42,7 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Aristotle Polit. lib. 7 cap. 18",
     "selector": {
       "exact": "Aristotle Polit. lib. 7 cap. 18",
@@ -56,7 +62,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Tatius lib. 2",
     "selector": {
       "exact": "Tatius lib. 2",
@@ -67,9 +73,40 @@
     "status": "parsed",
     "work": null
   },
+  "3.2.2.4-p44-ic1452": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Samuel 6:14",
+    "locus": [
+      [
+        "n",
+        "6"
+      ],
+      [
+        "n",
+        "14"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Sam. 6. 14",
+    "ref": {
+      "chapter": 6,
+      "verses": [
+        14
+      ]
+    },
+    "selector": {
+      "exact": "2 Sam. 6. 14",
+      "in": "3.2.2.4-p44",
+      "prefix": " as David did before the Ark, ",
+      "suffix": ", Miriam Exod. 15. 20, Judith "
+    },
+    "status": "parsed",
+    "work": "bible.samuel"
+  },
   "3.2.2.4-p44-ic1487": {
     "author": "bible",
-    "display": "Judith, 15, 13",
+    "display": "Judith 15:13",
     "locus": [
       [
         "n",
@@ -80,8 +117,14 @@
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Judith 15. 13",
+    "ref": {
+      "chapter": 15,
+      "verses": [
+        13
+      ]
+    },
     "selector": {
       "exact": "Judith 15. 13",
       "in": "3.2.2.4-p44",
@@ -93,7 +136,7 @@
   },
   "3.2.2.4-p44-ic434": {
     "author": "bible",
-    "display": "Ecclesiastes, 3, 4",
+    "display": "Ecclesiastes 3:4",
     "locus": [
       [
         "n",
@@ -104,8 +147,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eccles. 3. 4.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Eccles. 3. 4.",
       "in": "3.2.2.4-p44",
@@ -128,7 +177,7 @@
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eusebius praepar. Evangel. lib. 13 cap. 12",
     "selector": {
       "exact": "Eusebius praepar. Evangel. lib. 13 cap. 12",
@@ -148,7 +197,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Apuleius, lib. 2",
     "selector": {
       "exact": "Apuleius, lib. 2",
@@ -172,7 +221,7 @@
         "22"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gomesius lib. 3 de sale gen. cap. 22",
     "selector": {
       "exact": "Gomesius lib. 3 de sale gen. cap. 22",

@@ -6,7 +6,7 @@
         "display": "Justus Lipsius",
         "id": "3.1.2.2-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lipsius. epist. Camdeno.",
         "status": "partial",
         "work": null
@@ -32,7 +32,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vives 3 de Anima.",
         "status": "parsed",
         "work": "vives.de-anima"
@@ -53,7 +53,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Scultetus cap. 4 de causis Amor.",
         "status": "unidentified",
         "work": null
@@ -74,7 +74,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Theod. Prodromus amor. lib. 3.",
         "status": "parsed",
         "work": "prodromus.amaranthus"
@@ -90,7 +90,7 @@
         "display": null,
         "id": "3.1.2.2-n14-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Papinius.",
         "status": "unidentified",
         "work": null
@@ -120,7 +120,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Suspect. lect. lib. 1 cap. 2.",
         "status": "unidentified",
         "work": null
@@ -133,7 +133,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Isaiah, 49",
+        "display": "Isaiah 49",
         "id": "3.1.2.2-n17-c1",
         "locus": [
           [
@@ -141,8 +141,12 @@
             "49"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Isaiah 49.",
+        "ref": {
+          "chapter": 49,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.isaiah"
       }
@@ -171,7 +175,7 @@
             "22"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Grad. 1 cap. 22.",
         "status": "unidentified",
         "work": null
@@ -187,7 +191,7 @@
         "display": null,
         "id": "3.1.2.2-n2-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Edmundsbury.",
         "status": "unidentified",
         "work": null
@@ -208,7 +212,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Polydorus lib. 1 de Anglia.",
         "status": "partial",
         "work": null
@@ -234,7 +238,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Max. Tyrius ser. 9.",
         "status": "parsed",
         "work": null
@@ -264,7 +268,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Part. 1 sect. 2 memb. 3.",
         "status": "parsed",
         "work": "burton.anatomy"
@@ -280,7 +284,7 @@
         "display": "Martial",
         "id": "3.1.2.2-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mart.",
         "status": "parsed",
         "work": null
@@ -306,7 +310,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Omnif. mag. lib. 2 cap. 3.",
         "status": "parsed",
         "work": "cicogna.magiae-omnifariae"
@@ -332,7 +336,7 @@
             "15"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De sale geniali lib. 3 cap. 15.",
         "status": "partial",
         "work": null

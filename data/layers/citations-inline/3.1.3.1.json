@@ -1,7 +1,32 @@
 {
+  "3.1.3.1-p13-ic3994": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Kings 2",
+    "locus": [
+      [
+        "n",
+        "2"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Kings 2",
+    "ref": {
+      "chapter": 2,
+      "verses": []
+    },
+    "selector": {
+      "exact": "1 Kings 2",
+      "in": "3.1.3.1-p13",
+      "prefix": "imself, as Solomon told Joab, ",
+      "suffix": ", The Lord shall bring this bl"
+    },
+    "status": "parsed",
+    "work": "bible.kings"
+  },
   "3.1.3.1-p13-ic4055": {
     "author": "bible",
-    "display": "Proverbs, 1, 27",
+    "display": "Proverbs 1:27",
     "locus": [
       [
         "n",
@@ -12,8 +37,14 @@
         "27"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 1. 27",
+    "ref": {
+      "chapter": 1,
+      "verses": [
+        27
+      ]
+    },
     "selector": {
       "exact": "Prov. 1. 27",
       "in": "3.1.3.1-p13",
@@ -25,7 +56,7 @@
   },
   "3.1.3.1-p13-ic4205": {
     "author": "bible",
-    "display": "Isaiah, 3, 11",
+    "display": "Isaiah 3:11",
     "locus": [
       [
         "n",
@@ -36,8 +67,14 @@
         "11"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Isa. 3. 11",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        11
+      ]
+    },
     "selector": {
       "exact": "Isa. 3. 11",
       "in": "3.1.3.1-p13",
@@ -49,7 +86,7 @@
   },
   "3.1.3.1-p13-ic4533": {
     "author": "bible",
-    "display": "Matthew, 5, 7",
+    "display": "Matthew 5:7",
     "locus": [
       [
         "n",
@@ -60,8 +97,14 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Matth. 5. 7",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        7
+      ]
+    },
     "selector": {
       "exact": "Matth. 5. 7",
       "in": "3.1.3.1-p13",
@@ -73,15 +116,19 @@
   },
   "3.1.3.1-p13-ic4776": {
     "author": "bible",
-    "display": "Romans, 12",
+    "display": "Romans 12",
     "locus": [
       [
         "n",
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 12",
+    "ref": {
+      "chapter": 12,
+      "verses": []
+    },
     "selector": {
       "exact": "Rom. 12",
       "in": "3.1.3.1-p13",
@@ -91,9 +138,34 @@
     "status": "parsed",
     "work": "bible.romans"
   },
+  "3.1.3.1-p5-ic2021": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Corinthians, 13, 13",
+    "locus": [
+      [
+        "n",
+        "13"
+      ],
+      [
+        "n",
+        "13"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Cor. 13, 13",
+    "selector": {
+      "exact": "1 Cor. 13, 13",
+      "in": "3.1.3.1-p5",
+      "prefix": "the greatest of them is love, ",
+      "suffix": ", which inflames our souls wit"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.1.3.1-p5-ic2549": {
     "author": "bible",
-    "display": "Mark, 12, 31",
+    "display": "Mark 12:31",
     "locus": [
       [
         "n",
@@ -104,8 +176,14 @@
         "31"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mark 12. 31",
+    "ref": {
+      "chapter": 12,
+      "verses": [
+        31
+      ]
+    },
     "selector": {
       "exact": "Mark 12. 31",
       "in": "3.1.3.1-p5",
@@ -117,7 +195,7 @@
   },
   "3.1.3.1-p5-ic2562": {
     "author": "bible",
-    "display": "Matthew, 19, 19",
+    "display": "Matthew 19:19",
     "locus": [
       [
         "n",
@@ -128,8 +206,14 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 19. 19",
+    "ref": {
+      "chapter": 19,
+      "verses": [
+        19
+      ]
+    },
     "selector": {
       "exact": "Mat. 19. 19",
       "in": "3.1.3.1-p5",
@@ -139,17 +223,62 @@
     "status": "parsed",
     "work": "bible.matthew"
   },
+  "3.1.3.1-p5-ic508": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Corinthians 13:1–3",
+    "locus": [
+      [
+        "n",
+        "13"
+      ],
+      [
+        "n",
+        "1"
+      ],
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "3"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Cor. 13. 1, 2, 3.",
+    "ref": {
+      "chapter": 13,
+      "verses": [
+        1,
+        2,
+        3
+      ]
+    },
+    "selector": {
+      "exact": "1 Cor. 13. 1, 2, 3.",
+      "in": "3.1.3.1-p5",
+      "prefix": "ove, it profiteth me nothing, ",
+      "suffix": " ’Tis splendidum peccatum, wit"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.1.3.1-p6-ic1267": {
     "author": "bible",
-    "display": "Romans, 12",
+    "display": "Romans 12",
     "locus": [
       [
         "n",
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 12",
+    "ref": {
+      "chapter": 12,
+      "verses": []
+    },
     "selector": {
       "exact": "Rom. 12",
       "in": "3.1.3.1-p6",
@@ -161,7 +290,7 @@
   },
   "3.1.3.1-p6-ic1403": {
     "author": "bible",
-    "display": "Ephesians, 4, 32",
+    "display": "Ephesians 4:32",
     "locus": [
       [
         "n",
@@ -172,8 +301,14 @@
         "32"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eph. 4. 32",
+    "ref": {
+      "chapter": 4,
+      "verses": [
+        32
+      ]
+    },
     "selector": {
       "exact": "Eph. 4. 32",
       "in": "3.1.3.1-p6",
@@ -185,7 +320,7 @@
   },
   "3.1.3.1-p6-ic1439": {
     "author": "bible",
-    "display": "Philippians, 2, 2",
+    "display": "Philippians 2:2",
     "locus": [
       [
         "n",
@@ -196,8 +331,14 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Phil. 2. 2",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        2
+      ]
+    },
     "selector": {
       "exact": "Phil. 2. 2",
       "in": "3.1.3.1-p6",
@@ -207,9 +348,34 @@
     "status": "parsed",
     "work": "bible.philippians"
   },
+  "3.1.3.1-p6-ic1644": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Peter 3",
+    "locus": [
+      [
+        "n",
+        "3"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Pet. 3",
+    "ref": {
+      "chapter": 3,
+      "verses": []
+    },
+    "selector": {
+      "exact": "1 Pet. 3",
+      "in": "3.1.3.1-p6",
+      "prefix": "en: be pitiful and courteous, ",
+      "suffix": ", seek peace and follow it. He"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
   "3.1.3.1-p6-ic1753": {
     "author": "bible",
-    "display": "John, 3, 18",
+    "display": "John 3:18",
     "locus": [
       [
         "n",
@@ -220,8 +386,14 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Joh. 3. 18",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        18
+      ]
+    },
     "selector": {
       "exact": "Joh. 3. 18",
       "in": "3.1.3.1-p6",
@@ -233,7 +405,7 @@
   },
   "3.1.3.1-p6-ic1834": {
     "author": "bible",
-    "display": "John, 5, 1",
+    "display": "John 5:1",
     "locus": [
       [
         "n",
@@ -244,8 +416,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Joh. 5. 1",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Joh. 5. 1",
       "in": "3.1.3.1-p6",
@@ -255,9 +433,55 @@
     "status": "parsed",
     "work": "bible.john"
   },
+  "3.1.3.1-p6-ic302": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Corinthians 13:4–7",
+    "locus": [
+      [
+        "n",
+        "13"
+      ],
+      [
+        "n",
+        "4"
+      ],
+      [
+        "n",
+        "5"
+      ],
+      [
+        "n",
+        "6"
+      ],
+      [
+        "n",
+        "7"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Cor. 13. 4, 5, 6, 7",
+    "ref": {
+      "chapter": 13,
+      "verses": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "selector": {
+      "exact": "1 Cor. 13. 4, 5, 6, 7",
+      "in": "3.1.3.1-p6",
+      "prefix": "ll things, hopeth all things, ",
+      "suffix": ", it covereth all trespasses, "
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.1.3.1-p6-ic353": {
     "author": "bible",
-    "display": "Proverbs, 10, 12",
+    "display": "Proverbs 10:12",
     "locus": [
       [
         "n",
@@ -268,8 +492,14 @@
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 10. 12",
+    "ref": {
+      "chapter": 10,
+      "verses": [
+        12
+      ]
+    },
     "selector": {
       "exact": "Prov. 10. 12",
       "in": "3.1.3.1-p6",
@@ -279,9 +509,34 @@
     "status": "parsed",
     "work": "bible.proverbs"
   },
+  "3.1.3.1-p6-ic388": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Peter 4",
+    "locus": [
+      [
+        "n",
+        "4"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Pet. 4",
+    "ref": {
+      "chapter": 4,
+      "verses": []
+    },
+    "selector": {
+      "exact": "1 Pet. 4",
+      "in": "3.1.3.1-p6",
+      "prefix": " 10. 12, a multitude of sins, ",
+      "suffix": ", as our Saviour told the woma"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
   "3.1.3.1-p6-ic514": {
     "author": "bible",
-    "display": "Luke, 7, 47",
+    "display": "Luke 7:47",
     "locus": [
       [
         "n",
@@ -292,8 +547,14 @@
         "47"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Luke 7. 47",
+    "ref": {
+      "chapter": 7,
+      "verses": [
+        47
+      ]
+    },
     "selector": {
       "exact": "Luke 7. 47",
       "in": "3.1.3.1-p6",
@@ -305,7 +566,7 @@
   },
   "3.1.3.1-p6-ic571": {
     "author": "bible",
-    "display": "Isaiah, 1, 17",
+    "display": "Isaiah 1:17",
     "locus": [
       [
         "n",
@@ -316,8 +577,14 @@
         "17"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Isa. 1. 17",
+    "ref": {
+      "chapter": 1,
+      "verses": [
+        17
+      ]
+    },
     "selector": {
       "exact": "Isa. 1. 17",
       "in": "3.1.3.1-p6",
@@ -329,7 +596,7 @@
   },
   "3.1.3.1-p6-ic629": {
     "author": "bible",
-    "display": "Leviticus, 19, 18",
+    "display": "Leviticus 19:18",
     "locus": [
       [
         "n",
@@ -340,8 +607,14 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Levit. 19. 18",
+    "ref": {
+      "chapter": 19,
+      "verses": [
+        18
+      ]
+    },
     "selector": {
       "exact": "Levit. 19. 18",
       "in": "3.1.3.1-p6",
@@ -353,7 +626,7 @@
   },
   "3.1.3.1-p6-ic714": {
     "author": "bible",
-    "display": "Deuteronomy, 22, 1",
+    "display": "Deuteronomy 22:1",
     "locus": [
       [
         "n",
@@ -364,8 +637,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Deut. 22. 1",
+    "ref": {
+      "chapter": 22,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Deut. 22. 1",
       "in": "3.1.3.1-p6",
@@ -377,15 +656,19 @@
   },
   "3.1.3.1-p6-ic851": {
     "author": "bible",
-    "display": "Matthew, 5",
+    "display": "Matthew 5",
     "locus": [
       [
         "n",
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Matthew 5",
+    "ref": {
+      "chapter": 5,
+      "verses": []
+    },
     "selector": {
       "exact": "Matthew 5",
       "in": "3.1.3.1-p6",

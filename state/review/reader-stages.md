@@ -10,8 +10,8 @@ in stages, each committed after `burton check`.
 | 2 | Two margins from 1,380 px: commentary left, translations and Burton's notes right, with crossing over | 0af78e4 |
 | 3 | Penguin headings (brace), red decorated initials (`data/source/INITIALS.lock`) | 6037d60 |
 | 4 | Front page (engraving held large, stanzas on hover, synopses collapsed, "Enter, gentle Reader"), facing Gowland translations for Ad Librum and Lectori, synopsis signs as links | 00db8a4 |
-| 5 | Windows on cited authors' names (`burton/site/names.py`; hairline, R5 C) and on cross-references; CK3-style lock | (this stage) |
-| 6 | In-line citations and Bible verses | to do |
+| 5 | Windows on cited authors' names (`burton/site/names.py`; hairline, R5 C) and on cross-references; CK3-style lock | a487cfa |
+| 6 | In-line citations (name kept, § in the line, card in the margin), Bible verses from the KJV (`burton/site/kjv.py`), numbered books in the rules (abbrev-v2, inline-v2), guard on model expansions | (this stage) |
 | 7 | Language colours in the line, the in-line switch, Burton's own English, long passages | to do |
 
 ## Stage 6: in-line citations and Bible verses
@@ -63,3 +63,24 @@ in stages, each committed after `burton check`.
   `.mn`/`.mref` so those counts stay exact. V8's text-level leak test skips `.ft`, `.mn` and `.sn-tr`, and
   anything with `data-src="djs1927"`.
 * Python written through shell heredocs mangles `\n` and `\d`. Use the Edit tool for code.
+* Bible verses (stage 6): Burton sometimes numbers the Psalms as the Vulgate does ("Psalm. 118. 140" is KJV 119:140;
+  "Psal. 126. 7." has no KJV verse, so nothing shows). Where a Vulgate number names a verse the KJV also has, the
+  margin shows the KJV verse of that number, which may not be the one Burton meant: 74 Psalm citations show verses.
+  Owner to decide (suppress Psalms, or check each against Burton's words). "Reg." is Kings, numbered as in the KJV
+  (1 Reg. 11. 5 is Ashtoreth, 1 Kings 11:5).
+* Citation ids are renumbered by rules changes; `Renderer.expansion` uses a model expansion only when its `raw` matches
+  (1 mismatch after abbrev-v2: 1.4.1.1-n38-c1, "cap. 8." became "De provid. cap. 8.").
+
+## Owner's notes for the next session (2026-11-03, late; after stages 6 and 7)
+
+Recorded as given, for A/B rounds and work after stage 7:
+* "Where this stands in Burton's synopsis": show it as a visual, not the words. A/B a bunch of options. Perhaps always
+  at the top left of the page.
+* A settings widget and search bar always at the top right, looking more natural within the rest of the page.
+* The synopses' unique layout of the text should be visualized better on the home page.
+* Language colours: consider other colours for Latin and the other languages; give a visual of alternatives; perhaps
+  they change between light and dark mode.
+* Burton's own matter in the margins should perhaps have a distinct identifier.
+* A stylized G instead of writing "Gowland" every time: A/B it.
+* The top of the reader: "The Anatomy of Melancholy" as now, with "An Englished Reader" under it.
+* The owner will be asleep: don't let a permission prompt stop the work.

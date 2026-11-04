@@ -1,4 +1,35 @@
 {
+  "2.1.4.2-p1-ic791": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Kings 5:5",
+    "locus": [
+      [
+        "n",
+        "5"
+      ],
+      [
+        "n",
+        "5"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Kings 5. 5",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        5
+      ]
+    },
+    "selector": {
+      "exact": "2 Kings 5. 5",
+      "in": "2.1.4.2-p1",
+      "prefix": ", and ten change of raiments (",
+      "suffix": "). Another thing is, that out "
+    },
+    "status": "parsed",
+    "work": "bible.kings"
+  },
   "2.1.4.2-p4-ic1305": {
     "author": "crato",
     "display": "Johannes Crato von Krafftheim, consilium 186",
@@ -8,7 +39,7 @@
         "186"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Crato consil. 186",
     "selector": {
       "exact": "Crato consil. 186",

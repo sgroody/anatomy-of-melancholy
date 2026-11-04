@@ -1,8 +1,35 @@
 {
   "3.4.2.3-n1": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Samuel 2:16",
+        "id": "3.4.2.3-n1-c1",
+        "locus": [
+          [
+            "n",
+            "2"
+          ],
+          [
+            "n",
+            "16"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Sam. 2. 16.",
+        "ref": {
+          "chapter": 2,
+          "verses": [
+            16
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.samuel"
+      }
+    ],
     "raw": "1 Sam. 2. 16.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "3.4.2.3-n10": {
     "citations": [
@@ -21,7 +48,7 @@
             "17"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 20 cap. 17.",
         "status": "parsed",
         "work": null
@@ -55,7 +82,7 @@
             "282"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tom. 2 cap. 27 num. 282.",
         "status": "unidentified",
         "work": null
@@ -90,7 +117,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Drexelius Nicet. lib. 2 cap. 11.",
         "status": "partial",
         "work": null
@@ -116,7 +143,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ecclesiast. lib. 1.",
         "status": "unidentified",
         "work": null
@@ -137,7 +164,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "Cant.",
         "raw": "Bern. super 6 Cant.",
         "status": "partial",
@@ -156,7 +183,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 38",
+        "display": "Psalms 38",
         "id": "3.4.2.3-n2-c1",
         "locus": [
           [
@@ -164,8 +191,12 @@
             "38"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 38.",
+        "ref": {
+          "chapter": 38,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -185,7 +216,7 @@
         "display": "Euripides",
         "id": "3.4.2.3-n21-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Euripides.",
         "status": "parsed",
         "work": null
@@ -201,7 +232,7 @@
         "display": "Pierio Valeriano (Pierius)",
         "id": "3.4.2.3-n22-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Pierius.",
         "status": "parsed",
         "work": null
@@ -214,7 +245,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Genesis, 4",
+        "display": "Genesis 4",
         "id": "3.4.2.3-n23-c1",
         "locus": [
           [
@@ -222,8 +253,12 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gen. 4.",
+        "ref": {
+          "chapter": 4,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.genesis"
       }
@@ -243,7 +278,7 @@
         "display": "Plutarch",
         "id": "3.4.2.3-n25-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch.",
         "status": "parsed",
         "work": null
@@ -264,7 +299,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Caelius lib. 6.",
         "status": "unidentified",
         "work": null
@@ -280,7 +315,7 @@
         "display": "Juvenal",
         "id": "3.4.2.3-n27-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juvenal.",
         "status": "parsed",
         "work": null
@@ -296,7 +331,7 @@
         "display": "Lucian",
         "id": "3.4.2.3-n28-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucian de dea Syria.",
         "status": "partial",
         "work": null
@@ -312,7 +347,7 @@
         "display": "Juvenal",
         "id": "3.4.2.3-n29-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juvenal.",
         "status": "parsed",
         "work": null
@@ -333,7 +368,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vers. 8.",
         "status": "unidentified",
         "work": null
@@ -354,7 +389,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Buchanan. lib. 6 Hist. Scot.",
         "status": "partial",
         "work": null
@@ -370,7 +405,7 @@
         "display": null,
         "id": "3.4.2.3-n31-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De bello Neapol.",
         "status": "unidentified",
         "work": null
@@ -395,7 +430,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "part. 1 cap. 2.",
         "status": "unidentified",
         "work": null
@@ -408,7 +443,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 44, 16",
+        "display": "Psalms 44:16",
         "id": "3.4.2.3-n33-c1",
         "locus": [
           [
@@ -420,8 +455,14 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 44. 16.",
+        "ref": {
+          "chapter": 44,
+          "verses": [
+            16
+          ]
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -436,7 +477,7 @@
         "display": null,
         "id": "3.4.2.3-n34-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Pol.",
         "status": "unidentified",
         "work": null
@@ -452,7 +493,7 @@
         "display": null,
         "id": "3.4.2.3-n35-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cosmog. Munster. & Magde.",
         "status": "unidentified",
         "work": null
@@ -473,7 +514,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vers. 14.",
         "status": "unidentified",
         "work": null
@@ -498,7 +539,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lemn. lib. 1 cap. 16.",
         "status": "parsed",
         "work": null
@@ -519,7 +560,7 @@
         "display": null,
         "id": "3.4.2.3-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tract.",
         "status": "unidentified",
         "work": null
@@ -534,7 +575,7 @@
             "33, 34"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Melan. cap. 33 & 34.",
         "status": "unidentified",
         "work": null
@@ -555,7 +596,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 3 de mentis alien.",
         "status": "unidentified",
         "work": null
@@ -580,7 +621,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "cap. Gen.",
         "raw": "Comment. in 1 cap. Gen. artic. 3.",
         "status": "unidentified",

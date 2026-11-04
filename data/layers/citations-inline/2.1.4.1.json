@@ -12,7 +12,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Heurnius prax. med. lib. 3 cap. 1",
     "selector": {
       "exact": "Heurnius prax. med. lib. 3 cap. 1",
@@ -25,7 +25,7 @@
   },
   "2.1.4.1-p1-ic264": {
     "author": "bible",
-    "display": "Ecclesiasticus, 38, 2",
+    "display": "Ecclesiasticus 38:2",
     "locus": [
       [
         "n",
@@ -36,8 +36,14 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 38. 2",
+    "ref": {
+      "chapter": 38,
+      "verses": [
+        2
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 38. 2",
       "in": "2.1.4.1-p1",
@@ -49,7 +55,7 @@
   },
   "2.1.4.1-p1-ic505": {
     "author": "bible",
-    "display": "Ecclesiasticus, 38, 6, 7",
+    "display": "Ecclesiasticus 38:6–7",
     "locus": [
       [
         "n",
@@ -64,8 +70,15 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 38. 6, 7",
+    "ref": {
+      "chapter": 38,
+      "verses": [
+        6,
+        7
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 38. 6, 7",
       "in": "2.1.4.1-p1",
@@ -84,7 +97,7 @@
         "30"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Montanus consil. 30",
     "selector": {
       "exact": "Montanus consil. 30",
@@ -112,7 +125,7 @@
         "90"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Aetius tetrabib. 2 ser. 2 cap. 90",
     "selector": {
       "exact": "Aetius tetrabib. 2 ser. 2 cap. 90",

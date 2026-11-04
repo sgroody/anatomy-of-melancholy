@@ -43,6 +43,40 @@ def test_bible_needs_a_number_and_a_start():
     assert all(x["kind"] != "bible" for x in C.parse_note("De relig. lib. 1 Thes. 1."))
 
 
+def test_numbered_bible_book_keeps_its_number():
+    c = _one("1 Cor. 6. 5, 6.")
+    assert c["work"] == "bible.corinthians" and c["book_n"] == 1 and c["raw"] == "1 Cor. 6. 5, 6."
+    c = C.parse_note("Ezek. 8. 14. 1 Reg. 11. 5. 2 Reg. 3 & 17, 23.")
+    assert [(x["raw"], x.get("book_n")) for x in c] == [("Ezek. 8. 14.", None), ("1 Reg. 11. 5.", 1),
+                                                       ("2 Reg. 3 & 17, 23.", 2)]
+
+
+def test_a_number_that_belongs_elsewhere_is_not_a_book_number():
+    assert all(x["kind"] != "bible" for x in C.parse_note("Faerie Qu. lib. 4 Cant. 2."))  # lib. 4, canto 2
+    assert all(x["kind"] != "bible" for x in C.parse_note("Hom. 31 in 1 Cor. 6."))  # a homily on the book
+    assert all(x["kind"] != "bible" for x in C.parse_note("3 Cor. 2."))  # no third Corinthians
+
+
+def test_bible_reference_after_a_question():
+    c = C.parse_note("Stulti aliquando sapite; quando demum sapietis? Psal. 94. 8.")
+    assert [x["raw"] for x in c if x["kind"] == "bible"] == ["Psal. 94. 8."]
+
+
+def test_bible_chapter_and_verses_are_read_only_when_plain():
+    assert C.bible_ref("1 Cor. 6. 5, 6.") == {"chapter": 6, "verses": [5, 6]}
+    assert C.bible_ref("Psal. 94. 8.") == {"chapter": 94, "verses": [8]}
+    assert C.bible_ref("1 Sam. 20.") == {"chapter": 20, "verses": []}
+    assert C.bible_ref("Prov. 3. 5-7") == {"chapter": 3, "verses": [5, 6, 7]}
+    assert C.bible_ref("1 Sam. 2, ver. 7, 8") == {"chapter": 2, "verses": [7, 8]}
+    assert C.bible_ref("Mat. 18. 22,") == {"chapter": 18, "verses": [22]}
+    assert C.bible_ref("Ecclus. 1. 11 and 12") == {"chapter": 1, "verses": [11, 12]}
+    assert C.bible_ref("2 Reg. 3 & 17, 23.") is None
+    assert C.bible_ref("1 Cor. 13, 13") is None  # a comma could join two chapters
+    assert C.bible_label("ezra", 1, {"chapter": 3, "verses": [10]}) == "1 Esdras 3:10"
+    assert C.bible_label("haggai", None, C.bible_ref("Hag. 1. 9, 10")) == "Haggai 1:9–10"
+    assert C.bible_label("corinthians", 1, {"chapter": 6, "verses": [5, 6, 9]}) == "1 Corinthians 6:5–6, 9"
+
+
 def test_ambiguous_forms_resolve_only_with_a_reason():
     assert _one("Plin. lib. 7 cap. 2.")["author"] == "pliny-elder"  # default, basis in the yaml
     assert _one("Plin. epist. 3 lib. 5.")["author"] == "pliny-younger"  # by its locator

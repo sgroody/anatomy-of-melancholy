@@ -12,7 +12,7 @@
         "16"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Hercules de Saxonia lib. 1 pract. med. cap. 16. cap. de Melanch.",
     "selector": {
       "exact": "Hercules de Saxonia lib. 1 pract. med. cap. 16. cap. de Melanch.",
@@ -25,7 +25,7 @@
   },
   "3.4.1.1-p5-ic1558": {
     "author": "bible",
-    "display": "Wisdom, 13, 5",
+    "display": "Wisdom 13:5",
     "locus": [
       [
         "n",
@@ -36,8 +36,14 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Wisd. 13. 5.",
+    "ref": {
+      "chapter": 13,
+      "verses": [
+        5
+      ]
+    },
     "selector": {
       "exact": "Wisd. 13. 5.",
       "in": "3.4.1.1-p5",
@@ -49,7 +55,7 @@
   },
   "3.4.1.1-p5-ic292": {
     "author": "bible",
-    "display": "Psalms, 27, 4",
+    "display": "Psalms 27:4",
     "locus": [
       [
         "n",
@@ -60,8 +66,14 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 27. 4.",
+    "ref": {
+      "chapter": 27,
+      "verses": [
+        4
+      ]
+    },
     "selector": {
       "exact": "Psal. 27. 4.",
       "in": "3.4.1.1-p5",
@@ -73,7 +85,7 @@
   },
   "3.4.1.1-p5-ic372": {
     "author": "bible",
-    "display": "Psalms, 50, 2",
+    "display": "Psalms 50:2",
     "locus": [
       [
         "n",
@@ -84,8 +96,14 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 50. 2.",
+    "ref": {
+      "chapter": 50,
+      "verses": [
+        2
+      ]
+    },
     "selector": {
       "exact": "Psal. 50. 2.",
       "in": "3.4.1.1-p5",
@@ -97,7 +115,7 @@
   },
   "3.4.1.1-p5-ic4990": {
     "author": "bible",
-    "display": "Exodus, 33, 18",
+    "display": "Exodus 33:18",
     "locus": [
       [
         "n",
@@ -108,8 +126,14 @@
         "18"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Exod. 33. 18",
+    "ref": {
+      "chapter": 33,
+      "verses": [
+        18
+      ]
+    },
     "selector": {
       "exact": "Exod. 33. 18",
       "in": "3.4.1.1-p5",
@@ -119,17 +143,52 @@
     "status": "parsed",
     "work": "bible.exodus"
   },
+  "3.4.1.1-p6-ic2001": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 John 2:15",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "15"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 John 2. 15",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        15
+      ]
+    },
+    "selector": {
+      "exact": "1 John 2. 15",
+      "in": "3.4.1.1-p6",
+      "prefix": "tles so much thunder against, ",
+      "suffix": ", dehort us from; love not the"
+    },
+    "status": "parsed",
+    "work": "bible.john"
+  },
   "3.4.1.1-p6-ic3761": {
     "author": "bible",
-    "display": "Song of Songs, 5",
+    "display": "Song of Songs 5",
     "locus": [
       [
         "n",
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cant. 5.",
+    "ref": {
+      "chapter": 5,
+      "verses": []
+    },
     "selector": {
       "exact": "Cant. 5.",
       "in": "3.4.1.1-p6",
@@ -139,17 +198,57 @@
     "status": "parsed",
     "work": "bible.song"
   },
+  "3.4.1.1-p7-ic1092": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Corinthians 13:4–5",
+    "locus": [
+      [
+        "n",
+        "13"
+      ],
+      [
+        "n",
+        "4"
+      ],
+      [
+        "n",
+        "5"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Cor. 13. 4, 5",
+    "ref": {
+      "chapter": 13,
+      "verses": [
+        4,
+        5
+      ]
+    },
+    "selector": {
+      "exact": "1 Cor. 13. 4, 5",
+      "in": "3.4.1.1-p7",
+      "prefix": "ds, to which we are exhorted, ",
+      "suffix": ", Ephes. 4, Coloss. 3, Rom. 12"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.4.1.1-p7-ic1109": {
     "author": "bible",
-    "display": "Ephesians, 4",
+    "display": "Ephesians 4",
     "locus": [
       [
         "n",
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ephes. 4",
+    "ref": {
+      "chapter": 4,
+      "verses": []
+    },
     "selector": {
       "exact": "Ephes. 4",
       "in": "3.4.1.1-p7",
@@ -161,15 +260,19 @@
   },
   "3.4.1.1-p7-ic1119": {
     "author": "bible",
-    "display": "Colossians, 3",
+    "display": "Colossians 3",
     "locus": [
       [
         "n",
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Coloss. 3",
+    "ref": {
+      "chapter": 3,
+      "verses": []
+    },
     "selector": {
       "exact": "Coloss. 3",
       "in": "3.4.1.1-p7",
@@ -181,15 +284,19 @@
   },
   "3.4.1.1-p7-ic1130": {
     "author": "bible",
-    "display": "Romans, 12",
+    "display": "Romans 12",
     "locus": [
       [
         "n",
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Rom. 12.",
+    "ref": {
+      "chapter": 12,
+      "verses": []
+    },
     "selector": {
       "exact": "Rom. 12.",
       "in": "3.4.1.1-p7",
@@ -199,9 +306,40 @@
     "status": "parsed",
     "work": "bible.romans"
   },
+  "3.4.1.1-p9-ic5559": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Samuel 22:3",
+    "locus": [
+      [
+        "n",
+        "22"
+      ],
+      [
+        "n",
+        "3"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Sam. 22. 3",
+    "ref": {
+      "chapter": 22,
+      "verses": [
+        3
+      ]
+    },
+    "selector": {
+      "exact": "2 Sam. 22. 3",
+      "in": "3.4.1.1-p9",
+      "prefix": "ons whatsoever, as David did, ",
+      "suffix": ", he will sing with him, The L"
+    },
+    "status": "parsed",
+    "work": "bible.samuel"
+  },
   "3.4.1.1-p9-ic5727": {
     "author": "bible",
-    "display": "Psalms, 46, 1",
+    "display": "Psalms 46:1",
     "locus": [
       [
         "n",
@@ -212,8 +350,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 46. 1",
+    "ref": {
+      "chapter": 46,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Psal. 46. 1",
       "in": "3.4.1.1-p9",

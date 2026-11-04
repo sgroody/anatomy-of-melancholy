@@ -6,7 +6,7 @@
         "display": "Horace",
         "id": "1.2.3.7-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -24,7 +24,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Jeremiah, 12, 1",
+        "display": "Jeremiah 12:1",
         "id": "1.2.3.7-n11-c1",
         "locus": [
           [
@@ -36,8 +36,14 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jer. 12. 1.",
+        "ref": {
+          "chapter": 12,
+          "verses": [
+            1
+          ]
+        },
         "status": "parsed",
         "work": "bible.jeremiah"
       }
@@ -49,7 +55,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Habakkuk, 1",
+        "display": "Habakkuk 1",
         "id": "1.2.3.7-n12-c1",
         "locus": [
           [
@@ -57,8 +63,12 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hab. 1.",
+        "ref": {
+          "chapter": 1,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.habakkuk"
       }
@@ -73,7 +83,7 @@
         "display": "Tacitus",
         "id": "1.2.3.7-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tacit.",
         "status": "parsed",
         "work": null
@@ -92,7 +102,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hist. lib. 2 part. 6.",
         "status": "unidentified",
         "work": null
@@ -113,7 +123,7 @@
         "display": null,
         "id": "1.2.3.7-n15-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ant.",
         "status": "unidentified",
         "work": null
@@ -132,7 +142,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Guainerius lib. 2 cap. 8. vit. M. Aurelii.",
         "status": "partial",
         "work": null
@@ -158,7 +168,7 @@
         "display": "Augustine of Hippo",
         "id": "1.2.3.7-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Austin Domin. prima. Advent.",
         "status": "partial",
         "work": null
@@ -174,7 +184,7 @@
         "display": "Ovid",
         "id": "1.2.3.7-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid.",
         "status": "parsed",
         "work": null
@@ -195,7 +205,7 @@
             "13"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Declam. 13.",
         "status": "unidentified",
         "work": null
@@ -211,7 +221,7 @@
         "display": "Basil of Caesarea",
         "id": "1.2.3.7-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Basilius",
         "status": "parsed",
         "work": null
@@ -236,7 +246,7 @@
             "63"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Agrip. lib. 1 cap. 63.",
         "status": "unidentified",
         "work": null
@@ -257,7 +267,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hist. lib. 2,",
         "status": "unidentified",
         "work": null
@@ -267,7 +277,7 @@
         "display": "Tacitus",
         "id": "1.2.3.7-n9-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tacit.",
         "status": "parsed",
         "work": null

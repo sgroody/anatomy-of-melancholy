@@ -3,7 +3,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 139, 14, 15",
+        "display": "Psalms 139:14–15",
         "id": "1.1.2.1-n1-c1",
         "locus": [
           [
@@ -19,8 +19,15 @@
             "15"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 139. 14, 15.",
+        "ref": {
+          "chapter": 139,
+          "verses": [
+            14,
+            15
+          ]
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -36,7 +43,7 @@
         "display": "Philipp Melanchthon, Liber de anima",
         "id": "1.1.2.1-n2-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De Anima.",
         "status": "parsed",
         "work": "melanchthon.de-anima"
@@ -53,7 +60,7 @@
         "display": "Galen",
         "id": "1.1.2.1-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De usu partium.",
         "status": "partial",
         "work": null
@@ -74,7 +81,7 @@
         "display": "Helkiah Crooke",
         "id": "1.1.2.1-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Dr. Crooke.",
         "status": "parsed",
         "work": null
@@ -96,7 +103,7 @@
         "display": "Philipp Melanchthon, Liber de anima",
         "id": "1.1.2.1-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De Anima.",
         "status": "parsed",
         "work": "melanchthon.de-anima"
@@ -117,7 +124,7 @@
             "1, 2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Physiol. lib. 1, 2.",
         "status": "unidentified",
         "work": null
@@ -138,7 +145,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Institut. lib. 1.",
         "status": "unidentified",
         "work": null

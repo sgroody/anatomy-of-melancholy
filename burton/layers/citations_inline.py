@@ -28,7 +28,8 @@ from ..tei import XML_ID, T, public_id
 from ..textview import public_text
 from . import citations as cit
 
-METHOD = "rules/inline-v1"
+# v2 (2026-11-03): numbered Bible books and a reference after "?" or "!", as in the sidenote rules (abbrev-v2)
+METHOD = "rules/inline-v2"
 LAYER = "citations-inline"
 BLOCKS = (T("p"), T("l"), T("item"), T("head"), T("quote"))
 SPAN_TOKENS = 30  # a citation in the text is short; the parser reads at most this many tokens from its head
@@ -54,8 +55,10 @@ def _heads(toks: list[str]) -> list[int]:
     for i, tok in enumerate(toks):
         prev = toks[i - 1] if i else "."
         b = cit._bare(tok)
-        if b in t["bible"] and i + 1 < len(toks) and toks[i + 1][:1].isdigit() and \
-                (i == 0 or prev.endswith(".") or prev in {",", ";", ":", "("}):
+        at_start = i == 0 or prev.endswith(".") or prev in cit.STARTS
+        if cit._numbered_book(toks, i) and at_start and not (i and cit._locator(toks, i - 1)):
+            out.append(i)  # "1 Cor. 6. 5, 6"
+        elif b in t["bible"] and i + 1 < len(toks) and toks[i + 1][:1].isdigit() and at_start:
             out.append(i)
         elif (m := cit._match_author(toks, i)) and len(m[1]["candidates"]) == 1 and \
                 cit._locus_soon(toks, i + m[0] - 1, within=4):
@@ -118,6 +121,10 @@ def build(units: list[str] | None = None) -> Counter:
                     rec = {"selector": {"in": bid, "exact": exact, "prefix": pre, "suffix": suf},
                            "raw": exact, "author": c["author"], "work": c.get("work"), "locus": c["locus"],
                            "status": cit._status(c), "method": METHOD, "display": cit._display(c)}
+                    if c["author"] == "bible":
+                        c["ref"] = cit.bible_ref(exact)
+                        rec["display"] = cit._display(c)
+                        rec.update({k: c[k] for k in ("book_n", "ref") if c.get(k)})
                     if c.get("ambiguous_with"):
                         rec["ambiguous_with"], rec["resolved_by"] = c["ambiguous_with"], c.get("resolved_by")
                     records[f"{bid}-ic{f['start']}"] = rec

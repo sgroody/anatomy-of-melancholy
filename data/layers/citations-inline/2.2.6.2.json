@@ -12,7 +12,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Trincavellius consil. 12 lib. 1",
     "selector": {
       "exact": "Trincavellius consil. 12 lib. 1",
@@ -32,7 +32,7 @@
         "229"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Montanus consil. 229",
     "selector": {
       "exact": "Montanus consil. 229",
@@ -45,7 +45,7 @@
   },
   "2.2.6.2-p4-ic294": {
     "author": "bible",
-    "display": "Proverbs, 12, 25",
+    "display": "Proverbs 12:25",
     "locus": [
       [
         "n",
@@ -56,8 +56,14 @@
         "25"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Prov. 12. 25",
+    "ref": {
+      "chapter": 12,
+      "verses": [
+        25
+      ]
+    },
     "selector": {
       "exact": "Prov. 12. 25",
       "in": "2.2.6.2-p4",
@@ -76,7 +82,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Forestus observat. lib. 1",
     "selector": {
       "exact": "Forestus observat. lib. 1",
@@ -104,7 +110,7 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lemnius lib. 2 cap. 6 de 4 complex.",
     "selector": {
       "exact": "Lemnius lib. 2 cap. 6 de 4 complex.",

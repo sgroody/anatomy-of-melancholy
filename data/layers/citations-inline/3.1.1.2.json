@@ -1,7 +1,7 @@
 {
   "3.1.1.2-p10-ic136": {
     "author": "bible",
-    "display": "John, 3, 16",
+    "display": "John 3:16",
     "locus": [
       [
         "n",
@@ -12,8 +12,14 @@
         "16"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "John 3. 16.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        16
+      ]
+    },
     "selector": {
       "exact": "John 3. 16.",
       "in": "3.1.1.2-p10",
@@ -23,17 +29,52 @@
     "status": "parsed",
     "work": "bible.john"
   },
+  "3.1.1.2-p10-ic237": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 John 3:1",
+    "locus": [
+      [
+        "n",
+        "3"
+      ],
+      [
+        "n",
+        "1"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 John 3. 1.",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        1
+      ]
+    },
+    "selector": {
+      "exact": "1 John 3. 1.",
+      "in": "3.1.1.2-p10",
+      "prefix": "ld be called the sons of God, ",
+      "suffix": " Or by his sweet providence, i"
+    },
+    "status": "parsed",
+    "work": "bible.john"
+  },
   "3.1.1.2-p3-ic5715": {
     "author": "bible",
-    "display": "Psalms, 64",
+    "display": "Psalms 64",
     "locus": [
       [
         "n",
         "64"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 64",
+    "ref": {
+      "chapter": 64,
+      "verses": []
+    },
     "selector": {
       "exact": "Psal. 64",
       "in": "3.1.1.2-p3",
@@ -56,7 +97,7 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Aristotle 9 mor. cap. 5",
     "selector": {
       "exact": "Aristotle 9 mor. cap. 5",
@@ -76,7 +117,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Leon Hebraeus dial. 2",
     "selector": {
       "exact": "Leon Hebraeus dial. 2",
@@ -96,7 +137,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Baptista Porta de mag. lib. 1 cap. de plant.",
     "selector": {
       "exact": "Baptista Porta de mag. lib. 1 cap. de plant.",
@@ -116,7 +157,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Leon Hebraeus dial. 2",
     "selector": {
       "exact": "Leon Hebraeus dial. 2",
@@ -129,7 +170,7 @@
   },
   "3.1.1.2-p9-ic182": {
     "author": "bible",
-    "display": "John, 3, 35",
+    "display": "John 3:35",
     "locus": [
       [
         "n",
@@ -140,8 +181,14 @@
         "35"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Joh. 3. 35",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        35
+      ]
+    },
     "selector": {
       "exact": "Joh. 3. 35",
       "in": "3.1.1.2-p9",

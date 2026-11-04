@@ -1,6 +1,6 @@
 {
-  "when": "2026-11-04T03:17:57+00:00",
-  "ok": false,
+  "when": "2026-11-04T04:06:57+00:00",
+  "ok": true,
   "results": [
     {
       "code": "V1",
@@ -154,7 +154,7 @@
         "units_without_layer": 4,
         "djs_records": 7774,
         "djs_no-anchor": 2376,
-        "sidenotes_no-citation": 1204,
+        "sidenotes_no-citation": 1181,
         "djs_aligned": 2149,
         "obsolete_records": 748,
         "obsolete_ordinary": 207,
@@ -172,10 +172,10 @@
         "djs_ocr-noise": 17,
         "sidenotes_partial": 785,
         "citations_partial": 624,
-        "sidenotes_unidentified": 1502,
-        "citations_unidentified": 1862,
-        "sidenotes_parsed": 2212,
-        "citations_parsed": 2679,
+        "sidenotes_unidentified": 1503,
+        "citations_unidentified": 1863,
+        "sidenotes_parsed": 2234,
+        "citations_parsed": 2705,
         "citation_author_text-at-anchor": 604,
         "citation_author_work-title": 106,
         "xrefs_rel_unresolved": 32,
@@ -262,20 +262,17 @@
     {
       "code": "V6",
       "name": "links resolve",
-      "ok": false,
+      "ok": true,
       "deferred": null,
       "counts": {
         "pages": 844,
-        "links": 188396,
-        "broken": 2,
+        "links": 189694,
+        "broken": 0,
         "unresolved_xrefs_unlinked": 4,
         "search_results": 43707,
         "search_broken": 0
       },
-      "problems": [
-        "private/3.2.2.5/index.html: href='../authors/cesalpino/' does not resolve",
-        "public/3.2.2.5/index.html: href='../authors/cesalpino/' does not resolve"
-      ]
+      "problems": []
     },
     {
       "code": "V8",
@@ -294,10 +291,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "264/264",
+        "private:glyphs": "265/265",
         "private:fallback": 20,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F U+2653",
-        "public:glyphs": "243/243",
+        "public:glyphs": "244/244",
         "public:fallback": 20
       },
       "problems": []
@@ -345,14 +342,14 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "densest_3.2.4.1": "83 notes, 24 stacked in 7 stacks",
+        "densest_3.2.4.1": "87 notes, 26 stacked in 6 stacks",
         "pages": 20,
-        "notes": 10444,
-        "stacked": 3111,
+        "notes": 10668,
+        "stacked": 3217,
         "overlaps": 0,
-        "max_drift_rem": 13.9,
+        "max_drift_rem": 14,
         "marker_breaks": 0,
-        "left_margin": 2015,
+        "left_margin": 2071,
         "marker_checks": 12216
       },
       "problems": []

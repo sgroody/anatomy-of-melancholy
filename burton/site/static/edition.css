@@ -12,7 +12,7 @@
   --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
   /* languages and the kinds of margin note (owner, 2026-11-03: T3 A, T7 A) */
   --la: #2c6150; --grc: #36508f; --enm: #7a4f14; --modern: #5b4a7a;
-  --k-gloss: #9a6408; --k-cite: #4b5d80; --k-expl: #6d4a80;
+  --k-gloss: #9a6408; --k-cite: #4b5d80; --k-expl: #6d4a80; --k-bible: #66661f;
   --hot: color-mix(in srgb, #d9a520 26%, transparent);
   --measure: 34rem;
   --margin-col: 15rem;
@@ -24,7 +24,7 @@
   :root:not([data-theme="light"]) {
     --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
     --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; --k-gloss: #e2b45c; --k-cite: #9fb0d4;
-    --k-expl: #c3a3d6; --hot: color-mix(in srgb, #e0b040 24%, transparent);
+    --k-expl: #c3a3d6; --k-bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent);
     --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
     color-scheme: dark;
   }
@@ -32,7 +32,7 @@
 :root[data-theme="dark"] {
   --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
   --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; --k-gloss: #e2b45c; --k-cite: #9fb0d4;
-  --k-expl: #c3a3d6; --hot: color-mix(in srgb, #e0b040 24%, transparent);
+  --k-expl: #c3a3d6; --k-bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent);
   --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
   color-scheme: dark;
 }
@@ -612,3 +612,24 @@ a.nm:hover, a.nm:focus-visible { text-decoration-color: var(--accent); }
 .pw.locked { border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); }
 @keyframes pw-lock { to { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .pw:not(.locked) .pw-bar { animation: none; width: 100%; opacity: 0.4; } }
+
+/* ------------------------------------------------------------ in-line citations and Bible verses (stage 6, C1 C) */
+/* the name stays in Burton's sentence, the reference goes to the margin (shown again under "Burton's abbreviations"),
+   and a raised § in the citation colour marks the place; his own words are on the mark's title */
+.ic-m { color: var(--k-cite); font-size: 0.68em; vertical-align: 0.5em; line-height: 0; padding: 0 0.04em; cursor: help;
+  font-style: normal; }
+.ic-m[data-kind="bible"] { color: var(--k-bible); }
+.mn-ic[data-kind="cites"] .mn-k { color: var(--k-cite); }
+.mn-ic[data-kind="bible"] .mn-k { color: var(--k-bible); }
+.mn-ic .cx-a { color: inherit; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+/* the KJV text of a Bible citation: in the card, or one line after Burton's note; folded after three lines */
+.kjv { display: block; margin-top: 0.15em; }
+.kjv-t { font-style: italic; }
+.kjv.fold:not(.open) .kjv-t { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
+.kjv-n { font-size: 0.7em; font-style: normal; color: var(--muted); padding-right: 0.15em; }
+.kjv-l { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.kjv-more { background: none; border: none; padding: 0; color: var(--k-bible); text-decoration: underline;
+  text-decoration-thickness: 1px; cursor: pointer; font-size: 0.88em; }
+.kjv-more[hidden] { display: none; }
+.sn-bible { display: block; }
+.sidenote .kjv { color: var(--note-ink); }

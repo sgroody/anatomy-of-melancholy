@@ -20,7 +20,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Delrio dis. mag. Tom. 3 lib. 6 quaest. 2 sect. 3",
     "selector": {
       "exact": "Delrio dis. mag. Tom. 3 lib. 6 quaest. 2 sect. 3",
@@ -44,7 +44,7 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Strozzius Cicogna lib. 4 cap. 9",
     "selector": {
       "exact": "Strozzius Cicogna lib. 4 cap. 9",
@@ -57,7 +57,7 @@
   },
   "2.1.3.1-p2-ic64": {
     "author": "bible",
-    "display": "Psalms, 46, 1",
+    "display": "Psalms 46:1",
     "locus": [
       [
         "n",
@@ -68,8 +68,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 46. 1",
+    "ref": {
+      "chapter": 46,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Psal. 46. 1",
       "in": "2.1.3.1-p2",
@@ -81,15 +87,19 @@
   },
   "2.1.3.1-p3-ic1177": {
     "author": "bible",
-    "display": "Matthew, 11",
+    "display": "Matthew 11",
     "locus": [
       [
         "n",
         "11"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 11",
+    "ref": {
+      "chapter": 11,
+      "verses": []
+    },
     "selector": {
       "exact": "Mat. 11",
       "in": "2.1.3.1-p3",
@@ -98,6 +108,68 @@
     },
     "status": "parsed",
     "work": "bible.matthew"
+  },
+  "2.1.3.1-p3-ic1268": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Timothy 2:5",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "5"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Tim. 2. 5",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        5
+      ]
+    },
+    "selector": {
+      "exact": "1 Tim. 2. 5",
+      "in": "2.1.3.1-p3",
+      "prefix": "ixt God and man Jesus Christ (",
+      "suffix": "), who gave himself a ransom f"
+    },
+    "status": "parsed",
+    "work": "bible.timothy"
+  },
+  "2.1.3.1-p3-ic1385": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 John 2:1",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "1"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Joh. 2. 1",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        1
+      ]
+    },
+    "selector": {
+      "exact": "1 Joh. 2. 1",
+      "in": "2.1.3.1-p3",
+      "prefix": "ith the Father, Jesus Christ (",
+      "suffix": "), that there is no other name"
+    },
+    "status": "parsed",
+    "work": "bible.john"
   },
   "2.1.3.1-p3-ic175": {
     "author": "lactantius",
@@ -108,7 +180,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lactantius lib. 2 de orig.",
     "selector": {
       "exact": "Lactantius lib. 2 de orig.",
@@ -132,7 +204,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Wierus lib. 4 cap. 3.",
     "selector": {
       "exact": "Wierus lib. 4 cap. 3.",
@@ -156,7 +228,7 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Austin de Civitate Dei lib. 10 cap. 6",
     "selector": {
       "exact": "Austin de Civitate Dei lib. 10 cap. 6",
@@ -180,7 +252,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cicogna lib. 3 cap. 8.",
     "selector": {
       "exact": "Cicogna lib. 3 cap. 8.",

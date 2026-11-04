@@ -7,7 +7,7 @@
         "display": "Jason Pratensis",
         "id": "1.2.4.2-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de morbis capitis",
         "status": "partial",
         "work": null
@@ -29,7 +29,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 2 de consol.",
         "status": "parsed",
         "work": "cardano.de-consolatione"
@@ -54,7 +54,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 1 cap. 3.",
         "status": "unidentified",
         "work": null
@@ -70,7 +70,7 @@
         "display": "Juvenal",
         "id": "1.2.4.2-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juven.",
         "status": "parsed",
         "work": null
@@ -92,7 +92,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 3 de sapient.",
         "status": "parsed",
         "work": "cardano.de-sapientia"
@@ -117,7 +117,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 2 cap. 4.",
         "status": "unidentified",
         "work": null
@@ -134,7 +134,7 @@
         "head": "idem",
         "id": "1.2.4.2-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Idem.",
         "status": "unidentified",
         "work": null
@@ -160,7 +160,7 @@
         "display": "Terence",
         "id": "1.2.4.2-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ter.",
         "status": "parsed",
         "work": null
@@ -180,7 +180,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Adel. 3. 4.",
         "status": "parsed",
         "work": "terence.adelphi"
@@ -206,7 +206,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Idem Ac. 1 sc. 2.",
         "resolved_from": "1.2.4.2-n6-c2",
         "status": "partial",
@@ -232,7 +232,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Camerarius emb. 77 cent. 2",
         "status": "unidentified",
         "work": null
@@ -245,7 +245,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Proverbs, 13, 24",
+        "display": "Proverbs 13:24",
         "id": "1.2.4.2-n9-c1",
         "locus": [
           [
@@ -257,8 +257,14 @@
             "24"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Prov. 13. 24.",
+        "ref": {
+          "chapter": 13,
+          "verses": [
+            24
+          ]
+        },
         "status": "parsed",
         "work": "bible.proverbs"
       }

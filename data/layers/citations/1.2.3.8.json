@@ -11,7 +11,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cyprian ser. 2 de Livore.",
         "status": "parsed",
         "work": "cyprian.de-zelo"
@@ -36,7 +36,7 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Johannes Heroldus lib. 2 cap. 12 de bello sacro.",
         "status": "unidentified",
         "work": null
@@ -57,7 +57,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Paterculus vol. 1.",
         "status": "parsed",
         "work": null
@@ -78,7 +78,7 @@
         "display": "Sallust",
         "id": "1.2.3.8-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Sallust. Catil.",
         "status": "partial",
         "work": null
@@ -99,7 +99,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Paul. 3 Col.",
         "status": "unidentified",
         "work": null
@@ -112,7 +112,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Romans, 12",
+        "display": "Romans 12",
         "id": "1.2.3.8-n15-c1",
         "locus": [
           [
@@ -120,8 +120,12 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Rom. 12.",
+        "ref": {
+          "chapter": 12,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.romans"
       }
@@ -145,7 +149,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Valerius lib. 3 cap. 9.",
         "status": "parsed",
         "work": null
@@ -166,7 +170,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cyprian ser. 2 de zelo & livore.",
         "status": "parsed",
         "work": "cyprian.de-zelo"
@@ -182,7 +186,7 @@
         "display": "Hesiod, Opera et dies",
         "id": "1.2.3.8-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hesiod. op. dies.",
         "status": "parsed",
         "work": "hesiod.works"
@@ -198,7 +202,7 @@
         "display": "Velleius Paterculus",
         "id": "1.2.3.8-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Paterculus poster. vol.",
         "status": "partial",
         "work": null
@@ -219,7 +223,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Grotius Epig. lib. 1.",
         "status": "partial",
         "work": null
@@ -240,7 +244,7 @@
             "1519"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Anno 1519",
         "status": "unidentified",
         "work": null
@@ -256,7 +260,7 @@
         "display": "Aelius Spartianus",
         "id": "1.2.3.8-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Spartian.",
         "status": "parsed",
         "work": null
@@ -272,7 +276,7 @@
         "display": "Plutarch",
         "id": "1.2.3.8-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch.",
         "status": "parsed",
         "work": null

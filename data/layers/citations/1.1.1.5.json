@@ -6,7 +6,7 @@
         "display": null,
         "id": "1.1.1.5-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De quo homine securitas, de quo certum gaudium ?",
         "status": "unidentified",
         "work": null
@@ -21,7 +21,7 @@
             "85"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "August. in psal. 85.",
         "status": "parsed",
         "work": "augustine.enarrationes"
@@ -42,7 +42,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Apuleius 4 florid.",
         "status": "parsed",
         "work": "apuleius.florida"
@@ -67,7 +67,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Valerius lib. 6 cap. 11.",
         "status": "parsed",
         "work": null
@@ -92,7 +92,7 @@
             "1598"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lorchanus Gallobelgicus lib. 3 ad annum 1598.",
         "status": "unidentified",
         "work": null
@@ -107,9 +107,36 @@
     "status": "no-citation"
   },
   "1.1.1.5-n14": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 2,
+        "display": "2 Timothy 2:3",
+        "id": "1.1.1.5-n14-c1",
+        "locus": [
+          [
+            "n",
+            "2"
+          ],
+          [
+            "n",
+            "3"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "2 Tim. 2. 3.",
+        "ref": {
+          "chapter": 2,
+          "verses": [
+            3
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.timothy"
+      }
+    ],
     "raw": "2 Tim. 2. 3.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "1.1.1.5-n15": {
     "citations": [
@@ -127,7 +154,7 @@
             "10"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. 96 lib. 10.",
         "status": "unidentified",
         "work": null
@@ -157,7 +184,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 1 cap. 6.",
         "status": "unidentified",
         "work": null
@@ -186,7 +213,7 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fuchsius lib. 3 sect. 1 cap. 7.",
         "status": "parsed",
         "work": null
@@ -201,7 +228,7 @@
             "130"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hildesheim fol. 130.",
         "status": "parsed",
         "work": null
@@ -214,7 +241,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Job, 1, 14",
+        "display": "Job 1:14",
         "id": "1.1.1.5-n2-c1",
         "locus": [
           [
@@ -226,8 +253,14 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Job. 1. 14.",
+        "ref": {
+          "chapter": 1,
+          "verses": [
+            14
+          ]
+        },
         "status": "parsed",
         "work": "bible.job"
       }
@@ -252,7 +285,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 7 cap. 1.",
         "status": "parsed",
         "work": null
@@ -268,7 +301,7 @@
         "display": "Aelian",
         "id": "1.1.1.5-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aelian.",
         "status": "parsed",
         "work": null
@@ -284,7 +317,7 @@
         "display": "Homer",
         "id": "1.1.1.5-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Homer.",
         "status": "parsed",
         "work": null
@@ -295,7 +328,7 @@
         "display": "Homer, Iliad",
         "id": "1.1.1.5-n5-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Iliad.",
         "status": "parsed",
         "work": "homer.iliad"
@@ -320,7 +353,7 @@
             "45"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lipsius cent. 3 ep. 45.",
         "status": "parsed",
         "work": null
@@ -341,7 +374,7 @@
             "4, 1134"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucretius lib. 4, 1134.",
         "status": "parsed",
         "work": null
@@ -354,7 +387,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Proverbs, 14, 3",
+        "display": "Proverbs 14:3",
         "id": "1.1.1.5-n8-c1",
         "locus": [
           [
@@ -366,8 +399,14 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Prov. 14. 3.",
+        "ref": {
+          "chapter": 14,
+          "verses": [
+            3
+          ]
+        },
         "status": "parsed",
         "work": "bible.proverbs"
       }

@@ -39,7 +39,9 @@ from ..ingest.epub import all_units
 from ..tei import XML_ID, T, public_id
 from ..textview import public_text
 
-METHOD = "rules/abbrev-v1"
+# v2 (2026-11-03): numbered Bible books ("1 Cor. 6. 5, 6.", the number recorded as `book_n`), a reference after
+# "?" or "!" ("… sapietis? Psal. 94. 8."), and the chapter and verses of a Bible reference (`ref`)
+METHOD = "rules/abbrev-v2"
 ABBREV = paths.DATA / "abbreviations.yaml"
 WORKS = paths.DATA / "works.yaml"
 
@@ -49,6 +51,11 @@ WORK_GLUE = {"de", "in", "ad", "pro", "contra", "super", "adversus", "adv"}
 NAME_GLUE = {"de", "a", "à", "ab", "van", "von", "del", "di", "da", "le", "la", "du", "&"}
 CUES = {"vide", "vid", "see", "apud", "inquit", "ex", "e", "cf", "teste", "ait", "saith", "out", "of", "lege", "more"}
 LOWER_HEADS = {"part", "memb", "subs", "subsect", "sect", "fol", "lib", "cap"}  # a locus may open in lower case
+# Bible books that take a number, and the highest number each has ("Reg." is Kings, as Burton numbers it: "1 Reg. 11.
+# 5" is Solomon going after Ashtoreth, 1 Kings 11:5); "Esdr." numbered is the Apocrypha's 1 and 2 Esdras
+NUMBERED_BOOKS = {"samuel": 2, "kings": 2, "chronicles": 2, "ezra": 2, "corinthians": 2, "thessalonians": 2,
+                  "timothy": 2, "peter": 2, "john": 3, "maccabees": 2}
+STARTS = {";", ",", ":", "(", "?", "!"}  # a citation may start after these, as after a stop
 # capitalised words that open prose, never a citation
 PROSE = {"Si", "Qui", "Quae", "Quod", "Et", "Non", "Ut", "The", "Vide", "See", "Nam", "Sed", "Cum", "Quid", "Hic",
          "Haec", "Hoc", "Ego", "Est", "Sic", "Nec", "Ne", "Dum", "Omnes", "Omnia", "Omnis", "Nihil", "Nullus", "Nemo",
@@ -196,6 +203,14 @@ def _name_note(toks: list[str]) -> bool:
         all(w[:1].isupper() or w.lower() in NAME_GLUE for w in words) and toks[-1].endswith(".")
 
 
+def _numbered_book(toks: list[str], i: int) -> tuple[str, int] | None:
+    """(book, number) where toks[i:] read "1 Cor. 6": a number the book can have, its form, then a chapter."""
+    if not re.fullmatch(r"[1-4]", toks[i]) or i + 2 >= len(toks) or not toks[i + 2][:1].isdigit():
+        return None
+    book = tables()["bible"].get(_bare(toks[i + 1]))
+    return (book, int(toks[i])) if book and int(toks[i]) <= NUMBERED_BOOKS.get(book, 0) else None
+
+
 def _segments(toks: list[str]) -> list[tuple[int, int, str, object]]:
     """Citation heads: (index, length of the head, kind, payload)."""
     t = tables()
@@ -207,13 +222,17 @@ def _segments(toks: list[str]) -> list[tuple[int, int, str, object]]:
         tok = toks[i]
         b = _bare(tok)
         prev = toks[i - 1] if i else "."
-        at_start = i == 0 or prev.endswith(".") or prev in {";", ",", ":", "("} or _bare(prev).lower() in CUES
+        at_start = i == 0 or prev.endswith(".") or prev in STARTS or _bare(prev).lower() in CUES
         if b in t["idem"] and tok[:1].isupper():
             heads.append((i, 1, "idem", None))
         elif b.lower() in t["ibid"] and (tok.endswith(".") or b.lower() == "ibidem"):
             heads.append((i, 1, "ibid", None))
+        elif (book := _numbered_book(toks, i)) and at_start and not (i and _locator(toks, i - 1)):
+            heads.append((i, 2, "bible", book))  # "1 Cor. 6.", not "lib. 1 Thes. 1." (a book and a title)
+            i += 2
+            continue
         elif b in t["bible"] and i + 1 < len(toks) and toks[i + 1][:1].isdigit() and at_start:
-            heads.append((i, 1, "bible", t["bible"][b]))
+            heads.append((i, 1, "bible", (t["bible"][b], None)))
         elif m := _match_author(toks, i):
             heads.append((i, m[0], "author", m[1]))
             i += m[0]
@@ -361,7 +380,9 @@ def parse_note(text: str) -> list[dict]:
                 c["ambiguous_with"] = payload["candidates"]
                 c["resolved_by"] = how
         elif kind == "bible":
-            c["author"], c["work"] = "bible", f"bible.{payload}"
+            c["author"], c["work"] = "bible", f"bible.{payload[0]}"
+            if payload[1]:
+                c["book_n"] = payload[1]
         out.append(c)
     return out
 
@@ -370,11 +391,53 @@ def _join(toks: list[str]) -> str:
     return re.sub(r" ([,;:.)])", r"\1", " ".join(toks)).replace("( ", "(")
 
 
+BIBLE_REST = re.compile(r"(\d+)(?:(?:\s*[.:]\s*|\s*,?\s+v(?:er|ers)?\.\s*)"
+                        r"(\d+(?:(?:\s*[,\-–]\s*|\s+and\s+)\d+)*))?[.,]?")
+NUMBERED_NAMES = {"ezra": "Esdras"}  # "1 Esd." is the Apocrypha's First Book of Esdras, not Ezra
+
+
+def bible_ref(raw: str) -> dict | None:
+    """The chapter and verses of a Bible reference, read from Burton's words after the book ("Hag. 1. 9, 10" ->
+    chapter 1, verses 9 and 10; "Psal. 94. 8."; "1 Cor. 6. 5, 6."). None where they are not that plain ("2 Reg. 3 &
+    17, 23": a chapter and another chapter's verses, or two chapters), so nothing is shown for a reading not made."""
+    toks = raw.split(None, 2 if re.match(r"[1-4] ", raw) else 1)
+    if len(toks) < 2 or not (m := BIBLE_REST.fullmatch(toks[-1].strip())):
+        return None
+    verses: list[int] = []
+    for part in re.split(r"\s*,\s*|\s+and\s+", m.group(2) or ""):
+        if not part:
+            continue
+        bounds = [int(x) for x in re.split(r"\s*[\-–]\s*", part)]
+        if len(bounds) > 2 or bounds[-1] < bounds[0] or bounds[-1] - bounds[0] > 30:
+            return None
+        verses += range(bounds[0], bounds[-1] + 1)
+    return {"chapter": int(m.group(1)), "verses": verses}
+
+
+def bible_label(book: str, n: int | None, ref: dict | None) -> str:
+    """"1 Corinthians 6:5–6", "Haggai 1:9–10", "Psalms 94:8", "Samuel 20" (consecutive verses as a range)."""
+    name = f"{n} {NUMBERED_NAMES.get(book, tables()['bible_books'][book]['name'])}" if n else \
+        tables()["bible_books"][book]["name"]
+    if not ref:
+        return name
+    runs: list[list[int]] = []
+    for v in ref["verses"]:
+        if runs and v == runs[-1][-1] + 1:
+            runs[-1].append(v)
+        else:
+            runs.append([v])
+    vs = ", ".join(f"{r[0]}–{r[-1]}" if len(r) > 1 else str(r[0]) for r in runs)
+    return f"{name} {ref['chapter']}" + (f":{vs}" if vs else "")
+
+
 def _display(c: dict) -> str | None:
     t = tables()
     parts = []
     if c.get("author") == "bible":
-        parts.append(t["bible_books"][c["work"].split(".", 1)[1]]["name"])
+        book = c["work"].split(".", 1)[1]
+        if ref := c.get("ref"):
+            return bible_label(book, c.get("book_n"), ref)
+        parts.append(bible_label(book, c.get("book_n"), None))
     elif c.get("author"):
         parts.append(t["authors"][c["author"]]["name"])
         if c.get("work"):
@@ -444,6 +507,8 @@ def build(units: list[str] | None = None) -> Counter:
                     # ibid. repeats the work; Idem after a Bible book means that book
                     if (c["kind"] == "ibid" or prev["author"] == "bible") and prev.get("work"):
                         c["work"] = prev["work"]
+                        if prev.get("book_n"):
+                            c["book_n"] = prev["book_n"]
                     if c["kind"] == "ibid" and not c["locus"]:
                         c["locus"] = prev["locus"]
                 if c["kind"] == "locus" and {n for n, _ in c["locus"]} <= {"part", "section", "member", "subsection",
@@ -471,9 +536,12 @@ def build(units: list[str] | None = None) -> Counter:
                     stats["decisions_applied"] += 1
                 if c.get("author") and c["author"] != "bible" and not c.get("work"):
                     c["work"] = _work(c["author"], c["work_words"])
+                if c.get("author") == "bible" and c.get("work"):
+                    c["ref"] = bible_ref(c["raw"])
                 rec = {"id": f"{nid}-c{k}", "raw": c["raw"], "author": c.get("author"), "work": c.get("work"),
                        "locus": c["locus"], "status": _status(c), "method": METHOD, "display": _display(c)}
-                for key in ("resolved_from", "ambiguous_with", "resolved_by", "author_basis", "part_title"):
+                for key in ("resolved_from", "ambiguous_with", "resolved_by", "author_basis", "part_title", "book_n",
+                            "ref"):
                     if c.get(key):
                         rec[key] = c[key]
                 if c["kind"] in ("idem", "ibid"):

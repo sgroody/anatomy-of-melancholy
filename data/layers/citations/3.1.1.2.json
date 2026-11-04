@@ -11,7 +11,7 @@
             "301"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Exercit. 301.",
         "status": "unidentified",
         "work": null
@@ -27,7 +27,7 @@
         "display": "Andrea Alciato (Alciatus)",
         "id": "3.1.1.2-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Alciat.",
         "status": "parsed",
         "work": null
@@ -43,7 +43,7 @@
         "display": null,
         "id": "3.1.1.2-n11-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Porta.",
         "status": "unidentified",
         "work": null
@@ -68,7 +68,7 @@
             "47"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mizaldus secret. cent. 1. 47.",
         "status": "unidentified",
         "work": null
@@ -89,7 +89,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Theocritus idyl. 9.",
         "status": "parsed",
         "work": "theocritus.idylls"
@@ -105,7 +105,7 @@
         "display": "Baptista Mantuanus",
         "id": "3.1.1.2-n14-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mantuan.",
         "status": "parsed",
         "work": null
@@ -121,7 +121,7 @@
         "display": null,
         "id": "3.1.1.2-n15-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Polanus partit.",
         "status": "unidentified",
         "work": null
@@ -136,7 +136,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Zanchius de natura Dei, cap. 3",
         "status": "partial",
         "work": null
@@ -166,7 +166,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Camerarius Emb. 100 cent. 2.",
         "status": "unidentified",
         "work": null
@@ -187,7 +187,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Dial. 3.",
         "status": "unidentified",
         "work": null
@@ -203,7 +203,7 @@
         "display": "Juvenal",
         "id": "3.1.1.2-n19-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juven.",
         "status": "parsed",
         "work": null
@@ -228,7 +228,7 @@
             "29"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Grad. 1 cap. 29.",
         "status": "unidentified",
         "work": null
@@ -238,7 +238,7 @@
         "display": null,
         "id": "3.1.1.2-n2-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Platone.",
         "status": "unidentified",
         "work": null
@@ -251,7 +251,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Genesis, 1",
+        "display": "Genesis 1",
         "id": "3.1.1.2-n20-c1",
         "locus": [
           [
@@ -259,8 +259,12 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gen. 1.",
+        "ref": {
+          "chapter": 1,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.genesis"
       }
@@ -275,7 +279,7 @@
         "display": null,
         "id": "3.1.1.2-n21-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Caussinus.",
         "status": "unidentified",
         "work": null
@@ -291,7 +295,7 @@
         "display": null,
         "id": "3.1.1.2-n22-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plotino.",
         "status": "unidentified",
         "work": null
@@ -307,7 +311,7 @@
         "display": null,
         "id": "3.1.1.2-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Principio lib. de amore.",
         "status": "unidentified",
         "work": null
@@ -337,7 +341,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Godefridus, lib. 1 cap. 2.",
         "status": "unidentified",
         "work": null
@@ -353,7 +357,7 @@
         "display": null,
         "id": "3.1.1.2-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Piccolomineus",
         "status": "unidentified",
         "work": null
@@ -374,7 +378,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 4 de divinis.",
         "status": "unidentified",
         "work": null
@@ -390,7 +394,7 @@
         "display": null,
         "id": "3.1.1.2-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Convivio Platonis.",
         "status": "unidentified",
         "work": null
@@ -411,7 +415,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fonseca, cap. 1 Amor.",
         "status": "unidentified",
         "work": null
@@ -421,7 +425,7 @@
         "display": null,
         "id": "3.1.1.2-n9-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Augustini",
         "status": "unidentified",
         "work": null

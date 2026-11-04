@@ -10,10 +10,12 @@ import json
 import re
 
 from .. import paths
+from ..layers import citations as cit_rules
 from ..layers import djs as djs_layer
 from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
 from ..translate.validate import primary_machine
+from . import kjv
 from .hyphenation import soft_hyphenate
 
 PUNCT_START = re.compile(r"^[,;:.)]")
@@ -72,6 +74,19 @@ def short_label(t: dict) -> str:
 def prov(full: str) -> str:
     """The ◇ that carries a machine item's full provenance (owner, 2026-11-03: a small icon, not a prose line)."""
     return f'<span class="prov" role="img" tabindex="0" aria-label="{attr(full)}" title="{attr(full)}"></span>'
+
+
+def kjv_html(c: dict, counts: dict) -> str:
+    """The KJV text of a Bible citation's verses (stage 6), folded after three lines by edition.js; "" where the
+    reference gives no verses, or the book needs a number it lacks (counted)."""
+    vs = kjv.verses(c["work"].split(".", 1)[1], c.get("book_n"), c.get("ref"))
+    if not vs:
+        counts["bible_without_verses"] = counts.get("bible_without_verses", 0) + 1
+        return ""
+    counts["bible_verses"] = counts.get("bible_verses", 0) + 1
+    text = " ".join((f'<sup class="kjv-n">{v}</sup>' if len(vs) > 1 else "") + esc(t) for v, t in vs)
+    return (f'<span class="kjv" lang="en"><span class="kjv-t">{text}</span> '
+            f'<button type="button" class="kjv-more" hidden>more</button> <span class="kjv-l">KJV</span></span>')
 
 
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
@@ -430,7 +445,7 @@ class Renderer:
         else:
             self.children(e)
         self.in_note -= 1
-        seg = self.expand_citations(nid, "".join(self.out[start:]))
+        seg, verses = self.expand_citations(nid, "".join(self.out[start:]))
         # the Latin of the note translated after it, one line each, so Burton's punctuation stays with his words
         trs = []
         for fid in dict.fromkeys(re.findall(r'class="fp [^"]*" data-fid="([^"]+)"', seg)):
@@ -443,7 +458,7 @@ class Renderer:
                 trs.append(f'<span class="sn-tr" data-lang="{attr(lang)}" data-src="{attr(v["by"])}"{resp}>'
                            f'<span class="mn-tx">{esc_tagged(v["text"])}</span> '
                            f'<span class="mn-src">{esc(short_label(v))}{pl}</span></span>')
-        self.out[start:] = [seg + "".join(trs)]
+        self.out[start:] = [seg + "".join(trs) + verses]
         self.w("</span>")
 
     def expansion(self, c: dict) -> tuple[str, str] | None:
@@ -453,6 +468,11 @@ class Renderer:
         if c.get("author") == "burton":
             return None  # Burton's own divisions: a cross-reference, linked by mark_xrefs
         m = self.cexp.get(c["id"])
+        if m and m.get("raw") != c["raw"]:
+            # citation ids are `<note>-c<k>` by order: a rules change that finds an earlier citation renumbers the
+            # later ones, so a model expansion is used only for the words it was made for
+            self.counts["cite_expansions_raw_mismatch"] = self.counts.get("cite_expansions_raw_mismatch", 0) + 1
+            m = None
         if c["status"] == "parsed" and c.get("display"):
             return self.cite_link(c.get("author"), c["display"]), "rule"
         if m and m["status"] in ("expanded", "probable") and m.get("display"):
@@ -472,9 +492,11 @@ class Renderer:
             return esc(display)
         return f'<a class="cx-a" href="../authors/{attr(author)}/">{esc(display)}</a>'
 
-    def expand_citations(self, nid: str, seg: str) -> str:
+    def expand_citations(self, nid: str, seg: str) -> tuple[str, str]:
         """Burton's abbreviated citations in a note, each shown expanded in its place, his own words on hover and
-        under the reading option "Burton's abbreviations" (owner, 2026-11-03: one expanded form, in place)."""
+        under the reading option "Burton's abbreviations" (owner, 2026-11-03: one expanded form, in place); and the
+        KJV verses of its Bible citations, one line each after the note (stage 6)."""
+        verses = []
         for c in (self.cites.get(nid) or {}).get("citations", []):
             exp = self.expansion(c)
             if not exp:
@@ -483,6 +505,8 @@ class Renderer:
             if found is None:
                 self.counts["cite_unplaced"] = self.counts.get("cite_unplaced", 0) + 1
                 continue
+            if c.get("author") == "bible" and (k := kjv_html(c, self.counts)):
+                verses.append(f'<span class="sn-bible">{k}</span>')
             hs, he = found
             if (end := c["raw"].rstrip()[-1:]) in ".,;":  # Burton's stop after the citation stays after it
                 exp = (exp[0] + end, exp[1])
@@ -490,7 +514,7 @@ class Renderer:
             self.counts[f"cite_expansions_{exp[1]}"] = self.counts.get(f"cite_expansions_{exp[1]}", 0) + 1
             seg = (seg[:hs] + f'<span class="cx"><span class="cx-b">{seg[hs:he]}</span>'
                    f'<span class="cx-e" title="{attr("Burton: " + c["raw"])}">{exp[0]}</span></span>' + seg[he:])
-        return seg
+        return seg, "".join(verses)
 
     # ---------------------------------------------------------------- foreign passages
     def versions(self, fid: str) -> list[dict]:
@@ -724,7 +748,7 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
 
 
 SKIP_MAIN = ("nref", "sidenote", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn",
-             "cx-e", "prov")
+             "cx-e", "prov", "ic-m")
 SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn", "cx-e", "prov")
 
 
@@ -884,7 +908,7 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
     return html_text, cards
 
 
-SKIP_NAMES = (*SKIP_MAIN, "xref", "xref-unresolved", "unit-title", "pageref", "cx", "gl-s", "nm")
+SKIP_NAMES = (*SKIP_MAIN, "xref", "xref-unresolved", "unit-title", "pageref", "cx", "gl-s", "nm", "cx-b")
 
 
 def mark_names(html_text: str, names: re.Pattern | None, ids: dict[str, str], counts: dict) -> tuple[str, set[str]]:
@@ -1012,6 +1036,93 @@ def mark_restored(html_text: str, notes: dict, counts: dict) -> str:
     return html_text
 
 
+def _runs(html_text: str, pos: list[int], a: int, b: int) -> list[tuple[int, int]]:
+    """The HTML ranges that hold the visible characters a..b-1, one per run of text between tags (a soft hyphen
+    does not break a run; an entity is taken whole)."""
+    def end(k):
+        return html_text.index(";", pos[k]) + 1 if html_text[pos[k]] == "&" else pos[k] + 1
+
+    runs, k = [], a
+    while k < b:
+        j = k
+        while j + 1 < b and not html_text[end(j):pos[j + 1]].strip("­"):
+            j += 1
+        runs.append((pos[k], end(j)))
+        k = j + 1
+    return runs
+
+
+SKIP_IC = (*SKIP_MAIN, "gl-s")
+CLOSE_STOPS = ",;:"
+
+
+def mark_inline_cites(html_text: str, recs: dict, counts: dict) -> tuple[str, list[str]]:
+    """Burton's citations in his running text (data/layers/citations-inline/; owner, 2026-11-03: C1 C). The author's
+    name stays; the reference words are wrapped in a `cx-b` span, shown only under "Burton's abbreviations"; a raised
+    § after them stands for the citation, whose margin card gives the expansion and, for the Bible, the KJV verses.
+    A Bible reference has no name to keep, so only the § stays, and a comma it would leave doubled goes with it
+    ("sins, Hag. 1. 9, 10, God" -> "sins,§ God"; "the 1st, Jer. 7. God" -> "the 1st§. God"). Burton's stop at the
+    end stays where a sentence follows. Placed like glosses (found on the page as it is, inserted from the end); one
+    that cannot be placed is counted."""
+    views = {SKIP_IC: _visible(html_text, SKIP_IC)}
+    text = views[SKIP_IC][0]
+    edits: dict[int, list[str]] = {}
+    cards = []
+    for key, rec in sorted(recs.items()):
+        sel = rec["selector"]
+        found = _locate(html_text, sel, (SKIP_IC,), views)
+        if found is None:
+            counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
+            continue
+        at, pos = found[0], found[1]
+        ex, bible = sel["exact"], rec["author"] == "bible"
+        name = 0
+        if not bible:
+            toks = list(cit_rules.TOKEN.finditer(ex))
+            m = cit_rules._match_author([t.group(0) for t in toks], 0)
+            name = toks[m[0] - 1].end() if m else 0
+        a, b = at + name, at + len(ex)
+        if ex.endswith(".") and (not sel["suffix"] or sel["suffix"].lstrip()[:1].isupper()):
+            b -= 1  # "… Laurentius cap. 20 lib. 1. Similar, or Homogeneal": the stop ends Burton's sentence
+        if bible:
+            if a > 0 and text[a - 1] == " ":
+                a -= 1
+            if text[b:b + 1] == "," and text[a - 1:a] in CLOSE_STOPS:
+                b += 1
+            elif text[b:b + 1] in ".;:" and text[a - 1:a] == ",":
+                a -= 1  # "the 1st, Jer. 7. God is angry" -> "the 1st§. God is angry"
+        if b <= a:
+            counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
+            continue
+        runs = _runs(html_text, pos, a, b)
+        for hs, he in runs:
+            edits.setdefault(hs, []).append('<span class="cx-b">')
+            edits.setdefault(he, []).append("</span>")
+        cid = f"ic-{key}"
+        kind = "bible" if bible else "cites"
+        mark = (f'<span class="ic-m" data-kind="{kind}" role="img" aria-label="{attr("citation: " + rec["display"])}" '
+                f'title="{attr("Burton: " + rec["raw"])}">§</span>')
+        anchor_at, length = (runs[-1][1], 1) if bible else (pos[at], name + 1)
+        if (outside := _outside_passage(html_text, anchor_at)) != anchor_at:
+            anchor_at, length = outside, 0  # in a quotation: the card is held to the box, which "Read in English" hides
+            counts["inline_cites_in_passage"] = counts.get("inline_cites_in_passage", 0) + 1
+        edits.setdefault(anchor_at, []).append(f'<span class="mref" data-for="{attr(cid)}" data-len="{length}" '
+                                               'aria-hidden="true"></span>')
+        edits.setdefault(runs[-1][1], []).append(mark)
+        body = Renderer.cite_link(rec["author"], rec["display"])
+        if bible:
+            body += kjv_html(rec, counts)
+        label = "Bible" if bible else "cites"
+        cards.append(f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="{kind}" role="note" '
+                     f'aria-label="Citation"><span class="mn-k">{label}</span> '
+                     f'<span class="ic-e" title="{attr("Burton: " + rec["raw"])}">{body}</span></span>')
+        counts["inline_cites"] = counts.get("inline_cites", 0) + 1
+        counts[f"inline_cites_{kind}"] = counts.get(f"inline_cites_{kind}", 0) + 1
+    for p in sorted(edits, reverse=True):  # at one place, a span that ends there closes before anything opens
+        html_text = html_text[:p] + "".join(sorted(edits[p], key=lambda s: not s.startswith("</"))) + html_text[p:]
+    return html_text, cards
+
+
 def mark_xrefs(html_text: str, refs: list[dict], counts: dict) -> str:
     """Link Burton's cross-references: explicit ones resolved by rule (M2) and relative ones confirmed on review
     (M6). The selector's words are found in the page's visible text, where they must occur once (tried with
@@ -1062,7 +1173,8 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 pagemap: dict | None = None, glosses: list[dict] | None = None,
                 restored: dict | None = None, gowland_entries: list[dict] | None = None,
                 cexp: dict | None = None, initials: set[str] | None = None, names: re.Pattern | None = None,
-                name_ids: dict | None = None, author_info: dict | None = None) -> tuple[str, dict]:
+                name_ids: dict | None = None, author_info: dict | None = None,
+                inline_cites: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
@@ -1075,12 +1187,13 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts)
+    body, ic_cards = mark_inline_cites(body, inline_cites or {}, r.counts)
     body, used = mark_names(body, names, name_ids or {}, r.counts)
     if used and author_info:  # what the name windows show, for the authors named on this page (edition.js)
         data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
         script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
         body = body.replace("</article>\n", script + "\n</article>\n")
-    cards = list(r.cards)
+    cards = list(r.cards) + ic_cards
     if profile == "private" and gowland_entries:
         body, gw = mark_gowland(body, gowland_entries, r.counts)
         cards += gw

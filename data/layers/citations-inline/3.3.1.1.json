@@ -1,7 +1,38 @@
 {
+  "3.3.1.1-p4-ic852": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Corinthians 11:2",
+    "locus": [
+      [
+        "n",
+        "11"
+      ],
+      [
+        "n",
+        "2"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Cor. 11. 2",
+    "ref": {
+      "chapter": 11,
+      "verses": [
+        2
+      ]
+    },
+    "selector": {
+      "exact": "2 Cor. 11. 2",
+      "in": "3.3.1.1-p4",
+      "prefix": "of Corinth, as he confesseth, ",
+      "suffix": ", With a godly jealousy, to pr"
+    },
+    "status": "parsed",
+    "work": "bible.corinthians"
+  },
   "3.3.1.1-p9-ic736": {
     "author": "bible",
-    "display": "Ecclesiasticus, 26, 6",
+    "display": "Ecclesiasticus 26:6",
     "locus": [
       [
         "n",
@@ -12,8 +43,14 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 26. 6",
+    "ref": {
+      "chapter": 26,
+      "verses": [
+        6
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 26. 6",
       "in": "3.3.1.1-p9",

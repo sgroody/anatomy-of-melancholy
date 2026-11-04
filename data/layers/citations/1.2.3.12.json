@@ -12,7 +12,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tom. 2.",
         "status": "parsed",
         "work": null
@@ -23,7 +23,7 @@
         "head": "idem",
         "id": "1.2.3.12-n1-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Idem",
         "resolved_from": "1.2.3.12-n1-c1",
         "status": "parsed",
@@ -43,7 +43,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "ad Roman.",
         "raw": "Chrysostomus com. in cap. 6. ad Roman. ser. 11.",
         "status": "partial",
@@ -69,7 +69,7 @@
             "30"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 9 ep. 30.",
         "status": "unidentified",
         "work": null
@@ -95,7 +95,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 9 cap. 4.",
         "status": "parsed",
         "work": null
@@ -120,7 +120,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor. 10, lib. 1.",
         "status": "parsed",
         "work": null
@@ -138,7 +138,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Luke, 12, 20",
+        "display": "Luke 12:20",
         "id": "1.2.3.12-n14-c1",
         "locus": [
           [
@@ -150,8 +150,14 @@
             "20"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Luke 12. 20.",
+        "ref": {
+          "chapter": 12,
+          "verses": [
+            20
+          ]
+        },
         "status": "parsed",
         "work": "bible.luke"
       }
@@ -166,7 +172,7 @@
         "display": null,
         "id": "1.2.3.12-n15-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Theog.",
         "status": "unidentified",
         "work": null
@@ -192,7 +198,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ep. 2 lib. 2.",
         "status": "parsed",
         "work": null
@@ -208,7 +214,7 @@
         "display": "Jerome",
         "id": "1.2.3.12-n17-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hieron. ad Paulin.",
         "status": "partial",
         "work": null
@@ -234,7 +240,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. 2 lib. 2.",
         "status": "parsed",
         "work": null
@@ -259,7 +265,7 @@
             "17"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Guainer. tract. 15 cap. 17.",
         "status": "parsed",
         "work": null
@@ -284,7 +290,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 4. 1.",
         "status": "unidentified",
         "work": null
@@ -309,7 +315,7 @@
             "24"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor. 3 Od. 24.",
         "status": "parsed",
         "work": null
@@ -334,7 +340,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor. lib. 2 Sat. 6.",
         "status": "parsed",
         "work": null
@@ -356,7 +362,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 3 de lib. arbit.",
         "status": "parsed",
         "work": "augustine.de-libero-arbitrio"
@@ -385,7 +391,7 @@
             "72"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "cen. pro.",
         "raw": "Erasm. Adag. chil. 3 cen. 7 pro. 72.",
         "status": "parsed",
@@ -396,7 +402,7 @@
         "display": "Euripides",
         "id": "1.2.3.12-n23-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Euripides.",
         "status": "parsed",
         "work": null
@@ -412,7 +418,7 @@
         "display": null,
         "id": "1.2.3.12-n24-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hall. Char.",
         "status": "unidentified",
         "work": null
@@ -437,7 +443,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gellius lib. 3 cap. 1.",
         "status": "parsed",
         "work": null
@@ -463,7 +469,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 7 cap. 6.",
         "status": "parsed",
         "work": null
@@ -483,7 +489,7 @@
         "display": "Pliny the Elder",
         "id": "1.2.3.12-n27-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plin.",
         "resolved_by": "default",
         "status": "parsed",
@@ -499,7 +505,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Prooem. lib. 14.",
         "status": "unidentified",
         "work": null
@@ -520,7 +526,7 @@
             "18"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 18.",
         "status": "unidentified",
         "work": null
@@ -546,7 +552,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 6",
         "status": "unidentified",
         "work": null
@@ -572,7 +578,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juv. Sat. 14.",
         "status": "parsed",
         "work": null
@@ -588,7 +594,7 @@
         "display": "Hippocrates",
         "id": "1.2.3.12-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hippocr. ep. Abderit.",
         "status": "partial",
         "work": null
@@ -609,7 +615,7 @@
         "display": "Horace",
         "id": "1.2.3.12-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -631,7 +637,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hom. 2.",
         "status": "parsed",
         "work": null
@@ -658,7 +664,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. ad Donat. cap. 2.",
         "status": "parsed",
         "work": "cyprian.ad-donatum"

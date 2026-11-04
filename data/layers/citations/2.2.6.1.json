@@ -7,7 +7,7 @@
         "display": "Plato, Charmides",
         "id": "2.2.6.1-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Charmid.",
         "status": "parsed",
         "work": "plato.charmides"
@@ -28,7 +28,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Cap. 3 de affectibus animae.",
         "status": "unidentified",
         "work": null
@@ -49,7 +49,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Virg. 3 Geor.",
         "status": "parsed",
         "work": "virgil.georgics"
@@ -65,7 +65,7 @@
         "display": "Ovid",
         "id": "2.2.6.1-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid.",
         "status": "parsed",
         "work": null
@@ -81,7 +81,7 @@
             "5"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Trist. lib. 5.",
         "status": "parsed",
         "work": "ovid.tristia"
@@ -97,7 +97,7 @@
         "display": "Aristotle",
         "id": "2.2.6.1-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Arist.",
         "status": "parsed",
         "work": null
@@ -112,7 +112,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ethic. lib. 9.",
         "status": "unidentified",
         "work": null
@@ -137,7 +137,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Camerarius Emblem. 26 cent. 2.",
         "status": "unidentified",
         "work": null
@@ -163,7 +163,7 @@
             "10"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Sympos. lib. 6 cap. 10.",
         "status": "parsed",
         "work": "plutarch.symposiaca"
@@ -188,7 +188,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. 8 lib. 3.",
         "status": "unidentified",
         "work": null
@@ -213,7 +213,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Emblem. 54 cent. 1.",
         "status": "unidentified",
         "work": null
@@ -223,9 +223,30 @@
     "status": "unidentified"
   },
   "2.2.6.1-n18": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Samuel 20",
+        "id": "2.2.6.1-n18-c1",
+        "locus": [
+          [
+            "n",
+            "20"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Sam. 20.",
+        "ref": {
+          "chapter": 20,
+          "verses": []
+        },
+        "status": "parsed",
+        "work": "bible.samuel"
+      }
+    ],
     "raw": "As David did to Jonathan, 1 Sam. 20.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "2.2.6.1-n19": {
     "citations": [
@@ -243,7 +264,7 @@
             "67"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Seneca Epist. 67.",
         "resolved_by": "default",
         "status": "parsed",
@@ -265,7 +286,7 @@
         "display": "Ovid",
         "id": "2.2.6.1-n20-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid.",
         "status": "parsed",
         "work": null
@@ -282,7 +303,7 @@
         "display": "Cicero, De amicitia",
         "id": "2.2.6.1-n21-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De amicitia.",
         "status": "parsed",
         "work": "cicero.de-amicitia"
@@ -303,7 +324,7 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De Tranquil. cap. 7.",
         "status": "unidentified",
         "work": null
@@ -324,7 +345,7 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Commentar. lib. 7.",
         "status": "unidentified",
         "work": null
@@ -345,7 +366,7 @@
             "26"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De mel. cap. 26.",
         "status": "unidentified",
         "work": null
@@ -371,7 +392,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 2 cap. 16 de occult. nat.",
         "status": "parsed",
         "work": "lemnius.de-occultis"
@@ -392,7 +413,7 @@
         "display": "Girolamo Fracastoro (Fracastorius)",
         "id": "2.2.6.1-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fracastorius.",
         "status": "parsed",
         "work": null
@@ -413,7 +434,7 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "part_title": "de retard. sen.",
         "raw": "Epist. de secretis artis & naturae cap. 7 de retard. sen.",
         "status": "unidentified",
@@ -439,7 +460,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lemnius lib. 1 cap. 16.",
         "status": "parsed",
         "work": null
@@ -460,7 +481,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 2 de ira.",
         "status": "unidentified",
         "work": null

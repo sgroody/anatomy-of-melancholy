@@ -6,7 +6,7 @@
         "display": "Bernard of Clairvaux",
         "id": "1.2.4.4-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Bernardus.",
         "status": "parsed",
         "work": null
@@ -23,7 +23,7 @@
         "display": "Cicero, De oratore",
         "id": "1.2.4.4-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De orat.",
         "status": "parsed",
         "work": "cicero.de-oratore"
@@ -41,7 +41,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 15, 3",
+        "display": "Psalms 15:3",
         "id": "1.2.4.4-n12-c1",
         "locus": [
           [
@@ -53,8 +53,14 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 15. 3.",
+        "ref": {
+          "chapter": 15,
+          "verses": [
+            3
+          ]
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -69,7 +75,7 @@
         "display": null,
         "id": "1.2.4.4-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Balthasar",
         "status": "unidentified",
         "work": null
@@ -84,7 +90,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Castilio lib. 2 de aulico.",
         "status": "partial",
         "work": null
@@ -109,7 +115,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De sermone lib. 4 cap. 3.",
         "status": "unidentified",
         "work": null
@@ -130,7 +136,7 @@
             "55"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fol. 55",
         "status": "unidentified",
         "work": null
@@ -146,7 +152,7 @@
         "display": "Cicero",
         "id": "1.2.4.4-n16-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tully.",
         "status": "parsed",
         "work": null
@@ -157,7 +163,7 @@
         "display": "Cicero, Tusculanae disputationes",
         "id": "1.2.4.4-n16-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tusc. quaest.",
         "status": "parsed",
         "work": "cicero.tusculans"
@@ -182,7 +188,7 @@
             "35"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mart. lib. 1 epig. 35.",
         "status": "parsed",
         "work": null
@@ -203,7 +209,7 @@
             "55"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Galateus fol. 55.",
         "status": "unidentified",
         "work": null
@@ -224,7 +230,7 @@
         "display": "Caspar Barth (Barthius)",
         "id": "1.2.4.4-n2-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Barthius praefat. pronodid.",
         "status": "partial",
         "work": null
@@ -245,7 +251,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tull. ad Attic. lib. 11.",
         "status": "unidentified",
         "work": null
@@ -261,7 +267,7 @@
         "display": "Paolo Giovio (Jovius), Vitae illustrium virorum",
         "id": "1.2.4.4-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jovius in vita ejus.",
         "status": "parsed",
         "work": "jovius.vitae"
@@ -282,7 +288,7 @@
             "13"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plato lib. 13 de legibus.",
         "status": "parsed",
         "work": "plato.laws"
@@ -308,7 +314,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Curial. lib. 2.",
         "status": "unidentified",
         "work": null
@@ -324,7 +330,7 @@
         "display": "Terence",
         "id": "1.2.4.4-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ter.",
         "status": "parsed",
         "work": null
@@ -335,7 +341,7 @@
         "display": "Terence, Eunuchus",
         "id": "1.2.4.4-n7-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Eunuch.",
         "status": "parsed",
         "work": "terence.eunuchus"
@@ -351,7 +357,7 @@
         "display": "Horace",
         "id": "1.2.4.4-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -370,7 +376,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ser. lib. 1 Sat. 4.",
         "status": "unidentified",
         "work": null
@@ -392,7 +398,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 2.",
         "status": "parsed",
         "work": null

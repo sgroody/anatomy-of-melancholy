@@ -12,7 +12,7 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eusebius lib. 9 cap. 9",
     "selector": {
       "exact": "Eusebius lib. 9 cap. 9",
@@ -36,7 +36,7 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Nicephorus lib. 12 cap. 15",
     "selector": {
       "exact": "Nicephorus lib. 12 cap. 15",
@@ -56,7 +56,7 @@
         "190"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Bernard. Epist. 190",
     "selector": {
       "exact": "Bernard. Epist. 190",
@@ -69,7 +69,7 @@
   },
   "3.4.1.5-p2-ic3257": {
     "author": "bible",
-    "display": "Galatians, 6, 1",
+    "display": "Galatians 6:1",
     "locus": [
       [
         "n",
@@ -80,8 +80,14 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gal. 6. 1",
+    "ref": {
+      "chapter": 6,
+      "verses": [
+        1
+      ]
+    },
     "selector": {
       "exact": "Gal. 6. 1",
       "in": "3.4.1.5-p2",

@@ -6,7 +6,7 @@
         "display": "Giovanni Battista da Monte (Montanus)",
         "id": "3.4.1.4-n1-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Montanus",
         "status": "parsed",
         "work": null
@@ -25,7 +25,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Nubrigensis cap. 19 lib. 1.",
         "status": "unidentified",
         "work": null
@@ -40,14 +40,14 @@
             "23"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jer. ver. 23.",
         "status": "unidentified",
         "work": null
       },
       {
         "author": "bible",
-        "display": "Amos, 5, 5",
+        "display": "Amos 5:5",
         "id": "3.4.1.4-n1-c4",
         "locus": [
           [
@@ -59,8 +59,14 @@
             "5"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Amos. 5. 5.",
+        "ref": {
+          "chapter": 5,
+          "verses": [
+            5
+          ]
+        },
         "status": "parsed",
         "work": "bible.amos"
       }
@@ -84,7 +90,7 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De benefic. 7. 2.",
         "status": "unidentified",
         "work": null
@@ -105,7 +111,7 @@
         "display": null,
         "id": "3.4.1.4-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Rich. Dinoth.",
         "status": "unidentified",
         "work": null
@@ -136,7 +142,7 @@
             "27"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vandermylius de Aucupio cap. 27.",
         "status": "unidentified",
         "work": null
@@ -162,7 +168,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juvenalis Sat. 6.",
         "status": "parsed",
         "work": null
@@ -187,7 +193,7 @@
             "444"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Munster Cosmog. lib. 3 cap. 444.",
         "status": "parsed",
         "work": "munster.cosmographia"

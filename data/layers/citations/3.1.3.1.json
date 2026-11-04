@@ -11,7 +11,7 @@
         "display": "Lucian, Toxaris",
         "id": "3.1.3.1-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucianus Toxari.",
         "status": "parsed",
         "work": "lucian.toxaris"
@@ -27,7 +27,7 @@
         "display": null,
         "id": "3.1.3.1-n11-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vit. Pompon. Attici.",
         "status": "unidentified",
         "work": null
@@ -43,7 +43,7 @@
         "display": "Edmund Spenser",
         "id": "3.1.3.1-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Spenser",
         "status": "parsed",
         "work": null
@@ -59,7 +59,7 @@
         "display": null,
         "id": "3.1.3.1-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Siracides.",
         "status": "unidentified",
         "work": null
@@ -75,7 +75,7 @@
         "display": "Plutarch",
         "id": "3.1.3.1-n14-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch",
         "status": "parsed",
         "work": null
@@ -91,7 +91,7 @@
         "display": "Xenophon",
         "id": "3.1.3.1-n15-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Xenophon",
         "status": "parsed",
         "work": null
@@ -113,7 +113,7 @@
             "52"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. 52.",
         "status": "parsed",
         "work": null
@@ -129,7 +129,7 @@
         "display": null,
         "id": "3.1.3.1-n17-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Greg.",
         "status": "unidentified",
         "work": null
@@ -154,7 +154,7 @@
             "27"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Piccolomineus grad. 7 cap. 27.",
         "status": "unidentified",
         "work": null
@@ -170,7 +170,7 @@
         "display": "Bernard of Clairvaux",
         "id": "3.1.3.1-n19-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Bernard.",
         "status": "parsed",
         "work": null
@@ -204,7 +204,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Boethius lib. 2 met. 8.",
         "status": "unidentified",
         "work": null
@@ -225,7 +225,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Basil. 1 ser. de institut. mon.",
         "status": "partial",
         "work": null
@@ -251,7 +251,7 @@
         "display": null,
         "id": "3.1.3.1-n24-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Heraclitus.",
         "status": "unidentified",
         "work": null
@@ -267,7 +267,7 @@
         "display": "Augustine of Hippo",
         "id": "3.1.3.1-n25-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Austin.",
         "status": "parsed",
         "work": null
@@ -283,7 +283,7 @@
         "display": "Paolo Giovio (Jovius)",
         "id": "3.1.3.1-n26-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jovius",
         "status": "parsed",
         "work": null
@@ -299,7 +299,7 @@
         "display": "Plutarch",
         "id": "3.1.3.1-n27-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch. Pericle.",
         "status": "partial",
         "work": null
@@ -320,7 +320,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tullius lib. 1 de legibus.",
         "status": "parsed",
         "work": "cicero.de-legibus"
@@ -333,7 +333,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Genesis, 35, 8",
+        "display": "Genesis 35:8",
         "id": "3.1.3.1-n29-c1",
         "locus": [
           [
@@ -345,8 +345,14 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gen. 35. 8.",
+        "ref": {
+          "chapter": 35,
+          "verses": [
+            8
+          ]
+        },
         "status": "parsed",
         "work": "bible.genesis"
       }
@@ -361,7 +367,7 @@
         "display": "Terence",
         "id": "3.1.3.1-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ter.",
         "status": "parsed",
         "work": null
@@ -381,7 +387,7 @@
             "5"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Adelph. 4. 5.",
         "status": "parsed",
         "work": "terence.adelphi"
@@ -397,7 +403,7 @@
         "display": "Horace",
         "id": "3.1.3.1-n30-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor.",
         "status": "parsed",
         "work": null
@@ -423,7 +429,7 @@
         "display": null,
         "id": "3.1.3.1-n33-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Aurelian. Tantum",
         "status": "unidentified",
         "work": null
@@ -441,7 +447,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 13, 1",
+        "display": "Psalms 13:1",
         "id": "3.1.3.1-n35-c1",
         "locus": [
           [
@@ -453,8 +459,14 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 13. 1.",
+        "ref": {
+          "chapter": 13,
+          "verses": [
+            1
+          ]
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -479,7 +491,7 @@
             "16"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De bello Judaico lib. 6 cap. 16.",
         "status": "partial",
         "work": null
@@ -505,7 +517,7 @@
         "display": "Justus Lipsius",
         "id": "3.1.3.1-n39-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lipsius.",
         "status": "parsed",
         "work": null
@@ -522,7 +534,7 @@
         "display": "Cicero, De amicitia",
         "id": "3.1.3.1-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De amicit.",
         "status": "parsed",
         "work": "cicero.de-amicitia"
@@ -542,7 +554,7 @@
         "display": "Seneca the Younger",
         "id": "3.1.3.1-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Seneca.",
         "resolved_by": "default",
         "status": "parsed",
@@ -559,7 +571,7 @@
         "display": "Cicero",
         "id": "3.1.3.1-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tully.",
         "status": "parsed",
         "work": null
@@ -575,7 +587,7 @@
         "display": "Ovid, Fasti",
         "id": "3.1.3.1-n7-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Ovid. Fast.",
         "status": "parsed",
         "work": "ovid.fasti"
@@ -596,7 +608,7 @@
             "1347"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Anno 1347.",
         "status": "unidentified",
         "work": null
@@ -606,7 +618,7 @@
         "display": null,
         "id": "3.1.3.1-n8-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jacob Meyer.",
         "status": "unidentified",
         "work": null
@@ -616,7 +628,7 @@
         "display": null,
         "id": "3.1.3.1-n8-c3",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Annal.",
         "status": "unidentified",
         "work": null
@@ -631,7 +643,7 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Fland. lib. 12.",
         "status": "unidentified",
         "work": null
@@ -647,7 +659,7 @@
         "display": "Cicero",
         "id": "3.1.3.1-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tully.",
         "status": "parsed",
         "work": null

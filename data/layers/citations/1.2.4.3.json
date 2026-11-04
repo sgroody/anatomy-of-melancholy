@@ -12,7 +12,7 @@
             "7, 8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Tract. de melan. cap. 7 & 8.",
         "status": "partial",
         "work": null
@@ -28,7 +28,7 @@
         "display": "Felix Platter (Platerus)",
         "id": "1.2.4.3-n10-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Platerus.",
         "status": "parsed",
         "work": null
@@ -50,7 +50,7 @@
         "display": "Plutarch",
         "id": "1.2.4.3-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de auditione.",
         "status": "partial",
         "work": null
@@ -71,7 +71,7 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Theod. Prodromus lib. 7 Amorum.",
         "status": "partial",
         "work": null
@@ -92,7 +92,7 @@
             "122"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Alciat. embl. 122.",
         "status": "partial",
         "work": null
@@ -105,7 +105,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Judges, 7, 19",
+        "display": "Judges 7:19",
         "id": "1.2.4.3-n15-c1",
         "locus": [
           [
@@ -117,8 +117,14 @@
             "19"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jud. 7. 19.",
+        "ref": {
+          "chapter": 7,
+          "verses": [
+            19
+          ]
+        },
         "status": "parsed",
         "work": "bible.judges"
       }
@@ -133,7 +139,7 @@
         "display": "Plutarch, Vitae parallelae",
         "id": "1.2.4.3-n16-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarchus vita ejus.",
         "status": "parsed",
         "work": "plutarch.lives"
@@ -165,7 +171,7 @@
         "display": "Plutarch",
         "id": "1.2.4.3-n2-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de fort. & virtut. Alex.",
         "status": "partial",
         "work": null
@@ -181,7 +187,7 @@
         "display": "Felix Platter (Platerus)",
         "id": "1.2.4.3-n3-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Platerus.",
         "status": "parsed",
         "work": null
@@ -206,7 +212,7 @@
         "display": "Seneca the Younger",
         "id": "1.2.4.3-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Senec.",
         "resolved_by": "default",
         "status": "parsed",
@@ -218,7 +224,7 @@
         "display": "Seneca the Younger, Hercules Oetaeus",
         "id": "1.2.4.3-n5-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Herc. Oet.",
         "status": "parsed",
         "work": "seneca-younger.hercules-oetaeus"
@@ -245,7 +251,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 8 in Acad.",
         "status": "partial",
         "work": null
@@ -261,7 +267,7 @@
         "display": "Lucretius",
         "id": "1.2.4.3-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucret.",
         "status": "parsed",
         "work": null
@@ -277,7 +283,7 @@
         "display": "Felix Platter (Platerus)",
         "id": "1.2.4.3-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plater.",
         "status": "parsed",
         "work": null

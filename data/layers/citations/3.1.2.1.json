@@ -15,7 +15,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Piccolom. grad. 7 cap. 1.",
         "status": "unidentified",
         "work": null
@@ -49,7 +49,7 @@
             "12"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Part. 1 sect. 2 memb. 3 sub. 12.",
         "status": "parsed",
         "work": "burton.anatomy"
@@ -59,9 +59,36 @@
     "status": "parsed"
   },
   "3.1.2.1-n11": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Timothy 5:8",
+        "id": "3.1.2.1-n11-c1",
+        "locus": [
+          [
+            "n",
+            "5"
+          ],
+          [
+            "n",
+            "8"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Tim. 5. 8.",
+        "ref": {
+          "chapter": 5,
+          "verses": [
+            8
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.timothy"
+      }
+    ],
     "raw": "1 Tim. 5. 8.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "3.1.2.1-n2": {
     "citations": [
@@ -71,7 +98,7 @@
         "display": "Augustine of Hippo",
         "id": "3.1.2.1-n2-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. de amicit.",
         "status": "partial",
         "work": null
@@ -92,7 +119,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vives 3 de anima.",
         "status": "parsed",
         "work": "vives.de-anima"
@@ -105,7 +132,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Joshua, 7",
+        "display": "Joshua 7",
         "id": "3.1.2.1-n4-c1",
         "locus": [
           [
@@ -113,8 +140,12 @@
             "7"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Jos. 7.",
+        "ref": {
+          "chapter": 7,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.joshua"
       }
@@ -129,7 +160,7 @@
         "display": "Petronius",
         "id": "3.1.2.1-n5-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Petronius Arbiter.",
         "status": "partial",
         "work": null
@@ -145,7 +176,7 @@
         "display": "Juvenal",
         "id": "3.1.2.1-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Juvenalis.",
         "status": "parsed",
         "work": null
@@ -166,7 +197,7 @@
         "display": "Lucian, Timon",
         "id": "3.1.2.1-n8-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lucianus Timon.",
         "status": "parsed",
         "work": "lucian.timon"
@@ -182,7 +213,7 @@
         "display": "Persius",
         "id": "3.1.2.1-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Pers.",
         "status": "parsed",
         "work": null

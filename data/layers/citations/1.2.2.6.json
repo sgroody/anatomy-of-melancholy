@@ -20,7 +20,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hor. Ser. 1 Sat. 3.",
         "status": "parsed",
         "work": null
@@ -40,7 +40,7 @@
         "display": "Seneca the Younger",
         "id": "1.2.2.6-n11-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Seneca.",
         "resolved_by": "default",
         "status": "parsed",
@@ -57,7 +57,7 @@
         "display": "Plutarch",
         "id": "1.2.2.6-n12-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plutarch calls it.",
         "status": "partial",
         "work": null
@@ -77,7 +77,7 @@
         "display": "Seneca the Younger",
         "id": "1.2.2.6-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Sen.",
         "resolved_by": "default",
         "status": "parsed",
@@ -96,7 +96,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Exodus, 5",
+        "display": "Exodus 5",
         "id": "1.2.2.6-n15-c1",
         "locus": [
           [
@@ -104,8 +104,12 @@
             "5"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Exod. 5.",
+        "ref": {
+          "chapter": 5,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.exodus"
       }
@@ -122,7 +126,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Proverbs, 18",
+        "display": "Proverbs 18",
         "id": "1.2.2.6-n17-c1",
         "locus": [
           [
@@ -130,8 +134,12 @@
             "18"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Prov. 18.",
+        "ref": {
+          "chapter": 18,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.proverbs"
       }
@@ -156,7 +164,7 @@
             "10"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 19 cap. 10.",
         "status": "parsed",
         "work": null
@@ -172,7 +180,7 @@
         "display": "Plautus",
         "id": "1.2.2.6-n19-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plautus",
         "status": "parsed",
         "work": null
@@ -183,7 +191,7 @@
         "display": "Plautus, Mostellaria",
         "id": "1.2.2.6-n19-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mostel.",
         "status": "parsed",
         "work": "plautus.mostellaria"
@@ -204,7 +212,7 @@
             "44"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Instit. ad vit. Christ. cap. 44.",
         "status": "unidentified",
         "work": null
@@ -220,7 +228,7 @@
         "display": "Nicolas Le Pois (Piso)",
         "id": "1.2.2.6-n20-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Piso,",
         "status": "parsed",
         "work": null
@@ -230,7 +238,7 @@
         "display": "Filotheo Elião de Montalto (Montaltus)",
         "id": "1.2.2.6-n20-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Montaltus,",
         "status": "parsed",
         "work": null
@@ -240,7 +248,7 @@
         "display": "Girolamo Mercuriale",
         "id": "1.2.2.6-n20-c3",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Mercurialis",
         "status": "parsed",
         "work": null
@@ -261,7 +269,7 @@
         "display": "Virgil",
         "id": "1.2.2.6-n22-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Virg.",
         "status": "parsed",
         "work": null
@@ -282,7 +290,7 @@
             "72"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hieronymus ep. 72",
         "status": "parsed",
         "work": null
@@ -304,7 +312,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Offic. 3.",
         "status": "parsed",
         "work": "cicero.de-officiis"
@@ -325,7 +333,7 @@
             "25"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. 25.",
         "status": "unidentified",
         "work": null
@@ -338,7 +346,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Ecclesiastes, 4",
+        "display": "Ecclesiastes 4",
         "id": "1.2.2.6-n26-c1",
         "locus": [
           [
@@ -346,8 +354,12 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Eccl. 4.",
+        "ref": {
+          "chapter": 4,
+          "verses": []
+        },
         "status": "parsed",
         "work": "bible.ecclesiastes"
       }
@@ -380,7 +392,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Hom. 31 in 1 Cor. 6.",
         "status": "unidentified",
         "work": null
@@ -401,7 +413,7 @@
             "21"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Crato consil. 21.",
         "status": "parsed",
         "work": null
@@ -418,7 +430,7 @@
         "display": "Plutarch, De tranquillitate animi",
         "id": "1.2.2.6-n6-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De tranquil. animae.",
         "status": "parsed",
         "work": "plutarch.de-tranquillitate"
@@ -444,7 +456,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gordonius de observat. vit. hum. lib. 1.",
         "status": "partial",
         "work": null
@@ -469,7 +481,7 @@
             "17"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Path. lib. 1 cap. 17.",
         "status": "unidentified",
         "work": null

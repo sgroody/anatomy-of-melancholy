@@ -11,7 +11,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Vives 3 de Anima.",
         "status": "parsed",
         "work": "vives.de-anima"
@@ -42,7 +42,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. lib. 8.",
         "status": "unidentified",
         "work": null
@@ -58,7 +58,7 @@
         "display": "Plato, Phaedo",
         "id": "3.1.2.3-n13-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plato Phaedone.",
         "status": "parsed",
         "work": "plato.phaedo"
@@ -79,7 +79,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. lib. 4.",
         "status": "unidentified",
         "work": null
@@ -95,7 +95,7 @@
         "display": "Justus Lipsius, Physiologia Stoicorum",
         "id": "3.1.2.3-n15-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lipsius manuduc. ad Phys.",
         "status": "parsed",
         "work": "lipsius.physiologia"
@@ -114,7 +114,7 @@
             "17"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Stoic. lib. 3 diss. 17.",
         "status": "unidentified",
         "work": null
@@ -130,7 +130,7 @@
         "display": null,
         "id": "3.1.2.3-n16-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Franc.",
         "status": "unidentified",
         "work": null
@@ -145,7 +145,7 @@
             "1430"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Belleforest in hist. An. 1430.",
         "status": "unidentified",
         "work": null
@@ -181,7 +181,7 @@
         "display": null,
         "id": "3.1.2.3-n20-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Pars inscrip. Tit.",
         "status": "unidentified",
         "work": null
@@ -202,7 +202,7 @@
         "display": "Joannes Stobaeus",
         "id": "3.1.2.3-n22-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Stobaeus e graeco.",
         "status": "partial",
         "work": null
@@ -218,7 +218,7 @@
         "display": "Gaius Julius Solinus",
         "id": "3.1.2.3-n23-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Solinus",
         "status": "parsed",
         "work": null
@@ -234,7 +234,7 @@
         "display": "Statius",
         "id": "3.1.2.3-n24-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Statius.",
         "status": "parsed",
         "work": null
@@ -244,9 +244,36 @@
     "status": "parsed"
   },
   "3.1.2.3-n25": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Samuel 18:1",
+        "id": "3.1.2.3-n25-c1",
+        "locus": [
+          [
+            "n",
+            "18"
+          ],
+          [
+            "n",
+            "1"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Sam. 18. 1.",
+        "ref": {
+          "chapter": 18,
+          "verses": [
+            1
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.samuel"
+      }
+    ],
     "raw": "He loved him as his loved his own soul, 1 Sam. 18. 1. Beyond the love of women.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "3.1.2.3-n26": {
     "citations": [
@@ -260,7 +287,7 @@
             "9"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Virg. 9 Aen.",
         "status": "parsed",
         "work": "virgil.aeneid"
@@ -285,7 +312,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Austin confes. 4 cap. 6.",
         "status": "parsed",
         "work": "augustine.confessions"
@@ -295,7 +322,7 @@
         "display": "Horace",
         "id": "3.1.2.3-n27-c2",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Horatius",
         "status": "parsed",
         "work": null
@@ -315,7 +342,7 @@
         "display": "Pliny the Elder",
         "id": "3.1.2.3-n28-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Plinius.",
         "resolved_by": "default",
         "status": "parsed",
@@ -341,7 +368,7 @@
             "68"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Epist. lib. 4 epist. 68.",
         "status": "unidentified",
         "work": null
@@ -371,7 +398,7 @@
             "61"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 4 epist. 61.",
         "status": "unidentified",
         "work": null
@@ -398,7 +425,7 @@
             "13"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 13 de Legibus.",
         "status": "parsed",
         "work": "plato.laws"
@@ -408,15 +435,42 @@
     "status": "parsed"
   },
   "3.1.2.3-n33": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Samuel 25:3",
+        "id": "3.1.2.3-n33-c1",
+        "locus": [
+          [
+            "n",
+            "25"
+          ],
+          [
+            "n",
+            "3"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Sam. 25. 3.",
+        "ref": {
+          "chapter": 25,
+          "verses": [
+            3
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.samuel"
+      }
+    ],
     "raw": "1 Sam. 25. 3.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "3.1.2.3-n34": {
     "citations": [
       {
         "author": "bible",
-        "display": "Esther, 3, 2",
+        "display": "Esther 3:2",
         "id": "3.1.2.3-n34-c1",
         "locus": [
           [
@@ -428,8 +482,14 @@
             "2"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Esther 3. 2.",
+        "ref": {
+          "chapter": 3,
+          "verses": [
+            2
+          ]
+        },
         "status": "parsed",
         "work": "bible.esther"
       }
@@ -444,7 +504,7 @@
         "display": null,
         "id": "3.1.2.3-n35-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Amm.",
         "status": "unidentified",
         "work": null
@@ -459,7 +519,7 @@
             "14"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Marcellinus lib. 14.",
         "status": "unidentified",
         "work": null
@@ -472,7 +532,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "James, 3, 17",
+        "display": "James 3:17",
         "id": "3.1.2.3-n4-c1",
         "locus": [
           [
@@ -484,8 +544,14 @@
             "17"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "James 3. 17.",
+        "ref": {
+          "chapter": 3,
+          "verses": [
+            17
+          ]
+        },
         "status": "parsed",
         "work": "bible.james"
       }
@@ -510,7 +576,7 @@
             "28"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Orat. 28.",
         "status": "unidentified",
         "work": null
@@ -536,7 +602,7 @@
         "display": "Quintus Curtius Rufus",
         "id": "3.1.2.3-n9-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Curtius.",
         "status": "parsed",
         "work": null

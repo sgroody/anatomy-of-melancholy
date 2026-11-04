@@ -1,4 +1,35 @@
 {
+  "3.4.2.3-p1-ic380": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Thessalonians 5:2",
+    "locus": [
+      [
+        "n",
+        "5"
+      ],
+      [
+        "n",
+        "2"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Thes. 5. 2.",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        2
+      ]
+    },
+    "selector": {
+      "exact": "1 Thes. 5. 2.",
+      "in": "3.4.2.3-p1",
+      "prefix": "them as a thief in the night, ",
+      "suffix": " This temporary passion made D"
+    },
+    "status": "parsed",
+    "work": "bible.thessalonians"
+  },
   "3.4.2.3-p1-ic5758": {
     "author": "forestus",
     "display": "Pieter van Foreest (Forestus), book 10, chapter 12",
@@ -12,7 +43,7 @@
         "12"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Forestus observat. lib. 10 cap. 12 de morbis cerebri",
     "selector": {
       "exact": "Forestus observat. lib. 10 cap. 12 de morbis cerebri",
@@ -32,7 +63,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Plater observat. lib. 1.",
     "selector": {
       "exact": "Plater observat. lib. 1.",
@@ -56,7 +87,7 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Guainerius cap. 5 tract. 15",
     "selector": {
       "exact": "Guainerius cap. 5 tract. 15",
@@ -84,7 +115,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 119 part. 15 ver. 8",
     "selector": {
       "exact": "Psal. 119 part. 15 ver. 8",
@@ -104,7 +135,7 @@
         "14"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ammianus lib. 14",
     "selector": {
       "exact": "Ammianus lib. 14",
@@ -128,7 +159,7 @@
         "35"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Nicephorus lib. 10 cap. 35 eccles. hist., in Maximinus and Julian.",
     "selector": {
       "exact": "Nicephorus lib. 10 cap. 35 eccles. hist., in Maximinus and Julian.",

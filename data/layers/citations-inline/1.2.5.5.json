@@ -12,7 +12,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Galen. lib. 3 de loc. affect. cap. 7",
     "selector": {
       "exact": "Galen. lib. 3 de loc. affect. cap. 7",
@@ -22,5 +22,36 @@
     },
     "status": "parsed",
     "work": "galen.de-locis"
+  },
+  "1.2.5.5-p2-ic514": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Peter 5:6",
+    "locus": [
+      [
+        "n",
+        "5"
+      ],
+      [
+        "n",
+        "6"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Pet. 5. 6",
+    "ref": {
+      "chapter": 5,
+      "verses": [
+        6
+      ]
+    },
+    "selector": {
+      "exact": "1 Pet. 5. 6",
+      "in": "1.2.5.5-p2",
+      "prefix": "under the mighty hand of God, ",
+      "suffix": ", know thyself, acknowledge th"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
   }
 }

@@ -253,6 +253,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    gowland_entries=(gowland_notes.entries(unit, gstats)
                                                     if profile == "private" else None),
                                    cexp=layer_for(unit, "citation-expansions"), initials=initials,
+                                   inline_cites=layer_for(unit, "citations-inline"),
                                    names=name_rx, name_ids=name_ids, author_info=author_info)
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
@@ -337,6 +338,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                       for k in ("glosses", "glosses_gowland", "glosses_webster1913", "glosses_machine",
                                                 "glosses_unplaced", "glosses_unplaced_notfound",
                                                 "glosses_unplaced_markup", "glosses_unplaced_overlap")}}
+    report["citations"] = {k: sum(c.get(k, 0) for c in report["units"].values())  # stage 6
+                           for k in ("cite_expansions", "cite_expansions_rule", "cite_expansions_model",
+                                     "cite_expansions_raw_mismatch", "cite_unplaced", "inline_cites",
+                                     "inline_cites_cites", "inline_cites_bible", "inline_cites_unplaced",
+                                     "inline_cites_in_passage", "bible_verses", "bible_without_verses")}
+    print("citations:", ", ".join(f"{k} {v}" for k, v in report["citations"].items()))
     page("search", "search/index.html", "search.html", page=book.pages["search"], crumbs=[("Search", None)],
          title="Search", description="Search Burton’s text, sidenotes and translations", stats=sstats)
 

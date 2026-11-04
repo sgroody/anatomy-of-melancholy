@@ -8,7 +8,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Heliodorus lib. 1",
     "selector": {
       "exact": "Heliodorus lib. 1",
@@ -32,7 +32,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Athenaeus Dipnosophist. lib. 13 cap. 7",
     "selector": {
       "exact": "Athenaeus Dipnosophist. lib. 13 cap. 7",
@@ -43,9 +43,40 @@
     "status": "parsed",
     "work": "athenaeus.deipnosophistae"
   },
+  "3.2.2.2-p24-ic1076": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Samuel 13:2",
+    "locus": [
+      [
+        "n",
+        "13"
+      ],
+      [
+        "n",
+        "2"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Sam. 13. 2.",
+    "ref": {
+      "chapter": 13,
+      "verses": [
+        2
+      ]
+    },
+    "selector": {
+      "exact": "2 Sam. 13. 2.",
+      "in": "3.2.2.2-p24",
+      "prefix": "n fell sick for Tamar’s sake, ",
+      "suffix": " The beauty of Esther was such"
+    },
+    "status": "parsed",
+    "work": "bible.samuel"
+  },
   "3.2.2.2-p24-ic710": {
     "author": "bible",
-    "display": "Genesis, 34, 2",
+    "display": "Genesis 34:2",
     "locus": [
       [
         "n",
@@ -56,8 +87,14 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gen. 34. 2",
+    "ref": {
+      "chapter": 34,
+      "verses": [
+        2
+      ]
+    },
     "selector": {
       "exact": "Gen. 34. 2",
       "in": "3.2.2.2-p24",
@@ -66,6 +103,37 @@
     },
     "status": "parsed",
     "work": "bible.genesis"
+  },
+  "3.2.2.2-p24-ic806": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Kings 11:2",
+    "locus": [
+      [
+        "n",
+        "11"
+      ],
+      [
+        "n",
+        "2"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Reg. 11. 2",
+    "ref": {
+      "chapter": 11,
+      "verses": [
+        2
+      ]
+    },
+    "selector": {
+      "exact": "2 Reg. 11. 2",
+      "in": "3.2.2.2-p24",
+      "prefix": "vid spied Bathsheba afar off, ",
+      "suffix": ", the Elders Susanna, as that "
+    },
+    "status": "parsed",
+    "work": "bible.kings"
   },
   "3.2.2.2-p27-ic263": {
     "author": "heliodorus",
@@ -76,7 +144,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Heliodorus lib. 2",
     "selector": {
       "exact": "Heliodorus lib. 2",
@@ -96,7 +164,7 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Castilio, lib. 4 de aulico",
     "selector": {
       "exact": "Castilio, lib. 4 de aulico",
@@ -116,7 +184,7 @@
         "10"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Laurentius cap. 10 de melan.",
     "selector": {
       "exact": "Laurentius cap. 10 de melan.",
@@ -129,7 +197,7 @@
   },
   "3.2.2.2-p4-ic417": {
     "author": "bible",
-    "display": "Ecclesiasticus, 9, 8",
+    "display": "Ecclesiasticus 9:8",
     "locus": [
       [
         "n",
@@ -140,8 +208,14 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Ecclus. 9. 8",
+    "ref": {
+      "chapter": 9,
+      "verses": [
+        8
+      ]
+    },
     "selector": {
       "exact": "Ecclus. 9. 8",
       "in": "3.2.2.2-p4",
@@ -150,6 +224,37 @@
     },
     "status": "parsed",
     "work": "bible.ecclesiasticus"
+  },
+  "3.2.2.2-p4-ic8164": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Esdras 3:10",
+    "locus": [
+      [
+        "n",
+        "3"
+      ],
+      [
+        "n",
+        "10"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Esd. 3. 10",
+    "ref": {
+      "chapter": 3,
+      "verses": [
+        10
+      ]
+    },
+    "selector": {
+      "exact": "1 Esd. 3. 10",
+      "in": "3.2.2.2-p4",
+      "prefix": "trong, but a woman strongest, ",
+      "suffix": ", as Zerubbabel proved at larg"
+    },
+    "status": "parsed",
+    "work": "bible.ezra"
   },
   "3.2.2.2-p47-ic279": {
     "author": "athenaeus",
@@ -164,7 +269,7 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Athenaeus lib. 13 dip. cap. 5",
     "selector": {
       "exact": "Athenaeus lib. 13 dip. cap. 5",
@@ -184,7 +289,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Baptista Porta Physiognom. lib. 3",
     "selector": {
       "exact": "Baptista Porta Physiognom. lib. 3",
@@ -204,7 +309,7 @@
         "5"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Heliodor. lib. 5",
     "selector": {
       "exact": "Heliodor. lib. 5",
@@ -224,7 +329,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Heliodorus lib. 3",
     "selector": {
       "exact": "Heliodorus lib. 3",
@@ -248,7 +353,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Vairus lib. 1 cap. 2 de fascinat.",
     "selector": {
       "exact": "Vairus lib. 1 cap. 2 de fascinat.",
@@ -272,7 +377,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lemnius lib. 2 de occult. nat. mir. cap. 7",
     "selector": {
       "exact": "Lemnius lib. 2 de occult. nat. mir. cap. 7",
@@ -296,7 +401,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Valleriola lib. 2 observ. cap. 7",
     "selector": {
       "exact": "Valleriola lib. 2 observ. cap. 7",

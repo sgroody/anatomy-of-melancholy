@@ -14,6 +14,11 @@ def test_bible_book_with_numbers_after_a_stop():
     assert spans("’Tis all for your sins, Hag. 1. 9, 10, God is angry") == ["Hag. 1. 9, 10"]
 
 
+def test_numbered_book_and_reference_after_a_question():
+    assert spans("Is there not a wise man among you? 1 Cor. 6. 5, 6. But") == ["1 Cor. 6. 5, 6."]
+    assert spans("when will ye be wise? Psal. 94. 8, and") == ["Psal. 94. 8"]
+
+
 def test_a_name_alone_is_not_a_citation():
     assert spans("the marvel of marvels, as Plato, the Abridgement of the World") == []
 

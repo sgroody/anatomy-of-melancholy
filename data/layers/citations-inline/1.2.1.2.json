@@ -1,4 +1,35 @@
 {
+  "1.2.1.2-p1-ic2333": {
+    "author": "bible",
+    "book_n": 2,
+    "display": "2 Peter 2:4",
+    "locus": [
+      [
+        "n",
+        "2"
+      ],
+      [
+        "n",
+        "4"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "2 Pet. 2. 4",
+    "ref": {
+      "chapter": 2,
+      "verses": [
+        4
+      ]
+    },
+    "selector": {
+      "exact": "2 Pet. 2. 4",
+      "in": "1.2.1.2-p1",
+      "prefix": "ered into chains of darkness (",
+      "suffix": "), to be kept unto damnation. "
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
   "1.2.1.2-p1-ic2626": {
     "author": "maximus-tyrius",
     "display": "Maximus of Tyre, sermon 27",
@@ -8,7 +39,7 @@
         "27"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Tyrius ser. 27 maintains.",
     "selector": {
       "exact": "Tyrius ser. 27 maintains.",
@@ -28,7 +59,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Delrio lib. 2",
     "selector": {
       "exact": "Delrio lib. 2",
@@ -52,7 +83,7 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cicogna lib. 3 cap. 6",
     "selector": {
       "exact": "Cicogna lib. 3 cap. 6",
@@ -76,7 +107,7 @@
         "17"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Lavater de spect. part. 1 cap. 17",
     "selector": {
       "exact": "Lavater de spect. part. 1 cap. 17",
@@ -100,7 +131,7 @@
         "22"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Wierus lib. 1 cap. 22",
     "selector": {
       "exact": "Wierus lib. 1 cap. 22",
@@ -124,7 +155,7 @@
         "2"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Olaus lib. 2 cap. 2",
     "selector": {
       "exact": "Olaus lib. 2 cap. 2",
@@ -144,7 +175,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Gaguinus hist. Franc. lib. 8",
     "selector": {
       "exact": "Gaguinus hist. Franc. lib. 8",
@@ -168,7 +199,7 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cicogna, lib. 3 cap. 9.",
     "selector": {
       "exact": "Cicogna, lib. 3 cap. 9.",
@@ -192,7 +223,7 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Olaus Magnus, lib. 6 cap. 19",
     "selector": {
       "exact": "Olaus Magnus, lib. 6 cap. 19",
@@ -203,17 +234,46 @@
     "status": "parsed",
     "work": null
   },
+  "1.2.1.2-p15-ic107": {
+    "author": "bible",
+    "book_n": 1,
+    "display": "1 Peter 5",
+    "locus": [
+      [
+        "n",
+        "5"
+      ]
+    ],
+    "method": "rules/inline-v2",
+    "raw": "1 Pet. 5",
+    "ref": {
+      "chapter": 5,
+      "verses": []
+    },
+    "selector": {
+      "exact": "1 Pet. 5",
+      "in": "1.2.1.2-p15",
+      "prefix": "ill seeks whom he may devour, ",
+      "suffix": ", by Earth, Sea, Land, Air, as"
+    },
+    "status": "parsed",
+    "work": "bible.peter"
+  },
   "1.2.1.2-p15-ic2311": {
     "author": "bible",
-    "display": "Matthew, 25",
+    "display": "Matthew 25",
     "locus": [
       [
         "n",
         "25"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 25.",
+    "ref": {
+      "chapter": 25,
+      "verses": []
+    },
     "selector": {
       "exact": "Mat. 25.",
       "in": "1.2.1.2-p15",
@@ -225,7 +285,7 @@
   },
   "1.2.1.2-p17-ic5696": {
     "author": "bible",
-    "display": "Psalms, 78, verse 49",
+    "display": "Psalms 78:49",
     "locus": [
       [
         "n",
@@ -236,8 +296,14 @@
         "49"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Psal. 78 ver. 49",
+    "ref": {
+      "chapter": 78,
+      "verses": [
+        49
+      ]
+    },
     "selector": {
       "exact": "Psal. 78 ver. 49",
       "in": "1.2.1.2-p17",
@@ -260,7 +326,7 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Arculanus cap. 16 in 9",
     "selector": {
       "exact": "Arculanus cap. 16 in 9",
@@ -284,7 +350,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mat. 4, 8",
     "selector": {
       "exact": "Mat. 4, 8",
@@ -308,7 +374,7 @@
         "11"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Luke 4, 11",
     "selector": {
       "exact": "Luke 4, 11",
@@ -321,15 +387,19 @@
   },
   "1.2.1.2-p17-ic5933": {
     "author": "bible",
-    "display": "Luke, 13",
+    "display": "Luke 13",
     "locus": [
       [
         "n",
         "13"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Luke 13",
+    "ref": {
+      "chapter": 13,
+      "verses": []
+    },
     "selector": {
       "exact": "Luke 13",
       "in": "1.2.1.2-p17",
@@ -341,15 +411,19 @@
   },
   "1.2.1.2-p17-ic5942": {
     "author": "bible",
-    "display": "Mark, 9",
+    "display": "Mark 9",
     "locus": [
       [
         "n",
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Mark 9",
+    "ref": {
+      "chapter": 9,
+      "verses": []
+    },
     "selector": {
       "exact": "Mark 9",
       "in": "1.2.1.2-p17",
@@ -372,7 +446,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Tobit 8, 3",
     "selector": {
       "exact": "Tobit 8, 3",
@@ -400,7 +474,7 @@
         "11"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Sennertus lib. 1 part. 2 cap. 11",
     "selector": {
       "exact": "Sennertus lib. 1 part. 2 cap. 11",
@@ -420,7 +494,7 @@
         "40"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Basil ser. 40",
     "selector": {
       "exact": "Basil ser. 40",
@@ -440,7 +514,7 @@
         "1"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Wierus lib. 1",
     "selector": {
       "exact": "Wierus lib. 1",
@@ -460,7 +534,7 @@
         "19"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Cardan lib. 19 de subtil.",
     "selector": {
       "exact": "Cardan lib. 19 de subtil.",
@@ -480,7 +554,7 @@
         "3"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Austin in Gen. lib. 3 de lib. arbit.",
     "selector": {
       "exact": "Austin in Gen. lib. 3 de lib. arbit.",
@@ -500,7 +574,7 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Bodin lib. 4",
     "selector": {
       "exact": "Bodin lib. 4",
@@ -524,7 +598,7 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Zanch. cap. 10 lib. 4",
     "selector": {
       "exact": "Zanch. cap. 10 lib. 4",
@@ -552,7 +626,7 @@
         "29"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Delrio, Tom. 2 lib. 2 quaest. 29",
     "selector": {
       "exact": "Delrio, Tom. 2 lib. 2 quaest. 29",
@@ -572,7 +646,7 @@
         "4"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Bodin lib. 4 Theat. nat.",
     "selector": {
       "exact": "Bodin lib. 4 Theat. nat.",
@@ -596,7 +670,7 @@
         "9"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Zanch. lib. 4 cap. 9",
     "selector": {
       "exact": "Zanch. lib. 4 cap. 9",
@@ -620,7 +694,7 @@
         "15"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Hierom. lib. 2 com. in Mat. ad cap. 15",
     "selector": {
       "exact": "Hierom. lib. 2 com. in Mat. ad cap. 15",
@@ -644,7 +718,7 @@
         "8"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Austin lib. 9 cap. 8 de Civ.",
     "selector": {
       "exact": "Austin lib. 9 cap. 8 de Civ.",
@@ -668,7 +742,7 @@
         "6"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Euseb. lib. 4 praepar. Evang. cap. 6",
     "selector": {
       "exact": "Euseb. lib. 4 praepar. Evang. cap. 6",
@@ -688,7 +762,7 @@
         "7"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Varro lib. 7 de Civ.",
     "selector": {
       "exact": "Varro lib. 7 de Civ.",
@@ -712,7 +786,7 @@
         "211"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Bodin, lib. 2 Theat. naturae fol. 211",
     "selector": {
       "exact": "Bodin, lib. 2 Theat. naturae fol. 211",
@@ -732,7 +806,7 @@
         "48"
       ]
     ],
-    "method": "rules/inline-v1",
+    "method": "rules/inline-v2",
     "raw": "Eusebius lib. contra Philosophos cap. 48",
     "selector": {
       "exact": "Eusebius lib. contra Philosophos cap. 48",

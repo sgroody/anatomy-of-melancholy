@@ -16,7 +16,7 @@
             "38"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Livius lib. 38.",
         "status": "parsed",
         "work": null
@@ -41,7 +41,7 @@
             "4"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Gaguinus lib. 3 cap. 4.",
         "status": "parsed",
         "work": null
@@ -67,7 +67,7 @@
             "6"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Idem lib. 9 sub. Carol. 6.",
         "resolved_from": "1.2.1.1-n11-c1",
         "status": "partial",
@@ -93,7 +93,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Giraldus Cambrensis lib. 1 cap. 1 Itinerar. Cambriae.",
         "status": "parsed",
         "work": "giraldus-cambrensis.itinerarium"
@@ -126,7 +126,7 @@
             "3"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Delrio Tom. 3 lib. 6 sect. 3 quaest. 3.",
         "status": "parsed",
         "work": null
@@ -139,7 +139,7 @@
     "citations": [
       {
         "author": "bible",
-        "display": "Psalms, 94, 1",
+        "display": "Psalms 94:1",
         "id": "1.2.1.1-n15-c1",
         "locus": [
           [
@@ -151,8 +151,14 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Psal. 94. 1.",
+        "ref": {
+          "chapter": 94,
+          "verses": [
+            1
+          ]
+        },
         "status": "parsed",
         "work": "bible.psalms"
       }
@@ -172,7 +178,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 8 cap. de Hierar.",
         "status": "unidentified",
         "work": null
@@ -188,7 +194,7 @@
         "display": "Claudian",
         "id": "1.2.1.1-n17-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Claudian.",
         "status": "parsed",
         "work": null
@@ -204,7 +210,7 @@
         "display": null,
         "id": "1.2.1.1-n18-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "De Babila Martyre.",
         "status": "unidentified",
         "work": null
@@ -230,7 +236,7 @@
             "5"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 1 cap. 5 prog.",
         "status": "parsed",
         "work": "hippocrates.prognostics"
@@ -257,7 +263,7 @@
             "1"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lib. 1 de Abditis rerum causis.",
         "status": "partial",
         "work": null
@@ -272,9 +278,36 @@
     "status": "no-citation"
   },
   "1.2.1.1-n22": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Peter 5:6",
+        "id": "1.2.1.1-n22-c1",
+        "locus": [
+          [
+            "n",
+            "5"
+          ],
+          [
+            "n",
+            "6"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Pet. 5. 6.",
+        "ref": {
+          "chapter": 5,
+          "verses": [
+            6
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.peter"
+      }
+    ],
     "raw": "1 Pet. 5. 6.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "1.2.1.1-n3": {
     "citations": [
@@ -292,7 +325,7 @@
             "11"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Path. lib. 1 cap. 11.",
         "status": "unidentified",
         "work": null
@@ -308,7 +341,7 @@
         "display": null,
         "id": "1.2.1.1-n4-c1",
         "locus": [],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Galeno.",
         "status": "unidentified",
         "work": null
@@ -323,15 +356,42 @@
     "status": "no-citation"
   },
   "1.2.1.1-n6": {
-    "citations": [],
+    "citations": [
+      {
+        "author": "bible",
+        "book_n": 1,
+        "display": "1 Samuel 16:14",
+        "id": "1.2.1.1-n6-c1",
+        "locus": [
+          [
+            "n",
+            "16"
+          ],
+          [
+            "n",
+            "14"
+          ]
+        ],
+        "method": "rules/abbrev-v2",
+        "raw": "1 Sam. 16. 14.",
+        "ref": {
+          "chapter": 16,
+          "verses": [
+            14
+          ]
+        },
+        "status": "parsed",
+        "work": "bible.samuel"
+      }
+    ],
     "raw": "1 Sam. 16. 14.",
-    "status": "no-citation"
+    "status": "parsed"
   },
   "1.2.1.1-n7": {
     "citations": [
       {
         "author": "bible",
-        "display": "Daniel, 5, 21",
+        "display": "Daniel 5:21",
         "id": "1.2.1.1-n7-c1",
         "locus": [
           [
@@ -343,8 +403,14 @@
             "21"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Dan. 5. 21.",
+        "ref": {
+          "chapter": 5,
+          "verses": [
+            21
+          ]
+        },
         "status": "parsed",
         "work": "bible.daniel"
       }
@@ -368,7 +434,7 @@
             "8"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Lactant. instit. lib. 2 cap. 8.",
         "status": "partial",
         "work": null
@@ -393,7 +459,7 @@
             "43"
           ]
         ],
-        "method": "rules/abbrev-v1",
+        "method": "rules/abbrev-v2",
         "raw": "Munster cosmog. lib. 4 cap. 43.",
         "status": "parsed",
         "work": "munster.cosmographia"
