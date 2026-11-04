@@ -1,0 +1,38 @@
+{
+  "1.1.2.6-n3-c1": {
+    "author": "plutarch",
+    "author_name": "Plutarch",
+    "basis": "named-at-anchor",
+    "by": "machine",
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "display": "Plutarch, De placitis philosophorum, book 4",
+    "evidence": "Plutarch",
+    "input_hash": "e09b01b41e24267a",
+    "locus": "book 4",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-v1",
+    "raw": "De pract. Philos. 4.",
+    "reason": "The marker stands before Plutarch, and 'De pract. Philos.' is a misprint for De placitis philosophorum, whose book 4 deals with sight.",
+    "status": "expanded",
+    "work": "De placitis philosophorum"
+  },
+  "1.1.2.6-n5-c1": {
+    "author": "lactantius",
+    "author_name": "Lactantius",
+    "basis": "named-in-note",
+    "by": "machine",
+    "confidence": "high",
+    "date": "2026-11-03",
+    "display": "Lactantius, De opificio Dei, chapter 8",
+    "evidence": "Lac.",
+    "input_hash": "cc928dc218b9b5bc",
+    "locus": "chapter 8",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-v1",
+    "raw": "Lac. cap. 8 de opif.",
+    "reason": "The note says 'Lac.' for Lactantius, the marker stands before Lactantius, and 'de opif. Dei' is his work.",
+    "status": "expanded",
+    "work": "De opificio Dei"
+  }
+}

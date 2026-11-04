@@ -42,3 +42,9 @@
 {"ts": "2026-11-03T16:27:03Z", "event": "after", "run": "M8 obsolete obs-v1 (last 188)", "plan": "Pro", "window_5h_pct": 11, "weekly_pct": 38, "cost_usd_list": 0.57, "model": "claude-opus-5-5", "prompt": "obs-v1"}
 {"ts": "2026-11-03T16:28:58Z", "event": "after", "run": "M8 obsolete obs-v1 (2 single-item retries)", "plan": "Pro", "window_5h_pct": 12, "weekly_pct": 38, "cost_usd_list": 0.04, "model": "claude-opus-5-5", "prompt": "obs-v1"}
 {"ts": "2026-11-03T16:06:14Z", "event": "before", "run": "D7 gold-audit-v1 (1,127 items)", "plan": "Pro", "window_5h_pct": 11, "weekly_pct": 38}
+{"ts": "2026-11-03T20:21:09Z", "event": "before", "run": "citation expansion (in-line rules pass + model expansion of unresolved/partial citations), session start", "plan": "Pro", "window_5h_pct": 2, "weekly_pct": 49}
+{"ts": "2026-11-03T20:28:31Z", "event": "after", "run": "cite-v1 pilot (2 packets, 50 items)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 50, "cost_usd_list": 0.47, "model": "claude-opus-5-5", "prompt": "cite-v1"}
+{"ts": "2026-11-03T20:28:31Z", "event": "before", "run": "cite-v1 full run (2,436 items left, --budget-usd 25)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 50}
+{"ts": "2026-11-04T01:22:22Z", "event": "after", "run": "cite-v1 full run (stopped at the 5-hour limit, 2,325/2,486 answered)", "plan": "Pro", "window_5h_pct": 9, "weekly_pct": 63, "cost_usd_list": 21.89, "model": "claude-opus-5-5", "prompt": "cite-v1"}
+{"ts": "2026-11-04T01:22:22Z", "event": "before", "run": "cite-v1 resume (161 items) + cite-audit-v1 round a1 (150 items)", "plan": "Pro", "window_5h_pct": 9, "weekly_pct": 63}
+{"ts": "2026-11-04T01:36:19Z", "event": "after", "run": "cite-v1 resume (161 items) + cite-audit-v1 round a1 (150 items, PASS 0/150 wrong)", "plan": "Pro", "window_5h_pct": 21, "weekly_pct": 65, "cost_usd_list": 3.69, "model": "claude-opus-5-5", "prompt": "cite-v1, cite-audit-v1"}

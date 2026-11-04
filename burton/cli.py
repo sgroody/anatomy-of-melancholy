@@ -73,6 +73,16 @@ def main(argv: list[str] | None = None) -> int:
                                                 "data/layers/citations-inline/")
     s.add_argument("--unit", action="append")
 
+    s = sub.add_parser("expand-citations", help="model expansion of the citations the rules leave unidentified or "
+                                                "partial -> data/layers/citation-expansions/")
+    s.add_argument("--unit", action="append")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--packet-size", type=int, default=25)
+    s.add_argument("--max-packets", type=int, default=None)
+    s.add_argument("--budget-usd", type=float, default=None,
+                   help="stop before the next packet once this much list-equivalent cost is spent in this run")
+    s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
+
     s = sub.add_parser("authors", help="author registry skeletons (data/authors/) and the owner's top-100 list")
     s.add_argument("--review", action="store_true", help="also write state/review/authors-top100.md")
     s.add_argument("--wikidata", action="store_true", help="match cited authors to Wikidata (rules, network)")
@@ -264,6 +274,13 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import citations_inline
 
         stats = citations_inline.build(args.unit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "expand-citations":
+        from .layers import cite_expand
+
+        stats = cite_expand.run(model=args.model, packet_size=args.packet_size, budget_usd=args.budget_usd,
+                                max_packets=args.max_packets, dry_run=args.dry_run, units=args.unit)
         for k in sorted(stats):
             print(f"  {k}: {stats[k]}")
     elif args.cmd == "authors":
