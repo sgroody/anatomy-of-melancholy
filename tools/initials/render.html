@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Initials render</title>
+<style>
+  body { font-family: Georgia, serif; background: #f7f3ea; color: #23201b; margin: 16px; }
+  body.dark { background: #1c1a17; color: #e8e1d3; }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 18px; }
+  figure { margin: 0; text-align: center; font-size: 13px; }
+  canvas { width: 150px; height: 150px; display: block; }
+  #log { font-size: 12px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="sheet"></div>
+<pre id="log"></pre>
+<script type="module">
+import { draw } from "/work/vendor/initialis/lib/initialis.js";
+
+// The edition's palettes (burton/site/static/edition.css): paper, ink, rubric, light and dark.
+const THEMES = {
+  light: { paper: "#f7f3ea", inkA: "#23201b", inkB: "#8a2f1d", inkC: "#645c51" },
+  dark: { paper: "#1c1a17", inkA: "#e8e1d3", inkB: "#e5927a", inkC: "#a89e8e" },
+};
+const PRINT = { rough: 0.35, roughScale: 12, edge: 0.3, edgeScale: 5, mottle: 0.1, grain: 0.35 };
+// Woodcut-like recipes, all in IM Fell (OFL, 17th-century English types).
+export const RECIPES = {
+  red: { font: "im-fell-french-canon-400", size: 0.74, frame: "rect", fRules: 2, fW1: 10, fGap: 6, fW2: 2.5,
+         fRuleColor: "B", fField: "B", lFill: "paper", orn: "grow", oFill: "paper", oLeaf: "acanthus",
+         oFlower: "rosette", oDensity: 0.7, oStemW: 7, seed: 3, ...PRINT },
+  black: { font: "im-fell-french-canon-400", size: 0.74, frame: "rect", fRules: 2, fW1: 10, fGap: 6, fW2: 2.5,
+           fRuleColor: "A", fField: "A", lFill: "paper", orn: "grow", oFill: "paper", oLeaf: "acanthus",
+           oFlower: "rosette", oDensity: 0.7, oStemW: 7, seed: 3, ...PRINT },
+  twoink: { font: "im-fell-french-canon-400", size: 0.74, frame: "rect", fRules: 2, fW1: 6, fGap: 6, fW2: 2,
+            fRuleColor: "A", fField: "paper", lFill: "B", orn: "grow", oFill: "A", oLeaf: "acanthus",
+            oFlower: "rosette", oDensity: 0.62, oStemW: 5, seed: 3, ...PRINT },
+  hatched: { font: "im-fell-french-canon-400", size: 0.78, frame: "rect", fRules: 2, fW1: 6, fGap: 5, fW2: 2,
+             fRuleColor: "A", fField: "paper", fPattern: "hatch", fPatScale: 6, fPatAngle: 45, fPatW: 1.1,
+             fPatColor: "A", lFill: "B", lHalo: 10, lHaloColor: "paper", orn: "none", ...PRINT },
+};
+
+const log = (s) => { document.getElementById("log").textContent += s + "\n"; };
+async function save(canvas, name) {
+  const webp = name.endsWith(".webp");
+  const blob = await new Promise((r) => canvas.toBlob(r, webp ? "image/webp" : "image/png", webp ? 0.9 : undefined));
+  const res = await fetch(`/save?name=${encodeURIComponent(name)}`, { method: "POST", body: blob });
+  if (!res.ok) throw new Error(`save ${name}: ${res.status}`);
+}
+
+// sheet(letters, recipes, themes, size, store): draw each, show it, and save it when `store` is true
+window.sheet = async ({ letters = "M", recipes = Object.keys(RECIPES), themes = ["light"], size = 300, store = false,
+                         ext = "png" } = {}) => {
+  const root = document.getElementById("sheet");
+  let n = 0;
+  for (const th of themes) {
+    document.body.classList.toggle("dark", th === "dark");
+    for (const r of recipes) {
+      const row = document.createElement("div");
+      row.className = "row";
+      root.appendChild(row);
+      for (const ch of letters) {
+        const P = { ...RECIPES[r], ...THEMES[th], text: ch };
+        const c = document.createElement("canvas");
+        const fig = document.createElement("figure");
+        fig.append(c, Object.assign(document.createElement("figcaption"), { textContent: `${r} · ${th} · ${ch}` }));
+        row.appendChild(fig);
+        await draw(c, P, { size });
+        if (store) await save(c, `${r}-${th}-${ch}.${ext}`);
+        n++;
+      }
+    }
+  }
+  if (store) {
+    const recipe = { initialis_commit: "6cf93f7d3d2922efdbeb86cafa27f39758be9398", size, themes: THEMES, recipes: RECIPES };
+    await fetch("/save?name=recipe.json", { method: "POST", body: JSON.stringify(recipe, null, 2) });
+  }
+  log(`drew ${n}`);
+  return n;
+};
+log("ready");
+</script>
+</body>
+</html>

@@ -18,6 +18,12 @@
       "runtimeExecutable": "uv",
       "runtimeArgs": ["run", "python", "-m", "http.server", "8790", "--bind", "127.0.0.1"],
       "port": 8790
+    },
+    {
+      "name": "initials-render",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "python", "tools/initials/serve.py", "8791"],
+      "port": 8791
     }
   ]
 }
