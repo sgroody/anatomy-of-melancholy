@@ -796,7 +796,7 @@ def gowland_card(e: dict, notes, cid: str) -> str:
             text = f'<a class="xref" href="../{attr(t)}/">{esc(t)}</a>'
             return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="pointer" data-resp="gowland" role="note">'
                     f'<span class="mn-k">see</span> {text}</span>')
-    lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] and kind != "gloss" else ""
+    lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] else ""
     return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="{attr(kind)}" data-resp="gowland" role="note">'
             f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{esc_tagged(text)}</span>')
 

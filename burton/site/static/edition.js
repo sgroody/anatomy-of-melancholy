@@ -6,6 +6,7 @@ const root = new URL("..", import.meta.url);
 const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
+const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin on each side (R3)
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
 // come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
@@ -227,14 +228,30 @@ function layoutNotes() {
   const tops = new Map(all.map(([m]) => [m, m.getBoundingClientRect().top - art.top]));
   const pairs = all.map((p, i) => [p, i]).sort(([[a], i], [[b], j]) => (tops.get(a) - tops.get(b)) ||
     (a.matches("a.nref") ? 0 : 1) - (b.matches("a.nref") ? 0 : 1) || i - j).map(([p]) => p);
+  // Two margins on wide windows (owner, 2026-11-03, R3): Gowland's commentary on the left, Burton's notes and the
+  // translations on the right; an item crosses to the other side when its own would push it SWITCH below its line
+  // and the other side is free sooner. Each side keeps its own floor.
+  const two = twoSide.matches;
+  body.classList.toggle("two-side", two);
+  const SWITCH = 3 * rem;
+  for (const [, n] of pairs) n.classList.remove("mn-l");
+  // margin widths are read after the class change, so heights are measured in the column each item will use
   const anchors = pairs.map(([m]) => tops.get(m));
   const heights = pairs.map(([, n]) => n.getBoundingClientRect().height);
   let buttonH = null;
+  const floors = { r: -Infinity, l: -Infinity };
   let floor = -Infinity;
   let stack = null; // {block, notes, button}
   pairs.forEach(([marker, note], i) => {
     const block = blockOf(marker);
     const anchor = anchors[i];
+    let side = "r";
+    if (two) {
+      const pref = note.classList.contains("mn-gw") ? "l" : "r", other = pref === "l" ? "r" : "l";
+      const yp = Math.max(anchor, floors[pref] + GAP), yo = Math.max(anchor, floors[other] + GAP);
+      side = yp - anchor > SWITCH && yo < yp ? other : pref;
+    }
+    floor = floors[side];
     const y = Math.max(anchor, floor + GAP);
     const overflow = y - anchor > LIMIT && !expanded.has(block);
     if (overflow || (stack && stack.block === block)) {
@@ -243,14 +260,14 @@ function layoutNotes() {
       if (!stack || stack.block !== block) {
         const button = document.createElement("button");
         button.type = "button";
-        button.className = "sn-more";
+        button.className = side === "l" ? "sn-more mn-l" : "sn-more";
         button.setAttribute("aria-expanded", "false");
         button.style.top = `${y}px`;
         article.appendChild(button);
         button.addEventListener("click", () => { expanded.add(block); layoutNotes(); });
         stack = { block, notes: [], button };
         if (buttonH === null) { button.textContent = "1 more note"; buttonH = button.getBoundingClientRect().height; }
-        floor = y + buttonH;
+        floors[side] = y + buttonH;
       }
       stack.notes.push(note);
       const n = stack.notes.length;
@@ -259,10 +276,12 @@ function layoutNotes() {
       return;
     }
     stack = null;
+    note.classList.toggle("mn-l", side === "l");
     note.style.top = `${y}px`;
-    floor = y + heights[i];
+    floors[side] = y + heights[i];
   });
-  article.style.minHeight = floor > 0 ? `${Math.ceil(floor)}px` : "";
+  const end = Math.max(floors.r, floors.l);
+  article.style.minHeight = end > 0 ? `${Math.ceil(end)}px` : "";
 }
 
 let pending = 0;
@@ -273,6 +292,7 @@ function scheduleLayout() {
 }
 if (article) {
   wide.addEventListener("change", () => { expanded.clear(); scheduleLayout(); });
+  twoSide.addEventListener("change", () => { expanded.clear(); scheduleLayout(); });
   window.addEventListener("resize", scheduleLayout);
   document.fonts?.ready.then(scheduleLayout);
   window.addEventListener("load", scheduleLayout);

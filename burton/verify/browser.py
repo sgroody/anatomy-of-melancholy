@@ -274,25 +274,30 @@ def keyboard_check(profile: str = "private") -> Result:
 
 # ---------------------------------------------------------------- sidenote layout
 LAYOUT_JS = """() => {
+  // Burton's notes and the edition's margin items (2026-11-03), in one or two margins: no item may overlap another in
+  // the same column, nor the text column; drift is measured from each item's anchor
   const art = document.querySelector('article.unit');
   const rem = parseFloat(getComputedStyle(art).fontSize);
-  const notes = [...document.querySelectorAll('a.nref')].map(m => [m, document.getElementById(m.getAttribute('href').slice(1))]);
+  const of = m => m.classList.contains('mref') ? document.getElementById(m.dataset.for)
+                                                : document.getElementById(m.getAttribute('href').slice(1));
+  const notes = [...document.querySelectorAll('a.nref, span.mref')].map(m => [m, of(m)]).filter(([, n]) => n);
   const laid = notes.filter(([m, n]) => !n.classList.contains('sn-stacked'));
   const rects = laid.map(([m, n]) => n.getBoundingClientRect());
   let overlaps = 0, maxDrift = 0, outside = 0;
-  const textRight = art.getBoundingClientRect().right;
+  const box = art.getBoundingClientRect();
   for (let i = 0; i < laid.length; i++) {
     const [m] = laid[i]; const r = rects[i];
-    if (r.left < textRight) outside++;
+    if (r.left < box.right - 0.5 && r.right > box.left + 0.5) outside++;
     maxDrift = Math.max(maxDrift, (r.top - m.getBoundingClientRect().top) / rem);
     for (let j = i + 1; j < laid.length; j++) {
       const q = rects[j];
-      if (r.top < q.bottom - 0.5 && q.top < r.bottom - 0.5) overlaps++;
+      if (Math.abs(r.left - q.left) < 2 && r.top < q.bottom - 0.5 && q.top < r.bottom - 0.5) overlaps++;
     }
   }
   const more = [...document.querySelectorAll('.sn-more')];
   return {notes: notes.length, laid: laid.length, stacked: notes.length - laid.length, stacks: more.length,
-          overlaps, maxDrift: Math.round(maxDrift * 10) / 10, inText: outside};
+          overlaps, maxDrift: Math.round(maxDrift * 10) / 10, inText: outside,
+          left: rects.filter(r => r.right <= box.left + 0.5).length};
 }"""
 
 MARKER_LINE_JS = """() => {
@@ -323,7 +328,8 @@ def layout_check(profile: str = "private") -> Result:
     units = [u.rstrip("/") for u in built(site, ["3.2.4.1/", "1.1.3.2/", "1.2.4.6/", "1.1.1.2/", "djr/"])]
     tot = {"pages": 0, "notes": 0, "stacked": 0, "overlaps": 0, "max_drift_rem": 0.0, "marker_breaks": 0}
     with serve(site) as (_, base), browser() as b:
-        for width, mode in ((1280, "gloss"), (1600, "interlinear"), (1100, "english")):
+        # one margin (1100, 1280) and two (1600, 1920; owner, 2026-11-03, R3)
+        for width, mode in ((1280, "gloss"), (1600, "interlinear"), (1100, "english"), (1920, "gloss")):
             ctx, pg = new_page(b, width=width, settings={"mode": mode})
             for u in units:
                 pg.goto(base + f"{u}/", wait_until="load")
@@ -334,6 +340,7 @@ def layout_check(profile: str = "private") -> Result:
                 tot["notes"] += m["notes"]
                 tot["stacked"] += m["stacked"]
                 tot["overlaps"] += m["overlaps"]
+                tot["left_margin"] = tot.get("left_margin", 0) + m["left"]
                 tot["max_drift_rem"] = max(tot["max_drift_rem"], m["maxDrift"])
                 if m["overlaps"]:
                     r.fail(f"{u} at {width}px ({mode}): {m['overlaps']} overlapping notes")
@@ -341,6 +348,8 @@ def layout_check(profile: str = "private") -> Result:
                     r.fail(f"{u} at {width}px ({mode}): a note drifts {m['maxDrift']} rem below its marker")
                 if m["inText"]:
                     r.fail(f"{u} at {width}px: {m['inText']} notes overlap the text column")
+                if width >= 1600 and not m["left"] and m["notes"] > 10:
+                    r.fail(f"{u} at {width}px: no item in the left margin")
                 if u == "3.2.4.1" and width == 1280:
                     r.counts["densest_3.2.4.1"] = f"{m['notes']} notes, {m['stacked']} stacked in {m['stacks']} stacks"
             ctx.close()

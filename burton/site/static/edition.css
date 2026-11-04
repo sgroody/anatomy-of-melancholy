@@ -512,3 +512,16 @@ a.pageref { color: var(--accent); text-decoration-color: var(--rule); }
 .show-glosses .gl-w { text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 .show-glosses .gl-s { display: inline; font-style: normal; font-size: 0.74em; color: var(--muted); margin-left: 0.25em; padding: 0 0.3em; border-left: 1px solid var(--rule); }
 .show-glosses .gl-s .gl-l { font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
+
+/* ------------------------------------------------------------ two margins on wide windows (owner, 2026-11-03, R3) */
+/* Gowland's commentary on the left, Burton's notes and the translations on the right; edition.js places each item
+   and may cross it over when its side is full */
+@media (min-width: 1380px) {
+  .two-side main { max-width: calc(var(--measure) + 2 * (var(--margin-col) + var(--gap)) + 4rem); }
+  .two-side .unit { margin-left: calc(var(--margin-col) + var(--gap)); }
+  .two-side .unit.sn-laid :is(.mn, .sidenote, .sn-more).mn-l:not(.sn-stacked) { left: calc(-1 * (var(--margin-col) + var(--gap))); }
+  .two-side header.site, .two-side footer.site { max-width: calc(var(--measure) + 2 * (var(--margin-col) + var(--gap)) + 4rem); }
+}
+@media (min-width: 1700px) {
+  :root { --margin-col: 18rem; --gap: 3rem; }
+}
