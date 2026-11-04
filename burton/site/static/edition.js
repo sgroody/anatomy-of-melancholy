@@ -509,6 +509,129 @@ if (synTree) {
   }
 }
 
+// ---------------------------------------------------------------- windows on names and cross-references (stage 5)
+// Hovering a cited author's name or a cross-reference opens a window: the author's entry, or the opening of the
+// passage referred to. Held still on the link, a bar fills along the window's foot; once full, the window stays
+// while the pointer moves into it (CK3-style), and names inside it open windows of their own. A click follows the
+// link. Esc closes them all.
+const authorsData = Object.assign({}, ...[...document.querySelectorAll("script.authors-data")].map((s) => {
+  try { return JSON.parse(s.textContent); } catch { return {}; }
+}));
+const previews = new Map(); // href -> Promise of {title, text}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function preview(href) {
+  if (!previews.has(href)) {
+    previews.set(href, fetch(href).then((r) => r.text()).then((t) => {
+      const d = new DOMParser().parseFromString(t, "text/html");
+      const art = d.querySelector("article.unit");
+      art?.querySelectorAll(".sidenote, .nref, .mn-pool, .mref, .ft, .gowland-tr, .cx-b, .sr-only, .ini, script")
+        .forEach((x) => x.remove());
+      const p = art && [...art.querySelectorAll("p")].find((x) => !x.matches("[class*=head]") && x.textContent.trim());
+      const text = (p?.textContent || "").replace(/­/g, "").replace(/\s+/g, " ").trim();
+      return { title: d.querySelector("h1")?.textContent.trim() || "", text: text.length > 420 ? text.slice(0, 420) + "…" : text };
+    }).catch(() => null));
+  }
+  return previews.get(href);
+}
+async function windowFor(trig) {
+  const box = document.createDocumentFragment();
+  if (trig.classList.contains("nm")) {
+    const a = authorsData[trig.dataset.author];
+    if (!a) return null;
+    box.append(el("p", "pw-h", a.name + (a.dates ? `, ${a.dates}` : "")));
+    if (a.about) {
+      const p = el("p", "pw-t", a.about + " ");
+      if (a.by) {
+        const pv = el("span", "prov");
+        const full = `Entry drafted by ${a.by}${a.checked ? ", checked by the owner" : ", not yet checked"}`;
+        pv.title = full;
+        pv.setAttribute("aria-label", full);
+        pv.setAttribute("role", "img");
+        p.append(pv);
+      }
+      box.append(p);
+    }
+    const links = el("p", "pw-l");
+    const entry = el("a", null, "Index entry");
+    entry.href = trig.href;
+    links.append(entry);
+    if (a.qid) {
+      const w = el("a", null, "Wikipedia");
+      w.href = `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(a.qid)}`;
+      w.rel = "noopener";
+      w.target = "_blank";
+      links.append(" · ", w);
+    }
+    box.append(links);
+    return box;
+  }
+  const pv = await preview(trig.href);
+  if (!pv) return null;
+  box.append(el("p", "pw-h", pv.title), el("p", "pw-t", pv.text));
+  const open = el("a", "pw-open", "Open this passage →");
+  open.href = trig.href;
+  box.append(el("p", "pw-l"));
+  box.lastChild.append(open);
+  return box;
+}
+const pops = []; // the open windows, outermost first: {el, trig, locked, lt, ct}
+function closeFrom(i) {
+  while (pops.length > i) { const p = pops.pop(); clearTimeout(p.lt); clearTimeout(p.ct); p.el.remove(); }
+}
+function levelOf(node) {
+  const w = node.closest?.(".pw");
+  return w ? pops.findIndex((p) => p.el === w) + 1 : 0;
+}
+async function openWindow(trig) {
+  const lvl = levelOf(trig);
+  if (pops[lvl]?.trig === trig) { clearTimeout(pops[lvl].ct); return; }
+  closeFrom(lvl);
+  const p = { trig, locked: false };
+  pops.push(p);
+  const content = await windowFor(trig);
+  if (!content || pops[lvl] !== p) { if (pops[lvl] === p) closeFrom(lvl); return; }
+  const w = el("div", "pw");
+  w.setAttribute("role", "dialog");
+  w.append(content, el("span", "pw-bar"));
+  document.body.append(w);
+  p.el = w;
+  const r = trig.getBoundingClientRect();
+  const left = Math.max(16, Math.min(r.left, innerWidth - w.offsetWidth - 16));
+  const below = r.bottom + 8 + w.offsetHeight < innerHeight || r.top < w.offsetHeight + 16;
+  w.style.left = `${left + scrollX}px`;
+  w.style.top = `${(below ? r.bottom + 6 : r.top - w.offsetHeight - 6) + scrollY}px`;
+  p.lt = setTimeout(() => { p.locked = true; w.classList.add("locked"); }, 650);
+  w.addEventListener("mouseenter", () => { clearTimeout(p.ct); pops.slice(0, lvl).forEach((q) => clearTimeout(q.ct)); });
+  w.addEventListener("mouseleave", (ev) => {
+    if (ev.relatedTarget && pops.slice(lvl + 1).some((q) => q.el?.contains(ev.relatedTarget))) return;
+    p.ct = setTimeout(() => closeFrom(lvl), 300);
+  });
+}
+const POP = "a.nm, a.xref";
+let hoverTimer = 0;
+document.addEventListener("mouseover", (ev) => {
+  const t = ev.target.closest?.(POP);
+  if (!t || !wide.matches) return;
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(() => openWindow(t), 120);
+});
+document.addEventListener("mouseout", (ev) => {
+  const t = ev.target.closest?.(POP);
+  if (!t) return;
+  clearTimeout(hoverTimer);
+  const lvl = levelOf(t), p = pops[lvl];
+  if (!p || p.trig !== t) return;
+  if (!p.locked) { closeFrom(lvl); return; }
+  if (ev.relatedTarget && p.el?.contains(ev.relatedTarget)) return;
+  p.ct = setTimeout(() => closeFrom(lvl), 350);
+});
+document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closeFrom(0); });
+
 // ---------------------------------------------------------------- the front page (stage 4)
 // Pointing at a panel of the engraving shows its stanza beside it (owner, 2026-11-03: T14, R4 B).
 const stanzaBox = document.querySelector(".front-stanza");

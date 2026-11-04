@@ -594,3 +594,21 @@ main:has(> .front) { max-width: 82rem; }
 .facing-t .sidenote, .facing-t .nref, .facing-t .mn-pool, .facing-t .mref, .facing-t .enref { display: none !important; }
 @media (max-width: 1099px) { .facing-t { margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1rem; } }
 .facing-on .fo { text-decoration: none; }
+
+/* ------------------------------------------------------------ names and their windows (stage 5, R5 C) */
+a.nm { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em; }
+a.nm:hover, a.nm:focus-visible { text-decoration-color: var(--accent); }
+.pw { position: absolute; z-index: 60; width: min(26rem, calc(100vw - 32px)); background: var(--pop-bg); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); padding: 0.6rem 0.9rem 0.7rem;
+  font-size: 0.9rem; line-height: 1.4; text-align: left; text-indent: 0; font-style: normal; }
+.pw p { margin: 0 0 0.35rem; text-indent: 0; text-align: left; }
+.pw-h { font-style: italic; font-size: 1.05em; }
+.pw-l { font-size: 0.9em; margin-bottom: 0 !important; }
+.pw-l a, .pw-open { color: var(--accent); }
+.pw-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); border-radius: 0 0 0 6px; }
+.pw:not(.locked) .pw-bar { animation: pw-lock 0.65s linear forwards; }
+.pw.locked .pw-bar { width: 100%; background: color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 0 0 6px 6px; }
+.pw.locked { border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); }
+@keyframes pw-lock { to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .pw:not(.locked) .pw-bar { animation: none; width: 100%; opacity: 0.4; } }

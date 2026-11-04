@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts, frontispiece, glosses, gowland_notes, search, synopsis
+from . import authors_pages, fonts, frontispiece, glosses, gowland_notes, names, search, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -203,6 +203,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     initials = {f.stem[-1] for f in ini_src.glob("red-light-?.webp")
                 if (ini_src / f"red-dark-{f.stem[-1]}.webp").exists()}
     book = Book(profile, units)
+    name_rx, name_ids, author_info = names.index()  # the name windows (stage 5)
     cite_label = authors_pages.tables_label()["short"]
     titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front", "back")}
     findings = yaml.safe_load((paths.MANUAL / "source-findings.yaml").read_text(encoding="utf-8"))
@@ -251,7 +252,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    restored=layer_for(unit, "restored-notes"),
                                    gowland_entries=(gowland_notes.entries(unit, gstats)
                                                     if profile == "private" else None),
-                                   cexp=layer_for(unit, "citation-expansions"), initials=initials)
+                                   cexp=layer_for(unit, "citation-expansions"), initials=initials,
+                                   names=name_rx, name_ids=name_ids, author_info=author_info)
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         if (g := FACING.get(unit)) and profile == "private" and g in book.pages:
@@ -350,6 +352,19 @@ def build(units: list[str] | None, *, profile: str) -> dict:
              crumbs=[("Authors cited", "authors/"), (a["name"], None)], title=a["name"],
              description=f"{a['name']}, as cited by Burton in The Anatomy of Melancholy", a=a)
     report["authors"] = {"pages": len(alpha), **astats}
+    # a name or an expansion links to an author's page only if this build made one (an entry whose author is cited
+    # only outside the notes, or only in notes the public build withholds, has none): unwrap the rest
+    dead = re.compile(r'<a class="(?:nm|cx-a)" href="\.\./authors/([^/"]+)/"[^>]*>(.*?)</a>', re.S)
+    unwrapped = 0
+    for rel in pages:
+        def keep(m):
+            nonlocal unwrapped
+            if m.group(1) in apages:
+                return m.group(0)
+            unwrapped += 1
+            return m.group(2)
+        pages[rel] = dead.sub(keep, pages[rel])
+    report["authors"]["links_without_page_unwrapped"] = unwrapped
 
     # fonts: subset to exactly what the pages and the stylesheet show
     css_src = (HERE / "static" / "edition.css").read_text(encoding="utf-8")

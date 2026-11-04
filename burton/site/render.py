@@ -6,6 +6,7 @@ come from the layer data, never from the template.
 """
 
 import html
+import json
 import re
 
 from .. import paths
@@ -883,6 +884,32 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
     return html_text, cards
 
 
+SKIP_NAMES = (*SKIP_MAIN, "xref", "xref-unresolved", "unit-title", "pageref", "cx", "gl-s", "nm")
+
+
+def mark_names(html_text: str, names: re.Pattern | None, ids: dict[str, str], counts: dict) -> tuple[str, set[str]]:
+    """The names of cited authors in Burton's running text, linked to their index entries (owner, 2026-11-03: a
+    window on the entry, R5 C hairline). Only a form the abbreviation tables give to one author with an entry is
+    linked (`names`, built by the caller); it must stand as whole words in one text run, outside links, notes and
+    the margin. Returns the page and the ids linked."""
+    if names is None:
+        return html_text, set()
+    text, pos = _visible(html_text, SKIP_NAMES)
+    edits, used = [], set()
+    for m in names.finditer(text):
+        hs, he = pos[m.start()], pos[m.end() - 1] + 1
+        if "<" in html_text[hs:he] or "&" in html_text[hs:he]:
+            continue  # the name runs over markup (a soft hyphen is not markup; an entity is left alone)
+        aid = ids[m.group(0).replace("­", "")]
+        edits.append((hs, he, aid))
+        used.add(aid)
+    for hs, he, aid in reversed(edits):
+        html_text = (html_text[:hs] + f'<a class="nm" href="../authors/{attr(aid)}/" data-author="{attr(aid)}">'
+                     + html_text[hs:he] + "</a>" + html_text[he:])
+    counts["names_linked"] = counts.get("names_linked", 0) + len(edits)
+    return html_text, used
+
+
 def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
     """Obsolete-word glosses (M8): the word is wrapped, and its sense follows it, hidden until the reader turns
     glosses on. Placed like cross-references, in the main text only (all found on the page as it is, then
@@ -1034,7 +1061,8 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
                 pagemap: dict | None = None, glosses: list[dict] | None = None,
                 restored: dict | None = None, gowland_entries: list[dict] | None = None,
-                cexp: dict | None = None, initials: set[str] | None = None) -> tuple[str, dict]:
+                cexp: dict | None = None, initials: set[str] | None = None, names: re.Pattern | None = None,
+                name_ids: dict | None = None, author_info: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
@@ -1047,6 +1075,11 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts)
+    body, used = mark_names(body, names, name_ids or {}, r.counts)
+    if used and author_info:  # what the name windows show, for the authors named on this page (edition.js)
+        data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
+        script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
+        body = body.replace("</article>\n", script + "\n</article>\n")
     cards = list(r.cards)
     if profile == "private" and gowland_entries:
         body, gw = mark_gowland(body, gowland_entries, r.counts)
