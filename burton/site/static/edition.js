@@ -7,11 +7,13 @@ const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false };
-// Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only.
+// Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
+// come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
 const ORDERS = {
-  default: ["editor", "djs1927", "machine", "gowland"],
+  default: ["gowland", "editor", "djs1927", "machine"],
   gowland: ["gowland", "editor", "djs1927", "machine"],
-  machine: ["machine", "editor", "djs1927", "gowland"],
+  human: ["editor", "djs1927", "gowland", "machine"],
+  machine: ["machine", "gowland", "editor", "djs1927"],
 };
 
 function load() {

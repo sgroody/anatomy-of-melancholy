@@ -332,7 +332,9 @@ Outcomes:
 
 The default order for which translation the reader shows is:
 
-**Burton himself** > **editor** (reviewed) > **Dell & Jordan-Smith 1927** > **machine** > (private only) **Gowland 2021**.
+**Burton himself** > (private only) **Gowland 2021** > **editor** (reviewed) > **Dell & Jordan-Smith 1927** > **machine**.
+
+Gowland moved to the top on the owner's decision (2026-11-03): the private build is the target, and Gowland is its base. In the public build, which has no Gowland, the order is unchanged.
 
 The reader can change this order. Every displayed translation carries a visible and accessible label naming its source. Machine translations always show the model name and version, which come from the data rather than from the template.
 

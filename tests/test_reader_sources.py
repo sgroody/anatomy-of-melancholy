@@ -40,7 +40,7 @@ def test_bracket_over_several_blocks_is_joined_from_its_pieces():
 
 def test_private_box_lists_every_version_preferred_first_with_its_language():
     html = render_div("private", {"u-f1": REC})
-    assert html.index("ft-machine") < html.index("ft-gowland")  # the default order (SPEC §6.3)
+    assert html.index("ft-gowland") < html.index("ft-machine")  # the default order: Gowland first (SPEC §6.3)
     assert "from Latin" in html and "Translation from Latin: " in html
     assert "Gowland 2021 (private build)" in html and "claude-opus-5-5" in html
 

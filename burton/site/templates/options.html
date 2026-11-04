@@ -6,8 +6,8 @@
 </fieldset>
 <fieldset>
   <legend>Translation shown first</legend>
-  <label><input type="radio" name="order" value="default" checked> Human translation, then machine{% if profile == "private" %}, then Gowland{% endif %}</label>
-  {% if profile == "private" %}<label><input type="radio" name="order" value="gowland"> Gowland 2021 first</label>{% endif %}
+  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland 2021 first, then other human translations, then machine{% else %}Human translation, then machine{% endif %}</label>
+  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Editor’s and Dell &amp; Jordan-Smith’s first, then Gowland, then machine</label>{% endif %}
   <label><input type="radio" name="order" value="machine"> Machine translation first</label>
 </fieldset>
 <fieldset>

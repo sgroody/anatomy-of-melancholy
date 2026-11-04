@@ -55,8 +55,9 @@ def label_of(t: dict) -> str:
 
 
 # SPEC §6.3: the default order of translation sources (Burton's own rendering is not a source here:
-# where he translates a passage himself his English stays in the text). The reader can reorder them.
-SOURCE_ORDER = ["editor", "djs1927", "machine", "gowland"]
+# where he translates a passage himself his English stays in the text). Gowland first: the private build is
+# built on his edition (owner, 2026-11-03); the public build has none. The reader can reorder them.
+SOURCE_ORDER = ["gowland", "editor", "djs1927", "machine"]
 LANG_NAMES = {"la": ("Latin", "Lat."), "grc": ("Greek", "Gk."), "it": ("Italian", "It."), "fr": ("French", "Fr."),
               "es": ("Spanish", "Sp."), "de": ("German", "Ger."), "nl": ("Dutch", "Du."), "he": ("Hebrew", "Heb."),
               "ar": ("Arabic", "Ar."), "enm": ("Middle English", "ME")}
