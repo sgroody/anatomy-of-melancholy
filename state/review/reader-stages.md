@@ -199,3 +199,8 @@ adjust color?" · F3 B (three compartments, as in the engraving): "Might have to
 full front page" · F4 Neither: "Keep A for now" (Burton's English in the Latin's colour).
 What follows: Latin #7a2230 by day, #e0c27a by night, with a reading option for the colour (presets and a custom
 colour); round 6 shows compartment variants on the whole front page.
+
+Round 6 page: `state/review/ab-2026-11-04-r6.html` (it borrows the engraving from site/private, so build first). G1 the
+synopses as compartments on the whole front page: A three across under the way in, a click opens the chosen
+Partition's branches below; B stacked, shut to a line, one open at a time; C a triptych under the whole page, like the
+engraving's lowest row; D one compartment with three numbered panels to choose.
