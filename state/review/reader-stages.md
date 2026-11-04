@@ -84,3 +84,8 @@ Recorded as given, for A/B rounds and work after stage 7:
 * A stylized G instead of writing "Gowland" every time: A/B it.
 * The top of the reader: "The Anatomy of Melancholy" as now, with "An Englished Reader" under it.
 * The owner will be asleep: don't let a permission prompt stop the work.
+
+Round 4 page for those notes: `state/review/ab-2026-11-04.html` (served by `review-pages`, port 8790; it borrows
+fonts from site/private, so build first). Tests N1 synopsis position, N2 search and options, N3 synopses on the home
+page, N4 language colours (light and dark), N5 a mark for Burton's notes, N6 a sign for Gowland. The subtitle "An
+Englished Reader" is done directly (header, every page).

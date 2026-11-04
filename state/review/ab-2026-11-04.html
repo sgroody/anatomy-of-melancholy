@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader A/B round 4</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root { --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d; --panel: #efe9dc;
+  --la: #2c6150; --cite: #4b5d80; --bible: #66661f; --hot: color-mix(in srgb, #d9a520 26%, transparent); color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e;
+  --accent: #e5927a; --panel: #24211d; --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a; --panel: #24211d;
+  --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", Georgia, serif; font-size: 1.12rem; line-height: 1.5; font-variant-numeric: oldstyle-nums; }
+.wrap { max-width: 1400px; margin: 0 auto; padding: 1.5rem 16px 6rem; }
+h1 { font-weight: 400; margin: 0 0 0.3rem; } .intro, .q, .small { color: var(--muted); } .intro { max-width: 54rem; } .small { font-size: 0.86em; }
+.theme-btn { float: right; font: inherit; font-size: 0.85rem; background: none; color: var(--muted); border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.6rem; cursor: pointer; }
+section.test { border-top: 1px solid var(--rule); padding: 1.6rem 0 1rem; }
+section.test > h2 { font-weight: 400; font-size: 1.35rem; margin: 0; } .tn { color: var(--accent); margin-right: 0.4rem; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.2rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem 0.8rem; } .opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; } .ol b { color: var(--accent); }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.9rem; flex-wrap: wrap; }
+.pick button, .summary button { font: inherit; font-size: 0.9rem; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.25rem 0.8rem; cursor: pointer; }
+.pick button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.pick input { font: inherit; font-size: 0.9rem; flex: 1; min-width: 12rem; background: transparent; color: var(--ink); border: none; border-bottom: 1px solid var(--rule); }
+.pg { display: grid; grid-template-columns: minmax(0, 1fr) 13.5rem; gap: 1.3rem; }
+.tx { margin: 0; text-align: justify; hyphens: auto; }
+.mg { font-size: 0.82rem; line-height: 1.35; } .mg .n { margin: 0 0 0.6rem; padding-left: 0.5rem; border-left: 2px solid transparent; }
+.kl { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.3rem; color: var(--cite); }
+.kl.b { color: var(--bible); }
+.verse { font-style: italic; }
+.lk { border-radius: 2px; cursor: pointer; transition: background 0.12s; } .hot { background: var(--hot) !important; }
+.ph { cursor: pointer; }
+.pA .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; padding: 0 0.05em; }
+.pB .ph { color: var(--cite); font-size: 0.9em; padding: 0 0.08em; }
+.pC .name { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 0.22em; }
+.pC .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; }
+.pD .ph { display: inline-block; width: 0.38em; height: 0.38em; border-radius: 50%; background: var(--cite); opacity: 0.75; vertical-align: 0.12em; margin: 0 0.12em; }
+.orig { color: var(--muted); font-size: 0.85em; display: block; margin-top: 0.15rem; }
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--accent); padding: 0.6rem 0; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.summary span { color: var(--muted); font-size: 0.9rem; }
+.ini-sheet img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.ini-demo .ini { float: left; width: 4.1em; height: 4.1em; margin: 0.3em 0.5em 0 0; }
+.ini-demo .sc { font-variant-caps: small-caps; letter-spacing: 0.04em; }
+@media (max-width: 40rem) { .pg { grid-template-columns: 1fr; } }
+@font-face { font-family: "GFS Didot"; src: url("../../site/private/assets/fonts/GFSDidot-Regular.woff2") format("woff2"); }
+/* round 4 */
+:root { --grc: #36508f; --enm: #7a4f14; --modern: #5b4a7a; }
+:root[data-theme="dark"] { --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; } }
+.frame { border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); overflow: hidden; }
+.mini-head { display: flex; align-items: flex-start; gap: 1rem; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); font-size: 0.85rem; }
+.mini-body { padding: 0.8rem 0.9rem; font-size: 0.95rem; }
+.ttl { font-variant-caps: all-small-caps; letter-spacing: 0.12em; font-size: 1.05rem; line-height: 1.1; }
+.ttl small { display: block; font-variant-caps: normal; letter-spacing: 0.02em; font-style: italic; font-size: 0.78rem; color: var(--muted); }
+.cur { color: var(--accent); }
+.dim { color: var(--muted); }
+/* N1 */
+.braces { display: flex; align-items: center; gap: 0.15rem; font-size: 0.72rem; line-height: 1.15; max-width: 26rem; }
+.braces .lv { display: flex; align-items: center; gap: 0.15rem; }
+.braces .br { font-size: 2.1em; line-height: 0.8; color: var(--muted); font-weight: 300; transform: scaleY(1.25); }
+.braces .lb { max-width: 6.5rem; }
+.spine { font-size: 0.74rem; line-height: 1.3; border-left: 1px solid var(--rule); padding-left: 0.5rem; max-width: 17rem; }
+.spine div { position: relative; padding-left: 0.7rem; } .spine div::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.45rem; border-top: 1px solid var(--rule); }
+.spine .d1 { margin-left: 0; } .spine .d2 { margin-left: 0.8rem; } .spine .d3 { margin-left: 1.6rem; } .spine .d4 { margin-left: 2.4rem; }
+.rungs { font-variant-caps: all-small-caps; letter-spacing: 0.05em; font-size: 0.8rem; color: var(--muted); max-width: 30rem; }
+.rungs .sep { color: var(--rule); margin: 0 0.2rem; font-size: 1.2em; }
+.badge { position: relative; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 0.1rem 0.6rem; cursor: default; }
+.badge .ico { color: var(--accent); font-size: 1.2em; }
+.badge .pop { display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 5; width: 20rem; background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 0.5rem 0.7rem; color: var(--ink); }
+.badge:hover .pop, .badge:focus-within .pop { display: block; }
+/* N2 */
+.bar2 { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--rule); }
+.bar2 .ttl { margin-right: auto; }
+.sfield { font: inherit; font-size: 0.85rem; color: var(--ink); background: transparent; border: none; border-bottom: 1px solid var(--rule); padding: 0.05rem 0.2rem; width: 11rem; }
+.sfield::placeholder { color: var(--muted); font-style: italic; }
+.aa { font: inherit; font-size: 0.9rem; background: none; border: none; color: var(--muted); cursor: pointer; padding: 0 0.2rem; }
+.aa:hover, .tl:hover { color: var(--accent); }
+.tl { font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 0.9rem; color: var(--muted); text-decoration: none; }
+.ic { width: 1.05rem; height: 1.05rem; vertical-align: -0.15rem; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.cbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); }
+.cbar .ttl { text-align: center; }
+.cbar .right { justify-self: end; display: flex; gap: 0.7rem; color: var(--muted); }
+.cbar .left { color: var(--muted); font-size: 0.8rem; }
+/* N3 */
+.bt { display: flex; align-items: center; font-size: 0.78rem; line-height: 1.25; overflow-x: auto; padding: 0.4rem 0; }
+.bt .col { display: flex; flex-direction: column; gap: 0.5rem; }
+.bt .grp { display: flex; align-items: center; }
+.bt .br { font-size: 3.2em; line-height: 0.8; color: var(--muted); font-weight: 200; margin: 0 0.15rem; }
+.bt .br.s { font-size: 2.2em; }
+.bt .it { max-width: 10rem; } .bt .it.op { cursor: pointer; color: var(--accent); }
+.mc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); font-size: 0.8rem; border: 1px solid var(--rule); border-radius: 4px; min-height: 12rem; }
+.mc ul { list-style: none; margin: 0; padding: 0.4rem 0; border-right: 1px solid var(--rule); }
+.mc li { padding: 0.15rem 0.6rem; cursor: pointer; } .mc li.on { background: var(--panel); color: var(--accent); }
+.mc li.on::after { content: " ›"; }
+.out { font-size: 0.82rem; max-height: 24rem; overflow: auto; } .out ul { list-style: none; margin: 0; padding-left: 1rem; border-left: 1px solid var(--rule); } .out li { margin: 0.15rem 0; }
+/* N4 */
+.pal { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.pal .sw { border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.9rem; line-height: 1.45; }
+.pal .sw.l { background: #f7f3ea; color: #23201b; } .pal .sw.d { background: #1c1a17; color: #e8e1d3; }
+.pal .tag { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.8em; opacity: 0.7; display: block; margin-bottom: 0.2rem; }
+.pal i { font-style: italic; }
+.chips { display: flex; gap: 0.3rem; margin-top: 0.4rem; flex-wrap: wrap; } .chip { width: 1.3rem; height: 1.3rem; border-radius: 50%; display: inline-block; border: 1px solid rgb(0 0 0 / 0.1); }
+/* N5 and N6: margin cards */
+.cards { font-size: 0.82rem; line-height: 1.35; max-width: 16rem; }
+.cards .n { margin: 0 0 0.6rem; }
+.cards .k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); margin-right: 0.25rem; }
+.cards .lt { color: var(--accent); margin-right: 0.2rem; }
+.cards .la { color: var(--la); font-style: italic; }
+.cards .src { color: var(--muted); font-size: 0.9em; }
+.n5c .bn { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+.n5d .orn { color: var(--accent); margin-right: 0.15rem; }
+.gB { display: inline-flex; align-items: center; justify-content: center; width: 1.05em; height: 1.05em; border: 1px solid currentColor; border-radius: 50%; font-size: 0.78em; font-variant-caps: normal; line-height: 1; color: var(--accent); vertical-align: 0.05em; }
+.gC { font-style: italic; font-size: 1.15em; color: var(--accent); font-feature-settings: "swsh" 1, "salt" 1; }
+.gD { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); vertical-align: 0.35em; font-size: 0.78em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<button class="theme-btn" type="button" id="theme">Dark / light</button>
+<h1>Reader A/B round 4</h1>
+<p class="intro">From your notes of 2026-11-03 (late). Each test shows the same passage or page head in each option; pick one, or say Neither with a note, then “Copy my choices”. The title now reads “The Anatomy of Melancholy” with “An Englished Reader” under it (as you asked); it is shown that way in every option.</p>
+
+<section class="test" data-test="N1">
+<h2><span class="tn">N1</span>Where this page stands in Burton’s synopsis</h2>
+<p class="q">Today a line of text under the heading says “Where this stands in Burton’s synopsis”. Instead, a picture of the place, always at the top left. The page here is 1.2.3.10, “Discontents, Cares, Miseries, &amp;c. causes”.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · braces, as on the printed sheet</div>
+    <div class="frame"><div class="mini-head"><div class="braces" aria-label="Synopsis: Necessary causes, Passions and perturbations of the mind, Irascible, Discontents">
+      <span class="lv"><span class="lb dim">Necessary causes</span><span class="br">{</span></span>
+      <span class="lv"><span class="lb dim">Passions and perturbations</span><span class="br">{</span></span>
+      <span class="lv"><span class="lb dim">Irascible</span><span class="br">{</span></span>
+      <span class="lv"><span class="lb cur">Discontents, cares, miseries</span></span></div>
+      <div class="ttl" style="margin-left:auto">The Anatomy of Melancholy<small>An Englished Reader</small></div></div>
+    <div class="mini-body"><p class="tx">Discontents, cares, crosses, miseries, or whatsoever it is, that shall cause any molestation of spirit …</p></div></div>
+    <p class="small">Each level a brace, the page’s own branch in red; each label links to its node in the full synopsis.</p></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · a small tree, with the branches beside</div>
+    <div class="frame"><div class="mini-head"><div class="spine">
+      <div class="d1 dim">Necessary causes, the six non-natural things</div>
+      <div class="d2 dim">Passions and perturbations of the mind</div>
+      <div class="d3 dim">Irascible <span style="opacity:.6">· Concupiscible</span></div>
+      <div class="d4 cur">Discontents, cares, miseries</div></div>
+      <div class="ttl" style="margin-left:auto">The Anatomy of Melancholy<small>An Englished Reader</small></div></div>
+    <div class="mini-body"><p class="tx">Discontents, cares, crosses, miseries, or whatsoever it is …</p></div></div>
+    <p class="small">The path down the tree, with the other branch at each fork in grey; more room, more to read.</p></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · one line of brace marks</div>
+    <div class="frame"><div class="mini-head"><div class="rungs">Necessary causes<span class="sep">{</span>Passions<span class="sep">{</span>Irascible<span class="sep">{</span><span class="cur">Discontents</span></div>
+      <div class="ttl" style="margin-left:auto">The Anatomy of Melancholy<small>An Englished Reader</small></div></div>
+    <div class="mini-body"><p class="tx">Discontents, cares, crosses, miseries, or whatsoever it is …</p></div></div>
+    <p class="small">A breadcrumb in Burton’s own sign: the least room, short labels.</p></div>
+  <div class="opt" data-o="D"><div class="ol"><b>D</b> · a mark that opens the branch</div>
+    <div class="frame"><div class="mini-head"><span class="badge" tabindex="0"><span class="ico">{</span>I · Causes · Passions · <span class="cur">Discontents</span>
+      <span class="pop"><span class="dim">Necessary causes ›</span><br><span class="dim">&nbsp;Passions and perturbations of the mind ›</span><br><span class="dim">&nbsp;&nbsp;Irascible:</span> Sorrow · Fear · Shame · Envy · Emulation · Anger · <span class="cur">Discontents</span></span></span>
+      <div class="ttl" style="margin-left:auto">The Anatomy of Melancholy<small>An Englished Reader</small></div></div>
+    <div class="mini-body"><p class="tx">Discontents, cares, crosses, miseries … <span class="small">(hover the mark above)</span></p></div></div>
+    <p class="small">Small until wanted: hovering shows the branch with its neighbours, each a link.</p></div>
+</div>
+</section>
+
+<section class="test" data-test="N2">
+<h2><span class="tn">N2</span>Search and reading options, at the top right</h2>
+<p class="q">Today: boxed buttons (“Contents ▾”, “Reading options”) and a “Search” link. Something that sits in the page like a printed running head.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · a search line and “Aa”</div>
+    <div class="frame"><div class="bar2"><div class="ttl">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+      <input class="sfield" type="search" placeholder="Search the Anatomy" aria-label="Search the Anatomy">
+      <button class="aa" type="button" title="Reading options">Aa</button></div>
+      <div class="mini-body dim small">The search line takes words at once; Aa opens the reading options under it. Contents moves to the left, beside the synopsis mark.</div></div></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · words in small capitals</div>
+    <div class="frame"><div class="bar2"><div class="ttl">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+      <a class="tl" href="#">contents</a><span class="dim">·</span><a class="tl" href="#">search</a><span class="dim">·</span><a class="tl" href="#">options</a></div>
+      <div class="mini-body dim small">No boxes: three words like a running head; “search” opens a line in place.</div></div></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · title centred, two quiet signs</div>
+    <div class="frame"><div class="cbar"><div class="left">I · 2 · 3 · 10</div><div class="ttl">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+      <div class="right"><svg class="ic" viewBox="0 0 20 20" aria-label="Search" role="img"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg><button class="aa" type="button" title="Reading options">Aa</button></div></div>
+      <div class="mini-body dim small">The title in the middle as on a book’s page; the page’s place on the left (with N1); a magnifier and Aa on the right.</div></div></div>
+</div>
+</section>
+
+<section class="test" data-test="N3">
+<h2><span class="tn">N3</span>The synopses on the home page</h2>
+<p class="q">Burton’s synopses are trees drawn with braces, read left to right. Today the home page lists them as an indented outline. Partition 1, its first branches (click a red item to open it).</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · braces, left to right, as printed</div>
+    <div class="bt" id="n3a"></div>
+    <p class="small">The sheet’s own shape: each brace opens on a click; the deepest levels stay shut until asked.</p></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · columns: choose a branch, its parts appear beside it</div>
+    <div class="mc" id="n3b"></div>
+    <p class="small">Like a file browser: always one path open, nothing wider than the page.</p></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · the outline (today), with brace rules</div>
+    <div class="out" id="n3c"></div>
+    <p class="small">What the home page has now, kept for comparison.</p></div>
+</div>
+</section>
+
+<section class="test" data-test="N4">
+<h2><span class="tn">N4</span>Colours for the languages</h2>
+<p class="q">Each option in light and dark. Latin, Greek (GFS Didot), Middle English (Chaucer, small capitals) and a modern language (Italian).</p>
+<div class="opts" id="n4"></div>
+</section>
+
+<section class="test" data-test="N5">
+<h2><span class="tn">N5</span>Marking Burton’s own notes in the margin</h2>
+<p class="q">The margin holds Burton’s notes, translations, citations, Gowland’s notes and restored notes. Only Burton’s have no label: just their letter.</p>
+<div class="opts">
+  <div class="opt n5a" data-o="A"><div class="ol"><b>A</b> · the letter alone (today)</div><div class="cards">
+    <div class="n"><span class="lt">c</span><span class="la">Finis rerum omnium cui sublunaria serviunt.</span> Julius Caesar Scaliger, Exercitations, 365.</div>
+    <div class="n"><span class="k">trans.</span> The end of all things, to whom sublunary beings are subject <span class="src">Gowland</span></div>
+    <div class="n"><span class="k" style="color:var(--cite)">cites</span> Avicenna, book 3, fen 1</div></div></div>
+  <div class="opt n5b" data-o="B"><div class="ol"><b>B</b> · a “Burton” label, like the others</div><div class="cards">
+    <div class="n"><span class="k" style="color:var(--accent)">Burton</span><span class="lt">c</span><span class="la">Finis rerum omnium cui sublunaria serviunt.</span> Julius Caesar Scaliger, Exercitations, 365.</div>
+    <div class="n"><span class="k">trans.</span> The end of all things, to whom sublunary beings are subject <span class="src">Gowland</span></div>
+    <div class="n"><span class="k" style="color:var(--cite)">cites</span> Avicenna, book 3, fen 1</div></div></div>
+  <div class="opt n5c" data-o="C"><div class="ol"><b>C</b> · a rubric rule beside his notes</div><div class="cards">
+    <div class="n bn"><span class="lt">c</span><span class="la">Finis rerum omnium cui sublunaria serviunt.</span> Julius Caesar Scaliger, Exercitations, 365.</div>
+    <div class="n"><span class="k">trans.</span> The end of all things, to whom sublunary beings are subject <span class="src">Gowland</span></div>
+    <div class="n"><span class="k" style="color:var(--cite)">cites</span> Avicenna, book 3, fen 1</div></div></div>
+  <div class="opt n5d" data-o="D"><div class="ol"><b>D</b> · a printer’s flower before the letter</div><div class="cards">
+    <div class="n"><span class="orn">☙</span><span class="lt">c</span><span class="la">Finis rerum omnium cui sublunaria serviunt.</span> Julius Caesar Scaliger, Exercitations, 365.</div>
+    <div class="n"><span class="k">trans.</span> The end of all things, to whom sublunary beings are subject <span class="src">Gowland</span></div>
+    <div class="n"><span class="k" style="color:var(--cite)">cites</span> Avicenna, book 3, fen 1</div></div></div>
+</div>
+</section>
+
+<section class="test" data-test="N6">
+<h2><span class="tn">N6</span>A sign for Gowland instead of his name</h2>
+<p class="q">“Gowland” follows thousands of translations and notes. A sign, with his name on hover and in the guide.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · the name (today)</div><div class="cards">
+    <div class="n"><span class="k">trans.</span> where there’s sin there’s a storm <span class="src">Gowland</span></div>
+    <div class="n"><span class="k">gloss</span> <i class="dim">fabulous</i> Fond of relating fables <span class="src">Gowland</span></div></div></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · a G in a ring</div><div class="cards">
+    <div class="n"><span class="k">trans.</span> where there’s sin there’s a storm <span class="gB" title="Gowland 2021">G</span></div>
+    <div class="n"><span class="k">gloss</span> <i class="dim">fabulous</i> Fond of relating fables <span class="gB" title="Gowland 2021">G</span></div></div></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · an italic rubric G</div><div class="cards">
+    <div class="n"><span class="k">trans.</span> where there’s sin there’s a storm <span class="gC" title="Gowland 2021">G</span></div>
+    <div class="n"><span class="k">gloss</span> <i class="dim">fabulous</i> Fond of relating fables <span class="gC" title="Gowland 2021">G</span></div></div></div>
+  <div class="opt" data-o="D"><div class="ol"><b>D</b> · a raised small-capital G</div><div class="cards">
+    <div class="n"><span class="k">trans.</span> where there’s sin there’s a storm<span class="gD" title="Gowland 2021">g</span></div>
+    <div class="n"><span class="k">gloss</span> <i class="dim">fabulous</i> Fond of relating fables<span class="gD" title="Gowland 2021">g</span></div></div></div>
+</div>
+</section>
+
+<div class="summary"><button type="button" id="copy">Copy my choices</button><span id="sumtxt">No choices yet.</span></div>
+</div>
+<script type="application/json" id="syn-data">{"id": "p1-syn", "t": "Melancholy, its causes, symptoms, prognostics and cure: Partition 1", "c": [{"id": "p1-synopsis-s1", "t": "In diseases consider Sect. 1 Memb. 1.", "c": [{"id": "p1-synopsis-s2", "t": "Their Causes. Subsect. 1.", "c": [{"id": "p1-synopsis-s3", "t": "Impulsive;", "c": [{"id": "p1-synopsis-s4", "t": "sin, concupiscence, &c.", "c": []}]}, {"id": "p1-synopsis-s5", "t": "Instrumental;", "c": [{"id": "p1-synopsis-s6", "t": "intemperance, all second causes, &c.", "c": []}]}]}, {"id": "p1-synopsis-s7", "t": "Definition, Member, Division, Subsect. 2.", "c": [{"id": "p1-synopsis-s8", "t": "Of the body 300, which are", "c": [{"id": "p1-synopsis-s9", "t": "Epidemical; as Plague, Plica, &c.", "c": []}, {"id": "p1-synopsis-s10", "t": "Particular; as Gout, Dropsy, &c.", "c": []}]}, {"id": "p1-synopsis-s11", "t": "of the head or mind. Subsect. 3.", "c": [{"id": "p1-synopsis-s12", "t": "In disposition; as all perturbations, evil affection, &c.", "c": []}, {"id": "p1-synopsis-s13", "t": "Habits, as Subsect. 4.", "c": []}]}]}]}, {"id": "p1-synopsis-s23", "t": "Melancholy: in which consider", "c": [{"id": "p1-synopsis-s24", "t": "Its Equivocations, in Disposition, Improper, &c., Subsect. 5.", "c": []}, {"id": "p1-synopsis-s25", "t": "Memb. 2. To its explication, a digression of anatomy, in which observe parts of Subsect. 1.", "c": [{"id": "p1-synopsis-s26", "t": "Body hath parts Subsect. 2.", "c": [{"id": "p1-synopsis-s27", "t": "Contained as", "c": []}, {"id": "p1-synopsis-s30", "t": "containing", "c": []}]}, {"id": "p1-synopsis-s33", "t": "Soul and his faculties, as", "c": [{"id": "p1-synopsis-s34", "t": "Vegetal. Subsect. 5.", "c": []}, {"id": "p1-synopsis-s35", "t": "Sensible. Subsect. 6, 7, 8.", "c": []}, {"id": "p1-synopsis-s36", "t": "Rational. Subsect. 9, 10, 11.", "c": []}]}]}, {"id": "p1-synopsis-s37", "t": "Memb. 3. Its definition, name, difference, Subsect. 1.", "c": []}, {"id": "p1-synopsis-s38", "t": "The part and parties, affected, affection, &c., Subsect. 2.", "c": []}, {"id": "p1-synopsis-s39", "t": "The matter of melancholy, natural, unnatural, &c., Subsect. 3.", "c": []}, {"id": "p1-synopsis-s40", "t": "Species, or kinds, which are Subsect. 4.", "c": [{"id": "p1-synopsis-s41", "t": "Proper to parts, as", "c": [{"id": "p1-synopsis-s42", "t": "Of the head alone, Hypochondriacal, or windy melancholy. Of the whole body", "c": []}]}, {"id": "p1-synopsis-s44", "t": "Indefinite; as Love-melancholy, the subject of the third partition.", "c": []}]}, {"id": "p1-synopsis-s45", "t": "Its Causes in general. Sect. 2, A.", "c": []}, {"id": "p1-synopsis-s46", "t": "Its Symptoms or signs. Sect. 3, B.", "c": []}, {"id": "p1-synopsis-s47", "t": "Its prognostics or indications. Sect. 4, C.", "c": []}, {"id": "p1-synopsis-s48", "t": "Its Cures; the subject of the second Partition.", "c": []}]}, {"id": "p1-synopsis-s49", "t": "Sect. 2. Causes of Melancholy are either", "c": [{"id": "p1-synopsis-s50", "t": "General, as Memb. 1.", "c": [{"id": "p1-synopsis-s51", "t": "Supernatural", "c": [{"id": "p1-synopsis-s52", "t": "As from God immediately, or by second causes, Subsect. 1.", "c": []}, {"id": "p1-synopsis-s53", "t": "Or from the devil immediately, with a digression of the nature of spirits and devils, Subsect. 2.", "c": []}, {"id": "p1-synopsis-s54", "t": "Or mediately by Magicians, Witches, Subsect. 3.", "c": []}]}, {"id": "p1-synopsis-s55", "t": "Natural", "c": [{"id": "p1-synopsis-s56", "t": "Primary as stars, proved by Aphorisms, signs from Physiognomy, Metoposcopy, Chiromancy, Subsect. 4.", "c": []}, {"id": "p1-synopsis-s57", "t": "Secondary, as", "c": []}]}]}, {"id": "p1-synopsis-s75", "t": "Particular to the three species. See ♊", "c": []}]}, {"id": "p1-synopsis-s76", "t": "Particular causes Sect. 2 Memb. 5.", "c": [{"id": "p1-synopsis-s77", "t": "Of head-Melancholy are, Subsect. 3.", "c": [{"id": "p1-synopsis-s78", "t": "Inward", "c": [{"id": "p1-synopsis-s79", "t": "Innate humour, or from distemperature adust.", "c": []}, {"id": "p1-synopsis-s80", "t": "A hot brain, corrupted blood in the brain.", "c": []}, {"id": "p1-synopsis-s81", "t": "Excess of Venery, or defect.", "c": []}, {"id": "p1-synopsis-s82", "t": "Agues, or some precedent disease.", "c": []}, {"id": "p1-synopsis-s83", "t": "Fumes arising from the stomach, &c.", "c": []}]}, {"id": "p1-synopsis-s84", "t": "Outward", "c": [{"id": "p1-synopsis-s85", "t": "Heat of the Sun immoderate.", "c": []}, {"id": "p1-synopsis-s86", "t": "A blow on the head.", "c": []}, {"id": "p1-synopsis-s87", "t": "Overmuch use of hot wines, spices, garlic, onions, hot baths, overmuch waking, &c.", "c": []}, {"id": "p1-synopsis-s88", "t": "Idleness, solitariness, or overmuch study, vehement labour, &c.", "c": []}, {"id": "p1-synopsis-s89", "t": "Passions, perturbations, &c.", "c": []}]}]}, {"id": "p1-synopsis-s90", "t": "Of hypochondriacal, or windy melancholy are, Subsect. 4.", "c": [{"id": "p1-synopsis-s91", "t": "Inward", "c": [{"id": "p1-synopsis-s92", "t": "Default of spleen, belly, bowels, stomach, mesentery, meseraic veins, liver, &c.", "c": []}, {"id": "p1-synopsis-s93", "t": "Months, or haemorrhoids stopped, or any other ordinary evacuation.", "c": []}]}, {"id": "p1-synopsis-s94", "t": "Outward", "c": [{"id": "p1-synopsis-s95", "t": "Those six non-natural things abused.", "c": []}]}]}, {"id": "p1-synopsis-s96", "t": "Over all the body are, Subsect. 5.", "c": [{"id": "p1-synopsis-s97", "t": "Inward", "c": [{"id": "p1-synopsis-s98", "t": "Liver distempered, stopped, overhot, apt to engender melancholy, temperature innate.", "c": []}]}, {"id": "p1-synopsis-s99", "t": "Outward", "c": [{"id": "p1-synopsis-s100", "t": "Bad diet, suppression of haemorrhoids, &c., and such evacuations, passions, cares, &c., those six non-natural things abused.", "c": []}]}]}]}, {"id": "p1-synopsis-s101", "t": "Necessary causes, as those six non-natural things which are, Sect. 2 Memb. 2.", "c": [{"id": "p1-synopsis-s102", "t": "Diet offending in, Subsect. 1.", "c": [{"id": "p1-synopsis-s103", "t": "Substance", "c": [{"id": "p1-synopsis-s104", "t": "Bread; coarse and black, &c.", "c": []}, {"id": "p1-synopsis-s105", "t": "Drink; thick, thin, sour, &c.", "c": []}, {"id": "p1-synopsis-s106", "t": "Water unclean, milk, oil, vinegar, wine, spices, &c.", "c": []}, {"id": "p1-synopsis-s107", "t": "Flesh", "c": []}, {"id": "p1-synopsis-s111", "t": "Herbs, Fish, &c.", "c": []}]}, {"id": "p1-synopsis-s115", "t": "Quality, as in", "c": [{"id": "p1-synopsis-s116", "t": "Preparing, dressing, sharp sauces, salt meats, indurate, soused, fried, broiled, or made dishes, &c.", "c": []}]}, {"id": "p1-synopsis-s117", "t": "Quantity", "c": [{"id": "p1-synopsis-s118", "t": "Disorder in eating, immoderate eating, or at unseasonable times, &c., Subsect. 2.", "c": []}, {"id": "p1-synopsis-s119", "t": "Custom; delight, appetite, altered, &c., Subsect. 3.", "c": []}]}]}, {"id": "p1-synopsis-s120", "t": "Retention and evacuation, Subsect. 4.", "c": [{"id": "p1-synopsis-s121", "t": "Costiveness, hot baths, sweating, issues stopped, Venus in excess, or in defect, phlebotomy, purging, &c.", "c": []}]}, {"id": "p1-synopsis-s122", "t": "Air; hot, cold, tempestuous, dark, thick, foggy, moorish, &c., Subsect. 5.", "c": []}, {"id": "p1-synopsis-s123", "t": "Exercise, Subsect. 6.", "c": [{"id": "p1-synopsis-s124", "t": "Unseasonable, excessive, or defective of body or mind, solitariness, idleness, a life out of action, &c.", "c": []}]}, {"id": "p1-synopsis-s125", "t": "Sleep and waking, unseasonable, inordinate, overmuch, over-little, &c., Subsect. 7.", "c": []}, {"id": "p1-synopsis-s126", "t": "Memb. 3 Sect. 2. Passions and perturbations of the mind, Subsect. 1. With a digression of the force of imagination, Subsect. 2, and division of passions into Subsect. 3.", "c": [{"id": "p1-synopsis-s127", "t": "Irascible", "c": [{"id": "p1-synopsis-s128", "t": "Sorrow, cause and symptom, Subsect. 4. Fear, cause and symptom, Subsect. 5. Shame, repulse, disgrace, &c., Subsect. 6. Envy and malice, Subsect. 7. Emulation, hatred, faction, desire of revenge, Subsect. 8. Anger a cause, Subsect. 9. Discontents, cares, miseries, &c., Subsect. 10.", "c": []}]}, {"id": "p1-synopsis-s129", "t": "concupiscible", "c": [{"id": "p1-synopsis-s130", "t": "Vehement desires, ambition, Subsect. 11. Covetousness, Φιλαργυρία, Subsect. 12. Love of pleasures, gaming in excess, &c., Subsect. 13. Desire of praise, pride, vainglory, &c., Subsect. 14. Love of learning, study in excess, with a digression of the misery of Scholars, and why the Muses are melancholy, Subsect. 15.", "c": []}]}]}]}, {"id": "p1-synopsis-s131", "t": "Symptoms of melancholy are either Sect. 3.", "c": [{"id": "p1-synopsis-s132", "t": "General, as of Memb. 1.", "c": [{"id": "p1-synopsis-s133", "t": "Body, as ill digestion, crudity, wind, dry brains, hard belly, thick blood, much waking, heaviness and palpitation of heart, leaping in many places, &c., Subsect. 1.", "c": []}, {"id": "p1-synopsis-s134", "t": "Mind", "c": [{"id": "p1-synopsis-s135", "t": "Common to all or most", "c": []}, {"id": "p1-synopsis-s137", "t": "Particular to private persons, according to Subsect. 3, 4.", "c": []}]}]}, {"id": "p1-synopsis-s155", "t": "Particular to the three distinct species. See ♋ Memb. 2.", "c": []}]}, {"id": "p1-synopsis-s156", "t": "Particular symptoms to the three distinct species. Sect. 3 Memb. 2.", "c": [{"id": "p1-synopsis-s157", "t": "Head-melancholy. Subsect. 1.", "c": [{"id": "p1-synopsis-s158", "t": "In body", "c": [{"id": "p1-synopsis-s159", "t": "Headache, binding, heaviness, vertigo, lightness, singing of the ears, much waking, fixed eyes, high colour, red eyes, hard belly, dry body, no great sign of melancholy in the other parts.", "c": []}]}, {"id": "p1-synopsis-s160", "t": "In mind", "c": [{"id": "p1-synopsis-s161", "t": "Continual fear, sorrow, suspicion, discontent, superfluous cares, solicitude, anxiety, perpetual cogitation of such toys they are possessed with, thoughts like dreams, &c.", "c": []}]}]}, {"id": "p1-synopsis-s162", "t": "Hypochondriacal or windy melancholy. Subsect. 2.", "c": [{"id": "p1-synopsis-s163", "t": "In body", "c": [{"id": "p1-synopsis-s164", "t": "Wind, rumbling in the guts, belly-ache, heat in the bowels, convulsions, crudities, short wind, sour and sharp belchings, cold sweat, pain in the left side, suffocation, palpitation, heaviness of the heart, singing in the ears, much spittle, and moist, &c.", "c": []}]}, {"id": "p1-synopsis-s165", "t": "In mind", "c": [{"id": "p1-synopsis-s166", "t": "Fearful, sad, suspicious, discontent, anxiety, &c. Lascivious by reason of much wind, troublesome dreams, affected by fits, &c.", "c": []}]}]}, {"id": "p1-synopsis-s167", "t": "Over all the body. Subsect. 3.", "c": [{"id": "p1-synopsis-s168", "t": "In body", "c": [{"id": "p1-synopsis-s169", "t": "Black, most part lean, broad veins, gross, thick blood, their haemorrhoids commonly stopped, &c.", "c": []}]}, {"id": "p1-synopsis-s170", "t": "In mind", "c": [{"id": "p1-synopsis-s171", "t": "Fearful, sad, solitary, hate light, averse from company, fearful dreams, &c.", "c": []}]}]}, {"id": "p1-synopsis-s172", "t": "Symptoms of Nuns’, Maids’, and widows’ melancholy, in body and mind, &c., Subsect. 4.", "c": []}, {"id": "p1-synopsis-s173", "t": "A reason of these symptoms. Memb. 3.", "c": [{"id": "p1-synopsis-s174", "t": "Why they are so fearful, sad, suspicious without a cause, why solitary, why melancholy men are witty, why they suppose they hear and see strange voices, visions, apparitions.", "c": []}, {"id": "p1-synopsis-s175", "t": "Why they prophesy, and speak strange languages, whence comes their crudity, rumbling, convulsions, cold sweat, heaviness of heart, palpitation, cardiaca, fearful dreams, much waking, prodigious fantasies.", "c": []}]}]}, {"id": "p1-synopsis-s176", "t": "Prognostics of melancholy. Sect. 4.", "c": [{"id": "p1-synopsis-s177", "t": "Tending to good, as", "c": [{"id": "p1-synopsis-s178", "t": "Morphew, Scabs, Itch, Breaking out, &c.", "c": []}, {"id": "p1-synopsis-s179", "t": "Black Jaundice.", "c": []}, {"id": "p1-synopsis-s180", "t": "If the Haemorrhoids voluntarily open.", "c": []}, {"id": "p1-synopsis-s181", "t": "If varices appear.", "c": []}]}, {"id": "p1-synopsis-s182", "t": "Tending to evil, as", "c": [{"id": "p1-synopsis-s183", "t": "Leanness, dryness, hollow-eyed, &c.", "c": []}, {"id": "p1-synopsis-s184", "t": "Inveterate melancholy is incurable.", "c": []}, {"id": "p1-synopsis-s185", "t": "If cold, it degenerates often into Epilepsy, Apoplexy, dotage, or into blindness.", "c": []}, {"id": "p1-synopsis-s186", "t": "If hot, into madness, despair, and violent death.", "c": []}]}, {"id": "p1-synopsis-s187", "t": "Corollaries and questions.", "c": [{"id": "p1-synopsis-s188", "t": "The grievousness of this above all other diseases.", "c": []}, {"id": "p1-synopsis-s189", "t": "The diseases of the mind are more grievous than those of the body.", "c": []}, {"id": "p1-synopsis-s190", "t": "Whether it be lawful in this case of melancholy, for a man to offer violence to himself. Neg.", "c": []}, {"id": "p1-synopsis-s191", "t": "How a melancholy or mad man offering violence to himself, is to be censured.", "c": []}]}]}]}</script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const SYN = JSON.parse($("#syn-data").textContent);  // Partition 1's synopsis, four levels (data/synopses/p1.json)
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+  const short = (t) => esc(t.length > 70 ? t.slice(0, 68) + "…" : t);
+
+  // N3 A: braces left to right; a branch opens on a click
+  const open = new Set([SYN.id]);
+  const brace = (n) => {
+    if (!n.c.length || !open.has(n.id)) return "";
+    return `<span class="br${n.c.length < 3 ? " s" : ""}">{</span><span class="col">${n.c.map((k) =>
+      `<span class="grp"><span class="it${k.c.length ? " op" : ""}" data-id="${k.id}">${short(k.t)}</span>${brace(k)}</span>`).join("")}</span>`;
+  };
+  const drawA = () => { $("#n3a").innerHTML = `<span class="grp"><span class="it">${short(SYN.t || "Melancholy")}</span>${brace(SYN)}</span>`; };
+  $("#n3a").addEventListener("click", (e) => { const it = e.target.closest(".it.op"); if (!it) return;
+    open.has(it.dataset.id) ? open.delete(it.dataset.id) : open.add(it.dataset.id); drawA(); });
+  drawA();
+
+  // N3 B: columns
+  const path = [SYN];
+  const drawB = () => {
+    const cols = [];
+    for (let i = 0; i < 3; i++) {
+      const parent = path[i];
+      if (!parent || !parent.c.length) { cols.push("<ul></ul>"); continue; }
+      cols.push(`<ul>${parent.c.map((k) => `<li data-d="${i}" data-id="${k.id}" class="${path[i + 1] === k ? "on" : ""}">${short(k.t)}</li>`).join("")}</ul>`);
+    }
+    $("#n3b").innerHTML = cols.join("");
+  };
+  const find = (n, id) => n.id === id ? n : n.c.map((k) => find(k, id)).find(Boolean);
+  $("#n3b").addEventListener("click", (e) => { const li = e.target.closest("li"); if (!li) return;
+    const d = +li.dataset.d; path.length = d + 1; path.push(find(path[d], li.dataset.id)); drawB(); });
+  drawB();
+
+  // N3 C: the outline
+  const out = (n, depth) => n.c.length && depth < 3 ? `<ul>${n.c.map((k) => `<li>${short(k.t)}${out(k, depth + 1)}</li>`).join("")}</ul>` : "";
+  $("#n3c").innerHTML = out(SYN, 0);
+
+  // N4: palettes, light and dark
+  const PAL = [
+    ["A", "today: green, blue, brown, violet", { la: ["#2c6150", "#8cc9b3"], grc: ["#36508f", "#a3b5ee"], enm: ["#7a4f14", "#dcb478"], it: ["#5b4a7a", "#c4b2e6"] }],
+    ["B", "printer’s inks: indigo, teal, umber, plum", { la: ["#3f4f7a", "#b4c2ec"], grc: ["#2f6b6b", "#8fd0cc"], enm: ["#6e5420", "#d8bd84"], it: ["#6a3f5c", "#d9a8c9"] }],
+    ["C", "one colour for every foreign tongue; the face tells them apart", { la: ["#4a6356", "#a9c4b5"], grc: ["#4a6356", "#a9c4b5"], enm: ["#4a6356", "#a9c4b5"], it: ["#4a6356", "#a9c4b5"] }],
+    ["D", "a different colour by night: deep inks by day, candle-light tints by night", { la: ["#23584a", "#e0c27a"], grc: ["#2a4a8c", "#a9c8f0"], enm: ["#8a4b1c", "#e6a57a"], it: ["#5a3a6e", "#cdb6ef"] }],
+  ];
+  const sample = (c, k) => `as <i style="color:${c.la[k]}">ubi peccatum, ibi procella</i>; the Greek <span style="color:${c.grc[k]};font-family:'GFS Didot',serif">Πλείη μὲν γὰρ γαῖα κακῶν</span>; Chaucer’s <span style="color:${c.enm[k]};font-variant-caps:small-caps">if that they to water would</span>; and the Italian <i style="color:${c.it[k]}">chi vuol esser lieto, sia</i>. <span style="color:${c.la[k]}">Th’ earth’s full of maladies</span> (Burton’s own English, roman).`;
+  $("#n4").innerHTML = PAL.map(([o, name, c]) => `<div class="opt" data-o="${o}"><div class="ol"><b>${o}</b> · ${name}</div>
+    <div class="pal"><div class="sw l"><span class="tag">light</span>${sample(c, 0)}</div><div class="sw d"><span class="tag">dark</span>${sample(c, 1)}</div></div>
+    <div class="chips">${["la", "grc", "enm", "it"].flatMap((k) => [`<span class="chip" title="${k} light" style="background:${c[k][0]}"></span>`, `<span class="chip" title="${k} dark" style="background:${c[k][1]}"></span>`]).join("")}</div></div>`).join("");
+})();
+</script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const dark = () => getComputedStyle(document.documentElement).colorScheme.includes("dark");
+  const swap = () => $$("img[data-dark]").forEach((i) => { i.dataset.light ||= i.getAttribute("src"); i.src = dark() ? i.dataset.dark : i.dataset.light; });
+  const th = store.get("ab-theme"); if (th) document.documentElement.dataset.theme = th; swap();
+  $("#theme").onclick = () => { document.documentElement.dataset.theme = dark() ? "light" : "dark"; store.set("ab-theme", document.documentElement.dataset.theme); swap(); };
+  const scopeOf = (el) => el.closest(".opt") || document;
+  document.addEventListener("mouseover", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.add("hot")); });
+  document.addEventListener("mouseout", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.remove("hot")); });
+  const choices = store.get("ab4-choices") || {};
+  const render = () => { const parts = Object.entries(choices).filter(([, v]) => v.o || v.note).map(([k, v]) => `${k}: ${v.o || "—"}${v.note ? ` (${v.note})` : ""}`);
+    $("#sumtxt").textContent = parts.length ? parts.join(" · ") : "No choices yet.";
+    $$("section.test").forEach((s) => { const c = choices[s.dataset.test] || {}; $$(".opt[data-o]", s).forEach((o) => o.classList.toggle("chosen", c.o === o.dataset.o));
+      $$(".pick button", s).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === c.o))); }); store.set("ab4-choices", choices); };
+  $$("section.test").forEach((s) => { const opts = $$(".opt[data-o]", s).map((o) => o.dataset.o); const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = [...opts, "Neither"].map((o) => `<button type="button" data-v="${o}">${o === "Neither" ? "Neither" : "Prefer " + o}</button>`).join("") + `<input type="text" placeholder="note (optional)" aria-label="Note for ${s.dataset.test}">`;
+    s.appendChild(bar); const inp = $("input", bar); inp.value = (choices[s.dataset.test] || {}).note || "";
+    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const c = choices[s.dataset.test] ||= {}; c.o = c.o === b.dataset.v ? "" : b.dataset.v; render(); });
+    inp.addEventListener("input", () => { (choices[s.dataset.test] ||= {}).note = inp.value; render(); }); });
+  $("#copy").onclick = async () => { const t = "Round 4 choices: " + $("#sumtxt").textContent; try { await navigator.clipboard.writeText(t); } catch { prompt("Copy this:", t); } };
+  render();
+})();
+</script>
+</body>
+</html>
