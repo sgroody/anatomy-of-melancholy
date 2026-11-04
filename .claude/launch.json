@@ -12,6 +12,12 @@
       "runtimeExecutable": "uv",
       "runtimeArgs": ["run", "burton", "serve", "--profile", "public", "--port", "8766"],
       "port": 8766
+    },
+    {
+      "name": "review-pages",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "python", "-m", "http.server", "8790", "--bind", "127.0.0.1"],
+      "port": 8790
     }
   ]
 }

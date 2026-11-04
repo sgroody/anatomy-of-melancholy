@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader A/B round 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=GFS+Didot&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root {
+  --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d; --panel: #efe9dc;
+  --pop-bg: #fffdf8; --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.18);
+  --la: #2c6150; --nm: #4b5d80; --hot: color-mix(in srgb, #d9a520 26%, transparent);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a; --panel: #24211d;
+    --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5); --la: #8cc9b3; --nm: #a9b9da;
+    --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a; --panel: #24211d;
+  --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5); --la: #8cc9b3; --nm: #a9b9da;
+  --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", Georgia, serif; font-size: 1.12rem;
+  line-height: 1.5; font-variant-numeric: oldstyle-nums; }
+.wrap { max-width: 1500px; margin: 0 auto; padding: 1.5rem 16px 6rem; }
+h1 { font-weight: 400; letter-spacing: 0.04em; margin: 0 0 0.3rem; }
+.intro, .q, .small { color: var(--muted); }
+.intro { max-width: 54rem; } .intro b { color: var(--ink); font-weight: 600; }
+.small { font-size: 0.86em; }
+.theme-btn { float: right; font: inherit; font-size: 0.85rem; background: none; color: var(--muted); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 0.2rem 0.6rem; cursor: pointer; }
+section.test { border-top: 1px solid var(--rule); padding: 1.6rem 0 1rem; }
+section.test > h2 { font-weight: 400; font-size: 1.35rem; margin: 0; }
+.tn { color: var(--accent); margin-right: 0.4rem; font-variant-numeric: lining-nums; }
+.q { margin: 0.2rem 0 1rem; max-width: 62rem; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.2rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem 0.8rem; position: relative; min-width: 0; }
+.opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; }
+.ol b { color: var(--accent); font-weight: 600; }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.9rem; flex-wrap: wrap; }
+.pick button, .summary button, .tog button { font: inherit; font-size: 0.9rem; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.25rem 0.8rem; cursor: pointer; }
+.pick button[aria-pressed="true"], .tog button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.pick input { font: inherit; font-size: 0.9rem; flex: 1; min-width: 12rem; background: transparent; color: var(--ink); border: none;
+  border-bottom: 1px solid var(--rule); padding: 0.2rem 0; }
+.tog { display: flex; gap: 0.4rem; margin-bottom: 0.7rem; flex-wrap: wrap; align-items: center; }
+.tog span { font-size: 0.85rem; color: var(--muted); }
+p.tx { margin: 0; text-align: justify; hyphens: auto; }
+sup.m { font-size: 0.68em; color: var(--accent); font-style: normal; line-height: 0; padding: 0 0.06em; }
+.sc { font-variant-caps: small-caps; letter-spacing: 0.04em; }
+.lk { border-radius: 2px; transition: background 0.12s, color 0.12s; }
+.hot { background: var(--hot) !important; }
+[lang="la"] { color: var(--la); }
+.pg { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 1.3rem; }
+.mg { font-size: 0.82rem; line-height: 1.35; }
+.mg .n { margin: 0 0 0.55rem; padding-left: 0.5rem; border-left: 2px solid transparent; }
+.kl { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.3rem; }
+.prov { font-size: 0.8em; color: var(--muted); cursor: help; } .prov::before { content: "◇"; }
+@media (max-width: 40rem) { .pg { grid-template-columns: 1fr; } }
+
+/* ---------- R1 heading, after the Penguin page */
+.ph { text-align: center; padding: 0.5rem 0 0.2rem; }
+.ph .the { font-size: 1.6rem; letter-spacing: 0.14em; line-height: 1.1; }
+.ph .part { font-size: 2.3rem; letter-spacing: 0.1em; line-height: 1.15; margin-bottom: 0.9rem; }
+.ph .brace { display: inline-grid; grid-template-columns: auto auto auto; align-items: center; column-gap: 0.35rem;
+  font-variant-caps: small-caps; letter-spacing: 0.12em; font-size: 1.15rem; margin-bottom: 1rem; }
+.ph .brace svg { width: 0.7rem; height: 4.1rem; color: var(--ink); }
+.ph .brace .stack { text-align: left; line-height: 1.32; }
+.ph .tt { font-style: italic; font-size: 1.3rem; line-height: 1.3; margin: 0 auto 1rem; max-width: 26rem; }
+.ph .sub2 { font-variant-caps: small-caps; letter-spacing: 0.14em; font-size: 1.2rem; margin-bottom: 0.4rem; }
+.ph.withini + p .ini { float: left; width: 3.3em; height: 3.3em; margin: 0.25em 0.45em 0 0; display: grid; place-items: center;
+  font-family: "Cinzel Decorative", serif; font-weight: 700; color: var(--paper); background: var(--accent);
+  border: 3px double var(--paper); outline: 1px solid var(--accent); }
+.ph.withini + p .ini span { font-size: 2.4em; line-height: 1; }
+
+/* ---------- R2 Burton's own English */
+.o1 .own { color: var(--la); }
+.o2 .pair { background: color-mix(in srgb, var(--la) 9%, transparent); border-radius: 3px; box-decoration-break: clone;
+  -webkit-box-decoration-break: clone; padding: 0 0.1em; }
+.o2 .pair [lang="la"] { color: var(--la); }
+.o3 .own { font-variant-caps: normal; }
+.o4 .own { transition: background 0.12s; }
+.o4 [lang="la"] { cursor: pointer; }
+
+/* ---------- R3 sides */
+.sides { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) 7.5rem; gap: 0.7rem; font-size: 0.7rem; line-height: 1.3; }
+.sides .tx { font-size: 0.78rem; line-height: 1.38; text-align: justify; }
+.sides .col { display: flex; flex-direction: column; gap: 0.3rem; }
+.sides .b { border-radius: 3px; padding: 0.2rem 0.3rem; }
+.sides .b.bur { background: color-mix(in srgb, var(--accent) 13%, transparent); }
+.sides .b.trn { background: color-mix(in srgb, var(--la) 15%, transparent); }
+.sides .b.gow { background: color-mix(in srgb, #8a6a20 16%, transparent); }
+.sides .b.cit { background: color-mix(in srgb, var(--nm) 15%, transparent); }
+.meter { display: grid; grid-template-columns: 4.5rem 1fr 3rem; gap: 0.4rem; align-items: center; font-size: 0.8rem; margin-top: 0.5rem; }
+.meter .bar { height: 0.55rem; border-radius: 3px; background: var(--rule); position: relative; overflow: hidden; }
+.meter .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); }
+.key { display: flex; flex-wrap: wrap; gap: 0.2rem 0.8rem; font-size: 0.8rem; margin-bottom: 0.6rem; color: var(--muted); }
+.key span::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; border-radius: 2px; margin-right: 0.25em; vertical-align: -0.05em; }
+.key .bur::before { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+.key .trn::before { background: color-mix(in srgb, var(--la) 40%, transparent); }
+.key .gow::before { background: color-mix(in srgb, #8a6a20 40%, transparent); }
+.key .cit::before { background: color-mix(in srgb, var(--nm) 40%, transparent); }
+table.counts { border-collapse: collapse; font-size: 0.88rem; margin: 0.4rem 0 0.8rem; }
+table.counts td, table.counts th { padding: 0.15rem 0.7rem 0.15rem 0; text-align: left; border-bottom: 1px solid var(--rule); font-weight: 400; }
+table.counts td.r { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+
+/* ---------- R4 front page around the engraving */
+.core { display: grid; grid-template-columns: minmax(9rem, 1fr) minmax(16rem, 26rem) minmax(9rem, 1fr); gap: 1rem; align-items: start; }
+.core .eng { position: relative; }
+.core .eng img { width: 100%; height: auto; display: block; }
+.core .side { position: relative; font-size: 0.8rem; line-height: 1.28; }
+.core .side.l { text-align: right; }
+.stz { position: absolute; left: 0; right: 0; opacity: 0.42; transition: opacity 0.15s; cursor: default; font-style: italic; }
+.stz .sh { font-style: normal; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--accent); font-size: 0.95em; }
+.stz.on { opacity: 1; }
+.core.dim-on .stz:not(.on) { opacity: 0.25; }
+.topstz, .botstz { text-align: center; font-size: 0.8rem; line-height: 1.28; opacity: 0.42; font-style: italic; transition: opacity 0.15s; margin: 0.4rem auto; max-width: 26rem; }
+.topstz.on, .botstz.on { opacity: 1; }
+.veil { position: absolute; inset: 0; pointer-events: none; }
+.hole { position: absolute; box-shadow: 0 0 0 999px rgb(20 14 6 / 0.55); outline: 2px solid var(--accent); transition: all 0.15s; opacity: 0; }
+.hole.on { opacity: 1; }
+.lens { position: absolute; pointer-events: none; border: 2px solid var(--accent); box-shadow: var(--pop-shadow); background-repeat: no-repeat;
+  opacity: 0; transition: opacity 0.12s; z-index: 5; border-radius: 3px; }
+.lens.on { opacity: 1; }
+.pnl { position: absolute; background: none; border: 0; padding: 0; cursor: pointer; }
+.belowcore { text-align: center; margin-top: 1rem; }
+.enter { display: inline-block; margin: 0.6rem 0; font-size: 1.2rem; color: var(--accent); text-decoration: none; border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent); padding: 0.2rem 1.1rem; letter-spacing: 0.06em; }
+.syns { max-width: 30rem; margin: 0.5rem auto; text-align: left; font-size: 0.92rem; }
+.syns details { border-bottom: 1px solid var(--rule); padding: 0.25rem 0; } .syns summary { cursor: pointer; }
+.stick { display: grid; grid-template-columns: minmax(16rem, 30rem) 1fr; gap: 1.4rem; align-items: start; }
+.stick .eng { position: sticky; top: 0.5rem; }
+.stick .eng img { width: 100%; height: auto; display: block; }
+.stick .card { min-height: 9rem; border-left: 2px solid var(--accent); padding-left: 0.8rem; font-style: italic; font-size: 0.95rem; color: var(--muted); }
+@media (max-width: 52rem) { .core { grid-template-columns: 1fr; } .core .side { display: none; } .stick { grid-template-columns: 1fr; } }
+
+/* ---------- R5 names */
+.n1 .nm { cursor: help; border-radius: 2px; transition: background 0.12s; } .n1 .nm:hover { background: var(--hot); }
+.n2 .nm { color: var(--nm); cursor: help; }
+.n3 .nm { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 0.22em; cursor: help; }
+.n3 .nm:hover { text-decoration-color: var(--accent); }
+.n4 .nm { cursor: help; } .n4 .nm::after { content: "·"; color: var(--accent); font-weight: 600; vertical-align: 0.35em; font-size: 0.8em; margin-left: 0.05em; }
+.pop { position: absolute; z-index: 50; width: min(24rem, calc(100vw - 32px)); background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); padding: 0.6rem 0.85rem; font-size: 0.9rem; line-height: 1.4; }
+.pop h4 { margin: 0 0 0.2rem; font-weight: 400; font-style: italic; }
+.pop a { color: var(--accent); }
+
+/* ---------- R6 in-line toggle */
+.inl .tr-in { color: var(--la); font-style: italic; }
+.inl .tr-in .lt { font-style: normal; font-variant-caps: all-small-caps; font-size: 0.78em; letter-spacing: 0.05em; vertical-align: 0.2em; margin-left: 0.15em; }
+.place .tr-in::before { content: ""; }
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--accent); padding: 0.6rem 0; display: flex; gap: 1rem;
+  align-items: center; flex-wrap: wrap; z-index: 40; }
+.summary span { color: var(--muted); font-size: 0.9rem; }
+.toast { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 0.4rem 0.9rem;
+  border-radius: 4px; font-size: 0.9rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 99; }
+.toast.on { opacity: 1; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<button class="theme-btn" type="button" id="theme">Dark / light</button>
+<h1>Reader A/B round 2</h1>
+<p class="intro">Follow-ups to your round-1 choices, recorded in <code>state/review/ab-2026-11-03-decisions.md</code>. Everything shown is the <b>private build</b>: Gowland is the base, his translations come first, and his matter sits in the margin. Pick and note as before, then <b>Copy my choices</b>. Typefaces (T10) stay on B, and the question is saved for later.</p>
+
+<!-- ============================================================ R1 -->
+<section class="test" data-test="R1">
+<h2><span class="tn">R1</span>Headings like the print page</h2>
+<p class="q">Built from your photo of the Penguin page: “THE / FIRST PARTITION.”, then “THE FIRST” with a brace and SECTION, MEMBER, SUBSECTION stacked, then the title in italic. A is the page as printed. B adds round 1’s decorated initial below it. Later subsections keep the same scale with their own words (“SUBSECT. II.”).</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · as printed</div>
+    <div class="ph"><div class="the">THE</div><div class="part">FIRST PARTITION.</div>
+      <div class="brace"><span>The First</span><svg viewBox="0 0 10 60" preserveAspectRatio="none" aria-hidden="true"><path d="M9 1 C4 1 5 6 5 14 C5 24 5 28 1 30 C5 32 5 36 5 46 C5 54 4 59 9 59" fill="none" stroke="currentColor" stroke-width="1"/></svg><span class="stack">Section.<br>Member.<br>Subsection.</span></div>
+      <div class="tt">Man’s Excellency, Fall, Miseries, Infirmities; The causes of them.</div></div>
+    <p class="tx">Man, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, <em>the <sup class="m">a</sup>marvel of marvels</em>, as <em>Plato</em>…</p>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · as printed, with the decorated initial</div>
+    <div class="ph withini"><div class="the">THE</div><div class="part">FIRST PARTITION.</div>
+      <div class="brace"><span>The First</span><svg viewBox="0 0 10 60" preserveAspectRatio="none" aria-hidden="true"><path d="M9 1 C4 1 5 6 5 14 C5 24 5 28 1 30 C5 32 5 36 5 46 C5 54 4 59 9 59" fill="none" stroke="currentColor" stroke-width="1"/></svg><span class="stack">Section.<br>Member.<br>Subsection.</span></div>
+      <div class="tt">Man’s Excellency, Fall, Miseries, Infirmities; The causes of them.</div></div>
+    <p class="tx"><span class="ini" aria-hidden="true"><span>M</span></span><span class="sr-only">M</span><span class="sc">an</span>, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, <em>the <sup class="m">a</sup>marvel of marvels</em>, as <em>Plato</em>, the Abridgement and Epitome of the World…</p>
+  </div>
+</div>
+<p class="small">On initialis: its code is MIT and its fonts OFL, so it fits. It builds each initial procedurally in the browser (WebGL2). The plan is to run it once, offline, with one woodcut-like recipe in two inks (rubric and black), and pin the rendered set with its settings JSON, so the edition never runs it live. That means downloading and running its code here, so I’ll ask first (see my message).</p>
+</section>
+
+<!-- ============================================================ R2 -->
+<section class="test" data-test="R2">
+<h2><span class="tn">R2</span>When Burton translates his Latin himself: four more ways</h2>
+<p class="q">“wonder of Nature” is Burton’s English for <em lang="la">audacis naturae miraculum</em>, though he leaves out <em>audacis</em> (“daring”). Hover the Latin or the English in each.</p>
+<div class="opts">
+  <div class="opt o1" data-o="A"><div class="ol"><b>A</b> · his English takes the Latin’s colour, in his own type</div>
+    <p class="tx"><em>the principal and mighty work of God, <span class="own lk" data-k="a">wonder of Nature</span></em>, as <em>Zoroastes</em> calls him; <em lang="la" class="lk" data-k="a">audacis naturae miraculum</em>, <em>the marvel of marvels</em>, as <em>Plato</em>…</p>
+    <p class="small">The colour already means “a translation goes here” (T7). Here it marks a translation Burton made himself.</p></div>
+  <div class="opt o2" data-o="B"><div class="ol"><b>B</b> · a faint wash joins the pair, even across words between</div>
+    <p class="tx"><em>the principal and mighty work of God, <span class="pair lk" data-k="b">wonder of Nature</span></em><span class="pair lk" data-k="b">, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em></span>, <em>the marvel of marvels</em>, as <em>Plato</em>…</p>
+    <p class="small">It reads as one unit. Where they stand far apart, only the two ends get the wash.</p></div>
+  <div class="opt o3" data-o="C"><div class="ol"><b>C</b> · nothing in the line; the margin says so</div>
+    <div class="pg"><p class="tx"><em>the principal and mighty work of God, <span class="own lk" data-k="c">wonder of Nature</span></em>, as <em>Zoroastes</em> calls him; <em lang="la" class="lk" data-k="c">audacis naturae miraculum</em>, <em>the marvel of marvels</em>…</p>
+      <div class="mg"><div class="n lk" data-k="c" style="border-left-color:var(--la)"><span class="kl" style="color:var(--la)">Burton’s own</span><span style="color:var(--la)">“wonder of Nature”</span>, leaving out <em>audacis</em>, daring</div></div></div>
+    <p class="small">The margin slot where a translation would go tells you he has translated it, and where.</p></div>
+  <div class="opt o4" data-o="D"><div class="ol"><b>D</b> · nothing visible; hover the Latin to light his English</div>
+    <p class="tx"><em>the principal and mighty work of God, <span class="own lk" data-k="d">wonder of Nature</span></em>, as <em>Zoroastes</em> calls him; <em lang="la" class="lk" data-k="d">audacis naturae miraculum</em>, <em>the marvel of marvels</em>…</p>
+    <p class="small">The cleanest page. You only learn the pairing by hovering.</p></div>
+</div>
+<p class="small">A and C combine well: colour in the line, with the margin noting what he left out. Put “A + C” in the note if you like that.</p>
+</section>
+
+<!-- ============================================================ R3 -->
+<section class="test" data-test="R3">
+<h2><span class="tn">R3</span>Which notes go on which side</h2>
+<p class="q">You picked notes on both sides. Here is how much each kind fills, measured over the whole private build (159 units), in characters of text as it would stand in the margin:</p>
+<table class="counts">
+  <tr><th>Kind</th><th class="r">items</th><th class="r">characters</th></tr>
+  <tr><td>Burton’s sidenotes</td><td class="r">5,703</td><td class="r">235,984</td></tr>
+  <tr><td>Restored sidenotes (°)</td><td class="r">1,235</td><td class="r">122,664</td></tr>
+  <tr><td>Gowland’s translations of the sidenotes’ Latin</td><td class="r">—</td><td class="r">136,487</td></tr>
+  <tr><td>Gowland’s translations of Latin in the text (moving to the margin, T8 D)</td><td class="r">3,394</td><td class="r">183,707</td></tr>
+  <tr><td>Gowland’s endnotes (glosses and explanations; 722 are mostly “see above”)</td><td class="r">3,907</td><td class="r">828,314</td></tr>
+  <tr><td>Citation expansions (replace Burton’s abbreviations, T5 A, so they add little)</td><td class="r">2,975</td><td class="r">76,912</td></tr>
+</table>
+<p class="q">So the split matters: Gowland’s endnotes alone outweigh everything of Burton’s together. Three ways to divide them:</p>
+<div class="key"><span class="bur">Burton’s notes</span><span class="trn">translations</span><span class="gow">Gowland’s notes</span><span class="cit">citations</span></div>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · by author: Burton left, Gowland right</div>
+    <div class="sides" data-ex="A"></div>
+    <div class="meter"><span>left</span><span class="bar"><i style="width:33%"></i></span><span>33 %</span></div>
+    <div class="meter"><span>right</span><span class="bar"><i style="width:67%"></i></span><span>67 %</span></div>
+    <p class="small">Left: Burton’s notes, restored notes and their translations. Right: Gowland’s notes and his translations of the text. Clear, but lopsided.</p></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · by job: translations left, commentary right</div>
+    <div class="sides" data-ex="B"></div>
+    <div class="meter"><span>left</span><span class="bar"><i style="width:45%"></i></span><span>45 %</span></div>
+    <div class="meter"><span>right</span><span class="bar"><i style="width:55%"></i></span><span>55 %</span></div>
+    <p class="small">Left: Burton’s notes and every translation (of notes and of the text). Right: Gowland’s glosses and explanations. The sides stay meaningful (left “what it says”, right “what it means”) and nearly even.</p></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · by room: each note goes to the side with space near its words</div>
+    <div class="sides" data-ex="C"></div>
+    <div class="meter"><span>left</span><span class="bar"><i style="width:50%"></i></span><span>≈ 50 %</span></div>
+    <div class="meter"><span>right</span><span class="bar"><i style="width:50%"></i></span><span>≈ 50 %</span></div>
+    <p class="small">The most even and the least drift from the anchor. The side means nothing, so the kind labels (T3 A) carry it all.</p></div>
+</div>
+<p class="small">My suggestion is B, with C’s rule as the overflow: when one side is full near a note’s words, the note crosses to the other side rather than drifting down. Totals are whole-book. Dense pages differ, which is what the overflow is for.</p>
+</section>
+
+<!-- ============================================================ R4 -->
+<section class="test" data-test="R4">
+<h2><span class="tn">R4</span>The front page, built around the frontispiece</h2>
+<p class="q">The engraving is itself the title page, and the Argument’s stanzas describe it panel by panel. Both options make it large and keep the stanzas on the page. Hover a stanza or a panel. This also answers T14.</p>
+<div class="opts" style="grid-template-columns:1fr">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · the engraving at the centre, its stanzas around it, muted, each level with its panel</div>
+    <div class="tog" data-for="core"><span>On hover:</span><button type="button" data-fx="hole" aria-pressed="true">highlight the panel</button><button type="button" data-fx="lens" aria-pressed="false">magnify the panel</button></div>
+    <div class="topstz" data-p="1"></div>
+    <div class="core" id="core"><div class="side l"></div><div class="eng"><img src="../../site/private/assets/images/pg003.png" alt="The engraved title page of 1628" width="1151" height="1900"><div class="veil"><div class="hole"></div></div><div class="lens"></div></div><div class="side r"></div></div>
+    <div class="botstz" data-p="10"></div>
+    <div class="belowcore"><a class="enter" href="#" data-toast="Would open the Dedication">Enter, gentle Reader ☞</a>
+      <div class="syns"><details><summary>The Synopsis of the First Partition</summary><p class="small">(collapsed by default; opens the real tree)</p></details><details><summary>The Synopsis of the Second Partition</summary></details><details><summary>The Synopsis of the Third Partition</summary></details></div>
+      <div class="syns small">Contents: The Argument of the Frontispiece · Dedication · Democritus Junior ad Librum suum · The Author’s Abstract of Melancholy · Democritus Junior to the Reader · …</div></div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · the engraving large on the left, held in place while the right side scrolls</div>
+    <div class="stick"><div class="eng" id="stick-eng"><div style="position:relative"><img src="../../site/private/assets/images/pg003.png" alt="The engraved title page of 1628" width="1151" height="1900"></div></div>
+      <div><div style="font-size:1.6rem;letter-spacing:0.14em;line-height:1.15">THE ANATOMY OF MELANCHOLY,</div><div style="font-style:italic">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</div>
+        <a class="enter" href="#" data-toast="Would open the Dedication">Enter, gentle Reader ☞</a>
+        <div class="card" id="stick-card">Hover a panel to read its stanza here.</div>
+        <div class="syns" style="margin-left:0"><details><summary>The Synopsis of the First Partition</summary></details><details><summary>The Synopsis of the Second Partition</summary></details><details><summary>The Synopsis of the Third Partition</summary></details></div>
+        <div class="small">Contents follow…</div></div></div>
+  </div>
+</div>
+<p class="small">The stanzas are read live from the built Argument page, so they are Burton’s verse as the edition has it. Panels 8 and 9 share one stanza, as in the book. On a phone, A drops the side columns and the stanzas follow the image.</p>
+</section>
+
+<!-- ============================================================ R5 -->
+<section class="test" data-test="R5">
+<h2><span class="tn">R5</span>Marking names without a dotted underline</h2>
+<p class="q">Hover Chrysostom, Cyprian or Plato in each.</p>
+<div class="opts">
+  <div class="opt n1" data-o="A"><div class="ol"><b>A</b> · no mark; a soft highlight on hover</div>
+    <p class="tx">For <em lang="la">ubi peccatum, ibi procella</em>, as <span class="nm" data-who="chrys">Chrysostom</span> well observes. … Are you shaken with wars, as <span class="nm" data-who="cyp">Cyprian</span> well urgeth to Demetrius… the marvel of marvels, as <em class="nm" data-who="plato">Plato</em>.</p></div>
+  <div class="opt n2" data-o="B"><div class="ol"><b>B</b> · names in a quiet slate ink</div>
+    <p class="tx">For <em lang="la">ubi peccatum, ibi procella</em>, as <span class="nm" data-who="chrys">Chrysostom</span> well observes. … Are you shaken with wars, as <span class="nm" data-who="cyp">Cyprian</span> well urgeth to Demetrius… the marvel of marvels, as <em class="nm" data-who="plato">Plato</em>.</p></div>
+  <div class="opt n3" data-o="C"><div class="ol"><b>C</b> · a hairline in the rule colour, red on hover</div>
+    <p class="tx">For <em lang="la">ubi peccatum, ibi procella</em>, as <span class="nm" data-who="chrys">Chrysostom</span> well observes. … Are you shaken with wars, as <span class="nm" data-who="cyp">Cyprian</span> well urgeth to Demetrius… the marvel of marvels, as <em class="nm" data-who="plato">Plato</em>.</p></div>
+  <div class="opt n4" data-o="D"><div class="ol"><b>D</b> · a raised rubric point after the name</div>
+    <p class="tx">For <em lang="la">ubi peccatum, ibi procella</em>, as <span class="nm" data-who="chrys">Chrysostom</span> well observes. … Are you shaken with wars, as <span class="nm" data-who="cyp">Cyprian</span> well urgeth to Demetrius… the marvel of marvels, as <em class="nm" data-who="plato">Plato</em>.</p></div>
+</div>
+<p class="small">The windows here open at once. The edition keeps round 1’s lock-on-hold behaviour. The entries for Chrysostom, Cyprian and Plato are stand-ins.</p>
+</section>
+
+<!-- ============================================================ R6 -->
+<section class="test" data-test="R6">
+<h2><span class="tn">R6</span>The margin / in-line switch</h2>
+<p class="q">Your T8 note: a reading option between translations in the margin (D, the default) and in the line, with the English then styled like the Latin (coloured, italic). Should “in the line” put the English after the Latin, or in its place?</p>
+<div class="tog" data-for="r6"><span>Reading option:</span><button type="button" data-m="margin" aria-pressed="true">Translations in the margin</button><button type="button" data-m="inline" aria-pressed="false">Translations in the line</button></div>
+<div class="opts" id="r6">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · in the line, after the Latin</div><div class="r6 after"></div></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · in the line, in place of the Latin (the Latin on hover)</div><div class="r6 place"></div></div>
+</div>
+</section>
+
+<div class="summary"><button type="button" id="copy">Copy my choices</button><span id="sumtxt">No choices yet.</span></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const toast = (t) => { const e = $("#toast"); e.textContent = t; e.classList.add("on"); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove("on"), 1600); };
+  document.addEventListener("click", (ev) => { const t = ev.target.closest("[data-toast]"); if (t) { ev.preventDefault(); toast(t.dataset.toast); } });
+  const th = store.get("ab-theme"); if (th) document.documentElement.dataset.theme = th;
+  $("#theme").onclick = () => { const dark = getComputedStyle(document.documentElement).colorScheme.includes("dark");
+    document.documentElement.dataset.theme = dark ? "light" : "dark"; store.set("ab-theme", document.documentElement.dataset.theme); };
+
+  // linked pairs inside one option
+  const scopeOf = (el) => el.closest(".opt") || document;
+  document.addEventListener("mouseover", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.add("hot")); });
+  document.addEventListener("mouseout", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.remove("hot")); });
+
+  // R3 schematic pages: the same seven notes laid out three ways
+  const TX = "Man, the most excellent and noble creature of the World… as <em>Zoroastes</em> calls him; <em lang=\"la\">audacis naturae miraculum</em>, the <sup class=\"m\">a</sup>marvel of marvels, as <em>Plato</em>; the <sup class=\"m\">b</sup>Abridgement and Epitome of the World, as <em>Pliny</em>; <sup class=\"m\">c</sup>Sovereign Lord of the Earth… <sup class=\"m\">d</sup><em lang=\"la\">imaginis imago</em>, <sup class=\"m\">e</sup>created to God’s own Image… And this <em>belike</em> is that which our fabulous Poets have shadowed unto us in the tale of <sup class=\"m\">f</sup>Pandora’s box… (as an old Poet saith), to propagate the Church.";
+  const N = {
+    a: ["bur", "a <em>Magnum miraculum.</em>"], at: ["trn", "a A great miracle"],
+    tx1: ["trn", "the miracle of bold Nature"],
+    c: ["bur", "c <em>Finis rerum omnium…</em> Julius Caesar Scaliger, exercitation 365"], ct: ["trn", "c The end of all things, to whom sublunary beings are subject"],
+    d: ["trn", "the likeness of an image"],
+    f: ["bur", "f <em>Illa cadens tegmen manibus decussit…</em> Hesiod, <em>Works and Days</em>"],
+    g1: ["gow", "<em>fabulous</em>: Fond of relating fables or legends."],
+    g2: ["gow", "<em>an old Poet</em>: The Italian poet and philosopher Lodovico Lazzarelli, in his <em>Crater Hermetis</em> (1505)."],
+  };
+  const LAYOUT = {
+    A: [["a", "at", "c", "ct", "f"], ["tx1", "d", "g1", "g2"]],
+    B: [["a", "at", "tx1", "c", "ct", "d", "f"], ["g1", "g2"]],
+    C: [["a", "at", "c", "ct", "g1"], ["tx1", "d", "f", "g2"]],
+  };
+  $$(".sides").forEach((s) => { const [L, R] = LAYOUT[s.dataset.ex]; const col = (ks) => `<div class="col">${ks.map((k) => `<div class="b ${N[k][0]}">${N[k][1]}</div>`).join("")}</div>`;
+    s.innerHTML = col(L) + `<div class="tx">${TX}</div>` + col(R); });
+
+  // R4: stanzas fetched from the built Argument page (same origin)
+  const PANELS = { 1: [292, 0, 563, 505, "lg2"], 2: [0, 0, 290, 505, "lg3"], 3: [858, 0, 293, 505, "lg4"], 4: [0, 505, 290, 757, "lg5"], 5: [858, 505, 293, 757, "lg6"],
+                   6: [0, 1262, 290, 428, "lg7"], 7: [858, 1262, 293, 428, "lg8"], 8: [0, 1690, 290, 210, "lg9"], 9: [858, 1690, 293, 210, "lg9"], 10: [292, 1262, 563, 428, "lg10"] };
+  const NAMES = { 1: "Democritus Abderites", 2: "Zelotypia", 3: "Solitudo", 4: "Inamorato", 5: "Hypocondriacus", 6: "Superstitiosus", 7: "Maniacus", 8: "Borago and Helleborus", 9: "Borago and Helleborus", 10: "Democritus Junior" };
+  fetch("../../site/private/argument/index.html").then((r) => r.text()).then((h) => {
+    const d = new DOMParser().parseFromString(h, "text/html");
+    // the built lines carry hidden glosses, note markers and page markers: keep only Burton's words
+    const stanza = (lg) => $$(".l", d.getElementById("argument-" + lg)).map((l) => { const c = l.cloneNode(true);
+      $$(".gl-s, .sr-only, .nref, .sidenote, .enref, .pb, .ft", c).forEach((x) => x.remove());
+      return c.innerHTML.replace(/­/g, "").replace(/^\s*\d+\s*/, ""); }).join("<br>");
+    const core = $("#core"), eng = $(".eng", core), img = $("img", eng), L = $(".side.l", core), R = $(".side.r", core);
+    const hole = $(".hole", core), lens = $(".lens", core);
+    let fx = "hole";
+    const make = (n, cls) => `<div class="${cls}" data-p="${n}"><span class="sh">${n === 8 ? "8 · 9" : n} · ${NAMES[n]}</span><br>${stanza(PANELS[n][4])}</div>`;
+    L.innerHTML = [2, 4, 6, 8].map((n) => make(n, "stz")).join(""); R.innerHTML = [3, 5, 7].map((n) => make(n, "stz")).join("");
+    $(".topstz").innerHTML = make(1, "x").replace(/^<div class="x" data-p="1">|<\/div>$/g, "");
+    $(".botstz").innerHTML = make(10, "x").replace(/^<div class="x" data-p="10">|<\/div>$/g, "");
+    eng.insertAdjacentHTML("beforeend", Object.entries(PANELS).map(([n, [x, y, w, h]]) => `<button class="pnl" type="button" data-p="${n}" aria-label="Panel ${n}, ${NAMES[n]}" style="left:${x / 11.51}%;top:${y / 19}%;width:${w / 11.51}%;height:${h / 19}%"></button>`).join(""));
+    const placeStz = () => { const H = img.offsetHeight; let floorL = 0, floorR = 0;
+      $$(".side .stz", core).forEach((s) => { const y = PANELS[s.dataset.p][1] / 1900 * H; const left = s.closest(".l");
+        const top = Math.max(y, left ? floorL : floorR); s.style.top = top + "px"; const end = top + s.offsetHeight + 8; if (left) floorL = end; else floorR = end; });
+      L.style.minHeight = R.style.minHeight = H + "px"; };
+    img.complete ? placeStz() : img.addEventListener("load", placeStz); addEventListener("resize", placeStz);
+    const show = (n) => { const on = n != null; const p = on ? PANELS[n] : null;
+      $$(".stz, .topstz, .botstz", core.parentElement).forEach((s) => { const k = +s.dataset.p; s.classList.toggle("on", on && (k === +n || (p && PANELS[k][4] === p[4]))); });
+      core.classList.toggle("dim-on", on);
+      if (!on) { hole.classList.remove("on"); lens.classList.remove("on"); return; }
+      const W = img.offsetWidth, H = img.offsetHeight, [x, y, w, h] = p; const r = { l: x / 1151 * W, t: y / 1900 * H, w: w / 1151 * W, h: h / 1900 * H };
+      if (fx === "hole") { Object.assign(hole.style, { left: r.l + "px", top: r.t + "px", width: r.w + "px", height: r.h + "px" }); hole.classList.add("on"); lens.classList.remove("on"); }
+      else { const k = 1.9, lw = r.w * k, lh = r.h * k; const cl = Math.min(Math.max(r.l + r.w / 2 - lw / 2, -W * 0.15), W * 1.15 - lw), ct = Math.min(Math.max(r.t + r.h / 2 - lh / 2, 0), H - lh / 1.2);
+        Object.assign(lens.style, { left: cl + "px", top: ct + "px", width: lw + "px", height: lh + "px", backgroundImage: `url(${img.src})`,
+          backgroundSize: `${W * k}px ${H * k}px`, backgroundPosition: `${-r.l * k}px ${-r.t * k}px` }); lens.classList.add("on"); hole.classList.remove("on"); } };
+    core.parentElement.addEventListener("mouseover", (e) => { const t = e.target.closest("[data-p]"); if (t && core.parentElement.contains(t)) show(t.dataset.p); });
+    core.parentElement.addEventListener("mouseout", (e) => { const t = e.target.closest("[data-p]"); if (t && !(e.relatedTarget && e.relatedTarget.closest?.("[data-p]"))) show(null); });
+    $('.tog[data-for="core"]').addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; fx = b.dataset.fx;
+      $$('.tog[data-for="core"] button').forEach((x) => x.setAttribute("aria-pressed", String(x === b))); });
+    // B: sticky engraving, the stanza in the card
+    const se = $("#stick-eng > div"), card = $("#stick-card");
+    se.insertAdjacentHTML("beforeend", Object.entries(PANELS).map(([n, [x, y, w, h]]) => `<button class="pnl" type="button" data-q="${n}" aria-label="Panel ${n}" style="left:${x / 11.51}%;top:${y / 19}%;width:${w / 11.51}%;height:${h / 19}%"></button>`).join(""));
+    se.addEventListener("mouseover", (e) => { const b = e.target.closest("[data-q]"); if (!b) return; const n = +b.dataset.q;
+      card.innerHTML = `<span style="font-style:normal;font-variant-caps:all-small-caps;letter-spacing:0.06em;color:var(--accent)">${NAMES[n]}</span><br>${stanza(PANELS[n][4])}`; card.style.color = "var(--ink)";
+      $$(".pnl", se).forEach((x) => x.style.outline = x === b ? "2px solid var(--accent)" : ""); });
+  }).catch(() => { $("#core").innerHTML = "<p class='small'>Open this page through the review server so it can read the Argument page.</p>"; });
+
+  // R5 name windows (open on hover, close on leave)
+  const WHO = { chrys: ["John Chrysostom, c. 347–407", "Archbishop of Constantinople and preacher; Burton cites his homilies."],
+                cyp: ["Cyprian, d. 258", "Bishop of Carthage; Burton quotes his letter to Demetrianus."],
+                plato: ["Plato, c. 427–347 BC", "The Athenian philosopher."] };
+  let pop = null;
+  document.addEventListener("mouseover", (e) => { const n = e.target.closest(".nm"); if (!n || pop?._for === n) return; pop?.remove();
+    const [h, t] = WHO[n.dataset.who]; pop = document.createElement("div"); pop.className = "pop"; pop._for = n;
+    pop.innerHTML = `<h4>${h}</h4><div>${t} <span class="small">(stand-in)</span></div><a href="#" data-toast="Would open the index entry">Index entry</a> · <a href="#" data-toast="Would open Wikipedia">Wikipedia</a>`;
+    document.body.appendChild(pop); const r = n.getBoundingClientRect(); pop.style.left = Math.min(r.left + scrollX, scrollX + innerWidth - pop.offsetWidth - 16) + "px"; pop.style.top = r.bottom + scrollY + 6 + "px"; });
+  document.addEventListener("mouseout", (e) => { const n = e.target.closest(".nm"); if (n && pop && !(e.relatedTarget && pop.contains(e.relatedTarget))) { pop.remove(); pop = null; } });
+
+  // R6 toggle
+  const R6 = { margin: { after: null, place: null } };
+  const para = (mode, how) => {
+    const la = `<em lang="la" class="lk" data-k="u">ubi peccatum, ibi procella</em>`, en = `<span class="tr-in">where there’s sin there’s a storm<span class="lt">lat</span></span>`;
+    if (mode === "margin") return `<div class="pg"><p class="tx">… which pull these several plagues &amp; miseries upon our heads. For ${la}, as Chrysostom well observes.</p><div class="mg"><div class="n lk" data-k="u" style="border-left-color:var(--la);color:var(--la)">where there’s sin there’s a storm <span class="small">· Gowland</span></div></div></div>`;
+    if (how === "after") return `<p class="tx inl">… which pull these several plagues &amp; miseries upon our heads. For ${la} ${en}, as Chrysostom well observes.</p>`;
+    return `<p class="tx inl">… which pull these several plagues &amp; miseries upon our heads. For <span title="Latin: ubi peccatum, ibi procella">${en}</span>, as Chrysostom well observes.</p>`;
+  };
+  const r6 = (mode) => { $$(".r6").forEach((d) => d.innerHTML = para(mode, d.classList.contains("after") ? "after" : "place"));
+    $$('.tog[data-for="r6"] button').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.m === mode))); };
+  $('.tog[data-for="r6"]').addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) r6(b.dataset.m); });
+  r6("inline");
+
+  // choices
+  const choices = store.get("ab2-choices") || {};
+  const render = () => {
+    const parts = Object.entries(choices).filter(([, v]) => v.o || v.note).map(([k, v]) => `${k}: ${v.o || "—"}${v.note ? ` (${v.note})` : ""}`);
+    $("#sumtxt").textContent = parts.length ? parts.join(" · ") : "No choices yet.";
+    $$("section.test").forEach((s) => { const c = choices[s.dataset.test] || {};
+      $$(".opt", s).forEach((o) => o.classList.toggle("chosen", c.o === o.dataset.o));
+      $$(".pick button", s).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === c.o))); });
+    store.set("ab2-choices", choices);
+  };
+  $$("section.test").forEach((s) => {
+    const opts = $$(".opt", s).map((o) => o.dataset.o);
+    const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = [...opts, "Neither"].map((o) => `<button type="button" data-v="${o}">${o === "Neither" ? "Neither" : "Prefer " + o}</button>`).join("") +
+      `<input type="text" placeholder="note (optional)" aria-label="Note for ${s.dataset.test}">`;
+    s.appendChild(bar);
+    const inp = $("input", bar); inp.value = (choices[s.dataset.test] || {}).note || "";
+    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const c = choices[s.dataset.test] ||= {}; c.o = c.o === b.dataset.v ? "" : b.dataset.v; render(); });
+    inp.addEventListener("input", () => { (choices[s.dataset.test] ||= {}).note = inp.value; render(); });
+  });
+  $("#copy").onclick = async () => { const t = "Round 2 choices: " + $("#sumtxt").textContent; try { await navigator.clipboard.writeText(t); toast("Copied"); } catch { prompt("Copy this:", t); } };
+  render();
+})();
+</script>
+</body>
+</html>

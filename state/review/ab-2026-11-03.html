@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader A/B tests</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=GFS+Didot&family=UnifrakturMaguntia&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root {
+  --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d;
+  --pop-bg: #fffdf8; --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.18); --panel: #efe9dc;
+  --la: #2c6150; --grc: #36508f; --enm: #7a4f14;
+  --k-cite: #4b5d80; --k-bible: #66661f; --k-gloss: #9a6408; --k-expl: #6d4a80; --k-rest: #8a8174;
+  --hot: color-mix(in srgb, #d9a520 26%, transparent);
+  --hot-soft: color-mix(in srgb, #d9a520 12%, transparent);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+    --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5); --panel: #24211d;
+    --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478;
+    --k-cite: #9fb0d4; --k-bible: #c7c77a; --k-gloss: #e2b45c; --k-expl: #c3a3d6; --k-rest: #8f8679;
+    --hot: color-mix(in srgb, #e0b040 24%, transparent); --hot-soft: color-mix(in srgb, #e0b040 11%, transparent);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5); --panel: #24211d;
+  --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478;
+  --k-cite: #9fb0d4; --k-bible: #c7c77a; --k-gloss: #e2b45c; --k-expl: #c3a3d6; --k-rest: #8f8679;
+  --hot: color-mix(in srgb, #e0b040 24%, transparent); --hot-soft: color-mix(in srgb, #e0b040 11%, transparent);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", "EB Garamond", Georgia, serif;
+  font-size: 1.12rem; line-height: 1.5; font-variant-numeric: oldstyle-nums; }
+.wrap { max-width: 1500px; margin: 0 auto; padding: 1.5rem 16px 6rem; }
+h1 { font-weight: 400; letter-spacing: 0.04em; margin: 0 0 0.3rem; }
+.intro { color: var(--muted); max-width: 52rem; }
+.intro b { color: var(--ink); font-weight: 600; }
+.theme-btn { float: right; font: inherit; font-size: 0.85rem; background: none; color: var(--muted);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.6rem; cursor: pointer; }
+section.test { border-top: 1px solid var(--rule); padding: 1.6rem 0 1rem; }
+section.test > h2 { font-weight: 400; font-size: 1.35rem; margin: 0; }
+section.test > h2 .tn { color: var(--accent); font-variant-numeric: lining-nums; margin-right: 0.4rem; }
+.q { color: var(--muted); margin: 0.2rem 0 1rem; max-width: 60rem; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.2rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem 0.8rem; position: relative; }
+.opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.opt > .ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); font-size: 0.95rem;
+  margin-bottom: 0.6rem; display: flex; justify-content: space-between; gap: 1rem; }
+.opt > .ol b { color: var(--accent); font-weight: 600; }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.9rem; flex-wrap: wrap; }
+.pick button, .summary button { font: inherit; font-size: 0.9rem; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.25rem 0.8rem; cursor: pointer; }
+.pick button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.pick input { font: inherit; font-size: 0.9rem; flex: 1; min-width: 12rem; background: transparent; color: var(--ink);
+  border: none; border-bottom: 1px solid var(--rule); padding: 0.2rem 0; }
+.demo-tag { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); font-size: 0.9rem; }
+
+/* ---- the mini page: text + margin ---- */
+.pg { display: grid; grid-template-columns: minmax(0, 1fr) 13.5rem; gap: 1.4rem; font-size: 1.02rem; }
+.pg.wide-m { grid-template-columns: minmax(0, 1fr) 16rem; }
+.pg .tx { text-align: justify; hyphens: auto; }
+.pg .tx p { margin: 0 0 0.6rem; }
+.pg .mg { font-size: 0.82rem; line-height: 1.35; color: var(--ink); }
+.mg .n { margin: 0 0 0.6rem; padding: 0.1rem 0 0.1rem 0.5rem; border-left: 2px solid transparent; border-radius: 2px;
+  transition: background 0.12s; }
+sup.m { font-size: 0.68em; color: var(--accent); font-variant-numeric: lining-nums; font-style: normal; line-height: 0;
+  padding: 0 0.08em; cursor: pointer; }
+.nl { color: var(--accent); font-style: normal; margin-right: 0.25rem; }
+.lk { border-radius: 2px; transition: background 0.12s; cursor: pointer; }
+.hot { background: var(--hot) !important; }
+.seg:hover { background: var(--hot-soft); }
+.pin { background: var(--hot) !important; outline: 1px solid color-mix(in srgb, #d9a520 60%, transparent); }
+.prov { font-size: 0.8em; color: var(--muted); cursor: help; margin-left: 0.2rem; font-style: normal;
+  border-bottom: none; }
+.prov::before { content: "◇"; }
+.small { font-size: 0.85em; color: var(--muted); }
+.orig { color: var(--muted); font-size: 0.92em; }
+em { font-style: italic; }
+.sc { font-variant-caps: small-caps; letter-spacing: 0.03em; }
+@media (max-width: 40rem) { .pg, .pg.wide-m { grid-template-columns: 1fr; } }
+
+/* ---- note kinds (T3) ---- */
+.kA .kl { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.3rem; }
+.kA .k-burton .kl { color: var(--accent); }
+.kA .k-cite .kl { color: var(--k-cite); } .kA .k-bible .kl { color: var(--k-bible); }
+.kA .k-tr .kl { color: var(--la); } .kA .k-gloss .kl { color: var(--k-gloss); }
+.kA .k-expl .kl { color: var(--k-expl); } .kA .k-rest .kl { color: var(--k-rest); }
+.kB .n { border-left-width: 3px; }
+.kB .k-cite { border-left-color: var(--k-cite); } .kB .k-bible { border-left-color: var(--k-bible); }
+.kB .k-tr { border-left-color: var(--la); } .kB .k-gloss { border-left-color: var(--k-gloss); }
+.kB .k-expl { border-left-color: var(--k-expl); } .kB .k-rest { border-left-color: var(--k-rest); border-left-style: dashed; }
+.kB .k-burton { border-left-color: var(--accent); }
+.kB .kg { display: inline-block; width: 1.1em; text-align: center; margin-right: 0.15rem; font-style: normal; }
+.kB .k-cite .kg { color: var(--k-cite); } .kB .k-bible .kg { color: var(--k-bible); }
+.kB .k-tr .kg { color: var(--la); } .kB .k-gloss .kg { color: var(--k-gloss); }
+.kB .k-expl .kg { color: var(--k-expl); } .kB .k-rest .kg { color: var(--k-rest); }
+.legend { font-size: 0.78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.2rem 0.8rem; margin-bottom: 0.6rem; }
+.sub { display: block; padding-left: 0.9rem; margin-top: 0.15rem; }
+
+/* ---- language tint (T7) ---- */
+.tint [lang="la"], .tint .tr-la { color: var(--la); }
+.tint .n.tr-la { border-left: 2px solid var(--la); }
+.notint [lang="la"] { color: inherit; }
+
+/* ---- inline translation marks (T8) ---- */
+.trin { font-style: normal; }
+.mk1 .trin::before { content: "⸢"; color: var(--accent); } .mk1 .trin::after { content: "⸣"; color: var(--accent); }
+.mk2 .trin::before { content: "〔"; color: var(--accent); } .mk2 .trin::after { content: "〕"; color: var(--accent); }
+.mk3 .trin { background: color-mix(in srgb, var(--la) 12%, transparent); border-radius: 2px; padding: 0 0.12em; }
+.mk3 .trin .lt { font-variant-caps: all-small-caps; font-size: 0.75em; color: var(--la); vertical-align: 0.25em; margin-left: 0.1em; letter-spacing: 0.05em; }
+.mk1 .lt, .mk2 .lt { display: none; }
+
+/* ---- Burton's own English (T9) ---- */
+.bA .own { text-decoration: underline dotted var(--la); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+.bB .own::before { content: "≈"; color: var(--la); font-size: 0.8em; margin-right: 0.12em; vertical-align: 0.1em; }
+
+/* ---- fonts (T10) ---- */
+.fA [lang="grc"] { font-family: "GFS Didot", serif; }
+.fA .chaucer { font-family: "UnifrakturMaguntia", serif; font-size: 1.05em; letter-spacing: 0.01em; }
+.fB [lang="grc"] { font-family: "GFS Didot", serif; font-size: 0.97em; }
+.fB .chaucer { font-variant-caps: small-caps; letter-spacing: 0.02em; }
+.flines p { margin: 0 0 0.7rem; }
+
+/* ---- headings (T1) ---- */
+.hA, .hB { text-align: center; }
+.orn { color: var(--accent); letter-spacing: 0.35em; font-size: 0.95rem; overflow: hidden; white-space: nowrap; }
+.hA .p1 { letter-spacing: 0.22em; font-size: 1.25rem; margin: 0.5rem 0 0.2rem; }
+.hA .p2 { letter-spacing: 0.14em; font-size: 0.95rem; margin: 0.2rem 0; }
+.hA .tt { font-style: italic; font-size: 1.45rem; line-height: 1.2; margin: 0.5rem 0 0.8rem; }
+.hA hr, .hB hr { border: none; border-top: 1px solid var(--ink); width: 40%; margin: 0.6rem auto; }
+.rh { display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.15rem; margin-bottom: 1rem; }
+.rh i { font-style: italic; }
+.hB .p2 { font-size: 1.6rem; letter-spacing: 0.12em; margin: 0.3rem 0 0; }
+.hB .tt { font-style: italic; font-size: 1.25rem; margin: 0.1rem 0 0.8rem; }
+.hB .tt::before { content: "— "; }
+.firstw { font-variant-caps: small-caps; letter-spacing: 0.05em; }
+
+/* ---- drop caps (T2) ---- */
+.dc { text-align: justify; }
+.dcA::first-letter { float: left; font-size: 3.9em; line-height: 0.78; margin: 0.06em 0.08em 0 0; color: var(--accent); font-family: "EBG", "EB Garamond", serif; }
+.dcB .ini { float: left; width: 3.35em; height: 3.35em; margin: 0.25em 0.45em 0 0; display: grid; place-items: center;
+  font-family: "Cinzel Decorative", serif; font-weight: 700; font-size: 1.15em; color: var(--paper);
+  background:
+    radial-gradient(circle at 20% 20%, transparent 0 0.28em, color-mix(in srgb, var(--paper) 35%, transparent) 0.3em 0.36em, transparent 0.38em) 0 0 / 0.95em 0.95em,
+    var(--accent);
+  border: 3px double var(--paper); outline: 1px solid var(--accent); }
+.dcB .ini span { font-size: 2.3em; line-height: 1; text-shadow: 0 0 0.12em var(--accent); }
+
+/* ---- wide layouts (T11) ---- */
+.wl { font-size: 0.78rem; line-height: 1.38; }
+.wl .tx { text-align: justify; }
+.wlA { display: grid; grid-template-columns: minmax(0, 1fr) 9rem 9rem; gap: 0.9rem; }
+.wlB { display: grid; grid-template-columns: 9rem minmax(0, 1fr) 9rem; gap: 0.9rem; }
+.wl .mg { font-size: 0.66rem; line-height: 1.3; }
+.wl .mg .n { margin-bottom: 0.45rem; }
+.wl .mh { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); font-size: 0.72rem; margin-bottom: 0.3rem; }
+
+/* ---- pop-ups ---- */
+.pop { position: absolute; z-index: 50; width: min(26rem, calc(100vw - 32px)); background: var(--pop-bg); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); padding: 0.7rem 0.9rem 0.75rem;
+  font-size: 0.92rem; line-height: 1.4; }
+.pop .from { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--la); font-size: 0.95em; }
+.pop .tr { font-size: 1.05em; margin: 0.15rem 0 0.4rem; }
+.pop .ph { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); font-size: 0.9em; margin-top: 0.5rem;
+  border-top: 1px solid var(--rule); padding-top: 0.3rem; }
+.pop .lbl { color: var(--muted); font-size: 0.85em; }
+.pop details summary { cursor: pointer; color: var(--muted); font-size: 0.88em; }
+.pop .bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); border-radius: 0 0 0 6px; }
+.pop.lockable .bar { animation: lockbar 0.6s linear forwards; }
+.pop.locked .bar { width: 100%; animation: none; background: color-mix(in srgb, var(--accent) 40%, transparent); }
+.pop.locked { border-color: color-mix(in srgb, var(--accent) 50%, var(--rule)); }
+@keyframes lockbar { to { width: 100%; } }
+.pop h4 { margin: 0 0 0.2rem; font-weight: 400; font-style: italic; font-size: 1.1em; }
+.pop .open { display: inline-block; margin-top: 0.5rem; font-size: 0.88em; color: var(--accent); }
+[data-pop] { cursor: help; }
+a.xr { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.15em; cursor: pointer; }
+.nm { text-decoration: underline dotted var(--muted); text-underline-offset: 0.2em; }
+.toast { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--paper);
+  padding: 0.4rem 0.9rem; border-radius: 4px; font-size: 0.9rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 99; }
+.toast.on { opacity: 1; }
+
+/* ---- Bible (demo) ---- */
+.verse { font-style: italic; }
+.verse.clip { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.more { font: inherit; font-size: 0.9em; color: var(--k-bible); background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline; }
+
+/* ---- long block (T12) ---- */
+.lb .ln { display: block; padding-left: 1.2rem; }
+.lbA .ln { border-radius: 2px; cursor: pointer; }
+.lbA .ln:hover, .lbA .ln.hot { background: var(--hot); }
+.lbA [lang="la"] { color: var(--la); }
+.lbB { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.95rem; }
+.lbB .ln { padding-left: 0; }
+.lbB .col-la [lang="la"], .lbB .col-la { color: var(--la); }
+.lbB .col-en { font-size: 0.92em; }
+.lbB .ln.hot { background: var(--hot); }
+
+/* ---- front page (T13) ---- */
+.fpA, .fpB { font-size: 0.92rem; }
+.fpA { text-align: center; }
+.fpA img, .fpB img { width: 100%; max-width: 15rem; height: auto; display: block; margin: 0 auto 0.6rem; border: 1px solid var(--rule); }
+.tp1 { font-size: 1.5rem; letter-spacing: 0.16em; margin: 0.3rem 0 0; line-height: 1.15; }
+.tp2 { font-style: italic; margin: 0.15rem 0; }
+.tp3 { font-variant-caps: small-caps; letter-spacing: 0.04em; font-size: 0.95em; margin: 0.15rem 0; }
+.enter { display: inline-block; margin: 0.8rem 0; font-size: 1.15rem; color: var(--accent); text-decoration: none;
+  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 0.2rem 1rem; letter-spacing: 0.06em; }
+.fp-syn { text-align: left; margin: 0.6rem auto; max-width: 26rem; }
+.fp-syn details { border-bottom: 1px solid var(--rule); padding: 0.25rem 0; }
+.fp-syn summary { cursor: pointer; }
+.fp-syn .syn { font-size: 0.85em; color: var(--muted); padding: 0.3rem 0 0.3rem 1rem; }
+.fp-toc { text-align: left; max-width: 26rem; margin: 0.6rem auto 0; font-size: 0.88em; columns: 1; }
+.fp-toc div { padding: 0.05rem 0; }
+.fpB { display: grid; grid-template-columns: 14rem 1fr; gap: 1.2rem; align-items: start; }
+.fpB .fp-syn, .fpB .fp-toc { margin-left: 0; }
+@media (max-width: 40rem) { .fpB { grid-template-columns: 1fr; } }
+
+/* ---- frontispiece (T14) ---- */
+.fx { display: grid; grid-template-columns: 15rem 1fr; gap: 1rem; align-items: start; }
+.fx .img { position: relative; width: 15rem; }
+.fx img { width: 100%; height: auto; display: block; }
+.fx .panel { position: absolute; border: 1px solid transparent; background: none; padding: 0; cursor: pointer; }
+.fx .panel:hover, .fx .panel.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.fx .panel[disabled] { cursor: default; }
+.fx .stz { position: relative; min-height: 6rem; font-size: 0.95rem; }
+.fx .stz .card { position: absolute; left: 0; right: 0; transition: top 0.15s; }
+.stzh { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); font-size: 0.9em; }
+.fxB .stz .card { background: var(--pop-bg); border: 1px solid var(--rule); box-shadow: var(--pop-shadow); border-radius: 6px; padding: 0.5rem 0.7rem; }
+@media (max-width: 40rem) { .fx { grid-template-columns: 1fr; } }
+
+/* ---- synopsis (demo) ---- */
+.syn-row { font-size: 0.95rem; }
+.syn-key { color: var(--accent); font-family: "EBG", serif; text-decoration: none; }
+a.syn-key { text-decoration: underline; text-decoration-color: var(--accent); }
+
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--accent); padding: 0.6rem 0;
+  display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; z-index: 40; }
+.summary span { color: var(--muted); font-size: 0.9rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<button class="theme-btn" type="button" id="theme">Dark / light</button>
+<h1>Reader A/B tests</h1>
+<p class="intro">Mockups for your 3 November notes, built with Burton’s own text from 1.1.1.1 and its real notes and translations. <b>Hover, click and pin work as they would in the edition.</b> For each test, pick <b>A</b>, <b>B</b> (or <b>C</b>), or <b>Neither</b>, and add a note if you want. Then use <b>Copy my choices</b> at the bottom and paste the result back to me. Everything shown is the <b>private build, with Gowland as its base</b>: his translations come first, then Dell &amp; Jordan-Smith, and Claude’s only where neither exists. His glosses and explanatory notes sit in the margin, not in the line. Every note uses lettered markers (a, b, c, as Gowland letters them), and the model is shown as “Claude”, with the full label behind the ◇ icon.</p>
+
+<!-- ============================================================ T1 headings -->
+<section class="test" data-test="T1">
+<h2><span class="tn">1</span>Headings in Burton’s manner</h2>
+<p class="q">Your note “Headers should actually look like Burton’s, e.g.” was cut off before the example. These two are modelled on the 1651 folio. If you had a particular page in mind, send it and I’ll match it.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · headpiece of fleurons, stacked capitals, italic title</span></div>
+    <div class="hA">
+      <div class="orn" aria-hidden="true">❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦ ❧ ❦</div>
+      <div class="p1">THE FIRST PARTITION.</div>
+      <hr>
+      <div class="p2">THE FIRST SECTION, MEMBER, SUBSECTION.</div>
+      <div class="tt">Man’s Excellency, Fall, Miseries, Infirmities; The causes of them.</div>
+    </div>
+    <p style="text-align:justify;margin:0"><span class="firstw">Man</span>, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him…</p>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · running head, as on a folio page, then the subsection</span></div>
+    <div class="hB">
+      <div class="rh"><span>Part. 1. Sect. 1.</span><i>Man’s Excellency.</i><span>Memb. 1. Subs. 1.</span></div>
+      <div class="p2">SUBSECT. I.</div>
+      <div class="tt">Man’s Excellency, Fall, Miseries, Infirmities; The causes of them.</div>
+    </div>
+    <p style="text-align:justify;margin:0"><span class="firstw">Man</span>, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him…</p>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ T2 drop caps -->
+<section class="test" data-test="T2">
+<h2><span class="tn">2</span>Large initial letters</h2>
+<p class="q">A Gwern-style initial at the start of each subsection, shown only on the first paragraph. Either option works with either heading above.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · plain Garamond initial in rubric red</span></div>
+    <p class="dc dcA" style="margin:0">Man, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, the marvel of marvels, as <em>Plato</em>, the Abridgement and Epitome of the World, as <em>Pliny</em>; <em>Microcosmus</em>, a little world, a model of the world, Sovereign Lord of the Earth, Viceroy of the World…</p>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · decorated woodcut-style block (Cinzel Decorative, OFL)</span></div>
+    <p class="dc dcB" style="margin:0"><span class="ini" aria-hidden="true"><span>M</span></span><span class="sr-only">M</span><span class="firstw">an</span>, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, the marvel of marvels, as <em>Plato</em>, the Abridgement and Epitome of the World, as <em>Pliny</em>; <em>Microcosmus</em>, a little world, a model of the world, Sovereign Lord of the Earth, Viceroy of the World…</p>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ T3 note kinds -->
+<section class="test" data-test="T3">
+<h2><span class="tn">3</span>Telling the kinds of marginal note apart</h2>
+<p class="q">Seven kinds of material share the margin: Burton’s own note, a citation expansion, a Bible verse (KJV), a translation, Gowland’s gloss of an archaism, Gowland’s explanatory note, and a restored note (°). Gowland’s glosses and endnotes move out of the line and the back of the book into the margin, beside their words.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · a small-caps word names the kind</span></div>
+    <div class="mg kA" style="font-size:0.88rem">
+      <div class="n k-burton"><span class="kl">Burton</span><span class="nl">c</span><em lang="la">Finis rerum omnium cui sublunaria serviunt.</em></div>
+      <div class="n k-tr"><span class="kl">trans.</span>The end of all things, to whom sublunary beings are subject <span class="small">· Gowland</span></div>
+      <div class="n k-cite"><span class="kl">cites</span>Julius Caesar Scaliger, exercitation 365, section 3; Francisco Vallés (Valesius), chapter 5 <span class="prov" title="Expanded by rule (rules/abbrev-v1); abbreviation tables a machine draft by claude-opus-5-5, checked"></span></div>
+      <div class="n k-bible"><span class="kl">Bible</span>Ps. 107:17 <span class="verse">Fools because of their transgression, and because of their iniquities, are afflicted.</span> <span class="small">KJV</span></div>
+      <div class="n k-gloss"><span class="kl">gloss</span><em>hie</em> urge, hasten <span class="small">· Gowland</span></div>
+      <div class="n k-expl"><span class="kl">note</span><em>an old Poet</em>: the Italian poet and philosopher Lodovico Lazzarelli, in his <em>Crater Hermetis</em> (1505) <span class="small">· Gowland</span></div>
+      <div class="n k-expl"><span class="kl">note</span>‘Sublunaria’ means the things of the sublunary world, below the sphere of the moon <span class="prov" title="Note by claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></div>
+      <div class="n k-rest"><span class="kl">restored</span><span class="nl" style="color:var(--k-rest)">°</span><em lang="la">Lib. de anima.</em> <span class="prov" title="Not in Gowland’s edition: restored from Project Gutenberg #10800, note 864 (a 19th-century text checked against the 1638 edition)"></span></div>
+    </div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · a coloured rule and a glyph, with a key at the top of the margin</span></div>
+    <div class="mg kB" style="font-size:0.88rem">
+      <div class="legend"><span><span style="color:var(--accent)">a</span> Burton</span><span style="color:var(--k-cite)">§ citation</span><span style="color:var(--k-bible)">✠ Bible</span><span style="color:var(--la)">⇄ translation</span><span style="color:var(--k-gloss)">≡ gloss</span><span style="color:var(--k-expl)">※ note</span><span style="color:var(--k-rest)">° restored</span></div>
+      <div class="n k-burton"><span class="nl">c</span><em lang="la">Finis rerum omnium cui sublunaria serviunt.</em></div>
+      <div class="n k-tr"><span class="kg">⇄</span>The end of all things, to whom sublunary beings are subject <span class="small">· Gowland</span></div>
+      <div class="n k-cite"><span class="kg">§</span>Julius Caesar Scaliger, exercitation 365, section 3; Francisco Vallés (Valesius), chapter 5 <span class="prov" title="Expanded by rule (rules/abbrev-v1); abbreviation tables a machine draft by claude-opus-5-5, checked"></span></div>
+      <div class="n k-bible"><span class="kg">✠</span>Ps. 107:17 <span class="verse">Fools because of their transgression, and because of their iniquities, are afflicted.</span> <span class="small">KJV</span></div>
+      <div class="n k-gloss"><span class="kg">≡</span><em>hie</em> urge, hasten <span class="small">· Gowland</span></div>
+      <div class="n k-expl"><span class="kg">※</span><em>an old Poet</em>: the Italian poet and philosopher Lodovico Lazzarelli, in his <em>Crater Hermetis</em> (1505) <span class="small">· Gowland</span></div>
+      <div class="n k-expl"><span class="kg">※</span>‘Sublunaria’ means the things of the sublunary world, below the sphere of the moon <span class="prov" title="Note by claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></div>
+      <div class="n k-rest"><span class="kg">°</span><em lang="la">Lib. de anima.</em> <span class="prov" title="Not in Gowland’s edition: restored from Project Gutenberg #10800, note 864 (a 19th-century text checked against the 1638 edition)"></span></div>
+    </div>
+  </div>
+</div>
+<p class="small">The restored note’s text here is a placeholder. Hover ◇ to see the full provenance that replaces the prose lines. Gowland’s items carry his name only, since he is the base of this build. Endnotes that only point elsewhere (“See above, n. 55 (DJR)”) would show the note they point to, on hover.</p>
+</section>
+
+<!-- ============================================================ T4 linking -->
+<section class="test" data-test="T4">
+<h2><span class="tn">4</span>Which words a note belongs to</h2>
+<p class="q">Hover a note in the margin and its words light up. Hover the text and its note lights up. Click either to pin it, and click again to unpin. The two options differ only in how much text belongs to a note.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · the whole clause around the marker, Sefaria-style</span></div>
+    <div class="pg link-scope" data-span="clause"></div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · only the phrase after the marker, up to the next punctuation</span></div>
+    <div class="pg link-scope" data-span="phrase"></div>
+  </div>
+</div>
+<p class="small">Burton places a marker before the words it glosses (“the <sup class="m">a</sup>marvel of marvels”). Option B follows that. Option A also lights the words before the marker, back to the last stop.</p>
+</section>
+
+<!-- ============================================================ T5 citations -->
+<section class="test" data-test="T5">
+<h2><span class="tn">5</span>Citations: one expanded form, no “expanded by rule” line</h2>
+<p class="q">The two citation sections become one. Should the expansion stand in place of Burton’s abbreviation, or follow it?</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · the expansion replaces the abbreviation (Burton’s words on hover)</span></div>
+    <div class="mg" style="font-size:0.9rem;max-width:20rem">
+      <div class="n"><span class="nl">c</span><em lang="la" style="color:var(--la)">Finis rerum omnium cui sublunaria serviunt.</em>
+        <span class="sub" title="Burton: Scalig. exercit. 365 sect. 3. Vales. de sac. Phil. cap. 5.">Julius Caesar Scaliger, <em>Exotericae exercitationes</em> 365, section 3; Francisco Vallés (Valesius), <em>De sacra philosophia</em>, chapter 5 <span class="prov" title="Expanded by rule (rules/abbrev-v1); tables a machine draft (claude-opus-5-5), checked"></span></span></div>
+      <div class="n"><span class="nl">o</span><span title="Burton: Hom. 5 ad populum Antioch.">John Chrysostom, <em>Homilies to the People of Antioch</em>, homily 5</span> <span class="prov" title="Expanded by rule"></span></div>
+    </div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · Burton’s abbreviation first, then the expansion in small type</span></div>
+    <div class="mg" style="font-size:0.9rem;max-width:20rem">
+      <div class="n"><span class="nl">c</span><em lang="la" style="color:var(--la)">Finis rerum omnium cui sublunaria serviunt.</em> <span class="orig">Scalig. exercit. 365 sect. 3. Vales. de sac. Phil. cap. 5.</span>
+        <span class="sub small">= Julius Caesar Scaliger, <em>Exotericae exercitationes</em> 365, section 3; Francisco Vallés (Valesius), <em>De sacra philosophia</em>, chapter 5 <span class="prov" title="Expanded by rule (rules/abbrev-v1); tables a machine draft (claude-opus-5-5), checked"></span></span></div>
+      <div class="n"><span class="nl">o</span><span class="orig">Hom. 5 ad populum Antioch.</span> <span class="sub small">= John Chrysostom, <em>Homilies to the People of Antioch</em>, homily 5 <span class="prov" title="Expanded by rule"></span></span></div>
+    </div>
+  </div>
+</div>
+<p class="small">The work titles are filled in here to show the goal. Today the rules give “exercitation 365, section 3” without the title. Across the book, 2,679 of 5,165 citations are fully expanded, 624 partly and 1,862 not at all, so “expand every abbreviation” is real work (see my message).</p>
+</section>
+
+<!-- ============================================================ T6 translation -->
+<section class="test" data-test="T6">
+<h2><span class="tn">6</span>Where a translation of the running text appears</h2>
+<p class="q">Gowland’s translation comes first. Other versions are folded away, and Claude’s appears only when no human one exists. Each pop-up has a separate <em>Notes</em> section. Hover the Latin in each option.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · in the margin beside the line, in the Latin’s colour</span></div>
+    <div class="pg tint link-scope2">
+      <div class="tx"><p>… which pull these several plagues &amp; miseries upon our heads. For <em lang="la" class="lk" data-k="t1">ubi peccatum, ibi procella</em>, as <sup class="m">o</sup>Chrysostom well observes. <sup class="m">p</sup>Fools by reason of their transgression, and because of their iniquities are afflicted. Man, as <em lang="la" class="lk" data-k="t2">audacis naturae miraculum</em>, the marvel of marvels…</p></div>
+      <div class="mg">
+        <div class="n tr-la lk" data-k="t1"><span style="color:var(--la)">where there’s sin there’s a storm</span> <span class="small">· Gowland</span></div>
+        <div class="n">o John Chrysostom, homily 5</div>
+        <div class="n tr-la lk" data-k="t2"><span style="color:var(--la)">the miracle of bold Nature</span> <span class="small">· Gowland</span><br><span class="small">Burton’s “wonder of Nature” leaves out <em>audacis</em> (daring, bold). <span class="prov" title="Note by claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · a pop-up with labelled sections</span></div>
+    <div class="tx" style="text-align:justify">… which pull these several plagues &amp; miseries upon our heads. For <em lang="la" data-pop="pop-ubi" style="text-decoration:underline dotted var(--la);text-underline-offset:0.2em">ubi peccatum, ibi procella</em>, as <sup class="m">o</sup>Chrysostom well observes. … Man, the <sup class="m">c</sup><span data-pop="pop-finis" style="text-decoration:underline dotted var(--la);text-underline-offset:0.2em">Sovereign Lord of the Earth</span>…</div>
+  </div>
+</div>
+<template id="pop-ubi">
+  <div class="from">from Latin</div>
+  <div class="tr">where there’s sin there’s a storm</div>
+  <div class="lbl">Gowland</div>
+  <details><summary>Other versions (Dell &amp; Jordan-Smith, Claude)</summary><div style="margin-top:0.2rem">where there is sin, there is a storm <span class="lbl">Dell &amp; Jordan-Smith 1927</span></div><div>where there is sin, there is a storm <span class="prov" title="Machine translation: claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></div></details>
+  <div class="ph">Source</div>
+  <div>Burton cites John Chrysostom, <em>Homilies to the People of Antioch</em>, homily 5 <span class="lbl">(not yet checked against the text)</span></div>
+</template>
+<template id="pop-finis">
+  <div class="from">from Latin · Burton’s note c</div>
+  <div class="tr"><em lang="la">Finis rerum omnium cui sublunaria serviunt</em></div>
+  <div class="tr">The end of all things, to whom sublunary beings are subject</div>
+  <div class="lbl">Gowland</div>
+  <details><summary>Other version (Claude)</summary><div style="margin-top:0.2rem">The end of all things, whom all things beneath the moon serve <span class="prov" title="Machine translation: claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></div></details>
+  <div class="ph">Source</div>
+  <div>Burton cites Julius Caesar Scaliger, <em>Exotericae exercitationes</em> 365, section 3; Francisco Vallés, <em>De sacra philosophia</em>, chapter 5 <span class="lbl">(not yet checked)</span></div>
+  <div class="ph">Notes</div>
+  <div>‘Sublunaria’ means the things of the sublunary world, below the sphere of the moon <span class="prov" title="Note by claude-opus-5-5, prompt tr-v2, 2026-10-24"></span></div>
+</template>
+</section>
+
+<!-- ============================================================ T7 tint -->
+<section class="test" data-test="T7">
+<h2><span class="tn">7</span>A colour for each language, matched in the margin</h2>
+<p class="q">Should foreign words take their language’s colour, and their margin translations the same colour, so the eye knows where to go?</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · coloured: Latin green, Greek blue, Middle English brown</span></div>
+    <div class="pg tint"><div class="tx"><p>For <em lang="la">ubi peccatum, ibi procella</em>, as Chrysostom well observes … whom the Greeks call <span lang="grc" style="color:var(--grc)">ἐπιχαιρεκακία</span> … and Chaucer of his physician, <span class="chaucer" style="color:var(--enm)">For Gold in Physic is a cordial</span>.</p></div>
+      <div class="mg"><div class="n tr-la" style="color:var(--la)">where there’s sin there’s a storm</div><div class="n" style="border-left:2px solid var(--grc);color:var(--grc)">joy at another’s misfortune</div><div class="n" style="border-left:2px solid var(--enm);color:var(--enm)">gold is a heart-medicine</div></div></div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · ink only: italics as printed, the pairing shown by hover</span></div>
+    <div class="pg"><div class="tx"><p>For <em lang="la" class="lk" data-k="c1">ubi peccatum, ibi procella</em>, as Chrysostom well observes … whom the Greeks call <span lang="grc" class="lk" data-k="c2">ἐπιχαιρεκακία</span> … and Chaucer of his physician, <span class="chaucer lk" data-k="c3">For Gold in Physic is a cordial</span>.</p></div>
+      <div class="mg"><div class="n lk" data-k="c1"><span class="small">Lat.</span> where there’s sin there’s a storm</div><div class="n lk" data-k="c2"><span class="small">Gk.</span> joy at another’s misfortune</div><div class="n lk" data-k="c3"><span class="small">ME</span> gold is a heart-medicine</div></div></div>
+  </div>
+</div>
+<p class="small">The Greek and Chaucer glosses here are placeholders written for the mockup, not from the layers.</p>
+</section>
+
+<!-- ============================================================ T8 inline marks -->
+<section class="test" data-test="T8">
+<h2><span class="tn">8</span>Gowland’s in-line translations, and Read in English</h2>
+<p class="q">Gowland prints his translation in square brackets right after the Latin, and the current private build keeps it there. Your notes say to keep the line clean. Option D does that. If a translation does stand in the line (Read in English replaces the Latin), A–C are marks to use instead of plain brackets.</p>
+<div class="opts">
+  <div class="opt" data-o="D"><div class="ol"><span><b>D</b> · out of the line: Gowland’s bracket goes to the margin</span></div>
+    <div class="pg tint"><div class="tx"><p style="margin:0">… which pull these several plagues &amp; miseries upon our heads. For <em lang="la" class="lk" data-k="g8">ubi peccatum, ibi procella</em>, as Chrysostom well observes.</p></div>
+      <div class="mg"><div class="n tr-la lk" data-k="g8" style="color:var(--la)">where there’s sin there’s a storm <span class="small">· Gowland</span></div></div></div></div>
+  <div class="opt" data-o="now"><div class="ol"><span><b>now</b> · Gowland’s brackets in the line (for comparison)</span></div>
+    <p style="margin:0;text-align:justify">… which pull these several plagues &amp; miseries upon our heads. For <em lang="la">ubi peccatum, ibi procella</em> [where there’s sin there’s a storm], as Chrysostom well observes.</p></div>
+  <div class="opt mk1" data-o="A"><div class="ol"><span><b>A</b> · Read in English, half brackets ⸢ ⸣ (an editor’s mark)</span></div>
+    <p style="margin:0;text-align:justify">… which pull these several plagues &amp; miseries upon our heads. For <span class="trin" title="from Latin: ubi peccatum, ibi procella">where there’s sin there’s a storm<span class="lt">lat</span></span>, as Chrysostom well observes.</p></div>
+  <div class="opt mk2" data-o="B"><div class="ol"><span><b>B</b> · Read in English, tortoise-shell brackets 〔 〕</span></div>
+    <p style="margin:0;text-align:justify">… which pull these several plagues &amp; miseries upon our heads. For <span class="trin" title="from Latin: ubi peccatum, ibi procella">where there’s sin there’s a storm<span class="lt">lat</span></span>, as Chrysostom well observes.</p></div>
+  <div class="opt mk3" data-o="C"><div class="ol"><span><b>C</b> · Read in English, no brackets: a tint and a tiny language tag</span></div>
+    <p style="margin:0;text-align:justify">… which pull these several plagues &amp; miseries upon our heads. For <span class="trin" title="from Latin: ubi peccatum, ibi procella">where there’s sin there’s a storm<span class="lt">lat</span></span>, as Chrysostom well observes.</p></div>
+</div>
+<p class="small">Gowland’s braces (his own insertions, such as “He said that {the emperor’s} injustice…”) would show in muted roman inside his translation, wherever it appears. You can pick D plus one of A–C: put “D + A” in the note.</p>
+</section>
+
+<!-- ============================================================ T9 Burton's own English -->
+<section class="test" data-test="T9">
+<h2><span class="tn">9</span>When Burton translates his Latin himself</h2>
+<p class="q">Burton often gives the English straight after the Latin. Should his own rendering carry a sign that it pairs with the Latin? Hover either one.</p>
+<div class="opts">
+  <div class="opt bA" data-o="A"><div class="ol"><span><b>A</b> · a dotted underline in the Latin’s colour</span></div>
+    <p class="tint" style="margin:0;text-align:justify"><em class="lk" data-k="b1">the principal and mighty work of God, <span class="own lk" data-k="b1">wonder of Nature</span></em>, as Zoroastes calls him; <em lang="la" class="lk" data-k="b1">audacis naturae miraculum</em>, the marvel of marvels, as Plato…</p></div>
+  <div class="opt bB" data-o="B"><div class="ol"><span><b>B</b> · a small ≈ before his English</span></div>
+    <p class="tint" style="margin:0;text-align:justify"><em>the principal and mighty work of God, <span class="own lk" data-k="b2">wonder of Nature</span></em>, as Zoroastes calls him; <em lang="la" class="lk" data-k="b2">audacis naturae miraculum</em>, the marvel of marvels, as Plato…</p></div>
+  <div class="opt" data-o="C"><div class="ol"><span><b>C</b> · no mark (as now)</span></div>
+    <p class="tint" style="margin:0;text-align:justify"><em>the principal and mighty work of God, wonder of Nature</em>, as Zoroastes calls him; <em lang="la">audacis naturae miraculum</em>, the marvel of marvels, as Plato…</p></div>
+</div>
+<p class="small">In both A and B the Latin then needs no translation in the margin, or only the part Burton left out (“daring”).</p>
+</section>
+
+<!-- ============================================================ T10 fonts -->
+<section class="test" data-test="T10">
+<h2><span class="tn">10</span>Typefaces for other languages</h2>
+<p class="q">Latin stays in Garamond italic, as Burton’s printers set it. The question is Greek and Chaucer.</p>
+<div class="opts">
+  <div class="opt fA" data-o="A"><div class="ol"><span><b>A</b> · distinct faces: GFS Didot Greek, blackletter for Chaucer</span></div>
+    <div class="flines"><p><em lang="la">Gratia, forma, valetudo contingat abunde</em></p><p><span lang="grc">Δακρυχέων γενόμην, καὶ δακρύσας ἀποθνῄσκω</span></p><p><span class="chaucer">For Gold in Physic is a cordial, / Therefore he loved Gold in special.</span></p></div></div>
+  <div class="opt fB" data-o="B"><div class="ol"><span><b>B</b> · restrained: GFS Didot Greek, Chaucer in small capitals</span></div>
+    <div class="flines"><p><em lang="la">Gratia, forma, valetudo contingat abunde</em></p><p><span lang="grc">Δακρυχέων γενόμην, καὶ δακρύσας ἀποθνῄσκω</span></p><p><span class="chaucer">For Gold in Physic is a cordial, / Therefore he loved Gold in special.</span></p></div></div>
+</div>
+<p class="small">Both faces are OFL and can be bundled offline like EB Garamond. No Hebrew is tagged in the current text. If any turns up, Noto Serif Hebrew would be the counterpart.</p>
+</section>
+
+<!-- ============================================================ T11 wide layout -->
+<section class="test" data-test="T11">
+<h2><span class="tn">11</span>Using a wide window</h2>
+<p class="q">When the window allows, notes stand side by side, Talmud-fashion, instead of stacking into “more notes”. Both are shown scaled down.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · text left, two note columns on the right: Burton’s, then the edition’s</span></div>
+    <div class="wl wlA">
+      <div class="tx">Man, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, the <sup class="m">a</sup>marvel of marvels, as <em>Plato</em>, the <sup class="m">b</sup>Abridgement and Epitome of the World, as <em>Pliny</em>; <em>Microcosmus</em>, a little world, a model of the world, <sup class="m">c</sup>Sovereign Lord of the Earth, Viceroy of the World, sole Commander and Governor of all the Creatures in it: to whose Empire they are subject in particular, and yield obedience; far surpassing all the rest, not in body only, but in soul; <sup class="m">d</sup><em lang="la">imaginis imago</em>, <sup class="m">e</sup>created to God’s own <sup class="m">f</sup>Image, to that immortal and incorporeal substance, with all the faculties and powers belonging unto it…</div>
+      <div class="mg"><div class="mh">Burton</div><div class="n"><span class="nl">a</span><em>Magnum miraculum.</em></div><div class="n"><span class="nl">b</span><em>Mundi Epitome, naturae delitiae.</em></div><div class="n"><span class="nl">c</span><em>Finis rerum omnium cui sublunaria serviunt.</em> Scaliger, exerc. 365</div><div class="n"><span class="nl">d</span><em>Ut in numismate Caesaris Imago, sic in homine Dei.</em></div><div class="n"><span class="nl">e</span>Genesis 1</div></div>
+      <div class="mg"><div class="mh">Translations &amp; notes</div><div class="n" style="color:var(--la)">a A great miracle</div><div class="n" style="color:var(--la)">b Epitome of the world, delight of nature</div><div class="n" style="color:var(--la)">c The end of all things, to whom sublunary beings are subject</div><div class="n" style="color:var(--la)">d As the image of Caesar is on a coin, so that of God is in man</div><div class="n" style="color:var(--k-bible)">e ✠ So God created man in his own image… KJV</div></div>
+    </div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · text in the middle, Burton’s notes left, the edition’s right</span></div>
+    <div class="wl wlB">
+      <div class="mg" style="text-align:right"><div class="mh">Burton</div><div class="n"><em>Magnum miraculum.</em> <span class="nl">a</span></div><div class="n"><em>Mundi Epitome, naturae delitiae.</em> <span class="nl">b</span></div><div class="n"><em>Finis rerum omnium cui sublunaria serviunt.</em> Scaliger, exerc. 365 <span class="nl">c</span></div><div class="n"><em>Ut in numismate Caesaris Imago, sic in homine Dei.</em> <span class="nl">d</span></div><div class="n">Genesis 1 <span class="nl">e</span></div></div>
+      <div class="tx">Man, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la">audacis naturae miraculum</em>, the <sup class="m">a</sup>marvel of marvels, as <em>Plato</em>, the <sup class="m">b</sup>Abridgement and Epitome of the World, as <em>Pliny</em>; <em>Microcosmus</em>, a little world, a model of the world, <sup class="m">c</sup>Sovereign Lord of the Earth, Viceroy of the World, sole Commander and Governor of all the Creatures in it: to whose Empire they are subject in particular, and yield obedience; far surpassing all the rest, not in body only, but in soul; <sup class="m">d</sup><em lang="la">imaginis imago</em>, <sup class="m">e</sup>created to God’s own <sup class="m">f</sup>Image, to that immortal and incorporeal substance, with all the faculties and powers belonging unto it…</div>
+      <div class="mg"><div class="mh">Translations &amp; notes</div><div class="n" style="color:var(--la)">a A great miracle</div><div class="n" style="color:var(--la)">b Epitome of the world, delight of nature</div><div class="n" style="color:var(--la)">c The end of all things, to whom sublunary beings are subject</div><div class="n" style="color:var(--la)">d As the image of Caesar is on a coin, so that of God is in man</div><div class="n" style="color:var(--k-bible)">e ✠ So God created man in his own image… KJV</div></div>
+    </div>
+  </div>
+</div>
+<p class="small">Narrower windows fall back to one margin, then to pop-ups on a phone. Burton’s note e is “Gen. 1.” (a whole chapter), so the verse shown is only an illustration. For a chapter-only citation, the edition would link to the chapter, not pick a verse.</p>
+</section>
+
+<!-- ============================================================ T12 long blocks -->
+<section class="test" data-test="T12">
+<h2><span class="tn">12</span>Long foreign passages</h2>
+<p class="q">Twelve lines of Plautus (1.2.2.6). One hover window for the whole block is too much. Hover a line.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · line by line: hover a line, its English shows in the margin beside it</span></div>
+    <div class="pg"><div class="tx lb lbA" id="lbA"></div><div class="mg" id="lbA-m" style="position:relative"></div></div></div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · facing translation, Latin and English side by side</span></div>
+    <div class="lb lbB" id="lbB"><div class="col-la"></div><div class="col-en"></div></div></div>
+</div>
+<p class="small">Gowland’s verse translation, line for line. His bracket starts four lines earlier, with the passage before this one, so the split pairs his last twelve lines with Burton’s twelve. Where the line counts don’t match, the block would pair by stanza instead. Prose blocks split at sentence ends. The splitting is done by rule, with no model calls.</p>
+</section>
+
+<!-- ============================================================ T13 front page -->
+<section class="test" data-test="T13">
+<h2><span class="tn">13</span>The front page</h2>
+<p class="q">The frontispiece, then the title in Burton’s words, the three synopses collapsed, the contents, and a way in that leads to the Dedication. Which layout, and which wording for the way in?</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · one column, the title page first</span></div>
+    <div class="fpA">
+      <img src="../../site/private/assets/images/pg003.png" alt="The engraved title page of 1628">
+      <div class="tp1">THE ANATOMY OF<br>MELANCHOLY,</div>
+      <div class="tp2">What it is.</div>
+      <div class="tp3">With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</div>
+      <div class="tp2" style="font-size:0.92em">In three Partitions, with their several Sections, Members, and Subsections, Philosophically, Medicinally, Historically opened and cut up.</div>
+      <div class="tp3">By Democritus Junior.</div>
+      <a class="enter" href="#" data-toast="Would open the Dedication">☞ Here beginneth the Book</a>
+      <div class="fp-syn"><details><summary>The Synopsis of the First Partition</summary><div class="syn">Melancholy: its causes, symptoms, prognostics; general or particular…</div></details><details><summary>The Synopsis of the Second Partition</summary><div class="syn">Cure of melancholy: unlawful or lawful…</div></details><details><summary>The Synopsis of the Third Partition</summary><div class="syn">Love-melancholy; religious melancholy…</div></details></div>
+      <div class="fp-toc"><div>The Argument of the Frontispiece</div><div>Dedication</div><div>Democritus Junior ad Librum suum</div><div>The Author’s Abstract of Melancholy</div><div>Democritus Junior to the Reader</div><div>…</div></div>
+    </div>
+  </div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · two columns: the frontispiece beside the title and contents</span></div>
+    <div class="fpB">
+      <img src="../../site/private/assets/images/pg003.png" alt="The engraved title page of 1628">
+      <div>
+        <div class="tp1" style="font-size:1.3rem">THE ANATOMY OF MELANCHOLY,</div>
+        <div class="tp2">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</div>
+        <div class="tp3">By Democritus Junior.</div>
+        <a class="enter" href="#" data-toast="Would open the Dedication">Enter, gentle Reader ☞</a>
+        <div class="fp-syn"><details><summary>The Synopsis of the First Partition</summary><div class="syn">Melancholy: its causes, symptoms, prognostics…</div></details><details><summary>The Synopsis of the Second Partition</summary><div class="syn">Cure of melancholy…</div></details><details><summary>The Synopsis of the Third Partition</summary><div class="syn">Love-melancholy; religious melancholy…</div></details></div>
+        <div class="fp-toc"><div>The Argument of the Frontispiece</div><div>Dedication</div><div>Democritus Junior ad Librum suum</div><div>…</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="small">The title wording follows the 1632 title page in modern spelling, to match Gowland’s text. Original spelling (“Kindes, Causes, Symptomes, Prognostickes”) is the alternative. The synopsis lines here are stand-ins. Other wordings for the way in: “Read”, “Begin”, “To the Book ☞”. The Argument and the Gowland pages become one page each, with Gowland’s version as a toggle.</p>
+</section>
+
+<!-- ============================================================ T14 frontispiece -->
+<section class="test" data-test="T14">
+<h2><span class="tn">14</span>Frontispiece panels and their stanzas</h2>
+<p class="q">Click panel 1 (top centre) or panel 2 (top left). The caption about machine-outlined panels is gone, and its provenance moves to ◇.</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><span><b>A</b> · the stanza in the margin, level with its panel</span></div>
+    <div class="fx fxA" data-fx></div></div>
+  <div class="opt" data-o="B"><div class="ol"><span><b>B</b> · the stanza on a card beside the panel</span></div>
+    <div class="fx fxB" data-fx></div></div>
+</div>
+</section>
+
+<!-- ============================================================ demos -->
+<section class="test" data-test="D">
+<h2><span class="tn">◆</span>Behaviours to try (one version each; mark it if you want it changed)</h2>
+<div class="opts">
+  <div class="opt" data-o="xref"><div class="ol"><span><b>Cross-reference</b> · hold the pointer still and it locks, CK3-style</span></div>
+    <p style="margin:0;text-align:justify">…as I have elsewhere showed, <a class="xr" data-pop="pop-xref" data-lock data-toast="Would open 1.2.2.1">Part. 1 Sect. 2 Memb. 2</a>, of which more anon.</p>
+    <p class="small">Hover: a preview opens. If you keep the pointer on the link, a red bar fills along the bottom, and once it is full the window stays when you move into it. The names inside it then open their own windows. A click opens the subsection.</p>
+  </div>
+  <div class="opt" data-o="name"><div class="ol"><span><b>Names</b> · the index entry, with Wikipedia</span></div>
+    <p style="margin:0;text-align:justify">…for <span class="nm" data-pop="pop-chrys" data-lock>Chrysostom</span> well observes; and <span class="nm" data-pop="pop-scal" data-lock>Scaliger</span> calls him <em lang="la">finis rerum omnium</em>…</p>
+    <p class="small">Same locking. In margins, cited names get the same window.</p>
+  </div>
+  <div class="opt" data-o="bible"><div class="ol"><span><b>Bible verses</b> · KJV in the margin, long ones folded</span></div>
+    <div class="pg"><div class="tx"><p><sup class="m">p</sup>Fools by reason of their transgression, and because of their iniquities are afflicted. <sup class="m">q</sup>Fear cometh like sudden desolation… ’Tis all for your sins, <span class="nm" style="text-decoration-color:var(--k-bible)">Hag. 1. 9, 10</span>…</p></div>
+      <div class="mg kB">
+        <div class="n k-bible"><span class="nl">p</span>Ps. 107:17 <span class="verse">Fools because of their transgression, and because of their iniquities, are afflicted.</span></div>
+        <div class="n k-bible"><span class="nl">q</span>Prov. 1:27 <span class="verse">When your fear cometh as desolation, and your destruction cometh as a whirlwind; when distress and anguish cometh upon you.</span></div>
+        <div class="n k-bible"><span class="kg">✠</span>Hag. 1:9–10 <span class="verse clip" id="hag">Ye looked for much, and, lo, it came to little; and when ye brought it home, I did blow upon it. Why? saith the LORD of hosts. Because of mine house that is waste, and ye run every man unto his own house. Therefore the heaven over you is stayed from dew, and the earth is stayed from her fruit.</span><button class="more" type="button" data-unclip="hag">more</button></div>
+      </div></div>
+    <p class="small">The last one is an in-line citation in Burton’s text (no marker), given its own marginal note. The same goes for “saith Avicenna, lib. 3 Fen 1 Tract. 4 cap. 18” → Avicenna, <em>Canon</em>, book 3, fen 1, treatise 4, chapter 18.</p>
+  </div>
+  <div class="opt" data-o="synopsis"><div class="ol"><span><b>Synopsis keys</b> · the symbols are the links</span></div>
+    <div class="syn-row small" style="color:var(--muted)">Now: Particular to the three distinct species. See ♋ ♌ ♍ <span style="text-decoration:underline">♋</span> <span style="text-decoration:underline">♌</span> <span style="text-decoration:underline">♍</span></div>
+    <div class="syn-row" style="margin-top:0.4rem">Then: Particular to the three distinct species. See <a class="syn-key" href="#" data-toast="Would jump to the branch marked ♋">♋</a> <a class="syn-key" href="#" data-toast="Would jump to the branch marked ♌">♌</a> <a class="syn-key" href="#" data-toast="Would jump to the branch marked ♍">♍</a></div>
+    <p class="small">The duplicate links go, and Burton’s own symbols become the links. Screen readers still hear “go to the branch marked ♋”.</p>
+  </div>
+</div>
+<template id="pop-xref">
+  <h4>Part. 1, Sect. 2, Memb. 2, Subs. 1 · Bad diet a cause. Substance. Quality of meats.</h4>
+  <div>These six non-natural things, are Diet, Retention and Evacuation, which are more material than the other, because they make new matter… And well it may be called a material cause, since that as <span class="nm" data-pop="pop-fern" data-lock>Fernelius</span> holds, It hath such a power in begetting of disease…</div>
+  <a class="open" href="#" data-toast="Would open 1.2.2.1">Open this subsection →</a>
+  <div class="bar"></div>
+</template>
+<template id="pop-fern">
+  <h4>Jean Fernel (Fernelius), 1497–1558</h4>
+  <div>French physician; his <em>Universa medicina</em> was a standard text. <span class="lbl">(stand-in entry for the mockup)</span></div>
+  <a class="open" href="#" data-toast="Would open the index entry">Index entry</a> · <a class="open" href="#" data-toast="Would open Wikipedia: Jean Fernel">Wikipedia</a>
+  <div class="bar"></div>
+</template>
+<template id="pop-scal">
+  <h4>Julius Caesar Scaliger, 1484–1558</h4>
+  <div>Julius Caesar Scaliger (1484–1558) was an Italian-born humanist and physician who settled at Agen in France, and was the father of Joseph Justus Scaliger. His <em>Exotericae exercitationes</em> (1557), a long numbered attack on Cardano’s <em>De subtilitate</em>, ranges over natural philosophy. <span class="prov" title="Entry drafted by claude-opus-5-5, checked by the owner 2026-11-02"></span></div>
+  <a class="open" href="#" data-toast="Would open the index entry">Index entry</a> · <a class="open" href="#" data-toast="Would open Wikipedia: Julius Caesar Scaliger">Wikipedia</a>
+  <div class="bar"></div>
+</template>
+<template id="pop-chrys">
+  <h4>John Chrysostom, c. 347–407</h4>
+  <div>Archbishop of Constantinople and preacher; Burton cites his homilies. <span class="lbl">(stand-in entry for the mockup)</span></div>
+  <a class="open" href="#" data-toast="Would open the index entry">Index entry</a> · <a class="open" href="#" data-toast="Would open Wikipedia: John Chrysostom">Wikipedia</a>
+  <div class="bar"></div>
+</template>
+</section>
+
+<div class="summary"><button type="button" id="copy">Copy my choices</button><span id="sumtxt">No choices yet.</span></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const toast = (t) => { const e = $("#toast"); e.textContent = t; e.classList.add("on"); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove("on"), 1600); };
+  document.addEventListener("click", (ev) => { const t = ev.target.closest("[data-toast]"); if (t) { ev.preventDefault(); toast(t.dataset.toast); } });
+
+  // theme
+  const th = store.get("ab-theme"); if (th) document.documentElement.dataset.theme = th;
+  $("#theme").onclick = () => { const dark = getComputedStyle(document.documentElement).colorScheme.includes("dark");
+    document.documentElement.dataset.theme = dark ? "light" : "dark"; store.set("ab-theme", document.documentElement.dataset.theme); };
+
+  // ---------- T4: build the linked paragraph twice
+  const NOTES = {
+    a: ["Magnum miraculum.", "A great miracle"],
+    b: ["Mundi Epitome, naturae delitiae.", "Epitome of the world, delight of nature"],
+    c: ["Finis rerum omnium cui sublunaria serviunt.", "The end of all things, to whom sublunary beings are subject"],
+    d: ["Ut in numismate Caesaris Imago, sic in homine Dei.", "As the image of Caesar is on a coin, so that of God is in man"],
+  };
+  // clause = back to the last stop (; :), phrase = from the marker to the next punctuation
+  const PARA = [
+    ["", "Man, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; "],
+    ["a", "<em lang=\"la\">audacis naturae miraculum</em>, the ", "marvel of marvels", ", as <em>Plato</em>, "],
+    ["b", "the ", "Abridgement and Epitome of the World", ", as <em>Pliny</em>; "],
+    ["c", "<em>Microcosmus</em>, a little world, a model of the world, ", "Sovereign Lord of the Earth", ", Viceroy of the World, sole Commander and Governor of all the Creatures in it: "],
+    ["", "to whose Empire they are subject in particular, and yield obedience; far surpassing all the rest, not in body only, but in soul; "],
+    ["d", "", "<em lang=\"la\">imaginis imago</em>", ", created to God’s own Image…"],
+  ];
+  $$(".link-scope").forEach((scope) => {
+    const clause = scope.dataset.span === "clause";
+    let tx = "";
+    for (const [k, pre, ph, post] of PARA) {
+      if (!k) { tx += pre; continue; }
+      const m = `<sup class="m lk" data-k="${k}">${k}</sup>`;
+      tx += clause ? `<span class="lk seg" data-k="${k}">${pre}${m}${ph}${post}</span>`
+                   : `${pre}${m}<span class="lk seg" data-k="${k}">${ph}</span>${post}`;
+    }
+    const mg = Object.entries(NOTES).map(([k, [la, en]]) =>
+      `<div class="n lk" data-k="${k}"><span class="nl">${k}</span><em lang="la">${la}</em><span class="sub small" style="color:var(--la)">${en}</span></div>`).join("");
+    scope.innerHTML = `<div class="tx"><p>${tx}</p></div><div class="mg">${mg}</div>`;
+  });
+  // generic link highlighting inside an .opt
+  const scopeOf = (el) => el.closest(".opt") || document;
+  document.addEventListener("mouseover", (ev) => { const l = ev.target.closest(".lk"); if (!l) return;
+    $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.add("hot")); });
+  document.addEventListener("mouseout", (ev) => { const l = ev.target.closest(".lk"); if (!l) return;
+    $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.remove("hot")); });
+  document.addEventListener("click", (ev) => { const l = ev.target.closest(".lk"); if (!l) return;
+    const all = $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)); const on = !l.classList.contains("pin");
+    $$(".pin", scopeOf(l)).forEach((x) => x.classList.remove("pin")); if (on) all.forEach((x) => x.classList.add("pin")); });
+
+  // ---------- T12: Plautus
+  const LA = "At ubi illo migrat nequam homo indiligensque, &c. / Tempestas venit, confringit tegulas, imbricesque, / Putrefacit aer operam fabri, &c. / Dicam ut homines similes esse aedium arbitremini, / Fabri parentes fundamentum substruunt liberorum, / Expoliunt, docent literas, nec parcunt sumptui, / Ego autem sub fabrorum potestate frugi fui, / Postquam autem migravi in ingenium meum, / Perdidi operam fabrorum illico, oppido, / Venit ignavia, ea mihi tempestas fuit, / Adventuque suo grandinem & imbrem attulit, / Illa mihi virtutem deturbavit, &c.".split(" / ");
+  // Gowland's bracket here runs on from the passage before; its last twelve lines answer these twelve
+  const EN = "But when some worthless slacker moves in, etc. / A storm comes, smashes the tiles and gutters, / Moisture rots the builder’s work, etc. / I’ll say why you should think men similar to houses: / Parents are the builders, they lay their children’s foundation, / They polish them, they teach them literature, they spare no cost, / Indeed, under the influence of the builders I was decent, / But afterwards I changed back into my natural disposition, / I ruined the work of the builders instantly and completely, / Laziness came, she was my storm, / When she arrived she brought hail and rain, / She tore down my virtue, etc.".split(" / ");
+  const lbA = $("#lbA"), lbAm = $("#lbA-m");
+  lbA.innerHTML = LA.map((l, i) => `<span class="ln" data-i="${i}" lang="la">${l}</span>`).join("");
+  const showLine = (i) => { const ln = lbA.children[i]; lbAm.innerHTML = `<div class="n tr-la" style="position:absolute;top:${ln.offsetTop - lbA.offsetTop}px;color:var(--la);border-left:2px solid var(--la)">${EN[i]} <span class="small">· Gowland</span></div>`; };
+  lbA.addEventListener("mouseover", (e) => { const l = e.target.closest(".ln"); if (l) showLine(+l.dataset.i); });
+  const lbB = $("#lbB");
+  lbB.children[0].innerHTML = LA.map((l, i) => `<span class="ln" data-i="${i}" lang="la">${l}</span>`).join("");
+  lbB.children[1].innerHTML = EN.map((l, i) => `<span class="ln" data-i="${i}">${l}</span>`).join("") + `<span class="small">Gowland</span>`;
+  lbB.addEventListener("mouseover", (e) => { const l = e.target.closest(".ln"); $$(".ln", lbB).forEach((x) => x.classList.toggle("hot", !!l && x.dataset.i === l.dataset.i)); });
+  lbB.addEventListener("mouseleave", () => $$(".ln", lbB).forEach((x) => x.classList.remove("hot")));
+  // equalise the facing rows
+  requestAnimationFrame(() => { const a = $$(".ln", lbB.children[0]), b = $$(".ln", lbB.children[1]);
+    a.forEach((x, i) => { const h = Math.max(x.offsetHeight, b[i].offsetHeight); x.style.minHeight = b[i].style.minHeight = h + "px"; }); });
+
+  // ---------- T14: frontispiece
+  const STANZAS = {
+    1: ["Panel 1 · Democritus Abderites", "Old Democritus under a tree,<br>Sits on a stone with book on knee;<br>About him hang there many features,<br>Of Cats, Dogs and such like creatures,<br>Of which he makes Anatomy,<br>The seat of black choler to see.<br>Over his head appears the sky,<br>And Saturn Lord of melancholy."],
+    2: ["Panel 2 · Zelotypia", "To th’ left a landscape of Jealousy,<br>Presents itself unto thine eye.<br>A Kingfisher, a Swan, an Hern,<br>Two fighting Cocks you may discern,<br>Two roaring Bulls each other hie,<br>To assault concerning Venery.<br>Symbols are these; I say no more,<br>Conceive the rest by that’s afore."],
+  };
+  const PANELS = [[1, 292, 0, 563, 505], [2, 0, 0, 290, 505], [3, 858, 0, 293, 505], [4, 0, 505, 290, 757], [5, 858, 505, 293, 757],
+                  [6, 0, 1262, 290, 428], [7, 858, 1262, 293, 428], [10, 292, 1262, 563, 428]];
+  $$("[data-fx]").forEach((fx) => {
+    const btns = PANELS.map(([n, x, y, w, h]) => `<button class="panel" type="button" data-n="${n}" ${STANZAS[n] ? "" : "disabled"} aria-label="Panel ${n}" style="left:${x / 11.51}%;top:${y / 19}%;width:${w / 11.51}%;height:${h / 19}%"></button>`).join("");
+    fx.innerHTML = `<div class="img"><img src="../../site/private/assets/images/pg003.png" alt="The engraved title page of 1628, ten panels">${btns}</div><div class="stz"><div class="small">The engraved title page of 1628 <span class="prov" title="Panels outlined from the engraving by machine (claude-opus-5-5, 2026-11-03), machine draft"></span></div><div class="card"></div></div>`;
+    const card = $(".card", fx);
+    fx.addEventListener("click", (e) => { const b = e.target.closest(".panel"); if (!b || b.disabled) return;
+      $$(".panel", fx).forEach((x) => x.classList.toggle("on", x === b));
+      const [h, t] = STANZAS[b.dataset.n]; card.innerHTML = `<div class="stzh">${h}</div><div>${t}</div>`;
+      card.style.top = (b.offsetTop) + "px"; });
+  });
+
+  // ---------- Bible fold
+  document.addEventListener("click", (e) => { const b = e.target.closest("[data-unclip]"); if (!b) return;
+    const v = document.getElementById(b.dataset.unclip); v.classList.toggle("clip"); b.textContent = v.classList.contains("clip") ? "more" : "less"; });
+
+  // ---------- pop-ups: simple (grace period) and lockable (CK3)
+  const stack = [];
+  const closeFrom = (i) => { while (stack.length > i) { const p = stack.pop(); clearTimeout(p.lt); clearTimeout(p.ct); p.el.remove(); } };
+  const levelOf = (el) => { const pop = el.closest(".pop"); return pop ? stack.findIndex((p) => p.el === pop) + 1 : 0; };
+  const place = (el, trig) => { const r = trig.getBoundingClientRect(); const w = el.offsetWidth;
+    let left = r.left + window.scrollX; left = Math.min(left, window.scrollX + document.documentElement.clientWidth - w - 16); left = Math.max(left, window.scrollX + 16);
+    let top = r.bottom + window.scrollY + 6; if (r.bottom + el.offsetHeight + 12 > innerHeight && r.top > el.offsetHeight + 12) top = r.top + window.scrollY - el.offsetHeight - 6;
+    el.style.left = left + "px"; el.style.top = top + "px"; };
+  const open = (trig) => {
+    const lvl = levelOf(trig);
+    if (stack[lvl] && stack[lvl].trig === trig) { clearTimeout(stack[lvl].ct); return; }
+    closeFrom(lvl);
+    const el = document.createElement("div"); const lockable = trig.hasAttribute("data-lock");
+    el.className = "pop" + (lockable ? " lockable" : ""); el.innerHTML = document.getElementById(trig.dataset.pop).innerHTML;
+    if (!lockable) el.querySelector(".bar")?.remove();
+    document.body.appendChild(el); place(el, trig);
+    const p = { el, trig, lockable, locked: !lockable };
+    if (lockable) p.lt = setTimeout(() => { p.locked = true; el.classList.add("locked"); }, 600);
+    stack.push(p);
+    const i = stack.length - 1;
+    el.addEventListener("mouseenter", () => { clearTimeout(p.ct); for (let j = 0; j < i; j++) clearTimeout(stack[j].ct); });
+    el.addEventListener("mouseleave", (e) => { if (e.relatedTarget && stack.slice(i + 1).some((q) => q.el.contains(e.relatedTarget))) return;
+      p.ct = setTimeout(() => closeFrom(i), 250); });
+  };
+  document.addEventListener("mouseover", (e) => { const t = e.target.closest("[data-pop]"); if (t) open(t); });
+  document.addEventListener("mouseout", (e) => { const t = e.target.closest("[data-pop]"); if (!t) return;
+    const lvl = levelOf(t); const p = stack[lvl]; if (!p || p.trig !== t) return;
+    if (e.relatedTarget && p.el.contains(e.relatedTarget) && p.locked) return;
+    if (!p.locked) { if (p.lockable) closeFrom(lvl); else p.ct = setTimeout(() => closeFrom(lvl), 150); return; }
+    p.ct = setTimeout(() => closeFrom(lvl), 350); });
+  // a simple (non-locking) pop-up may be entered during its grace period
+  document.addEventListener("mouseover", (e) => { const pop = e.target.closest(".pop"); if (!pop) return;
+    const p = stack.find((q) => q.el === pop); if (p) clearTimeout(p.ct); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeFrom(0); });
+  document.addEventListener("click", (e) => { const t = e.target.closest("[data-pop][data-toast]"); if (t) closeFrom(0); });
+
+  // ---------- choices
+  const choices = store.get("ab-choices") || {};
+  const render = () => {
+    const parts = Object.entries(choices).filter(([, v]) => v.o || v.note).map(([k, v]) => `${k}: ${v.o || "—"}${v.note ? ` (${v.note})` : ""}`);
+    $("#sumtxt").textContent = parts.length ? parts.join(" · ") : "No choices yet.";
+    $$("section.test").forEach((s) => { const c = choices[s.dataset.test] || {};
+      $$(".opt", s).forEach((o) => o.classList.toggle("chosen", c.o === o.dataset.o));
+      $$(".pick button", s).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === c.o))); });
+    store.set("ab-choices", choices);
+  };
+  $$("section.test").forEach((s) => {
+    if (s.dataset.test === "D") return;
+    const opts = $$(".opt", s).map((o) => o.dataset.o);
+    const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = [...opts, "Neither"].map((o) => `<button type="button" data-v="${o}">${o === "Neither" ? "Neither" : "Prefer " + o}</button>`).join("") +
+      `<input type="text" placeholder="note (optional)" aria-label="Note for test ${s.dataset.test}">`;
+    s.appendChild(bar);
+    const inp = $("input", bar); inp.value = (choices[s.dataset.test] || {}).note || "";
+    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return;
+      const c = choices[s.dataset.test] ||= {}; c.o = c.o === b.dataset.v ? "" : b.dataset.v; render(); });
+    inp.addEventListener("input", () => { (choices[s.dataset.test] ||= {}).note = inp.value; render(); });
+  });
+  { // the behaviour demos take a note each
+    const s = $('section[data-test="D"]');
+    const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = `<input type="text" placeholder="anything to change in these behaviours? (optional)" aria-label="Note on the behaviours">`;
+    s.appendChild(bar); const inp = $("input", bar); inp.value = (choices.D || {}).note || "";
+    inp.addEventListener("input", () => { (choices.D ||= {}).note = inp.value; render(); });
+  }
+  $("#copy").onclick = async () => { const t = "A/B choices: " + $("#sumtxt").textContent;
+    try { await navigator.clipboard.writeText(t); toast("Copied"); } catch { prompt("Copy this:", t); } };
+  render();
+})();
+</script>
+</body>
+</html>

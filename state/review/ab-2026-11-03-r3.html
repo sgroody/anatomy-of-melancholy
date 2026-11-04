@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader A/B round 3</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root { --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d; --panel: #efe9dc;
+  --la: #2c6150; --cite: #4b5d80; --bible: #66661f; --hot: color-mix(in srgb, #d9a520 26%, transparent); color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e;
+  --accent: #e5927a; --panel: #24211d; --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a; --panel: #24211d;
+  --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", Georgia, serif; font-size: 1.12rem; line-height: 1.5; font-variant-numeric: oldstyle-nums; }
+.wrap { max-width: 1400px; margin: 0 auto; padding: 1.5rem 16px 6rem; }
+h1 { font-weight: 400; margin: 0 0 0.3rem; } .intro, .q, .small { color: var(--muted); } .intro { max-width: 54rem; } .small { font-size: 0.86em; }
+.theme-btn { float: right; font: inherit; font-size: 0.85rem; background: none; color: var(--muted); border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.6rem; cursor: pointer; }
+section.test { border-top: 1px solid var(--rule); padding: 1.6rem 0 1rem; }
+section.test > h2 { font-weight: 400; font-size: 1.35rem; margin: 0; } .tn { color: var(--accent); margin-right: 0.4rem; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.2rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem 0.8rem; } .opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; } .ol b { color: var(--accent); }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.9rem; flex-wrap: wrap; }
+.pick button, .summary button { font: inherit; font-size: 0.9rem; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.25rem 0.8rem; cursor: pointer; }
+.pick button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.pick input { font: inherit; font-size: 0.9rem; flex: 1; min-width: 12rem; background: transparent; color: var(--ink); border: none; border-bottom: 1px solid var(--rule); }
+.pg { display: grid; grid-template-columns: minmax(0, 1fr) 13.5rem; gap: 1.3rem; }
+.tx { margin: 0; text-align: justify; hyphens: auto; }
+.mg { font-size: 0.82rem; line-height: 1.35; } .mg .n { margin: 0 0 0.6rem; padding-left: 0.5rem; border-left: 2px solid transparent; }
+.kl { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.3rem; color: var(--cite); }
+.kl.b { color: var(--bible); }
+.verse { font-style: italic; }
+.lk { border-radius: 2px; cursor: pointer; transition: background 0.12s; } .hot { background: var(--hot) !important; }
+.ph { cursor: pointer; }
+.pA .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; padding: 0 0.05em; }
+.pB .ph { color: var(--cite); font-size: 0.9em; padding: 0 0.08em; }
+.pC .name { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 0.22em; }
+.pC .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; }
+.pD .ph { display: inline-block; width: 0.38em; height: 0.38em; border-radius: 50%; background: var(--cite); opacity: 0.75; vertical-align: 0.12em; margin: 0 0.12em; }
+.orig { color: var(--muted); font-size: 0.85em; display: block; margin-top: 0.15rem; }
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--accent); padding: 0.6rem 0; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.summary span { color: var(--muted); font-size: 0.9rem; }
+.ini-sheet img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.ini-demo .ini { float: left; width: 4.1em; height: 4.1em; margin: 0.3em 0.5em 0 0; }
+.ini-demo .sc { font-variant-caps: small-caps; letter-spacing: 0.04em; }
+@media (max-width: 40rem) { .pg { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<button class="theme-btn" type="button" id="theme">Dark / light</button>
+<h1>Reader A/B round 3</h1>
+<p class="intro">Burton’s in-line citations move to the margin, leaving a mark in the text. The rules found 924 of them in the running text: 652 to authors and 272 to Bible books. Hover a mark or its margin note. Burton’s own words for the citation show on hover in every option. Below that, the rendered initials.</p>
+
+<section class="test" data-test="C1">
+<h2><span class="tn">C1</span>What stands in the text where a citation was</h2>
+<p class="q">The hard case is grammar. “as Avicenna lib. 3 Fen 1 Tract. 4 cap. 18 holds” must not become “as ◦ holds”. Options C and D keep the author’s name in the line, since it is part of Burton’s sentence, and move only the reference.</p>
+<div class="opts">
+  <div class="opt pA" data-o="A"><div class="ol"><b>A</b> · the whole citation goes; a raised § marks the place</div>
+    <div class="pg"><p class="tx">… and hot, as <span class="ph lk" data-k="a1" title="Burton: Avicenna lib. 3 Fen 1 Tract. 4 cap. 18">§</span> holds, it is a cause of the disease. ’Tis all for your sins,<span class="ph lk" data-k="a2" title="Burton: Hag. 1. 9, 10">§</span> God is angry, punisheth, and threateneth…</p>
+      <div class="mg"><div class="n lk" data-k="a1"><span class="kl">cites</span>Avicenna, <em>Canon</em>, book 3, fen 1, treatise 4, chapter 18</div>
+        <div class="n lk" data-k="a2"><span class="kl b">Bible</span>Hag. 1:9–10 <span class="verse">Ye looked for much, and, lo, it came to little…</span></div></div></div>
+    <p class="small">The cleanest line, but “as § holds” reads oddly where the name was the subject.</p></div>
+  <div class="opt pB" data-o="B"><div class="ol"><b>B</b> · the whole citation goes; a small ¶-like sign stays on the line</div>
+    <div class="pg"><p class="tx">… and hot, as <span class="ph lk" data-k="b1" title="Burton: Avicenna lib. 3 Fen 1 Tract. 4 cap. 18">⁋</span> holds, it is a cause of the disease. ’Tis all for your sins, <span class="ph lk" data-k="b2" title="Burton: Hag. 1. 9, 10">⁋</span> God is angry, punisheth, and threateneth…</p>
+      <div class="mg"><div class="n lk" data-k="b1"><span class="kl">cites</span>Avicenna, <em>Canon</em>, book 3, fen 1, treatise 4, chapter 18</div>
+        <div class="n lk" data-k="b2"><span class="kl b">Bible</span>Hag. 1:9–10 <span class="verse">Ye looked for much, and, lo, it came to little…</span></div></div></div>
+    <p class="small">Like A, but the mark sits on the line at full size, so it is easier to see and to hit, at the cost of a busier line.</p></div>
+  <div class="opt pC" data-o="C"><div class="ol"><b>C</b> · the name stays, the reference goes; a raised § after the name</div>
+    <div class="pg"><p class="tx">… and hot, as <span class="name">Avicenna</span><span class="ph lk" data-k="c1" title="Burton: Avicenna lib. 3 Fen 1 Tract. 4 cap. 18">§</span> holds, it is a cause of the disease. ’Tis all for your sins,<span class="ph lk" data-k="c2" title="Burton: Hag. 1. 9, 10">§</span> God is angry, punisheth, and threateneth…</p>
+      <div class="mg"><div class="n lk" data-k="c1"><span class="kl">cites</span><em>Canon</em>, book 3, fen 1, treatise 4, chapter 18</div>
+        <div class="n lk" data-k="c2"><span class="kl b">Bible</span>Hag. 1:9–10 <span class="verse">Ye looked for much, and, lo, it came to little…</span></div></div></div>
+    <p class="small">The name keeps its hairline (R5 C) and its index window. A Bible reference has no name to keep, so only the mark stays.</p></div>
+  <div class="opt pD" data-o="D"><div class="ol"><b>D</b> · the name stays, the reference goes; a small slate dot</div>
+    <div class="pg"><p class="tx">… and hot, as Avicenna<span class="ph lk" data-k="d1" title="Burton: Avicenna lib. 3 Fen 1 Tract. 4 cap. 18"></span> holds, it is a cause of the disease. ’Tis all for your sins,<span class="ph lk" data-k="d2" title="Burton: Hag. 1. 9, 10"></span> God is angry, punisheth, and threateneth…</p>
+      <div class="mg"><div class="n lk" data-k="d1"><span class="kl">cites</span>Avicenna, <em>Canon</em>, book 3, fen 1, treatise 4, chapter 18</div>
+        <div class="n lk" data-k="d2"><span class="kl b">Bible</span>Hag. 1:9–10 <span class="verse">Ye looked for much, and, lo, it came to little…</span></div></div></div>
+    <p class="small">The quietest mark. It is set apart from Burton’s lettered notes by shape as well as colour.</p></div>
+</div>
+<p class="small">In every option the mark takes the citation colour (slate), so it never looks like one of Burton’s lettered notes (rubric). A reading option can put the citations back in the line exactly as Burton printed them.</p>
+</section>
+
+<section class="test" data-test="I1">
+<h2><span class="tn">I1</span>The decorated initials, rendered</h2>
+<p class="q">Rendered locally with initialis (commit 6cf93f7, MIT), set in IM Fell French Canon, a 17th-century English type (OFL), in the edition’s rubric and paper. There is one set per theme, so the block is red on paper in light mode and coral in dark mode. Pinned in <code>data/source/INITIALS.lock</code>. The other three recipes are rendered too, if you’d rather one of them.</p>
+<div class="opts">
+  <div class="opt ini-sheet" data-o="red"><div class="ol"><b>red</b> · as chosen (R1 B), the whole alphabet, light and dark</div><img src="../../work/initials-render/out/sheet-red.png" alt="The alphabet of red woodcut-style initials, light and dark"></div>
+  <div class="opt ini-sheet" data-o="other"><div class="ol"><b>others</b> · red, black, two-ink, hatched (M and T)</div><img src="../../work/initials-render/out/sheet-test.png" alt="Four recipes for the initials M and T, light and dark"></div>
+</div>
+<div class="opt ini-demo" style="margin-top:1.2rem"><div class="ol">in place, 1.1.1.1</div>
+  <p class="tx"><img class="ini" src="../../data/source/initials/red-light-M.webp" alt="" data-dark="../../data/source/initials/red-dark-M.webp"><span class="sc">an</span>, the most excellent and noble creature of the World, <em>the principal and mighty work of God, wonder of Nature</em>, as <em>Zoroastes</em> calls him; <em lang="la" style="color:var(--la)">audacis naturae miraculum</em>, <em>the marvel of marvels</em>, as <em>Plato</em>; <em>the Abridgement and Epitome of the World</em>, as <em>Pliny</em>; <em>Microcosmus</em>, a little world, a model of the world, Sovereign Lord of the Earth, Viceroy of the World, sole Commander and Governor of all the Creatures in it: to whose Empire they are subject in particular, and yield obedience; far surpassing all the rest, not in body only, but in soul…</p></div>
+</section>
+
+<div class="summary"><button type="button" id="copy">Copy my choices</button><span id="sumtxt">No choices yet.</span></div>
+</div>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const dark = () => getComputedStyle(document.documentElement).colorScheme.includes("dark");
+  const swap = () => $$("img[data-dark]").forEach((i) => { i.dataset.light ||= i.getAttribute("src"); i.src = dark() ? i.dataset.dark : i.dataset.light; });
+  const th = store.get("ab-theme"); if (th) document.documentElement.dataset.theme = th; swap();
+  $("#theme").onclick = () => { document.documentElement.dataset.theme = dark() ? "light" : "dark"; store.set("ab-theme", document.documentElement.dataset.theme); swap(); };
+  const scopeOf = (el) => el.closest(".opt") || document;
+  document.addEventListener("mouseover", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.add("hot")); });
+  document.addEventListener("mouseout", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.remove("hot")); });
+  const choices = store.get("ab3-choices") || {};
+  const render = () => { const parts = Object.entries(choices).filter(([, v]) => v.o || v.note).map(([k, v]) => `${k}: ${v.o || "—"}${v.note ? ` (${v.note})` : ""}`);
+    $("#sumtxt").textContent = parts.length ? parts.join(" · ") : "No choices yet.";
+    $$("section.test").forEach((s) => { const c = choices[s.dataset.test] || {}; $$(".opt[data-o]", s).forEach((o) => o.classList.toggle("chosen", c.o === o.dataset.o));
+      $$(".pick button", s).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === c.o))); }); store.set("ab3-choices", choices); };
+  $$("section.test").forEach((s) => { const opts = $$(".opt[data-o]", s).map((o) => o.dataset.o); const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = [...opts, "Neither"].map((o) => `<button type="button" data-v="${o}">${o === "Neither" ? "Neither" : "Prefer " + o}</button>`).join("") + `<input type="text" placeholder="note (optional)" aria-label="Note for ${s.dataset.test}">`;
+    s.appendChild(bar); const inp = $("input", bar); inp.value = (choices[s.dataset.test] || {}).note || "";
+    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const c = choices[s.dataset.test] ||= {}; c.o = c.o === b.dataset.v ? "" : b.dataset.v; render(); });
+    inp.addEventListener("input", () => { (choices[s.dataset.test] ||= {}).note = inp.value; render(); }); });
+  $("#copy").onclick = async () => { const t = "Round 3 choices: " + $("#sumtxt").textContent; try { await navigator.clipboard.writeText(t); } catch { prompt("Copy this:", t); } };
+  render();
+})();
+</script>
+</body>
+</html>
