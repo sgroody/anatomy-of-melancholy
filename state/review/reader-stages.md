@@ -11,8 +11,8 @@ in stages, each committed after `burton check`.
 | 3 | Penguin headings (brace), red decorated initials (`data/source/INITIALS.lock`) | 6037d60 |
 | 4 | Front page (engraving held large, stanzas on hover, synopses collapsed, "Enter, gentle Reader"), facing Gowland translations for Ad Librum and Lectori, synopsis signs as links | 00db8a4 |
 | 5 | Windows on cited authors' names (`burton/site/names.py`; hairline, R5 C) and on cross-references; CK3-style lock | a487cfa |
-| 6 | In-line citations (name kept, § in the line, card in the margin), Bible verses from the KJV (`burton/site/kjv.py`), numbered books in the rules (abbrev-v2, inline-v2), guard on model expansions | (this stage) |
-| 7 | Language colours in the line, the in-line switch, Burton's own English, long passages | to do |
+| 6 | In-line citations (name kept, § in the line, card in the margin), Bible verses from the KJV (`burton/site/kjv.py`), numbered books in the rules (abbrev-v2, inline-v2), guard on model expansions | 4d198db |
+| 7 | Translations in the line (R6 B), Burton's own English in the language's colour, long verse passages set facing (4+ lines, 104), Greek in GFS Didot, Chaucer in small capitals, How to read this book | (this stage) |
 
 ## Stage 6: in-line citations and Bible verses
 

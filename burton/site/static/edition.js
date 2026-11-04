@@ -242,7 +242,9 @@ function layoutNotes() {
   // Three passes, so the browser lays the page out once rather than once per note (M8: the longest page
   // took 1.4 s): (1) every note into the margin; (2) read every marker's place and every note's height,
   // which do not depend on each other, since laid-out notes are out of the flow; (3) place them.
-  const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
+  // with translations in the line (stage 7), their margin cards are not shown and take no room
+  const inLine = body.classList.contains("mode-english");
+  const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n && !(inLine && n.classList.contains("mn-tr")));
   for (const [, note] of all) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
   checkFolds(article);
   const rem = parseFloat(getComputedStyle(article).fontSize);
@@ -329,7 +331,7 @@ if (article) {
 // marker to the next stop; a translation, its passage; one of Gowland's notes, the words it is on. Hovering either
 // lights both; a click on those words, or on the item, pins them. The words are lit with the CSS Highlight API, so
 // the text's markup is never changed.
-const SKIP = ".sidenote, .mn, .ft, .nref, .mref, .gowland-tr, .gowland-verse, .cx-b, .sr-only, .st-mark, .prov";
+const SKIP = ".sidenote, .mn, .ft, .ftr, .nref, .mref, .gowland-tr, .gowland-verse, .cx-b, .sr-only, .st-mark, .prov";
 const STOP = /[,;:.!?)]/;
 const spans = new Map(); // margin item -> Range over its words
 
@@ -487,6 +489,14 @@ for (const fp of document.querySelectorAll(".fp")) {
   }
 }
 
+// A long passage set facing its translation (stage 7, T12 B): pointing at a line lights it and its translation.
+for (const fp of document.querySelectorAll(".fp-facing")) {
+  const lines = [...fp.querySelectorAll("[data-r]")];
+  const lit = (r) => lines.forEach((x) => x.classList.toggle("hot", r != null && x.dataset.r === r));
+  fp.addEventListener("mouseover", (ev) => lit(ev.target.closest("[data-r]")?.dataset.r));
+  fp.addEventListener("mouseleave", () => lit(null));
+}
+
 // ---------------------------------------------------------------- synopsis tree (M7)
 // The page is a fully open nested list; script adds a disclosure button to every branch, opens the branches
 // above a node reached by a link (a cross-key such as ♈, or a unit's "where this stands" link) and focuses it.
@@ -552,7 +562,7 @@ function preview(href) {
     previews.set(href, fetch(href).then((r) => r.text()).then((t) => {
       const d = new DOMParser().parseFromString(t, "text/html");
       const art = d.querySelector("article.unit");
-      art?.querySelectorAll(".sidenote, .nref, .mn-pool, .mref, .ft, .gowland-tr, .cx-b, .ic-m, .sr-only, .ini, script")
+      art?.querySelectorAll(".sidenote, .nref, .mn-pool, .mref, .ft, .ftr, .gowland-tr, .cx-b, .ic-m, .sr-only, .ini, script")
         .forEach((x) => x.remove());
       const p = art && [...art.querySelectorAll("p")].find((x) => !x.matches("[class*=head]") && x.textContent.trim());
       const text = (p?.textContent || "").replace(/­/g, "").replace(/\s+/g, " ").trim();

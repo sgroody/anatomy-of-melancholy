@@ -24,6 +24,9 @@ SOURCES = {
 # Built faces: (css family, style, source file)
 FACES = [("EB Garamond", "normal", "EBGaramond-Roman.ttf"), ("EB Garamond", "italic", "EBGaramond-Italic.ttf")]
 FALLBACK = ("Burton Symbols", "normal", "Cardo-Regular.ttf")
+# Greek in its own face (stage 7, T10 B), under [lang="grc"] for the Greek letters only; punctuation stays EB Garamond
+GREEK = ("GFS Didot", "normal", "GFSDidot-Regular.ttf")
+GREEK_RANGES = (range(0x0300, 0x0370), range(0x0370, 0x0400), range(0x1F00, 0x2000))
 STACK = '"EB Garamond", "Burton Symbols", Garamond, Georgia, serif'
 FEATURES = ["kern", "liga", "clig", "calt", "smcp", "c2sc", "onum", "pnum", "ccmp", "mark", "mkmk", "locl"]
 
@@ -75,8 +78,9 @@ def build_subsets(codepoints: set[int], out_dir) -> list[dict]:
     keep = set(codepoints) | set(range(0x20, 0x7F)) | {0x2019, 0x2018, 0x201C, 0x201D, 0x2014, 0x2026, 0x27E8, 0x27E9}
     primary = set().union(*(cmap(paths.FONTS_SRC / src) for _, _, src in FACES))
     faces = []
-    for family, style, src in FACES + [FALLBACK]:
-        wanted = keep if src != FALLBACK[2] else set(codepoints) - primary
+    greek = {c for c in codepoints if any(c in r for r in GREEK_RANGES)}
+    for family, style, src in FACES + [FALLBACK, GREEK]:
+        wanted = {FALLBACK[2]: set(codepoints) - primary, GREEK[2]: greek}.get(src, keep)
         if not wanted:
             continue
         opts = subset.Options()
@@ -92,5 +96,5 @@ def build_subsets(codepoints: set[int], out_dir) -> list[dict]:
         font.flavor = "woff2"
         font.save(str(out_dir / name))
         faces.append({"family": family, "style": style, "file": name, "cmap": cmap(out_dir / name),
-                      "fallback": src == FALLBACK[2]})
+                      "fallback": src == FALLBACK[2], "ranged": src in (FALLBACK[2], GREEK[2])})
     return faces

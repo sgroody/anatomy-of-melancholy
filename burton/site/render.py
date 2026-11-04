@@ -144,6 +144,7 @@ def gowland_versions(div) -> dict[str, str]:
     return out
 
 
+FACING_MIN = 4  # verse passages of this many lines or more are set facing their translation, where it fits (T12 B)
 INITIAL_UNITS = re.compile(r"^(?:\d+\.\d+\.\d+\.\d+|djr|abstract)$")
 BRACE = ('<span class="hb-brace" aria-hidden="true"><svg viewBox="0 0 10 60" preserveAspectRatio="none" '
          'focusable="false"><path d="M9 1 C4 1 5 6 5 14 C5 24 5 28 1 30 C5 32 5 36 5 46 C5 54 4 59 9 59" '
@@ -191,6 +192,9 @@ class Renderer:
         self.in_note = 0
         self.initial = None  # the decorated initial: None, "pending" (after the title), "open", "done"
         self.initials: set[str] = set()  # capitals with an initial in this build (none: no initials)
+        self.fp_lang: dict[str, str] = {}  # passage id -> its language, for Burton's own renderings (stage 7)
+        self.last_block: tuple[str, int] | None = None  # the previous foreign passage in the text: (id, verse lines)
+        self.facing_row: int | None = None  # the line number inside a passage set facing its translation
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -282,7 +286,11 @@ class Renderer:
         elif tag == T("lg"):
             self.lg(e)
         elif tag == T("l"):
-            self.w(f'<span class="l{" " + attr(e.get("rend")) if e.get("rend") else ""}">')
+            row = ""
+            if self.facing_row is not None:  # a line of a passage set facing its translation: its row in the grid
+                self.facing_row += 1
+                row = f' data-r="{self.facing_row}" style="--r:{self.facing_row}"'
+            self.w(f'<span class="l{" " + attr(e.get("rend")) if e.get("rend") else ""}"{row}>')
             self.children(e)
             self.w("</span>")
         elif tag == T("hi"):
@@ -688,9 +696,13 @@ class Renderer:
         self.counts["foreign"] += 1
         self.hoist_notes(e)
         fid, lang = self.pid(e), e.get(XML_LANG)
+        self.fp_lang[fid] = lang
+        if not self.in_note:
+            self.last_block = (fid, 0)
         size = "short" if len(public_text(e)) <= 40 else "long"
         self.card(fid, lang)
-        self.w(f'<span class="fp fp-{size}{self.mode_class(fid)}" data-fid="{attr(fid)}">{self.st_mark(fid)}'
+        self.w(f'<span class="fp fp-{size}{self.mode_class(fid)}" data-fid="{attr(fid)}" data-lang="{attr(lang)}">'
+               f'{self.st_mark(fid)}'
                f'<span class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</span>")
@@ -699,18 +711,55 @@ class Renderer:
             self.w(f'<span class="fp-p">{esc(punct)}</span>')
         self.w("</span>")
 
+    def facing_lines(self, e, fid: str) -> tuple[list[str], dict] | None:
+        """The preferred translation of a verse passage of FACING_MIN lines or more, line for line, where it has as
+        many " / " lines as the passage (owner, 2026-11-03: T12 B). Gowland's bracket sometimes runs on from the
+        verse passage before, which has no version of his own (the Plautus in 1.2.2.6): where his version has exactly
+        that passage's lines more, his last lines are this passage's."""
+        n = len(list(e.iter(T("l"))))
+        if self.in_note or n < FACING_MIN or e.tag != T("lg") or not (vs := self.versions(fid)):
+            return None
+        v, lines = vs[0], vs[0]["text"].split(" / ")
+        prev = self.last_block
+        if len(lines) > n and v["by"] == "gowland" and prev and prev[0] not in self.gowland and \
+                prev[1] == len(lines) - n:
+            lines = lines[-n:]
+            self.counts["facing_run_on"] = self.counts.get("facing_run_on", 0) + 1
+        return (lines, v) if len(lines) == n else None
+
     def foreign_block(self, e, tag: str, cls: str) -> None:
-        """A block-level foreign passage (verse group or block quotation) with its translation."""
+        """A block-level foreign passage (verse group or block quotation) with its translation: in the margin, or,
+        for a long verse passage that has one line for line, set facing it."""
         fid = self.pid(e)
         self.counts["foreign"] += 1
         self.hoist_notes(e)
         lang = e.get(XML_LANG)
-        self.card(fid, lang)
-        self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}">'
-               f'{self.st_mark(fid)}'
+        self.fp_lang[fid] = lang
+        facing = self.facing_lines(e, fid)
+        if not self.in_note:
+            self.last_block = (fid, len(list(e.iter(T("l")))))
+        if facing:
+            cls += " fp-facing"
+            self.counts["facing"] = self.counts.get("facing", 0) + 1
+            self.facing_row = 0
+        else:
+            self.card(fid, lang)
+        self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}" '
+               f'data-lang="{attr(lang)}">{self.st_mark(fid)}'
                f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
         self.w("</div>")
+        self.facing_row = None
+        if facing:
+            lines, v = facing
+            name, _ = LANG_NAMES.get(lang or "", (lang or "another language", ""))
+            pl = " " + prov(label_of(v)) if v["by"] == "machine" else ""
+            resp = ' data-resp="gowland"' if v["by"] == "gowland" else ""
+            rows = "".join(f'<span class="ftr-l" data-r="{k}" style="--r:{k}">{esc_tagged(t)}</span>'
+                           for k, t in enumerate(lines, 1))
+            self.w(f'<div class="ftr" lang="en" data-src="{attr(v["by"])}"{resp} role="note" '
+                   f'aria-label="Translation from {attr(name)}">{rows}<span class="ftr-src" '
+                   f'style="--r:{len(lines) + 1}">{esc(short_label(v))}{pl}</span></div>')
         self.w(self.tr_markup(fid, block=True, lang=lang))
         self.w(f"</{tag}>\n")
 
@@ -725,8 +774,9 @@ class Renderer:
         self.w("</div>")
 
 
-def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
-    """Wrap Burton's own renderings (text-quote selectors) so they can be linked to their originals.
+def mark_burton_spans(html_text: str, layer: dict, counts: dict, langs: dict | None = None) -> str:
+    """Wrap Burton's own renderings (text-quote selectors) so they can be linked to their originals, each with its
+    original's language, whose colour it takes in the line (owner, 2026-11-03: R2 A + C).
     Only exact matches inside one text run are wrapped; others are counted as unplaced."""
     for fid, rec in layer.items():
         sel = rec["self_translation"].get("burton_span")
@@ -735,10 +785,11 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
         q = esc(sel["exact"])
         parts = q.split(" / ")  # verse renderings span several lines; mark each line
         placed = 0
+        lang = (langs or {}).get(fid) or ""
         for part in parts:
             if html_text.count(part) == 1:
                 html_text = html_text.replace(
-                    part, f'<span class="burton-tr" data-for="{attr(fid)}">{part}</span>', 1)
+                    part, f'<span class="burton-tr" data-for="{attr(fid)}" data-lang="{attr(lang)}">{part}</span>', 1)
                 placed += 1
         if placed == len(parts):
             counts["burton_spans"] += 1
@@ -748,8 +799,9 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
 
 
 SKIP_MAIN = ("nref", "sidenote", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn",
-             "cx-e", "prov", "ic-m")
-SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn", "cx-e", "prov")
+             "cx-e", "prov", "ic-m", "ftr")
+SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn", "cx-e", "prov",
+              "ftr")
 
 
 def _visible(html_text: str, skip: tuple[str, ...] = ()) -> tuple[str, list[int]]:
@@ -1183,7 +1235,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")
-    body = mark_burton_spans("".join(r.out), layer, r.counts)
+    body = mark_burton_spans("".join(r.out), layer, r.counts, r.fp_lang)
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts)

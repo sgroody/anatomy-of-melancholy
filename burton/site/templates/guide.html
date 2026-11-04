@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose guide">
+  <h1>How to read this book</h1>
+  <p>Burton’s text runs down the middle of the page. Everything the edition adds stands beside it, in the margin, and keeps to it: hover over a note to light the words it is on, hover over the words to light the note, and click either to keep them lit. On a narrow screen the notes open beside the words when you tap them.</p>
+
+  <h2>The margin</h2>
+  <dl class="labels">
+    <dt><span class="g-burton">a b c …</span> Burton’s notes</dt><dd>His own marginal notes, lettered a to z as in the Penguin edition, from the marker in the text. Where a note quotes Latin, its English follows on a line of its own, in the language’s colour.</dd>
+    <dt><span class="g-k">trans.</span></dt><dd>A translation of a foreign passage in the text, in that language’s colour, with the name of its source. “+ more” opens the other translations, the passage’s source where it is known, and notes. Where Burton translates the passage himself, the margin says <span class="g-k">Burton’s own</span> instead, and his English in the text takes the original’s colour.</dd>
+    <dt><span class="g-k g-cite">cites</span> · <span class="g-k g-bible">Bible</span> · <span class="g-cite">§</span></dt><dd>Burton’s abbreviated citations are written out in full (“Hor. lib. 3 Od. 6” becomes Horace, Odes, book 3, ode 6); his own abbreviation shows when you hover over it. A citation in his running text keeps the author’s name and leaves a raised <span class="g-cite">§</span> where the reference stood; the reference is in the margin. A Bible reference gives the verse in the King James Version, folded after three lines.</dd>
+    <dt>° restored notes</dt><dd>Burton’s notes that Gowland’s edition leaves out, taken from a nineteenth-century text of the book, in grey with a ° marker and their source.</dd>
+    {% if profile == "private" %}
+    <dt><span class="g-k">gloss</span> · <span class="g-k">note</span> · <span class="g-k">about</span> · <span class="g-k">source</span> · <span class="g-k">see</span></dt><dd>Gowland’s endnotes, each set beside the words it is on and labelled by its kind: the sense of an old word, an explanation, who someone is, where a quotation comes from, or a pointer to another note. On a wide window they stand in the left margin, and Burton’s notes and the translations in the right; a note crosses over when its own side is full.</dd>
+    {% endif %}
+    <dt>◇</dt><dd>Anything a machine made (a translation, an expansion, an identification) carries this mark; point at it for the model, the prompt and the date.</dd>
+    <dt>“n more notes”</dt><dd>Where a paragraph has more notes than its margin can hold beside it, the rest wait behind this button.</dd>
+  </dl>
+
+  <h2>The colours</h2>
+  <p>Foreign passages are set in a colour for their language: <span class="g-la">Latin</span>, <span class="g-grc">Greek</span>, <span class="g-enm">Middle English</span> (Chaucer, in small capitals), and <span class="g-modern">the modern languages</span>. A translation takes the colour of its original, so it is never taken for Burton’s own words. A long verse passage whose translation goes line for line is set facing it.</p>
+
+  <h2>Reading options</h2>
+  <p>The <a href="{{ root }}settings/">Reading options</a> change how the foreign passages are read: in the original with translations in the margin (the default); interlinear, with the translation under each passage; or with the translations in the line, the English standing in place of the original in its colour and in italic, the original on hover. They also choose which translation comes first, show Burton’s abbreviations instead of their expansions, gloss other obsolete words, and set the theme and the type size{% if profile == "private" %}, and show Gowland’s bracketed translations and the Penguin page numbers{% endif %}.</p>
+
+  <h2>Finding your way</h2>
+  <p>Each page links to its place in Burton’s synopsis of the Partition; the synopses themselves are on the home page and the Partition pages. A name in the text with a fine underline opens a window on that author; held still for a moment, the window stays, and its own names open windows in turn. A cross-reference opens the passage it points to. <a href="{{ root }}search/">Search</a> finds words in the text, the notes and the translations, and <a href="{{ root }}authors/">Authors cited</a> lists everyone Burton cites. <a href="{{ root }}about/">About this edition</a> says where every part of the edition comes from.</p>
+</article>
+{% endblock %}

@@ -633,3 +633,61 @@ a.nm:hover, a.nm:focus-visible { text-decoration-color: var(--accent); }
 .kjv-more[hidden] { display: none; }
 .sn-bible { display: block; }
 .sidenote .kjv { color: var(--note-ink); }
+
+/* ------------------------------------------------------------ languages in the line (stage 7) */
+/* a passage's language colours its translation where that stands in the line or facing it, and Burton's own
+   rendering of it (owner, 2026-11-03: R2 A + C, R6 B) */
+.fp[data-lang="la"], .burton-tr[data-lang="la"] { --tr-ink: var(--la); }
+.fp[data-lang="grc"], .burton-tr[data-lang="grc"] { --tr-ink: var(--grc); }
+.fp[data-lang="enm"], .burton-tr[data-lang="enm"] { --tr-ink: var(--enm); }
+.fp:is([data-lang="it"], [data-lang="fr"], [data-lang="es"], [data-lang="de"], [data-lang="nl"]),
+.burton-tr:is([data-lang="it"], [data-lang="fr"], [data-lang="es"], [data-lang="de"], [data-lang="nl"]) { --tr-ink: var(--modern); }
+.mn-on .unit .burton-tr, .mode-english .unit .burton-tr { color: var(--tr-ink, inherit); }
+/* "Translations in the line" (R6 B): the English in place of the original, coloured and italic like the original,
+   with no brackets and no language tag; the original on hover, or for good with a click */
+.mode-english .fp > .ft .ft-text::before, .mode-english .fp > .ft .ft-text::after { content: none; }
+.mode-english .fp > .ft .ft-from { display: none; }
+.mode-english .ft-v .ft-text { background: none; padding: 0; color: var(--tr-ink, var(--ink)); font-style: italic; }
+.mode-english .fp:not(.show-orig, .fp-untranslated):hover > .fo {
+  display: block; position: absolute; z-index: 5; left: 0; top: calc(100% + 0.2rem); width: min(24rem, 80vw);
+  padding: 0.4rem 0.6rem; background: var(--pop-bg); color: var(--tr-ink, var(--ink)); border: 1px solid var(--rule);
+  border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; text-indent: 0;
+  text-align: left; font-style: italic; hyphens: manual; text-decoration: none;
+}
+.mode-english .fp-block:not(.show-orig, .fp-untranslated):hover > .fo { top: 100%; }
+.mode-english .fp.show-orig > .fo { color: var(--tr-ink, var(--ink)); }
+/* the translation is in the line, so its margin card is not shown (Burton's own renderings keep theirs) */
+.mode-english .unit .mn-tr { display: none !important; }
+
+/* ------------------------------------------------------------ long passages set facing (stage 7, T12 B) */
+/* a verse passage of four lines or more whose translation has one line for each of its own: the two side by side,
+   line against line; on a phone, each line with its translation under it */
+.ftr { display: none; }
+.mode-gloss .fp-facing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 1.4rem;
+  align-items: start; margin: 0.6rem 0; }
+.mode-gloss .fp-facing > .fo, .mode-gloss .fp-facing > .ftr, .mode-gloss .fp-facing .fo .lg { display: contents; }
+.mode-gloss .fp-facing .fo .l { grid-column: 1; grid-row: var(--r); }
+.mode-gloss .fp-facing .ftr-l { display: block; grid-column: 2; grid-row: var(--r); padding-left: 1em; text-indent: -1em;
+  font-size: 0.92em; line-height: 1.45; hyphens: manual; text-align: left; }
+.mode-gloss .fp-facing .ftr-src { grid-column: 2; grid-row: var(--r); font-size: 0.72em; color: var(--muted);
+  padding-left: 1em; }
+.mode-gloss .fp-facing > .ft { display: none !important; }
+.fp-facing .l.hot, .fp-facing .ftr-l.hot { background: var(--hot); border-radius: 2px; }
+@media (max-width: 700px) {
+  .mode-gloss .fp-facing { grid-template-columns: minmax(0, 1fr); }
+  .mode-gloss .fp-facing .fo .l { grid-row: calc(var(--r) * 2 - 1); }
+  .mode-gloss .fp-facing .ftr-l, .mode-gloss .fp-facing .ftr-src { grid-column: 1; grid-row: calc(var(--r) * 2);
+    padding-left: 2.5em; margin-bottom: 0.25rem; }
+}
+
+/* ------------------------------------------------------------ type for Greek and Chaucer (stage 7, T10 B for now) */
+[lang="grc"] { font-family: "GFS Didot", var(--font-text, serif); }
+.lucida { font-variant-caps: small-caps; letter-spacing: 0.02em; }
+
+/* ------------------------------------------------------------ "How to read this book" (stage 7) */
+.guide .g-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.guide .g-burton { color: var(--accent); font-variant-numeric: lining-nums; }
+.guide .g-cite { color: var(--k-cite); } .guide .g-bible { color: var(--k-bible); }
+.guide .g-la { color: var(--la); font-style: italic; } .guide .g-grc { color: var(--grc); font-style: italic; }
+.guide .g-enm { color: var(--enm); font-variant-caps: small-caps; } .guide .g-modern { color: var(--modern); font-style: italic; }
+.front-guide { margin: -0.4rem 0 1rem; font-size: 0.9em; }

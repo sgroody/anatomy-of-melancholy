@@ -322,6 +322,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
          title="About this edition", description="Sources, provenance labels and rights",
          labels=machine_labels(), source_hash=source_hash(), n_units=len(book.units), gloss_model=gloss_model(),
          built=date.today().isoformat())
+    page("guide", "guide/index.html", "guide.html", page=book.pages["guide"],
+         crumbs=[("How to read this book", None)], title="How to read this book",
+         description="The margin, the marks, the colours and the reading options")
     page("settings", "settings/index.html", "settings.html", page=book.pages["settings"],
          crumbs=[("Reading options", None)], title="Reading options",
          description="Language mode, theme and type size")
@@ -381,14 +384,14 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     css = []
     for f in faces:
         rng = ""
-        if f["fallback"]:
+        if f["ranged"]:  # the symbols' fallback, and Greek (GFS Didot) for its letters only
             rng = ";unicode-range:" + ",".join(f"U+{c:04X}" for c in sorted(f["cmap"]))
-        weight = "400" if f["fallback"] else "400 800"
+        weight = "400" if f["ranged"] else "400 800"
         css.append(f'@font-face{{font-family:"{f["family"]}";font-style:{f["style"]};font-weight:{weight};'
                    f'font-display:swap;src:url("fonts/{f["file"]}") format("woff2"){rng};}}\n')
     css.append(f":root{{--font-text:{fonts.STACK};}}\n")
     (out / "assets" / "fonts.css").write_text("".join(css), encoding="utf-8", newline="\n")
-    for lic in ("EBGaramond-OFL.txt", "Cardo-OFL.txt"):
+    for lic in ("EBGaramond-OFL.txt", "Cardo-OFL.txt", "GFSDidot-OFL.txt"):
         shutil.copy(paths.FONTS_SRC / lic, out / "assets" / "fonts" / lic)
     for name in STATIC:
         shutil.copy(HERE / "static" / name, out / "assets" / name)

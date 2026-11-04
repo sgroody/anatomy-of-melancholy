@@ -12,6 +12,7 @@
     <p class="front-what">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</p>
     <p class="front-by">By Democritus Junior.</p>
     {% if dedication %}<p class="front-enter"><a class="enter" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a></p>{% endif %}
+    <p class="front-guide"><a href="guide/">How to read this book</a></p>
     {% if stanzas %}<div class="front-stanza" aria-live="polite"><p class="fs-hint">Point at a panel of the engraving to read its stanza{% if argument %} from <a href="{{ argument.href }}">{{ argument.title }}</a>{% endif %}.</p>{{ stanzas }}</div>{% endif %}
     {% if synopses %}
     <section class="front-syn" aria-labelledby="syn-h">

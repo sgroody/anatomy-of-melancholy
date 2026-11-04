@@ -287,7 +287,8 @@ def site_results(units: list[str]) -> list[Result]:
                 # the page's own text, without the translation boxes: a machine translation may match a
                 # literal bracket word for word ("I came to Athens, and no one knew me"); a Gowland version
                 # rendered in a box is caught by its data-resp="gowland" markup above
-                for cls in ("ft", "mn", "sn-tr"):  # the boxes, and the margin cards and note lines (2026-11-03)
+                # the boxes, the margin cards and note lines (2026-11-03), and the facing translations (stage 7)
+                for cls in ("ft", "mn", "sn-tr", "ftr"):
                     for ft in by_class(tree, cls):
                         drop_keeping_tail(ft)
                 own = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)
