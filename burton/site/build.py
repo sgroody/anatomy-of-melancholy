@@ -193,6 +193,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     if out.exists():
         shutil.rmtree(out)
     (out / "assets").mkdir(parents=True)
+    # the decorated initials (stage 3; data/source/INITIALS.lock): the red set, light and dark, where both exist
+    ini_src = paths.DATA / "source" / "initials"
+    initials = {f.stem[-1] for f in ini_src.glob("red-light-?.webp")
+                if (ini_src / f"red-dark-{f.stem[-1]}.webp").exists()}
     book = Book(profile, units)
     cite_label = authors_pages.tables_label()["short"]
     titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front", "back")}
@@ -242,7 +246,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    restored=layer_for(unit, "restored-notes"),
                                    gowland_entries=(gowland_notes.entries(unit, gstats)
                                                     if profile == "private" else None),
-                                   cexp=layer_for(unit, "citation-expansions"))
+                                   cexp=layer_for(unit, "citation-expansions"), initials=initials)
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         report["units"][unit] = counts
@@ -352,6 +356,14 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     for name in STATIC:
         shutil.copy(HERE / "static" / name, out / "assets" / name)
     images.copy()
+    used_initials = sorted({c for u in report["units"].values() for c in u.get("initial_letters", [])})
+    if used_initials:
+        (out / "assets" / "initials").mkdir()
+        for c in used_initials:
+            for theme in ("light", "dark"):
+                shutil.copy(ini_src / f"red-{theme}-{c}.webp", out / "assets" / "initials" / f"red-{theme}-{c}.webp")
+    report["initials"] = {"letters": len(used_initials), "units": sum(1 for u in report["units"].values()
+                                                                      if u.get("initials"))}
 
     for rel, text in pages.items():
         dest = out / rel

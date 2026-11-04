@@ -205,7 +205,10 @@ def site_results(units: list[str]) -> list[Result]:
                 if not (nav.get("aria-label") or nav.get("aria-labelledby")):
                     a11y(profile, rel, "nav without an accessible name")
             for img in tree.iter(f"{XH}img"):
-                if not (img.get("alt") or "").strip():
+                # an empty alt is right for a decorative image inside an aria-hidden box (the decorated initials:
+                # their letter stays in the text)
+                decorative = img.get("alt") == "" and any(a.get("aria-hidden") == "true" for a in img.iterancestors())
+                if not (img.get("alt") or "").strip() and not decorative:
                     a11y(profile, rel, f"img {img.get('src')} without alt text")
             for b in tree.iter(f"{XH}button"):
                 if not "".join(b.itertext()).strip() and not b.get("aria-label"):

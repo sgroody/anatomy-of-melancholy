@@ -128,6 +128,27 @@ def gowland_versions(div) -> dict[str, str]:
     return out
 
 
+INITIAL_UNITS = re.compile(r"^(?:\d+\.\d+\.\d+\.\d+|djr|abstract)$")
+BRACE = ('<span class="hb-brace" aria-hidden="true"><svg viewBox="0 0 10 60" preserveAspectRatio="none" '
+         'focusable="false"><path d="M9 1 C4 1 5 6 5 14 C5 24 5 28 1 30 C5 32 5 36 5 46 C5 54 4 59 9 59" '
+         'fill="none" stroke="currentColor" stroke-width="1"/></svg></span>')
+NUMBER_HEAD = re.compile(r"\bThe (\w+) ((?:Section|Member|Subsection)(?:, (?:Member|Subsection))*\.)")
+
+
+def penguin_head(seg: str, kind: str | None) -> str:
+    """Headings set as on the Penguin page (owner's photo, 2026-11-03: R1 B), by markup only, Burton's words and
+    stops unchanged: "The / First Partition." on two lines, and "The First" beside a brace over "Section, /
+    Member, / Subsection."."""
+    if kind == "partition" and (m := re.search(r"\bThe (\w+ Partition\.)", seg)):
+        return (seg[:m.start()] + f'<span class="hp-the">The</span> <span class="hp-n">{m.group(1)}</span>'
+                + seg[m.end():])
+    if kind == "number" and (m := NUMBER_HEAD.search(seg)):
+        parts = " ".join(f"<span>{w}</span>" for w in m.group(2).split(" "))
+        return (seg[:m.start()] + f'<span class="hb"><span class="hb-the">The {m.group(1)}</span> {BRACE}'
+                f'<span class="hb-stack">{parts}</span></span>' + seg[m.end():])
+    return seg
+
+
 class Renderer:
     def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None,
                  cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
@@ -152,6 +173,8 @@ class Renderer:
         self.langs: list[str] = []
         self.cards: list[str] = []  # margin items (translations of the text), laid out beside their anchors
         self.in_note = 0
+        self.initial = None  # the decorated initial: None, "pending" (after the title), "open", "done"
+        self.initials: set[str] = set()  # capitals with an initial in this build (none: no initials)
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -159,11 +182,35 @@ class Renderer:
 
     def text(self, s: str | None) -> None:
         if s:
+            if self.initial == "open" and s.strip():
+                s = self.open_with_initial(s)
             if self.langs and self.langs[-1] in ("la", "grc"):
                 h = soft_hyphenate(s, self.langs[-1])
                 self.counts["soft_hyphens"] += len(h) - len(s)
                 s = h
             self.w(esc(s))
+
+    def open_with_initial(self, s: str) -> str:
+        """The first letter of the unit's first paragraph as a decorated initial (owner, 2026-11-03: T2 B, R1 B, I1
+        red), the rest of its first word in small capitals. The letter stays in the text for readers and search;
+        the images, one per theme, are drawn beside it (data/source/INITIALS.lock)."""
+        self.initial = "done"
+        i = len(s) - len(s.lstrip())
+        ch = s[i:i + 1]
+        if not self.initials or ch.upper() not in self.initials:
+            return s
+        self.counts["initials"] = self.counts.get("initials", 0) + 1
+        up = ch.upper()
+        self.counts["initial_letters"] = [up]
+        self.w(esc(s[:i]) + '<span class="ini" aria-hidden="true">'
+               f'<img class="ini-l" src="../assets/initials/red-light-{up}.webp" alt="" width="300" height="300">'
+               f'<img class="ini-d" src="../assets/initials/red-dark-{up}.webp" alt="" width="300" height="300">'
+               f'</span><span class="ini-ch">{esc(ch)}</span>')
+        rest = s[i + 1:]
+        if m := re.match(r"[\w’']+", rest):
+            self.w(f'<span class="ini-sc">{esc(m.group(0))}</span>')
+            rest = rest[m.end():]
+        return rest
 
     def drop_gowland(self) -> bool:
         return self.profile == "public"
@@ -204,6 +251,8 @@ class Renderer:
         if tag == T("head"):
             return self.head(e)
         if tag == T("p"):
+            if self.initial == "pending" and not self.in_note:
+                self.initial = "open"
             self.w(f'<p id="{attr(self.pid(e))}"{self.cls(e.get("rend"))}>')
             self.children(e)
             self.w("</p>\n")
@@ -341,11 +390,15 @@ class Renderer:
         if e.get("subtype") == "tableHeadA":  # the Table's letters: real headings, for navigation
             tag = "h2"
         self.w(f'<{tag} class="{cls}"{source}>')
+        start = len(self.out)
         if e.get("ana") == "foreign":  # a heading that is itself a foreign passage (Lectori male feriato)
             self.foreign(e)
         else:
             self.children(e)
+        self.out[start:] = [penguin_head("".join(self.out[start:]), t)]
         self.w(f"</{tag}>\n")
+        if e is self.h1_head and INITIAL_UNITS.match(self.unit):
+            self.initial = "pending"  # the next paragraph opens with a decorated initial (stage 3)
         return False
 
     def hi(self, e) -> None:
@@ -981,10 +1034,10 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
                 pagemap: dict | None = None, glosses: list[dict] | None = None,
                 restored: dict | None = None, gowland_entries: list[dict] | None = None,
-                cexp: dict | None = None) -> tuple[str, dict]:
+                cexp: dict | None = None, initials: set[str] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
-    r.plate, r.pagemap, r.cexp = plate, pagemap or {}, cexp or {}
+    r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')

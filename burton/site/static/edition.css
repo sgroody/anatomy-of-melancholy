@@ -525,3 +525,30 @@ a.pageref { color: var(--accent); text-decoration-color: var(--rule); }
 @media (min-width: 1700px) {
   :root { --margin-col: 18rem; --gap: 3rem; }
 }
+
+/* ------------------------------------------------------------ headings as on the Penguin page (stage 3, R1 B) */
+.unit p.head-partition { font-size: 1em; letter-spacing: 0; margin: 2.4rem 0 0.6rem; }
+.hp-the, .hp-n { display: block; text-transform: uppercase; line-height: 1.15; }
+.hp-the { font-size: 1.55em; letter-spacing: 0.16em; }
+.hp-n { font-size: 2.15em; letter-spacing: 0.1em; }
+.hb { display: inline-grid; grid-template-columns: auto auto auto; align-items: center; column-gap: 0.4rem;
+  font-variant-caps: small-caps; letter-spacing: 0.12em; font-size: 1.12em; }
+.hb-brace svg { display: block; width: 0.7rem; height: 4.1em; }
+.hb-stack { text-align: left; line-height: 1.32; }
+.hb-stack > span { display: block; }
+.unit p.head-number { font-variant-caps: small-caps; letter-spacing: 0.12em; margin-top: 1.6rem; }
+h1.unit-title { font-style: italic; font-size: 1.4em; max-width: 28rem; margin-left: auto; margin-right: auto; }
+/* the decorated initial: the image beside three lines, the letter itself kept for readers and search */
+.ini { float: left; width: 4.4em; height: 4.4em; margin: 0.32em 0.5em 0 0; }
+.ini img { width: 100%; height: 100%; display: block; }
+.ini-d { display: none !important; }
+.ini-ch { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ini-sc { font-variant-caps: all-small-caps; letter-spacing: 0.05em; }
+.unit p:has(> .ini) { text-indent: 0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ini-l { display: none !important; }
+  :root:not([data-theme="light"]) .ini-d { display: block !important; }
+}
+:root[data-theme="dark"] .ini-l { display: none !important; }
+:root[data-theme="dark"] .ini-d { display: block !important; }
+@media print { .ini-d { display: none !important; } .ini-l { display: block !important; } }
