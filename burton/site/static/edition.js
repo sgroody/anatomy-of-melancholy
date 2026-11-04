@@ -273,7 +273,8 @@ function layoutNotes() {
   // Two margins on wide windows (owner, 2026-11-03, R3): Gowland's commentary on the left, Burton's notes and the
   // translations on the right; an item crosses to the other side when its own would push it SWITCH below its line
   // and the other side is free sooner. Each side keeps its own floor.
-  const two = twoSide.matches;
+  // a page set facing Gowland keeps one margin: his notes stand between the columns (stage 9)
+  const two = twoSide.matches && !article.querySelector(".fp-wide, .ded-wrap");
   body.classList.toggle("two-side", two);
   const SWITCH = 3 * rem;
   const anchors = pairs.map(([m]) => tops.get(m));
@@ -515,6 +516,14 @@ for (const fp of document.querySelectorAll(".fp")) {
     });
   }
 }
+
+// A long note between facing columns (stage 9) is shortened; "more" opens it, "less" shuts it.
+document.addEventListener("click", (ev) => {
+  const b = ev.target.closest?.(".ftr-more");
+  if (!b) return;
+  const open = b.closest(".ftr-note").classList.toggle("open");
+  b.textContent = open ? "less" : "more";
+});
 
 // A long passage set facing its translation (stage 7, T12 B): pointing at a line lights it and its translation.
 for (const fp of document.querySelectorAll(".fp-facing")) {

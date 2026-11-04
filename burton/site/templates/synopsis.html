@@ -11,7 +11,7 @@
   {{ tree }}
   <section aria-labelledby="sheets-h">
     <h2 id="sheets-h">The printed sheets</h2>
-    <p class="note">The synopsis as the source prints it, in {{ sheets|length }} sheets.</p>
+    <p class="note">The printed sheets ({{ sheets|length }}).</p>
     <div class="sheets">
     {% for src, alt, w, h in sheets %}
       <figure class="sheet"><a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"></a></figure>

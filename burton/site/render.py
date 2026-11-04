@@ -206,6 +206,11 @@ class Renderer:
         self.decided: dict[str, str] = {}  # passage id -> Gowland's decision not to translate it (gowland_decisions)
         self.last_block: tuple[str, int] | None = None  # the previous foreign passage in the text: (id, verse lines)
         self.facing_row: int | None = None  # the line number inside a passage set facing its translation
+        self.facing_src: dict = {}  # passage id -> his translation page in rows, with his notes (facing.py)
+        self.consume_block = False  # his translation block on this page is shown facing, not after the poem
+        self.facing_unit = "l"  # what a row of a facing passage is: a verse line, or a paragraph
+        self.gowland_from: dict[str, str] = {}  # passage id -> the page of Gowland's its translation comes from
+        self.asides: dict[str, list[str]] = {}  # passage id -> his translation lines, set beside it (the Dedication)
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -284,7 +289,11 @@ class Renderer:
         if tag == T("p"):
             if self.initial == "pending" and not self.in_note:
                 self.initial = "open"
-            self.w(f'<p id="{attr(self.pid(e))}"{self.cls(e.get("rend"))}>')
+            row = ""
+            if self.facing_row is not None and self.facing_unit == "p" and not self.in_note:  # prose set facing
+                self.facing_row += 1
+                row = f' data-r="{self.facing_row}" style="--r:{self.facing_row}"'
+            self.w(f'<p id="{attr(self.pid(e))}"{self.cls(e.get("rend"))}{row}>')
             self.children(e)
             self.w("</p>\n")
         elif tag == T("quote"):
@@ -298,7 +307,7 @@ class Renderer:
             self.lg(e)
         elif tag == T("l"):
             row = ""
-            if self.facing_row is not None:  # a line of a passage set facing its translation: its row in the grid
+            if self.facing_row is not None and self.facing_unit == "l":  # a line of a passage set facing: its row
                 self.facing_row += 1
                 row = f' data-r="{self.facing_row}" style="--r:{self.facing_row}"'
             self.w(f'<span class="l{" " + attr(e.get("rend")) if e.get("rend") else ""}"{row}>')
@@ -366,7 +375,7 @@ class Renderer:
             self.children(e)
             self.w("</div>")
         elif tag == ED("block"):
-            if self.drop_gowland():
+            if self.drop_gowland() or self.consume_block:  # shown facing the poem instead (stage 9)
                 return True
             self.counts["gowland_trans"] += 1
             self.w('<div class="gowland-tr gowland-block" data-resp="gowland" '
@@ -589,7 +598,9 @@ class Renderer:
             if src == "djs1927" and t.get("attribution"):  # their own attribution, as they print it
                 extra += f'<span class="ft-src">They attribute it: {esc(t["attribution"])}</span>'
             resp = ' data-resp="gowland"' if src == "gowland" else ""
-            if src == "gowland":
+            if src == "gowland" and fid in self.gowland_from:  # from his translation page, not a bracket here
+                resp += f' data-from="{attr(self.gowland_from[fid])}"'
+            elif src == "gowland":
                 self.counts["gowland_versions"] += 1
             if src == "djs1927":
                 self.counts["djs_versions"] += 1
@@ -665,6 +676,8 @@ class Renderer:
         if self.in_note:
             return
         d = self.decided.get(fid)
+        if fid in self.asides:  # his translation stands beside it
+            return
         if d in ("covered", "glossed"):  # Gowland translated it with the next passage, or glossed it in his note
             self.counts[f"gowland_decided_{d}"] = self.counts.get(f"gowland_decided_{d}", 0) + 1
             return
@@ -738,6 +751,9 @@ class Renderer:
         many " / " lines as the passage (owner, 2026-11-03: T12 B). Gowland's bracket sometimes runs on from the
         verse passage before, which has no version of his own (the Plautus in 1.2.2.6): where his version has exactly
         that passage's lines more, his last lines are this passage's."""
+        if (src := self.facing_src.get(fid)) and not self.in_note:  # the front matter's own facing pages (stage 9)
+            n = len(list(e.iter(T("l")))) if e.tag == T("lg") else len(list(e.iter(T("p"))))
+            return (src["rows"], {"by": "gowland", "text": ""}) if len(src["rows"]) == n else None
         n = len(list(e.iter(T("l"))))
         if self.in_note or n < FACING_MIN or e.tag != T("lg") or not (vs := self.versions(fid)):
             return None
@@ -760,12 +776,17 @@ class Renderer:
         facing = self.facing_lines(e, fid)
         if not self.in_note:
             self.last_block = (fid, len(list(e.iter(T("l")))))
+        notes = (self.facing_src.get(fid) or {}).get("notes") or {}
         if facing:
-            cls += " fp-facing"
+            cls += " fp-facing" + (" fp-wide" if fid in self.facing_src else "") + (" has-notes" if notes else "")
             self.counts["facing"] = self.counts.get("facing", 0) + 1
             self.facing_row = 0
+            self.facing_unit = "l" if e.tag == T("lg") else "p"  # verse pairs by line, prose by paragraph
         else:
             self.card(fid, lang)
+        if fid in self.asides:  # the Dedication: an inscription, his English beside it (stage 9)
+            cls += " ded-tablet"
+            self.w('<div class="ded-wrap">')
         self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}" '
                f'data-lang="{attr(lang)}">{self.st_mark(fid)}'
                f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
@@ -779,11 +800,19 @@ class Renderer:
             resp = ' data-resp="gowland"' if v["by"] == "gowland" else ""
             rows = "".join(f'<span class="ftr-l" data-r="{k}" style="--r:{k}">{esc_tagged(t)}</span>'
                            for k, t in enumerate(lines, 1))
+            ks = sorted(notes)  # a note may run over the rows below it, up to three, never into the next note's
+            spans = {k: min(3, (ks[i + 1] if i + 1 < len(ks) else k + 3) - k) for i, k in enumerate(ks)}
+            rows += "".join(f'<span class="ftr-n" data-r="{k}" style="--r:{k};--span:{spans[k]}">{"".join(notes[k])}'
+                            '</span>' for k in ks)
             self.w(f'<div class="ftr" lang="en" data-src="{attr(v["by"])}"{resp} role="note" '
                    f'aria-label="Translation from {attr(name)}">{rows}<span class="ftr-src" '
                    f'style="--r:{len(lines) + 1}">{src_label(v)}{pl}</span></div>')
         self.w(self.tr_markup(fid, block=True, lang=lang))
         self.w(f"</{tag}>\n")
+        if fid in self.asides:
+            lines = "".join(f'<span class="ded-l">{esc_tagged(t)}</span>' for t in self.asides[fid])
+            self.w(f'<aside class="ded-tr" lang="en" data-resp="gowland" aria-label="Translation from Latin">{lines}'
+                   f'<span class="ftr-src">{src_label({"by": "gowland"})}</span></aside></div>\n')
 
     def lg(self, e) -> None:
         lgid = self.pid(e)
@@ -1291,13 +1320,19 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 restored: dict | None = None, gowland_entries: list[dict] | None = None,
                 cexp: dict | None = None, initials: set[str] | None = None, names: re.Pattern | None = None,
                 name_ids: dict | None = None, author_info: dict | None = None,
-                inline_cites: dict | None = None) -> tuple[str, dict]:
+                inline_cites: dict | None = None, facing_src: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
     if profile == "private":
         r.gowland = gowland_versions(div)
         r.decided = gowland_decisions(div, r.gowland, layer, gowland_entries)
+        if facing_src:  # Gowland's translation page, set facing the original (stage 9)
+            r.facing_src = facing_src.get("facing", {})
+            r.gowland.update(facing_src.get("heads", {}))
+            r.gowland_from = {fid: facing_src["from"] for fid in facing_src.get("heads", {})}
+            r.consume_block = facing_src.get("consumed", False)
+            r.asides = facing_src.get("asides", {})
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")

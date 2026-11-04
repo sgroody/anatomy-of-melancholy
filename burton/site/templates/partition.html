@@ -5,7 +5,7 @@
   {% if subtitle %}<p class="landing-sub">{{ subtitle }}</p>{% endif %}
   <section aria-labelledby="synopsis-h">
     <h2 id="synopsis-h">Synopsis</h2>
-    <p class="note">Burton’s synopsis, reproduced as the source prints it, in {{ sheets|length }} sheets.{% if synopsis %} <a href="{{ root }}{{ synopsis.href }}">Read it as a linked tree</a>, every head leading into the book.{% endif %}</p>
+    <p class="note">Burton’s synopsis, in {{ sheets|length }} printed sheets.{% if synopsis %} <a href="{{ root }}{{ synopsis.href }}">Read it as a linked tree</a>, every head leading into the book.{% endif %}</p>
     <div class="sheets">
     {% for src, alt, w, h in sheets %}
       <figure class="sheet"><a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="lazy" decoding="async"></a></figure>

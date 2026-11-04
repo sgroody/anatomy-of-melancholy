@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts, frontispiece, glosses, gowland_notes, names, search, synopsis
+from . import authors_pages, facing, fonts, frontispiece, glosses, gowland_notes, names, search, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -115,7 +115,6 @@ class Images:
 
 
 # ---------------------------------------------------------------- contents tree
-FACING = {"ad-librum": "ad-librum-gowland", "lectori": "lectori-gowland"}  # Burton's Latin poem -> Gowland's page
 
 
 def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Page | None = None) -> str:
@@ -225,6 +224,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     back = synopsis.back_links([pg.key for pg in book.partitions], book.units)  # unit -> its node in the synopsis
     plain = {u: book.pages[u].title for u in book.units if u in book.pages}  # for the synopsis mark (N1 D)
+    shown_titles = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
+    part_first = {next(u for u in book.units if u.startswith(f"{pt.key[1:]}.")): pt for pt in book.partitions
+                  if any(u.startswith(f"{pt.key[1:]}.") for u in book.units)}
 
     # where each Penguin page begins, for the Table's locators (private build only: the numbers are Gowland's)
     pagemap = {}
@@ -255,13 +257,21 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                                     if profile == "private" else None),
                                    cexp=layer_for(unit, "citation-expansions"), initials=initials,
                                    inline_cites=layer_for(unit, "citations-inline"),
+                                   # Gowland's translation pages, set facing Burton's Latin (stage 9)
+                                   facing_src=facing.sources(unit) if profile == "private" else None,
                                    names=name_rx, name_ids=name_ids, author_info=author_info)
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
-        if (g := FACING.get(unit)) and profile == "private" and g in book.pages:
-            # Gowland's translation of a Latin poem, set facing it by edition.js (stage 4); his page stays in the build
-            body = (f'<p class="facing-link" data-resp="gowland"><a href="../{g}/" data-facing="../{g}/">'
-                    "Gowland’s translation, facing</a></p>\n" + body)
+        if unit in part_first and (tree := synopsis.load(part_first[unit].key)):
+            # the Partition's synopsis at the head of its first page, folded (owner, 2026-11-04): the click-through goes
+            # from the front matter straight into the text, past the landing and synopsis pages
+            pt = part_first[unit]
+            body = (f'<details class="part-syn"><summary><span class="ps-k" aria-hidden="true">{{</span> '
+                    f'The Synopsis of '
+                    f'the {esc(pt.title.removeprefix("The "))}<span class="ps-hint">Burton’s map of this Partition: '
+                    f'open it</span></summary>{synopsis.tree_html(tree, "../", shown_titles)}'
+                    f'<p class="ps-all"><a href="../{pt.key}/synopsis/">The synopsis on its own page, with the printed '
+                    'sheets</a></p></details>\n' + body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
         words = len(public_text(div).split())

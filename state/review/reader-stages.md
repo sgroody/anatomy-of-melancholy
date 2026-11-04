@@ -131,8 +131,8 @@ Notes (owner's words condensed; grouped into the stages below):
 
 | Stage | What |
 |---|---|
-| 8 | Decided design: N1 D, N2 C (+ light/dark switch), N4 D colours, N5 C, N6 D, quiet ascriptions, "trans." neutral; the margin never stacks notes (long notes shortened with "more", which pushes the rest down); a word lights all its notes; no public-build hedges in the private reader; the guide's opening |
-| 9 | Front matter: facing pages done properly (line lights line, no heading/divider, first note, notes between, Heraclite, Gowland's pages folded in); the Dedication; synopses at the head of each Partition's first page, not in the click-through |
+| 8 (a118170) | Decided design: N1 D, N2 C (+ light/dark switch), N4 D colours, N5 C, N6 D, quiet ascriptions, "trans." neutral; the margin never stacks notes (long notes shortened with "more", which pushes the rest down); a word lights all its notes; no public-build hedges in the private reader; the guide's opening |
+| 9 (this commit) | Front matter: facing pages done properly (line lights line, no heading/divider, first note, notes between, Heraclite, Gowland's pages folded in); the Dedication; synopses at the head of each Partition's first page, not in the click-through |
 | 10 | A/B round 5: typefaces after Burton's printing (text, italic, margin), Latin in shades of red, the synopsis on the home page (N3 again), Burton's English with its Latin |
 | 11 | Data: declined names (Praxitelem), Psalm verses checked, restored notes (why left out; translated), the translation passes' notes (spot check + independent audit, then shown) |
 | 12 | V5: language-ID back to target, with a fresh held-out round |
@@ -162,3 +162,18 @@ initial A); a machine translation's ascription is the ◇ alone, not "Claude"; B
 the rubric rule of his notes; and where Gowland has decided, a passage is not translated over again: 38 passages his one
 bracket translates with the next ("covered"), 67 he glosses in a note ("glossed"), and 408 more that Burton renders
 himself, fully, partly or by paraphrase ("own"); translation cards 5,976 -> 5,871.
+
+Round 5 page: `state/review/ab-2026-11-04-r5.html` (fonts from Google Fonts for the comparison only). F1 typefaces after
+Burton's printing (EB Garamond; IM Fell English; IM Fell DW Pica; Garamond roman with Fell italic; margins varied),
+F2 Latin in a shade of red (oxblood, crimson lake, rose madder, beside the rubric), F3 the synopses on the home page
+again (the sheet live with true braces; three framed compartments; the outline with true braces), F4 Burton's English
+beside his Latin (tinted pair; "=" with an underline; the Latin raised over his English).
+
+### Finding (2026-11-04): Psalm verses against Burton's words (rules pass, scratch)
+
+76 Psalm citations show a verse. Comparing the KJV verse (content words) with Burton's words at the citation and the
+English of the Latin quoted there: 58 match the verse of Burton's number; 2 have no such KJV verse (Vulgate numbers);
+16 are unclear, and the word-overlap rule is too crude to settle them (it prefers Ps 18:9 for "Psal. 17. 8", where the
+KJV 17:8 "Keep me as the apple of the eye" is plainly meant). Stage 11: keep the rule only for clear matches, and send
+the 18 others to a ledgered model reading (private-only check; Gowland's translation of the quoted Latin may be used),
+with the verse shown only where it is confirmed, or the Vulgate-numbered one with a note where that is confirmed.

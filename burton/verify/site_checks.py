@@ -261,13 +261,21 @@ def site_results(units: list[str]) -> list[Result]:
             htm = {"sidenotes": len(by_class(tree, "sidenote")) - len(by_class(tree, "sn-restored")),
                    "foreign": len(by_class(tree, "fp")),
                    "enrefs": len(by_class(tree, "enref")), "pbs": len(by_class(tree, "pb")),
-                   "gowland_versions": len(by_class(tree, "ft-gowland")),
+                   # a version taken from his own translation page (data-from, stage 9) is checked apart, below
+                   "gowland_versions": len([x for x in by_class(tree, "ft-gowland") if not x.get("data-from")]),
                    "djs_versions": len(by_class(tree, "ft-djs1927")),
                    "pagerefs": len(by_class(tree, "pageref"))}
             for k in xml:
                 v2.counts[f"{profile}:{k}"] = v2.counts.get(f"{profile}:{k}", 0) + htm[k]
                 if xml[k] != htm[k]:
                     v2.fail(f"{profile} {unit} {k}: XML {xml[k]} vs HTML {htm[k]}")
+            for x in by_class(tree, "ft-gowland"):  # his heading's translation, read from his own translation page
+                src = x.get("data-from")
+                if src and not (profile == "private" and (paths.TEXT / f"{src}.xml").exists()):
+                    v2.fail(f"{profile} {unit}: a Gowland version from {src}, which is not a page of his")
+                elif src:
+                    key = "private:gowland_versions_from_his_pages"
+                    v2.counts[key] = v2.counts.get(key, 0) + 1
 
         # V8 (text level): no Gowland text in public pages (soft hyphens and tags ignored)
         if profile == "public":

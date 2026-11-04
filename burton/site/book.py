@@ -126,12 +126,18 @@ class Book:
         return parent.children[-1]
 
     # ------------------------------------------------------------ navigation
+    def reading(self, pg: Page) -> bool:
+        """A page on the way through the book by "Next" (owner, 2026-11-04): not the Partition landings or the synopsis
+        pages (each Partition's first page opens with its synopsis instead), nor Gowland's translation pages (they face
+        their originals)."""
+        return pg.kind not in ("partition", "synopsis") and not pg.gowland
+
     def neighbours(self, key: str) -> tuple[Page | None, Page | None]:
         if key not in self.order:
             return None, None
         i = self.order.index(key)
-        prev = self.pages[self.order[i - 1]] if i > 0 else None
-        nxt = self.pages[self.order[i + 1]] if i + 1 < len(self.order) else None
+        prev = next((self.pages[k] for k in reversed(self.order[:i]) if self.reading(self.pages[k])), None)
+        nxt = next((self.pages[k] for k in self.order[i + 1:] if self.reading(self.pages[k])), None)
         return prev, nxt
 
     def crumbs(self, key: str) -> list[tuple[str, str | None]]:
