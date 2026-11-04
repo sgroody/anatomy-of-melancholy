@@ -9,7 +9,8 @@ const wide = window.matchMedia("(min-width: 1100px)");
 const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin on each side (R3)
 // the margins are in use: a wide window, and no facing translation taking their room (stage 4)
 const isWide = () => wide.matches && !body.classList.contains("facing-on");
-const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false };
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false,
+  latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a" }; // the colour of the Latin (round 5, F2)
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
 // come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
 const ORDERS = {
@@ -35,6 +36,10 @@ function apply() {
   else html.dataset.theme = settings.theme;
   if (settings.size === "m") delete html.dataset.size;
   else html.dataset.size = settings.size;
+  if (settings.latin === "oxblood") delete html.dataset.latin;
+  else html.dataset.latin = settings.latin;
+  html.style.setProperty("--la-c-light", settings.laLight);
+  html.style.setProperty("--la-c-dark", settings.laDark);
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
   body.classList.toggle("show-abbr", !!settings.cites); // "Burton's abbreviations" in place of the expansions
@@ -60,12 +65,14 @@ function orderVersions() {
 function syncInputs() {
   for (const input of document.querySelectorAll(".settings input")) {
     if (input.type === "radio") input.checked = settings[input.name] === input.value;
+    else if (input.type === "color") input.value = settings[input.name];
     else input.checked = !!settings[input.name];
   }
 }
 for (const input of document.querySelectorAll(".settings input")) {
   input.addEventListener("change", () => {
-    settings[input.name] = input.type === "radio" ? input.value : input.checked;
+    settings[input.name] = input.type === "radio" || input.type === "color" ? input.value : input.checked;
+    if (input.type === "color") { settings.latin = "custom"; syncInputs(); } // a colour chosen: one's own colours
     const kept = save(settings);
     apply();
     const status = document.querySelector(".settings .saved");

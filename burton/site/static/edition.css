@@ -11,7 +11,7 @@
   --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.16);
   --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
   /* languages and the kinds of margin note (owner, 2026-11-03: T3 A, T7 A) */
-  --la: #23584a; --grc: #2a4a8c; --enm: #8a4b1c; --modern: #5a3a6e; /* N4 D (owner, 2026-11-04) */
+  --la: #7a2230; --grc: #2a4a8c; --enm: #8a4b1c; --modern: #5a3a6e; /* N4 D; Latin oxblood by day (F2 B) */
   --k-gloss: #9a6408; --k-cite: #4b5d80; --k-expl: #6d4a80; --k-bible: #66661f;
   --hot: color-mix(in srgb, #d9a520 26%, transparent);
   --measure: 34rem;
@@ -828,3 +828,17 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .ftr-long .ftr-more { display: block; position: absolute; right: 0; bottom: 0; padding: 0 0 0 1.6em; border: none;
   font: inherit; color: var(--accent); cursor: pointer; background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
 .ftr-long.open .ftr-more { position: static; padding: 0; background: none; display: inline; }
+
+/* ------------------------------------------------------------ the colour of the Latin, a reading option (round 5, F2) */
+/* default: oxblood by day, candle-gold by night; or green, or ink like the text, or the reader's own two colours */
+:root[data-latin="green"] { --la: #23584a; }
+:root[data-latin="plain"] { --la: var(--ink); }
+:root[data-latin="custom"] { --la: var(--la-c-light, #7a2230); }
+@media (prefers-color-scheme: dark) {
+  :root[data-latin="green"]:not([data-theme="light"]) { --la: #8cc9b3; }
+  :root[data-latin="custom"]:not([data-theme="light"]) { --la: var(--la-c-dark, #e0c27a); }
+}
+:root[data-latin="green"][data-theme="dark"] { --la: #8cc9b3; }
+:root[data-latin="custom"][data-theme="dark"] { --la: var(--la-c-dark, #e0c27a); }
+.settings .la-custom { display: inline-flex; gap: 0.4rem; align-items: center; margin-left: 1.4em; font-size: 0.92em; }
+.settings .la-custom input[type="color"] { width: 2rem; height: 1.4rem; padding: 0; border: 1px solid var(--rule); background: none; }

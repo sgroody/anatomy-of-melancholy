@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#1c1a17" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ root }}assets/fonts.css">
 <link rel="stylesheet" href="{{ root }}assets/edition.css">
-<script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;}catch(e){}</script>
+<script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;if(s.latin&&s.latin!=="oxblood")d.dataset.latin=s.latin;if(s.laLight)d.style.setProperty("--la-c-light",s.laLight);if(s.laDark)d.style.setProperty("--la-c-dark",s.laDark);}catch(e){}</script>
 <script type="module" src="{{ root }}assets/edition.js"></script>
 </head>
 <body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings', 'search') else (page.kind if page else 'other') }}">

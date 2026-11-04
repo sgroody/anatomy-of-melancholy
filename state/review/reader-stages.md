@@ -191,3 +191,11 @@ Done in stage 11 without a model: Gowland's entries placed on their words (stem 
 136 more on words (116 on sidenote words, anchored at the note's marker and lit inside the note; 11 by declined or
 variant forms, incl. Praxiteles/Praxitilem; 9 elsewhere in the paragraph); 195 still at his marker.
 Owner's choices awaited: round 5 (state/review/ab-2026-11-04-r5.html).
+
+# Round 5: owner's choices (2026-11-04)
+
+F1 A (EB Garamond throughout, as now) · F2 B, adjusted: "Oxblood by day, Candle-gold by night. Perhaps a setting to
+adjust color?" · F3 B (three compartments, as in the engraving): "Might have to see more options, and visualized on the
+full front page" · F4 Neither: "Keep A for now" (Burton's English in the Latin's colour).
+What follows: Latin #7a2230 by day, #e0c27a by night, with a reading option for the colour (presets and a custom
+colour); round 6 shows compartment variants on the whole front page.
