@@ -7,6 +7,8 @@ const html = document.documentElement;
 const body = document.body;
 const wide = window.matchMedia("(min-width: 1100px)");
 const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin on each side (R3)
+// the margins are in use: a wide window, and no facing translation taking their room (stage 4)
+const isWide = () => wide.matches && !body.classList.contains("facing-on");
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
 // come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
@@ -187,7 +189,7 @@ for (const marker of markers.filter((m) => m.matches("a.nref"))) {
   marker.addEventListener("click", (ev) => {
     ev.preventDefault();
     if (openNote && openNote.note === note) { closeNote(false); return; }
-    if (wide.matches && !note.classList.contains("sn-stacked")) {
+    if (isWide() && !note.classList.contains("sn-stacked")) {
       note.classList.add("flash");
       setTimeout(() => note.classList.remove("flash"), 1200);
     } else {
@@ -206,8 +208,8 @@ function layoutNotes() {
   if (!article) return;
   article.querySelectorAll(".sn-more").forEach((b) => b.remove());
   const notes = markers.map(noteOf).filter(Boolean);
-  body.classList.toggle("mn-on", wide.matches);
-  if (!wide.matches) {
+  body.classList.toggle("mn-on", isWide());
+  if (!isWide()) {
     article.classList.remove("sn-laid");
     article.style.minHeight = "";
     notes.forEach((n) => { n.classList.remove("sn-stacked"); n.style.top = ""; asPopover(n, true); });
@@ -415,7 +417,7 @@ if (article) {
     if (ev.target.closest("a, button, .sidenote, .mn, summary") || getSelection().toString()) return;
     const item = at(ev);
     if (!item) return;
-    if (wide.matches && !item.classList.contains("sn-stacked")) pin(item);
+    if (isWide() && !item.classList.contains("sn-stacked")) pin(item);
     else if (canPopover) { // narrow screens: the item opens beside the words tapped
       closeNote(false);
       asPopover(item, true);
@@ -505,6 +507,56 @@ if (synTree) {
       for (const li of synTree.querySelectorAll(".syn-n")) setOpen(li, b.dataset.syn === "open");
     });
   }
+}
+
+// ---------------------------------------------------------------- the front page (stage 4)
+// Pointing at a panel of the engraving shows its stanza beside it (owner, 2026-11-03: T14, R4 B).
+const stanzaBox = document.querySelector(".front-stanza");
+if (stanzaBox) {
+  const show = (st) => stanzaBox.querySelectorAll(".fs-st").forEach((d) => { d.hidden = d.dataset.st !== st; });
+  for (const a of document.querySelectorAll(".front .fs-panel")) {
+    a.addEventListener("mouseenter", () => show(a.dataset.st));
+    a.addEventListener("focus", () => show(a.dataset.st));
+  }
+}
+
+// ---------------------------------------------------------------- facing translations (stage 4)
+// A Latin poem of the front matter with Gowland's translation beside it (private build): his page is fetched and
+// set in a second column; Burton's notes then open as pop-ups, the margins being taken.
+for (const a of document.querySelectorAll("a[data-facing]")) {
+  let col = null;
+  const open = async () => {
+    if (!col) {
+      try {
+        const page = new DOMParser().parseFromString(await (await fetch(a.href)).text(), "text/html");
+        const art = page.querySelector("article.unit");
+        if (!art || !article) return;
+        col = document.createElement("aside");
+        col.className = "facing-t";
+        col.dataset.resp = "gowland";
+        col.setAttribute("aria-label", a.textContent);
+        art.querySelectorAll("[id]").forEach((e) => e.removeAttribute("id"));
+        col.append(...art.childNodes);
+        article.after(col);
+      } catch { return; }
+    }
+    col.hidden = false;
+    body.classList.add("facing-on");
+    a.setAttribute("aria-expanded", "true");
+    scheduleLayout();
+  };
+  const close = () => {
+    if (col) col.hidden = true;
+    body.classList.remove("facing-on");
+    a.setAttribute("aria-expanded", "false");
+    scheduleLayout();
+  };
+  a.setAttribute("aria-expanded", "false");
+  a.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    if (body.classList.contains("facing-on")) close(); else open();
+  });
+  if (wide.matches) open();
 }
 
 apply();

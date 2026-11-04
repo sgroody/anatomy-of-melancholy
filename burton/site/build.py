@@ -115,6 +115,9 @@ class Images:
 
 
 # ---------------------------------------------------------------- contents tree
+FACING = {"ad-librum": "ad-librum-gowland", "lectori": "lectori-gowland"}  # Burton's Latin poem -> Gowland's page
+
+
 def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Page | None = None) -> str:
     """Nested contents list. `ids` puts anchor ids on groups (home and landing pages only)."""
 
@@ -130,6 +133,8 @@ def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Pag
         return f'<li class="toc-g toc-d{depth}"{gid}><span class="toc-gl">{esc(pg.title)}</span><ol>{kids}</ol></li>'
 
     def item(pg: Page, depth: int) -> str:
+        if pg.gowland and pg.key != current:  # Gowland's translation pages: shown facing their original (stage 4)
+            return ""
         if pg.kind == "group":
             return group(pg, depth)
         if pg.kind == "partition":
@@ -249,6 +254,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    cexp=layer_for(unit, "citation-expansions"), initials=initials)
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
+        if (g := FACING.get(unit)) and profile == "private" and g in book.pages:
+            # Gowland's translation of a Latin poem, set facing it by edition.js (stage 4); his page stays in the build
+            body = (f'<p class="facing-link" data-resp="gowland"><a href="../{g}/" data-facing="../{g}/">'
+                    "Gowland’s translation, facing</a></p>\n" + body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
         words = len(public_text(div).split())
@@ -288,16 +297,22 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     # home
     front = images.get("pg003.png", "")
-    front_map = None
+    front_map = stanzas = None
     if "argument" in book.pages:
         arg = book.pages["argument"]
-        cap = (f'The engraved title page of 1628; <a href="{attr(arg.href)}">{esc(arg.title)}</a> explains its '
-               f'ten panels. ')
+        cap = f'The engraved title page of 1628; <a href="{attr(arg.href)}">{esc(arg.title)}</a> describes its panels'
         front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=cap))
+        stanzas = Markup(frontispiece.stanzas_html())
+    # the three synopses, collapsed, on the front page (owner, 2026-11-03: T13, R4 B)
+    shown = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
+    synopses = [{"title": f"The Synopsis of the {part.title.removeprefix('The ')}", "href": f"{part.key}/synopsis/",
+                 "tree": Markup(synopsis.tree_html(synopsis.load(part.key), "", shown))}
+                for part in book.partitions if (paths.DATA / "synopses" / f"{part.key}.json").exists()]
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
         toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
-        argument=book.pages.get("argument"), title="Contents",
+        argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
+        synopses=synopses, title="The Anatomy of Melancholy",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
     page("about", "about/index.html", "about.html", page=book.pages["about"], crumbs=[("About this edition", None)],

@@ -62,7 +62,18 @@ def tree_html(tree: dict, root: str, titles: dict[str, str]) -> str:
                            '<span class="syn-flag"> (sign supplied by this edition)</span></span> ')
             elif "src_p" in k:
                 row.append(f'<span class="syn-key">{esc(k["text"])}</span> ')
-        row.append(f'<span class="syn-t" id="{nid}-t">{runs_html(n["text"])}</span>')
+        text = runs_html(n["text"])
+        linked = set()
+        for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
+            # the sign Burton prints ("See ♋ ♌ ♍") is itself the link (owner, 2026-11-03), not a copy after it
+            i = text.find(esc(sign))
+            if i >= 0 and "<" not in text[i:i + len(esc(sign))] and text.count("<", 0, i) == text.count(">", 0, i):
+                where = _plain(by_id[tgt]["text"]) if tgt in by_id else ""
+                text = (text[:i] + f'<a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
+                        f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>'
+                        + text[i + len(esc(sign)):])
+                linked.add(tgt)
+        row.append(f'<span class="syn-t" id="{nid}-t">{text}</span>')
         if "label" in n:
             row.append(f' <span class="syn-label">{runs_html(n["label"]["runs"])}</span>')
         seen = []
@@ -76,6 +87,8 @@ def tree_html(tree: dict, root: str, titles: dict[str, str]) -> str:
                 else:
                     row.append(f' <span class="syn-ref">{esc(ref["div"])}</span>')
         for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
+            if tgt in linked:
+                continue
             where = _plain(by_id[tgt]["text"]) if tgt in by_id else ""
             row.append(f' <a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
                        f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>')

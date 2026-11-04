@@ -14,7 +14,7 @@ from lxml import etree
 from .. import paths
 from ..tei import XML_ID, T, public_id
 from ..textview import public_text
-from .render import attr, esc
+from .render import attr, esc, prov
 
 
 @cache
@@ -58,11 +58,32 @@ def figure_html(src: str, alt: str, w: int, h: int, argument_href: str, *, here:
                  f"width:{100 * pw / W:.2f}%;height:{100 * ph / H:.2f}%")
         pid = f' id="panel-{pn["n"]}"' if here else ""
         name = f"Panel {pn['n']}, {pn['name']}: stanza {nums[st]} of the Argument"
-        links.append(f'<a class="fs-panel"{pid} href="{attr(argument_href)}#{attr(st)}" style="{style}" '
+        links.append(f'<a class="fs-panel"{pid} href="{attr(argument_href)}#{attr(st)}" data-st="{attr(st)}" '
+                     f'style="{style}" '
                      f'aria-label="{attr(name)}"><span class="fs-n" aria-hidden="true">{pn["n"]}</span></a>')
     return (f'<div class="fs-map"><img src="{attr(src)}" alt="{attr(alt)}" width="{w}" height="{h}" '
             f'decoding="async">{"".join(links)}</div>'
-            f'<figcaption class="fs-label">{caption}{esc(label())}. Choose a panel to read its stanza.</figcaption>')
+            f'<figcaption class="fs-label">{caption} {prov(label())}</figcaption>')
+
+
+def stanzas_html() -> str:
+    """Each described stanza of the Argument, Burton's lines as the base text has them, for the front page: one
+    shows at a time beside the engraving, as the reader points at a panel (owner, 2026-11-03: T14, R4 B)."""
+    root = etree.parse(str(paths.TEXT / "argument.xml")).getroot()
+    names = {pn["stanza"]: [] for pn in load()["panels"]}
+    for pn in load()["panels"]:
+        names[pn["stanza"]].append(pn["name"])
+    out = []
+    for lg in root.iter(T("lg")):
+        sid = public_id(lg.get(XML_ID)) if lg.get(XML_ID) else ""
+        if sid not in names:
+            continue
+        lines = [esc(" ".join(public_text(ln).split())) for ln in lg.iter(T("l"))]
+        if lines:  # the stanza number Burton prints, said by the heading instead
+            lines[0] = re.sub(r"^\d+(?: \d+)* ", "", lines[0])
+        out.append(f'<div class="fs-st" data-st="{attr(sid)}" hidden><p class="fs-st-h">{esc(" and ".join(names[sid]))}'
+                   f'</p><p class="fs-st-l">{"<br>".join(lines)}</p></div>')
+    return "".join(out)
 
 
 def back_links() -> dict[str, list[tuple[int, str]]]:

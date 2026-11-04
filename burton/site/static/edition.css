@@ -552,3 +552,45 @@ h1.unit-title { font-style: italic; font-size: 1.4em; max-width: 28rem; margin-l
 :root[data-theme="dark"] .ini-l { display: none !important; }
 :root[data-theme="dark"] .ini-d { display: block !important; }
 @media print { .ini-d { display: none !important; } .ini-l { display: block !important; } }
+
+/* ------------------------------------------------------------ the front page (stage 4, R4 B) */
+main:has(> .front) { max-width: 82rem; }
+.front { display: grid; grid-template-columns: minmax(16rem, 36rem) minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: none; }
+.front .front-eng { position: sticky; top: 1rem; margin: 1.2rem 0; }
+.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem); width: auto; max-width: 100%; }
+.front .fs-label { line-height: 1.4; }
+.front-side { padding-top: 1.6rem; max-width: 40rem; }
+.front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.6rem; text-align: left; font-variant-caps: normal; }
+.front-title .ft-1 { display: block; font-size: 0.75em; }
+.front-title .ft-2 { display: block; font-size: 1.35em; }
+.front-what { font-style: italic; margin: 0.2rem 0; }
+.front-by { font-variant-caps: small-caps; letter-spacing: 0.06em; margin: 0.2rem 0 0; }
+.front-enter { margin: 1.2rem 0; }
+.enter { display: inline-block; font-size: 1.25em; color: var(--accent); text-decoration: none; border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent); padding: 0.2rem 1.1rem; letter-spacing: 0.06em; }
+.enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.front-stanza { min-height: 11rem; border-left: 2px solid var(--rule); padding-left: 0.9rem; margin: 1rem 0 1.4rem; }
+.front-stanza .fs-hint { color: var(--muted); font-size: 0.9em; margin: 0; }
+.front-stanza:has(.fs-st:not([hidden])) .fs-hint { display: none; }
+.fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
+.fs-st-l { font-style: italic; margin: 0; line-height: 1.45; }
+.front-syn details { border-bottom: 1px solid var(--rule); padding: 0.3rem 0; }
+.front-syn summary { cursor: pointer; }
+.front-syn .syn-tree { margin-top: 0.6rem; font-size: 0.92em; }
+@media (max-width: 60rem) { .front { grid-template-columns: 1fr; } .front .front-eng { position: static; } }
+
+/* ------------------------------------------------------------ facing translations (stage 4) */
+.facing-link { font-size: 0.9em; margin: 1rem 0 0; }
+.facing-link a[aria-expanded="true"]::before { content: "× "; }
+.facing-t[hidden] { display: none; }
+/* while the facing column is open, Burton's notes on the page open as pop-ups, the margins being taken */
+.facing-on .unit .sidenote:not(:popover-open), .facing-on .unit .mn:not(:popover-open) { display: none !important; }
+@media (min-width: 1100px) {
+  main:has(.facing-t:not([hidden])) { max-width: 76rem; display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; align-items: start; }
+  main:has(.facing-t:not([hidden])) > :not(.unit, .facing-t) { grid-column: 1 / -1; }
+  .facing-on .unit { margin: 0 !important; max-width: none; }
+  .facing-t { font-size: 0.95em; border-left: 1px solid var(--rule); padding-left: 1.5rem; }
+}
+.facing-t .sidenote, .facing-t .nref, .facing-t .mn-pool, .facing-t .mref, .facing-t .enref { display: none !important; }
+@media (max-width: 1099px) { .facing-t { margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1rem; } }
+.facing-on .fo { text-decoration: none; }

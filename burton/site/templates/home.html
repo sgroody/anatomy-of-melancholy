@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% block main %}
-<div class="home-page">
-  <h1>The Anatomy of Melancholy</h1>
-  <p class="sub">Robert Burton · a reading edition</p>
+{# The front page (owner, 2026-11-03: T13 A, R4 B): the engraved title page held large beside the way in, its
+   stanzas shown as the reader points at a panel; the synopses collapsed; the contents below. #}
+<div class="home-page front">
   {% set src, alt, w, h = frontispiece %}
-  {% if front_map %}
-  <figure class="frontispiece">
-    {{ front_map }}
+  <figure class="frontispiece front-eng">
+    {% if front_map %}{{ front_map }}{% else %}<a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" decoding="async"></a>{% endif %}
   </figure>
-  {% else %}
-  <figure class="frontispiece">
-    <a href="{{ src }}"><img src="{{ src }}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" decoding="async"></a>
-    <figcaption>The engraved title page of 1628.</figcaption>
-  </figure>
-  {% endif %}
-  <section aria-labelledby="contents-h">
-    <h2 id="contents-h">Contents</h2>
-    <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
-  </section>
+  <div class="front-side">
+    <h1 class="front-title"><span class="ft-1">The Anatomy of</span> <span class="ft-2">Melancholy,</span></h1>
+    <p class="front-what">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</p>
+    <p class="front-by">By Democritus Junior.</p>
+    {% if dedication %}<p class="front-enter"><a class="enter" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a></p>{% endif %}
+    {% if stanzas %}<div class="front-stanza" aria-live="polite"><p class="fs-hint">Point at a panel of the engraving to read its stanza{% if argument %} from <a href="{{ argument.href }}">{{ argument.title }}</a>{% endif %}.</p>{{ stanzas }}</div>{% endif %}
+    {% if synopses %}
+    <section class="front-syn" aria-labelledby="syn-h">
+      <h2 id="syn-h">The Synopses</h2>
+      {% for s in synopses %}<details class="front-syn-d"><summary>{{ s.title }}</summary><p class="syn-here"><a href="{{ s.href }}">Open as its own page</a></p>{{ s.tree }}</details>{% endfor %}
+    </section>
+    {% endif %}
+    <section aria-labelledby="contents-h">
+      <h2 id="contents-h">Contents</h2>
+      <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
+    </section>
+  </div>
 </div>
 {% endblock %}
