@@ -157,6 +157,61 @@ def _anchor_words(lemma: str) -> list[str]:
     return [w for w in (lemma, first) if w]
 
 
+def _norm(w: str) -> str:
+    return w.lower().replace("j", "i").replace("v", "u").replace("æ", "ae").replace("œ", "oe")
+
+
+WORD = re.compile(r"[^\W\d_]+")
+
+
+def _stem_hit(text: str, lemma: str, start: int, end: int) -> int:
+    """A single-word lemma met in another form, as Latin declines a name ("Praxiteles": "Praxitilem", "Dionysus":
+    "Dionysio"): the one word in text[start:end] sharing its first letters (five at least, and three fifths of the
+    lemma), or -1 where there is none or more than one."""
+    lw = _norm(lemma)
+    need = max(5, -(-len(lw) * 3 // 5))
+    hits = {(m.start(), m.group(0)) for m in WORD.finditer(text, start, end)
+            if len(m.group(0)) >= 5 and len(_common(lw, _norm(m.group(0)))) >= need}
+    return hits.pop()[0] if len({w for _, w in hits}) == 1 and len(hits) == 1 else -1
+
+
+def _common(a: str, b: str) -> str:
+    n = 0
+    while n < min(len(a), len(b)) and a[n] == b[n]:
+        n += 1
+    return a[:n]
+
+
+def _fallback(e, cid: str, text: str, start: int, at: int, lemma: str) -> tuple[dict | None, str | None]:
+    """Where the lemma's words are not found before the endnote's anchor (stage 11, 2026-11-04: 280 of 4,392 entries
+    stood at the marker): (1) once only anywhere in the paragraph; (2) as one word in another form, before the anchor;
+    (3) in one of Burton's sidenotes in the paragraph, once only (Gowland annotates the notes too: "Otho Nicholson").
+    Returns the selector and how it was found, or (None, None)."""
+    for words in _anchor_words(lemma):
+        ms = list(re.finditer(rf"(?<![\w’'-]){re.escape(words)}(?![\w’'-])", text, re.I))
+        if len(ms) == 1 and (sel := obsolete._selector(cid, text, ms[0].start(), ms[0].end())):
+            return sel, "block"
+    if len(WORD.findall(lemma)) == 1 and len(lemma.strip(" ,.;:")) >= 5:
+        i = _stem_hit(text, lemma.strip(" ,.;:"), start, at)
+        if i >= 0 and (sel := obsolete._selector(cid, text, i, WORD.match(text, i).end())):
+            return sel, "stem"
+    found = []
+    for note in e.iter(T("note")):
+        if note.get("type") != "side" or not note.get(XML_ID):
+            continue
+        ntext = public_text(note, notes=True)
+        for words in _anchor_words(lemma):
+            ms = list(re.finditer(rf"(?<![\w’'-]){re.escape(words)}(?![\w’'-])", ntext, re.I))
+            if ms:
+                found.append((note, ntext, ms))
+                break
+    if len(found) == 1 and len(found[0][2]) == 1:
+        note, ntext, ms = found[0]
+        if sel := obsolete._selector(public_id(note.get(XML_ID)), ntext, ms[0].start(), ms[0].end()):
+            return {**sel, "on": "note"}, "sidenote"
+    return None, None
+
+
 def entries(unit: str, stats: Counter | dict) -> list[dict]:
     """Every Gowland entry on this unit's paragraphs and verse groups: {endnote, n, seg, kind, lemma, selector,
     target (pointers)}. The selector spans the lemma's words where they are found, else it is None and the entry
@@ -201,6 +256,10 @@ def entries(unit: str, stats: Counter | dict) -> list[dict]:
                     if i >= 0 and (sel := obsolete._selector(cid, text, i, i + len(words))):
                         rec["selector"] = sel
                         break
+                if rec["selector"] is None and kd != "pointer" and lemma:
+                    rec["selector"], how = _fallback(e, cid, text, start, at, lemma)
+                    if how:
+                        stats[f"gowland_placed_by_{how}"] = stats.get(f"gowland_placed_by_{how}", 0) + 1
                 stats[f"gowland_{kd}"] = stats.get(f"gowland_{kd}", 0) + 1
                 stats["gowland_anchored_on_words" if rec["selector"] else "gowland_anchored_at_marker"] = \
                     stats.get("gowland_anchored_on_words" if rec["selector"] else "gowland_anchored_at_marker", 0) + 1

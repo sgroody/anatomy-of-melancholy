@@ -48,3 +48,18 @@ def test_a_lemma_split_by_an_ellipsis_is_mended():
     b.text, b.tail = "in Pindar", ": A gloss of the scholiast."
     assert gn.segments(e) == [("Knight of the sun", "See above, n. 249 (1.2.3)."),
                               ("Suidas … in Pindar", "A gloss of the scholiast.")]
+
+
+def test_a_declined_name_is_found_by_its_stem_once_only():
+    from burton.site import gowland_notes as g
+    text = "qui marmori ascribunt Praxitilem suo, and so forth"
+    assert text[g._stem_hit(text, "Praxiteles", 0, len(text)):].startswith("Praxitilem")
+    assert g._stem_hit("Dionysio and Dionysius both", "Dionysus", 0, 27) == -1  # two forms: not guessed
+    assert g._stem_hit("nothing like it here", "Praxiteles", 0, 20) == -1
+
+
+def test_entries_on_sidenote_words_are_found():
+    from burton.site import gowland_notes as g
+    sel = {e["lemma"]: e["selector"] for e in g.entries("djr", {})}
+    assert sel["Otho Nicholson"]["on"] == "note" and sel["Otho Nicholson"]["in"] == "djr-n24"
+    assert sel["Praxiteles"]["exact"] == "Praxitilem"

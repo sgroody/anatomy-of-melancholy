@@ -991,18 +991,28 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
     edits, cards = [], []
     for e in entries:
         cid = f"gw-{e['endnote']}-{e['seg']}"
-        hs = None
-        if e["selector"] and (found := _locate(html_text, e["selector"], (SKIP_MAIN,), views)):
+        hs, extra = None, ""
+        sel = e["selector"]
+        if sel and sel.get("on") == "note":
+            # on words of Burton's sidenote (stage 11): anchored at the note's marker in the text, so it stands beside
+            # the note however the note is placed; the words are lit inside the note (edition.js, data-note)
+            m = re.search(rf'<a class="nref" id="ref-{re.escape(sel["in"])}"', html_text)
+            if m:
+                hs, ln = m.start(), 0
+                extra = f' data-note="{attr(sel["in"])}" data-words="{attr(sel["exact"])}"'
+                counts["gowland_notes_on_sidenotes"] = counts.get("gowland_notes_on_sidenotes", 0) + 1
+        elif sel and (found := _locate(html_text, sel, (SKIP_MAIN,), views)):
             at, pos = found[0], found[1]
             hs = pos[at]
-            ln = len(e["selector"]["exact"])
+            ln = len(sel["exact"])
         if hs is None:
             m = re.search(rf'<span class="enref"[^>]*data-target="{re.escape(e["endnote"])}"[^>]*></span>', html_text)
             if not m:
                 counts["gowland_notes_unplaced"] = counts.get("gowland_notes_unplaced", 0) + 1
                 continue
             hs, ln = m.end(), 0
-        edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}" aria-hidden="true"></span>'))
+        edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}"{extra} '
+                          'aria-hidden="true"></span>'))
         cards.append(gowland_card(e, notes, cid))
         counts["gowland_notes"] = counts.get("gowland_notes", 0) + 1
         counts[f"gowland_notes_{e['kind']}"] = counts.get(f"gowland_notes_{e['kind']}", 0) + 1

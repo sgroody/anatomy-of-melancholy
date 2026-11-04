@@ -284,7 +284,7 @@ function layoutNotes() {
   // A second, shorter fold (FOLD_SHORT lines) is used only where the first is not enough (one margin, many notes).
   const noteSize = pairs.length ? parseFloat(getComputedStyle(pairs[0][1]).fontSize) : rem;
   const foldHs = [Infinity, ...[FOLD_LINES, FOLD_SHORT, FOLD_ONE].map((n) => n * 1.35 * noteSize)];
-  const place = (h) => {
+  const place = (h, fold) => {
     const floors = { r: -Infinity, l: -Infinity }, ys = [], sides = [];
     pairs.forEach(([, note], i) => {
       const anchor = anchors[i];
@@ -294,7 +294,7 @@ function layoutNotes() {
         const yp = Math.max(anchor, floors[pref] + GAP), yo = Math.max(anchor, floors[other] + GAP);
         side = yp - anchor > SWITCH && yo < yp ? other : pref;
       }
-      const y = Math.max(anchor, floors[side] + GAP);
+      const y = Math.max(anchor, floors[side] + (fold[i] >= 2 ? GAP / 2 : GAP)); // short notes sit closer
       ys.push(y);
       sides.push(side);
       floors[side] = y + h[i];
@@ -302,7 +302,7 @@ function layoutNotes() {
     return { ys, sides, floors };
   };
   const h = full.slice(), fold = pairs.map(() => 0); // 0 whole, 1 four lines, 2 two lines, 3 one line
-  let p = place(h);
+  let p = place(h, fold);
   for (let round = 0; round < 8; round++) {
     let changed = false;
     p.ys.forEach((y, i) => {
@@ -317,7 +317,7 @@ function layoutNotes() {
       }
     });
     if (!changed && round >= 4) break;
-    if (changed) p = place(h);
+    if (changed) p = place(h, fold);
   }
   pairs.forEach(([, note], i) => {
     note.classList.toggle("mn-l", p.sides[i] === "l");
@@ -393,6 +393,15 @@ function spanOf(marker) {
     const r = document.createRange();
     r.selectNodeContents(fo);
     return r;
+  }
+  if (marker.dataset.note) { // Gowland on words of Burton's sidenote (stage 11): those words, inside the note
+    const note = document.getElementById(marker.dataset.note), words = marker.dataset.words;
+    const walker = note && document.createTreeWalker(note, NodeFilter.SHOW_TEXT);
+    for (let n = walker?.nextNode(); n; n = walker.nextNode()) {
+      const i = n.data.indexOf(words);
+      if (i >= 0) { const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + words.length); return r; }
+    }
+    return null;
   }
   if (marker.classList.contains("mref")) {
     let left = Number(marker.dataset.len || 0);

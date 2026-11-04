@@ -177,3 +177,17 @@ English of the Latin quoted there: 58 match the verse of Burton's number; 2 have
 KJV 17:8 "Keep me as the apple of the eye" is plainly meant). Stage 11: keep the rule only for clear matches, and send
 the 18 others to a ledgered model reading (private-only check; Gowland's translation of the quoted Latin may be used),
 with the verse shown only where it is confirmed, or the Vulgate-numbered one with a note where that is confirmed.
+
+### Where things stand (2026-11-04, ~09:20 UTC)
+
+Usage meter read before any model run: weekly 85% (resets 2026-11-08 23:00 UTC), 5-hour 73%. The owner's ceiling is
+90% weekly, and this session's own work counts too, so **no model runs until the weekly reset**. Waiting on that:
+* Psalm verses: the 18 citations the rules cannot settle (a ledgered reading, private-only check);
+* the notes the Claude translation passes wrote: spot check + independent audit before they go into the margin;
+* restored notes: tie each to Burton's own English (rules, selftrans), then translate only what his English leaves out;
+* V5 (stage 12): the fixes are rules, but a fresh held-out round needs a gold sample (owner's hand, or the D7 blind
+  rater: a model run).
+Done in stage 11 without a model: Gowland's entries placed on their words (stem rule, whole paragraph, sidenote words):
+136 more on words (116 on sidenote words, anchored at the note's marker and lit inside the note; 11 by declined or
+variant forms, incl. Praxiteles/Praxitilem; 9 elsewhere in the paragraph); 195 still at his marker.
+Owner's choices awaited: round 5 (state/review/ab-2026-11-04-r5.html).
