@@ -17,6 +17,9 @@ SOURCES = {
     # Cardo is a scholarly OFL serif for classicists; it covers every one of them.
     "Cardo-Regular.ttf": f"{BASE}/cardo/Cardo-Regular.ttf",
     "Cardo-OFL.txt": f"{BASE}/cardo/OFL.txt",
+    # Greek in its own face (owner, 2026-11-03: T10 B): GFS Didot, from the Greek Font Society
+    "GFSDidot-Regular.ttf": f"{BASE}/gfsdidot/GFSDidot-Regular.ttf",
+    "GFSDidot-OFL.txt": f"{BASE}/gfsdidot/OFL.txt",
 }
 # Built faces: (css family, style, source file)
 FACES = [("EB Garamond", "normal", "EBGaramond-Roman.ttf"), ("EB Garamond", "italic", "EBGaramond-Italic.ttf")]
