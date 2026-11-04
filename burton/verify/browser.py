@@ -190,7 +190,11 @@ def keyboard_check(profile: str = "private") -> Result:
             f = focused(pg)
             if f.startswith("a#ref-"):
                 seen_marker = True
-            if ".fo" in f and pg.evaluate("getComputedStyle(document.activeElement.nextElementSibling).display") != "none":
+            # its box beside it, or (margin layout, 2026-11-03) its card in the margin, lit
+            if ".fo" in f and pg.evaluate("(() => { const a = document.activeElement, fid = a.closest('.fp')?.dataset.fid;"
+                                          " const c = fid && document.getElementById('mt-' + fid);"
+                                          " return getComputedStyle(a.nextElementSibling).display !== 'none'"
+                                          " || !!(c && c.classList.contains('hot')); })()"):
                 seen_fo = True
             if seen_marker and seen_fo:
                 break

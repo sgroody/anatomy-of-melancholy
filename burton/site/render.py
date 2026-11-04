@@ -8,6 +8,7 @@ come from the layer data, never from the template.
 import html
 import re
 
+from .. import paths
 from ..layers import djs as djs_layer
 from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
@@ -42,6 +43,7 @@ def attr(s: str | None) -> str:
 
 
 def label_of(t: dict) -> str:
+    """The full label of a translation's source, from its data (shown behind the ◇ for machine work)."""
     if t["by"] == "machine":
         return f"Machine translation ({t['model']}, prompt {t['prompt']}, {t['date']})"
     if t["by"] == "djs1927":
@@ -52,6 +54,31 @@ def label_of(t: dict) -> str:
     if t["by"] == "gowland":
         return "Gowland 2021 (private build)"
     return t["by"]
+
+
+def model_name(model: str) -> str:
+    """The visible name of a model: "Claude" for any Claude model (owner, 2026-11-03); the full id stays in the
+    data and behind the ◇."""
+    return "Claude" if model.startswith("claude") else model
+
+
+def short_label(t: dict) -> str:
+    """The visible label: the source's name only; a machine label is completed by prov()."""
+    return {"machine": model_name(t.get("model", "")), "djs1927": "Dell & Jordan-Smith", "editor": "Editor",
+            "gowland": "Gowland"}.get(t["by"], t["by"])
+
+
+def prov(full: str) -> str:
+    """The ◇ that carries a machine item's full provenance (owner, 2026-11-03: a small icon, not a prose line)."""
+    return f'<span class="prov" role="img" tabindex="0" aria-label="{attr(full)}" title="{attr(full)}"></span>'
+
+
+LETTERS = "abcdefghijklmnopqrstuvwxyz"
+
+
+def letter(n: str | None) -> str:
+    """Burton's note number as Gowland letters it: a to z, then a again."""
+    return LETTERS[(int(n) - 1) % 26] if n and n.isdigit() else (n or "")
 
 
 # SPEC §6.3: the default order of translation sources (Burton's own rendering is not a source here:
@@ -119,9 +146,12 @@ class Renderer:
                        "gowland_versions": 0, "djs_versions": 0, "cite_expansions": 0, "verified_sources": 0,
                        "pagerefs": 0, "pagerefs_linked": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
+        self.cexp: dict = {}  # data/layers/citation-expansions/<unit>.json (model expansions)
         self.out: list[str] = []
         self.hoisted: set[str] = set()
         self.langs: list[str] = []
+        self.cards: list[str] = []  # margin items (translations of the text), laid out beside their anchors
+        self.in_note = 0
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -331,10 +361,13 @@ class Renderer:
     def note(self, e) -> None:
         self.counts["sidenotes"] += 1
         nid, n = self.pid(e), e.get("n")
-        self.w(f'<a class="nref" id="ref-{attr(nid)}" href="#{attr(nid)}" role="doc-noteref" '
-               f'aria-label="Note {attr(n)}">{esc(n)}</a>')
+        lt = letter(n)
+        self.w(f'<a class="nref" id="ref-{attr(nid)}" href="#{attr(nid)}" role="doc-noteref" data-n="{attr(n)}" '
+               f'aria-label="Note {attr(lt)}">{esc(lt)}</a>')
         self.w(f'<span class="sidenote" id="{attr(nid)}" role="doc-footnote">'
-               f'<span class="sn-n">{esc(n)}</span> ')
+               f'<span class="sn-n">{esc(lt)}</span> ')
+        start = len(self.out)
+        self.in_note += 1
         if e.find(T("p")) is not None:
             for p in e.iter(T("p")):
                 self.w('<span class="sn-p">')
@@ -342,21 +375,68 @@ class Renderer:
                 self.w("</span>")
         else:
             self.children(e)
-        self.cite_expansion(nid)
+        self.in_note -= 1
+        seg = self.expand_citations(nid, "".join(self.out[start:]))
+        # the Latin of the note translated after it, one line each, so Burton's punctuation stays with his words
+        trs = []
+        for fid in dict.fromkeys(re.findall(r'class="fp [^"]*" data-fid="([^"]+)"', seg)):
+            if vs := self.versions(fid):
+                v = vs[0]
+                pl = " " + prov(label_of(v)) if v["by"] == "machine" else ""
+                lang = next((x.get(XML_LANG) for x in e.iter() if x.get(XML_ID) and public_id(x.get(XML_ID)) == fid),
+                            "la")
+                resp = ' data-resp="gowland"' if v["by"] == "gowland" else ""
+                trs.append(f'<span class="sn-tr" data-lang="{attr(lang)}" data-src="{attr(v["by"])}"{resp}>'
+                           f'<span class="mn-tx">{esc_tagged(v["text"])}</span> '
+                           f'<span class="mn-src">{esc(short_label(v))}{pl}</span></span>')
+        self.out[start:] = [seg + "".join(trs)]
         self.w("</span>")
 
-    def cite_expansion(self, nid: str) -> None:
-        """The note's resolved citations, hidden unless the reader asks for them ("Expand citations"). Only
-        what the rules resolved is shown; an author links to the author page, Scripture to nothing."""
-        shown = [c for c in (self.cites.get(nid) or {}).get("citations", [])
-                 if c.get("display") and c.get("author") and c["author"] != "burton"]
-        if not shown:
-            return
-        self.counts["cite_expansions"] += 1
-        items = [esc(c["display"]) if c["author"] == "bible" else
-                 f'<a href="../authors/{attr(c["author"])}/">{esc(c["display"])}</a>' for c in shown]
-        self.w(f'<span class="sn-cite" data-method="{attr(shown[0]["method"])}">'
-               f'<span class="lbl">{esc(self.cite_label)}:</span> {"; ".join(items)}</span>')
+    def expansion(self, c: dict) -> tuple[str, str] | None:
+        """(HTML, kind) of a citation's expansion: the rules' when they resolved it, else the model's
+        (data/layers/citation-expansions/), else the rules' partial reading. "probably" where the model inferred
+        the author from the work or from "Idem" (cite-audit a1: the 3 uncertain items were all Idem)."""
+        if c.get("author") == "burton":
+            return None  # Burton's own divisions: a cross-reference, linked by mark_xrefs
+        m = self.cexp.get(c["id"])
+        if c["status"] == "parsed" and c.get("display"):
+            return self.cite_link(c.get("author"), c["display"]), "rule"
+        if m and m["status"] in ("expanded", "probable") and m.get("display"):
+            probably = m["status"] == "probable" or m.get("basis") == "idem-previous"
+            full = f"Citation expanded by machine ({m['model']}, prompt {m['prompt']}, {m['date']})"
+            html_ = (("probably " if probably else "") + self.cite_link(m.get("author"), m["display"]) +
+                     f" {prov(full)}")
+            return html_, "model"
+        if c.get("display") and c.get("author"):
+            return self.cite_link(c["author"], c["display"]), "rule"
+        return None
+
+    @staticmethod
+    def cite_link(author: str | None, display: str) -> str:
+        """The expansion, linked to the author's page where the edition has one (data/authors/)."""
+        if not author or author == "bible" or not (paths.DATA / "authors" / f"{author}.yaml").exists():
+            return esc(display)
+        return f'<a class="cx-a" href="../authors/{attr(author)}/">{esc(display)}</a>'
+
+    def expand_citations(self, nid: str, seg: str) -> str:
+        """Burton's abbreviated citations in a note, each shown expanded in its place, his own words on hover and
+        under the reading option "Burton's abbreviations" (owner, 2026-11-03: one expanded form, in place)."""
+        for c in (self.cites.get(nid) or {}).get("citations", []):
+            exp = self.expansion(c)
+            if not exp:
+                continue
+            found = _find_in(seg, c["raw"])
+            if found is None:
+                self.counts["cite_unplaced"] = self.counts.get("cite_unplaced", 0) + 1
+                continue
+            hs, he = found
+            if (end := c["raw"].rstrip()[-1:]) in ".,;":  # Burton's stop after the citation stays after it
+                exp = (exp[0] + end, exp[1])
+            self.counts["cite_expansions"] += 1
+            self.counts[f"cite_expansions_{exp[1]}"] = self.counts.get(f"cite_expansions_{exp[1]}", 0) + 1
+            seg = (seg[:hs] + f'<span class="cx"><span class="cx-b">{seg[hs:he]}</span>'
+                   f'<span class="cx-e" title="{attr("Burton: " + c["raw"])}">{exp[0]}</span></span>' + seg[he:])
+        return seg
 
     # ---------------------------------------------------------------- foreign passages
     def versions(self, fid: str) -> list[dict]:
@@ -418,7 +498,8 @@ class Renderer:
                 self.counts["djs_versions"] += 1
             items.append(f'<span class="ft-v ft-{attr(src)}" data-src="{attr(src)}"{resp}>'
                          f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
-                         f'<span class="ft-label">{esc(label_of(t))}</span>{extra}</span>')
+                         f'<span class="ft-label">{esc(short_label(t))}'
+                         f'{" " + prov(label_of(t)) if src == "machine" else ""}</span>{extra}</span>')
         own = " ft-own" if burton.startswith('<span class="ft-burton-own"') else ""
         vsrc = ""
         if fd := self.findings.get("findings", {}).get(fid):
@@ -474,11 +555,63 @@ class Renderer:
             self.hoisted.add(n.get(XML_ID))
         self.w("</span>")
 
+    def card(self, fid: str, lang: str | None) -> None:
+        """A translation of a passage in the main text, for the margin (owner, 2026-11-03, T6 A / T8 D): the
+        preferred version in the passage's colour, labelled with its source; the other versions, the source and
+        the notes folded under it. Where Burton translates the passage himself, the card says so instead
+        (R2 A + C). Its anchor stands before the passage; edition.js lays it beside that line."""
+        if self.in_note:
+            return
+        rec = self.layer.get(fid)
+        st = ((rec or {}).get("self_translation") or {})
+        vs = self.versions(fid)
+        cid = f"mt-{fid}"
+        name, _ = LANG_NAMES.get(lang or "", (lang or "another language", ""))
+        if rec and rec.get("preferred") == "burton" and st.get("burton_span"):
+            head = '<span class="mn-k">Burton’s own</span> '
+            body = f'“\x00Q{fid}\x00”'
+            if t := next((v for v in vs if v["by"] != "gowland" and v.get("note")), None):
+                body += f'<span class="mn-sub">{esc_tagged(t["note"])} {prov(label_of(t))}</span>'
+            kind = "own"
+        elif vs:
+            v0, rest = vs[0], vs[1:]
+            lab = short_label(v0) + (" " + prov(label_of(v0)) if v0["by"] == "machine" else "")
+            head = '<span class="mn-k">trans.</span> '
+            body = (f'<span class="mn-v" data-src="{attr(v0["by"])}">'
+                    f'<span class="mn-tx">{esc_tagged(v0["text"])}</span> <span class="mn-src">{lab}</span></span>')
+            more = []
+            for t in rest:
+                pl = " " + prov(label_of(t)) if t["by"] == "machine" else ""
+                more.append(f'<span class="mn-alt" data-src="{attr(t["by"])}">'
+                            f'<span class="mn-tx">{esc_tagged(t["text"])}</span> '
+                            f'<span class="mn-src">{esc(short_label(t))}{pl}</span></span>')
+            src = (rec or {}).get("source") or {}
+            if src.get("status") in ("burton-cites", "probable", "identified"):
+                word = {"burton-cites": "Burton cites", "probable": "Probably", "identified": "Source"}[src["status"]]
+                where = ", ".join(x for x in (src.get("author"), src.get("work"), src.get("locus")) if x)
+                more.append(f'<span class="mn-alt"><span class="mn-h">Source</span> {word} {esc_tagged(where)}'
+                            f'{"" if src.get("verified") else " (unverified)"}</span>')
+            notes = [t for t in vs if t["by"] == "machine" and t.get("note")]
+            if notes:
+                more.append(f'<span class="mn-alt"><span class="mn-h">Notes</span> {esc_tagged(notes[0]["note"])} '
+                            f'{prov(label_of(notes[0]))}</span>')
+            if more:
+                body += f'<details class="mn-more"><summary>more</summary>{"".join(more)}</details>'
+            kind = "tr"
+        else:
+            return
+        resp = ' data-resp="gowland"' if vs and vs[0]["by"] == "gowland" else ""
+        self.w(f'<span class="mref" data-for="{attr(cid)}" data-fo="{attr(fid)}" aria-hidden="true"></span>')
+        self.cards.append(f'<span class="mn mn-{kind}" id="{attr(cid)}" data-lang="{attr(lang)}"{resp} role="note" '
+                          f'aria-label="Translation from {attr(name)}">{head}{body}</span>')
+        self.counts["margin_translations"] = self.counts.get("margin_translations", 0) + 1
+
     def foreign(self, e, punct: str = "") -> None:
         self.counts["foreign"] += 1
         self.hoist_notes(e)
         fid, lang = self.pid(e), e.get(XML_LANG)
         size = "short" if len(public_text(e)) <= 40 else "long"
+        self.card(fid, lang)
         self.w(f'<span class="fp fp-{size}{self.mode_class(fid)}" data-fid="{attr(fid)}">{self.st_mark(fid)}'
                f'<span class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
         self.children(e)
@@ -494,6 +627,7 @@ class Renderer:
         self.counts["foreign"] += 1
         self.hoist_notes(e)
         lang = e.get(XML_LANG)
+        self.card(fid, lang)
         self.w(f'<{tag} class="{cls} fp fp-block{self.mode_class(fid)}" id="{attr(fid)}" data-fid="{attr(fid)}">'
                f'{self.st_mark(fid)}'
                f'<div class="fo" lang="{attr(lang)}" tabindex="0" aria-describedby="tr-{attr(fid)}">')
@@ -535,8 +669,9 @@ def mark_burton_spans(html_text: str, layer: dict, counts: dict) -> str:
     return html_text
 
 
-SKIP_MAIN = ("nref", "sidenote", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb")
-SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb")
+SKIP_MAIN = ("nref", "sidenote", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn",
+             "cx-e", "prov")
+SKIP_NOTES = ("nref", "ft", "sn-cite", "gowland-tr", "gowland-verse", "gowland-block", "pb", "mn", "cx-e", "prov")
 
 
 def _visible(html_text: str, skip: tuple[str, ...] = ()) -> tuple[str, list[int]]:
@@ -616,6 +751,83 @@ def _locate(html_text: str, sel: dict, skips=(SKIP_MAIN, SKIP_NOTES), views=None
     while (m := re.match(r"</[a-zA-Z0-9]+>", html_text[he:])) and m.group(0) != "</a>":
         he += len(m.group(0))  # ... and closing tags right after the last
     return at, pos, hs, he
+
+
+def _find_in(seg: str, raw: str) -> tuple[int, int] | None:
+    """Where a citation's words stand in a note's HTML (Burton's token-by-token italics and any Latin box between
+    them taken in): (start, end) of a balanced fragment with no link inside, or None."""
+    text, pos = _visible(seg, ("ft", "gowland-tr", "gowland-verse", "gowland-block", "cx", "prov"))
+    pat = r"\s*".join(re.escape(t) for t in raw.split())
+    ms = list(re.finditer(pat, text))
+    if len(ms) != 1:
+        return None
+    a, b = ms[0].start(), ms[0].end()
+    hs, he = pos[a], pos[b - 1]
+    he = seg.index(";", he) + 1 if seg[he] == "&" else he + 1
+    while (m := re.search(r"<[a-zA-Z][^>]*>$", seg[:hs])) and not m.group(0).startswith("<a "):
+        hs = m.start()
+    while (m := re.match(r"</[a-zA-Z0-9]+>", seg[he:])) and m.group(0) != "</a>":
+        he += len(m.group(0))
+    frag = seg[hs:he]
+    if not _balanced(frag):  # the words end inside an element that opened before them: keep the tags outside
+        hs, he = pos[a], pos[b - 1] + 1
+        frag = seg[hs:he]
+        if not _balanced(frag):
+            return None
+    return (hs, he) if "<a " not in frag else None
+
+
+GW_LABELS = {"gloss": "gloss", "source": "source", "identity": "about", "explanation": "note", "pointer": "see"}
+
+
+def gowland_card(e: dict, notes, cid: str) -> str:
+    """One of Gowland's endnote entries as a margin item, labelled by its kind (private build only). A pointer
+    shows the note it points to, in place."""
+    text = notes.note_text(e["endnote"], e["seg"])
+    kind = e["kind"]
+    if kind == "pointer" and e.get("targets"):
+        t = e["targets"][0]
+        if t in notes.endnotes():
+            segs = notes.segments(notes.endnotes()[t])
+            k = next((i for i, (lem, _) in enumerate(segs) if lem.lower() == e["lemma"].lower()), 0)
+            text = segs[k][1] if segs else text
+            kind = notes.kind(segs[k][0], segs[k][1]) if segs else kind
+        elif re.fullmatch(r"\d\.\d\.\d(?:\.\d+)?", t):
+            text = f'<a class="xref" href="../{attr(t)}/">{esc(t)}</a>'
+            return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="pointer" data-resp="gowland" role="note">'
+                    f'<span class="mn-k">see</span> {text}</span>')
+    lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] and kind != "gloss" else ""
+    return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="{attr(kind)}" data-resp="gowland" role="note">'
+            f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{esc_tagged(text)}</span>')
+
+
+def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str, list[str]]:
+    """Gowland's endnote entries in the margin (private build; burton/site/gowland_notes.py): an anchor before the
+    words each is on (`data-len` of them, for the highlight), or, where the words are not found, after his own
+    endnote anchor; the items themselves are returned to be laid out beside their anchors."""
+    from . import gowland_notes as notes
+    views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
+    edits, cards = [], []
+    for e in entries:
+        cid = f"gw-{e['endnote']}-{e['seg']}"
+        hs = None
+        if e["selector"] and (found := _locate(html_text, e["selector"], (SKIP_MAIN,), views)):
+            at, pos = found[0], found[1]
+            hs = pos[at]
+            ln = len(e["selector"]["exact"])
+        if hs is None:
+            m = re.search(rf'<span class="enref"[^>]*data-target="{re.escape(e["endnote"])}"[^>]*></span>', html_text)
+            if not m:
+                counts["gowland_notes_unplaced"] = counts.get("gowland_notes_unplaced", 0) + 1
+                continue
+            hs, ln = m.end(), 0
+        edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}" aria-hidden="true"></span>'))
+        cards.append(gowland_card(e, notes, cid))
+        counts["gowland_notes"] = counts.get("gowland_notes", 0) + 1
+        counts[f"gowland_notes_{e['kind']}"] = counts.get(f"gowland_notes_{e['kind']}", 0) + 1
+    for hs, mark in sorted(edits, key=lambda x: x[0], reverse=True):
+        html_text = html_text[:hs] + mark + html_text[hs:]
+    return html_text, cards
 
 
 def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
@@ -710,9 +922,9 @@ def mark_restored(html_text: str, notes: dict, counts: dict) -> str:
         note = (f'<a class="nref nref-restored" id="ref-{attr(rid)}" href="#{attr(rid)}" role="doc-noteref" '
                 f'aria-label="Note not in Gowland’s edition">°</a>'
                 f'<span class="sidenote sn-restored" id="{attr(rid)}" role="doc-footnote">'
-                f'<span class="sn-n">°</span> {esc_tagged(rec["text"])}'
-                f'<span class="sn-src">{RESTORED_LABEL} {esc(rec["source"])}, note {rec["pg_note"]} '
-                f'(a 19th-century text checked against the 1638 edition)</span></span>')
+                f'<span class="sn-n">°</span> {esc_tagged(rec["text"])} '
+                + prov(f'{RESTORED_LABEL} {rec["source"]}, note {rec["pg_note"]} '
+                       f'(a 19th-century text checked against the 1638 edition)') + '</span>')
         if hoisted:  # before a passage box, held to its first line as Gowland's lifted-out notes are
             note = f'<span class="hoisted">{note}</span>'
         html_text = html_text[:hs] + note + html_text[hs:]
@@ -768,10 +980,11 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
                 pagemap: dict | None = None, glosses: list[dict] | None = None,
-                restored: dict | None = None) -> tuple[str, dict]:
+                restored: dict | None = None, gowland_entries: list[dict] | None = None,
+                cexp: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
-    r.plate, r.pagemap = plate, pagemap or {}
+    r.plate, r.pagemap, r.cexp = plate, pagemap or {}, cexp or {}
     if profile == "private":
         r.gowland = gowland_versions(div)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
@@ -781,6 +994,12 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts)
+    cards = list(r.cards)
+    if profile == "private" and gowland_entries:
+        body, gw = mark_gowland(body, gowland_entries, r.counts)
+        cards += gw
+    if cards:  # the margin items, laid out by edition.js beside their anchors (in reading order for no-script)
+        body = body.replace("</article>\n", f'<div class="mn-pool">{"".join(cards)}</div>\n</article>\n')
     for fid, rec in layer.items():
         sel = rec["self_translation"].get("burton_span")
         if sel:

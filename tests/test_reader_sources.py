@@ -42,7 +42,9 @@ def test_private_box_lists_every_version_preferred_first_with_its_language():
     html = render_div("private", {"u-f1": REC})
     assert html.index("ft-gowland") < html.index("ft-machine")  # the default order: Gowland first (SPEC §6.3)
     assert "from Latin" in html and "Translation from Latin: " in html
-    assert "Gowland 2021 (private build)" in html and "claude-opus-5-5" in html
+    # visible labels are short ("Gowland", "Claude"); the machine one's full label stands behind the ◇ (2026-11-03)
+    assert '<span class="ft-label">Gowland</span>' in html and ">Claude <span class=\"prov\"" in html
+    assert 'title="Machine translation (claude-opus-5-5' in html
 
 
 def test_public_build_has_no_gowland_version():

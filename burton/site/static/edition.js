@@ -34,7 +34,7 @@ function apply() {
   else html.dataset.size = settings.size;
   body.classList.toggle("show-gowland", !!settings.gowland);
   body.classList.toggle("show-pages", !!settings.pages);
-  body.classList.toggle("show-cites", !!settings.cites);
+  body.classList.toggle("show-abbr", !!settings.cites); // "Burton's abbreviations" in place of the expansions
   body.classList.toggle("show-glosses", !!settings.glosses);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
@@ -117,12 +117,17 @@ if (tocPanel) {
 // and the rest of its paragraph's notes collapse into a "more notes" stack at that paragraph.
 // Narrow screens (and stacked notes): the marker opens the note as a popover beside it.
 const article = document.querySelector("article.unit");
-const markers = [...document.querySelectorAll("a.nref")];
+// Burton's markers (a.nref) and the anchors of the edition's margin items (span.mref: translations of the text,
+// Gowland's notes), in reading order; each is laid out beside its anchor by the same pass.
+const markers = [...document.querySelectorAll("a.nref, span.mref")];
 const canPopover = typeof HTMLElement.prototype.showPopover === "function";
 const expanded = new Set(); // paragraphs whose stack the reader opened
 let openNote = null;
 
-function noteOf(marker) { return document.getElementById(marker.getAttribute("href").slice(1)); }
+function noteOf(marker) {
+  return marker.classList.contains("mref") ? document.getElementById(marker.dataset.for)
+    : document.getElementById(marker.getAttribute("href").slice(1));
+}
 function blockOf(marker) { return marker.closest("p, li, .lg, blockquote, h1") || article; }
 
 function asPopover(note, on) {
@@ -167,7 +172,7 @@ function openAsPopover(note, marker) {
   }
 }
 
-for (const marker of markers) {
+for (const marker of markers.filter((m) => m.matches("a.nref"))) {
   const note = noteOf(marker);
   if (!note) continue;
   marker.setAttribute("aria-controls", note.id);
@@ -200,6 +205,7 @@ function layoutNotes() {
   if (!article) return;
   article.querySelectorAll(".sn-more").forEach((b) => b.remove());
   const notes = markers.map(noteOf).filter(Boolean);
+  body.classList.toggle("mn-on", wide.matches);
   if (!wide.matches) {
     article.classList.remove("sn-laid");
     article.style.minHeight = "";
@@ -211,13 +217,17 @@ function layoutNotes() {
   // Three passes, so the browser lays the page out once rather than once per note (M8: the longest page
   // took 1.4 s): (1) every note into the margin; (2) read every marker's place and every note's height,
   // which do not depend on each other, since laid-out notes are out of the flow; (3) place them.
-  const pairs = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
-  for (const [, note] of pairs) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
+  const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
+  for (const [, note] of all) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
   const rem = parseFloat(getComputedStyle(article).fontSize);
   const LIMIT = 14 * rem; // how far a note may drift below its marker
   const GAP = 0.4 * rem;
   const art = article.getBoundingClientRect();
-  const anchors = pairs.map(([m]) => m.getBoundingClientRect().top - art.top);
+  // Burton's markers and the margin anchors are interleaved by where they stand on the page, Burton's first on a tie
+  const tops = new Map(all.map(([m]) => [m, m.getBoundingClientRect().top - art.top]));
+  const pairs = all.map((p, i) => [p, i]).sort(([[a], i], [[b], j]) => (tops.get(a) - tops.get(b)) ||
+    (a.matches("a.nref") ? 0 : 1) - (b.matches("a.nref") ? 0 : 1) || i - j).map(([p]) => p);
+  const anchors = pairs.map(([m]) => tops.get(m));
   const heights = pairs.map(([, n]) => n.getBoundingClientRect().height);
   let buttonH = null;
   let floor = -Infinity;
@@ -269,6 +279,133 @@ if (article) {
   new ResizeObserver(scheduleLayout).observe(article);
 }
 
+// ---------------------------------------------------------------- what each note is on
+// Each margin item covers some of Burton's words (owner, 2026-11-03, T4 B): a note of his, the words from its
+// marker to the next stop; a translation, its passage; one of Gowland's notes, the words it is on. Hovering either
+// lights both; a click on those words, or on the item, pins them. The words are lit with the CSS Highlight API, so
+// the text's markup is never changed.
+const SKIP = ".sidenote, .mn, .ft, .nref, .mref, .gowland-tr, .gowland-verse, .cx-b, .sr-only, .st-mark, .prov";
+const STOP = /[,;:.!?)]/;
+const spans = new Map(); // margin item -> Range over its words
+
+function textAfter(start, block, accept) {
+  // walk the visible text after `start` inside `block`; accept(text node, offset) returns an end offset or -1
+  const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT,
+    { acceptNode: (n) => n.parentElement.closest(SKIP) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+  walker.currentNode = start;
+  let first = null, last = null;
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    if (!start.compareDocumentPosition || !(start.compareDocumentPosition(n) & Node.DOCUMENT_POSITION_FOLLOWING)) continue;
+    first ||= n;
+    const end = accept(n);
+    if (end >= 0) { last = [n, end]; break; }
+    last = [n, n.length];
+  }
+  if (!first || !last) return null;
+  const r = document.createRange();
+  r.setStart(first, 0);
+  r.setEnd(last[0], last[1]);
+  return r;
+}
+
+function spanOf(marker) {
+  const block = blockOf(marker);
+  if (marker.dataset.fo) {
+    const fo = document.querySelector(`.fp[data-fid="${CSS.escape(marker.dataset.fo)}"] > .fo`);
+    if (!fo) return null;
+    const r = document.createRange();
+    r.selectNodeContents(fo);
+    return r;
+  }
+  if (marker.classList.contains("mref")) {
+    let left = Number(marker.dataset.len || 0);
+    if (!left) return null;
+    return textAfter(marker, block, (n) => { if (n.length >= left) return left; left -= n.length; return -1; });
+  }
+  let lead = true; // skip the space after the marker, then stop before the next punctuation
+  return textAfter(marker, block, (n) => {
+    const s = n.data;
+    for (let i = 0; i < s.length; i++) {
+      if (lead && /\s/.test(s[i])) continue;
+      lead = false;
+      if (STOP.test(s[i])) return i;
+    }
+    return -1;
+  });
+}
+
+const canHighlight = typeof Highlight === "function" && CSS.highlights;
+let hot = null, pinned = null;
+function light(item) {
+  if (hot === item) return;
+  hot?.classList.remove("hot");
+  hot = item;
+  item?.classList.add("hot");
+  if (!canHighlight) return;
+  const ranges = [item, pinned].filter(Boolean).map((i) => spans.get(i)).filter(Boolean);
+  CSS.highlights.set("note-words", new Highlight(...ranges));
+}
+function pin(item) {
+  pinned?.classList.remove("pinned");
+  pinned = pinned === item ? null : item;
+  pinned?.classList.add("pinned");
+  hot = null;
+  light(item);
+}
+
+if (article) {
+  for (const m of markers) {
+    const item = noteOf(m);
+    if (!item) continue;
+    try { const r = spanOf(m); if (r && !r.collapsed) spans.set(item, r); } catch { /* a block the walker cannot read */ }
+    item.addEventListener("mouseenter", () => light(item));
+    item.addEventListener("mouseleave", () => light(pinned));
+    item.addEventListener("click", (ev) => { if (!ev.target.closest("a, summary, .prov")) pin(item); });
+  }
+  const at = (ev) => {
+    const pos = document.caretPositionFromPoint?.(ev.clientX, ev.clientY);
+    const node = pos ? pos.offsetNode : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startContainer;
+    const off = pos ? pos.offset : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startOffset;
+    if (!node) return null;
+    let best = null, size = Infinity;
+    for (const [item, r] of spans) {
+      try {
+        if (!r.isPointInRange(node, off)) continue;
+        const s = r.toString().length;
+        if (s < size) { best = item; size = s; }
+      } catch { /* node in another tree */ }
+    }
+    return best;
+  };
+  let frame = 0;
+  article.addEventListener("mousemove", (ev) => {
+    if (ev.target.closest(".sidenote, .mn, .sn-more")) return;
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => light(at(ev) || pinned));
+  });
+  article.addEventListener("mouseleave", () => light(pinned));
+  // keyboard: focusing a passage lights its card (and the card reads out through aria-describedby on narrow screens)
+  article.addEventListener("focusin", (ev) => {
+    const fid = ev.target.closest?.(".fp")?.dataset.fid;
+    const card = fid && document.getElementById(`mt-${fid}`);
+    if (card) light(card);
+  });
+  article.addEventListener("focusout", () => light(pinned));
+  article.addEventListener("click", (ev) => {
+    if (ev.target.closest("a, button, .sidenote, .mn, summary") || getSelection().toString()) return;
+    const item = at(ev);
+    if (!item) return;
+    if (wide.matches && !item.classList.contains("sn-stacked")) pin(item);
+    else if (canPopover) { // narrow screens: the item opens beside the words tapped
+      closeNote(false);
+      asPopover(item, true);
+      item.showPopover();
+      placePopover(item, { getBoundingClientRect: () => new DOMRect(ev.clientX, ev.clientY - 12, 1, 22) });
+    }
+  });
+  document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && pinned) pin(pinned); });
+}
+
 // ---------------------------------------------------------------- translations
 for (const fp of document.querySelectorAll(".fp")) {
   const fid = fp.dataset.fid;
@@ -289,7 +426,9 @@ for (const fp of document.querySelectorAll(".fp")) {
   fp.addEventListener("click", (ev) => {
     if (ev.target.closest("a")) return;
     if (body.classList.contains("mode-english")) fp.classList.toggle("show-orig");
-    else if (body.classList.contains("mode-gloss")) fp.classList.toggle("pinned");
+    else if (body.classList.contains("mode-gloss") && (!body.classList.contains("mn-on") || fp.closest(".sidenote"))) {
+      fp.classList.toggle("pinned");
+    }
   });
   const ft = fp.querySelector(":scope > .ft");
   if (ft) {

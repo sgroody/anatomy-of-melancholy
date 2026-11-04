@@ -277,15 +277,16 @@ def site_results(units: list[str]) -> list[Result]:
                 # from the 1927 OCR (data/source/djs/), and their own bracketed glosses can coincide with
                 # Gowland's ("[saviours] servatores", 2.1.1.1)
                 tree = parse(page)[0]
-                for v in by_class(tree, "ft-djs1927"):
+                for v in by_class(tree, "ft-djs1927") + tree.xpath("//*[@data-src='djs1927']"):  # boxes, margin cards
                     drop_keeping_tail(v)
                 shown = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)
                                  .replace(chr(0xAD), "").split())
                 # the page's own text, without the translation boxes: a machine translation may match a
                 # literal bracket word for word ("I came to Athens, and no one knew me"); a Gowland version
                 # rendered in a box is caught by its data-resp="gowland" markup above
-                for ft in by_class(tree, "ft"):
-                    drop_keeping_tail(ft)
+                for cls in ("ft", "mn", "sn-tr"):  # the boxes, and the margin cards and note lines (2026-11-03)
+                    for ft in by_class(tree, cls):
+                        drop_keeping_tail(ft)
                 own = " ".join(html.escape("".join(tree.getroot().itertext()), quote=False)
                                .replace(chr(0xAD), "").split())
                 for t in root.iter(f"{ED}trans", f"{ED}verse-trans", f"{ED}block"):

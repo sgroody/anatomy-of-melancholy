@@ -24,7 +24,7 @@ from markupsafe import Markup
 from .. import paths
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, fonts, frontispiece, glosses, search, synopsis
+from . import authors_pages, fonts, frontispiece, glosses, gowland_notes, search, synopsis
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -236,8 +236,13 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
                                    verified=layer_for(unit, "source-verification"), findings=findings,
                                    xrefs=xrefs_for(unit, titles), plate=plate if unit == "argument" else None,
-                                   pagemap=pagemap, glosses=glosses.items_for(unit, profile, gstats),
-                                   restored=layer_for(unit, "restored-notes"))
+                                   # Gowland's own glosses are margin items now (gowland_notes), so the optional
+                                   # in-line glosses keep only Webster's and the machine ones
+                                   pagemap=pagemap, glosses=glosses.items_for(unit, "public", gstats),
+                                   restored=layer_for(unit, "restored-notes"),
+                                   gowland_entries=(gowland_notes.entries(unit, gstats)
+                                                    if profile == "private" else None),
+                                   cexp=layer_for(unit, "citation-expansions"))
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         report["units"][unit] = counts

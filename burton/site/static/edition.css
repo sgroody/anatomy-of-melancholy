@@ -10,6 +10,10 @@
   --pop-bg: #fffdf8;
   --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.16);
   --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
+  /* languages and the kinds of margin note (owner, 2026-11-03: T3 A, T7 A) */
+  --la: #2c6150; --grc: #36508f; --enm: #7a4f14; --modern: #5b4a7a;
+  --k-gloss: #9a6408; --k-cite: #4b5d80; --k-expl: #6d4a80;
+  --hot: color-mix(in srgb, #d9a520 26%, transparent);
   --measure: 34rem;
   --margin-col: 15rem;
   --gap: 2.5rem;
@@ -19,12 +23,16 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+    --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; --k-gloss: #e2b45c; --k-cite: #9fb0d4;
+    --k-expl: #c3a3d6; --hot: color-mix(in srgb, #e0b040 24%, transparent);
     --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --la: #8cc9b3; --grc: #a3b5ee; --enm: #dcb478; --modern: #c4b2e6; --k-gloss: #e2b45c; --k-cite: #9fb0d4;
+  --k-expl: #c3a3d6; --hot: color-mix(in srgb, #e0b040 24%, transparent);
   --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
   color-scheme: dark;
 }
@@ -202,6 +210,73 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
   }
   .sn-more::after { content: ""; display: inline-block; margin-left: 0.4em; border: 0.3em solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: 0.1em; }
 }
+
+/* ------------------------------------------------------------ the edition's margin items (owner, 2026-11-03) */
+/* translations of the text and Gowland's notes: laid out with Burton's notes beside their anchors (edition.js);
+   without script they follow the text as a list */
+.mref { display: inline; }
+.mn-pool { display: none; }
+.unit:not(.sn-laid) .mn-pool { display: block; margin-top: 2rem; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
+.mn { display: block; font-size: 0.78em; line-height: 1.35; color: var(--note-ink); text-indent: 0; text-align: left;
+  hyphens: manual; font-style: normal; font-weight: 400; margin: 0 0 0.4rem; }
+.mn-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.15em; color: var(--muted); }
+.mn-lem { color: var(--muted); }
+.mn-src, .mn-h { font-size: 0.88em; color: var(--muted); }
+.mn-h { font-variant-caps: all-small-caps; letter-spacing: 0.06em; margin-right: 0.3em; }
+.mn-sub, .mn-alt { display: block; margin-top: 0.15em; }
+.mn-more { margin-top: 0.1em; }
+.mn-more > summary { cursor: pointer; color: var(--muted); font-size: 0.85em; list-style: none; display: inline; }
+.mn-more > summary::before { content: "+ "; }
+.mn-more[open] > summary::before { content: "− "; }
+.mn-gw[data-kind="gloss"] .mn-k { color: var(--k-gloss); }
+.mn-gw[data-kind="source"] .mn-k { color: var(--k-cite); }
+.mn-gw[data-kind="identity"] .mn-k, .mn-gw[data-kind="explanation"] .mn-k { color: var(--k-expl); }
+.mn[popover]:not(:popover-open) { display: none; } /* a closed pop-up stays closed whatever .mn says */
+.mn[popover]:popover-open {
+  position: fixed; inset: auto; left: var(--pop-x, 16px); top: var(--pop-y, 16px); width: var(--pop-w, 22rem);
+  max-height: 60vh; overflow: auto; margin: 0; padding: 0.5rem 0.7rem; background: var(--pop-bg);
+  border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.8rem;
+}
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-pool { display: contents; }
+  .unit.sn-laid .mn:not(.sn-stacked) { position: absolute; left: calc(100% + var(--gap)); margin: 0; width: var(--margin-col); }
+  .unit.sn-laid .mn.sn-stacked:not(:popover-open) { display: none; }
+}
+/* a translation and its passage share the passage's language colour (T7 A); "from Latin" is said by the colour
+   and the card's label, and by the accessible name */
+.mn-tr .mn-tx, .mn-own { color: var(--tr-ink, var(--ink)); }
+.mn[data-lang="la"] { --tr-ink: var(--la); } .mn[data-lang="grc"] { --tr-ink: var(--grc); } .mn[data-lang="enm"] { --tr-ink: var(--enm); }
+.mn[data-lang="it"], .mn[data-lang="fr"], .mn[data-lang="es"], .mn[data-lang="de"], .mn[data-lang="nl"] { --tr-ink: var(--modern); }
+.mn-tr .mn-k, .mn-own .mn-k { color: var(--tr-ink); }
+.mn-on .unit .fo[lang="la"] { color: var(--la); } .mn-on .unit .fo[lang="grc"] { color: var(--grc); }
+.mn-on .unit .fo[lang="enm"] { color: var(--enm); }
+.mn-on .unit .fo:is([lang="it"], [lang="fr"], [lang="es"], [lang="de"], [lang="nl"]) { color: var(--modern); }
+.mn-on .fo { text-decoration: none; cursor: inherit; }
+/* in the margin layout a passage's translation is its card, not a box over the text */
+.mn-on.mode-gloss .unit .fp:hover > .ft, .mn-on.mode-gloss .unit .fp:focus-within > .ft { display: none; }
+/* a note and the words it is on, lit together; a click pins them */
+::highlight(note-words) { background-color: var(--hot); }
+.sidenote.hot, .mn.hot { background: var(--hot); border-radius: 2px; }
+.sidenote.pinned, .mn.pinned { outline: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+/* the ◇ that carries a machine item's provenance (owner, 2026-11-03) */
+.prov { font-size: 0.8em; color: var(--muted); cursor: help; font-style: normal; }
+.prov::before { content: "◇"; }
+/* a citation in Burton's note, shown expanded in its place; his own abbreviation on hover or by option */
+.cx-b { display: none; }
+.show-abbr .cx-b { display: inline; }
+.show-abbr .cx-e { display: none; }
+.cx-e a.cx-a { color: inherit; text-decoration-color: var(--rule); }
+
+/* Latin in Burton's own notes: its preferred translation after the note, one line each, in the same colour; the
+   note's own box over the Latin is not used in the margin layout */
+.sn-tr { display: none; }
+.mn-on.mode-gloss .unit .sn-tr, .sidenote[popover] .sn-tr { display: block; margin-top: 0.1em; }
+.sn-tr .mn-tx { color: var(--tr-ink, var(--la)); }
+.sn-tr[data-lang="grc"] { --tr-ink: var(--grc); } .sn-tr[data-lang="enm"] { --tr-ink: var(--enm); }
+.mn-on.mode-gloss .unit .sidenote .fp:hover > .ft, .mn-on.mode-gloss .unit .sidenote .fp:focus-within > .ft { display: none; }
+.mn-on .unit .sidenote .fo[lang="la"] { color: var(--la); }
+.sn-more { white-space: nowrap; width: auto; }
+.cx-e a.cx-a { text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 
 /* ------------------------------------------------------------ foreign passages and translations */
 .fp { position: relative; }
