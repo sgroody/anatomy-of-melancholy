@@ -84,6 +84,16 @@ if (reset) {
 }
 syncInputs();
 
+// the light/dark switch in the running head (owner, 2026-11-04): flips whatever is showing, and remembers it
+const darkNow = () => html.dataset.theme === "dark" ||
+  (!html.dataset.theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+document.querySelector(".theme-toggle")?.addEventListener("click", () => {
+  settings.theme = darkNow() ? "light" : "dark";
+  save(settings);
+  syncInputs();
+  apply();
+});
+
 const panel = document.getElementById("settings");
 const toggle = document.querySelector(".settings-toggle");
 function setPanel(open, focusToggle) {
@@ -124,7 +134,8 @@ const article = document.querySelector("article.unit");
 // Gowland's notes), in reading order; each is laid out beside its anchor by the same pass.
 const markers = [...document.querySelectorAll("a.nref, span.mref")];
 const canPopover = typeof HTMLElement.prototype.showPopover === "function";
-const expanded = new Set(); // paragraphs whose stack the reader opened
+const opened = new WeakSet(); // notes the reader opened to read whole
+const FOLD_LINES = 4, FOLD_SHORT = 2, FOLD_ONE = 1; // how many lines a shortened note keeps
 let openNote = null;
 
 function noteOf(marker) {
@@ -234,21 +245,25 @@ function layoutNotes() {
   if (!isWide()) {
     article.classList.remove("sn-laid");
     article.style.minHeight = "";
-    notes.forEach((n) => { n.classList.remove("sn-stacked"); n.style.top = ""; asPopover(n, true); });
+    notes.forEach((n) => { n.classList.remove("sn-stacked", "mn-fold"); n.style.top = ""; asPopover(n, true); });
     return;
   }
   closeNote(false);
   article.classList.add("sn-laid");
-  // Three passes, so the browser lays the page out once rather than once per note (M8: the longest page
-  // took 1.4 s): (1) every note into the margin; (2) read every marker's place and every note's height,
-  // which do not depend on each other, since laid-out notes are out of the flow; (3) place them.
-  // with translations in the line (stage 7), their margin cards are not shown and take no room
+  // The browser lays the page out a fixed number of times, not once per note (M8: the longest page took 1.4 s):
+  // (1) every note into the margin, unshortened; (2) read every marker's place and every note's height, which do not
+  // depend on each other, since laid-out notes are out of the flow; (3) place them, in arithmetic only.
+  // With translations in the line (stage 7), their margin cards are not shown and take no room.
   const inLine = body.classList.contains("mode-english");
   const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n && !(inLine && n.classList.contains("mn-tr")));
-  for (const [, note] of all) { note.classList.remove("sn-stacked"); asPopover(note, false); note.style.top = ""; }
+  for (const [, note] of all) {
+    note.classList.remove("sn-stacked", "mn-fold", "mn-fold2", "mn-fold3", "mn-l");
+    asPopover(note, false);
+    note.style.top = "";
+  }
   checkFolds(article);
   const rem = parseFloat(getComputedStyle(article).fontSize);
-  const LIMIT = 14 * rem; // how far a note may drift below its marker
+  const LIMIT = 14 * rem; // a note further than this below its marker makes the notes around it shorten
   const GAP = 0.4 * rem;
   const art = article.getBoundingClientRect();
   // Burton's markers and the margin anchors are interleaved by where they stand on the page, Burton's first on a tie
@@ -261,53 +276,65 @@ function layoutNotes() {
   const two = twoSide.matches;
   body.classList.toggle("two-side", two);
   const SWITCH = 3 * rem;
-  for (const [, n] of pairs) n.classList.remove("mn-l");
-  // margin widths are read after the class change, so heights are measured in the column each item will use
   const anchors = pairs.map(([m]) => tops.get(m));
-  const heights = pairs.map(([, n]) => n.getBoundingClientRect().height);
-  let buttonH = null;
-  const floors = { r: -Infinity, l: -Infinity };
-  let floor = -Infinity;
-  let stack = null; // {block, notes, button}
-  pairs.forEach(([marker, note], i) => {
-    const block = blockOf(marker);
-    const anchor = anchors[i];
-    let side = "r";
-    if (two) {
-      const pref = note.classList.contains("mn-gw") ? "l" : "r", other = pref === "l" ? "r" : "l";
-      const yp = Math.max(anchor, floors[pref] + GAP), yo = Math.max(anchor, floors[other] + GAP);
-      side = yp - anchor > SWITCH && yo < yp ? other : pref;
-    }
-    floor = floors[side];
-    const y = Math.max(anchor, floor + GAP);
-    const overflow = y - anchor > LIMIT && !expanded.has(block);
-    if (overflow || (stack && stack.block === block)) {
-      note.classList.add("sn-stacked");
-      asPopover(note, true);
-      if (!stack || stack.block !== block) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = side === "l" ? "sn-more mn-l" : "sn-more";
-        button.setAttribute("aria-expanded", "false");
-        button.style.top = `${y}px`;
-        article.appendChild(button);
-        button.addEventListener("click", () => { expanded.add(block); layoutNotes(); });
-        stack = { block, notes: [], button };
-        if (buttonH === null) { button.textContent = "1 more note"; buttonH = button.getBoundingClientRect().height; }
-        floors[side] = y + buttonH;
+  const full = pairs.map(([, n]) => n.getBoundingClientRect().height);
+  // Nothing is held back (owner, 2026-11-04): where notes would drift too far below their words, the long ones in that
+  // stretch are shortened to FOLD_LINES lines, with "more" to read them whole (which pushes the rest down).
+  // A second, shorter fold (FOLD_SHORT lines) is used only where the first is not enough (one margin, many notes).
+  const noteSize = pairs.length ? parseFloat(getComputedStyle(pairs[0][1]).fontSize) : rem;
+  const foldHs = [Infinity, ...[FOLD_LINES, FOLD_SHORT, FOLD_ONE].map((n) => n * 1.35 * noteSize)];
+  const place = (h) => {
+    const floors = { r: -Infinity, l: -Infinity }, ys = [], sides = [];
+    pairs.forEach(([, note], i) => {
+      const anchor = anchors[i];
+      let side = "r";
+      if (two) {
+        const pref = note.classList.contains("mn-gw") ? "l" : "r", other = pref === "l" ? "r" : "l";
+        const yp = Math.max(anchor, floors[pref] + GAP), yo = Math.max(anchor, floors[other] + GAP);
+        side = yp - anchor > SWITCH && yo < yp ? other : pref;
       }
-      stack.notes.push(note);
-      const n = stack.notes.length;
-      stack.button.textContent = `${n} more note${n > 1 ? "s" : ""}`;
-      stack.button.setAttribute("aria-label", `${n} more note${n > 1 ? "s" : ""} for this paragraph: show them in the margin`);
-      return;
+      const y = Math.max(anchor, floors[side] + GAP);
+      ys.push(y);
+      sides.push(side);
+      floors[side] = y + h[i];
+    });
+    return { ys, sides, floors };
+  };
+  const h = full.slice(), fold = pairs.map(() => 0); // 0 whole, 1 four lines, 2 two lines, 3 one line
+  let p = place(h);
+  for (let round = 0; round < 8; round++) {
+    let changed = false;
+    p.ys.forEach((y, i) => {
+      if (y - anchors[i] <= LIMIT) return;
+      let j = i; // back to where the run of pushed notes began
+      while (j > 0 && p.ys[j] > anchors[j] + 1) j--;
+      const level = Math.min(3, 1 + Math.floor(round / 2)); // two rounds of each fold, shortest last
+      for (let k = j; k <= i; k++) {
+        if (fold[k] < level && !opened.has(pairs[k][1]) && full[k] > foldHs[level] * 1.3) {
+          fold[k] = level; h[k] = foldHs[level]; changed = true;
+        }
+      }
+    });
+    if (!changed && round >= 4) break;
+    if (changed) p = place(h);
+  }
+  pairs.forEach(([, note], i) => {
+    note.classList.toggle("mn-l", p.sides[i] === "l");
+    note.classList.toggle("mn-fold", fold[i] > 0);
+    note.classList.toggle("mn-fold2", fold[i] === 2);
+    note.classList.toggle("mn-fold3", fold[i] === 3);
+    if (fold[i] && !note.querySelector(":scope > .fold-more")) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "fold-more";
+      b.textContent = "more";
+      b.setAttribute("aria-label", "Show the whole note");
+      b.addEventListener("click", (ev) => { ev.stopPropagation(); opened.add(note); scheduleLayout(); });
+      note.append(b);
     }
-    stack = null;
-    note.classList.toggle("mn-l", side === "l");
-    note.style.top = `${y}px`;
-    floors[side] = y + heights[i];
+    note.style.top = `${p.ys[i]}px`;
   });
-  const end = Math.max(floors.r, floors.l);
+  const end = Math.max(p.floors.r, p.floors.l);
   article.style.minHeight = end > 0 ? `${Math.ceil(end)}px` : "";
 }
 
@@ -318,8 +345,10 @@ function scheduleLayout() {
   pending = requestAnimationFrame(layoutNotes);
 }
 if (article) {
-  wide.addEventListener("change", () => { expanded.clear(); scheduleLayout(); });
-  twoSide.addEventListener("change", () => { expanded.clear(); scheduleLayout(); });
+  wide.addEventListener("change", scheduleLayout);
+  twoSide.addEventListener("change", scheduleLayout);
+  // a "+ more" opened or closed inside a note changes its height: the notes below move with it
+  article.addEventListener("toggle", (ev) => { if (ev.target.closest?.(".mn, .sidenote")) scheduleLayout(); }, true);
   window.addEventListener("resize", scheduleLayout);
   document.fonts?.ready.then(scheduleLayout);
   window.addEventListener("load", scheduleLayout);
@@ -382,21 +411,23 @@ function spanOf(marker) {
 }
 
 const canHighlight = typeof Highlight === "function" && CSS.highlights;
-let hot = null, pinned = null;
-function light(item) {
-  if (hot === item) return;
-  hot?.classList.remove("hot");
-  hot = item;
-  item?.classList.add("hot");
+// A word with several notes (a gloss inside a passage with a broader note) lights all of them (owner, 2026-11-04).
+let hot = [], pinned = null;
+function light(items) {
+  items = [items].flat().filter(Boolean);
+  if (items.length === hot.length && items.every((x, i) => x === hot[i])) return;
+  hot.forEach((x) => x.classList.remove("hot"));
+  hot = items;
+  hot.forEach((x) => x.classList.add("hot"));
   if (!canHighlight) return;
-  const ranges = [item, pinned].filter(Boolean).map((i) => spans.get(i)).filter(Boolean);
+  const ranges = [...hot, pinned].filter(Boolean).map((i) => spans.get(i)).filter(Boolean);
   CSS.highlights.set("note-words", new Highlight(...ranges));
 }
 function pin(item) {
   pinned?.classList.remove("pinned");
   pinned = pinned === item ? null : item;
   pinned?.classList.add("pinned");
-  hot = null;
+  hot = [];
   light(item);
 }
 
@@ -413,22 +444,18 @@ if (article) {
     const pos = document.caretPositionFromPoint?.(ev.clientX, ev.clientY);
     const node = pos ? pos.offsetNode : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startContainer;
     const off = pos ? pos.offset : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startOffset;
-    if (!node) return null;
-    let best = null, size = Infinity;
+    if (!node) return [];
+    const found = [];
     for (const [item, r] of spans) {
-      try {
-        if (!r.isPointInRange(node, off)) continue;
-        const s = r.toString().length;
-        if (s < size) { best = item; size = s; }
-      } catch { /* node in another tree */ }
+      try { if (r.isPointInRange(node, off)) found.push([r.toString().length, item]); } catch { /* another tree */ }
     }
-    return best;
+    return found.sort((a, b) => a[0] - b[0]).map(([, item]) => item); // the narrowest first
   };
   let frame = 0;
   article.addEventListener("mousemove", (ev) => {
     if (ev.target.closest(".sidenote, .mn, .sn-more")) return;
     cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => light(at(ev) || pinned));
+    frame = requestAnimationFrame(() => { const items = at(ev); light(items.length ? items : pinned); });
   });
   article.addEventListener("mouseleave", () => light(pinned));
   // keyboard: focusing a passage lights its card (and the card reads out through aria-describedby on narrow screens)
@@ -440,7 +467,7 @@ if (article) {
   article.addEventListener("focusout", () => light(pinned));
   article.addEventListener("click", (ev) => {
     if (ev.target.closest("a, button, .sidenote, .mn, summary") || getSelection().toString()) return;
-    const item = at(ev);
+    const item = at(ev)[0];
     if (!item) return;
     if (isWide() && !item.classList.contains("sn-stacked")) pin(item);
     else if (canPopover) { // narrow screens: the item opens beside the words tapped

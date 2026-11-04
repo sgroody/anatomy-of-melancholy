@@ -22,7 +22,10 @@ AXE = paths.ROOT / "tests" / "browser" / "node_modules" / "axe-core" / "axe.min.
 SAMPLE = ["", "about/", "settings/", "search/", "p1/", "p2/", "p3/", "p1/synopsis/", "argument/", "dedication/", "abstract/", "djr/",
           "lectori/", "heraclite/", "1.1.1.1/", "1.1.1.2/", "1.1.3.2/", "3.2.4.1/", "1.2.4.6/", "2.3.3.1/",
           "3.2.5.5/", "2.4.1.3/"]
-LIMIT_REM = 14  # must match edition.js: the furthest a laid-out note may drift below its marker
+LIMIT_REM = 14  # must match edition.js: past this, the notes before a note are shortened
+# Nothing is held back any more (owner, 2026-11-04): a run of notes already shortened to one line may still drift past
+# LIMIT_REM on a narrow wide window (djr at 1,100 px: 24.7 rem); twice the limit is the bound
+DRIFT_BOUND_REM = 2 * LIMIT_REM
 
 
 def built(site: Path, rels: list[str]) -> list[str]:
@@ -191,7 +194,8 @@ def keyboard_check(profile: str = "private") -> Result:
             if f.startswith("a#ref-"):
                 seen_marker = True
             # its box beside it, or (margin layout, 2026-11-03) its card in the margin, lit
-            if ".fo" in f and pg.evaluate("(() => { const a = document.activeElement, fid = a.closest('.fp')?.dataset.fid;"
+            # the passage's own class "fo" (not "fold-more", the button that opens a shortened note: stage 8)
+            if "fo" in f.split(".")[1:] and pg.evaluate("(() => { const a = document.activeElement, fid = a.closest('.fp')?.dataset.fid;"
                                           " const c = fid && document.getElementById('mt-' + fid);"
                                           " return getComputedStyle(a.nextElementSibling).display !== 'none'"
                                           " || !!(c && c.classList.contains('hot')); })()"):
@@ -260,10 +264,12 @@ def keyboard_check(profile: str = "private") -> Result:
             step(focused(pg).startswith(f"li#{target}") and pg.is_visible(f"#{target} > .syn-row"),
                  f"a cross-key should reveal and focus its branch, got {focused(pg)}")
             link = pg.evaluate("""async () => { const r = await fetch('../../1.2.3.12/'); if (!r.ok) return null;
-                const m = (await r.text()).match(/class="syn-here"><a href="([^"]+)"/); return m && m[1]; }""")
+                const m = (await r.text()).match(/class="sb-step syn-node"[^>]*href="([^"]+)"/); return m && m[1]; }""")
+            step(bool(link), "a unit page should carry its synopsis mark (N1 D)")
             if link:
                 pg.goto(base + "1.2.3.12/")
-                pg.click(".syn-here a")
+                pg.focus(".syn-badge")  # the mark opens its path on focus
+                pg.click("a.syn-node")
                 pg.wait_for_timeout(200)
                 step(focused(pg).startswith("li#" + link.split("#")[1]),
                      f"a unit's synopsis link should land on its node, got {focused(pg)}")
@@ -296,6 +302,7 @@ LAYOUT_JS = """() => {
   }
   const more = [...document.querySelectorAll('.sn-more')];
   return {notes: notes.length, laid: laid.length, stacked: notes.length - laid.length, stacks: more.length,
+          folded: document.querySelectorAll('.mn-fold').length,
           overlaps, maxDrift: Math.round(maxDrift * 10) / 10, inText: outside,
           left: rects.filter(r => r.right <= box.left + 0.5).length};
 }"""
@@ -323,7 +330,7 @@ MARKER_LINE_JS = """() => {
 
 
 def layout_check(profile: str = "private") -> Result:
-    r = Result("L1", "sidenote layout: no overlaps, drift within the limit, markers on their word's line")
+    r = Result("L1", "sidenote layout: none held back, no overlaps, drift within the bound, markers on their word’s line")
     site = paths.SITE / profile
     units = [u.rstrip("/") for u in built(site, ["3.2.4.1/", "1.1.3.2/", "1.2.4.6/", "1.1.1.2/", "djr/"])]
     tot = {"pages": 0, "notes": 0, "stacked": 0, "overlaps": 0, "max_drift_rem": 0.0, "marker_breaks": 0}
@@ -344,14 +351,16 @@ def layout_check(profile: str = "private") -> Result:
                 tot["max_drift_rem"] = max(tot["max_drift_rem"], m["maxDrift"])
                 if m["overlaps"]:
                     r.fail(f"{u} at {width}px ({mode}): {m['overlaps']} overlapping notes")
-                if m["maxDrift"] > LIMIT_REM + 0.5:
+                if m["maxDrift"] > DRIFT_BOUND_REM:
                     r.fail(f"{u} at {width}px ({mode}): a note drifts {m['maxDrift']} rem below its marker")
+                if m["stacked"] or m["stacks"]:
+                    r.fail(f"{u} at {width}px ({mode}): {m['stacked']} notes held back in {m['stacks']} stacks")
                 if m["inText"]:
                     r.fail(f"{u} at {width}px: {m['inText']} notes overlap the text column")
                 if width >= 1600 and not m["left"] and m["notes"] > 10:
                     r.fail(f"{u} at {width}px: no item in the left margin")
                 if u == "3.2.4.1" and width == 1280:
-                    r.counts["densest_3.2.4.1"] = f"{m['notes']} notes, {m['stacked']} stacked in {m['stacks']} stacks"
+                    r.counts["densest_3.2.4.1"] = f"{m['notes']} notes, {m['folded']} shortened, {m['stacked']} held back"
             ctx.close()
         # interlinear glosses are atomic inline boxes, which allow a break before them: without the
         # word joiner after each marker, 62 markers in these pages part from their word

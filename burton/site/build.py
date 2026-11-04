@@ -224,6 +224,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             toc=Markup(toc_html(book, root, key, ids=False)), **kw)
 
     back = synopsis.back_links([pg.key for pg in book.partitions], book.units)  # unit -> its node in the synopsis
+    plain = {u: book.pages[u].title for u in book.units if u in book.pages}  # for the synopsis mark (N1 D)
 
     # where each Penguin page begins, for the Table's locators (private build only: the numbers are Gowland's)
     pagemap = {}
@@ -271,7 +272,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         here = back.get(unit)
         page(unit, f"{unit}/index.html", "unit.html", page=pg, body=Markup(body),
              hidden_h1=None if has_h1 else pg.title,
-             synopsis_href=f"../{here[0]}/synopsis/#{here[1]}" if here else None,
+             place=Markup(synopsis.branch_html(unit, here[0], here[1], "../", plain)) if here else None,
              title=pg.title if pg.kind in ("front", "back") else f"{unit} {pg.title}",
              description=f"Burton, The Anatomy of Melancholy, {pg.title}")
 

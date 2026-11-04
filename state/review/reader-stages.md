@@ -89,3 +89,76 @@ Round 4 page for those notes: `state/review/ab-2026-11-04.html` (served by `revi
 fonts from site/private, so build first). Tests N1 synopsis position, N2 search and options, N3 synopses on the home
 page, N4 language colours (light and dark), N5 a mark for Burton's notes, N6 a sign for Gowland. The subtitle "An
 Englished Reader" is done directly (header, every page).
+
+# Round 4 answers and the owner's notes of 2026-11-04
+
+Round 4: N1 D (a mark that opens the branch) · N2 C (title centred, two quiet signs) · N3 Neither ("Reflect on
+aesthetic design principles and come up with something that matches both Burton's original and our front page") ·
+N4 D (a different colour by night), "but let me see what it would look like if the Latin were some shade of red. Most
+of the non-English is Latin so it's important that it looks right" · N5 C (a rubric rule beside his notes) · N6 D
+(a raised small-capital g).
+
+Notes (owner's words condensed; grouped into the stages below):
+* Fonts: explore fonts that capture Burton's original printing; italics in a slightly different face? marginalia in
+  one, yet distinct? Where Burton glosses a statement with Latin, make that more distinct.
+* "+ more" expands over the notes below instead of pushing them down; things must never overlay each other.
+* The reader asks for manual expansion of notes ("n more notes") when the margin has room: it should never hold back
+  new notes, only shorten a long note with a way to read it in full.
+* Where several notes cover the same thing it is confusing: explore ways to simplify. A word with several notes (a
+  gloss inside a passage with a broader note) lights all of them.
+* "Gowland", "Claude" after a translation are not distinct enough from it: an ascription, not text. "trans." perhaps
+  not in the translated text's colour: the eye should go straight to the text, while a first-time reader still sees
+  what it is.
+* Light/dark switch always at the side, with search and options.
+* The Dedication (the first page after "Enter, gentle Reader"): styled better, uniquely.
+* Facing pages (Ad librum and the like): pointing at a line lights its translation line; no "[TRANSLATION]" heading
+  and no divider; a place for the first note (Haec comice dicta cave ne male capias); explanatory notes between the
+  columns, lighting both passages; Gowland should not have a separate page when he is already facing. Heraclite
+  fleas: Gowland's translation facing too.
+* Synopses break the flow when clicking through ("Burton's synopsis, reproduced as the source prints it"): jump into
+  the first Partition, with the interactive synopsis at the top of each Partition's first page.
+* "How to read this book" begins with a couple of sentences on what this is: the source text and this reader.
+* The note on Praxiteles misses the declined form "Praxitelem": is it a broader class?
+* Restored (Gutenberg) sidenotes: translate them; find out why Gowland left them out.
+* The notes the Claude translation passes wrote: add them (to the margin), after a spot check and an independent
+  audit of their quality.
+* Psalm verses: check them against Burton's words.
+* V5 (deferred): deal with it now.
+* "I should not be seeing things differently out of concerns of a separate public build at this point": no
+  public-build hedges in what the reader shows.
+
+## Plan (2026-11-04)
+
+| Stage | What |
+|---|---|
+| 8 | Decided design: N1 D, N2 C (+ light/dark switch), N4 D colours, N5 C, N6 D, quiet ascriptions, "trans." neutral; the margin never stacks notes (long notes shortened with "more", which pushes the rest down); a word lights all its notes; no public-build hedges in the private reader; the guide's opening |
+| 9 | Front matter: facing pages done properly (line lights line, no heading/divider, first note, notes between, Heraclite, Gowland's pages folded in); the Dedication; synopses at the head of each Partition's first page, not in the click-through |
+| 10 | A/B round 5: typefaces after Burton's printing (text, italic, margin), Latin in shades of red, the synopsis on the home page (N3 again), Burton's English with its Latin |
+| 11 | Data: declined names (Praxitelem), Psalm verses checked, restored notes (why left out; translated), the translation passes' notes (spot check + independent audit, then shown) |
+| 12 | V5: language-ID back to target, with a fresh held-out round |
+
+### Finding (2026-11-04): Gowland entries that do not light their words (the Praxiteles note)
+
+Of 4,392 Gowland entries with words to find, 4,112 are placed on their words and 280 (6.4%) stand at his marker.
+* Declined or variant forms: ~11 recoverable by a stem rule (Praxiteles/Praxitilem, Dionysus/Dionysio, Paeon/Paeoniis,
+  Papinian/Papinianus, tormentum/torment).
+* The lemma is in Burton's sidenote, not his running text (Otho Nicholson, Maecenas, liberales disciplinas): Gowland
+  annotates the notes too. These should sit on the sidenote's words.
+* The lemma is in the paragraph but outside the stretch searched (from the previous endnote marker to this one), e.g.
+  Gentiles, Ethnics in 1.2.1.2.
+Stage 11: the stem rule, the whole-block fallback (unique occurrence only), and entries on sidenote words.
+
+### Finding (2026-11-04): why Gowland left out sidenotes (his "A Note on the Text", EPUB note_on_text.xhtml)
+
+His stated policy, in short: the notes were pruned "aggressively". Latin in a note that Burton translates directly in
+the main text was removed, and notes made up only of such Latin were deleted with their markers; the marginal
+descriptive tags were dropped too. So most restored notes are the Latin of something Burton already renders in his
+own English beside it. For stage 11: show each restored note's tie to Burton's English (the selftrans signals), and
+translate only what his English does not cover; notes Gowland shortened (Latin cut, citation kept) are not restored
+yet and would need a separate comparison with Project Gutenberg #10800.
+
+Added to stage 8 (owner, 2026-11-04, later): an icon for the desktop shortcut (tools/desktop/anatomy.ico, the red
+initial A); a machine translation's ascription is the ◇ alone, not "Claude"; Burton's own rendering in the margin gets
+the rubric rule of his notes; and where Gowland has decided, a passage is not translated over again: 38 passages his one
+bracket translates with the next ("covered"), 67 he glosses in a note ("glossed"), and 408 more that Burton renders
+himself, fully, partly or by paraphrase ("own"); translation cards 5,976 -> 5,871.

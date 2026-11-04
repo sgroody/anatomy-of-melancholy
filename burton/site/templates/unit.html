@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block main %}
 {% if page.gowland %}
-<p class="banner" data-resp="gowland">This page is Angus Gowland’s translation (Penguin, 2021), shown in the private build only.</p>
+<p class="banner" data-resp="gowland">This page is Angus Gowland’s translation (Penguin, 2021).</p>
 {% endif %}
 {% if page.kind == "back" and profile == "private" %}
-<p class="banner" data-resp="gowland">The page numbers are those of the Penguin edition (2021). Each links to the place where that page begins, and is shown in the private build only.</p>
+<p class="banner" data-resp="gowland">The page numbers are those of the Penguin edition (2021). Each links to the place where that page begins.</p>
 {% elif page.kind == "back" %}
 <p class="banner">Burton’s Table refers to pages of a printed edition. This build leaves out those page numbers, so the entries are not linked; use <a href="../search/">Search</a> to find a subject.</p>
 {% endif %}
 {% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
-{% if synopsis_href %}<p class="syn-here"><a href="{{ synopsis_href }}">Where this stands in Burton’s synopsis</a></p>{% endif %}
 {{ body }}
 {% endblock %}

@@ -55,7 +55,7 @@ def label_of(t: dict) -> str:
     if t["by"] == "editor":
         return "Editor's translation"
     if t["by"] == "gowland":
-        return "Gowland 2021 (private build)"
+        return "Gowland 2021"
     return t["by"]
 
 
@@ -69,6 +69,16 @@ def short_label(t: dict) -> str:
     """The visible label: the source's name only; a machine label is completed by prov()."""
     return {"machine": model_name(t.get("model", "")), "djs1927": "Dell & Jordan-Smith", "editor": "Editor",
             "gowland": "Gowland"}.get(t["by"], t["by"])
+
+
+def src_label(t: dict) -> str:
+    """A translation's ascription: Gowland as a small-capital g, his name on hover (owner, 2026-11-04: N6 D); a machine
+    translation by its ◇ alone (the caller adds it); the others by name."""
+    if t["by"] == "gowland":
+        return '<span class="src-g" title="Gowland 2021" aria-label="Gowland">g</span>'
+    if t["by"] == "machine":
+        return ""  # the ◇ alone, which names the model (owner, 2026-11-04: "just the diamond", not "Claude")
+    return esc(short_label(t))
 
 
 def prov(full: str) -> str:
@@ -193,6 +203,7 @@ class Renderer:
         self.initial = None  # the decorated initial: None, "pending" (after the title), "open", "done"
         self.initials: set[str] = set()  # capitals with an initial in this build (none: no initials)
         self.fp_lang: dict[str, str] = {}  # passage id -> its language, for Burton's own renderings (stage 7)
+        self.decided: dict[str, str] = {}  # passage id -> Gowland's decision not to translate it (gowland_decisions)
         self.last_block: tuple[str, int] | None = None  # the previous foreign passage in the text: (id, verse lines)
         self.facing_row: int | None = None  # the line number inside a passage set facing its translation
 
@@ -343,7 +354,7 @@ class Renderer:
             lead = ""
             if self.out and self.out[-1].endswith(" "):
                 self.out[-1], lead = self.out[-1][:-1], " "
-            self.w(f'<span class="gowland-tr" data-resp="gowland" title="Gowland 2021 (private build only)">{lead}')
+            self.w(f'<span class="gowland-tr" data-resp="gowland" title="Gowland 2021">{lead}')
             self.children(e)
             self.w("</span>")
         elif tag == ED("verse-trans"):
@@ -351,7 +362,7 @@ class Renderer:
                 return True
             self.counts["gowland_trans"] += 1
             self.w('<div class="gowland-tr gowland-verse" data-resp="gowland" '
-                   'title="Gowland 2021 (private build only)">')
+                   'title="Gowland 2021">')
             self.children(e)
             self.w("</div>")
         elif tag == ED("block"):
@@ -359,7 +370,7 @@ class Renderer:
                 return True
             self.counts["gowland_trans"] += 1
             self.w('<div class="gowland-tr gowland-block" data-resp="gowland" '
-                   'title="Gowland 2021 (private build only)">')
+                   'title="Gowland 2021">')
             self.children(e)
             self.w("</div>\n")
         elif tag == T("figure"):
@@ -465,7 +476,7 @@ class Renderer:
                 resp = ' data-resp="gowland"' if v["by"] == "gowland" else ""
                 trs.append(f'<span class="sn-tr" data-lang="{attr(lang)}" data-src="{attr(v["by"])}"{resp}>'
                            f'<span class="mn-tx">{esc_tagged(v["text"])}</span> '
-                           f'<span class="mn-src">{esc(short_label(v))}{pl}</span></span>')
+                           f'<span class="mn-src">{src_label(v)}{pl}</span></span>')
         self.out[start:] = [seg + "".join(trs) + verses]
         self.w("</span>")
 
@@ -584,7 +595,7 @@ class Renderer:
                 self.counts["djs_versions"] += 1
             items.append(f'<span class="ft-v ft-{attr(src)}" data-src="{attr(src)}"{resp}>'
                          f'<span class="ft-text">{esc_tagged(t["text"])}</span>'
-                         f'<span class="ft-label">{esc(short_label(t))}'
+                         f'<span class="ft-label">{src_label(t)}'
                          f'{" " + prov(label_of(t)) if src == "machine" else ""}</span>{extra}</span>')
         own = " ft-own" if burton.startswith('<span class="ft-burton-own"') else ""
         vsrc = ""
@@ -619,7 +630,12 @@ class Renderer:
 
     def mode_class(self, fid: str) -> str:
         rec = self.layer.get(fid)
-        if not self.has_translation(fid):  # nothing to substitute: every mode keeps the original
+        d = self.decided.get(fid)
+        if d == "covered":  # its translation is the next passage's
+            return " fp-covered"
+        if d == "own":  # Burton's English stands for it
+            return " st-full"
+        if not self.has_translation(fid) or d == "glossed":  # nothing to substitute: every mode keeps the original
             return " fp-untranslated"
         st = ((rec or {}).get("self_translation") or {}).get("status", "none")
         return {"full": " st-full", "partial": " st-partial", "paraphrase": " st-paraphrase"}.get(st, "")
@@ -648,12 +664,18 @@ class Renderer:
         (R2 A + C). Its anchor stands before the passage; edition.js lays it beside that line."""
         if self.in_note:
             return
+        d = self.decided.get(fid)
+        if d in ("covered", "glossed"):  # Gowland translated it with the next passage, or glossed it in his note
+            self.counts[f"gowland_decided_{d}"] = self.counts.get(f"gowland_decided_{d}", 0) + 1
+            return
         rec = self.layer.get(fid)
         st = ((rec or {}).get("self_translation") or {})
         vs = self.versions(fid)
         cid = f"mt-{fid}"
         name, _ = LANG_NAMES.get(lang or "", (lang or "another language", ""))
-        if rec and rec.get("preferred") == "burton" and st.get("burton_span"):
+        if rec and (rec.get("preferred") == "burton" or d == "own") and st.get("burton_span"):
+            if d == "own" and rec.get("preferred") != "burton":
+                self.counts["gowland_decided_own"] = self.counts.get("gowland_decided_own", 0) + 1
             head = '<span class="mn-k">Burton’s own</span> '
             body = f'“\x00Q{fid}\x00”'
             if t := next((v for v in vs if v["by"] != "gowland" and v.get("note")), None):
@@ -661,7 +683,7 @@ class Renderer:
             kind = "own"
         elif vs:
             v0, rest = vs[0], vs[1:]
-            lab = short_label(v0) + (" " + prov(label_of(v0)) if v0["by"] == "machine" else "")
+            lab = src_label(v0) + (" " + prov(label_of(v0)) if v0["by"] == "machine" else "")
             head = '<span class="mn-k">trans.</span> '
             body = (f'<span class="mn-v" data-src="{attr(v0["by"])}">'
                     f'<span class="mn-tx">{esc_tagged(v0["text"])}</span> <span class="mn-src">{lab}</span></span>')
@@ -670,7 +692,7 @@ class Renderer:
                 pl = " " + prov(label_of(t)) if t["by"] == "machine" else ""
                 more.append(f'<span class="mn-alt" data-src="{attr(t["by"])}">'
                             f'<span class="mn-tx">{esc_tagged(t["text"])}</span> '
-                            f'<span class="mn-src">{esc(short_label(t))}{pl}</span></span>')
+                            f'<span class="mn-src">{src_label(t)}{pl}</span></span>')
             src = (rec or {}).get("source") or {}
             if src.get("status") in ("burton-cites", "probable", "identified"):
                 word = {"burton-cites": "Burton cites", "probable": "Probably", "identified": "Source"}[src["status"]]
@@ -759,7 +781,7 @@ class Renderer:
                            for k, t in enumerate(lines, 1))
             self.w(f'<div class="ftr" lang="en" data-src="{attr(v["by"])}"{resp} role="note" '
                    f'aria-label="Translation from {attr(name)}">{rows}<span class="ftr-src" '
-                   f'style="--r:{len(lines) + 1}">{esc(short_label(v))}{pl}</span></div>')
+                   f'style="--r:{len(lines) + 1}">{src_label(v)}{pl}</span></div>')
         self.w(self.tr_markup(fid, block=True, lang=lang))
         self.w(f"</{tag}>\n")
 
@@ -1219,6 +1241,49 @@ def h1_head(div):
     return next((h for h in heads if h.get("type") == "title"), heads[0] if heads else None)
 
 
+BLOCK_TAGS = (T("p"), T("l"), T("item"), T("head"), T("quote"))
+DECIDER_SKIP = (T("note"), T("pb"), ED("enref"))
+
+
+def _words(s: str) -> str:
+    return " ".join(re.sub(r"[^\w\s]", " ", s.lower()).split())
+
+
+def gowland_decisions(div, gowland: dict[str, str], layer: dict, entries: list[dict] | None) -> dict[str, str]:
+    """Where Gowland gives no translation of a passage in the text, his decision stands, so it is not translated
+    over again (owner, 2026-11-04). Three cases, taken from his edition as facts:
+    * "covered": a Latin sentence split by the text into two passages, his one bracket after the second translating
+      both (nothing but stops, notes and page breaks between them);
+    * "glossed": he explains the word in an endnote instead (a gloss or note whose words are exactly the passage's);
+    * "own": Burton renders it himself, fully, in part or by paraphrase (the selftrans signals), and Gowland judged that
+      enough ("except ... when the translations or paraphrases ... given by Burton preserve the majority of the
+      original sense", his Note on the Text)."""
+    glossed = {(e["selector"]["in"], _words(e["selector"]["exact"])) for e in entries or []
+               if e.get("selector") and e["kind"] in ("gloss", "explanation", "identity")}
+    out: dict[str, str] = {}
+    for fp in div.iter(T("foreign"), T("lg"), T("quote"), T("head")):
+        if fp.get("ana") != "foreign" or not fp.get(XML_ID):
+            continue
+        fid = public_id(fp.get(XML_ID))
+        if fid in gowland or any(a.tag == T("note") for a in fp.iterancestors()):
+            continue
+        nxt, between = fp.getnext(), fp.tail or ""
+        while nxt is not None and nxt.tag in DECIDER_SKIP and not between.strip(" ,;:"):
+            between, nxt = nxt.tail or "", nxt.getnext()
+        if nxt is not None and not between.strip(" ,;:") and nxt.get("ana") == "foreign" and nxt.get(XML_ID) and \
+                public_id(nxt.get(XML_ID)) in gowland:
+            out[fid] = "covered"
+            continue
+        block = next((a for a in fp.iterancestors() if a.tag in BLOCK_TAGS and a.get(XML_ID)), None)
+        if block is not None and (public_id(block.get(XML_ID)), _words(public_text(fp))) in glossed:
+            out[fid] = "glossed"
+            continue
+        st = ((layer.get(fid) or {}).get("self_translation") or {})
+        if st.get("status") in ("full", "partial", "paraphrase") and st.get("burton_span"):
+            out[fid] = "own"
+    return out
+
+
 def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict | None = None,
                 cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
                 findings: dict | None = None, xrefs: list[dict] | None = None, plate=None,
@@ -1232,6 +1297,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
     if profile == "private":
         r.gowland = gowland_versions(div)
+        r.decided = gowland_decisions(div, r.gowland, layer, gowland_entries)
     r.w(f'<article class="unit" id="{attr(unit)}">\n')
     r.children(div)
     r.w("</article>\n")

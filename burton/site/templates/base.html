@@ -17,20 +17,28 @@
 <body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings', 'search') else (page.kind if page else 'other') }}">
 <a class="skip" href="#main">Skip to text</a>
 <header class="site">
+  {# the running head (owner, 2026-11-04: N2 C): the page's place on the left, the title in the middle, two quiet
+     signs and the light/dark switch on the right #}
   <div class="bar">
+    <div class="bar-l">
+      {% if toc %}
+      <details class="toc-panel">
+        <summary>Contents</summary>
+        <nav aria-label="Contents">{{ toc }}</nav>
+      </details>
+      {% endif %}
+      {{ place or "" }}
+    </div>
     <a class="home" href="{{ root or './' }}"{% if key == "home" %} aria-current="page"{% endif %}><span class="home-t">The Anatomy of Melancholy</span> <span class="home-s">An Englished Reader</span></a>
-    {% if toc %}
-    <details class="toc-panel">
-      <summary>Contents</summary>
-      <nav aria-label="Contents">{{ toc }}</nav>
-    </details>
-    {% endif %}
-    <a class="search-link" href="{{ root }}search/"{% if key == "search" %} aria-current="page"{% endif %}>Search</a>
-    {% if key != "settings" %}
-    <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings">Reading options</button>
-    {% endif %}
+    <div class="bar-r">
+      <a class="search-link" href="{{ root }}search/" aria-label="Search" title="Search"{% if key == "search" %} aria-current="page"{% endif %}><svg class="ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg></a>
+      {% if key != "settings" %}
+      <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings" aria-label="Reading options" title="Reading options">Aa</button>
+      {% endif %}
+      <button class="theme-toggle" type="button" aria-label="Dark or light" title="Dark or light"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M15.5 12.5A6.5 6.5 0 0 1 7.5 4.5a6.5 6.5 0 1 0 8 8z"/></svg></button>
+    </div>
   </div>
-  {% if crumbs %}
+  {% if crumbs and not place %}
   <nav class="crumbs" aria-label="Breadcrumb"><ol>
     <li><a href="{{ root or './' }}">Contents</a></li>
     {% for label, href in crumbs %}

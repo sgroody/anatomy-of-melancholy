@@ -6,6 +6,7 @@ Words are rendered from the tree's runs exactly (italic, symbols, Greek tagged w
 """
 
 import json
+import re
 from functools import cache
 
 from markupsafe import Markup
@@ -124,6 +125,55 @@ def back_links(parts: list[str], units: list[str]) -> dict[str, tuple[str, str]]
                         if u not in best or rank < best[u][0]:
                             best[u] = (rank, part, n["id"])
     return {u: (p, nid) for u, (_, p, nid) in best.items()}
+
+
+LOCATORS = re.compile(r"^(?:(?:Part|Sect|Memb|Subsect|Subs)\.?\s*\d+\.?\s*)+")
+ROMAN = {"p1": "I", "p2": "II", "p3": "III"}
+CUR = 'class="sb-cur" aria-current="page"'
+
+
+def short(text: str, words: int = 4) -> str:
+    """A node's label cut to its first clause, without Burton's locators: "Memb. 3 Sect. 2. Passions and perturbations
+    of the mind, Subsect. 1 …" -> "Passions and perturbations of the …"."""
+    t = LOCATORS.sub("", text).strip()
+    t = re.split(r"[,.;:(]", t, maxsplit=1)[0].strip() or t
+    w = t.split()
+    return " ".join(w[:words]) + ("…" if len(w) > words else "")
+
+
+def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str]) -> str:
+    """Where a page stands in Burton's synopsis (owner, 2026-11-04: N1 D): a small mark at the top left naming the
+    Partition and the branches above the page; pointing at it (or focusing it) opens the path, each step linked to its
+    node in the synopsis, and the sections the page's node names, the page's own in red, each linked to its page."""
+    def find(n, trail):
+        for c in n.get("children", []):
+            if c["id"] == nid:
+                return trail + [c]
+            if r := find(c, trail + [c]):
+                return r
+        return None
+
+    path = find(load(part), []) or []
+    if not path:
+        return ""
+    syn = f"{root}{part}/synopsis/"
+    here = short(titles.get(unit, unit), 3)
+    # the last step is the node that stands for this page; it often names several sections ("Sorrow … Discontents"),
+    # so it is labelled with the page's own title
+    labels = [short(_plain(n.get("text", []))) for n in path[:-1]] + [here]
+    line = " · ".join([ROMAN.get(part, part), *[esc_tagged(x) for x in labels[-3:-1]],
+                       f'<span class="sb-cur">{esc_tagged(here)}</span>'])
+    steps = "".join(f'<a class="sb-step{" syn-node" if n is path[-1] else ""}" style="--d:{k}" '
+                    f'href="{attr(syn)}#{attr(n["id"])}">{esc_tagged(lab)}</a>'
+                    for k, (n, lab) in enumerate(zip(path, labels, strict=True)))
+    units = [r["unit"] for r in path[-1].get("ref", []) if r.get("unit") and r["unit"] in titles]
+    sibs = " · ".join(f'<a href="{root}{attr(u)}/"{chr(32) + CUR if u == unit else ""}>'
+                      f'{esc_tagged(short(titles[u], 3))}</a>' for u in dict.fromkeys(units))
+    return (f'<div class="syn-badge" tabindex="0" aria-label="Where this page stands in Burton’s synopsis">'
+            f'<span class="sb-ico" aria-hidden="true">{{</span><span class="sb-line">{line}</span>'
+            f'<div class="sb-pop">{steps}{f"<p class=\"sb-sibs\">{sibs}</p>" if sibs else ""}'
+            f'<a class="sb-all" href="{attr(syn)}">The whole synopsis of Partition {ROMAN.get(part, part)}</a>'
+            '</div></div>')
 
 
 def label(tree: dict) -> Markup:

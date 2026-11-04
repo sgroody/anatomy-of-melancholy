@@ -1,5 +1,5 @@
 {
-  "when": "2026-11-04T07:06:59+00:00",
+  "when": "2026-11-04T08:24:54+00:00",
   "ok": true,
   "results": [
     {
@@ -253,7 +253,7 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 11984,
+        "script_chars": 12114,
         "untagged": 0,
         "in_document_titles": 20
       },
@@ -266,7 +266,7 @@
       "deferred": null,
       "counts": {
         "pages": 846,
-        "links": 190898,
+        "links": 191196,
         "broken": 0,
         "unresolved_xrefs_unlinked": 4,
         "search_results": 43707,
@@ -331,25 +331,25 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "steps": 21,
+        "steps": 22,
         "failed": 0
       },
       "problems": []
     },
     {
       "code": "L1",
-      "name": "sidenote layout: no overlaps, drift within the limit, markers on their word's line",
+      "name": "sidenote layout: none held back, no overlaps, drift within the bound, markers on their word’s line",
       "ok": true,
       "deferred": null,
       "counts": {
-        "densest_3.2.4.1": "87 notes, 26 stacked in 6 stacks",
+        "densest_3.2.4.1": "87 notes, 32 shortened, 0 held back",
         "pages": 20,
-        "notes": 10656,
-        "stacked": 2635,
+        "notes": 10580,
+        "stacked": 0,
         "overlaps": 0,
-        "max_drift_rem": 13.9,
+        "max_drift_rem": 24.7,
         "marker_breaks": 0,
-        "left_margin": 2746,
+        "left_margin": 2846,
         "marker_checks": 12216
       },
       "problems": []
