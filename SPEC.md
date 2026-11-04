@@ -41,7 +41,7 @@ Gowland material is kept in the base text, clearly marked, rather than discarded
 2. the private build can use it;
 3. the public build removes it with one filter.
 
-Gowland's translations are **never sent to a model** as input. Machine translations must be independent of them (CLAUDE.md).
+Gowland's translations are **never sent to a model** as translation input. Machine translations must be independent of them (CLAUDE.md). His findings (source identifications, glosses, cross-references) are facts and may be used in the private build with credit, and a model may see his matter in private-only audits and identification runs (owner, 2026-11-03; CLAUDE.md rule 5).
 
 ## 3. Identifiers and URLs
 

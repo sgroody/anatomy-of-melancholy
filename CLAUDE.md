@@ -18,8 +18,9 @@ Read `SPEC.md` for the design, `PLAN.md` for the current milestone, and `SURVEY.
    * XML ids carry a `u` prefix; HTML ids and layer keys do not (one conversion function).
 5. **Gowland's editorial matter is kept but marked**: `ed:trans`, `ed:verse-trans`, `ed:enref`, `supplied[@resp=#gowland]`, `pb`.
    * It must never appear in a `public` build, and the leak check enforces this.
-   * **It must never be sent to a model** as input or as an example.
-   * It must never be copied into a layer file.
+   * **His wording** (translations, the prose of his notes and glosses) is never copied into a layer file and never becomes text we show as ours. The private build reads it from the base text at build time, labelled as his.
+   * **His findings are facts** (owner, 2026-11-03): who or what a passage cites, what a word means, where a reference points. Like any scholarly identification they may be used in the private product, credited "Gowland". A layer may record that it took a finding from him (`basis: gowland`, with the endnote id), never his sentences.
+   * **A model may see his matter only in private-only work**: audits and checks (output: flags and verdicts, not display text), and identification runs whose records are marked `informed_by: gowland` and never enter a `public` build. Machine translations stay independent of his: translation prompts never include his brackets.
 
 ## Honesty rules (non-negotiable)
 
