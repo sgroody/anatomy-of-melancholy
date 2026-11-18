@@ -78,6 +78,9 @@ def src_label(t: dict) -> str:
         return '<span class="src-g" title="Gowland 2021" aria-label="Gowland">g</span>'
     if t["by"] == "machine":
         return ""  # the ◇ alone, which names the model (owner, 2026-11-04: "just the diamond", not "Claude")
+    if t["by"] == "djs1927":  # Dell & Jordan-Smith (1927), a sign of their own (owner, 2026-11-18)
+        return ('<span class="src-dj" title="Dell &amp; Jordan-Smith (1927)" aria-label="Dell and Jordan-Smith">'
+                'dj</span>')
     return esc(short_label(t))
 
 
@@ -86,17 +89,31 @@ def prov(full: str) -> str:
     return f'<span class="prov" role="img" tabindex="0" aria-label="{attr(full)}" title="{attr(full)}"></span>'
 
 
-def kjv_html(c: dict, counts: dict) -> str:
+def kjv_html(c: dict, counts: dict, check: dict | None = None) -> str:
     """The KJV text of a Bible citation's verses (stage 6), folded after three lines by edition.js; "" where the
-    reference gives no verses, or the book needs a number it lacks (counted)."""
-    vs = kjv.verses(c["work"].split(".", 1)[1], c.get("book_n"), c.get("ref"))
+    reference gives no verses, or the book needs a number it lacks (counted). A Psalm verse is shown only where the
+    Psalm check (data/layers/psalm-check/) confirms which verse Burton means, as he numbers it or as the Vulgate
+    does."""
+    ref, note = c.get("ref"), ""
+    if c.get("work") == "bible.psalms" and (ref or {}).get("verses"):
+        if not check or check["verdict"] not in ("kjv", "vulgate"):
+            counts["psalm_verses_unconfirmed"] = counts.get("psalm_verses_unconfirmed", 0) + 1
+            return ""
+        if check["verdict"] == "vulgate":
+            ref = {"chapter": check["chapter"], "verses": check["verses"]}
+            vs_ = ", ".join(map(str, check["verses"]))
+            who = f"Verse identified by machine ({check['model']}, prompt {check['prompt']}, {check['date']})"
+            note = (f' <span class="kjv-l">Psalm {check["chapter"]}:{vs_} in the KJV; Burton numbers it as the Vulgate '
+                    f'does</span> {prov(who)}')
+            counts["psalm_verses_vulgate"] = counts.get("psalm_verses_vulgate", 0) + 1
+    vs = kjv.verses(c["work"].split(".", 1)[1], c.get("book_n"), ref)
     if not vs:
         counts["bible_without_verses"] = counts.get("bible_without_verses", 0) + 1
         return ""
     counts["bible_verses"] = counts.get("bible_verses", 0) + 1
     text = " ".join((f'<sup class="kjv-n">{v}</sup>' if len(vs) > 1 else "") + esc(t) for v, t in vs)
     return (f'<span class="kjv" lang="en"><span class="kjv-t">{text}</span> '
-            f'<button type="button" class="kjv-more" hidden>more</button> <span class="kjv-l">KJV</span></span>')
+            f'<button type="button" class="kjv-more" hidden>more</button> <span class="kjv-l">KJV</span>{note}</span>')
 
 
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
@@ -195,6 +212,7 @@ class Renderer:
                        "pagerefs": 0, "pagerefs_linked": 0}
         self.gowland: dict[str, str] = {}  # passage id -> Gowland's translation (private build only)
         self.cexp: dict = {}  # data/layers/citation-expansions/<unit>.json (model expansions)
+        self.psalms: dict = {}  # data/layers/psalm-check/<unit>.json
         self.out: list[str] = []
         self.hoisted: set[str] = set()
         self.langs: list[str] = []
@@ -210,6 +228,7 @@ class Renderer:
         self.consume_block = False  # his translation block on this page is shown facing, not after the poem
         self.facing_unit = "l"  # what a row of a facing passage is: a verse line, or a paragraph
         self.gowland_from: dict[str, str] = {}  # passage id -> the page of Gowland's its translation comes from
+        self.block_passage = False  # the passage being carded is a block (verse group, quotation), not in a line
         self.asides: dict[str, list[str]] = {}  # passage id -> his translation lines, set beside it (the Dedication)
 
     # ---------------------------------------------------------------- helpers
@@ -462,7 +481,7 @@ class Renderer:
         self.w(f'<a class="nref" id="ref-{attr(nid)}" href="#{attr(nid)}" role="doc-noteref" data-n="{attr(n)}" '
                f'aria-label="Note {attr(lt)}">{esc(lt)}</a>')
         self.w(f'<span class="sidenote" id="{attr(nid)}" role="doc-footnote">'
-               f'<span class="sn-n">{esc(lt)}</span> ')
+               f'<span class="sn-body"><span class="sn-n">{esc(lt)}</span> {self.note_kind(nid)}')
         start = len(self.out)
         self.in_note += 1
         if e.find(T("p")) is not None:
@@ -477,6 +496,12 @@ class Renderer:
         # the Latin of the note translated after it, one line each, so Burton's punctuation stays with his words
         trs = []
         for fid in dict.fromkeys(re.findall(r'class="fp [^"]*" data-fid="([^"]+)"', seg)):
+            el = next((x for x in e.iter() if x.get(XML_ID) and public_id(x.get(XML_ID)) == fid), None)
+            words = public_text(el).split() if el is not None else []
+            if len(words) <= 1 and len("".join(words).strip(".,;:")) <= 4:
+                # a lone short word ("de", "in"): its English would only repeat the obvious (owner, 2026-11-18)
+                self.counts["note_tr_trivial_skipped"] = self.counts.get("note_tr_trivial_skipped", 0) + 1
+                continue
             if vs := self.versions(fid):
                 v = vs[0]
                 pl = " " + prov(label_of(v)) if v["by"] == "machine" else ""
@@ -486,8 +511,22 @@ class Renderer:
                 trs.append(f'<span class="sn-tr" data-lang="{attr(lang)}" data-src="{attr(v["by"])}"{resp}>'
                            f'<span class="mn-tx">{esc_tagged(v["text"])}</span> '
                            f'<span class="mn-src">{src_label(v)}{pl}</span></span>')
-        self.out[start:] = [seg + "".join(trs) + verses]
+        # Burton's own words (his note, his citations written out) under the rubric rule; the lines the edition adds
+        # (translations, KJV verses) after them, as belonging to the note but not his (owner, 2026-11-18)
+        self.out[start:] = [seg + "</span>" + "".join(trs) + verses]
         self.w("</span>")
+
+    def note_kind(self, nid: str) -> str:
+        """What one of Burton's notes is (owner, 2026-11-18): CITES where it is only citations (the rules' citations
+        cover nearly all its words), NOTE where he says something besides."""
+        rec = self.cites.get(nid)
+        if not rec:
+            return ""
+        raw = re.sub(r"\s", "", rec["raw"])
+        cited = sum(len(re.sub(r"\s", "", c["raw"])) for c in rec["citations"])
+        kind = "cites" if raw and cited / len(raw) >= 0.8 else "note"
+        self.counts[f"burton_notes_{kind}"] = self.counts.get(f"burton_notes_{kind}", 0) + 1
+        return f'<span class="sn-k" data-kind="{kind}">{kind}</span> '
 
     def expansion(self, c: dict) -> tuple[str, str] | None:
         """(HTML, kind) of a citation's expansion: the rules' when they resolved it, else the model's
@@ -533,7 +572,7 @@ class Renderer:
             if found is None:
                 self.counts["cite_unplaced"] = self.counts.get("cite_unplaced", 0) + 1
                 continue
-            if c.get("author") == "bible" and (k := kjv_html(c, self.counts)):
+            if c.get("author") == "bible" and (k := kjv_html(c, self.counts, self.psalms.get(c["id"]))):
                 verses.append(f'<span class="sn-bible">{k}</span>')
             hs, he = found
             if (end := c["raw"].rstrip()[-1:]) in ".,;":  # Burton's stop after the citation stays after it
@@ -689,10 +728,12 @@ class Renderer:
         if rec and (rec.get("preferred") == "burton" or d == "own") and st.get("burton_span"):
             if d == "own" and rec.get("preferred") != "burton":
                 self.counts["gowland_decided_own"] = self.counts.get("gowland_decided_own", 0) + 1
-            head = '<span class="mn-k">Burton’s own</span> '
+            if self.block_passage:  # he renders a whole block himself, set right after it: no card (2026-11-18)
+                self.counts["own_block_no_card"] = self.counts.get("own_block_no_card", 0) + 1
+                return
+            # "Author trans." and his words only: a note saying the same again is not wanted (owner, 2026-11-18)
+            head = '<span class="mn-k">Author trans.</span> '
             body = f'“\x00Q{fid}\x00”'
-            if t := next((v for v in vs if v["by"] != "gowland" and v.get("note")), None):
-                body += f'<span class="mn-sub">{esc_tagged(t["note"])} {prov(label_of(t))}</span>'
             kind = "own"
         elif vs:
             v0, rest = vs[0], vs[1:]
@@ -773,6 +814,7 @@ class Renderer:
         self.hoist_notes(e)
         lang = e.get(XML_LANG)
         self.fp_lang[fid] = lang
+        self.block_passage = True
         facing = self.facing_lines(e, fid)
         if not self.in_note:
             self.last_block = (fid, len(list(e.iter(T("l")))))
@@ -784,6 +826,7 @@ class Renderer:
             self.facing_unit = "l" if e.tag == T("lg") else "p"  # verse pairs by line, prose by paragraph
         else:
             self.card(fid, lang)
+        self.block_passage = False
         if fid in self.asides:  # the Dedication: an inscription, his English beside it (stage 9)
             cls += " ded-tablet"
             self.w('<div class="ded-wrap">')
@@ -1021,13 +1064,15 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
     return html_text, cards
 
 
-SKIP_NAMES = (*SKIP_MAIN, "xref", "xref-unresolved", "unit-title", "pageref", "cx", "gl-s", "nm", "cx-b")
+# names are linked in Burton's notes too (owner, 2026-11-18), but not in the lines the edition adds to them
+SKIP_NAMES = (*(x for x in SKIP_MAIN if x != "sidenote"), "xref", "xref-unresolved", "unit-title", "pageref", "cx",
+              "gl-s", "nm", "cx-b", "sn-n", "sn-k", "sn-tr", "sn-bible", "sn-restored")
 
 
 def mark_names(html_text: str, names: re.Pattern | None, ids: dict[str, str], counts: dict) -> tuple[str, set[str]]:
     """The names of cited authors in Burton's running text, linked to their index entries (owner, 2026-11-03: a
     window on the entry, R5 C hairline). Only a form the abbreviation tables give to one author with an entry is
-    linked (`names`, built by the caller); it must stand as whole words in one text run, outside links, notes and
+    linked (`names`, built by the caller); it must stand as whole words in one text run, outside links, added lines and
     the margin. Returns the page and the ids linked."""
     if names is None:
         return html_text, set()
@@ -1169,7 +1214,7 @@ SKIP_IC = (*SKIP_MAIN, "gl-s")
 CLOSE_STOPS = ",;:"
 
 
-def mark_inline_cites(html_text: str, recs: dict, counts: dict) -> tuple[str, list[str]]:
+def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | None = None) -> tuple[str, list[str]]:
     """Burton's citations in his running text (data/layers/citations-inline/; owner, 2026-11-03: C1 C). The author's
     name stays; the reference words are wrapped in a `cx-b` span, shown only under "Burton's abbreviations"; a raised
     § after them stands for the citation, whose margin card gives the expansion and, for the Bible, the KJV verses.
@@ -1181,13 +1226,18 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict) -> tuple[str, li
     text = views[SKIP_IC][0]
     edits: dict[int, list[str]] = {}
     cards = []
-    for key, rec in sorted(recs.items()):
-        sel = rec["selector"]
-        found = _locate(html_text, sel, (SKIP_IC,), views)
+    located = []
+    for key, rec in recs.items():
+        found = _locate(html_text, rec["selector"], (SKIP_IC,), views)
         if found is None:
             counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
             continue
-        at, pos = found[0], found[1]
+        located.append((found[0], key, rec, found[1]))
+    # in reading order, none hiding what an earlier one hid: in "Mat. 4. 23, Luke 5. 18, Luke 7 & 8." the comma between
+    # two references goes with one of them only (2026-11-18: claimed by both, it nested their spans and hid an anchor)
+    hidden_to = -1
+    for at, key, rec, pos in sorted(located, key=lambda x: x[0]):
+        sel = rec["selector"]
         ex, bible = sel["exact"], rec["author"] == "bible"
         name = 0
         if not bible:
@@ -1204,9 +1254,11 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict) -> tuple[str, li
                 b += 1
             elif text[b:b + 1] in ".;:" and text[a - 1:a] == ",":
                 a -= 1  # "the 1st, Jer. 7. God is angry" -> "the 1st§. God is angry"
+        a = max(a, hidden_to)
         if b <= a:
             counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
             continue
+        hidden_to = b
         runs = _runs(html_text, pos, a, b)
         for hs, he in runs:
             edits.setdefault(hs, []).append('<span class="cx-b">')
@@ -1219,12 +1271,14 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict) -> tuple[str, li
         if (outside := _outside_passage(html_text, anchor_at)) != anchor_at:
             anchor_at, length = outside, 0  # in a quotation: the card is held to the box, which "Read in English" hides
             counts["inline_cites_in_passage"] = counts.get("inline_cites_in_passage", 0) + 1
-        edits.setdefault(anchor_at, []).append(f'<span class="mref" data-for="{attr(cid)}" data-len="{length}" '
+        # a Bible reference lights the clause it is given for, back to the stop before it (2026-11-18: the § alone)
+        back = ' data-back="clause"' if bible and length else ""
+        edits.setdefault(anchor_at, []).append(f'<span class="mref" data-for="{attr(cid)}" data-len="{length}"{back} '
                                                'aria-hidden="true"></span>')
         edits.setdefault(runs[-1][1], []).append(mark)
         body = Renderer.cite_link(rec["author"], rec["display"])
         if bible:
-            body += kjv_html(rec, counts)
+            body += kjv_html(rec, counts, (psalms or {}).get(key))
         label = "Bible" if bible else "cites"
         cards.append(f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="{kind}" role="note" '
                      f'aria-label="Citation"><span class="mn-k">{label}</span> '
@@ -1330,10 +1384,12 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 restored: dict | None = None, gowland_entries: list[dict] | None = None,
                 cexp: dict | None = None, initials: set[str] | None = None, names: re.Pattern | None = None,
                 name_ids: dict | None = None, author_info: dict | None = None,
-                inline_cites: dict | None = None, facing_src: dict | None = None) -> tuple[str, dict]:
+                inline_cites: dict | None = None, facing_src: dict | None = None,
+                psalms: dict | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
+    r.psalms = psalms or {}  # data/layers/psalm-check/: which Psalm verse Burton means (2026-11-18)
     if profile == "private":
         r.gowland = gowland_versions(div)
         r.decided = gowland_decisions(div, r.gowland, layer, gowland_entries)
@@ -1350,7 +1406,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts)
-    body, ic_cards = mark_inline_cites(body, inline_cites or {}, r.counts)
+    body, ic_cards = mark_inline_cites(body, inline_cites or {}, r.counts, psalms)
     body, used = mark_names(body, names, name_ids or {}, r.counts)
     if used and author_info:  # what the name windows show, for the authors named on this page (edition.js)
         data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)

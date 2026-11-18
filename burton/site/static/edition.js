@@ -10,7 +10,8 @@ const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin o
 // the margins are in use: a wide window, and no facing translation taking their room (stage 4)
 const isWide = () => wide.matches && !body.classList.contains("facing-on");
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false,
-  latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a" }; // the colour of the Latin (round 5, F2)
+  latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a", // the colour of the Latin (round 5, F2)
+  hideic: false, onlygw: false, textonly: false }; // what to show (owner, 2026-11-18)
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
 // come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
 const ORDERS = {
@@ -44,6 +45,9 @@ function apply() {
   body.classList.toggle("show-pages", !!settings.pages);
   body.classList.toggle("show-abbr", !!settings.cites); // "Burton's abbreviations" in place of the expansions
   body.classList.toggle("show-glosses", !!settings.glosses);
+  body.classList.toggle("hide-ic", !!settings.hideic);
+  body.classList.toggle("only-gw", !!settings.onlygw);
+  body.classList.toggle("text-only", !!settings.textonly);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
   scheduleLayout();
@@ -101,12 +105,25 @@ document.querySelector(".theme-toggle")?.addEventListener("click", () => {
   apply();
 });
 
+// the search box opens in the running head; Enter goes to the results (owner, 2026-11-18)
+const hsearch = document.querySelector(".hsearch");
+document.querySelector(".search-link:not([aria-current])")?.addEventListener("click", (ev) => {
+  if (!hsearch) return;
+  ev.preventDefault();
+  const open = hsearch.classList.toggle("open");
+  if (open) hsearch.querySelector("input").focus();
+});
+hsearch?.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape") { hsearch.classList.remove("open"); document.querySelector(".search-link")?.focus(); }
+});
+
 const panel = document.getElementById("settings");
 const toggle = document.querySelector(".settings-toggle");
 function setPanel(open, focusToggle) {
   panel.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
-  if (open) panel.querySelector("input:checked, input")?.focus();
+  // the chosen way of reading the foreign passages first (the first checked radio), not a switch above it
+  if (open) (panel.querySelector('input[type="radio"]:checked') || panel.querySelector("input"))?.focus();
   else if (focusToggle) toggle.focus();
 }
 if (panel && toggle) {
@@ -262,7 +279,12 @@ function layoutNotes() {
   // depend on each other, since laid-out notes are out of the flow; (3) place them, in arithmetic only.
   // With translations in the line (stage 7), their margin cards are not shown and take no room.
   const inLine = body.classList.contains("mode-english");
-  const all = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n && !(inLine && n.classList.contains("mn-tr")));
+  // and what the reader chose not to see takes no room either (owner, 2026-11-18)
+  const shown = (n) => !body.classList.contains("text-only") &&
+    !(body.classList.contains("only-gw") && !n.classList.contains("mn-gw")) &&
+    !(body.classList.contains("hide-ic") && n.classList.contains("mn-ic"));
+  const all = markers.map((m) => [m, noteOf(m)])
+    .filter(([, n]) => n && shown(n) && !(inLine && n.classList.contains("mn-tr")));
   for (const [, note] of all) {
     note.classList.remove("sn-stacked", "mn-fold", "mn-fold2", "mn-fold3", "mn-l");
     asPopover(note, false);
@@ -410,6 +432,28 @@ function spanOf(marker) {
     }
     return null;
   }
+  if (marker.dataset.back === "clause") { // an in-line Bible reference: the clause before it, back to a stop
+    const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT,
+      { acceptNode: (n) => n.parentElement.closest(SKIP) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+    const nodes = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (marker.compareDocumentPosition(n) & Node.DOCUMENT_POSITION_PRECEDING) nodes.push(n);
+    }
+    let end = null, start = null;
+    for (let k = nodes.length - 1; k >= 0 && !start; k--) {
+      const s = nodes[k].data;
+      for (let i = s.length - 1; i >= 0; i--) {
+        if (!end) { if (/[\s,;:]/.test(s[i])) continue; end = [nodes[k], i + 1]; }
+        if (/[.;:!?]/.test(s[i])) { start = [nodes[k], i + 1]; break; }
+      }
+      if (!start && k === 0) start = [nodes[0], 0];
+    }
+    if (!end || !start) return null;
+    const r = document.createRange();
+    r.setStart(...start);
+    r.setEnd(...end);
+    return r;
+  }
   if (marker.classList.contains("mref")) {
     let left = Number(marker.dataset.len || 0);
     if (!left) return null;
@@ -507,6 +551,17 @@ for (const fp of document.querySelectorAll(".fp")) {
   };
   fp.addEventListener("mouseenter", () => link(true));
   fp.addEventListener("mouseleave", () => link(false));
+  // a note of Burton's quoting the Latin he also renders in the text: pointing at the note lights his English, and
+  // pointing at his English lights the note (owner, 2026-11-18)
+  const holder = fp.closest(".sidenote");
+  if (holder && mine.length) {
+    holder.addEventListener("mouseenter", () => link(true));
+    holder.addEventListener("mouseleave", () => link(false));
+    mine.forEach((s) => {
+      s.addEventListener("mouseenter", () => holder.classList.add("hot"));
+      s.addEventListener("mouseleave", () => holder.classList.remove("hot"));
+    });
+  }
   fp.addEventListener("focusin", () => link(true));
   fp.addEventListener("focusout", () => link(false));
   mine.forEach((s) => {

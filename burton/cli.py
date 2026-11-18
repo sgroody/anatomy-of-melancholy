@@ -83,6 +83,11 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop before the next packet once this much list-equivalent cost is spent in this run")
     s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
 
+    s = sub.add_parser("psalm-check", help="which KJV verse each Psalm citation means (model, ledgered, private-only) "
+                                           "-> data/layers/psalm-check/")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--dry-run", action="store_true", help="count the citations, no model")
     s = sub.add_parser("cite-audit", help="held-out check of the citation expansions, with Gowland's notes as "
                                           "evidence (private-only)")
     s.add_argument("--model", default="claude-opus-5-5")
@@ -281,6 +286,12 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import citations_inline
 
         stats = citations_inline.build(args.unit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "psalm-check":
+        from .layers import psalm_check
+
+        stats = psalm_check.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run)
         for k in sorted(stats):
             print(f"  {k}: {stats[k]}")
     elif args.cmd == "cite-audit":

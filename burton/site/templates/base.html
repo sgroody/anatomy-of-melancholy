@@ -31,6 +31,8 @@
     </div>
     <a class="home" href="{{ root or './' }}"{% if key == "home" %} aria-current="page"{% endif %}><span class="home-t">The Anatomy of Melancholy</span> <span class="home-s">An Englished Reader</span></a>
     <div class="bar-r">
+      {# the search box opens in place; Enter goes to the results (owner, 2026-11-18); without script, the link #}
+      <form class="hsearch" action="{{ root }}search/" method="get" role="search"><input name="q" type="search" placeholder="Search the Anatomy" aria-label="Search the Anatomy" autocomplete="off"></form>
       <a class="search-link" href="{{ root }}search/" aria-label="Search" title="Search"{% if key == "search" %} aria-current="page"{% endif %}><svg class="ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg></a>
       {% if key != "settings" %}
       <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings" aria-label="Reading options" title="Reading options">Aa</button>

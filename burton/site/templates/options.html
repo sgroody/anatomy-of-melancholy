@@ -1,3 +1,32 @@
+<div class="opt-key" aria-label="Key to the colours and signs">
+  <p class="ok-h">Key</p>
+  <ul class="ok-l">
+    <li><span class="ok-sw" style="background:var(--la)"></span><i style="color:var(--la)">Latin</i></li>
+    <li><span class="ok-sw" style="background:var(--grc)"></span><span style="color:var(--grc)">Greek</span></li>
+    <li><span class="ok-sw" style="background:var(--enm)"></span><span style="color:var(--enm);font-variant-caps:small-caps">Middle English</span></li>
+    <li><span class="ok-sw" style="background:var(--modern)"></span><i style="color:var(--modern)">Italian, French …</i></li>
+  </ul>
+  <ul class="ok-l">
+    <li><span class="ok-mark ok-burton">a</span> Burton’s note</li>
+    <li><span class="ok-k">cites</span> <span class="ok-k">note</span> what his note is</li>
+    <li><span class="ok-k">trans.</span> a translation</li>
+    <li><span class="ok-k">Author trans.</span> Burton’s own</li>
+    <li><span class="ok-k" style="color:var(--k-cite)">cites</span> <span class="ok-k" style="color:var(--k-bible)">Bible</span> <span style="color:var(--k-cite)">§</span> a citation from the text</li>
+    {% if profile == "private" %}<li><span class="ok-k" style="color:var(--k-gloss)">gloss</span> <span class="ok-k" style="color:var(--k-expl)">note</span> <span class="ok-k" style="color:var(--k-cite)">source</span> Gowland’s notes</li>{% endif %}
+  </ul>
+  <ul class="ok-l">
+    {% if profile == "private" %}<li><span class="mn-src"><span class="src-g">g</span></span> Gowland</li>{% endif %}
+    <li><span class="mn-src"><span class="src-dj">dj</span></span> Dell &amp; Jordan-Smith</li>
+    <li><span class="prov"></span> made by a model (point at it)</li>
+    <li><span class="ok-mark">°</span> a note Gowland left out, restored</li>
+  </ul>
+</div>
+<fieldset>
+  <legend>What to show</legend>
+  <label><input type="checkbox" name="hideic"> Hide Burton’s citations from the line (the § marks and their notes)</label>
+  {% if profile == "private" %}<label><input type="checkbox" name="onlygw"> Only Gowland’s notes in the margin</label>{% endif %}
+  <label><input type="checkbox" name="textonly"> Nothing but the text</label>
+</fieldset>
 <fieldset>
   <legend>Foreign-language passages</legend>
   <label><input type="radio" name="mode" value="gloss" checked> Original, with translations in the margin (on tap on a phone)</label>

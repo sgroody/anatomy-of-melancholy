@@ -204,3 +204,25 @@ Round 6 page: `state/review/ab-2026-11-04-r6.html` (it borrows the engraving fro
 synopses as compartments on the whole front page: A three across under the way in, a click opens the chosen
 Partition's branches below; B stacked, shut to a line, one open at a time; C a triptych under the whole page, like the
 engraving's lowest row; D one compartment with three numbered panels to choose.
+
+# The owner's notes of 2026-11-18 (after a few weeks away)
+
+Grouped as stages; weekly meter 19% at the start (resets 2026-11-22 23:00 UTC), so model runs are possible again.
+
+| Stage | What |
+|---|---|
+| 12 | The margin and the page: "Author trans." for Burton's own; no redundant Burton/machine double ("gullet"); no translation of trivial words in notes ("de" -> "on"); no card where Burton renders a whole block himself; the rubric rule only on what Burton wrote, the lines added to his note (expansions, translations, KJV) set as belonging to it without the rule; CITES / NOTE on Burton's notes by what they are; Dell & Jordan-Smith's own sign; kind colours more distinct in light mode; a quieter expand sign than "+ more"; names linked in the sidenotes too; hovering a note that translates Latin lights Burton's English and the reverse; Bible notes lighting their words (bug); the two floating Bible references at the head of DJR (bug); "Haec comice dicta" untranslated (bug); front matter centred, with its own contents list at the top marking where one is; search opening in place; the settings panel sleeker and with a key to colours and signs; options to hide Burton's in-line citations, to show only Gowland's notes, and to show nothing but the text |
+| 13 | A/B round 7: Next/Previous as whole side zones; Burton's note letters in a small box; the rubric rule on the inner side of notes in the left margin |
+| 14 | Data (model runs, ledgered, meter read before and after): names sweep (obscure names), missed in-line citations, restored notes translated + citations expanded + kind, the most useful notes from the translation passes rated and shown, Psalm verses checked, V5 |
+| 15 | The synopses visualized: research first, then options |
+Later: IM Fell instead of EB Garamond (general consideration).
+
+Round 7 page: `state/review/ab-2026-11-18-r7.html`. P1 Next and Previous (foot of the page; whole side zones; fixed
+side arrows; in the running head), P2 Burton's note letters (alone; ruled box; filled box; raised), P3 the rubric rule
+on a note in the left margin (left side; the side facing the text; the outer side).
+Synopsis research (stage 15): `reports/Visualizing the Burton synopses.md`, notes in `research_notes/`. Recommends
+re-setting the synopses as live type with drawn braces (columns per level, leaves linked to their sections, the signs as
+jumps), three ruled compartments on the front page that unfold into each sheet, a brace outline below ~700 px and for
+print, and the brace path in rubric for "where this page stands".
+
+Status 2026-11-18 (usage limit reached): stage 12 is built and checked by hand in headless Chrome but NOT committed; its `burton check --all` was still running. Next session: re-run the check, then commit stage 12 (files: burton/site/render.py, build.py, static/edition.css, edition.js, templates/*.html).

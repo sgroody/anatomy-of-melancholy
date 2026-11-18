@@ -8,6 +8,7 @@
 {% elif page.kind == "back" %}
 <p class="banner">Burton’s Table refers to pages of a printed edition. This build leaves out those page numbers, so the entries are not linked; use <a href="../search/">Search</a> to find a subject.</p>
 {% endif %}
+{% if front_nav %}{{ front_nav }}{% endif %}
 {% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
 {{ body }}
 {% endblock %}

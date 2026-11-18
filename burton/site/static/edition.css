@@ -12,7 +12,7 @@
   --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
   /* languages and the kinds of margin note (owner, 2026-11-03: T3 A, T7 A) */
   --la: #7a2230; --grc: #2a4a8c; --enm: #8a4b1c; --modern: #5a3a6e; /* N4 D; Latin oxblood by day (F2 B) */
-  --k-gloss: #9a6408; --k-cite: #4b5d80; --k-expl: #6d4a80; --k-bible: #66661f;
+  --k-gloss: #a04f00; --k-cite: #2a55a8; --k-expl: #8a2f9a; --k-bible: #556b00; /* more distinct (2026-11-18) */
   --hot: color-mix(in srgb, #d9a520 26%, transparent);
   --measure: 34rem;
   --margin-col: 15rem;
@@ -228,9 +228,14 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mn-h { font-variant-caps: all-small-caps; letter-spacing: 0.06em; margin-right: 0.3em; }
 .mn-sub, .mn-alt { display: block; margin-top: 0.15em; }
 .mn-more { margin-top: 0.1em; }
-.mn-more > summary { cursor: pointer; color: var(--muted); font-size: 0.85em; list-style: none; display: inline; }
-.mn-more > summary::before { content: "+ "; }
-.mn-more[open] > summary::before { content: "− "; }
+/* the other versions open from a small chevron after the translation, not "+ more" (owner, 2026-11-18) */
+.mn-more { display: inline; margin: 0; }
+.mn-more > summary { cursor: pointer; list-style: none; display: inline-block; font-size: 0; width: 1.1rem; height: 0.9rem; vertical-align: -0.05rem; }
+.mn-more > summary::-webkit-details-marker { display: none; }
+.mn-more > summary::after { content: ""; display: inline-block; width: 0.38rem; height: 0.38rem; margin-left: 0.35rem;
+  border-right: 1.5px solid var(--tr-ink, var(--accent)); border-bottom: 1.5px solid var(--tr-ink, var(--accent)); transform: rotate(45deg); transition: transform 0.15s; }
+.mn-more[open] > summary::after { transform: rotate(-135deg) translate(-0.1rem, -0.1rem); }
+.mn-more > summary:hover::after, .mn-more > summary:focus-visible::after { border-color: var(--accent); }
 .mn-gw[data-kind="gloss"] .mn-k { color: var(--k-gloss); }
 .mn-gw[data-kind="source"] .mn-k { color: var(--k-cite); }
 .mn-gw[data-kind="identity"] .mn-k, .mn-gw[data-kind="explanation"] .mn-k { color: var(--k-expl); }
@@ -748,7 +753,7 @@ header.site .toc-panel > nav { left: 0; right: auto; }
 }
 /* Burton's own notes: a rubric rule beside them (owner, 2026-11-04: N5 C) */
 @media (min-width: 1100px) {
-  .unit.sn-laid .sidenote:not(.sn-restored) { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+  .unit.sn-laid .sidenote:not(.sn-restored) > .sn-body { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
 }
 /* ascriptions (owner, 2026-11-04): who made a translation is set apart from it, raised and in small capitals; Gowland
    as a small-capital g (N6 D), his name on hover */
@@ -842,3 +847,52 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 :root[data-latin="custom"][data-theme="dark"] { --la: var(--la-c-dark, #e0c27a); }
 .settings .la-custom { display: inline-flex; gap: 0.4rem; align-items: center; margin-left: 1.4em; font-size: 0.92em; }
 .settings .la-custom input[type="color"] { width: 2rem; height: 1.4rem; padding: 0; border: 1px solid var(--rule); background: none; }
+
+/* ------------------------------------------------------------ stage 12 (owner, 2026-11-18) */
+/* Burton's own words in a note carry the rubric rule; the lines the edition adds (translations, KJV) hang from it on a
+   dotted rule: one note, two hands */
+.sn-body { display: block; }
+@media (min-width: 1100px) {
+  .unit.sn-laid .sidenote:not(.sn-restored) > .sn-tr, .unit.sn-laid .sidenote:not(.sn-restored) > .sn-bible {
+    margin-left: 0.6rem; padding-left: 0.45rem; border-left: 1px dotted var(--rule); }
+}
+.sn-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.92em; color: var(--muted); margin-right: 0.1em; }
+.sn-k[data-kind="cites"] { color: var(--k-cite); }
+.src-dj { cursor: help; }
+/* the front matter centred, with its own contents at the head of each page */
+.page-front main { max-width: none; }
+.page-front .unit { margin-left: auto !important; margin-right: auto !important; }
+.front-nav { max-width: var(--measure); margin: 0.6rem auto 1.4rem; }
+.front-nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2rem 0.9rem;
+  font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.92em; }
+.front-nav a { color: var(--muted); text-decoration: none; }
+.front-nav a:hover { color: var(--accent); }
+.front-nav a[aria-current="page"] { color: var(--cur-front, #8a2f1d); border-bottom: 1px solid currentColor; }
+:root[data-theme="dark"] .front-nav a[aria-current="page"] { --cur-front: #e0c27a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .front-nav a[aria-current="page"] { --cur-front: #e0c27a; } }
+/* the search box, opened in place */
+.hsearch { display: none; }
+.hsearch.open { display: block; }
+.hsearch input { font: inherit; font-size: 0.85em; width: 12rem; color: var(--ink); background: transparent; border: none;
+  border-bottom: 1px solid var(--accent); padding: 0.1rem 0.2rem; outline: none; }
+.hsearch input::placeholder { color: var(--muted); font-style: italic; }
+/* the reading options, quieter, with a key */
+.settings { accent-color: var(--accent); }
+.settings fieldset { padding: 0.2rem 0; }
+.settings label { padding: 0.08rem 0; cursor: pointer; }
+.settings label:hover { color: var(--accent); }
+.settings legend { color: var(--accent); }
+.settings .reset, .settings-toggle { border-color: transparent; }
+.opt-key { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; padding: 0.4rem 0 0.6rem; border-bottom: 1px solid var(--rule); }
+.opt-key .ok-h { flex-basis: 100%; margin: 0; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--accent); }
+.opt-key .ok-l { list-style: none; margin: 0; padding: 0; }
+.opt-key li { margin: 0.1rem 0; }
+.ok-sw { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: 0; }
+.ok-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.ok-mark { color: var(--muted); display: inline-block; min-width: 0.8rem; }
+.ok-burton { color: var(--accent); border-left: 2px solid var(--accent); padding-left: 0.3rem; }
+/* what to show */
+.hide-ic .ic-m, .hide-ic .mn-ic { display: none !important; }
+.only-gw .unit .sidenote, .only-gw .unit a.nref, .only-gw .unit .mn:not(.mn-gw), .only-gw .unit .ic-m { display: none !important; }
+.text-only .unit .sidenote, .text-only .unit a.nref, .text-only .unit .mn, .text-only .unit .ic-m,
+.text-only .unit .ftr-n { display: none !important; }

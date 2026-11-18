@@ -222,6 +222,13 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             root=root, profile=profile, key=key, prev=prev, next=nxt,
             toc=Markup(toc_html(book, root, key, ids=False)), **kw)
 
+    def front_nav(current: str) -> Markup:
+        """Every page of the front matter, the reader's own marked (owner, 2026-11-18): after "Enter, gentle Reader"
+        the front matter has its own contents at the head of each of its pages."""
+        items = "".join(f'<li><a href="../{attr(fp.key)}/"{' aria-current="page"' if fp.key == current else ""}>'
+                        f'{fp.title_html}</a></li>' for fp in book.front if not fp.gowland)
+        return Markup(f'<nav class="front-nav" aria-label="The front matter"><ol>{items}</ol></nav>')
+
     back = synopsis.back_links([pg.key for pg in book.partitions], book.units)  # unit -> its node in the synopsis
     plain = {u: book.pages[u].title for u in book.units if u in book.pages}  # for the synopsis mark (N1 D)
     shown_titles = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
@@ -257,6 +264,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                                     if profile == "private" else None),
                                    cexp=layer_for(unit, "citation-expansions"), initials=initials,
                                    inline_cites=layer_for(unit, "citations-inline"),
+                                   psalms=layer_for(unit, "psalm-check"),
                                    # Gowland's translation pages, set facing Burton's Latin (stage 9)
                                    facing_src=facing.sources(unit) if profile == "private" else None,
                                    names=name_rx, name_ids=name_ids, author_info=author_info)
@@ -283,6 +291,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         page(unit, f"{unit}/index.html", "unit.html", page=pg, body=Markup(body),
              hidden_h1=None if has_h1 else pg.title,
              place=Markup(synopsis.branch_html(unit, here[0], here[1], "../", plain)) if here else None,
+             front_nav=front_nav(unit) if pg.kind == "front" else None,
              title=pg.title if pg.kind in ("front", "back") else f"{unit} {pg.title}",
              description=f"Burton, The Anatomy of Melancholy, {pg.title}")
 
