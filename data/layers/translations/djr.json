@@ -8811,6 +8811,75 @@
       }
     ]
   },
+  "djr-f1356": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "So many myriads of the Commons were butchered up, with sword, famine, war",
+        "in": "djr",
+        "near": "djr-f1356",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Richard Dinoth",
+      "basis": "sidenote \"Belli civilis gal. lib. 1.\" and text \"as Richard Dinoth adds\"",
+      "locus": "lib. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De bello civili Gallico"
+    },
+    "text": "Hoc ferali bello & caedibus omnia repleverunt, & regnum amplissimum a fundamentis pene everterunt, plebis tot myriades gladio, bello, fame miserabiliter perierunt",
+    "text_sha1": "0f9876cde239654ec0d00be588efe0a6a55d3160",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text renders most of this, but omits the opening clause about filling everything with slaughter.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "So many myriads of the Commons were butchered up, with sword, famine, war",
+            "in": "djr",
+            "near": "djr-f1356",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Richard Dinoth",
+          "basis": "sidenote \"Belli civilis gal. lib. 1.\" and text \"as Richard Dinoth adds\"",
+          "locus": "lib. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De bello civili Gallico"
+        },
+        "text": "In this deadly war they filled everything with slaughter, and almost overthrew a most ample kingdom from its foundations; so many myriads of the common people perished miserably by sword, war and famine.",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f1357": {
     "kind": "phrase",
     "lang": "la",
@@ -12424,6 +12493,65 @@
       }
     ]
   },
+  "djr-f1416": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Matteo Ricci",
+      "basis": "sidenote \"Riccius lib. 1 cap. 5.\"",
+      "locus": "lib. 1 cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Christiana expeditione apud Sinas"
+    },
+    "text": "soli literati admittuntur, nec ad eam rem gratia magistratuum aut regis indigent, omnia ab explorata cujusque scientia & virtue pendent",
+    "text_sha1": "23471c720e699d893261eeca1a27721f405c8de0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote describes how the Chinese choose men to govern the commonwealth; the words before the marked passage, 'Ad regendam rempub.', mean 'to govern the commonwealth'. 'virtue' is a misprint for Latin 'virtute'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Matteo Ricci",
+          "basis": "sidenote \"Riccius lib. 1 cap. 5.\"",
+          "locus": "lib. 1 cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Christiana expeditione apud Sinas"
+        },
+        "text": "only the learned are admitted, and for this they need no favour of magistrates or king; everything depends on the tested knowledge and virtue of each man.",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f1417": {
     "kind": "phrase",
     "lang": "la",
@@ -13573,6 +13701,65 @@
           "work": "Oratio de Imaginatione"
         },
         "text": "Let the ambitious and the bold sail to Anticyra.",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1439": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martial",
+      "basis": "sidenote \"Mart. ep. 76 lib. 3.\"",
+      "locus": "ep. 76 lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epigrams"
+    },
+    "text": "Hic rogo non furor est, non est haec mentula demens",
+    "text_sha1": "105816e82e75ad7653e18dcd20334efd4a436372",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "This, I ask, is it not madness, is this not a mad penis?",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Martial is mocking Bassus, who lusts after old women and scorns girls. 'Mentula' is obscene. The standard text reads 'non haec est mentula demens?', where Burton has 'non est haec'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martial",
+          "basis": "sidenote \"Mart. ep. 76 lib. 3.\"",
+          "locus": "ep. 76 lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epigrams"
+        },
+        "text": "Is this not madness, I ask? Is this not a demented prick?",
         "warnings": []
       }
     ]
@@ -15108,63 +15295,6 @@
           "work": "Eclogues"
         },
         "text": "It pleases me to be mad, that is, to compose verses",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1466": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Martial",
-      "basis": "sidenote \"Mart. ep. 76 lib. 3.\"",
-      "locus": "ep. 76 lib. 3",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Epigrams"
-    },
-    "text": "Insana libido. Hic rogo non furor est, non est haec mentula demens",
-    "text_sha1": "09d81b9c2c733f1e16f7178ecbbc42b979236bc1",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Martial's line is 'hic, rogo, non furor est, non haec est mentula demens?' Burton has changed the word order. 'Insana libido' is Burton's heading.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Martial",
-          "basis": "sidenote \"Mart. ep. 76 lib. 3.\"",
-          "locus": "ep. 76 lib. 3",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Epigrams"
-        },
-        "text": "Mad lust. Is this not madness, I ask, is this prick not out of its wits?",
         "warnings": []
       }
     ]
@@ -27972,65 +28102,6 @@
       }
     ]
   },
-  "djr-f328": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cyprian",
-      "basis": "sidenote \"Cyprian ad Donatum.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Ad Donatum"
-    },
-    "text": "Cyprian ad Donatum",
-    "text_sha1": "d415df7dca7a386139a6284fe9689e5f03ea38e2",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A reference to Cyprian's letter To Donatus, which describes corrupt judges and courts.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cyprian",
-          "basis": "sidenote \"Cyprian ad Donatum.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Ad Donatum"
-        },
-        "text": "Cyprian, To Donatus",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f329": {
     "kind": "phrase",
     "lang": "la",
@@ -32266,75 +32337,6 @@
           "work": "Odes"
         },
         "text": "— and wars, hated by mothers,",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f392": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "So many myriads of the Commons were butchered up, with sword, famine, war",
-        "in": "djr",
-        "near": "djr-f392",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Richard Dinoth",
-      "basis": "text \"as Richard Dinoth adds\" with sidenote \"Belli civilis gal. lib. 1.\"",
-      "locus": "book 1",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De bello civili Gallico"
-    },
-    "text": "Belli civilis gal. lib. 1. Hoc ferali bello & caedibus omnia repleverunt, & regnum amplissimum a fundamentis pene everterunt, plebis tot myriades gladio, bello, fame miserabiliter perierunt",
-    "text_sha1": "39f1e54dd6d215c01f377c1e3e1c4e859cd27ed7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The note cites Richard Dinoth's history of the French civil wars, named in the main text.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "So many myriads of the Commons were butchered up, with sword, famine, war",
-            "in": "djr",
-            "near": "djr-f392",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Richard Dinoth",
-          "basis": "text \"as Richard Dinoth adds\" with sidenote \"Belli civilis gal. lib. 1.\"",
-          "locus": "book 1",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De bello civili Gallico"
-        },
-        "text": "Of the French Civil War, book 1. In this savage war they filled everything with slaughter and all but overthrew a very great kingdom from its foundations; so many myriads of the common people perished miserably by sword, war and famine.",
         "warnings": []
       }
     ]
@@ -53453,65 +53455,6 @@
       }
     ]
   },
-  "djr-f749": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Matteo Ricci",
-      "basis": "sidenote \"Riccius lib. 1 cap. 5.\"",
-      "locus": "book 1, chapter 5",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De Christiana expeditione apud Sinas"
-    },
-    "text": "Ad regendam rempub. soli literati admittuntur, nec ad eam rem gratia magistratuum aut regis indigent, omnia ab explorata cujusque scientia & virtue pendent",
-    "text_sha1": "baed7c76d0bcabb60f1dd4fe2b2d673a102fd98f",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "corrupt-text"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'virtue' is a slip for Latin 'virtute'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Matteo Ricci",
-          "basis": "sidenote \"Riccius lib. 1 cap. 5.\"",
-          "locus": "book 1, chapter 5",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De Christiana expeditione apud Sinas"
-        },
-        "text": "Only the learned are admitted to govern the commonwealth, and for this they need no favour from magistrates or king; everything depends on each man's tested knowledge and virtue.",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f75": {
     "kind": "phrase",
     "lang": "la",
@@ -63946,65 +63889,6 @@
           "work": "Letter to Balthasar Moretus"
         },
         "text": "truly the tutor of the human race, by voice and by pen",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f924": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Rejectiunculae ad Batavum",
-    "text_sha1": "6f901e5934f804654ad76b19005048d48cce4393",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A book title, apparently a polemic addressed to a Dutchman. Its author is not identified here.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Little Rejoinders to the Batavian",
         "warnings": []
       }
     ]

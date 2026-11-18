@@ -1,0 +1,66 @@
+{
+  "1.2.3.5-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Suetonius",
+      "basis": "text \"saith Suetonius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Augustus"
+    },
+    "text": "Vita ejus",
+    "text_sha1": "be5444cc94c2c67d5c832e9355bfd286c326f384",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a reference to Suetonius' Life of Augustus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Suetonius",
+          "basis": "text \"saith Suetonius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Augustus"
+        },
+        "text": "His Life.",
+        "warnings": []
+      }
+    ]
+  }
+}

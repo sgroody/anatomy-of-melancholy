@@ -51,3 +51,7 @@
 {"ts": "2026-11-18T20:30:00Z", "event": "before", "run": "psalm-check-v1 (75 Psalm citations)", "plan": "Pro", "window_5h_pct": 5, "weekly_pct": 1}
 {"ts": "2026-11-18T20:40:00Z", "event": "after", "run": "psalm-check-v1 (75 Psalm citations: 45 kjv, 3 vulgate, 2 none, 25 unsure)", "plan": "Pro", "window_5h_pct": 7, "weekly_pct": 2, "cost_usd_list": 0.87, "model": "claude-opus-5-5", "prompt": "psalm-check-v1"}
 {"ts": "2026-11-18T20:50:00Z", "event": "after", "run": "psalm-check-v1 re-run, context centred (55 asked; 67 kjv, 3 vulgate, 3 none, 2 unsure)", "plan": "Pro", "window_5h_pct": 9, "weekly_pct": 2, "cost_usd_list": 0.54, "model": "claude-opus-5-5", "prompt": "psalm-check-v1"}
+{"ts": "2026-11-18T21:40:00Z", "event": "before", "run": "translate --all (28 new passages after the langid change)", "plan": "Pro", "window_5h_pct": 9, "weekly_pct": 2}
+{"ts": "2026-11-18T21:50:00Z", "event": "after", "run": "translate --all (28 new passages, 49 records retired)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 2, "cost_usd_list": 0.84, "model": "claude-opus-5-5", "prompt": "tr-v2"}
+{"ts": "2026-11-18T22:05:00Z", "event": "before", "run": "gold-audit-v1 label round h3 (300 items, blind)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 2}
+{"ts": "2026-11-18T22:15:00Z", "event": "after", "run": "gold-audit-v1 label round h3 (300 items)", "plan": "Pro", "window_5h_pct": 12, "weekly_pct": 3, "cost_usd_list": 1.09, "model": "claude-opus-5-5", "prompt": "gold-audit-v1"}

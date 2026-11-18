@@ -1283,6 +1283,63 @@
       }
     ]
   },
+  "1.4.1.1-f136": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca the Elder",
+      "basis": "sidenote \"Laqueus praecisus, cont. 1 lib. 5.\" and \"Seneca.\"",
+      "locus": "cont. 1 lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Controversiae"
+    },
+    "text": "Quidam naufragio facto, amissis tribus liberis, & uxore, suspendit se, praecidit illi quidam ex praetereuntibus laqueum, a liberato reus fit maleficii",
+    "text_sha1": "f2e8d6441c4d709547556fd6f8da4d07f5da84d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "A certain one, a shipwreck having been made, three children and wife having been lost, hanged himself; a certain one of the passers-by cut the noose for him; by the freed man he is made defendant of wrongdoing.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the theme of a declamation case. The man who was rescued sues his rescuer for 'maleficium' (harm, wrongful injury), on the grounds that cutting him down only prolonged his misery. Burton cites it as 'Laqueus praecisus' (The Cut Noose), 'cont. 1 lib. 5', and names 'Seneca', meaning the Elder Seneca's Controversiae.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca the Elder",
+          "basis": "sidenote \"Laqueus praecisus, cont. 1 lib. 5.\" and \"Seneca.\"",
+          "locus": "cont. 1 lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Controversiae"
+        },
+        "text": "A certain man, having suffered shipwreck and lost his three children and his wife, hanged himself; one of the passers-by cut the noose for him, and the man he had set free brought a charge of wrongful injury against him.",
+        "warnings": []
+      }
+    ]
+  },
   "1.4.1.1-f14": {
     "kind": "verse",
     "lang": "la",
@@ -4775,66 +4832,6 @@
           "work": "Trinummus"
         },
         "text": "He does a beggar a bad turn who gives him something to eat; for what he gives is lost, and he only prolongs the beggar's life into misery",
-        "warnings": []
-      }
-    ]
-  },
-  "1.4.1.1-f70": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "downgraded_from": "burton-cites",
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Laqueus praecisus, cont. 1 lib. 5. Quidam naufragio facto, amissis tribus liberis, & uxore, suspendit se, praecidit illi quidam ex praetereuntibus laqueum, a liberato reus fit maleficii",
-    "text_sha1": "5a0e14d79102cab9b6694abf860777c5890c8001",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "This is a declamation theme from Seneca the Elder's Controversiae, book 5, number 1.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "downgraded_from": "burton-cites",
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "The Cut Noose, Controversiae 1, book 5. A certain man, after a shipwreck in which he lost his three children and his wife, hanged himself; one of the passers-by cut the noose for him, and is accused of wrongdoing by the man he freed",
         "warnings": []
       }
     ]

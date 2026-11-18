@@ -2192,6 +2192,16 @@
     ],
     "text_sha1": "c9f6249195b252fbacffa6680d8744a61a91299e"
   },
+  "3.4.1.3-f218": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "a95d2f5e609d19430b5169bbd6ce1e434a0286e0"
+  },
   "3.4.1.3-f219": {
     "bracket": "present",
     "by": "rules",
@@ -2271,16 +2281,6 @@
       "english-follows"
     ],
     "text_sha1": "cb43ecf888c9be32b573a46acd372b3e1a602578"
-  },
-  "3.4.1.3-f221": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "b2e1183baaeddc74df9d0163e0916b1d101a3a43"
   },
   "3.4.1.3-f223": {
     "bracket": "none",
@@ -2561,16 +2561,6 @@
     ],
     "text_sha1": "6ba44911d9ef376a68c66431df511b2ef4a4020c"
   },
-  "3.4.1.3-f231": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "79ac00241fae9a22d9a520e5f23d2427bea6828f"
-  },
   "3.4.1.3-f232": {
     "bracket": "present",
     "by": "rules",
@@ -2752,34 +2742,6 @@
     ],
     "text_sha1": "bd341d5d65c741b881967d8e85e9484437bb628e"
   },
-  "3.4.1.3-f239": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Julian the Apostate, Porphyrius the Platonist, Celsus the Physician, Libanius the Sophister",
-          "in": "3.4.1.3-p15",
-          "prefix": "ical Popes, than ever it was by ",
-          "suffix": "; by those heathen Emperors, Hun"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "d3ea1cfbec11f072ba780607697b7ad93e3ea2cd"
-  },
   "3.4.1.3-f24": {
     "bracket": "none",
     "by": "rules",
@@ -2805,6 +2767,44 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "7315771f0b8eb7dfc6c9a4c2b4e259c7842993e7"
+  },
+  "3.4.1.3-f240": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "6640abd1c096ffee25b39281b2362eadbd310ec1"
+  },
+  "3.4.1.3-f241": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Julian the Apostate, Porphyrius the Platonist, Celsus the Physician, Libanius the Sophister",
+          "in": "3.4.1.3-p15",
+          "prefix": "ical Popes, than ever it was by ",
+          "suffix": "; by those heathen Emperors, Hun"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "a1628e145bad09b46a1a6cbcaaaaa4945900c017"
   },
   "3.4.1.3-f25": {
     "bracket": "present",
@@ -4354,35 +4354,6 @@
       "english-precedes"
     ],
     "text_sha1": "b5589f161dd4a975480a096e378e473dae1dc2cd"
-  },
-  "3.4.1.3-f76": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Lucian’s time, a heifer for their good health, four Oxen for wealth, an hundred for a Kingdom, nine Bulls for their safe return from Troja to Pylus, &c.",
-          "in": "3.4.1.3-p9",
-          "prefix": " ordinary thing to sacrifice in ",
-          "suffix": " Every God almost had a peculiar"
-        },
-        "words": 28
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "fad2557dae2cd4f564326d413e2f7213f4728c5e"
   },
   "3.4.1.3-f77": {
     "bracket": "none",

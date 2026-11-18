@@ -1089,6 +1089,75 @@
       }
     ]
   },
+  "2.4.1.4-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he discommends and inveighs against it, by reason of the corrosive waters which are used in it",
+        "in": "2.4.1.4",
+        "near": "2.4.1.4-f32",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Noxium ob aquas rodentes",
+    "text_sha1": "38629f6d47a64e35a7a3e5cb454c5bbd79fe2823",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "Harmful on account of the gnawing waters",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Sidenote to Burton's discussion of aurum potabile (drinkable gold). The 'gnawing' waters (aquae rodentes) are the corrosive acids used to dissolve the gold. The sidenote also begins with 'Aurum non aurum' ('gold that is not gold'), which falls outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he discommends and inveighs against it, by reason of the corrosive waters which are used in it",
+            "in": "2.4.1.4",
+            "near": "2.4.1.4-f32",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Harmful because of the corrosive waters",
+        "warnings": []
+      }
+    ]
+  },
   "2.4.1.4-f33": {
     "kind": "phrase",
     "lang": "la",
@@ -1552,75 +1621,6 @@
           "work": null
         },
         "text": "Drinkable gold",
-        "warnings": []
-      }
-    ]
-  },
-  "2.4.1.4-f9": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "by reason of the corrosive waters which are used in it",
-        "in": "2.4.1.4",
-        "near": "2.4.1.4-f9",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Aurum non aurum. Noxium ob aquas rodentes",
-    "text_sha1": "8abd229ff3a09b92bbd8641a5024aec96ef88d1b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This refers to Erastus's objection to potable gold.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "by reason of the corrosive waters which are used in it",
-            "in": "2.4.1.4",
-            "near": "2.4.1.4-f9",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Gold that is no gold. Harmful because of the corrosive waters.",
         "warnings": []
       }
     ]

@@ -1085,63 +1085,6 @@
       }
     ]
   },
-  "3.1.2.3-f28": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Pars inscrip. Tit. Livii statuae Patavii",
-    "text_sha1": "0606ba8fb2288b77061225f0d5b9edec246c8e19",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a reference note. It gives the source of the Latin sentence that follows in the main text.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Part of the inscription on the statue of Titus Livy at Padua.",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.2.3-f29": {
     "kind": "phrase",
     "lang": "la",
@@ -2321,65 +2264,6 @@
       }
     ]
   },
-  "3.1.2.3-f59": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cornelius Nepos",
-      "basis": "text \"Cornelius Nepos writes\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Life of Atticus"
-    },
-    "text": "Vita ejus",
-    "text_sha1": "be5444cc94c2c67d5c832e9355bfd286c326f384",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Refers to Cornelius Nepos's Life of Atticus.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cornelius Nepos",
-          "basis": "text \"Cornelius Nepos writes\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Life of Atticus"
-        },
-        "text": "His Life.",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.2.3-f6": {
     "kind": "phrase",
     "lang": "la",
@@ -2979,6 +2863,65 @@
           "work": null
         },
         "text": "Wisdom often lies hidden under a threadbare coat.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f76": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Livii statuae Patavii",
+    "text_sha1": "842ecfc6a80b7ec4e9e615dee30017170b1d283d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "of Livius's statue at Padua",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment of Burton's sidenote, which reads in full \"Pars inscrip. Tit. Livii statuae Patavii\": \"Part of the inscription on the statue of Titus Livius at Padua.\" The marked passage leaves out \"Tit.\" (Titus), which belongs with \"Livii\". The sidenote cites the source of the Latin sentence in the main text. It is not itself a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of Livy's statue at Padua",
         "warnings": []
       }
     ]

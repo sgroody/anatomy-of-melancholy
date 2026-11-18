@@ -1711,6 +1711,63 @@
       }
     ]
   },
+  "2.2.2.1-f43": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quot itinera una nocte confecissent tot coronas ludicro deo puta Triphallo, Marsiae, Hermae, Priapo donarent, Cingemus tibi mentulam coronis, &c",
+    "text_sha1": "b37dbd98a7e0805efc74b2cb60a94b4cae67c7bd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "How many journeys in one night they had completed, so many crowns to the playful god, suppose to Triphallus, Marsyas, Hermes, Priapus, they would give; we will gird for you the prick with crowns, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Itinera' (journeys) is a euphemism for acts of intercourse. The custom described is a votive offering of one garland to a phallic deity for each act. Triphallus ('triple-phallused') is an epithet of Priapus. 'Mentula' is the coarse Latin word for the penis, so it is rendered here with a vulgar English equivalent. The closing clause reads like a line of Priapic verse. Burton's sidenote names several sources together (Mizauld, Lemnius, Catullus, Ovid) but does not say which one this wording comes from.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "As many journeys as they had accomplished in one night, so many garlands would they present to the sportive god, to Triphallus, say, Marsyas, Hermes, Priapus: We will wreathe your prick with garlands, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.2.1-f45": {
     "kind": "phrase",
     "lang": "la",
@@ -1767,66 +1824,6 @@
           "work": "Amorum libri"
         },
         "text": "6; very curious on these matters, for he even fixes the number, out of the Talmudists, so that you may know that each man has his own time assigned, etc.",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.2.1-f46": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Catullus; Ovid",
-      "basis": "sidenote \"Catullum ad Ipsithillam, &c. Ovid. Eleg. lib. 3 & 6\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Catullum ad Ipsithillam, &c. Ovid. Eleg. lib. 3 & 6, &c. Quot itinera una nocte confecissent tot coronas ludicro deo puta Triphallo, Marsiae, Hermae, Priapo donarent, Cingemus tibi mentulam coronis, &c",
-    "text_sha1": "6b5062f13617480e1d88118e71f13223a85f4edb",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
-        "flags": [
-          "truncated"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'Itinera' (journeys) is a euphemism for sexual bouts. Catullus's poem to Ipsithilla is the one boasting of nine bouts in a row. Burton's Ovid reference is presumably to the Amores. 'Cingemus tibi mentulam coronis' is a Priapic-style hendecasyllable, and its source is not certain.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Catullus; Ovid",
-          "basis": "sidenote \"Catullum ad Ipsithillam, &c. Ovid. Eleg. lib. 3 & 6\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Catullus to Ipsithilla, etc. Ovid, Elegies book 3 & 6, etc. As many journeys as they had made in one night, so many garlands they would give to the sportive god, namely Triphallus, Marsyas, Hermes, Priapus: We will wreathe your member with garlands, etc.",
         "warnings": []
       }
     ]

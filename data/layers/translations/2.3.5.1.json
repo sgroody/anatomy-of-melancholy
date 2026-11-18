@@ -3107,65 +3107,6 @@
       }
     ]
   },
-  "2.3.5.1-f55": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Nathan Chytraeus",
-      "basis": "sidenote \"Chytraeus delitiis Europae.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Deliciae Europae"
-    },
-    "text": "Chytraeus delitiis Europae",
-    "text_sha1": "c06d47b190738ee8ecd2fb41f37b6b4152ffa885",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A reference to Nathan Chytraeus's collection of inscriptions, Variorum in Europa itinerum deliciae.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Nathan Chytraeus",
-          "basis": "sidenote \"Chytraeus delitiis Europae.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Deliciae Europae"
-        },
-        "text": "Chytraeus, in Delights of Europe",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.5.1-f56": {
     "kind": "phrase",
     "lang": "la",
@@ -3895,65 +3836,6 @@
           "work": null
         },
         "text": "Tacitus",
-        "warnings": []
-      }
-    ]
-  },
-  "2.3.5.1-f68": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Vaticanus vita ejus",
-    "text_sha1": "94801eceaa85f725df8a32e2c5b8a2c21926ed37",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a citation, not a quotation. It refers to an account of Servetus's life by an author called 'Vaticanus', who has not been identified here.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Vaticanus, in his Life",
         "warnings": []
       }
     ]

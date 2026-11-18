@@ -147,5 +147,66 @@
         "warnings": []
       }
     ]
+  },
+  "lectori-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Si me commorit, melius non tangere clamo. Hor",
+    "text_sha1": "a06b7f84bf34712eb4ba80f811ec0ec8585ffb7c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "If he shall have stirred me up, 'better not to touch,' I shout.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Horace, Satires 2.1.44–46: 'at ille, / qui me commorit (melius non tangere, clamo), / flebit' ('but whoever provokes me, better not touch me, I cry, will weep for it'). Burton writes 'Si' for Horace's 'qui' and leaves out the following 'flebit' ('will weep'). The sidenote supports the threat in the main text that Democritus Junior will turn a hostile critic into a joke.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "If he provokes me, 'Better not touch!' I cry.",
+        "warnings": []
+      }
+    ]
   }
 }

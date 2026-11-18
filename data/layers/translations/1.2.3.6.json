@@ -245,7 +245,7 @@
       }
     ]
   },
-  "1.2.3.6-f16": {
+  "1.2.3.6-f17": {
     "kind": "phrase",
     "lang": "la",
     "location": "sidenote",
@@ -257,37 +257,36 @@
     },
     "self_translation": {
       "burton_span": null,
-      "confidence": "medium",
+      "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
       "status": "none"
     },
     "source": {
       "author": "Plautus",
-      "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"",
-      "locus": "Act 1 Scene 3",
+      "basis": "paragraph \"Pseudolus Act. 1 Scen. 3.\"; main text \"Ballio the Bawd in Plautus\"",
+      "locus": "Act. 1 Scen. 3",
       "status": "burton-cites",
       "verified": false,
       "work": "Pseudolus"
     },
-    "text": "Ita est. Ps. sceleste. B. dicis vera. Ps. Verbero. B. quippeni. Ps. furcifer. B. factum optime. Ps. sociofraude. B. sunt mea istaec. Ps. parricida. B. perge tu. Ps. sacrilege. B. fateor. Ps. perjure. B. vera dicis. Ps. pernities adolescentum. B. acerrime. Ps. fur. B. babe. Ps. fugitive. B. bombax. Ps. fraus populi. B. Planissime. Ps. impure leno, caenum. B. cantores probos",
-    "text_sha1": "d13b6e6683eb08e9be851c52d2e469363f7810be",
+    "text": "dicis vera. Ps. Verbero. B. quippeni. Ps. furcifer. B. factum optime. Ps. sociofraude. B. sunt mea istaec. Ps. parricida. B. perge tu. Ps. sacrilege. B. fateor. Ps. perjure. B. vera dicis. Ps. pernities adolescentum. B. acerrime. Ps. fur. B. babe. Ps. fugitive. B. bombax. Ps. fraus populi. B. Planissime. Ps. impure leno, caenum. B. cantores probos",
+    "text_sha1": "62fe57ba311f94fea54f6d0b199f9469ca76de17",
     "translations": [
       {
         "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
+        "confidence": "high",
+        "date": "2026-11-18",
         "flags": [
           "boundary-suspect",
-          "wordplay"
+          "misquotation-suspected"
         ],
-        "literal": null,
+        "literal": "you say true things. Ps. Whip-worthy! B. Why not? Ps. Fork-bearer! B. Done excellently. Ps. Partner-defrauder! B. These are mine. Ps. Parricide! B. Proceed you. Ps. Sacrilegious one! B. I confess. Ps. Perjured one! B. True things you say. Ps. Destruction of youths! B. Most sharply. Ps. Thief! B. Babae! Ps. Fugitive! B. Bombax! Ps. Fraud of the people! B. Most plainly. Ps. Impure pimp, filth! B. Good singers!",
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "The marked passage leaves out the opening of the sidenote, \"Ps. Impudice. B.\" ('Ps. Shameless! B.'), so it begins in the middle of the exchange. Ps. is Pseudolus and B. is Ballio the pimp, who takes each insult as a compliment. 'Babae' and 'bombax' are mock-admiring interjections with no lexical meaning, so they are kept as written. 'Cantores probos' is an exclamation in the accusative, meaning roughly 'what fine singers!', as if the abuse were music. 'pernities' stands for pernicies and 'sociofraude' for sociofraus. Confidence is medium because some of Ballio's ironic replies, such as 'acerrime', are hard to render exactly.",
+        "note": "The cursing match between Pseudolus (Ps.) and the pimp Ballio (B.), who welcomes every insult. The marked passage begins in mid-exchange: the paragraph opens with 'Ps. Impudice. B. Ita est. Ps. sceleste. B.' ('Shameless! B. So I am. Ps. Villain! B.'), which is outside the marked text. 'Babae' and 'bombax' are mock-exclamations of surprise or delight, left as written; the English equivalent is something like 'Oho!' and 'Hurrah!'. A furcifer was a slave made to carry the fork-shaped yoke as a punishment, so 'gallows-bird'. 'Cantores probos' is ironic: Ballio pretends the abuse is a choir singing his praises. Compared with the standard text of Plautus, Burton leaves out some insults and replies (for example 'bustirape … certo' and 'legirupa … valide'). He also gives 'vera dicis' where Plautus has Ballio reply 'vetera vaticinamini' ('you're prophesying old news'). In the standard text, 'impure leno' is spoken by another character.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
@@ -295,13 +294,13 @@
         },
         "source": {
           "author": "Plautus",
-          "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"",
-          "locus": "Act 1 Scene 3",
+          "basis": "paragraph \"Pseudolus Act. 1 Scen. 3.\"; main text \"Ballio the Bawd in Plautus\"",
+          "locus": "Act. 1 Scen. 3",
           "status": "burton-cites",
           "verified": false,
           "work": "Pseudolus"
         },
-        "text": "That's so. Ps. Villain! B. You say true. Ps. Whipping-post! B. Why not? Ps. Gallows-bird! B. Very well done. Ps. Cheater of your partners! B. Those are my ways. Ps. Parricide! B. Go on. Ps. Temple-robber! B. I confess it. Ps. Perjurer! B. You say true. Ps. Ruin of young men! B. Most keenly. Ps. Thief! B. Babae! Ps. Runaway! B. Bombax! Ps. Cheat of the people! B. Most plainly. Ps. Filthy pimp, muck! B. Fine singers!",
+        "text": "you speak the truth. Ps. Whipping-stock! B. Why not? Ps. Gallows-bird! B. Very well done. Ps. Cheater of partners! B. Those are my ways. Ps. Parricide! B. Go on. Ps. Temple-robber! B. I confess it. Ps. Perjurer! B. You speak the truth. Ps. Ruin of young men! B. Most keenly so. Ps. Thief! B. Babae! Ps. Runaway! B. Bombax! Ps. Cheat of the people! B. Most plainly. Ps. Filthy pimp, dung! B. Fine singers!",
         "warnings": []
       }
     ]

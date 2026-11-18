@@ -5,6 +5,9 @@ V5:
   decision: D10
   date: 2026-10-20
   reason: >-
-    Language-ID is below target on held-out round h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95).
-    The remaining errors are edge cases (roman words next to italics, sidenote abbreviations, two model
-    rulings); the owner chose to move on and return to them later.
+    Language-ID is below target on the gate round. Updated 2026-11-18: the rules gained the sidenote-title rule and
+    now read Burton's notes inside quotations (h2 became a seen round); a fresh round h3 (300 items, drawn after the
+    change, labelled blind by the gold-audit-v1 rater, 4 Chaucer labels corrected from the source's markup) scores
+    P 0.962, R 0.952, B 0.960 (targets 0.98 / 0.97 / 0.95). Remaining errors: Latin titles in the running text
+    ("de atra bile") read as quoted Latin, two missed Latin phrases, three missed mixed phrases. Fixing them needs
+    another cycle (h3 seen, rules changed, a fresh round h4); it stays deferred under D10 until then.

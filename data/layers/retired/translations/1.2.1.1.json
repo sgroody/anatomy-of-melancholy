@@ -1,0 +1,67 @@
+{
+  "1.2.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "downgraded_from": "burton-cites",
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Primo artis curativae",
+    "text_sha1": "3469071a514968b1b75a77930a13a35b798fe7e8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "Of the first of the curative art.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A reference for Burton's 'so Galen prescribes Glauco': Galen's two books to Glaucon on the method of healing. 'Primo' means the first book.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "downgraded_from": "burton-cites",
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "In the first book of the art of healing.",
+        "warnings": []
+      }
+    ]
+  }
+}

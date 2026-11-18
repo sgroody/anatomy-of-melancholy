@@ -1,0 +1,132 @@
+{
+  "3.2.2.2-f190": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "meminit ob elegantiam",
+    "text_sha1": "0aecae89c3ede4c9b36edf47086f2ee11ab87ebf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the closing words of the sidenote. In full it reads: 'Ocelli, poem 17, which Lipsius also mentions for its elegance in his Epistolicae Quaestiones, book 3, chapter 11.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "mentions it for its elegance",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.2-f202": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Achilles Tatius",
+      "basis": "sidenote \"Tatius lib. 5.\"",
+      "locus": "lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Leucippe and Clitophon"
+    },
+    "text": "pectus amantis dimanans amatae rei formam insculpsit",
+    "text_sha1": "ac12caa8e9f702d6b45ecd65a3760e47d1f6c8d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "into the breast of the lover flowing, of the loved thing the form engraved",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is part of the sidenote. In full it reads: 'Beauty itself, flowing through hidden rays into the lover's breast, engraved there the form of the beloved object.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Achilles Tatius",
+          "basis": "sidenote \"Tatius lib. 5.\"",
+          "locus": "lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Leucippe and Clitophon"
+        },
+        "text": "flowing into the lover's breast, engraved the form of the beloved object",
+        "warnings": []
+      }
+    ]
+  }
+}

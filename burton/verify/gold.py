@@ -132,7 +132,13 @@ HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tunin
     {"name": "h2", "seed": 20261022, "prefix": "h2-",
      "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
      "sample": paths.DATA / "eval" / "langid-holdout2-sample.jsonl",
-     "gold": paths.DATA / "eval" / "langid-holdout2-gold.jsonl"},
+     "gold": paths.DATA / "eval" / "langid-holdout2-gold.jsonl",
+     "seen": "2026-11-18: its errors were studied to change the rules (the sidenote-title rule)"},
+    # 2026-11-18: drawn after the rules changed, labelled blind by the second rater (gold-audit-v1), the V5 gate
+    {"name": "h3", "seed": 20261118, "prefix": "h3-",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout3-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout3-gold.jsonl"},
 ]
 GATE = HOLDOUTS[-1]["name"]
 HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]

@@ -1381,65 +1381,6 @@
       }
     ]
   },
-  "2.3.6.1-f36": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Nathan Chytraeus",
-      "basis": "sidenote \"Nat. Chytraeus delitiis Europae.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Variorum in Europa itinerum deliciae"
-    },
-    "text": "Chytraeus delitiis Europae",
-    "text_sha1": "c06d47b190738ee8ecd2fb41f37b6b4152ffa885",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Nat.' (Nathan) stands outside the marked passage. This refers to Nathan Chytraeus' collection of inscriptions met on travels in Europe (Variorum in Europa itinerum deliciae).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Nathan Chytraeus",
-          "basis": "sidenote \"Nat. Chytraeus delitiis Europae.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Variorum in Europa itinerum deliciae"
-        },
-        "text": "Chytraeus, Delights of Europe",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.6.1-f4": {
     "kind": "phrase",
     "lang": "la",
@@ -1767,6 +1708,65 @@
           "work": null
         },
         "text": "— not for the first time has my breast / felt this wound; I have borne heavier things. —",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.6.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nathan Chytraeus",
+      "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Deliciae Europae (Variorum in Europa itinerum deliciae)"
+    },
+    "text": "Nat. Chytraeus delitiis Europae",
+    "text_sha1": "69f421e6af5a154df436c113118b3c55dd032640",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "Nathan Chytraeus, in the Delights of Europe",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A source reference for the Venetian Armoury inscription mentioned in the main text. Nathan Chytraeus (1543–1598) compiled inscriptions from his travels in the collection usually titled 'Variorum in Europa itinerum deliciae' (1594). Burton abbreviates the title as 'delitiis Europae'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nathan Chytraeus",
+          "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Deliciae Europae (Variorum in Europa itinerum deliciae)"
+        },
+        "text": "Nathan Chytraeus, in Delights of Europe",
         "warnings": []
       }
     ]

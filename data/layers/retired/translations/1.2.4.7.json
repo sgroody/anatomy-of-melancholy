@@ -1,0 +1,66 @@
+{
+  "1.2.4.7-f112": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paolo Giovio (Jovius)",
+      "basis": "sidenote \"Vita ejus.\" at text \"as Jovius gives out\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Leo X"
+    },
+    "text": "Vita ejus",
+    "text_sha1": "be5444cc94c2c67d5c832e9355bfd286c326f384",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to Paolo Giovio's (Jovius's) Life of Leo X, whom the main text cites at this point.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paolo Giovio (Jovius)",
+          "basis": "sidenote \"Vita ejus.\" at text \"as Jovius gives out\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Leo X"
+        },
+        "text": "His Life.",
+        "warnings": []
+      }
+    ]
+  }
+}

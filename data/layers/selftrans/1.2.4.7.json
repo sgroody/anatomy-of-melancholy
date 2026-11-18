@@ -284,18 +284,6 @@
     "signals": [],
     "text_sha1": "ecb09355d32975fd39fb4d7536fe55b9a15d3393"
   },
-  "1.2.4.7-f112": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "be5444cc94c2c67d5c832e9355bfd286c326f384"
-  },
   "1.2.4.7-f113": {
     "bracket": "none",
     "by": "rules",
@@ -2764,7 +2752,7 @@
     "text_sha1": "13b4498545070081b4c0bc790badc4273b6cf0b8"
   },
   "1.2.4.7-f71": {
-    "bracket": "present",
+    "bracket": "none",
     "by": "rules",
     "candidates": [
       {
@@ -2787,7 +2775,8 @@
     "location": "sidenote",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-at-anchor"
+      "english-at-anchor",
+      "no-gowland-bracket"
     ],
     "text_sha1": "34768b1f2135d34eb40f4eb79c5fabb01c407f25"
   },

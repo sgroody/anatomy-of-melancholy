@@ -1,0 +1,65 @@
+{
+  "3.3.1.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paolo Giovio",
+      "basis": "sidenote \"Jovius vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Jovius vita ejus",
+    "text_sha1": "e6a7ee50f437baaab620dd1ebfaab1de35fbd337",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Paolo Giovio (Paulus Jovius), the historian; 'his life' presumably means the life of the sultan named in the text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paolo Giovio",
+          "basis": "sidenote \"Jovius vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Jovius, in his life",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -116,5 +116,64 @@
         "warnings": []
       }
     ]
+  },
+  "ad-librum-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Haec comice dicta cave ne male capias",
+    "text_sha1": "bb8c84f8382d431fcb4fcc969084bdd853be8c87",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "These things comically said, beware lest you take badly.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's sidenote to his Latin poem 'Ad librum suum' (To his book). It is attached to the parenthesis 'nam diligit istas' ('for he loves them', meaning the noble girls who may read the book). The note asks the reader not to take the playful claim that the author loves women in the wrong way. 'Comice' literally means 'in the manner of comedy'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Take care not to take amiss these things said in jest.",
+        "warnings": []
+      }
+    ]
   }
 }

@@ -163,3 +163,63 @@ def report() -> dict:
     atomic_write_text(REVIEW, "\n".join(lines) + "\n")
     return {"items": n, "agree": agree, "disagree": len(rows),
             "by_round": {r: f"{by_round[(r, True)]}/{by_round[(r, True)] + by_round[(r, False)]}" for r in ROUNDS}}
+
+
+def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) -> dict:
+    """Label a hold-out round that has no gold yet (2026-11-18: round h3, the V5 gate after the rules changed):
+    the same blind rater and prompt as the audit, item text and context only, never the detector's output; the
+    labels become the round's gold file, with their provenance in its header."""
+    from ..verify import gold as goldmod
+
+    h = goldmod.holdout_round(name)
+    if h["gold"].exists():
+        raise SystemExit(f"round {name} already has gold ({h['gold'].name})")
+    sample = goldmod.read_sample(h["sample"])
+    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{PROMPT}.md").read_text(encoding="utf-8")
+    done = _done()
+    todo = [{"id": f"{name}:{r['sid']}", "unit": r["unit"], "in_sidenote": r["stratum"] == "sidenote",
+             "text": clean(r["unit"], r["text"]), "context": clean(r["unit"], r.get("context", ""))}
+            for r in sample]
+    ask = [i for i in todo if i["id"] not in done]
+    spent = 0.0
+    for k in range(0, len(ask), packet_size):
+        pk = ask[k:k + packet_size]
+        bad = [(i["id"], g) for i in pk for g in leaks(i["unit"], i["text"] + " " + i["context"])]
+        if bad:
+            raise SystemExit(f"packet refused: Gowland text in {bad[:3]}")
+        user = "Label these items.\n\n" + json.dumps({"items": pk}, ensure_ascii=False, indent=2)
+        meta = {"ids": [i["id"] for i in pk], "model": model, "prompt": PROMPT,
+                "input_hash": packets.input_hash({"items": pk}, PROMPT, model, 0)}
+        res = runner.call_claude(model, sys_prompt, user, SCHEMA)
+        status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
+        runner.append(LEDGER, {**meta, "ts": runner.now(), "status": status,
+                               **{x: res.get(x) for x in ("seconds", "cost_usd_list", "usage", "error")}})
+        spent += res.get("cost_usd_list") or 0
+        if not res["ok"]:
+            raise SystemExit(f"call {status}: {res.get('error')} (re-run to resume)")
+        date = datetime.now(UTC).date().isoformat()
+        for g in res["output"]["items"]:
+            done[g["id"]] = {"id": g["id"], "label": g["label"], "kind": g["kind"], "foreign_part": g["foreign_part"],
+                             "reason": g["reason"], "by": "machine", "model": model, "prompt": PROMPT, "date": date}
+        atomic_write_text(OUT, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
+                                       for x in sorted(done)))
+        print(f"  {k + len(pk)}/{len(ask)} labelled (${spent:.2f})", flush=True)
+    rows = [{"_meta": {"round": name, "seed": h["seed"], "date": datetime.now(UTC).date().isoformat(),
+                       "labelled_by": f"machine, blind (prompt {PROMPT}, model {model}): item text and context only, "
+                                      "detector output not shown",
+                       "purpose": f"held-out round {name} (V5 gate): never used to tune the rules",
+                       "mixed_lang": "a 'mixed' item's foreign part is taken as Latin (the rater names no language)",
+                       "owner_review": "pending (PLAN D7)"}}]
+    for r in sample:
+        a = done.get(f"{name}:{r['sid']}")
+        if not a:
+            continue
+        row = {"sid": r["sid"], "stratum": r["stratum"], "unit": r["unit"], "text": r["text"], "gold": a["label"],
+               "kind": a["kind"]}
+        if r["stratum"] == "sidenote":
+            row["in_note"] = True
+        if a["label"] == "mixed":
+            row["foreign_part"], row["mixed_lang"] = a["foreign_part"], "la"
+        rows.append(row)
+    atomic_write_text(h["gold"], "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in rows))
+    return {"labelled": len(rows) - 1, "of": len(sample), "cost_usd_list": round(spent, 2)}

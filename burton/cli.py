@@ -106,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--model", default="claude-opus-5-5")
     s.add_argument("--budget-usd", type=float, default=None)
     s.add_argument("--report", action="store_true", help="compare the raters -> state/review/d7-gold-audit.md")
+    s.add_argument("--label-round", help="label a drawn hold-out round that has no gold yet (e.g. h3)")
     s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
 
     s = sub.add_parser("obsolete", help="obsolete-word glosses: Webster 1913 candidates, model ruling -> "
@@ -325,7 +326,9 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "gold-audit":
         from .layers import gold_audit
 
-        if args.report:
+        if args.label_round:
+            print(gold_audit.label_round(args.label_round, model=args.model))
+        elif args.report:
             print(gold_audit.report())
         elif args.dry_run:
             its = gold_audit.items()

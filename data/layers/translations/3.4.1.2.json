@@ -1625,65 +1625,6 @@
       }
     ]
   },
-  "3.4.1.2-f158": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Aelius Lampridius",
-      "basis": "sidenote \"Lampridius vita ejus.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Life of Heliogabalus (Historia Augusta)"
-    },
-    "text": "Lampridius vita ejus",
-    "text_sha1": "4ac4575aba0571f026bfc6a9f73f2548ca612bbb",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A reference to Aelius Lampridius's Life of Heliogabalus, in the Historia Augusta. \"ejus\" (his) refers to Heliogabalus.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Aelius Lampridius",
-          "basis": "sidenote \"Lampridius vita ejus.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Life of Heliogabalus (Historia Augusta)"
-        },
-        "text": "Lampridius, in his Life",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.1.2-f159": {
     "kind": "phrase",
     "lang": "la",
@@ -2272,6 +2213,63 @@
           "work": null
         },
         "text": "that the reliquary opened of its own accord, and that he fought for them",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.2-f173": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Zaleucus",
+      "basis": "sidenote text \"Zaleucus praefat legis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Preamble to the laws"
+    },
+    "text": "Qui urbem aut regionem inhabitant, persuasos esse oportet esse Deos",
+    "text_sha1": "1b87cdba171e2123da1c14a6b562c58155eb8813",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "Who a city or region inhabit, persuaded to be it is fitting that there are gods",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's sidenote attributes this to the preamble of the laws of Zaleucus, the lawgiver of Locri. The preamble survives in Greek (in Stobaeus), so this is a Latin version of it. Burton's main text at the anchor gives a related idea, which he credits to Aristotle and Plato, but it does not translate this line.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Zaleucus",
+          "basis": "sidenote text \"Zaleucus praefat legis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Preamble to the laws"
+        },
+        "text": "Those who live in a city or a region must be persuaded that there are gods.",
         "warnings": []
       }
     ]
@@ -3636,63 +3634,6 @@
           "work": null
         },
         "text": "If the world wishes to be deceived, let it be deceived",
-        "warnings": []
-      }
-    ]
-  },
-  "3.4.1.2-f24": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Zaleucus",
-      "basis": "sidenote \"Zaleucus praefat legis.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "preface to his laws"
-    },
-    "text": "Zaleucus praefat legis. Qui urbem aut regionem inhabitant, persuasos esse oportet esse Deos",
-    "text_sha1": "99e5a7e5258cec049e0b99209825dfebef0c954d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "Zaleucus, preface of the law. Those who inhabit a city or region, it behoves them to be persuaded that there are gods.",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Zaleucus was the early lawgiver of the Locrians. A prologue to his laws that opens with belief in the gods has come down through later Greek writers.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Zaleucus",
-          "basis": "sidenote \"Zaleucus praefat legis.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "preface to his laws"
-        },
-        "text": "Zaleucus, preface to his laws. Those who live in a city or a country must be persuaded that there are gods.",
         "warnings": []
       }
     ]

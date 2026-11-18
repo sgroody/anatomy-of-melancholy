@@ -133,15 +133,13 @@
     "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d"
   },
   "1.4.1.1-f114": {
-    "bracket": "none",
+    "bracket": "present",
     "by": "rules",
     "candidates": [],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
+    "signals": [],
     "text_sha1": "95f374d27626db29861d22abbad1008eeb593029"
   },
   "1.4.1.1-f115": {
@@ -543,6 +541,34 @@
       "english-follows"
     ],
     "text_sha1": "fa382e719686660feb66ea202748ee837a00fc7e"
+  },
+  "1.4.1.1-f136": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "prolong his miseries",
+          "in": "1.4.1.1-p10",
+          "prefix": ") doth ill, because he doth but ",
+          "suffix": ". But Lactantius lib. 6 cap. 7 d"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "f2e8d6441c4d709547556fd6f8da4d07f5da84d7"
   },
   "1.4.1.1-f14": {
     "bracket": "none",
@@ -2233,34 +2259,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "846c45977e8621b84c443e0afddaba21c589af3a"
-  },
-  "1.4.1.1-f70": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "prolong his miseries",
-          "in": "1.4.1.1-p10",
-          "prefix": ") doth ill, because he doth but ",
-          "suffix": ". But Lactantius lib. 6 cap. 7 d"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "5a0e14d79102cab9b6694abf860777c5890c8001"
   },
   "1.4.1.1-f71": {
     "bracket": "present",

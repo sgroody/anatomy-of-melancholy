@@ -1,0 +1,142 @@
+{
+  "1.2.2.1-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"Cardan makes that a cause\"; sidenote \"De rerum varietat.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De rerum varietate"
+    },
+    "text": "De rerum varietat",
+    "text_sha1": "cb84913eb5f705504815834f7790ada1740679bc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A book title, abbreviated: Cardano's De rerum varietate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Cardan makes that a cause\"; sidenote \"De rerum varietat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De rerum varietate"
+        },
+        "text": "On the Variety of Things",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "hath an evil name, it yields gross nutriment",
+        "in": "1.2.2.1",
+        "near": "1.2.2.1-f5",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Freitagius",
+      "basis": "sidenote \"(inquit Freitagius)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Male audit cervina (inquit Freitagius) crassissimum & atrabilarium suppeditat alimentum",
+    "text_sha1": "f50e2fe22570ff8b3fd40ff6633e97c5863447e0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Deer's flesh is ill spoken of (says Freitagius); it furnishes the thickest and atrabilious nourishment.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "cervina means deer's flesh (caro understood). atrabilarium means 'of black bile', that is, tending to breed melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "hath an evil name, it yields gross nutriment",
+            "in": "1.2.2.1",
+            "near": "1.2.2.1-f5",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Freitagius",
+          "basis": "sidenote \"(inquit Freitagius)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Venison has a bad name (says Freitagius); it supplies very gross and black-bilious nourishment.",
+        "warnings": []
+      }
+    ]
+  }
+}

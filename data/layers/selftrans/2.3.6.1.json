@@ -640,35 +640,6 @@
     ],
     "text_sha1": "6b570b6598dfea9df6c0a9c41122c5babefaa82e"
   },
-  "2.3.6.1-f36": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Venice, in their Armoury have this inscription, Happy is that city which in time of peace thinks of war, a fit Motto for every man’s private house",
-          "in": "2.3.6.1-p3",
-          "prefix": "The Commonwealth of ",
-          "suffix": "; happy is the man that provides"
-        },
-        "words": 27
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "c06d47b190738ee8ecd2fb41f37b6b4152ffa885"
-  },
   "2.3.6.1-f4": {
     "bracket": "present",
     "by": "rules",
@@ -787,5 +758,34 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "50e505b91ac1e5b9593ced996694a42159d0c5b7"
+  },
+  "2.3.6.1-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Venice, in their Armoury have this inscription, Happy is that city which in time of peace thinks of war, a fit Motto for every man’s private house",
+          "in": "2.3.6.1-p3",
+          "prefix": "The Commonwealth of ",
+          "suffix": "; happy is the man that provides"
+        },
+        "words": 27
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "69f421e6af5a154df436c113118b3c55dd032640"
   }
 }

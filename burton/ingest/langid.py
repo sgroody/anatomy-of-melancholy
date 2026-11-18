@@ -163,6 +163,11 @@ def classify(text: str, followed_by_bracket: bool, in_note: bool = False,
             # (Donatus Altomarus) stay names while terms (Morbus Gallicus) become Latin
             return "la", "medium", f"capitalised term attested in Burton's Latin (lexicon la={lx_la})"
         return "name", "medium", "capitalised words only (name or term)"
+    if in_note and not followed_by_bracket and len(words) <= 3 and words[0][:1].isupper():
+        # a short unbracketed run opening with a capital in a sidenote is a title or an abbreviated name ("Vita
+        # ejus", "Ter."): Gowland translated the Latin he kept in the notes, so a quotation there has his bracket
+        # (2026-11-18, after held-out h2)
+        return "citation", "medium", "short capitalised unbracketed run in a sidenote (a title)"
     if in_note and len(words) <= 6 and n_la < 2:
         if lx_la >= 2 and not lx_en and not n_en:
             return "la", "medium", f"sidenote run attested in Burton's Latin (lexicon la={lx_la})"
@@ -349,8 +354,14 @@ def _bracketed(items: list, i: int, j: int) -> bool:
 
 
 def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
-    if e.tag in (ED("trans"), ED("verse-trans"), ED("block"), T("foreign"), T("supplied")) \
-            or e.get("ana") == "foreign":
+    if e.get("ana") == "foreign":
+        # a passage already: but Burton's notes inside it are his own matter, read on their own (2026-11-18: "Haec
+        # comice dicta cave ne male capias", a note in the Latin poem Ad librum, was never tagged or translated)
+        for n in e.iter(T("note")):
+            if not any(a.tag == T("note") for a in n.iterancestors()):
+                tag_latin(n, decisions, unit, in_note=True)
+        return
+    if e.tag in (ED("trans"), ED("verse-trans"), ED("block"), T("foreign"), T("supplied")):
         return
     if e.get("facs") is not None:  # our own transcriptions of heading images are not source text
         return

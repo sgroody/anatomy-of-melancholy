@@ -1,0 +1,65 @@
+{
+  "3.3.4.1-f81": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "sidenote \"Amator dial.\"; text \"saith Plutarch\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Amatorius"
+    },
+    "text": "Amator dial",
+    "text_sha1": "891e2fb484c5c04749cf6511632b40127810f9c9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Plutarch's Amatorius (Dialogue on Love), which tells of Gabba pretending to sleep for Maecenas. 'dial' is read as 'dialogus'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "sidenote \"Amator dial.\"; text \"saith Plutarch\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Amatorius"
+        },
+        "text": "Amatorius, a dialogue",
+        "warnings": []
+      }
+    ]
+  }
+}
