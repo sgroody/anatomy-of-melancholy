@@ -1,5 +1,5 @@
 {
-  "when": "2026-11-02T16:22:32+00:00",
+  "when": "2026-11-18T22:10:17+00:00",
   "ok": true,
   "results": [
     {
@@ -8,12 +8,12 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "main_words": 484453,
+        "main_words": 614,
         "main_unexplained_diffs": 0,
-        "notes_compared": 5703,
+        "notes_compared": 11,
         "note_mismatches": 0,
-        "editor_additions_excluded": 5,
-        "units": 158
+        "editor_additions_excluded": 1,
+        "units": 1
       },
       "problems": []
     },
@@ -23,14 +23,15 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "sidenote_refs": "5703/5703",
-        "endnote_refs": "3907/3907",
-        "pagebreaks": "956/956",
-        "paragraphs": "1910/1910",
-        "verse_lines": "5006/5006",
-        "greek_chars": "862/862",
-        "heading_images": "4/4",
-        "units": 158
+        "sidenote_refs": "11/11",
+        "endnote_refs": "6/6",
+        "pagebreaks": "2/2",
+        "paragraphs": "4/4",
+        "verse_lines": "9/9",
+        "greek_chars": "85/85",
+        "heading_images": "1/1",
+        "page_refs": "0/0",
+        "units": 1
       },
       "problems": []
     },
@@ -40,9 +41,9 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "sidenotes_resolved": "5703/5703",
-        "ids": 16751,
-        "units": 158
+        "sidenotes_resolved": "11/11",
+        "ids": 28,
+        "units": 1
       },
       "problems": []
     },
@@ -52,9 +53,9 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "script_chars": 1080,
+        "script_chars": 85,
         "untagged": 0,
-        "units": 158
+        "units": 1
       },
       "problems": []
     },
@@ -64,8 +65,8 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "pages_checked": 18,
-        "pages_total": 18
+        "pages_checked": 0,
+        "pages_total": 19
       },
       "problems": []
     },
@@ -77,10 +78,8 @@
       "counts": {
         "bodies": "3907/3907",
         "text_mismatches": 0,
-        "anchors": 3907,
-        "link_fixes_applied": 1,
-        "orphans": 0,
-        "referenced_twice": 0
+        "anchors": 6,
+        "link_fixes_applied": 0
       },
       "problems": []
     },
@@ -90,41 +89,28 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "trans": 4345,
-        "trans_pieces": 10,
-        "verse_trans": 725,
-        "supplied": 152,
+        "trans": 4,
+        "trans_pieces": 0,
+        "verse_trans": 1,
+        "supplied": 0,
         "brackets_left": 0,
-        "gowland_units": 2,
-        "units": 158
+        "gowland_units": 0,
+        "units": 1
       },
       "problems": []
     },
     {
       "code": "V5",
-      "name": "language-ID vs gold samples (gate: held-out h2)",
-      "ok": false,
-      "deferred": "deferred by D10 (2026-10-20): Language-ID is below target on held-out round h2 (P 0.964, R 0.964, B 0.975; targets 0.98 / 0.97 / 0.95). The remaining errors are edge cases (roman words next to italics, sidenote abbreviations, two model rulings); the owner chose to move on and return to them later.",
+      "name": "language-ID vs gold samples (gate: held-out h3)",
+      "ok": true,
+      "deferred": null,
       "counts": {
-        "heldout_h2": "P=0.964 R=0.964 B=0.975 n=300 tp=80 fp=3 fn=3",
-        "seen_h1": "P=1.0 R=1.0 B=0.979 n=150 tp=47 fp=0 fn=0",
-        "tuning": "P=0.984 R=0.984 B=0.967 n=677 tp=183 fp=3 fn=3"
+        "heldout_h3": "P=None R=None B=None n=1 tp=0 fp=0 fn=0",
+        "seen_h1": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
+        "seen_h2": "P=None R=None B=None n=0 tp=0 fp=0 fn=0",
+        "tuning": "P=1.0 R=1.0 B=1.0 n=77 tp=8 fp=0 fn=0"
       },
-      "problems": [
-        "held-out h2 below target: precision >= 0.98, recall >= 0.97, boundary >= 0.95",
-        "held-out h2: missed la term: 'Intestina' (h2-italic-054)",
-        "held-out h2: missed mixed phrase: 'in secundis' (h2-roman-before-bracket-016)",
-        "held-out h2: false foreign [en]: '’Tis an inevitable chance, the first statute in Magna Carta,' (h2-roman-before-bracket-023)",
-        "held-out h2: missed mixed phrase: 'more aquilae factum' (h2-roman-before-bracket-033)",
-        "held-out h2: false foreign [citation]: 'Ter' (h2-sidenote-003)",
-        "held-out h2: false foreign [citation]: 'Vita ejus' (h2-sidenote-006)",
-        "tuning: missed la phrase: 'obscurorum virorum' (italic-212)",
-        "tuning: false foreign [citation]: 'ii' (italic-263)",
-        "tuning: missed mixed phrase: 'Chorus Sancti Viti' (roman-before-bracket-040)",
-        "tuning: false foreign [en]: 'His eyes hollow and grisly to behold,' (verse-041)",
-        "tuning: false foreign [en]: 'Swear and lie as women can.' (verse-049)",
-        "tuning: missed mixed phrase: 'Diuretica' (english-030)"
-      ]
+      "problems": []
     },
     {
       "code": "V7",
@@ -132,17 +118,17 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "foreign": 7769,
-        "with_record": 7769,
-        "machine_labelled": 7821,
+        "foreign": 10,
+        "with_record": 10,
+        "machine_labelled": 17,
         "stale": 0,
         "orphan_keys": 0,
-        "selectors_ok": 6932,
+        "selectors_ok": 8,
         "selectors_bad": 0,
-        "sources_unidentified": 2766,
-        "sources_other": 5003,
-        "selftrans_records": 7769,
-        "selftrans_selectors_ok": 8422,
+        "sources_unidentified": 5,
+        "sources_other": 5,
+        "selftrans_records": 10,
+        "selftrans_selectors_ok": 8,
         "selftrans_selectors_bad": 0,
         "selftrans_stale": 0,
         "selftrans_missing": 0,
@@ -150,33 +136,37 @@
         "selftrans_units_missing": 0,
         "selftrans_gowland_overlap": 0,
         "untranslated": 0,
-        "units_without_layer": 4,
-        "djs_records": 7769,
-        "djs_no-anchor": 2375,
-        "sidenotes_no-citation": 1205,
-        "djs_aligned": 2149,
-        "djs_omitted": 1621,
-        "djs_below-threshold": 407,
-        "djs_kept-original": 194,
-        "djs_not-found": 798,
-        "djs_implausible-length": 201,
-        "djs_ocr-noise": 17,
-        "sidenotes_partial": 781,
-        "citations_partial": 621,
-        "sidenotes_unidentified": 1507,
-        "citations_unidentified": 1868,
-        "sidenotes_parsed": 2210,
-        "citations_parsed": 2675,
-        "citation_author_text-at-anchor": 602,
-        "citation_author_work-title": 106,
-        "xrefs": 21,
-        "xrefs_resolved": 19,
-        "citation_author_own-divisions": 22,
-        "source_downgrades": 1,
-        "xrefs_unresolved": 2,
-        "djs_broken-span": 7,
-        "gloss_records": 23,
-        "gloss_selectors_ok": 98
+        "units_without_layer": 0,
+        "restored_records": 2,
+        "restored_selectors_ok": 2,
+        "djs_records": 10,
+        "djs_ocr-noise": 1,
+        "djs_no-anchor": 5,
+        "djs_aligned": 1,
+        "djs_omitted": 1,
+        "djs_implausible-length": 2,
+        "sidenotes_unidentified": 4,
+        "citations_unidentified": 6,
+        "sidenotes_no-citation": 3,
+        "sidenotes_partial": 3,
+        "citations_partial": 3,
+        "citations_parsed": 3,
+        "sidenotes_parsed": 1,
+        "citation_author_text-at-anchor": 1,
+        "sources_verified": 1
+      },
+      "problems": []
+    },
+    {
+      "code": "V11",
+      "name": "synopsis completeness",
+      "ok": true,
+      "deferred": null,
+      "counts": {
+        "strings": "561/561",
+        "nodes": 489,
+        "labels resolved": "192/192",
+        "cross-keys linked": "22/22"
       },
       "problems": []
     }
