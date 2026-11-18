@@ -226,3 +226,7 @@ jumps), three ruled compartments on the front page that unfold into each sheet, 
 print, and the brace path in rubric for "where this page stands".
 
 Status 2026-11-18 (usage limit reached): stage 12 is built and checked by hand in headless Chrome but NOT committed; its `burton check --all` was still running. Next session: re-run the check, then commit stage 12 (files: burton/site/render.py, build.py, static/edition.css, edition.js, templates/*.html).
+
+Stage 15 begun (2026-11-18): the synopsis pages show the synopsis as a sheet (Burton's braces drawn, read left to right,
+one column per level) by default on wide windows, with "As an outline" beside it. The front page (round 6) and the
+"where this page stands" path (research report) are next, after the owner's round 6 choice.

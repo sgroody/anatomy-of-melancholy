@@ -641,7 +641,16 @@ if (synTree) {
   const tools = document.querySelector(".syn-tools");
   if (tools) {
     tools.hidden = false;
+    // as a sheet (Burton's braces, left to right) or as an outline; the sheet by default where there is room
+    const view = (v) => {
+      synTree.classList.toggle("syn-sheet", v === "sheet");
+      document.querySelector(".synopsis")?.classList.toggle("sheet-on", v === "sheet");
+      tools.querySelectorAll("button[data-view]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.view === v)));
+    };
+    view(settings.synview || (window.matchMedia("(min-width: 900px)").matches ? "sheet" : "outline"));
     tools.addEventListener("click", (ev) => {
+      const v = ev.target.closest("button[data-view]");
+      if (v) { settings.synview = v.dataset.view; save(settings); view(v.dataset.view); return; }
       const b = ev.target.closest("button[data-syn]");
       if (!b) return;
       for (const li of synTree.querySelectorAll(".syn-n")) setOpen(li, b.dataset.syn === "open");

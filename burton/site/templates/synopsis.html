@@ -5,10 +5,12 @@
   <p class="note machine-label">{{ label }}</p>
   <p class="note">Each head links to the place in the book it names; a sign such as ♈ leads to the branch carrying the same sign.</p>
   <div class="syn-tools" hidden>
+    <span class="syn-views" role="group" aria-label="View"><button type="button" data-view="sheet" aria-pressed="false">As a sheet</button><button type="button" data-view="outline" aria-pressed="false">As an outline</button></span>
     <button type="button" data-syn="open">Open all</button>
     <button type="button" data-syn="close">Close all</button>
   </div>
-  {{ tree }}
+  {# the sheet: Burton's braces, read left to right, one column per level (2026-11-18, after the synopsis research) #}
+  <div class="syn-scroll">{{ tree }}</div>
   <section aria-labelledby="sheets-h">
     <h2 id="sheets-h">The printed sheets</h2>
     <p class="note">The printed sheets ({{ sheets|length }}).</p>
