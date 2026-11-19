@@ -803,65 +803,6 @@
       }
     ]
   },
-  "3.4.2.6-f148": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "FINIS.",
-    "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "THE END.",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.2.6-f149": {
     "kind": "phrase",
     "lang": "la",
@@ -1987,65 +1928,6 @@
           "work": null
         },
         "text": "This shall be your staff, this your impregnable tower, this your armour.",
-        "warnings": []
-      }
-    ]
-  },
-  "3.4.2.6-f181": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Johann Weyer (Wierus)",
-      "basis": "text \"read Wierus at large, lib. 5 de Cura. Lam. malef. cap.\"",
-      "locus": "lib. 5 cap. 38 & deinceps",
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "38 & deinceps",
-    "text_sha1": "40d818845b35a83744532473d9f0c1e14cf1bda9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Part of a reference: 'chapter 38 and following'. 'cap.' just before it belongs to the same citation.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Johann Weyer (Wierus)",
-          "basis": "text \"read Wierus at large, lib. 5 de Cura. Lam. malef. cap.\"",
-          "locus": "lib. 5 cap. 38 & deinceps",
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "38 and following",
         "warnings": []
       }
     ]
@@ -6680,6 +6562,65 @@
           "work": "De praestigiis daemonum (book on the cure of those bewitched)"
         },
         "text": "and what the manner of casting out devils was",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f88": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johann Weyer (Wierus)",
+      "basis": "text \"read Wierus at large\" immediately before the citation; Wierus de praestigiis daemonum is named earlier in the same paragraph",
+      "locus": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De praestigiis daemonum"
+    },
+    "text": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+    "text_sha1": "ba0065c5305dc9fce987eb05cf4f8785aced040b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-19",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A bare reference to Johann Weyer (Wierus), De praestigiis daemonum. The abbreviated title of Book 5 is left as written because its expansion is uncertain. It probably means something like 'On the Cure of Those Bewitched by Witches' (de Curatione Lamiarum maleficiorum or a similar wording). 'Deinceps' means 'and the chapters following'. The foreign words are only a citation, not a sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johann Weyer (Wierus)",
+          "basis": "text \"read Wierus at large\" immediately before the citation; Wierus de praestigiis daemonum is named earlier in the same paragraph",
+          "locus": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De praestigiis daemonum"
+        },
+        "text": "book 5, de Cura. Lam. malef., chapter 38 and following",
         "warnings": []
       }
     ]

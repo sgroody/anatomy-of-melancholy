@@ -111,18 +111,6 @@
     "signals": [],
     "text_sha1": "c426b1b2900801fdea2b1fd31122c49b73684e25"
   },
-  "1.2.2.1-f16": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b2d8e865f500340e408694b1ed1c6e485faa5121"
-  },
   "1.2.2.1-f17": {
     "bracket": "none",
     "by": "rules",
@@ -1075,6 +1063,34 @@
       "english-at-anchor"
     ],
     "text_sha1": "99b1f53521a287ae18e12efcfc7ed29866254c48"
+  },
+  "1.2.2.1-f59": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Howsoever they may be wholesome and approved, much use of them is not good",
+          "in": "1.2.2.1-p15",
+          "prefix": "who is instar omnium solus, &c. ",
+          "suffix": ": P. Forestus in his Medicinal o"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "96823ae6f4f36983ae3b72179ba5b171d952bef3"
   },
   "1.2.2.1-f7": {
     "bracket": "present",

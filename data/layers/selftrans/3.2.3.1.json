@@ -360,47 +360,6 @@
     ],
     "text_sha1": "f729fd81a9968847e970db004dbfa5a1c17c1dd7"
   },
-  "3.2.3.1-f116": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "a warfare",
-          "in": "3.2.3.1-p67",
-          "prefix": " a perpetual flux, angor animi, ",
-          "suffix": ", militat omnis amans, a grievou"
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "For Love is a perpetual flux",
-          "in": "3.2.3.1-p67",
-          "prefix": "space he would consume himself. ",
-          "suffix": ", angor animi, a warfare, milita"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "ada6ab3cd1c0fb8c561f2d865e6057439a5d307c"
-  },
   "3.2.3.1-f117": {
     "bracket": "present",
     "by": "rules",
@@ -2056,61 +2015,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "34ee8bc407b30c7f8343c0c2c63cd87139b54fc5"
-  },
-  "3.2.3.1-f187": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "All the bombast Epithets, pathetical adjuncts, incomparably fair, curiously neat, divine, sweet, dainty, delicious, &c., pretty diminutives",
-          "in": "3.2.3.1-p110",
-          "prefix": "",
-          "suffix": ", corculum, suaviolum, &c., plea"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ce79268a5a4a6deb6d5f09eae01f9f99ac1117b2"
-  },
-  "3.2.3.1-f188": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "&c., pleasant names may be invented, bird, mouse, lamb, puss, pigeon, pigsney, Kid, honey, love, dove, chicken, duck, &c., he puts on her",
-          "in": "3.2.3.1-p110",
-          "prefix": "minutives, corculum, suaviolum, ",
-          "suffix": "."
-        },
-        "words": 23
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f82ff5625361e71ad5a2bb80ed0ccfd4bf82b46a"
   },
   "3.2.3.1-f189": {
     "bracket": "present",
@@ -7638,6 +7542,88 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "d20ee943c26e7e22c18ee4bc7c424819a41b4fa1"
+  },
+  "3.2.3.1-f443": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a warfare",
+          "in": "3.2.3.1-p67",
+          "prefix": " a perpetual flux, angor animi, ",
+          "suffix": ", militat omnis amans, a grievou"
+        },
+        "words": 2
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "For Love is a perpetual",
+          "in": "3.2.3.1-p67",
+          "prefix": "space he would consume himself. ",
+          "suffix": " flux, angor animi, a warfare, m"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "2fc5b50fa94c4f12ad7a4da6553a5cd89f2ad8a7"
+  },
+  "3.2.3.1-f444": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "pleasant names may be invented, bird, mouse, lamb, puss, pigeon, pigsney, Kid, honey, love, dove, chicken, duck, &c., he puts on her",
+          "in": "3.2.3.1-p110",
+          "prefix": "ives, corculum, suaviolum, &c., ",
+          "suffix": "."
+        },
+        "words": 22
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "All the bombast Epithets, pathetical adjuncts, incomparably fair, curiously neat, divine, sweet, dainty, delicious, &c., pretty diminutives",
+          "in": "3.2.3.1-p110",
+          "prefix": "",
+          "suffix": ", corculum, suaviolum, &c., plea"
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "5a536eec01f8e75105db394666a0daa19b1a2475"
   },
   "3.2.3.1-f45": {
     "bracket": "present",

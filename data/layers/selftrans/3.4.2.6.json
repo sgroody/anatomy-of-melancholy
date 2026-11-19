@@ -357,18 +357,6 @@
     ],
     "text_sha1": "dd7404c90e7601db3401dde08463c0317f7da745"
   },
-  "3.4.2.6-f148": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d"
-  },
   "3.4.2.6-f149": {
     "bracket": "none",
     "by": "rules",
@@ -789,16 +777,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "1a2097341ba6873257618f95f898edc442a3a1bf"
-  },
-  "3.4.2.6-f181": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "40d818845b35a83744532473d9f0c1e14cf1bda9"
   },
   "3.4.2.6-f182": {
     "bracket": "present",
@@ -2930,6 +2908,21 @@
     "by": "rules",
     "candidates": [
       {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "read Wierus at large",
+          "in": "3.4.2.6-p17",
+          "prefix": " quis daemonia ejiciendi modus, ",
+          "suffix": ", lib. 5 de Cura. Lam. malef. ca"
+        },
+        "words": 4
+      },
+      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -2946,9 +2939,36 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "0dcb07316ebdf325c0cb4f506917369b0490a0eb"
+  },
+  "3.4.2.6-f88": {
+    "bracket": "short",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "read Wierus at large",
+          "in": "3.4.2.6-p17",
+          "prefix": " quis daemonia ejiciendi modus, ",
+          "suffix": ", lib. 5 de Cura. Lam. malef. ca"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "short-gowland-bracket"
+    ],
+    "text_sha1": "ba0065c5305dc9fce987eb05cf4f8785aced040b"
   },
   "3.4.2.6-f89": {
     "bracket": "present",

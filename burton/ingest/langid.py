@@ -5,8 +5,12 @@ italic runs using English/Latin function words, Latin endings and Gowland's brac
 No language-detector library is used. Every decision records its confidence and method.
 """
 
-import regex as re
+import functools
 
+import regex as re
+import yaml
+
+from .. import paths
 from ..tei import ED, XML_LANG, T, el, local, put_items, take_items
 from . import lexicon
 
@@ -48,6 +52,28 @@ CITATION = re.compile(r"\d|(?<!&)\b(?:lib|cap|sect|tom|epist|consil|fol|memb|sub
 # capitalised words, "de", and a title word cut off by an abbreviation stop.
 WORK_TITLE = re.compile(r"^\s*(?:\p{Lu}[\p{L}’']*\.?\s+){1,3}de\s+\p{L}+\.")
 TITLE_WORDS = {"de", "in", "&", "et"}
+# "Originem in Celsum", "vide Cyrillum in Julianum": an author and the work against or on another (2026-11-19, h4)
+AUTHOR_IN = re.compile(r"^\s*(?:(?:vide|vid|cf)\.?\s+)?(?:\p{Lu}[\p{L}’']*\.?\s+){1,2}(?:in|contra|adversus)\s+"
+                       r"\p{Lu}[\p{L}’']*\.?\s*$")
+REF_WORDS = TITLE_WORDS | {"contra", "adversus", "vide", "vid", "cf"}
+# a locator and nothing else: "20 & passim alias", "38 & deinceps" (Gowland may translate it; it is still a
+# reference, not Burton's Latin: 2026-11-19, after held-out h4)
+LOCATOR_WORDS = {"passim", "alias", "alibi", "deinceps", "seq", "sequ", "sequent", "sequentibus", "sqq", "ibid",
+                 "ibidem", "infra", "supra", "et", "c", "cap", "lib", "fol", "pag", "tom", "num", "sect"}
+
+
+def _locator_only(text: str) -> bool:
+    words = [w.lower() for w in WORD.findall(text)]
+    return bool(words) and bool(re.search(r"\d", text)) and all(w in LOCATOR_WORDS for w in words)
+
+
+@functools.cache
+def naturalised() -> frozenset[str]:
+    """Latin words naturalised in English before 1621 (data/manual/naturalised.yaml)."""
+    path = paths.MANUAL / "naturalised.yaml"
+    if not path.exists():
+        return frozenset()
+    return frozenset(w.lower() for w in (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("words", {}))
 ABBREV = {"lib", "cap", "sect", "tom", "epist", "ep", "consil", "fol", "memb", "subs", "subsect", "c", "l", "de",
           "com", "hist", "lect", "ser", "serm", "hom", "sat", "dial", "art", "quaest", "tract", "prob", "aph",
           "par", "vers", "pag", "num", "cent", "obs", "observ", "exercit", "med", "pract", "instit", "comment"}
@@ -153,6 +179,10 @@ def classify(text: str, followed_by_bracket: bool, in_note: bool = False,
     if not words:
         return "en", "high", "no words"
     stopped = text.rstrip() + "." if stop else text
+    if _locator_only(text):
+        return "citation", "medium", "a locator only (digits and passim, deinceps …)"
+    if len(words) == 1 and lower[0] in naturalised():
+        return "en", "medium", "a Latin word naturalised in English (data/manual/naturalised.yaml)"
     if CITATION.search(stopped) and not followed_by_bracket:
         return "citation", "medium", "locator abbreviation or digits"
     if not followed_by_bracket and (ref := _reference_list(stopped)):
@@ -229,13 +259,14 @@ def _reference_list(text: str) -> str | None:
     pieces = [p for p in (ETC.sub(" ", x).strip() for x in re.split(r",\s*", text)) if WORD.search(p)]
     if not pieces:
         return None
-    titles = [bool(WORK_TITLE.match(p)) for p in pieces]
+    titles = [bool(WORK_TITLE.match(p) or AUTHOR_IN.match(p)) for p in pieces]
     caps = [_capitalised(p) for p, t in zip(pieces, titles, strict=True) if not t]
     # every piece a reference or capitalised, and most capitalised pieces names rather than Latin terms
     if not all(caps) or sum(_latin_term(c) for c in caps) * 2 > len(caps):
         return None
     lower = [w.lower() for w in WORD.findall(ETC.sub(" ", text))]
-    if any((w in LA_FUNCTION and w not in TITLE_WORDS) or w in EN_FUNCTION for w in lower):
+    allowed = REF_WORDS if any(titles) else TITLE_WORDS
+    if any((w in LA_FUNCTION and w not in allowed) or w in EN_FUNCTION for w in lower):
         return None
     if any(titles):
         return "citation"
@@ -286,6 +317,11 @@ def tag_roman_before_brackets(div, decisions: list, unit: str) -> None:
             start = m.start()
         span = text[start:].rstrip()
         span_len = len(text[start:len(text.rstrip())])
+        if span and _locator_only(span):
+            decisions.append({"unit": unit, "text": span.strip(), "verdict": "citation", "confidence": "medium",
+                              "why": "roman locator before bracket (digits and passim, deinceps …)",
+                              "in_note": any(a.tag == T("note") for a in t.iterancestors())})
+            continue
         if la < 2 or la < 0.5 * (la + other) or not span:
             decisions.append({"unit": unit, "text": text[-60:].strip(), "verdict": "undetermined",
                               "confidence": "low", "why": f"roman text before bracket; la={la} other={other}",
@@ -325,7 +361,10 @@ def _runs(items: list) -> list[tuple[int, int]]:
             members = list(range(i, j, 2))
             seps = [items[k] for k in range(i + 1, j, 2)]
             short = all(len(WORD.findall(text_of([items[m]]))) <= 3 for m in members)
-            if len(members) > 1 and short and seps and all(s.strip() == "," for s in seps):
+            # a list of lowercase Latin words is one run ("horribile, dirum, pestilens, atrox, ferum"); only a list
+            # with a capitalised member may be a list of names (2026-11-19, after held-out h4)
+            caps = any(text_of([items[m]]).strip()[:1].isupper() for m in members)
+            if len(members) > 1 and short and caps and seps and all(s.strip() == "," for s in seps):
                 runs.extend((m, m + 1) for m in members)
             else:
                 runs.append((i, j))

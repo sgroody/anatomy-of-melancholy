@@ -144,7 +144,14 @@ HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tunin
     {"name": "h4", "seed": 20261119, "prefix": "h4-",
      "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
      "sample": paths.DATA / "eval" / "langid-holdout4-sample.jsonl",
-     "gold": paths.DATA / "eval" / "langid-holdout4-gold.jsonl"},
+     "gold": paths.DATA / "eval" / "langid-holdout4-gold.jsonl",
+     "seen": "2026-11-19: its errors were studied to change the rules (naturalised words, locators, Author in Work, "
+             "lowercase Latin lists; the scorer measures '|' labels stretch by stretch)"},
+    # 2026-11-19: drawn after the third cycle's rules changed, labelled blind by the second rater, the V5 gate
+    {"name": "h5", "seed": 20261120, "prefix": "h5-",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout5-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout5-gold.jsonl"},
 ]
 GATE = HOLDOUTS[-1]["name"]
 HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]
@@ -312,20 +319,30 @@ def evaluate(units: list[str] | None = None, *, holdout: bool | str = False) -> 
                 exact |= tagged
             elif positive:
                 # detected if the block's foreign passages cover >= 75 % of the target's words
-                # (a note or an attribution may split or extend the Latin); exactness is measured apart
-                tw = _words(target)
-                covered = [False] * len(tw)
-                for f in foreign:
-                    fw = _words(f)
-                    if fw and _contains_words(f, target):
-                        covered = [True] * len(tw)
-                        exact |= norm(f).strip(" ,.;:—&c") == norm(target).strip(" ,.;:—&c")
-                        continue
-                    for k in range(len(tw) - len(fw) + 1):
-                        if fw and tw[k:k + len(fw)] == fw:
-                            covered[k:k + len(fw)] = [True] * len(fw)
-                if tw and sum(covered) >= 0.75 * len(tw):
+                # (a note or an attribution may split or extend the Latin); exactness is measured apart.
+                # A label of separate stretches joined by "|" is measured stretch by stretch: exact only if
+                # every stretch is a passage of its own (2026-11-19, settled before round h5 was drawn)
+                n_words = n_covered = 0
+                bx = True
+                for piece in (x for x in target.split("|") if _words(x)):
+                    tw = _words(piece)
+                    covered = [False] * len(tw)
+                    piece_exact = False
+                    for f in foreign:
+                        fw = _words(f)
+                        if fw and _contains_words(f, piece):
+                            covered = [True] * len(tw)
+                            piece_exact |= norm(f).strip(" ,.;:—&c") == norm(piece).strip(" ,.;:—&c")
+                            continue
+                        for k in range(len(tw) - len(fw) + 1):
+                            if fw and tw[k:k + len(fw)] == fw:
+                                covered[k:k + len(fw)] = [True] * len(fw)
+                    n_words += len(tw)
+                    n_covered += sum(covered)
+                    bx &= piece_exact
+                if n_words and n_covered >= 0.75 * n_words:
                     detected = True
+                    exact |= bx
             else:
                 detected |= any(_contains_words(r["text"], f) for f in foreign if _words(f))
         if positive:

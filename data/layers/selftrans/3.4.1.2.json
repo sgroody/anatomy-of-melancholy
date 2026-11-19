@@ -581,12 +581,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "as amongst our modern Turks, Reipub",
+          "exact": "as amongst our modern",
           "in": "3.4.1.2-p4",
           "prefix": " Atheismi Triumphati observes), ",
-          "suffix": ". Finis, as knowing magnum ejus "
+          "suffix": " Turks, Reipub. Finis, as knowin"
         },
-        "words": 6
+        "words": 4
       }
     ],
     "lang": "la",
@@ -1166,34 +1166,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "1b87cdba171e2123da1c14a6b562c58155eb8813"
-  },
-  "3.4.1.2-f174": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "as knowing",
-          "in": "3.4.1.2-p4",
-          "prefix": "ur modern Turks, Reipub. Finis, ",
-          "suffix": " magnum ejus in animos imperium;"
-        },
-        "words": 2
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "24d0b932e9003633171b4d69cda08163dd70f7e5"
   },
   "3.4.1.2-f175": {
     "bracket": "present",
@@ -1815,6 +1787,34 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3aec6b1eebc5a467e917818fd128d09e10391848"
+  },
+  "3.4.1.2-f29": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as knowing",
+          "in": "3.4.1.2-p4",
+          "prefix": "ur modern Turks, Reipub. Finis, ",
+          "suffix": " magnum ejus in animos imperium;"
+        },
+        "words": 2
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "01177272f53532f3e55f1927e93cf84371d24e09"
   },
   "3.4.1.2-f3": {
     "bracket": "present",

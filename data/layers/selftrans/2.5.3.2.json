@@ -38,31 +38,6 @@
     ],
     "text_sha1": "f448d3febaf22d0f8298e8b1606dd4e8523989a3"
   },
-  "2.5.3.2-f12": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Of the cure of this flatuous melancholy, read more in Fienus de flatibus cap",
-          "in": "2.5.3.2-p5",
-          "prefix": "peedily eased a melancholy man. ",
-          "suffix": ". 20 & passim alias."
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
-    "text_sha1": "3c444c83e29c1cd2f23c057d34924c6a863b1a50"
-  },
   "2.5.3.2-f2": {
     "bracket": "present",
     "by": "rules",
@@ -103,6 +78,32 @@
       "english-precedes"
     ],
     "text_sha1": "c9f4f529feebfbddbe66cf0bba25ea59996ce0cf"
+  },
+  "2.5.3.2-f3": {
+    "bracket": "short",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Of the cure of this flatuous melancholy, read more in",
+          "in": "2.5.3.2-p5",
+          "prefix": "peedily eased a melancholy man. ",
+          "suffix": " Fienus de flatibus cap. 20 & pa"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "short-gowland-bracket"
+    ],
+    "text_sha1": "93221d99e13634b76030c88d7c7163bee74f865d"
   },
   "2.5.3.2-f5": {
     "bracket": "present",
@@ -183,17 +184,5 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "abfe039c9e0ed9216315f749a9d954b47633e106"
-  },
-  "2.5.3.2-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d"
   }
 }

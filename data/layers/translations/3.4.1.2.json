@@ -2274,65 +2274,6 @@
       }
     ]
   },
-  "3.4.1.2-f174": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Finis",
-    "text_sha1": "24d0b932e9003633171b4d69cda08163dd70f7e5",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The marked word is only 'Finis'. The abbreviation 'Reipub.' just before it belongs to the same phrase: 'Reipub. Finis', 'the end (goal) of the commonwealth'. Together with 'Solus Rex' the sense is 'the king alone is the end of the commonwealth'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the end",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.1.2-f175": {
     "kind": "phrase",
     "lang": "la",
@@ -3821,6 +3762,66 @@
           "work": "Commentary on Ptolemy's Quadripartitum"
         },
         "text": "the Christian law is a law of piety, justice, faith, simplicity",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.2-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Tommaso Campanella",
+      "basis": "text \"which Campanella cap. 18 Atheismi Triumphati observes\"",
+      "locus": "cap. 18",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Atheismus Triumphatus"
+    },
+    "text": "Turks, Reipub. Finis",
+    "text_sha1": "01177272f53532f3e55f1927e93cf84371d24e09",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-19",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only \"Reipub. Finis\" is Latin. \"Turks\" is Burton's English (\"as amongst our modern Turks\") and is not translated. \"Reipub.\" stands for reipublicae. The phrase finishes the clause that begins \"Solus Rex\": the king alone is the end, meaning the purpose or goal, of the commonwealth. So everything in the state, religion included, is directed to the ruler. \"Finis\" could also be read as \"limit\", but \"end\" in the sense of \"purpose\" fits the argument best.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Tommaso Campanella",
+          "basis": "text \"which Campanella cap. 18 Atheismi Triumphati observes\"",
+          "locus": "cap. 18",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Atheismus Triumphatus"
+        },
+        "text": "the end of the commonwealth",
         "warnings": []
       }
     ]

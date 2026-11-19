@@ -1,30 +1,4 @@
 {
-  "1.2.1.5-f1": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Secondary peculiar causes, efficient, so called in respect of the other precedent, are either",
-          "in": "1.2.1.5-p1",
-          "prefix": "",
-          "suffix": " congenitae, internae, innatae a"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "052228320a821dfe8156df556cf48207a91eeb00"
-  },
   "1.2.1.5-f10": {
     "bracket": "none",
     "by": "rules",
@@ -131,18 +105,6 @@
     ],
     "text_sha1": "eef466c4d7e26325ff9fde8c7845a90b2d495796"
   },
-  "1.2.1.5-f2": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "2737eecf9bd2e8010c6aeb3f420a175b8af1efe8"
-  },
   "1.2.1.5-f21": {
     "bracket": "present",
     "by": "rules",
@@ -171,7 +133,7 @@
     ],
     "text_sha1": "977929f2fdcc8df17fda386ad703f4ab1ab7a578"
   },
-  "1.2.1.5-f3": {
+  "1.2.1.5-f22": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -189,6 +151,18 @@
           "suffix": "; or else outward and adventitio"
         },
         "words": 4
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Secondary peculiar causes, efficient, so called in respect of the other precedent, are either",
+          "in": "1.2.1.5-p1",
+          "prefix": "",
+          "suffix": " congenitae, internae, innatae a"
+        },
+        "words": 14
       }
     ],
     "lang": "la",
@@ -197,9 +171,10 @@
     "signals": [
       "cognate-overlap",
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "5930e8f67f3b40ac1fa381ea9e0393e3fcb91925"
+    "text_sha1": "b3213c4cc50cf161f55a2fb4895a75e1d68659d5"
   },
   "1.2.1.5-f4": {
     "bracket": "present",

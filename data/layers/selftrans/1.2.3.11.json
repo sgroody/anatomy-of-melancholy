@@ -6,17 +6,17 @@
       {
         "after_attribution": false,
         "by": "rules",
-        "cognates": 0,
+        "cognates": 1,
         "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "distracted and tired, they consume the",
+          "exact": "distracted and tired, they consume the interim of their time",
           "in": "1.2.3.11-p2",
           "prefix": "f mind, inter spemque metumque, ",
-          "suffix": " interim of their time. There ca"
+          "suffix": ". There can be no greater plague"
         },
-        "words": 6
+        "words": 10
       },
       {
         "by": "rules",
@@ -35,6 +35,7 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "cognate-overlap",
       "english-follows",
       "english-precedes"
     ],
@@ -455,48 +456,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "5490a80dafc384b3b581f1bf51f631ac5e1b946e"
-  },
-  "1.2.3.11-f33": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of their time",
-          "in": "1.2.3.11-p2",
-          "prefix": "tired, they consume the interim ",
-          "suffix": ". There can be no greater plague"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "distracted and tired, they consume the",
-          "in": "1.2.3.11-p2",
-          "prefix": "f mind, inter spemque metumque, ",
-          "suffix": " interim of their time. There ca"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a7ff7619f3bf34e909c79eaebba969978ad87062"
   },
   "1.2.3.11-f4": {
     "bracket": "present",

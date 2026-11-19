@@ -605,48 +605,6 @@
     ],
     "text_sha1": "b9e3c99699ddb1071a5e3e1e0228e7322104b12e"
   },
-  "3.4.2.1-f146": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of little or no religion",
-          "in": "3.4.2.1-p10",
-          "prefix": " they pretend, they are interim ",
-          "suffix": "."
-        },
-        "words": 5
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Thus they mutter and object (see the rest of their arguments in Mersennus in Genesin, and in Campanella, amply confuted), with many such vain cavils, well known, not worthy the recapitulation or answering, whatsoever they pretend, they are",
-          "in": "3.4.2.1-p10",
-          "prefix": "rga dei providentiam contexunt. ",
-          "suffix": " interim of little or no religio"
-        },
-        "words": 38
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a7ff7619f3bf34e909c79eaebba969978ad87062"
-  },
   "3.4.2.1-f147": {
     "bracket": "none",
     "by": "rules",
@@ -1277,12 +1235,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Thus they mutter and object (see the rest of their arguments in Mersennus in Genesin, and in Campanella, amply confuted), with many such vain cavils, well known, not worthy the recapitulation or answering, whatsoever they pretend, they are",
+          "exact": "Thus they mutter and object (see the rest of their arguments in Mersennus in Genesin, and in Campanella, amply confuted), with many such vain cavils, well known, not worthy the recapitulation or answering, whatsoever they pretend, they are interim of",
           "in": "3.4.2.1-p10",
           "prefix": "rga dei providentiam contexunt. ",
-          "suffix": " interim of little or no religio"
+          "suffix": " little or no religion."
         },
-        "words": 38
+        "words": 40
       }
     ],
     "lang": "la",

@@ -43,15 +43,6 @@
     "text_sha1": "e634dbc81bab0e6bf2cddcb5efa26cf33ef07df2",
     "threshold": 0.85
   },
-  "1.4.1.1-f113": {
-    "by": "djs1927",
-    "left_anchor": ": he that gives a",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "",
-    "status": "no-anchor",
-    "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d",
-    "threshold": 0.85
-  },
   "1.4.1.1-f114": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -64,7 +55,7 @@
     "by": "djs1927",
     "left_anchor": ": so doth",
     "method": "rules/djs-align-v3",
-    "right_anchor": ";",
+    "right_anchor": "; FINIS.",
     "status": "no-anchor",
     "text_sha1": "17fa5a87cb0da3251e13a1f86e2b7cd723430d12",
     "threshold": 0.85
@@ -905,8 +896,8 @@
     "left_anchor": "61 ad Dulcitium Tribunum: so doth Jerome to Marcella of Blaesilla’s death,",
     "left_score": 0.819,
     "method": "rules/djs-align-v3",
-    "right_anchor": "., he calls such men",
-    "right_score": 1.0,
+    "right_anchor": "., he calls such men FINIS.",
+    "right_score": 0.85,
     "status": "below-threshold",
     "text_sha1": "a825b75f9954764007a8ec0f0036861ce1827110",
     "threshold": 0.85
@@ -915,8 +906,8 @@
     "by": "djs1927",
     "left_anchor": "., he calls such men",
     "method": "rules/djs-align-v3",
-    "right_anchor": ": so doth",
-    "status": "no-anchor",
+    "right_anchor": ": so doth FINIS.",
+    "status": "not-found",
     "text_sha1": "c8c4e7b5443b4e4d956c54e9d9e81fb6ba1d53ca",
     "threshold": 0.85
   },

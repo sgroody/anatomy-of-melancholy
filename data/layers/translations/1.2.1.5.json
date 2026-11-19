@@ -1,76 +1,4 @@
 {
-  "1.2.1.5-f1": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "inward, innate, and inbred",
-        "in": "1.2.1.5",
-        "near": "1.2.1.5-f1",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "congenitae",
-    "text_sha1": "052228320a821dfe8156df556cf48207a91eeb00",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Feminine plural agreeing with an understood causae, 'causes'. It is the first of three near-synonyms that Burton renders together as 'inward, innate, and inbred'. He also glosses the anglicised 'congenite' a little later as 'born with us'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "inward, innate, and inbred",
-            "in": "1.2.1.5",
-            "near": "1.2.1.5-f1",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "congenital",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.5-f10": {
     "kind": "phrase",
     "lang": "la",
@@ -411,78 +339,6 @@
       }
     ]
   },
-  "1.2.1.5-f2": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "inward, innate, and inbred",
-        "in": "1.2.1.5",
-        "near": "1.2.1.5-f2",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "internae",
-    "text_sha1": "2737eecf9bd2e8010c6aeb3f420a175b8af1efe8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Agrees with an understood causae, 'causes'. Burton renders the three Latin terms together as 'inward, innate, and inbred'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "inward, innate, and inbred",
-            "in": "1.2.1.5",
-            "near": "1.2.1.5-f2",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "internal",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.5-f21": {
     "kind": "phrase",
     "lang": "la",
@@ -541,7 +397,7 @@
       }
     ]
   },
-  "1.2.1.5-f3": {
+  "1.2.1.5-f22": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -555,7 +411,7 @@
       "burton_span": {
         "exact": "inward, innate, and inbred",
         "in": "1.2.1.5",
-        "near": "1.2.1.5-f3",
+        "near": "1.2.1.5-f22",
         "prefix": "",
         "suffix": ""
       },
@@ -574,27 +430,26 @@
       "verified": false,
       "work": null
     },
-    "text": "innatae",
-    "text_sha1": "5930e8f67f3b40ac1fa381ea9e0393e3fcb91925",
+    "text": "congenitae, internae, innatae",
+    "text_sha1": "b3213c4cc50cf161f55a2fb4895a75e1d68659d5",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-26",
+        "date": "2026-11-19",
         "flags": [],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "Agrees with an understood causae, 'causes'. Burton renders the three Latin terms together as 'inward, innate, and inbred'.",
+        "note": "Burton gives his own English straight after the phrase: \"inward, innate, and inbred\".",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": {
             "exact": "inward, innate, and inbred",
             "in": "1.2.1.5",
-            "near": "1.2.1.5-f3",
+            "near": "1.2.1.5-f22",
             "prefix": "",
             "suffix": ""
           },
@@ -608,7 +463,7 @@
           "verified": false,
           "work": null
         },
-        "text": "innate",
+        "text": "congenital, internal, innate",
         "warnings": []
       }
     ]

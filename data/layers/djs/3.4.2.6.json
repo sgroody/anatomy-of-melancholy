@@ -160,15 +160,6 @@
     "text_sha1": "dd7404c90e7601db3401dde08463c0317f7da745",
     "threshold": 0.85
   },
-  "3.4.2.6-f148": {
-    "by": "djs1927",
-    "left_anchor": ". Austin.",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "",
-    "status": "no-anchor",
-    "text_sha1": "ed53590b20ab00f0c298f0689580059eb016215d",
-    "threshold": 0.85
-  },
   "3.4.2.6-f149": {
     "align_score": 0.862,
     "by": "djs1927",
@@ -363,17 +354,6 @@
     "right_score": 1.0,
     "status": "not-found",
     "text_sha1": "1a2097341ba6873257618f95f898edc442a3a1bf",
-    "threshold": 0.85
-  },
-  "3.4.2.6-f181": {
-    "by": "djs1927",
-    "left_anchor": ", read Wierus at large, lib. 5 de Cura. Lam. malef. cap.",
-    "left_score": 0.6666666666666667,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". Last of all: if the party affected shall certainly know this",
-    "right_score": 1.0,
-    "status": "not-found",
-    "text_sha1": "40d818845b35a83744532473d9f0c1e14cf1bda9",
     "threshold": 0.85
   },
   "3.4.2.6-f182": {
@@ -1306,15 +1286,29 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 51485, pp. 969-970"
   },
   "3.4.2.6-f87": {
-    "align_score": 0.667,
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "him. What the practice of the primitive Church was in this behalf,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", read Wierus at large, lib. 5 de Cura. Lam. malef. cap.",
-    "right_score": 0.667,
-    "status": "below-threshold",
+    "right_anchor": ", read Wierus at large, Last of all: if the party affected",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "and the way of expelling Devils,",
     "text_sha1": "0dcb07316ebdf325c0cb4f506917369b0490a0eb",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 51488, pp. 969-970"
+  },
+  "3.4.2.6-f88": {
+    "align_score": 0.621,
+    "by": "djs1927",
+    "left_anchor": "matters by vomit, sweat, or some suc , read Wierus at large,",
+    "left_score": 0.621,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Last of all: if the party affected shall certainly know this",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "ba0065c5305dc9fce987eb05cf4f8785aced040b",
     "threshold": 0.85
   },
   "3.4.2.6-f89": {
@@ -1377,7 +1371,7 @@
     "by": "djs1927",
     "left_anchor": "",
     "method": "rules/djs-align-v3",
-    "right_anchor": ". Austin.",
+    "right_anchor": ". Austin. FINIS.",
     "status": "no-anchor",
     "text_sha1": "fc5c25ea3b0cc4c3f7a93f52a545822148c22020",
     "threshold": 0.85

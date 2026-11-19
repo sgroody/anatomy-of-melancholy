@@ -78,30 +78,6 @@
     ],
     "text_sha1": "7ccf037a2117451e9bf28eb804681e41d87d84a3"
   },
-  "3.4.2.4-f13": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "805a41929cbac2b0c501ff4553386f4ee6617309"
-  },
-  "3.4.2.4-f14": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a22074d7d52a98f5c6189fd621b2d93d45e975ee"
-  },
   "3.4.2.4-f16": {
     "bracket": "none",
     "by": "rules",
@@ -157,45 +133,7 @@
     ],
     "text_sha1": "1e9c7ba1a7ce77c62cdb3fa9585adc0e497b298e"
   },
-  "3.4.2.4-f18": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "All that is single in other melancholy",
-          "in": "3.4.2.4-p1",
-          "prefix": "lence the voice of desperation? ",
-          "suffix": ", horribile, dirum, pestilens, a"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "aa0411fd2f7a663d84b12b7b8a0d87d76616d46e"
-  },
-  "3.4.2.4-f2": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "5ffadba29d1c98b1f323a7c76d25cc8a51baa6cb"
-  },
-  "3.4.2.4-f3": {
+  "3.4.2.4-f19": {
     "bracket": "present",
     "by": "rules",
     "candidates": [
@@ -213,15 +151,28 @@
           "suffix": "; a burning fever of the soul; s"
         },
         "words": 12
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "All that is single in other melancholy",
+          "in": "3.4.2.4-p1",
+          "prefix": "lence the voice of desperation? ",
+          "suffix": ", horribile, dirum, pestilens, a"
+        },
+        "words": 7
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows"
+      "english-follows",
+      "english-precedes"
     ],
-    "text_sha1": "19f9334233e464db692c127be9992b6a5ff8d14f"
+    "text_sha1": "389718d6cef792f9695479bf0d0b1bb0bbd7b3fd"
   },
   "3.4.2.4-f4": {
     "bracket": "none",
