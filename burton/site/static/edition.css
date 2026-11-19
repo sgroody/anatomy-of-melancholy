@@ -798,6 +798,9 @@ header.site .toc-panel > nav { left: 0; right: auto; }
 /* Burton's own rendering, marked in the margin as his notes are (owner, 2026-11-04) */
 @media (min-width: 1100px) {
   .unit.sn-laid .mn-own { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+  /* in the left margin, on the side facing the text, like his notes (owner, 2026-11-19, with P3 B) */
+  .unit.sn-laid .mn-own.mn-l { border-left: none; padding-left: 0; border-right: 2px solid var(--accent);
+    padding-right: 0.45rem; }
 }
 
 /* ------------------------------------------------------------ the front matter facing Gowland (stage 9) */
