@@ -92,5 +92,113 @@
       "preceding": 1
     },
     "tie": "full"
+  },
+  "2.4.2.2-r3": {
+    "burton_quote": "hot in the second degree, dry in the first. Brasavola calls it a wonderful herb against melancholy, it scours the blood, illightens the spirits, shakes off sorrow",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "full"
+  },
+  "2.4.2.2-r4": {
+    "burton_quote": "doth not open the veins",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {},
+    "tie": "partial",
+    "translation": "The more recent writers deny that it opens the mouths of the veins."
+  },
+  "2.4.2.2-r5": {
+    "burton_quote": "Physicians of the Moors, familiarly prescribe it to all melancholy passions",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {},
+    "tie": "full"
+  },
+  "2.4.2.2-r6": {
+    "burton_quote": "brags of that happy success which he still had in the administration of it",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  },
+  "2.4.2.2-r7": {
+    "burton_quote": "and if this will not serve (saith Rhasis) then there remains nothing but Lapis Armenus, and Hellebore itself",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Lorenz Scholz, *Consilia medicinalia*, consilium 184",
+        "raw": "Consil. 184. Scoltzii.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 3
+    },
+    "tie": "full"
+  },
+  "2.4.2.2-r8": {
+    "burton_quote": "to be very noisome, to trouble the stomach, and hurt their bodies that take it overmuch",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "full"
+  },
+  "2.4.2.2-r9": {
+    "burton_quote": "Who seeing it to purge his Goats when they raved",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
   }
 }

@@ -1,0 +1,80 @@
+{
+  "2.5.2.1-r1": {
+    "burton_quote": "Median or middle vein to be opened",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "partial",
+    "translation": "in preference to the others"
+  },
+  "2.5.2.1-r2": {
+    "burton_quote": "because the malice of melancholy is much corrected by the goodness of the blood",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "2.5.2.1-r3": {
+    "burton_quote": "If the malady continue, it is not amiss to evacuate in a part",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  },
+  "2.5.2.1-r4": {
+    "burton_quote": "all their study must be to make a melancholy man fat, and then the cure is ended",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "2.5.2.1-r5": {
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "none",
+    "translation": "This one thing I warn you of beforehand, sir: be careful about your diet, without which all other remedies are applied in vain."
+  }
+}
