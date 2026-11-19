@@ -294,3 +294,11 @@ prompts, the CLI wiring, tests/test_names_sweep.py, data/eval/notes-spotcheck*.
   the reader shows none of them. Checked in headless Chrome with the gate forced open in one build: 1.1.1.1, no overlaps.
 * **Owner, 2026-11-19:** the remedy for translator notes is accepted: rate all; blind audit of every note rated 3 and not
   doubtful; show only those judged sound; a fresh spot check of what would show before any is shown (after the login).
+
+# Round 7: owner's choices (2026-11-19)
+
+Round 6 (front-page compartments): none satisfies; set aside for now. Round 7: **P1 B** (Next and Previous as the whole
+left and right edges of the window) "but it should be some stylized symbol, not a simple arrow" (built with the
+printer's manicule, ☜ ☞, in EB Garamond) · **P2 C** (Burton's note letters in a small filled red box, the letter in the
+page colour) · **P3 B** (the rubric rule on the side facing the text), to be revisited: listed in
+state/review/to-revisit.md.

@@ -103,6 +103,24 @@ footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.
 .pager-dir { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .pager-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .pager a:hover .pager-t { text-decoration: underline; text-decoration-color: var(--accent); }
+/* Next and Previous as the window's edges (owner, 2026-11-19: P1 B): a faint manicule at mid-height; pointing at the
+   edge tints it and shows the title; on narrow or touch screens the pager at the foot stays */
+.side-zone { display: none; }
+@media (min-width: 1100px) and (hover: hover) {
+  .side-zone { display: flex; position: fixed; top: 0; bottom: 0; z-index: 20; width: 2.6rem; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.7rem; text-decoration: none; color: var(--muted); }
+  .sz-prev { left: 0; } .sz-next { right: 0; }
+  .sz-sym { font-size: 1.75rem; line-height: 1; opacity: 0.5; transition: opacity 0.15s, color 0.15s; }
+  .sz-t { writing-mode: vertical-rl; max-height: 62vh; overflow: hidden; font-variant-caps: all-small-caps;
+    letter-spacing: 0.06em; font-size: 0.85rem; line-height: 1.2; opacity: 0; transition: opacity 0.15s; }
+  .sz-prev .sz-t { transform: rotate(180deg); }
+  .side-zone:hover, .side-zone:focus-visible { background: color-mix(in srgb, var(--accent) 7%, transparent);
+    color: var(--accent); }
+  .side-zone:hover .sz-sym, .side-zone:focus-visible .sz-sym, .side-zone:hover .sz-t, .side-zone:focus-visible .sz-t {
+    opacity: 1; }
+  footer.site .pager { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .sz-sym, .sz-t { transition: none; } }
 
 main { max-width: var(--page); margin: 0 auto; padding: 0 16px; }
 .unit, .home-page, .landing, .prose { max-width: var(--measure); }
@@ -446,7 +464,7 @@ a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: v
     --pop-bg: #fff; --tr-bg: #f1ece3; color-scheme: light;
   }
   body { font-size: 10.5pt; line-height: 1.38; background: #fff; }
-  header.site, .settings, footer .pager, .sn-more, .skip, .syn-here, .search-form, .search-help, .sr-more,
+  header.site, .settings, footer .pager, .side-zone, .sn-more, .skip, .syn-here, .search-form, .search-help, .sr-more,
   .fs-n, .to-panel, .banner[data-resp] { display: none !important; }
   main, .unit, .prose, .home-page, .landing { max-width: none; padding: 0; margin: 0; }
   .unit { margin-right: 31% !important; position: static !important; }
@@ -752,10 +770,19 @@ header.site .toc-panel > nav { left: 0; right: auto; }
     background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
   .unit.sn-laid .mn-fold.hot > .fold-more { background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
 }
-/* Burton's own notes: a rubric rule beside them (owner, 2026-11-04: N5 C) */
+/* Burton's own notes: a rubric rule beside them (owner, 2026-11-04: N5 C), on the side facing the text: right in the
+   left margin (owner, 2026-11-19: P3 B, to be revisited, state/review/to-revisit.md) */
 @media (min-width: 1100px) {
   .unit.sn-laid .sidenote:not(.sn-restored) > .sn-body { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+  .unit.sn-laid .sidenote.mn-l:not(.sn-restored) > .sn-body { border-left: none; padding-left: 0;
+    border-right: 2px solid var(--accent); padding-right: 0.45rem; }
+  .unit.sn-laid .sidenote.sn-restored.mn-l:not(.sn-stacked) { border-left: none; padding-left: 0;
+    border-right: 1px dashed var(--rule); padding-right: 0.4rem; }
 }
+/* Burton's note letters in a small filled red box, the letter in the page colour (owner, 2026-11-19: P2 C) */
+.sidenote:not(.sn-restored) .sn-n { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center;
+  background: var(--accent); color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.8em;
+  font-style: normal; }
 /* ascriptions (owner, 2026-11-04): who made a translation is set apart from it, raised and in small capitals; Gowland
    as a small-capital g (N6 D), his name on hover */
 .mn-src, .ftr-src { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.8em; vertical-align: 0.3em;
