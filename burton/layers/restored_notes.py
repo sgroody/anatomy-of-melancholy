@@ -6,12 +6,14 @@ nineteenth-century modernised edition re-checked against the 1638 edition. Its 6
 the book, with their markers [N] in the text. That editor sometimes added an English translation to a note, so a
 restored note is labelled as coming from that text, never as Burton's words alone. The base text is not touched.
 
-Rules (`rules/restore-v1`):
+Rules (`rules/restore-v2`):
 1. Each Gutenberg marker is placed in this edition's main text by the words that follow it (5 normalised words,
    then 4, found once in the book), else by the 5 words before it; a place out of reading order is dropped.
 2. A marker within one word of one of Gowland's sidenote markers is that note (kept, not restored); so is one
    within six words of an unclaimed note of his with the same text (half its words in common). Each of
-   Gowland's notes is claimed once, by the nearest marker.
+   Gowland's notes is claimed once, by the nearest marker. (v2) A note left over that mostly repeats any note of
+   his in the same paragraph (>= 60 % of its longer words), claimed or not, is his too: Gutenberg can mark one note
+   twice, or far from where Gowland marks it.
 3. A note in English, at a foreign passage of this edition or carrying no reference (a number, "lib.", "cap.",
    ...), is most likely that editor's translation of Burton's Latin, not Burton's note: left out, counted and
    listed in state/review/restored-notes-left-out.json.
@@ -35,7 +37,7 @@ from ..textview import is_gowland, public_text
 
 FILE = paths.SOURCE / "burton-pg" / "10800.txt.utf-8"
 LAYER = paths.LAYERS / "restored-notes"
-RULES = "rules/restore-v1"
+RULES = "rules/restore-v2"  # v2 (2026-11-19): a note that repeats one of Gowland's nearby is his, not restored
 SOURCE = "Project Gutenberg #10800"
 SEP = ""  # a private-use character, never in the text: marks one of Gowland's sidenote anchors
 WORD = re.compile(r"[a-z]+|[α-ω]+")
@@ -190,6 +192,10 @@ def run() -> Counter:
             left.append((num, at))
     out: dict[str, dict] = defaultdict(dict)
     left_out: list[dict] = []
+    by_block: dict[str, list[int]] = defaultdict(list)  # paragraph id -> Gowland's anchors in it
+    for a in free:
+        if a < len(words):
+            by_block[words[a][2]].append(a)
     for num, at in left:
         k = bisect_left(free, at - 6)
         near = [a for a in free[k:k + 14] if abs(a - at) <= 6 and a not in claimed
@@ -198,7 +204,14 @@ def run() -> Counter:
             claimed.add(min(near, key=lambda a: abs(a - at)))
             stats["kept_by_gowland_nearby"] += 1
             continue
+        # v2 (2026-11-19): Gutenberg may mark one note twice where Gowland keeps it once; the nearer marker claims his
+        # note and the other would be "restored" as a copy of it (61 such: 1.1.1.1-r2 repeated note d). A note that
+        # mostly repeats any of his notes in the same paragraph, claimed or not, is his (Burton does not give one
+        # note twice in a paragraph; Gutenberg's marker can stand far from Gowland's).
         w, unit, cid, s, e, text, in_foreign = words[at]
+        if any(repeats(notes[num], note_at[a]) for a in by_block.get(cid, ())):
+            stats["repeats_gowland"] += 1
+            continue
         while s > 0 and text[s - 1] in "’'‘“(":
             s -= 1
         if english(notes[num]) and (in_foreign or not REFERENCE.search(notes[num])):
@@ -245,6 +258,13 @@ def similar(gowland_note: str, pg_note: str) -> bool:
     a = [w for w, _, _ in norm_words(gowland_note)]
     b = {w for w, _, _ in norm_words(pg_note)}
     return bool(a) and sum(w in b for w in a) / len(a) >= 0.5
+
+
+def repeats(pg_note: str, gowland_note: str) -> bool:
+    """The Gutenberg note is mostly Gowland's again: >= 60 % of its words of 4+ letters (at least 3) are in his note."""
+    a = {w for w, _, _ in norm_words(pg_note) if len(w) > 3}
+    b = {w for w, _, _ in norm_words(gowland_note)}
+    return len(a) >= 3 and len(a & b) >= 0.6 * len(a)
 
 
 def _selector(cid: str, text: str, a: int, b: int) -> dict | None:
