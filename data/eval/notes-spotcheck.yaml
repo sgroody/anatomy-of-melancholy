@@ -146,3 +146,11 @@ outcome:
   consequence: No translator note is shown in the margin until the owner decides (rule on_failure).
   proposal: 'Show a note only where the rating pass rates it 3 AND the blind auditor (note-audit-v1) judges it sound: run
     the audit over every note rated 3, then a fresh spot check of the notes that would be shown.'
+  owner_decision:
+    date: '2026-11-19'
+    decision: 'remedy accepted (owner: "Remedy for translator notes seems fine")'
+    steps:
+    - rate every note (note-rate-v1, `note-rate --all`)
+    - blind audit (note-audit-v1) of every note rated 3 and not doubtful
+    - show only notes rated 3, not doubtful, and judged sound by the auditor
+    - a fresh spot check (new seed, rules fixed before labelling) of the notes that would then be shown, before any is shown

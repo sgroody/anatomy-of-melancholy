@@ -292,3 +292,5 @@ prompts, the CLI wiring, tests/test_names_sweep.py, data/eval/notes-spotcheck*.
   citations as § with a card (none of Burton's words hidden); obscure names underlined with a window. Each layer is shown
   only when its blind audit (`burton sweep-audit`, sweep-audit-v1, at most 3 % wrong) has passed; none has run yet, so
   the reader shows none of them. Checked in headless Chrome with the gate forced open in one build: 1.1.1.1, no overlaps.
+* **Owner, 2026-11-19:** the remedy for translator notes is accepted: rate all; blind audit of every note rated 3 and not
+  doubtful; show only those judged sound; a fresh spot check of what would show before any is shown (after the login).
