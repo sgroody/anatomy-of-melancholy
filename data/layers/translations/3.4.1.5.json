@@ -1088,6 +1088,136 @@
       }
     ]
   },
+  "3.4.1.5-f41": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they worship their own gods according to their own ordination",
+        "in": "3.4.1.5",
+        "near": "3.4.1.5-f41",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Pomponius Mela",
+      "basis": "text \"which Pomponius Mela reports of the Africans\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De chorographia"
+    },
+    "text": "Deos suos patrio more venerantur",
+    "text_sha1": "d7fd7b85d0784fbb94a4158fd7f0353091b306b7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "patrio more: by ancestral custom. Burton's English has 'according to their own ordination'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they worship their own gods according to their own ordination",
+            "in": "3.4.1.5",
+            "near": "3.4.1.5-f41",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Pomponius Mela",
+          "basis": "text \"which Pomponius Mela reports of the Africans\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De chorographia"
+        },
+        "text": "they worship their own gods in the manner of their fathers",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.5-f42": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Isocrates",
+      "basis": "text \"Isocrates adviseth Demonicus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "To Demonicus"
+    },
+    "text": "& unumquemque Topicum deum sic coli oportere, quomodo ipse praeceperit",
+    "text_sha1": "6e7d657a7a6a4561e36aaf36aacc1d5f11de3f90",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Topicum deum: a local god, the god of a particular place (Greek topikos). The clause carries on Isocrates' advice in Burton's own Latin wording. Burton's preceding English renders only the first part of that advice, so it is not a rendering of this clause.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Isocrates",
+          "basis": "text \"Isocrates adviseth Demonicus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "To Demonicus"
+        },
+        "text": "and that each local god ought to be worshipped in the way he himself has prescribed",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.1.5-f5": {
     "kind": "phrase",
     "lang": "la",

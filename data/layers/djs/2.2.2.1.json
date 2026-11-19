@@ -37,23 +37,15 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 22134, pp. 404-406"
   },
-  "2.2.2.1-f15": {
-    "by": "djs1927",
-    "left_anchor": "reckoned up by Mercatus, and by Rodericus à Castro, in their tracts",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ";",
-    "status": "no-anchor",
-    "text_sha1": "c32dc520066678a03f790e110b9584e2ccd4ca91",
-    "threshold": 0.85
-  },
   "2.2.2.1-f16": {
+    "align_score": 0.759,
     "by": "djs1927",
-    "left_anchor": "on his head. John Baptista Silvaticus cont. 64 commends all th ;",
-    "left_score": 0.9203539823008849,
+    "left_anchor": "by Rodericus à Castro, in their tracts de melancholia virginum & monialium;",
+    "left_score": 0.759,
     "method": "rules/djs-align-v3",
     "right_anchor": ", but as Platerus adds,",
     "right_score": 1.0,
-    "status": "not-found",
+    "status": "below-threshold",
     "text_sha1": "0f38755e28cffc5e76185e4f02f7f7cc687c291a",
     "threshold": 0.85
   },
@@ -162,20 +154,6 @@
     "status": "no-anchor",
     "text_sha1": "ce6674b429771910baf0c0e1bef6404e880e6b31",
     "threshold": 0.85
-  },
-  "2.2.2.1-f3": {
-    "align_score": 0.993,
-    "by": "djs1927",
-    "left_anchor": "be used as occasion serves, Peter Cnemiander in a consultation of his",
-    "left_score": 0.993,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", will have his patient continually loose, and to that end sets",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "for a hypochondriac,",
-    "text_sha1": "942f5ce8bead9f374b94dde8d33052bef2300326",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 22005, p. 403"
   },
   "2.2.2.1-f30": {
     "align_score": 0.986,

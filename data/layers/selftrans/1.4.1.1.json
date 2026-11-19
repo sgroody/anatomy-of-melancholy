@@ -570,6 +570,35 @@
     ],
     "text_sha1": "f2e8d6441c4d709547556fd6f8da4d07f5da84d7"
   },
+  "1.4.1.1-f137": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as Seneca notes)",
+          "in": "1.4.1.1-p4",
+          "prefix": "ante fores se laqueo suspendit (",
+          "suffix": ", alius se praecipitavit a tecto"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b8fc588dd682ca702a90d316b96b7e5d578d9ef8"
+  },
   "1.4.1.1-f14": {
     "bracket": "none",
     "by": "rules",
@@ -767,27 +796,13 @@
           "suffix": " Physicians, furiously disposed,"
         },
         "words": 38
-      },
-      {
-        "by": "rules",
-        "cognates": 1,
-        "position": "preceding",
-        "selector": {
-          "exact": "alius ante fores se laqueo suspendit (as Seneca notes)",
-          "in": "1.4.1.1-p4",
-          "prefix": "ples are daily seen amongst us: ",
-          "suffix": ", alius se praecipitavit a tecto"
-        },
-        "words": 9
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "cognate-overlap",
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "597dda40776f035de5b251da90f842e565c43ae7"
   },
@@ -2149,48 +2164,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "a8da66ec919de6af257761aebd73fb7d4a2aa948"
-  },
-  "1.4.1.1-f66": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "for example’s sake led the way first",
-          "in": "1.4.1.1-p9",
-          "prefix": " Plato’s divine tract de anima, ",
-          "suffix": ". That neat Epigram of Callimach"
-        },
-        "words": 7
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "And having read Plato’s divine tract",
-          "in": "1.4.1.1-p9",
-          "prefix": "ife, to precipitate themselves. ",
-          "suffix": " de anima, for example’s sake le"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "09ebdc5fc1330c57b6cfb416865ed8a63e6e83c6"
   },
   "1.4.1.1-f67": {
     "bracket": "present",

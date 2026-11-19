@@ -385,6 +385,77 @@
       }
     ]
   },
+  "1.1.1.5-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "there is a succession of pleasure and pain",
+        "in": "1.1.1.5",
+        "near": "1.1.1.5-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Invicem cedunt dolor & voluptas",
+    "text_sha1": "3ece2a4c2eb1c47acd4796d3ced56012d9d5164e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton renders it himself right after: \"there is a succession of pleasure and pain.\" The paragraph's last sidenote, \"Lipsius cent. 3 ep. 45.\", may belong to this phrase, but that is not certain, so no attribution is given here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "there is a succession of pleasure and pain",
+            "in": "1.1.1.5",
+            "near": "1.1.1.5-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Pain and pleasure give way to each other in turn",
+        "warnings": []
+      }
+    ]
+  },
   "1.1.1.5-f2": {
     "kind": "verse",
     "lang": "la",

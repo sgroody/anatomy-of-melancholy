@@ -316,5 +316,76 @@
         "warnings": []
       }
     ]
+  },
+  "1.2.5.3-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "if the brain be hot",
+        "in": "1.2.5.3",
+        "near": "1.2.5.3-f6",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Capivaccius (Girolamo Capivacci)",
+      "basis": "text \"as Bruele maintains, and Capivaccius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "si cerebrum sit calidius",
+    "text_sha1": "354904d78ebddea3bb406d9c8e338c5b34f15c4f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "if the brain be hotter",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "calidius is a comparative ('hotter'), used here in the sense 'hotter than it should be'. Burton's following English carries on into Capivaccius's argument about the animal spirits, madness and folly, but only 'if the brain be hot' renders the Latin phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "if the brain be hot",
+            "in": "1.2.5.3",
+            "near": "1.2.5.3-f6",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Capivaccius (Girolamo Capivacci)",
+          "basis": "text \"as Bruele maintains, and Capivaccius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "if the brain is too hot",
+        "warnings": []
+      }
+    ]
   }
 }

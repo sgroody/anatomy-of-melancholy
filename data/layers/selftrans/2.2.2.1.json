@@ -87,31 +87,6 @@
     ],
     "text_sha1": "c1e6d4b8477d2abd72de6cd36c458822f98f7faf"
   },
-  "2.2.2.1-f15": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Many other inconveniences are reckoned up by Mercatus, and by Rodericus à Castro, in their tracts",
-          "in": "2.2.2.1-p4",
-          "prefix": "d sad, the body dull and heavy. ",
-          "suffix": " de melancholia virginum & monia"
-        },
-        "words": 16
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
-    "text_sha1": "c32dc520066678a03f790e110b9584e2ccd4ca91"
-  },
   "2.2.2.1-f16": {
     "bracket": "present",
     "by": "rules",
@@ -361,34 +336,6 @@
     ],
     "text_sha1": "ce6674b429771910baf0c0e1bef6404e880e6b31"
   },
-  "2.2.2.1-f3": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "will have his patient continually loose, and to that end sets down there many forms of Potions and Clysters",
-          "in": "2.2.2.1-p1",
-          "prefix": "ation of his pro hypocondriaco, ",
-          "suffix": ". Mercurialis, consil. 88, if th"
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "942f5ce8bead9f374b94dde8d33052bef2300326"
-  },
   "2.2.2.1-f30": {
     "bracket": "present",
     "by": "rules",
@@ -512,12 +459,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Peter Cnemiander in a consultation of his",
+          "exact": "Peter Cnemiander in a consultation of his pro hypocondriaco, will have his patient continually loose, and to that end sets down there many forms of Potions and Clysters",
           "in": "2.2.2.1-p1",
           "prefix": " to be used as occasion serves, ",
-          "suffix": " pro hypocondriaco, will have hi"
+          "suffix": ". Mercurialis, consil. 88, if th"
         },
-        "words": 7
+        "words": 28
       }
     ],
     "lang": "la",

@@ -1,0 +1,65 @@
+{
+  "2.5.1.5-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Francis Bacon",
+      "basis": "text \"Our noble and learned Lord Verulam, in his book de vita & morte\" and sidenote \"Viscount St. Albans.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Historia vitae et mortis"
+    },
+    "text": "de vita & morte",
+    "text_sha1": "59d0e2459b1063a1e65d34877755706379cc13fb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's short title for Bacon's Historia vitae et mortis (1623).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Francis Bacon",
+          "basis": "text \"Our noble and learned Lord Verulam, in his book de vita & morte\" and sidenote \"Viscount St. Albans.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Historia vitae et mortis"
+        },
+        "text": "Of Life and Death",
+        "warnings": []
+      }
+    ]
+  }
+}

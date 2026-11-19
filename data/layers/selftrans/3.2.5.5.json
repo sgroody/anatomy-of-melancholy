@@ -3465,6 +3465,21 @@
     "by": "rules",
     "candidates": [
       {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "both in men’s and women’s genitures, by the examination of the seventh house the Almutens, Lords and Planets there, a ☉d & ☾a, &c., by particular Aphorisms",
+          "in": "3.2.5.5-p44",
+          "prefix": "xores, de mutuo amore conjugum, ",
+          "suffix": ", Si dominus 7mae in 7ma vel sec"
+        },
+        "words": 26
+      },
+      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -3481,6 +3496,7 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "ec747a1523f06f84449c1f17c203bff3edacf2b8"
@@ -3818,6 +3834,47 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "fbd1bc2c6eacbfe87569a01fd2caf9f893a91d73"
+  },
+  "3.2.5.5-f313": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "with many such, too tedious to relate",
+          "in": "3.2.5.5-p44",
+          "prefix": "odecima. Si Venus in 12ma, &c., ",
+          "suffix": ". Yet let no man be troubled, or"
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "both in men’s and women’s genitures, by the examination of the seventh house the Almutens, Lords and Planets there, a ☉d & ☾a, &c., by particular Aphorisms",
+          "in": "3.2.5.5-p44",
+          "prefix": "xores, de mutuo amore conjugum, ",
+          "suffix": ", Si dominus 7mae in 7ma vel sec"
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "6b20b49bfd9a88a30d4b7ca02adbd28913f75a8c"
   },
   "3.2.5.5-f32": {
     "bracket": "present",

@@ -1498,6 +1498,65 @@
       }
     ]
   },
+  "1.3.1.2-f141": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quaeque momenti non sunt",
+    "text_sha1": "1b86d61ad1baad94ad5ec870e436b3ce40a2670c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "and which are not of moment",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase continues the preceding 'timent de non timendis' ('they fear things not to be feared'). Here 'quaeque' means 'and which', and the phrase lists a second set of things they fear. Burton's English that follows ('yet all likely fear…') carries on the argument and does not translate this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and things that are of no importance",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.1.2-f16": {
     "kind": "phrase",
     "lang": "la",

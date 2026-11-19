@@ -37,17 +37,48 @@
     "signals": [],
     "text_sha1": "145f41a6741f766ff7d4b031b20ea7520dec6135"
   },
-  "1.2.2.2-f100": {
+  "1.2.2.2-f101": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "’twas done like a Prince",
+          "in": "1.2.2.2-p7",
+          "prefix": "uch, O dignum principe haustum, ",
+          "suffix": ". Our Dutchmen invite all comers"
+        },
+        "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and comes off clearly, sound Trumpets, Fife and Drums, the spectators will applaud him, the Bishop himself (if he belie them not) with his Chaplain will stand by and do as much",
+          "in": "1.2.2.2-p7",
+          "prefix": "",
+          "suffix": ", O dignum principe haustum, ’tw"
+        },
+        "words": 32
+      }
+    ],
     "lang": "la",
-    "location": "sidenote",
+    "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "5524f80c65b45a08fe10bd6a3021b30eb2b34816"
+    "text_sha1": "3aa315bf3f3e8587a56facbd380dcec0dd1374aa"
   },
   "1.2.2.2-f11": {
     "bracket": "present",
@@ -1848,48 +1879,5 @@
       "english-at-anchor"
     ],
     "text_sha1": "79162a5429b202d61f035e44642c181c455c508d"
-  },
-  "1.2.2.2-f99": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "’twas done like a Prince",
-          "in": "1.2.2.2-p7",
-          "prefix": "uch, O dignum principe haustum, ",
-          "suffix": ". Our Dutchmen invite all comers"
-        },
-        "words": 5
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and comes off clearly, sound Trumpets, Fife and Drums, the spectators will applaud him, the Bishop himself (if he belie them not) with his Chaplain will stand by and do as much, O",
-          "in": "1.2.2.2-p7",
-          "prefix": "",
-          "suffix": " dignum principe haustum, ’twas "
-        },
-        "words": 33
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8891264e21a4864649dd225629ee42bd0b671fc1"
   }
 }

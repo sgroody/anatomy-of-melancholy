@@ -1,0 +1,65 @@
+{
+  "3.2.2.5-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Thomas Erastus",
+      "basis": "text \"saith Erastus in his book de Lamiis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Lamiis"
+    },
+    "text": "de Lamiis",
+    "text_sha1": "31a3076cd63c7fba26fb429f3f1f34d4dc4bc6d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A book title: Thomas Erastus's treatise on witches.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Thomas Erastus",
+          "basis": "text \"saith Erastus in his book de Lamiis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Lamiis"
+        },
+        "text": "On Witches",
+        "warnings": []
+      }
+    ]
+  }
+}

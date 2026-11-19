@@ -2505,6 +2505,77 @@
       }
     ]
   },
+  "3.4.2.6-f190": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "deferring of time or grievousness of sin do not prejudicate his grace",
+        "in": "3.4.2.6",
+        "near": "3.4.2.6-f190",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Fulgentius",
+      "basis": "text \"God (saith Fulgentius) is delighted in the conversion of a sinner\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "prolixitas temporis Deo non praejudicat, aut gravitas peccati",
+    "text_sha1": "6205b0fd729bc1309b814cebe27ef70fa54093ee",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sense is that neither a long delay nor the gravity of a sin limits God's power to forgive. Burton renders the phrase himself straight afterwards.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "deferring of time or grievousness of sin do not prejudicate his grace",
+            "in": "3.4.2.6",
+            "near": "3.4.2.6-f190",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Fulgentius",
+          "basis": "text \"God (saith Fulgentius) is delighted in the conversion of a sinner\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "length of time does not prejudice God, nor does the gravity of sin",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -3060,67 +3131,6 @@
       }
     ]
   },
-  "3.4.2.6-f29": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Caelius Secundus Curio",
-      "basis": "text \"as Caelius Secundus stiffly maintains in his book\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De amplitudine regni coelesti"
-    },
-    "text": "De amplitudine regni coelesti",
-    "text_sha1": "d7e77b0d3976b710d45491341edcc8591e242e90",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [
-          "misquotation-suspected"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A book title. Celio Secondo Curione's work is usually titled 'De amplitudine beati regni Dei'. 'coelesti' should grammatically be 'coelestis'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Caelius Secundus Curio",
-          "basis": "text \"as Caelius Secundus stiffly maintains in his book\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De amplitudine regni coelesti"
-        },
-        "text": "On the Breadth of the Heavenly Kingdom",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.2.6-f3": {
     "kind": "phrase",
     "lang": "la",
@@ -3546,65 +3556,6 @@
           "work": null
         },
         "text": "not unworthy of salvation",
-        "warnings": []
-      }
-    ]
-  },
-  "3.4.2.6-f36": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Francesco Collio (Collius)",
-      "basis": "text \"Franciscus Collius hath fully censured all Opinions in his five Books\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De animabus paganorum"
-    },
-    "text": "de Paganorum animabus post mortem",
-    "text_sha1": "371567e9038579261c9825f9d726cc3ceaa20f17",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The book is by Francesco Collio (Collius), De animabus paganorum, Milan, 1622–33.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Francesco Collio (Collius)",
-          "basis": "text \"Franciscus Collius hath fully censured all Opinions in his five Books\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De animabus paganorum"
-        },
-        "text": "On the Souls of the Pagans after Death",
         "warnings": []
       }
     ]
@@ -6613,67 +6564,6 @@
           "work": null
         },
         "text": "let us flee to God alone",
-        "warnings": []
-      }
-    ]
-  },
-  "3.4.2.6-f85": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Athanasius",
-      "basis": "text \"Athanasius in his book\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De variis quaestionibus"
-    },
-    "text": "De variis quaest",
-    "text_sha1": "edf89adecf776f88bfdab4fcc68e260249b9e7e9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [
-          "truncated"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A book title: 'quaest.' is short for quaestionibus ('questions'). Burton gives it as a work by Athanasius.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Athanasius",
-          "basis": "text \"Athanasius in his book\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De variis quaestionibus"
-        },
-        "text": "On Various Questions",
         "warnings": []
       }
     ]

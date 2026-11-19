@@ -1,0 +1,200 @@
+{
+  "1.2.1.6-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bruno Seidel",
+      "basis": "text \"So doth Bruno Seidelius in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de morbo incurab."
+    },
+    "text": "de morbo incurab",
+    "text_sha1": "2def1b46e327663d989e5ea8bc3e5b002f37b92e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A book title with 'incurab.' abbreviated. The exact form of the full title (singular or plural) is not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bruno Seidel",
+          "basis": "text \"So doth Bruno Seidelius in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de morbo incurab."
+        },
+        "text": "On Incurable Disease",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rodrigo de Castro",
+      "basis": "text \"Rodericus à Castro Lusitanus\"; sidenote \"De nat. mul. lib. 3 cap. 4.\"",
+      "locus": "lib. 3 cap. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De nat. mul."
+    },
+    "text": "ideo, & pestiferum vocat",
+    "text_sha1": "e2bdf252b32999d556ead559d3b3c27dd857b6d6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "therefore, and pestilential, he calls",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment from the middle of a sentence: 'concubitum hunc exitialem ideo, & pestiferum vocat' means 'he therefore calls this intercourse deadly and pestilential'. The passage begins after 'exitialem' (deadly), which falls outside it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rodrigo de Castro",
+          "basis": "text \"Rodericus à Castro Lusitanus\"; sidenote \"De nat. mul. lib. 3 cap. 4.\"",
+          "locus": "lib. 3 cap. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De nat. mul."
+        },
+        "text": "therefore also calls it pestilential",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": "text \"Lev. 18, 20\"",
+      "locus": "18, 20",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Leviticus"
+    },
+    "text": "non perhorrescunt. Damnavit olim divina Lex, & morte mulctavit hujusmodi homines",
+    "text_sha1": "8d79b4d3359b0abaf8d3ba3e27d177de647afe13",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage starts in the middle of a clause: 'non perhorrescunt' finishes the sentence 'who, at the fourth moon, while this menstrual flux is running, do not shrink from this intercourse'. The Law Burton cites is Leviticus 18 and 20.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": "text \"Lev. 18, 20\"",
+          "locus": "18, 20",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Leviticus"
+        },
+        "text": "do not shrink in horror from it. The divine Law of old condemned such men and punished them with death",
+        "warnings": []
+      }
+    ]
+  }
+}

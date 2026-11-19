@@ -61,5 +61,68 @@
         "warnings": []
       }
     ]
+  },
+  "2.5.3.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Codronchus",
+      "basis": "text \"Codronchus in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De sale absinthii"
+    },
+    "text": "de sale absyn",
+    "text_sha1": "b8b5d8c6b39cdb6541f52bc6808d1433c0c21784",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is an abbreviated title, with absyn. standing for absinthii (of wormwood). The book is Battista Codronchi's treatise on the salt of wormwood.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Codronchus",
+          "basis": "text \"Codronchus in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De sale absinthii"
+        },
+        "text": "On the Salt of Wormwood",
+        "warnings": []
+      }
+    ]
   }
 }

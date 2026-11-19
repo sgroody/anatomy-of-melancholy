@@ -975,6 +975,36 @@
     "signals": [],
     "text_sha1": "fb26323d86cceaa78b4073a12498eea6c8baa611"
   },
+  "3.4.2.6-f190": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "deferring of time or grievousness of sin do not prejudicate his grace, things past and to come are all one to him, as present, ’tis never too late to repent",
+          "in": "3.4.2.6-p5",
+          "prefix": "ejudicat, aut gravitas peccati, ",
+          "suffix": ". This haven of repentance is st"
+        },
+        "words": 30
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6205b0fd729bc1309b814cebe27ef70fa54093ee"
+  },
   "3.4.2.6-f2": {
     "bracket": "present",
     "by": "rules",
@@ -1184,48 +1214,6 @@
     "signals": [],
     "text_sha1": "7d86e33d2d7fb7a30fd80c2889f77f3d1e3a613c"
   },
-  "3.4.2.6-f29": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or some impostor under his name)",
-          "in": "3.4.2.6-p14",
-          "prefix": " De amplitudine regni coelesti, ",
-          "suffix": ", beatorum numerus multo major q"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Some again though less orthodoxal, will have a far greater part saved, than shall be damned (as Caelius Secundus stiffly maintains in his book",
-          "in": "3.4.2.6-p14",
-          "prefix": "ommon to all that will believe. ",
-          "suffix": ", De amplitudine regni coelesti,"
-        },
-        "words": 24
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d7e77b0d3976b710d45491341edcc8591e242e90"
-  },
   "3.4.2.6-f3": {
     "bracket": "present",
     "by": "rules",
@@ -1291,12 +1279,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "or some impostor under his name)",
+          "exact": "Some again though less orthodoxal, will have a far greater part saved, than shall be damned (as Caelius Secundus stiffly maintains in his book, De amplitudine regni coelesti, or some impostor under his name)",
           "in": "3.4.2.6-p14",
-          "prefix": " De amplitudine regni coelesti, ",
+          "prefix": "ommon to all that will believe. ",
           "suffix": ", beatorum numerus multo major q"
         },
-        "words": 6
+        "words": 34
       }
     ],
     "lang": "la",
@@ -1501,48 +1489,6 @@
       "english-precedes"
     ],
     "text_sha1": "cc2b7d8015b37bc4b7a540255a3e5b04b19abf93"
-  },
-  "3.4.2.6-f36": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and amply dilated this question, which who so will may peruse",
-          "in": "3.4.2.6-p14",
-          "prefix": "Paganorum animabus post mortem, ",
-          "suffix": ". But to return to my Author, hi"
-        },
-        "words": 11
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Franciscus Collius hath fully censured all Opinions in his five Books",
-          "in": "3.4.2.6-p14",
-          "prefix": "d Papists are stiff against it. ",
-          "suffix": " de Paganorum animabus post mort"
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "371567e9038579261c9825f9d726cc3ceaa20f17"
   },
   "3.4.2.6-f37": {
     "bracket": "present",
@@ -2966,32 +2912,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "7b2a6d84352218ca495b164e689ae53009fc91e0"
-  },
-  "3.4.2.6-f85": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Athanasius in his book",
-          "in": "3.4.2.6-p17",
-          "prefix": "them fly to God alone for help. ",
-          "suffix": " De variis quaest. prescribes as"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "edf89adecf776f88bfdab4fcc68e260249b9e7e9"
   },
   "3.4.2.6-f86": {
     "bracket": "none",

@@ -1222,48 +1222,6 @@
     ],
     "text_sha1": "c0c6272485874b036cae2ea04164888f8d6b9219"
   },
-  "1.2.2.6-f51": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in that prodigious commendation of Socrates, how a deep meditation coming into Socrates’ mind by chance, he stood still musing",
-          "in": "1.2.2.6-p6",
-          "prefix": "Plato in his dialogue de Amore, ",
-          "suffix": ", eodem vestigio cogitabundus, f"
-        },
-        "words": 20
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "It is reported by Plato in his dialogue",
-          "in": "1.2.2.6-p6",
-          "prefix": "when he seemed to be most idle. ",
-          "suffix": " de Amore, in that prodigious co"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cebd8c19d67f166bcf83e613a4d693c7e94c0eec"
-  },
   "1.2.2.6-f52": {
     "bracket": "none",
     "by": "rules",
@@ -1288,12 +1246,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "in that prodigious commendation of Socrates, how a deep meditation coming into Socrates’ mind by chance, he stood still musing",
+          "exact": "It is reported by Plato in his dialogue de Amore, in that prodigious commendation of Socrates, how a deep meditation coming into Socrates’ mind by chance, he stood still musing",
           "in": "1.2.2.6-p6",
-          "prefix": "Plato in his dialogue de Amore, ",
+          "prefix": "when he seemed to be most idle. ",
           "suffix": ", eodem vestigio cogitabundus, f"
         },
-        "words": 20
+        "words": 30
       }
     ],
     "lang": "la",

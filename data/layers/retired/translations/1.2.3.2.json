@@ -1,0 +1,66 @@
+{
+  "1.2.3.2-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Thomas Fienus",
+      "basis": "text \"Fienus, a famous Physician of Antwerp, that wrote three books\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De viribus imaginationis"
+    },
+    "text": "de viribus imaginationis",
+    "text_sha1": "a5bf6875b16ad02df6b0154917237dd0818a64e0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of Thomas Fienus's treatise De viribus imaginationis.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Thomas Fienus",
+          "basis": "text \"Fienus, a famous Physician of Antwerp, that wrote three books\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De viribus imaginationis"
+        },
+        "text": "On the Powers of the Imagination",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -213,12 +213,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Sileo interim turpes illas",
+          "exact": "Sileo interim turpes",
           "in": "3.2.1.2-p7",
           "prefix": "oeditatem, quam non spurcitiem? ",
-          "suffix": ", & ne nominandas quidem monacho"
+          "suffix": " illas, & ne nominandas quidem m"
         },
-        "words": 4
+        "words": 3
       }
     ],
     "lang": "la",
@@ -230,32 +230,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "ee5f10e4cfd02b86712e22d264961edafeecf5c2"
-  },
-  "3.2.1.2-f115": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Sileo interim turpes illas",
-          "in": "3.2.1.2-p7",
-          "prefix": "oeditatem, quam non spurcitiem? ",
-          "suffix": ", & ne nominandas quidem monacho"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "61527232e0d41bd482f9bcca69e4845bdbea167f"
   },
   "3.2.1.2-f116": {
     "bracket": "none",
@@ -566,6 +540,30 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "5fb1937e616cad0118680f7b958fb032b16e815f"
+  },
+  "3.2.1.2-f133": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a63fb1b0833ff2f7d446c332ad01591f625bc4dd"
+  },
+  "3.2.1.2-f134": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c3b4e9034e8868447cb340afcf572829f2feef77"
   },
   "3.2.1.2-f14": {
     "bracket": "none",

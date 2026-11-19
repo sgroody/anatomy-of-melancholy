@@ -136,5 +136,47 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "789e31befeb1e267b94cf13a03e4558dee949ee5"
+  },
+  "1.2.5.3-f6": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "if the brain be hot, the animal spirits will be hot, and thence comes madness",
+          "in": "1.2.5.3-p1",
+          "prefix": "cius, si cerebrum sit calidius, ",
+          "suffix": ": if cold, folly. David Crusius "
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Both these opinions may stand good, as Bruele maintains, and Capivaccius",
+          "in": "1.2.5.3-p1",
+          "prefix": "ood and choler into melancholy. ",
+          "suffix": ", si cerebrum sit calidius, if t"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "354904d78ebddea3bb406d9c8e338c5b34f15c4f"
   }
 }

@@ -1,0 +1,66 @@
+{
+  "1.2.3.3-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petrarch",
+      "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+      "locus": "preface",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De remediis utriusque fortunae"
+    },
+    "text": "de Remediis, &c",
+    "text_sha1": "ae4b5b59a495a1805aebc40e36f4f163e46b0ae2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Short title of Petrarch's De remediis utriusque fortunae (On the Remedies for Both Kinds of Fortune).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petrarch",
+          "basis": "sidenote \"Petrarch. praefat. de Remediis, &c.\"",
+          "locus": "preface",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De remediis utriusque fortunae"
+        },
+        "text": "On Remedies, etc.",
+        "warnings": []
+      }
+    ]
+  }
+}

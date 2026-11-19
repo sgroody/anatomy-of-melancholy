@@ -9962,6 +9962,209 @@
       }
     ]
   },
+  "2.3.3.1-f275": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "stretching himself on ivory beds",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f275",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": "sidenote \"Amos 6.\"",
+      "locus": "6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Amos"
+    },
+    "text": "in lectis eburneis dormit, vinum phialis bibit, optimis unguentis delibuitur",
+    "text_sha1": "fb539464c0ea9dfed8ce3b2c5b057ce0ca5f1786",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton puts this into the third person. It echoes the Vulgate of Amos 6:4–6 ('qui dormitis in lectis eburneis … bibentes vinum in phialis, et optimo unguento delibuti'). The sidenote 'Xenoph. Tyran.' points to Xenophon's Hiero for Simonides' complaint. Burton's English gives only the ivory beds.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "stretching himself on ivory beds",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f275",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": "sidenote \"Amos 6.\"",
+          "locus": "6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Amos"
+        },
+        "text": "he sleeps on ivory beds, drinks wine from bowls, and is anointed with the finest ointments",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f276": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the whole world cannot give him content",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f276",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "sidenote \"Seneca consil. ad Albinum cap. 11.\"",
+      "locus": "cap. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consolation to Helvia (ad Albinum, as Burton gives it)"
+    },
+    "text": "totus non sufficit orbis",
+    "text_sha1": "0c22511c19e2652c053b11227044000939efe31c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase recalls Juvenal 10.168 on Alexander ('Unus Pellaeo iuveni non sufficit orbis'), but here it stands on its own. The sidenote to Seneca's consolation probably belongs to the preceding sentence about living according to nature.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the whole world cannot give him content",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f276",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "sidenote \"Seneca consil. ad Albinum cap. 11.\"",
+          "locus": "cap. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consolation to Helvia (ad Albinum, as Burton gives it)"
+        },
+        "text": "the whole world is not enough",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f277": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The wording closely matches Virgil's well-known line 'ut gemma bibat et Sarrano dormiat ostro', describing the rich man who ruins cities for his luxury.",
+      "locus": "2.506",
+      "status": "probable",
+      "verified": false,
+      "work": "Georgics"
+    },
+    "text": "qui gemmis bibit & Serrano dormit in ostro",
+    "text_sha1": "19f464f4c6e6ca889de86855be7261bda2319b61",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "who drinks from gems and sleeps in Serran purple",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Serranus' (Sarranus) means Tyrian, from Sarra, an old name for Tyre, famous for its purple dye. Burton inserts Virgil's line into his rendering of Theodoret. Virgil's text reads 'ut gemma bibat et Sarrano dormiat ostro' ('so that he may drink from a jewel and sleep on Tyrian purple'). Burton changes it into a relative clause with indicative verbs and the plural 'gemmis'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "The wording closely matches Virgil's well-known line 'ut gemma bibat et Sarrano dormiat ostro', describing the rich man who ruins cities for his luxury.",
+          "locus": "2.506",
+          "status": "probable",
+          "verified": false,
+          "work": "Georgics"
+        },
+        "text": "who drinks from jewels and sleeps on Tyrian purple",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.3.1-f29": {
     "kind": "phrase",
     "lang": "la",

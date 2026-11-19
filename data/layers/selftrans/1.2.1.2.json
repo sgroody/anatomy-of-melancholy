@@ -800,12 +800,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Trithemius in his book",
+          "exact": "Trithemius in his book de septem secundis, assigns names to such Angels, as are Governors of particular Provinces, by what authority I know not, and gives them several jurisdictions",
           "in": "1.2.1.2-p16",
           "prefix": "tus maligni spiritus affectent. ",
-          "suffix": " de septem secundis, assigns nam"
+          "suffix": ". Asclepiades a Grecian, Rabbi A"
         },
-        "words": 4
+        "words": 29
       }
     ],
     "lang": "la",
@@ -815,48 +815,6 @@
       "english-follows"
     ],
     "text_sha1": "1a5e79a3a74bda48e6ebf83c54c010c6398c9b5e"
-  },
-  "1.2.1.2-f128": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "assigns names to such Angels, as are Governors of particular Provinces, by what authority I know not, and gives them several jurisdictions",
-          "in": "1.2.1.2-p16",
-          "prefix": "in his book de septem secundis, ",
-          "suffix": ". Asclepiades a Grecian, Rabbi A"
-        },
-        "words": 22
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Trithemius in his book",
-          "in": "1.2.1.2-p16",
-          "prefix": "tus maligni spiritus affectent. ",
-          "suffix": " de septem secundis, assigns nam"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a3b1f2f88b750ddaa4aa4cfea887b7098f3ee248"
   },
   "1.2.1.2-f129": {
     "bracket": "none",
@@ -1252,32 +1210,6 @@
       "english-precedes"
     ],
     "text_sha1": "1616a7a4b6f52f9781cc03ad4545c1d13c320d7d"
-  },
-  "1.2.1.2-f14": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "But this absurd Tenet of Tyrius, Proclus confutes at large in his book",
-          "in": "1.2.1.2-p2",
-          "prefix": "nchius, and some Divines think. ",
-          "suffix": " de Anima & daemone."
-        },
-        "words": 13
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "436a36a346407ded14f873ee5c51647f58ddd0af"
   },
   "1.2.1.2-f140": {
     "bracket": "present",
@@ -5454,35 +5386,6 @@
     ],
     "text_sha1": "1e6dfe7ef48ff403891f0ca73f7ee134ab1eb4ea"
   },
-  "1.2.1.2-f84": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "before the destruction of Jerusalem",
-          "in": "1.2.1.2-p10",
-          "prefix": "s in his book de bello Judaico, ",
-          "suffix": ". All which Guil. Postellus in h"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "de056d9498633b4901b5c0ffd460597a34cc4ab1"
-  },
   "1.2.1.2-f85": {
     "bracket": "none",
     "by": "rules",
@@ -5631,18 +5534,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "481f998d586f98ac4b1ff164810a3a7365e3ca35"
-  },
-  "1.2.1.2-f91": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "573329246da1e42f33fc82682cf1cea35fd399a7"
   },
   "1.2.1.2-f92": {
     "bracket": "none",

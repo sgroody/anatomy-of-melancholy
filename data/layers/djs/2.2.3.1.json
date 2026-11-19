@@ -54,36 +54,26 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 23107, p. 425"
   },
   "2.2.3.1-f103": {
-    "align_score": 1.0,
+    "align_score": 0.809,
     "by": "djs1927",
     "left_anchor": "the whole sphere of Saturn, and all that is included in it,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "(as Fromundus of Louvain in his tract",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "the aggregate,",
+    "right_anchor": "(as Fromundus of Louvain in his tract de immobilitate terrae argues)",
+    "right_score": 0.809,
+    "status": "below-threshold",
     "text_sha1": "8070a3518c92e6ad302fe598592a68d5fb113c57",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 23111, p. 425"
-  },
-  "2.2.3.1-f104": {
-    "by": "djs1927",
-    "left_anchor": "(as Fromundus of Louvain in his tract",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "argues)",
-    "status": "no-anchor",
-    "text_sha1": "c6d44ff5c2e110a4f24e3de0aa9fcb9120126a37",
     "threshold": 0.85
   },
   "2.2.3.1-f105": {
+    "align_score": 0.809,
     "by": "djs1927",
-    "left_anchor": "., he concludes, it could not be from natural argues)",
-    "left_score": 0.9583333333333335,
+    "left_anchor": "(as Fromundus of Louvain in his tract de immobilitate terrae argues)",
+    "left_score": 0.809,
     "method": "rules/djs-align-v3",
     "right_anchor": ". If our world be small in respect, why may we not",
     "right_score": 1.0,
-    "status": "not-found",
+    "status": "below-threshold",
     "text_sha1": "566482f89f2b3fec900ae247640769d4c90f5b50",
     "threshold": 0.85
   },
@@ -380,20 +370,6 @@
     "text_sha1": "542ec2744e885a1a8ba0032f0936aa7429f4a851",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 23383, p. 430"
-  },
-  "2.2.3.1-f133": {
-    "align_score": 0.879,
-    "by": "djs1927",
-    "left_anchor": "s Jason Pratensis, in his book",
-    "left_score": 0.964,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", and chapter of Melancholy, hath these words out of Galen, Let",
-    "right_score": 0.879,
-    "status": "aligned",
-    "text": "on diseases of the head, and chapter of Digression of",
-    "text_sha1": "b278d2335742d4d7493823d3e89920847907996e",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 23386, p. 430"
   },
   "2.2.3.1-f134": {
     "align_score": 0.982,
@@ -1663,8 +1639,8 @@
     "left_anchor": ", but he and Menippus: or as Peter Cunaeus,",
     "left_score": 0.987012987012987,
     "method": "rules/djs-align-v3",
-    "right_anchor": "Jason Pratensis, in his book",
-    "right_score": 1.0,
+    "right_anchor": "Jason Pratensis, in his book de morbis capitis, and chapter of Melancholy,",
+    "right_score": 0.7153284671532848,
     "status": "not-found",
     "text_sha1": "b61b2ce9ad968a549bb710126a828a4680e68851",
     "threshold": 0.85

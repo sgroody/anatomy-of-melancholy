@@ -138,7 +138,13 @@ HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tunin
     {"name": "h3", "seed": 20261118, "prefix": "h3-",
      "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
      "sample": paths.DATA / "eval" / "langid-holdout3-sample.jsonl",
-     "gold": paths.DATA / "eval" / "langid-holdout3-gold.jsonl"},
+     "gold": paths.DATA / "eval" / "langid-holdout3-gold.jsonl",
+     "seen": "2026-11-18: its errors were studied to change the rules (Latin titles, possessives, mixed italics)"},
+    # 2026-11-18: drawn after the second cycle's rules changed, labelled blind by the second rater, the V5 gate
+    {"name": "h4", "seed": 20261119, "prefix": "h4-",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout4-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout4-gold.jsonl"},
 ]
 GATE = HOLDOUTS[-1]["name"]
 HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]
@@ -219,7 +225,9 @@ def _foreign_ancestor(e, stop) -> bool:
 
 
 def _words(s: str) -> list[str]:
-    return re.findall(r"[^\W\d_]+", norm(s).lower())
+    # "&c" is "etc.", not a word of the passage: a detected passage that runs on to "&c" still covers a target
+    # that stops before it (2026-11-18: "quaedam credenda, quaedam admiranda, &c" was scored as a miss)
+    return re.findall(r"[^\W\d_]+", re.sub(r"&\s*c\b\.?", " ", norm(s)).lower())
 
 
 def _contains_words(hay: str, needle: str) -> bool:
@@ -277,7 +285,7 @@ def evaluate(units: list[str] | None = None, *, holdout: bool | str = False) -> 
     sample = {r["sid"]: r for r in read_sample(sample_path)}
     idx: dict[str, UnitIndex] = {}
     tally: dict[str, dict] = {}
-    misses, unlocated = [], []
+    misses, unlocated, inexact = [], [], []
     for r in rows:
         ui = idx.setdefault(r["unit"], UnitIndex(r["unit"]))
         stratum = r.get("stratum", "m1")
@@ -324,6 +332,8 @@ def evaluate(units: list[str] | None = None, *, holdout: bool | str = False) -> 
             if detected:
                 t["tp"] += 1
                 t["boundary_ok"] += exact
+                if not exact:
+                    inexact.append(f"boundary {r['gold']}: {target[:60]!r} ({r.get('sid') or r['unit']})")
             else:
                 t["fn"] += 1
                 where = r.get("sid") or r["unit"]
@@ -338,7 +348,8 @@ def evaluate(units: list[str] | None = None, *, holdout: bool | str = False) -> 
     for t in tally.values():
         t.update(_rates(t))
     return {"sample": name, "labelled": gold_path.exists(), "items": len(rows), "unlocated": len(unlocated),
-            **total, **_rates(total), "by_stratum": tally, "misses": misses, "unlocated_items": unlocated}
+            **total, **_rates(total), "by_stratum": tally, "misses": misses, "inexact": inexact,
+            "unlocated_items": unlocated}
 
 
 def _rates(t: dict) -> dict:

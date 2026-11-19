@@ -569,8 +569,10 @@
   "djr-f1165": {
     "by": "djs1927",
     "left_anchor": "as mute as a fish, better open an Oyster without a knife.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "(saith Sarisburiensis) in manus eorum millies incidi, & Charon immitis qui nulli",
+    "right_anchor": "(saith Sarisburiensis) I could repeat many such particular grievances, which much disturb",
+    "right_score": 0.8461538461538461,
     "status": "not-found",
     "text_sha1": "4b570f9512f9105c473ecb9f8987214bbf5896bd",
     "threshold": 0.85
@@ -2322,11 +2324,14 @@
     "threshold": 0.85
   },
   "djr-f1429": {
+    "align_score": 0.803,
     "by": "djs1927",
-    "left_anchor": ", Aeneas Silvius (",
+    "left_anchor": "I refer you to Lucian’s Tract, de mercede conductis, Aeneas Silvius (",
+    "left_score": 0.803,
     "method": "rules/djs-align-v3",
     "right_anchor": ", he calls them), Agrippa, and many others.",
-    "status": "not-found",
+    "right_score": 1.0,
+    "status": "below-threshold",
     "text_sha1": "5eb9b103d12fcbb61da2359e74e90a1339b18f8b",
     "threshold": 0.85
   },
@@ -2950,6 +2955,46 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "f82523333afbe4fc8ce91ea6456ba9b490f7aabe",
+    "threshold": 0.85
+  },
+  "djr-f1497": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "scrape together it boots not whence. Bewitched with this desire of fame,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", to the disparagement of their health, and scarce able to hold",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "even in the thick of illness,",
+    "text_sha1": "124df6e2652099fa65b90286c9eb8fe2c854e54f",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 1715, pp. 17-18"
+  },
+  "djr-f1498": {
+    "align_score": 0.99,
+    "by": "djs1927",
+    "left_anchor": "of whom you shall be any whit better, but rather much worse,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", by which he is rather infected than anyway perfected.",
+    "right_score": 0.99,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "21d5501b1fd7462059aa49d9df72189e52d6bb77",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 1763, pp. 17-18"
+  },
+  "djr-f1499": {
+    "by": "djs1927",
+    "left_anchor": "envy rich, hate good men, abhor the present government, wi (saith Sarisburiensis)",
+    "left_score": 0.8613138686131387,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; I speak out of experience, I have been a thousand times",
+    "right_score": 0.8320000000000001,
+    "status": "not-found",
+    "text_sha1": "0a4edc529b80d1d7e1412c5e0e0fb35312908924",
     "threshold": 0.85
   },
   "djr-f15": {
@@ -8178,20 +8223,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 1381, pp. 10-11"
   },
-  "djr-f60": {
-    "align_score": 0.941,
-    "by": "djs1927",
-    "left_anchor": "fesseth he writ his book",
-    "left_score": 0.941,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "after his son’s death, to comfort himself; so did Tully write of",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "on Consolation",
-    "text_sha1": "e2a3a7b58a2584beff6408fc86930299667ed8b9",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 1678, pp. 17-18"
-  },
   "djr-f601": {
     "align_score": 0.577,
     "by": "djs1927",
@@ -10549,18 +10580,6 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "0c2a4d637bb54a7492d8940d07c7a0accbaf072b",
-    "threshold": 0.85
-  },
-  "djr-f818": {
-    "align_score": 0.795,
-    "by": "djs1927",
-    "left_anchor": "But for these men’s discontents, anxieties, I refer you to Lucian’s Tract,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Aeneas Silvius ( Of Philosophers and Scholars,",
-    "right_score": 0.795,
-    "status": "below-threshold",
-    "text_sha1": "b414d2ea8231c625db618b0dd5a6957d946fb49f",
     "threshold": 0.85
   },
   "djr-f82": {

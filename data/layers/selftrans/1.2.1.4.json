@@ -122,48 +122,6 @@
     ],
     "text_sha1": "5ac3a478ab286bf4a2c3d1290877b6099d5cd690"
   },
-  "1.2.1.4-f16": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "tells such a story of his own person, that a little before his son’s death, he had a black spot, which appeared in one of his nails",
-          "in": "1.2.1.4-p5",
-          "prefix": "in his book de libris propriis, ",
-          "suffix": "; and dilated itself as he came "
-        },
-        "words": 27
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Cardan in his book",
-          "in": "1.2.1.4-p5",
-          "prefix": "nded, the black spots vanished. ",
-          "suffix": " de libris propriis, tells such "
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "11f89831e67c0db4facb2102436e4a2876bd5467"
-  },
   "1.2.1.4-f17": {
     "bracket": "none",
     "by": "rules",
@@ -352,35 +310,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "030b03952c2ee7dede223cc12ec67ab57154b08d"
-  },
-  "1.2.1.4-f32": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "& that the constellation alone many times, produceth melancholy, all other causes set apart",
-          "in": "1.2.1.4-p2",
-          "prefix": "ing more to Stars than humours, ",
-          "suffix": ". He gives instance in Lunatic p"
-        },
-        "words": 13
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "5b307bd3af2ff90656dee321ca221af327bab23e"
   },
   "1.2.1.4-f33": {
     "bracket": "present",
@@ -623,34 +552,5 @@
       "english-at-anchor"
     ],
     "text_sha1": "99fdba8c211b98c0e7ead819692cd5cdf8be7260"
-  },
-  "1.2.1.4-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "discourseth to this purpose at large",
-          "in": "1.2.1.4-p2",
-          "prefix": "3th Chap. de rebus caelestibus, ",
-          "suffix": ". Ex atra bile varii generantur "
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "44b25fd9d71c40835abc91287377adbca3b6ac51"
   }
 }

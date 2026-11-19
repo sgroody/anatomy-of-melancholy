@@ -6361,13 +6361,26 @@
           "suffix": "."
         },
         "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "But for these men’s discontents, anxieties, I refer you to Lucian’s Tract, de mercede conductis, Aeneas Silvius",
+          "in": "djr-p169",
+          "prefix": "s with cares, gets nothing, &c. ",
+          "suffix": " (libidinis & stultitiae servos,"
+        },
+        "words": 17
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows"
+      "english-follows",
+      "english-precedes"
     ],
     "text_sha1": "5eb9b103d12fcbb61da2359e74e90a1339b18f8b"
   },
@@ -7950,6 +7963,120 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "f82523333afbe4fc8ce91ea6456ba9b490f7aabe"
+  },
+  "djr-f1497": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "to the disparagement of their health, and scarce able to hold a pen, they must say something, have it out, and get themselves a name, saith Scaliger, though it be to the downfall and ruin of many others",
+          "in": "djr-p10",
+          "prefix": "f fame, etiam mediis in morbis, ",
+          "suffix": ". To be counted writers, scripto"
+        },
+        "words": 38
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Bewitched with this desire of fame",
+          "in": "djr-p10",
+          "prefix": "e together it boots not whence. ",
+          "suffix": ", etiam mediis in morbis, to the"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "124df6e2652099fa65b90286c9eb8fe2c854e54f"
+  },
+  "djr-f1498": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "by which he is rather infected than anyway perfected",
+          "in": "djr-p10",
+          "prefix": "icitur potius, quam perficitur, ",
+          "suffix": "."
+        },
+        "words": 9
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Amongst so many thousand Authors you shall scarce find one, by reading of whom you shall be any whit better, but rather much worse",
+          "in": "djr-p10",
+          "prefix": "as, quisquiliasque ineptiasque. ",
+          "suffix": ", quibus inficitur potius, quam "
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "21d5501b1fd7462059aa49d9df72189e52d6bb77"
+  },
+  "djr-f1499": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "I speak out of experience, I have been a thousand times amongst them, and Charon himself is more gentle than they",
+          "in": "djr-p138",
+          "prefix": "quam, his longe clementior est; ",
+          "suffix": "; he is contented with his singl"
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0a4edc529b80d1d7e1412c5e0e0fb35312908924"
   },
   "djr-f15": {
     "bracket": "present",
@@ -21277,48 +21404,6 @@
     ],
     "text_sha1": "3a83c4c9b880249542717b261e4a284e5f21e1c0"
   },
-  "djr-f60": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "after his son’s death, to comfort himself",
-          "in": "djr-p9",
-          "prefix": "e writ his book De consolatione ",
-          "suffix": "; so did Tully write of the same"
-        },
-        "words": 7
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Cardan professeth he writ his book",
-          "in": "djr-p9",
-          "prefix": " taken this pains. And why not? ",
-          "suffix": " De consolatione after his son’s"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2a3a7b58a2584beff6408fc86930299667ed8b9"
-  },
   "djr-f601": {
     "bracket": "present",
     "by": "rules",
@@ -27489,32 +27574,6 @@
     ],
     "text_sha1": "0c2a4d637bb54a7492d8940d07c7a0accbaf072b"
   },
-  "djr-f818": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "But for these men’s discontents, anxieties, I refer you to Lucian’s Tract",
-          "in": "djr-p169",
-          "prefix": "s with cares, gets nothing, &c. ",
-          "suffix": ", de mercede conductis, Aeneas S"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b414d2ea8231c625db618b0dd5a6957d946fb49f"
-  },
   "djr-f82": {
     "bracket": "present",
     "by": "rules",
@@ -27821,12 +27880,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Amongst so many thousand Authors you shall scarce find one, by reading of whom you shall be any whit better, but rather much worse, quibus inficitur potius, quam perficitur, by which he is rather infected than anyway perfected",
+          "exact": "Amongst so many thousand Authors you shall scarce find one, by reading of whom you shall be any whit better, but rather much worse",
           "in": "djr-p10",
           "prefix": "as, quisquiliasque ineptiasque. ",
-          "suffix": "."
+          "suffix": ", quibus inficitur potius, quam "
         },
-        "words": 38
+        "words": 24
       },
       {
         "by": "rules",

@@ -58,20 +58,13 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 13136, p. 233"
   },
-  "1.2.3.9-f15": {
-    "by": "djs1927",
-    "left_anchor": "a devil of a Saint: and therefore Basil (belike) in his Homily",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", calls it",
-    "status": "no-anchor",
-    "text_sha1": "f8a5e7841b8a01a973aab6a424ec5b32f1881d33",
-    "threshold": 0.85
-  },
   "1.2.3.9-f17": {
     "by": "djs1927",
-    "left_anchor": "Dei, ad Donatum cap. 5, is",
+    "left_anchor": "Lactantius describes it, Lib. de Ira Dei, ad Donatum cap. 5, is",
+    "left_score": 0.6428571428571428,
     "method": "rules/djs-align-v3",
     "right_anchor": "., a cruel tempest of the mind, making his eyes spark fire,",
+    "right_score": 0.9818181818181819,
     "status": "not-found",
     "text_sha1": "088261bf8e1b4ffebb0686e2e22b8950e50dfec0",
     "threshold": 0.85
@@ -88,9 +81,11 @@
   "1.2.3.9-f19": {
     "by": "djs1927",
     "left_anchor": "tolerable, But it ruins and subverts whole Towns, Cities, Families, and Kingdoms;",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", saith Seneca,",
-    "status": "no-anchor",
+    "right_anchor": ", saith Seneca, de Ira, lib. 1. No plague hath done mankind",
+    "right_score": 0.6226415094339622,
+    "status": "not-found",
     "text_sha1": "6e08489ef554bb79f0e31acc12f7251cc443f947",
     "threshold": 0.85
   },
@@ -139,16 +134,19 @@
     "threshold": 0.85
   },
   "1.2.3.9-f6": {
-    "align_score": 0.744,
+    "align_score": 0.921,
     "by": "djs1927",
-    "left_anchor": "Anger a Cause. , calls it",
-    "left_score": 0.744,
+    "left_anchor": "Saint: and therefore Basil (belike) in his Homily de Ira, calls it",
+    "left_score": 0.921,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": "; the darkening of our understanding, and a bad Angel. Lucian in",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "omitted",
+    "text": "",
     "text_sha1": "2b3a012111ea5a38d52ad55ee9cc6ae9bd927ea2",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 13149, pp. 234-235"
   },
   "1.2.3.9-f7": {
     "by": "djs1927",

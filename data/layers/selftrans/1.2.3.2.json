@@ -39,12 +39,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "Fienus, a famous Physician of Antwerp, that wrote three books",
+          "exact": "Fienus, a famous Physician of Antwerp, that wrote three books de viribus imaginationis",
           "in": "1.2.3.2-p1",
           "prefix": " and him that is instar omnium, ",
-          "suffix": " de viribus imaginationis. I hav"
+          "suffix": ". I have thus far digressed, bec"
         },
-        "words": 10
+        "words": 13
       }
     ],
     "lang": "la",
@@ -54,49 +54,6 @@
       "english-follows"
     ],
     "text_sha1": "84a4312e317d9330a3ec7aac401a26b733c72b81"
-  },
-  "1.2.3.2-f11": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "I have thus far digressed, because this imagination is the",
-          "in": "1.2.3.2-p1",
-          "prefix": "books de viribus imaginationis. ",
-          "suffix": " medium deferens of passions, by"
-        },
-        "words": 10
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Fienus, a famous Physician of Antwerp, that wrote three books",
-          "in": "1.2.3.2-p1",
-          "prefix": " and him that is instar omnium, ",
-          "suffix": " de viribus imaginationis. I hav"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a5bf6875b16ad02df6b0154917237dd0818a64e0"
   },
   "1.2.3.2-f12": {
     "bracket": "present",

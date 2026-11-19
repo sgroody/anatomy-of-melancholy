@@ -6,7 +6,13 @@ rounds listed in `burton/verify/gold.py` (`HOLDOUTS`):
 | round | files | items | seed | status |
 |---|---|---|---|---|
 | h1 | `langid-holdout-{sample,gold}.jsonl` | 150 | 20261021 | **seen** 2026-10-20: its errors were studied to change the rules |
-| h2 | `langid-holdout2-{sample,gold}.jsonl` | 300 | 20261022 | **gate**: never used to tune the rules |
+| h2 | `langid-holdout2-{sample,gold}.jsonl` | 300 | 20261022 | **seen** 2026-11-18: the sidenote-title rule |
+| h3 | `langid-holdout3-{sample,gold}.jsonl` | 300 | 20261118 | **seen** 2026-11-18: Latin titles, possessives, mixed italics |
+| h4 | `langid-holdout4-{sample,gold}.jsonl` | 300 | 20261119 | **gate**: drawn after the 2026-11-18 rules, never used to tune them |
+
+From h3 on, rounds are labelled blind by the second rater (`burton gold-audit --label-round <name>`, prompt
+gold-audit-v1). A label is corrected afterwards only from objective source markup (e.g. `span.lucida` is
+Chaucer, `enm`), and each correction is kept in the row's `corrected` field with the reason.
 
 Samples are drawn by `gold.draw_holdout(name)`, which excludes every item already in any sample or gold
 file and refuses to redraw a labelled round. `evaluate()` scores in place; V5 gates on the newest round

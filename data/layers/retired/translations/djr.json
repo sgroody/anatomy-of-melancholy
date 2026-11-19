@@ -196,6 +196,69 @@
       }
     ]
   },
+  "djr-f60": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"Cardan professeth he writ his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De consolatione"
+    },
+    "text": "De consolatione",
+    "text_sha1": "e2a3a7b58a2584beff6408fc86930299667ed8b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-23",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Title of Cardano's book.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Cardan professeth he writ his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De consolatione"
+        },
+        "text": "On Consolation",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f749": {
     "kind": "phrase",
     "lang": "la",
@@ -255,6 +318,69 @@
           "work": "De Christiana expeditione apud Sinas"
         },
         "text": "Only the learned are admitted to govern the commonwealth, and for this they need no favour from magistrates or king; everything depends on each man's tested knowledge and virtue.",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f818": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "text \"Lucian’s Tract\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De mercede conductis"
+    },
+    "text": "de mercede conductis",
+    "text_sha1": "b414d2ea8231c625db618b0dd5a6957d946fb49f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": "on those hired for a wage",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin title of Lucian's essay on the miseries of educated men in the service of great houses.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "text \"Lucian’s Tract\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De mercede conductis"
+        },
+        "text": "On Those Who Serve for Hire",
         "warnings": []
       }
     ]

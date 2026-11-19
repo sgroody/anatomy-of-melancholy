@@ -165,6 +165,62 @@ def test_comma_list_is_split_into_items():
     assert p.find(T("foreign")) is None
 
 
+def test_a_latin_title_after_a_title_noun_is_a_citation():
+    p = tei('<hi rend="i">Prosper Calanius</hi> in his book <hi rend="i">de atra bile</hi>, will have them')
+    langid.tag_latin(p, [], "t")
+    assert p.find(T("foreign")) is None
+    # Gowland translates titles too: after a title noun the bracket does not make it a passage
+    p = tei('in a consultation of his <hi rend="i">pro hypocondriaco</hi> <ed:trans>[for a hypochondriac]</ed:trans>')
+    langid.tag_latin(p, [], "t")
+    langid.tag_roman_before_brackets(p, [], "t")  # nor does the bracket pass take it back
+    langid.finalize_lang(p)
+    assert p.find(T("foreign")) is None and p.find(T("hi")).get("lang-title") is None
+    # quoted Latin opening with "de" elsewhere is still a passage
+    p = tei('they say <hi rend="i">de inanibus semper conqueruntur, &amp; timent</hi>')
+    langid.tag_latin(p, [], "t")
+    assert p.find(T("foreign")) is not None
+
+
+def test_a_title_after_an_abbreviation_in_a_note_is_a_citation():
+    n = tei('<note type="side"><hi rend="i">Origo ejus a Coelo petenda est</hi> <ed:trans>[x]</ed:trans>. '
+            '<hi rend="i">Tr</hi>. <hi rend="i">de morbis amentium</hi>.</note>')
+    langid.tag_latin(n, [], "t")
+    assert [public_text(f) for f in n.iter(T("foreign"))] == ["Origo ejus a Coelo petenda est"]
+
+
+def test_latin_with_only_latin_ambiguous_english_words():
+    assert langid.classify("Deos suos patrio more venerantur", False)[0] == "la"
+
+
+def test_superscript_ending_joins_its_run_and_is_never_cut():
+    p = tei('<hi rend="i">Si dominus 7</hi><hi rend="sup-i">mae</hi> <hi rend="i">in 7</hi><hi rend="sup-i">ma</hi> '
+            '<hi rend="i">vel secunda nobilem decernit uxorem</hi>. <hi rend="i">Si Venus in 12</hi>'
+            '<hi rend="sup-i">ma</hi>, <hi rend="i">&amp;c</hi>. <ed:trans>[x]</ed:trans>')
+    langid.tag_latin(p, [], "t")
+    fs = [public_text(f) for f in p.iter(T("foreign"))]
+    assert len(fs) == 1 and fs[0].startswith("Si dominus 7mae") and "12ma" in fs[0]
+
+
+def test_a_latin_clause_inside_an_english_italic_run():
+    p = tei('<hi rend="i">I am undone, I cannot endure these love pangs, what shall I do? '
+            'Vos O dii Averrunci, solvite me his curis</hi>, O ye Gods')
+    langid.tag_latin(p, [], "t")
+    assert [public_text(f) for f in p.iter(T("foreign"))] == ["Vos O dii Averrunci, solvite me his curis"]
+    # inside a run that ends in a reference ("…folly. David Crusius Theat. … lib. 2 cap. 6")
+    p = tei('<hi rend="i">Capivaccius</hi>, <hi rend="i">si cerebrum sit calidius, if the brain be hot, the animal '
+            'spirits will be hot: if cold, folly</hi>. <hi rend="i">David Crusius Theat</hi>. <hi rend="i">lib</hi>. '
+            '<hi rend="i">2 cap</hi>. <hi rend="i">6 de atra bile</hi>, grants')
+    langid.tag_latin(p, [], "t")
+    assert [public_text(f) for f in p.iter(T("foreign"))] == ["si cerebrum sit calidius"]
+    assert "Capivaccius, si cerebrum sit calidius, if the brain" in public_text(p)  # text unchanged
+    # a piece cut out of a reference run is Latin only on strong evidence
+    p = tei('<hi rend="i">as they say of that country, and so do all writers</hi>. <hi rend="i">Vide Isaacum Pontanum '
+            'descript</hi>. <hi rend="i">Amstel</hi>. <hi rend="i">lib</hi>. <hi rend="i">2 cap</hi>. '
+            '<hi rend="i">3</hi>')
+    langid.tag_latin(p, [], "t")
+    assert p.find(f".//{T('foreign')}") is None
+
+
 def test_greek_run_includes_elision_marks():
     p = tei("Νοῦσοι δʼ ἀνθρώποισιν ἐφ̓ ἡμέρῃ, and English")
     langid._wrap_script_runs(p, __import__("collections").Counter())

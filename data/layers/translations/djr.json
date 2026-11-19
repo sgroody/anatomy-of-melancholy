@@ -17203,6 +17203,221 @@
       }
     ]
   },
+  "djr-f1497": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "to the disparagement of their health, and scarce able to hold a pen",
+        "in": "djr",
+        "near": "djr-f1497",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Julius Caesar Scaliger",
+      "basis": "text \"saith Scaliger\" immediately after the passage; the sidenote \"Exercit. 288.\" may belong to it",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "etiam mediis in morbis",
+    "text_sha1": "124df6e2652099fa65b90286c9eb8fe2c854e54f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "even in the middle of diseases",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's following English, 'to the disparagement of their health, and scarce able to hold a pen', expands the phrase loosely rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "to the disparagement of their health, and scarce able to hold a pen",
+            "in": "djr",
+            "near": "djr-f1497",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Julius Caesar Scaliger",
+          "basis": "text \"saith Scaliger\" immediately after the passage; the sidenote \"Exercit. 288.\" may belong to it",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "even in the midst of illness",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1498": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "by which he is rather infected than anyway perfected",
+        "in": "djr",
+        "near": "djr-f1498",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quibus inficitur potius, quam perficitur",
+    "text_sha1": "21d5501b1fd7462059aa49d9df72189e52d6bb77",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "by which he is infected rather than perfected",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The jingle is between inficitur (infected, tainted) and perficitur (perfected, completed). Burton keeps it in his English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "by which he is rather infected than anyway perfected",
+            "in": "djr",
+            "near": "djr-f1498",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "by which he is infected rather than perfected",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1499": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I have been a thousand times amongst them, and Charon himself is more gentle than they",
+        "in": "djr",
+        "near": "djr-f1499",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "John of Salisbury",
+      "basis": "text \"saith Sarisburiensis\" and sidenote \"Polycrat. lib.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Policraticus"
+    },
+    "text": "in manus eorum millies incidi, & Charon immitis qui nulli pepercit unquam, his longe clementior est",
+    "text_sha1": "0a4edc529b80d1d7e1412c5e0e0fb35312908924",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English leaves out 'merciless … who never spared anyone'. 'Experto crede' ('believe one who has tried it'), just before the passage, is rendered separately by Burton as 'I speak out of experience'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I have been a thousand times amongst them, and Charon himself is more gentle than they",
+            "in": "djr",
+            "near": "djr-f1499",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "John of Salisbury",
+          "basis": "text \"saith Sarisburiensis\" and sidenote \"Polycrat. lib.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Policraticus"
+        },
+        "text": "I have fallen into their hands a thousand times, and merciless Charon, who never spared anyone, is far more lenient than they are",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f15": {
     "kind": "phrase",
     "lang": "la",
@@ -44736,65 +44951,6 @@
       }
     ]
   },
-  "djr-f60": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Girolamo Cardano",
-      "basis": "text \"Cardan professeth he writ his book\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De consolatione"
-    },
-    "text": "De consolatione",
-    "text_sha1": "e2a3a7b58a2584beff6408fc86930299667ed8b9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Title of Cardano's book.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Girolamo Cardano",
-          "basis": "text \"Cardan professeth he writ his book\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De consolatione"
-        },
-        "text": "On Consolation",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f601": {
     "kind": "phrase",
     "lang": "la",
@@ -57430,65 +57586,6 @@
           "work": "Satires"
         },
         "text": "and care-worn Solons",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f818": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Lucian",
-      "basis": "text \"Lucian’s Tract\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De mercede conductis"
-    },
-    "text": "de mercede conductis",
-    "text_sha1": "b414d2ea8231c625db618b0dd5a6957d946fb49f",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": "on those hired for a wage",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The Latin title of Lucian's essay on the miseries of educated men in the service of great houses.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Lucian",
-          "basis": "text \"Lucian’s Tract\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De mercede conductis"
-        },
-        "text": "On Those Who Serve for Hire",
         "warnings": []
       }
     ]

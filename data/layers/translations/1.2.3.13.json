@@ -2818,6 +2818,77 @@
       }
     ]
   },
+  "1.2.3.13-f69": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many men have made a shipwreck of their fortunes, and go like rogues and beggars",
+        "in": "1.2.3.13",
+        "near": "1.2.3.13-f69",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Augustine (attributed)",
+      "basis": "text \"(Austin)\" and sidenote \"Ser. 33 ad frat. in Eremo.\"",
+      "locus": "Ser. 33",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Sermones ad fratres in eremo"
+    },
+    "text": "Multi ignobiles evasere ob vini potum, & (Austin) amissis honoribus profugi aberrarunt",
+    "text_sha1": "a2dc0172f0fd98c15eaa8a4508f03d0dfc6605d3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "Many ignoble have turned out on account of the drinking of wine, and (Austin) their honours having been lost, as fugitives they have wandered away",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Ignobiles evasere' means they ended up base or dishonoured. Burton's English after it ('shipwreck of their fortunes… like rogues and beggars') gives the gist loosely and draws its image from the Erasmus sidenote ('poculum quasi sinus, in quo saepe naufragium faciunt'). The sermons 'ad fratres in eremo' ascribed to Augustine are generally held to be spurious.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many men have made a shipwreck of their fortunes, and go like rogues and beggars",
+            "in": "1.2.3.13",
+            "near": "1.2.3.13-f69",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Augustine (attributed)",
+          "basis": "text \"(Austin)\" and sidenote \"Ser. 33 ad frat. in Eremo.\"",
+          "locus": "Ser. 33",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Sermones ad fratres in eremo"
+        },
+        "text": "Many have fallen into disgrace through drinking wine, and (Austin) having lost their honours, have gone wandering as fugitives",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.13-f8": {
     "kind": "phrase",
     "lang": "la",

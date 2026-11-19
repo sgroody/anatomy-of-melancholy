@@ -152,16 +152,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49159, p. 924"
   },
   "3.4.1.5-f2": {
-    "align_score": 0.823,
+    "align_score": 0.895,
     "by": "djs1927",
-    "left_anchor": "ipse praeceperit: which Caecilius in Minucius labours, and would have every nation,",
-    "left_score": 0.823,
+    "left_anchor": ": which Caecilius in Minucius labours, and would have every nation,",
+    "left_score": 0.895,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", keep their own ceremonies, worship their peculiar gods, which Pomponius Mela",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "omitted",
+    "text": "",
     "text_sha1": "228b9f96123e53cfd6d5f04771bf9093d5134cad",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49068, p. 922"
   },
   "3.4.1.5-f20": {
     "by": "djs1927",
@@ -223,6 +226,36 @@
     "status": "no-anchor",
     "text_sha1": "408712bc0da1ec352c90a1bb062000bd2339d6e0",
     "threshold": 0.85
+  },
+  "3.4.1.5-f41": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "ceremonies, worship their peculiar gods, which Pomponius Mela reports of the Africans,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", they worship their own gods according to their own ordination. For",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "d7fd7b85d0784fbb94a4158fd7f0353091b306b7",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49069, p. 922"
+  },
+  "3.4.1.5-f42": {
+    "align_score": 0.895,
+    "by": "djs1927",
+    "left_anchor": "strange city, to worship by all means the Gods of the place,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ": which Caecilius in Minucius labours, and would have every nation,",
+    "right_score": 0.895,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "6e7d657a7a6a4561e36aaf36aacc1d5f11de3f90",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49067, p. 922"
   },
   "3.4.1.5-f5": {
     "by": "djs1927",

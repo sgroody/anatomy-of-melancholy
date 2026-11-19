@@ -55,3 +55,7 @@
 {"ts": "2026-11-18T21:50:00Z", "event": "after", "run": "translate --all (28 new passages, 49 records retired)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 2, "cost_usd_list": 0.84, "model": "claude-opus-5-5", "prompt": "tr-v2"}
 {"ts": "2026-11-18T22:05:00Z", "event": "before", "run": "gold-audit-v1 label round h3 (300 items, blind)", "plan": "Pro", "window_5h_pct": 10, "weekly_pct": 2}
 {"ts": "2026-11-18T22:15:00Z", "event": "after", "run": "gold-audit-v1 label round h3 (300 items)", "plan": "Pro", "window_5h_pct": 12, "weekly_pct": 3, "cost_usd_list": 1.09, "model": "claude-opus-5-5", "prompt": "gold-audit-v1"}
+{"ts": "2026-11-18T23:37:37Z", "event": "before", "run": "translate --all (26 new passages after langid cycle 2)", "plan": "Pro", "window_5h_pct": 64, "weekly_pct": 9}
+{"ts": "2026-11-18T23:40:54Z", "event": "after", "run": "translate --all (26 new passages after langid cycle 2, 71 records retired)", "plan": "Pro", "window_5h_pct": 73, "weekly_pct": 10, "cost_usd_list": 0.95, "model": "claude-opus-5-5", "prompt": "tr-v2"}
+{"ts": "2026-11-18T23:40:54Z", "event": "before", "run": "gold-audit-v1 label round h4 (300 items, blind)", "plan": "Pro", "window_5h_pct": 73, "weekly_pct": 10}
+{"ts": "2026-11-18T23:44:13Z", "event": "after", "run": "gold-audit-v1 label round h4 (300 items)", "plan": "Pro", "window_5h_pct": 76, "weekly_pct": 11, "cost_usd_list": 1.07, "model": "claude-opus-5-5", "prompt": "gold-audit-v1"}

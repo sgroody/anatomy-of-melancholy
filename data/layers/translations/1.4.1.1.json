@@ -1340,6 +1340,67 @@
       }
     ]
   },
+  "1.4.1.1-f137": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"(as Seneca notes)\" and sidenote \"Seneca.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistulae morales"
+    },
+    "text": "alius ante fores se laqueo suspendit",
+    "text_sha1": "b8fc588dd682ca702a90d316b96b7e5d578d9ef8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "another before the doors himself with a noose hanged",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the first item in Seneca's list of suicides, which Burton continues in the next clauses. The passage is Seneca, Letters 4.4. The standard text reads 'alius ante ostium amicae laqueo pependit' ('one hanged himself before his mistress's door'). Burton leaves out the mistress and rewords the verb. Burton's English after the passage does not translate it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"(as Seneca notes)\" and sidenote \"Seneca.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistulae morales"
+        },
+        "text": "one hanged himself with a halter before the door",
+        "warnings": []
+      }
+    ]
+  },
   "1.4.1.1-f14": {
     "kind": "verse",
     "lang": "la",
@@ -4580,66 +4641,6 @@
           "work": "The City of God"
         },
         "text": "whether it is better to suffer one death by dying, or to fear all of them by living",
-        "warnings": []
-      }
-    ]
-  },
-  "1.4.1.1-f66": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "de anima",
-    "text_sha1": "09ebdc5fc1330c57b6cfb416865ed8a63e6e83c6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Plato's dialogue on the soul, the Phaedo.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "On the Soul",
         "warnings": []
       }
     ]

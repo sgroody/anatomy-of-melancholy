@@ -149,48 +149,6 @@
     ],
     "text_sha1": "dc18990a22a48e6f07f77dbafd183e816bf686ad"
   },
-  "1.2.3.9-f15": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "calls it",
-          "in": "1.2.3.9-p1",
-          "prefix": " (belike) in his Homily de Ira, ",
-          "suffix": " tenebras rationis, morbum anima"
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and therefore Basil (belike) in his Homily",
-          "in": "1.2.3.9-p1",
-          "prefix": "t will make a devil of a Saint: ",
-          "suffix": " de Ira, calls it tenebras ratio"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f8a5e7841b8a01a973aab6a424ec5b32f1881d33"
-  },
   "1.2.3.9-f17": {
     "bracket": "none",
     "by": "rules",
@@ -362,6 +320,18 @@
           "suffix": ". Lucian in Abdicato, Tom. 1, wi"
         },
         "words": 9
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and therefore Basil (belike) in his Homily de Ira, calls it",
+          "in": "1.2.3.9-p1",
+          "prefix": "t will make a devil of a Saint: ",
+          "suffix": " tenebras rationis, morbum anima"
+        },
+        "words": 11
       }
     ],
     "lang": "la",
@@ -369,6 +339,7 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "2b3a012111ea5a38d52ad55ee9cc6ae9bd927ea2"

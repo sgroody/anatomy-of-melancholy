@@ -664,6 +664,35 @@
     ],
     "text_sha1": "60e4119e208a415a84113819fed9b67a67da91cd"
   },
+  "1.3.1.2-f141": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "yet all likely fear, some with an extraordinary and a mighty fear, Aretaeus",
+          "in": "1.3.1.2-p1",
+          "prefix": "ot all alike (saith Altomarus), ",
+          "suffix": ". Many fear death, and yet in a "
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1b86d61ad1baad94ad5ec870e436b3ce40a2670c"
+  },
   "1.3.1.2-f16": {
     "bracket": "none",
     "by": "rules",
@@ -1066,29 +1095,11 @@
   "1.3.1.2-f3": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Gordonius), quaeque momenti non sunt, although not all alike (saith Altomarus), yet all likely fear, some with an extraordinary and a mighty fear, Aretaeus",
-          "in": "1.3.1.2-p1",
-          "prefix": " cause, timent de non timendis (",
-          "suffix": ". Many fear death, and yet in a "
-        },
-        "words": 24
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
+    "signals": [],
     "text_sha1": "6a6949bb9f4bd0f5c0549d0c4145df6528d411a5"
   },
   "1.3.1.2-f30": {

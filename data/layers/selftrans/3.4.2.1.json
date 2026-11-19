@@ -141,12 +141,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Scaliger (who would forswear himself at any time, saith",
+          "exact": "Pomponatius in his Tract (so styled at least) De immortalitate Animae, Scaliger (who would forswear himself at any time, saith",
           "in": "3.4.2.1-p15",
-          "prefix": "least) De immortalitate Animae, ",
+          "prefix": "ec., Origen lib. de principiis. ",
           "suffix": " Patritius, in defence of his gr"
         },
-        "words": 9
+        "words": 20
       }
     ],
     "lang": "la",
@@ -1939,48 +1939,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "f28e69014f9a1b0f8ef0726e7acdd5f8a4f354dc"
-  },
-  "3.4.2.1-f62": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Scaliger (who would forswear himself at any time, saith",
-          "in": "3.4.2.1-p15",
-          "prefix": "least) De immortalitate Animae, ",
-          "suffix": " Patritius, in defence of his gr"
-        },
-        "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Pomponatius in his Tract (so styled at least)",
-          "in": "3.4.2.1-p15",
-          "prefix": "ec., Origen lib. de principiis. ",
-          "suffix": " De immortalitate Animae, Scalig"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "2c4f964aad4f44ab9fd3a76c9d2df36bf1d186d0"
   },
   "3.4.2.1-f65": {
     "bracket": "present",

@@ -418,10 +418,13 @@ def run(selection_path=None, units: list[str] | None = None) -> dict:
     djs, counts = load(), Counter()
     for unit, ids in by_unit.items():
         ps = packets.passages(unit)
+        f = LAYER / f"{unit}.json"
         if not ps:
+            if ids is None and f.exists():
+                f.unlink()  # a whole-unit run on a unit left with no passages: nothing may linger
+                counts["layer_removed"] += 1
             continue
         others_all = [p["packet_item"]["text"] for p in ps]
-        f = LAYER / f"{unit}.json"
         layer = json.loads(f.read_text(encoding="utf-8")) if f.exists() and ids is not None else {}
         for p in ps:
             item = p["packet_item"]

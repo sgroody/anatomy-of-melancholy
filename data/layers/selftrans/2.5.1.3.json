@@ -212,12 +212,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "with which in his book",
+          "exact": "with which in his book de curis admirandis, he boasts that he had cured many melancholy persons in eight days, which Schenkius puts amongst his observable medicines",
           "in": "2.5.1.3-p7",
           "prefix": "alm; Cardan’s Pulvis Hyacinthi, ",
-          "suffix": " de curis admirandis, he boasts "
+          "suffix": ": Altomarus his Syrup, with whic"
         },
-        "words": 5
+        "words": 27
       }
     ],
     "lang": "la",
@@ -227,48 +227,6 @@
       "english-follows"
     ],
     "text_sha1": "33cb70474f1e0151f6373bb04394ba0e69713ec9"
-  },
-  "2.5.1.3-f17": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "he boasts that he had cured many melancholy persons in eight days, which Schenkius puts amongst his observable medicines",
-          "in": "2.5.1.3-p7",
-          "prefix": "n his book de curis admirandis, ",
-          "suffix": ": Altomarus his Syrup, with whic"
-        },
-        "words": 19
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "with which in his book",
-          "in": "2.5.1.3-p7",
-          "prefix": "alm; Cardan’s Pulvis Hyacinthi, ",
-          "suffix": " de curis admirandis, he boasts "
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7b7e61ddd1f5c0f2c86590912b5da8048b2ce4a2"
   },
   "2.5.1.3-f19": {
     "bracket": "present",
@@ -343,48 +301,6 @@
     ],
     "text_sha1": "39c9ee1bd56d8b41e32c90509386c30f89110145"
   },
-  "2.5.1.3-f22": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "takes upon him to Apologize for Anthony, and sets light by all that speak against him",
-          "in": "2.5.1.3-p8",
-          "prefix": "book de Sole e puteo emergente, ",
-          "suffix": ". But what do I meddle with this"
-        },
-        "words": 16
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Rhenanus, a Dutch Chemist in his book",
-          "in": "2.5.1.3-p8",
-          "prefix": "ly, slackly, and to no purpose. ",
-          "suffix": " de Sole e puteo emergente, take"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "62fc3f866d9b421b6fdb8463b278f851756b9f0c"
-  },
   "2.5.1.3-f23": {
     "bracket": "none",
     "by": "rules",
@@ -414,8 +330,8 @@
     ],
     "text_sha1": "3205d5cad0a1fb8c57a05482216713b8ad7b54f6"
   },
-  "2.5.1.3-f24": {
-    "bracket": "none",
+  "2.5.1.3-f25": {
+    "bracket": "present",
     "by": "rules",
     "candidates": [
       {
@@ -423,31 +339,20 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Thus they contend and rail, and every Mart write books",
+          "exact": "Thus they contend and rail, and every Mart write books pro and",
           "in": "2.5.1.3-p8",
           "prefix": " done by the help of the Devil. ",
-          "suffix": " pro and con, & adhuc subjudice "
+          "suffix": " con, & adhuc subjudice lis est;"
         },
-        "words": 10
+        "words": 12
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
+      "english-precedes"
     ],
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893"
-  },
-  "2.5.1.3-f25": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [],
     "text_sha1": "cb6be8b6043002b266af5b2521794630d9510437"
   },
   "2.5.1.3-f26": {

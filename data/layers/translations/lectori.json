@@ -208,5 +208,64 @@
         "warnings": []
       }
     ]
+  },
+  "lectori-f4": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hippocrates (pseudo-Hippocratic letters)",
+      "basis": "sidenote text \"Hippoc. epist. Damageto\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Damagetus"
+    },
+    "text": "Abderitanos vero tanquam non sanos accusavi, veratri potione ipsos potius eguisse dicens",
+    "text_sha1": "a6e0cbfb0c4d27f6c89cc37cb68a3afcd895dee2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "But the Abderites as not sane I accused, saying that they rather had needed a potion of hellebore",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Veratrum is hellebore, the classical purge for madness. The sentence closes Burton's Latin paraphrase of the pseudo-Hippocratic letter to Damagetus. In the letter, Hippocrates is summoned to cure Democritus, finds him wise, and says it is the citizens of Abdera who are mad.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hippocrates (pseudo-Hippocratic letters)",
+          "basis": "sidenote text \"Hippoc. epist. Damageto\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Damagetus"
+        },
+        "text": "But I accused the Abderites of being the ones not sane, saying that they themselves had more need of a draught of hellebore.",
+        "warnings": []
+      }
+    ]
   }
 }

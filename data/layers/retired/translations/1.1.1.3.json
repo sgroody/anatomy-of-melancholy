@@ -1,0 +1,65 @@
+{
+  "1.1.1.3-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "sidenote \"Praefat. de morbis capitis.\" anchored at main text \"Heurnius\"",
+      "locus": "Praefat.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "de morbis capitis",
+    "text_sha1": "b278d2335742d4d7493823d3e89920847907996e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title or subject of Heurnius's preface, which Burton cites for the division of head diseases he takes from Heurnius. Heurnius in turn took it from Arculanus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "sidenote \"Praefat. de morbis capitis.\" anchored at main text \"Heurnius\"",
+          "locus": "Praefat.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "On the diseases of the head",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -171,47 +171,6 @@
     ],
     "text_sha1": "2d75f8179c05d1f604e28dfdbe86bcde6c64b122"
   },
-  "3.1.2.2-f17": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and other Satirical invectives may witness",
-          "in": "3.1.2.2-p3",
-          "prefix": "s his books de Burdonum familia ",
-          "suffix": ". Ovid in Ibin, Archilochus hims"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "., but when they began to vary, none so absurd as Scaliger, so vile and base, as his books",
-          "in": "3.1.2.2-p3",
-          "prefix": " poplitibus veneramur flexis, &c",
-          "suffix": " de Burdonum familia and other S"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "bae841ea8d9f3924a81b3789e0ff77e3039a9380"
-  },
   "3.1.2.2-f18": {
     "bracket": "present",
     "by": "rules",
@@ -429,12 +388,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "but when they began to vary, none so absurd as Scaliger, so vile and base, as his books",
+          "exact": "but when they began to vary, none so absurd as Scaliger, so vile and base, as his books de Burdonum familia and other Satirical invectives may witness",
           "in": "3.1.2.2-p3",
           "prefix": "plitibus veneramur flexis, &c., ",
-          "suffix": " de Burdonum familia and other S"
+          "suffix": ". Ovid in Ibin, Archilochus hims"
         },
-        "words": 18
+        "words": 27
       }
     ],
     "lang": "la",

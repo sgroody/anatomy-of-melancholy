@@ -1,0 +1,66 @@
+{
+  "1.2.4.1-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "text \"as Plutarch doth in his book de liberis educandis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De liberis educandis"
+    },
+    "text": "de liberis educandis",
+    "text_sha1": "4f3bcf908451001c59866011e5dd3f340a9f0e90",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the Latin title of the treatise attributed to Plutarch.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "text \"as Plutarch doth in his book de liberis educandis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De liberis educandis"
+        },
+        "text": "On the Education of Children",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -2,8 +2,8 @@
   "2.5.1.3-f1": {
     "align_score": 0.957,
     "by": "djs1927",
-    "left_anchor": "ceed to other medicines; first prepare, and then purge,",
-    "left_score": 0.972,
+    "left_anchor": "bloodletting we must proceed to other medicines; first prepare, and then purge,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ", make the body clean before we can hope to do any",
     "right_score": 0.957,
@@ -93,32 +93,16 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31336, pp. 387-588"
   },
   "2.5.1.3-f16": {
-    "align_score": 0.967,
+    "align_score": 0.796,
     "by": "djs1927",
     "left_anchor": "other receipts. Rubeus his compound water out of Savonarola: Pinetus his Balm;",
     "left_score": 0.967,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", with which in his book",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Cardan's Jacinth Powder,",
+    "right_anchor": ", with which in his book de curis admirandis, he boasts that",
+    "right_score": 0.796,
+    "status": "below-threshold",
     "text_sha1": "33cb70474f1e0151f6373bb04394ba0e69713ec9",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31338, pp. 387-588"
-  },
-  "2.5.1.3-f17": {
-    "align_score": 0.975,
-    "by": "djs1927",
-    "left_anchor": ", with which in his book",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", he boasts that he had cured many melancholy persons in eight",
-    "right_score": 0.975,
-    "status": "aligned",
-    "text": "On Wonderful Cures,",
-    "text_sha1": "7b7e61ddd1f5c0f2c86590912b5da8048b2ce4a2",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31339, pp. 387-588"
+    "threshold": 0.85
   },
   "2.5.1.3-f19": {
     "align_score": 0.794,
@@ -166,18 +150,6 @@
     "text_sha1": "39c9ee1bd56d8b41e32c90509386c30f89110145",
     "threshold": 0.85
   },
-  "2.5.1.3-f22": {
-    "align_score": 0.826,
-    "by": "djs1927",
-    "left_anchor": "slackly, and to no purpose. Rhenanus, a Dutch Chemist in his book",
-    "left_score": 0.826,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", takes upon him to Apologize for Anthony, and sets light by",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "62fc3f866d9b421b6fdb8463b278f851756b9f0c",
-    "threshold": 0.85
-  },
   "2.5.1.3-f23": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -186,23 +158,19 @@
     "text_sha1": "3205d5cad0a1fb8c57a05482216713b8ad7b54f6",
     "threshold": 0.85
   },
-  "2.5.1.3-f24": {
-    "by": "djs1927",
-    "left_anchor": "the Devil. Thus they contend and rail, and every Mart write books",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and",
-    "status": "no-anchor",
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
-    "threshold": 0.85
-  },
   "2.5.1.3-f25": {
+    "align_score": 0.984,
     "by": "djs1927",
-    "left_anchor": "and",
+    "left_anchor": "Thus they contend and rail, and every Mart write books pro and",
+    "left_score": 0.984,
     "method": "rules/djs-align-v3",
-    "right_anchor": "; let them agree as they will, I",
-    "status": "no-anchor",
+    "right_anchor": "; let them agree as they will, I proceed.",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "con. and the matter is not settled yet;",
     "text_sha1": "cb6be8b6043002b266af5b2521794630d9510437",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 31403, pp. 387-588"
   },
   "2.5.1.3-f26": {
     "align_score": 0.865,
@@ -301,13 +269,13 @@
     "threshold": 0.85
   },
   "2.5.1.3-f39": {
-    "align_score": 0.933,
+    "align_score": 0.944,
     "by": "djs1927",
     "left_anchor": "have some rest. The most gentle purges to begin with, are Senna,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Epithyme, Myrobalans, Catholicon: if these prevail not, we may",
-    "right_score": 0.933,
+    "right_anchor": ", Epithyme, Myrobalans, Catholicon: if these prevail not, we may proceed to",
+    "right_score": 0.944,
     "status": "kept-original",
     "text": "Cassia,",
     "text_sha1": "5b6c03e2db1d3a66bd86b8bab442a814ba3e6e3b",

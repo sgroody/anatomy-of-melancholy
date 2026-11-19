@@ -141,32 +141,6 @@
     ],
     "text_sha1": "1ba8456557597c1918e045acfa57cf654cad1d01"
   },
-  "1.1.2.5-f3": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "which opinion of his, Campanella in his book",
-          "in": "1.1.2.5-p1",
-          "prefix": "ed faculties, a Spiritual Soul: ",
-          "suffix": " de Sensu rerum, much labours to"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "600ccd1b71569232d01d110bc63e906beab04d8c"
-  },
   "1.1.2.5-f4": {
     "bracket": "none",
     "by": "rules",
@@ -185,6 +159,18 @@
           "suffix": "; with many such arguments: and "
         },
         "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "which opinion of his, Campanella in his book de",
+          "in": "1.1.2.5-p1",
+          "prefix": "ed faculties, a Spiritual Soul: ",
+          "suffix": " Sensu rerum, much labours to de"
+        },
+        "words": 9
       }
     ],
     "lang": "la",
@@ -192,6 +178,7 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "1a0e3785eb5698f62d2528f6675171bf6bb5bf98"

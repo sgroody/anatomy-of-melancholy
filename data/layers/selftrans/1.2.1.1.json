@@ -2,11 +2,29 @@
   "1.2.1.1-f1": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Prosper Calanius well observes in his tract de atra bile to Cardinal Caesius",
+          "in": "1.2.1.1-p1",
+          "prefix": "ave not first been searched, as ",
+          "suffix": ". Insomuch that Fernelius puts a"
+        },
+        "words": 13
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "english-at-anchor"
+    ],
     "text_sha1": "2706b9f142a8257861d917cdf2a036dee104ff8f"
   },
   "1.2.1.1-f10": {
@@ -144,32 +162,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "fadc140669e6eb61c5df375535298fc021ca180f"
-  },
-  "1.2.1.1-f2": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and the common experience of others confirms, that those cures must be unperfect, lame, and to no purpose, wherein the causes have not first been searched, as Prosper Calanius well observes in his tract",
-          "in": "1.2.1.1-p1",
-          "prefix": "es, so Galen prescribes Glauco: ",
-          "suffix": " de atra bile to Cardinal Caesiu"
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7c4945ed3893e66493e264d578be035dd9238863"
   },
   "1.2.1.1-f3": {
     "bracket": "none",

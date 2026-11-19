@@ -1101,68 +1101,6 @@
       }
     ]
   },
-  "3.2.1.2-f115": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "& ne nominandas quidem monachorum",
-    "text_sha1": "61527232e0d41bd482f9bcca69e4845bdbea167f",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect",
-          "truncated"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The phrase depends on the noun that follows outside the marked text, 'mastrupationes' (masturbations): 'and the monks' not-even-to-be-named masturbations.' The preceding 'Sileo interim turpes illas' ('Meanwhile I pass over those foul…') is Latin, not Burton's English.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "and the not even nameable … of the monks",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.1.2-f116": {
     "kind": "phrase",
     "lang": "la",
@@ -2285,6 +2223,127 @@
           "work": "Gryllus (Bruta animalia ratione uti)"
         },
         "text": "To this day among us neither has a man loved a man, nor a woman a woman, as many memorable and illustrious men among you have done—to say nothing of the common sort: Hercules, pursuing a beardless companion, deserted his friends, etc. Your lusts cannot be kept within the bounds of nature, but like an overflowing river they breed dreadful foulness, tumult and confusion of nature in matters of love: for men and women have mated with goats, swine and horses, and have burned with a mad passion for beasts, whence Minotaurs, Centaurs, Sylvans, Sphinxes, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f133": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "illas, & ne nominandas quidem monachorum",
+    "text_sha1": "a63fb1b0833ff2f7d446c332ad01591f625bc4dd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-18",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "those, and not even to be named, of the monks",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment cut out of a longer phrase. The full clause reads \"Sileo interim turpes illas, & ne nominandas quidem monachorum mastrupationes\": \"I pass over in silence those foul acts of self-abuse among the monks, which ought not even to be named.\" The adjective before the passage (turpes, 'foul') and the noun it governs (mastrupationes, 'masturbations') both fall outside the marked text. Without them, 'illas' has no noun to refer to.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "those —not even to be named— of the monks",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f134": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Clement of Alexandria",
+      "basis": "sidenote \"Clemens Alex. paedag. lib. 3 cap. 3.\"",
+      "locus": "lib. 3 cap. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Paedagogus"
+    },
+    "text": "Nullus est meatus ad quem non pateat aditus impudicitiae",
+    "text_sha1": "c3b4e9034e8868447cb340afcf572829f2feef77",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": "There is no passage to which the entry of unchastity is not open.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The note belongs to Burton's 'ne os quidem a libidine exceptum' ('not even the mouth exempt from lust'). Clement wrote in Greek, so this is a Latin version of his words.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Clement of Alexandria",
+          "basis": "sidenote \"Clemens Alex. paedag. lib. 3 cap. 3.\"",
+          "locus": "lib. 3 cap. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Paedagogus"
+        },
+        "text": "There is no passage of the body to which unchastity does not find open entry.",
         "warnings": []
       }
     ]

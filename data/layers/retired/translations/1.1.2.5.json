@@ -1,0 +1,68 @@
+{
+  "1.1.2.5-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-18",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Tommaso Campanella",
+      "basis": "text \"Campanella in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De sensu rerum"
+    },
+    "text": "de",
+    "text_sha1": "600ccd1b71569232d01d110bc63e906beab04d8c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-24",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is only the first word of the title De sensu rerum ('On the Sense of Things'); the rest of the title is passage f4.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Tommaso Campanella",
+          "basis": "text \"Campanella in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De sensu rerum"
+        },
+        "text": "On",
+        "warnings": []
+      }
+    ]
+  }
+}

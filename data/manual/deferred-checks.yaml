@@ -11,3 +11,14 @@ V5:
     P 0.962, R 0.952, B 0.960 (targets 0.98 / 0.97 / 0.95). Remaining errors: Latin titles in the running text
     ("de atra bile") read as quoted Latin, two missed Latin phrases, three missed mixed phrases. Fixing them needs
     another cycle (h3 seen, rules changed, a fresh round h4); it stays deferred under D10 until then.
+    Updated 2026-11-18 (second cycle): h3 became a seen round; the rules gained Latin titles as citations (after
+    "book", "tract", "consultation"…, after an author or a title abbreviation, "De X" in a sidenote), Latin pronoun
+    and possessive forms, Latin with only Latin-ambiguous "English" words, superscript endings joined to their run,
+    and a Latin clause inside an English italic run (h3 now P 0.991, R 1.000, B 0.943; tuning, h1, h2 unchanged).
+    A fresh round h4 (300 items, seed 20261119, drawn after the change, labelled blind by gold-audit-v1, no label
+    corrected: none stands in Chaucer markup) scores P 0.948, R 0.968, B 0.912 (targets 0.98 / 0.97 / 0.95), so it
+    stays deferred. h4's errors: 5 false Latin (English loan-words "Decorum", "verbatim"; locators "& passim alias",
+    "& deinceps" that Gowland's brackets translate; a title "Originem in Celsum, &c" in a sidenote), 3 missed
+    (capitalised Latin read as names: "Scytala Laconica", "Capuae Fluenta"; one mixed roman passage). Of the 8
+    inexact boundaries, 6 are labels that join separate stretches with "|", which the scorer can never count as
+    exact; that is a measurement limit to settle before the next round is drawn, not a reason to pass this one.

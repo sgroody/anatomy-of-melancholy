@@ -20370,6 +20370,77 @@
       }
     ]
   },
+  "3.2.3.1-f442": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "O ye Gods, free me from these cares and miseries",
+        "in": "3.2.3.1",
+        "near": "3.2.3.1-f442",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aristaenetus",
+      "basis": "sidenote \"Aristaenetus lib. 2 epist. 8.\" and text \"Theocles prays\"",
+      "locus": "lib. 2 epist. 8",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "Vos O dii Averrunci, solvite me his curis",
+    "text_sha1": "d20ee943c26e7e22c18ee4bc7c424819a41b4fa1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The dii Averrunci were the Roman gods who turned away evil. Burton's 'and miseries' adds to the Latin. The Latin is apparently Burton's (or a translator's) version of a Greek letter of Aristaenetus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "O ye Gods, free me from these cares and miseries",
+            "in": "3.2.3.1",
+            "near": "3.2.3.1-f442",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aristaenetus",
+          "basis": "sidenote \"Aristaenetus lib. 2 epist. 8.\" and text \"Theocles prays\"",
+          "locus": "lib. 2 epist. 8",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "O you averting gods, free me from these cares",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.3.1-f45": {
     "kind": "verse",
     "lang": "la",

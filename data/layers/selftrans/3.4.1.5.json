@@ -395,12 +395,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "keep their own ceremonies, worship their peculiar gods, which Pomponius Mela reports of the Africans, Deos suos patrio more venerantur, they worship their own gods according to their own ordination",
+          "exact": "keep their own ceremonies, worship their peculiar gods, which Pomponius Mela reports of the Africans",
           "in": "3.4.1.5-p1",
           "prefix": "abere, & deos colere municipes, ",
-          "suffix": ". For why should any one nation,"
+          "suffix": ", Deos suos patrio more venerant"
         },
-        "words": 30
+        "words": 15
       },
       {
         "by": "rules",
@@ -571,6 +571,90 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "408712bc0da1ec352c90a1bb062000bd2339d6e0"
+  },
+  "3.4.1.5-f41": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "they worship their own gods according to their own ordination",
+          "in": "3.4.1.5-p1",
+          "prefix": "os suos patrio more venerantur, ",
+          "suffix": ". For why should any one nation,"
+        },
+        "words": 10
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "keep their own ceremonies, worship their peculiar gods, which Pomponius Mela reports of the Africans",
+          "in": "3.4.1.5-p1",
+          "prefix": "abere, & deos colere municipes, ",
+          "suffix": ", Deos suos patrio more venerant"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d7fd7b85d0784fbb94a4158fd7f0353091b306b7"
+  },
+  "3.4.1.5-f42": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and would have every nation",
+          "in": "3.4.1.5-p1",
+          "prefix": " Caecilius in Minucius labours, ",
+          "suffix": ", sacrorum ritus gentiles habere"
+        },
+        "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Isocrates adviseth Demonicus, when he came to a strange city, to worship by all means the Gods of the place",
+          "in": "3.4.1.5-p1",
+          "prefix": " gods, as Symmachus calls them. ",
+          "suffix": ", & unumquemque Topicum deum sic"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6e7d657a7a6a4561e36aaf36aacc1d5f11de3f90"
   },
   "3.4.1.5-f5": {
     "bracket": "present",

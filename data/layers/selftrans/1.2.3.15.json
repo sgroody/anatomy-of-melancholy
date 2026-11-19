@@ -1641,12 +1641,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Calanius in his book",
+          "exact": "Calanius in his book de atra bile",
           "in": "1.2.3.15-p4",
           "prefix": "consil. 86, consil. 25, Prosper ",
-          "suffix": " de atra bile: go to Bedlam and "
+          "suffix": ": go to Bedlam and ask. Or if th"
         },
-        "words": 4
+        "words": 7
       }
     ],
     "lang": "la",
@@ -1776,35 +1776,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "6ba9a2bc5d9e53f8e04e082d8404e1b73b53a58b"
-  },
-  "1.2.3.15-f17": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "go to Bedlam and ask",
-          "in": "1.2.3.15-p4",
-          "prefix": "anius in his book de atra bile: ",
-          "suffix": ". Or if they keep their wits, ye"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7c4945ed3893e66493e264d578be035dd9238863"
   },
   "1.2.3.15-f170": {
     "bracket": "none",
@@ -3410,28 +3381,11 @@
   "1.2.3.15-f262": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in corruptionis hunc",
-          "in": "1.2.3.15-p34",
-          "prefix": "facem praeferunt ad Simoniam, & ",
-          "suffix": " scopulum impingentes, non tonde"
-        },
-        "words": 3
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "9dddca54a02066058d213f2393beec213f65f8bf"
@@ -3439,25 +3393,11 @@
   "1.2.3.15-f263": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "in corruptionis hunc",
-          "in": "1.2.3.15-p34",
-          "prefix": "facem praeferunt ad Simoniam, & ",
-          "suffix": " scopulum impingentes, non tonde"
-        },
-        "words": 3
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "fa4af8371aedae7bf3fe1ec5b9f5db6a8d1fac79"

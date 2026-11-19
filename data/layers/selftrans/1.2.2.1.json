@@ -111,35 +111,6 @@
     "signals": [],
     "text_sha1": "c426b1b2900801fdea2b1fd31122c49b73684e25"
   },
-  "1.2.2.1-f15": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "which was printed at Rome in",
-          "in": "1.2.2.1-p15",
-          "prefix": "Piscium natura & praeparatione, ",
-          "suffix": " Folio, 1554, with most elegant "
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "0f6edd124cf32d918e30d032dd4e65efe24581fb"
-  },
   "1.2.2.1-f16": {
     "bracket": "none",
     "by": "rules",
@@ -797,12 +768,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "which was printed at Rome in",
+          "exact": "Hippolytus Salvianus in his Book de Piscium natura & praeparatione, which was printed at Rome in",
           "in": "1.2.2.1-p15",
-          "prefix": "Piscium natura & praeparatione, ",
+          "prefix": "uetus accounts it a muddy fish. ",
           "suffix": " Folio, 1554, with most elegant "
         },
-        "words": 6
+        "words": 15
       }
     ],
     "lang": "la",

@@ -77,55 +77,27 @@
       {
         "after_attribution": false,
         "by": "rules",
-        "cognates": 0,
+        "cognates": 1,
         "cue": null,
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Beroaldus in his book",
+          "exact": "Beroaldus in his book de terrae motu, hath commended to posterity) that all the city trembled, the people thought the world was at an end",
           "in": "1.2.4.3-p3",
           "prefix": "eleven a clock in the night (as ",
-          "suffix": " de terrae motu, hath commended "
+          "suffix": ", actum de mortalibus, such a fe"
         },
-        "words": 4
+        "words": 25
       }
     ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
     "signals": [
+      "cognate-overlap",
       "english-at-anchor"
     ],
     "text_sha1": "e38f615a54ace702db82b1e965e83c0a554b1e75"
-  },
-  "1.2.4.3-f12": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "hath commended to posterity) that all the city trembled, the people thought the world was at an end",
-          "in": "1.2.4.3-p3",
-          "prefix": "dus in his book de terrae motu, ",
-          "suffix": ", actum de mortalibus, such a fe"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3a18f5174667d0b055bc16c29f20b42b4383881f"
   },
   "1.2.4.3-f13": {
     "bracket": "present",
@@ -145,26 +117,13 @@
           "suffix": "; the inhabitants were infinitel"
         },
         "words": 10
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "hath commended to posterity) that all the city trembled, the people thought the world was at an end",
-          "in": "1.2.4.3-p3",
-          "prefix": "dus in his book de terrae motu, ",
-          "suffix": ", actum de mortalibus, such a fe"
-        },
-        "words": 18
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "d0521ed1384b2bb79b327fb22cb0b5cb526f6b6f"
   },
