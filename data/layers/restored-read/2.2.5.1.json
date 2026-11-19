@@ -1,0 +1,69 @@
+{
+  "2.2.5.1-r1": {
+    "burton_quote": "to read some pleasant Author till he be asleep, to have a basin of water still dropping by his bedside",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Ovid",
+        "raw": "Ovid.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "partial",
+    "translation": "or conversation, to which the mind turns more attentively"
+  },
+  "2.2.5.1-r2": {
+    "burton_quote": "sup of vinegar",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "2.2.5.1-r3": {
+    "burton_quote": "because it rarefies melancholy, and procures an appetite to sleep",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "full"
+  },
+  "2.2.5.1-r5": {
+    "burton_quote": "the best way was to have divine and celestial meditations, and to use honest actions in the daytime",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 3
+    },
+    "tie": "full"
+  }
+}

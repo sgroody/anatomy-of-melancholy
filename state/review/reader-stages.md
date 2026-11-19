@@ -239,3 +239,56 @@ running text ("de atra bile" -> citation), and the missed phrases; then draw and
 Still to do (model runs, meter before/after): names sweep (obscure names), missed in-line citations, restored notes
 (translate, expand citations, kind; tie to Burton's English first), rate the translation passes' notes for the margin.
 Awaiting the owner: round 6 (front-page synopsis compartments), round 7 (Next/Previous, note letters, rule side).
+
+### V5, second cycle (2026-11-18, night)
+
+h3 studied and marked seen. Rules (burton/ingest/langid.py): a Latin title after "book", "tract", "consultation"… or
+after an author or a title abbreviation, and "De X" in a sidenote, is a citation (64 title passages retired, e.g. *de
+atra bile*, *pro hypocondriaco*, *Tr. de morbis amentium*); Latin pronoun and possessive forms; Latin whose only
+"English" words are Latin forms (*more*, *his*); superscript endings joined to their run (*12ma*), never cut inside a
+word; a Latin clause inside an English italic run wrapped as a passage (*…what shall I do? Vos O dii Averrunci…*, *si
+cerebrum sit calidius, if the brain…*). Scorer: "&c" no longer counts as a word of a passage. Re-ingest: 26 passages
+new, 71 records retired; translated ($0.95). Seen rounds: tuning, h1, h2 unchanged; h3 P 0.991 R 1.000 B 0.943.
+Gate h4 (seed 20261119, 300 items, labelled blind, $1.07, no label corrected): **P 0.948, R 0.968, B 0.912**, so V5
+stays DEFER (data/manual/deferred-checks.yaml has the errors). Also seen while labelling the notes sample: *John come
+kiss me now* (3.2.3.1) is an English song title tagged Latin. Next cycle: English loan-words in italics (*decorum*,
+*verbatim*), locator phrases before a bracket (*& passim alias*), capitalised Latin read as names, and the scorer's
+"|"-joined labels (never exact) settled before h5 is drawn.
+
+### Data passes (stage 14), begun 2026-11-18 night
+
+Code written, not yet run (the 5-hour meter reached 89% at 23:53 UTC; no model run until it resets):
+* `burton names-sweep` (names-v1): unlinked name forms from the rules' `name` verdicts, a blind identification each;
+  the reader is to underline obscure, single-bearer, identified/probable forms with a ◇ window.
+* `burton cite-sweep` (cite-sweep-v1): italic runs the rules judged `citation` that no rules record covers ->
+  data/layers/citations-inline-model/.
+* `burton restored-read` (restored-v1): restored notes tied to Burton's English (rules signals, then exact quote),
+  the rest translated, citations expanded, kind.
+* `burton note-rate` (note-audit-v1, note-rate-v1): spot check drawn (110 of 5,523 notes, data/eval/notes-spotcheck.yaml);
+  first rater (in session) done: 110/110 sound, usefulness 3/2/1 = 38/42/30. Next: `--audit`, `--sample`, `--compare`,
+  then `--all`; notes shown only if the rules pass (outcome recorded in the yaml).
+Reader wiring for the four layers is still to do.
+V5 cycle committed as a97b8f9 (check: 21 PASS, V5 DEFER). Stopped at 00:21 UTC with the 5-hour meter at 94% (weekly
+13%); resume after 01:20 UTC: `note-rate --audit`, `--sample`, `--compare`; then the three sweeps, each with a
+`--limit` spot check first; then the reader wiring, `check --all`, commits. Uncommitted: the four pass modules, their
+prompts, the CLI wiring, tests/test_names_sweep.py, data/eval/notes-spotcheck*.
+
+### Data passes, 2026-11-19 (early morning UTC)
+
+* **Translator notes:** blind audit and rating of the 110-note sample done ($2.03). Raters agree on accuracy 107/110,
+  usefulness 86/110 exact and 110/110 within one. Adjudicated: 2.2.4.1-f337 **wrong** ('dies' can be feminine, so
+  Burton's 'ullam … diem' can agree), 3.1.1.2-f38 doubtful, 1.2.2.2-f68 sound. R1 passes (1/110 wrong), **R2 fails**:
+  the rating pass rated f337 3 and not doubtful, so it would be shown. Per the rule fixed before labelling, **no
+  translator note is shown until the owner decides**. Proposal in data/eval/notes-spotcheck.yaml: show only notes rated
+  3 that the blind auditor also judges sound, then a fresh spot check of what would show.
+* **Citation sweep:** complete ($6.57): 922 citations (751 expanded, 171 probable), 82 not citations, 4 unidentified.
+* **Restored notes:** the restore rules duplicated 54 of Gowland's notes (Gutenberg marks one note twice, or far from
+  his marker): rules/restore-v2 drops a note that repeats one of his in the same paragraph; 1,235 -> 1,181. Readings
+  done for 612 ($6.73), then the headless `claude -p` login expired ("OAuth session expired"): the owner must sign in
+  again (`claude` in a terminal, /login) before `burton restored-read` resumes (569 left).
+* **Names sweep:** spot check of 40 forms only ($0.25; 22 would show); the full run (~5,300 forms, ~$33) waits for the
+  login and spans two or more five-hour windows.
+* **Reader:** restored notes with kind, Burton's English, the rest translated and references (each with ◇); found
+  citations as § with a card (none of Burton's words hidden); obscure names underlined with a window. Each layer is shown
+  only when its blind audit (`burton sweep-audit`, sweep-audit-v1, at most 3 % wrong) has passed; none has run yet, so
+  the reader shows none of them. Checked in headless Chrome with the gate forced open in one build: 1.1.1.1, no overlaps.

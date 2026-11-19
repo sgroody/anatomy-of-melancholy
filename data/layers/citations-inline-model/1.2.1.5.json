@@ -1,0 +1,47 @@
+{
+  "1.2.1.5-p1-icm2988": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Jean Bodin; Thomas Erastus; Lambert Daneau; Scribanius; Sébastien Michaëlis; Tommaso Campanella, *De sensu rerum et magia*, book 4, chapter 9",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Bodin, Erastus, Danaeus, Scribanius, Sebastian Michaelis, Campanella de Sensu rerum lib. 4 cap. 9",
+    "selector": {
+      "exact": "Bodin, Erastus, Danaeus, Scribanius, Sebastian Michaelis, Campanella de Sensu rerum lib. 4 cap. 9",
+      "in": "1.2.1.5-p1",
+      "prefix": "t, but do not. But this opinion ",
+      "suffix": ", Dandinus the Jesuit, lib. 2 de"
+    },
+    "status": "expanded"
+  },
+  "1.2.1.5-p1-icm3087": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Girolamo Dandini, *De anima* (commentary on Aristotle), book 2",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Dandinus the Jesuit, lib. 2 de Anima",
+    "selector": {
+      "exact": "Dandinus the Jesuit, lib. 2 de Anima",
+      "in": "1.2.1.5-p1",
+      "prefix": "a de Sensu rerum lib. 4 cap. 9, ",
+      "suffix": ", explode; Cicogna confutes at l"
+    },
+    "status": "expanded"
+  },
+  "1.2.1.5-p1-icm941": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Rhazes, *Continens*, book 1, chapter 9",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Cont. lib. 1 cap. 9",
+    "selector": {
+      "exact": "Cont. lib. 1 cap. 9",
+      "in": "1.2.1.5-p1",
+      "prefix": "s that Arabian Physician in his ",
+      "suffix": ", calls it a necessary and insep"
+    },
+    "status": "expanded"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "1.1.3.2-r2": {
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Daniel Sennert, *De quartana* (on the quartan fever)",
+        "raw": "De quartano.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "low",
+    "date": "2026-11-19",
+    "kind": "cites",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "no-latin"
+  },
+  "1.1.3.2-r3": {
+    "by": "machine",
+    "citations": [
+      {
+        "display": null,
+        "raw": "Lib. 1. part. 2. cap. 11.",
+        "status": "unidentified"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "cites",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "no-latin"
+  },
+  "1.1.3.2-r4": {
+    "burton_quote": "ascribe into the number not only discontented, passionate, and miserable persons, swarthy, black; but such as are most merry and pleasant, scoffers, and high-coloured",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "1.1.3.2-r5": {
+    "burton_quote": "they are free from ambition, envy, shame and fear, they are neither troubled in conscience, nor macerated with cares, to which our whole life is so much subject",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1,
+      "preceding": 0
+    },
+    "tie": "full"
+  }
+}

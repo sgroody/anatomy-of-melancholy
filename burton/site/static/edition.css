@@ -607,6 +607,7 @@ main:has(> .front) { max-width: 82rem; }
 a.nm { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
   text-underline-offset: 0.22em; }
 a.nm:hover, a.nm:focus-visible { text-decoration-color: var(--accent); }
+a.nm-x { cursor: help; } /* an identified name with no index page: the window is all it opens */
 .pw { position: absolute; z-index: 60; width: min(26rem, calc(100vw - 32px)); background: var(--pop-bg); color: var(--ink);
   border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); padding: 0.6rem 0.9rem 0.7rem;
   font-size: 0.9rem; line-height: 1.4; text-align: left; text-indent: 0; font-style: normal; }

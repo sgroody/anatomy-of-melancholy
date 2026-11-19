@@ -1,0 +1,47 @@
+{
+  "1.1.1.4-p5-icm2099": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Dioscorides, *De materia medica*, book 6 (on poisons), chapter 37; Johannes Heurnius; Franz Hildesheim; Girolamo Capivaccio; Pieter van Foreest; Johann Schenck",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Dioscorides lib. 6 cap. 37, Heurnius, Hildesheim, Capivaccius, Forestus, Schenkius",
+    "selector": {
+      "exact": "Dioscorides lib. 6 cap. 37, Heurnius, Hildesheim, Capivaccius, Forestus, Schenkius",
+      "in": "1.1.1.4-p5",
+      "prefix": " read of them, may consult with ",
+      "suffix": ", and before all others Codronch"
+    },
+    "status": "probable"
+  },
+  "1.1.1.4-p6-icm1130": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Jean Bodin, *De republica* (*Les six livres de la République*), book 5, chapter 1",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "5th Book de Repub. cap. 1",
+    "selector": {
+      "exact": "5th Book de Repub. cap. 1",
+      "in": "1.1.1.4-p6",
+      "prefix": "t a kind of Palsy. Bodin in his ",
+      "suffix": " speaks of this infirmity; Monav"
+    },
+    "status": "expanded"
+  },
+  "1.1.1.4-p6-icm961": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Felix Platter, *De mentis alienatione* (in *Praxis medica*), chapter 3",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Felix Platerus de mentis alienat. cap. 3",
+    "selector": {
+      "exact": "Felix Platerus de mentis alienat. cap. 3",
+      "in": "1.1.1.4-p6",
+      "prefix": "al persons he hath cured of it. ",
+      "suffix": " reports of a woman in Basel who"
+    },
+    "status": "expanded"
+  }
+}

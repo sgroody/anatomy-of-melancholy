@@ -1,0 +1,47 @@
+{
+  "2.2.1.2-p1-icm1275": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Celsus, *De medicina*, book 1; Leonardo Giacchini, commentary on Rhazes, *Ad Almansorem* book 9, chapter 15",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "lib. 1 Jacchinus 15 in 9 Rhasis",
+    "selector": {
+      "exact": "lib. 1 Jacchinus 15 in 9 Rhasis",
+      "in": "2.2.1.2-p1",
+      "prefix": "y fast; for as Celsus contends, ",
+      "suffix": ", repletion and inanition may bo"
+    },
+    "status": "probable"
+  },
+  "2.2.1.2-p2-icm2153": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Giovanni Battista Montano, *Consilia medica*, consilium 229",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "consil. 229",
+    "selector": {
+      "exact": "consil. 229",
+      "in": "2.2.1.2-p2",
+      "prefix": "o drink betwixt meals. The like ",
+      "suffix": " he will allow his patient one o"
+    },
+    "status": "expanded"
+  },
+  "2.2.1.2-p5-icm473": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Nicephorus Callistus, *Historia ecclesiastica*, book 18, chapter 8",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "eccles. hist. lib. 18 cap. 8",
+    "selector": {
+      "exact": "eccles. hist. lib. 18 cap. 8",
+      "in": "2.2.1.2-p5",
+      "prefix": "d Kings, as Nicephorus relates, ",
+      "suffix": ", of Mauritius, Lodovicus Pius, "
+    },
+    "status": "expanded"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "1.2.3.10-r2": {
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Boethius",
+        "raw": "Boethius.",
+        "status": "expanded"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "cites",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "no-latin"
+  },
+  "1.2.3.10-r3": {
+    "burton_quote": "In adversity I wish for prosperity, and in prosperity I am afraid of adversity; what mediocrity may be found? Where is no temptation?",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 4
+    },
+    "tie": "full"
+  },
+  "1.2.3.10-r4": {
+    "burton_quote": "He sits at table in a soft chair at ease, but he doth not remember in the meantime, that a tired waiter stands behind him, an hungry fellow ministers to him full, he is athirst that gives him drink",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0,
+      "preceding": 1
+    },
+    "tie": "full"
+  },
+  "1.2.3.10-r5": {
+    "burton_quote": "Look not on his crown, but consider his afflictions: attend not his number of servants, but multitude of crosses",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "full"
+  }
+}

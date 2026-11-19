@@ -22,6 +22,7 @@ from lxml import etree
 from markupsafe import Markup
 
 from .. import paths
+from ..layers import names_sweep, sweep_audit
 from ..tei import T
 from ..textview import public_text
 from . import authors_pages, facing, fonts, frontispiece, glosses, gowland_notes, names, search, synopsis
@@ -203,6 +204,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                 if (ini_src / f"red-dark-{f.stem[-1]}.webp").exists()}
     book = Book(profile, units)
     name_rx, name_ids, author_info = names.index()  # the name windows (stage 5)
+    # the stage-14 sweeps, each shown only if its blind audit passed (data/eval/sweep-audit.yaml)
+    obscure_rx, obscure_info = names_sweep.reader_index() if sweep_audit.passed("names") else ({}, {})
+    show_cites, show_restored = sweep_audit.passed("cites"), sweep_audit.passed("restored")
     cite_label = authors_pages.tables_label()["short"]
     titles = {k: f"{k} {pg.title}" for k, pg in book.pages.items() if pg.kind in ("unit", "front", "back")}
     findings = yaml.safe_load((paths.MANUAL / "source-findings.yaml").read_text(encoding="utf-8"))
@@ -267,7 +271,11 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    psalms=layer_for(unit, "psalm-check"),
                                    # Gowland's translation pages, set facing Burton's Latin (stage 9)
                                    facing_src=facing.sources(unit) if profile == "private" else None,
-                                   names=name_rx, name_ids=name_ids, author_info=author_info)
+                                   names=name_rx, name_ids=name_ids, author_info=author_info,
+                                   restored_read=layer_for(unit, "restored-read") if show_restored else None,
+                                   inline_cites_model=(layer_for(unit, "citations-inline-model")
+                                                       if show_cites else None),
+                                   name_extra=(obscure_rx.get(unit), obscure_info))
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         if unit in part_first and (tree := synopsis.load(part_first[unit].key)):

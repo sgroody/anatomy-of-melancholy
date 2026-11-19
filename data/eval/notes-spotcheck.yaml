@@ -1,0 +1,148 @@
+purpose: Spot check of the notes the translation passes wrote, before any is shown in the margin. Drawn, and the rules fixed,
+  before any labelling.
+drawn: '2026-11-18'
+seed: 20261118
+population: 5523
+raters: 'first: Claude in session; second: a model blind via `burton note-rate --audit` (prompt note-audit-v1). The notes''
+  writer is the same model family, so errors it makes systematically may be missed by both raters.'
+labels:
+  accuracy:
+    sound: every claim of fact in the note is right, or hedged as it should be
+    doubtful: a claim that may be wrong, or is stated more surely than the evidence allows
+    wrong: a claim of fact that is wrong (a source, a date, a meaning, what Burton did)
+  usefulness:
+    3: 'tells a reader something worth knowing beside the text: an allusion, the source and how Burton bends it, a term''s
+      sense, context'
+    2: correct but slight; a reader loses little without it
+    1: a translator's working note (word choice, grammar, literal sense) or a repetition of the translation
+rules:
+  R1: 'accuracy: notes adjudicated `wrong` at most 3 % of the sample'
+  R2: of the notes the rating pass would show (rated 3, not doubtful), none adjudicated `wrong`
+  on_failure: reported with its numbers; no note is shown in the margin until the owner decides
+sample:
+- 1.1.1.1-f6
+- 1.1.1.4-f1
+- 1.1.2.8-f3
+- 1.1.2.9-f10
+- 1.2.1.2-f172
+- 1.2.1.3-f36
+- 1.2.1.3-f6
+- 1.2.1.5-f3
+- 1.2.2.1-f39
+- 1.2.2.2-f19
+- 1.2.2.2-f44
+- 1.2.2.2-f68
+- 1.2.2.2-f75
+- 1.2.2.6-f2
+- 1.2.2.6-f63
+- 1.2.3.10-f8
+- 1.2.3.15-f10
+- 1.2.3.15-f137
+- 1.2.3.15-f148
+- 1.2.3.15-f247
+- 1.2.3.15-f271
+- 1.2.3.15-f58
+- 1.2.4.6-f97
+- 1.2.4.7-f104
+- 1.2.4.7-f113
+- 1.2.4.7-f31
+- 1.2.4.7-f79
+- 1.2.5.1-f7
+- 1.2.5.5-f4
+- 1.3.1.2-f56
+- 1.3.1.4-f20
+- 1.3.2.3-f4
+- 1.4.1.1-f30
+- 1.4.1.1-f68
+- 2.2.1.1-f1
+- 2.2.3.1-f109
+- 2.2.3.1-f28
+- 2.2.3.1-f360
+- 2.2.3.1-f361
+- 2.2.4.1-f119
+- 2.2.4.1-f138
+- 2.2.4.1-f151
+- 2.2.4.1-f337
+- 2.2.4.1-f9
+- 2.2.6.1-f14
+- 2.2.6.4-f4
+- 2.3.2.1-f9
+- 2.3.3.1-f220
+- 2.3.3.1-f249
+- 2.3.3.1-f276
+- 2.3.4.1-f10
+- 2.3.4.1-f19
+- 2.3.5.1-f20
+- 2.3.7.1-f73
+- 2.4.1.2-f11
+- 2.4.3.1-f3
+- 3.1.1.1-f4
+- 3.1.1.2-f38
+- 3.1.2.3-f33
+- 3.1.2.3-f40
+- 3.1.3.1-f13
+- 3.2.1.2-f118
+- 3.2.1.2-f2
+- 3.2.2.1-f83
+- 3.2.2.2-f141
+- 3.2.2.2-f151
+- 3.2.2.2-f178
+- 3.2.2.2-f44
+- 3.2.2.2-f6
+- 3.2.2.3-f34
+- 3.2.2.3-f68
+- 3.2.2.3-f9
+- 3.2.2.4-f140
+- 3.2.2.4-f195
+- 3.2.2.4-f39
+- 3.2.3.1-f130
+- 3.2.3.1-f236
+- 3.2.3.1-f288
+- 3.2.3.1-f382
+- 3.2.5.2-f108
+- 3.2.5.2-f109
+- 3.2.5.3-f196
+- 3.2.5.3-f208
+- 3.2.5.3-f75
+- 3.2.5.3-f84
+- 3.2.5.5-f172
+- 3.3.1.1-f1
+- 3.3.1.1-f16
+- 3.3.4.1-f49
+- 3.3.4.2-f55
+- 3.4.1.1-f25
+- 3.4.1.2-f37
+- 3.4.1.3-f129
+- 3.4.1.3-f132
+- 3.4.1.3-f25
+- 3.4.2.1-f11
+- 3.4.2.1-f131
+- 3.4.2.1-f35
+- 3.4.2.2-f6
+- 3.4.2.6-f7
+- djr-f1334
+- djr-f1339
+- djr-f1492
+- djr-f302
+- djr-f36
+- djr-f360
+- djr-f499
+- djr-f585
+- djr-f783
+- djr-f868
+outcome:
+  date: '2026-11-19'
+  passed: false
+  items: 110
+  agreement:
+    accuracy: 108/110 before adjudication
+    usefulness: 86/110 exact, 110/110 within one
+  adjudicated:
+    1.2.2.2-f68: sound
+    2.2.4.1-f337: wrong
+    3.1.1.2-f38: doubtful
+  R1: 'pass: 1/110 wrong (limit 3 %)'
+  R2: 'FAIL: wrong notes the rating pass would show: [''2.2.4.1-f337''] (rated 3, not flagged doubtful)'
+  consequence: No translator note is shown in the margin until the owner decides (rule on_failure).
+  proposal: 'Show a note only where the rating pass rates it 3 AND the blind auditor (note-audit-v1) judges it sound: run
+    the audit over every note rated 3, then a fresh spot check of the notes that would be shown.'

@@ -1,0 +1,32 @@
+{
+  "1.1.2.1-p1-icm1836": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Helkiah Crooke, *Mikrokosmographia: A Description of the Body of Man*",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Microcosmographia",
+    "selector": {
+      "exact": "Microcosmographia",
+      "in": "1.1.2.1-p1",
+      "prefix": "at translation of Columbus, and ",
+      "suffix": ", in 13 books, I have made this "
+    },
+    "status": "expanded"
+  },
+  "1.1.2.1-p1-icm1983": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "treatises *De anima* (on the soul)",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "de Anima",
+    "selector": {
+      "exact": "de Anima",
+      "in": "1.1.2.1-p1",
+      "prefix": "hsius, and those tedious Tracts ",
+      "suffix": " (which have more compendiously "
+    },
+    "status": "probable"
+  }
+}

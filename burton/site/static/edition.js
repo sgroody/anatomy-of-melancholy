@@ -666,6 +666,10 @@ if (synTree) {
 const authorsData = Object.assign({}, ...[...document.querySelectorAll("script.authors-data")].map((s) => {
   try { return JSON.parse(s.textContent); } catch { return {}; }
 }));
+// obscure names the names sweep identified (stage 14): {form: {who, probable, label}}
+const namesData = Object.assign({}, ...[...document.querySelectorAll("script.names-data")].map((s) => {
+  try { return JSON.parse(s.textContent); } catch { return {}; }
+}));
 const previews = new Map(); // href -> Promise of {title, text}
 function el(tag, cls, text) {
   const e = document.createElement(tag);
@@ -689,6 +693,20 @@ function preview(href) {
 }
 async function windowFor(trig) {
   const box = document.createDocumentFragment();
+  if (trig.classList.contains("nm-x")) {
+    const n = namesData[trig.dataset.name];
+    if (!n) return null;
+    box.append(el("p", "pw-h", trig.textContent.replace(/­/g, "")));
+    const p = el("p", "pw-t", (n.probable ? "Probably " + n.who : n.who) + " ");
+    const pv = el("span", "prov");
+    pv.title = n.label;
+    pv.setAttribute("aria-label", n.label);
+    pv.setAttribute("role", "img");
+    pv.tabIndex = 0;
+    p.append(pv);
+    box.append(p);
+    return box;
+  }
   if (trig.classList.contains("nm")) {
     const a = authorsData[trig.dataset.author];
     if (!a) return null;
@@ -780,6 +798,15 @@ document.addEventListener("mouseout", (ev) => {
   p.ct = setTimeout(() => closeFrom(lvl), 350);
 });
 document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closeFrom(0); });
+// an identified name has no page of its own: a click, Enter or Space opens (and locks) its window
+function openName(ev) {
+  const t = ev.target.closest?.("a.nm-x");
+  if (!t || (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ")) return;
+  ev.preventDefault();
+  openWindow(t).then(() => { const p = pops.find((q) => q.trig === t); if (p?.el) { p.locked = true; p.el.classList.add("locked"); } });
+}
+document.addEventListener("click", openName);
+document.addEventListener("keydown", openName);
 
 // ---------------------------------------------------------------- the front page (stage 4)
 // Pointing at a panel of the engraving shows its stanza beside it (owner, 2026-11-03: T14, R4 B).

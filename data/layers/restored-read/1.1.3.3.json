@@ -1,0 +1,54 @@
+{
+  "1.1.3.3-r1": {
+    "burton_quote": "than the Body is well able to bear, it must needs be distempered, saith Faventinus, & diseased",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "1.1.3.3-r2": {
+    "burton_quote": "Faventinus, a cause of dotage, & produceth milder symptoms: if hot, they are rash, raving mad, or inclining to it",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  },
+  "1.1.3.3-r3": {
+    "burton_quote": "Hippocrates in his book of Melancholy (if at least it be his) giving instance in a burning coal, which when it is hot, shines; when it is cold, looks black, and so doth the humour",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Hippocrates, *On Melancholy*",
+        "raw": "Hippocrates.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  }
+}

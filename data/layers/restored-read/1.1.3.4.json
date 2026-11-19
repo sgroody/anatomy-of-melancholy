@@ -1,0 +1,69 @@
+{
+  "1.1.3.4-r1": {
+    "burton_quote": "others acknowledge a multitude of kinds, and leave them indefinite",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Aetius, *Tetrabiblos*, tetrabiblos 2, sermon 2, chapter 9",
+        "raw": "2 Ser. 2. cap. 9.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "1.1.3.4-r2": {
+    "burton_quote": "If natural Melancholy be adust, it maketh one kind; if blood, another; if choler, a third, differing from the first; and so many several opinions there are about the kinds, as there be men themselves",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 2
+    },
+    "tie": "partial",
+    "translation": "There is a very great difference among these."
+  },
+  "1.1.3.4-r3": {
+    "burton_quote": "one beginning, another consummate",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "full"
+  },
+  "1.1.3.4-r4": {
+    "burton_quote": "he laboured of head-melancholy, and that which proceeds from the whole temperature both at once",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  }
+}

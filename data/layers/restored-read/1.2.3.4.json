@@ -1,0 +1,112 @@
+{
+  "1.2.3.4-r1": {
+    "burton_quote": "a cruel torture of the soul, a most inexplicable grief, poisoned worm, consuming body and soul, and gnawing the very heart, a perpetual executioner, continual night, profound darkness, a whirlwind, a tempest, an ague not appearing, heating worse than any fire, & a battle that hath no end. It crucifies worse than any Tyrant",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 3
+    },
+    "tie": "full"
+  },
+  "1.2.3.4-r2": {
+    "burton_quote": "refrigerates the heart, takes away stomach",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Johann Crato von Krafftheim, *Consilia*, book 2, consilium 21",
+        "raw": "Crato consil. 21. lib. 2.",
+        "status": "expanded"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "partial",
+    "translation": "Sadness chills the whole body and extinguishes the innate heat."
+  },
+  "1.2.3.4-r3": {
+    "burton_quote": "It hinders concoction, refrigerates the heart, takes away stomach, colour, and sleep; thickens the blood",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "partial",
+    "translation": "it dries up the spirits, overwhelms the innate heat, and heaps up the melancholy juice."
+  },
+  "1.2.3.4-r4": {
+    "by": "machine",
+    "citations": [
+      {
+        "display": "1 Maccabees, chapter 6",
+        "raw": "Marc. vi. 16. 11.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "low",
+    "date": "2026-11-19",
+    "kind": "cites",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "no-latin"
+  },
+  "1.2.3.4-r5": {
+    "burton_quote": "that had no other cause of this mischief",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  },
+  "1.2.3.4-r7": {
+    "burton_quote": "sorrow strikes the heart, makes it tremble and pine away, with great pain: and the black blood drawn from the spleen, and diffused under the ribs, on the left side, makes those perilous hypochondriacal convulsions, which happen to them that are troubled with Sorrow",
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Philipp Melanchthon, *De anima*",
+        "raw": "Melancthon",
+        "status": "probable"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "both",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 2,
+      "preceding": 2
+    },
+    "tie": "full"
+  }
+}

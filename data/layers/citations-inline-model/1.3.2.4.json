@@ -1,0 +1,47 @@
+{
+  "1.3.2.4-p1-icm160": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Daniel Sennert, *Practicae medicinae*, book 1, part 2, chapter 13",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Daniel Sennertus of Wittenberg lib. 1 part. 2 cap. 13",
+    "selector": {
+      "exact": "Daniel Sennertus of Wittenberg lib. 1 part. 2 cap. 13",
+      "in": "1.3.2.4-p1",
+      "prefix": "two famous Physicians in Spain, ",
+      "suffix": ", with others, have vouchsafed i"
+    },
+    "status": "probable"
+  },
+  "1.3.2.4-p1-icm46": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Luis Mercado, *De mulierum affectionibus*, book 2, chapter 4",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "de mulier. affect. cap. 4",
+    "selector": {
+      "exact": "de mulier. affect. cap. 4",
+      "in": "1.3.2.4-p1",
+      "prefix": "cus Mercatus in his second book ",
+      "suffix": ", and Rodericus à Castro de morb"
+    },
+    "status": "expanded"
+  },
+  "1.3.2.4-p1-icm77": {
+    "by": "machine",
+    "date": "2026-11-19",
+    "display": "Rodrigo de Castro, *De universa mulierum medicina* (on the diseases of women), book 2, chapter 3",
+    "model": "claude-opus-5-5",
+    "prompt": "cite-sweep-v1",
+    "raw": "Rodericus à Castro de morb. mulier. cap. 3 lib. 2",
+    "selector": {
+      "exact": "Rodericus à Castro de morb. mulier. cap. 3 lib. 2",
+      "in": "1.3.2.4-p1",
+      "prefix": " de mulier. affect. cap. 4, and ",
+      "suffix": ", two famous Physicians in Spain"
+    },
+    "status": "expanded"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "1.3.1.1-r1": {
+    "burton_quote": "universal or particular, saith Gordonius, lil. med. cap. 19 part. 2, to persons, to species; some signs are secret, some manifest, some in the Body, some in the mind, and diversely vary, according to the inward or outward causes, Capivaccius: or from stars according to Jovianus Pontanus, de reb. coelest. lib. 10 cap. 13, and celestial influences, or from the humours diversely mixed",
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "preceding": 0
+    },
+    "tie": "partial",
+    "translation": "which, like wine, dispose the body in various ways; diverse phantasms according to the variety of the cause."
+  },
+  "1.3.1.1-r2": {
+    "burton_quote": "lean, withered, hollow-eyed, look old, wrinkled, harsh, much troubled with wind, and a griping in their bellies, or belly-ache, belch often, dry bellies and hard, dejected looks, flaggy beards, singing of the ears, vertigo, light-headed, little or no sleep, and that interrupt, terrible and fearful dreams",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "1.3.1.1-r3": {
+    "burton_quote": "do eat much, yet they are lean, ill-liking, saith Aretaeus, withered and hard, much troubled with costiveness",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "full"
+  }
+}

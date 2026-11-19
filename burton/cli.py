@@ -88,6 +88,38 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--model", default="claude-opus-5-5")
     s.add_argument("--budget-usd", type=float, default=None)
     s.add_argument("--dry-run", action="store_true", help="count the citations, no model")
+    s = sub.add_parser("names-sweep", help="obscure names identified for the reader (model, ledgered) "
+                                           "-> data/layers/names/forms.json")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--limit", type=int, default=None, help="ask about the first N forms only (a spot check)")
+    s.add_argument("--dry-run", action="store_true", help="count the forms, no model")
+    s = sub.add_parser("restored-read", help="restored notes: tie to Burton's English, translate the rest, expand "
+                                             "citations, kind (model, ledgered) -> data/layers/restored-read/")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--limit", type=int, default=None, help="read the first N notes only (a spot check)")
+    s.add_argument("--dry-run", action="store_true", help="count the notes, no model")
+    s = sub.add_parser("cite-sweep", help="citations in the running text the rules missed (model, ledgered) "
+                                          "-> data/layers/citations-inline-model/")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
+    s.add_argument("--limit", type=int, default=None, help="read the first N candidates only (a spot check)")
+    s.add_argument("--dry-run", action="store_true", help="count the candidates, no model")
+    s = sub.add_parser("sweep-audit", help="blind check of what the stage-14 sweeps would show (model, ledgered)")
+    s.add_argument("--draw", action="store_true", help="draw the samples (once)")
+    s.add_argument("--run", action="store_true", help="judge the samples")
+    s.add_argument("--report", action="store_true", help="counts and the rule's outcome -> data/eval/sweep-audit.yaml")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s = sub.add_parser("note-rate", help="the translation passes' notes: spot check, blind audit, rating for the "
+                                         "margin (model, ledgered) -> data/layers/note-ratings/")
+    s.add_argument("--draw", action="store_true", help="draw the spot-check sample (once)")
+    s.add_argument("--audit", action="store_true", help="blind second rater on the spot-check sample")
+    s.add_argument("--compare", action="store_true", help="first rater against the second; the rules' outcome")
+    s.add_argument("--all", action="store_true", help="rate every note")
+    s.add_argument("--sample", action="store_true", help="rate the spot-check sample's notes only")
+    s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--budget-usd", type=float, default=None)
     s = sub.add_parser("cite-audit", help="held-out check of the citation expansions, with Gowland's notes as "
                                           "evidence (private-only)")
     s.add_argument("--model", default="claude-opus-5-5")
@@ -295,6 +327,50 @@ def main(argv: list[str] | None = None) -> int:
         stats = psalm_check.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run)
         for k in sorted(stats):
             print(f"  {k}: {stats[k]}")
+    elif args.cmd == "names-sweep":
+        from .layers import names_sweep
+
+        stats = names_sweep.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run, limit=args.limit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "restored-read":
+        from .layers import restored_read
+
+        stats = restored_read.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run,
+                                  limit=args.limit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "cite-sweep":
+        from .layers import cite_sweep
+
+        stats = cite_sweep.run(model=args.model, budget_usd=args.budget_usd, dry_run=args.dry_run, limit=args.limit)
+        for k in sorted(stats):
+            print(f"  {k}: {stats[k]}")
+    elif args.cmd == "sweep-audit":
+        import json
+
+        from .layers import sweep_audit
+
+        if args.draw:
+            print(sweep_audit.draw())
+        if args.run:
+            print(sweep_audit.run(model=args.model))
+        if args.report:
+            print(json.dumps(sweep_audit.report(), ensure_ascii=False, indent=1))
+    elif args.cmd == "note-rate":
+        import json
+
+        from .translate import notes_rate
+
+        if args.draw:
+            print(notes_rate.draw())
+        if args.audit:
+            print(notes_rate.run_audit(model=args.model))
+        if args.all or args.sample:
+            print(notes_rate.run_rate(model=args.model, budget_usd=args.budget_usd,
+                                      which=notes_rate.sample_ids() if args.sample else None))
+        if args.compare:
+            print(json.dumps(notes_rate.compare(), ensure_ascii=False, indent=1))
     elif args.cmd == "cite-audit":
         from .layers import cite_audit
 

@@ -1,0 +1,113 @@
+{
+  "2.4.1.1-r1": {
+    "burton_quote": "they are very painful, long-lived, sound",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0
+    },
+    "tie": "partial",
+    "translation": "Living on little, content with what they have, they live to a hundred years."
+  },
+  "2.4.1.1-r2": {
+    "burton_quote": "which is dried fish instead of bread, butter, cheese, and salt meats, most part they drink water and whey, and yet without Physic or Physician, they live many of them 250 years",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {},
+    "tie": "full"
+  },
+  "2.4.1.1-r3": {
+    "by": "machine",
+    "citations": [
+      {
+        "display": "Levinus Lemnius, *De habitu et constitutione corporis* (on the four complexions)",
+        "raw": "Lib. de 4. complex.",
+        "status": "probable"
+      }
+    ],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "cites",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0,
+      "preceding": 0
+    },
+    "tie": "no-latin"
+  },
+  "2.4.1.1-r4": {
+    "burton_quote": "Every disease is either curable or incurable, a man recovers of it; or is killed by it; both ways Physic is to be rejected. If it be deadly, it cannot be cured; if it may be helped, it requires no Physician, Nature will expel it of itself",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "2.4.1.1-r5": {
+    "by": "machine",
+    "citations": [],
+    "confidence": "medium",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 1
+    },
+    "tie": "no-latin"
+  },
+  "2.4.1.1-r6": {
+    "burton_quote": "he that may be cured by diet, must not meddle with Physic",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 0,
+      "preceding": 0
+    },
+    "tie": "full"
+  },
+  "2.4.1.1-r7": {
+    "burton_quote": "A modest and wise Physician, will never hasten to use medicines, but upon urgent necessity",
+    "by": "machine",
+    "citations": [],
+    "confidence": "high",
+    "date": "2026-11-19",
+    "kind": "note",
+    "model": "claude-opus-5-5",
+    "prompt": "restored-v1",
+    "rules": "rules/restored-tie-v1",
+    "signals": {
+      "following": 3
+    },
+    "tie": "full"
+  }
+}

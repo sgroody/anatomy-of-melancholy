@@ -1092,6 +1092,26 @@ def mark_names(html_text: str, names: re.Pattern | None, ids: dict[str, str], co
     return html_text, used
 
 
+def mark_obscure_names(html_text: str, rx: re.Pattern, counts: dict) -> tuple[str, set[str]]:
+    """Obscure names the names sweep identified (data/layers/names/forms.json; owner, 2026-11-18: "obscure names to
+    underline"): underlined as the cited authors are, with a window from the layer instead of an index entry. Placed
+    after the authors' names (never inside a link) and like them only in one text run."""
+    text, pos = _visible(html_text, SKIP_NAMES)
+    edits, used = [], set()
+    for m in rx.finditer(text):
+        hs, he = pos[m.start()], pos[m.end() - 1] + 1
+        if "<" in html_text[hs:he] or "&" in html_text[hs:he]:
+            continue
+        form = m.group(0).replace("­", "")
+        edits.append((hs, he, form))
+        used.add(form)
+    for hs, he, form in reversed(edits):
+        html_text = (html_text[:hs] + f'<a class="nm nm-x" tabindex="0" role="button" data-name="{attr(form)}">'
+                     + html_text[hs:he] + "</a>" + html_text[he:])
+    counts["names_obscure"] = counts.get("names_obscure", 0) + len(edits)
+    return html_text, used
+
+
 def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
     """Obsolete-word glosses (M8): the word is wrapped, and its sense follows it, hidden until the reader turns
     glosses on. Placed like cross-references, in the main text only (all found on the page as it is, then
@@ -1164,10 +1184,45 @@ def _outside_passage(html_text: str, at: int) -> int:
     return outer[0] if outer else at
 
 
-def mark_restored(html_text: str, notes: dict, counts: dict) -> str:
+def _md_italics(s: str) -> str:
+    """Escape a model's display string, with its *asterisks* as italics."""
+    return re.sub(r"\*([^*]+)\*", r"<i>\1</i>", esc(s))
+
+
+def restored_lines(rd: dict | None, counts: dict) -> tuple[str, str]:
+    """(kind label, added lines) for a restored note from data/layers/restored-read/ (stage 14): Burton's own English
+    in the text that renders it, a translation of only what that leaves out, and its references written out. Each
+    line belongs to the note but is the edition's, set after his words and labelled machine."""
+    if not rd:
+        return "", ""
+    kind = "cites" if rd["kind"] == "cites" else "note"
+    full = f"({rd['model']}, prompt {rd['prompt']}, {rd['date']})"
+    lines = []
+    if q := rd.get("burton_quote"):
+        lines.append(f'<span class="sn-tr" data-src="burton"><span class="mn-k">Author trans.</span> '
+                     f'<span class="mn-tx">“{esc(q)}”</span> {prov("Matched to Burton’s English by machine " + full)}'
+                     '</span>')
+        counts["restored_tied"] = counts.get("restored_tied", 0) + 1
+    if t := rd.get("translation"):
+        lines.append(f'<span class="sn-tr" data-lang="la" data-src="machine"><span class="mn-tx">{esc_tagged(t)}</span>'
+                     f' <span class="mn-src">{prov("Machine translation " + full)}</span></span>')
+        counts["restored_translated"] = counts.get("restored_translated", 0) + 1
+    for c in rd.get("citations", []):
+        if c["status"] not in ("expanded", "probable") or not c.get("display"):
+            continue
+        word = "probably " if c["status"] == "probable" else ""
+        lines.append(f'<span class="sn-tr sn-cx"><span class="mn-k">cites</span> {word}{_md_italics(c["display"])} '
+                     f'{prov("Citation expanded by machine " + full)}</span>')
+        counts["restored_citations"] = counts.get("restored_citations", 0) + 1
+    counts[f"restored_kind_{kind}"] = counts.get(f"restored_kind_{kind}", 0) + 1
+    return f'<span class="sn-k" data-kind="{kind}">{kind}</span> ', "".join(lines)
+
+
+def mark_restored(html_text: str, notes: dict, counts: dict, reads: dict | None = None) -> str:
     """Burton's sidenotes that Gowland's edition leaves out (data/layers/restored-notes/): a marker ° before the
     word and the note beside it, styled apart and labelled with its source; placed like glosses, found on the
-    page as it is and inserted from the end. One that cannot be placed is counted."""
+    page as it is and inserted from the end. One that cannot be placed is counted. With its reading
+    (data/layers/restored-read/): its kind, Burton's English for it, the rest translated, its references written out."""
     views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
     edits = []
     for rid, rec in notes.items():
@@ -1181,12 +1236,13 @@ def mark_restored(html_text: str, notes: dict, counts: dict) -> str:
         counts["restored_hoisted"] = counts.get("restored_hoisted", 0) + (hs != word)
         edits.append((hs, rid, rec, hs != word))
     for hs, rid, rec, hoisted in sorted(edits, key=lambda x: x[0], reverse=True):
+        kind, lines = restored_lines((reads or {}).get(rid), counts)
         note = (f'<a class="nref nref-restored" id="ref-{attr(rid)}" href="#{attr(rid)}" role="doc-noteref" '
                 f'aria-label="Note not in Gowland’s edition">°</a>'
                 f'<span class="sidenote sn-restored" id="{attr(rid)}" role="doc-footnote">'
-                f'<span class="sn-n">°</span> {esc_tagged(rec["text"])} '
+                f'<span class="sn-body"><span class="sn-n">°</span> {kind}{esc_tagged(rec["text"])} '
                 + prov(f'{RESTORED_LABEL} {rec["source"]}, note {rec["pg_note"]} '
-                       f'(a 19th-century text checked against the 1638 edition)') + '</span>')
+                       f'(a 19th-century text checked against the 1638 edition)') + f'</span>{lines}</span>')
         if hoisted:  # before a passage box, held to its first line as Gowland's lifted-out notes are
             note = f'<span class="hoisted">{note}</span>'
         html_text = html_text[:hs] + note + html_text[hs:]
@@ -1238,6 +1294,26 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | N
     hidden_to = -1
     for at, key, rec, pos in sorted(located, key=lambda x: x[0]):
         sel = rec["selector"]
+        if rec.get("by") == "machine":
+            # found by the citation sweep (stage 14): its words may include Burton's own, so none are hidden; the §
+            # after them and the card, labelled machine, are all it adds
+            if at < hidden_to:
+                counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
+                continue
+            runs = _runs(html_text, pos, at, at + len(sel["exact"]))
+            cid = f"ic-{key}"
+            full = f"Citation found and expanded by machine ({rec['model']}, prompt {rec['prompt']}, {rec['date']})"
+            word = "probably " if rec["status"] == "probable" else ""
+            edits.setdefault(pos[at], []).append(f'<span class="mref" data-for="{attr(cid)}" '
+                                                 f'data-len="{len(sel["exact"])}" aria-hidden="true"></span>')
+            edits.setdefault(runs[-1][1], []).append(
+                f'<span class="ic-m" data-kind="cites" role="img" aria-label="{attr("citation: " + rec["display"])}" '
+                f'title="{attr("Burton: " + rec["raw"])}">§</span>')
+            cards.append(f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="cites" role="note" aria-label="Citation">'
+                         f'<span class="mn-k">cites</span> <span class="ic-e">{word}{_md_italics(rec["display"])} '
+                         f'{prov(full)}</span></span>')
+            counts["inline_cites_machine"] = counts.get("inline_cites_machine", 0) + 1
+            continue
         ex, bible = sel["exact"], rec["author"] == "bible"
         name = 0
         if not bible:
@@ -1385,7 +1461,9 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 cexp: dict | None = None, initials: set[str] | None = None, names: re.Pattern | None = None,
                 name_ids: dict | None = None, author_info: dict | None = None,
                 inline_cites: dict | None = None, facing_src: dict | None = None,
-                psalms: dict | None = None) -> tuple[str, dict]:
+                psalms: dict | None = None, restored_read: dict | None = None,
+                inline_cites_model: dict | None = None,
+                name_extra: tuple[re.Pattern | None, dict] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
@@ -1405,9 +1483,15 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     body = mark_burton_spans("".join(r.out), layer, r.counts, r.fp_lang)
     body = mark_xrefs(body, xrefs or [], r.counts)
     body = mark_glosses(body, glosses or [], r.counts)
-    body = mark_restored(body, restored or {}, r.counts)
-    body, ic_cards = mark_inline_cites(body, inline_cites or {}, r.counts, psalms)
+    body = mark_restored(body, restored or {}, r.counts, restored_read)
+    body, ic_cards = mark_inline_cites(body, {**(inline_cites or {}), **(inline_cites_model or {})}, r.counts, psalms)
     body, used = mark_names(body, names, name_ids or {}, r.counts)
+    if name_extra and name_extra[0] is not None:  # obscure names identified by the names sweep (stage 14)
+        body, shown = mark_obscure_names(body, name_extra[0], r.counts)
+        if shown:
+            data = json.dumps({k: name_extra[1][k] for k in sorted(shown)}, ensure_ascii=False)
+            script = f'<script type="application/json" class="names-data">{data.replace("</", "<\\/")}</script>'
+            body = body.replace("</article>\n", script + "\n</article>\n")
     if used and author_info:  # what the name windows show, for the authors named on this page (edition.js)
         data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
         script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
