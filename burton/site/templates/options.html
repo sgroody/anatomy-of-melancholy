@@ -32,35 +32,35 @@
 </div>
 <fieldset>
   <legend>What to show</legend>
-  <label><input type="checkbox" name="hideic"> Hide Burton’s citations from the line (the § marks and their notes)</label>
-  {% if profile == "private" %}<label><input type="checkbox" name="onlygw"> Only Gowland’s notes in the margin</label>{% endif %}
-  <label><input type="checkbox" name="textonly"> Nothing but the text</label>
+  <label><input type="checkbox" name="hideic"> Hide in-line citations (§)</label>
+  {% if profile == "private" %}<label><input type="checkbox" name="onlygw"> Only Gowland’s notes</label>{% endif %}
+  <label><input type="checkbox" name="textonly"> Hide all notes (the text as printed)</label>
 </fieldset>
 <fieldset>
-  <legend>Foreign-language passages</legend>
-  <label><input type="radio" name="mode" value="gloss" checked> Original, with translations in the margin (on tap on a phone)</label>
-  <label><input type="radio" name="mode" value="interlinear"> Interlinear: translation beneath</label>
-  <label><input type="radio" name="mode" value="english"> Translations in the line: the English in place of the original, in its colour and italic; the original on hover</label>
+  <legend>Latin and other languages</legend>
+  <label><input type="radio" name="mode" value="gloss" checked> Original; translation in the margin</label>
+  <label><input type="radio" name="mode" value="interlinear"> Translation beneath the original</label>
+  <label><input type="radio" name="mode" value="english"> Translation in place of the original (original on hover)</label>
 </fieldset>
 <fieldset>
-  <legend>Translation shown first</legend>
-  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland 2021 first, then other human translations, then machine{% else %}Human translation, then machine{% endif %}</label>
-  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Editor’s and Dell &amp; Jordan-Smith’s first, then Gowland, then machine</label>{% endif %}
-  <label><input type="radio" name="order" value="machine"> Machine translation first</label>
+  <legend>Translation first</legend>
+  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland’s{% else %}A human translation{% endif %}</label>
+  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Dell &amp; Jordan-Smith’s</label>{% endif %}
+  <label><input type="radio" name="order" value="machine"> The machine translation</label>
 </fieldset>
 <fieldset>
   <legend>Citations</legend>
-  <label><input type="checkbox" name="cites"> Show Burton’s own abbreviations (“Scalig. exercit. 365”) instead of their expansions</label>
+  <label><input type="checkbox" name="cites"> Burton’s abbreviations (“Scalig. exercit. 365”), not written out</label>
 </fieldset>
 <fieldset>
   <legend>Obsolete words</legend>
-  <label><input type="checkbox" name="glosses"> Gloss other obsolete English words in the line (Webster 1913 and machine glosses, each labelled){% if profile == "private" %}; Gowland’s glosses are always in the margin{% endif %}</label>
+  <label><input type="checkbox" name="glosses"> Gloss obsolete words in the margin (Webster 1913, or a model’s ◇){% if profile == "private" %}; Gowland’s glosses are always there{% endif %}</label>
 </fieldset>
 <fieldset>
   <legend>Colour of the Latin</legend>
-  <label><input type="radio" name="latin" value="oxblood" checked> Oxblood by day, candle-gold by night</label>
-  <label><input type="radio" name="latin" value="green"> Green by day, sea-green by night</label>
-  <label><input type="radio" name="latin" value="plain"> Ink, like the rest of the text</label>
+  <label><input type="radio" name="latin" value="oxblood" checked> Oxblood; candle-gold at night</label>
+  <label><input type="radio" name="latin" value="green"> Green; sea-green at night</label>
+  <label><input type="radio" name="latin" value="plain"> Ink, like the text</label>
   <label><input type="radio" name="latin" value="custom"> My own colours:</label>
   <span class="la-custom"><label>day <input type="color" name="laLight" value="#7a2230"></label> <label>night <input type="color" name="laDark" value="#e0c27a"></label></span>
 </fieldset>
@@ -80,7 +80,7 @@
 {% if profile == "private" %}
 <fieldset>
   <legend>Gowland’s edition (2021)</legend>
-  <label><input type="checkbox" name="gowland"> Show Gowland’s bracketed translations</label>
-  <label><input type="checkbox" name="pages"> Show Penguin page numbers</label>
+  <label><input type="checkbox" name="gowland"> His bracketed translations in the line</label>
+  <label><input type="checkbox" name="pages"> Penguin page numbers</label>
 </fieldset>
 {% endif %}

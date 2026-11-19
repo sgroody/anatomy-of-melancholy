@@ -18,7 +18,7 @@
   <p class="search-status" role="status" aria-live="polite">Search needs JavaScript.</p>
   <ol class="search-results"></ol>
   <p class="search-help">The index holds {{ "{:,}".format(stats.docs) }} passages ({{ "{:,}".format(stats.text) }} paragraphs and verse groups, {{ "{:,}".format(stats.note) }} sidenotes, {{ "{:,}".format(stats.translation) }} translations). It is loaded when you first search and then kept for offline use.</p>
-  <p class="search-help">Matching ignores case, and Greek accents and breathings, so <em lang="grc">εντελεχεια</em> finds <em lang="grc">ἐντελέχεια</em>. Every word must occur in the same paragraph, verse group, sidenote or translation; put words in quotation marks to find them together. A translation is found in the passage it translates and is labelled with its source.</p>
+  <p class="search-help">Matching ignores case, and Greek accents and breathings, so <em lang="grc">εντελεχεια</em> finds <em lang="grc">ἐντελέχεια</em>. Words are matched whole (<em>test</em> does not find <em>potest</em>); end one with * to find the words that begin so (<em>melanchol*</em>). Every word must occur in the same paragraph, verse group, sidenote or translation; put words in quotation marks to find them together. A translation is found in the passage it translates and is labelled with its source.</p>
 </article>
 <script type="module" src="{{ root }}assets/search.js"></script>
 {% endblock %}

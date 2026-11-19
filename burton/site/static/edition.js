@@ -32,7 +32,9 @@ const settings = Object.assign({}, DEFAULTS, load());
 
 function apply() {
   body.classList.remove("mode-gloss", "mode-interlinear", "mode-english");
-  body.classList.add(`mode-${settings.mode}`);
+  // nothing but the text: the original as printed, whatever the other options say (owner, 2026-11-19)
+  const bare = !!settings.textonly;
+  body.classList.add(`mode-${bare ? "gloss" : settings.mode}`);
   if (settings.theme === "auto") delete html.dataset.theme;
   else html.dataset.theme = settings.theme;
   if (settings.size === "m") delete html.dataset.size;
@@ -41,10 +43,10 @@ function apply() {
   else html.dataset.latin = settings.latin;
   html.style.setProperty("--la-c-light", settings.laLight);
   html.style.setProperty("--la-c-dark", settings.laDark);
-  body.classList.toggle("show-gowland", !!settings.gowland);
-  body.classList.toggle("show-pages", !!settings.pages);
-  body.classList.toggle("show-abbr", !!settings.cites); // "Burton's abbreviations" in place of the expansions
-  body.classList.toggle("show-glosses", !!settings.glosses);
+  body.classList.toggle("show-gowland", !bare && !!settings.gowland);
+  body.classList.toggle("show-pages", !bare && !!settings.pages);
+  body.classList.toggle("show-abbr", bare || !!settings.cites); // "Burton's abbreviations" in place of the expansions
+  body.classList.toggle("show-glosses", !bare && !!settings.glosses);
   body.classList.toggle("hide-ic", !!settings.hideic);
   body.classList.toggle("only-gw", !!settings.onlygw);
   body.classList.toggle("text-only", !!settings.textonly);
@@ -131,6 +133,14 @@ if (panel && toggle) {
   panel.addEventListener("keydown", (ev) => {
     if (ev.key === "Escape") { ev.stopPropagation(); setPanel(false, true); }
   });
+}
+
+// The search, options and light/dark signs follow the reader down the page once the running head has scrolled away
+// (owner, 2026-11-19: "a small floating settings widget [that follows] you down the page in the upper right")
+const siteHead = document.querySelector("header.site");
+if (siteHead && "IntersectionObserver" in window) {
+  new IntersectionObserver(([e]) => body.classList.toggle("bar-float", !e.isIntersecting && e.boundingClientRect.top < 0))
+    .observe(siteHead);
 }
 
 // ---------------------------------------------------------------- contents panel
@@ -282,7 +292,8 @@ function layoutNotes() {
   // and what the reader chose not to see takes no room either (owner, 2026-11-18)
   const shown = (n) => !body.classList.contains("text-only") &&
     !(body.classList.contains("only-gw") && !n.classList.contains("mn-gw")) &&
-    !(body.classList.contains("hide-ic") && n.classList.contains("mn-ic"));
+    !(body.classList.contains("hide-ic") && n.classList.contains("mn-ic")) &&
+    !(n.classList.contains("mn-gl") && !body.classList.contains("show-glosses"));
   const all = markers.map((m) => [m, noteOf(m)])
     .filter(([, n]) => n && shown(n) && !(inLine && n.classList.contains("mn-tr")));
   for (const [, note] of all) {

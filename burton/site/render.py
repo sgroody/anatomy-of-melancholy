@@ -1112,7 +1112,7 @@ def mark_obscure_names(html_text: str, rx: re.Pattern, counts: dict) -> tuple[st
     return html_text, used
 
 
-def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
+def mark_glosses(html_text: str, items: list[dict], counts: dict) -> tuple[str, list[str]]:
     """Obsolete-word glosses (M8): the word is wrapped, and its sense follows it, hidden until the reader turns
     glosses on. Placed like cross-references, in the main text only (all found on the page as it is, then
     inserted from the end); a gloss that cannot be placed, is split by other markup or overlaps another is
@@ -1149,16 +1149,27 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> str:
             continue
         keep.append((hs, he, it))
         end = he
-    for hs, he, it in reversed(keep):
-        src = attr(it["source"])
-        note = (f'<span class="gl-s" data-src="{src}"><span class="sr-only">gloss: </span>{esc(it["sense"])}'
-                f'<span class="gl-l"> · {esc(it["label"])}</span></span>')
+    cards = []
+    for k, (hs, he, it) in enumerate(reversed(keep)):
+        # the sense in the margin, not in the line (owner, 2026-11-19: "Why is this in-line"); its source by name for
+        # Webster, the ◇ alone for what a model chose or drafted
+        src, gid = attr(it["source"]), f"ogl-{len(keep) - k}"
         resp = ' data-resp="gowland"' if it["source"] == "gowland" else ""
-        word = f'<span class="gl gl-{src}"{resp}><span class="gl-w">{html_text[hs:he]}</span>{note}</span>'
+        word = (f'<span class="gl gl-{src}"{resp}><span class="mref" data-for="{gid}" data-len="{he - hs}" '
+                f'aria-hidden="true"></span><span class="gl-w">{html_text[hs:he]}</span></span>')
         html_text = html_text[:hs] + word + html_text[he:]
+        if it["source"] == "webster1913":
+            full = "Sense chosen from Webster 1913 by machine: " + it["label"]
+            ascr = f'<span class="mn-src">Webster 1913</span> {prov(full)}'
+        elif it["source"] == "machine":
+            ascr = prov("Gloss " + it["label"])
+        else:
+            ascr = f'<span class="mn-src">{esc(it["label"])}</span>'
+        cards.append(f'<span class="mn mn-gl" id="{gid}" data-kind="gloss" role="note" aria-label="Gloss">'
+                     f'<span class="mn-k">gloss</span> <i>{esc(it["headword"])}</i> {esc(it["sense"])} {ascr}</span>')
         counts["glosses"] = counts.get("glosses", 0) + 1
         counts[f"glosses_{it['source']}"] = counts.get(f"glosses_{it['source']}", 0) + 1
-    return html_text
+    return html_text, cards[::-1]
 
 
 RESTORED_LABEL = "Not in Gowland’s edition: restored from"
@@ -1482,7 +1493,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.w("</article>\n")
     body = mark_burton_spans("".join(r.out), layer, r.counts, r.fp_lang)
     body = mark_xrefs(body, xrefs or [], r.counts)
-    body = mark_glosses(body, glosses or [], r.counts)
+    body, gl_cards = mark_glosses(body, glosses or [], r.counts)
     body = mark_restored(body, restored or {}, r.counts, restored_read)
     body, ic_cards = mark_inline_cites(body, {**(inline_cites or {}), **(inline_cites_model or {})}, r.counts, psalms)
     body, used = mark_names(body, names, name_ids or {}, r.counts)
@@ -1496,7 +1507,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
         data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
         script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
         body = body.replace("</article>\n", script + "\n</article>\n")
-    cards = list(r.cards) + ic_cards
+    cards = list(r.cards) + ic_cards + gl_cards
     if profile == "private" and gowland_entries:
         body, gw = mark_gowland(body, gowland_entries, r.counts)
         cards += gw

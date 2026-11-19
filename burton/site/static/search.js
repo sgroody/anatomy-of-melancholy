@@ -51,8 +51,10 @@ function terms(q) {
   const re = /"([^"]+)"|“([^”]+)”|(\S+)/g;
   let m;
   while ((m = re.exec(q))) {
-    const t = normalise((m[1] || m[2] || m[3]).replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "")).trim();
-    if (t) out.push(t.replace(/\s+/g, " "));
+    const raw = m[1] || m[2] || m[3];
+    const star = !m[1] && !m[2] && /\*$/.test(raw); // "melanchol*": words that begin so
+    const t = normalise(raw.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "")).trim();
+    if (t) out.push(t.replace(/\s+/g, " ") + (star ? "*" : ""));
   }
   return out;
 }
@@ -87,14 +89,25 @@ function tagScripts(s) {
   return out;
 }
 
+// Whole words only (owner, 2026-11-19: "test" found "Potest"); a term ending in * matches the beginnings of words.
+// -> [position, length] of the first match at or after `from`, or null.
+const WORDCH = /[\p{L}\p{N}]/u;
+function wordAt(n, t, from = 0) {
+  const pre = t.endsWith("*"), w = pre ? t.slice(0, -1) : t;
+  if (!w) return null;
+  for (let p = n.indexOf(w, from); p >= 0; p = n.indexOf(w, p + 1)) {
+    if ((p === 0 || !WORDCH.test(n[p - 1])) && (pre || !WORDCH.test(n[p + w.length] || " "))) return [p, w.length];
+  }
+  return null;
+}
+
 // A window of the text around the first match, with every match marked.
 function snippet(text, ts) {
   const [n, map] = mapped(text.replace(/\s+/g, " "));
   const flat = text.replace(/\s+/g, " ");
   const hits = [];
   for (const t of ts) {
-    let p = n.indexOf(t);
-    while (p >= 0) { hits.push([map[p], map[p + t.length]]); p = n.indexOf(t, p + t.length); }
+    for (let h = wordAt(n, t); h; h = wordAt(n, t, h[0] + h[1])) hits.push([map[h[0]], map[h[0] + h[1]]]);
   }
   hits.sort((a, b) => a[0] - b[0]);
   const first = hits.length ? hits[0][0] : 0;
@@ -168,7 +181,7 @@ async function run(q, scope) {
   for (let i = 0; i < norms.length; i++) {
     if (!kinds.has(index.docs[i][1])) continue;
     const n = norms[i];
-    if (ts.every((t) => n.includes(t))) found.push(i);
+    if (ts.every((t) => wordAt(n, t))) found.push(i);
   }
   render(/^["“].*["”]$/.test(q) ? q : `“${q}”`, ts, scope, found, SHOW);
 }
