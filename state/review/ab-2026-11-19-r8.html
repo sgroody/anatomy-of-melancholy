@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader A/B round 8</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root { --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d; --panel: #efe9dc;
+  --la: #2c6150; --cite: #4b5d80; --bible: #66661f; --hot: color-mix(in srgb, #d9a520 26%, transparent); color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e;
+  --accent: #e5927a; --panel: #24211d; --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a; --panel: #24211d;
+  --la: #8cc9b3; --cite: #9fb0d4; --bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", Georgia, serif; font-size: 1.12rem; line-height: 1.5; font-variant-numeric: oldstyle-nums; }
+.wrap { max-width: 1400px; margin: 0 auto; padding: 1.5rem 16px 6rem; }
+h1 { font-weight: 400; margin: 0 0 0.3rem; } .intro, .q, .small { color: var(--muted); } .intro { max-width: 54rem; } .small { font-size: 0.86em; }
+.theme-btn { float: right; font: inherit; font-size: 0.85rem; background: none; color: var(--muted); border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.6rem; cursor: pointer; }
+section.test { border-top: 1px solid var(--rule); padding: 1.6rem 0 1rem; }
+section.test > h2 { font-weight: 400; font-size: 1.35rem; margin: 0; } .tn { color: var(--accent); margin-right: 0.4rem; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: 1.2rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.1rem 0.8rem; } .opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; } .ol b { color: var(--accent); }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.9rem; flex-wrap: wrap; }
+.pick button, .summary button { font: inherit; font-size: 0.9rem; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.25rem 0.8rem; cursor: pointer; }
+.pick button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.pick input { font: inherit; font-size: 0.9rem; flex: 1; min-width: 12rem; background: transparent; color: var(--ink); border: none; border-bottom: 1px solid var(--rule); }
+.pg { display: grid; grid-template-columns: minmax(0, 1fr) 13.5rem; gap: 1.3rem; }
+.tx { margin: 0; text-align: justify; hyphens: auto; }
+.mg { font-size: 0.82rem; line-height: 1.35; } .mg .n { margin: 0 0 0.6rem; padding-left: 0.5rem; border-left: 2px solid transparent; }
+.kl { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.3rem; color: var(--cite); }
+.kl.b { color: var(--bible); }
+.verse { font-style: italic; }
+.lk { border-radius: 2px; cursor: pointer; transition: background 0.12s; } .hot { background: var(--hot) !important; }
+.ph { cursor: pointer; }
+.pA .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; padding: 0 0.05em; }
+.pB .ph { color: var(--cite); font-size: 0.9em; padding: 0 0.08em; }
+.pC .name { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 0.22em; }
+.pC .ph { color: var(--cite); font-size: 0.72em; vertical-align: 0.45em; line-height: 0; }
+.pD .ph { display: inline-block; width: 0.38em; height: 0.38em; border-radius: 50%; background: var(--cite); opacity: 0.75; vertical-align: 0.12em; margin: 0 0.12em; }
+.orig { color: var(--muted); font-size: 0.85em; display: block; margin-top: 0.15rem; }
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--accent); padding: 0.6rem 0; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.summary span { color: var(--muted); font-size: 0.9rem; }
+.ini-sheet img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.ini-demo .ini { float: left; width: 4.1em; height: 4.1em; margin: 0.3em 0.5em 0 0; }
+.ini-demo .sc { font-variant-caps: small-caps; letter-spacing: 0.04em; }
+@media (max-width: 40rem) { .pg { grid-template-columns: 1fr; } }
+/* round 7 */
+:root { --rubric: #8a2f1d; } :root[data-theme="dark"] { --rubric: #e5927a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --rubric: #e5927a; } }
+.pgm { position: relative; border: 1px solid var(--rule); border-radius: 4px; min-height: 9rem; padding: 0.8rem 2.6rem; font-size: 0.95rem; }
+.txm { text-align: justify; }
+.foot { display: flex; justify-content: space-between; margin-top: 1.5rem; border-top: 1px solid var(--rule); padding-top: 0.4rem; font-size: 0.85em; color: var(--muted); }
+.zones .zone { position: absolute; top: 0; bottom: 0; width: 2.2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); font-size: 0.75rem; text-decoration: none; }
+.zone span { font-size: 1.6rem; } .zone i { writing-mode: vertical-rl; margin-top: 0.4rem; opacity: 0; }
+.zl { left: 0; } .zr { right: 0; } .zone.hov { background: color-mix(in srgb, var(--rubric) 7%, transparent); color: var(--rubric); } .zone.hov i { opacity: 1; }
+.arrow { position: absolute; top: 45%; font-size: 1.6rem; color: var(--muted); } .al { left: 0.6rem; } .ar { right: 0.6rem; }
+.head { display: flex; justify-content: space-between; font-size: 0.8em; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin: -0.4rem -1.8rem 0.6rem; }
+.head .ttl { font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--ink); }
+.mgm { font-size: 0.82rem; line-height: 1.35; max-width: 16rem; }
+.mgm .bn { margin: 0 0 0.6rem; }
+.k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.lt { color: var(--rubric); font-variant-numeric: lining-nums; }
+.lt.box { display: inline-block; min-width: 1.05em; text-align: center; border: 1px solid var(--rubric); border-radius: 2px; line-height: 1.15; font-size: 0.85em; }
+.lt.fill { display: inline-block; min-width: 1.05em; text-align: center; background: var(--rubric); color: var(--paper); border-radius: 2px; line-height: 1.2; font-size: 0.85em; }
+sup.lt { font-size: 0.7em; }
+.three { display: grid; grid-template-columns: 12rem minmax(0, 1fr) 12rem; gap: 1rem; align-items: start; font-size: 0.95rem; }
+.rl { border-left: 2px solid var(--rubric); padding-left: 0.45rem; } .rr { border-right: 2px solid var(--rubric); padding-right: 0.45rem; text-align: right; }
+.mgm.l .rr { text-align: left; }
+/* round 8 */
+.fm { text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.05em; font-size: 0.85rem; color: var(--muted); }
+.fm .cur { color: var(--rubric); }
+.fmA { display: inline-block; border: 1px solid var(--rule); outline: 1px solid var(--rule); outline-offset: 2px; padding: 0.4rem 1.4rem; line-height: 1.55; }
+.fmA .cur::before { content: "❧ "; }
+.fmB span { margin: 0 0.45rem; cursor: help; } .fmB .cur { margin: 0 0.6rem; }
+.fmC a { color: var(--muted); } .fmC .all { margin-left: 1rem; color: var(--accent); }
+.fmD { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1.2rem; text-align: left; }
+.fmD ol { list-style: none; margin: 0; padding: 0 0.6rem 0 0; border-right: 1px solid var(--rule); line-height: 1.7; }
+.fmD .cur { border-right: 2px solid var(--rubric); margin-right: -0.65rem; padding-right: 0.5rem; display: block; }
+.pgm.fmpage { padding: 0.8rem 1rem; } .pgm .ded { text-align: center; letter-spacing: 0.2em; margin-top: 0.8rem; }
+.demo { border: 1px solid var(--rule); border-radius: 4px; padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+.demo .la { color: var(--la); font-style: italic; } .demo .tr { color: var(--muted); font-size: 0.85em; }
+.demo .opt-line { font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0; } .demo .opt-line b { color: var(--ink); font-weight: 400; }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.9rem; } .ba > div { border: 1px dashed var(--rule); padding: 0.3rem 0.5rem; }
+.ba .h { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); display: block; }
+.flash { outline: 2px solid var(--rubric); outline-offset: 2px; border-radius: 2px; }
+.showme { font: inherit; font-size: 0.8rem; color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0 0.4rem; margin-left: 0.4rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<button class="theme-btn" type="button" id="theme">Dark / light</button>
+<h1>Reader A/B round 8</h1>
+<p class="intro">Two questions from your notes of 2026-11-19: a better design for the front matter’s contents (F1), and a way for the reading options to show what they change (D1). Pick one per question, or Neither, and add a note; “Copy my choices” gives text to paste back.</p>
+
+<section class="test" data-test="F1">
+<h2><span class="tn">F1</span>The front matter’s contents</h2>
+<p class="q">At the head of each front-matter page (the Dedication shown): how should the seven pieces, and where you are, be shown?</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · a small ruled tablet, one piece a line, a hedera before the one you are on</div>
+    <div class="pgm fmpage"><div class="fm"><div class="fmA">The Argument of the Frontispiece<br><span class="cur">Dedication</span><br>Democritus Junior ad Librum suum<br>The Author’s Abstract of Melancholy<br>Democritus Junior to the Reader<br>Lectori male feriato<br>Heraclite fleas, misero sic convenit aevo</div></div><div class="ded">HONORATISSIMO DOMINO…</div></div></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · the seven as Roman numerals in one short line; yours spelled out, the others named on hover</div>
+    <div class="pgm fmpage"><div class="fm fmB"><span title="The Argument of the Frontispiece">I</span><span class="cur">II · Dedication</span><span title="Democritus Junior ad Librum suum">III</span><span title="The Author’s Abstract of Melancholy">IV</span><span title="Democritus Junior to the Reader">V</span><span title="Lectori male feriato">VI</span><span title="Heraclite fleas, misero sic convenit aevo">VII</span></div><div class="ded">HONORATISSIMO DOMINO…</div></div></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · only where you are, with the pieces before and after; “all seven” opens the list</div>
+    <div class="pgm fmpage"><div class="fm fmC"><a>‹ The Argument of the Frontispiece</a> · <span class="cur">Dedication</span> · <a>Democritus Junior ad Librum suum ›</a><span class="all">all seven ▾</span></div><div class="ded">HONORATISSIMO DOMINO…</div></div></div>
+  <div class="opt" data-o="D"><div class="ol"><b>D</b> · down the left margin, like a thumb index, yours marked by the red rule</div>
+    <div class="pgm fmpage"><div class="fm fmD"><ol><li>The Argument of the Frontispiece</li><li><span class="cur">Dedication</span></li><li>Democritus Junior ad Librum suum</li><li>The Author’s Abstract of Melancholy</li><li>Democritus Junior to the Reader</li><li>Lectori male feriato</li><li>Heraclite fleas, misero sic convenit aevo</li></ol><div class="ded" style="font-variant-caps:normal;letter-spacing:.2em;color:var(--ink)">HONORATISSIMO DOMINO…</div></div></div></div>
+</div>
+</section>
+
+<section class="test" data-test="D1">
+<h2><span class="tn">D1</span>Showing what the reading options do</h2>
+<p class="q">How should the options panel show what each option changes?</p>
+<div class="opts">
+  <div class="opt" data-o="A"><div class="ol"><b>A</b> · a few lines of Burton at the head of the panel, changing live with every option</div>
+    <div class="demo"><div class="opt-line">Sample: <b>these lines change as you change the options below</b></div><p style="margin:0.3rem 0">So <i class="la">Seneca</i> holds, <span class="la">pro remedio est dolor</span><span class="tr"> [grief is a remedy]</span>, and <u style="text-decoration-color:var(--rule)">Nevisanus</u> grants it<sup style="color:var(--cite)">§</sup>.</p><div class="opt-line">☐ Hide in-line citations (§) &nbsp; ☐ Hide all notes &nbsp; ◉ Original; translation in the margin</div></div></div>
+  <div class="opt" data-o="B"><div class="ol"><b>B</b> · a small before and after beside an option when you point at it</div>
+    <div class="demo"><div class="opt-line">☐ <b>Burton’s abbreviations, not written out</b> (pointed at)</div><div class="ba"><div><span class="h">off</span>Girolamo Mercuriale, <i>De affectibus</i>, book 1</div><div><span class="h">on</span><i>Mercurialis de affect. lib. 1</i></div></div></div></div>
+  <div class="opt" data-o="C"><div class="ol"><b>C</b> · “show me” beside each option: the page rings, for a moment, a place the option changes</div>
+    <div class="demo"><div class="opt-line">☐ <b>Hide in-line citations (§)</b><button class="showme" type="button">show me</button></div><p style="margin:0.3rem 0">…and <u style="text-decoration-color:var(--rule)">Nevisanus</u> grants it<sup class="flash" style="color:var(--cite)">§</sup>, as the page itself shows: the § it would hide is ringed for a moment.</p></div></div>
+</div>
+</section>
+
+<div class="summary"><button type="button" id="copy">Copy my choices</button><span id="sumtxt">No choices yet.</span></div>
+</div>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+  const dark = () => getComputedStyle(document.documentElement).colorScheme.includes("dark");
+  const swap = () => $$("img[data-dark]").forEach((i) => { i.dataset.light ||= i.getAttribute("src"); i.src = dark() ? i.dataset.dark : i.dataset.light; });
+  const th = store.get("ab-theme"); if (th) document.documentElement.dataset.theme = th; swap();
+  $("#theme").onclick = () => { document.documentElement.dataset.theme = dark() ? "light" : "dark"; store.set("ab-theme", document.documentElement.dataset.theme); swap(); };
+  const scopeOf = (el) => el.closest(".opt") || document;
+  document.addEventListener("mouseover", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.add("hot")); });
+  document.addEventListener("mouseout", (e) => { const l = e.target.closest(".lk"); if (l) $$(`.lk[data-k="${l.dataset.k}"]`, scopeOf(l)).forEach((x) => x.classList.remove("hot")); });
+  const choices = store.get("ab8-choices") || {};
+  const render = () => { const parts = Object.entries(choices).filter(([, v]) => v.o || v.note).map(([k, v]) => `${k}: ${v.o || "—"}${v.note ? ` (${v.note})` : ""}`);
+    $("#sumtxt").textContent = parts.length ? parts.join(" · ") : "No choices yet.";
+    $$("section.test").forEach((s) => { const c = choices[s.dataset.test] || {}; $$(".opt[data-o]", s).forEach((o) => o.classList.toggle("chosen", c.o === o.dataset.o));
+      $$(".pick button", s).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === c.o))); }); store.set("ab8-choices", choices); };
+  $$("section.test").forEach((s) => { const opts = $$(".opt[data-o]", s).map((o) => o.dataset.o); const bar = document.createElement("div"); bar.className = "pick";
+    bar.innerHTML = [...opts, "Neither"].map((o) => `<button type="button" data-v="${o}">${o === "Neither" ? "Neither" : "Prefer " + o}</button>`).join("") + `<input type="text" placeholder="note (optional)" aria-label="Note for ${s.dataset.test}">`;
+    s.appendChild(bar); const inp = $("input", bar); inp.value = (choices[s.dataset.test] || {}).note || "";
+    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const c = choices[s.dataset.test] ||= {}; c.o = c.o === b.dataset.v ? "" : b.dataset.v; render(); });
+    inp.addEventListener("input", () => { (choices[s.dataset.test] ||= {}).note = inp.value; render(); }); });
+  $("#copy").onclick = async () => { const t = "Round 8 choices: " + $("#sumtxt").textContent; try { await navigator.clipboard.writeText(t); } catch { prompt("Copy this:", t); } };
+  render();
+})();
+</script>
+</body>
+</html>

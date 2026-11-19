@@ -302,3 +302,70 @@ left and right edges of the window) "but it should be some stylized symbol, not 
 printer's manicule, ☜ ☞, in EB Garamond) · **P2 C** (Burton's note letters in a small filled red box, the letter in the
 page colour) · **P3 B** (the rubric rule on the side facing the text), to be revisited: listed in
 state/review/to-revisit.md.
+
+# The synopses re-set by the printer's rules (side project, 2026-11-19)
+
+Owner: look at the layout of the printed synopsis sheets and find a way to show them that flows on the web, on the
+front page and at the opening of each Partition. Prototype: `state/review/synopsis-sheets-2026-11-19.html` (served
+by `review-pages`, port 8790; it borrows fonts and images from site/private), built by
+`tools/synopsis_sheets/proto.py` from `data/synopses/pN.json` (words verbatim; nothing in the edition changed).
+
+* **The sheets' rules (R1-R7).** Heads that divide are set narrow, leaves run to the edge; a head stands at its
+  brace's middle; a brace is pieces (curls, beak, rule), never stretched; "Or" in the members' column; leaves hang
+  their turnovers; the italic locators and signs are the finding aids; short of width the printer gives way branch by
+  branch (narrower heads, then a tall head turned, as "Not necessary, as Memb. 4 Sect. 2." on sheet A).
+* **One component, three places.** The same sheet at full width, at a Partition's head (first sheet open, the others
+  one line each with the sign column ♈ A ♊ ♉ B ♋ C) and on the front page (the three Partitions on one lighter,
+  editorial brace, each folded to its sheets' opening lines). A brace is the fold button; a folded branch is a stub
+  with its count ("21 heads"); pointing at a head inks the braces above it.
+* **Responsive by the same rule (R7).** A short script measures each branch: a head stays beside its members while the
+  width holds its words; a tall head with room along its brace is turned; otherwise the head is set over its members
+  with a bracket. Deepest branches give way first. Without script, container queries give a rougher version.
+  Measured on P1 ♈ + A (53 nodes, 17 ms): full width 0 set over, 2 turned (as printed); 900 px 5 set over; 640 px 9;
+  390 px 19; no sideways scroll at any width (page 375 px wide on the phone preset).
+* **Locators are the links.** Burton's own words (*Subsect.* 4, "6, 7, 8" number by number, "2nd.", a label or column
+  heading where the locator is printed) link to the unit: 169/169 nodes with units. Sign links: 0 broken.
+* Not checked: axe on this page, print, keyboard-only use beyond the brace buttons' names. Known blemish: where several
+  nested branches are set over their members, their bracket ends gather at the bottom.
+* **For the owner (Q1-Q4 on the page):** adopt this as the form everywhere (replacing "As a sheet / As an outline"
+  and the front page's three boxes)? Turn tall heads as the printer did? Front page all folded, or the First
+  Partition's first sheet open? Locators as links, or the section-number chips as now?
+
+## Owner's answers (2026-11-19) and round 8
+
+Owner, on the first version: "This looks pretty great." Settled: **the form** is used wherever the synopses appear,
+with differences noted for the front page; **tall heads are turned**; **no ◇ on the synopses** ("the words are all
+Burton's"; the branching's machine provenance stays in data/synopses/pN.json and is not shown). The front page keeps
+its present layout, everything in one screen with the synopses folded; resting on a Partition's name opens it, not at
+once. Asked for: folded braces that open slowly on hover, "more organic" (A/B allowed); a better or more Burtonian
+word than "heads"; the synopsis labels on the front page redesigned.
+
+Round 8, on the same page (`state/review/synopsis-sheets-2026-11-19.html`, sticky switches at the top):
+* **H, opening on rest** (0.42 s rest, the brace inks red while waiting; leaving a branch opened this way folds it
+  after 0.9 s; a click keeps it; touch and keyboard open by tap/Enter only): **H1 Unfurl**, the whole branch in one
+  movement (height grows from the stub over ~1.15 s, members fade in from the beak outward); **H2 Grow**, one level at
+  a time (~0.95 s apiece) while the pointer rests. Measured in the pane: H1 0 -> 446 px over ~1.1 s, folding ~0.75 s
+  after the linger; H2 inner branches open 0 -> 2 -> 5 -> 8 at ~1 s steps.
+* **C, the count on a folded brace:** C1 "25 parts" (Burton's anatomy word), C2 "branches", C3 "&c.", C4 numeral;
+  a folded Partition counts "8 sheets".
+* **L, the front page's labels:** L1 "The Synopses" braced to the three Partitions (a small sheet; editorial braces
+  lighter); L2 a heading, with rubric numerals I II III in the key column.
+* Front mock at 1400 x 900: 899 px of content in a 900 px frame, so it fits one screen folded.
+* Fixed on the way: a branch set over its members collapsed to its stub's height once `.kw` had a min-height
+  (flex-basis 0 in a column); after the fix, 0 spills and no sideways scroll in all three frames at 390, 640 and full.
+* Not checked: axe, print, Safari/Firefox (the height animation needs `interpolate-size`, Chrome 129+; elsewhere it
+  opens without the growth). At phone width the counts take a fair share of each folded line.
+
+# The owner's notes of 2026-11-19 (second set)
+
+* Search matched parts of words ("test" found "Potest"): words now match whole; a trailing * matches beginnings.
+* "Why is this in-line: And this belike gloss:…": the obsolete-word option put the sense, and the model's name, in
+  the line. Those glosses now stand in the margin as cards (Webster by name, a model by its ◇), shown with the option.
+* "When toggling notes away the languages should not still be different colors": "Hide all notes" now gives the text
+  as printed: no language colours or tints, no underlines or links in the line, Burton's abbreviations, the original
+  in place of any translation mode, no glosses, brackets or page numbers.
+* Option labels shortened ("Hide all notes (the text as printed)" for "Nothing but the text", and the rest).
+* The search, options and light/dark signs float at the top right once the running head has scrolled away; the
+  options open under them.
+* Design questions, round 8 (state/review/ab-2026-11-19-r8.html): F1 the front matter's contents (tablet; numerals;
+  before and after; thumb index), D1 showing what the options do (live sample; before/after; "show me").
