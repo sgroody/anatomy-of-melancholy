@@ -118,6 +118,8 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--compare", action="store_true", help="first rater against the second; the rules' outcome")
     s.add_argument("--all", action="store_true", help="rate every note")
     s.add_argument("--sample", action="store_true", help="rate the spot-check sample's notes only")
+    s.add_argument("--audit-shown", action="store_true", help="the owner's remedy: blind audit of every note the "
+                                                              "rating would show -> data/layers/note-audits/")
     s.add_argument("--model", default="claude-opus-5-5")
     s.add_argument("--budget-usd", type=float, default=None)
     s = sub.add_parser("cite-audit", help="held-out check of the citation expansions, with Gowland's notes as "
@@ -369,6 +371,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.all or args.sample:
             print(notes_rate.run_rate(model=args.model, budget_usd=args.budget_usd,
                                       which=notes_rate.sample_ids() if args.sample else None))
+        if args.audit_shown:
+            print(notes_rate.run_audit_shown(model=args.model, budget_usd=args.budget_usd))
         if args.compare:
             print(json.dumps(notes_rate.compare(), ensure_ascii=False, indent=1))
     elif args.cmd == "cite-audit":

@@ -1,0 +1,109 @@
+purpose: 'Fresh spot check of the notes that would be shown in the margin (owner''s remedy, 2026-11-19): rated 3 and not
+  doubtful by note-rate-v1, judged sound by the blind auditor note-audit-v1. Drawn, and the rules fixed, before any labelling.'
+drawn: '2026-11-19'
+seed: 20261121
+population: 1432
+raters: 'first: Claude in session; second: a different model blind (claude-sonnet-5-5, prompt note-audit-v1), so that the
+  auditor that chose the notes is not asked again. All three readers are of one family.'
+labels:
+  accuracy:
+    sound: every claim of fact in the note is right, or hedged as it should be
+    doubtful: a claim that may be wrong, or is stated more surely than the evidence allows
+    wrong: a claim of fact that is wrong (a source, a date, a meaning, what Burton did)
+  usefulness:
+    3: 'tells a reader something worth knowing beside the text: an allusion, the source and how Burton bends it, a term''s
+      sense, context'
+    2: correct but slight; a reader loses little without it
+    1: a translator's working note (word choice, grammar, literal sense) or a repetition of the translation
+rules:
+  S1: 'accuracy: no note in the sample adjudicated `wrong`'
+  S2: 'accuracy: at most 3 notes (5 %) adjudicated `doubtful`'
+  on_failure: reported with its numbers; no note is shown in the margin until the owner decides
+sample:
+- 1.1.1.1-f24
+- 1.1.1.1-f36
+- 1.1.2.5-f1
+- 1.1.3.4-f10
+- 1.2.3.11-f2
+- 1.2.3.12-f8
+- 1.2.3.13-f2
+- 1.2.3.13-f36
+- 1.2.3.14-f76
+- 1.2.3.4-f1
+- 1.2.4.6-f20
+- 1.2.4.7-f81
+- 1.3.1.2-f67
+- 1.3.1.4-f45
+- 1.3.3.1-f9
+- 1.4.1.1-f40
+- 1.4.1.1-f43
+- 2.1.1.1-f14
+- 2.2.3.1-f29
+- 2.2.4.1-f267
+- 2.2.4.1-f83
+- 2.2.6.1-f12
+- 2.2.6.4-f35
+- 2.3.2.1-f57
+- 2.3.3.1-f38
+- 2.3.3.1-f63
+- 2.3.6.1-f19
+- 2.5.3.1-f6
+- 3.1.2.1-f14
+- 3.1.2.3-f21
+- 3.1.3.1-f22
+- 3.1.3.1-f28
+- 3.1.3.1-f35
+- 3.2.1.2-f116
+- 3.2.1.2-f22
+- 3.2.1.2-f62
+- 3.2.1.2-f67
+- 3.2.2.1-f30
+- 3.2.2.2-f35
+- 3.2.2.3-f46
+- 3.2.2.4-f86
+- 3.2.3.1-f305
+- 3.2.3.1-f311
+- 3.2.3.1-f336
+- 3.2.5.3-f114
+- 3.2.5.3-f24
+- 3.3.4.1-f24
+- 3.3.4.1-f42
+- 3.3.4.2-f47
+- 3.4.2.1-f74
+- 3.4.2.6-f38
+- 3.4.2.6-f53
+- djr-f1016
+- djr-f131
+- djr-f1420
+- djr-f1484
+- djr-f379
+- djr-f547
+- djr-f768
+- djr-f911
+outcome:
+  date: '2026-11-19'
+  passed: true
+  items: 60
+  agreement:
+    accuracy: 54/60 before adjudication
+    pairs (first/second):
+      sound/doubtful: 5
+      sound/sound: 54
+      sound/wrong: 1
+  adjudicated:
+    djr-f379: 'sound: the Perseus Lucan (10.407) reads ''Nulla fides pietasque viris, qui castra sequuntur'', as the note
+      says; the second rater''s text is Burton''s own'
+    1.3.1.2-f67: 'sound: Cicero, Ad familiares 5.12.1 ''pudor quidam paene subrusticus'' (Perseus text)'
+    3.3.4.2-f47: 'sound: Gellius 5.11.14 ''Ennius ... quae stata forma forent'' (Perseus text)'
+    djr-f1420: 'sound: Historia Augusta, Hadrian 18 ''decoctores bonorum suorum ... catomidiari in amphitheatro'' (Perseus
+      text)'
+    1.1.1.1-f36: 'sound: the note calls the ''ex te'' wording a proverbial form of Hosea 13:9, which it is, and claims no
+      more'
+    djr-f131: 'sound: plagiarius means a plagiarist; ''a trifler, a trivant'' are further insults, as the note says'
+  S1: 'pass: 0/60 wrong'
+  S2: 'pass: 0/60 doubtful (limit 3)'
+  consequence: The notes that are rated 3, not doubtful, and judged sound by the auditor (1,432) may stand in the margin,
+    each with its ◇.
+  limits: 60 of 1,432 with none wrong bounds the share of wrong notes below about 5 % (95 %), not to zero; all readers are
+    of one model family; five of the six disagreements were the second rater unable to confirm, settled from the Perseus
+    texts in data/source/corpora.

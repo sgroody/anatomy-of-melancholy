@@ -219,14 +219,60 @@ def write_layer(current: dict[str, str], rated: dict[str, dict]) -> Counter:
 
 
 def shows(rec: dict | None) -> bool:
+    """Rated for the margin: most useful, not flagged doubtful (the remedy adds the audit: `shown`)."""
     return bool(rec) and rec["usefulness"] == 3 and not rec["doubtful"]
 
 
+# The owner's remedy (2026-11-19, after R2 failed): every note the rating would show is read by the blind auditor
+# (note-audit-v1), and only those it judges sound are shown; then a fresh spot check of what would show.
+AUDITS = paths.LAYERS / "note-audits"
+
+
+def _audits() -> dict[str, dict]:
+    out = {}
+    for f in AUDITS.glob("*.json"):
+        out.update(json.loads(f.read_text(encoding="utf-8")))
+    return out
+
+
+def run_audit_shown(model: str = PRIMARY_MODEL, packet_size: int = 12, budget_usd: float | None = None) -> dict:
+    """Audit every note the rating would show, once per note text (a changed note is audited again)."""
+    rated, have = _layer(), _audits()
+    want = [p for p, r in rated.items() if shows(r) and (have.get(p) or {}).get("note_hash") != r["note_hash"]]
+    todo = [_brief(i, False) for i in audit.items(want)] if want else []
+    date = datetime.now(UTC).date().isoformat()
+
+    def sink(answers):
+        by_unit: dict[str, dict] = {}
+        for a in answers:
+            have[a["id"]] = {"accuracy": a["accuracy"], "accuracy_reason": a["accuracy_reason"],
+                             "usefulness": a["usefulness"], "note_hash": rated[a["id"]]["note_hash"],
+                             "by": "machine", "model": model, "prompt": AUDIT_PROMPT, "date": date}
+        for p, r in have.items():
+            by_unit.setdefault(p.rsplit("-", 1)[0], {})[p] = r
+        AUDITS.mkdir(parents=True, exist_ok=True)
+        for unit, recs in by_unit.items():
+            atomic_write_text(AUDITS / f"{unit}.json",
+                              json.dumps(recs, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+
+    spent = _ask(AUDIT_PROMPT, AUDIT_SCHEMA, todo, model, packet_size, sink, budget_usd)
+    shown_now = [p for p, r in rated.items() if shown(r, have.get(p))]
+    return {"would_show_by_rating": sum(shows(r) for r in rated.values()), "audited_now": len(todo),
+            "audited_sound": len(shown_now), "cost_usd_list": round(spent, 2)}
+
+
+def shown(rec: dict | None, aud: dict | None) -> bool:
+    """What the reader shows (once the fresh spot check passes): rated for the margin, and judged sound by the blind
+    auditor for this very note text."""
+    return shows(rec) and bool(aud) and aud["accuracy"] == "sound" and aud["note_hash"] == rec["note_hash"]
+
+
 def passed() -> bool:
-    """Whether the spot check's outcome allows notes in the margin (set by `compare` from the adjudicated labels)."""
-    if not SAMPLE.exists():
+    """Whether notes may stand in the margin: the first spot check failed (R2), so it is the fresh one's outcome
+    (data/eval/notes-spotcheck2.yaml, set from the adjudicated labels) that decides (owner's remedy, 2026-11-19)."""
+    if not SAMPLE2.exists():
         return False
-    return (yaml.safe_load(SAMPLE.read_text(encoding="utf-8")).get("outcome") or {}).get("passed") is True
+    return (yaml.safe_load(SAMPLE2.read_text(encoding="utf-8")).get("outcome") or {}).get("passed") is True
 
 
 def compare() -> dict:
@@ -248,6 +294,74 @@ def compare() -> dict:
                            "within_one": sum(n for (a, b), n in use.items() if abs(a - b) <= 1),
                            "pairs": {f"{a}/{b}": n for (a, b), n in sorted(use.items())}},
             "wrong": wrong, "R1": r1, "shown_wrong": shown_wrong, "R2": r2 if rated else None,
+            "disagreements": [{"id": i, "first": first[i]["accuracy"], "second": second[i]["accuracy"],
+                               "second_reason": second[i]["accuracy_reason"]} for i in both
+                              if first[i]["accuracy"] != second[i]["accuracy"]]}
+
+
+# The fresh spot check the remedy asks for (2026-11-19): a seeded sample of the notes that would now be shown (rated 3,
+# not doubtful, judged sound by the auditor), rules fixed before labelling. The second rater is a different model from
+# the auditor that chose these notes, so it is not the same reader agreeing with itself.
+SAMPLE2 = paths.ROOT / "data" / "eval" / "notes-spotcheck2.yaml"
+FIRST2 = paths.ROOT / "data" / "eval" / "notes-spotcheck2-gold.jsonl"
+SECOND2 = paths.ROOT / "data" / "eval" / "notes-spotcheck2-rater2.jsonl"
+SEED2, N2, MODEL2 = 20261121, 60, "claude-sonnet-5-5"
+
+
+def shown_population() -> list[str]:
+    rated, auds = _layer(), _audits()
+    return sorted(p for p, r in rated.items() if shown(r, auds.get(p)))
+
+
+def draw2() -> dict:
+    if SAMPLE2.exists():
+        raise SystemExit(f"{SAMPLE2.name} exists: the spot check is drawn once")
+    pop = shown_population()
+    pick = sorted(random.Random(SEED2).sample(pop, N2))
+    doc = {
+        "purpose": "Fresh spot check of the notes that would be shown in the margin (owner's remedy, 2026-11-19): "
+                   "rated 3 and not doubtful by note-rate-v1, judged sound by the blind auditor note-audit-v1. "
+                   "Drawn, and the rules fixed, before any labelling.",
+        "drawn": datetime.now(UTC).date().isoformat(), "seed": SEED2, "population": len(pop),
+        "raters": f"first: Claude in session; second: a different model blind ({MODEL2}, prompt {AUDIT_PROMPT}), so "
+                  "that the auditor that chose the notes is not asked again. All three readers are of one family.",
+        "labels": yaml.safe_load(SAMPLE.read_text(encoding="utf-8"))["labels"],
+        "rules": {
+            "S1": "accuracy: no note in the sample adjudicated `wrong`",
+            "S2": "accuracy: at most 3 notes (5 %) adjudicated `doubtful`",
+            "on_failure": "reported with its numbers; no note is shown in the margin until the owner decides"},
+        "sample": pick,
+        "outcome": None,
+    }
+    atomic_write_text(SAMPLE2, yaml.safe_dump(doc, allow_unicode=True, sort_keys=False, width=118))
+    return {"population": len(pop), "sample": len(pick)}
+
+
+def run_audit2(model: str = MODEL2, packet_size: int = 12) -> dict:
+    ids = yaml.safe_load(SAMPLE2.read_text(encoding="utf-8"))["sample"]
+    done = {k: v for k, v in _jsonl(SECOND2).items() if v.get("prompt") == AUDIT_PROMPT}
+    todo = [_brief(i, False) for i in audit.items(ids) if i["id"] not in done]
+    date = datetime.now(UTC).date().isoformat()
+
+    def sink(answers):
+        for a in answers:
+            done[a["id"]] = {**a, "by": "machine", "model": model, "prompt": AUDIT_PROMPT, "date": date}
+        atomic_write_text(SECOND2, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
+                                           for x in sorted(done)))
+
+    spent = _ask(AUDIT_PROMPT, AUDIT_SCHEMA, todo, model, packet_size, sink)
+    return {"audited": len(done), "cost_usd_list": round(spent, 2)}
+
+
+def compare2() -> dict:
+    """The first rater (in session, adjudicated where the two disagree) against the second, and the rules' outcome."""
+    first, second = _jsonl(FIRST2), _jsonl(SECOND2)
+    both = sorted(set(first) & set(second))
+    acc = Counter((first[i]["accuracy"], second[i]["accuracy"]) for i in both)
+    wrong = [i for i in both if first[i]["accuracy"] == "wrong"]
+    doubtful = [i for i in both if first[i]["accuracy"] == "doubtful"]
+    return {"items": len(both), "accuracy_pairs": {f"{a}/{b}": n for (a, b), n in sorted(acc.items())},
+            "wrong": wrong, "S1": not wrong, "doubtful": doubtful, "S2": len(doubtful) <= 3,
             "disagreements": [{"id": i, "first": first[i]["accuracy"], "second": second[i]["accuracy"],
                                "second_reason": second[i]["accuracy_reason"]} for i in both
                               if first[i]["accuracy"] != second[i]["accuracy"]]}
