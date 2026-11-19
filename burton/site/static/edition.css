@@ -103,7 +103,7 @@ footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.
 .pager-dir { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .pager-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .pager a:hover .pager-t { text-decoration: underline; text-decoration-color: var(--accent); }
-/* Next and Previous as the window's edges (owner, 2026-11-19: P1 B): a faint manicule at mid-height; pointing at the
+/* Next and Previous as the window's edges (owner, 2026-11-19: P1 B): a faint hedera (☙ ❧) at mid-height; pointing at the
    edge tints it and shows the title; on narrow or touch screens the pager at the foot stays */
 .side-zone { display: none; }
 @media (min-width: 1100px) and (hover: hover) {
@@ -922,6 +922,15 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .ok-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
 .ok-mark { color: var(--muted); display: inline-block; min-width: 0.8rem; }
 .ok-burton { color: var(--accent); border-left: 2px solid var(--accent); padding-left: 0.3rem; }
+/* the key in groups, each sign drawn as in the margin (owner, 2026-11-19: "the key is kind of unclear") */
+.opt-key .ok-g { min-width: 12rem; flex: 1 1 12rem; }
+.opt-key .ok-t { margin: 0 0 0.15rem; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); }
+.ok-rule { border-left: 2px solid var(--accent); padding-left: 0.35rem; }
+.ok-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center; background: var(--accent);
+  color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.8em; }
+.ok-dot { border-left: 1px dotted var(--muted); padding-left: 0.35rem; }
+.ok-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em; }
 /* what to show */
 .hide-ic .ic-m, .hide-ic .mn-ic { display: none !important; }
 .only-gw .unit .sidenote, .only-gw .unit a.nref, .only-gw .unit .mn:not(.mn-gw), .only-gw .unit .ic-m { display: none !important; }

@@ -58,11 +58,11 @@
 <main id="main" tabindex="-1">
 {% block main %}{% endblock %}
 </main>
-{# Next and Previous as the whole left and right edges of the window, the printer's manicule pointing the way, the title
-   on hover (owner, 2026-11-19: P1 B, "some stylized symbol, not a simple arrow"); wide windows only, the foot elsewhere #}
+{# Next and Previous as the whole left and right edges of the window, the printer's hedera (☙ ❧) marking the way, the title
+   on hover (owner, 2026-11-19: P1 B, "some stylized symbol, not a simple arrow"; the hedera, owner's choice); wide windows only, the foot elsewhere #}
 {% if prev or next %}<nav class="side-zones" aria-label="Turn the page">
-{% if prev %}<a class="side-zone sz-prev" rel="prev" href="{{ root }}{{ prev.href }}" aria-label="Previous: {% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">☜</span><span class="sz-t" aria-hidden="true">{% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html }}</span></a>{% endif %}
-{% if next %}<a class="side-zone sz-next" rel="next" href="{{ root }}{{ next.href }}" aria-label="Next: {% if next.number %}{{ next.number }} {% endif %}{{ next.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">☞</span><span class="sz-t" aria-hidden="true">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
+{% if prev %}<a class="side-zone sz-prev" rel="prev" href="{{ root }}{{ prev.href }}" aria-label="Previous: {% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">☙</span><span class="sz-t" aria-hidden="true">{% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html }}</span></a>{% endif %}
+{% if next %}<a class="side-zone sz-next" rel="next" href="{{ root }}{{ next.href }}" aria-label="Next: {% if next.number %}{{ next.number }} {% endif %}{{ next.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">❧</span><span class="sz-t" aria-hidden="true">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
 </nav>{% endif %}
 <footer class="site">
   {% if prev or next %}

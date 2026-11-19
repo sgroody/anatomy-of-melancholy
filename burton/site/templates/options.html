@@ -1,25 +1,34 @@
 <div class="opt-key" aria-label="Key to the colours and signs">
   <p class="ok-h">Key</p>
+  <div class="ok-g"><p class="ok-t">Languages</p>
   <ul class="ok-l">
     <li><span class="ok-sw" style="background:var(--la)"></span><i style="color:var(--la)">Latin</i></li>
     <li><span class="ok-sw" style="background:var(--grc)"></span><span style="color:var(--grc)">Greek</span></li>
     <li><span class="ok-sw" style="background:var(--enm)"></span><span style="color:var(--enm);font-variant-caps:small-caps">Middle English</span></li>
     <li><span class="ok-sw" style="background:var(--modern)"></span><i style="color:var(--modern)">Italian, French …</i></li>
-  </ul>
+  </ul></div>
+  <div class="ok-g"><p class="ok-t">Burton’s notes</p>
   <ul class="ok-l">
-    <li><span class="ok-mark ok-burton">a</span> Burton’s note</li>
-    <li><span class="ok-k">cites</span> <span class="ok-k">note</span> what his note is</li>
-    <li><span class="ok-k">trans.</span> a translation</li>
-    <li><span class="ok-k">Author trans.</span> Burton’s own</li>
-    <li><span class="ok-k" style="color:var(--k-cite)">cites</span> <span class="ok-k" style="color:var(--k-bible)">Bible</span> <span style="color:var(--k-cite)">§</span> a citation from the text</li>
-    {% if profile == "private" %}<li><span class="ok-k" style="color:var(--k-gloss)">gloss</span> <span class="ok-k" style="color:var(--k-expl)">note</span> <span class="ok-k" style="color:var(--k-cite)">source</span> Gowland’s notes</li>{% endif %}
-  </ul>
-  <ul class="ok-l">
-    {% if profile == "private" %}<li><span class="mn-src"><span class="src-g">g</span></span> Gowland</li>{% endif %}
-    <li><span class="mn-src"><span class="src-dj">dj</span></span> Dell &amp; Jordan-Smith</li>
-    <li><span class="prov"></span> made by a model (point at it)</li>
+    <li><span class="ok-rule"><span class="ok-box">a</span> his words</span>, with the red rule</li>
+    <li><span class="ok-k">cites</span> the note only gives references</li>
+    <li><span class="ok-k">note</span> it says something more</li>
+    <li><span class="ok-k">Author trans.</span> his own English for his Latin</li>
     <li><span class="ok-mark">°</span> a note Gowland left out, restored</li>
-  </ul>
+  </ul></div>
+  <div class="ok-g"><p class="ok-t">Added by this edition</p>
+  <ul class="ok-l">
+    <li><span class="ok-dot"><span class="ok-k">trans.</span></span> a translation, hung below on a dotted line</li>
+    <li><span style="color:var(--k-cite)">§</span> <span class="ok-k" style="color:var(--k-cite)">cites</span> <span class="ok-k" style="color:var(--k-bible)">Bible</span> a reference in his text, written out</li>
+    <li><span class="ok-ul">Name</span> point at it to see who</li>
+    {% if profile == "private" %}<li><span class="ok-k" style="color:var(--k-gloss)">gloss</span> <span class="ok-k" style="color:var(--k-expl)">about</span> <span class="ok-k" style="color:var(--k-expl)">note</span> <span class="ok-k" style="color:var(--k-cite)">source</span> Gowland’s notes, in his colours</li>{% endif %}
+  </ul></div>
+  <div class="ok-g"><p class="ok-t">Who made it, and the page</p>
+  <ul class="ok-l">
+    {% if profile == "private" %}<li><span class="mn-src"><span class="src-g">g</span></span> Gowland (2021)</li>{% endif %}
+    <li><span class="mn-src"><span class="src-dj">dj</span></span> Dell &amp; Jordan-Smith (1927)</li>
+    <li><span class="prov"></span> made by a model: point at it to see which</li>
+    <li><span class="ok-mark">☙ ❧</span> at the window’s edges: previous and next page</li>
+  </ul></div>
 </div>
 <fieldset>
   <legend>What to show</legend>
