@@ -54,7 +54,7 @@ def test_a_bible_reference_leaves_only_the_mark_and_no_doubled_comma():
     out, cards = mark_inline_cites(page, {"x-p1-ic25": rec}, {})
     assert _visible(out, ("cx-b", "mref"))[0] == "’Tis all for your sins,§ God is angry"
     if (kjv.DIR / "pg10.txt").exists():
-        assert "Ye looked for much" in cards[0] and "KJV" in cards[0]
+        assert "Ye looked for much" in cards[0] and "King James Bible" in cards[0]
 
 
 def test_a_kept_stop_takes_the_comma_before_a_bible_reference():

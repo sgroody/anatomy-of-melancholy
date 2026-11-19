@@ -369,3 +369,56 @@ Round 8, on the same page (`state/review/synopsis-sheets-2026-11-19.html`, stick
   options open under them.
 * Design questions, round 8 (state/review/ab-2026-11-19-r8.html): F1 the front matter's contents (tablet; numerals;
   before and after; thumb index), D1 showing what the options do (live sample; before/after; "show me").
+
+# The owner's notes of 2026-11-19 (third set) and round 8's answers
+
+* Round 8: **F1 A** (the ruled tablet, a hedera before the page you are on), "but I want to see how A, B and D look on
+  the actual page"; **D1 A** (a live sample at the head of the options).
+  * F1: one markup for all three, chosen by CSS. A is the default; `?fm=B` or `?fm=D` on any front-matter page shows
+    B or D and is remembered from page to page, `?fm=A` goes back. D stands at the window's edge from 1100 px (below
+    that it falls back to A); in D a front-matter page sets all its notes in the right margin, so that the index has
+    the left (measured on "To the Reader" at 1100-1920 px: no left-margin note, index clear of the text).
+  * D1: "As you choose", a few lines of 3.2.3.1 (Hercules de Saxonia, Ovid's line, Hesiod, *belike*) with a small
+    margin, at the head of the options and kept in view while they change. Its words are checked against the base
+    text at build time; its translation, citation and gloss come from their layers with their ◇. It answers the
+    options for what to show, the translation mode, citations, obsolete words and the Latin colour; not "translation
+    first" (it shows the machine translation, to keep Gowland's wording out of it).
+* "Glosses should not exist when one toggles away everything but the core text": "Hide all notes" now hides every
+  translation as well (on hover, beneath, facing, the Dedication's, Gowland's brackets): counted 0 visible on Ad
+  Librum and 1.1.1.1, against 2 and 19 with the notes shown.
+* The key: no line for the hederas; the last group reads "Who made it"; every source has a sign, its name on hover:
+  g Gowland, dj Dell & Jordan-Smith, **w** Webster 1913, **kjv** the King James Bible, **pg** Project Gutenberg (the
+  restored notes, which carried a ◇ for their source, wrongly: the ◇ is for a model's work).
+* Also fixed: the hederas at the window's edges sat at different heights when the page titles differed in length
+  (the hidden title took up room); the title is now out of the flow and the hedera stays in the middle.
+* "Where are we at with V5. Can't you do it yourself?": a third cycle, done here (see deferred-checks.yaml): h4 seen,
+  rules changed, a fresh round h5 drawn and labelled blind. h5 P 0.959, R 0.940, B 0.979: still below 0.98 / 0.97.
+* Translator notes (the remedy, carried out): every note rated (2,895 asked, $15.29); the 1,492 rated 3 and not
+  doubtful audited blind (note-audit-v1, $18.37 in two windows): 1,432 judged sound. A fresh spot check
+  (data/eval/notes-spotcheck2.yaml, seed 20261121, 60 of the 1,432, rules fixed before labelling: S1 none wrong,
+  S2 at most 3 doubtful) labelled by Claude in session, then blind by a different model (claude-sonnet-5-5, $0.45):
+  54/60 agree; of the 6 disagreements, 5 were the second rater unable to confirm a locus and 1 called Lucan's text
+  wrong. All 6 were settled from the Perseus texts in data/source/corpora (Lucan 10.407 "Nulla fides pietasque",
+  Cicero Fam. 5.12.1, Gellius 5.11.14, HA Hadrian 18) or by reading the note: 0 wrong, 0 doubtful, passed. A
+  cleared note now stands open in its translation card with its ◇; the rest stay folded under the chevron. Limit:
+  60 with none wrong bounds the wrong share below about 5 % (95 %), not to zero.
+
+## Round 8: the owner's choices (2026-11-19) and the reworked opening
+
+Choices: **H2 Grow** (listed in to-revisit.md: "feels a little too chaotic"), **C3 "&c."** on a folded brace, **L2
+rubric numerals** I II III for the front page's Partitions. Owner asked for the windows' hold indicator on the braces
+(something visible that says resting here will open or fix), and for one brace at a time unless the pointer stays on
+the broader brace. The locator question was unclear; it is now shown on the page as two renderings side by side.
+
+Reworked (prototype only; the switches for H, C and L are gone, the choices are fixed on the page):
+* Resting on a folded brace fills it with rubric from the beak outward (0.65 s, the windows' time), then it opens one
+  brace deep, its inner braces folded. Resting on: it fills again (0.9 s) and the branch is **fixed** (faint rubric
+  brace; stays when the pointer leaves). Resting on still: inner braces open one at a time in reading order, level by
+  level, each filling first (0.45 s fill, 0.3 s pause). Moving off the brace stops the growing; resting on an inner
+  brace opens just that one. Not fixed: folds 0.9 s after the pointer leaves the branch. Click: open and fix, or fold
+  a fixed branch. A Partition opens onto its sheets and stops there.
+* Only real pointer movement ends a rest: an opening sheet narrows its head and slides its brace from under a still
+  pointer, and the browser's leave/enter reports for that are ignored (the first build stopped there).
+* Checked in the pane (1400 x 900): sheet A grew to 9/9 inner braces while rested on; on ♈, moving off after one inner
+  brace left 1 open 4 s later, the branch fixed; the front page's First Partition opened, fixed, 0 sheets opened, page
+  still fits its 900 px frame. No console errors.

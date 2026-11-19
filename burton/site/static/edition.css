@@ -111,7 +111,8 @@ footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.
     align-items: center; justify-content: center; gap: 0.7rem; text-decoration: none; color: var(--muted); }
   .sz-prev { left: 0; } .sz-next { right: 0; }
   .sz-sym { font-size: 1.75rem; line-height: 1; opacity: 0.5; transition: opacity 0.15s, color 0.15s; }
-  .sz-t { writing-mode: vertical-rl; max-height: 62vh; overflow: hidden; font-variant-caps: all-small-caps;
+  /* the title out of the flow, so the hedera keeps the middle whatever the title's length */
+  .sz-t { position: absolute; top: calc(50% + 1.4rem); writing-mode: vertical-rl; max-height: calc(50vh - 2.4rem); overflow: hidden; font-variant-caps: all-small-caps;
     letter-spacing: 0.06em; font-size: 0.85rem; line-height: 1.2; opacity: 0; transition: opacity 0.15s; }
   .sz-prev .sz-t { transform: rotate(180deg); }
   .side-zone:hover, .side-zone:focus-visible { background: color-mix(in srgb, var(--accent) 7%, transparent);
@@ -245,6 +246,8 @@ blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em
 .mn-src, .mn-h { font-size: 0.88em; color: var(--muted); }
 .mn-h { font-variant-caps: all-small-caps; letter-spacing: 0.06em; margin-right: 0.3em; }
 .mn-sub, .mn-alt { display: block; margin-top: 0.15em; }
+/* a translator's note rated and audited for the margin, open under the translation (stage 14, 2026-11-19) */
+.mn-note { display: block; margin-top: 0.2em; color: var(--muted); font-size: 0.92em; }
 .mn-more { margin-top: 0.1em; }
 /* the other versions open from a small chevron after the translation, not "+ more" (owner, 2026-11-18) */
 .mn-more { display: inline; margin: 0; }
@@ -788,7 +791,7 @@ header.site .toc-panel > nav { left: 0; right: auto; }
    as a small-capital g (N6 D), his name on hover */
 .mn-src, .ftr-src { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.8em; vertical-align: 0.3em;
   color: var(--muted); font-style: normal; margin-left: 0.15em; }
-.src-g { cursor: help; }
+.src-m { cursor: help; }
 /* a translation's kind label stays neutral, so the eye goes to the translation in its colour */
 .mn-tr .mn-k, .mn-own .mn-k { color: var(--muted); }
 .guide .guide-lead { font-size: 1.08em; }
@@ -890,19 +893,40 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 }
 .sn-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.92em; color: var(--muted); margin-right: 0.1em; }
 .sn-k[data-kind="cites"] { color: var(--k-cite); }
-.src-dj { cursor: help; }
 /* the front matter centred, with its own contents at the head of each page */
 .page-front main { max-width: none; }
 .page-front .unit { margin-left: auto !important; margin-right: auto !important; }
-/* smaller (owner, 2026-11-19: "can be smaller, but overall it's an improvement") */
-.front-nav { max-width: min(64rem, 100%); margin: 0.4rem auto 1rem; }
-.front-nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 0.05rem 1.3rem; font-variant-caps: all-small-caps; letter-spacing: 0.04em; font-size: 0.76em; line-height: 1.35; }
+/* the front matter's contents (round 8, F1; owner, 2026-11-19: A, with B and D to be seen on the real page).
+   A (default): a small ruled tablet, one piece a line, a hedera before the one you are on */
+.front-nav { --cur-front: #8a2f1d; margin: 0.4rem auto 1.2rem; text-align: center; }
+:root[data-theme="dark"] .front-nav { --cur-front: #e0c27a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .front-nav { --cur-front: #e0c27a; } }
+.front-nav ol { list-style: none; margin: 0; display: inline-block; text-align: center; border: 1px solid var(--rule);
+  outline: 1px solid var(--rule); outline-offset: 2px; padding: 0.35rem 1.4rem; font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em; font-size: 0.76em; line-height: 1.55; }
 .front-nav a { color: var(--muted); text-decoration: none; }
 .front-nav a:hover { color: var(--accent); }
-.front-nav a[aria-current="page"] { color: var(--cur-front, #8a2f1d); border-bottom: 1px solid currentColor; }
-:root[data-theme="dark"] .front-nav a[aria-current="page"] { --cur-front: #e0c27a; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .front-nav a[aria-current="page"] { --cur-front: #e0c27a; } }
+.front-nav a[aria-current="page"] { color: var(--cur-front); }
+.front-nav .fn-n { display: none; }
+.front-nav a[aria-current="page"] .fn-t::before { content: "❧ "; }
+/* B: the pieces as Roman numerals in one short line; yours spelled out, the others named on hover */
+[data-fm="B"] .front-nav ol { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 0.9rem; border: 0;
+  outline: 0; padding: 0; font-size: 0.82em; }
+[data-fm="B"] .front-nav .fn-n { display: inline; }
+[data-fm="B"] .front-nav a:not([aria-current]) .fn-t { position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; }
+[data-fm="B"] .front-nav a[aria-current="page"] .fn-t::before { content: "· "; }
+/* D: down the left margin like a thumb index, yours marked by the red rule (wide windows; narrower ones keep A) */
+@media (min-width: 1100px) {
+  [data-fm="D"] .front-nav { position: fixed; left: 3.4rem; top: 7rem; width: 10rem; margin: 0; text-align: left;
+    z-index: 3; }
+  [data-fm="D"] .front-nav ol { display: block; text-align: left; border: 0; outline: 0; padding: 0 0.6rem 0 0;
+    border-right: 1px solid var(--rule); line-height: 1.45; font-size: 0.8em; }
+  [data-fm="D"] .front-nav li { margin: 0.3rem 0; }
+  [data-fm="D"] .front-nav a[aria-current="page"] { display: block; border-right: 2px solid var(--cur-front);
+    margin-right: -0.65rem; padding-right: 0.5rem; }
+  [data-fm="D"] .front-nav a[aria-current="page"] .fn-t::before { content: none; }
+}
 /* the search box, opened in place */
 .hsearch { display: none; }
 .hsearch.open { display: block; }
@@ -933,11 +957,53 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .ok-dot { border-left: 1px dotted var(--muted); padding-left: 0.35rem; }
 .ok-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
   text-underline-offset: 0.22em; }
+/* the options' live sample (round 8, D1 A; owner, 2026-11-19): a few lines of Burton that change with every option */
+.opt-sample { grid-column: 1 / -1; border: 1px solid var(--rule); padding: 0.45rem 0.8rem 0.55rem; margin: 0 0 0.9rem;
+  font-size: 0.92rem; line-height: 1.45; background: var(--paper); }
+/* kept in view while the options below it are changed, where the window is tall enough */
+@media (min-height: 700px) { .opt-sample { position: sticky; top: 0; z-index: 2; } }
+.opt-sample .os-body { max-width: 52rem; }
+.os-h { margin: 0 0 0.25rem; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.os-where { margin-left: 0.5em; font-variant-caps: normal; letter-spacing: 0; font-style: italic; }
+.os-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(9rem, 13rem); gap: 0.3rem 1rem; }
+@media (max-width: 40rem) { .os-body { grid-template-columns: minmax(0, 1fr); } }
+.os-text { margin: 0; }
+.os-m { font-size: 0.82em; line-height: 1.35; }
+.os-card { margin: 0 0 0.35rem; }
+.os-k { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); }
+.os-k-c, .os-ic { color: var(--k-cite); }
+.os-ic { font-size: 0.8em; vertical-align: 0.35em; margin-left: 0.05em; }
+.os-ref { color: var(--accent); margin-left: 0.05em; }
+.os-sn { border-left: 2px solid var(--accent); padding-left: 0.4rem; }
+.os-n { background: var(--accent); color: var(--paper); border-radius: 2px; padding: 0 0.22em; font-size: 0.85em; }
+.os-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em; }
+.os-la { color: var(--la); }
+.os-abbr, .os-abbr-n, .os-il, .os-en, .os-gl { display: none; }
+.show-abbr .os-abbr, .show-abbr .os-abbr-n { display: inline; }
+.show-abbr .os-exp-n { display: none; }
+.mode-interlinear .os-il { display: block; font-size: 0.92em; }
+.mode-interlinear .os-tr, .mode-english .os-tr, .mode-english .os-la { display: none; }
+.mode-english .os-en { display: inline; }
+.show-glosses .os-gl { display: block; }
+.show-glosses .os-glw { text-decoration: underline dotted var(--muted); text-underline-offset: 0.2em; }
+.hide-ic .os-ic, .hide-ic .os-icc { display: none; }
+.only-gw :is(.os-sn, .os-ref, .os-ic, .os-icc, .os-tr, .os-gl) { display: none; }
+.text-only .os-m, .text-only .os-ref, .text-only .os-ic { display: none; }
+.text-only .os-body { grid-template-columns: minmax(0, 1fr); }
+.text-only .os-ul, .text-only .os-glw { text-decoration: none; }
+.text-only .os-la { color: inherit; }
 /* what to show */
 .hide-ic .ic-m, .hide-ic .mn-ic { display: none !important; }
 .only-gw .unit .sidenote, .only-gw .unit a.nref, .only-gw .unit .mn:not(.mn-gw), .only-gw .unit .ic-m { display: none !important; }
 .text-only .unit .sidenote, .text-only .unit a.nref, .text-only .unit .mn, .text-only .unit .ic-m,
 .text-only .unit .ftr-n { display: none !important; }
+/* no translations or glosses either, in the line, on hover or facing (owner, 2026-11-19: "glosses should not exist when
+   one toggles away everything but the core text") */
+.text-only .unit .ft, .text-only .unit .ftr, .text-only .unit .ftr-l, .text-only .unit .ftr-src, .text-only .unit .sn-tr,
+.text-only .ded-tr, .text-only .gowland-tr, .text-only .gowland-verse, .text-only .gowland-block { display: none !important; }
+.text-only .unit .fp-facing, .text-only .unit .fp-facing > .fo, .text-only .unit .fp-facing .fo .lg { display: block !important; }
+.text-only .unit .fp { cursor: auto; }
 /* and the text as it was printed: no language colours or tints, no underlines, no links in the line (owner, 2026-11-19:
    "it should basically just be the text as one would have seen it originally, sans anything") */
 .text-only .unit [lang], .text-only .unit .fp, .text-only .unit .fo, .text-only .unit .burton-tr,

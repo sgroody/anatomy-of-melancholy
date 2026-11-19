@@ -30,6 +30,19 @@ function save(s) {
 
 const settings = Object.assign({}, DEFAULTS, load());
 
+// round 8, F1: the front matter's contents as A (the default), or B or D to compare on the real pages; ?fm=B or ?fm=D
+// is remembered from page to page, ?fm=A goes back (owner, 2026-11-19: "I want to see how A, B and D look")
+(() => {
+  let fm = new URLSearchParams(location.search).get("fm");
+  try {
+    if (fm) localStorage.setItem("burton-fm", fm.toUpperCase());
+    else fm = localStorage.getItem("burton-fm");
+  } catch { /* private window: this page only */ }
+  fm = (fm || "A").toUpperCase();
+  if (fm === "A") delete html.dataset.fm;
+  else html.dataset.fm = fm;
+})();
+
 function apply() {
   body.classList.remove("mode-gloss", "mode-interlinear", "mode-english");
   // nothing but the text: the original as printed, whatever the other options say (owner, 2026-11-19)
@@ -314,7 +327,9 @@ function layoutNotes() {
   // translations on the right; an item crosses to the other side when its own would push it SWITCH below its line
   // and the other side is free sooner. Each side keeps its own floor.
   // a page set facing Gowland keeps one margin: his notes stand between the columns (stage 9)
-  const two = twoSide.matches && !article.querySelector(".fp-wide, .ded-wrap");
+  // and so does a front-matter page whose contents stand in the left margin (round 8, F1 D)
+  const two = twoSide.matches && !article.querySelector(".fp-wide, .ded-wrap") &&
+    !(html.dataset.fm === "D" && document.querySelector(".front-nav"));
   body.classList.toggle("two-side", two);
   const SWITCH = 3 * rem;
   const anchors = pairs.map(([m]) => tops.get(m));

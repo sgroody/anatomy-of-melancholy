@@ -1,3 +1,4 @@
+{{ opt_sample }}
 <div class="opt-key" aria-label="Key to the colours and signs">
   <p class="ok-h">Key</p>
   <div class="ok-g"><p class="ok-t">Languages</p>
@@ -22,12 +23,14 @@
     <li><span class="ok-ul">Name</span> point at it to see who</li>
     {% if profile == "private" %}<li><span class="ok-k" style="color:var(--k-gloss)">gloss</span> <span class="ok-k" style="color:var(--k-expl)">about</span> <span class="ok-k" style="color:var(--k-expl)">note</span> <span class="ok-k" style="color:var(--k-cite)">source</span> Gowland’s notes, in his colours</li>{% endif %}
   </ul></div>
-  <div class="ok-g"><p class="ok-t">Who made it, and the page</p>
+  <div class="ok-g"><p class="ok-t">Who made it</p>
   <ul class="ok-l">
-    {% if profile == "private" %}<li><span class="mn-src"><span class="src-g">g</span></span> Gowland (2021)</li>{% endif %}
-    <li><span class="mn-src"><span class="src-dj">dj</span></span> Dell &amp; Jordan-Smith (1927)</li>
-    <li><span class="prov"></span> made by a model: point at it to see which</li>
-    <li><span class="ok-mark">☙ ❧</span> at the window’s edges: previous and next page</li>
+    {% if profile == "private" %}<li><span class="mn-src"><span class="src-m">g</span></span> Gowland (2021)</li>{% endif %}
+    <li><span class="mn-src"><span class="src-m">dj</span></span> Dell &amp; Jordan-Smith (1927)</li>
+    <li><span class="mn-src"><span class="src-m">w</span></span> Webster’s dictionary (1913)</li>
+    <li><span class="mn-src"><span class="src-m">kjv</span></span> the King James Bible</li>
+    <li><span class="mn-src"><span class="src-m">pg</span></span> Project Gutenberg’s text</li>
+    <li><span class="prov"></span> a model: point at it to see which</li>
   </ul></div>
 </div>
 <fieldset>
@@ -54,7 +57,7 @@
 </fieldset>
 <fieldset>
   <legend>Obsolete words</legend>
-  <label><input type="checkbox" name="glosses"> Gloss obsolete words in the margin (Webster 1913, or a model’s ◇){% if profile == "private" %}; Gowland’s glosses are always there{% endif %}</label>
+  <label><input type="checkbox" name="glosses"> Gloss obsolete words in the margin (w or ◇){% if profile == "private" %}; Gowland’s glosses are always there{% endif %}</label>
 </fieldset>
 <fieldset>
   <legend>Colour of the Latin</legend>

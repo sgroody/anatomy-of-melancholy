@@ -44,7 +44,7 @@ def test_private_box_lists_every_version_preferred_first_with_its_language():
     assert "from Latin" in html and "Translation from Latin: " in html
     # visible ascriptions (owner, 2026-11-04): Gowland as a small-capital g, a machine translation by its ◇ alone, the
     # model, prompt and date behind it
-    assert '<span class="ft-label"><span class="src-g" title="Gowland 2021"' in html
+    assert '<span class="ft-label"><span class="src-m src-g" role="img" title="Gowland 2021"' in html
     assert '<span class="ft-label"> <span class="prov"' in html and ">Claude" not in html
     assert 'title="Machine translation (claude-opus-5-5' in html
 

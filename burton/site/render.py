@@ -14,6 +14,7 @@ from ..layers import citations as cit_rules
 from ..layers import djs as djs_layer
 from ..tei import ED, XML_ID, XML_LANG, T, public_id
 from ..textview import public_text
+from ..translate import notes_rate
 from ..translate.validate import primary_machine
 from . import kjv
 from .hyphenation import soft_hyphenate
@@ -71,16 +72,30 @@ def short_label(t: dict) -> str:
             "gowland": "Gowland"}.get(t["by"], t["by"])
 
 
+# Every source by a sign of its own, its name on hover (owner, 2026-11-04: Gowland's g, N6 D; 2026-11-18: dj;
+# 2026-11-19: "Webster, like all sources, should just have a symbol"): sign, title, accessible name.
+SOURCES = {
+    "gowland": ("g", "Gowland 2021", "Gowland"),
+    "djs1927": ("dj", "Dell & Jordan-Smith (1927)", "Dell and Jordan-Smith"),
+    "webster1913": ("w", "Webster’s Revised Unabridged Dictionary (1913)", "Webster 1913"),
+    "kjv": ("kjv", "The King James Bible (1611)", "King James Bible"),
+    "pg": ("pg", "Project Gutenberg #10800", "Project Gutenberg"),
+}
+
+
+def src_mark(key: str, title: str | None = None) -> str:
+    """A source's sign, with its name (or `title`) on hover and as its accessible name."""
+    sign, name, spoken = SOURCES[key]
+    return (f'<span class="src-m src-{sign}" role="img" title="{attr(title or name)}" '
+            f'aria-label="{attr(title or spoken)}">{sign}</span>')
+
+
 def src_label(t: dict) -> str:
-    """A translation's ascription: Gowland as a small-capital g, his name on hover (owner, 2026-11-04: N6 D); a machine
-    translation by its ◇ alone (the caller adds it); the others by name."""
-    if t["by"] == "gowland":
-        return '<span class="src-g" title="Gowland 2021" aria-label="Gowland">g</span>'
+    """A translation's ascription: its source's sign; a machine translation by its ◇ alone (the caller adds it)."""
     if t["by"] == "machine":
         return ""  # the ◇ alone, which names the model (owner, 2026-11-04: "just the diamond", not "Claude")
-    if t["by"] == "djs1927":  # Dell & Jordan-Smith (1927), a sign of their own (owner, 2026-11-18)
-        return ('<span class="src-dj" title="Dell &amp; Jordan-Smith (1927)" aria-label="Dell and Jordan-Smith">'
-                'dj</span>')
+    if t["by"] in SOURCES:
+        return src_mark(t["by"])
     return esc(short_label(t))
 
 
@@ -113,7 +128,8 @@ def kjv_html(c: dict, counts: dict, check: dict | None = None) -> str:
     counts["bible_verses"] = counts.get("bible_verses", 0) + 1
     text = " ".join((f'<sup class="kjv-n">{v}</sup>' if len(vs) > 1 else "") + esc(t) for v, t in vs)
     return (f'<span class="kjv" lang="en"><span class="kjv-t">{text}</span> '
-            f'<button type="button" class="kjv-more" hidden>more</button> <span class="kjv-l">KJV</span>{note}</span>')
+            f'<button type="button" class="kjv-more" hidden>more</button> '
+            f'<span class="kjv-l">{src_mark("kjv")}</span>{note}</span>')
 
 
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
@@ -754,11 +770,19 @@ class Renderer:
                 more.append(f'<span class="mn-alt"><span class="mn-h">Source</span> {word} {esc_tagged(where)}'
                             f'{"" if src.get("verified") else " (unverified)"}</span>')
             notes = [t for t in vs if t["by"] == "machine" and t.get("note")]
-            if notes:
+            open_note = ""
+            cleared = getattr(self, "note_hashes", {}).get(fid)
+            if notes and rec and cleared and cleared == notes_rate.note_hash(fid, rec):
+                # rated among the most useful, judged sound by a second reader: open in the card (stage 14)
+                open_note = (f'<span class="mn-note">{esc_tagged(notes[0]["note"])} '
+                             f'{prov(label_of(notes[0]) + "; note rated and audited for the margin")}</span>')
+                self.counts["notes_open"] = self.counts.get("notes_open", 0) + 1
+            elif notes:
                 more.append(f'<span class="mn-alt"><span class="mn-h">Notes</span> {esc_tagged(notes[0]["note"])} '
                             f'{prov(label_of(notes[0]))}</span>')
             if more:
                 body += f'<details class="mn-more"><summary>more</summary>{"".join(more)}</details>'
+            body += open_note
             kind = "tr"
         else:
             return
@@ -1160,9 +1184,11 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> tuple[str, 
         html_text = html_text[:hs] + word + html_text[he:]
         if it["source"] == "webster1913":
             full = "Sense chosen from Webster 1913 by machine: " + it["label"]
-            ascr = f'<span class="mn-src">Webster 1913</span> {prov(full)}'
+            ascr = f'<span class="mn-src">{src_mark("webster1913")}</span> {prov(full)}'
         elif it["source"] == "machine":
             ascr = prov("Gloss " + it["label"])
+        elif it["source"] in SOURCES:
+            ascr = f'<span class="mn-src">{src_mark(it["source"])}</span>'
         else:
             ascr = f'<span class="mn-src">{esc(it["label"])}</span>'
         cards.append(f'<span class="mn mn-gl" id="{gid}" data-kind="gloss" role="note" aria-label="Gloss">'
@@ -1252,8 +1278,9 @@ def mark_restored(html_text: str, notes: dict, counts: dict, reads: dict | None 
                 f'aria-label="Note not in Gowland’s edition">°</a>'
                 f'<span class="sidenote sn-restored" id="{attr(rid)}" role="doc-footnote">'
                 f'<span class="sn-body"><span class="sn-n">°</span> {kind}{esc_tagged(rec["text"])} '
-                + prov(f'{RESTORED_LABEL} {rec["source"]}, note {rec["pg_note"]} '
-                       f'(a 19th-century text checked against the 1638 edition)') + f'</span>{lines}</span>')
+                + '<span class="mn-src">' + src_mark("pg", f'{RESTORED_LABEL} {rec["source"]}, note {rec["pg_note"]} '
+                                                    f'(a 19th-century text checked against the 1638 edition)')
+                + f'</span></span>{lines}</span>')
         if hoisted:  # before a passage box, held to its first line as Gowland's lifted-out notes are
             note = f'<span class="hoisted">{note}</span>'
         html_text = html_text[:hs] + note + html_text[hs:]
@@ -1473,12 +1500,13 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 name_ids: dict | None = None, author_info: dict | None = None,
                 inline_cites: dict | None = None, facing_src: dict | None = None,
                 psalms: dict | None = None, restored_read: dict | None = None,
-                inline_cites_model: dict | None = None,
+                inline_cites_model: dict | None = None, note_hashes: dict | None = None,
                 name_extra: tuple[re.Pattern | None, dict] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
     r.psalms = psalms or {}  # data/layers/psalm-check/: which Psalm verse Burton means (2026-11-18)
+    r.note_hashes = note_hashes or {}  # translator notes cleared for the margin (stage 14)
     if profile == "private":
         r.gowland = gowland_versions(div)
         r.decided = gowland_decisions(div, r.gowland, layer, gowland_entries)
