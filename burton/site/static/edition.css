@@ -893,9 +893,10 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 /* the front matter centred, with its own contents at the head of each page */
 .page-front main { max-width: none; }
 .page-front .unit { margin-left: auto !important; margin-right: auto !important; }
-.front-nav { max-width: var(--measure); margin: 0.6rem auto 1.4rem; }
-.front-nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.2rem 0.9rem;
-  font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.92em; }
+/* smaller (owner, 2026-11-19: "can be smaller, but overall it's an improvement") */
+.front-nav { max-width: min(64rem, 100%); margin: 0.4rem auto 1rem; }
+.front-nav ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.05rem 1.3rem; font-variant-caps: all-small-caps; letter-spacing: 0.04em; font-size: 0.76em; line-height: 1.35; }
 .front-nav a { color: var(--muted); text-decoration: none; }
 .front-nav a:hover { color: var(--accent); }
 .front-nav a[aria-current="page"] { color: var(--cur-front, #8a2f1d); border-bottom: 1px solid currentColor; }
