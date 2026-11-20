@@ -1,4 +1,135 @@
 {
+  "1.2.3.14-f129": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jerome",
+      "basis": "sidenote \"Ep. ad Eustochium, de custod. virgin.\" anchored at \"Jerome\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Eustochium"
+    },
+    "text": "ad Eustochium, de custod. virgin",
+    "text_sha1": "6f6ccc75e813dbbd053ce56ab632ea846626d084",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-23",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a reference: Jerome's letter to Eustochium, his Letter 22. 'Ep.' (Letter), which stands just before the marked text, is not part of the passage. 'custod.' stands for 'custodia', keeping or guarding.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jerome",
+          "basis": "sidenote \"Ep. ad Eustochium, de custod. virgin.\" anchored at \"Jerome\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Eustochium"
+        },
+        "text": "to Eustochium, on the keeping of virginity",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.14-f134": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "low",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Per",
+    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "low",
+        "date": "2026-11-18",
+        "flags": [
+          "truncated",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote is only \"Per.\", so it cannot be translated with any certainty. As a Latin preposition, per means \"through\" or \"by\", but this is almost certainly an abbreviation or the broken-off start of a reference, so it is kept as written. It is attached to the line \"Palma negata macrum, donata reducit opimum\" (\"The palm denied sends him home lean, the palm given sends him home fat\"). That line is from Horace, Epistles 2.1.181, so \"Per.\" may be a slip or a fragment of a citation and not an abbreviation for Persius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Per.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.14-f15": {
     "kind": "phrase",
     "lang": "la",
@@ -121,6 +252,69 @@
       }
     ]
   },
+  "1.2.3.14-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Chrysostom sup. Jo. Tu sola animum mentemque peruris, gloria",
+    "text_sha1": "5ec635ad3c1936576557c45c04d31d596006ee1c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-23",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "You alone burn through the spirit and the mind, glory.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage includes Burton's reference 'Chrysostom sup. Jo.' (Chrysostom on John). It most likely gives the source of the English sentence before it, not of the Latin verse that follows. Where the verse comes from is not identified. 'Peruris' means 'you burn through' or 'you inflame'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Chrysostom, on John. You alone, Glory, set heart and mind on fire.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.14-f33": {
     "kind": "phrase",
     "lang": "la",
@@ -180,6 +374,130 @@
           "work": null
         },
         "text": "Typotius, On Fame",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.14-f84": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Uxor Hen. 8",
+    "text_sha1": "770f0984d6055296e65ca87154e483f035d50000",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-23",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This identifies 'Queen Katherine, Dowager of England' as Catherine of Aragon.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Wife of Henry VIII",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.14-f91": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Persius",
+      "basis": "sidenote \"Per.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Per",
+    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-23",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An abbreviated reference to Persius, naming the source of the line before it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Persius",
+          "basis": "sidenote \"Per.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Persius",
         "warnings": []
       }
     ]

@@ -198,6 +198,67 @@
       }
     ]
   },
+  "1.2.2.2-f102": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johannes Boemus",
+      "basis": "text \"as one of their own Countrymen complains\", with sidenote \"Bohemus in Saxonia.\" Burton marks the sidenote loosely, so this is not a firm match.",
+      "locus": "in Saxonia",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Omnium gentium mores (on Saxony)"
+    },
+    "text": "Quantum liquoris immodestissima gens capiat",
+    "text_sha1": "90088e5f4eb9417a2724a199eea81042eff531d1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This clause depends on Burton's preceding 'Incredibile dictu' ('incredible to say'). Burton cuts it off with '&c.' The English that follows carries his argument forward; it does not render the Latin.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johannes Boemus",
+          "basis": "text \"as one of their own Countrymen complains\", with sidenote \"Bohemus in Saxonia.\" Burton marks the sidenote loosely, so this is not a firm match.",
+          "locus": "in Saxonia",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Omnium gentium mores (on Saxony)"
+        },
+        "text": "How much liquor this most immoderate nation can hold, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.2.2-f11": {
     "kind": "phrase",
     "lang": "la",

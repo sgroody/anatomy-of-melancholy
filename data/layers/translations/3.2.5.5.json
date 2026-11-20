@@ -523,65 +523,6 @@
       }
     ]
   },
-  "3.2.5.5-f107": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Dio Cassius",
-      "basis": "sidenote \"Dion Cassius lib. 56.\"",
-      "locus": "lib. 56",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Roman History"
-    },
-    "text": "Rome ad caelibes",
-    "text_sha1": "4972571bbb4657a257753d2e6682f056a3ababa5",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Only 'ad caelibes' is Latin; 'Rome' belongs to Burton's English sentence ('made an oration in Rome'). Dio Cassius (book 56) reports Augustus' speech to the unmarried knights.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Dio Cassius",
-          "basis": "sidenote \"Dion Cassius lib. 56.\"",
-          "locus": "lib. 56",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Roman History"
-        },
-        "text": "to the bachelors",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.5.5-f108": {
     "kind": "phrase",
     "lang": "la",
@@ -1383,65 +1324,6 @@
           "work": null
         },
         "text": "Hippolytus, you know not what good of life you flee, / Hippolytus, you know not —",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.5-f121": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Aeneas Silvius Piccolomini",
-      "basis": "sidenote \"Aeneas Silvius de dictis Sigismundi. Heinsius Primerio.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De dictis Sigismundi"
-    },
-    "text": "Aeneas Silvius de dictis Sigismundi. Heinsius Primerio",
-    "text_sha1": "f388924675c9e5be1a770fa9d5b5b6f400415aed",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Aeneas Silvius Piccolomini (Pope Pius II) wrote on the sayings and deeds of the Emperor Sigismund. 'Heinsius Primerio' probably refers to a work or dialogue by Daniel Heinsius involving a Primerius; it could not be identified for certain.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Aeneas Silvius Piccolomini",
-          "basis": "sidenote \"Aeneas Silvius de dictis Sigismundi. Heinsius Primerio.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De dictis Sigismundi"
-        },
-        "text": "Aeneas Silvius, On the Sayings of Sigismund. Heinsius, Primerius.",
         "warnings": []
       }
     ]
@@ -3688,65 +3570,6 @@
       }
     ]
   },
-  "3.2.5.5-f166": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "pro",
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Part of the half-English phrase 'pro and con'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "for",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.5.5-f167": {
     "kind": "phrase",
     "lang": "la",
@@ -4251,77 +4074,6 @@
           "work": null
         },
         "text": "cherishing mutual embraces",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.5-f174": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "Venus’ Vigil",
-        "in": "3.2.5.5",
-        "near": "3.2.5.5-f174",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "partial"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Pervigilium Veneris e vetere poeta",
-    "text_sha1": "38f084faa64c587d70b60573285ebcecd9c9ff10",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The Pervigilium Veneris is an anonymous late Latin poem.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "Venus’ Vigil",
-            "in": "3.2.5.5",
-            "near": "3.2.5.5-f174",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "The Vigil of Venus, from an old poet.",
         "warnings": []
       }
     ]
@@ -6711,67 +6463,6 @@
           "work": null
         },
         "text": "a harsh father",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.5-f215": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Genius",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Latin Genius here means a person's natural inclination or appetite for pleasure (as in 'indulgere genio'). 'Starve their Genius' means to deny them their natural enjoyments. The word sits inside Burton's English sentence.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Genius",
         "warnings": []
       }
     ]
@@ -9793,6 +9484,209 @@
       }
     ]
   },
+  "3.2.5.5-f317": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "priapismus",
+    "text_sha1": "7f7b8ea60854be12c58b8417d1f73ea15a7d510a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Priapism is a persistent, painful erection, here listed among the disorders said to follow from enforced celibacy. Burton's sidenote 'Mercurialis de Priapismo' points to Mercuriale's treatment of the condition; it is a reference on the disease, not the source of a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "priapism",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f318": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "better burn or fly out, than to break thy vow",
+        "in": "3.2.5.5",
+        "near": "3.2.5.5-f318",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Robert Bellarmine",
+      "basis": "text \"saith Bellarmine, cap. 38 lib. de Monach.\"",
+      "locus": "cap. 38",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Monachis"
+    },
+    "text": "melius est scortari & uri quam de voto coelibatus ad nuptias transire",
+    "text_sha1": "26a86818a0d72bf8d4d155744174ef9762f4d6f1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Burn' echoes St Paul's 'better to marry than to burn' (1 Corinthians 7:9), turned against him. Burton's 'fly out' renders scortari, 'to go whoring'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "better burn or fly out, than to break thy vow",
+            "in": "3.2.5.5",
+            "near": "3.2.5.5-f318",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Robert Bellarmine",
+          "basis": "text \"saith Bellarmine, cap. 38 lib. de Monach.\"",
+          "locus": "cap. 38",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Monachis"
+        },
+        "text": "it is better to fornicate and burn than to pass from a vow of celibacy to marriage",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f319": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a greater sin",
+        "in": "3.2.5.5",
+        "near": "3.2.5.5-f319",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Franciscus Costerus",
+      "basis": "text \"Coster in his Enchirid. de coelibat. sacerdotum, saith\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Enchiridion de coelibatu sacerdotum"
+    },
+    "text": "gravius peccatum",
+    "text_sha1": "8c0fcca7d6d8f5448796a0d5f23bb522d7787a01",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a greater sin",
+            "in": "3.2.5.5",
+            "near": "3.2.5.5-f319",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Franciscus Costerus",
+          "basis": "text \"Coster in his Enchirid. de coelibat. sacerdotum, saith\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Enchiridion de coelibatu sacerdotum"
+        },
+        "text": "a graver sin",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.5-f32": {
     "kind": "verse",
     "lang": "la",
@@ -9846,6 +9740,441 @@
           "work": null
         },
         "text": "— to catch men, and to scorn them once caught,",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f320": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide vitam ejus",
+    "text_sha1": "3ab23e2637ef324a79194f4d47dc1699a0d8aed5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote refers to the life of Georgius Wicelius, printed in an edition of 1623 by Dr Thomas James.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See his life",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f321": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Dio Cassius",
+      "basis": "sidenote \"Dion Cassius lib. 56.\"",
+      "locus": "lib. 56",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Roman History"
+    },
+    "text": "ad caelibes",
+    "text_sha1": "c72f3ce39add1d9e59c1614f60e65e7bfddb18f3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Augustus's speech urging Roman bachelors to marry, reported by Dio Cassius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Dio Cassius",
+          "basis": "sidenote \"Dion Cassius lib. 56.\"",
+          "locus": "lib. 56",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Roman History"
+        },
+        "text": "to the unmarried",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f322": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "whether a Scholar should marry",
+        "in": "3.2.5.5",
+        "near": "3.2.5.5-f322",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "an uxor literato sit ducenda",
+    "text_sha1": "78fa516cec592541a274455f3e8850b1378459e4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "whether a wife is to be taken by a lettered man",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This was a standard question for debate among Renaissance humanists.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "whether a Scholar should marry",
+            "in": "3.2.5.5",
+            "near": "3.2.5.5-f322",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "whether a man of letters should take a wife",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f323": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a pillar of rest",
+        "in": "3.2.5.5",
+        "near": "3.2.5.5-f323",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Jesus son of Sirach",
+      "basis": "text \"Siracides cap. 26 & 36\" and \"(& 36. 24)\"",
+      "locus": "36. 24",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Ecclesiasticus"
+    },
+    "text": "columna quietis",
+    "text_sha1": "7bf0923367b6e3c9bee0f696a35089fbee02cc08",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ecclesiasticus 36. The Vulgate wording is 'columna ut requies'; Burton's Latin may follow another version.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a pillar of rest",
+            "in": "3.2.5.5",
+            "near": "3.2.5.5-f323",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Jesus son of Sirach",
+          "basis": "text \"Siracides cap. 26 & 36\" and \"(& 36. 24)\"",
+          "locus": "36. 24",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ecclesiasticus"
+        },
+        "text": "a pillar of rest",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f324": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "E graeco",
+    "text_sha1": "3554e79a132f3b8be1c891d494f7696799e95645",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This marks the line in the main text ('to marry and not to marry are both bad') as translated from a Greek saying.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "From the Greek",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f325": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "e vetere poeta",
+    "text_sha1": "ec9c892f81d7c9da8fc1b131a765ee59d40bfea7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "from an old poet",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This describes the Pervigilium Veneris ('The Vigil of Venus') as the work of an unnamed ancient poet.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "by an ancient poet",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f326": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quod ait ille",
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "as that man says",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A formula used to introduce a borrowed phrase. The surrounding Latin reads: 'Let this suffice to have been said of love, subject to correction, as he says, by anyone who judges better.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "as he says",
         "warnings": []
       }
     ]

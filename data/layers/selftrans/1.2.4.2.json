@@ -292,35 +292,6 @@
     ],
     "text_sha1": "fdff206cd92308df6c41cd0f40ef24936bf67ad1"
   },
-  "1.2.4.2-f22": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Jason Pratensis, puts this of Education for a principal cause",
-          "in": "1.2.4.2-p1",
-          "prefix": " be undone by evil bringing up. ",
-          "suffix": "; bad parents, stepmothers, Tuto"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "1e8b8df454eda49ebdcf4178f236e080a9035ca0"
-  },
   "1.2.4.2-f23": {
     "bracket": "none",
     "by": "rules",
@@ -350,7 +321,36 @@
     ],
     "text_sha1": "753d11a1ea2439180d6c6f909b322746c05baa1b"
   },
-  "1.2.4.2-f25": {
+  "1.2.4.2-f26": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Jason Pratensis, puts this of Education for a principal cause",
+          "in": "1.2.4.2-p1",
+          "prefix": " be undone by evil bringing up. ",
+          "suffix": "; bad parents, stepmothers, Tuto"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor"
+    ],
+    "text_sha1": "ccdf71d673f5f183e1d29a276bf3dbbd2d5bd72a"
+  },
+  "1.2.4.2-f27": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -368,18 +368,6 @@
           "suffix": ": these things ought not at all,"
         },
         "words": 23
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "but they are much to blame in it, many times, saith",
-          "in": "1.2.4.2-p1",
-          "prefix": "ey cry, or be otherways unruly: ",
-          "suffix": " Lavater de spectris, part. 1 ca"
-        },
-        "words": 11
       }
     ],
     "lang": "la",
@@ -387,10 +375,9 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
-      "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "01b9731bf39b29c143cf38034c33f87f8e6a1966"
+    "text_sha1": "91ba97f2d262f6b284d08923255798236888260b"
   },
   "1.2.4.2-f3": {
     "bracket": "present",

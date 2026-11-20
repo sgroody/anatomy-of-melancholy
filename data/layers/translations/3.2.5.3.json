@@ -4277,65 +4277,6 @@
       }
     ]
   },
-  "3.2.5.3-f176": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Lex Julia",
-    "text_sha1": "b390d4269dfd7341c4d355e199072c9ca61e9eb7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton uses the name for the law that Caesar reportedly planned, allowing him as many wives as he wished. Suetonius (Divus Julius 52) reports this as a rumour, which is why Burton notes that others doubt it.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the Julian Law",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.5.3-f177": {
     "kind": "phrase",
     "lang": "la",
@@ -5617,67 +5558,6 @@
       }
     ]
   },
-  "3.2.5.3-f204": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Philo Judaeus de mercede mer., Platina’s dial. in Amores",
-    "text_sha1": "9bfb00555dfdbdbd968bdb7f4af6189ed10a5ae3",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "Philo Judaeus, on the wages of a harl[ot], Platina's dialogue against Loves",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a list of book titles mixed with Burton's English ('Platina’s'). 'de mercede mer.' is taken as Philo's treatise De mercede meretricis. 'dial. in Amores' is read as Platina's dialogue 'against loves', since 'in' here means 'against'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Philo Judaeus, On the Wages of a Harlot; Platina's dialogue Against Love",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.5.3-f206": {
     "kind": "phrase",
     "lang": "la",
@@ -6706,6 +6586,255 @@
           "work": "Dialogus de amore"
         },
         "text": "touches on it at length",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f222": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "vernantis aetatulae Venerilla",
+    "text_sha1": "3b74df8a553dd46eb3e0e5b1d51578626f613038",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "a little Venus of springing little age",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Both 'aetatula' and 'Venerilla' are diminutives, used affectionately: a dainty young Venus in the bloom of youth. The English that follows ('like Venus herself when she was a maid') matches the sidenote 'Qualis fuit Venus cum fuit virgo', not this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a little Venus in the springtime of her youth",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f223": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quae salivam moveat",
+    "text_sha1": "2768defaf92644238c577db42832c0774ac13f99",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "who moves the saliva",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "one who would make your mouth water",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f224": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "consideratio faeditatis",
+    "text_sha1": "1606e31dd0687e0674e5d0558c67da75de781f3a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked words break off a longer Latin sentence: 'consideratio faeditatis mulierum, menstruae imprimis, quam immundae sunt' ('the consideration of the foulness of women, especially when menstruating, how unclean they are'). Burton goes on to say that Savonarola proposes this as his seventh rule. 'faeditatis' stands for 'foeditatis'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the consideration of the foulness",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f225": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "No father, no, I am a lover still",
+        "in": "3.2.5.3",
+        "near": "3.2.5.3-f225",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "sidenote \"Lucian. Tom. 4.\"; the passage is Pan's reply to Hermes (Mercury) in Lucian's dialogue of the two gods",
+      "locus": "Tom. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogues of the Gods"
+    },
+    "text": "Nequaquam pater, amator enim sum",
+    "text_sha1": "16818ae02cee49a2516fb1b2dccc6e7f72194e92",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English expands the reply, adding 'and cannot be contented with one woman'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "No father, no, I am a lover still",
+            "in": "3.2.5.3",
+            "near": "3.2.5.3-f225",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "sidenote \"Lucian. Tom. 4.\"; the passage is Pan's reply to Hermes (Mercury) in Lucian's dialogue of the two gods",
+          "locus": "Tom. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogues of the Gods"
+        },
+        "text": "Not at all, father, for I am a lover",
         "warnings": []
       }
     ]
@@ -7993,63 +8122,6 @@
           "work": null
         },
         "text": "a golden offspring, fashioned in the likeness of some divinity",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.3-f42": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Phoenix, vernantis aetatulae Venerilla",
-    "text_sha1": "f94f89c2bd525a2ba82ca30ec2f2f68542a40c12",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "Phoenix, a little Venus of a blossoming little age",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Phoenix' reads the same in Latin and English. Aetatula ('tender age') and Venerilla ('little Venus') are diminutives.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Phoenix, a little Venus in the springtime of her tender youth",
         "warnings": []
       }
     ]

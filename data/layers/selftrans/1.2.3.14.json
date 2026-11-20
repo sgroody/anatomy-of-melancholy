@@ -467,35 +467,6 @@
     ],
     "text_sha1": "ea3dd2ca1f83554bf82653dc66b291c8ea2ac190"
   },
-  "1.2.3.14-f129": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Jerome), we love him, we love him for it",
-          "in": "1.2.3.14-p1",
-          "prefix": "nostris libenter favemus (saith ",
-          "suffix": ": O Bonciari suave, suave fuit a"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "6f6ccc75e813dbbd053ce56ab632ea846626d084"
-  },
   "1.2.3.14-f13": {
     "bracket": "present",
     "by": "rules",
@@ -564,18 +535,6 @@
     ],
     "text_sha1": "cbb9571ba57a0de90d6610ab4b986a5b82a98fc5"
   },
-  "1.2.3.14-f134": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713"
-  },
   "1.2.3.14-f135": {
     "bracket": "present",
     "by": "rules",
@@ -627,6 +586,77 @@
     "signals": [],
     "text_sha1": "bb9f66f7697b39cd85f0a016257352e78f439dbf"
   },
+  "1.2.3.14-f138": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "A great assault and cause of our present malady, although we do most part neglect, take no notice of it, yet this is a violent batterer of our souls, causeth melancholy and dotage",
+          "in": "1.2.3.14-p1",
+          "prefix": "imum mentemque peruris, gloria. ",
+          "suffix": ". This pleasing humour, this sof"
+        },
+        "words": 33
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "f9a9cf5ea8b2479c0e60b16f9aeac9b4204bd6d7"
+  },
+  "1.2.3.14-f139": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., I burn with an incredible desire, to have my name registered in thy book",
+          "in": "1.2.3.14-p2",
+          "prefix": ", Ardeo incredibili cupiditate, ",
+          "suffix": ". Out of this fountain proceed a"
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "., and that vainglorious Orator, is not ashamed to confess in an Epistle of his to Marcus Lucceius",
+          "in": "1.2.3.14-p2",
+          "prefix": "liny seconds him; Quanquam O! &c",
+          "suffix": ", Ardeo incredibili cupiditate, "
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "568b66aad7447fba20af95e2e226d5216c73170e"
+  },
   "1.2.3.14-f14": {
     "bracket": "present",
     "by": "rules",
@@ -654,6 +684,35 @@
       "english-at-anchor"
     ],
     "text_sha1": "75f8976833b87fd5e4864f36ad1e52f00fc77d11"
+  },
+  "1.2.3.14-f140": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Queen Katherine, Dowager of England, in private talk, upon like occasion, said, that she would not willingly endure the extremity of either fortune",
+          "in": "1.2.3.14-p16",
+          "prefix": "d. That wise and virtuous Lady, ",
+          "suffix": "; but if it were so, that of nec"
+        },
+        "words": 23
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "63792f0d5d7118fada3b110dc77147e3f3de0d86"
   },
   "1.2.3.14-f17": {
     "bracket": "present",
@@ -986,34 +1045,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "6695af7ab337bcacc3e24aa65fe2aadc89db1b6f"
-  },
-  "1.2.3.14-f3": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "A great assault and cause of our present malady, although we do most part neglect, take no notice of it, yet this is a violent batterer of our souls, causeth melancholy and dotage",
-          "in": "1.2.3.14-p1",
-          "prefix": "imum mentemque peruris, gloria. ",
-          "suffix": ". This pleasing humour, this sof"
-        },
-        "words": 33
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "5ec635ad3c1936576557c45c04d31d596006ee1c"
   },
   "1.2.3.14-f31": {
     "bracket": "present",
@@ -2427,34 +2458,6 @@
     ],
     "text_sha1": "e22f3beb6ef8df714cc7b6e2ebfc579c5b2433b5"
   },
-  "1.2.3.14-f84": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Queen Katherine, Dowager of England, in private talk, upon like occasion, said, that she would not willingly endure the extremity of either fortune",
-          "in": "1.2.3.14-p16",
-          "prefix": "d. That wise and virtuous Lady, ",
-          "suffix": "; but if it were so, that of nec"
-        },
-        "words": 23
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "770f0984d6055296e65ca87154e483f035d50000"
-  },
   "1.2.3.14-f85": {
     "bracket": "none",
     "by": "rules",
@@ -2567,35 +2570,6 @@
     ],
     "text_sha1": "d465e1f5362b69e486671dc40f49f878d996fe47"
   },
-  "1.2.3.14-f91": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "we are active and passive",
-          "in": "1.2.3.14-p2",
-          "prefix": "iseth from ourselves or others, ",
-          "suffix": ". It proceeds inwardly from ours"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713"
-  },
   "1.2.3.14-f92": {
     "bracket": "none",
     "by": "rules",
@@ -2637,12 +2611,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "and that vainglorious Orator, is not ashamed to confess in an Epistle of his to Marcus Lucceius, Ardeo incredibili cupiditate, &c., I burn with an incredible desire, to have my name registered in thy book",
+          "exact": "and that vainglorious Orator, is not ashamed to confess in an Epistle of his to Marcus Lucceius",
           "in": "1.2.3.14-p2",
           "prefix": "y seconds him; Quanquam O! &c., ",
-          "suffix": ". Out of this fountain proceed a"
+          "suffix": ", Ardeo incredibili cupiditate, "
         },
-        "words": 35
+        "words": 17
       }
     ],
     "lang": "la",

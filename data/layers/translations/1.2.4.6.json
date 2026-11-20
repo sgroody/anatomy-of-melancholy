@@ -1047,68 +1047,6 @@
       }
     ]
   },
-  "1.2.4.6-f120": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Genius",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Genius here works as Burton's English. It reflects the Latin idiom 'genium defraudare' (to cheat one's genius), meaning to deny oneself food and comfort. The genius is the inner spirit or appetite that a person indulges or starves.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Genius",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.4.6-f126": {
     "kind": "phrase",
     "lang": "la",
@@ -1936,6 +1874,134 @@
           "work": "Deipnosophistae"
         },
         "text": "at the Phiditia",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.6-f148": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "his neighbours hate him",
+        "in": "1.2.4.6",
+        "near": "1.2.4.6-f148",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": "text \"Prov. 14. 20.\" directly following the passage",
+      "locus": "14. 20",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Proverbs"
+    },
+    "text": "omnes vicini oderunt",
+    "text_sha1": "af9cfac0da378fbe67bac97f1cd56f3cb28029b4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's Latin loosely echoes Proverbs 14:20, where the Vulgate says the poor man will be hateful even to his neighbour.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "his neighbours hate him",
+            "in": "1.2.4.6",
+            "near": "1.2.4.6-f148",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": "text \"Prov. 14. 20.\" directly following the passage",
+          "locus": "14. 20",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Proverbs"
+        },
+        "text": "all his neighbours hate him",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.6-f149": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Livy",
+      "basis": "sidenote \"Liv. dec. 9 lib. 2.\"",
+      "locus": "dec. 9 lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Perseus P. Consuli. S",
+    "text_sha1": "3f12bf30c6f0dea2ff540ea043d73c985aa4dad6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Perseus to Consul P. S[alutem]",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the salutation of a letter. \"P.\" stands for Paulus (Aemilius Paullus). \"S\" is the usual abbreviation of salutem, \"greeting\". Confidence is medium only because the text is abbreviated.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Livy",
+          "basis": "sidenote \"Liv. dec. 9 lib. 2.\"",
+          "locus": "dec. 9 lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Perseus to the Consul P., greeting",
         "warnings": []
       }
     ]

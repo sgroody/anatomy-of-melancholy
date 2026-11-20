@@ -1,4 +1,68 @@
 {
+  "1.2.3.15-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "per annum",
+    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "by the year",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a year",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f17": {
     "kind": "phrase",
     "lang": "la",
@@ -251,6 +315,72 @@
           "work": null
         },
         "text": "Leo",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f203": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"Hear Tully pro Archia Poeta\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pro Archia Poeta"
+    },
+    "text": "Tully pro Archia Poeta",
+    "text_sha1": "52b00a30d304bba9d399c3c97369764069b57aff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Tully, for Archias the Poet",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'Tully' is Burton's English name for Cicero; only 'pro Archia Poeta' is Latin. This is the title of Cicero's speech in defence of the poet Archias. The words that follow give the content of the speech, not a rendering of the title.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"Hear Tully pro Archia Poeta\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pro Archia Poeta"
+        },
+        "text": "Cicero, Pro Archia Poeta",
         "warnings": []
       }
     ]
@@ -716,6 +846,70 @@
       }
     ]
   },
+  "1.2.3.15-f35": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "per annum",
+    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "by the year",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a year",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f37": {
     "kind": "phrase",
     "lang": "la",
@@ -776,6 +970,70 @@
           "work": null
         },
         "text": "a little",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f75": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Sir Henry Spelman",
+      "basis": "sidenote \"Sir Henry Spelman, de non temerandis Ecclesiis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De non temerandis Ecclesiis"
+    },
+    "text": "de non temerandis Ecclesiis",
+    "text_sha1": "35f595758c9586a477913877779d659b9cbd8233",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "concerning churches not to be violated",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The title of Spelman's tract on church property and tithes, De non temerandis ecclesiis (1613).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Sir Henry Spelman",
+          "basis": "sidenote \"Sir Henry Spelman, de non temerandis Ecclesiis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De non temerandis Ecclesiis"
+        },
+        "text": "On Not Profaning Churches",
         "warnings": []
       }
     ]

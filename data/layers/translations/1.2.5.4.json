@@ -69,6 +69,197 @@
       }
     ]
   },
+  "1.2.5.4-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "for a Citizen of Lyons in France",
+        "in": "1.2.5.4",
+        "near": "1.2.5.4-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Reiner Solenander",
+      "basis": "text \"Solenander consil. 9\"",
+      "locus": "consil. 9",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "pro cive Lugdunensi",
+    "text_sha1": "48fa8334a37d88b544ed24f4e346bc130fa77902",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Lugdunum is Lyons. This gives the patient of Solenander's consilium 9, a case report written for a particular patient.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "for a Citizen of Lyons in France",
+            "in": "1.2.5.4",
+            "near": "1.2.5.4-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Reiner Solenander",
+          "basis": "text \"Solenander consil. 9\"",
+          "locus": "consil. 9",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "for a citizen of Lyons",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.4-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Mesenterium",
+    "text_sha1": "61c922bd5c79c50b10b9c77858386a9e67b823d3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin anatomical term. Burton uses the English 'Mesentery' later in the same paragraph.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "mesentery",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.5.4-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Giovanni Battista Montano (Montanus)",
+      "basis": "text \"Montanus consil. 22\"",
+      "locus": "consil. 22",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "pro delirante Judaeo",
+    "text_sha1": "2d38dc4572053d031ecf799de2a63cdfa6783d3a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This names the patient of Montanus's consilium 22, a case report written for a particular patient.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Giovanni Battista Montano (Montanus)",
+          "basis": "text \"Montanus consil. 22\"",
+          "locus": "consil. 22",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "for a delirious Jew",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.5.4-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -407,7 +598,7 @@
       }
     ]
   },
-  "1.2.5.4-f8": {
+  "1.2.5.4-f9": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -434,8 +625,8 @@
       "verified": false,
       "work": null
     },
-    "text": "Pylorus",
-    "text_sha1": "96f2a20ca7db09387af764667f0b76ff37f63cc4",
+    "text": "Diaphragma",
+    "text_sha1": "2f22e35d80215f6dc6a9ba958addbe98cab0d75c",
     "translations": [
       {
         "by": "machine",
@@ -449,7 +640,7 @@
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "An anatomical term, Latinised from the Greek pylōros, 'gatekeeper': the lower opening of the stomach into the intestine. Burton explains it straight away as 'the nether mouth of the Ventricle', meaning the stomach. That is a definition rather than a translation, so no self-translation is recorded. The word is kept as the English anatomical term.",
+        "note": "The Latin anatomical term for the diaphragm, the same organ as the 'Midriff' already named in Burton's list. Burton repeats it rather than translating it.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
@@ -463,7 +654,7 @@
           "verified": false,
           "work": null
         },
-        "text": "pylorus",
+        "text": "Diaphragm",
         "warnings": []
       }
     ]

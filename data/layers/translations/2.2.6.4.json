@@ -2988,6 +2988,136 @@
       }
     ]
   },
+  "2.2.6.4-f67": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Philip, a Jester, was brought in to make sport",
+        "in": "2.2.6.4",
+        "near": "2.2.6.4-f67",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Xenophon",
+      "basis": "text \"in Xenophon’s Sympos.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Symposium"
+    },
+    "text": "Philippus ridendi artifex",
+    "text_sha1": "549a41cad256f22dbc9621c1475625cf8f0444ab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Philip, artificer of laughing",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In Xenophon's Symposium, Philip the jester (gelotopoios, 'laughter-maker') turns up at Callias's banquet uninvited. Burton's Latin calls him an 'artificer of laughter'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Philip, a Jester, was brought in to make sport",
+            "in": "2.2.6.4",
+            "near": "2.2.6.4-f67",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Xenophon",
+          "basis": "text \"in Xenophon’s Sympos.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Symposium"
+        },
+        "text": "Philip, the craftsman of laughter",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.6.4-f68": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "trinoctium",
+    "text_sha1": "a505ed7f3c319c17c8bd55ca8d6111420513d6bf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "three-night period",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This alludes to the myth in which Jupiter made one night last as long as three so he could lie longer with Alcmena, the mother of Hercules. Burton's drinkers want their revels stretched out in the same way.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "night three nights long",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.6.4-f9": {
     "kind": "phrase",
     "lang": "la",

@@ -113,11 +113,11 @@
       }
     ]
   },
-  "3.4.2.5-f7": {
+  "3.4.2.5-f8": {
     "kind": "phrase",
     "lang": "la",
     "location": "sidenote",
-    "preferred": "machine",
+    "preferred": "burton",
     "review": {
       "by": null,
       "date": null,
@@ -125,59 +125,59 @@
     },
     "self_translation": {
       "burton_span": {
-        "exact": "but most offer violence to their own persons",
+        "exact": "most offer violence to their own persons",
         "in": "3.4.2.5",
-        "near": "3.4.2.5-f7",
+        "near": "3.4.2.5-f8",
         "prefix": "",
         "suffix": ""
       },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [],
-      "status": "paraphrase"
+      "status": "full"
     },
     "source": {
-      "author": "Patritius",
-      "basis": "sidenote \"Musculus. Patritius, Ad vim sibi inferendam cogit homines.\"",
+      "author": "Musculus; Patritius",
+      "basis": "sidenote \"Musculus. Patritius,\"",
       "locus": null,
       "status": "burton-cites",
       "verified": false,
       "work": null
     },
-    "text": "Patritius, Ad vim sibi inferendam cogit homines",
-    "text_sha1": "b7622c50b782ff9e67040b8f61e5385db6913854",
+    "text": "Ad vim sibi inferendam cogit homines",
+    "text_sha1": "14de502b7e78c65108acb11e6be2232cf15a54c0",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-28",
+        "date": "2026-11-20",
         "flags": [],
-        "literal": "Patritius: to violence to-be-brought-upon themselves it compels men.",
+        "literal": "It compels men to violence to-be-brought-upon themselves",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "The unstated subject is presumably despair. Burton's main text at the anchor ('most offer violence to their own persons') gives the gist of the quotation.",
+        "note": "The subject is despair, the topic of Burton's main text. In the sidenote this phrase follows the names Musculus and Patritius. It is unclear which of the two it belongs to.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": {
-            "exact": "but most offer violence to their own persons",
+            "exact": "most offer violence to their own persons",
             "in": "3.4.2.5",
-            "near": "3.4.2.5-f7",
+            "near": "3.4.2.5-f8",
             "prefix": "",
             "suffix": ""
           },
-          "status": "paraphrase"
+          "status": "full"
         },
         "source": {
-          "author": "Patritius",
-          "basis": "sidenote \"Musculus. Patritius, Ad vim sibi inferendam cogit homines.\"",
+          "author": "Musculus; Patritius",
+          "basis": "sidenote \"Musculus. Patritius,\"",
           "locus": null,
           "status": "burton-cites",
           "verified": false,
           "work": null
         },
-        "text": "Patritius: It drives men to do violence to themselves.",
+        "text": "It drives men to do violence to themselves",
         "warnings": []
       }
     ]

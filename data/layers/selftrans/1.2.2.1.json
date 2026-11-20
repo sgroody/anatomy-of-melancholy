@@ -854,64 +854,6 @@
     "signals": [],
     "text_sha1": "5ac92f0d5c82999a8e62770f806d165811fe0837"
   },
-  "1.2.2.1-f52": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Nicholas Piso in his Practics, forbids all fruits, as windy, or to be sparingly eaten at least, and not raw",
-          "in": "1.2.2.1-p18",
-          "prefix": "o, or touched with this malady, ",
-          "suffix": ". Amongst other fruits, Bruyerin"
-        },
-        "words": 20
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f1e291dc5427b89a082daff4cfe67413127a9305"
-  },
-  "1.2.2.1-f53": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and almost every peculiar Physician, discourseth at large of all particular meats in his Chapter of Melancholy",
-          "in": "1.2.2.1-p2",
-          "prefix": " besides many other in English, ",
-          "suffix": ": yet because these Books are no"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7e61dbf4e95614fa876d7c32755c163149f53180"
-  },
   "1.2.2.1-f54": {
     "bracket": "none",
     "by": "rules",
@@ -1137,7 +1079,135 @@
     ],
     "text_sha1": "64db1efb9144231d72ffe2ed1121f008bf184f51"
   },
-  "1.2.2.1-f63": {
+  "1.2.2.1-f64": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b067bdab709621ee8a07954d902ef7e9e1dfa54c"
+  },
+  "1.2.2.1-f65": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "hath an evil name, it yields gross nutriment",
+          "in": "1.2.2.1-p6",
+          "prefix": "Hart, and Red Deer ",
+          "suffix": "; a strong and great-grained mea"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8c30eabb8e66f29c45c92693b67c8d3034f051b1"
+  },
+  "1.2.2.1-f66": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Coneys are of the nature of Hares",
+          "in": "1.2.2.1-p9",
+          "prefix": "",
+          "suffix": ". Magninus compares them to Beef"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "552a311f3482571353c3ec1a3e7dec6890168d4f"
+  },
+  "1.2.2.1-f67": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Coneys are of the nature of Hares",
+          "in": "1.2.2.1-p9",
+          "prefix": "",
+          "suffix": ". Magninus compares them to Beef"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "4cae10cb0a7ff9648fb8d28c2c80f965c502907f"
+  },
+  "1.2.2.1-f68": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "it brings heaviness to the soul",
+          "in": "1.2.2.1-p16",
+          "prefix": "ap. 1, Animae gravitatem facit, ",
+          "suffix": ". Some are of opinion, that all "
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cebb374f8c151e2486aab1aae820181028a07ed1"
+  },
+  "1.2.2.1-f69": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -1165,7 +1235,7 @@
       "english-follows",
       "no-gowland-bracket"
     ],
-    "text_sha1": "df3c8a42483f9b3d854d698ea024724d5031b407"
+    "text_sha1": "d512e4d1ec15bb7cea18c43a4629df2899c69ce0"
   },
   "1.2.2.1-f7": {
     "bracket": "present",
@@ -1207,35 +1277,6 @@
       "english-precedes"
     ],
     "text_sha1": "f1478da5108dac25343f16b75739c0881b87a129"
-  },
-  "1.2.2.1-f8": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Coneys are of the nature of Hares",
-          "in": "1.2.2.1-p9",
-          "prefix": "",
-          "suffix": ". Magninus compares them to Beef"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "672852426582ef48a09e214bf0e09650cc5b3100"
   },
   "1.2.2.1-f9": {
     "bracket": "present",

@@ -9,36 +9,6 @@
     "signals": [],
     "text_sha1": "e17f266e3ee8925d4c231a77657a0ac119549ec3"
   },
-  "2.5.1.6-f10": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Cardan and Mizaldus, to anoint the soles of the feet with the fat of a dormouse, the teeth with earwax of a dog, swine’s gall, hare’s ears",
-          "in": "2.5.1.6-p8",
-          "prefix": "atient’s head, are mentioned by ",
-          "suffix": ": charms, &c."
-        },
-        "words": 27
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a74bdbc340117a171cd2c68fdfe477811b771c67"
-  },
   "2.5.1.6-f12": {
     "bracket": "present",
     "by": "rules",
@@ -465,35 +435,6 @@
     ],
     "text_sha1": "b763f038062bc13afb96b70b0725a10965bdcaed"
   },
-  "2.5.1.6-f41": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "are in use, &c.",
-          "in": "2.5.1.6-p3",
-          "prefix": "ium, Laudanum Paracelsi, Opium, ",
-          "suffix": " Countryfolks commonly make a po"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3ceb5f50cda04a0f1ef990e0a67c002620aceaf2"
-  },
   "2.5.1.6-f42": {
     "bracket": "none",
     "by": "rules",
@@ -520,35 +461,6 @@
     ],
     "text_sha1": "b763f038062bc13afb96b70b0725a10965bdcaed"
   },
-  "2.5.1.6-f43": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "itself is most part used outwardly, ʒ i to smell to in a ball, though commonly so taken by the Turks to the same quantity for a cordial, and at Goa in the Indies",
-          "in": "2.5.1.6-p4",
-          "prefix": "swald. Crollius commends. Opium ",
-          "suffix": "; the dose 40 or 50 grains."
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3ceb5f50cda04a0f1ef990e0a67c002620aceaf2"
-  },
   "2.5.1.6-f44": {
     "bracket": "none",
     "by": "rules",
@@ -564,11 +476,28 @@
   "2.5.1.6-f45": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Opium, are in use, &c.",
+          "in": "2.5.1.6-p3",
+          "prefix": "ioscordium, Laudanum Paracelsi, ",
+          "suffix": " Countryfolks commonly make a po"
+        },
+        "words": 5
+      }
+    ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "55fb985438daf4dbd2fa6fef47f7642813b168e3"
@@ -614,6 +543,47 @@
     ],
     "text_sha1": "63ea0c3d2df169c9ecc0e2cfc3eed8c5fd252435"
   },
+  "2.5.1.6-f48": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ca40e8e539db45336319887daf4b477845b417c7"
+  },
+  "2.5.1.6-f49": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Saffron, Hempseed, Nutmegs, Willows with their seeds, juice, decoctions, distilled waters, &c.",
+          "in": "2.5.1.6-p2",
+          "prefix": "Henbane, Nightshade or Solanum, ",
+          "suffix": " Compounds are syrups, or opiate"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5390f857919aaa5d7d8657a31af34c0f18195327"
+  },
   "2.5.1.6-f5": {
     "bracket": "present",
     "by": "rules",
@@ -641,6 +611,147 @@
       "english-at-anchor"
     ],
     "text_sha1": "61f9b613ae2063a7945fe15ca49e5f5ab493166d"
+  },
+  "2.5.1.6-f50": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which are commonly taken with distilled waters",
+          "in": "2.5.1.6-p2",
+          "prefix": "up of Poppy, Violets, Verbasco, ",
+          "suffix": "."
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Compounds are syrups, or opiates, syrup of Poppy, Violets",
+          "in": "2.5.1.6-p2",
+          "prefix": "coctions, distilled waters, &c. ",
+          "suffix": ", Verbasco, which are commonly t"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "dc420d62c77f824ab2c90e23cb8d3cab00972b47"
+  },
+  "2.5.1.6-f51": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Violet leaves, Mandrake roots, Henbane, white Poppy",
+          "in": "2.5.1.6-p11",
+          "prefix": "coction of flowers of Nymphaea, ",
+          "suffix": ". Herc. de Saxonia, stillicidia,"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ca40e8e539db45336319887daf4b477845b417c7"
+  },
+  "2.5.1.6-f52": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or droppings, &c.",
+          "in": "2.5.1.6-p11",
+          "prefix": " Herc. de Saxonia, stillicidia, ",
+          "suffix": " Lotions of the feet do much ava"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ad088013128d4efd0250c317a1f5c4801f540120"
+  },
+  "2.5.1.6-f53": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or the herb Horse-tongue, Balm, to use them or their distilled waters after supper, &c.",
+          "in": "2.5.1.6-p12",
+          "prefix": "ould have you take Hippoglossa, ",
+          "suffix": " Such men must not eat Beans, Pe"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "05d56c82f325ae48c256e7a2d9390b95edc81b94"
+  },
+  "2.5.1.6-f54": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2f3bc4ffcaa43a4acea5112dbd7c4e0e9a50e67c"
   },
   "2.5.1.6-f6": {
     "bracket": "none",

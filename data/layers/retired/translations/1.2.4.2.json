@@ -1,0 +1,153 @@
+{
+  "1.2.4.2-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Jason Pratensis, puts this of Education for a principal cause",
+        "in": "1.2.4.2",
+        "near": "1.2.4.2-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Jason Pratensis",
+      "basis": "sidenote \"Lib. de morbis capitis, cap. de mania\" and text \"Jason Pratensis\"",
+      "locus": "chapter de mania",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De morbis capitis"
+    },
+    "text": "de mania; Haud postrema causa supputatur educatio, inter has mentis abalienationis causas. Injusta noverca",
+    "text_sha1": "1e8b8df454eda49ebdcf4178f236e080a9035ca0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "on mania; not the last cause is reckoned education, among these causes of alienation of mind. Unjust stepmother.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'de mania' belongs to the citation ('chapter on mania') rather than to the quotation itself. 'Injusta noverca' seems to be a separate catchword (the harsh stepmother of proverb), matching the 'stepmothers' in Burton's text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Jason Pratensis, puts this of Education for a principal cause",
+            "in": "1.2.4.2",
+            "near": "1.2.4.2-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Jason Pratensis",
+          "basis": "sidenote \"Lib. de morbis capitis, cap. de mania\" and text \"Jason Pratensis\"",
+          "locus": "chapter de mania",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De morbis capitis"
+        },
+        "text": "on mania: among these causes of the mind's estrangement, education is reckoned not the least. An unjust stepmother.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.2-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "for fear they fall into many diseases, and cry out in their sleep",
+        "in": "1.2.4.2",
+        "near": "1.2.4.2-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Ludwig Lavater",
+      "basis": "text \"saith Lavater de spectris, part. 1 cap. 5\"",
+      "locus": "part. 1 cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De spectris"
+    },
+    "text": "Lavater de spectris, part. 1 cap. 5, ex metu in morbos graves incidunt & noctu dormientes clamant",
+    "text_sha1": "01b9731bf39b29c143cf38034c33f87f8e6a1966",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage includes Burton's own in-text reference to Ludwig Lavater's De spectris (1570), a treatise on ghosts and apparitions.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "for fear they fall into many diseases, and cry out in their sleep",
+            "in": "1.2.4.2",
+            "near": "1.2.4.2-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Ludwig Lavater",
+          "basis": "text \"saith Lavater de spectris, part. 1 cap. 5\"",
+          "locus": "part. 1 cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De spectris"
+        },
+        "text": "Lavater, On Spectres, part 1, chapter 5: from fear they fall into serious diseases, and cry out at night in their sleep.",
+        "warnings": []
+      }
+    ]
+  }
+}

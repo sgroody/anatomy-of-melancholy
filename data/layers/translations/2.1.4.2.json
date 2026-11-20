@@ -57,80 +57,6 @@
       }
     ]
   },
-  "2.1.4.2-f2": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "’Tis a part of his cure to wish his own health",
-        "in": "2.1.4.2",
-        "near": "2.1.4.2-f2",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": "Seneca",
-      "basis": "text \"(Seneca\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Phaedra"
-    },
-    "text": "Pars sanitatis velle sanari fuit (Seneca",
-    "text_sha1": "ec2751d703eab4c1b1d8708302a903e86728f516",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The passage includes Burton's citation '(Seneca', with the closing parenthesis left outside the marked span. The line is from Seneca's Phaedra, where it reads 'pars sanitatis velle sanari fuit'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "’Tis a part of his cure to wish his own health",
-            "in": "2.1.4.2",
-            "near": "2.1.4.2-f2",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Seneca",
-          "basis": "text \"(Seneca\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Phaedra"
-        },
-        "text": "It has been part of health to wish to be healed (Seneca",
-        "warnings": []
-      }
-    ]
-  },
   "2.1.4.2-f3": {
     "kind": "verse",
     "lang": "la",
@@ -482,6 +408,77 @@
           "work": "Satires"
         },
         "text": "you may see them demanding it; meet the disease as it comes.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.2-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’Tis a part of his cure to wish his own health",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"(Seneca)\"; the wording matches Seneca, Phaedra 249 exactly",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Pars sanitatis velle sanari fuit",
+    "text_sha1": "0760ba603247bab772544cafe7648b3c72c863f7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Part of health was to wish to be healed.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The perfect 'fuit' works here as a general truth, the way Latin uses the gnomic perfect. In Seneca the Nurse speaks the line to Phaedra.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’Tis a part of his cure to wish his own health",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"(Seneca)\"; the wording matches Seneca, Phaedra 249 exactly",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "To wish to be healed has been part of health.",
         "warnings": []
       }
     ]

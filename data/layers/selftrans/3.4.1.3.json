@@ -1199,48 +1199,6 @@
     ],
     "text_sha1": "18012e1a7b9d570e5fcaff77ac9adfdfb6f1360e"
   },
-  "3.4.1.3-f153": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Storks, an Ox (saith Pliny), Leeks and Onions, Macrobius",
-          "in": "3.4.1.3-p6",
-          "prefix": "ed a Cat, saith Herodotus, Ibis ",
-          "suffix": ","
-        },
-        "words": 10
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "In the city of Bubastis they adored a Cat, saith Herodotus",
-          "in": "3.4.1.3-p6",
-          "prefix": "ny creature that did them good. ",
-          "suffix": ", Ibis and Storks, an Ox (saith "
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ea8ad7245829c0a5a13064efc36174a0c027c0b6"
-  },
   "3.4.1.3-f16": {
     "bracket": "none",
     "by": "rules",
@@ -1484,18 +1442,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "2a7b75bc911bf1d9700a29f7f388cdbd8df00932"
-  },
-  "3.4.1.3-f202": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9eead4e2ceff552df4bcfb0e0bad9e88d07c6417"
   },
   "3.4.1.3-f203": {
     "bracket": "none",
@@ -2268,18 +2214,6 @@
     ],
     "text_sha1": "3e7780d08e9a532714678cf26c746c0ba1859e96"
   },
-  "3.4.1.3-f234": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ba65426ac785850afdf2509e30a808cf2d177567"
-  },
   "3.4.1.3-f235": {
     "bracket": "none",
     "by": "rules",
@@ -2363,12 +2297,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "For so they were Semi-dii, demigods, some",
+          "exact": "For so they were",
           "in": "3.4.1.3-p7",
           "prefix": "mphiaraus, &c., dii & Semi-dei. ",
-          "suffix": " medii inter Deos & homines, as "
+          "suffix": " Semi-dii, demigods, some medii "
         },
-        "words": 8
+        "words": 4
       },
       {
         "by": "rules",
@@ -2457,16 +2391,6 @@
     ],
     "text_sha1": "a1628e145bad09b46a1a6cbcaaaaa4945900c017"
   },
-  "3.4.1.3-f243": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "593f888ac2a46ed6f9fc5311a13fb09bb17508e2"
-  },
   "3.4.1.3-f244": {
     "bracket": "none",
     "by": "rules",
@@ -2521,6 +2445,131 @@
     ],
     "text_sha1": "47b75262f106b8fe1414157d55fdc1712f95b84a"
   },
+  "3.4.1.3-f246": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 2,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "In attempting to speak of these Symptoms, shall I laugh with Democritus, or weep with Heraclitus",
+          "in": "3.4.1.3-p1",
+          "prefix": "raclitus, an rideat Democritus? ",
+          "suffix": "? They are so ridiculous and abs"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7b2c445854663f01618d18227fd9d44342125cf4"
+  },
+  "3.4.1.3-f247": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "we make our will and understanding too slavishly subject to our faith, without further examination of the truth",
+          "in": "3.4.1.3-p5",
+          "prefix": "ike the Pythagorean Ipse dixit, ",
+          "suffix": "; yet as Saint Gregory truly ans"
+        },
+        "words": 18
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "saying, that the Christian Creed is like the Pythagorean",
+          "in": "3.4.1.3-p5",
+          "prefix": "intellectum in obsequium fidei, ",
+          "suffix": " Ipse dixit, we make our will an"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "d4cbb2382063fe819bb94d1a7dcc2e38a587285f"
+  },
+  "3.4.1.3-f248": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "They hold it impossible",
+          "in": "3.4.1.3-p5",
+          "prefix": "isionibus politicorum reperiri. ",
+          "suffix": ", Deum in pane manducari; and be"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "765cedae6b2171f7e8c7bebc768bf77406c64cc1"
+  },
+  "3.4.1.3-f249": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "some celestial select and great ones, others",
+          "in": "3.4.1.3-p7",
+          "prefix": "o holds, certain and uncertain; ",
+          "suffix": " Indigetes and Semi-dei, Lares, "
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "46287a07208fe16c6015b9cc264e8e0503446b4b"
+  },
   "3.4.1.3-f25": {
     "bracket": "present",
     "by": "rules",
@@ -2548,6 +2597,174 @@
       "english-follows"
     ],
     "text_sha1": "a62c458fbf3dffd32e260442c04e5bc26d5d8843"
+  },
+  "3.4.1.3-f250": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., male and female gods, of all ages, sexes, and dimensions, with beards, without beards, married, unmarried, begot, not born at all, but as Minerva start out of Jupiter’s head",
+          "in": "3.4.1.3-p8",
+          "prefix": "ess of youth, Mena menstruarum, ",
+          "suffix": ". Hesiodus reckons up at least 3"
+        },
+        "words": 30
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Comus the god of goodfellows, gods of silence, of comfort, Hebe goddess of youth, Mena",
+          "in": "3.4.1.3-p8",
+          "prefix": "Hymen, Hymenaeus, for weddings; ",
+          "suffix": " menstruarum, &c., male and fema"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b76f0086aa54a372f22a60f7d1a274d58aa8454f"
+  },
+  "3.4.1.3-f251": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "bd4e9067d029b05556c6a2ca297bfb0101c3e08a"
+  },
+  "3.4.1.3-f252": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "that’s the drift of religion to make us like him whom we worship",
+          "in": "3.4.1.3-p10",
+          "prefix": "ei quem colimus similes fiamus, ",
+          "suffix": ": what shall be the end of Idola"
+        },
+        "words": 13
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "nay more, if that of Plotinus be true, is",
+          "in": "3.4.1.3-p10",
+          "prefix": "t, are no better than dizzards; ",
+          "suffix": " unus religionis scopus, ut ei q"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8ede943a71b3dc1cb5354d786cac201ce4d70c85"
+  },
+  "3.4.1.3-f253": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Julian the Apostate, Porphyrius the Platonist, Celsus the Physician, Libanius the Sophister",
+          "in": "3.4.1.3-p15",
+          "prefix": "ical Popes, than ever it was by ",
+          "suffix": "; by those heathen Emperors, Hun"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c4908668ffade667e2cceda95b0a60c560a87491"
+  },
+  "3.4.1.3-f254": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 2,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Julian the Apostate, Porphyrius the Platonist, Celsus the Physician, Libanius the Sophister",
+          "in": "3.4.1.3-p15",
+          "prefix": "ical Popes, than ever it was by ",
+          "suffix": "; by those heathen Emperors, Hun"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "bc98816c1852792fd7ddb77727d065571e313559"
+  },
+  "3.4.1.3-f255": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5b0232119d0f4f0823f8b2b5edbfdb58ac726863"
   },
   "3.4.1.3-f26": {
     "bracket": "present",
@@ -2680,12 +2897,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "saying, that the Christian Creed is like the",
+          "exact": "saying, that the Christian Creed is like the Pythagorean",
           "in": "3.4.1.3-p5",
           "prefix": "intellectum in obsequium fidei, ",
-          "suffix": " Pythagorean Ipse dixit, we make"
+          "suffix": " Ipse dixit, we make our will an"
         },
-        "words": 8
+        "words": 9
       },
       {
         "by": "rules",
@@ -2708,47 +2925,6 @@
       "english-precedes"
     ],
     "text_sha1": "ebfd9d95139643d5c4d5d067fd1bea1fc5435eae"
-  },
-  "3.4.1.3-f31": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "we make our will and understanding too slavishly subject to our faith, without further examination of the truth",
-          "in": "3.4.1.3-p5",
-          "prefix": "ike the Pythagorean Ipse dixit, ",
-          "suffix": "; yet as Saint Gregory truly ans"
-        },
-        "words": 18
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "saying, that the Christian Creed is like the",
-          "in": "3.4.1.3-p5",
-          "prefix": "intellectum in obsequium fidei, ",
-          "suffix": " Pythagorean Ipse dixit, we make"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "3ecc7ecf9e86ac5ea79b7209efabfc29a1121403"
   },
   "3.4.1.3-f32": {
     "bracket": "present",
@@ -2862,116 +3038,15 @@
     ],
     "text_sha1": "6aca5058ebb92da9a0986344f047a7f5d2c44006"
   },
-  "3.4.1.3-f35": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "vows he will say to Christ himself at the day of judgement",
-          "in": "3.4.1.3-p5",
-          "prefix": " as Richardus de sancto Victore ",
-          "suffix": "; Lord, if we be deceived, thou "
-        },
-        "words": 12
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and if we be mistaken or err in our general belief, as",
-          "in": "3.4.1.3-p5",
-          "prefix": "st and will believe God’s word; ",
-          "suffix": " Richardus de sancto Victore vow"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "89bc14f0de7c6d5a36a9850428448733cde7a2aa"
-  },
   "3.4.1.3-f36": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Mahometans and Jews justly except at, as Campanella confesseth",
-          "in": "3.4.1.3-p5",
-          "prefix": "l consubstantiation, that which ",
-          "suffix": ", Atheismi triumphat. cap. 12 fo"
-        },
-        "words": 9
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
+    "signals": [],
     "text_sha1": "451d1741e13339fbc663963af5ee74697729f839"
-  },
-  "3.4.1.3-f37": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "They hold it impossible",
-          "in": "3.4.1.3-p5",
-          "prefix": "isionibus politicorum reperiri. ",
-          "suffix": ", Deum in pane manducari; and be"
-        },
-        "words": 4
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "But for the rest I will not justify that pontificial consubstantiation, that which Mahometans and Jews justly except at, as Campanella confesseth",
-          "in": "3.4.1.3-p5",
-          "prefix": "ast deceived us: thus we plead. ",
-          "suffix": ", Atheismi triumphat. cap. 12 fo"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "60e5a6ec4cc31c229c5bb05fc88287d691d18629"
   },
   "3.4.1.3-f38": {
     "bracket": "present",
@@ -3255,26 +3330,11 @@
   "3.4.1.3-f47": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "some celestial select and great ones, others Indigetes and",
-          "in": "3.4.1.3-p7",
-          "prefix": "o holds, certain and uncertain; ",
-          "suffix": " Semi-dei, Lares, Lemures, Diosc"
-        },
-        "words": 9
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
+    "signals": [],
     "text_sha1": "9faf53a7e371e2242f32be2f59c8b54e7b7afd67"
   },
   "3.4.1.3-f48": {
@@ -3432,29 +3492,56 @@
     ],
     "text_sha1": "62ce6454485813b947533f2995d1f0e88705d4be"
   },
-  "3.4.1.3-f53": {
-    "bracket": "present",
+  "3.4.1.3-f52": {
+    "bracket": "none",
     "by": "rules",
     "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "demigods, some",
+          "in": "3.4.1.3-p7",
+          "prefix": "dei. For so they were Semi-dii, ",
+          "suffix": " medii inter Deos & homines, as "
+        },
+        "words": 2
+      },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "For so they were Semi-dii, demigods, some",
+          "exact": "For so they were",
           "in": "3.4.1.3-p7",
           "prefix": "mphiaraus, &c., dii & Semi-dei. ",
-          "suffix": " medii inter Deos & homines, as "
+          "suffix": " Semi-dii, demigods, some medii "
         },
-        "words": 8
+        "words": 4
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-precedes"
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
     ],
+    "text_sha1": "483fe4b4294dd0e2133c4170ba7fed32b61354db"
+  },
+  "3.4.1.3-f53": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
     "text_sha1": "5e0a88eb372bceac41f8cd5e52f86e0da07bbfaf"
   },
   "3.4.1.3-f54": {
@@ -3507,48 +3594,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "83e4bebb7f72e0a97e9b06f4d36e73f989f824e1"
-  },
-  "3.4.1.3-f56": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "&c., male and female gods, of all ages, sexes, and dimensions, with beards, without beards, married, unmarried, begot, not born at all, but as Minerva start out of Jupiter’s head",
-          "in": "3.4.1.3-p8",
-          "prefix": "ess of youth, Mena menstruarum, ",
-          "suffix": ". Hesiodus reckons up at least 3"
-        },
-        "words": 30
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Comus the god of goodfellows, gods of silence, of comfort, Hebe goddess of youth",
-          "in": "3.4.1.3-p8",
-          "prefix": "Hymen, Hymenaeus, for weddings; ",
-          "suffix": ", Mena menstruarum, &c., male an"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f777bf7dbbbad688742b968af457c06e8f5542ad"
   },
   "3.4.1.3-f57": {
     "bracket": "none",
@@ -4660,6 +4705,16 @@
       "english-precedes"
     ],
     "text_sha1": "25550c31ffd07fd79fda0a44920b39b3e98a0250"
+  },
+  "3.4.1.3-f97": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "f95ddf7d2c81b9d7c063a1d041744721426b3a68"
   },
   "3.4.1.3-f98": {
     "bracket": "present",

@@ -685,7 +685,7 @@
       }
     ]
   },
-  "1.2.3.7-f32": {
+  "1.2.3.7-f33": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -697,9 +697,9 @@
     },
     "self_translation": {
       "burton_span": {
-        "exact": "They love, or hate, no medium amongst them",
+        "exact": "They love, or hate, no medium amongst them.",
         "in": "1.2.3.7",
-        "near": "1.2.3.7-f32",
+        "near": "1.2.3.7-f33",
         "prefix": "",
         "suffix": ""
       },
@@ -711,44 +711,41 @@
       "status": "full"
     },
     "source": {
-      "author": "Granatensis",
-      "basis": "text \"(Granatensis)\"",
+      "author": "Luis de Granada (Granatensis)",
+      "basis": "text \"(Granatensis)\" immediately following the passage",
       "locus": null,
       "status": "burton-cites",
       "verified": false,
       "work": null
     },
-    "text": "aut amat, aut odit, nihil est tertium (Granatensis",
-    "text_sha1": "dd50235bf1c6e59c49f810d958b3771ce9a1d1ee",
+    "text": "aut amat, aut odit, nihil est tertium",
+    "text_sha1": "d312ac361c31a8db43aaa1106d366197e08b6a31",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "either she loves, or she hates, there is nothing third",
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "The marked span includes Burton's parenthetical attribution '(Granatensis', which is a name and has not been translated. Granatensis is probably Luis de Granada.",
+        "note": "The Latin has no subject. The context (women) shows it means 'she'. The saying echoes Publilius Syrius: 'Aut amat aut odit mulier, nihil est tertium'.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": {
-            "exact": "They love, or hate, no medium amongst them",
+            "exact": "They love, or hate, no medium amongst them.",
             "in": "1.2.3.7",
-            "near": "1.2.3.7-f32",
+            "near": "1.2.3.7-f33",
             "prefix": "",
             "suffix": ""
           },
           "status": "full"
         },
         "source": {
-          "author": "Granatensis",
-          "basis": "text \"(Granatensis)\"",
+          "author": "Luis de Granada (Granatensis)",
+          "basis": "text \"(Granatensis)\" immediately following the passage",
           "locus": null,
           "status": "burton-cites",
           "verified": false,

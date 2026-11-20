@@ -214,31 +214,20 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 16307, p. 296"
   },
-  "1.2.4.6-f120": {
-    "align_score": 1.0,
+  "1.2.4.6-f126": {
+    "align_score": 0.852,
     "by": "djs1927",
-    "left_anchor": "perpetual exactions, that though they do drudge, fare hard, and starve their",
+    "left_anchor": "., but he scorned him any answer,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", they cannot live in some countries; but what they have is",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Genius,",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 16490, pp. 299-301"
-  },
-  "1.2.4.6-f126": {
-    "align_score": 0.779,
-    "by": "djs1927",
-    "left_anchor": "Roman General; Perseus P. Consuli. S., but he scorned him any answer,",
-    "left_score": 0.779,
-    "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": "(saith mine author), upbraiding him with his present fortune. Carolus Pugnax, that",
     "right_score": 0.852,
-    "status": "below-threshold",
+    "status": "omitted",
+    "text": "",
     "text_sha1": "9fb4bdaa591d3a0e76e637045e199397aa766b6e",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 16707, p. 304"
   },
   "1.2.4.6-f127": {
     "by": "djs1927",
@@ -379,6 +368,32 @@
     "text_sha1": "47efbd4d3e025d3bbd1814883f07c63f41d17f9d",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 16619, p. 303"
+  },
+  "1.2.4.6-f148": {
+    "align_score": 0.8,
+    "by": "djs1927",
+    "left_anchor": "friends, Prov. 19. 7. His brethren hate him if he be poor,",
+    "left_score": 0.827,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", his neighbours hate him, Prov. 14. 20.",
+    "right_score": 0.8,
+    "status": "below-threshold",
+    "text_sha1": "af9cfac0da378fbe67bac97f1cd56f3cb28029b4",
+    "threshold": 0.85
+  },
+  "1.2.4.6-f149": {
+    "align_score": 0.993,
+    "by": "djs1927",
+    "left_anchor": "King Perseus overcome sent a letter to Paulus Aemilius the Roman General;",
+    "left_score": 0.993,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "., but he scorned him any answer,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "Perseus giveth greetings to Paulus the Consul",
+    "text_sha1": "3f12bf30c6f0dea2ff540ea043d73c985aa4dad6",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 16706, p. 304"
   },
   "1.2.4.6-f15": {
     "by": "djs1927",
@@ -1246,8 +1261,8 @@
   },
   "1.2.4.6-f84": {
     "by": "djs1927",
-    "left_anchor": "be poor, omnes vicini oderunt, his neighbours hate him, Prov. 14. 20.",
-    "left_score": 0.6226415094339622,
+    "left_anchor": ", his neighbours hate him, Prov. 14. 20.",
+    "left_score": 0.8,
     "method": "rules/djs-align-v3",
     "right_anchor": ", as he complained in the Comedy, friends & strangers, all forsake",
     "right_score": 1.0,

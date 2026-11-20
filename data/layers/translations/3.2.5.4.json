@@ -502,6 +502,68 @@
       }
     ]
   },
+  "3.2.5.4-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Radix",
+    "text_sha1": "e2bea001712992baa23e8c78c49863e0902c0ce2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only the first word of the sentence is marked. The full phrase is 'Radix mandragorae ebibitae', 'the root of mandrake, drunk down', the first item in Burton's list of absurd remedies for love.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The root",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.4-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -555,6 +617,128 @@
           "work": null
         },
         "text": "Julius Capitolinus",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.4-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Philostratus",
+      "basis": "text \"apud Philostratum lib. 3\"",
+      "locus": "book 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Apollonius of Tyana"
+    },
+    "text": "Iarthae Indorum gymnosophistae apud Philostratum lib",
+    "text_sha1": "3330ec36901d6cdd68d309d928a380698519b604",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This depends on the preceding 'ex consilio' ('on the advice'). The book number '3' falls just outside the marked span. 'Iarthae' is Burton's form of Iarchas, the Indian sage in Philostratus' Life of Apollonius. The whole sentence reads: 'An owl's egg, eaten, makes men abstain from wine, on the advice of Iarchas…'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Philostratus",
+          "basis": "text \"apud Philostratum lib. 3\"",
+          "locus": "book 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Apollonius of Tyana"
+        },
+        "text": "of Iarchas, gymnosophist of the Indians, in Philostratus, book",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.4-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Julius Capitolinus",
+      "basis": "text \"refert Julius Capitolinus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Historia Augusta, Life of Marcus Aurelius"
+    },
+    "text": "Faustinam Marci Aurelii uxorem, gladiatoris amore captam, ita penitus consilio Chaldaeorum liberatam, refert",
+    "text_sha1": "2fb620885ba775edf666c2e257653d1db12af288",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Faustina, of Marcus Aurelius wife, by love of a gladiator seized, thus thoroughly by the counsel of the Chaldaeans freed, reports",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is an accusative-and-infinitive construction that depends on 'refert'. The subject, Julius Capitolinus, stands just outside the marked span. 'Ita' ('in this way') refers back to the preceding remedy: drinking the blood of the beloved removes all feeling of love. In the Historia Augusta's Life of Marcus, the Chaldaeans advised that the gladiator be killed and that Faustina bathe in his blood.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Julius Capitolinus",
+          "basis": "text \"refert Julius Capitolinus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Historia Augusta, Life of Marcus Aurelius"
+        },
+        "text": "Faustina, wife of Marcus Aurelius, who had been seized with love for a gladiator, was in this way thoroughly freed of it on the advice of the Chaldaeans, reports",
         "warnings": []
       }
     ]

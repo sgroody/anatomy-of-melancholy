@@ -109,18 +109,15 @@
     "threshold": 0.85
   },
   "1.2.2.1-f2": {
-    "align_score": 0.947,
     "by": "djs1927",
-    "left_anchor": "life, anyways inclined to Melancholy, or dry of complexion: Tales (Galen thinks)",
-    "left_score": 0.947,
+    "left_anchor": "neither air, nor perturbations, nor any of those other e (Galen thinks)",
+    "left_score": 0.8976377952755905,
     "method": "rules/djs-align-v3",
     "right_anchor": ". Pork, of all meats is most nutritive in his own nature,",
     "right_score": 1.0,
-    "status": "aligned",
-    "text": "are easily seized with melancholy diseases.",
+    "status": "not-found",
     "text_sha1": "e469330fe665a512839e9be6672d922ebfffe3ce",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 10921, pp. 189-190"
+    "threshold": 0.85
   },
   "1.2.2.1-f20": {
     "align_score": 1.0,
@@ -351,14 +348,11 @@
     "threshold": 0.85
   },
   "1.2.2.1-f48": {
-    "align_score": 0.745,
     "by": "djs1927",
-    "left_anchor": "or dry of complexion: Tales (Galen thinks) de f , saith Savonarola,",
-    "left_score": 0.745,
+    "left_anchor": "(Galen thinks) de f , saith Savonarola,",
     "method": "rules/djs-align-v3",
     "right_anchor": ": naught for queasy stomachs, insomuch, that frequent use of it may",
-    "right_score": 0.969,
-    "status": "below-threshold",
+    "status": "not-found",
     "text_sha1": "ba7b01ee2a1913073d4fe8316eb37bd9e2b86f99",
     "threshold": 0.85
   },
@@ -379,26 +373,6 @@
     "right_score": 0.7706422018348624,
     "status": "not-found",
     "text_sha1": "5ac92f0d5c82999a8e62770f806d165811fe0837",
-    "threshold": 0.85
-  },
-  "1.2.2.1-f52": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f1e291dc5427b89a082daff4cfe67413127a9305",
-    "threshold": 0.85
-  },
-  "1.2.2.1-f53": {
-    "align_score": 0.633,
-    "by": "djs1927",
-    "left_anchor": "Fumanellus, lib. de regimine senum, Curio in his Comment on Schola Salerna,",
-    "left_score": 0.633,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "., besides many other in English, and almost every peculiar Physician, discourseth",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "7e61dbf4e95614fa876d7c32755c163149f53180",
     "threshold": 0.85
   },
   "1.2.2.1-f54": {
@@ -489,20 +463,65 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 11240, p. 196"
   },
-  "1.2.2.1-f63": {
-    "align_score": 0.961,
+  "1.2.2.1-f64": {
+    "align_score": 0.877,
     "by": "djs1927",
-    "left_anchor": "and Worts, except Borage, Bugloss, Fennel, Parsley, Dill, Balm, Succory. Magninus, regim.",
-    "left_score": 0.961,
+    "left_anchor": "lead a resty life, anyways inclined to Melancholy, or dry of complexion:",
+    "left_score": 0.993,
     "method": "rules/djs-align-v3",
-    "residue": "",
+    "right_anchor": "(Galen thinks) Pork, of all meats is most nutritive in his own",
+    "right_score": 0.877,
+    "status": "aligned",
+    "text": "such, Galen thinks, are easily seized with melancholy",
+    "text_sha1": "b067bdab709621ee8a07954d902ef7e9e1dfa54c",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 10921, pp. 189-190"
+  },
+  "1.2.2.1-f65": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "8c30eabb8e66f29c45c92693b67c8d3034f051b1",
+    "threshold": 0.85
+  },
+  "1.2.2.1-f66": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "552a311f3482571353c3ec1a3e7dec6890168d4f",
+    "threshold": 0.85
+  },
+  "1.2.2.1-f67": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "4cae10cb0a7ff9648fb8d28c2c80f965c502907f",
+    "threshold": 0.85
+  },
+  "1.2.2.1-f68": {
+    "by": "djs1927",
+    "left_anchor": "6, of all Herbs condemns Cabbage; and Isaac, lib. 2 cap. 1,",
+    "left_score": 0.7962962962962963,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", it brings heaviness to the soul. Some are of opinion, that",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "cebb374f8c151e2486aab1aae820181028a07ed1",
+    "threshold": 0.85
+  },
+  "1.2.2.1-f69": {
+    "by": "djs1927",
+    "left_anchor": "Bugloss, Fennel, Parsley, Dill, Balm, Succory. Magninus, regim. sanitatis, 3 part. cap",
+    "left_score": 0.7913669064748201,
+    "method": "rules/djs-align-v3",
     "right_anchor": ", all Herbs are simply evil to feed on (as he thinks).",
     "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "df3c8a42483f9b3d854d698ea024724d5031b407",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 11056, pp. 191-193"
+    "status": "not-found",
+    "text_sha1": "d512e4d1ec15bb7cea18c43a4629df2899c69ce0",
+    "threshold": 0.85
   },
   "1.2.2.1-f7": {
     "align_score": 0.985,
@@ -517,14 +536,6 @@
     "text_sha1": "f1478da5108dac25343f16b75739c0881b87a129",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 10951, pp. 189-190"
-  },
-  "1.2.2.1-f8": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "672852426582ef48a09e214bf0e09650cc5b3100",
-    "threshold": 0.85
   },
   "1.2.2.1-f9": {
     "by": "djs1927",

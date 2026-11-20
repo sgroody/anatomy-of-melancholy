@@ -57,16 +57,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49507, p. 931"
   },
   "3.4.2.1-f122": {
-    "align_score": 0.71,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "Tract (so styled at least) De immor fessed Christians, yet they will",
-    "left_score": 0.71,
+    "left_anchor": "in a dream, who though they be professed Christians, yet they will",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", make a conscience of nothing they do, they have cauterized consciences,",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "omitted",
+    "text": "",
     "text_sha1": "f98f32f8ec57084447c36d1cfd700067f5c7b1d0",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49604, pp. 932-933"
   },
   "3.4.2.1-f127": {
     "align_score": 1.0,
@@ -105,14 +108,6 @@
     "right_anchor": ";",
     "status": "no-anchor",
     "text_sha1": "4bb17f6b2fb93c63412be89c015348e21b72ac24",
-    "threshold": 0.85
-  },
-  "3.4.2.1-f130": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f74c68479e75d36f7aac3417c1e97e63e9e4d5fd",
     "threshold": 0.85
   },
   "3.4.2.1-f131": {
@@ -213,21 +208,6 @@
     "text_sha1": "27139d093126b9d1da8806080b65fbbc37fd2a2b",
     "threshold": 0.85
   },
-  "3.4.2.1-f140": {
-    "align_score": 0.974,
-    "by": "djs1927",
-    "left_anchor": "of late to confute Atheists: of the Immortality of the Soul, Hierom.",
-    "left_score": 0.992,
-    "method": "rules/djs-align-v3",
-    "residue": "Montanus,",
-    "right_anchor": ": Lelius Vincentius of the same subject: Thomas Gianinius, and",
-    "right_score": 0.974,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "983eecbb135e5642e2e21cafd434b36884986845",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49710, pp. 934-935"
-  },
   "3.4.2.1-f142": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -243,14 +223,14 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49517, p. 931"
   },
   "3.4.2.1-f147": {
-    "align_score": 1.0,
+    "align_score": 0.992,
     "by": "djs1927",
     "left_anchor": "he could not choose but laugh at, and will now and then",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": ", read Austin, frequent Sermons, and yet",
-    "right_score": 1.0,
+    "right_anchor": ", read Austin, frequent Sermons, and yet professed Usurers, mere Gripers,",
+    "right_score": 0.992,
     "status": "omitted",
     "text": "",
     "text_sha1": "1a16a1c83a66e62f0390ba4fbec64a091d303ae6",
@@ -303,6 +283,35 @@
     "right_anchor": ", saith Jerome,",
     "status": "no-anchor",
     "text_sha1": "e23ce6494dc117b8c943670078a0e9538f4449df",
+    "threshold": 0.85
+  },
+  "3.4.2.1-f152": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "399e3e1bf3807f484ae10798db13e35f0d868d79",
+    "threshold": 0.85
+  },
+  "3.4.2.1-f153": {
+    "align_score": 0.985,
+    "by": "djs1927",
+    "gap_words": 60,
+    "left_anchor": "in superfluity of wealth, keeps whores, parasites, and what he will himself:",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "? Cousin-germans to these men, are many of our great Philosophers, and",
+    "right_score": 0.985,
+    "status": "implausible-length",
+    "text_sha1": "e91ba0437ebd37c2ac7382dd6562e6c8bd06dc97",
+    "threshold": 0.85
+  },
+  "3.4.2.1-f154": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "2ef7fb8303e7b8e93a921d12d15e1b7c9ff90dd4",
     "threshold": 0.85
   },
   "3.4.2.1-f16": {
@@ -390,23 +399,25 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49320, p. 927"
   },
   "3.4.2.1-f21": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "fess religion, but",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", tempted thereunto out of that horrible consideration of diversity of Religions,",
-    "status": "no-anchor",
-    "text_sha1": "a12e702dba2ba142cbb85bc52ec41e9d2fe68397",
-    "threshold": 0.85
-  },
-  "3.4.2.1-f22": {
-    "align_score": 0.603,
-    "by": "djs1927",
-    "left_anchor": "both urgeth and answers), besides the covetousness, imposture and knavery of Priests,",
+    "left_anchor": "milder sort of these Atheistical spirits there are that profess religion, but",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "(as Postellus observes) Nullos esse Deos, inane coelum, / Affirmat Selius:",
-    "right_score": 0.603,
-    "status": "below-threshold",
+    "right_anchor": ", tempted thereunto out of that horrible consideration of diversity of Religions,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "timidly and hesitantly,",
+    "text_sha1": "a12e702dba2ba142cbb85bc52ec41e9d2fe68397",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49330, p. 928"
+  },
+  "3.4.2.1-f22": {
+    "by": "djs1927",
+    "left_anchor": "both urgeth and answers), besides the covetousness, imposture and knavery of Priests,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(as Postellus observes)",
+    "status": "no-anchor",
     "text_sha1": "585d6927e8e493946f5a17b48d517949bcaddcfc",
     "threshold": 0.85
   },
@@ -419,24 +430,12 @@
     "text_sha1": "9a2805d4c525f343ecbf968a30931f8fa8d65bf4",
     "threshold": 0.85
   },
-  "3.4.2.1-f24": {
-    "align_score": 0.759,
-    "by": "djs1927",
-    "left_anchor": "Sextus Empiricus lib. 8 advers. Mathematicos: after many Philosophical arguments and reasons",
-    "left_score": 0.759,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and con that there are Gods, and again that there are no",
-    "right_score": 0.93,
-    "status": "below-threshold",
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
-    "threshold": 0.85
-  },
   "3.4.2.1-f25": {
     "by": "djs1927",
     "left_anchor": "are Gods, and again that there are no Gods, he so concludes,",
     "method": "rules/djs-align-v3",
-    "right_anchor": ". Nullos esse Deos, inane coelum, / Affirmat Selius:",
-    "status": "not-found",
+    "right_anchor": ".",
+    "status": "no-anchor",
     "text_sha1": "af7cc6ff18df9a1962b5d4e05dc206b45854d3c9",
     "threshold": 0.85
   },
@@ -506,18 +505,15 @@
     "threshold": 0.85
   },
   "3.4.2.1-f35": {
-    "align_score": 0.878,
     "by": "djs1927",
-    "left_anchor": "wealth, keeps whores, parasites, and what he will himself: audis Jupiter haec?",
-    "left_score": 0.878,
+    "left_anchor": "that whilst he thus denies / Their Deities, he better thrives. ?",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ". Thus they mutter and object (see the rest of their arguments",
     "right_score": 1.0,
-    "status": "aligned",
-    "text": "this, Jupiter ? Collecting many such things, they weave a tissue of reproaches against God's providence.",
+    "status": "not-found",
     "text_sha1": "c8762a7cc6cb5b1fa4453237bc86452bd9815316",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49397, p. 929"
+    "threshold": 0.85
   },
   "3.4.2.1-f36": {
     "align_score": 0.992,
@@ -533,14 +529,6 @@
     "text_sha1": "6be620b7de316ae20bb977853bdf4e80f30098a2",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49407, p. 929"
-  },
-  "3.4.2.1-f37": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "e3b0a056fcdd6e2a2283c207b239bb6456bf145c",
-    "threshold": 0.85
   },
   "3.4.2.1-f38": {
     "align_score": 0.993,
@@ -647,9 +635,9 @@
   },
   "3.4.2.1-f47": {
     "by": "djs1927",
-    "left_anchor": "gress, periods,",
+    "left_anchor": "predominant, so have Religions, Rites, Ceremonies, and Kingdoms their beginning, progress, periods,",
     "method": "rules/djs-align-v3",
-    "right_anchor": "Quid nunc vile magis & execrandum? Ita coelestia corpora",
+    "right_anchor": "",
     "status": "no-anchor",
     "text_sha1": "83a2f4f6132b6799314f762bffe8ab559c776c67",
     "threshold": 0.85
@@ -753,7 +741,7 @@
     "by": "djs1927",
     "left_anchor": ", it can",
     "method": "rules/djs-align-v3",
-    "right_anchor": "",
+    "right_anchor": "professed Atheists all in their times: though not simple Atheists neither, as",
     "status": "no-anchor",
     "text_sha1": "155c8c4bbadd0b6d66d18d127e0999e954397e20",
     "threshold": 0.85
@@ -779,14 +767,6 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "beeaa72f4288b67a0c3a25e5f156b83984c731b2",
-    "threshold": 0.85
-  },
-  "3.4.2.1-f60": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "8cea7f5ef1e1a1a65bacf3e60e3f470c6535931c",
     "threshold": 0.85
   },
   "3.4.2.1-f61": {
@@ -851,7 +831,7 @@
   "3.4.2.1-f7": {
     "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": ", and to be merry for the present,",
+    "left_anchor": "how to please their Genius, and to be merry for the present,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "The same condition is of men and of beasts; as the one",
@@ -863,13 +843,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49244, p. 926"
   },
   "3.4.2.1-f70": {
+    "align_score": 0.989,
     "by": "djs1927",
     "left_anchor": "(Henry the Landgrave of Hessen heard him speak it).",
+    "left_score": 0.989,
     "method": "rules/djs-align-v3",
-    "right_anchor": ". To these",
-    "status": "no-anchor",
+    "right_anchor": ". To these professed Atheists we may well add that impious and",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "If the Princes of the Empire (he said) would follow my teaching, I would lay out a much better way of believing and living.",
     "text_sha1": "0a0d7ffd8ad3efe8ca4cafc4fd7fa465a3ff6c9d",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49597, pp. 932-933"
   },
   "3.4.2.1-f71": {
     "align_score": 0.991,
@@ -1002,13 +987,19 @@
     "threshold": 0.85
   },
   "3.4.2.1-f80": {
+    "align_score": 0.992,
     "by": "djs1927",
-    "left_anchor": "fessed Usurers, mere Gripers,",
+    "left_anchor": ", read Austin, frequent Sermons, and yet professed Usurers, mere Gripers,",
+    "left_score": 0.992,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": "; all their life is Epicurism and Atheism, come to Church all",
-    "status": "not-found",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "dab9b2286857d8466de2fe97579360c81ced34a2",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49652, pp. 934-935"
   },
   "3.4.2.1-f81": {
     "align_score": 0.987,
@@ -1160,21 +1151,6 @@
     "text_sha1": "7b2901927051ff335b651122ea3849ac7f95c82b",
     "threshold": 0.85
   },
-  "3.4.2.1-f93": {
-    "align_score": 0.974,
-    "by": "djs1927",
-    "left_anchor": ": Lelius Vincentius of the same subject: Thomas Gianinius, and",
-    "left_score": 0.974,
-    "method": "rules/djs-align-v3",
-    "residue": "Franciscus Collins,",
-    "right_anchor": ", a famous Doctor of the Ambrosian College in Milan. Bishop Fotherby",
-    "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "6252c060d0efca0f1dd94810dd3ea372b10649e5",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49711, pp. 934-935"
-  },
   "3.4.2.1-f94": {
     "align_score": 0.969,
     "by": "djs1927",
@@ -1210,19 +1186,5 @@
     "status": "implausible-length",
     "text_sha1": "01bf93e3e9000c6028c8c9eb01e7294afeb63aa5",
     "threshold": 0.85
-  },
-  "3.4.2.1-f97": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "endeavours are to satisfy their lust and appetite, how to please their",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", and to be merry for the present,",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Genius,",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49241, p. 926"
   }
 }

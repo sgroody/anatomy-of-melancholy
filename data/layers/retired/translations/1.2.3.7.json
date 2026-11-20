@@ -196,5 +196,83 @@
         "warnings": []
       }
     ]
+  },
+  "1.2.3.7-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "They love, or hate, no medium amongst them",
+        "in": "1.2.3.7",
+        "near": "1.2.3.7-f32",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Granatensis",
+      "basis": "text \"(Granatensis)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "aut amat, aut odit, nihil est tertium (Granatensis",
+    "text_sha1": "dd50235bf1c6e59c49f810d958b3771ce9a1d1ee",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked span includes Burton's parenthetical attribution '(Granatensis', which is a name and has not been translated. Granatensis is probably Luis de Granada.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "They love, or hate, no medium amongst them",
+            "in": "1.2.3.7",
+            "near": "1.2.3.7-f32",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Granatensis",
+          "basis": "text \"(Granatensis)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "she either loves or hates; there is no third way",
+        "warnings": []
+      }
+    ]
   }
 }

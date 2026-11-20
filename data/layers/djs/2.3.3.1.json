@@ -1376,12 +1376,10 @@
   },
   "2.3.3.1-f225": {
     "by": "djs1927",
-    "left_anchor": "Though he kill me, saith Job, I will trust in him. Justus",
-    "left_score": 0.9423076923076923,
+    "left_anchor": "",
     "method": "rules/djs-align-v3",
     "right_anchor": ", as Chrysostom holds, a just man is impregnable, and not to",
-    "right_score": 1.0,
-    "status": "not-found",
+    "status": "no-anchor",
     "text_sha1": "2d2d9e00a2744a5dd0da7d8f787271414c62e509",
     "threshold": 0.85
   },
@@ -1821,14 +1819,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27683, pp. 515-516"
   },
-  "2.3.3.1-f274": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "7fd4e108aa4608a0b5dcd2edcc66934d568e9c44",
-    "threshold": 0.85
-  },
   "2.3.3.1-f275": {
     "align_score": 0.993,
     "by": "djs1927",
@@ -1887,6 +1877,58 @@
     "text_sha1": "1f62c6ba8d86b37f17e10f2cdc032d48f2145d6e",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27489, p. 512"
+  },
+  "2.3.3.1-f280": {
+    "align_score": 0.836,
+    "by": "djs1927",
+    "left_anchor": "James 5. 1, 2, 3. I may then boldly conclude with Theodoret,",
+    "left_score": 0.836,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", &c. As often as you shall see a man abounding in",
+    "right_score": 0.874,
+    "status": "below-threshold",
+    "text_sha1": "ed35bcd43cc4db8b66f948e0b605a85da2a49fab",
+    "threshold": 0.85
+  },
+  "2.3.3.1-f281": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "ee545b50ed28ca654e2b8daf3e454fb9bacad5ce",
+    "threshold": 0.85
+  },
+  "2.3.3.1-f282": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "cfc71a2af3236f89c73bfa04a6d5c00bbb05b3a6",
+    "threshold": 0.85
+  },
+  "2.3.3.1-f283": {
+    "by": "djs1927",
+    "left_anchor": "it. Though he kill me, saith Job, I will trust in him.",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "",
+    "status": "no-anchor",
+    "text_sha1": "c49516a80320629f0b72f41064748609681cbcf7",
+    "threshold": 0.85
+  },
+  "2.3.3.1-f284": {
+    "align_score": 0.947,
+    "by": "djs1927",
+    "left_anchor": "so many dangers, God especially protected him, he was dear unto him:",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", &c. Thou art now in the vale of misery, in poverty,",
+    "right_score": 0.947,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "f808653f664f988da9b0be355fc4c24ac5e8ba07",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 28124, pp. 524-525"
   },
   "2.3.3.1-f29": {
     "align_score": 1.0,
@@ -2553,14 +2595,6 @@
     "text_sha1": "85a87ab23eb2dd8f0b9c6e372ba7910b9d403c61",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27800, p. 519"
-  },
-  "2.3.3.1-f84": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "2418da9bc2091066efe77c7609d7aea500a632b9",
-    "threshold": 0.85
   },
   "2.3.3.1-f85": {
     "align_score": 1.0,

@@ -755,6 +755,65 @@
       }
     ]
   },
+  "1.2.3.9-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Gilberto Cognato interprete",
+    "text_sha1": "a734277a289f54d2dcb634a6d4748e9a2e74f368",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Gilbert Cousin [being] the translator",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A bibliographical sidenote. Gilbertus Cognatus is Gilbert Cousin (1506–1572), a humanist who translated Lucian into Latin. The note tells the reader that Burton quotes Lucian's Abdicatus (The Disinherited Son), cited in the main text, from Cousin's Latin version.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "In the translation of Gilbert Cousin",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.9-f5": {
     "kind": "phrase",
     "lang": "la",

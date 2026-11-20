@@ -1,4 +1,81 @@
 {
+  "2.3.2.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "great men are proper, and tall",
+        "in": "2.3.2.1",
+        "near": "2.3.2.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Virgil",
+      "basis": "The distinctive phrase 'caput inter nubila condit', used of Fama.",
+      "locus": "4.177",
+      "status": "probable",
+      "verified": false,
+      "work": "Aeneid"
+    },
+    "text": "I grant, ——— caput inter nubila condunt",
+    "text_sha1": "863779117a56f4d0d331ace9035e48b8e2716558",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'I grant' is Burton's English and is not translated here. Virgil, Aeneid 4.177, says of Rumour 'et caput inter nubila condit' ('and hides her head among the clouds'). Burton makes the verb plural so that it fits tall men.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "great men are proper, and tall",
+            "in": "2.3.2.1",
+            "near": "2.3.2.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Virgil",
+          "basis": "The distinctive phrase 'caput inter nubila condit', used of Fama.",
+          "locus": "4.177",
+          "status": "probable",
+          "verified": false,
+          "work": "Aeneid"
+        },
+        "text": "— they hide their heads among the clouds",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.2.1-f22": {
     "kind": "phrase",
     "lang": "la",
@@ -63,6 +140,196 @@
       }
     ]
   },
+  "2.3.2.1-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Agesilaus despicabili forma",
+    "text_sha1": "85ec2bb4b041b1e9cee109695c539a3c4d08124b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Agesilaus, of contemptible appearance",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.2.1-f63": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Josephus Mussus (Giuseppe Musso)",
+      "basis": "sidenote \"Josephus Mussus vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Cornelio Musso"
+    },
+    "text": "Josephus Mussus vita ejus",
+    "text_sha1": "74a3fefa6f9c40bd61a634766f2cb882066e3bf2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Josephus Mussus, life of him",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A source reference: the Life of the preacher Cornelio Musso written by Giuseppe Musso.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Josephus Mussus (Giuseppe Musso)",
+          "basis": "sidenote \"Josephus Mussus vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Cornelio Musso"
+        },
+        "text": "Giuseppe Musso, his Life",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.2.1-f67": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Joachim Camerarius",
+      "basis": "sidenote \"Joachimus Camerarius vit. ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Melanchthon"
+    },
+    "text": "Joachimus Camerarius vit. ejus",
+    "text_sha1": "3062fa3a43a078f4de1011248533951d56008029",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "Joachimus Camerarius, life of him",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A source reference: Camerarius's Life of Melanchthon.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Joachim Camerarius",
+          "basis": "sidenote \"Joachimus Camerarius vit. ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Melanchthon"
+        },
+        "text": "Joachim Camerarius, his Life",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.2.1-f74": {
     "kind": "phrase",
     "lang": "la",
@@ -123,6 +390,134 @@
           "work": null
         },
         "text": "Secundus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.2.1-f76": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Gaspar Ens",
+      "basis": "sidenote \"Gaspar Ens polit. thes.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Thesaurus politicus"
+    },
+    "text": "Gaspar Ens polit. thes",
+    "text_sha1": "e1b1987fde1bd8daf58e9454ea01fbebff0a67d2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a bibliographical reference to Gaspar Ens's Thesaurus politicus. The abbreviations \"polit. thes\" are expanded from the fuller form of the same reference later in this subsection.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Gaspar Ens",
+          "basis": "sidenote \"Gaspar Ens polit. thes.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Thesaurus politicus"
+        },
+        "text": "Gaspar Ens, Political Thesaurus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.2.1-f80": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Gaspar Ens",
+      "basis": "sidenote \"Gaspar Ens thesauro polit.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Thesaurus politicus"
+    },
+    "text": "Gaspar Ens thesauro polit",
+    "text_sha1": "517d3cdf6e5901b08bdd755639498c3b09c78998",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a bibliographical reference to Gaspar Ens's Thesaurus politicus. The ablative \"thesauro\" means \"in the Thesaurus\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Gaspar Ens",
+          "basis": "sidenote \"Gaspar Ens thesauro polit.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Thesaurus politicus"
+        },
+        "text": "Gaspar Ens, in his Political Thesaurus",
         "warnings": []
       }
     ]

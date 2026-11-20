@@ -337,12 +337,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "to balance our hearts with love, charity, meekness, patience, and counterpoise those irregular motions of envy, livor, spleen, hatred, with their opposite virtues, as we bend a crooked staff another way, to oppose sufferance to labour, patience to reproach, bounty",
+          "exact": "to balance our hearts with love, charity, meekness, patience, and counterpoise those irregular motions of envy",
           "in": "2.3.6.1-p1",
           "prefix": " facere, sibi quod ex usu siet: ",
-          "suffix": " to covetousness, fortitude to p"
+          "suffix": ", livor, spleen, hatred, with th"
         },
-        "words": 40
+        "words": 16
       },
       {
         "by": "rules",
@@ -640,6 +640,48 @@
     ],
     "text_sha1": "6b570b6598dfea9df6c0a9c41122c5babefaa82e"
   },
+  "2.3.6.1-f37": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "spleen, hatred, with their opposite virtues, as we bend a crooked staff another way, to oppose sufferance to labour, patience to reproach, bounty to covetousness, fortitude to pusillanimity, meekness to anger, humility to pride, to examine ourselves for what cause",
+          "in": "2.3.6.1-p1",
+          "prefix": "regular motions of envy, livor, ",
+          "suffix": " we are so much disquieted, on w"
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "to balance our hearts with love, charity, meekness, patience, and counterpoise those irregular motions of envy",
+          "in": "2.3.6.1-p1",
+          "prefix": " facere, sibi quod ex usu siet: ",
+          "suffix": ", livor, spleen, hatred, with th"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "89cb9e1557a6f09258513fcac6a0054547be814f"
+  },
   "2.3.6.1-f4": {
     "bracket": "present",
     "by": "rules",
@@ -758,34 +800,5 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "50e505b91ac1e5b9593ced996694a42159d0c5b7"
-  },
-  "2.3.6.1-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Venice, in their Armoury have this inscription, Happy is that city which in time of peace thinks of war, a fit Motto for every man’s private house",
-          "in": "2.3.6.1-p3",
-          "prefix": "The Commonwealth of ",
-          "suffix": "; happy is the man that provides"
-        },
-        "words": 27
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "69f421e6af5a154df436c113118b3c55dd032640"
   }
 }

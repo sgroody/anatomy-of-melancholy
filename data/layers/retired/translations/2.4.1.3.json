@@ -1,0 +1,126 @@
+{
+  "2.4.1.3-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Oswald Croll",
+      "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De signaturis internis rerum"
+    },
+    "text": "de Internis rerum signaturis, de herbis particularibus parti cuique convenientibus",
+    "text_sha1": "f6c7d83c56aaba998339e4d581ef12b0cddb18bb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to Oswald Croll's treatise on signatures, which assigns herbs to the parts of the body they were held to resemble or suit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Oswald Croll",
+          "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De signaturis internis rerum"
+        },
+        "text": "On the Internal Signatures of Things, on particular herbs suited to each part",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f30": {
+    "kind": "phrase",
+    "lang": "grc-Latn",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Homer",
+      "basis": "text \"that famous Nepenthes of Homer\" and sidenote \"Odyss. Δ.\"",
+      "locus": "Book Δ",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odyssey"
+    },
+    "text": "Nepenthes",
+    "text_sha1": "7c6936771c40f4ab39af7057102fcfd056794a5c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "sorrowless",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Greek nēpenthes means 'banishing sorrow'. It is the drug Helen mixes into the wine in Homer, Odyssey 4. It is kept as a proper name here, as in Burton.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Homer",
+          "basis": "text \"that famous Nepenthes of Homer\" and sidenote \"Odyss. Δ.\"",
+          "locus": "Book Δ",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odyssey"
+        },
+        "text": "Nepenthes",
+        "warnings": []
+      }
+    ]
+  }
+}

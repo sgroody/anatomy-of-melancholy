@@ -609,66 +609,6 @@
       }
     ]
   },
-  "1.2.1.4-f34": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Lonerus praefat. de Apoplexia, Ficinus, Fernelius, &c",
-    "text_sha1": "e55643ec3af26d3f46dacd0e283a64e4a1c54fbb",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "A list of authorities: Lonerus's preface to a work on apoplexy, Marsilio Ficino and Jean Fernel.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Lonerus, preface to On Apoplexy, Ficino, Fernel, etc.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.4-f35": {
     "kind": "phrase",
     "lang": "la",
@@ -735,6 +675,152 @@
           "work": null
         },
         "text": "Black spots in the nails signify lawsuits, quarrels and melancholy, from such a humour in the heart.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.4-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Wilt thou know how far the Stars work upon us?",
+        "in": "1.2.1.4",
+        "near": "1.2.1.4-f37",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johannes de Indagine",
+      "basis": "text \"Joh. de Indagine hath comprised in brief\"; sidenote \"Chirom. lib. 5.\"",
+      "locus": "lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Chiromantia"
+    },
+    "text": "Quaeris a me quantum in nobis operantur astra",
+    "text_sha1": "0cdf8f5418476f1ca1c31530e3090c0696051bc1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "You ask from me how much the stars operate in us",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton breaks the quotation off with \"&c.\" and then gives the rest of the sense in his English paraphrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Wilt thou know how far the Stars work upon us?",
+            "in": "1.2.1.4",
+            "near": "1.2.1.4-f37",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johannes de Indagine",
+          "basis": "text \"Joh. de Indagine hath comprised in brief\"; sidenote \"Chirom. lib. 5.\"",
+          "locus": "lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Chiromantia"
+        },
+        "text": "You ask me how far the stars work upon us",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.4-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many diseases proceed from black choler",
+        "in": "1.2.1.4",
+        "near": "1.2.1.4-f38",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Giovanni Gioviano Pontano (Jovianus Pontanus)",
+      "basis": "text \"Jovianus Pontanus in his 10th book, and 13th Chap. de rebus caelestibus, discourseth to this purpose at large.\"",
+      "locus": "10th book, 13th Chap.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De rebus caelestibus"
+    },
+    "text": "Ex atra bile varii generantur morbi",
+    "text_sha1": "2a1585e0064afccb20a91b836e710c58fd0b27e7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton cuts the quotation off with \"&c.\" and goes on in English with Pontanus's argument.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many diseases proceed from black choler",
+            "in": "1.2.1.4",
+            "near": "1.2.1.4-f38",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Giovanni Gioviano Pontano (Jovianus Pontanus)",
+          "basis": "text \"Jovianus Pontanus in his 10th book, and 13th Chap. de rebus caelestibus, discourseth to this purpose at large.\"",
+          "locus": "10th book, 13th Chap.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De rebus caelestibus"
+        },
+        "text": "Various diseases are generated from black bile",
         "warnings": []
       }
     ]

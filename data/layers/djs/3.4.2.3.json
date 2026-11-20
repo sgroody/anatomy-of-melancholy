@@ -68,16 +68,18 @@
     "threshold": 0.85
   },
   "3.4.2.3-f16": {
-    "align_score": 0.808,
+    "align_score": 0.929,
     "by": "djs1927",
     "left_anchor": "afford, lie on a down bed with a Courtesan in their arms:",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", as he said, what a cruel tyr",
-    "right_score": 0.808,
-    "status": "below-threshold",
+    "right_anchor": ", as he said, what a cruel tyranny is this, so to",
+    "right_score": 0.929,
+    "status": "aligned",
+    "text": "Alas, what we endure for Christ, as he [Leo Decimus]",
     "text_sha1": "8e6a79a8484d66fa2df8700589b3cf22a68c1659",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 50027, pp. 940-942"
   },
   "3.4.2.3-f17": {
     "align_score": 0.993,
@@ -239,34 +241,6 @@
     "text_sha1": "b9e479e5e2d312dd7aa989813670868d096d999d",
     "threshold": 0.85
   },
-  "3.4.2.3-f44": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "death with Rats and Mice, as Popelius the second King of Poland,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". 830, his wife and children; the like story is of Hatto",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "in the year",
-    "text_sha1": "744cb9a9fb3d5583744ea3ece9b4d819d90bdee2",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 50171, pp. 944-945"
-  },
-  "3.4.2.3-f45": {
-    "align_score": 0.953,
-    "by": "djs1927",
-    "left_anchor": "wife and children; the like story is of Hatto Archbishop of Mainz,",
-    "left_score": 0.953,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". 969, so devoured by these vermin, which howsoever Serarius the Jesuit",
-    "right_score": 0.993,
-    "status": "aligned",
-    "text": "in the year",
-    "text_sha1": "219dc550cd320d69885a529524239d875ad19347",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 50172, pp. 944-945"
-  },
   "3.4.2.3-f46": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -357,6 +331,21 @@
     "status": "no-anchor",
     "text_sha1": "2afb3dfbab1c8561d64fa05bb32da2f3c7f3406e",
     "threshold": 0.85
+  },
+  "3.4.2.3-f57": {
+    "align_score": 0.959,
+    "by": "djs1927",
+    "left_anchor": "this terror of conscience. Felix Plater so found it in his observations,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", &c. They think they are not predestinate, God hath forsaken them;",
+    "right_score": 0.959,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "967a6b7053aed78adad4e2381ce1ece21785b801",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49890, p. 939"
   },
   "3.4.2.3-f6": {
     "align_score": 1.0,

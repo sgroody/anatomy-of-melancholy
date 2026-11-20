@@ -80,6 +80,35 @@
     ],
     "text_sha1": "3aa315bf3f3e8587a56facbd380dcec0dd1374aa"
   },
+  "1.2.2.2-f102": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., How they love a man that will be drunk, crown him and honour him for it, hate him that will not pledge him, stab him, kill him",
+          "in": "1.2.2.2-p7",
+          "prefix": "ris immodestissima gens capiat, ",
+          "suffix": ": a most intolerable offence, an"
+        },
+        "words": 28
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "90088e5f4eb9417a2724a199eea81042eff531d1"
+  },
   "1.2.2.2-f11": {
     "bracket": "present",
     "by": "rules",
@@ -1232,29 +1261,11 @@
   "1.2.2.2-f47": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Quantum liquoris immodestissima gens capiat, &c., How they love a man that will be drunk, crown him and honour him for it, hate him that will not pledge him, stab him, kill him",
-          "in": "1.2.2.2-p7",
-          "prefix": "their own Countrymen complains: ",
-          "suffix": ": a most intolerable offence, an"
-        },
-        "words": 33
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
+    "signals": [],
     "text_sha1": "1ca4c8cdb6e7e527b03a5b60b5bed5a37757f7b9"
   },
   "1.2.2.2-f49": {

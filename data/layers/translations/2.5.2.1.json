@@ -1,0 +1,197 @@
+{
+  "2.5.2.1-f1": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "medicines to procure urine",
+        "in": "2.5.2.1",
+        "near": "2.5.2.1-f1",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Diuretica",
+    "text_sha1": "ed9b0c00a6b5cd1323b35291f121a7a71af18179",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton glosses the term himself straight after it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "medicines to procure urine",
+            "in": "2.5.2.1",
+            "near": "2.5.2.1-f1",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Diuretics",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.2.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Carduus Benedictus",
+    "text_sha1": "d6c4291379099f2b383260ddab9cf818d866f03c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "blessed thistle",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The herbal name of the plant Cnicus benedictus. English herbals of Burton's day usually kept the Latin name.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Blessed Thistle",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.2.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aetius",
+      "basis": "text \"Aetius tetrab. ser. 2 cap. 114\"",
+      "locus": "tetrab. ser. 2 cap. 114",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Tetrabiblos"
+    },
+    "text": "Hieram Archigenis",
+    "text_sha1": "7f7bf50ef1f9bd31016349168e4b265cbba4b0a1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Hiera of Archigenes",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A 'hiera' (Greek for 'sacred') was a compound purging medicine. This one is named after the physician Archigenes. In Latin the phrase is in the accusative because it is the object of 'admires', which is carried over from the earlier clause about Crollius. The English that follows describes what the medicine does; it does not translate the name.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aetius",
+          "basis": "text \"Aetius tetrab. ser. 2 cap. 114\"",
+          "locus": "tetrab. ser. 2 cap. 114",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Tetrabiblos"
+        },
+        "text": "the hiera of Archigenes",
+        "warnings": []
+      }
+    ]
+  }
+}

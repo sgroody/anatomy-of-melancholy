@@ -1306,67 +1306,6 @@
       }
     ]
   },
-  "2.4.1.5-f40": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Pharmacopoeia",
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "technical-medical"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An official book of drug formulas and their preparation, such as the London Pharmacopoeia of 1618.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "pharmacopoeia",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.5-f41": {
     "kind": "phrase",
     "lang": "la",
@@ -2038,7 +1977,7 @@
       }
     ]
   },
-  "2.4.1.5-f6": {
+  "2.4.1.5-f52": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -2050,9 +1989,11 @@
     },
     "self_translation": {
       "burton_span": null,
-      "confidence": "medium",
+      "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
+      "signals": [
+        "no-gowland-bracket"
+      ],
       "status": "none"
     },
     "source": {
@@ -2063,20 +2004,22 @@
       "verified": false,
       "work": null
     },
-    "text": "crasse",
-    "text_sha1": "fc9f7f94755e0b65e8fe2d0828774f62a5768a79",
+    "text": "Stechados",
+    "text_sha1": "f0d1b770031116d2f7901688ba318adeeb4c94ef",
     "translations": [
       {
         "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "grossly, coarsely",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "of stoechas",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "The Latin adverb crasse means 'grossly, without refinement'. Burton's point is that these compounds are crudely put together, like the rest. The word could also be read as an English 'crass' spelling.",
+        "note": "Stechados is the Greek-style genitive of stoechas (French lavender, Lavandula stoechas). It depends on 'oils … as of', so it means oil of stoechas.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
@@ -2090,7 +2033,153 @@
           "verified": false,
           "work": null
         },
-        "text": "crudely",
+        "text": "stoechas",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.5-f53": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "those moist medicines, laid on linen, to bathe and cool several parts misaffected",
+        "in": "2.4.1.5",
+        "near": "2.4.1.5-f53",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Epithemata",
+    "text_sha1": "13df559f0ccb45497e5bca0ee14d868e28cce5ba",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Epithemata (from the Greek) are epithems: moist medicines applied outwardly to the skin, usually on cloth. Burton explains the term himself in the words that follow.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "those moist medicines, laid on linen, to bathe and cool several parts misaffected",
+            "in": "2.4.1.5",
+            "near": "2.4.1.5-f53",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Epithems",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.5-f54": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "little bags",
+        "in": "2.4.1.5",
+        "near": "2.4.1.5-f54",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sacculi",
+    "text_sha1": "e231df0b847defcb3ec4e4cabc452f79d8cd6145",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Sacculi are small bags of medicinal herbs laid on the body. Burton gives the meaning straight after the word.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "little bags",
+            "in": "2.4.1.5",
+            "near": "2.4.1.5-f54",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Little bags",
         "warnings": []
       }
     ]

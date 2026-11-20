@@ -1101,6 +1101,67 @@
       }
     ]
   },
+  "2.2.6.3-f42": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Anno ab urb. cond",
+    "text_sha1": "a701519c3fdfc825035e3343b6cd9f3372f06d0f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the standard Roman way of giving a date, abbreviated from 'Anno ab urbe condita'. The year '567' that completes the phrase stands just outside the marked passage: it is the 567th year of Rome, 187 BC. That was the year of Gnaeus Manlius Vulso's triumph after his Asian campaign, which Livy (39.6) blames for bringing luxury into Rome. The phrase is a dating formula, not a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the year from the founding of the city",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.6.3-f5": {
     "kind": "phrase",
     "lang": "la",

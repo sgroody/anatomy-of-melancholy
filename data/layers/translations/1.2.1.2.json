@@ -2914,65 +2914,6 @@
       }
     ]
   },
-  "1.2.1.2-f15": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Apuleius",
-      "basis": "sidenote \"Apuleius:\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De deo Socratis"
-    },
-    "text": "Apuleius: Spiritus animalia sunt animo passibilia, mente rationalia, corpore aeria, tempore sempiterna",
-    "text_sha1": "e496a708f0cd3c91c6301eef7ff996484067e1ed",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "misquotation-suspected"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Apuleius' definition in De deo Socratis reads 'daemones sunt genere animalia, ingenio rationabilia, animo passiva, corpore aeria, tempore aeterna'. Burton has 'spiritus' for 'daemones', and his order and word-forms differ (passibilia, rationalia, sempiterna).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Apuleius",
-          "basis": "sidenote \"Apuleius:\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De deo Socratis"
-        },
-        "text": "Apuleius: Spirits are living beings, subject to passion in soul, rational in mind, aerial in body, everlasting in time.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.2-f151": {
     "kind": "phrase",
     "lang": "la",
@@ -4038,65 +3979,6 @@
           "work": "Theatrum Naturae; Hermeticae Philosophiae"
         },
         "text": "whatever is contained in a place is corporeal: but spirits are contained in a place",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.2-f186": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Girolamo Cardano",
-      "basis": "text \"The same Author Cardan in his Hyperchen\" and \"(for so he calls them)\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Hyperchen"
-    },
-    "text": "Genii",
-    "text_sha1": "e559138c3872ed0ad68a42b2c371b1cd19e9ab45",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Genii are tutelary or attendant spirits. Burton keeps the term because it is Cardano's own word ('for so he calls them').",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Girolamo Cardano",
-          "basis": "text \"The same Author Cardan in his Hyperchen\" and \"(for so he calls them)\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Hyperchen"
-        },
-        "text": "genii",
         "warnings": []
       }
     ]
@@ -5397,66 +5279,6 @@
       }
     ]
   },
-  "1.2.1.2-f263": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Genii",
-    "text_sha1": "e559138c3872ed0ad68a42b2c371b1cd19e9ab45",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Attendant guardian spirits.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "genii",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.2-f264": {
     "kind": "phrase",
     "lang": "la",
@@ -5711,65 +5533,6 @@
           "work": "De orbis terrae concordia"
         },
         "text": "On no subject has there been greater dispute, greater obscurity, or less agreement of opinions than about demons and separate substances.",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.2-f272": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cicero",
-      "basis": "text \"with Tully de nat. deorum\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De natura deorum"
-    },
-    "text": "deorum, quid non sint, quam quid sint",
-    "text_sha1": "0c439f3909e91a313190de33d726fb4a70862ff7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Deorum' finishes the title Burton has started, 'de nat. deorum' (On the Nature of the Gods), so it is left untranslated here. In Cicero, Cotta says he could say sooner what a god is not than what it is.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cicero",
-          "basis": "text \"with Tully de nat. deorum\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De natura deorum"
-        },
-        "text": "what they are not, rather than what they are",
         "warnings": []
       }
     ]
@@ -6576,76 +6339,6 @@
       }
     ]
   },
-  "1.2.1.2-f285": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "the middle betwixt God and men",
-        "in": "1.2.1.2",
-        "near": "1.2.1.2-f285",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Proclus",
-      "basis": "text \"Proclus and Iamblichus will\" and sidenote \"Lib. de Anima & daemone.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De anima et daemone"
-    },
-    "text": "de Anima & daemone. Med. inter deos & homines, divina ad nos & nostra aequaliter ad deos ferunt",
-    "text_sha1": "ee2a0e4b6e20a8b32fb4842379f1fb048f165d56",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'de Anima & daemone' is a book title, probably Proclus' De anima et daemone in Ficino's Latin version. 'Med.' is taken as medii, 'intermediate'. The idea goes back to Plato, Symposium 202e.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "the middle betwixt God and men",
-            "in": "1.2.1.2",
-            "near": "1.2.1.2-f285",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Proclus",
-          "basis": "text \"Proclus and Iamblichus will\" and sidenote \"Lib. de Anima & daemone.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De anima et daemone"
-        },
-        "text": "On the Soul and the Daemon. Intermediate between gods and men, they carry divine things to us and ours to the gods alike.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.2-f287": {
     "kind": "phrase",
     "lang": "la",
@@ -7038,66 +6731,6 @@
           "work": "commentary on Samuel"
         },
         "text": "They are often present in battles; they direct our journeys and all our business, and by secret aids often grant us the successes we wished for",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.2-f293": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Girolamo Zanchi (Zanchius)",
-      "basis": "sidenote \"Idem Zanchius lib. 4 cap. 10 & 11 de malis angelis.\"",
-      "locus": "lib. 4 cap. 10 & 11",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "de malis angelis"
-    },
-    "text": "10 & 11 de malis angelis",
-    "text_sha1": "3ff0993c06c3dbbea378acd123be49e909bf6826",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "A fragment of a reference. 'lib. 4 cap.' before it stands outside the marked passage, so the full reference reads 'book 4, chapters 10 and 11, On Evil Angels'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Girolamo Zanchi (Zanchius)",
-          "basis": "sidenote \"Idem Zanchius lib. 4 cap. 10 & 11 de malis angelis.\"",
-          "locus": "lib. 4 cap. 10 & 11",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "de malis angelis"
-        },
-        "text": "10 and 11, On Evil Angels",
         "warnings": []
       }
     ]
@@ -8880,6 +8513,431 @@
       }
     ]
   },
+  "1.2.1.2-f323": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"we can sooner determine with Tully de nat. deorum\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De natura deorum"
+    },
+    "text": "quid non sint, quam quid sint",
+    "text_sha1": "e9f50cbf372bf568c00cb7ae85c375446391982a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Cicero says this of the gods: it is easier to say what they are not than what they are. Burton applies it to spirits.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"we can sooner determine with Tully de nat. deorum\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De natura deorum"
+        },
+        "text": "what they are not, rather than what they are",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f324": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Apuleius",
+      "basis": "text \"saith Apuleius\"; sidenote \"De Deo Socratis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De deo Socratis"
+    },
+    "text": "Aegypto Osyris",
+    "text_sha1": "ad9d1691299cc25e8845f95546554193f4c923c1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Egypt Osiris",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the end of Burton's quotation from Apuleius, 'ut in Aegypto Osyris' ('as in Egypt, Osiris'). The preceding 'ut in' ('as in') lies outside the marked passage. Osiris is the example of a man deified after death.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Apuleius",
+          "basis": "text \"saith Apuleius\"; sidenote \"De Deo Socratis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De deo Socratis"
+        },
+        "text": "Egypt, Osiris",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f325": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Apuleius",
+      "basis": "sidenote \"Apuleius:\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De deo Socratis"
+    },
+    "text": "Spiritus animalia sunt animo passibilia, mente rationalia, corpore aeria, tempore sempiterna",
+    "text_sha1": "999d764de3df84b292b27797fb90237df32bd7c8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Spirits are animals passible in soul, rational in mind, aerial in body, eternal in time.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Apuleius, De deo Socratis, reads 'daemones sunt genere animalia, ingenio rationabilia, animo passiva, corpore aeria, tempore aeterna'. Burton's wording differs: he writes 'spiritus', 'mente rationalia', 'animo passibilia' and 'sempiterna', and changes the order. 'Tempore sempiterna' ('everlasting in time') contradicts the main text's claim that spirits are mortal.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Apuleius",
+          "basis": "sidenote \"Apuleius:\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De deo Socratis"
+        },
+        "text": "Spirits are living beings, subject to passion in soul, rational in mind, airy in body, everlasting in time.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f326": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jean Bodin; David Crusius",
+      "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Theatrum Naturae; Hermeticae Philosophiae"
+    },
+    "text": "ergo",
+    "text_sha1": "0ed60ce722e2858121b8e2e3744afd8cf153202e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the conclusion of a syllogism: whatever is contained in a place is corporeal; spirits are contained in a place; therefore spirits are corporeal. The conclusion is left unstated.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jean Bodin; David Crusius",
+          "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Theatrum Naturae; Hermeticae Philosophiae"
+        },
+        "text": "therefore",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f327": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jean Bodin; David Crusius",
+      "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Theatrum Naturae; Hermeticae Philosophiae"
+    },
+    "text": "ergo",
+    "text_sha1": "0ed60ce722e2858121b8e2e3744afd8cf153202e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the conclusion of a syllogism: if spirits have quantity they are corporeal; they have quantity; therefore they are corporeal. The conclusion is left unstated.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jean Bodin; David Crusius",
+          "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Theatrum Naturae; Hermeticae Philosophiae"
+        },
+        "text": "therefore",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f328": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jean Bodin; David Crusius",
+      "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Theatrum Naturae; Hermeticae Philosophiae"
+    },
+    "text": "ergo",
+    "text_sha1": "0ed60ce722e2858121b8e2e3744afd8cf153202e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This word stands in 'Sunt finiti, ergo quanti' ('They are finite, therefore they have quantity').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jean Bodin; David Crusius",
+          "basis": "text \"Bodin lib. 4 Theatri Naturae, and David Crusius Hermeticae Philosophiae lib. 1 cap. 4, by several arguments proves\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Theatrum Naturae; Hermeticae Philosophiae"
+        },
+        "text": "therefore",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f329": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "mere illusions and cozenings",
+        "in": "1.2.1.2",
+        "near": "1.2.1.2-f329",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Strozzi Cicogna",
+      "basis": "text \"as Cicogna proves at large\" and \"omnif. mag. lib. 4 cap. 4\"",
+      "locus": "lib. 4 cap. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Omnifariae magiae"
+    },
+    "text": "illusoriae & praestigiatrices transformationes",
+    "text_sha1": "19907a1cd825b173e324daaca20796196120c929",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sense is that the transformations devils seem to work are mere illusions. 'Praestigiatrices' means juggling or conjuring tricks.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "mere illusions and cozenings",
+            "in": "1.2.1.2",
+            "near": "1.2.1.2-f329",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Strozzi Cicogna",
+          "basis": "text \"as Cicogna proves at large\" and \"omnif. mag. lib. 4 cap. 4\"",
+          "locus": "lib. 4 cap. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Omnifariae magiae"
+        },
+        "text": "illusory and deceptive transformations",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.2-f33": {
     "kind": "phrase",
     "lang": "la",
@@ -8945,6 +9003,443 @@
           "work": "De subtilitate"
         },
         "text": "For as man rules over man, so demon rules over demon",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f330": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the middle betwixt God and men",
+        "in": "1.2.1.2",
+        "near": "1.2.1.2-f330",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Proclus",
+      "basis": "sidenote \"Lib. de Anima & daemone\"; text \"Proclus and Iamblichus will\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De anima et daemone"
+    },
+    "text": ". Med. inter deos & homines, divina ad nos & nostra aequaliter ad deos ferunt",
+    "text_sha1": "b511e63b63c9640bf33ed3c9996d8fdc9402d43c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Mid. between gods and men, they carry divine things to us and ours equally to the gods.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins with the stray full stop that ends the title in the sidenote. 'Med.' is an abbreviation, probably for 'medii' ('intermediate ones'), but this is not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the middle betwixt God and men",
+            "in": "1.2.1.2",
+            "near": "1.2.1.2-f330",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Proclus",
+          "basis": "sidenote \"Lib. de Anima & daemone\"; text \"Proclus and Iamblichus will\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De anima et daemone"
+        },
+        "text": "Intermediaries between gods and men, they carry divine things to us, and ours in like manner to the gods.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f331": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "sidenote \"Austin:\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hoc dixi, ne quis existimet habitare ibi mala daemonia ubi Solem & Lunam & Stellas Deus ordinavit, & alibi nemo arbitraretur Daemonem caelis habitare cum Angelis suis unde lapsum credimus",
+    "text_sha1": "f90ca09e0fa9f2ec8e7c322bae0381f77f3b4b20",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Et alibi' ('and elsewhere') joins two separate statements from Augustine.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "sidenote \"Austin:\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "I have said this so that no one may think that evil demons dwell where God has set the Sun, the Moon and the stars; and elsewhere: no one should suppose that the Devil dwells in the heavens with his angels, from which we believe he fell.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f332": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "dancing & rejoicing",
+        "in": "1.2.1.2",
+        "near": "1.2.1.2-f332",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Heinrich Kornmann",
+      "basis": "text \"as Kornmannus observes, de mirac. mort. part. 7 cap\"",
+      "locus": "part. 7 cap. 76",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De miraculis mortuorum"
+    },
+    "text": ". 76, tripudium agentes",
+    "text_sha1": "77b888d9fff58713e97c48a0251ac242d9c1916f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "76, performing a ritual dance",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins in the middle of a reference: '76' is the chapter number of 'cap. 76', and 'cap' lies outside the passage. 'Tripudium' is a leaping dance of triumph or religious exultation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "dancing & rejoicing",
+            "in": "1.2.1.2",
+            "near": "1.2.1.2-f332",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Heinrich Kornmann",
+          "basis": "text \"as Kornmannus observes, de mirac. mort. part. 7 cap\"",
+          "locus": "part. 7 cap. 76",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De miraculis mortuorum"
+        },
+        "text": "76, dancing in triumph",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f333": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Dryades, Oreades, Hamadryades",
+    "text_sha1": "1ed8b0ee7cad81c5244aea50dc7292023429b87e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are classes of nymph: Dryads are wood-nymphs, Oreads are mountain-nymphs, and Hamadryads are nymphs whose lives are bound to a single tree. The sidenote glosses Burton's 'Wood-nymphs'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Dryads, Oreads, Hamadryads",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f334": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Olaus Magnus",
+      "basis": "sidenote \"Lib. 3 cap. 11. Elvarum choreas Olaus lib. 3. vocat\"",
+      "locus": "Lib. 3 cap. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Historia de gentibus septentrionalibus"
+    },
+    "text": "Elvarum choreas Olaus lib. 3. vocat",
+    "text_sha1": "ac92924d17b92e08dff25a0f9bee66a618fb9ef5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Olaus in book 3 calls [them] dances of elves",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase refers to the green fairy rings described in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Olaus Magnus",
+          "basis": "sidenote \"Lib. 3 cap. 11. Elvarum choreas Olaus lib. 3. vocat\"",
+          "locus": "Lib. 3 cap. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Historia de gentibus septentrionalibus"
+        },
+        "text": "Olaus, book 3, calls them the dances of the elves",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f335": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Epiphanium",
+    "text_sha1": "402d031a6bdec81d997f4a06b4398e3df47fd9b2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The name is in the accusative because it is governed by 'lege' ('read'), which lies outside the passage: 'read Epiphanius, volume 2, book 2'. This is Epiphanius of Salamis, cited by Burton as a reading reference rather than quoted.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Epiphanius",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.2-f336": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Idem et",
+    "text_sha1": "9e95202844cb45328a15b62b5e10949132e20c16",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads 'Idem et Trithemius' ('the same author, and Trithemius'). It names the source of 'another hath it' in the main text. 'Idem' probably refers to the author cited in the preceding sidenote, which is not given here, so the reference is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The same, and",
         "warnings": []
       }
     ]
@@ -11227,76 +11722,6 @@
       }
     ]
   },
-  "1.2.1.2-f77": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "They are confined until the day of judgement, to this sublunary world",
-        "in": "1.2.1.2",
-        "near": "1.2.1.2-f77",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Augustine",
-      "basis": "sidenote \"Austin:\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Austin: Hoc dixi, ne quis existimet habitare ibi mala daemonia ubi Solem & Lunam & Stellas Deus ordinavit, & alibi nemo arbitraretur Daemonem caelis habitare cum Angelis suis unde lapsum credimus",
-    "text_sha1": "4b66cb2d521c77640f9189f874561b4a40571417",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'& alibi' is taken as 'and elsewhere', bringing in a second passage.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "They are confined until the day of judgement, to this sublunary world",
-            "in": "1.2.1.2",
-            "near": "1.2.1.2-f77",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Augustine",
-          "basis": "sidenote \"Austin:\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Augustine: I have said this so that no one may think that evil demons dwell there, where God set the Sun, the Moon and the Stars; and elsewhere: let no one suppose that the Devil dwells in the heavens with his angels, from which we believe he fell.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.2-f78": {
     "kind": "phrase",
     "lang": "la",
@@ -11770,76 +12195,6 @@
           "work": "De praestigiis daemonum"
         },
         "text": "They thrust themselves into tempests",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.2-f86": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "dancing & rejoicing at the death of a sinner",
-        "in": "1.2.1.2",
-        "near": "1.2.1.2-f86",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Heinrich Kornmann",
-      "basis": "text \"as Kornmannus observes, de mirac. mort. part. 7 cap. 76\"",
-      "locus": "part. 7 cap. 76",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De miraculis mortuorum"
-    },
-    "text": "de mirac. mort. part. 7 cap. 76, tripudium agentes",
-    "text_sha1": "abb506ef259c0d54d3e6cb37e5b145205784e399",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": "On the miracles of the dead, part 7 chapter 76, performing a triumphal dance",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The first part is a book reference (Kornmann's De miraculis mortuorum). A tripudium is a solemn or triumphal leaping dance.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "dancing & rejoicing at the death of a sinner",
-            "in": "1.2.1.2",
-            "near": "1.2.1.2-f86",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Heinrich Kornmann",
-          "basis": "text \"as Kornmannus observes, de mirac. mort. part. 7 cap. 76\"",
-          "locus": "part. 7 cap. 76",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De miraculis mortuorum"
-        },
-        "text": "On the Miracles of the Dead, part 7, chapter 76: dancing in triumph",
         "warnings": []
       }
     ]

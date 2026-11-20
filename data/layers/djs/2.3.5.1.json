@@ -665,14 +665,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 28856, p. 539"
   },
-  "2.3.5.1-f59": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "6220e2c9e0a559e447a77c98a43c635b0af91e46",
-    "threshold": 0.85
-  },
   "2.3.5.1-f6": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -821,14 +813,11 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 28787, p. 538"
   },
   "2.3.5.1-f77": {
-    "align_score": 0.735,
     "by": "djs1927",
-    "left_anchor": "the worse he would have been, & quo vita longior (Ambrose thinks)",
-    "left_score": 0.735,
+    "left_anchor": "(Ambrose thinks)",
     "method": "rules/djs-align-v3",
     "right_anchor": ", more sinful, more to answer for he would have had. If",
-    "right_score": 0.959,
-    "status": "below-threshold",
+    "status": "no-anchor",
     "text_sha1": "f69208173a6b85e185abc71ec5978b8413bece66",
     "threshold": 0.85
   },
@@ -926,6 +915,37 @@
     "text_sha1": "06fbd06291373d52b8fa56a35858cdaf56e2c042",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 28824, p. 539"
+  },
+  "2.3.5.1-f86": {
+    "by": "djs1927",
+    "left_anchor": "the longer he had lived, the worse he would have been, &",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(Ambrose thinks)",
+    "status": "no-anchor",
+    "text_sha1": "644f831c1d50677131baeec42be56fd65c66ee96",
+    "threshold": 0.85
+  },
+  "2.3.5.1-f87": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "more need rejoice that I am freed from diseases, agues, cares, anxieties,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", love, covetousness, hatred, envy, malice, that I fear no more thieves,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "livor [or spite],",
+    "text_sha1": "89cb9e1557a6f09258513fcac6a0054547be814f",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 28828, p. 539"
+  },
+  "2.3.5.1-f88": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "edec40d8a2dac8a138f125b016bb11dd33ad3bac",
+    "threshold": 0.85
   },
   "2.3.5.1-f9": {
     "align_score": 1.0,

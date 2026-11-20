@@ -151,20 +151,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 38652, p. 720"
   },
-  "3.2.2.5-f34": {
-    "align_score": 0.969,
-    "by": "djs1927",
-    "left_anchor": "as by man’s blood Chemically prepared, which much avails saith Ernestus Burggravius,",
-    "left_score": 0.994,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "(so huntsmen make their dogs love them, and farmers their pullen), ’tis",
-    "right_score": 0.969,
-    "status": "aligned",
-    "text": "in a Revelatory Lamp of Life and Death, to procure love and hate",
-    "text_sha1": "4c860766e88c5076316eff4d66a6cd9b5c324af3",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 38667, p. 720"
-  },
   "3.2.2.5-f35": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -194,6 +180,26 @@
     "right_anchor": ", a certain hair in a Wolf’s tail, &c., of which Rhasis,",
     "status": "no-anchor",
     "text_sha1": "2cdcd5a28908be53cef7ddd437bdaedbd65cb28f",
+    "threshold": 0.85
+  },
+  "3.2.2.5-f38": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "7cc84b079fc7305417db3e2741477b76041af175",
+    "threshold": 0.85
+  },
+  "3.2.2.5-f39": {
+    "align_score": 0.769,
+    "by": "djs1927",
+    "left_anchor": "which much avails saith Ernestus Burggravius, in Lucerna vitae & mortis Indice,",
+    "left_score": 0.769,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(so huntsmen make their dogs love them, and farmers their pullen), ’tis",
+    "right_score": 0.969,
+    "status": "below-threshold",
+    "text_sha1": "59f5b41c1408eea4aac348397767942ee75cb731",
     "threshold": 0.85
   },
   "3.2.2.5-f4": {

@@ -125,6 +125,282 @@
       }
     ]
   },
+  "3.3.4.2-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that hath one foot in his grave",
+        "in": "3.3.4.2",
+        "near": "3.3.4.2-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a silicernium",
+    "text_sha1": "be0c5e4f624d80eb9b2cd9b14d65408c3b534648",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "a funeral feast",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'a' is Burton's English. A silicernium was a funeral feast for the dead. Comedy (Terence, Adelphoe) uses it as an insult for a decrepit old man, an 'old corpse'. The word is kept as written because Burton treats it as an English loan.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that hath one foot in his grave",
+            "in": "3.3.4.2",
+            "near": "3.3.4.2-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "silicernium",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.4.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Dithmar Blefken",
+      "basis": "sidenote \"Dithmarus Blefkenius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Dithmarus Blefkenius, Ut Agetas Aristoni, pulcherrimam uxorem habens amico prostituit",
+    "text_sha1": "62400f4497e6de84e3d6816b1fefbc71b9dc7885",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Dithmar Blefken wrote a description of Iceland and is the authority for the Icelanders in the main text. The Agetas comparison seems to recall Herodotus 6.61–62, where the Spartan king Ariston gets the beautiful wife of his friend Agetus by a trick over an exchange of gifts. In Herodotus she is not willingly prostituted, so Burton's version is loose.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Dithmar Blefken",
+          "basis": "sidenote \"Dithmarus Blefkenius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Dithmar Blefken. Just as Agetas, who had a very beautiful wife, prostituted her to his friend Ariston.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.4.2-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "is full of treachery and suspicion",
+        "in": "3.3.4.2",
+        "near": "3.3.4.2-f37",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"(saith Chrysostom)\"; sidenote \"Hom. 80.\"",
+      "locus": "Hom. 80",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Suspitionis plena res est, & insidiarum, beauty",
+    "text_sha1": "34647e12e20fe5383901c6c2f96a3ec1de24bcc8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text ends with Burton's English word 'beauty', which is the subject of his own rendering and is not translated here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "is full of treachery and suspicion",
+            "in": "3.3.4.2",
+            "near": "3.3.4.2-f37",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"(saith Chrysostom)\"; sidenote \"Hom. 80.\"",
+          "locus": "Hom. 80",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is a thing full of suspicion and of snares",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.4.2-f77": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ctesias",
+      "basis": "sidenote \"Ctesias in Persicis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Persica"
+    },
+    "text": "Ctesias in Persicis, Finxit vulvae morbum esse nec curari posse, nisi cum viro concumberet, hac arte voti compos, &c",
+    "text_sha1": "4d86584a2e00de49a7222922d78cd6eb908b3a4f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin leaves the subject of \"finxit\" unstated. In Ctesias's story the physician Apollonides of Cos persuades the royal lady Amytis that she can be cured only by intercourse, so \"he\" is the likely reading.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ctesias",
+          "basis": "sidenote \"Ctesias in Persicis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Persica"
+        },
+        "text": "Ctesias, in his Persian History: He pretended it was a disease of the womb that could not be cured unless she lay with a man; by this trick he got his wish, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "3.3.4.2-f86": {
     "kind": "phrase",
     "lang": "la",

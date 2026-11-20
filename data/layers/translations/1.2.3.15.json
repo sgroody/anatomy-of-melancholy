@@ -1524,66 +1524,6 @@
       }
     ]
   },
-  "1.2.3.15-f12": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "per annum",
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": "by the year",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "a year",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.15-f120": {
     "kind": "verse",
     "lang": "la",
@@ -5727,68 +5667,6 @@
           "work": "Satires"
         },
         "text": "With heads bent, and eyes fixed on the ground, / when they gnaw their murmurs and rabid silences to themselves, / and weigh their words on an outthrust lip, / pondering the dreams of some old sick man: that nothing / can be born of nothing, and nothing can return to nothing.",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.3.15-f203": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cicero",
-      "basis": "text \"Hear Tully pro Archia Poeta\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Pro Archia Poeta"
-    },
-    "text": "Tully pro Archia Poeta",
-    "text_sha1": "52b00a30d304bba9d399c3c97369764069b57aff",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "Tully, for Archias the Poet",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'Tully' is Burton's English name for Cicero; only 'pro Archia Poeta' is Latin. This is the title of Cicero's speech in defence of the poet Archias. The words that follow give the content of the speech, not a rendering of the title.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cicero",
-          "basis": "text \"Hear Tully pro Archia Poeta\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Pro Archia Poeta"
-        },
-        "text": "Cicero, Pro Archia Poeta",
         "warnings": []
       }
     ]
@@ -10385,6 +10263,619 @@
       }
     ]
   },
+  "1.2.3.15-f290": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "qui tanquam mures alienum panem comedunt",
+    "text_sha1": "17a5d7528b4f5fe19f8a11843105baa1b8583cc7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial image of parasites. Burton's 'like Parasites' just before introduces the phrase but does not translate it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "who, like mice, eat another man's bread",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f291": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "enforcing to sin",
+        "in": "1.2.3.15",
+        "near": "1.2.3.15-f291",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "cogit ad turpia",
+    "text_sha1": "e596f42cb1131a655086743c0dabd17a79ef119a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "compels to shameful things",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "enforcing to sin",
+            "in": "1.2.3.15",
+            "near": "1.2.3.15-f291",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "drives to base deeds",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f292": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Juvenal",
+      "basis": "Burton introduces it with 'the Poet saith'. The line 'Invitatus ad haec aliquis de ponte negabit' is Juvenal's (Satire 14, on the miser's stale fare).",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Invitatus",
+    "text_sha1": "158348a8538551843fb09669aea274fdb4f6c531",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only the first word of the verse is marked. The full line, 'Invitatus ad haec aliquis de ponte negabit', means 'Invited to such things, someone from the bridge (a beggar) would refuse.' Burton's English after it ('a beggar's brat taken from the bridge… had cause to refuse it') renders the whole line, not this single word.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Juvenal",
+          "basis": "Burton introduces it with 'the Poet saith'. The line 'Invitatus ad haec aliquis de ponte negabit' is Juvenal's (Satire 14, on the miser's stale fare).",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "Invited",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f293": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "testor",
+    "text_sha1": "782f32afc5834562c4c8c03dd117ee8414725c2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of the parenthesis 'testor Deum, non mihi videri dignos ingenui hominis appellatione': 'I call God to witness, they do not seem to me worthy of the name of a free-born man.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "I call to witness",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f294": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Nos interim quod attinet",
+    "text_sha1": "bbe10b4f493ba97d76c32af0a9d27a2c1be9317a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Us meanwhile as far as concerns",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The opening of Burton's long Latin digression against the universities' share in simony.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "As for us, meanwhile",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f295": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "fit",
+    "text_sha1": "9c20b9ba55a293ba051d5b5d90b9f0d26026f5b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In context, 'nostra enim culpa fit' means 'for it happens through our fault'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "it comes about",
+        "warnings": [
+          "length ratio 4.67"
+        ]
+      }
+    ]
+  },
+  "1.2.3.15-f296": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "frequentes, foedaque fiant in Ecclesia nundinationes",
+    "text_sha1": "82a738c2a67229c577d0514b6718868c31a7992f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The preceding 'tam' falls outside the marked passage; the full clause reads 'that such frequent and foul traffickings…'. Nundinationes are market dealings, here the buying and selling of church livings (simony).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "frequent and foul traffickings are carried on in the Church",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f297": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "tot sordes",
+    "text_sha1": "f046834b49d9d13aab7aa43a818940238f410177",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Sordes means moral filth and also sordid, mercenary dealing.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "so much filth",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f298": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Academicorum imprimis) vitio fit",
+    "text_sha1": "4219ed6664a7b7a7f927bb7c10741481b31e2a4f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins inside a parenthesis. The full phrase 'nostro inquam, omnium (Academicorum imprimis) vitio fit' means 'it happens, I say, through the fault of us all, academics above all'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of academics above all) it comes about through the fault",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f299": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a nobis seminarium",
+    "text_sha1": "a64b3a25f74259568681b71ef624800960d7fdc1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "from us the seed-plot",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In context: that the commonwealth suffers so many evils, the seed-bed of it lies with us.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the seed-bed of it is from us",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f3": {
     "kind": "phrase",
     "lang": "la",
@@ -10501,6 +10992,606 @@
       }
     ]
   },
+  "1.2.3.15-f300": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "virili",
+    "text_sha1": "86dd87f28b96636c3c3928f82cb695c1f82251b0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "manly (share)",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of the idiom 'pro virili (parte)', 'to the utmost of one's power'. The clause 'qui pro virili non occurrimus' means 'who do not resist it with all our might'. The single word cannot be translated cleanly on its own.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "utmost",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f301": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "indies sine delectu pauperes alumni, terrae filii, & cujuscunque ordinis homunciones ad gradus certatim admittantur",
+    "text_sha1": "9ce8643636ce41e31143bb0c17985640d3f13397",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The preceding 'tot' (so many) falls outside the marked passage. 'Terrae filii' are men of no birth or account. Certatim suggests the candidates vying with one another.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "daily, without discrimination, poor scholars, sons of the earth, and manikins of every sort are admitted to degrees in eager rivalry",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f302": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "more tot annos in dialectica posuerint",
+    "text_sha1": "8fd58816666b517d1b684030e700337ac35317a6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "custom so many years in dialectic have placed",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The preceding 'pro' falls outside the marked passage; 'pro more' means 'according to custom'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "custom have spent so many years in logic",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f303": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Idiotae, nugatores, otiatores, aleatores, compotores, indigni, libidinis voluptatumque administri",
+    "text_sha1": "4fe34dfe626ee20b004d916f68592c996214dffa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Idiotae means unlearned laymen or ignoramuses, not 'idiots' in the modern sense.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "dunces, triflers, idlers, dicers, drinking companions, unworthy men, servants of lust and pleasures",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f304": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "modo tot annos in Academia insumpserint",
+    "text_sha1": "323c6bd40ded62b42b0ebfbb1d4192d94b9893d5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "provided only they have spent so many years at the University",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f305": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "lucri",
+    "text_sha1": "789844b2ca26d535fff9543336475f700b6c2d91",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of 'lucri causa', 'for the sake of gain'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of gain",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f306": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "addo",
+    "text_sha1": "9e61b65263843c73c1712da933c8ed7493b21e6c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "I add",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f307": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "jam valedicturi testimonialibus hisce litteris, amplissime conscriptis",
+    "text_sha1": "992c7a171ba30a4bd04544acb7b082c003d5919f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence continues 'in eorum gratiam honorantur': they are honoured with such letters in their favour.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "now, on the point of taking their leave, with these testimonial letters, written in the most ample terms",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f308": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "proculdubio faciunt",
+    "text_sha1": "57bea7ca6aa05a9500471b660e22179612bb5ec4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "without doubt make",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Completes 'fidei suae & existimationis jacturam … faciunt', 'who undoubtedly suffer the loss of their own credit and reputation'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "undoubtedly suffer",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f309": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quod ait ille",
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The 'he' is unnamed. The paragraph's sidenote 'Jun. Acad. cap. 6.' may give the source, but its link to this phrase is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "as he says",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f31": {
     "kind": "phrase",
     "lang": "la",
@@ -10555,6 +11646,618 @@
           "work": null
         },
         "text": "What you are, anyone from the crowd can be",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f310": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Id solum",
+    "text_sha1": "de6f8cc65fe8736bf86c8f9f3f0e6fcb4c123764",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Fragment: the opening words of the sentence 'Id solum in votis habent annui plerumque magistratus…' ('This alone is what the annual officers mostly wish for…'). Only the marked words are translated.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "This alone",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f311": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Philosophastro Comoedia latina, in Aede Christi Oxon. publice habita",
+    "text_sha1": "fb100ff7c27e74de0617e43583302b1099ebec7e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in Philosophaster, a Latin comedy, held publicly in Christ Church, Oxford",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton refers to his own Latin comedy Philosophaster. The full sidenote reads: 'I satirised these men not long ago in Philosophaster, a Latin comedy publicly performed at Christ Church, Oxford, 16 February 1617.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Philosophaster, a Latin comedy, publicly performed at Christ Church, Oxford",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f312": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Theologastri (solvant modo",
+    "text_sha1": "da5c29d0ab9c2c92cd62495589f9d6453d638a7f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage stops before the parenthesis closes. The full clause says that theologasters, provided only they pay, are counted learned enough and more, and are raised through every degree of honour. 'Theologaster' is a contemptuous word for a petty or sham theologian.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Theologasters (provided only they pay",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f313": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "fit",
+    "text_sha1": "9c20b9ba55a293ba051d5b5d90b9f0d26026f5b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "it happens",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A single word from 'Atque hinc fit quod…' ('And hence it comes about that…').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "it comes about",
+        "warnings": [
+          "length ratio 4.67"
+        ]
+      }
+    ]
+  },
+  "1.2.3.15-f314": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Idiotae, literarum crepusculo positi, larvae pastorum, circumforanei, vagi, bardi, fungi, crassi, asini, merum pecus in sacrosanctos theologiae aditus, illotis pedibus irrumpant, praeter inverecundam frontem adferentes nihil, vulgares quasdam quisquilias, & scholarium quaedam nugamenta, indigna quae vel recipiantur",
+    "text_sha1": "145e9bdd3d94f2f17862e95627609fb3b3cd4744",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "idiots placed in the twilight of letters, masks of shepherds, going round the marketplace, wandering, stupid, mushrooms, gross, asses, mere cattle … unworthy that they should be received even",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence ends just outside the marked text with 'in triviis' ('at the crossroads', i.e. in the street). 'Idiotae' means unlearned men; 'larvae pastorum' means masks or spectres of shepherds; 'fungi' (mushrooms) is a stock Latin insult for blockheads. The phrase 'illotis pedibus' (with unwashed feet) is proverbial for irreverent entry into sacred things.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "ignoramuses, standing in the twilight of learning, mere ghosts of pastors, strolling mountebanks, vagabonds, dolts, blockheads, clods, asses, mere cattle, burst with unwashed feet into the sacred precincts of theology, bringing nothing but a shameless brow, some common rubbish and certain schoolboy trifles, unworthy to be received even",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f315": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paul",
+      "basis": "text \"quod Paulus ait\"; sidenote \"2 Cor. 2. 17.\"",
+      "locus": "2. 17",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "2 Corinthians"
+    },
+    "text": "in Repub. partium minime capaces sint; ad sacram hanc anchoram confugiunt, sacerdotium quovismodo captantes, non ex sinceritate, quod Paulus ait",
+    "text_sha1": "6a875ef2a480664414687fb4e6e7a8feab83c9c4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "[of other] parts in the commonwealth they are least capable; to this sacred anchor they flee, catching the priesthood in any way, not from sincerity, as Paul says",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'aliarum' (other), which governs 'partium', stands just before the marked text: they are scarcely capable of any other roles in the commonwealth. The Pauline phrase continues outside the marked text with 'sed cauponantes verbum Dei' ('but huckstering the word of God').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paul",
+          "basis": "text \"quod Paulus ait\"; sidenote \"2 Cor. 2. 17.\"",
+          "locus": "2. 17",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "2 Corinthians"
+        },
+        "text": "in the commonwealth, are scarcely capable of filling; they flee to this sacred anchor, catching at a priesthood by any means whatever, not out of sincerity, as Paul says",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f316": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ecclesia Anglicana quamplurimos, egregie doctos, illustres",
+    "text_sha1": "232f2abb7db36f3191cc09ff9185cb4a58756077",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "[whom] the English Church [has] very many, egregiously learned, illustrious",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Fragment of 'quos habet Ecclesia Anglicana quamplurimos…', in which Burton says the Church of England has a great many good men, excellently learned, illustrious, of spotless reputation. 'habet' stands before the marked text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the Church of England has very many, excellently learned, illustrious",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f317": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "ne quis a florentissimis",
+    "text_sha1": "a45e09019bc3989dbac4e36088cd8279e6181413",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "lest anyone [think anything taken] from the most flourishing",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The construction is elliptical. It repeats 'Ne quis … detractum quid putet' from earlier in the sentence, so 'think anything detracted' is supplied from there. The noun 'Academiis' (universities) follows just outside the marked text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "nor let anyone think anything detracted from the most flourishing",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f318": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "sordes",
+    "text_sha1": "e6036ac26a4df545b608a8474911a50fea3bef06",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "filth",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'sordes' means filth, and figuratively meanness or sordid avarice. Here it refers to the venal corruption that dims the universities' splendid light.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "sordid dealings",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f319": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "his idiotis circumforaneis, sacram pollui Theologiam",
+    "text_sha1": "062584daed1e6bf40715a64e5c7402409acce111",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "[by] these idiots going round the markets, sacred theology to be polluted",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The preposition 'ab' (by) stands just before the marked text. The infinitive depends on 'agnoscat': no one fails to acknowledge that sacred theology is defiled by these mountebank ignoramuses.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "these strolling ignoramuses, sacred theology is defiled",
         "warnings": []
       }
     ]
@@ -10631,6 +12334,606 @@
       }
     ]
   },
+  "1.2.3.15-f320": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Martin Luther",
+      "basis": "text \"sic enim Lutherus alicubi vocat\"; sidenote \"Comment. in Gal.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Commentary on Galatians"
+    },
+    "text": "sic enim Lutherus alicubi vocat",
+    "text_sha1": "bdb008cf7cc948db1af7eb9730a808594f7c73d0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "for thus Luther somewhere calls",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Luther's epithet is 'Viles animae & effrontes' ('base and shameless souls').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Martin Luther",
+          "basis": "text \"sic enim Lutherus alicubi vocat\"; sidenote \"Comment. in Gal.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Commentary on Galatians"
+        },
+        "text": "for so Luther somewhere calls them",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f321": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "cujuslibet honoris, officii",
+    "text_sha1": "a077f8e807efe69b20da3971ac39319da2b1013b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "of any honour, office",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This phrase depends on 'in spem' ('in hope of'): in hope of a benefice, of any honour or office.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of any honour or office whatever",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f322": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Erasmus",
+      "basis": "text \"Erasmus ait\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "obsecundantes Parasiti (Erasmus ait",
+    "text_sha1": "25fc02361d84a66d2bcec961dd2201d836e31d1f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage stops before the parenthesis closes. The sentence goes on: they teach, say, write, urge anything, and approve it against their conscience.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Erasmus",
+          "basis": "text \"Erasmus ait\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "compliant parasites (as Erasmus says",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f323": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Theologiam accedunt",
+    "text_sha1": "9ec301ecb39498c4338d8f0ddf209c009a3b735c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The preposition 'ad' stands just before the marked text. The full clause says that for the most part they come to theology with this aim.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "they come to theology",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f324": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Paul",
+      "basis": "text \"quod Paulus ait\"",
+      "locus": "2:21",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Philippians"
+    },
+    "text": "quaerentes, quod Paulus ait",
+    "text_sha1": "1ca7deeb0426749c84d9c045b35d17f94e003147",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The words of Paul follow just outside the marked text: 'Non quae Jesu Christi, sed quae sua' ('not the things of Jesus Christ, but their own'). They echo Philippians 2:21; Burton gives no reference, and the identification is the translator's.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Paul",
+          "basis": "text \"quod Paulus ait\"",
+          "locus": "2:21",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Philippians"
+        },
+        "text": "seeking, as Paul says",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f325": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in usu est: sed & medios, summos, elatos, ne dicam Episcopos, hoc malum invasit",
+    "text_sha1": "9262630a9257a3cc39ed5b74c45c721ec26d4c3f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "is in use: but also the middle, highest, elevated, not to say bishops, this evil has invaded",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'hoc' (this) stands just before the marked text. The full sentence says this is the practice not only among those of baser fortune and abject lot.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "is the practice: but this evil has invaded those of middle rank too, the highest, the exalted, not to say bishops",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f326": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "qui reliquis morum probitate praelucerent",
+    "text_sha1": "ccb657e4c69f915e225c38b3b5adb4a42d536b5e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "and who should shine before the rest by probity of manners",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "It continues 'Summos saepe viros transversos agit avaritia' ('Avarice often drives even the greatest men astray'), the opening of the sentence, which is placed outside the marked text. The subjunctive 'praelucerent' implies 'who should' or 'who would otherwise' outshine others.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and those who ought to outshine the rest in uprightness of conduct",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f327": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in corruptionis hunc",
+    "text_sha1": "725a89d218213324d5999eb52b64a8f68de879a9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "on this [rock] of corruption",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The noun 'scopulum' (rock, reef) follows just outside the marked text: 'striking upon this rock of corruption'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "on this … of corruption",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f328": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "summos, sed",
+    "text_sha1": "636f0b6e4e02d626a54dd9e0dbd91ec068fca241",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Fragment of 'ut non ab infimis ad summos, sed a summis ad infimos, malum promanasse videatur' ('so that the evil seems to have flowed not from the lowest to the highest, but from the highest to the lowest').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the highest, but",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f329": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Leo",
+      "basis": "text \"quod cum Leone dicam\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "quod cum Leone dicam",
+    "text_sha1": "010ba14c8b5833f9c736fd68c365f1cf8f391f38",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "which I may say with Leo",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton attributes the following saying about the simoniac (grace not received is not possessed) to a Leo, probably a pope. He does not identify which Leo.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Leo",
+          "basis": "text \"quod cum Leone dicam\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "to say it with Leo",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f33": {
     "kind": "phrase",
     "lang": "la",
@@ -10701,6 +13004,611 @@
       }
     ]
   },
+  "1.2.3.15-f330": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a promovendo reliquos, ut penitus impediant, probe sibi conscii, quibus artibus illic pervenerint",
+    "text_sha1": "7bc969c88c51091bfda4171283fb4b3271d2645e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Completes the clause 'tantum enim absunt istorum nonnulli, qui ad clavum sedent' ('for some of those who sit at the helm are so far'), which stands just before the marked words: some of those in power are so far from promoting others that they actively block them.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "from promoting others that they hinder them altogether, knowing full well by what arts they got there themselves",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f331": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "his",
+    "text_sha1": "b187a9ed471ef7465c5d78cc7b4b1846f07ac76d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A single word cut out of the phrase 'ex his primordiis' ('from these beginnings').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "these",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f332": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in Ecclesiam invehitur. Hinc tam frequens simonia, hinc ortae querelae, fraudes, imposturae, ab hoc fonte se derivarunt omnes nequitiae. Ne quid obiter dicam de ambitione, Adulatione plusquam aulica, ne tristi domicaenio laborent, de luxu, de foedo nonnunquam vitae exemplo, quo nonnullos offendunt, de compotatione Sybaritica, &c. Hinc ille squalor Academicus",
+    "text_sha1": "cb1e00e34adabc73014e0d759ff1d6f309eef623",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Begins mid-sentence: the subject ('a flood of vices, every calamity, the whole troop of miseries') stands just before the marked words. 'Domicaenium' is a dinner eaten at home (a Martial word). The flattery is meant to win invitations, so that the flatterer is spared a dreary meal at his own table.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "is brought into the Church. Hence such frequent simony; hence have arisen complaints, frauds, impostures; from this fountain all wickedness has flowed. Not to say anything in passing of ambition, of flattery more than courtly so that they need not suffer a sad dinner at home, of luxury, of the sometimes foul example of life by which they give offence to some, of Sybaritic drinking-bouts, etc. Hence that academic squalor",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f333": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "quum quivis homunculus artium ignarus, his artibus assurgat, hunc in modum promoveatur & ditescat, ambitiosis appellationibus insignis, & multis dignitatibus augustus vulgi oculos perstringat, bene se habeat, & grandia gradiens majestatem quandam ac amplitudinem prae se ferens, miramque sollicitudinem, barba reverendus, toga nitidus, purpura coruscus, supellectilis splendore, & famulorum numero maxime conspicuus",
+    "text_sha1": "9882cbc2d0ce1b4997b2acfdffe866be2d6e39db",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Play on 'artium ignarus … his artibus': a man ignorant of the liberal arts rises by 'these arts', meaning the corrupt practices just described.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "when any manikin ignorant of the arts rises by these arts, is promoted in this way and grows rich, distinguished by ambitious titles and, made august by many dignities, dazzles the eyes of the crowd, lives well, and, stepping grandly, displays a certain majesty and greatness and a wonderful air of solicitude, reverend in beard, sleek in gown, glittering in purple, most conspicuous for the splendour of his furniture and the number of his servants",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f334": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Guillaume Budé (Budaeus)",
+      "basis": "sidenote \"Budaeus de Asse lib. 5.\"",
+      "locus": "book 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Asse"
+    },
+    "text": "quod ait ille",
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Introduces the simile of the statues set on church columns that look as if they strain under the weight they carry.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Guillaume Budé (Budaeus)",
+          "basis": "sidenote \"Budaeus de Asse lib. 5.\"",
+          "locus": "book 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Asse"
+        },
+        "text": "as he says",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f335": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Atlantes",
+    "text_sha1": "0821a12ac63bf60f3804737ab2d1c25d5aaed858",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Atlantes are figures of Atlas used as supporting columns. These men want to look like Atlases holding up the Church when they are only stone figures.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Atlases",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f336": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "fungi forsan & bardi, nihil a saxo differentes. Quum interim docti viri, & vitae sanctioris ornamentis praediti, qui aestum diei sustinent, his iniqua sorte serviant, minimo forsan salario contenti, puris nominibus nuncupati, humiles, obscuri, multoque digniores licet, egentes, inhonorati vitam privam privatam agant, tenuique sepulti sacerdotio, vel in collegiis suis in aeternum incarcerati, inglorie delitescant. Sed nolo diutius hanc movere sentinam, hinc illae lachrymae, lugubris musarum habitus, hinc ipsa religio (quod cum Sesellio dicam",
+    "text_sha1": "22ae212dd67a105b6b27954bf98a804c60daeb7a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "mushrooms perhaps and dolts … called by pure names … lead a life private and deprived, and buried in a thin priesthood",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Fungi' (mushrooms) is a common Latin insult for dull, senseless people. 'Qui aestum diei sustinent' echoes Matthew 20:12. 'Puris nominibus' means names without titles or degrees. 'Vitam privam privatam' is a doubled jingle; its exact force is uncertain. The passage ends inside Burton's parenthesis, before its closing bracket.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "blockheads perhaps and dullards, no different from a stone. Meanwhile learned men, endowed with the ornaments of a holier life, who bear the heat of the day, serve these by an unjust lot, content perhaps with the smallest salary, called by their bare names, humble, obscure, and though far worthier, needy and unhonoured, they lead a private, retired life, and buried in some poor benefice, or imprisoned for ever in their colleges, they lie hidden without glory. But I will stir this sink no longer; hence those tears, the mourning habit of the Muses, hence religion itself (as I may say with Seyssel",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f337": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "abjectum sacerdotium",
+    "text_sha1": "ef8bd5bd025c16b19c128d34416ef29dd173cd41",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "an abject priesthood",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the priesthood made abject",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f338": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "putidi dicterium de clero usurpare",
+    "text_sha1": "93435cdda7ed92a7feea9b73fc192e0efd5d46fd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "wordplay"
+        ],
+        "literal": "to usurp the gibe of a rotten man about the clergy",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The word 'putidum' just before the marked words belongs with them: 'putidum putidi dicterium', 'the rotten gibe of a rotten man'. The rotten man is evidently Campion (sidenote 'Campian.'), whose slur follows.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to borrow a rotten fellow's gibe about the clergy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.15-f339": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Edmund Campion",
+      "basis": "sidenote \"Campian.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "inops, rude",
+    "text_sha1": "9b94d4992fdf0a8b299a4bd79431838b0efa84c8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of the quoted gibe 'Putidum vulgus, inops, rude, sordidum…' ('a rotten rabble, needy, uncouth, sordid…') against the English clergy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Edmund Campion",
+          "basis": "sidenote \"Campian.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "needy, uncouth",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.15-f34": {
     "kind": "phrase",
     "lang": "la",
@@ -10755,66 +13663,6 @@
           "work": null
         },
         "text": "they come to grief either on a wench or on the cup",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.3.15-f35": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "per annum",
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": "by the year",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "a year",
         "warnings": []
       }
     ]
@@ -13504,66 +16352,6 @@
           "work": null
         },
         "text": "And you hunt for wealth with all your strength, / but from it comes a most wretched harvest.",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.3.15-f75": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Sir Henry Spelman",
-      "basis": "sidenote \"Sir Henry Spelman, de non temerandis Ecclesiis.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De non temerandis Ecclesiis"
-    },
-    "text": "de non temerandis Ecclesiis",
-    "text_sha1": "35f595758c9586a477913877779d659b9cbd8233",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": "concerning churches not to be violated",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The title of Spelman's tract on church property and tithes, De non temerandis ecclesiis (1613).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Sir Henry Spelman",
-          "basis": "sidenote \"Sir Henry Spelman, de non temerandis Ecclesiis.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De non temerandis Ecclesiis"
-        },
-        "text": "On Not Profaning Churches",
         "warnings": []
       }
     ]

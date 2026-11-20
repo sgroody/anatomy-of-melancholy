@@ -195,18 +195,6 @@
     ],
     "text_sha1": "ca9bd829e7714ca0ee5fc63ec421d9144ac4c00a"
   },
-  "1.1.1.4-f18": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3b2a957d67f09772355ff7b0378107fcdb39f984"
-  },
   "1.1.1.4-f19": {
     "bracket": "none",
     "by": "rules",
@@ -508,47 +496,5 @@
       "english-at-anchor"
     ],
     "text_sha1": "8e84c553ce07f787d4adcd7d44596d24cb27fd47"
-  },
-  "1.1.1.4-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "I voluntarily omit",
-          "in": "1.1.1.4-p7",
-          "prefix": "mes of this subject pro & con), ",
-          "suffix": "."
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "said of them, their actions, gestures, contortions, fasting, prophesying, speaking languages they were never taught, &c., many strange stories are related of them, which because some will not allow (for Deacon and Darrell have written large volumes of this subject",
-          "in": "1.1.1.4-p7",
-          "prefix": "eternatural: stupend things are ",
-          "suffix": " pro & con), I voluntarily omit."
-        },
-        "words": 40
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1f2db0e5e5a96f8a33aa79ff9b5ed6b17e635006"
   }
 }

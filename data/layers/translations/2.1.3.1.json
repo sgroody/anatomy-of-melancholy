@@ -391,68 +391,6 @@
       }
     ]
   },
-  "2.1.3.1-f19": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "downgraded_from": "burton-cites",
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Spicil. de morbis daemoniacis",
-    "text_sha1": "b90bfedc3a3b9de8c7918986fdabbee06bc290a2",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'Spicil.' is the abbreviation of Spicilegium ('gleanings'), the title of Franz Hildesheim's medical work.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "downgraded_from": "burton-cites",
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Spicilegium, on demoniacal diseases",
-        "warnings": []
-      }
-    ]
-  },
   "2.1.3.1-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -673,6 +611,195 @@
       }
     ]
   },
+  "2.1.3.1-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "there was a goddess of idleness, a goddess of the draught, or jakes",
+        "in": "2.1.3.1",
+        "near": "2.1.3.1-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "dea Vacuna, dea Cloacina",
+    "text_sha1": "66d2ec57374c201c1f089dbb49f3dd505eab6dd0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Vacuna was an old Sabine goddess whom later writers took as the goddess of leisure (vacare, 'to be idle'). Cloacina was the goddess of the Cloaca Maxima, Rome's great sewer. Burton glosses them as goddesses of idleness and of the jakes.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "there was a goddess of idleness, a goddess of the draught, or jakes",
+            "in": "2.1.3.1",
+            "near": "2.1.3.1-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the goddess Vacuna, the goddess Cloacina",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.3.1-f26": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "text \"as Austin mentioneth lib. 4 de Civit. Dei, cap. 9\"",
+      "locus": "lib. 4, cap. 9",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De Civitate Dei"
+    },
+    "text": "dea",
+    "text_sha1": "ec86376e23b99516bb874a35db8a3cdb6a95987d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "In 'Angerona dea', the goddess Angerona. Roman authors linked her with anguish and anxiety (angor), which is why Burton calls her a goddess of melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "text \"as Austin mentioneth lib. 4 de Civit. Dei, cap. 9\"",
+          "locus": "lib. 4, cap. 9",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De Civitate Dei"
+        },
+        "text": "goddess",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.3.1-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Franz Hildesheim",
+      "basis": "sidenote \"Spicil. de morbis daemoniacis.\" anchored at text \"Hildesheim well saith\"",
+      "locus": "de morbis daemoniacis",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Spicilegium"
+    },
+    "text": "morbis daemoniacis",
+    "text_sha1": "2058097b927b1fa60b4b5cc4d5dbf47e057c6f82",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of the title of a section of Hildesheim's Spicilegium: 'Spicilegium, on demoniacal diseases'. Burton refers to it at 'Hildesheim well saith'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Franz Hildesheim",
+          "basis": "sidenote \"Spicil. de morbis daemoniacis.\" anchored at text \"Hildesheim well saith\"",
+          "locus": "de morbis daemoniacis",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Spicilegium"
+        },
+        "text": "demoniacal diseases",
+        "warnings": []
+      }
+    ]
+  },
   "2.1.3.1-f3": {
     "kind": "phrase",
     "lang": "la",
@@ -857,66 +984,6 @@
           "work": null
         },
         "text": "the Breaking of Wind",
-        "warnings": []
-      }
-    ]
-  },
-  "2.1.3.1-f6": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Lilio Gregorio Giraldi",
-      "basis": "sidenote \"See Lilii Giraldi syntagma de diis, &c.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De deis gentium syntagmata"
-    },
-    "text": "Lilii Giraldi syntagma de diis, &c",
-    "text_sha1": "b4e15c78abfbe0c950dfd138a3a00cb776123add",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Lilio Gregorio Giraldi, De deis gentium ... syntagmata (1548).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Lilio Gregorio Giraldi",
-          "basis": "sidenote \"See Lilii Giraldi syntagma de diis, &c.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De deis gentium syntagmata"
-        },
-        "text": "Lilius Giraldus, Syntagma on the Gods, etc.",
         "warnings": []
       }
     ]

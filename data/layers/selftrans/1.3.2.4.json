@@ -1,4 +1,33 @@
 {
+  "1.3.2.4-f1": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as a peculiar species of melancholy (which I have already specified) distinct from the rest (for it much differs from that which commonly befalls men and other women, as having one only cause proper to women alone)",
+          "in": "1.3.2.4-p1",
+          "prefix": "virginum, Monialium & Viduarum, ",
+          "suffix": ": I may not omit in this general"
+        },
+        "words": 37
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows"
+    ],
+    "text_sha1": "8e06dd1d87d530964c26c659d56dc21b6d58a663"
+  },
   "1.3.2.4-f10": {
     "bracket": "present",
     "by": "rules",
@@ -204,12 +233,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "I confess ’tis an",
+          "exact": "I confess ’tis an indecorum, and as Pallas a Virgin blushed, when Jupiter by chance spake of Love matters in her presence, and turned away her face",
           "in": "1.3.2.4-p5",
           "prefix": " sane ineptus qui haec dixerim, ",
-          "suffix": " indecorum, and as Pallas a Virg"
+          "suffix": "; me reprimam, though my subject"
         },
-        "words": 4
+        "words": 27
       },
       {
         "by": "rules",
@@ -232,35 +261,6 @@
       "english-precedes"
     ],
     "text_sha1": "70b34d1c592f48e41d336913ffc9c40802156ec1"
-  },
-  "1.3.2.4-f17": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and as Pallas a Virgin blushed, when Jupiter by chance spake of Love matters in her presence, and turned away her face",
-          "in": "1.3.2.4-p5",
-          "prefix": "m, I confess ’tis an indecorum, ",
-          "suffix": "; me reprimam, though my subject"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9859b7592fc57a46c6dce9707ca9d503de1b480c"
   },
   "1.3.2.4-f18": {
     "bracket": "present",

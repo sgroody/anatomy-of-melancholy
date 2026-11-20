@@ -1,4 +1,159 @@
 {
+  "1.3.1.1-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "mighty and often watchings",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f11",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ingentes habent & crebras vigilias (Aretaeus",
+    "text_sha1": "e2e46425b00847cfb63e969b7dae3113cdbb2ce7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage includes the author's name, Aretaeus, but not its closing parenthesis.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "mighty and often watchings",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f11",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They have great and frequent wakings (Aretaeus)",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "not much in quantity",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f13",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "urina pauca, acris, biliosa (Aretaeus",
+    "text_sha1": "83bfee63c3eccc1a03a56336d8f35cb9dc8cb788",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage includes the author's name but not its closing parenthesis. 'biliosa' means tinged with yellow bile (choler).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "not much in quantity",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f13",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "urine scanty, sharp, choleric (Aretaeus)",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.1.1-f2": {
     "kind": "phrase",
     "lang": "la",
@@ -59,6 +214,80 @@
           "work": "De insania et melancholia"
         },
         "text": "On Madness and Melancholy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "laughing, weeping",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Gordonius",
+      "basis": "sidenote \"Gordonius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Gordonius: Modo rident, modo flent, silent, &c",
+    "text_sha1": "b7a094fbfdb47487e6449baba6c9ebaf9db4da94",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "laughing, weeping",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Gordonius",
+          "basis": "sidenote \"Gordonius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Gordonius: Now they laugh, now they weep, they are silent, etc.",
         "warnings": []
       }
     ]

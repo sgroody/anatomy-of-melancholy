@@ -1,72 +1,7 @@
 # Checks the project owner has decided may fail without failing the build.
 # A deferred check still runs, prints its counts and problems, and is reported as DEFER (never PASS).
 # Remove an entry to make the check blocking again.
-V5:
-  decision: D10
-  date: 2026-10-20
-  reason: >-
-    Language-ID is below target on the gate round. Updated 2026-11-18: the rules gained the sidenote-title rule and
-    now read Burton's notes inside quotations (h2 became a seen round); a fresh round h3 (300 items, drawn after the
-    change, labelled blind by the gold-audit-v1 rater, 4 Chaucer labels corrected from the source's markup) scores
-    P 0.962, R 0.952, B 0.960 (targets 0.98 / 0.97 / 0.95). Remaining errors: Latin titles in the running text
-    ("de atra bile") read as quoted Latin, two missed Latin phrases, three missed mixed phrases. Fixing them needs
-    another cycle (h3 seen, rules changed, a fresh round h4); it stays deferred under D10 until then.
-    Updated 2026-11-18 (second cycle): h3 became a seen round; the rules gained Latin titles as citations (after
-    "book", "tract", "consultation"…, after an author or a title abbreviation, "De X" in a sidenote), Latin pronoun
-    and possessive forms, Latin with only Latin-ambiguous "English" words, superscript endings joined to their run,
-    and a Latin clause inside an English italic run (h3 now P 0.991, R 1.000, B 0.943; tuning, h1, h2 unchanged).
-    A fresh round h4 (300 items, seed 20261119, drawn after the change, labelled blind by gold-audit-v1, no label
-    corrected: none stands in Chaucer markup) scores P 0.948, R 0.968, B 0.912 (targets 0.98 / 0.97 / 0.95), so it
-    stays deferred. h4's errors: 5 false Latin (English loan-words "Decorum", "verbatim"; locators "& passim alias",
-    "& deinceps" that Gowland's brackets translate; a title "Originem in Celsum, &c" in a sidenote), 3 missed
-    (capitalised Latin read as names: "Scytala Laconica", "Capuae Fluenta"; one mixed roman passage). Of the 8
-    inexact boundaries, 6 are labels that join separate stretches with "|", which the scorer can never count as
-    exact; that is a measurement limit to settle before the next round is drawn, not a reason to pass this one.
-    Updated 2026-11-19 (third cycle): h4 became a seen round; the rules gained Latin words naturalised in English
-    (data/manual/naturalised.yaml), locators as citations even before a bracket ("20 & passim alias"), "Author in
-    Work" references ("Originem in Celsum"), and lowercase Latin lists kept whole ("horribile, dirum, pestilens");
-    the scorer now measures a label of "|"-joined stretches stretch by stretch (settled before h5 was drawn). h4 now
-    P 1.000, R 0.979, B 0.957; tuning, h1, h2 unchanged; h3 B 0.962 (scorer). A fresh round h5 (300 items, seed
-    20261120, drawn after the change, labelled blind by gold-audit-v1, 1 Chaucer label corrected from the source's
-    markup) scores P 0.959, R 0.940, B 0.979 (targets 0.98 / 0.97 / 0.95), so it stays deferred. h5's errors:
-    4 false (sidenote abbreviated titles "rebus gestis Alph.", "Gaspar Ens polit."; "Genius" and "per annum" used as
-    English), 6 missed (single Latin words "inquis", "Pythonissas", "Napthe", "Protobib."; roman Latin without a
-    bracket "de rebus caelestibus", "in summo gradu"). Three cycles on fresh rounds give P 0.95-0.96, R 0.94-0.97:
-    each round brings rare constructions the earlier ones did not, so rule changes have stopped converging. The
-    obvious next lever, sending short ambiguous runs to the model, would be scored against gold labelled by the
-    same model; until a human-checked gate exists (PLAN D7) that would partly measure the model agreeing with itself.
-    Updated 2026-11-20 (fourth cycle; owner: "just do the remainder of V5 yourself; I can't hand check it"): h5 became
-    a seen round. The lever was taken: a short run (three words or fewer, no Gowland bracket) that the rules decided on
-    one or two lexicon hits, and a capitalised run the names sweep ruled not a name, take the model's ruling (la-v2,
-    resp="#model"; 2,361 rulings, 62 low ones not applied). Seen rounds after: tuning P 0.979 R 0.989; h2 R 0.964 ->
-    0.976; h4 R 0.979 -> 0.989; h5 P 0.959 -> 0.990, R 0.940 -> 0.950. The gate stands in for the owner's hand check:
-    a fresh round h6 (300 items, seed 20261121, drawn after the change) labelled blind by gold-audit-v1 with
-    claude-opus-5-5 and again with claude-sonnet-5-5; the 13 items where they disagree on foreignness or on a mixed
-    item's foreign part were settled by Claude in session from the text, with reasons
-    (data/eval/langid-holdout6-settled.yaml). h6 scores P 0.990, R 0.941, B 0.947 (targets 0.98 / 0.97 / 0.95):
-    precision now passes; recall and boundaries do not, so it stays deferred. h6's misses: 1 false (a sidenote title,
-    "Chytraeus delitiis Europae"), 6 missed: Latin in roman type ("Jesu & Mariae", "in secundis, no not in tertiis",
-    "Haedus, Albertus, & infiniti fere medici"), a lone lowercase word ("dei"), a Latin sentence in a note ("Elvarum
-    choreas Olaus lib"), and one doubtful gold label both raters agreed on ("Mandrake apples, Lemnius lib", foreign
-    part "lib", a locator: a citation by LABELLING.md); it is recorded, not changed, since changing gold only where the
-    detector missed would bias the score (corrected, R would be 0.950). Four cycles: precision is fixed by the model
-    lever; recall stays at 0.94-0.95, its misses now mostly Latin in roman type, which neither the rules nor this lever
-    reach.
-    Updated 2026-11-20 (fifth cycle; owner: "Run a fifth"): h6 became a seen round. Read closely, h6's errors sat on the
-    line between a reference and Latin, not in roman type as such: three were the raters putting a cited title's words
-    or a locator into the foreign part ("dei" in "Austin de civ. dei", "Jesu & Mariae" in a title, "lib"), against
-    LABELLING.md. Two changes, both made before h7 was drawn. (1) The detector: a reference run holding two or more
-    Latin words, a piece the trim cut off a Latin run, and a roman preposition before a Latin passage ("in secundis")
-    take the model's ruling (la-v2, 310 rulings; a ruling of kind title keeps a cited title a reference, which also
-    returned 10 earlier title passages to references; reference fragments at either end of a run ruled Latin are
-    shed). (2) The raters' prompt, gold-audit-v2: v1 plus LABELLING.md's conventions on what belongs to a reference,
-    and separate foreign stretches joined by " | ". The h6 gold is unchanged. Seen rounds after: h2 R 0.976 -> 0.988,
-    h5 R 0.950 -> 0.960, none lower. A fresh round h7 (300 items, seed 20261122, drawn after the change) labelled blind
-    by gold-audit-v2 with claude-opus-5-5 and with claude-sonnet-5-5; Claude settled their 11 disagreements from the
-    text before scoring (data/eval/langid-holdout7-settled.yaml). h7 scores P 0.958, R 0.968, B 0.967 (targets 0.98 /
-    0.97 / 0.95): boundaries pass, recall is one item short, precision fails, so it stays deferred. h7's errors:
-    4 false, none made by this cycle (all four tagged in the text before it): abbreviations in references ("cap",
-    "Ter"), a cited title ("Tully pro Archia Poeta"), and "Phoebades", where Gowland's bracket ("prophetesses") makes
-    Claude's settlement as a name doubtful (recorded, not changed: it was settled before scoring); 3 missed, all single
-    capitalised Latin words read as names ("Hieralogodion", "Rusticus", "Indae" in "Pil. Indae"). Five cycles: each
-    fresh round draws a few rare errors the earlier ones did not, and the scores move within P 0.95-0.99, R 0.94-0.97.
+#
+# V5 (deferred under D10 from 2026-10-20) was removed on 2026-11-20: it is gated by the census (D13,
+# data/eval/CENSUS.md) and passes. Its deferral's history: state/review/census-2026-11-20.md.
+{}

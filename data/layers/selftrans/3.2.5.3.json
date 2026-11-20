@@ -1854,48 +1854,6 @@
     ],
     "text_sha1": "eb63842f5ff359ab34ac7cd0a699451daf3c9cd4"
   },
-  "3.2.5.3-f176": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "which Caesar once enforced in Rome (though Levinus Torrentius, and others suspect it)",
-          "in": "3.2.5.3-p45",
-          "prefix": "t polygamy of Turks, Lex Julia, ",
-          "suffix": " uti uxores quot & quas vellent "
-        },
-        "words": 13
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "or that polygamy of Turks",
-          "in": "3.2.5.3-p45",
-          "prefix": "",
-          "suffix": ", Lex Julia, which Caesar once e"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b390d4269dfd7341c4d355e199072c9ca61e9eb7"
-  },
   "3.2.5.3-f177": {
     "bracket": "none",
     "by": "rules",
@@ -1920,12 +1878,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "which Caesar once enforced in Rome (though Levinus Torrentius, and others suspect it)",
+          "exact": "or that polygamy of Turks, Lex Julia, which Caesar once enforced in Rome (though Levinus Torrentius, and others suspect it)",
           "in": "3.2.5.3-p45",
-          "prefix": "t polygamy of Turks, Lex Julia, ",
+          "prefix": "",
           "suffix": " uti uxores quot & quas vellent "
         },
-        "words": 13
+        "words": 20
       }
     ],
     "lang": "la",
@@ -2379,35 +2337,6 @@
     ],
     "text_sha1": "0bfa2c9767617c5b86e6318c6162f41cf471e769"
   },
-  "3.2.5.3-f204": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Espencaeus and those three books of Pet",
-          "in": "3.2.5.3-p3",
-          "prefix": "er., Platina’s dial. in Amores, ",
-          "suffix": ". Haedus de contem. amoribus, Ae"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9bfb00555dfdbdbd968bdb7f4af6189ed10a5ae3"
-  },
   "3.2.5.3-f206": {
     "bracket": "present",
     "by": "rules",
@@ -2847,6 +2776,100 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "f75d24dae63eef4e4a713ec6074723b8768eebdf"
+  },
+  "3.2.5.3-f222": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a Nymph, a Fairy, like Venus herself when she was a maid",
+          "in": "3.2.5.3-p18",
+          "prefix": " vernantis aetatulae Venerilla, ",
+          "suffix": ", nulli secunda, a mere quintess"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "3b74df8a553dd46eb3e0e5b1d51578626f613038"
+  },
+  "3.2.5.3-f223": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2768defaf92644238c577db42832c0774ac13f99"
+  },
+  "3.2.5.3-f224": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1606e31dd0687e0674e5d0558c67da75de781f3a"
+  },
+  "3.2.5.3-f225": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., No father, no, I am a lover still, and cannot be contented with one woman",
+          "in": "3.2.5.3-p45",
+          "prefix": "quaquam pater, amator enim sum, ",
+          "suffix": ". Pythias, Echo, Maenades, and I"
+        },
+        "words": 16
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "but as Pan replied to his father Mercury, when he asked whether he was married",
+          "in": "3.2.5.3-p45",
+          "prefix": "e thee; nor one woman many men: ",
+          "suffix": ", Nequaquam pater, amator enim s"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "16818ae02cee49a2516fb1b2dccc6e7f72194e92"
   },
   "3.2.5.3-f23": {
     "bracket": "present",
@@ -3290,34 +3313,6 @@
       "english-precedes"
     ],
     "text_sha1": "8a8231666ac4beeb4f553cca4cdc50bf4d4179db"
-  },
-  "3.2.5.3-f42": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "a Nymph, a Fairy, like Venus herself when she was a maid",
-          "in": "3.2.5.3-p18",
-          "prefix": " vernantis aetatulae Venerilla, ",
-          "suffix": ", nulli secunda, a mere quintess"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "f94f89c2bd525a2ba82ca30ec2f2f68542a40c12"
   },
   "3.2.5.3-f43": {
     "bracket": "present",

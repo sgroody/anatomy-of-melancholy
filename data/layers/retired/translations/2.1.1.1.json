@@ -62,5 +62,69 @@
         "warnings": []
       }
     ]
+  },
+  "2.1.1.1-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "René Moreau",
+      "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+      "locus": "cap. 38",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Animadversions on the Schola Salernitana"
+    },
+    "text": "in scholam salernit. cap. 38. Si ad 40 annos possent producere vitam cur non ad centum? Si ad centum cur non ad mille?",
+    "text_sha1": "1dcd7b08ba8a9016a522b4dac0cede7a483f3a4d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins partway through the title of the cited work: 'Vide Renatum Moreau Animad. in scholam salernit.' means 'See René Moreau, Animadversions on the School of Salerno'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "René Moreau",
+          "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+          "locus": "cap. 38",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Animadversions on the Schola Salernitana"
+        },
+        "text": "on the School of Salerno, chapter 38. If they could prolong life to 40 years, why not to a hundred? If to a hundred, why not to a thousand?",
+        "warnings": []
+      }
+    ]
   }
 }

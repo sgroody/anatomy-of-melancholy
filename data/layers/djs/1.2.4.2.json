@@ -120,14 +120,6 @@
     "text_sha1": "fdff206cd92308df6c41cd0f40ef24936bf67ad1",
     "threshold": 0.85
   },
-  "1.2.4.2-f22": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "1e8b8df454eda49ebdcf4178f236e080a9035ca0",
-    "threshold": 0.85
-  },
   "1.2.4.2-f23": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -136,20 +128,24 @@
     "text_sha1": "753d11a1ea2439180d6c6f909b322746c05baa1b",
     "threshold": 0.85
   },
-  "1.2.4.2-f25": {
-    "align_score": 1.0,
+  "1.2.4.2-f26": {
     "by": "djs1927",
-    "left_anchor": "unruly: but they are much to blame in it, many times, saith",
-    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "residue": "Lavater,",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "ccdf71d673f5f183e1d29a276bf3dbbd2d5bd72a",
+    "threshold": 0.85
+  },
+  "1.2.4.2-f27": {
+    "by": "djs1927",
+    "left_anchor": "blame in it, many times, saith Lavater de spectris, part. 1 cap",
+    "left_score": 0.7719298245614035,
+    "method": "rules/djs-align-v3",
     "right_anchor": ", for fear they fall into many diseases, and cry out in",
     "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "01b9731bf39b29c143cf38034c33f87f8e6a1966",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 15711, pp. 284-285"
+    "status": "not-found",
+    "text_sha1": "91ba97f2d262f6b284d08923255798236888260b",
+    "threshold": 0.85
   },
   "1.2.4.2-f3": {
     "by": "djs1927",

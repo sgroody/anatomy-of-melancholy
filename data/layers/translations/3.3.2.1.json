@@ -2327,6 +2327,138 @@
       }
     ]
   },
+  "3.3.2.1-f55": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Fear not daughter",
+        "in": "3.3.2.1",
+        "near": "3.3.2.1-f55",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aristaenetus",
+      "basis": "text \"An old bawdy nurse in Aristaenetus\"; sidenote \"Epist. 6 Mercero Inter.\"",
+      "locus": "Epist. 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "Noli vereri filia",
+    "text_sha1": "998740e2707d5dcc37d88a2f90721c2b5c7233e6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton cuts the quotation short with \"&c.\". His English that follows (\"I’ll teach thee a trick to help it\") supplies the rest of the nurse's reply, and it matches the Latin of Barth's version given in the sidenote (\"Ego docebo te…\").",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Fear not daughter",
+            "in": "3.3.2.1",
+            "near": "3.3.2.1-f55",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aristaenetus",
+          "basis": "text \"An old bawdy nurse in Aristaenetus\"; sidenote \"Epist. 6 Mercero Inter.\"",
+          "locus": "Epist. 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "Do not be afraid, daughter",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.2.1-f56": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "anno ab urb. condita",
+    "text_sha1": "b75d52272ee2b4788245895b7fc3cdb8216bb20e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The standard Roman way of dating by years from the founding of Rome (A.U.C.). \"urb.\" stands for urbe.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the year from the founding of the city",
+        "warnings": []
+      }
+    ]
+  },
   "3.3.2.1-f6": {
     "kind": "verse",
     "lang": "la",

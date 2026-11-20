@@ -1037,65 +1037,6 @@
       }
     ]
   },
-  "2.4.1.1-f27": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Pharmacopoeia",
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A Greek-derived Latin term for an official book of drug formulas and preparations. The word also passed into English.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "pharmacopoeia",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.1-f28": {
     "kind": "phrase",
     "lang": "la",
@@ -1165,6 +1106,79 @@
           "work": null
         },
         "text": "Pharmaceutics",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.1-f29": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "ill digestion, and bad juice through all the parts of it",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f29",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cacochymia",
+    "text_sha1": "44555dbf660ef9ee3dbba63345150123eba20ad7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "bad juice",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Latinised Greek medical term (kakochymia, 'bad juices'): an unhealthy, corrupted state of the body's humours, usually put down to faulty digestion. 'Cacochymy' is the old English form of the word. Burton explains it himself straight afterwards. He says Celsus and others observe the condition, but this is a technical term, not a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "ill digestion, and bad juice through all the parts of it",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f29",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "cacochymy",
         "warnings": []
       }
     ]

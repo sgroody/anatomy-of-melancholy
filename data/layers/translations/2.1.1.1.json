@@ -947,66 +947,6 @@
       }
     ]
   },
-  "2.1.1.1-f37": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "René Moreau",
-      "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
-      "locus": "cap. 38",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Animadversions on the Schola Salernitana"
-    },
-    "text": "in scholam salernit. cap. 38. Si ad 40 annos possent producere vitam cur non ad centum? Si ad centum cur non ad mille?",
-    "text_sha1": "1dcd7b08ba8a9016a522b4dac0cede7a483f3a4d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The passage begins partway through the title of the cited work: 'Vide Renatum Moreau Animad. in scholam salernit.' means 'See René Moreau, Animadversions on the School of Salerno'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "René Moreau",
-          "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
-          "locus": "cap. 38",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Animadversions on the Schola Salernitana"
-        },
-        "text": "on the School of Salerno, chapter 38. If they could prolong life to 40 years, why not to a hundred? If to a hundred, why not to a thousand?",
-        "warnings": []
-      }
-    ]
-  },
   "2.1.1.1-f39": {
     "kind": "phrase",
     "lang": "la",
@@ -1061,6 +1001,126 @@
           "work": null
         },
         "text": "By this compact one falls away from God to the devil.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.1.1-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "René Moreau",
+      "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+      "locus": "cap. 38",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Animadversiones in Scholam Salernitanam"
+    },
+    "text": "in scholam salernit.",
+    "text_sha1": "d4eddca9894a0013a29422ff7719412087aa22f7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment of a book title: René Moreau's Animadversiones in Scholam Salernitanam, his notes on the Salernitan Regimen of Health. The surrounding words of the citation (\"Vide Renatum Moreau Animad.\" and \"cap. 38\") fall outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "René Moreau",
+          "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+          "locus": "cap. 38",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Animadversiones in Scholam Salernitanam"
+        },
+        "text": "on the School of Salerno",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.1.1-f41": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "René Moreau",
+      "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+      "locus": "cap. 38",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Animadversiones in Scholam Salernitanam"
+    },
+    "text": ". 38. Si ad 40 annos possent producere vitam cur non ad centum? Si ad centum cur non ad mille?",
+    "text_sha1": "76605dea02cc30d83827e05d5c617871028aae6e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "38. If to 40 years they could extend life, why not to a hundred? If to a hundred, why not to a thousand?",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins in the middle of the citation \"cap. 38\", whose \"cap\" (chapter) falls outside the marked text, so only \"38\" is kept here. The argument is aimed at claims, like those in the main text, that some remedy can make people young again or immortal: if art could lengthen life at all, nothing would stop it from lengthening life without limit.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "René Moreau",
+          "basis": "sidenote \"Vide Renatum Moreau Animad. in scholam salernit. cap. 38.\"",
+          "locus": "cap. 38",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Animadversiones in Scholam Salernitanam"
+        },
+        "text": "38. If they could prolong life to 40 years, why not to a hundred? If to a hundred, why not to a thousand?",
         "warnings": []
       }
     ]

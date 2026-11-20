@@ -481,48 +481,6 @@
     ],
     "text_sha1": "4230b67ab50239361f34dab1435d8315397c61f7"
   },
-  "2.4.1.5-f40": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "will show you, with their tables or lozenges that are made out of them",
-          "in": "2.4.1.5-p5",
-          "prefix": "on, &c., as every Pharmacopoeia ",
-          "suffix": "; with Condites and the like."
-        },
-        "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "&c., as every",
-          "in": "2.4.1.5-p5",
-          "prefix": " Diarrhodon Abbatis, Diacodion, ",
-          "suffix": " Pharmacopoeia will show you, wi"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170"
-  },
   "2.4.1.5-f41": {
     "bracket": "none",
     "by": "rules",
@@ -561,12 +519,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "which Hamech an Arabian, and Philonius a Roman long since composed, but",
+          "exact": "which Hamech an Arabian, and Philonius a Roman long since composed, but crasse as the rest",
           "in": "2.4.1.5-p1",
           "prefix": " Hamech, and Philonium Romanum, ",
-          "suffix": " crasse as the rest. If they be "
+          "suffix": ". If they be so exact, as by him"
         },
-        "words": 12
+        "words": 16
       },
       {
         "by": "rules",
@@ -730,12 +688,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "&c., as every",
+          "exact": "&c., as every Pharmacopoeia will show you, with their tables or lozenges that are made out of them",
           "in": "2.4.1.5-p5",
           "prefix": " Diarrhodon Abbatis, Diacodion, ",
-          "suffix": " Pharmacopoeia will show you, wi"
+          "suffix": "; with Condites and the like."
         },
-        "words": 3
+        "words": 18
       }
     ],
     "lang": "la",
@@ -747,36 +705,36 @@
     ],
     "text_sha1": "3a4ce8fb1678de722002be462224f6c9353986dd"
   },
-  "2.4.1.5-f6": {
-    "bracket": "present",
+  "2.4.1.5-f52": {
+    "bracket": "none",
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": true,
+        "after_attribution": false,
         "by": "rules",
         "cognates": 0,
         "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "If they be so exact, as by him it seems they were, and those mixtures so perfect, why doth Fernelius alter the one, and why is the other obsolete",
-          "in": "2.4.1.5-p1",
-          "prefix": "mposed, but crasse as the rest. ",
-          "suffix": "? Cardan taxeth Galen for presum"
+          "exact": "Violets, Roses, Almonds, Poppy, Nymphaea, Mandrake, &c., to be used after bathing, or to procure sleep",
+          "in": "2.4.1.5-p6",
+          "prefix": "old, as of Camomile, Stechados, ",
+          "suffix": "."
         },
-        "words": 29
+        "words": 16
       },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "which Hamech an Arabian, and Philonius a Roman long since composed, but",
-          "in": "2.4.1.5-p1",
-          "prefix": " Hamech, and Philonium Romanum, ",
-          "suffix": " crasse as the rest. If they be "
+          "exact": "Outwardly used as occasion serves, as amulets, oils hot and cold, as of Camomile",
+          "in": "2.4.1.5-p6",
+          "prefix": "",
+          "suffix": ", Stechados, Violets, Roses, Alm"
         },
-        "words": 12
+        "words": 14
       }
     ],
     "lang": "la",
@@ -784,9 +742,81 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
-      "english-precedes"
+      "english-precedes",
+      "no-gowland-bracket"
     ],
-    "text_sha1": "fc9f7f94755e0b65e8fe2d0828774f62a5768a79"
+    "text_sha1": "f0d1b770031116d2f7901688ba318adeeb4c94ef"
+  },
+  "2.4.1.5-f53": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or those moist medicines, laid on linen, to bathe and cool several parts misaffected",
+          "in": "2.4.1.5-p10",
+          "prefix": "me decoctions, &c., Epithemata, ",
+          "suffix": "."
+        },
+        "words": 14
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Fomentations or sponges, wet in some decoctions, &c.",
+          "in": "2.4.1.5-p10",
+          "prefix": "in, grief, heat, procure sleep. ",
+          "suffix": ", Epithemata, or those moist med"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "13df559f0ccb45497e5bca0ee14d868e28cce5ba"
+  },
+  "2.4.1.5-f54": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or little bags of herbs, flowers, seeds, roots, and the like applied to the head, heart, stomach, &c., odoraments, balls, perfumes, posies to smell to, all which have their several uses in melancholy, as shall be showed, when I treat",
+          "in": "2.4.1.5-p11",
+          "prefix": "Sacculi, ",
+          "suffix": " of the cure of the distinct Spe"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e231df0b847defcb3ec4e4cabc452f79d8cd6145"
   },
   "2.4.1.5-f7": {
     "bracket": "present",

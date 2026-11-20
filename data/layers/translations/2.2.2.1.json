@@ -777,66 +777,6 @@
       }
     ]
   },
-  "2.2.2.1-f28": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "medium",
-    "text_sha1": "20af418657698863db8d966f4b42ed8dc7d0bd54",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The middle course between the two extremes.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "mean",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.2.1-f29": {
     "kind": "phrase",
     "lang": "la",
@@ -891,6 +831,65 @@
           "work": null
         },
         "text": "He begot the Thespiades",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.2.1-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Peter Cnemiander",
+      "basis": "text \"Peter Cnemiander in a consultation of his\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "pro hypocondriaco",
+    "text_sha1": "942f5ce8bead9f374b94dde8d33052bef2300326",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The title or heading of Cnemiander's consultation: a case written for a patient with hypochondriacal melancholy. 'Hypocondriaco' is Burton's spelling of hypochondriaco.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Peter Cnemiander",
+          "basis": "text \"Peter Cnemiander in a consultation of his\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "for a hypochondriac",
         "warnings": []
       }
     ]
@@ -1779,6 +1778,136 @@
           "work": null
         },
         "text": "filth corrupts",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.2.1-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Thermae",
+    "text_sha1": "0ed31fcbd7d0e01ecfb2cdaab4b59bfb0fa72d5a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Thermae",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Thermae were the Roman public hot baths. The sidenote gives Latin and Greek-derived names for the baths of Constantinople mentioned in the main text, and the next word, 'Nympheae', is a separate item. Burton's word 'Baths' at the anchor corresponds to this term.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hot baths",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.2.1-f49": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "three most healthful things",
+        "in": "2.2.2.1",
+        "near": "2.2.2.1-f49",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "text \"Plutarch in his book de san. tuend.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De sanitate tuenda"
+    },
+    "text": "tria saluberrima",
+    "text_sha1": "9e83d187568a1cf3bce1dc6db804a8c2f5f6427d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "three most healthful things",
+            "in": "2.2.2.1",
+            "near": "2.2.2.1-f49",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "text \"Plutarch in his book de san. tuend.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De sanitate tuenda"
+        },
+        "text": "three most healthful things",
         "warnings": []
       }
     ]

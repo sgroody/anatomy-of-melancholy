@@ -43,21 +43,15 @@
     "text_sha1": "95f374d27626db29861d22abbad1008eeb593029",
     "threshold": 0.85
   },
-  "1.4.1.1-f115": {
-    "by": "djs1927",
-    "left_anchor": ": so doth",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; FINIS.",
-    "status": "no-anchor",
-    "text_sha1": "17fa5a87cb0da3251e13a1f86e2b7cd723430d12",
-    "threshold": 0.85
-  },
   "1.4.1.1-f116": {
+    "align_score": 0.75,
     "by": "djs1927",
-    "left_anchor": ";",
+    "left_anchor": ": so doth Cyprian de duplici martyrio;",
+    "left_score": 0.75,
     "method": "rules/djs-align-v3",
     "right_anchor": ": ’tis mere madness so to do,",
-    "status": "no-anchor",
+    "right_score": 1.0,
+    "status": "below-threshold",
     "text_sha1": "b7bcf01e0c647956ce1609806c8d9fd004c0efd4",
     "threshold": 0.85
   },
@@ -280,6 +274,37 @@
     "text_sha1": "54f3994e5629c110de1cd199ff2fd0147831798a",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 20176, p. 373"
+  },
+  "1.4.1.1-f142": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "abhors, he alone; so intolerable are his pains; some make a question,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", whether the diseases of the body or mind be more grievous,",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "107026fc7b28c1a9cc4b62b3aaf212fe585ef159",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 20032, p. 370"
+  },
+  "1.4.1.1-f143": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "0a86cedfaac12bf9476b9621874e24218ff12e02",
+    "threshold": 0.85
+  },
+  "1.4.1.1-f144": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "51cc32468a2006aaa68e32578afd6d665cdfd29f",
+    "threshold": 0.85
   },
   "1.4.1.1-f15": {
     "by": "djs1927",
@@ -785,14 +810,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 20112, p. 372"
   },
-  "1.4.1.1-f57": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "719f563f1fd0e80ec76ba1ef78ab8332f7352f4d",
-    "threshold": 0.85
-  },
   "1.4.1.1-f58": {
     "align_score": 0.993,
     "by": "djs1927",
@@ -836,14 +853,6 @@
     "text_sha1": "7f368e398f1a77e70a7a331dff68cfe7e36a1da3",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 19861, pp. 366-367"
-  },
-  "1.4.1.1-f60": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "ae69389d8a85bd41685a565d69742108faf23547",
-    "threshold": 0.85
   },
   "1.4.1.1-f61": {
     "align_score": 0.804,
@@ -947,11 +956,14 @@
     "threshold": 0.85
   },
   "1.4.1.1-f72": {
+    "align_score": 0.75,
     "by": "djs1927",
     "left_anchor": "., he calls such men",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ": so doth FINIS.",
-    "status": "not-found",
+    "right_anchor": ": so doth Cyprian de duplici martyrio;",
+    "right_score": 0.75,
+    "status": "below-threshold",
     "text_sha1": "c8c4e7b5443b4e4d956c54e9d9e81fb6ba1d53ca",
     "threshold": 0.85
   },
@@ -1080,14 +1092,6 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "88826a736f36b490cbf14224ccaebf3999bda8e7",
-    "threshold": 0.85
-  },
-  "1.4.1.1-f92": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
     "threshold": 0.85
   }
 }

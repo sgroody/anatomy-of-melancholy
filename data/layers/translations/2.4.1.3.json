@@ -487,63 +487,6 @@
       }
     ]
   },
-  "2.4.1.3-f21": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Oswald Croll",
-      "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De signaturis internis rerum"
-    },
-    "text": "de Internis rerum signaturis, de herbis particularibus parti cuique convenientibus",
-    "text_sha1": "f6c7d83c56aaba998339e4d581ef12b0cddb18bb",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This refers to Oswald Croll's treatise on signatures, which assigns herbs to the parts of the body they were held to resemble or suit.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Oswald Croll",
-          "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De signaturis internis rerum"
-        },
-        "text": "On the Internal Signatures of Things, on particular herbs suited to each part",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.3-f22": {
     "kind": "phrase",
     "lang": "la",
@@ -1034,65 +977,6 @@
       }
     ]
   },
-  "2.4.1.3-f30": {
-    "kind": "phrase",
-    "lang": "grc-Latn",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Homer",
-      "basis": "text \"that famous Nepenthes of Homer\" and sidenote \"Odyss. Δ.\"",
-      "locus": "Book Δ",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Odyssey"
-    },
-    "text": "Nepenthes",
-    "text_sha1": "7c6936771c40f4ab39af7057102fcfd056794a5c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": "sorrowless",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Greek nēpenthes means 'banishing sorrow'. It is the drug Helen mixes into the wine in Homer, Odyssey 4. It is kept as a proper name here, as in Burton.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Homer",
-          "basis": "text \"that famous Nepenthes of Homer\" and sidenote \"Odyss. Δ.\"",
-          "locus": "Book Δ",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Odyssey"
-        },
-        "text": "Nepenthes",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.3-f31": {
     "kind": "phrase",
     "lang": "la",
@@ -1219,6 +1103,252 @@
           "work": null
         },
         "text": "blessed thistle",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide",
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Introduces the reference to Oswald Croll that follows in the sidenote.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "such and such plants, should have a peculiar virtue to such particular parts",
+        "in": "2.4.1.3",
+        "near": "2.4.1.3-f34",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Oswald Croll",
+      "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De internis rerum signaturis"
+    },
+    "text": "de herbis particularibus parti cuique convenientibus",
+    "text_sha1": "caae9477c0f2ee1cf079acc1e8e069edefc166b2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "concerning particular herbs agreeing to each part",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Describes the content of Croll's treatise on the 'internal signatures' of things, which Burton cites in the same sidenote. Burton's main text makes the same point in looser words.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "such and such plants, should have a peculiar virtue to such particular parts",
+            "in": "2.4.1.3",
+            "near": "2.4.1.3-f34",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Oswald Croll",
+          "basis": "sidenote \"Vide Oswaldum Crollium lib. de Internis rerum signaturis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De internis rerum signaturis"
+        },
+        "text": "on particular herbs suited to each part",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f35": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Enula campana",
+    "text_sha1": "b2db936c10ad208581202e808c43c9e08e148840",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Enula campana (Inula helenium) is the Latin herbal name of elecampane. Burton uses it as a plant name in a list of English plant names.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Elecampane",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.3-f36": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ros Solis",
+    "text_sha1": "db356c8c7c9d1a999ac814cc43ef0dc404edd806",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "dew of the sun",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ros solis is the herbalists' name for sundew (Drosera). Burton uses it as a plant name in a list.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Sundew",
         "warnings": []
       }
     ]

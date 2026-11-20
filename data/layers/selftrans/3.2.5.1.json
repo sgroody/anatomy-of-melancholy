@@ -842,28 +842,39 @@
     ],
     "text_sha1": "90300ab69b17021cea97a997add13cfed65e791b"
   },
-  "3.2.5.1-f7": {
+  "3.2.5.1-f63": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "/ Frustra delitiae obsidebitis has, / Frustra has illecebrae, & procacitates, /",
-          "in": "3.2.5.1-lg4",
-          "prefix": "stra nequitiae venistis ad has, ",
-          "suffix": " Et suspiria, & oscula, & susurr"
-        },
-        "words": 8
-      },
-      {
         "by": "rules",
         "cognates": 0,
+        "position": "verse-following",
+        "selector": {
+          "exact": "In vain are all your flatteries, / In vain are all your knaveries, / Delights, deceits, procacities, / Sighs, kisses, and conspiracies, / And whate’er is done by Art, / To bewitch a Lover’s heart.",
+          "in": "3.2.5.1-lg5",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 30
+      }
+    ],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "burton-verse-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e85e55252be03469fb4e01900ab147efe2829531"
+  },
+  "3.2.5.1-f64": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 1,
         "position": "verse-following",
         "selector": {
           "exact": "In vain are all your flatteries, / In vain are all your knaveries, / Delights, deceits, procacities, / Sighs, kisses, and conspiracies, / And whate’er is done by Art, / To bewitch a Lover’s heart.",
@@ -880,27 +891,14 @@
     "signals": [
       "burton-verse-follows",
       "cognate-overlap",
-      "english-follows",
       "no-gowland-bracket"
     ],
-    "text_sha1": "8ae93c7ffd04543d90bdb4adff2df636485213f2"
+    "text_sha1": "01b55077714082379fda9c3469f84e810d89fe1e"
   },
-  "3.2.5.1-f8": {
+  "3.2.5.1-f7": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "/ Frustra delitiae obsidebitis has, / Frustra has illecebrae, & procacitates, /",
-          "in": "3.2.5.1-lg4",
-          "prefix": "stra nequitiae venistis ad has, ",
-          "suffix": " Et suspiria, & oscula, & susurr"
-        },
-        "words": 8
-      },
       {
         "by": "rules",
         "cognates": 0,
@@ -919,7 +917,32 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "burton-verse-follows",
-      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8ae93c7ffd04543d90bdb4adff2df636485213f2"
+  },
+  "3.2.5.1-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "verse-following",
+        "selector": {
+          "exact": "In vain are all your flatteries, / In vain are all your knaveries, / Delights, deceits, procacities, / Sighs, kisses, and conspiracies, / And whate’er is done by Art, / To bewitch a Lover’s heart.",
+          "in": "3.2.5.1-lg5",
+          "prefix": "",
+          "suffix": ""
+        },
+        "words": 30
+      }
+    ],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "burton-verse-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "8f7a5ce355a0e71696d58e387bd2bfc59c07da4e"

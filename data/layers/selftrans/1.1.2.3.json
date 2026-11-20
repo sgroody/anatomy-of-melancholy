@@ -27,35 +27,6 @@
     ],
     "text_sha1": "2d5aebaf4954f2a006364eb40f5401d11fd398ed"
   },
-  "1.1.2.3-f10": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "is the root of all the other, which serves the whole body",
-          "in": "1.1.2.3-p6",
-          "prefix": "rived, Aorta, and Venosa; Aorta ",
-          "suffix": "; the other goes to the Lungs, t"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ed7cca943001b57442500c8244baa9d1e930453"
-  },
   "1.1.2.3-f11": {
     "bracket": "none",
     "by": "rules",
@@ -379,40 +350,44 @@
     ],
     "text_sha1": "e3cfb08a2ba4657c04033421749cf9d2d61c45b1"
   },
-  "1.1.2.3-f8": {
+  "1.1.2.3-f9": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Aorta is the root of all the other, which serves the whole body",
+          "in": "1.1.2.3-p6",
+          "prefix": "are derived, Aorta, and Venosa; ",
+          "suffix": "; the other goes to the Lungs, t"
+        },
+        "words": 13
+      },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "They arise in the left side of the heart, & are principally two, from which the rest are derived",
+          "exact": "They arise in the left side of the heart, & are principally two, from which the rest are derived, Aorta, and",
           "in": "1.1.2.3-p6",
           "prefix": "t was wont to cut up men alive. ",
-          "suffix": ", Aorta, and Venosa; Aorta is th"
+          "suffix": " Venosa; Aorta is the root of al"
         },
-        "words": 18
+        "words": 20
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ed7cca943001b57442500c8244baa9d1e930453"
-  },
-  "1.1.2.3-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
       "no-gowland-bracket"
     ],
     "text_sha1": "b4f6f0d8d1ed2f8942d4a073d89c1451127a72fb"

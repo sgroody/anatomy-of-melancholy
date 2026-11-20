@@ -1,4 +1,79 @@
 {
+  "2.4.1.4-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison, a mere imposture",
+        "in": "2.4.1.4",
+        "near": "2.4.1.4-f33",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Thomas Erastus",
+      "basis": "sidenote \"Ep. ad Monavium.\" with text \"Erastus concludes\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Peter Monavius"
+    },
+    "text": "ad Monavium. Metallica omnia in universum quovismodo parata, nec tuto, nec commode intra corpus sumi",
+    "text_sha1": "f8243d94e29759640791b87264e5260c8073d8b7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote begins 'Ep.' (letter), which stands outside the marked text, so the reference reads 'Letter to Monavius'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison, a mere imposture",
+            "in": "2.4.1.4",
+            "near": "2.4.1.4-f33",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Thomas Erastus",
+          "basis": "sidenote \"Ep. ad Monavium.\" with text \"Erastus concludes\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Peter Monavius"
+        },
+        "text": "to Monavius. All metallic substances in general, however they are prepared, cannot be taken into the body either safely or suitably.",
+        "warnings": []
+      }
+    ]
+  },
   "2.4.1.4-f9": {
     "kind": "phrase",
     "lang": "la",

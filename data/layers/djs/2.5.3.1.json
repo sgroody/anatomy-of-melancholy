@@ -52,6 +52,18 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 32162, p. 602"
   },
+  "2.5.3.1-f16": {
+    "align_score": 0.661,
+    "by": "djs1927",
+    "left_anchor": "Diminutives and purgers may be taken as before, of",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", manna, cassia, which Montanus consil. 230 for an Italian Abbot, in",
+    "right_score": 0.661,
+    "status": "below-threshold",
+    "text_sha1": "3ff26a9ad064787677884a73ff99ab561cbd4291",
+    "threshold": 0.85
+  },
   "2.5.3.1-f17": {
     "align_score": 0.955,
     "by": "djs1927",
@@ -66,20 +78,6 @@
     "text_sha1": "a1bb7f0715bfcbff4023ece23932b43911501224",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 32238, pp. 603-612"
-  },
-  "2.5.3.1-f18": {
-    "align_score": 0.985,
-    "by": "djs1927",
-    "left_anchor": "Arnaldus hath a wormwood wine which he would have used, which every",
-    "left_score": 0.985,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "speaks of. Diminutives and purgers may be taken as before, of",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Pharmacopoeia",
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 32191, p. 602"
   },
   "2.5.3.1-f19": {
     "align_score": 0.909,
@@ -103,16 +101,19 @@
     "text_sha1": "99fc4f85a34e09241f7f95ca21000c099627acb7",
     "threshold": 0.85
   },
-  "2.5.3.1-f21": {
+  "2.5.3.1-f22": {
+    "align_score": 0.982,
     "by": "djs1927",
-    "left_anchor": "Diminutives and purgers may be taken as before, of",
-    "left_score": 1.0,
+    "left_anchor": "oil of Rue, applied at certain times to the stomach, to the",
+    "left_score": 0.982,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", which Montanus consil. 230 for an Italian Abbot, in this kind",
-    "right_score": 0.7454545454545455,
-    "status": "not-found",
-    "text_sha1": "0b4badda96ee2f4a4e356bd34476453622952bd7",
-    "threshold": 0.85
+    "right_anchor": ", or part of the back which is over against the heart,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "metaphrene,",
+    "text_sha1": "cecf3cf7fbeee3031e755f63f6bd22982c2f1a81",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 32302, pp. 603-612"
   },
   "2.5.3.1-f3": {
     "by": "djs1927",

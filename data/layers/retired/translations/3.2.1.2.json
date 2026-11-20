@@ -65,6 +65,135 @@
       }
     ]
   },
+  "3.2.1.2-f128": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Sciatica",
+    "text_sha1": "35958a63a5644071ff859a5954e43198fae359cc",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a medical Latin term used as an ordinary word in Burton's English list of diseases. It does not really need translating.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "sciatica",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pietro Aretino",
+      "basis": "sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\" with text \"Aretine’s Lucretia\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pornodidascalus"
+    },
+    "text": "Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital",
+    "text_sha1": "d2ff6084ca18805243b5e60d0055c055cef84677",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Caspar Barth's Latin version (1623) of a dialogue from Pietro Aretino's Ragionamenti.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pietro Aretino",
+          "basis": "sidenote \"Pornodidasc. dial. lat. interp. Casp. Barthio ex Ital.\" with text \"Aretine’s Lucretia\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pornodidascalus"
+        },
+        "text": "Pornodidascalus, a dialogue, translated into Latin from the Italian by Caspar Barth",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.1.2-f60": {
     "kind": "phrase",
     "lang": "la",
@@ -124,6 +253,69 @@
           "work": "De anima"
         },
         "text": "Melanchthon, On the Soul",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f67": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lilio Gregorio Giraldi",
+      "basis": "sidenote \"Lilius Giraldus vita ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lilius Giraldus vita ejus",
+    "text_sha1": "92f8293073fb539b54ff7aa42e5c3fb943f60037",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Lilio Gregorio Giraldi was an Italian humanist who wrote on mythology. The note is attached to the list of Hercules's male lovers, so 'his life' is the life of Hercules.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lilio Gregorio Giraldi",
+          "basis": "sidenote \"Lilius Giraldus vita ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Lilius Giraldus, in his life of him.",
         "warnings": []
       }
     ]
@@ -254,6 +446,69 @@
           "work": null
         },
         "text": "Fortune",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.1.2-f78": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "genus",
+    "text_sha1": "834549b9b43b4b28cd5ba46fa3895c17c5fda6ba",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A term of logic: the general class that a definition places its object in, as distinct from a symptom or property.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "genus",
         "warnings": []
       }
     ]

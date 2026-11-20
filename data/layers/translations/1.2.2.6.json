@@ -2820,6 +2820,223 @@
       }
     ]
   },
+  "1.2.2.6-f67": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the water itself putrefies, and air likewise, if it be not continually stirred by the wind",
+        "in": "1.2.2.6",
+        "near": "1.2.2.6-f67",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "Exact wording of Ovid's pentameter 'ut capiant vitium, ni moveantur, aquae', paired with 'ignavum corrumpant otia corpus', which Burton quotes just before.",
+      "locus": "1.5.6",
+      "status": "probable",
+      "verified": false,
+      "work": "Epistulae ex Ponto"
+    },
+    "text": "vitium capiunt ni moveantur aquae",
+    "text_sha1": "b6721f9c8f81c1941a4efdaef50903000ea95d00",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "waters take on a fault unless they are moved",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ovid's couplet pairs this line with the one Burton quotes just before, 'Ignavum corrumpunt otia corpus': 'You see how idleness corrupts a sluggish body, how waters grow foul unless they are stirred.' Burton's English adds the air, which is not in the Latin.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the water itself putrefies, and air likewise, if it be not continually stirred by the wind",
+            "in": "1.2.2.6",
+            "near": "1.2.2.6-f67",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "Exact wording of Ovid's pentameter 'ut capiant vitium, ni moveantur, aquae', paired with 'ignavum corrumpant otia corpus', which Burton quotes just before.",
+          "locus": "1.5.6",
+          "status": "probable",
+          "verified": false,
+          "work": "Epistulae ex Ponto"
+        },
+        "text": "waters grow foul unless they are stirred",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.6-f68": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Jerome",
+        "in": "1.2.2.6",
+        "near": "1.2.2.6-f68",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hieronymus",
+    "text_sha1": "edcc3fd7a7980f7abfb1e73ef0f43358b4c1fc9e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is only the first word of a longer Latin sidenote. The full note reads: 'Jerome, letter 72, said that towns and cities seemed to him foul prisons and solitude a paradise; he preferred to the delights of Rome a land infested with scorpions, wearing sackcloth, lying on the ground and living on water and herbs.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Jerome",
+            "in": "1.2.2.6",
+            "near": "1.2.2.6-f68",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Jerome",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.6-f69": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Nature may justly complain of thee",
+        "in": "1.2.2.6",
+        "near": "1.2.2.6-f69",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Girolamo Mercuriale (Mercurialis)",
+      "basis": "text \"So that which Mercurialis consil. 11 sometimes expostulated with his melancholy patient\"",
+      "locus": "consil. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "Natura de te videtur conqueri posse",
+    "text_sha1": "87d3462fa73d2947fed8902aae410726efd95d63",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "Nature seems to be able to complain about you",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton cuts the Latin off with '&c.' and then gives a longer English version of the rebuke.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Nature may justly complain of thee",
+            "in": "1.2.2.6",
+            "near": "1.2.2.6-f69",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Girolamo Mercuriale (Mercurialis)",
+          "basis": "text \"So that which Mercurialis consil. 11 sometimes expostulated with his melancholy patient\"",
+          "locus": "consil. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "Nature, it seems, might well complain of you",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.2.6-f7": {
     "kind": "phrase",
     "lang": "la",

@@ -361,66 +361,6 @@
       }
     ]
   },
-  "1.2.2.4-f17": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Prosper Calanius",
-      "basis": "sidenote \"Lib. de flatulenta Melancholia.\" anchored at text \"Prosper Calanius observes as much of all Phlebotomy\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De flatulenta melancholia"
-    },
-    "text": "de flatulenta Melancholia. Frequens sanguinis missio corpus extenuat",
-    "text_sha1": "df09d521004954eeeed92cd47ca4e92e8f8b450c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The full sidenote begins with \"Lib.\" (book), which falls outside the marked passage. \"De flatulenta Melancholia\" is a book title, translated here as \"On Flatulent Melancholy\".",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Prosper Calanius",
-          "basis": "sidenote \"Lib. de flatulenta Melancholia.\" anchored at text \"Prosper Calanius observes as much of all Phlebotomy\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De flatulenta melancholia"
-        },
-        "text": "On Flatulent Melancholy. Frequent bloodletting wastes the body.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.2.4-f18": {
     "kind": "phrase",
     "lang": "la",
@@ -596,6 +536,63 @@
           "work": null
         },
         "text": "love-potion",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.4-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Prosper Calanius",
+      "basis": "sidenote \"Lib. de flatulenta Melancholia\"; text at anchor \"Prosper Calanius observes as much of all Phlebotomy\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De flatulenta melancholia"
+    },
+    "text": ". Frequens sanguinis missio corpus extenuat",
+    "text_sha1": "770e3f71c70940b42b9f6406feacdbd928eee821",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Frequent letting of blood thins the body.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads \"Lib. de flatulenta Melancholia. Frequens sanguinis missio corpus extenuat\". The passage begins with the full stop that closes the book title. Burton's main text, \"Prosper Calanius observes as much of all Phlebotomy\", only points back to this idea. It does not translate the sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Prosper Calanius",
+          "basis": "sidenote \"Lib. de flatulenta Melancholia\"; text at anchor \"Prosper Calanius observes as much of all Phlebotomy\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De flatulenta melancholia"
+        },
+        "text": "Frequent bloodletting wastes the body.",
         "warnings": []
       }
     ]

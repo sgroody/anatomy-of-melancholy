@@ -570,32 +570,6 @@
     ],
     "text_sha1": "afbf9b5f80e955846bfd5723c193701757474ec7"
   },
-  "3.4.1.1-f119": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "He sets out his Son and his Church in that",
-          "in": "3.4.1.1-p5",
-          "prefix": "ory calls it, to his creatures. ",
-          "suffix": " Epithalamium or mystical song o"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ddb898e243d19c78ce0bf9278ba5d65fb2736ac6"
-  },
   "3.4.1.1-f12": {
     "bracket": "none",
     "by": "rules",
@@ -679,6 +653,89 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04"
+  },
+  "3.4.1.1-f122": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "’tis a frequent disease",
+          "in": "3.4.1.1-p2",
+          "prefix": "aepissime multum fui impeditus; ",
+          "suffix": "; and they have a ground of what"
+        },
+        "words": 4
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and Felix Platerus de mentis alienat. cap",
+          "in": "3.4.1.1-p2",
+          "prefix": "reth as much in the same words: ",
+          "suffix": ". 3, frequentissima est ejus spe"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "c214603002590c7b57aa46baa67af01120764311"
+  },
+  "3.4.1.1-f123": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d47dadafb9b9624da4fec3dd2a23bb8677cd8522"
+  },
+  "3.4.1.1-f124": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Mr. Thomas Jackson Doctor of Divinity, in his Comment on the Creed",
+          "in": "3.4.1.1-p11",
+          "prefix": "e to time, is fully set down by ",
+          "suffix": ". A fifth part of the world, and"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "30146b7f80e716c022ce4a14502170072dab2a06"
   },
   "3.4.1.1-f13": {
     "bracket": "none",
@@ -1382,12 +1439,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "or Sergeant be ready to martyr them",
+          "exact": "although tyrants rage, persecute, and that bloody Lictor or Sergeant be ready to martyr them",
           "in": "3.4.1.1-p9",
-          "prefix": "rsecute, and that bloody Lictor ",
+          "prefix": "s, and begets generous spirits: ",
           "suffix": ", aut lita, aut morere (as in th"
         },
-        "words": 7
+        "words": 15
       }
     ],
     "lang": "la",
@@ -1440,35 +1497,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "76888daeb4aacebb57a03372a18e45fb66e413d0"
-  },
-  "3.4.1.1-f4": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "’tis a frequent disease",
-          "in": "3.4.1.1-p2",
-          "prefix": "aepissime multum fui impeditus; ",
-          "suffix": "; and they have a ground of what"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-follows"
-    ],
-    "text_sha1": "734715691825acd02172d6b10ab741d87f44079b"
   },
   "3.4.1.1-f40": {
     "bracket": "present",
@@ -2053,48 +2081,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "2dd1a8c5ca8b6012988ac87a20662442fdacfdf8"
-  },
-  "3.4.1.1-f73": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or Sergeant be ready to martyr them",
-          "in": "3.4.1.1-p9",
-          "prefix": "rsecute, and that bloody Lictor ",
-          "suffix": ", aut lita, aut morere (as in th"
-        },
-        "words": 7
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "although tyrants rage, persecute, and that bloody",
-          "in": "3.4.1.1-p9",
-          "prefix": "s, and begets generous spirits: ",
-          "suffix": " Lictor or Sergeant be ready to "
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d6ddff4204c52c547750a839aed366078acf543d"
   },
   "3.4.1.1-f8": {
     "bracket": "none",

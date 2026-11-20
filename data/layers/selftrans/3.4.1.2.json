@@ -313,6 +313,21 @@
     "by": "rules",
     "candidates": [
       {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Magi (of which read Ja",
+          "in": "3.4.1.2-p15",
+          "prefix": "siasts, prophets, dii Fatidici, ",
+          "suffix": ". Boissardus, who hath laborious"
+        },
+        "words": 5
+      },
+      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -329,6 +344,7 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "b7aca8dfb2f58eeaabca734efdb617454744b976"
@@ -510,12 +526,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "as amongst our modern",
+          "exact": "as amongst our modern Turks",
           "in": "3.4.1.2-p4",
           "prefix": " Atheismi Triumphati observes), ",
-          "suffix": " Turks, Reipub. Finis, as knowin"
+          "suffix": ", Reipub. Finis, as knowing magn"
         },
-        "words": 4
+        "words": 5
       }
     ],
     "lang": "la",
@@ -692,64 +708,6 @@
     ],
     "text_sha1": "dd179bcfe47c96ef28f65a98b59e732356a90bcc"
   },
-  "3.4.1.2-f156": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Druids, &c., went as far as they could by the light of Nature",
-          "in": "3.4.1.2-p11",
-          "prefix": " Seneca, Epictetus, those Magi, ",
-          "suffix": "; multa praeclara de natura Dei "
-        },
-        "words": 13
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f"
-  },
-  "3.4.1.2-f159": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of which read Ja",
-          "in": "3.4.1.2-p15",
-          "prefix": ", prophets, dii Fatidici, Magi (",
-          "suffix": ". Boissardus, who hath laborious"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f"
-  },
   "3.4.1.2-f16": {
     "bracket": "present",
     "by": "rules",
@@ -790,35 +748,6 @@
       "english-precedes"
     ],
     "text_sha1": "a3f781dff5e47e44aedfc01e0f643f53bd332479"
-  },
-  "3.4.1.2-f166": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "philosophers in Greece",
-          "in": "3.4.1.2-p5",
-          "prefix": "uls the Druids; Magi in Persia; ",
-          "suffix": "; Chaldeans amongst the Oriental"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f"
   },
   "3.4.1.2-f167": {
     "bracket": "present",
@@ -1309,32 +1238,6 @@
     ],
     "text_sha1": "e7840bc737758135515b76d386e5ff47ae40fb98"
   },
-  "3.4.1.2-f188": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "see millions of examples in our Annals, Bede, Gregory, Jacobus de Voragine, Lippomanus, Hieronymus",
-          "in": "3.4.1.2-n92",
-          "prefix": " was whipped for reading Tully; ",
-          "suffix": ", John Major de vitis Patrum, &c"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1e7ffacddecd2c615e7c96da8cfe0d4eba4c5622"
-  },
   "3.4.1.2-f189": {
     "bracket": "present",
     "by": "rules",
@@ -1390,35 +1293,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "bc02960d16d6cfc8d3881ecd2435c3342defdc5f"
-  },
-  "3.4.1.2-f191": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "St. George fought in person for John the bastard of Portugal, against the Castilians",
-          "in": "3.4.1.2-p3",
-          "prefix": " for Ariulphus Duke of Spoleto, ",
-          "suffix": "; St. James for the Spaniards in"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "f0c1b88f1f4e5329ad2371c73596ed152d64890b"
   },
   "3.4.1.2-f192": {
     "bracket": "present",
@@ -1558,6 +1432,179 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04"
+  },
+  "3.4.1.2-f198": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "God himself, and is so adored by the Heathen, and esteemed",
+          "in": "3.4.1.2-p1",
+          "prefix": "Elect. He will be worshipped as ",
+          "suffix": ". And in imitation of that divin"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1731360d1d198ce65b116fef95a6464fa129a834"
+  },
+  "3.4.1.2-f199": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "St. George fought in person for John the bastard of Portugal, against the Castilians",
+          "in": "3.4.1.2-p3",
+          "prefix": " for Ariulphus Duke of Spoleto, ",
+          "suffix": "; St. James for the Spaniards in"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "8e9578c2e4662d249067451e9b5b98cbe946954c"
+  },
+  "3.4.1.2-f200": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as knowing",
+          "in": "3.4.1.2-p4",
+          "prefix": "ur modern Turks, Reipub. Finis, ",
+          "suffix": " magnum ejus in animos imperium;"
+        },
+        "words": 2
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "e8109ed82077dce856c8da0384ee879bfed0174f"
+  },
+  "3.4.1.2-f201": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "writ many things well of the nature of God, but they had but a confused light, a glimpse",
+          "in": "3.4.1.2-p11",
+          "prefix": "natura Dei scripta reliquerunt, ",
+          "suffix": ","
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4baa18c1742ffc8cc3b4d4216ac5d3f86c357aff"
+  },
+  "3.4.1.2-f202": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "by the Devil’s means",
+          "in": "3.4.1.2-p15",
+          "prefix": "d wholly ab instinctu daemonum, ",
+          "suffix": ": and so those Enthuasists, Anab"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fb961421c9a69e8e4ea806c2a1a4176bbc59a95e"
+  },
+  "3.4.1.2-f203": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Monk of Evesham, who saw heaven and hell in a vision",
+          "in": "3.4.1.2-p15",
+          "prefix": "ch Matthew Paris relates of the ",
+          "suffix": "; of Sir Owen, that went down in"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7858ac3ff63354f37161bd349efe11edd13b89cb"
   },
   "3.4.1.2-f21": {
     "bracket": "present",
@@ -1704,34 +1751,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3aec6b1eebc5a467e917818fd128d09e10391848"
-  },
-  "3.4.1.2-f29": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "as knowing",
-          "in": "3.4.1.2-p4",
-          "prefix": "ur modern Turks, Reipub. Finis, ",
-          "suffix": " magnum ejus in animos imperium;"
-        },
-        "words": 2
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "01177272f53532f3e55f1927e93cf84371d24e09"
   },
   "3.4.1.2-f3": {
     "bracket": "present",

@@ -936,35 +936,6 @@
     "signals": [],
     "text_sha1": "18f84df59dbb592d243c185ba80adc380c3cb8e4"
   },
-  "3.1.1.1-f46": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 2,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
-          "in": "3.1.1.1-p12",
-          "prefix": "nlawful loves, and lust itself, ",
-          "suffix": ". I will treat of this with like"
-        },
-        "words": 33
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "7988e3a5a7bde9458cac41829bc3828950ecbeb3"
-  },
   "3.1.1.1-f47": {
     "bracket": "present",
     "by": "rules",
@@ -1476,16 +1447,6 @@
     ],
     "text_sha1": "bd2d2b4865db9fb8a4943fcec048560396deeba4"
   },
-  "3.1.1.1-f80": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "b934fbfc7e60e7ba5888854713bc07b4d60fb986"
-  },
   "3.1.1.1-f83": {
     "bracket": "present",
     "by": "rules",
@@ -1596,6 +1557,74 @@
       "english-at-anchor"
     ],
     "text_sha1": "7c8c602ff2d8c4fd63a20ffcb7a7b0de808b4c13"
+  },
+  "3.1.1.1-f86": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "2b1898814425a5c45838dff53929e57c546b1189"
+  },
+  "3.1.1.1-f87": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 2,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
+          "in": "3.1.1.1-p12",
+          "prefix": "nlawful loves, and lust itself, ",
+          "suffix": ". I will treat of this with like"
+        },
+        "words": 33
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f623e071e59e2023ae3191658889421f791a1d05"
+  },
+  "3.1.1.1-f88": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
+          "in": "3.1.1.1-p12",
+          "prefix": "nlawful loves, and lust itself, ",
+          "suffix": ". I will treat of this with like"
+        },
+        "words": 33
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "ba57acd4f43e9f190f395b0aec8e3bb174078275"
   },
   "3.1.1.1-f9": {
     "bracket": "present",

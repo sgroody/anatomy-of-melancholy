@@ -1,4 +1,128 @@
 {
+  "3.1.2.3-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Charites",
+    "text_sha1": "859d75c68a76beb02a9f08ddd48d265c3534a873",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Greek name of the Graces.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Graces",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Suetonius",
+      "basis": "Suetonius's well-known description of Titus as 'amor ac deliciae generis humani'",
+      "locus": "1",
+      "status": "probable",
+      "verified": false,
+      "work": "Life of Titus"
+    },
+    "text": "Titus deliciae humani generis",
+    "text_sha1": "ee7d424fccd21a534fff83295c2e5ad9cb43af04",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": "Titus, the delight of the human race",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Suetonius (Titus 1) calls Titus 'amor ac deliciae generis humani'. Burton shortens the phrase and changes the word order.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Suetonius",
+          "basis": "Suetonius's well-known description of Titus as 'amor ac deliciae generis humani'",
+          "locus": "1",
+          "status": "probable",
+          "verified": false,
+          "work": "Life of Titus"
+        },
+        "text": "Titus, the darling of the human race",
+        "warnings": []
+      }
+    ]
+  },
   "3.1.2.3-f28": {
     "kind": "phrase",
     "lang": "la",
@@ -56,6 +180,67 @@
           "work": null
         },
         "text": "Part of the inscription on the statue of Titus Livy at Padua.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "low",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Solinus",
+      "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Solinus, Pulchri nulla est facies",
+    "text_sha1": "6ada9f987b69f3e9e11429bb3bca4c034aa0bed1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "low",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sense is uncertain. It may mean that true beauty, the beauty of virtue, has no bodily face, or no face that time can change. Read beside 'virtue's lustre never fades' in the text, this seems likely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Solinus",
+          "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Solinus: The beautiful has no face.",
         "warnings": []
       }
     ]

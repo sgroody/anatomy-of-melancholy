@@ -119,19 +119,16 @@
     "threshold": 0.85
   },
   "1.2.3.13-f24": {
-    "align_score": 1.0,
+    "align_score": 0.731,
     "by": "djs1927",
-    "left_anchor": ", saith Cyprian, and mad Sybaritical spendthrifts,",
-    "left_score": 1.0,
+    "left_anchor": "patrimonium sine ulla fori calumnia amittunt, saith Cyprian, and mad Sybaritical spendthrifts,",
+    "left_score": 0.731,
     "method": "rules/djs-align-v3",
-    "residue": "",
     "right_anchor": "; that eat up all at a breakfast, at a supper, or",
     "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
+    "status": "below-threshold",
     "text_sha1": "ea08b5a6a3e38014014b149e6c90ac2afe32d0d5",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 14011, p. 251"
+    "threshold": 0.85
   },
   "1.2.3.13-f25": {
     "align_score": 1.0,
@@ -505,6 +502,14 @@
     "text_sha1": "a2dc0172f0fd98c15eaa8a4508f03d0dfc6605d3",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 14065, p. 252"
+  },
+  "1.2.3.13-f70": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "61f611a4fd585e96d518c703dc7dcdeec8354e1c",
+    "threshold": 0.85
   },
   "1.2.3.13-f8": {
     "by": "djs1927",

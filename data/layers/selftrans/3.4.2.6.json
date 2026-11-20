@@ -122,48 +122,6 @@
     ],
     "text_sha1": "0f4e58547b989968db8c8ac037a933f3e94fbc0f"
   },
-  "3.4.2.6-f108": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "the Queen of Sheba, Darius king of Persia, Socrates, Aristides, Cato, Curius, Tully, Seneca, and many other Philosophers, upright livers, no matter of what Religion, as Cornelius, out of any Nation, so that he live honestly, call on God, trust",
-          "in": "3.4.2.6-p14",
-          "prefix": "’s sight, as Job was, the Magi, ",
-          "suffix": " in him, fear him, he shall be s"
-        },
-        "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "They were acceptable in God’s sight, as Job was, the",
-          "in": "3.4.2.6-p14",
-          "prefix": "ightly before the Law of Moses. ",
-          "suffix": " Magi, the Queen of Sheba, Dariu"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f"
-  },
   "3.4.2.6-f11": {
     "bracket": "none",
     "by": "rules",
@@ -275,12 +233,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Why sweet perfumes, fires, and so many lights should be used in such places",
+          "exact": "Why sweet perfumes, fires, and so many lights should be used in such places, Ernestus Burggravius Lucerna vitae & mortis, and Fortunus Licetus assigns this cause",
           "in": "3.4.2.6-p17",
           "prefix": "ponacis, galbani, castorei, &c. ",
-          "suffix": ", Ernestus Burggravius Lucerna v"
+          "suffix": ", quod his boni Genii provocentu"
         },
-        "words": 14
+        "words": 25
       },
       {
         "by": "rules",
@@ -710,34 +668,6 @@
     ],
     "text_sha1": "520e254d617198ab9c31b4d7135014e3f2baccb2"
   },
-  "3.4.2.6-f18": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Scriptures false, rude, harsh, immethodical",
-          "in": "3.4.2.6-p6",
-          "prefix": "mself, the blessed Trinity: the ",
-          "suffix": ": Heaven, hell, resurrection, me"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "1f6d5b44fd5040f4ccd8bac182998e2416ba8688"
-  },
   "3.4.2.6-f180": {
     "bracket": "present",
     "by": "rules",
@@ -1075,7 +1005,7 @@
     ],
     "text_sha1": "02e0acb2114c55c9d186fd3cb72cc12e745d847b"
   },
-  "3.4.2.6-f2": {
+  "3.4.2.6-f194": {
     "bracket": "present",
     "by": "rules",
     "candidates": [
@@ -1101,7 +1031,127 @@
     "signals": [
       "english-at-anchor"
     ],
-    "text_sha1": "07bc9bfe8893122b0e469851111baae71f89db98"
+    "text_sha1": "815ccbf02df97547adb297347be0dd25769b3163"
+  },
+  "3.4.2.6-f195": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Scriptures false, rude, harsh, immethodical",
+          "in": "3.4.2.6-p6",
+          "prefix": "mself, the blessed Trinity: the ",
+          "suffix": ": Heaven, hell, resurrection, me"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "062e7dbacf6da92072ac2712e5aca455c6acc457"
+  },
+  "3.4.2.6-f196": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "and through impatience they roar and howl, curse, blaspheme, deny God, call his power in question, abjure religion, and are still ready to offer violence unto themselves, by hanging, drowning, &c.",
+          "in": "3.4.2.6-p15",
+          "prefix": "complaints, they are possessed, ",
+          "suffix": " Never any miserable wretch from"
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c553ef9d997396825c275b90d31358ed500858e5"
+  },
+  "3.4.2.6-f197": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "and through impatience they roar and howl, curse, blaspheme, deny God, call his power in question, abjure religion, and are still ready to offer violence unto themselves, by hanging, drowning, &c.",
+          "in": "3.4.2.6-p15",
+          "prefix": "complaints, they are possessed, ",
+          "suffix": " Never any miserable wretch from"
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "68cde75403fc70fcacb0725eff50bf4d962a61a5"
+  },
+  "3.4.2.6-f198": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "of brimstone and bitumen",
+          "in": "3.4.2.6-p17",
+          "prefix": "ns, as the Angel taught Tobias: ",
+          "suffix": ", thus, myrrha, bryony root, wit"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes"
+    ],
+    "text_sha1": "9ff3fb5bd238cc7f60b6a3aa5874b0fa8581bdbb"
+  },
+  "3.4.2.6-f199": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "8281d4b946b9a8d3918971730e6acdc5e13f6705"
   },
   "3.4.2.6-f20": {
     "bracket": "present",
@@ -1448,48 +1498,6 @@
       "english-precedes"
     ],
     "text_sha1": "7371bec9ca214eaf9f1014e3fc18b51d38a3f875"
-  },
-  "3.4.2.6-f33": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "whose Tenet Bullinger vindicates, and Gualter approves in a just Apology with many Arguments",
-          "in": "3.4.2.6-p14",
-          "prefix": "xposit. fidei ad Regem Galliae, ",
-          "suffix": ". There be many Jesuits that fol"
-        },
-        "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "This Opinion was formerly maintained by the Valentinian and Basilidean heretics, revived of late in Turkey, of what sect Rustan Bassa was patron, defended by Galeottus Martius, and some ancient Fathers, and of later times favoured by Erasmus, by",
-          "in": "3.4.2.6-p14",
-          "prefix": "m, fear him, he shall be saved. ",
-          "suffix": " Zwinglius in exposit. fidei ad "
-        },
-        "words": 39
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "2b312700cbcc62bc04b535ad65f14f82d41fb81d"
   },
   "3.4.2.6-f34": {
     "bracket": "present",
@@ -1918,34 +1926,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "cccfc6333bfa5de24a3b9b14bf2f4a4675120f3f"
-  },
-  "3.4.2.6-f48": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "and through impatience they roar and howl, curse, blaspheme, deny God, call his power in question, abjure religion, and are still ready to offer violence unto themselves, by hanging, drowning, &c.",
-          "in": "3.4.2.6-p15",
-          "prefix": "complaints, they are possessed, ",
-          "suffix": " Never any miserable wretch from"
-        },
-        "words": 31
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "79bb3abc640d2992c9f04de2d5e570e06ff3724a"
   },
   "3.4.2.6-f49": {
     "bracket": "present",
@@ -2597,31 +2577,6 @@
     "signals": [],
     "text_sha1": "7a8dd2c798ba3ff5c9214cc1a3d3ef8e6d053d08"
   },
-  "3.4.2.6-f70": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "of brimstone and",
-          "in": "3.4.2.6-p17",
-          "prefix": "ns, as the Angel taught Tobias: ",
-          "suffix": " bitumen, thus, myrrha, bryony r"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
-    "text_sha1": "47d2fa9df60f739184f90d6e63c00a66bff9389b"
-  },
   "3.4.2.6-f71": {
     "bracket": "present",
     "by": "rules",
@@ -2631,48 +2586,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "337796895be06efa919bf7a0dfd69d846f93b893"
-  },
-  "3.4.2.6-f72": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Fortunus Licetus assigns this cause",
-          "in": "3.4.2.6-p17",
-          "prefix": "gravius Lucerna vitae & mortis, ",
-          "suffix": ", quod his boni Genii provocentu"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Why sweet perfumes, fires, and so many lights should be used in such places",
-          "in": "3.4.2.6-p17",
-          "prefix": "ponacis, galbani, castorei, &c. ",
-          "suffix": ", Ernestus Burggravius Lucerna v"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "c02a57e660fb65065988c17ce5502d2ed75429c0"
   },
   "3.4.2.6-f73": {
     "bracket": "none",
@@ -2698,12 +2611,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "and Fortunus Licetus assigns this cause",
+          "exact": "Why sweet perfumes, fires, and so many lights should be used in such places, Ernestus Burggravius Lucerna vitae & mortis, and Fortunus Licetus assigns this cause",
           "in": "3.4.2.6-p17",
-          "prefix": "gravius Lucerna vitae & mortis, ",
+          "prefix": "ponacis, galbani, castorei, &c. ",
           "suffix": ", quod his boni Genii provocentu"
         },
-        "words": 6
+        "words": 25
       }
     ],
     "lang": "la",
@@ -2750,35 +2663,6 @@
       "english-precedes"
     ],
     "text_sha1": "06be1e3dd9a0e1cb85a9db487bdd946ae8de69c3"
-  },
-  "3.4.2.6-f77": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "&c., see more in them",
-          "in": "3.4.2.6-p17",
-          "prefix": "ictorius Isagog. de daemonibus, ",
-          "suffix": ". Cardan would have the party af"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "c2b0c95fb7e43cd8bd1464df0f738859ccbabb60"
   },
   "3.4.2.6-f78": {
     "bracket": "none",
@@ -2987,21 +2871,6 @@
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "read Wierus at large",
-          "in": "3.4.2.6-p17",
-          "prefix": " quis daemonia ejiciendi modus, ",
-          "suffix": ", lib. 5 de Cura. Lam. malef. ca"
-        },
-        "words": 4
-      },
-      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -3018,36 +2887,9 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "0dcb07316ebdf325c0cb4f506917369b0490a0eb"
-  },
-  "3.4.2.6-f88": {
-    "bracket": "short",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "read Wierus at large",
-          "in": "3.4.2.6-p17",
-          "prefix": " quis daemonia ejiciendi modus, ",
-          "suffix": ", lib. 5 de Cura. Lam. malef. ca"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "short-gowland-bracket"
-    ],
-    "text_sha1": "ba0065c5305dc9fce987eb05cf4f8785aced040b"
   },
   "3.4.2.6-f89": {
     "bracket": "present",

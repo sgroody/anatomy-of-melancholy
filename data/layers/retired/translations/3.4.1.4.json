@@ -1,0 +1,156 @@
+{
+  "3.4.1.4-f15": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "and Wednesday now is in danger of a fast",
+        "in": "3.4.1.4",
+        "near": "3.4.1.4-f15",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Erasmus",
+      "basis": "text \"saith Erasmus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "then Saturday, & nunc periclitatur dies Mercurii",
+    "text_sha1": "04a67460f6ee72ded258a1093ab93afcd4fcb5f3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "and now the day of Mercury is in danger",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'then Saturday' is Burton's English and is left untranslated. 'dies Mercurii' (Mercury's day) is Wednesday. The danger is that Wednesday will also become a fast day.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "and Wednesday now is in danger of a fast",
+            "in": "3.4.1.4",
+            "near": "3.4.1.4-f15",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Erasmus",
+          "basis": "text \"saith Erasmus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "and now Wednesday is in danger",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.4-f17": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "an intolerable perturbation",
+        "in": "3.4.1.4",
+        "near": "3.4.1.4-f17",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"Seneca calls it\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Intolerabilem perturbationem Seneca",
+    "text_sha1": "4729893684292f0c83895e58f043385840711626",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Seneca' is the author's name, part of Burton's own sentence ('Seneca calls it'), and is not translated. 'Perturbatio' is the Stoic term for a passion or disturbance of the mind; here it is said of superstition. The paragraph's sidenote 'De benefic. 7. 2.' probably refers to this passage, but that is not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "an intolerable perturbation",
+            "in": "3.4.1.4",
+            "near": "3.4.1.4-f17",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"Seneca calls it\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "an intolerable perturbation",
+        "warnings": []
+      }
+    ]
+  }
+}

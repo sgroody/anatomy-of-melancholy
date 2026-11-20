@@ -561,6 +561,148 @@
       }
     ]
   },
+  "2.1.4.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as it often falleth out",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "sidenote \"lib. 3 cap. 1\" … \"Heurnius.\"; text \"as Heurnius complains\"",
+      "locus": "lib. 3 cap. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quod saepe evenit",
+    "text_sha1": "33a28c5d1ad61f50ac7ccb2c5865491c50160e41",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of Burton's sidenote, glossing his \"stir up a silent disease, as it often falleth out\" in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as it often falleth out",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "sidenote \"lib. 3 cap. 1\" … \"Heurnius.\"; text \"as Heurnius complains\"",
+          "locus": "lib. 3 cap. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Which often happens",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.4.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "when there is no cause",
+        "in": "2.1.4.1",
+        "near": "2.1.4.1-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "sidenote \"lib. 3 cap. 1\" … \"Heurnius.\"",
+      "locus": "lib. 3 cap. 1",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "cum non sit necessitas",
+    "text_sha1": "868a6bba530b9b290a255aa65f3e98e9425168d1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text has this as \"when there is no cause\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "when there is no cause",
+            "in": "2.1.4.1",
+            "near": "2.1.4.1-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "sidenote \"lib. 3 cap. 1\" … \"Heurnius.\"",
+          "locus": "lib. 3 cap. 1",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "when there is no necessity",
+        "warnings": []
+      }
+    ]
+  },
   "2.1.4.1-f3": {
     "kind": "phrase",
     "lang": "la",

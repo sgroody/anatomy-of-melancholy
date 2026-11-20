@@ -842,6 +842,48 @@
     ],
     "text_sha1": "5e9b9a23293d27089e4075912413982d3a1cc014"
   },
+  "2.2.3.1-f13": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "of Thrasumene, at Peruzium in Italy",
+          "in": "2.2.3.1-p1",
+          "prefix": "t of Mare mortuum in Palestina, ",
+          "suffix": "; the Mediterranean itself. For "
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and that of",
+          "in": "2.2.3.1-p1",
+          "prefix": "nd hath no vent but exhalation: ",
+          "suffix": " Mare mortuum in Palestina, of T"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1bdaa68eb6557921ca95dd7604e12252c640063d"
+  },
   "2.2.3.1-f130": {
     "bracket": "present",
     "by": "rules",
@@ -1000,18 +1042,6 @@
       "english-precedes"
     ],
     "text_sha1": "e32460d44b157bfa2be33414bbce9ca9ab2ab814"
-  },
-  "2.2.3.1-f138": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3be63d57c0ed426d27fb2d8ce2315a5ddfee5a90"
   },
   "2.2.3.1-f14": {
     "bracket": "present",
@@ -1204,47 +1234,6 @@
       "english-precedes"
     ],
     "text_sha1": "314f8fa3f5a6af2c3f8db2158addbac33c8ddf38"
-  },
-  "2.2.3.1-f144": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Drayton, or a little more elevated, though nearer, as Caucut, as Amington, Polesworth, Weddington (to insist in such places best to me known, upon the river of Anker in Warwickshire, Swarston, and Drakesly upon Trent)",
-          "in": "2.2.3.1-p9",
-          "prefix": "as Lindley, Orton super montem, ",
-          "suffix": ". Or howsoever they be unseasona"
-        },
-        "words": 35
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "or else may be corrected by the site, if it be somewhat remote from the water, as Lindley",
-          "in": "2.2.3.1-p9",
-          "prefix": "odities of pleasure and profit; ",
-          "suffix": ", Orton super montem, Drayton, o"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "b77860b3aea47fad1297955f90631bf865ffbff0"
   },
   "2.2.3.1-f145": {
     "bracket": "present",
@@ -2008,35 +1997,6 @@
     ],
     "text_sha1": "7d7b5cac74be7c2a0d4c04e73c778cb284bf47bf"
   },
-  "2.2.3.1-f223": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Spirits, Angels, which rule and domineer in several places",
-          "in": "2.2.3.1-p3",
-          "prefix": "ly to proceed from those Genii, ",
-          "suffix": "; they cause storms, thunder, li"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e559138c3872ed0ad68a42b2c371b1cd19e9ab45"
-  },
   "2.2.3.1-f229": {
     "bracket": "none",
     "by": "rules",
@@ -2191,21 +2151,6 @@
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "after he was dead, from the Centre of the earth, to signify what distance the same centre was from the",
-          "in": "2.2.3.1-p2",
-          "prefix": ", that sent a letter ad superos ",
-          "suffix": " superficies of the same, viz. 4"
-        },
-        "words": 20
-      },
-      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -2222,7 +2167,6 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "4153d979c09e865bc8c61d637df10cf73f359509"
@@ -2928,34 +2872,6 @@
     ],
     "text_sha1": "641680ef41ea18504fcade6f1013b3c59d77b655"
   },
-  "2.2.3.1-f335": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Ister so cold near the Euxine, Pontus, Bithynia, and all Thrace",
-          "in": "2.2.3.1-p3",
-          "prefix": "that comes from it? Why then is ",
-          "suffix": ", frigidas regiones Maginus call"
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "0b9704d8b74591fec54fa674101976fca0c2610a"
-  },
   "2.2.3.1-f336": {
     "bracket": "present",
     "by": "rules",
@@ -3110,16 +3026,6 @@
     ],
     "text_sha1": "6dcf7e96631ed17cf91eb0ffa32c24075b9e21bd"
   },
-  "2.2.3.1-f342": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "49ae6523a58ec271df9b3d0df169c44bc0aea05b"
-  },
   "2.2.3.1-f343": {
     "bracket": "present",
     "by": "rules",
@@ -3201,16 +3107,6 @@
       "english-precedes"
     ],
     "text_sha1": "a79210c8f2a8532555c11a36c44b74cde8992d1c"
-  },
-  "2.2.3.1-f348": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "60fab162005efd90d830be3b69339359691d38bf"
   },
   "2.2.3.1-f35": {
     "bracket": "none",
@@ -3296,32 +3192,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "b71f2076f2aa9bd188358bf0f55152d7fe0c69b4"
-  },
-  "2.2.3.1-f355": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "of the same",
-          "in": "2.2.3.1-p2",
-          "prefix": "centre was from the superficies ",
-          "suffix": ", viz. 42,000 stadiums, might ha"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e468b29e40f0ef5995c55d4d309519c3c389fe8d"
   },
   "2.2.3.1-f356": {
     "bracket": "none",
@@ -3439,16 +3309,6 @@
     ],
     "text_sha1": "b0f51dc4f950248571cc481f4b52b50e2e468b33"
   },
-  "2.2.3.1-f359": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "4c63040875bf2d9a15c28f975e63fce4dbd1e4ec"
-  },
   "2.2.3.1-f36": {
     "bracket": "present",
     "by": "rules",
@@ -3530,7 +3390,7 @@
     ],
     "text_sha1": "691659710f056bc17a886e861214944f852535f1"
   },
-  "2.2.3.1-f362": {
+  "2.2.3.1-f366": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -3542,24 +3402,24 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "be bigger than the seas, or that of Archimedes be true, the",
+          "exact": "which have all commonly the same passions at set times",
           "in": "2.2.3.1-p1",
-          "prefix": "whether the earth’s superficies ",
-          "suffix": " superficies of all water is eve"
+          "prefix": "e great rivers in Zona Torrida, ",
+          "suffix": ": and by good husbandry and poli"
         },
-        "words": 12
+        "words": 10
       },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "I would examine that demonstration of Alexander Piccolomineus, whether the earth’s",
+          "exact": "Libanus), or from those great dropping perpetual showers, which are so frequent to the inhabitants within the Tropics, when the Sun is vertical, and cause such vast inundations in Senega, Maragnan, Orenoque, and the rest of those great rivers in",
           "in": "2.2.3.1-p1",
-          "prefix": "n, and go about their business. ",
-          "suffix": " superficies be bigger than the "
+          "prefix": "ws when the snow melts in Mount ",
+          "suffix": " Zona Torrida, which have all co"
         },
-        "words": 11
+        "words": 40
       }
     ],
     "lang": "la",
@@ -3570,133 +3430,7 @@
       "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6"
-  },
-  "2.2.3.1-f363": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of all water is even",
-          "in": "2.2.3.1-p1",
-          "prefix": "imedes be true, the superficies ",
-          "suffix": "? Search the depth, and see that"
-        },
-        "words": 5
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "be bigger than the seas, or that of Archimedes be true, the",
-          "in": "2.2.3.1-p1",
-          "prefix": "whether the earth’s superficies ",
-          "suffix": " superficies of all water is eve"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6"
-  },
-  "2.2.3.1-f364": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of the same",
-          "in": "2.2.3.1-p2",
-          "prefix": "centre was from the superficies ",
-          "suffix": ", viz. 42,000 stadiums, might ha"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "after he was dead, from the Centre of the earth, to signify what distance the same centre was from the",
-          "in": "2.2.3.1-p2",
-          "prefix": ", that sent a letter ad superos ",
-          "suffix": " superficies of the same, viz. 4"
-        },
-        "words": 20
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6"
-  },
-  "2.2.3.1-f365": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and that in a tenfold proportion (as Aristotle holds), or else these fountains come directly from the sea, by secret passages, and so made fresh again, by running through the bowels of the earth",
-          "in": "2.2.3.1-p2",
-          "prefix": "oisten the earth’s superficies, ",
-          "suffix": "; and are either thick, thin, ho"
-        },
-        "words": 34
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "If it be solid earth, ’tis the fountain of metals, waters, which by his innate temper turns Air into water, which springs up in several chinks, to moisten the earth’s",
-          "in": "2.2.3.1-p2",
-          "prefix": "e contentious shall never find. ",
-          "suffix": " superficies, and that in a tenf"
-        },
-        "words": 30
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6"
+    "text_sha1": "038e2039928e740e2720e9acd8cbc31fb5ca430b"
   },
   "2.2.3.1-f367": {
     "bracket": "none",
@@ -3734,12 +3468,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "creeks, havens, promontories, straits, lakes, baths, rocks, mountains, places, and fields, where Cities have been ruined or swallowed, battles fought, creatures, Sea-monsters",
+          "exact": "creeks, havens, promontories, straits, lakes, baths, rocks, mountains, places, and fields, where Cities have been ruined or swallowed, battles fought, creatures, Sea-monsters, Remora, &c., minerals, vegetals",
           "in": "2.2.3.1-p1",
           "prefix": "es, Isthmi, Euripi, Chersonesi, ",
-          "suffix": ", Remora, &c., minerals, vegetal"
+          "suffix": ". Zoophytes were fit to be consi"
         },
-        "words": 23
+        "words": 27
       }
     ],
     "lang": "la",
@@ -3750,76 +3484,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "9c1e996150c253468cf0621fe8ec3335df88612c"
-  },
-  "2.2.3.1-f37": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "metals, peculiar almost to every place",
-          "in": "2.2.3.1-p3",
-          "prefix": "colours, plants, birds, beasts, ",
-          "suffix": "? Why so many thousand strange b"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "cae1987907659fdee22dc9c4d0736c7290071c5a"
-  },
-  "2.2.3.1-f370": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "&c., minerals, vegetals",
-          "in": "2.2.3.1-p1",
-          "prefix": "reatures, Sea-monsters, Remora, ",
-          "suffix": ". Zoophytes were fit to be consi"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "creeks, havens, promontories, straits, lakes, baths, rocks, mountains, places, and fields, where Cities have been ruined or swallowed, battles fought, creatures, Sea-monsters",
-          "in": "2.2.3.1-p1",
-          "prefix": "es, Isthmi, Euripi, Chersonesi, ",
-          "suffix": ", Remora, &c., minerals, vegetal"
-        },
-        "words": 23
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "88305e347f0e73cfd99d2580e61d0d282a0fabeb"
   },
   "2.2.3.1-f371": {
     "bracket": "none",
@@ -3964,47 +3628,18 @@
           "suffix": ", in infinito aethere, which Eus"
         },
         "words": 31
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "9daaadef4447a997cf71fdc3571a529c20bede1e"
-  },
-  "2.2.3.1-f376": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "which have all commonly the same passions at set times",
-          "in": "2.2.3.1-p1",
-          "prefix": "e great rivers in Zona Torrida, ",
-          "suffix": ": and by good husbandry and poli"
-        },
-        "words": 10
       },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Mount Libanus), or from those great dropping perpetual showers, which are so frequent to the inhabitants within the Tropics, when the Sun is vertical, and cause such vast inundations in Senega, Maragnan, Orenoque, and the rest of those great rivers",
-          "in": "2.2.3.1-p1",
-          "prefix": "verflows when the snow melts in ",
-          "suffix": " in Zona Torrida, which have all"
+          "exact": "at Capuae Fluenta, recorded by Laertius and others, or",
+          "in": "2.2.3.1-p5",
+          "prefix": "’s time, olymp. 84. anno tertio ",
+          "suffix": " Ancile or buckler in Numa’s tim"
         },
-        "words": 40
+        "words": 9
       }
     ],
     "lang": "la",
@@ -4015,7 +3650,7 @@
       "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "7e49e4e1d0ff91f7bfd2e7e74596635805aa9bcf"
+    "text_sha1": "9daaadef4447a997cf71fdc3571a529c20bede1e"
   },
   "2.2.3.1-f377": {
     "bracket": "present",
@@ -4166,6 +3801,252 @@
     ],
     "text_sha1": "62c46522ba3d5e76a785e11e836042ff2c0fc96e"
   },
+  "2.2.3.1-f380": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Cabeus the Jesuit, that have both written great volumes of this subject, satisfy these Inquisitors",
+          "in": "2.2.3.1-p1",
+          "prefix": "t our Dr. Gilbert, and Nicholas ",
+          "suffix": ". Whether the sea be open and na"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5093ce2e9e2b577aeae89b36505a8f47329e1f3b"
+  },
+  "2.2.3.1-f381": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "78c0e1b0f6c39a8fe0d510e29cca99d27d75694f"
+  },
+  "2.2.3.1-f382": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "M. Polus Venetus puts him in Asia, the most received opinion is, that he is Emperor of the Abyssines, which of old was Ethiopia, now Nubia, under the Equator in Africk",
+          "in": "2.2.3.1-p1",
+          "prefix": "yter John be in Asia or Africk; ",
+          "suffix": ". Whether Guinea be an Island or"
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2f8dfca99fe7b20af69b3b765f5ce9d4fbc6f361"
+  },
+  "2.2.3.1-f383": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "the most received opinion is, that he is Emperor of the Abyssines, which of old was Ethiopia, now Nubia, under the Equator in Africk",
+          "in": "2.2.3.1-p1",
+          "prefix": "Polus Venetus puts him in Asia, ",
+          "suffix": ". Whether Guinea be an Island or"
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4227a84953c4e547198deeef05c7b571a464b35f"
+  },
+  "2.2.3.1-f384": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Paradise, and where Ophir was whence Solomon did fetch his gold",
+          "in": "2.2.3.1-p1",
+          "prefix": "e true seat of that terrestrial ",
+          "suffix": "; from Peruana, which some suppo"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a1f45d157a7a28870d7d573de373c5592f926139"
+  },
+  "2.2.3.1-f385": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "eff0e06d38effe818df71818cc41f4195fdc1dd5"
+  },
+  "2.2.3.1-f386": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "metals, peculiar almost to every place",
+          "in": "2.2.3.1-p3",
+          "prefix": "colours, plants, birds, beasts, ",
+          "suffix": "? Why so many thousand strange b"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "21a9498f662bc9b3af5f04606c07027b18db75fd"
+  },
+  "2.2.3.1-f387": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "in this kind",
+          "in": "2.2.3.1-p3",
+          "prefix": "ungary and Ireland male audiunt ",
+          "suffix": "; come to the Azores, by a secre"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Our Climes breed lice, Hungary and Ireland",
+          "in": "2.2.3.1-p3",
+          "prefix": "ven will keep itself from cold? ",
+          "suffix": " male audiunt in this kind; come"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "4d26b6275f9fede8eb10fcdf11e08cc2e2372196"
+  },
+  "2.2.3.1-f388": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "dbf1d1198d916636ecdac1b3b995fe29175c4fb6"
+  },
+  "2.2.3.1-f389": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "at Capuae Fluenta, recorded by Laertius and others, or",
+          "in": "2.2.3.1-p5",
+          "prefix": "’s time, olymp. 84. anno tertio ",
+          "suffix": " Ancile or buckler in Numa’s tim"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fbea66dbce629a23a960f175819edc2d5851979a"
+  },
   "2.2.3.1-f39": {
     "bracket": "present",
     "by": "rules",
@@ -4195,6 +4076,58 @@
     ],
     "text_sha1": "e47170be10a8b5663c5667f9fa5bb757c41b0dcb"
   },
+  "2.2.3.1-f390": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e19af9f1ea3233056eb291f831ecce030d3444d0"
+  },
+  "2.2.3.1-f391": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "’tis hard to determine",
+          "in": "2.2.3.1-p5",
+          "prefix": "uc pertinent explorata habemus: ",
+          "suffix": "; this only he proves, that we a"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "c576583713a0631cdaac2711366358a73326848c"
+  },
+  "2.2.3.1-f392": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "06594a28e157dfbbb55498c88092bb5d34ed6983"
+  },
   "2.2.3.1-f42": {
     "bracket": "present",
     "by": "rules",
@@ -4219,47 +4152,6 @@
       "english-precedes"
     ],
     "text_sha1": "5e48e540ff8de6f0a953d0f85af391c10ca60d91"
-  },
-  "2.2.3.1-f43": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in this kind",
-          "in": "2.2.3.1-p3",
-          "prefix": "ungary and Ireland male audiunt ",
-          "suffix": "; come to the Azores, by a secre"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Our Climes breed lice, Hungary and",
-          "in": "2.2.3.1-p3",
-          "prefix": "ven will keep itself from cold? ",
-          "suffix": " Ireland male audiunt in this ki"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "57e3d1688b35072a529daa7a1120b771434382e1"
   },
   "2.2.3.1-f44": {
     "bracket": "present",
@@ -4478,6 +4370,48 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "4273f318ef8fd7c5002a582e8fb0634d433c5478"
+  },
+  "2.2.3.1-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "methinks some of our modern Argonauts should prosecute the rest",
+          "in": "2.2.3.1-p1",
+          "prefix": "ient passage to Mare pacificum: ",
+          "suffix": ". As I go by Madagascar, I would"
+        },
+        "words": 10
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Schouten and Le Maire have done well in the discovery of the Straits of Magellan, in finding a more convenient passage to",
+          "in": "2.2.3.1-p1",
+          "prefix": "America did unto the Spaniards. ",
+          "suffix": " Mare pacificum: methinks some o"
+        },
+        "words": 22
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6980011aef41c9a7c9ed8c438004482aed181510"
   },
   "2.2.3.1-f50": {
     "bracket": "none",

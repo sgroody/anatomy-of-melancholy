@@ -145,35 +145,6 @@
     ],
     "text_sha1": "a0215fd4099e87c0a7f896610f5e54b82f1fb160"
   },
-  "2.1.3.1-f19": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "the like is commonly practised in Bohemia, as Matthiolus gives us to understand in his preface to his comment upon Dioscorides",
-          "in": "2.1.3.1-p2",
-          "prefix": "alty, as Hildesheim well saith; ",
-          "suffix": ". But we need not run so far for"
-        },
-        "words": 21
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b90bfedc3a3b9de8c7918986fdabbee06bc290a2"
-  },
   "2.1.3.1-f2": {
     "bracket": "none",
     "by": "rules",
@@ -257,6 +228,93 @@
     ],
     "text_sha1": "e09d6126bb4811ce6b22b3c554a794927421dea3"
   },
+  "2.1.3.1-f25": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "there was a goddess of idleness, a goddess of the draught, or jakes, Prema, Premunda, Priapus, bawdy gods, and gods for all offices",
+          "in": "2.1.3.1-p1",
+          "prefix": "tris, dea Vacuna, dea Cloacina, ",
+          "suffix": ". Varro reckons up 30,000 gods; "
+        },
+        "words": 23
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "66d2ec57374c201c1f089dbb49f3dd505eab6dd0"
+  },
+  "2.1.3.1-f26": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and she had her Chapel and Feasts, to whom (saith Macrobius) they did offer sacrifice yearly, that she might be pacified as well as the rest. ’Tis no new thing, you see this of Papists",
+          "in": "2.1.3.1-p1",
+          "prefix": " there was of old Angerona dea, ",
+          "suffix": "; and in my judgement, that old "
+        },
+        "words": 35
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ec86376e23b99516bb874a35db8a3cdb6a95987d"
+  },
+  "2.1.3.1-f27": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "the like is commonly practised in Bohemia, as Matthiolus gives us to understand in his preface to his comment upon Dioscorides",
+          "in": "2.1.3.1-p2",
+          "prefix": "alty, as Hildesheim well saith; ",
+          "suffix": ". But we need not run so far for"
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2058097b927b1fa60b4b5cc4d5dbf47e057c6f82"
+  },
   "2.1.3.1-f3": {
     "bracket": "none",
     "by": "rules",
@@ -332,21 +390,6 @@
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "dea Vacuna, dea Cloacina, there was a goddess of idleness, a goddess of the draught, or jakes, Prema, Premunda, Priapus, bawdy gods, and gods for all offices",
-          "in": "2.1.3.1-p1",
-          "prefix": "sts, Seasons, Crepitus Ventris, ",
-          "suffix": ". Varro reckons up 30,000 gods; "
-        },
-        "words": 27
-      },
-      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -363,22 +406,9 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "1a22fba5e04e6ba019677ac2ad4de88058c822f0"
-  },
-  "2.1.3.1-f6": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b4e15c78abfbe0c950dfd138a3a00cb776123add"
   },
   "2.1.3.1-f8": {
     "bracket": "present",

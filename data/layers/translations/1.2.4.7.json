@@ -1143,66 +1143,6 @@
       }
     ]
   },
-  "1.2.4.7-f137": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Terence",
-      "basis": "sidenote \"Ter.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ter",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "An abbreviated attribution for the quotation 'minime miror eos … qui insanire occipiunt ex injuria'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Terence",
-          "basis": "sidenote \"Ter.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Terence",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.4.7-f14": {
     "kind": "phrase",
     "lang": "la",
@@ -5048,71 +4988,6 @@
         },
         "text": "Where now is your old boasting of your virtues, O Axiochus?",
         "warnings": []
-      }
-    ]
-  },
-  "1.2.4.7-f54": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Lucian",
-      "basis": "text \"Megapenthus the tyrant in Lucian\"; sidenote \"Tom. 4 dial. 8, Cataplo.\"",
-      "locus": "Tom. 4 dial. 8",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Cataplus"
-    },
-    "text": "let me live a while longer",
-    "text_sha1": "aed20356d2548eff808f1a840eb5868a5e428ec4",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "language-mismatch",
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The marked text is Burton's own English, his rendering of Megapenthes' plea in Lucian's Cataplus. There is no Latin to translate, so the words are left as they stand.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Lucian",
-          "basis": "text \"Megapenthus the tyrant in Lucian\"; sidenote \"Tom. 4 dial. 8, Cataplo.\"",
-          "locus": "Tom. 4 dial. 8",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Cataplus"
-        },
-        "text": "let me live a while longer",
-        "warnings": [
-          "4+ source words left untranslated"
-        ]
       }
     ]
   },

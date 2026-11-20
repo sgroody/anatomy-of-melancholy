@@ -1151,65 +1151,6 @@
       }
     ]
   },
-  "3.4.1.1-f119": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Epithalamium",
-    "text_sha1": "ddb898e243d19c78ce0bf9278ba5d65fb2736ac6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An epithalamium is a song sung for a bride and bridegroom. Here it means the Song of Solomon.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "wedding-song",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.1.1-f12": {
     "kind": "phrase",
     "lang": "la",
@@ -1409,6 +1350,198 @@
           "work": null
         },
         "text": "pythonesses",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.1-f122": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis a frequent disease",
+        "in": "3.4.1.1",
+        "near": "3.4.1.1-f122",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Felix Platter",
+      "basis": "text \"Felix Platerus de mentis alienat. cap\"",
+      "locus": "cap. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De mentis alienatione"
+    },
+    "text": ". 3, frequentissima est ejus species, in qua curanda saepissime multum fui impeditus",
+    "text_sha1": "c214603002590c7b57aa46baa67af01120764311",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins with the end of Burton's citation, \"cap. 3\" (chapter 3), which is split at the boundary; \". 3\" belongs to that reference. Burton's \"’tis a frequent disease\" renders only the first clause.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis a frequent disease",
+            "in": "3.4.1.1",
+            "near": "3.4.1.1-f122",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Felix Platter",
+          "basis": "text \"Felix Platerus de mentis alienat. cap\"",
+          "locus": "cap. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De mentis alienatione"
+        },
+        "text": "3: it is a very frequent species, and in treating it I have very often been greatly hindered",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.1-f123": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "text \"saith Austin\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Rempub",
+    "text_sha1": "d47dadafb9b9624da4fec3dd2a23bb8677cd8522",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Rempub. is an abbreviation of rempublicam. It is the first word of the phrase \"Rempub. caelestem cogitare\", which the boundary splits after the abbreviation. The whole phrase means \"we cannot think on the heavenly commonwealth\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "text \"saith Austin\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "commonwealth",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.1-f124": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "deinceps",
+    "text_sha1": "30146b7f80e716c022ce4a14502170072dab2a06",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is part of a citation in a sidenote: \"chapter [1] and following\", i.e. that chapter and the ones after it. It refers to Thomas Jackson's Commentary on the Creed, named in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and following",
         "warnings": []
       }
     ]
@@ -2845,75 +2978,6 @@
       }
     ]
   },
-  "3.4.1.1-f4": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "’tis a frequent disease",
-        "in": "3.4.1.1",
-        "near": "3.4.1.1-f4",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Felix Platter",
-      "basis": "text \"Felix Platerus de mentis alienat. cap. 3\"",
-      "locus": "cap. 3",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De mentis alienatione"
-    },
-    "text": "Felix Platerus de mentis alienat. cap. 3, frequentissima est ejus species, in qua curanda saepissime multum fui impeditus",
-    "text_sha1": "734715691825acd02172d6b10ab741d87f44079b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton's English gives only the first clause.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "’tis a frequent disease",
-            "in": "3.4.1.1",
-            "near": "3.4.1.1-f4",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Felix Platter",
-          "basis": "text \"Felix Platerus de mentis alienat. cap. 3\"",
-          "locus": "cap. 3",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De mentis alienatione"
-        },
-        "text": "Felix Platter, On Mental Alienation, chapter 3: it is a very frequent species of it, and in curing it I have very often been much hindered",
-        "warnings": []
-      }
-    ]
-  },
   "3.4.1.1-f40": {
     "kind": "phrase",
     "lang": "la",
@@ -4186,77 +4250,6 @@
           "work": null
         },
         "text": "God is good, just, and beautiful, according to Plato.",
-        "warnings": []
-      }
-    ]
-  },
-  "3.4.1.1-f73": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "Sergeant",
-        "in": "3.4.1.1",
-        "near": "3.4.1.1-f73",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Lictor",
-    "text_sha1": "d6ddff4204c52c547750a839aed366078acf543d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The lictor was the Roman magistrate's attendant, who carried the rods and axe and carried out floggings and executions.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "Sergeant",
-            "in": "3.4.1.1",
-            "near": "3.4.1.1-f73",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "lictor",
         "warnings": []
       }
     ]

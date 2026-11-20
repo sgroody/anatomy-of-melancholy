@@ -1,4 +1,70 @@
 {
+  "2.5.3.2-f11": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Electuarium de baccis lauri, Benedicta laxativa, Pulvis ad flatus Antid. Florent., pulvis Carminativus, Aromaticum Rosatum, Treacle, Mithridate, &c",
+    "text_sha1": "f448d3febaf22d0f8298e8b1606dd4e8523989a3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "technical-medical",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are names of compound medicines from the pharmacopoeias. Benedicta laxativa is a purging electuary, the 'blessed laxative', and Aromaticum rosatum is an aromatic rose powder. These two keep their trade names. 'Antid. Florent.' is taken to mean the Antidotarium Florentinum, a Florentine pharmacopoeia. 'Treacle' and 'Mithridate' are already English names of compound antidotes, so they are given as Burton wrote them.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Electuary of bayberries, Benedicta laxativa, Powder for wind from the Florentine Antidotary, Carminative powder, Aromaticum rosatum, Treacle, Mithridate, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.3.2-f12": {
     "kind": "phrase",
     "lang": "la",
@@ -58,6 +124,131 @@
           "work": null
         },
         "text": "20, and here and there elsewhere",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.3.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Thomas Fienus",
+      "basis": "text \"Fienus de flatibus cap. 20 & passim alias\"",
+      "locus": "cap. 20",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De flatibus"
+    },
+    "text": "Fienus de flatibus cap. 20 & passim alias",
+    "text_sha1": "93221d99e13634b76030c88d7c7163bee74f865d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-19",
+        "flags": [],
+        "literal": "Fienus on winds chapter 20 & throughout elsewhere",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A bibliographical reference. Thomas Fienus (Feyens) wrote De flatibus (1582), a treatise on flatulence, so 'winds' here means bodily wind. 'Passim alias' means that the subject also comes up in scattered places elsewhere in the book.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Thomas Fienus",
+          "basis": "text \"Fienus de flatibus cap. 20 & passim alias\"",
+          "locus": "cap. 20",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De flatibus"
+        },
+        "text": "Fienus, On Winds, chapter 20, and here and there elsewhere",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.3.2-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "i",
+    "text_sha1": "042dc4512fa3d391c5170cf3aa61e6a638f84342",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is just the Roman numeral in 'pil. mastichin. ʒ i', meaning 1 drachm of mastic pills, set in Burton's English sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "1",
         "warnings": []
       }
     ]

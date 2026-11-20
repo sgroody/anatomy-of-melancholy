@@ -427,12 +427,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "now swift then slow, occidental, oriental, they turn round, jump and trace, ♀ and ☿ about the Sun with those thirty-three Maculae or Bourbonian planets",
+          "exact": "now swift then slow, occidental, oriental, they turn round, jump and trace, ♀ and ☿ about the Sun with those thirty-three",
           "in": "3.2.2.4-p44",
           "prefix": "ow in Apogaeo then in perigaeo, ",
-          "suffix": ", circa Solem saltantes Cythared"
+          "suffix": " Maculae or Bourbonian planets, "
         },
-        "words": 24
+        "words": 20
       }
     ],
     "lang": "la",
@@ -461,26 +461,13 @@
           "suffix": ". Our greatest Counsellors, and "
         },
         "words": 20
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "now swift then slow, occidental, oriental, they turn round, jump and trace, ♀ and ☿ about the Sun with those thirty-three Maculae or Bourbonian planets",
-          "in": "3.2.2.4-p44",
-          "prefix": "ow in Apogaeo then in perigaeo, ",
-          "suffix": ", circa Solem saltantes Cythared"
-        },
-        "words": 24
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "6aceb1ab6887cdd84795183a74a4eebe9cfc5a05"
   },
@@ -1728,48 +1715,6 @@
     ],
     "text_sha1": "131e95588a847674d348176633a64a8f3281608d"
   },
-  "3.2.2.4-f172": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of Caesar, by Venus’ shrine, Hymen’s deity, by Jupiter, and all the other gods, give no credit to his words",
-          "in": "3.2.2.4-p54",
-          "prefix": "he solemnly swear by the Genius ",
-          "suffix": ". For when Lovers swear, Venus l"
-        },
-        "words": 20
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Though he solemnly swear by the",
-          "in": "3.2.2.4-p54",
-          "prefix": "",
-          "suffix": " Genius of Caesar, by Venus’ shr"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "3.2.2.4-f18": {
     "bracket": "present",
     "by": "rules",
@@ -2559,24 +2504,119 @@
     "signals": [],
     "text_sha1": "cd54aadfbfb445507a63200c93f010d170e2a447"
   },
-  "3.2.2.4-f21": {
+  "3.2.2.4-f208": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": true,
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "more than a Vestal virgin, I looked like a wife, I was so demure and chaste, I did add such gestures, tunes, speeches, signs and motions upon all occasions, that my spectators and auditors were stupefied, enchanted, fastened all to",
+          "in": "3.2.2.4-p17",
+          "prefix": " I had been virgo virginissima, ",
+          "suffix": " their places, like so many stoc"
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Peter Aretine’s Lucretia telleth as much and more of herself, I counterfeited honesty, as if I had been",
+          "in": "3.2.2.4-p17",
+          "prefix": "",
+          "suffix": " virgo virginissima, more than a"
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6a56a04eceec79141b85a2f911acf109241b54f5"
+  },
+  "3.2.2.4-f209": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "begin as at first",
+          "in": "3.2.2.4-p22",
+          "prefix": "always fresh, and ready to ",
+          "suffix": ", basium nullo fine terminatur, "
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "7d471e32d6a2ed8c7c2ef7408ba584defadc0ce8"
+  },
+  "3.2.2.4-f210": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cd54aadfbfb445507a63200c93f010d170e2a447"
+  },
+  "3.2.2.4-f211": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
         "by": "rules",
         "cognates": 0,
         "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "will come with a company of compliments, and hold you up by the arm as you go, and wringing your fingers, will so be enticed, or entice",
-          "in": "3.2.2.4-p7",
-          "prefix": "m-bearded fellow, saith Jerome, ",
-          "suffix": ": one drinks to you, another emb"
+          "exact": "or Bourbonian planets",
+          "in": "3.2.2.4-p44",
+          "prefix": "with those thirty-three Maculae ",
+          "suffix": ", circa Solem saltantes Cythared"
         },
-        "words": 27
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "now swift then slow, occidental, oriental, they turn round, jump and trace, ♀ and ☿ about the Sun with those thirty-three",
+          "in": "3.2.2.4-p44",
+          "prefix": "ow in Apogaeo then in perigaeo, ",
+          "suffix": " Maculae or Bourbonian planets, "
+        },
+        "words": 20
       }
     ],
     "lang": "la",
@@ -2584,9 +2624,10 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "ab2164197191d5147074dd6b6979d8334a431788"
+    "text_sha1": "420b91de48bb1448d77e7fcbe776b6e6dd2fbf1b"
   },
   "3.2.2.4-f22": {
     "bracket": "none",
@@ -2994,34 +3035,6 @@
     ],
     "text_sha1": "11601f262c6335f6f2427f002d39cddc3379ecf3"
   },
-  "3.2.2.4-f40": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Aristides Milesius (mentioned by Plutarch) and found by the Persians, in Crassus’ army amongst the spoils, Aretine’s Dialogues, with ditties, Love songs, &c., must needs set them on fire, with such-like pictures, as those of Aretine, or wanton objects in",
-          "in": "3.2.2.4-p17",
-          "prefix": "ntine; or those light tracts of ",
-          "suffix": " what kind soever; no stronger e"
-        },
-        "words": 41
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "04f8349a16962e13d5748c760aa81086f926694a"
-  },
   "3.2.2.4-f41": {
     "bracket": "present",
     "by": "rules",
@@ -3202,34 +3215,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "741187d95afda68f712f97d93a39d8433bf15558"
-  },
-  "3.2.2.4-f49": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "begin as at first",
-          "in": "3.2.2.4-p22",
-          "prefix": "always fresh, and ready to ",
-          "suffix": ", basium nullo fine terminatur, "
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "853c6486389c60b096aaeea41d3287e433e62862"
   },
   "3.2.2.4-f5": {
     "bracket": "present",

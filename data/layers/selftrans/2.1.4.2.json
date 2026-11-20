@@ -9,35 +9,6 @@
     "signals": [],
     "text_sha1": "fd36a406e6c2df6fd3667264340d8d59cc603bc5"
   },
-  "2.1.4.2-f2": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "’Tis a part of his cure to wish his own health",
-          "in": "2.1.4.2-p2",
-          "prefix": "tis velle sanari fuit (Seneca). ",
-          "suffix": "; and not to defer it too long."
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ec2751d703eab4c1b1d8708302a903e86728f516"
-  },
   "2.1.4.2-f3": {
     "bracket": "none",
     "by": "rules",
@@ -128,5 +99,34 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "580d39ab2cb3354a12280c25a80197cc837582f8"
+  },
+  "2.1.4.2-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Seneca). ’Tis a part of his cure to wish his own health",
+          "in": "2.1.4.2-p2",
+          "prefix": "rs sanitatis velle sanari fuit (",
+          "suffix": "; and not to defer it too long."
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0760ba603247bab772544cafe7648b3c72c863f7"
   }
 }

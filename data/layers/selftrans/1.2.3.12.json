@@ -308,48 +308,6 @@
     ],
     "text_sha1": "877a4768a6d2b368263f60b6ecefc661adf1ccc1"
   },
-  "1.2.3.12-f23": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "still seeking what sacrifice he may offer to his golden god",
-          "in": "1.2.3.12-p3",
-          "prefix": "ervat, Cypr. prolog. ad sermon. ",
-          "suffix": ", Per fas & nefas, he cares not "
-        },
-        "words": 11
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "He is a perpetual drudge, restless in his thoughts, and never satisfied, a slave, a wretch, a dust-worm",
-          "in": "1.2.3.12-p3",
-          "prefix": "ppy in the life to come. Basil. ",
-          "suffix": ", semper quod idolo suo immolet,"
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "51b343fded54bad9c293126dd72dd1f84cb3d2dc"
-  },
   "1.2.3.12-f24": {
     "bracket": "present",
     "by": "rules",
@@ -374,12 +332,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": ". still seeking what sacrifice he may offer to his golden god",
+          "exact": "Cypr. prolog. ad sermon. still seeking what sacrifice he may offer to his golden god",
           "in": "1.2.3.12-p3",
-          "prefix": "bservat, Cypr. prolog. ad sermon",
+          "prefix": " suo immolet, sedulus observat, ",
           "suffix": ", Per fas & nefas, he cares not "
         },
-        "words": 11
+        "words": 15
       }
     ],
     "lang": "la",
@@ -748,48 +706,6 @@
     ],
     "text_sha1": "8e45eaa0c524643aa8e0470aa9dc652dec3e1157"
   },
-  "1.2.3.12-f41": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "keep back from his wife and children, neither letting them, nor other friends use or enjoy that which is theirs by right, and which they much need perhaps",
-          "in": "1.2.3.12-p2",
-          "prefix": " himself, to starve his Genius, ",
-          "suffix": "; like a hog, or dog in the mang"
-        },
-        "words": 28
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "And when, as Cyprian notes, he may be freed from his burden, and eased of his pains, will go on still, his wealth increasing, when he hath enough, to get more, to live besides himself, to starve his",
-          "in": "1.2.3.12-p2",
-          "prefix": "erate himself when he need not? ",
-          "suffix": " Genius, keep back from his wife"
-        },
-        "words": 38
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "1.2.3.12-f43": {
     "bracket": "none",
     "by": "rules",
@@ -1048,6 +964,48 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "561faecc33e5d60958488a0dbbb1bad90e06e645"
+  },
+  "1.2.3.12-f56": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Cypr. prolog. ad sermon. still seeking what sacrifice he may offer to his golden god",
+          "in": "1.2.3.12-p3",
+          "prefix": " suo immolet, sedulus observat, ",
+          "suffix": ", Per fas & nefas, he cares not "
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "He is a perpetual drudge, restless in his thoughts, and never satisfied, a slave, a wretch, a dust-worm",
+          "in": "1.2.3.12-p3",
+          "prefix": "ppy in the life to come. Basil. ",
+          "suffix": ", semper quod idolo suo immolet,"
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b9f5af5fe5ebcb1689aaf53ca6eda4782e3eff0f"
   },
   "1.2.3.12-f6": {
     "bracket": "present",

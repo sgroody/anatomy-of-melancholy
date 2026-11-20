@@ -40,6 +40,76 @@
     ],
     "text_sha1": "556385e5a7653e76c49e76a8b52339fc8c3b1950"
   },
+  "1.2.5.4-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "48fa8334a37d88b544ed24f4e346bc130fa77902"
+  },
+  "1.2.5.4-f11": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or Midriff distempered by heat, the womb misaffected, stopping of Haemorrhoids, with many such",
+          "in": "1.2.5.4-p1",
+          "prefix": ". Others assign the Mesenterium ",
+          "suffix": ". All which Laurentius cap. 12, "
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "61c922bd5c79c50b10b9c77858386a9e67b823d3"
+  },
+  "1.2.5.4-f12": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "confirms it, grievous symptoms of the mind brought him to it",
+          "in": "1.2.5.4-p2",
+          "prefix": "consil. 22 pro delirante Judaeo ",
+          "suffix": ". Rondoletius relates of himself"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2d38dc4572053d031ecf799de2a63cdfa6783d3a"
+  },
   "1.2.5.4-f2": {
     "bracket": "none",
     "by": "rules",
@@ -209,7 +279,7 @@
     ],
     "text_sha1": "bf307d7d712c6842b258a8013cc59c6fcfe4c295"
   },
-  "1.2.5.4-f8": {
+  "1.2.5.4-f9": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -217,28 +287,28 @@
         "after_attribution": false,
         "by": "rules",
         "cognates": 0,
-        "cue": "which is",
+        "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "which is the nether mouth of the Ventricle",
+          "exact": "Meseraic veins, stopping of issues, &c.",
           "in": "1.2.5.4-p1",
-          "prefix": "he inflammation of the Pylorus, ",
-          "suffix": ". Others assign the Mesenterium "
+          "prefix": "ver, Pylorus, Womb, Diaphragma, ",
+          "suffix": " Montaltus cap. 15 out of Galen "
         },
-        "words": 8
+        "words": 6
       },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Diocles supposed the ground of this kind of Melancholy, to proceed from the inflammation of the",
+          "exact": "Inward from diverse parts or organs, as Midriff, Spleen, Stomach, Liver, Pylorus, Womb",
           "in": "1.2.5.4-p1",
-          "prefix": "and the fountain of melancholy. ",
-          "suffix": " Pylorus, which is the nether mo"
+          "prefix": "s causes are inward or outward. ",
+          "suffix": ", Diaphragma, Meseraic veins, st"
         },
-        "words": 16
+        "words": 13
       }
     ],
     "lang": "la",
@@ -247,9 +317,8 @@
     "signals": [
       "english-follows",
       "english-precedes",
-      "gloss-cue",
       "no-gowland-bracket"
     ],
-    "text_sha1": "96f2a20ca7db09387af764667f0b76ff37f63cc4"
+    "text_sha1": "2f22e35d80215f6dc6a9ba958addbe98cab0d75c"
   }
 }

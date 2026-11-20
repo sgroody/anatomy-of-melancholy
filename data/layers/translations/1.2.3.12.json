@@ -777,78 +777,6 @@
       }
     ]
   },
-  "1.2.3.12-f23": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "still seeking what sacrifice he may offer to his golden god",
-        "in": "1.2.3.12",
-        "near": "1.2.3.12-f23",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": "Cyprian",
-      "basis": "text \"Cypr. prolog. ad sermon.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "prologue to the sermons"
-    },
-    "text": "semper quod idolo suo immolet, sedulus observat, Cypr. prolog. ad sermon",
-    "text_sha1": "51b343fded54bad9c293126dd72dd1f84cb3d2dc",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "still seeking what sacrifice he may offer to his golden god",
-            "in": "1.2.3.12",
-            "near": "1.2.3.12-f23",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Cyprian",
-          "basis": "text \"Cypr. prolog. ad sermon.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "prologue to the sermons"
-        },
-        "text": "he watches diligently for something to sacrifice to his idol, Cyprian, prologue to the sermons",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.12-f24": {
     "kind": "phrase",
     "lang": "la",
@@ -1817,66 +1745,6 @@
       }
     ]
   },
-  "1.2.3.12-f41": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Genius",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The Latin genius is a person's guardian spirit, and also his natural appetite for enjoyment. 'To starve one's Genius' echoes the classical 'genium defraudare': to deny oneself pleasures. The single word leaves the exact sense open.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Genius",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.12-f43": {
     "kind": "phrase",
     "lang": "la",
@@ -2583,6 +2451,77 @@
           "work": "Attic Nights"
         },
         "text": "Sometimes, for gain, they come to such a pitch of wickedness that they throw away their own life.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.12-f56": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "still seeking what sacrifice he may offer to his golden god",
+        "in": "1.2.3.12",
+        "near": "1.2.3.12-f56",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cyprian",
+      "basis": "text \"Cypr. prolog. ad sermon.\" immediately after the passage",
+      "locus": "prolog. ad sermon.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "prologue to the sermons"
+    },
+    "text": "semper quod idolo suo immolet, sedulus observat",
+    "text_sha1": "b9f5af5fe5ebcb1689aaf53ca6eda4782e3eff0f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "always what he may sacrifice to his idol, diligent he observes",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's 'golden god' makes explicit that the miser's idol is his money.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "still seeking what sacrifice he may offer to his golden god",
+            "in": "1.2.3.12",
+            "near": "1.2.3.12-f56",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"Cypr. prolog. ad sermon.\" immediately after the passage",
+          "locus": "prolog. ad sermon.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "prologue to the sermons"
+        },
+        "text": "he watches diligently, always, for something to sacrifice to his idol",
         "warnings": []
       }
     ]

@@ -330,5 +330,284 @@
         "warnings": []
       }
     ]
+  },
+  "1.2.2.1-f52": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nicholas Piso",
+      "basis": "text \"Nicholas Piso in his Practics\"",
+      "locus": "chapter on melancholy",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Practica"
+    },
+    "text": "Cap. de Mel",
+    "text_sha1": "f1e291dc5427b89a082daff4cfe67413127a9305",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to the chapter on melancholy in Nicholas Piso's Practica.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nicholas Piso",
+          "basis": "text \"Nicholas Piso in his Practics\"",
+          "locus": "chapter on melancholy",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Practica"
+        },
+        "text": "Chapter on Melancholy",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.1-f53": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Godefridus Stegius arte med., Marsilius Cagnatus, Ficinus, Ranzovius, Fonseca, Lessius, Magninus, regim. sanitatis, Freitagius, Hugo Fridaevallius, &c",
+    "text_sha1": "7e61dbf4e95614fa876d7c32755c163149f53180",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is a list of authorities. The only Latin is the abbreviated titles: 'arte med.' (Ars medica) and 'regim. sanitatis' (Regimen sanitatis).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Godefridus Stegius, Art of Medicine; Marsilius Cagnatus, Ficinus, Ranzovius, Fonseca, Lessius, Magninus, Regimen of Health; Freitagius, Hugo Fridaevallius, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.1-f63": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "all Herbs are simply evil to feed on",
+        "in": "1.2.2.1",
+        "near": "1.2.2.1-f63",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Magninus (Maino de' Maineri)",
+      "basis": "text \"Magninus, regim. sanitatis, 3 part. cap. 13\"",
+      "locus": "3 part. cap. 13",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Regimen sanitatis"
+    },
+    "text": "sanitatis, 3 part. cap. 13, Omnes herbae simpliciter malae, via cibi",
+    "text_sha1": "df3c8a42483f9b3d854d698ea024724d5031b407",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "of health, 3rd part, chapter 13: All herbs simply bad, by way of food",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins in the middle of a book title: 'regim. sanitatis' (Regimen sanitatis, 'Regimen of Health') by Magninus. The abbreviation 'regim.' stands just before the marked text, so the title is split. 'Via cibi' means 'by way of food', i.e. when eaten as food.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "all Herbs are simply evil to feed on",
+            "in": "1.2.2.1",
+            "near": "1.2.2.1-f63",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Magninus (Maino de' Maineri)",
+          "basis": "text \"Magninus, regim. sanitatis, 3 part. cap. 13\"",
+          "locus": "3 part. cap. 13",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Regimen sanitatis"
+        },
+        "text": "of Health, part 3, chapter 13: All herbs are simply bad, by way of food",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.2.1-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Coneys are of the nature of Hares",
+        "in": "1.2.2.1",
+        "near": "1.2.2.1-f8",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Johannes Bruyerinus",
+      "basis": "sidenote \"Bruyerinus lib. 13 cap. 25\"",
+      "locus": "lib. 13 cap. 25",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Parum absunt a natura Leporum. Bruyerinus lib. 13 cap. 25, pullorum tenera & optima",
+    "text_sha1": "672852426582ef48a09e214bf0e09650cc5b3100",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "They are little distant from the nature of hares. Bruyerinus book 13 chapter 25, of the young ones tender and best.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "pullorum (of the young) refers to young rabbits. Burton's 'young Rabbits … approved to be good' gives the gist of the second part.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Coneys are of the nature of Hares",
+            "in": "1.2.2.1",
+            "near": "1.2.2.1-f8",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Johannes Bruyerinus",
+          "basis": "sidenote \"Bruyerinus lib. 13 cap. 25\"",
+          "locus": "lib. 13 cap. 25",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They are not far removed from the nature of hares. Bruyerinus, book 13, chapter 25: the flesh of the young ones is tender and very good.",
+        "warnings": []
+      }
+    ]
   }
 }

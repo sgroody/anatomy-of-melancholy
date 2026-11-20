@@ -68,13 +68,13 @@
     "threshold": 0.85
   },
   "3.2.5.3-f104": {
-    "align_score": 0.936,
+    "align_score": 0.976,
     "by": "djs1927",
     "left_anchor": "they may, as some Princes and great men do, keep as many",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "or that polygamy of Turks,",
-    "right_score": 0.936,
+    "right_anchor": "or that polygamy of Turks, Lex Julia, which Caesar once enforced in",
+    "right_score": 0.976,
     "status": "aligned",
     "text": "Courtisans as they will themselves, fly out recklessly, meddling with others' wives; [they had rather]",
     "text_sha1": "1377e994b166a9bdcc6736bbd5a7484872f6befd",
@@ -824,8 +824,8 @@
     "by": "djs1927",
     "left_anchor": "Chrysostom, When thou seest a fair and beautiful person, a brave Bona-roba,",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", quae salivam moveat,",
-    "status": "not-found",
+    "right_anchor": ",",
+    "status": "no-anchor",
     "text_sha1": "d462849d449671cd99822fa16c2af0a521806b99",
     "threshold": 0.85
   },
@@ -857,20 +857,6 @@
     "text_sha1": "eb63842f5ff359ab34ac7cd0a699451daf3c9cd4",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42163, pp. 785-786"
-  },
-  "3.2.5.3-f176": {
-    "align_score": 0.936,
-    "by": "djs1927",
-    "left_anchor": "or that polygamy of Turks,",
-    "left_score": 0.936,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", which Caesar once enforced in Rome (though Levinus Torrentius, and others",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Lex Julia,",
-    "text_sha1": "b390d4269dfd7341c4d355e199072c9ca61e9eb7",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 42425, p. 791"
   },
   "3.2.5.3-f177": {
     "align_score": 1.0,
@@ -1102,18 +1088,6 @@
     "text_sha1": "0bfa2c9767617c5b86e6318c6162f41cf471e769",
     "threshold": 0.85
   },
-  "3.2.5.3-f204": {
-    "align_score": 0.707,
-    "by": "djs1927",
-    "left_anchor": "Ambros. lib. 1 cap. 4 in his book of Abel and Cain,",
-    "left_score": 0.707,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Espencaeus and those three books of Pet. Haedus de contem. amoribus,",
-    "right_score": 0.85,
-    "status": "below-threshold",
-    "text_sha1": "9bfb00555dfdbdbd968bdb7f4af6189ed10a5ae3",
-    "threshold": 0.85
-  },
   "3.2.5.3-f206": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -1178,15 +1152,13 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42546, p. 793"
   },
   "3.2.5.3-f211": {
-    "align_score": 0.854,
     "by": "djs1927",
-    "gap_words": 93,
-    "left_anchor": "qualities, filthy diseases, in this case fit to be considered; consideratio faeditatis",
-    "left_score": 0.854,
+    "left_anchor": "Young men will do it when they come to it.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "I will say nothing of the vices of their minds, their pride,",
     "right_score": 1.0,
-    "status": "implausible-length",
+    "status": "not-found",
     "text_sha1": "8c0c6a753d9c31c5fe6d7c0a4a45531136be158f",
     "threshold": 0.85
   },
@@ -1299,6 +1271,50 @@
     "status": "not-found",
     "text_sha1": "f75d24dae63eef4e4a713ec6074723b8768eebdf",
     "threshold": 0.85
+  },
+  "3.2.5.3-f222": {
+    "by": "djs1927",
+    "left_anchor": ", a Phoenix,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", a Nymph, a Fairy, like Venus herself when she was a",
+    "status": "no-anchor",
+    "text_sha1": "3b74df8a553dd46eb3e0e5b1d51578626f613038",
+    "threshold": 0.85
+  },
+  "3.2.5.3-f223": {
+    "by": "djs1927",
+    "left_anchor": "of my grace, / And crooked old age coming on apace. ,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "2768defaf92644238c577db42832c0774ac13f99",
+    "threshold": 0.85
+  },
+  "3.2.5.3-f224": {
+    "by": "djs1927",
+    "left_anchor": "fits, evil qualities, filthy diseases, in this case fit to be considered;",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "I will say nothing of the vices of their minds, their pride,",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "1606e31dd0687e0674e5d0558c67da75de781f3a",
+    "threshold": 0.85
+  },
+  "3.2.5.3-f225": {
+    "align_score": 0.944,
+    "by": "djs1927",
+    "left_anchor": "replied to his father Mercury, when he asked whether he was married,",
+    "left_score": 0.985,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", &c., No father, no, I am a lover still, and cannot",
+    "right_score": 0.944,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "16818ae02cee49a2516fb1b2dccc6e7f72194e92",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 42434, p. 791"
   },
   "3.2.5.3-f23": {
     "align_score": 0.961,
@@ -1542,18 +1558,9 @@
     "by": "djs1927",
     "left_anchor": "to be admired for her person, a most incomparable, unmatchable piece,",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", a",
+    "right_anchor": ", a Phoenix,",
     "status": "no-anchor",
     "text_sha1": "8a8231666ac4beeb4f553cca4cdc50bf4d4179db",
-    "threshold": 0.85
-  },
-  "3.2.5.3-f42": {
-    "by": "djs1927",
-    "left_anchor": ", a",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", a Nymph, a Fairy, like Venus herself when she was a",
-    "status": "no-anchor",
-    "text_sha1": "f94f89c2bd525a2ba82ca30ec2f2f68542a40c12",
     "threshold": 0.85
   },
   "3.2.5.3-f43": {
@@ -1780,14 +1787,15 @@
     "threshold": 0.85
   },
   "3.2.5.3-f60": {
-    "align_score": 0.804,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "/ And crooked old age coming on apace. , quae salivam moveat,",
-    "left_score": 0.804,
+    "gap_words": 36,
+    "left_anchor": "of my grace, / And crooked old age coming on apace. ,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ", a comely woman, having bright eyes, a merry countenance, a shining",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "implausible-length",
     "text_sha1": "a6d924651d0194bdfa503574b7971b9e2aea336b",
     "threshold": 0.85
   },

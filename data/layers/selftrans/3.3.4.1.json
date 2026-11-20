@@ -319,48 +319,6 @@
     "signals": [],
     "text_sha1": "8b2f5de24f6500817c4b1660cded34f9bf8986e9"
   },
-  "3.3.4.1-f19": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "she is bad, he is worse",
-          "in": "3.3.4.1-p5",
-          "prefix": "to complain, ’tis quid pro quo, ",
-          "suffix": ": Bethink thyself, hast thou not"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "It may be ’tis his own fault, and he hath no reason to complain, ’tis",
-          "in": "3.3.4.1-p5",
-          "prefix": "is no remedy then but patience. ",
-          "suffix": " quid pro quo, she is bad, he is"
-        },
-        "words": 15
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "305ccc8e3350d6b39b05d9d9f104f286a124d90a"
-  },
   "3.3.4.1-f2": {
     "bracket": "present",
     "by": "rules",
@@ -973,48 +931,6 @@
       "english-follows"
     ],
     "text_sha1": "505785b8b5210562c9092bd9958b8abc3418055c"
-  },
-  "3.3.4.1-f4": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "where Ximenius the Archbishop of Toledo then lived, that by his good counsel (as for the present she was) she might be eased",
-          "in": "3.3.4.1-p2",
-          "prefix": "utum, or Alcala de las Henares, ",
-          "suffix": ". For a disease of the soul, if "
-        },
-        "words": 23
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Joanna Queen of Spain, of whom I have formerly spoken, under pretence of changing air, was sent to Complutum, or",
-          "in": "3.3.4.1-p2",
-          "prefix": "peak, no doubt he may be cured. ",
-          "suffix": " Alcala de las Henares, where Xi"
-        },
-        "words": 20
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "afb2692a29ed0769b78dacaeae5349f3321a91eb"
   },
   "3.3.4.1-f40": {
     "bracket": "present",

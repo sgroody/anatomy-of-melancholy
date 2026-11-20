@@ -40,35 +40,6 @@
     ],
     "text_sha1": "5ee23f6d4eb682de5bed4a5d8abe7d0192084e97"
   },
-  "3.1.3.1-f10": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "an only possession",
-          "in": "3.1.3.1-p5",
-          "prefix": "han gold, a medicine of misery, ",
-          "suffix": "; yet this love of friends, nupt"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "8acdb3aafd477c65578f4653fa989ff028fb5d01"
-  },
   "3.1.3.1-f11": {
     "bracket": "none",
     "by": "rules",
@@ -1504,6 +1475,63 @@
     ],
     "text_sha1": "726c6c9e5df9b04614ebd68fc816831ce4657dd3"
   },
+  "3.1.3.1-f64": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "gold, a medicine of misery, an only possession",
+          "in": "3.1.3.1-p5",
+          "prefix": " faithful friend is better than ",
+          "suffix": "; yet this love of friends, nupt"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "2ae6701ab90fb38af05821c61408fec3b1de43ed"
+  },
+  "3.1.3.1-f65": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "an only possession",
+          "in": "3.1.3.1-p5",
+          "prefix": "han gold, a medicine of misery, ",
+          "suffix": "; yet this love of friends, nupt"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor"
+    ],
+    "text_sha1": "16f5192c0dbd5e547d6bf073261a8f736f6989c7"
+  },
   "3.1.3.1-f7": {
     "bracket": "none",
     "by": "rules",
@@ -1562,33 +1590,5 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "2428eb7b72adb59e4172261fb025d7179753a345"
-  },
-  "3.1.3.1-f9": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "gold, a medicine of misery, an only possession",
-          "in": "3.1.3.1-p5",
-          "prefix": " faithful friend is better than ",
-          "suffix": "; yet this love of friends, nupt"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "c6de6317174c9eb61ff2309393038f0fac911a0c"
   }
 }

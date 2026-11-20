@@ -68,75 +68,6 @@
       }
     ]
   },
-  "3.1.3.1-f10": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "an only possession",
-        "in": "3.1.3.1",
-        "near": "3.1.3.1-f10",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Xenophon",
-      "basis": "sidenote \"Xenophon, Verus amicus praestantissima possessio.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Xenophon, Verus amicus praestantissima possessio",
-    "text_sha1": "8acdb3aafd477c65578f4653fa989ff028fb5d01",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "an only possession",
-            "in": "3.1.3.1",
-            "near": "3.1.3.1-f10",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Xenophon",
-          "basis": "sidenote \"Xenophon, Verus amicus praestantissima possessio.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Xenophon: a true friend is the most excellent possession",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.3.1-f11": {
     "kind": "phrase",
     "lang": "la",
@@ -3201,6 +3132,144 @@
       }
     ]
   },
+  "3.1.3.1-f64": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "gold",
+        "in": "3.1.3.1",
+        "near": "3.1.3.1-f64",
+        "prefix": "er than ",
+        "suffix": ", a medi"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "sidenote \"Plutarch, Preciosum numisma.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Preciosum numisma",
+    "text_sha1": "2ae6701ab90fb38af05821c61408fec3b1de43ed",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text has 'better than gold', but his sidenote marker sits between 'than' and 'gold', so only 'gold' can be quoted as his loose rendering of the 'precious coin'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "gold",
+            "in": "3.1.3.1",
+            "near": "3.1.3.1-f64",
+            "prefix": "er than ",
+            "suffix": ", a medi"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "sidenote \"Plutarch, Preciosum numisma.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A precious coin",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.3.1-f65": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "an only possession",
+        "in": "3.1.3.1",
+        "near": "3.1.3.1-f65",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Xenophon",
+      "basis": "sidenote \"Xenophon, Verus amicus praestantissima possessio.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Verus amicus praestantissima possessio",
+    "text_sha1": "16f5192c0dbd5e547d6bf073261a8f736f6989c7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text loosens 'most excellent possession' into 'an only possession'. The idea matches Xenophon's Memorabilia, book 2, on friends as the most valuable of possessions, but Burton gives no locus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "an only possession",
+            "in": "3.1.3.1",
+            "near": "3.1.3.1-f65",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Xenophon",
+          "basis": "sidenote \"Xenophon, Verus amicus praestantissima possessio.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "A true friend is the most excellent possession.",
+        "warnings": []
+      }
+    ]
+  },
   "3.1.3.1-f7": {
     "kind": "phrase",
     "lang": "la",
@@ -3339,63 +3408,6 @@
           "work": "Life of Atticus"
         },
         "text": "in friendship, likeness of character counts for more than kinship by marriage, etc.",
-        "warnings": []
-      }
-    ]
-  },
-  "3.1.3.1-f9": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Plutarch",
-      "basis": "sidenote \"Plutarch, Preciosum numisma.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Plutarch, Preciosum numisma",
-    "text_sha1": "c6de6317174c9eb61ff2309393038f0fac911a0c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This note is attached to 'gold' in Burton's phrase 'A faithful friend is better than gold'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Plutarch",
-          "basis": "sidenote \"Plutarch, Preciosum numisma.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Plutarch: a precious coin",
         "warnings": []
       }
     ]

@@ -676,12 +676,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "They wish for Philoxenus’ neck, Jupiter’s trinoctium, and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
+          "exact": "and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
           "in": "2.2.6.4-p10",
-          "prefix": "Mellona, is all their religion. ",
+          "prefix": "us’ neck, Jupiter’s trinoctium, ",
           "suffix": " dies noctesque pergraecari & bi"
         },
-        "words": 25
+        "words": 18
       }
     ],
     "lang": "la",
@@ -1277,6 +1277,78 @@
       "english-precedes"
     ],
     "text_sha1": "ce05c39c455bc9a20dd1aa346eecc0cf8dadf19c"
+  },
+  "2.2.6.4-f67": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Philip, a Jester, was brought in to make sport",
+          "in": "2.2.6.4-p5",
+          "prefix": "pos. Philippus ridendi artifex, ",
+          "suffix": ". Paulus Jovius in the eleventh "
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "549a41cad256f22dbc9621c1475625cf8f0444ab"
+  },
+  "2.2.6.4-f68": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
+          "in": "2.2.6.4-p10",
+          "prefix": "us’ neck, Jupiter’s trinoctium, ",
+          "suffix": " dies noctesque pergraecari & bi"
+        },
+        "words": 18
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "They wish for Philoxenus’ neck, Jupiter’s",
+          "in": "2.2.6.4-p10",
+          "prefix": "Mellona, is all their religion. ",
+          "suffix": " trinoctium, and that the Sun wo"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a505ed7f3c319c17c8bd55ca8d6111420513d6bf"
   },
   "2.2.6.4-f9": {
     "bracket": "present",

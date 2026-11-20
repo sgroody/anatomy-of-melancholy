@@ -1319,64 +1319,6 @@
       }
     ]
   },
-  "1.2.1.6-f40": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "& Damianus à Goes de Scandia",
-    "text_sha1": "a805a443bf68906ff44f40fcee5fcb2101635167",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Damianus à Goes is the Portuguese humanist Damião de Góis, who wrote on Scandinavia (Scandia). This is a bibliographical reference.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "and Damianus à Goes, on Scandia",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.6-f41": {
     "kind": "phrase",
     "lang": "la",
@@ -1561,78 +1503,6 @@
           "work": null
         },
         "text": "Among the Spartans of old",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.6-f44": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "if a child were crooked or deformed in body or mind, they made him away",
-        "in": "1.2.1.6",
-        "near": "1.2.1.6-f44",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Justus Lipsius",
-      "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
-      "locus": "epist. 85",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Epistolarum centuria ad Belgas"
-    },
-    "text": "85 cent ad Belgas, Dionysio Villerio, Si quos aliqua membrorum parte inutiles notaverint, necari jubent",
-    "text_sha1": "73774df8bd44d06d600e906f36a5c23961847bc8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "If any they have marked useless in some part of the limbs, they order to be killed",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The passage starts in the middle of the reference 'Lipsius epist. 85', and its first words are part of that citation: letter 85 of Lipsius's Century of letters to the Belgians, addressed to Dionysius Villerius. Only the clause after the comma is the quotation.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "if a child were crooked or deformed in body or mind, they made him away",
-            "in": "1.2.1.6",
-            "near": "1.2.1.6-f44",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Justus Lipsius",
-          "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
-          "locus": "epist. 85",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Epistolarum centuria ad Belgas"
-        },
-        "text": "85, Century to the Belgians, to Dionysius Villerius: If they found any to be useless in some part of their limbs, they ordered them to be killed",
         "warnings": []
       }
     ]
@@ -2265,6 +2135,68 @@
       }
     ]
   },
+  "1.2.1.6-f59": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Levinus Lemnius",
+      "basis": "text \"quam in nautis praesertim insectatur Lemnius\"; sidenote \"Lib. 2 cap. 8 de occult. nat. mir.\"",
+      "locus": "Lib. 2 cap. 8",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De occultis naturae miraculis"
+    },
+    "text": "Intemperantia veneris, quam in nautis praesertim insectatur Lemnius, qui uxores ineunt, nulla menstrui decursus ratione habita, nec observato interlunio, praecipua causa est, noxia, pernitiosa, concubitum",
+    "text_sha1": "565c5ce49c306ab95c1f82f7dbc38a7525dbb9d6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage breaks off at 'concubitum', whose clause continues outside the marked text: 'concubitum hunc exitialem ideo, & pestiferum vocat' ('this intercourse he therefore calls deadly and pestilent'). The interlunium is the time of the dark moon, between old and new. In the margin Burton tells the reader not to put this Latin into English ('Good Master Schoolmaster do not English this'), and in the text he says 'I spare to English this'. So he deliberately gives no rendering.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Levinus Lemnius",
+          "basis": "text \"quam in nautis praesertim insectatur Lemnius\"; sidenote \"Lib. 2 cap. 8 de occult. nat. mir.\"",
+          "locus": "Lib. 2 cap. 8",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De occultis naturae miraculis"
+        },
+        "text": "Intemperance in venery, which Lemnius especially censures in sailors, who go in to their wives with no regard to the course of the menses and without observing the interlunar period, is a principal cause, harmful and pernicious; this intercourse",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.6-f6": {
     "kind": "phrase",
     "lang": "la",
@@ -2333,6 +2265,382 @@
           "work": null
         },
         "text": "and I believe, says he, that she became so through a shared melancholic intemperature",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f60": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rodericus à Castro",
+      "basis": "text \"Rodericus à Castro Lusitanus\"; sidenote \"De nat. mul. lib. 3 cap. 4.\"",
+      "locus": "lib. 3 cap. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De universa mulierum medicina"
+    },
+    "text": "Rodericus à Castro Lusitanus, detestantur ad unum omnes medici, tum & quarta luna concepti, infaelices plerumque & amentes, deliri, stolidi, morbosi, impuri, invalidi, tetra lue sordidi, minime vitales, omnibus bonis corporis atque animi destituti",
+    "text_sha1": "1fdb22f8ca73bbc2ccc7e3d047650ca332afe835",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins in mid-sentence: 'Rodericus à Castro Lusitanus' is the subject of the preceding 'vocat' ('...calls this intercourse deadly and pestilent'). The exact meaning of 'quarta luna' is uncertain. Here it seems to mean the time of the menses, since later in the paragraph Burton writes 'quarta luna profluente hac mensium illuvie' ('at the fourth moon, while this filth of the menses is flowing'). 'Tetra lue' could also mean a foul plague or contagion.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rodericus à Castro",
+          "basis": "text \"Rodericus à Castro Lusitanus\"; sidenote \"De nat. mul. lib. 3 cap. 4.\"",
+          "locus": "lib. 3 cap. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De universa mulierum medicina"
+        },
+        "text": "Rodericus à Castro the Portuguese; all physicians to a man detest it; and those conceived at the fourth moon are, moreover, mostly unhappy and witless, delirious, stupid, sickly, impure, feeble, foul with a loathsome pox, hardly likely to live, and destitute of every good of body and mind",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f61": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Eustathius",
+      "basis": "text \"inquit Eustathius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "si saniores, inquit Eustathius, ut Hercules, & alii. Judaei",
+    "text_sha1": "7096648e77b3f186677dcc3b616b8d4e856961d2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage continues the clause 'ad laborem nati' ('born to toil'). In full: born to toil, if they turn out healthier, like Hercules and others. 'Judaei' is the subject of the next sentence ('The Jews most of all censure...'). The phrase is the same in Eustathius's commentary on Homer; the sidenote's exact reference cannot be confirmed.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Eustathius",
+          "basis": "text \"inquit Eustathius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "if they are healthier, says Eustathius, like Hercules and others. The Jews",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f62": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Christianos Concubitum",
+    "text_sha1": "5e0e86a4f9ae34f5c6675c518a9d747f5c7ff3a0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Christians intercourse",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment of 'faedum hunc & immundum apud Christianos Concubitum' ('this foul and unclean intercourse among Christians'). The governing preposition 'apud' stands outside the marked text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "intercourse among Christians",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f63": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johannes Buxtorf",
+      "basis": "sidenote \"Buxtorfius cap. 31. Synag. Jud. Ezek. 18.\"",
+      "locus": "cap. 31",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Synagoga Judaica"
+    },
+    "text": "quod Christiani toties leprosi, amentes, tot morbilli, impetigines, alphi, psorae, cutis & faciei decolorationes, tam multi morbi Epidemici, acerbi, & venenosi sint, in hunc immundum concubitum rejiciunt, & crudeles illos in pignora vocant, qui quarta luna profluente hac mensium illuvie concubitum",
+    "text_sha1": "4daae5c892f9a2c181b463cbe6c77dd698e7ac51",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage breaks off: the sentence ends outside it with 'hunc non perhorrescunt' ('do not shrink in horror from this intercourse'). 'Alphi' are the alphos, a white scaly skin disease (morphew); 'psorae' are itch or scabies. The subject of 'rejiciunt' and 'vocant' is the Jews. 'Pignora' (literally 'pledges') means children. 'Quarta luna' is uncertain; see the earlier passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johannes Buxtorf",
+          "basis": "sidenote \"Buxtorfius cap. 31. Synag. Jud. Ezek. 18.\"",
+          "locus": "cap. 31",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Synagoga Judaica"
+        },
+        "text": "that Christians are so often leprous and mad, that there are so many measles, impetigos, white scurfs, itches, discolourations of the skin and face, so many epidemic diseases, bitter and venomous, they lay at the door of this unclean intercourse, and they call those cruel to their offspring who, at the fourth moon, while this filth of the menses is flowing, this intercourse",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f64": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bede",
+      "basis": "sidenote \"Beda Eccl. hist. lib. 1 cap. 27 respons. 10.\"",
+      "locus": "lib. 1 cap. 27 respons. 10",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Historia ecclesiastica"
+    },
+    "text": "immunda muliere. Gregorius Magnus, petenti Augustino nunquid apud Britannos hujusmodi concubitum toleraret, severe prohibuit",
+    "text_sha1": "b36c1eabfdf51da73fe6297689a55892811f51b8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins after 'ab': the full phrase is 'quod non contineret ab immunda muliere' ('because he did not keep himself from an unclean woman'). It also stops before the object of 'prohibuit': 'viris suis tum misceri foeminas in consuetis suis menstruis' ('women to have intercourse with their husbands during their customary menses'). The Augustine here is Augustine of Canterbury.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bede",
+          "basis": "sidenote \"Beda Eccl. hist. lib. 1 cap. 27 respons. 10.\"",
+          "locus": "lib. 1 cap. 27 respons. 10",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Historia ecclesiastica"
+        },
+        "text": "unclean woman. Gregory the Great, when Augustine asked whether he should tolerate such intercourse among the Britons, strictly forbade",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f65": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "if a child were crooked or deformed in body or mind, they made him away",
+        "in": "1.2.1.6",
+        "near": "1.2.1.6-f65",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Justus Lipsius",
+      "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
+      "locus": "epist. 85",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistolae, Centuria ad Belgas"
+    },
+    "text": "Si quos aliqua membrorum parte inutiles notaverint, necari jubent",
+    "text_sha1": "67f0690196a4c44f33b07119cf853ecc39d13b1c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote refers to the Spartans of old ('Apud Lacones olim'). Burton's English in the main text adds 'or mind' and applies the practice to several countries.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "if a child were crooked or deformed in body or mind, they made him away",
+            "in": "1.2.1.6",
+            "near": "1.2.1.6-f65",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Justus Lipsius",
+          "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
+          "locus": "epist. 85",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistolae, Centuria ad Belgas"
+        },
+        "text": "If they noted any to be useless in some part of their limbs, they ordered them to be put to death.",
         "warnings": []
       }
     ]

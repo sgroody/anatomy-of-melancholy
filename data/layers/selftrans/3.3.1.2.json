@@ -376,6 +376,65 @@
     ],
     "text_sha1": "0eea009dd6afe4336c81b620d5770b5a8b168b85"
   },
+  "3.3.1.2-f117": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Epistles be his) to oversee his wife in his absence (as Apollo set a Raven to watch his Coronis), although she lived in his house with her father and mother, whom he knew would have a care of her",
+          "in": "3.3.1.2-p11",
+          "prefix": "nd Dionysius (if at least those ",
+          "suffix": "; yet that would not satisfy his"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f666fb3337837ff4c729e5972ea886cd125a72cc"
+  },
+  "3.3.1.2-f118": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Philippus bonus left fourteen bastards",
+          "in": "3.3.1.2-p23",
+          "prefix": "enteen alone lawfully begotten. ",
+          "suffix": ". Laurence Medices a good Prince"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "687d8fbdff34986cefbabf08ffe21599e5a0c7e3"
+  },
   "3.3.1.2-f12": {
     "bracket": "present",
     "by": "rules",
@@ -742,48 +801,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "813eed3e70a9b0e793f462e0c51e06e421854bcd"
-  },
-  "3.3.1.2-f24": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "Or if present, and give them not that content which they ought",
-          "in": "3.3.1.2-p11",
-          "prefix": " fly out another, quid pro quo. ",
-          "suffix": ", Primum ingratae, mox invisae n"
-        },
-        "words": 12
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "or if they run one way, their wives at home will fly out another",
-          "in": "3.3.1.2-p11",
-          "prefix": "usiness, well they may suspect: ",
-          "suffix": ", quid pro quo. Or if present, a"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "305ccc8e3350d6b39b05d9d9f104f286a124d90a"
   },
   "3.3.1.2-f25": {
     "bracket": "present",
@@ -2540,34 +2557,5 @@
       "english-precedes"
     ],
     "text_sha1": "89d32adfae3d631e23b07c4483aebf298297a002"
-  },
-  "3.3.1.2-f98": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Philippus bonus left fourteen bastards",
-          "in": "3.3.1.2-p23",
-          "prefix": "enteen alone lawfully begotten. ",
-          "suffix": ". Laurence Medices a good Prince"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "464eef94e18dd0c61efa32c77361022d2a6f5091"
   }
 }

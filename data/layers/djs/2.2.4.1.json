@@ -366,52 +366,6 @@
     "text_sha1": "8d988df6ac9f8183aee904a37ed187f104d985be",
     "threshold": 0.85
   },
-  "2.2.4.1-f133": {
-    "by": "djs1927",
-    "left_anchor": "intricate and pleasing, withal as to peruse and practise Heron Alexandrinus’ works,",
-    "left_score": 0.9937106918238993,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Now for women, instead of laborious studies, they have curious needleworks,",
-    "right_score": 1.0,
-    "status": "not-found",
-    "text_sha1": "628b40caeb3f772a81647a0c4025599583869cb5",
-    "threshold": 0.85
-  },
-  "2.2.4.1-f134": {
-    "by": "djs1927",
-    "left_anchor": ",",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "proposit. 13, that pleasant tract of",
-    "status": "no-anchor",
-    "text_sha1": "bce68f35b244b9eb73e394132a42feca02787ee8",
-    "threshold": 0.85
-  },
-  "2.2.4.1-f135": {
-    "align_score": 0.786,
-    "by": "djs1927",
-    "left_anchor": "proposit. 13, that pleasant tract of",
-    "left_score": 0.786,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Apollonius’ Conics, or Commandinus’ labours in that kind,",
-    "right_score": 0.991,
-    "status": "below-threshold",
-    "text_sha1": "1ca8682ec0960c8ea1a56c42749e60818d64c0fa",
-    "threshold": 0.85
-  },
-  "2.2.4.1-f136": {
-    "align_score": 0.991,
-    "by": "djs1927",
-    "left_anchor": ", Apollonius’ Conics, or Commandinus’ labours in that kind,",
-    "left_score": 0.991,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", with many such Geometrical Theorems, and Problems? Those rare instruments and",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "on the centre of gravity,",
-    "text_sha1": "0a25c242a93be4b5d10858e2f6381a4d29907f0e",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24949, pp. 461-462"
-  },
   "2.2.4.1-f139": {
     "align_score": 0.828,
     "by": "djs1927",
@@ -604,20 +558,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 25014, pp. 461-462"
   },
-  "2.2.4.1-f156": {
-    "align_score": 0.9,
-    "by": "djs1927",
-    "left_anchor": "allow: or let him make an Ephemerides, read Suisset the Calculator’s works,",
-    "left_score": 0.9,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", and Petavius his adversary, till he understand them, peruse subtle Scotus’",
-    "right_score": 0.972,
-    "status": "aligned",
-    "text": "Acrosticks lator's works, Scaliger on the correction of Time,",
-    "text_sha1": "7d41113281b2f9dcdf5a8ccf036be0d81c7f62ca",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 25033, pp. 461-462"
-  },
   "2.2.4.1-f158": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -742,14 +682,6 @@
     "text_sha1": "66536c6b873e58d806ffbc95b509da456fb681e9",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24390, pp. 449-450"
-  },
-  "2.2.4.1-f178": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "7e397eca18ac21a2933300dda5cbd9288e21aebc",
-    "threshold": 0.85
   },
   "2.2.4.1-f180": {
     "align_score": 1.0,
@@ -932,18 +864,16 @@
     "threshold": 0.85
   },
   "2.2.4.1-f263": {
-    "align_score": 0.992,
+    "align_score": 0.778,
     "by": "djs1927",
     "left_anchor": "fit and proper to expel Idleness and Melancholy, as that of Study:",
     "left_score": 0.992,
     "method": "rules/djs-align-v3",
-    "right_anchor": "., find the rest in",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Study delighteth age, informeth youth, adorneth prosperity, charmeth us at home, and is the solace and refuge of adversity, &c.,",
+    "right_anchor": "., find the rest in Tully pro Archia Poeta. What so full",
+    "right_score": 0.778,
+    "status": "below-threshold",
     "text_sha1": "9d487fe984fa6f9013acb02397caec6c13c8788a",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24554, p. 453"
+    "threshold": 0.85
   },
   "2.2.4.1-f264": {
     "by": "djs1927",
@@ -1450,12 +1380,76 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24808, p. 458"
   },
+  "2.2.4.1-f346": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "6947dd7e66bd382fd3bd7311f3fa8fed8d5ce949",
+    "threshold": 0.85
+  },
+  "2.2.4.1-f347": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "573ccd442d58a36020ad6e5ddf2f02bffdda82b3",
+    "threshold": 0.85
+  },
+  "2.2.4.1-f348": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "6fec8aa096c33643b96f1d64d6e0f199a0e8c0ed",
+    "threshold": 0.85
+  },
+  "2.2.4.1-f349": {
+    "align_score": 0.994,
+    "by": "djs1927",
+    "left_anchor": "itself if he had but a place to fasten his instrument: Archimedes",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", and rare devices to corrivate waters, music instruments, and trisyllable Echoes",
+    "right_score": 0.994,
+    "status": "aligned",
+    "text": "water-screw,",
+    "text_sha1": "66d318e6345cb70c51acc56ab50e633bb27fb882",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 24655, pp. 454-455"
+  },
   "2.2.4.1-f35": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "d3ac7881f061dc8af0100d5f88ff8370ca91320f",
+    "threshold": 0.85
+  },
+  "2.2.4.1-f350": {
+    "align_score": 0.981,
+    "by": "djs1927",
+    "left_anchor": "to Heraldry, Antiquity, invent Impresses, Emblems; make Epithalamiums, Epitaphs, Elegies, Epigrams, Palindromal",
+    "left_score": 0.981,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", Anagrams, Chronograms, Acrostics, upon his friends’ names; or write a Comment",
+    "right_score": 0.993,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "934e29551f564ef8f6aecc0931e63c5a3252bb39",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 25046, p. 463"
+  },
+  "2.2.4.1-f351": {
+    "by": "djs1927",
+    "left_anchor": "and alienate their imaginations, they must be compelled, saith Christophorus à Vega,",
+    "left_score": 0.9875,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", lib. 3 cap. 14, upon some mulct, if they perform it",
+    "right_score": 0.8409090909090909,
+    "status": "not-found",
+    "text_sha1": "066d4db1c2dbf558b84bd3ef3751ce1e02dc290d",
     "threshold": 0.85
   },
   "2.2.4.1-f36": {
@@ -2078,18 +2072,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24544, p. 453"
   },
-  "2.2.4.1-f87": {
-    "align_score": 0.589,
-    "by": "djs1927",
-    "left_anchor": "of distinct natures, to fit that v ., find the rest in",
-    "left_score": 0.589,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". What so full of content, as to read, walk, and see",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "52b00a30d304bba9d399c3c97369764069b57aff",
-    "threshold": 0.85
-  },
   "2.2.4.1-f88": {
     "align_score": 0.973,
     "by": "djs1927",
@@ -2188,20 +2170,6 @@
     "text_sha1": "794f998ed2c6d02ec9936e24c05620312e533e5b",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24648, pp. 454-455"
-  },
-  "2.2.4.1-f96": {
-    "align_score": 0.994,
-    "by": "djs1927",
-    "left_anchor": "earth itself if he had but a place to fasten his instrument:",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", and rare devices to corrivate waters, music instruments, and trisyllable Echoes",
-    "right_score": 0.994,
-    "status": "aligned",
-    "text": "Archimedes' water-screw,",
-    "text_sha1": "2b0f1bddcc4104da5a06e8e6dbdc5d785eb710b9",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24655, pp. 454-455"
   },
   "2.2.4.1-f97": {
     "align_score": 1.0,

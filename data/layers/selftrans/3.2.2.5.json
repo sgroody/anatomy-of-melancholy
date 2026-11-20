@@ -343,48 +343,6 @@
     ],
     "text_sha1": "04bd0fb44980ff77d74179e3632dba3fc10fdadf"
   },
-  "3.2.2.5-f34": {
-    "bracket": "short",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "so huntsmen make their dogs love them, and farmers their pullen), ’tis an excellent Philtre as he holds",
-          "in": "3.2.2.5-p9",
-          "prefix": "ad amorem conciliandum & odium (",
-          "suffix": ", sed vulgo prodere grande nefas"
-        },
-        "words": 18
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Others are of opinion that these feats, which most suppose to be done by Charms and Philtres, are merely effected by natural causes, as by man’s blood Chemically prepared, which much avails saith Ernestus Burggravius",
-          "in": "3.2.2.5-p9",
-          "prefix": "thearts, many miles in a night. ",
-          "suffix": ", in Lucerna vitae & mortis Indi"
-        },
-        "words": 35
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "short-gowland-bracket"
-    ],
-    "text_sha1": "4c860766e88c5076316eff4d66a6cd9b5c324af3"
-  },
   "3.2.2.5-f35": {
     "bracket": "present",
     "by": "rules",
@@ -470,6 +428,59 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "2cdcd5a28908be53cef7ddd437bdaedbd65cb28f"
+  },
+  "3.2.2.5-f38": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7cc84b079fc7305417db3e2741477b76041af175"
+  },
+  "3.2.2.5-f39": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "so huntsmen make their dogs love them, and farmers their pullen), ’tis an excellent Philtre as he holds",
+          "in": "3.2.2.5-p9",
+          "prefix": "ad amorem conciliandum & odium (",
+          "suffix": ", sed vulgo prodere grande nefas"
+        },
+        "words": 18
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "are of opinion that these feats, which most suppose to be done by Charms and Philtres, are merely effected by natural causes, as by man’s blood Chemically prepared, which much avails saith Ernestus Burggravius, in Lucerna vitae & mortis Indice",
+          "in": "3.2.2.5-p9",
+          "prefix": ", many miles in a night. Others ",
+          "suffix": ", ad amorem conciliandum & odium"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "59f5b41c1408eea4aac348397767942ee75cb731"
   },
   "3.2.2.5-f4": {
     "bracket": "present",

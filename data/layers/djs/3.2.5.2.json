@@ -160,6 +160,18 @@
     "text_sha1": "a67a1ce0174008b60907b24a4576636ba3f4f28f",
     "threshold": 0.85
   },
+  "3.2.5.2-f115": {
+    "align_score": 0.845,
+    "by": "djs1927",
+    "left_anchor": "and terrify any man or woman living. Gordonius cap. 20 part. 2",
+    "left_score": 0.845,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; Withal as they do discommend the old, for the better effecting",
+    "right_score": 0.984,
+    "status": "below-threshold",
+    "text_sha1": "dbbab672d7e3a2f86301daa1eb5c68cdd5c4f1ef",
+    "threshold": 0.85
+  },
   "3.2.5.2-f13": {
     "align_score": 0.992,
     "by": "djs1927",
@@ -561,14 +573,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41569, p. 774"
   },
-  "3.2.5.2-f44": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "11a01c2a4004d07914209d87ae2ea4f320413490",
-    "threshold": 0.85
-  },
   "3.2.5.2-f45": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -709,14 +713,11 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41626, p. 775"
   },
   "3.2.5.2-f55": {
-    "align_score": 0.615,
     "by": "djs1927",
-    "left_anchor": "or woman living. Gordonius cap. 20 part. 2 hunc in modum consulit;",
-    "left_score": 0.615,
+    "left_anchor": ";",
     "method": "rules/djs-align-v3",
     "right_anchor": "Withal as they do discommend the old, for the better effecting a",
-    "right_score": 0.984,
-    "status": "below-threshold",
+    "status": "no-anchor",
     "text_sha1": "4ed0223a6c443af3c76f4ba8cfdad735378c0fe0",
     "threshold": 0.85
   },

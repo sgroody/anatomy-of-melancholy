@@ -360,6 +360,47 @@
     ],
     "text_sha1": "f729fd81a9968847e970db004dbfa5a1c17c1dd7"
   },
+  "3.2.3.1-f116": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a warfare",
+          "in": "3.2.3.1-p67",
+          "prefix": " a perpetual flux, angor animi, ",
+          "suffix": ", militat omnis amans, a grievou"
+        },
+        "words": 2
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "For Love is a perpetual flux",
+          "in": "3.2.3.1-p67",
+          "prefix": "space he would consume himself. ",
+          "suffix": ", angor animi, a warfare, milita"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "ada6ab3cd1c0fb8c561f2d865e6057439a5d307c"
+  },
   "3.2.3.1-f117": {
     "bracket": "present",
     "by": "rules",
@@ -4499,32 +4540,6 @@
     ],
     "text_sha1": "0177cbd55647f0657fa917b97410d1e4ef451736"
   },
-  "3.2.3.1-f288": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Yea many times this love will make old men and women that have more toes than teeth dance",
-          "in": "3.2.3.1-p165",
-          "prefix": "own voices, and dance after it. ",
-          "suffix": ", ——— John come kiss me now, mas"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "278743ac4cbbee6086c046dd8fb267f198938643"
-  },
   "3.2.3.1-f289": {
     "bracket": "none",
     "by": "rules",
@@ -5073,47 +5088,6 @@
     "signals": [],
     "text_sha1": "1d94a346fd55e27f48378ac4826a93eb6c3d046a"
   },
-  "3.2.3.1-f308": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and the rest of his Poems",
-          "in": "3.2.3.1-p172",
-          "prefix": " Lachrymae, Myrrha, Musae, &c., ",
-          "suffix": "; why are Italians at this day g"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Petrarch’s Laura made him so famous, Astrophel’s Stella, and Jovianus Pontanus’ Mistress was the cause of his",
-          "in": "3.2.3.1-p172",
-          "prefix": "",
-          "suffix": " Roses, Violets, Lilies, Nequiti"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "672ab03b64751b037f2facb21f7ac832e8e97b4b"
-  },
   "3.2.3.1-f31": {
     "bracket": "short",
     "by": "rules",
@@ -5442,18 +5416,6 @@
     ],
     "text_sha1": "30942c11a632bdb4e963c4fe92a3d112593b1bc8"
   },
-  "3.2.3.1-f32": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e0aa0eebc6869816d1a513f9d8b243dbe604b0f6"
-  },
   "3.2.3.1-f322": {
     "bracket": "none",
     "by": "rules",
@@ -5566,18 +5528,6 @@
           "suffix": "; so Chaerea exclaims when he ca"
         },
         "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The Persian Kings are not so jovial as he is, O",
-          "in": "3.2.3.1-p43",
-          "prefix": "",
-          "suffix": " festus dies hominis, O happy da"
-        },
-        "words": 11
       }
     ],
     "lang": "la",
@@ -5585,7 +5535,6 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
-      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "0e8e324a4558d3f3251c29ec683ae8c6ba2e0568"
@@ -5869,35 +5818,6 @@
     ],
     "text_sha1": "7253d709aff40eb56075212ec29150a13489cace"
   },
-  "3.2.3.1-f357": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "when he besought the Sea-waves to let him go quietly to his Love, and kill him coming back",
-          "in": "3.2.3.1-p125",
-          "prefix": "presently: Leander to his Hero, ",
-          "suffix": "."
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
-  },
   "3.2.3.1-f36": {
     "bracket": "present",
     "by": "rules",
@@ -5956,35 +5876,6 @@
     ],
     "text_sha1": "befd8bba95f348887b7e5daa809ea3fb166140ac"
   },
-  "3.2.3.1-f365": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Salmacis to Hermaphroditus",
-          "in": "3.2.3.1-p141",
-          "prefix": " they that saw Hero in Musaeus, ",
-          "suffix": ","
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
-  },
   "3.2.3.1-f366": {
     "bracket": "none",
     "by": "rules",
@@ -5996,32 +5887,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3feca253f9146e372f87daab2465458c2ae73325"
-  },
-  "3.2.3.1-f367": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "One said, to Heaven would I not / desire at all to go, / If that at mine own house I had / such a fine wife as",
-          "in": "3.2.3.1-lg267",
-          "prefix": "",
-          "suffix": " Hero."
-        },
-        "words": 25
-      }
-    ],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
   },
   "3.2.3.1-f368": {
     "bracket": "none",
@@ -6152,6 +6017,35 @@
     ],
     "text_sha1": "b9d2433c6b74ce8b3f70d22a0d628d82de971dc1"
   },
+  "3.2.3.1-f376": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "For that being an old man, and a public Professor, a father of many children, he was so mad for the love of a young maid (that which many of his friends were ashamed to see) an old gouty fellow",
+          "in": "3.2.3.1-p165",
+          "prefix": "gustine Niphus the Philosopher, ",
+          "suffix": ", yet would dance after Fiddlers"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "be5444cc94c2c67d5c832e9355bfd286c326f384"
+  },
   "3.2.3.1-f377": {
     "bracket": "none",
     "by": "rules",
@@ -6261,6 +6155,16 @@
       "english-at-anchor"
     ],
     "text_sha1": "74989f721254651d54431dfe1291bf3128a9b0f1"
+  },
+  "3.2.3.1-f396": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "334f68113d53efc2541a2ad2e32941ac260237de"
   },
   "3.2.3.1-f397": {
     "bracket": "present",
@@ -6785,34 +6689,6 @@
     ],
     "text_sha1": "e7b92db64c37856d2c66ccee871a272417fa282c"
   },
-  "3.2.3.1-f423": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "All our Tilts and Tournaments, Orders of the Garter, Golden Fleece, &c.",
-          "in": "3.2.3.1-p170",
-          "prefix": "us’ wife, whom he dearly loved. ",
-          "suffix": ""
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "7e419499c261e627276c2fd5552b42bc1c84b485"
-  },
   "3.2.3.1-f424": {
     "bracket": "present",
     "by": "rules",
@@ -7243,16 +7119,6 @@
     ],
     "text_sha1": "0ac2df9f672a3227383edc38241ae689209ad997"
   },
-  "3.2.3.1-f440": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "b1af85bbf651030faa52bdbd9c687189c79c2637"
-  },
   "3.2.3.1-f441": {
     "bracket": "present",
     "by": "rules",
@@ -7291,47 +7157,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "d20ee943c26e7e22c18ee4bc7c424819a41b4fa1"
-  },
-  "3.2.3.1-f443": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "a warfare",
-          "in": "3.2.3.1-p67",
-          "prefix": " a perpetual flux, angor animi, ",
-          "suffix": ", militat omnis amans, a grievou"
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "For Love is a perpetual",
-          "in": "3.2.3.1-p67",
-          "prefix": "space he would consume himself. ",
-          "suffix": " flux, angor animi, a warfare, m"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "2fc5b50fa94c4f12ad7a4da6553a5cd89f2ad8a7"
   },
   "3.2.3.1-f444": {
     "bracket": "present",
@@ -7403,6 +7228,68 @@
     ],
     "text_sha1": "ae8a5af63394ef51e30f6268ecb5c0b26040d126"
   },
+  "3.2.3.1-f446": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "394ead38e1d54c3caf068af1385ec61d98c8c224"
+  },
+  "3.2.3.1-f447": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "da18f46f646596a6b3efde5427f6206cddbfd49e"
+  },
+  "3.2.3.1-f448": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The Persian Kings are not so jovial as he is",
+          "in": "3.2.3.1-p43",
+          "prefix": "",
+          "suffix": ", O festus dies hominis, O happy"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "08a914cde05039694ef0194d9ee79ff9a79dde33"
+  },
+  "3.2.3.1-f449": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "52e5c238da5b2451a26564b0ca8a51f14b000313"
+  },
   "3.2.3.1-f45": {
     "bracket": "present",
     "by": "rules",
@@ -7412,6 +7299,105 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "8c1c29adbc22ff0822f4b0b712996be2808572de"
+  },
+  "3.2.3.1-f450": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Peter Abelardus lost his testicles for his Heloissa, he will I say not venture an incision, but life itself",
+          "in": "3.2.3.1-p127",
+          "prefix": " adventure for all this. And as ",
+          "suffix": ". For how many gallants offered "
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "90915626d6f205fecd30f6b6dd6bdc320f63f29c"
+  },
+  "3.2.3.1-f451": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "All our Tilts and Tournaments, Orders of the Garter, Golden Fleece, &c.",
+          "in": "3.2.3.1-p170",
+          "prefix": "us’ wife, whom he dearly loved. ",
+          "suffix": ""
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "2eac1a3e51c35b001dcace8b1cbc287988325c4a"
+  },
+  "3.2.3.1-f452": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and the rest of his Poems",
+          "in": "3.2.3.1-p172",
+          "prefix": " Lachrymae, Myrrha, Musae, &c., ",
+          "suffix": "; why are Italians at this day g"
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Petrarch’s Laura made him so famous, Astrophel’s Stella, and Jovianus Pontanus’ Mistress was the cause of his Roses, Violets, Lilies",
+          "in": "3.2.3.1-p172",
+          "prefix": "",
+          "suffix": ", Nequitiae, blanditiae, joci, d"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "982f9b39cc55416157d37ad6e46234483b8716c8"
   },
   "3.2.3.1-f46": {
     "bracket": "present",
@@ -8389,35 +8375,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b3468d4761a173b474e8a938d56e4471dcac61d1"
-  },
-  "3.2.3.1-f9": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Jason Pratensis gives, because of the distraction of the spirits the Liver doth not perform his part, nor turns the aliment into blood as it ought, and for that cause the members are weak for want of sustenance, they are",
-          "in": "3.2.3.1-p5",
-          "prefix": "tite, &c. A reason of all this, ",
-          "suffix": " lean and pine, as the herbs of "
-        },
-        "words": 40
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a7f09c7315bc722976ce133487e0287f7532a954"
   },
   "3.2.3.1-f90": {
     "bracket": "present",

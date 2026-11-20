@@ -194,21 +194,6 @@
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Augustus Caesar made an oration in",
-          "in": "3.2.5.5-p48",
-          "prefix": "mpliare imperium, quam pecunia; ",
-          "suffix": " Rome ad caelibes, to persuade t"
-        },
-        "words": 6
-      },
-      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -225,51 +210,9 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "23670320daf46b5c7b6ef9ac2342e1090b023c49"
-  },
-  "3.2.5.5-f107": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "to persuade them to marry, some countries compelled them to marry of old, as Jews, Turks, Indians, Chinese, amongst the rest in these days, who much wonder at our discipline to suffer so many idle persons to live in Monasteries",
-          "in": "3.2.5.5-p48",
-          "prefix": "an oration in Rome ad caelibes, ",
-          "suffix": ", and often marvel how they can "
-        },
-        "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Augustus Caesar made an oration in",
-          "in": "3.2.5.5-p48",
-          "prefix": "mpliare imperium, quam pecunia; ",
-          "suffix": " Rome ad caelibes, to persuade t"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "4972571bbb4657a257753d2e6682f056a3ababa5"
   },
   "3.2.5.5-f108": {
     "bracket": "present",
@@ -615,35 +558,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "47a5a270524cab22d0498fd256b6149d9e9bc65b"
-  },
-  "3.2.5.5-f121": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Some make a doubt, an uxor literato sit ducenda, whether a Scholar should marry, if she be fair she will bring him back from his grammar to his horn-book, or else with kissing and dalliance she will hinder his study",
-          "in": "3.2.5.5-p51",
-          "prefix": "est, ’tis otherwise Hippolytus. ",
-          "suffix": "; if foul, with scolding, he can"
-        },
-        "words": 41
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f388924675c9e5be1a770fa9d5b5b6f400415aed"
   },
   "3.2.5.5-f122": {
     "bracket": "present",
@@ -1580,48 +1494,6 @@
     ],
     "text_sha1": "3e9fd43bafba024a5109215cfb8babb7ae62da43"
   },
-  "3.2.5.5-f166": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and con, every poet thus argues the case (though what cares",
-          "in": "3.2.5.5-p65",
-          "prefix": "ost every philosopher plead pro ",
-          "suffix": " vulgus hominum what they say?),"
-        },
-        "words": 11
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "So Siracides himself, speaks as much as may be, for and against women, so doth almost every philosopher plead",
-          "in": "3.2.5.5-p65",
-          "prefix": "",
-          "suffix": " pro and con, every poet thus ar"
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893"
-  },
   "3.2.5.5-f167": {
     "bracket": "present",
     "by": "rules",
@@ -1646,12 +1518,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "and con, every poet thus argues the case (though what cares",
+          "exact": "So Siracides himself, speaks as much as may be, for and against women, so doth almost every philosopher plead pro and con, every poet thus argues the case (though what cares",
           "in": "3.2.5.5-p65",
-          "prefix": "ost every philosopher plead pro ",
+          "prefix": "",
           "suffix": " vulgus hominum what they say?),"
         },
-        "words": 11
+        "words": 31
       }
     ],
     "lang": "la",
@@ -1796,35 +1668,6 @@
       "english-precedes"
     ],
     "text_sha1": "846dea7cb56cfd23a93f5aa5ba4b82cc3938e568"
-  },
-  "3.2.5.5-f174": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Venus’ Vigil with our Ancestors for company together, singing as they did",
-          "in": "3.2.5.5-p69",
-          "prefix": "for Hymen’s sake, and celebrate ",
-          "suffix": ","
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "38f084faa64c587d70b60573285ebcecd9c9ff10"
   },
   "3.2.5.5-f175": {
     "bracket": "present",
@@ -2555,56 +2398,28 @@
     ],
     "text_sha1": "9d7bc8a282294dfab9ee0502a0d11d7115e29d0a"
   },
-  "3.2.5.5-f215": {
+  "3.2.5.5-f216": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "have them",
-          "in": "3.2.5.5-p33",
-          "prefix": "starve their children’s Genius, ",
-          "suffix": " a pueris illico nasci senes, th"
-        },
-        "words": 2
-      },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "measure their children’s affections by their own, they are now cold and decrepit themselves, past all such youthful conceits, and they will therefore starve their children’s",
+          "exact": "measure their children’s affections by their own, they are now cold and decrepit themselves, past all such youthful conceits, and they will therefore starve their children’s Genius, have them",
           "in": "3.2.5.5-p33",
           "prefix": "areless Parents, iniqui patres, ",
-          "suffix": " Genius, have them a pueris illi"
+          "suffix": " a pueris illico nasci senes, th"
         },
-        "words": 26
+        "words": 29
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
-  "3.2.5.5-f216": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
       "no-gowland-bracket"
     ],
     "text_sha1": "e8cdba3d9b1b5fcdd2681c4d72d0221622410de9"
@@ -3832,6 +3647,119 @@
     ],
     "text_sha1": "722ffd767c61903bc3ece66a1bdbe7fa804f80f6"
   },
+  "3.2.5.5-f317": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "melancholy, madness, fornication, adultery, buggery, sodomy, theft, murder, and all manner of mischiefs",
+          "in": "3.2.5.5-p47",
+          "prefix": "ration, satyriasis, priapismus, ",
+          "suffix": ": read but Bale’s Catalogue of S"
+        },
+        "words": 13
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "What Merits and Indulgences they heap unto themselves by it, what commodities, I know not, but I am sure, from such rash vows, and inhuman manner of life proceed many inconveniences, many diseases, many vices, mastupration, satyriasis",
+          "in": "3.2.5.5-p47",
+          "prefix": "",
+          "suffix": ", priapismus, melancholy, madnes"
+        },
+        "words": 37
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7f7b8ea60854be12c58b8417d1f73ea15a7d510a"
+  },
+  "3.2.5.5-f318": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "better burn or fly out, than to break thy vow",
+          "in": "3.2.5.5-p47",
+          "prefix": "coelibatus ad nuptias transire, ",
+          "suffix": ". And Coster in his Enchirid. de"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "26a86818a0d72bf8d4d155744174ef9762f4d6f1"
+  },
+  "3.2.5.5-f319": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a greater sin for a Priest to marry, than to keep a concubine at home",
+          "in": "3.2.5.5-p47",
+          "prefix": "is absolutely gravius peccatum, ",
+          "suffix": ". Gregory de Valentia, cap. 6 de"
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "And Coster in his Enchirid. de coelibat. sacerdotum, saith it is absolutely",
+          "in": "3.2.5.5-p47",
+          "prefix": "fly out, than to break thy vow. ",
+          "suffix": " gravius peccatum, a greater sin"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8c0fcca7d6d8f5448796a0d5f23bb522d7787a01"
+  },
   "3.2.5.5-f32": {
     "bracket": "present",
     "by": "rules",
@@ -3841,6 +3769,153 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "4e7442a5846875ffc6a4fa6212e89a9bb6f5355f"
+  },
+  "3.2.5.5-f320": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3ab23e2637ef324a79194f4d47dc1699a0d8aed5"
+  },
+  "3.2.5.5-f321": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "to persuade them to marry, some countries compelled them to marry of old, as Jews, Turks, Indians, Chinese, amongst the rest in these days, who much wonder at our discipline to suffer so many idle persons to live in Monasteries",
+          "in": "3.2.5.5-p48",
+          "prefix": "an oration in Rome ad caelibes, ",
+          "suffix": ", and often marvel how they can "
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "c72f3ce39add1d9e59c1614f60e65e7bfddb18f3"
+  },
+  "3.2.5.5-f322": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "whether a Scholar should marry, if she be fair she will bring him back from his grammar to his horn-book, or else with kissing and dalliance she will hinder his study",
+          "in": "3.2.5.5-p51",
+          "prefix": ", an uxor literato sit ducenda, ",
+          "suffix": "; if foul, with scolding, he can"
+        },
+        "words": 32
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Some make a doubt",
+          "in": "3.2.5.5-p51",
+          "prefix": "est, ’tis otherwise Hippolytus. ",
+          "suffix": ", an uxor literato sit ducenda, "
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "78fa516cec592541a274455f3e8850b1378459e4"
+  },
+  "3.2.5.5-f323": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7bf0923367b6e3c9bee0f696a35089fbee02cc08"
+  },
+  "3.2.5.5-f324": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3554e79a132f3b8be1c891d494f7696799e95645"
+  },
+  "3.2.5.5-f325": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Venus’ Vigil with our Ancestors for company together, singing as they did",
+          "in": "3.2.5.5-p69",
+          "prefix": "for Hymen’s sake, and celebrate ",
+          "suffix": ","
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ec9c892f81d7c9da8fc1b131a765ee59d40bfea7"
+  },
+  "3.2.5.5-f326": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247"
   },
   "3.2.5.5-f33": {
     "bracket": "present",
@@ -4245,12 +4320,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "measure their children’s affections by their own, they are now cold and decrepit themselves, past all such youthful conceits, and they will therefore starve their children’s",
+          "exact": "measure their children’s affections by their own, they are now cold and decrepit themselves, past all such youthful conceits, and they will therefore starve their children’s Genius, have them",
           "in": "3.2.5.5-p33",
           "prefix": "areless Parents, iniqui patres, ",
-          "suffix": " Genius, have them a pueris illi"
+          "suffix": " a pueris illico nasci senes, th"
         },
-        "words": 26
+        "words": 29
       },
       {
         "by": "rules",

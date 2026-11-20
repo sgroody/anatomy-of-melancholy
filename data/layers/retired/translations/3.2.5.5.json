@@ -1,4 +1,268 @@
 {
+  "3.2.5.5-f107": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Dio Cassius",
+      "basis": "sidenote \"Dion Cassius lib. 56.\"",
+      "locus": "lib. 56",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Roman History"
+    },
+    "text": "Rome ad caelibes",
+    "text_sha1": "4972571bbb4657a257753d2e6682f056a3ababa5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only 'ad caelibes' is Latin; 'Rome' belongs to Burton's English sentence ('made an oration in Rome'). Dio Cassius (book 56) reports Augustus' speech to the unmarried knights.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Dio Cassius",
+          "basis": "sidenote \"Dion Cassius lib. 56.\"",
+          "locus": "lib. 56",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Roman History"
+        },
+        "text": "to the bachelors",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f121": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aeneas Silvius Piccolomini",
+      "basis": "sidenote \"Aeneas Silvius de dictis Sigismundi. Heinsius Primerio.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De dictis Sigismundi"
+    },
+    "text": "Aeneas Silvius de dictis Sigismundi. Heinsius Primerio",
+    "text_sha1": "f388924675c9e5be1a770fa9d5b5b6f400415aed",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Aeneas Silvius Piccolomini (Pope Pius II) wrote on the sayings and deeds of the Emperor Sigismund. 'Heinsius Primerio' probably refers to a work or dialogue by Daniel Heinsius involving a Primerius; it could not be identified for certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aeneas Silvius Piccolomini",
+          "basis": "sidenote \"Aeneas Silvius de dictis Sigismundi. Heinsius Primerio.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De dictis Sigismundi"
+        },
+        "text": "Aeneas Silvius, On the Sayings of Sigismund. Heinsius, Primerius.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f166": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "pro",
+    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of the half-English phrase 'pro and con'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "for",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f174": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Venus’ Vigil",
+        "in": "3.2.5.5",
+        "near": "3.2.5.5-f174",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pervigilium Veneris e vetere poeta",
+    "text_sha1": "38f084faa64c587d70b60573285ebcecd9c9ff10",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Pervigilium Veneris is an anonymous late Latin poem.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Venus’ Vigil",
+            "in": "3.2.5.5",
+            "near": "3.2.5.5-f174",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "The Vigil of Venus, from an old poet.",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.5-f210": {
     "kind": "phrase",
     "lang": "la",
@@ -60,6 +324,71 @@
           "work": null
         },
         "text": "Hero",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.5-f215": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Genius",
+    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Latin Genius here means a person's natural inclination or appetite for pleasure (as in 'indulgere genio'). 'Starve their Genius' means to deny them their natural enjoyments. The word sits inside Burton's English sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Genius",
         "warnings": []
       }
     ]

@@ -56,6 +56,36 @@
     ],
     "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd"
   },
+  "1.1.2.10-f11": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "applies it to him, and dictates this or the like",
+          "in": "1.1.2.10-p2",
+          "prefix": " have done to thyself. Dictamen ",
+          "suffix": ": Regulus, thou wouldst not anot"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "30aabaf5440979cb7dde970a95b06ca327cede9a"
+  },
   "1.1.2.10-f2": {
     "bracket": "present",
     "by": "rules",
@@ -93,48 +123,6 @@
       "english-follows"
     ],
     "text_sha1": "bfefeed7f32657ee8eacd00e182a897b218f80cd"
-  },
-  "1.1.2.10-f7": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or subtlety, sharpness of invention, when he doth invent of himself without a teacher, or learns anew, which abstracts those intelligible Species from the Fantasy, and transfers them to the passive understanding, because there is nothing in the understanding, which",
-          "in": "1.1.2.10-p1",
-          "prefix": "s called the Wit of man, acumen ",
-          "suffix": " was not first in the sense. Tha"
-        },
-        "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The Agent is that which is called the Wit of man",
-          "in": "1.1.2.10-p1",
-          "prefix": "or in Act; Simple, or Compound. ",
-          "suffix": ", acumen or subtlety, sharpness "
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "de515d54b70acb1ad63222d2627fd1dfa6f64a93"
   },
   "1.1.2.10-f8": {
     "bracket": "none",

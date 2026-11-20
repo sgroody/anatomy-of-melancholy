@@ -75,6 +75,80 @@
       }
     ]
   },
+  "1.2.1.5-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they do no such wonders at all, only their Brains are crazed",
+        "in": "1.2.1.5",
+        "near": "1.2.1.5-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johann Weyer (Wierus)",
+      "basis": "text \"(saith Wierus)\" and \"(de Lamiis lib. 3 cap. 36)\"",
+      "locus": "lib. 3 cap. 36",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De lamiis"
+    },
+    "text": "aut quid mirum faciunt (de Lamiis lib. 3 cap. 36) ut putatur, solam vitiatam habent phantasiam",
+    "text_sha1": "e2978dd115a1db5991dfad302f9103dc3233be08",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This continues the previous passage, 'Non laedunt omnino', from Wierus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they do no such wonders at all, only their Brains are crazed",
+            "in": "1.2.1.5",
+            "near": "1.2.1.5-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johann Weyer (Wierus)",
+          "basis": "text \"(saith Wierus)\" and \"(de Lamiis lib. 3 cap. 36)\"",
+          "locus": "lib. 3 cap. 36",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De lamiis"
+        },
+        "text": "nor do they work anything wonderful (On Witches, book 3, chapter 36), as is supposed; they have only a corrupted imagination",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.5-f2": {
     "kind": "phrase",
     "lang": "la",

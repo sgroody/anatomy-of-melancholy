@@ -190,5 +190,69 @@
         "warnings": []
       }
     ]
+  },
+  "1.2.2.5-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Mercurius Britannicus (Joseph Hall)",
+      "basis": "text \"Mercurius Britannicus belike, puts melancholy men to inhabit just under the Pole\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Mundus alter et idem"
+    },
+    "text": "Mundus alter & idem, seu Terra Australis incognita",
+    "text_sha1": "7021de9bbc3c4909a27c447e2b39c5e52c81f619",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": "Another world and the same, or Southern Land unknown",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of the satirical imaginary voyage published under the pseudonym Mercurius Britannicus, a work attributed to Joseph Hall.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Mercurius Britannicus (Joseph Hall)",
+          "basis": "text \"Mercurius Britannicus belike, puts melancholy men to inhabit just under the Pole\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Mundus alter et idem"
+        },
+        "text": "Another World and Yet the Same, or the Unknown Southern Land",
+        "warnings": []
+      }
+    ]
   }
 }

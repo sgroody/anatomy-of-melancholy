@@ -388,6 +388,18 @@
     ],
     "text_sha1": "a67a1ce0174008b60907b24a4576636ba3f4f28f"
   },
+  "3.2.5.2-f115": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "dbbab672d7e3a2f86301daa1eb5c68cdd5c4f1ef"
+  },
   "3.2.5.2-f13": {
     "bracket": "present",
     "by": "rules",
@@ -1278,35 +1290,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "ab96aecc812c119190f83b03625527c06a3544b2"
-  },
-  "3.2.5.2-f44": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Author), as if he had lost his former eyes",
-          "in": "3.2.5.2-p12",
-          "prefix": "es oculos amisisset (saith mine ",
-          "suffix": ". Peter Godefridus in the last c"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "11a01c2a4004d07914209d87ae2ea4f320413490"
   },
   "3.2.5.2-f45": {
     "bracket": "present",

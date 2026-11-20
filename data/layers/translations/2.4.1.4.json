@@ -1158,77 +1158,6 @@
       }
     ]
   },
-  "2.4.1.4-f33": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison, a mere imposture",
-        "in": "2.4.1.4",
-        "near": "2.4.1.4-f33",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Thomas Erastus",
-      "basis": "sidenote \"Ep. ad Monavium.\" with text \"Erastus concludes\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Letter to Peter Monavius"
-    },
-    "text": "ad Monavium. Metallica omnia in universum quovismodo parata, nec tuto, nec commode intra corpus sumi",
-    "text_sha1": "f8243d94e29759640791b87264e5260c8073d8b7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The sidenote begins 'Ep.' (letter), which stands outside the marked text, so the reference reads 'Letter to Monavius'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison, a mere imposture",
-            "in": "2.4.1.4",
-            "near": "2.4.1.4-f33",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Thomas Erastus",
-          "basis": "sidenote \"Ep. ad Monavium.\" with text \"Erastus concludes\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Letter to Peter Monavius"
-        },
-        "text": "to Monavius. All metallic substances in general, however they are prepared, cannot be taken into the body either safely or suitably.",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.4-f34": {
     "kind": "phrase",
     "lang": "la",
@@ -1601,6 +1530,195 @@
           "work": null
         },
         "text": "It makes men cheerful.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.4-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Aurum non aurum",
+    "text_sha1": "500e76153e8d9c5117f80644006e3d344e069c9a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A terse sidenote: potable gold is not really gold. It goes with Burton's main text on aurum potabile. The next words of the same sidenote, 'Noxium ob aquas rodentes' ('harmful because of the corrosive waters'), are Burton's own reason for rejecting it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Gold, not gold",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.4-f41": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison",
+        "in": "2.4.1.4",
+        "near": "2.4.1.4-f41",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Thomas Erastus",
+      "basis": "sidenote \"Ep. ad Monavium\"; text \"Erastus concludes\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Monavius"
+    },
+    "text": ". Metallica omnia in universum quovismodo parata, nec tuto, nec commode intra corpus sumi",
+    "text_sha1": "7aa3251672ad216f85054c57cb25ade0f3902484",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Metallic things all in general, prepared in whatever way, neither safely nor conveniently to be taken within the body",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins with the full stop that closes the citation 'Ep. ad Monavium'. The sentence is an accusative-and-infinitive (sumi) that depends on an unstated verb of saying or concluding. It is rendered here as a statement.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Erastus concludes their Philosophical stones and potable gold, &c., to be no better than poison",
+            "in": "2.4.1.4",
+            "near": "2.4.1.4-f41",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Thomas Erastus",
+          "basis": "sidenote \"Ep. ad Monavium\"; text \"Erastus concludes\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Monavius"
+        },
+        "text": "All metallic substances whatsoever, however they are prepared, cannot be taken into the body either safely or conveniently.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.4-f42": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide Ernestum Burggravium",
+    "text_sha1": "dd4671f1fe824bd6841fa79b73dc8d3093fa89b8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A cross-reference to Ernst Burggrav. The rest of the sidenote, 'edit. Franakere 8o 1611', gives the edition: Franeker, octavo, 1611.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See Ernestus Burggravius",
         "warnings": []
       }
     ]

@@ -119,13 +119,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47782, pp. 894-895"
   },
   "3.4.1.2-f111": {
+    "align_score": 0.985,
     "by": "djs1927",
     "left_anchor": "or Sibyls, I am assured there be other Enthusiasts, prophets,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ",",
-    "status": "no-anchor",
+    "right_anchor": ", Magi (of which read Ja. Boissardus, who hath laboriously collected them",
+    "right_score": 0.985,
+    "status": "aligned",
+    "text": "Fortune Tellers,",
     "text_sha1": "b7aca8dfb2f58eeaabca734efdb617454744b976",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 47784, pp. 894-895"
   },
   "3.4.1.2-f113": {
     "align_score": 1.0,
@@ -188,13 +193,13 @@
     "threshold": 0.85
   },
   "3.4.1.2-f129": {
-    "align_score": 0.857,
+    "align_score": 0.868,
     "by": "djs1927",
     "left_anchor": "most of them are but Machiavellians, counterfeits only for political ends; for",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "(which Campanella cap. 18 Atheismi Triumphati observes), as amongst our modern",
-    "right_score": 0.857,
+    "right_anchor": "(which Campanella cap. 18 Atheismi Triumphati observes), as amongst our modern Turks,",
+    "right_score": 0.868,
     "status": "aligned",
     "text": "kingship only",
     "text_sha1": "ade9427f3e2d8285819a1e605ea688e2404aebe2",
@@ -268,30 +273,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47460, p. 888"
   },
-  "3.4.1.2-f156": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "gap_words": 1,
-    "left_anchor": "acknowledge it. The Philosophers, Socrates, Plato, Plotinus, Pythagoras, Trismegistus, Seneca, Epictetus, those",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Druids, &c., went as far as they could by the light",
-    "right_score": 1.0,
-    "status": "ocr-noise",
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f",
-    "threshold": 0.85
-  },
-  "3.4.1.2-f159": {
-    "by": "djs1927",
-    "left_anchor": "more eminent, of better parts than the rest, more learned, eloquent, ,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "(of which read Ja. Boissardus, who hath laboriously collected them into a",
-    "right_score": 0.9857142857142859,
-    "status": "not-found",
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f",
-    "threshold": 0.85
-  },
   "3.4.1.2-f16": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -305,20 +286,6 @@
     "text_sha1": "a3f781dff5e47e44aedfc01e0f643f53bd332479",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47069, pp. 879-880"
-  },
-  "3.4.1.2-f166": {
-    "align_score": 0.994,
-    "by": "djs1927",
-    "left_anchor": "besotted in this kind; amongst our Britons and old Gauls the Druids;",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "in Persia; philosophers in Greece; Chaldeans amongst the Oriental; Brachmanni in India;",
-    "right_score": 0.994,
-    "status": "aligned",
-    "text": "^lagi",
-    "text_sha1": "8519eee27abece61191818273c86402079ab393f",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 47245, pp. 884-885"
   },
   "3.4.1.2-f167": {
     "by": "djs1927",
@@ -494,14 +461,6 @@
     "text_sha1": "e7840bc737758135515b76d386e5ff47ae40fb98",
     "threshold": 0.85
   },
-  "3.4.1.2-f188": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "1e7ffacddecd2c615e7c96da8cfe0d4eba4c5622",
-    "threshold": 0.85
-  },
   "3.4.1.2-f189": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -516,14 +475,6 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "bc02960d16d6cfc8d3881ecd2435c3342defdc5f",
-    "threshold": 0.85
-  },
-  "3.4.1.2-f191": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f0c1b88f1f4e5329ad2371c73596ed152d64890b",
     "threshold": 0.85
   },
   "3.4.1.2-f192": {
@@ -576,6 +527,71 @@
     "right_score": 1.0,
     "status": "below-threshold",
     "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04",
+    "threshold": 0.85
+  },
+  "3.4.1.2-f198": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "1731360d1d198ce65b116fef95a6464fa129a834",
+    "threshold": 0.85
+  },
+  "3.4.1.2-f199": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "8e9578c2e4662d249067451e9b5b98cbe946954c",
+    "threshold": 0.85
+  },
+  "3.4.1.2-f200": {
+    "by": "djs1927",
+    "left_anchor": "(which Campanella cap. 18 Atheismi Triumphati observes), as amongst our modern Turks,",
+    "left_score": 0.8679245283018868,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", as knowing Next to Politicians, if I may distinguish them, are",
+    "right_score": 0.8990825688073394,
+    "status": "not-found",
+    "text_sha1": "e8109ed82077dce856c8da0384ee879bfed0174f",
+    "threshold": 0.85
+  },
+  "3.4.1.2-f201": {
+    "align_score": 0.981,
+    "by": "djs1927",
+    "left_anchor": "&c., went as far as they could by the light of Nature;",
+    "left_score": 0.981,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", writ many things well of the nature of God, but they",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "4baa18c1742ffc8cc3b4d4216ac5d3f86c357aff",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 47493, p. 889"
+  },
+  "3.4.1.2-f202": {
+    "align_score": 0.987,
+    "by": "djs1927",
+    "left_anchor": "revelations, Nuns’ dreams, which they suppose come from God, do proceed wholly",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", by the Devil’s means: and so those Enthuasists, Anabaptists, Pseudoprophets from",
+    "right_score": 0.987,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "fb961421c9a69e8e4ea806c2a1a4176bbc59a95e",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 47762, pp. 894-895"
+  },
+  "3.4.1.2-f203": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "7858ac3ff63354f37161bd349efe11edd13b89cb",
     "threshold": 0.85
   },
   "3.4.1.2-f21": {
@@ -649,17 +665,6 @@
     "right_score": 0.97,
     "status": "below-threshold",
     "text_sha1": "3aec6b1eebc5a467e917818fd128d09e10391848",
-    "threshold": 0.85
-  },
-  "3.4.1.2-f29": {
-    "by": "djs1927",
-    "left_anchor": "(which Campanella cap. 18 Atheismi Triumphati observes), as amongst our modern",
-    "left_score": 0.8571428571428572,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", as knowing Next to Politicians, if I may distinguish them, are",
-    "right_score": 0.8990825688073394,
-    "status": "not-found",
-    "text_sha1": "01177272f53532f3e55f1927e93cf84371d24e09",
     "threshold": 0.85
   },
   "3.4.1.2-f3": {
@@ -870,20 +875,19 @@
     "by": "djs1927",
     "left_anchor": "more than any other tormentors whatsoever, partly for their commodity and gain;",
     "method": "rules/djs-align-v3",
-    "right_anchor": "(as Postellus holds)",
+    "right_anchor": "(as",
     "status": "no-anchor",
     "text_sha1": "238a213edfecf1dbb3e6ed81d17085e990f39bbb",
     "threshold": 0.85
   },
   "3.4.1.2-f47": {
-    "align_score": 0.554,
     "by": "djs1927",
-    "left_anchor": "civitat. Dei cap. 9 censures Scaevola saying and a (as Postellus holds)",
-    "left_score": 0.554,
+    "left_anchor": "de civitat. Dei cap. 9 censures Scaevola saying and a ellus holds)",
+    "left_score": 0.6376811594202898,
     "method": "rules/djs-align-v3",
     "right_anchor": ": for sovereignty, credit, to maintain their state and reputation, out of",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "not-found",
     "text_sha1": "a83f01f5784c1681bba75357a7d06f8d5a873a75",
     "threshold": 0.85
   },

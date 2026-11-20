@@ -304,6 +304,67 @@
       }
     ]
   },
+  "2.5.3.1-f16": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "hiera",
+    "text_sha1": "3ff26a9ad064787677884a73ff99ab561cbd4291",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hiera ('the sacred [remedy]'), in full hiera picra, was a standard purging electuary based on aloes. It is kept as the name of the drug.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "hiera",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.3.1-f17": {
     "kind": "phrase",
     "lang": "la",
@@ -373,65 +434,6 @@
           "work": null
         },
         "text": "prepared steel",
-        "warnings": []
-      }
-    ]
-  },
-  "2.5.3.1-f18": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Pharmacopoeia",
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A pharmacopoeia is an official book of drug recipes and preparations.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "pharmacopoeia",
         "warnings": []
       }
     ]
@@ -556,24 +558,30 @@
       }
     ]
   },
-  "2.5.3.1-f21": {
+  "2.5.3.1-f22": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
-    "preferred": "machine",
+    "preferred": "burton",
     "review": {
       "by": null,
       "date": null,
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
+      "burton_span": {
+        "exact": "or part of the back which is over against the heart",
+        "in": "2.5.3.1",
+        "near": "2.5.3.1-f22",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [
         "no-gowland-bracket"
       ],
-      "status": "none"
+      "status": "full"
     },
     "source": {
       "author": null,
@@ -583,8 +591,8 @@
       "verified": false,
       "work": null
     },
-    "text": "hiera, manna, cassia",
-    "text_sha1": "0b4badda96ee2f4a4e356bd34476453622952bd7",
+    "text": "metaphrenum",
+    "text_sha1": "cecf3cf7fbeee3031e755f63f6bd22982c2f1a81",
     "translations": [
       {
         "by": "machine",
@@ -593,16 +601,22 @@
         "flags": [
           "technical-medical"
         ],
-        "literal": null,
+        "literal": "the part behind the midriff",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "These are the names of three standard mild purgatives, kept as they appear in apothecaries' usage. Hiera is the 'holy' electuary, usually hiera picra, made with aloes. Manna is the sweet exudate of the manna ash. Cassia is the pulp of cassia fistula (purging cassia). Burton names Montanus, consil. 230, as preferring these simples, but the phrase is a list of drugs, not a quotation.",
+        "note": "Metaphrenum, from the Greek metaphrenon, is the part of the back lying behind the phren (the diaphragm or midriff), between the shoulder-blades. Burton glosses it himself straight afterwards.",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "status": "none"
+          "burton_span": {
+            "exact": "or part of the back which is over against the heart",
+            "in": "2.5.3.1",
+            "near": "2.5.3.1-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
         },
         "source": {
           "author": null,
@@ -612,7 +626,7 @@
           "verified": false,
           "work": null
         },
-        "text": "hiera, manna, cassia",
+        "text": "upper back",
         "warnings": []
       }
     ]

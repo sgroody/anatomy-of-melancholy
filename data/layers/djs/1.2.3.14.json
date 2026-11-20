@@ -171,14 +171,6 @@
     "text_sha1": "ea3dd2ca1f83554bf82653dc66b291c8ea2ac190",
     "threshold": 0.85
   },
-  "1.2.3.14-f129": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "6f6ccc75e813dbbd053ce56ab632ea846626d084",
-    "threshold": 0.85
-  },
   "1.2.3.14-f13": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -212,14 +204,6 @@
     "text_sha1": "cbb9571ba57a0de90d6610ab4b986a5b82a98fc5",
     "threshold": 0.85
   },
-  "1.2.3.14-f134": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "threshold": 0.85
-  },
   "1.2.3.14-f135": {
     "by": "djs1927",
     "left_anchor": "do over-highly prize our own. We will not suffer them to be",
@@ -242,12 +226,49 @@
     "text_sha1": "bb9f66f7697b39cd85f0a016257352e78f439dbf",
     "threshold": 0.85
   },
+  "1.2.3.14-f138": {
+    "align_score": 0.868,
+    "by": "djs1927",
+    "left_anchor": "body, hath lost all his honour, captivated by vainglory. Chrysostom sup. Jo",
+    "left_score": 0.868,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". A great assault and cause of our present malady, although we",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "both mind and heart.",
+    "text_sha1": "f9a9cf5ea8b2479c0e60b16f9aeac9b4204bd6d7",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 14098, p. 252"
+  },
+  "1.2.3.14-f139": {
+    "align_score": 0.929,
+    "by": "djs1927",
+    "left_anchor": "not ashamed to confess in an Epistle of his to Marcus Lucceius,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", &c., I burn with an incredible desire, to have my name",
+    "right_score": 0.929,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "568b66aad7447fba20af95e2e226d5216c73170e",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 14182, p. 254"
+  },
   "1.2.3.14-f14": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "75f8976833b87fd5e4864f36ad1e52f00fc77d11",
+    "threshold": 0.85
+  },
+  "1.2.3.14-f140": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "63792f0d5d7118fada3b110dc77147e3f3de0d86",
     "threshold": 0.85
   },
   "1.2.3.14-f17": {
@@ -296,21 +317,23 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 14094, p. 252"
   },
   "1.2.3.14-f20": {
-    "align_score": 0.606,
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "they suppose) like other men, of a purer and more precious metal:",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", which that wise And when I am dead and gone, /",
-    "right_score": 0.606,
-    "status": "below-threshold",
+    "right_anchor": ", which that wise Periander held of such:",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "the only persons able to conduct affairs,",
     "text_sha1": "4db8cd213f9db17354c2fff82fd1c1d3adc567d0",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 14164, p. 254"
   },
   "1.2.3.14-f21": {
     "by": "djs1927",
-    "left_anchor": "of the body, hath lost all his honour, iander held of such:",
-    "left_score": 0.7924528301886792,
+    "left_anchor": ", which that wise Periander held of such:",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ". And when I am dead and gone, / My corpse laid",
     "right_score": 1.0,
@@ -404,20 +427,6 @@
     "status": "not-found",
     "text_sha1": "6695af7ab337bcacc3e24aa65fe2aadc89db1b6f",
     "threshold": 0.85
-  },
-  "1.2.3.14-f3": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "concupiscences of the body, hath lost all his honour, captivated by vainglory.",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". A great assault and cause of our present malady, although we",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "It consumes both mind and heart.",
-    "text_sha1": "5ec635ad3c1936576557c45c04d31d596006ee1c",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 14098, p. 252"
   },
   "1.2.3.14-f31": {
     "by": "djs1927",
@@ -959,13 +968,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 14394, p. 258"
   },
   "1.2.3.14-f76": {
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "and go like Hercules in a Lion’s skin? Domitian a God (",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "), like the",
-    "status": "no-anchor",
+    "right_anchor": "), like the Persian Kings, whose Image was adored by all that",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "{our Lord God [so Suetonius tells of it] bids that this be done),",
     "text_sha1": "e15cd179935be63e3921e1fbcaa2e730debdfa13",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 14398, p. 258"
   },
   "1.2.3.14-f77": {
     "by": "djs1927",
@@ -1034,14 +1048,6 @@
     "text_sha1": "e22f3beb6ef8df714cc7b6e2ebfc579c5b2433b5",
     "threshold": 0.85
   },
-  "1.2.3.14-f84": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "770f0984d6055296e65ca87154e483f035d50000",
-    "threshold": 0.85
-  },
   "1.2.3.14-f85": {
     "align_score": 0.946,
     "by": "djs1927",
@@ -1084,14 +1090,6 @@
     "text_sha1": "d465e1f5362b69e486671dc40f49f878d996fe47",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 14130, p. 253"
-  },
-  "1.2.3.14-f91": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "threshold": 0.85
   },
   "1.2.3.14-f92": {
     "by": "djs1927",

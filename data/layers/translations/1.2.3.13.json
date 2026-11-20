@@ -2829,6 +2829,68 @@
       }
     ]
   },
+  "1.2.3.13-f70": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Matthew Paris",
+      "basis": "sidenote \"Mat. Paris.\" follows the clause that 'qui' begins",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "qui",
+    "text_sha1": "61f611a4fd585e96d518c703dc7dcdeec8354e1c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only the relative pronoun 'qui' is marked. It begins the sentence that follows in the sidenote: 'qui 36 Ecclesias matrices depopulatus est ad forestam novam', meaning '[William the Conqueror,] who laid waste 36 mother churches to make the New Forest'. The sidenote's first part, 'Feris quam hominibus aequiores' ('kinder to wild beasts than to men'), is credited to Camden on William the Conqueror. Burton credits this clause to Matthew Paris. The main-text English at the anchor carries on Burton's argument and does not translate the passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Matthew Paris",
+          "basis": "sidenote \"Mat. Paris.\" follows the clause that 'qui' begins",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "who",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.13-f8": {
     "kind": "phrase",
     "lang": "la",

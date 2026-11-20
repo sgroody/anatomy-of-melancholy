@@ -321,5 +321,130 @@
         "warnings": []
       }
     ]
+  },
+  "2.3.3.1-f274": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nathan Chytraeus",
+      "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Variorum in Europa itinerum deliciae"
+    },
+    "text": "Chytraeus delitiis Europae: Gustonii in aedibus Hubianis in coenaculo e regione mensae",
+    "text_sha1": "7fd4e108aa4608a0b5dcd2edcc66934d568e9c44",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A source note for the verse inscription in the main text: Burton says the verses were written on the dining-room wall opposite the table. The preceding \"Nat.\" stands outside the marked passage and is probably Nathan Chytraeus's first name. His collection of inscriptions is known in full as Variorum in Europa itinerum deliciae. The place name \"Gustonii\" is uncertain and has been left in its Latin form. It may stand for Güstrow in Mecklenburg. \"Aedibus Hubianis\" means the house of a person named Hube or Hubius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nathan Chytraeus",
+          "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Variorum in Europa itinerum deliciae"
+        },
+        "text": "Chytraeus, Delights of Europe: at Gustonium, in the Hubian house, in the dining-room, facing the table",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f84": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nathan Chytraeus",
+      "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Europae deliciae"
+    },
+    "text": "Chytraeus in Europae delitiis",
+    "text_sha1": "2418da9bc2091066efe77c7609d7aea500a632b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A reference, not a quotation. Nathan Chytraeus's collection of inscriptions from travels in Europe (Variorum in Europa itinerum deliciae) is the source for Foscarini's epitaph.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nathan Chytraeus",
+          "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Europae deliciae"
+        },
+        "text": "Chytraeus, in the Delights of Europe",
+        "warnings": []
+      }
+    ]
   }
 }

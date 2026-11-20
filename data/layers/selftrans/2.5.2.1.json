@@ -1,1 +1,103 @@
-{}
+{
+  "2.5.2.1-f1": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or medicines to procure urine, are prescribed by some in this kind, hot and cold",
+          "in": "2.5.2.1-p1",
+          "prefix": "en the cure is ended. Diuretica ",
+          "suffix": ": hot where the heat of the live"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ed9b0c00a6b5cd1323b35291f121a7a71af18179"
+  },
+  "2.5.2.1-f2": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Dandelion, Hop, Maidenhair, Fumitory, Bugloss, Borage, &c., with their juice, decoctions, distilled waters, Syrups, &c.",
+          "in": "2.5.2.1-p2",
+          "prefix": "na, Endive, Carduus Benedictus, ",
+          "suffix": ""
+        },
+        "words": 15
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "To purge and purify the blood, use Sow-thistle, Succory, Senna, Endive",
+          "in": "2.5.2.1-p2",
+          "prefix": "",
+          "suffix": ", Carduus Benedictus, Dandelion,"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d6c4291379099f2b383260ddab9cf818d866f03c"
+  },
+  "2.5.2.1-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": "which is",
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which is an excellent medicine to purify the blood, for all melancholy affections, falling sickness, none to be compared to it",
+          "in": "2.5.2.1-p3",
+          "prefix": " 2 cap. 114, Hieram Archigenis, ",
+          "suffix": "."
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "gloss-cue",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7f7bf50ef1f9bd31016349168e4b265cbba4b0a1"
+  }
+}

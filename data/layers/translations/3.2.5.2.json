@@ -976,6 +976,65 @@
       }
     ]
   },
+  "3.2.5.2-f115": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernard of Gordon (Gordonius)",
+      "basis": "text \"Gordonius cap. 20 part. 2\" immediately before the phrase",
+      "locus": "cap. 20 part. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Lilium medicinae"
+    },
+    "text": "hunc in modum consulit",
+    "text_sha1": "dbbab672d7e3a2f86301daa1eb5c68cdd5c4f1ef",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in this manner he counsels",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A short introductory phrase that leads into the Latin quotation from Gordonius that follows, about hiring an ugly old woman to disgust the lover with the beloved.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernard of Gordon (Gordonius)",
+          "basis": "text \"Gordonius cap. 20 part. 2\" immediately before the phrase",
+          "locus": "cap. 20 part. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Lilium medicinae"
+        },
+        "text": "gives his advice in this manner",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.2-f13": {
     "kind": "verse",
     "lang": "la",
@@ -2951,65 +3010,6 @@
           "work": "Lives of the Sophists"
         },
         "text": "as if he had lost his former eyes",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f44": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Philostratus",
-      "basis": "sidenote \"Philostratus de vitis Sophistarum.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Lives of the Sophists"
-    },
-    "text": "Philostratus de vitis Sophistarum",
-    "text_sha1": "11a01c2a4004d07914209d87ae2ea4f320413490",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Philostratus",
-          "basis": "sidenote \"Philostratus de vitis Sophistarum.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Lives of the Sophists"
-        },
-        "text": "Philostratus, Lives of the Sophists",
         "warnings": []
       }
     ]

@@ -1105,6 +1105,77 @@
       }
     ]
   },
+  "2.2.5.1-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Rhasis seems to deliberate of it",
+        "in": "2.2.5.1",
+        "near": "2.2.5.1-f34",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Rhazes",
+      "basis": "sidenote \"Cont. 1 tract. 9\" anchored at main text \"Rhasis seems to deliberate of it\"",
+      "locus": "1 tract. 9",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Continens"
+    },
+    "text": "meditandum de aceto",
+    "text_sha1": "e2ea4844641455f87666134daaef2e4fda5315a8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "it is to be deliberated concerning vinegar",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A gerundive phrase: whether vinegar should be used needs careful thought. In the main text Burton turns this into his remark that Rhazes 'seems to deliberate of it', meaning vinegar, the subject of the surrounding discussion. 'Cont.' is Rhazes' Continens.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Rhasis seems to deliberate of it",
+            "in": "2.2.5.1",
+            "near": "2.2.5.1-f34",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Rhazes",
+          "basis": "sidenote \"Cont. 1 tract. 9\" anchored at main text \"Rhasis seems to deliberate of it\"",
+          "locus": "1 tract. 9",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Continens"
+        },
+        "text": "vinegar must be thought over",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.5.1-f4": {
     "kind": "phrase",
     "lang": "la",

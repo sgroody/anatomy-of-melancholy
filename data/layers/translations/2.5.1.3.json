@@ -489,66 +489,6 @@
       }
     ]
   },
-  "2.5.1.3-f16": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Cardan’s Pulvis Hyacinthi",
-    "text_sha1": "33cb70474f1e0151f6373bb04394ba0e69713ec9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect",
-          "technical-medical"
-        ],
-        "literal": "powder of hyacinth",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Cardan’s' is Burton's English and is left untranslated. 'Hyacinthus' here probably means the jacinth gemstone, a common ingredient in cordial powders, rather than the flower.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Jacinth Powder",
-        "warnings": []
-      }
-    ]
-  },
   "2.5.1.3-f19": {
     "kind": "phrase",
     "lang": "la",
@@ -783,124 +723,6 @@
           "work": null
         },
         "text": "potable gold",
-        "warnings": []
-      }
-    ]
-  },
-  "2.5.1.3-f23": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Giovanni Battista Codronchi (Codronchus)",
-      "basis": "sidenote \"Codronchus de sale absinthii.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De sale absinthii"
-    },
-    "text": "Codronchus de sale absinthii",
-    "text_sha1": "3205d5cad0a1fb8c57a05482216713b8ad7b54f6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a citation of Giovanni Battista Codronchi's treatise on salt of wormwood. It is the source for the claim at the anchor point, not a rendering of it.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Giovanni Battista Codronchi (Codronchus)",
-          "basis": "sidenote \"Codronchus de sale absinthii.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De sale absinthii"
-        },
-        "text": "Codronchus, On the Salt of Wormwood",
-        "warnings": []
-      }
-    ]
-  },
-  "2.5.1.3-f25": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Horace",
-      "basis": "A famous line: 'grammatici certant et adhuc sub iudice lis est.'",
-      "locus": "78",
-      "status": "probable",
-      "verified": false,
-      "work": "Ars Poetica"
-    },
-    "text": "con, & adhuc subjudice lis est",
-    "text_sha1": "cb6be8b6043002b266af5b2521794630d9510437",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'con' is the English short form of contra ('against'), part of the idiom 'pro and con'. The Latin quotation begins at '& adhuc'. 'subjudice' is printed as one word, for 'sub judice'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Horace",
-          "basis": "A famous line: 'grammatici certant et adhuc sub iudice lis est.'",
-          "locus": "78",
-          "status": "probable",
-          "verified": false,
-          "work": "Ars Poetica"
-        },
-        "text": "against, and the case is still before the judge",
         "warnings": []
       }
     ]
@@ -1360,67 +1182,6 @@
       }
     ]
   },
-  "2.5.1.3-f39": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Cassia",
-    "text_sha1": "5b6c03e2db1d3a66bd86b8bab442a814ba3e6e3b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "technical-medical"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A drug name: cassia fistula, the pulp of the purging cassia pod, a mild laxative.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Cassia",
-        "warnings": []
-      }
-    ]
-  },
   "2.5.1.3-f4": {
     "kind": "phrase",
     "lang": "la",
@@ -1677,6 +1438,425 @@
       }
     ]
   },
+  "2.5.1.3-f43": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pil. Indae",
+    "text_sha1": "1503062b61ce5caf9cf323ddf81253122f3cbf37",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Pil. is short for pilulae. The name of a standard compound purging pill in the old pharmacopoeias.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Indian pills",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f44": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rhazes",
+      "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Saepe valent ex Helleboro",
+    "text_sha1": "ef64bbc4cc10dda7b2a140fbf99e49cc17a4b4cf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "They often are well from hellebore.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject of 'valent' is not stated. It probably means the patients, in the sense 'they get well'. Burton's main text at the anchor says that some prescribe hellebore, but it does not render this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rhazes",
+          "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They often recover by means of hellebore.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Avicenna",
+      "basis": "sidenote \"Avicenna tertia imprimis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "tertia imprimis",
+    "text_sha1": "47822e3126c6b733d94ca63de8d61bf04e19b9a9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is an elliptical reference that ends a sidenote recommending voyages at sea because they cause vomiting. 'Tertia' probably refers to a book or section of Avicenna's work, perhaps the third, but the noun is left out.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Avicenna",
+          "basis": "sidenote \"Avicenna tertia imprimis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the third especially",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f46": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johannes Heurnius",
+      "basis": "sidenote \"Lib. 2. Inter composita purgantia melancholiam.\" anchored at text \"Heurnius\"",
+      "locus": "Lib. 2.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Inter composita purgantia melancholiam",
+    "text_sha1": "f07c68454d229a37f392a7228ce3cf8cdc2f16ef",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a chapter or section heading in the work Burton cites. Here 'melancholy' means the melancholy humour, black bile.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johannes Heurnius",
+          "basis": "sidenote \"Lib. 2. Inter composita purgantia melancholiam.\" anchored at text \"Heurnius\"",
+          "locus": "Lib. 2.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Among the compound medicines that purge melancholy",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Montanus",
+      "basis": "text \"That famous Helleborism of Montanus, which he so often repeats in his consultations and counsels, as 28\"",
+      "locus": "28",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "pro melan. sacerdote",
+    "text_sha1": "5bc5c8b72615f220d65886b4c134da39044815f1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of Montanus's consilium (case report) 28. 'Melan.' is short for melancholico.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Montanus",
+          "basis": "text \"That famous Helleborism of Montanus, which he so often repeats in his consultations and counsels, as 28\"",
+          "locus": "28",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "for a melancholic priest",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Montanus",
+      "basis": "text \"& consil. 248 pro Hypocondriaco\"",
+      "locus": "consil. 248",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Consilia"
+    },
+    "text": "pro Hypocondriaco",
+    "text_sha1": "46cd0e5f946695cefe92d9bac8183261c8e65f6f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "for a hypochondriac",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of Montanus's consilium 248. 'Hypochondriacal' here refers to the anatomical seat of the disease in the upper abdomen.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Montanus",
+          "basis": "text \"& consil. 248 pro Hypocondriaco\"",
+          "locus": "consil. 248",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Consilia"
+        },
+        "text": "for a hypochondriacal patient",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f49": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Cardano",
+      "basis": "text \"Cardan’s Pulvis Hyacinthi, with which in his book de curis admirandis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de curis admirandis"
+    },
+    "text": "Pulvis Hyacinthi",
+    "text_sha1": "78e5d44f34e205c91789e08ff38507006d91a0a6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Hyacinthus' here probably means the gem jacinth, which was used in cordial powders, rather than the flower.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Cardano",
+          "basis": "text \"Cardan’s Pulvis Hyacinthi, with which in his book de curis admirandis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de curis admirandis"
+        },
+        "text": "Powder of Jacinth",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.1.3-f5": {
     "kind": "phrase",
     "lang": "la",
@@ -1748,10 +1928,71 @@
       }
     ]
   },
-  "2.5.1.3-f7": {
+  "2.5.1.3-f50": {
     "kind": "phrase",
     "lang": "la",
     "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Baptista Codronchus",
+      "basis": "sidenote \"Codronchus de sale absinthii.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de sale absinthii"
+    },
+    "text": "de sale absinthii",
+    "text_sha1": "b9c2bbc0261d4633ba6ebdf9869278fde26bb7a4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of a treatise by Codronchus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Baptista Codronchus",
+          "basis": "sidenote \"Codronchus de sale absinthii.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de sale absinthii"
+        },
+        "text": "On Salt of Wormwood",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.3-f51": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
     "preferred": "machine",
     "review": {
       "by": null,
@@ -1766,43 +2007,41 @@
       "status": "none"
     },
     "source": {
-      "author": "Rhazes",
-      "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
-      "locus": null,
-      "status": "burton-cites",
+      "author": "Horace",
+      "basis": "The wording matches Horace's well-known half-line 'grammatici certant et adhuc sub iudice lis est'.",
+      "locus": "78",
+      "status": "probable",
       "verified": false,
-      "work": null
+      "work": "Ars Poetica"
     },
-    "text": "Rhasis, Saepe valent ex Helleboro",
-    "text_sha1": "d066bdabeb92b90dd09b05f9d291a496b8456102",
+    "text": "& adhuc subjudice lis est",
+    "text_sha1": "cf4710a07086753ea1e9b75fb615331780878e1f",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "technical-medical"
-        ],
-        "literal": "Rhazes: often they are well from hellebore.",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "and still under the judge the suit is",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": null,
+        "note": "The saying is proverbial and means the dispute is still undecided.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
           "status": "none"
         },
         "source": {
-          "author": "Rhazes",
-          "basis": "sidenote \"Rhasis, Saepe valent ex Helleboro.\"",
-          "locus": null,
-          "status": "burton-cites",
+          "author": "Horace",
+          "basis": "The wording matches Horace's well-known half-line 'grammatici certant et adhuc sub iudice lis est'.",
+          "locus": "78",
+          "status": "probable",
           "verified": false,
-          "work": null
+          "work": "Ars Poetica"
         },
-        "text": "Rhazes: they often recover by means of hellebore.",
+        "text": "and the case is still before the judge",
         "warnings": []
       }
     ]

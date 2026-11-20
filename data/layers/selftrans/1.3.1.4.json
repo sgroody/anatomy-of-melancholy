@@ -17,26 +17,13 @@
           "suffix": "; like him in Athenaeus, that th"
         },
         "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "all he sees is his, re or",
-          "in": "1.3.1.4-p1",
-          "prefix": "and able to go through with it; ",
-          "suffix": " spe, he hath devoured it in hop"
-        },
-        "words": 7
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "9795db9e25f98f179e005b5a25f53f00df996864"
   },
@@ -399,16 +386,6 @@
     ],
     "text_sha1": "a19a96ec31a0a7c1e3d176fb83ff168620df7679"
   },
-  "1.3.1.4-f23": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "8cb3d92c7ed8823cab12d3921946b21fff91bda9"
-  },
   "1.3.1.4-f29": {
     "bracket": "none",
     "by": "rules",
@@ -686,6 +663,32 @@
     ],
     "text_sha1": "d12cef20ed25995ebb04b0cc71609a5cb10228ce"
   },
+  "1.3.1.4-f43": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "all he sees is his",
+          "in": "1.3.1.4-p1",
+          "prefix": "and able to go through with it; ",
+          "suffix": ", re or spe, he hath devoured it"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c387c982a132d05cbd5f88840aef2c8157740049"
+  },
   "1.3.1.4-f45": {
     "bracket": "none",
     "by": "rules",
@@ -902,18 +905,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3dbc52e71a76b2312de5fd96384181b9333a0fdd"
-  },
-  "1.3.1.4-f51": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3c471d5d4efb37d0c039ffdb5aaf4551589d7945"
   },
   "1.3.1.4-f6": {
     "bracket": "present",

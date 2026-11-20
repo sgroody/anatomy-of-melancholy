@@ -1,4 +1,67 @@
 {
+  "3.4.2.2-f12": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girolamo Zanchi (Zanchius)",
+      "basis": "text \"saith Zanchy\"; sidenote \"Super praeceptum primum de Relig. & partibus ejus.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Super praeceptum primum de Relig. & partibus ejus",
+    "text_sha1": "89d7bba5035e5a0ffded5ba47cc9b2a0741c8586",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to a treatise by Zanchius on the first commandment.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girolamo Zanchi (Zanchius)",
+          "basis": "text \"saith Zanchy\"; sidenote \"Super praeceptum primum de Relig. & partibus ejus.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "On the First Commandment, of Religion and its parts",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.2-f27": {
     "kind": "phrase",
     "lang": "la",

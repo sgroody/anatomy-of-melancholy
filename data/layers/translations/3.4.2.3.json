@@ -1272,128 +1272,6 @@
       }
     ]
   },
-  "3.4.2.3-f44": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "ann",
-    "text_sha1": "744cb9a9fb3d5583744ea3ece9b4d819d90bdee2",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An abbreviation of 'anno'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "in the year",
-        "warnings": [
-          "length ratio 3.67"
-        ]
-      }
-    ]
-  },
-  "3.4.2.3-f45": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ann",
-    "text_sha1": "219dc550cd320d69885a529524239d875ad19347",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-28",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An abbreviation of 'anno'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "in the year",
-        "warnings": [
-          "length ratio 3.67"
-        ]
-      }
-    ]
-  },
   "3.4.2.3-f46": {
     "kind": "phrase",
     "lang": "la",
@@ -1914,6 +1792,77 @@
           "work": null
         },
         "text": "As often as I think of that day",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.3-f57": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "They think they are not predestinate, God hath forsaken them",
+        "in": "3.4.2.3",
+        "near": "3.4.2.3-f57",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Felix Platter",
+      "basis": "text \"Felix Plater so found it in his observations\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Observationes"
+    },
+    "text": "e melancholicis alii damnatos se putant, Deo curae non sunt, nec praedestinati",
+    "text_sha1": "967a6b7053aed78adad4e2381ce1ece21785b801",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "of the melancholics some think themselves damned, they are not a care to God, nor predestined",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase ends with Burton's \"&c.\", so the quotation is cut short. \"Deo curae non sunt\" is a Latin double dative, literally \"they are not a care to God\". Burton's English that follows renders the second half of the passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "They think they are not predestinate, God hath forsaken them",
+            "in": "3.4.2.3",
+            "near": "3.4.2.3-f57",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Felix Platter",
+          "basis": "text \"Felix Plater so found it in his observations\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Observationes"
+        },
+        "text": "some of the melancholic think themselves damned, that God has no care for them, and that they are not predestined",
         "warnings": []
       }
     ]

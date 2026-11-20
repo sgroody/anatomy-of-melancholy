@@ -2368,75 +2368,6 @@
       }
     ]
   },
-  "3.1.1.1-f46": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
-        "in": "3.1.1.1",
-        "near": "3.1.1.1-f46",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Aeneas Silvius",
-      "basis": "text \"(Aeneas Silvius)\" within the sidenote",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Taxando & ab his deterrendo humanam lasciviam & insaniam, sed & remedia docendo, non igitur candidus lector nobis succenseat, &c. Commonitio erit juvenibus haec, hisce ut abstineant nugis, & omissa lascivia quae homines reddit insanos, virtutis incumbant studiis (Aeneas Silvius) & curam amoris si quis nescit hinc poterit scire",
-    "text_sha1": "7988e3a5a7bde9458cac41829bc3828950ecbeb3",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton's main text says 'not to teach', but the Latin speaks of 'teaching remedies'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
-            "in": "3.1.1.1",
-            "near": "3.1.1.1-f46",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Aeneas Silvius",
-          "basis": "text \"(Aeneas Silvius)\" within the sidenote",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "By censuring human wantonness and madness and deterring people from them, but also by teaching remedies; let the fair-minded reader therefore not be angry with us, etc. This will be a warning to young men to keep away from these trifles and, putting aside the wantonness that makes men mad, to devote themselves to the pursuit of virtue (Aeneas Silvius); and anyone who does not know the cure of love can learn it from this.",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.1.1-f47": {
     "kind": "verse",
     "lang": "la",
@@ -3672,77 +3603,6 @@
       }
     ]
   },
-  "3.1.1.1-f80": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "for by the naughtiness of men it is so come to pass",
-        "in": "3.1.1.1",
-        "near": "3.1.1.1-f80",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Nicolas Caussin (Caussinus)",
-      "basis": "sidenote \"Lib. 8 Eloquent. cap. 14 de affectibus\" anchored at text \"as Caussinus observes\"",
-      "locus": "lib. 8 cap. 14",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De eloquentia sacra et humana"
-    },
-    "text": "14 de affectibus: Mortalium vitio fit qui praeclara quaeque in parvos usus vertunt",
-    "text_sha1": "b934fbfc7e60e7ba5888854713bc07b4d60fb986",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The opening '14 de affectibus' belongs to the citation 'Lib. 8 Eloquent. cap. 14 de affectibus' (chapter 14, 'on the passions'), not to the quoted sentence. 'qui' is odd grammar after 'fit'; it is read here as referring to 'mortalium'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "for by the naughtiness of men it is so come to pass",
-            "in": "3.1.1.1",
-            "near": "3.1.1.1-f80",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Nicolas Caussin (Caussinus)",
-          "basis": "sidenote \"Lib. 8 Eloquent. cap. 14 de affectibus\" anchored at text \"as Caussinus observes\"",
-          "locus": "lib. 8 cap. 14",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De eloquentia sacra et humana"
-        },
-        "text": "14, on the passions: it comes about through the fault of mortals, who turn every excellent thing to petty uses.",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.1.1-f83": {
     "kind": "phrase",
     "lang": "la",
@@ -3934,6 +3794,203 @@
           "work": "preface to the History of Euryalus and Lucretia"
         },
         "text": "What has a man of forty to do with love? For my part I admit that a love-story does not become me, who, being now past my noon, am carried on towards evening.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.1.1-f86": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "by the naughtiness of men it is so come to pass",
+        "in": "3.1.1.1",
+        "near": "3.1.1.1-f86",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Nicolas Caussin (Caussinus)",
+      "basis": "text \"Caussinus observes\"; sidenote \"Lib. 8 Eloquent. cap. 14 de affectibus\"",
+      "locus": "Lib. 8 cap. 14 de affectibus",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De eloquentia sacra et humana"
+    },
+    "text": "Mortalium vitio fit qui praeclara quaeque in parvos usus vertunt",
+    "text_sha1": "2b1898814425a5c45838dff53929e57c546b1189",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The relative 'qui' refers back to 'mortalium'. One might expect 'quod' here ('it comes about through the fault of mortals that they turn…'), but the sense is the same either way. Burton's main text gives the opening idea loosely as 'by the naughtiness of men it is so come to pass'. The sidenote refers to Nicolas Caussin's De eloquentia sacra et humana.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "by the naughtiness of men it is so come to pass",
+            "in": "3.1.1.1",
+            "near": "3.1.1.1-f86",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Nicolas Caussin (Caussinus)",
+          "basis": "text \"Caussinus observes\"; sidenote \"Lib. 8 Eloquent. cap. 14 de affectibus\"",
+          "locus": "Lib. 8 cap. 14 de affectibus",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De eloquentia sacra et humana"
+        },
+        "text": "It comes about through the fault of mortals, who turn every excellent thing to petty uses.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.1.1-f87": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
+        "in": "3.1.1.1",
+        "near": "3.1.1.1-f87",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aeneas Silvius Piccolomini (Pius II)",
+      "basis": "sidenote \"(Aeneas Silvius)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Taxando & ab his deterrendo humanam lasciviam & insaniam, sed & remedia docendo, non igitur candidus lector nobis succenseat, &c. Commonitio erit juvenibus haec, hisce ut abstineant nugis, & omissa lascivia quae homines reddit insanos, virtutis incumbant studiis",
+    "text_sha1": "f623e071e59e2023ae3191658889421f791a1d05",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's sentence in the main text adapts the first clause ('to tax and deter … and to apply remedies'). The second sentence is not rendered there. The passage probably comes from Aeneas Silvius (Pius II), from his writings around the tale of Euryalus and Lucretia, but the exact place is not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I speak it only to tax and deter others from it, not to teach, but to show the vanities and fopperies of this heroical or Herculean love, and to apply remedies unto it",
+            "in": "3.1.1.1",
+            "near": "3.1.1.1-f87",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aeneas Silvius Piccolomini (Pius II)",
+          "basis": "sidenote \"(Aeneas Silvius)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "By censuring human lewdness and madness and deterring men from them, and also by teaching the remedies; let not the candid reader therefore be angry with us, etc. This will be a warning to young men to keep away from these trifles and, setting aside the lewdness that makes men mad, to apply themselves to the pursuits of virtue.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.1.1-f88": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "& curam amoris si quis nescit hinc poterit scire",
+    "text_sha1": "ba57acd4f43e9f190f395b0aec8e3bb174078275",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "and the cure of love if anyone does not know, from here he will be able to know",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This follows the parenthetical '(Aeneas Silvius)' in the same sidenote. It may continue the Aeneas Silvius quotation or be Burton's own addition. 'Curam amoris' here means the remedy for love, though 'cura' can also mean 'love-care'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and if anyone does not know the cure for love, he will be able to learn it from this.",
         "warnings": []
       }
     ]

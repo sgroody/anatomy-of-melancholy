@@ -65,6 +65,144 @@
       }
     ]
   },
+  "1.2.1.6-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "& Damianus à Goes de Scandia",
+    "text_sha1": "a805a443bf68906ff44f40fcee5fcb2101635167",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Damianus à Goes is the Portuguese humanist Damião de Góis, who wrote on Scandinavia (Scandia). This is a bibliographical reference.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "and Damianus à Goes, on Scandia",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.6-f44": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "if a child were crooked or deformed in body or mind, they made him away",
+        "in": "1.2.1.6",
+        "near": "1.2.1.6-f44",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Justus Lipsius",
+      "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
+      "locus": "epist. 85",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistolarum centuria ad Belgas"
+    },
+    "text": "85 cent ad Belgas, Dionysio Villerio, Si quos aliqua membrorum parte inutiles notaverint, necari jubent",
+    "text_sha1": "73774df8bd44d06d600e906f36a5c23961847bc8",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "If any they have marked useless in some part of the limbs, they order to be killed",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage starts in the middle of the reference 'Lipsius epist. 85', and its first words are part of that citation: letter 85 of Lipsius's Century of letters to the Belgians, addressed to Dionysius Villerius. Only the clause after the comma is the quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "if a child were crooked or deformed in body or mind, they made him away",
+            "in": "1.2.1.6",
+            "near": "1.2.1.6-f44",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Justus Lipsius",
+          "basis": "sidenote \"Lipsius epist. 85 cent ad Belgas, Dionysio Villerio\"",
+          "locus": "epist. 85",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistolarum centuria ad Belgas"
+        },
+        "text": "85, Century to the Belgians, to Dionysius Villerius: If they found any to be useless in some part of their limbs, they ordered them to be killed",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.6-f45": {
     "kind": "phrase",
     "lang": "la",

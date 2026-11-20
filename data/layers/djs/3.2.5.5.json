@@ -101,7 +101,7 @@
     "left_score": 0.992,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": "; Augustus Caesar made an oration in",
+    "right_anchor": "; Augustus Caesar made an oration in Rome",
     "right_score": 1.0,
     "status": "omitted",
     "text": "",
@@ -109,31 +109,19 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43529, pp. 807-812"
   },
-  "3.2.5.5-f107": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "; Augustus Caesar made an oration in",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", to persuade them to marry, some countries compelled them to marry",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Rome to bachelors",
-    "text_sha1": "4972571bbb4657a257753d2e6682f056a3ababa5",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 43530, pp. 807-812"
-  },
   "3.2.5.5-f108": {
-    "align_score": 0.551,
+    "align_score": 0.982,
     "by": "djs1927",
     "left_anchor": "in Padua, in Venice 31 Cloisters of Monks, 28 of Nuns, &c.,",
     "left_score": 0.982,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", ’tis to this Yet notwithstanding many with us are of the",
-    "right_score": 0.551,
-    "status": "below-threshold",
+    "right_anchor": ", ’tis to this proportion, in all other Provinces and Cities, what",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "from the claw guessing what size the beast must be,",
     "text_sha1": "71f91d69cbb71f967446cf71ac9ea6d64cae3d28",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43540, pp. 807-812"
   },
   "3.2.5.5-f109": {
     "by": "djs1927",
@@ -264,14 +252,6 @@
     "text_sha1": "47a5a270524cab22d0498fd256b6149d9e9bc65b",
     "threshold": 0.85
   },
-  "3.2.5.5-f121": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "f388924675c9e5be1a770fa9d5b5b6f400415aed",
-    "threshold": 0.85
-  },
   "3.2.5.5-f122": {
     "align_score": 0.919,
     "by": "djs1927",
@@ -387,14 +367,11 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43652, pp. 815-816"
   },
   "3.2.5.5-f131": {
-    "align_score": 0.705,
     "by": "djs1927",
-    "left_anchor": "portion (& 36. 24), an help, a pillar of rest, columna quietis,",
-    "left_score": 0.705,
+    "left_anchor": ",",
     "method": "rules/djs-align-v3",
     "right_anchor": "Et 25, he that hath no wife wandereth to and fro mourning.",
-    "right_score": 0.943,
-    "status": "below-threshold",
+    "status": "no-anchor",
     "text_sha1": "81b5b9de02a7ecbfe7e7a483e0e1904007cae2d6",
     "threshold": 0.85
   },
@@ -426,10 +403,10 @@
     "threshold": 0.85
   },
   "3.2.5.5-f135": {
-    "align_score": 0.923,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "p, an help, &c.",
-    "left_score": 0.923,
+    "left_anchor": ", a prop, an help, &c.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
     "right_anchor": "Man’s best possession is a loving wife, / She tempers anger and",
@@ -549,13 +526,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43726, pp. 815-816"
   },
   "3.2.5.5-f147": {
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "our own ends we must make use of them, to have issue,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", and to",
-    "status": "no-anchor",
+    "right_anchor": ", and to propagate the Church. For to what end is a",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "to give pleasure and restore the race,",
     "text_sha1": "6f2bf4947e4259dbf61d49966601d486d2b00072",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43728, pp. 815-816"
   },
   "3.2.5.5-f148": {
     "align_score": 1.0,
@@ -579,7 +561,7 @@
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": ", the sole and chief",
+    "right_anchor": ", the sole and chief prop of an empire.",
     "right_score": 1.0,
     "status": "omitted",
     "text": "",
@@ -602,11 +584,11 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42916, pp. 799-801"
   },
   "3.2.5.5-f150": {
-    "align_score": 0.923,
+    "align_score": 1.0,
     "attribution": "palingenius",
     "by": "djs1927",
-    "left_anchor": "p of an empire.",
-    "left_score": 0.923,
+    "left_anchor": ", the sole and chief prop of an empire.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "which Pelopidas objected to Epaminondas, he was an unworthy member of a",
     "right_score": 1.0,
@@ -632,13 +614,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43742, pp. 815-816"
   },
   "3.2.5.5-f152": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "vided,",
+    "left_anchor": "we could buy children with gold and silver, and be so provided,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", without women’s company, but that may not be,",
-    "status": "no-anchor",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "ed1d0581d8c91a33db7ee1fd086fa3d76b588adb",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43750, pp. 815-816"
   },
   "3.2.5.5-f153": {
     "align_score": 0.98,
@@ -680,25 +668,11 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42918, pp. 799-801"
   },
-  "3.2.5.5-f166": {
-    "align_score": 0.932,
-    "by": "djs1927",
-    "left_anchor": "may be, for and against women, so doth almost every philosopher plead",
-    "left_score": 0.992,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and con, every poet thus argues the case (though what cares",
-    "right_score": 0.932,
-    "status": "aligned",
-    "text": "for",
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 43851, pp. 817-819"
-  },
   "3.2.5.5-f167": {
-    "align_score": 0.932,
+    "align_score": 0.905,
     "by": "djs1927",
-    "left_anchor": "and con, every poet thus argues the case (though what cares",
-    "left_score": 0.932,
+    "left_anchor": "pro and con, every poet thus argues the case (though what cares",
+    "left_score": 0.905,
     "method": "rules/djs-align-v3",
     "right_anchor": "what they say?), so can I conceive peradventure, and so canst thou:",
     "right_score": 1.0,
@@ -810,14 +784,6 @@
     "text_sha1": "846dea7cb56cfd23a93f5aa5ba4b82cc3938e568",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43870, pp. 817-819"
-  },
-  "3.2.5.5-f174": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "38f084faa64c587d70b60573285ebcecd9c9ff10",
-    "threshold": 0.85
   },
   "3.2.5.5-f175": {
     "align_score": 0.975,
@@ -1051,17 +1017,17 @@
     "by": "djs1927",
     "left_anchor": ",",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", quod ait ille, For my words here and every part, /",
+    "right_anchor": ", For my words here and every part, / I speak hem",
     "status": "no-anchor",
     "text_sha1": "eb8e1250c87828611855f612145bbc79251b3a6a",
     "threshold": 0.85
   },
   "3.2.5.5-f195": {
     "by": "djs1927",
-    "left_anchor": ", quod ait ille,",
+    "left_anchor": ",",
     "method": "rules/djs-align-v3",
     "right_anchor": ". For my words here and every part, / I speak hem",
-    "status": "not-found",
+    "status": "no-anchor",
     "text_sha1": "67be59ff9e42b60bac7cd79ce76962ddca1e0ced",
     "threshold": 0.85
   },
@@ -1253,18 +1219,9 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43078, p. 803"
   },
-  "3.2.5.5-f215": {
-    "by": "djs1927",
-    "left_anchor": "past all such youthful conceits, and they will therefore starve their children’s",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", have them",
-    "status": "no-anchor",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "threshold": 0.85
-  },
   "3.2.5.5-f216": {
     "by": "djs1927",
-    "left_anchor": "not thou for that which may not be had. , have them",
+    "left_anchor": "youthful conceits, and they will therefore starve their children’s Genius, have them",
     "method": "rules/djs-align-v3",
     "right_anchor": "",
     "status": "no-anchor",
@@ -1385,10 +1342,10 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43371, pp. 807-812"
   },
   "3.2.5.5-f26": {
-    "align_score": 0.927,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "test, I swear, I weep,",
-    "left_score": 0.927,
+    "left_anchor": "I protest, I swear, I weep,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
     "right_anchor": "she neglects me for all this, she derides me, contemns me, she",
@@ -1520,22 +1477,32 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43663, pp. 815-816"
   },
   "3.2.5.5-f284": {
+    "align_score": 0.968,
     "by": "djs1927",
     "left_anchor": "a young man’s Mistress, a middle age’s companion, an old man’s nurse:",
+    "left_score": 0.968,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", a",
-    "status": "no-anchor",
+    "right_anchor": ", a prop, an help, &c.",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "sharer of joys and sorrows,",
     "text_sha1": "d6c1af14ef600b70fccba3077286c67947999900",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43672, pp. 815-816"
   },
   "3.2.5.5-f286": {
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "I give, I bribe, I send presents, but they are refused.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "I",
-    "status": "no-anchor",
+    "right_anchor": "I protest, I swear, I weep,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "[As Virgil hath it :] Cory don, thou art but a yokel! thy beloved cares nothing jor gifts.",
     "text_sha1": "1ff4baefe8d28191c99fe860e6c69f596adea7e7",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 42942, pp. 799-801"
   },
   "3.2.5.5-f287": {
     "align_score": 0.972,
@@ -1655,13 +1622,18 @@
     "threshold": 0.85
   },
   "3.2.5.5-f298": {
+    "align_score": 0.928,
     "by": "djs1927",
     "left_anchor": "all the dicteries I could against women; but now recant with Stesichorus,",
+    "left_score": 0.928,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", I ap",
-    "status": "no-anchor",
+    "right_anchor": ", I approve of marriage, I am glad I am a married",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "I sing a Palinode,",
     "text_sha1": "1b34bd2ec183e2a9d919eaa153b7aca3f1125f9d",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43635, pp. 813-814"
   },
   "3.2.5.5-f299": {
     "by": "djs1927",
@@ -1822,6 +1794,43 @@
     "text_sha1": "722ffd767c61903bc3ece66a1bdbe7fa804f80f6",
     "threshold": 0.85
   },
+  "3.2.5.5-f317": {
+    "align_score": 0.988,
+    "by": "djs1927",
+    "left_anchor": "manner of life proceed many inconveniences, many diseases, many vices, mastupration, satyriasis,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", melancholy, madness, fornication, adultery, buggery, sodomy, theft, murder, and all manner",
+    "right_score": 0.988,
+    "status": "aligned",
+    "text": "priapism,",
+    "text_sha1": "7f7b8ea60854be12c58b8417d1f73ea15a7d510a",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43453, pp. 807-812"
+  },
+  "3.2.5.5-f318": {
+    "by": "djs1927",
+    "left_anchor": "be broke or not? No, saith Bellarmine, cap. 38 lib. de Monach.,",
+    "left_score": 0.7547169811320755,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", better burn or fly out, than to break thy vow. And",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "26a86818a0d72bf8d4d155744174ef9762f4d6f1",
+    "threshold": 0.85
+  },
+  "3.2.5.5-f319": {
+    "align_score": 0.614,
+    "by": "djs1927",
+    "left_anchor": "And Coster in his Enchirid. de coelibat. sacerdotum, saith it is absolutely",
+    "left_score": 0.614,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", a greater sin for a Priest to marry, than to keep",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "8c0fcca7d6d8f5448796a0d5f23bb522d7787a01",
+    "threshold": 0.85
+  },
   "3.2.5.5-f32": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -1835,6 +1844,77 @@
     "text_sha1": "4e7442a5846875ffc6a4fa6212e89a9bb6f5355f",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42977, pp. 799-801"
+  },
+  "3.2.5.5-f320": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "3ab23e2637ef324a79194f4d47dc1699a0d8aed5",
+    "threshold": 0.85
+  },
+  "3.2.5.5-f321": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "; Augustus Caesar made an oration in Rome",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", to persuade them to marry, some countries compelled them to marry",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "to bachelors",
+    "text_sha1": "c72f3ce39add1d9e59c1614f60e65e7bfddb18f3",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43530, pp. 807-812"
+  },
+  "3.2.5.5-f322": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "knowest not what thou sayest, ’tis otherwise Hippolytus. Some make a doubt,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", whether a Scholar should marry, if she be fair she will",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "78fa516cec592541a274455f3e8850b1378459e4",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43621, pp. 813-814"
+  },
+  "3.2.5.5-f323": {
+    "by": "djs1927",
+    "left_anchor": "a good portion (& 36. 24), an help, a pillar of rest,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "7bf0923367b6e3c9bee0f696a35089fbee02cc08",
+    "threshold": 0.85
+  },
+  "3.2.5.5-f324": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "3554e79a132f3b8be1c891d494f7696799e95645",
+    "threshold": 0.85
+  },
+  "3.2.5.5-f325": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "ec9c892f81d7c9da8fc1b131a765ee59d40bfea7",
+    "threshold": 0.85
+  },
+  "3.2.5.5-f326": {
+    "by": "djs1927",
+    "left_anchor": ",",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", For my words here and every part, / I speak hem",
+    "status": "no-anchor",
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247",
+    "threshold": 0.85
   },
   "3.2.5.5-f33": {
     "align_score": 0.993,
@@ -2272,13 +2352,14 @@
     "threshold": 0.85
   },
   "3.2.5.5-f65": {
+    "align_score": 0.832,
     "by": "djs1927",
     "left_anchor": "to marry a daughter to a man of understanding in due time:",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", as Lemnius admonisheth, lib. 1 cap. 6, Virgins must be",
-    "right_score": 0.7835051546391754,
-    "status": "not-found",
+    "right_anchor": ", as Lemnius admonisheth, lib. 1 cap. 6, Virgins must be provided",
+    "right_score": 0.832,
+    "status": "below-threshold",
     "text_sha1": "981ed77140a5b74cf318de077f5e35ea661db6bf",
     "threshold": 0.85
   },
@@ -2537,15 +2618,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43348, pp. 807-812"
   },
   "3.2.5.5-f87": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "Blessed is the wooing, / That is not long a-doing, vision left,",
-    "left_score": 0.8648648648648648,
+    "left_anchor": "his company, in which were thirty-two messes and as much provision left,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", as would serve ten thousand men: but a little after Lionel",
     "right_score": 1.0,
-    "status": "not-found",
+    "status": "omitted",
+    "text": "",
     "text_sha1": "4be49b4dedf275ed83086aef2e79f7f9c9b9ce1e",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43358, pp. 807-812"
   },
   "3.2.5.5-f88": {
     "align_score": 1.0,

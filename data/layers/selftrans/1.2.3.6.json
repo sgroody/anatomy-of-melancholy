@@ -11,12 +11,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "battered and broken with reproach and obloquy (siquidem vita & fama pari passu ambulant), and are so dejected many times for some public injury, disgrace, as a box on the ear, by their inferior, to be overcome of their adversary",
+          "exact": "battered and broken with reproach and obloquy",
           "in": "1.2.3.6-p1",
           "prefix": "differently, but they are quite ",
-          "suffix": ", foiled in the field, to be out"
+          "suffix": " (siquidem vita & fama pari pass"
         },
-        "words": 39
+        "words": 7
       }
     ],
     "lang": "la",
@@ -132,35 +132,17 @@
     ],
     "text_sha1": "62fe57ba311f94fea54f6d0b199f9469ca76de17"
   },
-  "1.2.3.6-f18": {
+  "1.2.3.6-f19": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 2,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "generous minds are often moved with shame, to despair for some public disgrace",
-          "in": "1.2.3.6-p1",
-          "prefix": "ter lib. 3 de alienat. mentis), ",
-          "suffix": ". And he, saith Philo lib. 2 de "
-        },
-        "words": 13
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "cognate-overlap",
-      "english-follows",
       "no-gowland-bracket"
     ],
-    "text_sha1": "d2ccfc8fffe7dd32e6543793b516fa468ccf0449"
+    "text_sha1": "d0723f6853f6e6e7d767f615333a4fcb3657eeda"
   },
   "1.2.3.6-f2": {
     "bracket": "present",
@@ -171,6 +153,151 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "c6f3ac74c6ff84858d99fc10e38e3c2e9b4f92bb"
+  },
+  "1.2.3.6-f20": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and are so dejected many times for some public injury, disgrace, as a box on the ear, by their inferior, to be overcome of their adversary, foiled in the field, to be out in a speech, some foul fact committed",
+          "in": "1.2.3.6-p1",
+          "prefix": "ta & fama pari passu ambulant), ",
+          "suffix": " or disclosed, &c., that they da"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "22800aecef67aec2aebaf11155ffd8a3f824311a"
+  },
+  "1.2.3.6-f21": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "was swallowed up with this passion of shame because he could not unfold the fisherman’s riddle",
+          "in": "1.2.3.6-p1",
+          "prefix": ". 8. Homerus pudore consumptus, ",
+          "suffix": ". Sophocles killed himself, for "
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "191f083907be0cbb03c1c4b4e843b0ce2ee6ae11"
+  },
+  "1.2.3.6-f22": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "they rejoice at it",
+          "in": "1.2.3.6-p2",
+          "prefix": "ith Ballio the Bawd in Plautus, ",
+          "suffix": ", Cantores probos; babe and Bomb"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c9a4ebd1be3f266358dbd0b7b86fedb46d80a6a2"
+  },
+  "1.2.3.6-f23": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "they rejoice at it",
+          "in": "1.2.3.6-p2",
+          "prefix": "ith Ballio the Bawd in Plautus, ",
+          "suffix": ", Cantores probos; babe and Bomb"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "14f0424c040d7a735a339e6aba22e86e349a0f4f"
+  },
+  "1.2.3.6-f24": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "they rejoice at it",
+          "in": "1.2.3.6-p2",
+          "prefix": "ith Ballio the Bawd in Plautus, ",
+          "suffix": ", Cantores probos; babe and Bomb"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2d9c01ff6507e6df39c176020d237cb105c19036"
   },
   "1.2.3.6-f3": {
     "bracket": "present",

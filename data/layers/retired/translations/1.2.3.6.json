@@ -64,6 +64,83 @@
       }
     ]
   },
+  "1.2.3.6-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "generous minds are often moved with shame, to despair for some public disgrace.",
+        "in": "1.2.3.6",
+        "near": "1.2.3.6-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Felix Plater",
+      "basis": "text \"Felix Plater lib. 3 de alienat. mentis\"",
+      "locus": "lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de alienat. mentis"
+    },
+    "text": "Ob pudorem & dedecus publicum, ob errorem commissum saepe moventur generosi animi (Felix Plater lib. 3 de alienat. mentis",
+    "text_sha1": "d2ccfc8fffe7dd32e6543793b516fa468ccf0449",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage includes Burton's citation with its opening parenthesis; the closing parenthesis falls outside the marked text, so the citation is translated but left open as in the source. 'Generosi animi' means minds of noble temper. Burton's English that follows adds 'to despair', which is not in the Latin, and leaves out 'ob errorem commissum'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "generous minds are often moved with shame, to despair for some public disgrace.",
+            "in": "1.2.3.6",
+            "near": "1.2.3.6-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Felix Plater",
+          "basis": "text \"Felix Plater lib. 3 de alienat. mentis\"",
+          "locus": "lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de alienat. mentis"
+        },
+        "text": "Generous minds are often moved by shame and public disgrace, and by an error they have committed (Felix Plater, book 3, On Alienation of the Mind",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.6-f4": {
     "kind": "phrase",
     "lang": "la",

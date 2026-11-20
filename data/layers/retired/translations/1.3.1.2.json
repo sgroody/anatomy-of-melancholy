@@ -1,0 +1,280 @@
+{
+  "1.3.1.2-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bernard of Gordon (Gordonius)",
+      "basis": "text \"(Gordonius)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "without a cause, timent de non timendis",
+    "text_sha1": "6a6949bb9f4bd0f5c0549d0c4145df6528d411a5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked span includes Burton's English 'without a cause', which is not translated here. The Latin continues after the citation with 'quaeque momenti non sunt' ('and things of no importance').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bernard of Gordon (Gordonius)",
+          "basis": "text \"(Gordonius)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they fear things that are not to be feared",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.2-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Now prodigal, and then covetous, they do, and by and by repent them of which they have done",
+        "in": "1.3.1.2",
+        "near": "1.3.1.2-f45",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "faciunt, & mox facti paenitent (Aretaeus) avari, et paulo post prodigi",
+    "text_sha1": "b2471aba4149d85db22af0ca649c6a2532113ad1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Now prodigal, and then covetous, they do, and by and by repent them of which they have done",
+            "in": "1.3.1.2",
+            "near": "1.3.1.2-f45",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they act, and soon repent of what they have done; covetous, and shortly after prodigal",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.2-f59": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Rhazes",
+      "basis": "text \"Rhasis cont. lib. 1 cap. 9\"",
+      "locus": "lib. 1 cap. 9",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Continens"
+    },
+    "text": "& supra modum, Rhasis cont. lib. 1 cap. 9, praemeditantur de aliqua re",
+    "text_sha1": "e99521812addea838ff7937aec98bd875e864920",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'cont.' is taken as the Continens of Rhazes. 'praemeditantur' means they think something over in advance and obsessively.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Rhazes",
+          "basis": "text \"Rhasis cont. lib. 1 cap. 9\"",
+          "locus": "lib. 1 cap. 9",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Continens"
+        },
+        "text": "and beyond measure, Rhazes, Continens book 1 chapter 9, they brood beforehand over some matter",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.2-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they dream of Hobgoblins",
+        "in": "1.3.1.2",
+        "near": "1.3.1.2-f9",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "text \"(Lucian\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hecatas somniare sibi videntur (Lucian",
+    "text_sha1": "22431779336b9a93fda4254b2a36949755a79eff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked span includes Burton's citation '(Lucian', which is not translated. 'Hecates' are ghostly apparitions sent by Hecate. Burton renders the word as 'Hobgoblins'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they dream of Hobgoblins",
+            "in": "1.3.1.2",
+            "near": "1.3.1.2-f9",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "text \"(Lucian\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "they seem to themselves to dream of Hecates",
+        "warnings": []
+      }
+    ]
+  }
+}

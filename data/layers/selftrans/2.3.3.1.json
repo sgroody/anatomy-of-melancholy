@@ -3608,16 +3608,6 @@
     ],
     "text_sha1": "63516e2b321797a1f52367b919474b030d9a8dbf"
   },
-  "2.3.3.1-f274": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "7fd4e108aa4608a0b5dcd2edcc66934d568e9c44"
-  },
   "2.3.3.1-f275": {
     "bracket": "none",
     "by": "rules",
@@ -3755,6 +3745,95 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "1f62c6ba8d86b37f17e10f2cdc032d48f2145d6e"
+  },
+  "2.3.3.1-f280": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "I may then boldly conclude with Theodoret",
+          "in": "2.3.3.1-p6",
+          "prefix": "lesh as fire, James 5. 1, 2, 3. ",
+          "suffix": ", quotiescunque divitiis affluen"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ed35bcd43cc4db8b66f948e0b605a85da2a49fab"
+  },
+  "2.3.3.1-f281": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Sebastian Foscarinus sometime Duke of Venice, caused to be engraven on his Tomb in Saint Mark’s Church, Hear, O ye Venetians, and I will tell you which is the best thing in the world",
+          "in": "2.3.3.1-p24",
+          "prefix": "th alike, fit for me. And which ",
+          "suffix": ": to contemn it. I will engrave "
+        },
+        "words": 34
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ee545b50ed28ca654e2b8daf3e454fb9bacad5ce"
+  },
+  "2.3.3.1-f282": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "cfc71a2af3236f89c73bfa04a6d5c00bbb05b3a6"
+  },
+  "2.3.3.1-f283": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c49516a80320629f0b72f41064748609681cbcf7"
+  },
+  "2.3.3.1-f284": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f808653f664f988da9b0be355fc4c24ac5e8ba07"
   },
   "2.3.3.1-f29": {
     "bracket": "present",
@@ -5259,35 +5338,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "85a87ab23eb2dd8f0b9c6e372ba7910b9d403c61"
-  },
-  "2.3.3.1-f84": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Sebastian Foscarinus sometime Duke of Venice, caused to be engraven on his Tomb in Saint Mark’s Church, Hear, O ye Venetians, and I will tell you which is the best thing in the world",
-          "in": "2.3.3.1-p24",
-          "prefix": "th alike, fit for me. And which ",
-          "suffix": ": to contemn it. I will engrave "
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "2418da9bc2091066efe77c7609d7aea500a632b9"
   },
   "2.3.3.1-f85": {
     "bracket": "present",

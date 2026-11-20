@@ -148,6 +148,48 @@
     ],
     "text_sha1": "ba425041e20401ab333365c3c563d8df27a6b948"
   },
+  "3.4.2.4-f21": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "dismal, ghastly, tedious, irksome, &c., it is not sufficient, it comes far short, no tongue can tell, no heart conceive it. ’Tis an Epitome of hell, an extract, a quintessence, a compound, a mixture of all feral maladies, tyrannical tortures",
+          "in": "3.4.2.4-p1",
+          "prefix": "es, grief, pain, terror, angor, ",
+          "suffix": ", plagues and perplexities. Ther"
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "imagine what thou canst, fear, sorrow, furies, grief, pain, terror",
+          "in": "3.4.2.4-p1",
+          "prefix": "ribing the Symptoms of Despair; ",
+          "suffix": ", angor, dismal, ghastly, tediou"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "edc614c046bed2887416c53c6352daa0893364d0"
+  },
   "3.4.2.4-f4": {
     "bracket": "none",
     "by": "rules",

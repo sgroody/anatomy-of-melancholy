@@ -1143,12 +1143,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "flower of his youth, as if he had risen, saith Plutarch, from the midst of a feast, before he was drunk, the longer he had lived, the worse he would have been, & quo vita longior (Ambrose thinks)",
+          "exact": "flower of his youth, as if he had risen, saith Plutarch, from the midst of a feast, before he was drunk, the longer he had lived, the worse he would have been, &",
           "in": "2.3.5.1-p24",
           "prefix": "nity as another Ganymede in the ",
-          "suffix": " culpa numerosior, more sinful, "
+          "suffix": " quo vita longior (Ambrose think"
         },
-        "words": 37
+        "words": 32
       }
     ],
     "lang": "la",
@@ -1289,35 +1289,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "9536c867c4f01ee3d85e0a5d2502cdc34d61743b"
-  },
-  "2.3.5.1-f59": {
-    "bracket": "short",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "premeditation make such accidents familiar, as Ulysses that wept for his dog, but not for his wife",
-          "in": "2.3.5.1-p27",
-          "prefix": "et it not transpose thee, or by ",
-          "suffix": ", quod paratus esset animo obfir"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "short-gowland-bracket"
-    ],
-    "text_sha1": "6220e2c9e0a559e447a77c98a43c635b0af91e46"
   },
   "2.3.5.1-f6": {
     "bracket": "present",
@@ -1573,18 +1544,6 @@
           "suffix": ". If he was naught, thou mayst b"
         },
         "words": 10
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "in the flower of his youth, as if he had risen, saith Plutarch, from the midst of a feast, before he was drunk, the longer he had lived, the worse he would have been, & quo vita longior (Ambrose thinks)",
-          "in": "2.3.5.1-p24",
-          "prefix": "to eternity as another Ganymede ",
-          "suffix": " culpa numerosior, more sinful, "
-        },
-        "words": 39
       }
     ],
     "lang": "la",
@@ -1592,7 +1551,6 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
-      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "f69208173a6b85e185abc71ec5978b8413bece66"
@@ -1826,6 +1784,102 @@
       "english-precedes"
     ],
     "text_sha1": "06fbd06291373d52b8fa56a35858cdaf56e2c042"
+  },
+  "2.3.5.1-f86": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "to eternity as another Ganymede in the flower of his youth, as if he had risen, saith Plutarch, from the midst of a feast, before he was drunk, the longer he had lived, the worse he would have been, &",
+          "in": "2.3.5.1-p24",
+          "prefix": "broke thy heart; he is now gone ",
+          "suffix": " quo vita longior (Ambrose think"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "644f831c1d50677131baeec42be56fd65c66ee96"
+  },
+  "2.3.5.1-f87": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "love, covetousness, hatred, envy, malice, that I fear no more thieves, tyrants, enemies as you do",
+          "in": "2.3.5.1-p24",
+          "prefix": "agues, cares, anxieties, livor, ",
+          "suffix": ". What good do your tears, to wh"
+        },
+        "words": 16
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "You had more need rejoice that I am freed from diseases, agues, cares, anxieties",
+          "in": "2.3.5.1-p24",
+          "prefix": " on clothes to drive away cold? ",
+          "suffix": ", livor, love, covetousness, hat"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "89cb9e1557a6f09258513fcac6a0054547be814f"
+  },
+  "2.3.5.1-f88": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "premeditation make such accidents familiar, as Ulysses that wept for his dog, but not for his wife",
+          "in": "2.3.5.1-p27",
+          "prefix": "et it not transpose thee, or by ",
+          "suffix": ", quod paratus esset animo obfir"
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "edec40d8a2dac8a138f125b016bb11dd33ad3bac"
   },
   "2.3.5.1-f9": {
     "bracket": "present",

@@ -193,18 +193,13 @@
     "threshold": 0.85
   },
   "3.2.2.4-f112": {
-    "align_score": 0.964,
     "by": "djs1927",
-    "left_anchor": "and ☿ about the Sun with those thirty-three Maculae or Bourbonian planets,",
-    "left_score": 0.964,
+    "left_anchor": "or Bourbonian planets,",
     "method": "rules/djs-align-v3",
     "right_anchor": ", saith Fromundus. Four Medicean stars dance about Jupiter, two Austrian about",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "dancers about the harping Sun,",
+    "status": "no-anchor",
     "text_sha1": "6aceb1ab6887cdd84795183a74a4eebe9cfc5a05",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 38133, p. 710"
+    "threshold": 0.85
   },
   "3.2.2.4-f113": {
     "align_score": 0.992,
@@ -819,20 +814,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 37421, p. 697"
   },
-  "3.2.2.4-f172": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "Though he solemnly swear by the",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "of Caesar, by Venus’ shrine, Hymen’s deity, by Jupiter, and all the",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Genius",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 38271, pp. 712-714"
-  },
   "3.2.2.4-f18": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -1142,19 +1123,46 @@
     "text_sha1": "cd54aadfbfb445507a63200c93f010d170e2a447",
     "threshold": 0.85
   },
-  "3.2.2.4-f21": {
-    "align_score": 0.976,
+  "3.2.2.4-f208": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "commonly seen at some drunken matches, dissolute meetings, or great unruly feasts.",
+    "left_anchor": "and more of herself, I counterfeited honesty, as if I had been",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", saith Jerome, will come with a company of compliments, and hold",
-    "right_score": 0.976,
-    "status": "aligned",
-    "text": "A young pickitivanted [or peak'd-bearded], trim-bearded fellow,",
-    "text_sha1": "ab2164197191d5147074dd6b6979d8334a431788",
+    "residue": "",
+    "right_anchor": ", more than a Vestal virgin, I looked like a wife, I",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "6a56a04eceec79141b85a2f911acf109241b54f5",
     "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 37456, p. 698"
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 37587, pp. 700-701"
+  },
+  "3.2.2.4-f209": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "7d471e32d6a2ed8c7c2ef7408ba584defadc0ce8",
+    "threshold": 0.85
+  },
+  "3.2.2.4-f210": {
+    "by": "djs1927",
+    "left_anchor": "———",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "",
+    "status": "no-anchor",
+    "text_sha1": "cd54aadfbfb445507a63200c93f010d170e2a447",
+    "threshold": 0.85
+  },
+  "3.2.2.4-f211": {
+    "by": "djs1927",
+    "left_anchor": "jump and trace, ♀ and ☿ about the Sun with those thirty-three",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "or Bourbonian planets,",
+    "status": "no-anchor",
+    "text_sha1": "420b91de48bb1448d77e7fcbe776b6e6dd2fbf1b",
+    "threshold": 0.85
   },
   "3.2.2.4-f22": {
     "by": "djs1927",
@@ -1389,14 +1397,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 37371, p. 696"
   },
-  "3.2.2.4-f40": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "04f8349a16962e13d5748c760aa81086f926694a",
-    "threshold": 0.85
-  },
   "3.2.2.4-f41": {
     "by": "djs1927",
     "left_anchor": "in them but a few player’s ends and compliments, vain braggadocians, impu",
@@ -1496,14 +1496,6 @@
     "text_sha1": "741187d95afda68f712f97d93a39d8433bf15558",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 37683, p. 702"
-  },
-  "3.2.2.4-f49": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "853c6486389c60b096aaeea41d3287e433e62862",
-    "threshold": 0.85
   },
   "3.2.2.4-f5": {
     "align_score": 0.88,

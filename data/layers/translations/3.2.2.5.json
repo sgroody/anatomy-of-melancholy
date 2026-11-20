@@ -780,63 +780,6 @@
       }
     ]
   },
-  "3.2.2.5-f34": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Ernestus Burggravius",
-      "basis": "text \"saith Ernestus Burggravius\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Lucerna vitae et mortis index"
-    },
-    "text": "in Lucerna vitae & mortis Indice, ad amorem conciliandum & odium",
-    "text_sha1": "4c860766e88c5076316eff4d66a6cd9b5c324af3",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The title of Burggravius's book, about a 'lamp of life' that shows whether a person is alive or dead, is given loosely here, so the rendering is uncertain. 'Conciliandum' fits 'love' better than 'hatred'; the sense is to procure either.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Ernestus Burggravius",
-          "basis": "text \"saith Ernestus Burggravius\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Lucerna vitae et mortis index"
-        },
-        "text": "in his Lamp, the Index of Life and Death, for winning love and hatred",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.2.5-f35": {
     "kind": "phrase",
     "lang": "la",
@@ -1034,6 +977,122 @@
           "work": null
         },
         "text": "hippomanes",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.5-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Idem refert",
+    "text_sha1": "7cc84b079fc7305417db3e2741477b76041af175",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's sidenote attributing the same story about Charlemagne to Henricus Kornmannus, De miraculis mortuorum, book 1, chapter 14. Idem could be neuter ('reports the same thing', with Kornmann as subject) or masculine ('the same man reports'). Since Kornmann's name follows, the first reading is preferred.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Reports the same",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.5-f39": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ernestus Burggravius",
+      "basis": "text \"saith Ernestus Burggravius, in Lucerna vitae & mortis Indice\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Lucerna vitae et mortis indice"
+    },
+    "text": "ad amorem conciliandum & odium",
+    "text_sha1": "59f5b41c1408eea4aac348397767942ee75cb731",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "for love to be won, and hatred",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase is elliptical. Taken literally, conciliandum governs only amorem. The sense is that the preparation of human blood serves to produce love, and also hatred. Burton's following parenthesis about huntsmen and farmers comments on it but does not translate it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ernestus Burggravius",
+          "basis": "text \"saith Ernestus Burggravius, in Lucerna vitae & mortis Indice\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Lucerna vitae et mortis indice"
+        },
+        "text": "for winning love, and hatred",
         "warnings": []
       }
     ]

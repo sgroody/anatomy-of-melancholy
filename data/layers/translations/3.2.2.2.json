@@ -4006,65 +4006,6 @@
       }
     ]
   },
-  "3.2.2.2-f172": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Isocrates",
-      "basis": "text \"Isocrates record\" at the anchor of the sidenote",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Encomium of Helen"
-    },
-    "text": "In laudem Helenae orat",
-    "text_sha1": "56c1392254c973a40d07187d8091e6ca1883ff5d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is the title of Isocrates' speech, the Encomium of Helen.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Isocrates",
-          "basis": "text \"Isocrates record\" at the anchor of the sidenote",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Encomium of Helen"
-        },
-        "text": "Oration in Praise of Helen.",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.2.2-f173": {
     "kind": "phrase",
     "lang": "la",
@@ -5597,6 +5538,199 @@
           "work": "Epistles"
         },
         "text": "A woman is not beautiful whose leg and arm are praised, but she whose whole appearance taken together has given admiration to each single part",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.2-f214": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Unde is",
+    "text_sha1": "7f7bc4cedb689446d9b75a54ac57c8d177a5f72a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A short lead-in to a verse quotation; Burton's 'Unde is' seems short for something like 'unde iste versus', 'hence that verse'. The verse lines nearby ('Quale decus tumidis… / Forma papillarum quam fuit apta premi!') appear to be what it introduces. The sidenote 'Arnaudus' probably refers to the source of the passage before it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hence that",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.2-f215": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "will have Jason’s golden hair, to be the main cause of Medea’s dotage on him",
+        "in": "3.2.2.2",
+        "near": "3.2.2.2-f215",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Apollonius of Rhodes",
+      "basis": "text \"Apollonius (Argonaut. lib. 4\"",
+      "locus": "book 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Argonautica"
+    },
+    "text": "Jasonis flava coma incendit cor Medeae",
+    "text_sha1": "6b76d63256eabab6c15eed22e669a3692353cb16",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Jason's yellow hair inflames the heart of Medea",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's Latin summary of Apollonius' account, not a direct quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "will have Jason’s golden hair, to be the main cause of Medea’s dotage on him",
+            "in": "3.2.2.2",
+            "near": "3.2.2.2-f215",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Apollonius of Rhodes",
+          "basis": "text \"Apollonius (Argonaut. lib. 4\"",
+          "locus": "book 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Argonautica"
+        },
+        "text": "Jason's golden hair set Medea's heart on fire",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.2-f216": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Justus Lipsius",
+      "basis": "sidenote \"cujus & Lipsius epist. quaest. lib. 3 cap. 11 meminit ob elegantiam\"",
+      "locus": "lib. 3 cap. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistolicae Quaestiones"
+    },
+    "text": "cujus & Lipsius",
+    "text_sha1": "454acadb7319a50b81ddb84af6f3e36c89ac6df3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "of which also Lipsius",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of the sidenote 'Ocelli carm. 17, cujus & Lipsius epist. quaest. lib. 3 cap. 11 meminit ob elegantiam', meaning 'Ocelli, poem 17, which Lipsius also mentions in his Epistolicae Quaestiones, book 3, chapter 11, for its elegance.' The genitive 'cujus' belongs with 'meminit' (mentions), which falls outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Justus Lipsius",
+          "basis": "sidenote \"cujus & Lipsius epist. quaest. lib. 3 cap. 11 meminit ob elegantiam\"",
+          "locus": "lib. 3 cap. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistolicae Quaestiones"
+        },
+        "text": "which Lipsius also",
         "warnings": []
       }
     ]

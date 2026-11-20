@@ -59,153 +59,6 @@
       }
     ]
   },
-  "1.3.1.1-f11": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "mighty and often watchings",
-        "in": "1.3.1.1",
-        "near": "1.3.1.1-f11",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": "Aretaeus",
-      "basis": "text \"(Aretaeus)\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ingentes habent & crebras vigilias (Aretaeus",
-    "text_sha1": "e2e46425b00847cfb63e969b7dae3113cdbb2ce7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The marked passage includes the author's name, Aretaeus, but not its closing parenthesis.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "mighty and often watchings",
-            "in": "1.3.1.1",
-            "near": "1.3.1.1-f11",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Aretaeus",
-          "basis": "text \"(Aretaeus)\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "They have great and frequent wakings (Aretaeus)",
-        "warnings": []
-      }
-    ]
-  },
-  "1.3.1.1-f13": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "not much in quantity",
-        "in": "1.3.1.1",
-        "near": "1.3.1.1-f13",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Aretaeus",
-      "basis": "text \"(Aretaeus)\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "urina pauca, acris, biliosa (Aretaeus",
-    "text_sha1": "83bfee63c3eccc1a03a56336d8f35cb9dc8cb788",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect",
-          "technical-medical"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The marked passage includes the author's name but not its closing parenthesis. 'biliosa' means tinged with yellow bile (choler).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "not much in quantity",
-            "in": "1.3.1.1",
-            "near": "1.3.1.1-f13",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Aretaeus",
-          "basis": "text \"(Aretaeus)\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "urine scanty, sharp, choleric (Aretaeus)",
-        "warnings": []
-      }
-    ]
-  },
   "1.3.1.1-f14": {
     "kind": "phrase",
     "lang": "la",
@@ -531,6 +384,281 @@
       }
     ]
   },
+  "1.3.1.1-f19": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "mighty and often watchings",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f19",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\" immediately after the passage",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Ingentes habent & crebras vigilias",
+    "text_sha1": "15fafd25d7222f0f61fd7fb1dba73ebdab7f0ba9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Vigiliae here means sleepless wakefulness, Burton's \"watchings\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "mighty and often watchings",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f19",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\" immediately after the passage",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "They have great and frequent wakings",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "not much in quantity",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aretaeus",
+      "basis": "text \"(Aretaeus)\" immediately after the passage",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "urina pauca, acris, biliosa",
+    "text_sha1": "b9b58fa97fe9e98702a15643a24812e5bff2049f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Biliosa describes the urine as bile-coloured or charged with bile, so \"bilious\" is used rather than the glossary's \"choleric\", which applies to people. Burton's English renders only pauca (\"not much in quantity\").",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "not much in quantity",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aretaeus",
+          "basis": "text \"(Aretaeus)\" immediately after the passage",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "urine scanty, sharp, bilious",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jacchinus",
+      "basis": "sidenote \"saith Jacchinus in 15, 9 Rhasis\"",
+      "locus": "in 15, 9 Rhasis",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "commentary on Rhazes"
+    },
+    "text": "Post. 40 aetat",
+    "text_sha1": "3c76af754bf54d989f7ab95e7597b285271ff04a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "After the 40th of age",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage stops before \"annum\" (year), which completes the phrase post 40 aetatis annum, \"after the fortieth year of age\". The translation includes it for sense. The sidenote apparently gives the age after which these diseases (apoplexy etc.) tend to come on.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jacchinus",
+          "basis": "sidenote \"saith Jacchinus in 15, 9 Rhasis\"",
+          "locus": "in 15, 9 Rhasis",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "commentary on Rhazes"
+        },
+        "text": "After the 40th year of age",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.1-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "intempestive laughing, weeping, swooning, &c.",
+        "in": "1.3.1.1",
+        "near": "1.3.1.1-f22",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Gordonius",
+      "basis": "sidenote \"Gordonius:\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Modo rident, modo flent, silent, &c",
+    "text_sha1": "c78f85a996fdb626b60f1b885d4e314b30e51583",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main-text list differs slightly: he adds \"intempestive\" (untimely) and \"swooning\", and leaves out silence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "intempestive laughing, weeping, swooning, &c.",
+            "in": "1.3.1.1",
+            "near": "1.3.1.1-f22",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Gordonius",
+          "basis": "sidenote \"Gordonius:\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Now they laugh, now they weep, they are silent, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.1.1-f3": {
     "kind": "phrase",
     "lang": "la",
@@ -789,76 +917,6 @@
           "work": null
         },
         "text": "they crave much, digest little",
-        "warnings": []
-      }
-    ]
-  },
-  "1.3.1.1-f8": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "laughing, weeping",
-        "in": "1.3.1.1",
-        "near": "1.3.1.1-f8",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Gordonius",
-      "basis": "sidenote \"Gordonius\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Gordonius: Modo rident, modo flent, silent, &c",
-    "text_sha1": "b7a094fbfdb47487e6449baba6c9ebaf9db4da94",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "laughing, weeping",
-            "in": "1.3.1.1",
-            "near": "1.3.1.1-f8",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Gordonius",
-          "basis": "sidenote \"Gordonius\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Gordonius: Now they laugh, now they weep, they are silent, etc.",
         "warnings": []
       }
     ]

@@ -579,8 +579,8 @@
     ],
     "text_sha1": "11c443e838745eec2ea78d32271ac75b22d1ad97"
   },
-  "2.4.2.2-f5": {
-    "bracket": "present",
+  "2.4.2.2-f41": {
+    "bracket": "none",
     "by": "rules",
     "candidates": [
       {
@@ -591,21 +591,77 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "drink Hellebore, &c., and Harpax in the Comedian, told Simo and Ballio, two doting fellows, that they had need to be purged with this plant",
-          "in": "2.4.2.2-p6",
-          "prefix": "ixture. Aristophanes in vespis, ",
-          "suffix": ". When that proud Menecrates ὁ ζ"
+          "exact": "or broom, Pennyroyal and half-boiled Cabbage, I find in this Catalogue of purgers of black choler, Origan, Featherfew, Ammoniac Salt, Saltpetre",
+          "in": "2.4.2.2-p3",
+          "prefix": "rcury, roots of Capers, Genista ",
+          "suffix": ". But these are very gentle, aly"
         },
-        "words": 25
+        "words": 22
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Stoechas, Fumitory, Dodder, herb Mercury, roots of Capers",
+          "in": "2.4.2.2-p3",
+          "prefix": "",
+          "suffix": ", Genista or broom, Pennyroyal a"
+        },
+        "words": 8
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows"
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
     ],
-    "text_sha1": "a02519d09d5b25105a887db538c7932f5f4c6e98"
+    "text_sha1": "f5ea8b94f56c8aff6837b3ae348e5a62c2e3fda4"
+  },
+  "2.4.2.2-f42": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and Hellebore itself",
+          "in": "2.4.2.2-p5",
+          "prefix": "ains nothing but Lapis Armenus, ",
+          "suffix": ". Valescus and Jason Pratensis, "
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and if this will not serve (saith Rhasis) then there remains nothing but",
+          "in": "2.4.2.2-p5",
+          "prefix": ", sect. 1 cap. 12 in Antidotis; ",
+          "suffix": " Lapis Armenus, and Hellebore it"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "69b889618b8033c9cc478e0f2a2b99b9c1cea78c"
   },
   "2.4.2.2-f7": {
     "bracket": "none",

@@ -61,6 +61,333 @@
       }
     ]
   },
+  "1.2.3.10-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Austin confess. lib. 10 cap. 28), catena perpetuorum malorum",
+    "text_sha1": "05dafb04f5db0879f2f1657f4a8072c6945dfaaa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The marked span includes Burton's parenthetical reference to Augustine and its closing bracket. Only 'catena perpetuorum malorum' is quoted Latin; the reference is translated as a reference.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Augustine, Confessions, book 10, chapter 28; a chain of perpetual evils",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.10-f3": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "biting, eating, gnawing, cruel, bitter, sick, sad, unquiet, pale, tetric, miserable, intolerable cares",
+        "in": "1.2.3.10",
+        "near": "1.2.3.10-f3",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Claudian; Virgil; Lucan; Horace; Ovid; Martial; Mant.",
+      "basis": "sidenote \"Insomnes, Claudianus. Tristes, Virg. Mordaces, Lucan. Edaces, Hor. Moestae, amarae, Ovid. Damnosae, inquietae, Mart. Urentes, Rodentes, Mant.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Insomnes, Claudianus. Tristes, Virg. Mordaces, Lucan. Edaces, Hor. Moestae, amarae, Ovid. Damnosae, inquietae, Mart. Urentes, Rodentes, Mant., &c",
+    "text_sha1": "2382ad05a1cea2d5d48e8d74feb2c7b226faf514",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A list of poetic epithets for cares (curae; the adjectives are feminine plural to agree with it), each with the poet said to use it. 'Mant.' is very probably Baptista Mantuanus (Mantuan), the Renaissance Latin poet, but the abbreviation is left as written.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "biting, eating, gnawing, cruel, bitter, sick, sad, unquiet, pale, tetric, miserable, intolerable cares",
+            "in": "1.2.3.10",
+            "near": "1.2.3.10-f3",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Claudian; Virgil; Lucan; Horace; Ovid; Martial; Mant.",
+          "basis": "sidenote \"Insomnes, Claudianus. Tristes, Virg. Mordaces, Lucan. Edaces, Hor. Moestae, amarae, Ovid. Damnosae, inquietae, Mart. Urentes, Rodentes, Mant.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Sleepless, Claudian. Sad, Virgil. Biting, Lucan. Devouring, Horace. Mournful, bitter, Ovid. Harmful, restless, Martial. Burning, gnawing, Mant., etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.10-f74": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hyginus",
+      "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+      "locus": "fab. 220",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Fabulae"
+    },
+    "text": "Cura",
+    "text_sha1": "fde1a9509293aa694db89ef77a9ae4388a91b35c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Cura, Care personified, the heroine of Hyginus' fable.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hyginus",
+          "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+          "locus": "fab. 220",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Fabulae"
+        },
+        "text": "Care",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.10-f75": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hyginus",
+      "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+      "locus": "fab. 220",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Fabulae"
+    },
+    "text": "Cura",
+    "text_sha1": "fde1a9509293aa694db89ef77a9ae4388a91b35c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Cura, Care personified.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hyginus",
+          "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+          "locus": "fab. 220",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Fabulae"
+        },
+        "text": "Care",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.10-f8": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hyginus",
+      "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+      "locus": "fab. 220",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Fabulae"
+    },
+    "text": "Tellus",
+    "text_sha1": "03c7b3d8f28c2466b1e26fc56b022c5e88e3b28d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Tellus is the Earth, personified as a goddess.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hyginus",
+          "basis": "text \"Hyginus, fab. 220, to this purpose hath a pleasant tale\"",
+          "locus": "fab. 220",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Fabulae"
+        },
+        "text": "Earth",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.10-f85": {
     "kind": "phrase",
     "lang": "la",

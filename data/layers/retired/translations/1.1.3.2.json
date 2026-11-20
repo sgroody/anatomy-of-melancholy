@@ -1,0 +1,65 @@
+{
+  "1.1.3.2-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Synesius",
+      "basis": "text \"according to Synesius\" and sidenote \"In laud. calvit.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Praise of Baldness"
+    },
+    "text": "Anacreon’s cicada, sine sanguine & dolore, similes fere diis sunt",
+    "text_sha1": "c91692d2ccfd956a73ef52ce1cafc0f2ad1f4fbb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-24",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Anacreon's cicada' is Burton's English, so it is not translated. The Latin echoes the Anacreontic ode to the cicada, which calls it bloodless, free of suffering and almost like the gods. Synesius quotes that ode in his Praise of Baldness.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Synesius",
+          "basis": "text \"according to Synesius\" and sidenote \"In laud. calvit.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Praise of Baldness"
+        },
+        "text": "without blood and without pain, they are almost like gods",
+        "warnings": []
+      }
+    ]
+  }
+}

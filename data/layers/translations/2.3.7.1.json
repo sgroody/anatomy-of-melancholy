@@ -322,75 +322,6 @@
       }
     ]
   },
-  "2.3.7.1-f103": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "If thou seest aught amiss in another, mend it in thyself",
-        "in": "2.3.7.1",
-        "near": "2.3.7.1-f103",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Epictetus",
-      "basis": "sidenote \"Epictetus:\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Epictetus: Optime feceris si ea fugeris quae in alio reprehendis. Nemini dixeris quae nolis efferri",
-    "text_sha1": "881a63985e863bf15521a841a725539bf5cad42d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "If thou seest aught amiss in another, mend it in thyself",
-            "in": "2.3.7.1",
-            "near": "2.3.7.1-f103",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Epictetus",
-          "basis": "sidenote \"Epictetus:\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Epictetus: You will do best if you shun the things you blame in another. Tell no one what you would not have spread abroad",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.7.1-f104": {
     "kind": "phrase",
     "lang": "la",
@@ -2084,65 +2015,6 @@
       }
     ]
   },
-  "2.3.7.1-f154": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cicero",
-      "basis": "sidenote \"Tullius epist. Dolabellae\"",
-      "locus": "epist. Dolabellae",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Letters"
-    },
-    "text": "Dolabellae, Tu forti sis animo, & tua moderatio, constantia, eorum infamet injuriam",
-    "text_sha1": "f9a3a0f5f0b48ebf6b679cb6752085cc6fc17c4f",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Dolabellae' belongs to the reference ('Cicero, letter to Dolabella') rather than to the quotation. It is rendered here as 'To Dolabella'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cicero",
-          "basis": "sidenote \"Tullius epist. Dolabellae\"",
-          "locus": "epist. Dolabellae",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Letters"
-        },
-        "text": "To Dolabella: Be of brave heart, and let your moderation and constancy bring disgrace on their injustice.",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.7.1-f156": {
     "kind": "phrase",
     "lang": "la",
@@ -3133,6 +3005,215 @@
           "work": null
         },
         "text": "Be slow to become a friend.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f171": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "not be moved",
+        "in": "2.3.7.1",
+        "near": "2.3.7.1-f171",
+        "prefix": "tality, ",
+        "suffix": ": for ho"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "sidenote \"Tullius epist. Dolabellae\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Dolabella"
+    },
+    "text": "Tu forti sis animo, & tua moderatio, constantia, eorum infamet injuriam",
+    "text_sha1": "f8c94b3976a79cea956ac0aaf7ed8c4aadee841f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "May you be of brave mind, and may your moderation, constancy, defame their injury.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton cites a letter of Cicero (Tullius) to Dolabella. In the main text he gives only the gist, 'not be moved'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "not be moved",
+            "in": "2.3.7.1",
+            "near": "2.3.7.1-f171",
+            "prefix": "tality, ",
+            "suffix": ": for ho"
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "sidenote \"Tullius epist. Dolabellae\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Dolabella"
+        },
+        "text": "Be of a brave mind, and let your moderation and constancy bring disgrace on the wrong they do you.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f172": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If thou seest aught amiss in another, mend it in thyself.",
+        "in": "2.3.7.1",
+        "near": "2.3.7.1-f172",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Epictetus",
+      "basis": "sidenote \"Epictetus:\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Optime feceris si ea fugeris quae in alio reprehendis. Nemini dixeris quae nolis efferri",
+    "text_sha1": "1b16cfc5e0c1c250fb372975e909afdbbb62ec29",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's main text renders the first sentence; 'reveal not thy secrets' loosely covers the second. Burton attributes the saying to Epictetus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If thou seest aught amiss in another, mend it in thyself.",
+            "in": "2.3.7.1",
+            "near": "2.3.7.1-f172",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Epictetus",
+          "basis": "sidenote \"Epictetus:\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "You will do best if you shun the things you blame in another. Tell no one what you would not have spread abroad.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f173": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Give not ear to tale-tellers, babblers",
+        "in": "2.3.7.1",
+        "near": "2.3.7.1-f173",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Fuge susurrones",
+    "text_sha1": "cc4bc6ff857f3cb130b06aa94a2bfd3cf273bfa1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote goes on with 'Percontatorem fugito' (shun the inquisitive man), from Horace, which is not part of this passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Give not ear to tale-tellers, babblers",
+            "in": "2.3.7.1",
+            "near": "2.3.7.1-f173",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Shun whisperers.",
         "warnings": []
       }
     ]

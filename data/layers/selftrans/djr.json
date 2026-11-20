@@ -1,16 +1,4 @@
 {
-  "djr-f1": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ca63ca531e4344eaebf5d86fd8b71ec460fbd5c5"
-  },
   "djr-f10": {
     "bracket": "present",
     "by": "rules",
@@ -73,49 +61,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "66d13cae6bfc219e2bd436979b044ad29c30ad11"
-  },
-  "djr-f101": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
-          "in": "djr-p13",
-          "prefix": "thodus sola artificem ostendit, ",
-          "suffix": ". Oribasius, Aetius, Avicenna, h"
-        },
-        "words": 19
-      },
-      {
-        "by": "rules",
-        "cognates": 1,
-        "position": "preceding",
-        "selector": {
-          "exact": "I make them pay tribute, to set out this my Maceronicon, the method only is mine own, I must usurp that of",
-          "in": "djr-p13",
-          "prefix": " hausi, dispose of what I take. ",
-          "suffix": " Wecker e Terentio, nihil dictum"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "dd4eaba5b2e1dc12197e42c942b951bf0e5bcf3b"
   },
   "djr-f1016": {
     "bracket": "present",
@@ -186,48 +131,6 @@
     ],
     "text_sha1": "af7ab378a1e64ba608c386da8912f7787cf288e7"
   },
-  "djr-f1020": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "descried by his works",
-          "in": "djr-p16",
-          "prefix": "the trace, so is a man’s genius ",
-          "suffix": ", Multo melius ex sermone quam l"
-        },
-        "words": 4
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "our style bewrays us, & as hunters find their game by the trace, so is a man’s",
-          "in": "djr-p16",
-          "prefix": "most true, stylus virum arguit, ",
-          "suffix": " genius descried by his works, M"
-        },
-        "words": 16
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3dcad53b7bcddd2d77a9c8abf601016b7adbdbfa"
-  },
   "djr-f103": {
     "bracket": "present",
     "by": "rules",
@@ -250,12 +153,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "and it is no greater prejudice for me to indite after others, than for Aelianus Montaltus that famous Physician, to write",
+          "exact": "and it is no greater prejudice for me to indite after others, than for Aelianus Montaltus that famous Physician, to write de morbis capitis after Jason Pratensis, Heurnius, Hildesheim, &c., many horses to run in a race, one Logician, one",
           "in": "djr-p14",
           "prefix": "e farther than my predecessors; ",
-          "suffix": " de morbis capitis after Jason P"
+          "suffix": " Rhetorician, after another. Opp"
         },
-        "words": 21
+        "words": 40
       }
     ],
     "lang": "la",
@@ -307,47 +210,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "681b24920e79982ca319304d8cb48333e92c2f6f"
-  },
-  "djr-f105": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "after Jason Pratensis, Heurnius, Hildesheim, &c., many horses to run in a race, one Logician, one Rhetorician, after another",
-          "in": "djr-p14",
-          "prefix": "ian, to write de morbis capitis ",
-          "suffix": ". Oppose then what thou wilt,"
-        },
-        "words": 19
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and it is no greater prejudice for me to indite after others, than for Aelianus Montaltus that famous Physician, to write",
-          "in": "djr-p14",
-          "prefix": "e farther than my predecessors; ",
-          "suffix": " de morbis capitis after Jason P"
-        },
-        "words": 21
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "b278d2335742d4d7493823d3e89920847907996e"
   },
   "djr-f1053": {
     "bracket": "none",
@@ -837,48 +699,6 @@
     ],
     "text_sha1": "74de3ae9de6b23b725ec6f263aede151bcf5160f"
   },
-  "djr-f1107": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "attends on them",
-          "in": "djr-p72",
-          "prefix": "rnal fame, that immortal Genius ",
-          "suffix": ", hac itur ad astra. When Rhodes"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "these are the brave spirits, the gallants of the world, these admired alone, triumph alone, have statues, crowns, pyramids, obelisks to their eternal fame, that immortal",
-          "in": "djr-p72",
-          "prefix": "rantur, & heroum numero habent: ",
-          "suffix": " Genius attends on them, hac itu"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "djr-f111": {
     "bracket": "present",
     "by": "rules",
@@ -1136,48 +956,6 @@
     "signals": [],
     "text_sha1": "86b9a81ba7b5e717d8aeb82fbdbce9a8e762c416"
   },
-  "djr-f1140": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "damn his soul to gather wealth, which he shall not enjoy, which his prodigal son melts and consumes in an instant",
-          "in": "djr-p94",
-          "prefix": "; another to starve his genius, ",
-          "suffix": "."
-        },
-        "words": 21
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "another to starve his",
-          "in": "djr-p94",
-          "prefix": "mself into honours and offices; ",
-          "suffix": " genius, damn his soul to gather"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3dcad53b7bcddd2d77a9c8abf601016b7adbdbfa"
-  },
   "djr-f1143": {
     "bracket": "none",
     "by": "rules",
@@ -1260,35 +1038,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "04cba8cd396cbeba64e6ecac63c5aa5163f4b7ad"
-  },
-  "djr-f115": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "Go now censure, criticize, scoff and rail",
-          "in": "djr-p15",
-          "prefix": "tis lex talionis, quid pro quo. ",
-          "suffix": "."
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "305ccc8e3350d6b39b05d9d9f104f286a124d90a"
   },
   "djr-f1159": {
     "bracket": "none",
@@ -1602,12 +1351,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "our style bewrays us, & as hunters find their game by the trace, so is a man’s",
+          "exact": "our style bewrays us, & as hunters find their game by the trace, so is a man’s genius descried by his works",
           "in": "djr-p16",
           "prefix": "most true, stylus virum arguit, ",
-          "suffix": " genius descried by his works, M"
+          "suffix": ", Multo melius ex sermone quam l"
         },
-        "words": 16
+        "words": 21
       },
       {
         "by": "rules",
@@ -1698,12 +1447,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "descried by his works",
+          "exact": "our style bewrays us, & as hunters find their game by the trace, so is a man’s genius descried by his works",
           "in": "djr-p16",
-          "prefix": "the trace, so is a man’s genius ",
+          "prefix": "most true, stylus virum arguit, ",
           "suffix": ", Multo melius ex sermone quam l"
         },
-        "words": 4
+        "words": 21
       }
     ],
     "lang": "la",
@@ -1786,35 +1535,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "62b79060f9be28287957ad7591d0371da9fa0c0c"
-  },
-  "djr-f1226": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Procurators’ houses, & offices in Venice, which like the golden Apple, shall be given to the worthiest, & best deserving both in war and peace, as a reward of their worth and good service, as so many goals for all",
-          "in": "djr-p157",
-          "prefix": " Bassas’ palaces in Turkey, the ",
-          "suffix": " to aim at (honos alit artes), a"
-        },
-        "words": 38
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "4691cb1bbb18e150e5bbe0f8ca9170950bb6df7c"
   },
   "djr-f1229": {
     "bracket": "none",
@@ -1909,18 +1629,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b8740499b38e4568b7a96dae042ec4c37f32dd89"
-  },
-  "djr-f1234": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "997ad70d7f227f5ce88c6d6b4f4155d144eba4f3"
   },
   "djr-f1235": {
     "bracket": "present",
@@ -2242,18 +1950,6 @@
     ],
     "text_sha1": "ba96c4efb459e0672123a6db2da418ecb04afec2"
   },
-  "djr-f1276": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713"
-  },
   "djr-f128": {
     "bracket": "none",
     "by": "rules",
@@ -2437,6 +2133,47 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "f394c20cbf37d456add18a10cb586469e9fda4a4"
+  },
+  "djr-f1298": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a king now with his crown, robes, sceptre, attendants, by and by drove a loaded ass before him like a carter, &c.",
+          "in": "djr-p59",
+          "prefix": "another, in his volupiae ludis; ",
+          "suffix": " If Democritus were alive now, h"
+        },
+        "words": 22
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "a smith one while, a philosopher another, in his",
+          "in": "djr-p59",
+          "prefix": "day, is an Apothecary tomorrow; ",
+          "suffix": " volupiae ludis; a king now with"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "667e78b9fcb6737c622c5b8a782da938b3b08b7b"
   },
   "djr-f13": {
     "bracket": "present",
@@ -2668,47 +2405,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "e7fa4e622808954e8a79eca5e7570a8b57deb0d4"
-  },
-  "djr-f1311": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "a king now with his crown, robes, sceptre, attendants, by and by drove a loaded ass before him like a carter, &c.",
-          "in": "djr-p59",
-          "prefix": "another, in his volupiae ludis; ",
-          "suffix": " If Democritus were alive now, h"
-        },
-        "words": 22
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "a smith one while, a philosopher another",
-          "in": "djr-p59",
-          "prefix": "day, is an Apothecary tomorrow; ",
-          "suffix": ", in his volupiae ludis; a king "
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "a5e93f2faa88ae348a231087a9739b9584c327e8"
   },
   "djr-f1312": {
     "bracket": "present",
@@ -5276,26 +4972,13 @@
           "suffix": "; rebel, wallow as so many swine"
         },
         "words": 21
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and as the Apologist will, Resp",
-          "in": "djr-p153",
-          "prefix": "lt, lapis super lapidem sedeat, ",
-          "suffix": ". tussi & graveolentia laboret, "
-        },
-        "words": 6
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "bbb54ade97931200b695c86c0eaedce85adebe7d"
   },
@@ -6006,16 +5689,6 @@
     "signals": [],
     "text_sha1": "d97212d370db892426036c09fa9b1d6ac790b44a"
   },
-  "djr-f1441": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "3a38c7135e08f857a293835236d97ca30cac5f7c"
-  },
   "djr-f1442": {
     "bracket": "present",
     "by": "rules",
@@ -6660,26 +6333,13 @@
           "suffix": ", ad stuporem doctus, the best o"
         },
         "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "But it was Democritus his fortune, idem admirationi &",
-          "in": "djr-p20",
-          "prefix": " scornfully rejected by others. ",
-          "suffix": " irrisioni habitus. ’Twas Seneca"
-        },
-        "words": 8
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "441b3e386234e925e789bd70591d673956f12284"
   },
@@ -6837,48 +6497,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b23fe533886180225cf38bc3cde6134a1b48d542"
-  },
-  "djr-f1478": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "No Parish to contain above a thousand Auditors",
-          "in": "djr-p158",
-          "prefix": "roved as the literati in China. ",
-          "suffix": ". If it were possible, I would h"
-        },
-        "words": 8
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "No impropriations, no lay patrons of church livings, or one private man, but common societies, corporations, &c., and those Rectors of benefices to be chosen out of the Universities, examined and approved as the",
-          "in": "djr-p158",
-          "prefix": "opos, subordinate as the other. ",
-          "suffix": " literati in China. No Parish to"
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b370d8d48d1cb619e3e6e65051b67e9b61a4d414"
   },
   "djr-f1479": {
     "bracket": "none",
@@ -7046,34 +6664,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "92c139624b5435776712061cc10240b4be78bd70"
-  },
-  "djr-f1484": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Cyprian desired, open doors and locks, shoot bolts, as Lucian’s Gallus did with a feather of his tail",
-          "in": "djr-p104",
-          "prefix": "ecreta cordium penetrare, which ",
-          "suffix": ": or Gyges’ invisible ring, or s"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "86b587b41423569bf765d5c687c5a7554da052b0"
   },
   "djr-f1485": {
     "bracket": "present",
@@ -7648,90 +7238,6 @@
     ],
     "text_sha1": "cc6d4e8fefa4293298741b39137a4808d7aa3e6b"
   },
-  "djr-f1505": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "bells, with many such",
-          "in": "djr-p67",
-          "prefix": "ocking, kneeling at Ave Marias, ",
-          "suffix": ","
-        },
-        "words": 4
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Had he been present at a Mass, and seen such kissing of Paxes, crucifixes, cringes, duckings, their several attires and ceremonies, pictures of saints, indulgences, pardons, vigils, fasting, feasts, crossing, knocking, kneeling at",
-          "in": "djr-p67",
-          "prefix": "nterfeit & Maggot-eaten Relics. ",
-          "suffix": " Ave Marias, bells, with many su"
-        },
-        "words": 33
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f16aa697720483c6121dbdac05bac52b63e26f7b"
-  },
-  "djr-f1506": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "advocate, that preys upon them both, and cries",
-          "in": "djr-p85",
-          "prefix": "one another, to enrich an Harpy ",
-          "suffix": " Eia Socrates, Eia Xantippe; or "
-        },
-        "words": 8
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and for commodity to squeeze blood, saith Jerome, out of their brother’s heart, defame, lie, disgrace, backbite, rail, bear false witness, swear, forswear, fight and wrangle, spend their goods, lives, fortunes, friends, undo one another, to enrich an",
-          "in": "djr-p85",
-          "prefix": "pull out one another’s throats; ",
-          "suffix": " Harpy advocate, that preys upon"
-        },
-        "words": 38
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "80c6952b119b1b5df2f68c3c6a6d5f52f47dfc51"
-  },
   "djr-f1507": {
     "bracket": "none",
     "by": "rules",
@@ -7773,48 +7279,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "4c46918d7f6a4b9559a9f55911d8dc63510aa8be"
-  },
-  "djr-f1508": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or induction",
-          "in": "djr-p126",
-          "prefix": " must needs follow by a Sorites ",
-          "suffix": ". Every multitude is mad, bellua"
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The whole must needs follow by a",
-          "in": "djr-p126",
-          "prefix": "ated in this following Preface. ",
-          "suffix": " Sorites or induction. Every mul"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1ab9ee453989e880431043d4948a5b456fe6644a"
   },
   "djr-f1509": {
     "bracket": "none",
@@ -8230,6 +7694,253 @@
     ],
     "text_sha1": "1d7669e53dddfe2797a6e007e655d65d6958897e"
   },
+  "djr-f1522": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a62a83439a9eff194e6c61f84abe20bf47c27a7e"
+  },
+  "djr-f1523": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Something I can speak out of experience",
+          "in": "djr-p9",
+          "prefix": "olizing, Experto crede ROBERTO. ",
+          "suffix": ", aerumnabilis experientia me do"
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Concerning myself, I can peradventure affirm with Marius in Sallust, that which others hear or read of, I felt, and practised myself, they get their knowledge by books, I mine by melancholizing",
+          "in": "djr-p9",
+          "prefix": "hich Lipsius probably suspects. ",
+          "suffix": ", Experto crede ROBERTO. Somethi"
+        },
+        "words": 32
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "f9c49706b629d63bc34aac7529e84146931061e5"
+  },
+  "djr-f1524": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
+          "in": "djr-p13",
+          "prefix": "thodus sola artificem ostendit, ",
+          "suffix": ". Oribasius, Aetius, Avicenna, h"
+        },
+        "words": 19
+      },
+      {
+        "by": "rules",
+        "cognates": 1,
+        "position": "preceding",
+        "selector": {
+          "exact": "I make them pay tribute, to set out this my Maceronicon, the method only is mine own, I must usurp that of Wecker",
+          "in": "djr-p13",
+          "prefix": " hausi, dispose of what I take. ",
+          "suffix": " e Terentio, nihil dictum quod n"
+        },
+        "words": 23
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0d0dbb71f7d51b49b35c2cd3a581fa222208600e"
+  },
+  "djr-f1525": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "But it was Democritus his fortune",
+          "in": "djr-p20",
+          "prefix": " scornfully rejected by others. ",
+          "suffix": ", idem admirationi & irrisioni h"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "891d6e020fb9a14bfe6a5ad7c15603cdd02f8b8a"
+  },
+  "djr-f1526": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Blind fury, or error, or rashness, or what it is that eggs them, I know not, I am sure many times, which Austin perceived long since",
+          "in": "djr-p35",
+          "prefix": "rior, an culpa, responsum date? ",
+          "suffix": ", tempestate contentionis, seren"
+        },
+        "words": 26
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and that with such eagerness, impudence, abominable lying, falsifying, and bitterness in their questions they proceed, that as he said",
+          "in": "djr-p35",
+          "prefix": "st and will have the last word; ",
+          "suffix": ", furorne caecus, an rapit vis a"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a05b24574caa96527c4c01439fb903a026844d62"
+  },
+  "djr-f1527": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "our Regius Professor of physic well informed us in a learned lecture of his not long since",
+          "in": "djr-p37",
+          "prefix": "the other corpus per animam, as ",
+          "suffix": ". One helps the vices and passio"
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "98790e2a1d56be6a342002edeb0203c1c06cbc2d"
+  },
+  "djr-f1528": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "73b7c5ba865041b245e169d0740fbca56b834d14"
+  },
+  "djr-f1529": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "is every day more foolish than other",
+          "in": "djr-p49",
+          "prefix": "will have it, semper stultizat, ",
+          "suffix": "; the more it is whipped, the wo"
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and the world itself, which ought at least to be wise by reason of his antiquity, as Hugo de Prato Florido will have it",
+          "in": "djr-p49",
+          "prefix": "ghter: we are not soberly wise; ",
+          "suffix": ", semper stultizat, is every day"
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "00e20d587bbf7c241d91cf53f0bc6b3dc2e8f476"
+  },
   "djr-f153": {
     "bracket": "present",
     "by": "rules",
@@ -8239,6 +7950,272 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "f43c2969c498dfd9d0563b4b9981be4a1c3ed421"
+  },
+  "djr-f1530": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "& infinitely varies, as we ourselves are severally addicted, saith Balthasar Castilio",
+          "in": "djr-p52",
+          "prefix": " a head, will run in infinitum, ",
+          "suffix": ": and cannot so easily be rooted"
+        },
+        "words": 11
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "a seminary of folly, which if it be stirred up, or get a head, will run",
+          "in": "djr-p52",
+          "prefix": "there is seminarium stultitiae, ",
+          "suffix": " in infinitum, & infinitely vari"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2d8bd70b4f6247e7117e99eb29ad235727e284c2"
+  },
+  "djr-f1531": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "of whom they never had offence in thought, word or deed",
+          "in": "djr-p74",
+          "prefix": "quam cogitatione fuerunt laesi, ",
+          "suffix": ". Infinite treasures consumed, t"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "055fd216cf7e6eada1e148be7bbac8796ac88af6"
+  },
+  "djr-f1532": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "586af4b0885eba0c7d1bd3a2a04c5c22c3ab2a32"
+  },
+  "djr-f1533": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Cyprian desired, open doors and locks, shoot bolts, as Lucian’s Gallus did with a feather of his tail",
+          "in": "djr-p104",
+          "prefix": "ecreta cordium penetrare, which ",
+          "suffix": ": or Gyges’ invisible ring, or s"
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "88da46fa28ddc40c56a8bde28791b8a22269632b"
+  },
+  "djr-f1534": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "and men are much deceived that think too well of themselves, an especial argument to convince them of folly",
+          "in": "djr-p113",
+          "prefix": "er, that it is a great offence, ",
+          "suffix": ". Many men (saith Seneca) had be"
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "732fecb2d4375892b5777792ecc8b2d31ce85ef6"
+  },
+  "djr-f1535": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a skirt of Hippocrates",
+          "in": "djr-p125",
+          "prefix": "kes Galen fimbriam Hippocratis, ",
+          "suffix": ": and the said Cardan himself el"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "af63741b4619e165e25411a73ff574533d8d79db"
+  },
+  "djr-f1536": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "54e661036b65fb9f32caf1c922816422ca87db92"
+  },
+  "djr-f1537": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "wise only by inheritance, and in authority by birthright, favour, or for their wealth and titles",
+          "in": "djr-p135",
+          "prefix": "tot. pol. 5 cap. 8) & scientia, ",
+          "suffix": "; there must needs be a fault, a"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "ad15cb2a1e411beda9a38ef5f20abe077e365501"
+  },
+  "djr-f1538": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "they can make a jar, out of the law itself find still some quirk or other, to set men at odds, and continue causes so long",
+          "in": "djr-p138",
+          "prefix": "tch others. If there be no jar, ",
+          "suffix": ", lustra aliquot, I know not how"
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "c5c7f1ddacdcca6e8c4c2bf1df11dc17af8064ef"
+  },
+  "djr-f1539": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "as a bad humour from the body, that are like so many Ulcers and Boils, and must be cured before the Melancholy body can be eased",
+          "in": "djr-p146",
+          "prefix": "hem purged from a Commonwealth, ",
+          "suffix": "."
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "eff548ff358805fe2fe2f81ff36580405a9bb8b9"
   },
   "djr-f154": {
     "bracket": "present",
@@ -8267,6 +8244,292 @@
       "english-follows"
     ],
     "text_sha1": "93638a086ac25153bac5637428baf670a157a225"
+  },
+  "djr-f1540": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "as a bad humour from the body, that are like so many Ulcers and Boils, and must be cured before the Melancholy body can be eased",
+          "in": "djr-p146",
+          "prefix": "hem purged from a Commonwealth, ",
+          "suffix": "."
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "eebfeba344a797028eff8ef3ad6034c1a2c3c2fb"
+  },
+  "djr-f1541": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Ostium, Dioclesiani Therma, Fucinus Lacus, that Piraeus in Athens, made by Themistocles, Amphitheatrums of curious Marble, as at Verona, Civitas Philippi, and Heraclea in Thrace, those Appian and Flaminian ways, prodigious works all may witness",
+          "in": "djr-p147",
+          "prefix": "nd works of Trajan, Claudius at ",
+          "suffix": ": and rather than they should be"
+        },
+        "words": 35
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cdf590eb810af8e4ea854948b85320077a00fe39"
+  },
+  "djr-f1542": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and as the Apologist will",
+          "in": "djr-p153",
+          "prefix": "lt, lapis super lapidem sedeat, ",
+          "suffix": ", Resp. tussi & graveolentia lab"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c66efaa4cf18e9e08f7377a4cdbbc99a232bb81e"
+  },
+  "djr-f1543": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Paradise of the world",
+          "in": "djr-p154",
+          "prefix": "perhaps under the Equator, that ",
+          "suffix": ", ubi semper virens laurus, &c.,"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e"
+  },
+  "djr-f1544": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "with fair, broad, and straight streets, houses uniform, built of brick and stone, like Bruges, Brussels, Rhegium Lepidi, Berne in Switzerland, Milan, Mantua, Crema, Cambalu in Tartary described by M. Polus, or that Venetian Palma",
+          "in": "djr-p154",
+          "prefix": " round, square, or long square, ",
+          "suffix": ". I will admit very few or no su"
+        },
+        "words": 35
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e"
+  },
+  "djr-f1545": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "in which shall be kept engines for quenching of fire, artillery gardens, public walks, theatres, and spacious fields allotted for all gymnics, sports, and honest recreations, hospitals of all kinds, for children, orphans, old folks, sick men, madmen, soldiers, pest-houses",
+          "in": "djr-p154",
+          "prefix": "ses, meeting-places, armouries, ",
+          "suffix": ", &c., not built precario, or by"
+        },
+        "words": 41
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9cbaf7d3a136ed52060b106d8cad73be69f679f5"
+  },
+  "djr-f1546": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "granaries, as at Dresden in Misnia, Stetein in Pomerland, Nuremberg, &c.",
+          "in": "djr-p154",
+          "prefix": "y disposed in each town, common ",
+          "suffix": " Colleges of mathematicians, mus"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e"
+  },
+  "djr-f1547": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "granaries, as at Dresden in Misnia, Stetein in Pomerland, Nuremberg, &c.",
+          "in": "djr-p154",
+          "prefix": "y disposed in each town, common ",
+          "suffix": " Colleges of mathematicians, mus"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6ec4fbdd7f8e1bc2950b39bd80a85f92cde30629"
+  },
+  "djr-f1548": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "public governors, fit officers to each place, Treasurers, Aediles, Quaestors, Overseers of pupils, widows’ goods, and all public houses, &c., and those once a year to make strict accounts of all receipts, expenses, to avoid confusion",
+          "in": "djr-p154",
+          "prefix": "l such places, so will I ordain ",
+          "suffix": ", & sic fiet ut non absumant (as"
+        },
+        "words": 36
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e"
+  },
+  "djr-f1549": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Hippolytus complains of) that it should be more dishonourable for Noblemen to govern the City, than the Country, or unseemly to dwell there now, than of old",
+          "in": "djr-p154",
+          "prefix": "ons: for I see no reason (which ",
+          "suffix": ". I will have no bogs, fens, mar"
+        },
+        "words": 27
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "06c2d31b129eb2c989a1c3e325581df3b29cba09"
   },
   "djr-f155": {
     "bracket": "present",
@@ -8308,6 +8571,194 @@
       "english-precedes"
     ],
     "text_sha1": "b90704df86868a1102640ff84183fc8065e7d99a"
+  },
+  "djr-f1550": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "common treasure, no fees to be given or taken upon pain of losing their places",
+          "in": "djr-p158",
+          "prefix": "wed to be maintained out of the ",
+          "suffix": "; or if they do, very small fees"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1f5de59338b9e161308d1a75d452abe0afcf0586"
+  },
+  "djr-f1551": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "32ff28e3fabd4d632aa4b382d5a1bc153d022b1e"
+  },
+  "djr-f1552": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "they correct others, & are hot in a cold cause, puzzle themselves to find out how many streets in Rome, houses, gates, towers, Homer’s country, Aeneas’ mother, Niobe’s daughters",
+          "in": "djr-p173",
+          "prefix": "th them that cannot find fault; ",
+          "suffix": ", an Sappho publica fuerit? ovum"
+        },
+        "words": 28
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "190dd7bb5ef5cb31c43fd1c2ab3883a8a9748148"
+  },
+  "djr-f1553": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Hannibal, as he had mighty virtues, so had he many vices",
+          "in": "djr-p179",
+          "prefix": " a worthy Prince, but covetous: ",
+          "suffix": "; unam virtutem mille vitia comi"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor"
+    ],
+    "text_sha1": "9aa7ac71d4d3633695578804bc63ffca3d42ec7f"
+  },
+  "djr-f1554": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Dutch writer censured Richard the rich Duke of Cornwall, suing to be Emperor, for his profuse spending",
+          "in": "djr-p181",
+          "prefix": " public, or private purse; as a ",
+          "suffix": ", qui effudit pecuniam ante pede"
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "02fad45b3533068dade6801b573adf00558b1209"
+  },
+  "djr-f1555": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "79054e2c431d6cff4a37e77e30cfc83d0aa4f7e7"
+  },
+  "djr-f1556": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "a42d17dd2ab0099bce2b1bdcb5b3abbe6bfdd249"
+  },
+  "djr-f1557": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "their Theophrastian master",
+          "in": "djr-p183",
+          "prefix": "nd others), or an Elias artifex ",
+          "suffix": "; whom though Libavius & many de"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Neuhusius makes a doubt of it, Valentinus Andreas and others), or an",
+          "in": "djr-p183",
+          "prefix": "t least there be any such (Hen. ",
+          "suffix": " Elias artifex their Theophrasti"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "75b79295c8fdca207e3e2a567a600e670fc6b5a4"
   },
   "djr-f156": {
     "bracket": "present",
@@ -10449,34 +10900,6 @@
       "english-follows"
     ],
     "text_sha1": "17ad318566716297b9e9319855c9ca6dd2ef7fb3"
-  },
-  "djr-f229": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "our Regius Professor of physic well informed us in a learned lecture of his not long since",
-          "in": "djr-p37",
-          "prefix": "the other corpus per animam, as ",
-          "suffix": ". One helps the vices and passio"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "70fe27b4e62ab72d69194401530dc3664751efd8"
   },
   "djr-f23": {
     "bracket": "present",
@@ -12626,12 +13049,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "a seminary of folly, which if it be stirred up, or get a head, will run in infinitum, & infinitely varies, as we ourselves are severally addicted, saith Balthasar Castilio",
+          "exact": "a seminary of folly, which if it be stirred up, or get a head, will run",
           "in": "djr-p52",
           "prefix": "there is seminarium stultitiae, ",
-          "suffix": ": and cannot so easily be rooted"
+          "suffix": " in infinitum, & infinitely vari"
         },
-        "words": 29
+        "words": 16
       },
       {
         "by": "rules",
@@ -14002,12 +14425,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "indulgences, pardons, vigils, fasting, feasts, crossing, knocking, kneeling at",
+          "exact": "indulgences, pardons, vigils, fasting, feasts, crossing, knocking, kneeling at Ave Marias, bells, with many such",
           "in": "djr-p67",
           "prefix": "ceremonies, pictures of saints, ",
-          "suffix": " Ave Marias, bells, with many su"
+          "suffix": ","
         },
-        "words": 9
+        "words": 15
       }
     ],
     "lang": "la",
@@ -14609,12 +15032,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "these are the brave spirits, the gallants of the world, these admired alone, triumph alone, have statues, crowns, pyramids, obelisks to their eternal fame, that immortal",
+          "exact": "these are the brave spirits, the gallants of the world, these admired alone, triumph alone, have statues, crowns, pyramids, obelisks to their eternal fame, that immortal Genius attends on them",
           "in": "djr-p72",
           "prefix": "rantur, & heroum numero habent: ",
-          "suffix": " Genius attends on them, hac itu"
+          "suffix": ", hac itur ad astra. When Rhodes"
         },
-        "words": 26
+        "words": 30
       }
     ],
     "lang": "la",
@@ -14650,12 +15073,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "attends on them",
+          "exact": "these are the brave spirits, the gallants of the world, these admired alone, triumph alone, have statues, crowns, pyramids, obelisks to their eternal fame, that immortal Genius attends on them",
           "in": "djr-p72",
-          "prefix": "rnal fame, that immortal Genius ",
+          "prefix": "rantur, & heroum numero habent: ",
           "suffix": ", hac itur ad astra. When Rhodes"
         },
-        "words": 3
+        "words": 30
       }
     ],
     "lang": "la",
@@ -14858,48 +15281,6 @@
       "english-precedes"
     ],
     "text_sha1": "f875b26a5d9d8a9400707c26b032293b33eba029"
-  },
-  "djr-f380": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of whom they never had offence in thought, word or deed",
-          "in": "djr-p74",
-          "prefix": "quam cogitatione fuerunt laesi, ",
-          "suffix": ". Infinite treasures consumed, t"
-        },
-        "words": 11
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "nothing so common as to have",
-          "in": "djr-p74",
-          "prefix": "",
-          "suffix": " father fight against the son, b"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e488333e32d28caf03d120a984c32ce0a5eb9151"
   },
   "djr-f381": {
     "bracket": "present",
@@ -16769,12 +17150,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "Laws altered, misconstrued, interpreted",
+          "exact": "Laws altered, misconstrued, interpreted pro and con, as the Judge is made by friends, bribed, or otherwise affected as a nose of wax, good today, none tomorrow",
           "in": "djr-p83",
           "prefix": "lectere, quum sit ipse raptor ? ",
-          "suffix": " pro and con, as the Judge is ma"
+          "suffix": "; or firm in his opinion, cast i"
         },
-        "words": 4
+        "words": 27
       }
     ],
     "lang": "la",
@@ -16825,48 +17206,6 @@
       "english-precedes"
     ],
     "text_sha1": "07efe7ab8681d5a12c67d5adfb27e705124d612d"
-  },
-  "djr-f440": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and con, as the Judge is made by friends, bribed, or otherwise affected as a nose of wax, good today, none tomorrow",
-          "in": "djr-p83",
-          "prefix": ", misconstrued, interpreted pro ",
-          "suffix": "; or firm in his opinion, cast i"
-        },
-        "words": 22
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Laws altered, misconstrued, interpreted",
-          "in": "djr-p83",
-          "prefix": "lectere, quum sit ipse raptor ? ",
-          "suffix": " pro and con, as the Judge is ma"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893"
   },
   "djr-f441": {
     "bracket": "present",
@@ -17232,12 +17571,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "advocate, that preys upon them both, and cries",
+          "exact": "Jerome, out of their brother’s heart, defame, lie, disgrace, backbite, rail, bear false witness, swear, forswear, fight and wrangle, spend their goods, lives, fortunes, friends, undo one another, to enrich an Harpy advocate, that preys upon them both, and cries",
           "in": "djr-p85",
-          "prefix": "one another, to enrich an Harpy ",
+          "prefix": "mmodity to squeeze blood, saith ",
           "suffix": " Eia Socrates, Eia Xantippe; or "
         },
-        "words": 8
+        "words": 40
       }
     ],
     "lang": "la",
@@ -17277,42 +17616,6 @@
     ],
     "text_sha1": "6ed01c05747caadfc68303524867c7f72f9fb9a1"
   },
-  "djr-f455": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Generally they prey one upon another as so many ravenous birds, brute beasts, devouring fishes, no",
-          "in": "djr-p85",
-          "prefix": "frog fought, carried both away. ",
-          "suffix": " medium, omnes hic aut captantur"
-        },
-        "words": 16
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "20af418657698863db8d966f4b42ed8dc7d0bd54"
-  },
-  "djr-f456": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "f801c1b85ee631a5065cc5c71fd88c565be93a60"
-  },
   "djr-f457": {
     "bracket": "present",
     "by": "rules",
@@ -17331,13 +17634,26 @@
           "suffix": "; tear others, or be torn in pie"
         },
         "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Generally they prey one upon another as so many ravenous birds, brute beasts, devouring fishes, no medium",
+          "in": "djr-p85",
+          "prefix": "frog fought, carried both away. ",
+          "suffix": ", omnes hic aut captantur aut ca"
+        },
+        "words": 17
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows"
+      "english-follows",
+      "english-precedes"
     ],
     "text_sha1": "4683f67c4d008e4a91aba000cbdb81fec5bdedca"
   },
@@ -22099,34 +22415,6 @@
     ],
     "text_sha1": "3efbeefa8c701bd51badbcf5873b1f2ccf1736f3"
   },
-  "djr-f631": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "wise only by inheritance, and in authority by birthright, favour, or for their wealth and titles",
-          "in": "djr-p135",
-          "prefix": "tot. pol. 5 cap. 8) & scientia, ",
-          "suffix": "; there must needs be a fault, a"
-        },
-        "words": 16
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "a9f100622d26a1d0be0a3c69a20a0f4fb7a2f44b"
-  },
   "djr-f632": {
     "bracket": "present",
     "by": "rules",
@@ -22811,34 +23099,6 @@
       "english-precedes"
     ],
     "text_sha1": "31aeefaf939da9cd226b25e8cbc733ce63d8750d"
-  },
-  "djr-f651": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "they can make a jar, out of the law itself find still some quirk or other, to set men at odds, and continue causes so long",
-          "in": "djr-p138",
-          "prefix": "tch others. If there be no jar, ",
-          "suffix": ", lustra aliquot, I know not how"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "db3205b2db4aa5a42cf2f680709548fc4d48dc56"
   },
   "djr-f652": {
     "bracket": "present",
@@ -24005,34 +24265,6 @@
     ],
     "text_sha1": "4671d92fcea8a555d50cb3fc47378729033f0187"
   },
-  "djr-f690": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "as a bad humour from the body, that are like so many Ulcers and Boils, and must be cured before the Melancholy body can be eased",
-          "in": "djr-p146",
-          "prefix": "hem purged from a Commonwealth, ",
-          "suffix": "."
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "27548c5650b09c77a5e684fd8c0aa4276beb1edd"
-  },
   "djr-f691": {
     "bracket": "present",
     "by": "rules",
@@ -24289,35 +24521,6 @@
       "english-follows"
     ],
     "text_sha1": "7c71389c7c0cd07fd4b018ed904efe66d6b59546"
-  },
-  "djr-f701": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "to the King of Spain’s coffers, besides those many trades and artificers that are busied about them in the kingdom of Granada, Murcia, and all over Spain",
-          "in": "djr-p150",
-          "prefix": ", yield 30,000 crowns per annum ",
-          "suffix": ". In France a great benefit is r"
-        },
-        "words": 27
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8"
   },
   "djr-f703": {
     "bracket": "present",
@@ -24648,12 +24851,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "and as the Apologist will, Resp",
+          "exact": "and as the Apologist will",
           "in": "djr-p153",
           "prefix": "lt, lapis super lapidem sedeat, ",
-          "suffix": ". tussi & graveolentia laboret, "
+          "suffix": ", Resp. tussi & graveolentia lab"
         },
-        "words": 6
+        "words": 5
       },
       {
         "by": "rules",
@@ -25319,12 +25522,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "No impropriations, no lay patrons of church livings, or one private man, but common societies, corporations, &c., and those Rectors of benefices to be chosen out of the Universities, examined and approved as the",
+          "exact": "No impropriations, no lay patrons of church livings, or one private man, but common societies, corporations, &c., and those Rectors of benefices to be chosen out of the Universities, examined and approved as the literati in China",
           "in": "djr-p158",
           "prefix": "opos, subordinate as the other. ",
-          "suffix": " literati in China. No Parish to"
+          "suffix": ". No Parish to contain above a t"
         },
-        "words": 34
+        "words": 37
       }
     ],
     "lang": "la",
@@ -29291,35 +29494,6 @@
     ],
     "text_sha1": "8e21176efa71085f640775088902f02c2d6894fa"
   },
-  "djr-f881": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Hannibal, as he had mighty virtues, so had he many vices",
-          "in": "djr-p179",
-          "prefix": " a worthy Prince, but covetous: ",
-          "suffix": "; unam virtutem mille vitia comi"
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
-    "text_sha1": "e654e8e7133bdaab0e1cb7dcc2508d5205c26520"
-  },
   "djr-f882": {
     "bracket": "present",
     "by": "rules",
@@ -29357,34 +29531,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "16744fc262e56c5625ff4d328f6f746171ec4463"
-  },
-  "djr-f884": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Dutch writer censured Richard the rich Duke of Cornwall, suing to be Emperor, for his profuse spending",
-          "in": "djr-p181",
-          "prefix": " public, or private purse; as a ",
-          "suffix": ", qui effudit pecuniam ante pede"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "4d00163963c7f61973ff95f585f3397daa9a19fe"
   },
   "djr-f885": {
     "bracket": "none",
@@ -30434,12 +30580,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Neuhusius makes a doubt of it, Valentinus Andreas and others), or an Elias artifex their Theophrastian master",
+          "exact": "Neuhusius makes a doubt of it, Valentinus Andreas and others), or an",
           "in": "djr-p183",
           "prefix": "t least there be any such (Hen. ",
-          "suffix": "; whom though Libavius & many de"
+          "suffix": " Elias artifex their Theophrasti"
         },
-        "words": 17
+        "words": 12
       }
     ],
     "lang": "la",
@@ -31858,18 +32004,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3f9146f44ee4ba0c47c1988f898166aaacc3bffd"
-  },
-  "djr-f987": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713"
   },
   "djr-f99": {
     "bracket": "present",

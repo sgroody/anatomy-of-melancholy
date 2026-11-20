@@ -1,4 +1,77 @@
 {
+  "2.3.7.1-f103": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "If thou seest aught amiss in another, mend it in thyself",
+        "in": "2.3.7.1",
+        "near": "2.3.7.1-f103",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Epictetus",
+      "basis": "sidenote \"Epictetus:\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Epictetus: Optime feceris si ea fugeris quae in alio reprehendis. Nemini dixeris quae nolis efferri",
+    "text_sha1": "881a63985e863bf15521a841a725539bf5cad42d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "If thou seest aught amiss in another, mend it in thyself",
+            "in": "2.3.7.1",
+            "near": "2.3.7.1-f103",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Epictetus",
+          "basis": "sidenote \"Epictetus:\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "Epictetus: You will do best if you shun the things you blame in another. Tell no one what you would not have spread abroad",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.7.1-f125": {
     "kind": "phrase",
     "lang": "la",
@@ -188,6 +261,69 @@
           "work": null
         },
         "text": "Terence.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f154": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "sidenote \"Tullius epist. Dolabellae\"",
+      "locus": "epist. Dolabellae",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "Dolabellae, Tu forti sis animo, & tua moderatio, constantia, eorum infamet injuriam",
+    "text_sha1": "f9a3a0f5f0b48ebf6b679cb6752085cc6fc17c4f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Dolabellae' belongs to the reference ('Cicero, letter to Dolabella') rather than to the quotation. It is rendered here as 'To Dolabella'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "sidenote \"Tullius epist. Dolabellae\"",
+          "locus": "epist. Dolabellae",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "To Dolabella: Be of brave heart, and let your moderation and constancy bring disgrace on their injustice.",
         "warnings": []
       }
     ]

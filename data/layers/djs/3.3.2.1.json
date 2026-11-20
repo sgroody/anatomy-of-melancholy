@@ -245,16 +245,18 @@
     "threshold": 0.85
   },
   "3.3.2.1-f32": {
-    "align_score": 0.705,
+    "align_score": 0.906,
     "by": "djs1927",
-    "left_anchor": "in Rome, anno ab urb. condita 800, before the Senators; and Aemilia,",
-    "left_score": 0.705,
+    "left_anchor": "800, before the Senators; and Aemilia,",
+    "left_score": 0.906,
     "method": "rules/djs-align-v3",
     "right_anchor": ", that ran over hot irons, as Emma, Edward the Confessor’s mother",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "aligned",
+    "text": "innocent virgin,",
     "text_sha1": "d49ad01be7931b0055434df5aabe6bc7eb4999dc",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 45292, p. 845"
   },
   "3.3.2.1-f33": {
     "align_score": 0.992,
@@ -438,6 +440,35 @@
     "text_sha1": "f52112761a09b032b9ae7727fa3fb45cddc49c68",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 45266, p. 844"
+  },
+  "3.3.2.1-f55": {
+    "align_score": 0.95,
+    "by": "djs1927",
+    "left_anchor": "ready to be married, was afraid it would be perceived, comfortably replied,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", &c., Fear not daughter, I’ll teach thee a trick to help",
+    "right_score": 0.95,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "998740e2707d5dcc37d88a2f90721c2b5c7233e6",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 45265, p. 844"
+  },
+  "3.3.2.1-f56": {
+    "align_score": 0.906,
+    "by": "djs1927",
+    "left_anchor": "virgins that fetched water in a Sieve, as Tatia did in Rome,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "800, before the Senators; and Aemilia,",
+    "right_score": 0.906,
+    "status": "aligned",
+    "text": "in the year 800 from the founding of the city,",
+    "text_sha1": "b75d52272ee2b4788245895b7fc3cdb8216bb20e",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 45291, p. 845"
   },
   "3.3.2.1-f6": {
     "align_score": 1.0,

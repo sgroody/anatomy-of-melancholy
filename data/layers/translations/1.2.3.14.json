@@ -1012,67 +1012,6 @@
       }
     ]
   },
-  "1.2.3.14-f129": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Jerome",
-      "basis": "sidenote \"Ep. ad Eustochium, de custod. virgin.\" anchored at \"Jerome\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Letter to Eustochium"
-    },
-    "text": "ad Eustochium, de custod. virgin",
-    "text_sha1": "6f6ccc75e813dbbd053ce56ab632ea846626d084",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a reference: Jerome's letter to Eustochium, his Letter 22. 'Ep.' (Letter), which stands just before the marked text, is not part of the passage. 'custod.' stands for 'custodia', keeping or guarding.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Jerome",
-          "basis": "sidenote \"Ep. ad Eustochium, de custod. virgin.\" anchored at \"Jerome\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Letter to Eustochium"
-        },
-        "text": "to Eustochium, on the keeping of virginity",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.14-f13": {
     "kind": "phrase",
     "lang": "la",
@@ -1275,68 +1214,6 @@
       }
     ]
   },
-  "1.2.3.14-f134": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "low",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Per",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "low",
-        "date": "2026-11-18",
-        "flags": [
-          "truncated",
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The sidenote is only \"Per.\", so it cannot be translated with any certainty. As a Latin preposition, per means \"through\" or \"by\", but this is almost certainly an abbreviation or the broken-off start of a reference, so it is kept as written. It is attached to the line \"Palma negata macrum, donata reducit opimum\" (\"The palm denied sends him home lean, the palm given sends him home fat\"). That line is from Horace, Epistles 2.1.181, so \"Per.\" may be a slip or a fragment of a citation and not an abbreviation for Persius.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Per.",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.14-f135": {
     "kind": "phrase",
     "lang": "la",
@@ -1451,6 +1328,139 @@
       }
     ]
   },
+  "1.2.3.14-f138": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": ". Tu sola animum mentemque peruris, gloria",
+    "text_sha1": "f9a9cf5ea8b2479c0e60b16f9aeac9b4204bd6d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "You alone burn through the spirit and mind, glory",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The opening full stop belongs to Burton's citation \"Chrysostom sup. Jo.\" (on John) just before it, not to the quotation; only the Latin words are translated. Glory is addressed directly as the thing that burns up the soul.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "You alone, glory, burn up the heart and mind",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.14-f139": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I burn with an incredible desire",
+        "in": "1.2.3.14",
+        "near": "1.2.3.14-f139",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Cicero",
+      "basis": "text \"that vainglorious Orator, is not ashamed to confess in an Epistle of his to Marcus Lucceius\"; sidenote \"Tullius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Lucceius (Ad Familiares)"
+    },
+    "text": "Ardeo incredibili cupiditate",
+    "text_sha1": "568b66aad7447fba20af95e2e226d5216c73170e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated",
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Cicero's letter to Lucceius (Ad Familiares 5.12) has the word order 'Ardeo cupiditate incredibili'. Burton cuts the sentence short with '&c.' and gives its sense himself: that his name should be made famous in Lucceius's history.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I burn with an incredible desire",
+            "in": "1.2.3.14",
+            "near": "1.2.3.14-f139",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Cicero",
+          "basis": "text \"that vainglorious Orator, is not ashamed to confess in an Epistle of his to Marcus Lucceius\"; sidenote \"Tullius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Lucceius (Ad Familiares)"
+        },
+        "text": "I burn with an incredible desire, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.14-f14": {
     "kind": "phrase",
     "lang": "la",
@@ -1506,6 +1516,65 @@
           "work": "Epistles"
         },
         "text": "Those who compose bad poems are laughed at; yet / they delight in writing, and worship themselves, and beyond that, / if you say nothing, they praise, happy men, whatever they have written",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.14-f140": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Uxor",
+    "text_sha1": "63792f0d5d7118fada3b110dc77147e3f3de0d86",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote reads \"Uxor Hen. 8.\", that is, wife of Henry VIII. It identifies the Queen Katherine named in the main text (Catherine of Aragon).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Wife",
         "warnings": []
       }
     ]
@@ -2321,65 +2390,6 @@
           "work": "Odes"
         },
         "text": "Nothing small or in a lowly strain, nothing mortal do I utter",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.3.14-f3": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Chrysostom sup. Jo. Tu sola animum mentemque peruris, gloria",
-    "text_sha1": "5ec635ad3c1936576557c45c04d31d596006ee1c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-23",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "You alone burn through the spirit and the mind, glory.",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The passage includes Burton's reference 'Chrysostom sup. Jo.' (Chrysostom on John). It most likely gives the source of the English sentence before it, not of the Latin verse that follows. Where the verse comes from is not identified. 'Peruris' means 'you burn through' or 'you inflame'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Chrysostom, on John. You alone, Glory, set heart and mind on fire.",
         "warnings": []
       }
     ]
@@ -5475,63 +5485,6 @@
       }
     ]
   },
-  "1.2.3.14-f84": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Uxor Hen. 8",
-    "text_sha1": "770f0984d6055296e65ca87154e483f035d50000",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This identifies 'Queen Katherine, Dowager of England' as Catherine of Aragon.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Wife of Henry VIII",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.14-f85": {
     "kind": "phrase",
     "lang": "la",
@@ -5715,65 +5668,6 @@
           "work": null
         },
         "text": "a deceitful sweetness, a flattering demon",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.3.14-f91": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Persius",
-      "basis": "sidenote \"Per.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Per",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An abbreviated reference to Persius, naming the source of the line before it.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Persius",
-          "basis": "sidenote \"Per.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Persius",
         "warnings": []
       }
     ]

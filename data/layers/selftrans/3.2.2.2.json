@@ -1596,36 +1596,6 @@
     ],
     "text_sha1": "0e500824085a5b7f5b204c9327be85561aba7506"
   },
-  "3.2.2.2-f172": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Isocrates record) fought more for Helena, than they did against the Giants",
-          "in": "3.2.2.2-p22",
-          "prefix": "y gods themselves (as Homer and ",
-          "suffix": ". When Venus lost her son Cupid,"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "56c1392254c973a40d07187d8091e6ca1883ff5d"
-  },
   "3.2.2.2-f173": {
     "bracket": "none",
     "by": "rules",
@@ -2184,6 +2154,58 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "61c0ab1fd4db699bc7fc07efdf4c722ef7ebc7c5"
+  },
+  "3.2.2.2-f214": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "7f7bc4cedb689446d9b75a54ac57c8d177a5f72a"
+  },
+  "3.2.2.2-f215": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "will have Jason’s golden hair, to be the main cause of Medea’s dotage on him",
+          "in": "3.2.2.2-p40",
+          "prefix": "flava coma incendit cor Medeae) ",
+          "suffix": ". Castor and Pollux were both ye"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6b76d63256eabab6c15eed22e669a3692353cb16"
+  },
+  "3.2.2.2-f216": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "454acadb7319a50b81ddb84af6f3e36c89ac6df3"
   },
   "3.2.2.2-f22": {
     "bracket": "present",

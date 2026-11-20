@@ -93,31 +93,6 @@
     ],
     "text_sha1": "b4b6b37fa1abf6052f979d512b08a49d23c921aa"
   },
-  "2.3.2.1-f11": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "And for bodily stature which some so much admire, and goodly presence, ’tis true, to say the best of them, great men are proper, and tall",
-          "in": "2.3.2.1-p4",
-          "prefix": "have generally the finest wits. ",
-          "suffix": ", I grant, ——— caput inter nubil"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
-    "text_sha1": "863779117a56f4d0d331ace9035e48b8e2716558"
-  },
   "2.3.2.1-f111": {
     "bracket": "present",
     "by": "rules",
@@ -547,6 +522,130 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "530abee4a2825abc058084b69712ae0849d483ce"
+  },
+  "2.3.2.1-f134": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Bocchoris a most deformed prince as ever Egypt had, yet as Diodorus Siculus records of him, in wisdom and knowledge far beyond his predecessors",
+          "in": "2.3.2.1-p1",
+          "prefix": "h: Agesilaus despicabili forma; ",
+          "suffix": ". Anno Dom. 1306, Vladislaus Cub"
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "cc6ae91cd220a85251ec0e4bb748cd497cf3a83e"
+  },
+  "2.3.2.1-f135": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "And for bodily stature which some so much admire, and goodly presence, ’tis true, to say the best of them, great men are proper, and tall, I grant",
+          "in": "2.3.2.1-p4",
+          "prefix": "have generally the finest wits. ",
+          "suffix": ", ——— caput inter nubila condunt"
+        },
+        "words": 28
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes"
+    ],
+    "text_sha1": "0c416c5cde31bbea9cc1d4c40ca96503357cac4e"
+  },
+  "2.3.2.1-f136": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a slave to his lust and belly",
+          "in": "2.3.2.1-p8",
+          "prefix": ", Ventris & inguinis mancipium, ",
+          "suffix": ", solaque libidine fortis. And a"
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "A nobleman therefore in some likelihood, as he concludes, is an Atheist, an oppressor, an Epicure, a gull, a dizzard, an illiterate idiot, an outside, a glow-worm, a proud fool, an arrant ass",
+          "in": "2.3.2.1-p8",
+          "prefix": ", adultery, ignorance, impiety? ",
+          "suffix": ", Ventris & inguinis mancipium, "
+        },
+        "words": 34
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "bbda6cdc00a482b0560e0704db9fa7dc84b8743b"
+  },
+  "2.3.2.1-f137": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Chinenses observe the same customs, no man amongst them noble by birth",
+          "in": "2.3.2.1-p8",
+          "prefix": "iscreet, & well brought up. The ",
+          "suffix": "; out of their Philosophers and "
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "de48ee9ea4893feb6a5d29227dbd06b43c048063"
   },
   "2.3.2.1-f15": {
     "bracket": "present",
@@ -1082,12 +1181,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "some likelihood, as he concludes, is an Atheist, an oppressor, an Epicure, a gull, a dizzard, an illiterate idiot, an outside, a glow-worm, a proud fool, an arrant ass, Ventris & inguinis mancipium, a slave to his lust and belly",
+          "exact": "a slave to his lust and belly",
           "in": "2.3.2.1-p8",
-          "prefix": "mpiety? A nobleman therefore in ",
+          "prefix": ", Ventris & inguinis mancipium, ",
           "suffix": ", solaque libidine fortis. And a"
         },
-        "words": 40
+        "words": 7
       }
     ],
     "lang": "la",
@@ -1905,34 +2004,6 @@
     "signals": [],
     "text_sha1": "c9c71e56e380613eb5481b91817bb20301bd6ab9"
   },
-  "2.3.2.1-f6": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Bocchoris a most deformed prince as ever Egypt had, yet as Diodorus Siculus records of him, in wisdom and knowledge far beyond his predecessors",
-          "in": "2.3.2.1-p1",
-          "prefix": "h: Agesilaus despicabili forma; ",
-          "suffix": ". Anno Dom. 1306, Vladislaus Cub"
-        },
-        "words": 24
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "85ec2bb4b041b1e9cee109695c539a3c4d08124b"
-  },
   "2.3.2.1-f60": {
     "bracket": "present",
     "by": "rules",
@@ -2025,35 +2096,6 @@
     "signals": [],
     "text_sha1": "2a9cb8f059c9ebf5491a1d50fdd77d688981e16c"
   },
-  "2.3.2.1-f63": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "when he came first into the pulpit in Venice, was so much contemned by reason of his outside, a little, lean, poor, dejected person, they were all ready to leave the church",
-          "in": "2.3.2.1-p1",
-          "prefix": " that famous preacher in Italy, ",
-          "suffix": "; but when they heard his voice "
-        },
-        "words": 32
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "74a3fefa6f9c40bd61a634766f2cb882066e3bf2"
-  },
   "2.3.2.1-f64": {
     "bracket": "none",
     "by": "rules",
@@ -2082,35 +2124,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3e2c37b9885f28f218137fa0073891924cd4c179"
-  },
-  "2.3.2.1-f67": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Melanchthon a short hard-favoured man",
-          "in": "2.3.2.1-p1",
-          "prefix": "tapulensis, a couple of dwarfs, ",
-          "suffix": ", parvus erat, sed magnus erat, "
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3062fa3a43a078f4de1011248533951d56008029"
   },
   "2.3.2.1-f72": {
     "bracket": "none",
@@ -2170,35 +2183,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "4a34ce0c7c67e0dab060f9e6f2a565d8b5fadc7d"
-  },
-  "2.3.2.1-f76": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Germans, Frenchmen, and Venetians, the gentry scorn the commonalty, and will not suffer them to match with them",
-          "in": "2.3.2.1-p6",
-          "prefix": " attributed unto it, as amongst ",
-          "suffix": "; they depress, & make them as s"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e1b1987fde1bd8daf58e9454ea01fbebff0a67d2"
   },
   "2.3.2.1-f77": {
     "bracket": "present",
@@ -2268,35 +2252,6 @@
       "english-follows"
     ],
     "text_sha1": "de4d8ca2f6f9747588966dadee14b1c7d1436741"
-  },
-  "2.3.2.1-f80": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "In the kingdom of Naples and France, he that buys such lands, buys the honour, title, barony together with it",
-          "in": "2.3.2.1-p8",
-          "prefix": "ould dispend per annum so much. ",
-          "suffix": "; and they that can dispend so m"
-        },
-        "words": 20
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "517d3cdf6e5901b08bdd755639498c3b09c78998"
   },
   "2.3.2.1-f88": {
     "bracket": "none",

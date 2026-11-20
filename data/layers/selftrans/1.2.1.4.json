@@ -281,12 +281,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Crato confesseth the influence of Stars to have a great hand to this peculiar disease, so doth Jason Pratensis",
+          "exact": "Crato confesseth the influence of Stars to have a great hand to this peculiar disease, so doth Jason Pratensis, Lonerus praefat. de Apoplexia, Ficinus, Fernelius, &c.",
           "in": "1.2.1.4-p2",
           "prefix": "ysicians, Galenists themselves. ",
-          "suffix": ", Lonerus praefat. de Apoplexia,"
+          "suffix": " P. Cnemiander acknowledgeth the"
         },
-        "words": 19
+        "words": 26
       }
     ],
     "lang": "la",
@@ -297,48 +297,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "92ef50ad6fda5219fd4dca350b4ea547407a085a"
-  },
-  "1.2.1.4-f34": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "P. Cnemiander acknowledgeth the Stars an universal cause, and particular from parents, and the use of the six non-natural things",
-          "in": "1.2.1.4-p2",
-          "prefix": "plexia, Ficinus, Fernelius, &c. ",
-          "suffix": ". Baptista Port. mag. lib. 1 cap"
-        },
-        "words": 21
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Crato confesseth the influence of Stars to have a great hand to this peculiar disease, so doth Jason Pratensis",
-          "in": "1.2.1.4-p2",
-          "prefix": "ysicians, Galenists themselves. ",
-          "suffix": ", Lonerus praefat. de Apoplexia,"
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e55643ec3af26d3f46dacd0e283a64e4a1c54fbb"
   },
   "1.2.1.4-f35": {
     "bracket": "present",
@@ -368,6 +326,61 @@
       "english-at-anchor"
     ],
     "text_sha1": "90c17137c81ddd015890574bbebf0a26da24c920"
+  },
+  "1.2.1.4-f37": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "All this (methinks) Joh. de Indagine hath comprised in brief",
+          "in": "1.2.1.4-p1",
+          "prefix": "ey rule us, but God rules them. ",
+          "suffix": ", Quaeris a me quantum in nobis "
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0cdf8f5418476f1ca1c31530e3090c0696051bc1"
+  },
+  "1.2.1.4-f38": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., many diseases proceed from black choler, as it shall be hot or cold",
+          "in": "1.2.1.4-p2",
+          "prefix": "ra bile varii generantur morbi, ",
+          "suffix": "; and though it be cold in its o"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2a1585e0064afccb20a91b836e710c58fd0b27e7"
   },
   "1.2.1.4-f4": {
     "bracket": "present",

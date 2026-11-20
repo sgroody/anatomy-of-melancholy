@@ -63,6 +63,80 @@
       }
     ]
   },
+  "1.3.1.3-f31": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "the veins of their eyes be red, as well as their faces",
+        "in": "1.3.1.3",
+        "near": "1.3.1.3-f31",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Alexander of Tralles (Trallianus)",
+      "basis": "sidenote \"Trallian. lib. 1. 16\"",
+      "locus": "lib. 1. 16",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Venae oculorum sunt rubrae, vide an praecesserit vini & aromatum usus, & frequens balneum, Trallian. lib. 1. 16, an praecesserit mora sub sole",
+    "text_sha1": "41ce43b06f8e107a04fa56627dbe62aa2f913c7c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "'lib. 1. 16' is presumably book 1, chapter 16.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "the veins of their eyes be red, as well as their faces",
+            "in": "1.3.1.3",
+            "near": "1.3.1.3-f31",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Alexander of Tralles (Trallianus)",
+          "basis": "sidenote \"Trallian. lib. 1. 16\"",
+          "locus": "lib. 1. 16",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "The veins of the eyes are red; see whether the use of wine and spices, and frequent bathing, has gone before, Trallianus book 1, 16; whether a stay in the sun has gone before.",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.1.3-f5": {
     "kind": "phrase",
     "lang": "la",

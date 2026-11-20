@@ -93,18 +93,6 @@
     "text_sha1": "49b5d981a8f5ae92bb1542b066a594ee30fa75d4",
     "threshold": 0.85
   },
-  "3.2.2.3-f106": {
-    "align_score": 0.772,
-    "by": "djs1927",
-    "left_anchor": "And Pliny lib. 12 & 13. Read more in Dioscorides, Ulmus, Arnaldus,",
-    "left_score": 0.772,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; for it is now an art, as it was of old",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "70f9914234c3f190ebef6069427625c2492c98c2",
-    "threshold": 0.85
-  },
   "3.2.2.3-f107": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -214,6 +202,30 @@
     "status": "implausible-length",
     "text_sha1": "cad7072db3df6df5ddeb9bc723e1adc576d8f6d9",
     "threshold": 0.85
+  },
+  "3.2.2.3-f115": {
+    "by": "djs1927",
+    "left_anchor": ", one calls it, the first snare of lust; Bossus",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "369c49e6b2b78e387b8f95c32738a8353bf60e32",
+    "threshold": 0.85
+  },
+  "3.2.2.3-f116": {
+    "align_score": 0.988,
+    "by": "djs1927",
+    "left_anchor": "(I say it again) such gestures, apish, ridiculous, undecent attires, Sybaritical tricks,",
+    "left_score": 0.988,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": "., use those sweet perfumes, powders and ointments in public; flock to",
+    "right_score": 0.992,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "e71f8e0068d07d23a17177d5f4bdbb97c6737eee",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 37053, p. 690"
   },
   "3.2.2.3-f12": {
     "align_score": 1.0,
@@ -450,7 +462,7 @@
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": ", one calls it, the first snare of lust;",
+    "right_anchor": ", one calls it, the first snare of lust; Bossus",
     "right_score": 1.0,
     "status": "omitted",
     "text": "",
@@ -471,15 +483,6 @@
     "text_sha1": "22f4f5660627a89a6ae689fe7f31ce4d3b256dc0",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 36705, pp. 683-684"
-  },
-  "3.2.2.3-f30": {
-    "by": "djs1927",
-    "left_anchor": ", one calls it, the first snare of lust;",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ",",
-    "status": "no-anchor",
-    "text_sha1": "c7c3c9de8b4ec8ca3a82a0aefbea9c317e91605d",
-    "threshold": 0.85
   },
   "3.2.2.3-f31": {
     "align_score": 1.0,
@@ -1097,21 +1100,6 @@
     "status": "no-anchor",
     "text_sha1": "50184491660f66e7253a754b6341ca822fed762f",
     "threshold": 0.85
-  },
-  "3.2.2.3-f86": {
-    "align_score": 0.986,
-    "by": "djs1927",
-    "left_anchor": "and use (I say it again) such gestures, apish, ridiculous, undecent attires,",
-    "left_score": 0.986,
-    "method": "rules/djs-align-v3",
-    "residue": "Sybaritical tricks,",
-    "right_anchor": "., use those sweet perfumes, powders and ointments in public; flock to",
-    "right_score": 0.992,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "1097a3b8c323fadeb71718b42fe195774152c4bd",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 37053, p. 690"
   },
   "3.2.2.3-f88": {
     "align_score": 0.993,

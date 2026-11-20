@@ -9662,63 +9662,6 @@
       }
     ]
   },
-  "2.3.3.1-f274": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Nathan Chytraeus",
-      "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Variorum in Europa itinerum deliciae"
-    },
-    "text": "Chytraeus delitiis Europae: Gustonii in aedibus Hubianis in coenaculo e regione mensae",
-    "text_sha1": "7fd4e108aa4608a0b5dcd2edcc66934d568e9c44",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-11-18",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A source note for the verse inscription in the main text: Burton says the verses were written on the dining-room wall opposite the table. The preceding \"Nat.\" stands outside the marked passage and is probably Nathan Chytraeus's first name. His collection of inscriptions is known in full as Variorum in Europa itinerum deliciae. The place name \"Gustonii\" is uncertain and has been left in its Latin form. It may stand for Güstrow in Mecklenburg. \"Aedibus Hubianis\" means the house of a person named Hube or Hubius.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Nathan Chytraeus",
-          "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Variorum in Europa itinerum deliciae"
-        },
-        "text": "Chytraeus, Delights of Europe: at Gustonium, in the Hubian house, in the dining-room, facing the table",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.3.1-f275": {
     "kind": "phrase",
     "lang": "la",
@@ -9991,6 +9934,341 @@
           "work": "Job"
         },
         "text": "In a moment they go down to hell",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f280": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "As often as you shall see a man abounding in wealth",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f280",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Theodoret",
+      "basis": "text \"I may then boldly conclude with Theodoret\"; sidenote \"Cap. 6 de curat. graec. affect. cap. de providentia.\"",
+      "locus": "Cap. 6 de curat. graec. affect. cap. de providentia",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Graecarum affectionum curatio"
+    },
+    "text": "quotiescunque divitiis affluentem",
+    "text_sha1": "ed35bcd43cc4db8b66f948e0b605a85da2a49fab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "as often as abounding in riches",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton gives only the opening words and breaks off with '&c.'. The words 'you see a man' are supplied from the sense, which Burton's own English completes. The Latin participle alone means only '[someone] abounding in riches'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "As often as you shall see a man abounding in wealth",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f280",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Theodoret",
+          "basis": "text \"I may then boldly conclude with Theodoret\"; sidenote \"Cap. 6 de curat. graec. affect. cap. de providentia.\"",
+          "locus": "Cap. 6 de curat. graec. affect. cap. de providentia",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Graecarum affectionum curatio"
+        },
+        "text": "whenever you see a man abounding in riches",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f281": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nathan Chytraeus",
+      "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Deliciae Europae"
+    },
+    "text": "in Europae delitiis",
+    "text_sha1": "ee545b50ed28ca654e2b8daf3e454fb9bacad5ce",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to Nathan Chytraeus's collection of inscriptions, the Deliciae (Delights) of travels in Europe, which Burton gives as the source of the Foscarini epitaph.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nathan Chytraeus",
+          "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Deliciae Europae"
+        },
+        "text": "in Delights of Europe",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f282": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Nathan Chytraeus",
+      "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Deliciae Europae"
+    },
+    "text": "delitiis Europae: Gustonii in aedibus Hubianis in coenaculo e regione mensae",
+    "text_sha1": "cfc71a2af3236f89c73bfa04a6d5c00bbb05b3a6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to where Chytraeus recorded the verse inscription. The place 'Gustonii' and the house 'aedibus Hubianis', perhaps the house of a family named Hube, cannot be identified with certainty, so the names are kept as written.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Nathan Chytraeus",
+          "basis": "sidenote \"Nat. Chytraeus delitiis Europae\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Deliciae Europae"
+        },
+        "text": "Delights of Europe: at Gustonium, in the Hubian house, in the dining room, opposite the table",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f283": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a just man",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f283",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"as Chrysostom holds\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Justus",
+    "text_sha1": "c49516a80320629f0b72f41064748609681cbcf7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin phrase goes on outside the marked passage: 'Justus inexpugnabilis', 'the just man is impregnable'. Burton renders the whole of it right afterwards.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a just man",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f283",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"as Chrysostom holds\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "The just man",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.3.1-f284": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Thou art now in the vale of misery, in poverty, in agony, in temptation",
+        "in": "2.3.3.1",
+        "near": "2.3.3.1-f284",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"as Chrysostom pleads\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "modo in egestate, tribulatione, convalle deplorationis",
+    "text_sha1": "f808653f664f988da9b0be355fc4c24ac5e8ba07",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "now in want, tribulation, valley of lamentation",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton breaks off with '&c.'. 'Convallis deplorationis' recalls the biblical 'vale of tears' (Psalm 84). Burton's English rendering puts the phrases in a different order and adds to them.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Thou art now in the vale of misery, in poverty, in agony, in temptation",
+            "in": "2.3.3.1",
+            "near": "2.3.3.1-f284",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"as Chrysostom pleads\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "now in want, in tribulation, in the valley of weeping",
         "warnings": []
       }
     ]
@@ -13519,66 +13797,6 @@
           "work": null
         },
         "text": "I approve of a garment and a fortune that fit neatly rather than hang loose",
-        "warnings": []
-      }
-    ]
-  },
-  "2.3.3.1-f84": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Nathan Chytraeus",
-      "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Europae deliciae"
-    },
-    "text": "Chytraeus in Europae delitiis",
-    "text_sha1": "2418da9bc2091066efe77c7609d7aea500a632b9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "A reference, not a quotation. Nathan Chytraeus's collection of inscriptions from travels in Europe (Variorum in Europa itinerum deliciae) is the source for Foscarini's epitaph.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Nathan Chytraeus",
-          "basis": "sidenote \"Chytraeus in Europae delitiis.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Europae deliciae"
-        },
-        "text": "Chytraeus, in the Delights of Europe",
         "warnings": []
       }
     ]

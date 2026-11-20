@@ -379,12 +379,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "when a fair maid of her acquaintance wept and made her moan to her, how she had been deflowered, and now ready to be married, was afraid it would be perceived, comfortably replied, Noli vereri filia, &c., Fear not daughter",
+          "exact": "when a fair maid of her acquaintance wept and made her moan to her, how she had been deflowered, and now ready to be married, was afraid it would be perceived, comfortably replied",
           "in": "3.3.2.1-p9",
           "prefix": "ue mulieres arte sua virgines), ",
-          "suffix": ", I’ll teach thee a trick to hel"
+          "suffix": ", Noli vereri filia, &c., Fear n"
         },
-        "words": 40
+        "words": 33
       },
       {
         "by": "rules",
@@ -938,6 +938,74 @@
       "short-gowland-bracket"
     ],
     "text_sha1": "f52112761a09b032b9ae7727fa3fb45cddc49c68"
+  },
+  "3.3.2.1-f55": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., Fear not daughter, I’ll teach thee a trick to help it",
+          "in": "3.3.2.1-p9",
+          "prefix": "bly replied, Noli vereri filia, ",
+          "suffix": ". Sed haec extra callem. To what"
+        },
+        "words": 12
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "), when a fair maid of her acquaintance wept and made her moan to her, how she had been deflowered, and now ready to be married, was afraid it would be perceived, comfortably replied",
+          "in": "3.3.2.1-p9",
+          "prefix": "emque mulieres arte sua virgines",
+          "suffix": ", Noli vereri filia, &c., Fear n"
+        },
+        "words": 33
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "998740e2707d5dcc37d88a2f90721c2b5c7233e6"
+  },
+  "3.3.2.1-f56": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "We may say the same of those Vestal virgins that fetched water in a Sieve, as Tatia did in Rome",
+          "in": "3.3.2.1-p9",
+          "prefix": "ymptoms of incredible jealousy? ",
+          "suffix": ", anno ab urb. condita 800, befo"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b75d52272ee2b4788245895b7fc3cdb8216bb20e"
   },
   "3.3.2.1-f6": {
     "bracket": "none",

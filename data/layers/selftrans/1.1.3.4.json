@@ -97,6 +97,18 @@
           "suffix": "; another stomachalis, from the "
         },
         "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "one from the mirach, called",
+          "in": "1.1.3.4-p1",
+          "prefix": " have the kinds to be infinite; ",
+          "suffix": " myrachialis of the Arabians; an"
+        },
+        "words": 5
       }
     ],
     "lang": "la",
@@ -104,6 +116,7 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "38a6c54ed713fb6e6dee9021329d84bdbfab5e59"
@@ -251,32 +264,6 @@
     ],
     "text_sha1": "ca9bd829e7714ca0ee5fc63ec421d9144ac4c00a"
   },
-  "1.1.3.4-f20": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "one from the",
-          "in": "1.1.3.4-p1",
-          "prefix": " have the kinds to be infinite; ",
-          "suffix": " mirach, called myrachialis of t"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e16f874014f8cc43bb0fd7e91aa5157475ba731a"
-  },
   "1.1.3.4-f21": {
     "bracket": "none",
     "by": "rules",
@@ -318,18 +305,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "aac9623e522ee2bc7ad42616a3407363715cb555"
-  },
-  "1.1.3.4-f22": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3c471d5d4efb37d0c039ffdb5aaf4551589d7945"
   },
   "1.1.3.4-f3": {
     "bracket": "present",

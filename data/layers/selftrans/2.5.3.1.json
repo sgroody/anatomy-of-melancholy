@@ -137,6 +137,32 @@
     ],
     "text_sha1": "8e77c32325aa980ad113321b3a2f663dcac215b6"
   },
+  "2.5.3.1-f16": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Diminutives and purgers may be taken as before, of",
+          "in": "2.5.3.1-p5",
+          "prefix": "",
+          "suffix": " hiera, manna, cassia, which Mon"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3ff26a9ad064787677884a73ff99ab561cbd4291"
+  },
   "2.5.3.1-f17": {
     "bracket": "none",
     "by": "rules",
@@ -148,48 +174,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "a1bb7f0715bfcbff4023ece23932b43911501224"
-  },
-  "2.5.3.1-f18": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "speaks of",
-          "in": "2.5.3.1-p4",
-          "prefix": "used, which every Pharmacopoeia ",
-          "suffix": "."
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Arnaldus hath a wormwood wine which he would have used, which every",
-          "in": "2.5.3.1-p4",
-          "prefix": " crudities, helps appetite, &c. ",
-          "suffix": " Pharmacopoeia speaks of."
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170"
   },
   "2.5.3.1-f19": {
     "bracket": "none",
@@ -248,31 +232,47 @@
     ],
     "text_sha1": "99fc4f85a34e09241f7f95ca21000c099627acb7"
   },
-  "2.5.3.1-f21": {
+  "2.5.3.1-f22": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or part of the back which is over against the heart, Aetius sinapisms",
+          "in": "2.5.3.1-p11",
+          "prefix": "he stomach, to the metaphrenum, ",
+          "suffix": "; Montaltus cap. 35 would have t"
+        },
+        "words": 13
+      },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Diminutives and purgers may be taken as before, of",
-          "in": "2.5.3.1-p5",
-          "prefix": "",
-          "suffix": " hiera, manna, cassia, which Mon"
+          "exact": "Piso Dropaces of pitch, and oil of Rue, applied at certain times to the stomach, to the",
+          "in": "2.5.3.1-p11",
+          "prefix": "asms, or dry purging medicines: ",
+          "suffix": " metaphrenum, or part of the bac"
         },
-        "words": 9
+        "words": 17
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "0b4badda96ee2f4a4e356bd34476453622952bd7"
+    "text_sha1": "cecf3cf7fbeee3031e755f63f6bd22982c2f1a81"
   },
   "2.5.3.1-f3": {
     "bracket": "present",

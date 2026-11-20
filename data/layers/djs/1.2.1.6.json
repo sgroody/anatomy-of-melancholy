@@ -51,13 +51,13 @@
     "threshold": 0.85
   },
   "1.2.1.6-f15": {
-    "align_score": 0.881,
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "drunken, or hare-brain women, most part bring forth children like unto themselves,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", and so likewise he that lies with a menstruous woman. Intemperantia",
-    "right_score": 0.881,
+    "right_anchor": ", and so likewise he that lies with a menstruous woman.",
+    "right_score": 1.0,
     "status": "aligned",
     "text": "morose & languid,",
     "text_sha1": "c6c0f407ff79590baca916723163eb976674c84b",
@@ -66,9 +66,11 @@
   },
   "1.2.1.6-f16": {
     "by": "djs1927",
-    "left_anchor": "invalidi, tetra lue sordidi, minime vitales, omnibus bonis corporis atque animi destituti:",
+    "left_anchor": "wholly to be imputed to their parents; I need not therefo :",
+    "left_score": 0.9824561403508771,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", si saniores, inquit Eustathius, ut Hercules, & alii. Judaei",
+    "right_anchor": ", Some other causes are given, which properly pertain to, and proceed",
+    "right_score": 0.9538461538461537,
     "status": "not-found",
     "text_sha1": "701067e746b201d1dde91c63431d1a02b0277ca4",
     "threshold": 0.85
@@ -233,14 +235,6 @@
     "text_sha1": "b77303cd66199d9f3dc4b46f957d5dcb56a1cae8",
     "threshold": 0.85
   },
-  "1.2.1.6-f40": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a805a443bf68906ff44f40fcee5fcb2101635167",
-    "threshold": 0.85
-  },
   "1.2.1.6-f41": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -265,28 +259,24 @@
     "text_sha1": "3ad71cf554d5326f415fa11e88bd89536be7c9b1",
     "threshold": 0.85
   },
-  "1.2.1.6-f44": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "73774df8bd44d06d600e906f36a5c23961847bc8",
-    "threshold": 0.85
-  },
   "1.2.1.6-f46": {
     "by": "djs1927",
-    "left_anchor": ", si saniores, inquit Eustathius, ut Hercules, & alii. Judaei",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
     "method": "rules/djs-align-v3",
-    "right_anchor": "Christianos Concubitum, Some other causes are given, which properly pertain to, and",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
     "status": "not-found",
     "text_sha1": "dc9d4a27542c1b75a5a1663ff166eda4f6205443",
     "threshold": 0.85
   },
   "1.2.1.6-f47": {
     "by": "djs1927",
-    "left_anchor": "to be imputed to their parents; I need not therefo Christianos Concubitum,",
+    "left_anchor": "wholly to be imputed to their parents; I need not therefo ,",
+    "left_score": 0.9824561403508771,
     "method": "rules/djs-align-v3",
-    "right_anchor": "; & quod Christiani toties leprosi, amentes, tot morbilli, impetigines, alphi, psorae,",
+    "right_anchor": "; & Some other causes are given, which properly pertain to, and",
+    "right_score": 0.9391304347826087,
     "status": "not-found",
     "text_sha1": "9518aa30a42cbbcd696dcafc98ca058c321953b2",
     "threshold": 0.85
@@ -294,17 +284,21 @@
   "1.2.1.6-f49": {
     "by": "djs1927",
     "left_anchor": "imputed to their parents; I need not therefo , Lev. 18, 20",
+    "left_score": 0.8737864077669903,
     "method": "rules/djs-align-v3",
-    "right_anchor": "immunda muliere. Gregorius Magnus, petenti Augustino nunquid apud Britannos hujusmodi concubitum toleraret,",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
     "status": "not-found",
     "text_sha1": "8d5ab16c78e9e78afd0a4c844fff62188b9e3f85",
     "threshold": 0.85
   },
   "1.2.1.6-f50": {
     "by": "djs1927",
-    "left_anchor": "Gregorius Magnus, petenti Augustino nunquid apud Britannos hujusmodi concubitum toleraret, severe prohibuit",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
     "method": "rules/djs-align-v3",
     "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
     "status": "not-found",
     "text_sha1": "d1e8f99fb88726d7f0c006c5b5289bf5a6408c93",
     "threshold": 0.85
@@ -334,18 +328,22 @@
   },
   "1.2.1.6-f53": {
     "by": "djs1927",
-    "left_anchor": "decursus ratione habita, nec observato interlunio, praecipua causa est, noxia, pernitiosa, concubitum",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Rodericus à Castro Lusitanus, detestantur ad unum omnes medici, tum &",
+    "right_anchor": ", Some other causes are given, which properly pertain to, and proceed",
+    "right_score": 0.9538461538461537,
     "status": "not-found",
     "text_sha1": "bb6833ed6e7b80df1c96ed061b940e1f3ac359d3",
     "threshold": 0.85
   },
   "1.2.1.6-f54": {
     "by": "djs1927",
-    "left_anchor": "illos in pignora vocant, qui quarta luna profluente hac mensium illuvie concubitum",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
     "method": "rules/djs-align-v3",
     "right_anchor": ", Lev. 18, 20 Some other causes are given, which properly pertain",
+    "right_score": 0.896551724137931,
     "status": "not-found",
     "text_sha1": "d01429fc270b42b2df2213a5b6f3d6cfa94700ce",
     "threshold": 0.85
@@ -369,6 +367,17 @@
     "text_sha1": "c2d2113077cef4e5d1753e104b83de8345291d31",
     "threshold": 0.85
   },
+  "1.2.1.6-f59": {
+    "by": "djs1927",
+    "left_anchor": ", and so likewise he that lies with a menstruous woman.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
+    "status": "not-found",
+    "text_sha1": "565c5ce49c306ab95c1f82f7dbc38a7525dbb9d6",
+    "threshold": 0.85
+  },
   "1.2.1.6-f6": {
     "align_score": 0.981,
     "by": "djs1927",
@@ -382,6 +391,69 @@
     "text_sha1": "21ff13a6fe2567dcc69c27c952d154a69b9d6520",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 10641, pp. 183-184"
+  },
+  "1.2.1.6-f60": {
+    "by": "djs1927",
+    "left_anchor": "wholly to be imputed to their parents; I need not therefo ,",
+    "left_score": 0.9824561403508771,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ": Some other causes are given, which properly pertain to, and proceed",
+    "right_score": 0.9538461538461537,
+    "status": "not-found",
+    "text_sha1": "1fdb22f8ca73bbc2ccc7e3d047650ca332afe835",
+    "threshold": 0.85
+  },
+  "1.2.1.6-f61": {
+    "by": "djs1927",
+    "left_anchor": "wholly to be imputed to their parents; I need not therefo ,",
+    "left_score": 0.9824561403508771,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
+    "status": "not-found",
+    "text_sha1": "7096648e77b3f186677dcc3b616b8d4e856961d2",
+    "threshold": 0.85
+  },
+  "1.2.1.6-f62": {
+    "by": "djs1927",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Some other causes are given, which properly pertain to, and proceed",
+    "right_score": 0.9538461538461537,
+    "status": "not-found",
+    "text_sha1": "5e0e86a4f9ae34f5c6675c518a9d747f5c7ff3a0",
+    "threshold": 0.85
+  },
+  "1.2.1.6-f63": {
+    "by": "djs1927",
+    "left_anchor": "to be imputed to their parents; I need not therefo ; &",
+    "left_score": 0.9423076923076923,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
+    "status": "not-found",
+    "text_sha1": "4daae5c892f9a2c181b463cbe6c77dd698e7ac51",
+    "threshold": 0.85
+  },
+  "1.2.1.6-f64": {
+    "by": "djs1927",
+    "left_anchor": "times wholly to be imputed to their parents; I need not therefo",
+    "left_score": 0.9841269841269842,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "Some other causes are given, which properly pertain to, and proceed from",
+    "right_score": 0.9571428571428572,
+    "status": "not-found",
+    "text_sha1": "b36c1eabfdf51da73fe6297689a55892811f51b8",
+    "threshold": 0.85
+  },
+  "1.2.1.6-f65": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "67f0690196a4c44f33b07119cf853ecc39d13b1c",
+    "threshold": 0.85
   },
   "1.2.1.6-f7": {
     "align_score": 0.835,

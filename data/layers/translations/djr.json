@@ -1,63 +1,4 @@
 {
-  "djr-f1": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Seneca",
-      "basis": "sidenote \"Seneca in ludo in mortem Claudii Caesaris.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Apocolocyntosis (Ludus de morte Claudii)"
-    },
-    "text": "Seneca in ludo in mortem Claudii Caesaris",
-    "text_sha1": "ca63ca531e4344eaebf5d86fd8b71ec460fbd5c5",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": "Seneca in the play on the death of Claudius Caesar",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Seneca's satire on the death of Claudius is the Apocolocyntosis. Here 'ludus' means a jest or skit.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Seneca",
-          "basis": "sidenote \"Seneca in ludo in mortem Claudii Caesaris.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Apocolocyntosis (Ludus de morte Claudii)"
-        },
-        "text": "Seneca, in his skit on the death of Claudius Caesar",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f10": {
     "kind": "phrase",
     "lang": "la",
@@ -243,77 +184,6 @@
       }
     ]
   },
-  "djr-f101": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
-        "in": "djr",
-        "near": "djr-f101",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": "Johann Jacob Wecker",
-      "basis": "text \"Wecker e Terentio\"; sidenote \"Praef. ad Syntax. med.\"",
-      "locus": "Praef.",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Syntaxes medicae"
-    },
-    "text": "Wecker e Terentio, nihil dictum quod non dictum prius, methodus sola artificem ostendit",
-    "text_sha1": "dd4eaba5b2e1dc12197e42c942b951bf0e5bcf3b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The first clause echoes the prologue to Terence's Eunuch: 'nullumst iam dictum quod non dictum sit prius'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
-            "in": "djr",
-            "near": "djr-f101",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Johann Jacob Wecker",
-          "basis": "text \"Wecker e Terentio\"; sidenote \"Praef. ad Syntax. med.\"",
-          "locus": "Praef.",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Syntaxes medicae"
-        },
-        "text": "Wecker, from Terence: nothing is said that has not been said before; method alone shows the craftsman",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1016": {
     "kind": "phrase",
     "lang": "la",
@@ -450,65 +320,6 @@
           "work": null
         },
         "text": "in a different style, not a different faith",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1020": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "genius",
-    "text_sha1": "3dcad53b7bcddd2d77a9c8abf601016b7adbdbfa",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": "genius",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Here genius means a person's inborn character or disposition, not exceptional talent. The word stands in Burton's English sentence as a borrowed term.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "natural bent",
         "warnings": []
       }
     ]
@@ -684,63 +495,6 @@
           "work": null
         },
         "text": "lapis lazuli",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f105": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "de morbis capitis",
-    "text_sha1": "b278d2335742d4d7493823d3e89920847907996e",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The title or subject of Montaltus's treatise.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "On Diseases of the Head",
         "warnings": []
       }
     ]
@@ -1647,65 +1401,6 @@
       }
     ]
   },
-  "djr-f1107": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Genius",
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Genius here is the attendant or guardian spirit of classical belief; it has been taken into Burton's English sentence.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Genius",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f111": {
     "kind": "phrase",
     "lang": "la",
@@ -2293,65 +1988,6 @@
       }
     ]
   },
-  "djr-f1140": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "genius",
-    "text_sha1": "3dcad53b7bcddd2d77a9c8abf601016b7adbdbfa",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "In Latin usage, genius is a man's guardian spirit and so his natural appetite for comfort and pleasure. To 'cheat' or 'starve one's genius' (genium defraudare) means to deny oneself the ordinary comforts of life.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "genius",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1143": {
     "kind": "phrase",
     "lang": "la",
@@ -2563,65 +2199,6 @@
           "work": "Letter to Damagetus"
         },
         "text": "In this his own country",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f115": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "quid pro quo",
-    "text_sha1": "305ccc8e3350d6b39b05d9d9f104f286a124d90a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": "something for something",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A proverbial phrase for tit for tat. The English that follows, 'Go now censure…', does not render it.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "this for that",
         "warnings": []
       }
     ]
@@ -3634,65 +3211,6 @@
       }
     ]
   },
-  "djr-f1226": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Jerónimo Osório (Osorius)",
-      "basis": "sidenote \"See Contarenus and Osorius de rebus gestis Emanuelis.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De rebus Emmanuelis gestis"
-    },
-    "text": "Osorius de rebus gestis Emanuelis",
-    "text_sha1": "4691cb1bbb18e150e5bbe0f8ca9170950bb6df7c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A book title: Jerónimo Osório's history of King Manuel I of Portugal.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Jerónimo Osório (Osorius)",
-          "basis": "sidenote \"See Contarenus and Osorius de rebus gestis Emanuelis.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De rebus Emmanuelis gestis"
-        },
-        "text": "Osorius, On the Deeds of Emanuel",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1229": {
     "kind": "phrase",
     "lang": "la",
@@ -3890,65 +3408,6 @@
           "work": null
         },
         "text": "equal law",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1234": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Aristotle",
-      "basis": "sidenote \"Aliter Aristoteles, a man at 25 a woman at 30. Polit.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Politics"
-    },
-    "text": "Polit",
-    "text_sha1": "997ad70d7f227f5ce88c6d6b4f4155d144eba4f3",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "An abbreviated reference to Aristotle's Politics.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Aristotle",
-          "basis": "sidenote \"Aliter Aristoteles, a man at 25 a woman at 30. Polit.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Politics"
-        },
-        "text": "Politics",
         "warnings": []
       }
     ]
@@ -4749,67 +4208,6 @@
       }
     ]
   },
-  "djr-f1276": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Per",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Only an abbreviated citation, 'Per.', most likely for Persius, the source of 'Anticyras melior sorbere meracas' (Satires 4.16). There is no Latin text to translate.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Persius.",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f128": {
     "kind": "phrase",
     "lang": "la",
@@ -5129,6 +4527,63 @@
           "work": "Epigrams"
         },
         "text": "They write poems that people read while shitting.",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1298": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Celio Calcagnini",
+      "basis": "text \"as Calcagninus wittily feigns in his Apologues\"; sidenote \"Calcagninus Apol.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Apologues"
+    },
+    "text": "volupiae ludis",
+    "text_sha1": "667e78b9fcb6737c622c5b8a782da938b3b08b7b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in games of Volupia",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Volupia was the Roman goddess of pleasure. The phrase picks up Burton's earlier 'volupiae sacra', the rites of Pleasure in Calcagnini's fable.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Celio Calcagnini",
+          "basis": "text \"as Calcagninus wittily feigns in his Apologues\"; sidenote \"Calcagninus Apol.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Apologues"
+        },
+        "text": "in his games of Volupia",
         "warnings": []
       }
     ]
@@ -5627,63 +5082,6 @@
           "work": "Ars Poetica"
         },
         "text": "— and let it be kept back until the ninth year,",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1311": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Celio Calcagnini",
-      "basis": "text \"as Calcagninus wittily feigns in his Apologues\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Apologues"
-    },
-    "text": "in his volupiae ludis",
-    "text_sha1": "a5e93f2faa88ae348a231087a9739b9584c327e8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'His' is the Latin ablative 'these', not the English pronoun. Volupia is the goddess of pleasure.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Celio Calcagnini",
-          "basis": "text \"as Calcagninus wittily feigns in his Apologues\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Apologues"
-        },
-        "text": "in these games of Volupia",
         "warnings": []
       }
     ]
@@ -12973,63 +12371,6 @@
       }
     ]
   },
-  "djr-f1441": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Famianus Strada",
-      "basis": "sidenote \"Famian. Strada de bajulis, de marmore semisculptis.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Strada de bajulis, de marmore semisculptis",
-    "text_sha1": "3a38c7135e08f857a293835236d97ca30cac5f7c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "These look like the titles of pieces by Famianus Strada. Their exact standing is uncertain.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Famianus Strada",
-          "basis": "sidenote \"Famian. Strada de bajulis, de marmore semisculptis.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Strada, On Porters; On Half-Carved Marble",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1442": {
     "kind": "phrase",
     "lang": "la",
@@ -14836,65 +14177,6 @@
       }
     ]
   },
-  "djr-f1478": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "literati",
-    "text_sha1": "b370d8d48d1cb619e3e6e65051b67e9b61a4d414",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": "the learned",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Latin 'literati', 'men of letters'. Burton means the Chinese scholar-officials chosen by examination.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "literati",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1479": {
     "kind": "phrase",
     "lang": "la",
@@ -15273,94 +14555,6 @@
           "work": null
         },
         "text": "Laws engraved are neglected",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1484": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Cyprian",
-      "basis": "text \"which Cyprian desired\" and sidenote \"Ad Donat. ep. 2 lib. 2.\"",
-      "locus": "ep. 2 lib. 2",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Ad Donatum"
-    },
-    "text": "Ad Donat. ep. 2 lib. 2. O si posses in specula sublimi constitutus, &c",
-    "text_sha1": "86b587b41423569bf765d5c687c5a7554da052b0",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-20",
-        "flags": [
-          "truncated"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a reference to Cyprian's letter To Donatus, where the reader is invited to look down from a height on the world's wickedness. The quotation is cut off after the opening words.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cyprian",
-          "basis": "text \"which Cyprian desired\" and sidenote \"Ad Donat. ep. 2 lib. 2.\"",
-          "locus": "ep. 2 lib. 2",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Ad Donatum"
-        },
-        "text": "To Donatus, letter 2, book 2. O, if you could, set on a lofty watchtower, etc.",
-        "warnings": []
-      },
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-20",
-        "flags": [
-          "truncated"
-        ],
-        "literal": null,
-        "model": "claude-sonnet-5-5",
-        "models_reported": [
-          "claude-sonnet-5-5"
-        ],
-        "note": "Cyprian, Ad Donatum; the reference is Burton's. Cut off with &c. Burton's English at the anchor only says Cyprian desired such a view.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Cyprian",
-          "basis": "text \"Cyprian desired\" at the anchor, and the passage begins \"Ad Donat. ep. 2 lib. 2.\"",
-          "locus": "ep. 2 lib. 2",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Ad Donatum"
-        },
-        "text": "To Donatus, letter 2, book 2. Oh, if you could be set on a lofty watchtower, etc.",
         "warnings": []
       }
     ]
@@ -16594,126 +15788,6 @@
       }
     ]
   },
-  "djr-f1505": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ave Marias",
-    "text_sha1": "f16aa697720483c6121dbdac05bac52b63e26f7b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The prayer is named after its opening words, Ave Maria.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Hail Marys",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1506": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Harpy",
-    "text_sha1": "80c6952b119b1b5df2f68c3c6a6d5f52f47dfc51",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [
-          "language-mismatch"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Here 'Harpy' is used as an English word, from the Greek Harpyia, the snatching monster of myth. Burton uses it of a grasping lawyer. It is not Latin.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "harpy",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f1507": {
     "kind": "phrase",
     "lang": "la",
@@ -16769,65 +15843,6 @@
           "work": "Life of Solon"
         },
         "text": "tripod",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f1508": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Sorites",
-    "text_sha1": "1ab9ee453989e880431043d4948a5b456fe6644a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Sorites is a term of logic from the Greek for 'heap'. It is a chain of linked premises leading step by step to a conclusion.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "sorites",
         "warnings": []
       }
     ]
@@ -17592,6 +16607,530 @@
       }
     ]
   },
+  "djr-f1522": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Macrobius",
+      "basis": "text \"with Vettius in Macrobius\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Saturnalia"
+    },
+    "text": "atque otium",
+    "text_sha1": "a62a83439a9eff194e6c61f84abe20bf47c27a7e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of the clause 'atque otium in utile verterem negotium', 'and might turn leisure into useful business'. The marked words break off before the verb.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Macrobius",
+          "basis": "text \"with Vettius in Macrobius\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Saturnalia"
+        },
+        "text": "and leisure",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1523": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Experto crede ROBERTO",
+    "text_sha1": "f9c49706b629d63bc34aac7529e84146931061e5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "Believe Robert, the one who has experienced it",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverbial tag ('experto crede Roberto') that Burton turns to his own name, Robert Burton. It echoes Virgil's 'experto credite' (Aeneid 11).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Believe Robert, who has tried it",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1524": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
+        "in": "djr",
+        "near": "djr-f1524",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Johann Jacob Wecker",
+      "basis": "text \"I must usurp that of Wecker\"; sidenote \"Praef. ad Syntax. med.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Syntaxis medicinae, preface"
+    },
+    "text": "e Terentio, nihil dictum quod non dictum prius, methodus sola artificem ostendit",
+    "text_sha1": "0d0dbb71f7d51b49b35c2cd3a581fa222208600e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The first clause comes from Terence, Eunuchus, prologue: 'nullumst iam dictum quod non sit dictum prius'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "we can say nothing but what hath been said, the composition and method is ours only, & shows a Scholar",
+            "in": "djr",
+            "near": "djr-f1524",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Johann Jacob Wecker",
+          "basis": "text \"I must usurp that of Wecker\"; sidenote \"Praef. ad Syntax. med.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Syntaxis medicinae, preface"
+        },
+        "text": "from Terence: nothing is said that has not been said before; method alone shows the craftsman",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1525": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "idem admirationi",
+    "text_sha1": "891d6e020fb9a14bfe6a5ad7c15603cdd02f8b8a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "the same man, to admiration",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase continues '& irrisioni habitus', so the whole reads 'he was held at once in admiration and in derision'. Only the first half is marked.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "held at once in admiration",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1526": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Blind fury, or error, or rashness, or what it is that eggs them, I know not",
+        "in": "djr",
+        "near": "djr-f1526",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. epod. lib. od. 7.\"",
+      "locus": "epod. lib. od. 7",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epodes"
+    },
+    "text": "furorne caecus, an rapit vis acrior, an culpa, responsum date",
+    "text_sha1": "a05b24574caa96527c4c01439fb903a026844d62",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Blind fury, or error, or rashness, or what it is that eggs them, I know not",
+            "in": "djr",
+            "near": "djr-f1526",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. epod. lib. od. 7.\"",
+          "locus": "epod. lib. od. 7",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epodes"
+        },
+        "text": "is it blind frenzy, or some fiercer force that sweeps you on, or guilt? Give answer",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1527": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in comitiis",
+    "text_sha1": "98790e2a1d56be6a342002edeb0203c1c06cbc2d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in the assemblies",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Comitia' is the Oxford Act, the university's public degree ceremony, at which Dr Thomas Clayton, Regius Professor of Physic, gave his lecture.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "at the Comitia",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1528": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I think all the Anticyrae will not restore them to their wits",
+        "in": "djr",
+        "near": "djr-f1528",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "The wording is exactly Horace's line about the avaricious, 'nescio an Anticyram ratio illis destinet omnem'.",
+      "locus": "2.3.83",
+      "status": "probable",
+      "verified": false,
+      "work": "Satires"
+    },
+    "text": "Nescio an Anticyram ratio illis destinet omnem",
+    "text_sha1": "73b7c5ba865041b245e169d0740fbca56b834d14",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Anticyra was famous for hellebore, the classical cure for madness.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I think all the Anticyrae will not restore them to their wits",
+            "in": "djr",
+            "near": "djr-f1528",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "The wording is exactly Horace's line about the avaricious, 'nescio an Anticyram ratio illis destinet omnem'.",
+          "locus": "2.3.83",
+          "status": "probable",
+          "verified": false,
+          "work": "Satires"
+        },
+        "text": "I know not whether reason would not assign them the whole of Anticyra",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1529": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "is every day more foolish than other",
+        "in": "djr",
+        "near": "djr-f1529",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Hugo de Prato Florido",
+      "basis": "text \"as Hugo de Prato Florido will have it\"; sidenote \"Ser. 4 in domi. Pal.\"",
+      "locus": "Ser. 4 in domi. Pal.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Sermons"
+    },
+    "text": "semper stultizat",
+    "text_sha1": "00e20d587bbf7c241d91cf53f0bc6b3dc2e8f476",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Stultizat' is a late Latin verb meaning 'acts foolishly'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "is every day more foolish than other",
+            "in": "djr",
+            "near": "djr-f1529",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Hugo de Prato Florido",
+          "basis": "text \"as Hugo de Prato Florido will have it\"; sidenote \"Ser. 4 in domi. Pal.\"",
+          "locus": "Ser. 4 in domi. Pal.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Sermons"
+        },
+        "text": "is always playing the fool",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f153": {
     "kind": "phrase",
     "lang": "la",
@@ -17661,6 +17200,646 @@
       }
     ]
   },
+  "djr-f1530": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in infinitum",
+    "text_sha1": "2d8bd70b4f6247e7117e99eb29ad235727e284c2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to infinity",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1531": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "of whom they never had offence in thought, word or deed",
+        "in": "djr",
+        "near": "djr-f1531",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a quibus nec unquam cogitatione fuerunt laesi",
+    "text_sha1": "055fd216cf7e6eada1e148be7bbac8796ac88af6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "of whom they never had offence in thought, word or deed",
+            "in": "djr",
+            "near": "djr-f1531",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "by whom they had never been injured even in thought",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1532": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petronius",
+      "basis": "sidenote \"Petronius de Crotone civitate.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Satyricon"
+    },
+    "text": "de Crotone civitate",
+    "text_sha1": "586af4b0885eba0c7d1bd3a2a04c5c22c3ab2a32",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the reference for the main-text quotation 'omnes hic aut captantur aut captant', from Petronius's description of Croton in the Satyricon.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petronius",
+          "basis": "sidenote \"Petronius de Crotone civitate.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Satyricon"
+        },
+        "text": "on the city of Croton",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1533": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cyprian",
+      "basis": "text \"which Cyprian desired\"; sidenote \"Ad Donat. ep. 2 lib. 2.\"",
+      "locus": "ep. 2 lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Ad Donatum"
+    },
+    "text": ". 2. O si posses in specula sublimi constitutus, &c",
+    "text_sha1": "88da46fa28ddc40c56a8bde28791b8a22269632b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The leading '. 2.' belongs to the reference 'lib. 2' and is not translated. The quotation breaks off with '&c.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cyprian",
+          "basis": "text \"which Cyprian desired\"; sidenote \"Ad Donat. ep. 2 lib. 2.\"",
+          "locus": "ep. 2 lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ad Donatum"
+        },
+        "text": "Oh, if you could, placed on a lofty watch-tower, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1534": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pliny the Younger",
+      "basis": "sidenote \"Superbam stultitiam Plinius vocat. 7 epist. 21.\"",
+      "locus": "7 epist. 21",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "Superbam stultitiam Plinius vocat",
+    "text_sha1": "732fecb2d4375892b5777792ecc8b2d31ce85ef6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's reference '7 epist. 21' points to the letters of Pliny the Younger.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pliny the Younger",
+          "basis": "sidenote \"Superbam stultitiam Plinius vocat. 7 epist. 21.\"",
+          "locus": "7 epist. 21",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "Pliny calls it proud folly",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1535": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a skirt of Hippocrates",
+        "in": "djr",
+        "near": "djr-f1535",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Julius Caesar Scaliger",
+      "basis": "text \"Scaliger exercitat. 224 scoffs at this censure of his\"",
+      "locus": "exercitat. 224",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Exercitationes"
+    },
+    "text": "fimbriam Hippocratis",
+    "text_sha1": "af63741b4619e165e25411a73ff574533d8d79db",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Fimbria' means the fringe or border of a garment.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a skirt of Hippocrates",
+            "in": "djr",
+            "near": "djr-f1535",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Julius Caesar Scaliger",
+          "basis": "text \"Scaliger exercitat. 224 scoffs at this censure of his\"",
+          "locus": "exercitat. 224",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Exercitationes"
+        },
+        "text": "a fringe of Hippocrates",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1536": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aristotle",
+      "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
+      "locus": "pol. 5 cap. 8",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Politics"
+    },
+    "text": "virtus",
+    "text_sha1": "54e661036b65fb9f32caf1c922816422ca87db92",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of 'ubi deest facultas, virtus … & scientia': where ability, virtue and knowledge are lacking.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aristotle",
+          "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
+          "locus": "pol. 5 cap. 8",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Politics"
+        },
+        "text": "virtue",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1537": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aristotle",
+      "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
+      "locus": "pol. 5 cap. 8",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Politics"
+    },
+    "text": ". 8) & scientia",
+    "text_sha1": "ad15cb2a1e411beda9a38ef5f20abe077e365501",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The leading '. 8)' belongs to Burton's reference '(Aristot. pol. 5 cap. 8)' and is not translated. The phrase completes 'ubi deest facultas, virtus … & scientia'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aristotle",
+          "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
+          "locus": "pol. 5 cap. 8",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Politics"
+        },
+        "text": "and knowledge",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1538": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "they can make a jar, out of the law itself find still some quirk or other, to set men at odds",
+        "in": "djr",
+        "near": "djr-f1538",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "William Camden",
+      "basis": "sidenote \"Camden in Norfolke\"",
+      "locus": "Norfolke",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Britannia"
+    },
+    "text": "Qui si nihil sit litum e juris apicibus lites tamen serere callent",
+    "text_sha1": "c5c7f1ddacdcca6e8c4c2bf1df11dc17af8064ef",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'litum' is probably a misprint for 'litium' (of disputes). Camden is describing the litigious people of Norfolk.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "they can make a jar, out of the law itself find still some quirk or other, to set men at odds",
+            "in": "djr",
+            "near": "djr-f1538",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "William Camden",
+          "basis": "sidenote \"Camden in Norfolke\"",
+          "locus": "Norfolke",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Britannia"
+        },
+        "text": "who, even if there is no dispute, are skilled at sowing disputes out of the fine points of the law",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1539": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as a bad humour from the body",
+        "in": "djr",
+        "near": "djr-f1539",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Plato",
+      "basis": "text \"saith Plato\"; sidenote \"(11 de leg.)\"",
+      "locus": "11 de leg.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Laws"
+    },
+    "text": "Ac pituitam & bilem a corpore (11",
+    "text_sha1": "eff548ff358805fe2fe2f81ff36580405a9bb8b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sentence continues after Burton's reference '(11 de leg.)' with 'omnes vult exterminari': he wants them all expelled, like phlegm and bile from the body. '(11' belongs to that reference and is not translated. In Plato the image of phlegm and bile appears in Republic 8 rather than in Laws 11, so Burton may be combining the two.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as a bad humour from the body",
+            "in": "djr",
+            "near": "djr-f1539",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Plato",
+          "basis": "text \"saith Plato\"; sidenote \"(11 de leg.)\"",
+          "locus": "11 de leg.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Laws"
+        },
+        "text": "as phlegm and bile from the body",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f154": {
     "kind": "phrase",
     "lang": "la",
@@ -17718,6 +17897,613 @@
       }
     ]
   },
+  "djr-f1540": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he will have them purged from a Commonwealth",
+        "in": "djr",
+        "near": "djr-f1540",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Plato",
+      "basis": "text \"saith Plato\"; sidenote \"(11 de leg.)\"",
+      "locus": "11 de leg.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Laws"
+    },
+    "text": ".) omnes vult exterminari",
+    "text_sha1": "eebfeba344a797028eff8ef3ad6034c1a2c3c2fb",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "he wishes all to be driven out",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The leading '.)' closes Burton's reference '(11 de leg.)' and is not translated.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he will have them purged from a Commonwealth",
+            "in": "djr",
+            "near": "djr-f1540",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Plato",
+          "basis": "text \"saith Plato\"; sidenote \"(11 de leg.)\"",
+          "locus": "11 de leg.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Laws"
+        },
+        "text": "he wants them all banished",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1541": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "De quo Suet. in Claudio, & Plinius",
+    "text_sha1": "cdf590eb810af8e4ea854948b85320077a00fe39",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "About which Suetonius in Claudius, and Pliny",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A reference note for Claudius's harbour works at Ostia. The 'cap. 36' that follows lies outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "On which see Suetonius in his Claudius, and Pliny",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1542": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johann Valentin Andreae",
+      "basis": "text \"as the Apologist will\"; sidenote \"Valent. Andreae, Apolog. manip. 6. 40.\"",
+      "locus": "manip. 6. 40",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Apologi (Mythologiae Christianae)"
+    },
+    "text": "Resp",
+    "text_sha1": "c66efaa4cf18e9e08f7377a4cdbbc99a232bb81e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Resp. is almost certainly an abbreviation of Respublica. It is the subject of the phrase that follows: 'let the commonwealth suffer from cough and foul smell, the world from vice'. The passage is only the first word of that phrase. The 'Apologist' is Johann Valentin Andreae (see the sidenote).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johann Valentin Andreae",
+          "basis": "text \"as the Apologist will\"; sidenote \"Valent. Andreae, Apolog. manip. 6. 40.\"",
+          "locus": "manip. 6. 40",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Apologi (Mythologiae Christianae)"
+        },
+        "text": "The commonwealth",
+        "warnings": [
+          "length ratio 4.00"
+        ]
+      }
+    ]
+  },
+  "djr-f1543": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide",
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1544": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide",
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1545": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "De his",
+    "text_sha1": "9cbaf7d3a136ed52060b106d8cad73be69f679f5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the fire-engines mentioned in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "On these",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1546": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide",
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1547": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "de his",
+    "text_sha1": "6ec4fbdd7f8e1bc2950b39bd80a85f92cde30629",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "on these",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the public granaries mentioned in the main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "on these matters",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1548": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vide",
+    "text_sha1": "10784acc3a10be462a30754e13dacc5e36bbad2e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "See",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1549": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Idem",
+    "text_sha1": "06c2d31b129eb2c989a1c3e325581df3b29cba09",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "The same",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Here Idem probably means 'the same point is made in' Hubertus Folieta's work on Naples, not 'the same author'. A different author is named straight after.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Likewise",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f155": {
     "kind": "phrase",
     "lang": "la",
@@ -17771,6 +18557,489 @@
           "work": "Judicium de Seneca"
         },
         "text": "others are taken up with quibbles and trifles; he is tangled in places and ill composed; he did this without a wealth of matter",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1550": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "De his lege",
+    "text_sha1": "1f5de59338b9e161308d1a75d452abe0afcf0586",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "About these read",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "On these matters read",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1551": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "vide",
+    "text_sha1": "32ff28e3fabd4d632aa4b382d5a1bc153d022b1e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "see",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1552": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"as Seneca holds\"; sidenote \"Macrob. Satur. 7. 16.\" for the egg-and-hen question",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistulae morales"
+    },
+    "text": "an Sappho publica fuerit? ovum",
+    "text_sha1": "190dd7bb5ef5cb31c43fd1c2ab3883a8a9748148",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage breaks off in mid-question. The full question goes on: 'whether the egg came before the hen?' A 'public woman' is a prostitute. In Seneca (Letters 88) the Sappho question is one of the idle problems raised by the grammarians. The egg-and-hen question is in Macrobius, Saturnalia 7.16, which Burton cites in a sidenote.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"as Seneca holds\"; sidenote \"Macrob. Satur. 7. 16.\" for the egg-and-hen question",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistulae morales"
+        },
+        "text": "whether Sappho was a public woman? whether the egg",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1553": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "as he had mighty virtues, so had he many vices",
+        "in": "djr",
+        "near": "djr-f1553",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Livy",
+      "basis": "sidenote \"Livy,\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Ab urbe condita"
+    },
+    "text": "Ingentes virtutes ingentia vitia",
+    "text_sha1": "9aa7ac71d4d3633695578804bc63ffca3d42ec7f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton condenses Livy's portrait of Hannibal (21.4), which reads 'Has tantas viri virtutes ingentia vitia aequabant' ('these great virtues of the man were matched by huge vices').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "as he had mighty virtues, so had he many vices",
+            "in": "djr",
+            "near": "djr-f1553",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Livy",
+          "basis": "sidenote \"Livy,\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ab urbe condita"
+        },
+        "text": "Huge virtues, huge vices",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1554": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": "sidenote \"Cronica Slavonica ad annum 1257\"",
+      "locus": "ad annum 1257",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Chronica Slavorum (Cronica Slavonica)"
+    },
+    "text": "ad annum 1257 de cujus pecunia jam incredibilia dixerunt",
+    "text_sha1": "02fad45b3533068dade6801b573adf00558b1209",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "at the year 1257, about whose money they have now told incredible things",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to Richard, Earl of Cornwall, and the money he spent to be elected King of the Romans.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": "sidenote \"Cronica Slavonica ad annum 1257\"",
+          "locus": "ad annum 1257",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Chronica Slavorum (Cronica Slavonica)"
+        },
+        "text": "under the year 1257: they have told incredible things about his money",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1555": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Insana libido",
+    "text_sha1": "79054e2c431d6cff4a37e77e30cfc83d0aa4f7e7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Mad lust",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1556": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Famianus Strada",
+      "basis": "sidenote \"Famian. Strada de bajulis, de marmore semisculptis.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "de bajulis, de marmore semisculptis",
+    "text_sha1": "a42d17dd2ab0099bce2b1bdcb5b3abbe6bfdd249",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These look like topics or titles in Famianus Strada. The marble that is only half carved fits Burton's 'marmorei sumus' (we are stony). The exact sense of 'de bajulis' in Strada is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Famianus Strada",
+          "basis": "sidenote \"Famian. Strada de bajulis, de marmore semisculptis.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "on porters, on half-carved marble",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1557": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Elias artifex",
+    "text_sha1": "75b79295c8fdca207e3e2a567a600e670fc6b5a4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Elias the craftsman",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Elias Artista was the figure Paracelsus foretold, a coming master who would renew alchemy and all the arts.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Elias the Artist",
         "warnings": []
       }
     ]
@@ -22301,75 +23570,6 @@
           "work": null
         },
         "text": "the body through the soul",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f229": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "our Regius Professor of physic well informed us in a learned lecture of his not long since",
-        "in": "djr",
-        "near": "djr-f229",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Clayton in comitiis",
-    "text_sha1": "70fe27b4e62ab72d69194401530dc3664751efd8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-23",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "At Oxford, 'comitia' was the assembly for conferring degrees, the Act, where the Regius Professor gave a public lecture. The exact occasion meant is not certain.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "our Regius Professor of physic well informed us in a learned lecture of his not long since",
-            "in": "djr",
-            "near": "djr-f229",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Clayton, at the Comitia",
         "warnings": []
       }
     ]
@@ -31514,81 +32714,6 @@
       }
     ]
   },
-  "djr-f380": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "of whom they never had offence in thought, word or deed",
-        "in": "djr",
-        "near": "djr-f380",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "father fight against the son, brother against brother, kinsman against kinsman, kingdom against kingdom, province against province, Christians against Christians: a quibus nec unquam cogitatione fuerunt laesi",
-    "text_sha1": "e488333e32d28caf03d120a984c32ce0a5eb9151",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The marked span takes in Burton's own English ('father fight against the son … Christians against Christians'). Only the Latin clause is translated.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "of whom they never had offence in thought, word or deed",
-            "in": "djr",
-            "near": "djr-f380",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "by whom they were never injured even in thought",
-        "warnings": [
-          "length ratio 0.23"
-        ]
-      }
-    ]
-  },
   "djr-f381": {
     "kind": "phrase",
     "lang": "la",
@@ -35358,67 +36483,6 @@
       }
     ]
   },
-  "djr-f440": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "pro",
-    "text_sha1": "3b40f38967952a3fcd286e1c6b5790d84ff40893",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Part of the phrase \"pro and con\", which was already a stock English expression meaning \"for and against\". Only \"pro\" was marked as Latin.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "for",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f441": {
     "kind": "phrase",
     "lang": "la",
@@ -36305,122 +37369,6 @@
           "work": null
         },
         "text": "The kite snatches them up and flays them.",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f455": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "medium",
-    "text_sha1": "20af418657698863db8d966f4b42ed8dc7d0bd54",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": "middle",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'No medium' means there is no middle course between preying on others and being their prey.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "middle way",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f456": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Petronius",
-      "basis": "sidenote \"Petronius de Crotone civitate.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Satyricon"
-    },
-    "text": "Petronius de Crotone civitate",
-    "text_sha1": "f801c1b85ee631a5065cc5c71fd88c565be93a60",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is the reference for the following quotation, omnes hic aut captantur aut captant, from the Satyricon's description of Croton.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Petronius",
-          "basis": "sidenote \"Petronius de Crotone civitate.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Satyricon"
-        },
-        "text": "Petronius, on the city of Croton",
         "warnings": []
       }
     ]
@@ -46530,65 +47478,6 @@
       }
     ]
   },
-  "djr-f631": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Aristotle",
-      "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
-      "locus": "5 cap. 8",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Politics"
-    },
-    "text": "virtus (Aristot. pol. 5 cap. 8) & scientia",
-    "text_sha1": "a9f100622d26a1d0be0a3c69a20a0f4fb7a2f44b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Continues the previous passage: where ability, virtue and knowledge are lacking.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Aristotle",
-          "basis": "text \"(Aristot. pol. 5 cap. 8)\"",
-          "locus": "5 cap. 8",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Politics"
-        },
-        "text": "virtue (Aristotle, Politics 5, chapter 8) and knowledge",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f632": {
     "kind": "phrase",
     "lang": "la",
@@ -47893,77 +48782,6 @@
           "work": null
         },
         "text": "so that they may drain the purses of the better-off",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f651": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "they can make a jar, out of the law itself find still some quirk or other",
-        "in": "djr",
-        "near": "djr-f651",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "William Camden",
-      "basis": "sidenote \"Camden in Norfolke\"",
-      "locus": "Norfolk",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Britannia"
-    },
-    "text": "Camden in Norfolke: Qui si nihil sit litum e juris apicibus lites tamen serere callent",
-    "text_sha1": "db3205b2db4aa5a42cf2f680709548fc4d48dc56",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [
-          "corrupt-text"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Litum' is presumably a slip for 'litium' (of lawsuits); the translation follows that reading. Camden says this of the litigious people of Norfolk.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "they can make a jar, out of the law itself find still some quirk or other",
-            "in": "djr",
-            "near": "djr-f651",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "William Camden",
-          "basis": "sidenote \"Camden in Norfolke\"",
-          "locus": "Norfolk",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Britannia"
-        },
-        "text": "Camden on Norfolk: who, even if there is no lawsuit, are skilled at sowing lawsuits out of the fine points of the law.",
         "warnings": []
       }
     ]
@@ -50137,75 +50955,6 @@
       }
     ]
   },
-  "djr-f690": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "as a bad humour from the body",
-        "in": "djr",
-        "near": "djr-f690",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "partial"
-    },
-    "source": {
-      "author": "Plato",
-      "basis": "sidenote \"(11 de leg.)\" and main text \"saith Plato\"",
-      "locus": "11",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Laws"
-    },
-    "text": "Ac pituitam & bilem a corpore (11 de leg.) omnes vult exterminari",
-    "text_sha1": "27548c5650b09c77a5e684fd8c0aa4276beb1edd",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": "As phlegm and bile from the body (11 Laws) he wants all to be exterminated.",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Ac' is read here as 'as', making a comparison: the beggars are to be expelled from the city as phlegm and bile are expelled from the body. Burton turns this into 'a bad humour' in his main text. Medium confidence because the clause is compressed.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "as a bad humour from the body",
-            "in": "djr",
-            "near": "djr-f690",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "partial"
-        },
-        "source": {
-          "author": "Plato",
-          "basis": "sidenote \"(11 de leg.)\" and main text \"saith Plato\"",
-          "locus": "11",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Laws"
-        },
-        "text": "He will have them all driven out, as phlegm and bile are from the body (Laws 11).",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f691": {
     "kind": "phrase",
     "lang": "la",
@@ -50860,65 +51609,6 @@
           "work": "Life of Aurelian (Historia Augusta)"
         },
         "text": "and built up the banks of the Tiber",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f701": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "per annum",
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "a year",
         "warnings": []
       }
     ]
@@ -61098,75 +61788,6 @@
       }
     ]
   },
-  "djr-f881": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "Hannibal, as he had mighty virtues, so had he many vices",
-        "in": "djr",
-        "near": "djr-f881",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "full"
-    },
-    "source": {
-      "author": "Livy",
-      "basis": "sidenote \"Livy, Ingentes virtutes ingentia vitia.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Livy, Ingentes virtutes ingentia vitia",
-    "text_sha1": "e654e8e7133bdaab0e1cb7dcc2508d5205c26520",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton's compressed version of Livy's verdict on Hannibal (Livy 21.4: 'has tantas viri virtutes ingentia vitia aequabant', 'these great virtues of the man were matched by huge vices').",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "Hannibal, as he had mighty virtues, so had he many vices",
-            "in": "djr",
-            "near": "djr-f881",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Livy",
-          "basis": "sidenote \"Livy, Ingentes virtutes ingentia vitia.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Livy: huge virtues, huge vices.",
-        "warnings": []
-      }
-    ]
-  },
   "djr-f882": {
     "kind": "phrase",
     "lang": "la",
@@ -61277,63 +61898,6 @@
           "work": "Satires"
         },
         "text": "By far the largest share of hellebore must be given to the covetous.",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f884": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": "sidenote \"Cronica Slavonica ad annum 1257\"",
-      "locus": "ad annum 1257",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Chronica Slavonica"
-    },
-    "text": "Cronica Slavonica ad annum 1257 de cujus pecunia jam incredibilia dixerunt",
-    "text_sha1": "4d00163963c7f61973ff95f585f3397daa9a19fe",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The sense of 'jam' ('already', or 'by now') is a little uncertain in this compressed note.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": "sidenote \"Cronica Slavonica ad annum 1257\"",
-          "locus": "ad annum 1257",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Chronica Slavonica"
-        },
-        "text": "Chronica Slavonica, at the year 1257: about whose money they have already told incredible things.",
         "warnings": []
       }
     ]
@@ -66802,67 +67366,6 @@
           "work": "Epistulae morales"
         },
         "text": "it is plain where it was taken from",
-        "warnings": []
-      }
-    ]
-  },
-  "djr-f987": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Per",
-    "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-23",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A citation sidenote, not Latin text: 'Per.' is almost certainly Burton's abbreviation for Persius. It is attached to 'petulanti splene cachinno' (Persius, Satires 1.12).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Persius",
         "warnings": []
       }
     ]

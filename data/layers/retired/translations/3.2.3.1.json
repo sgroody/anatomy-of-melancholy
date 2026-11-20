@@ -186,6 +186,73 @@
       }
     ]
   },
+  "3.2.3.1-f288": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "John come kiss me now",
+    "text_sha1": "278743ac4cbbee6086c046dd8fb267f198938643",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "language-mismatch"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is English, not Latin: the title of a popular song and dance tune of the period. It is given here as written.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "John come kiss me now",
+        "warnings": [
+          "4+ source words left untranslated"
+        ]
+      }
+    ]
+  },
   "3.2.3.1-f290": {
     "kind": "phrase",
     "lang": "la",
@@ -246,6 +313,137 @@
         },
         "text": "unseemliness",
         "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f308": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Roses, Violets, Lilies, Nequitiae, blanditiae, joci, decor, Nardus, Ver, Corolla, Thus, Mars, Pallas, Venus, Charis, Crocum, Laurus, Unguentum, Costum, Lachrymae, Myrrha, Musae, &c",
+    "text_sha1": "672ab03b64751b037f2facb21f7ac832e8e97b4b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text begins with Burton's English 'Roses, Violets, Lilies', which is left untranslated. The Latin words appear to be the titles or themes of Pontano's love poems. 'Charis' is Greek for 'grace', and costus is an aromatic root. Whether each word is a poem title is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Wantonness, Endearments, Jests, Comeliness, Nard, Spring, Garland, Frankincense, Mars, Pallas, Venus, Grace, Saffron, Laurel, Ointment, Costus, Tears, Myrrh, Muses, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Come kiss me Corinna?",
+    "text_sha1": "e0aa0eebc6869816d1a513f9d8b243dbe604b0f6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "language-mismatch",
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This line is English, not Latin. It is Burton's own English, apparently echoing a song, and there is nothing foreign to translate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Come kiss me Corinna?",
+        "warnings": [
+          "4+ source words left untranslated"
+        ]
       }
     ]
   },
@@ -633,6 +831,201 @@
       }
     ]
   },
+  "3.2.3.1-f357": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hero",
+    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is just the name of Hero, Leander's beloved, inside Burton's English sentence. There is nothing to translate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hero",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f365": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Musaeus",
+      "basis": "text \"Hero in Musaeus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Hero and Leander"
+    },
+    "text": "Hero",
+    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "language-mismatch"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is just the proper name Hero, the heroine of Musaeus' Hero and Leander, and is the same in English. There is nothing to translate.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Musaeus",
+          "basis": "text \"Hero in Musaeus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Hero and Leander"
+        },
+        "text": "Hero",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f367": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hero",
+    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the proper name Hero at the end of Burton's own English verse rendering. It is not a separate foreign passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hero",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.3.1-f376": {
     "kind": "phrase",
     "lang": "la",
@@ -950,6 +1343,69 @@
       }
     ]
   },
+  "3.2.3.1-f423": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Fransus",
+      "basis": "sidenote \"Fransus lib. 3 De symbolis\"",
+      "locus": "lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De symbolis"
+    },
+    "text": "3 De symbolis: Qui primus symbolum excogitavit, voluit nimirum hac ratione implicatum animum evolvere, eumque vel dominae vel aliis intuentibus ostendere",
+    "text_sha1": "7e419499c261e627276c2fd5552b42bc1c84b485",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage begins with part of the citation ('[lib.] 3 De symbolis', i.e. book 3 of On Symbols), which is rendered here as a reference. Burton paraphrases the sentence in the main text that follows ('By this means, saith Jovius, they would express their loving minds to their Mistress, and to the beholders'), but that falls outside the anchor text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Fransus",
+          "basis": "sidenote \"Fransus lib. 3 De symbolis\"",
+          "locus": "lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De symbolis"
+        },
+        "text": "3, On Symbols: He who first devised a symbol wished, no doubt, by this means to unfold his entangled mind and to show it either to his mistress or to others who looked on.",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.3.1-f427": {
     "kind": "phrase",
     "lang": "la",
@@ -1011,6 +1467,195 @@
           "work": "commentary on Ovid's Metamorphoses"
         },
         "text": "unclean, the hoopoe, a lover of dung; nothing is fouler than this bird, nothing more lustful.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f440": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ovid",
+      "basis": "sidenote \"Ovid. Met. 13 de Polyphemo\"",
+      "locus": "13",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Metamorphoses"
+    },
+    "text": "13 de Polyphemo: Uritur oblitus pecorum, antrorumque suorum, Jamque tibi formae, &c",
+    "text_sha1": "b1af85bbf651030faa52bdbd9c687189c79c2637",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-18",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "13, about Polyphemus: He burns, forgetful of flocks and his caves, / and now to you of beauty, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ovid, Metamorphoses 13.763–764, Galatea speaking of Polyphemus's love. The second line breaks off after 'formae'. In Ovid it goes on 'iamque est tibi cura placendi' ('and now you care about your looks, and about pleasing'), so the translation borrows 'care' from those missing words. '13 de Polyphemo' belongs to Burton's citation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ovid",
+          "basis": "sidenote \"Ovid. Met. 13 de Polyphemo\"",
+          "locus": "13",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Metamorphoses"
+        },
+        "text": "Book 13, on Polyphemus: He burns, forgetting his flocks and his caves; / and now you care for your looks, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f443": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "flux, angor animi",
+    "text_sha1": "2fc5b50fa94c4f12ad7a4da6553a5cd89f2ad8a7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-19",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "\"flux\" is Burton's English (\"a perpetual flux\"), so only the Latin \"angor animi\" is translated here. Burton does not render the Latin himself; his \"perpetual flux\" goes before it as a separate phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "anguish of mind",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.3.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jason Pratensis",
+      "basis": "text \"Jason Pratensis gives\"; sidenote \"De morbis cerebri de erot. amore.\"",
+      "locus": "de erotico amore",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De morbis cerebri"
+    },
+    "text": "De morbis cerebri de erot. amore",
+    "text_sha1": "a7f09c7315bc722976ce133487e0287f7532a954",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title and chapter of Jason Pratensis's book, which Burton gives as his reference. 'erot.' is short for 'erotico'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jason Pratensis",
+          "basis": "text \"Jason Pratensis gives\"; sidenote \"De morbis cerebri de erot. amore.\"",
+          "locus": "de erotico amore",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De morbis cerebri"
+        },
+        "text": "On Diseases of the Brain, on erotic love",
         "warnings": []
       }
     ]

@@ -2561,6 +2561,68 @@
       }
     ]
   },
+  "1.1.1.1-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Luís Fróis",
+      "basis": "sidenote \"Lege hist. relationem Lod. Frois. de rebus Japonicis ad annum 1596.\"",
+      "locus": "ad annum 1596",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Relatio historica de rebus Japonicis"
+    },
+    "text": "Lege hist. relationem Lod. Frois. de rebus Japonicis ad annum",
+    "text_sha1": "ef46a3ebbb59c02e91971de5c9c45ca72ba0ac65",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "Read the historical relation of Lod. Frois concerning Japanese affairs, to the year",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage stops at 'ad annum'. The year '1596' follows outside it in the sidenote, so the full reference is 'for the year 1596'. 'Lod. Frois.' is the Jesuit missionary Luís Fróis (Ludovicus Frois), whose letters from Japan, including the account of the great earthquakes of 1596, were printed in Latin.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Luís Fróis",
+          "basis": "sidenote \"Lege hist. relationem Lod. Frois. de rebus Japonicis ad annum 1596.\"",
+          "locus": "ad annum 1596",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Relatio historica de rebus Japonicis"
+        },
+        "text": "Read the historical account of Luís Fróis on the affairs of Japan, for the year",
+        "warnings": []
+      }
+    ]
+  },
   "1.1.1.1-f6": {
     "kind": "phrase",
     "lang": "la",

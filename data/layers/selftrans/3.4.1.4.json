@@ -192,35 +192,6 @@
     ],
     "text_sha1": "57f2b92980f1177da593699d8618e726465ef162"
   },
-  "3.4.1.4-f15": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Wednesday now is in danger of a fast",
-          "in": "3.4.1.4-p1",
-          "prefix": "unc periclitatur dies Mercurii, ",
-          "suffix": ". And for such-like toys, some s"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "04a67460f6ee72ded258a1093ab93afcd4fcb5f3"
-  },
   "3.4.1.4-f16": {
     "bracket": "none",
     "by": "rules",
@@ -263,7 +234,48 @@
     ],
     "text_sha1": "5a061ca148fda3c10f70f7c5e9f24db9f7798812"
   },
-  "3.4.1.4-f17": {
+  "3.4.1.4-f18": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1918526e4846c88b027e7f94c20e607b19a0d263"
+  },
+  "3.4.1.4-f19": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and Wednesday now is in danger of a fast",
+          "in": "3.4.1.4-p1",
+          "prefix": "unc periclitatur dies Mercurii, ",
+          "suffix": ". And for such-like toys, some s"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "90952b62d7ed3519b4e9b7d6e0350fe50faca2fa"
+  },
+  "3.4.1.4-f20": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -275,12 +287,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "calls it, as well he might, an intolerable perturbation, that causeth such dire events, folly, madness, sickness, despair, death of body and soul, and hell itself",
+          "exact": "Seneca calls it, as well he might, an intolerable perturbation, that causeth such dire events, folly, madness, sickness, despair, death of body and soul, and hell itself",
           "in": "3.4.1.4-p1",
-          "prefix": "lerabilem perturbationem Seneca ",
+          "prefix": "e, Intolerabilem perturbationem ",
           "suffix": "."
         },
-        "words": 26
+        "words": 27
       },
       {
         "by": "rules",
@@ -304,19 +316,7 @@
       "english-precedes",
       "no-gowland-bracket"
     ],
-    "text_sha1": "4729893684292f0c83895e58f043385840711626"
-  },
-  "3.4.1.4-f18": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1918526e4846c88b027e7f94c20e607b19a0d263"
+    "text_sha1": "8706337b82db210380fa60505c0c0dbae4242f21"
   },
   "3.4.1.4-f3": {
     "bracket": "none",

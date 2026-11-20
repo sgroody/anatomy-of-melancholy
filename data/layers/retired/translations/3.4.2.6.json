@@ -1,4 +1,67 @@
 {
+  "3.4.2.6-f108": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Magi",
+    "text_sha1": "8519eee27abece61191818273c86402079ab393f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the Wise Men from the East of Matthew 2. The word was already part of English.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the Magi",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f148": {
     "kind": "phrase",
     "lang": "la",
@@ -62,6 +125,79 @@
       }
     ]
   },
+  "3.4.2.6-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Religion, Policy, an human invention, to keep men in obedience, or for profit, invented by Priests and Lawgivers to that purpose",
+        "in": "3.4.2.6",
+        "near": "3.4.2.6-f18",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Minucius Felix",
+      "basis": "sidenote \"Caecilius Minucio\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Octavius"
+    },
+    "text": "Caecilius Minucio, Omnia ista figmenta male sanae religionis, & inepta solatia a poetis inventa, vel ab aliis ob commodum, superstitiosa misteria, &c",
+    "text_sha1": "1f6d5b44fd5040f4ccd8bac182998e2416ba8688",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Refers to the pagan speaker Caecilius in Minucius Felix's dialogue Octavius. The sidenote is a loose summary, not a verbatim quotation. 'Caecilius Minucio' is taken here as 'Caecilius in Minucius'; it could also be read 'Caecilius to Minucius'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Religion, Policy, an human invention, to keep men in obedience, or for profit, invented by Priests and Lawgivers to that purpose",
+            "in": "3.4.2.6",
+            "near": "3.4.2.6-f18",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Minucius Felix",
+          "basis": "sidenote \"Caecilius Minucio\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Octavius"
+        },
+        "text": "Caecilius to Minucius: all these are fictions of an unsound religion, and foolish consolations invented by the poets, or by others for their own profit; superstitious mysteries, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f181": {
     "kind": "phrase",
     "lang": "la",
@@ -121,6 +257,67 @@
           "work": null
         },
         "text": "38 and following",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "John Major",
+      "basis": "sidenote \"John Major vitis patrum\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Vitae Patrum"
+    },
+    "text": "John Major vitis patrum: quidam negavit Christum, per Chirographum, post restitutus",
+    "text_sha1": "07bc9bfe8893122b0e469851111baae71f89db98",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Chirographum is a handwritten bond or deed, here a signed pact with the Devil. This is the 'obligation' in Burton's main text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "John Major",
+          "basis": "sidenote \"John Major vitis patrum\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Vitae Patrum"
+        },
+        "text": "John Major, Lives of the Fathers: a certain man denied Christ by a written bond, and was afterwards restored",
         "warnings": []
       }
     ]
@@ -190,6 +387,69 @@
       }
     ]
   },
+  "3.4.2.6-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Huldrych Zwingli",
+      "basis": "text \"Zwinglius in exposit. fidei ad Regem Galliae\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Fidei expositio"
+    },
+    "text": "Zwinglius in exposit. fidei ad Regem Galliae",
+    "text_sha1": "2b312700cbcc62bc04b535ad65f14f82d41fb81d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Zwingli's Christianae fidei expositio was addressed to Francis I of France. In it he places virtuous pagans such as Socrates and Cato in heaven.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Huldrych Zwingli",
+          "basis": "text \"Zwinglius in exposit. fidei ad Regem Galliae\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Fidei expositio"
+        },
+        "text": "Zwingli, in his Exposition of the Faith to the King of France",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f36": {
     "kind": "phrase",
     "lang": "la",
@@ -249,6 +509,266 @@
           "work": "De animabus paganorum"
         },
         "text": "On the Souls of the Pagans after Death",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "God’s heavy wrath, a most intolerable pain and grief of heart seizeth on them",
+        "in": "3.4.2.6",
+        "near": "3.4.2.6-f48",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Niels Hemmingsen (Hemmingius)",
+      "basis": "sidenote \"(Hemmingius)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vastata conscientia sequitur sensus irae divinae (Hemmingius) fremitus cordis, ingens animae cruciatus",
+    "text_sha1": "79bb3abc640d2992c9f04de2d5e570e06ff3724a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hemmingius is the Danish Lutheran theologian Niels Hemmingsen. 'Fremitus cordis' (roaring or groaning of the heart) echoes Psalm 38:8 in the Vulgate (Psalm 37:9), 'rugiebam a gemitu cordis mei'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "God’s heavy wrath, a most intolerable pain and grief of heart seizeth on them",
+            "in": "3.4.2.6",
+            "near": "3.4.2.6-f48",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Niels Hemmingsen (Hemmingius)",
+          "basis": "sidenote \"(Hemmingius)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "When the conscience is laid waste, there follows a sense of the divine wrath (Hemmingius), a roaring of the heart, an immense torment of the soul",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f70": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "bitumen, thus, myrrha",
+    "text_sha1": "47d2fa9df60f739184f90d6e63c00a66bff9389b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'thus' is Latin for frankincense, not the English adverb.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "bitumen, frankincense, myrrh",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f72": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Ernestus Burggravius",
+      "basis": "text \"Ernestus Burggravius Lucerna vitae & mortis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Lucerna vitae & mortis"
+    },
+    "text": "Ernestus Burggravius Lucerna vitae & mortis",
+    "text_sha1": "c02a57e660fb65065988c17ce5502d2ed75429c0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A bibliographical reference to a work by the German physician Ernst Burggrav.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Ernestus Burggravius",
+          "basis": "text \"Ernestus Burggravius Lucerna vitae & mortis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Lucerna vitae & mortis"
+        },
+        "text": "Ernestus Burggravius, The Lamp of Life and Death",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f77": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Petrus Thyraeus; Georg Pictorius",
+      "basis": "text \"Thyraeus cap. 57, 58, 62, &c., de locis infestis, Pictorius Isagog. de daemonibus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De locis infestis; Isagoge de daemonibus"
+    },
+    "text": "de locis infestis, Pictorius Isagog. de daemonibus",
+    "text_sha1": "c2b0c95fb7e43cd8bd1464df0f738859ccbabb60",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": "on infested places, Pictorius, Isagoge on demons",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are book titles. 'De locis infestis' belongs to Petrus Thyraeus, named just before, whose treatise is on places haunted by spirits. 'Isagog.' is an abbreviation of Isagoge, 'Introduction', a work on demons by Georg Pictorius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Petrus Thyraeus; Georg Pictorius",
+          "basis": "text \"Thyraeus cap. 57, 58, 62, &c., de locis infestis, Pictorius Isagog. de daemonibus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De locis infestis; Isagoge de daemonibus"
+        },
+        "text": "On Haunted Places, Pictorius, Introduction on Demons",
         "warnings": []
       }
     ]
@@ -314,6 +834,69 @@
           "work": "De variis quaestionibus"
         },
         "text": "On Various Questions",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f88": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Johann Weyer (Wierus)",
+      "basis": "text \"read Wierus at large\" immediately before the citation; Wierus de praestigiis daemonum is named earlier in the same paragraph",
+      "locus": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De praestigiis daemonum"
+    },
+    "text": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+    "text_sha1": "ba0065c5305dc9fce987eb05cf4f8785aced040b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-19",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A bare reference to Johann Weyer (Wierus), De praestigiis daemonum. The abbreviated title of Book 5 is left as written because its expansion is uncertain. It probably means something like 'On the Cure of Those Bewitched by Witches' (de Curatione Lamiarum maleficiorum or a similar wording). 'Deinceps' means 'and the chapters following'. The foreign words are only a citation, not a sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Johann Weyer (Wierus)",
+          "basis": "text \"read Wierus at large\" immediately before the citation; Wierus de praestigiis daemonum is named earlier in the same paragraph",
+          "locus": "lib. 5 de Cura. Lam. malef. cap. 38 & deinceps",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De praestigiis daemonum"
+        },
+        "text": "book 5, de Cura. Lam. malef., chapter 38 and following",
         "warnings": []
       }
     ]

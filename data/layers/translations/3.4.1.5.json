@@ -1159,6 +1159,67 @@
       }
     ]
   },
+  "3.4.1.5-f43": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Europae, Libyae",
+    "text_sha1": "cd2477fb9be729c9d66e79a95e9d8d3bfe22d28f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A fragment of the longer phrase 'diis Asiae, Europae, Libyae, diis ignotis & peregrinis': altars 'to the gods of Asia, Europe, Libya, to unknown and foreign gods'. The governing word 'diis' (to the gods) and 'Asiae' fall outside the marked span. 'Libya' was the ancient name for Africa.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "of Europe, of Libya",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.1.5-f5": {
     "kind": "phrase",
     "lang": "la",

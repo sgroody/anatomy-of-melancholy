@@ -170,12 +170,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Philo Judaeus reprehends them for, and use (I say it again) such gestures, apish, ridiculous, undecent attires",
+          "exact": "Philo Judaeus reprehends them for, and use (I say it again) such gestures, apish, ridiculous, undecent attires, Sybaritical tricks",
           "in": "3.2.2.3-p21",
           "prefix": "th such counterfeit gait, which ",
-          "suffix": ", Sybaritical tricks, fucos geni"
+          "suffix": ", fucos genis, purpurissam venis"
         },
-        "words": 17
+        "words": 19
       }
     ],
     "lang": "la",
@@ -213,35 +213,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "49b5d981a8f5ae92bb1542b066a594ee30fa75d4"
-  },
-  "3.2.2.3-f106": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "for it is now an art, as it was of old (so Seneca records)",
-          "in": "3.2.2.3-p25",
-          "prefix": "doletius de fuco & decoratione; ",
-          "suffix": ", officinae sunt odores coquenti"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "70f9914234c3f190ebef6069427625c2492c98c2"
   },
   "3.2.2.3-f107": {
     "bracket": "present",
@@ -462,6 +433,58 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "cad7072db3df6df5ddeb9bc723e1adc576d8f6d9"
+  },
+  "3.2.2.3-f115": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "369c49e6b2b78e387b8f95c32738a8353bf60e32"
+  },
+  "3.2.2.3-f116": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "use those sweet perfumes, powders and ointments in public",
+          "in": "3.2.2.3-p21",
+          "prefix": "ssam fronti, leges oculis, &c., ",
+          "suffix": "; flock to hear sermons so frequ"
+        },
+        "words": 9
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Why do they go with such counterfeit gait, which Philo Judaeus reprehends them for, and use (I say it again) such gestures, apish, ridiculous, undecent attires, Sybaritical tricks",
+          "in": "3.2.2.3-p21",
+          "prefix": "",
+          "suffix": ", fucos genis, purpurissam venis"
+        },
+        "words": 28
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e71f8e0068d07d23a17177d5f4bdbb97c6737eee"
   },
   "3.2.2.3-f12": {
     "bracket": "none",
@@ -987,16 +1010,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "22f4f5660627a89a6ae689fe7f31ce4d3b256dc0"
-  },
-  "3.2.2.3-f30": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "c7c3c9de8b4ec8ca3a82a0aefbea9c317e91605d"
   },
   "3.2.2.3-f31": {
     "bracket": "none",
@@ -2336,48 +2349,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "50184491660f66e7253a754b6341ca822fed762f"
-  },
-  "3.2.2.3-f86": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "use those sweet perfumes, powders and ointments in public",
-          "in": "3.2.2.3-p21",
-          "prefix": "ssam fronti, leges oculis, &c., ",
-          "suffix": "; flock to hear sermons so frequ"
-        },
-        "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Why do they go with such counterfeit gait, which Philo Judaeus reprehends them for, and use (I say it again) such gestures, apish, ridiculous, undecent attires",
-          "in": "3.2.2.3-p21",
-          "prefix": "",
-          "suffix": ", Sybaritical tricks, fucos geni"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1097a3b8c323fadeb71718b42fe195774152c4bd"
   },
   "3.2.2.3-f88": {
     "bracket": "present",

@@ -725,7 +725,7 @@
       }
     ]
   },
-  "1.2.4.3-f27": {
+  "1.2.4.3-f28": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -745,44 +745,43 @@
       "status": "none"
     },
     "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
+      "author": "Amatus Lusitanus",
+      "basis": "text \"Amatus Lusitanus had a patient, that by reason of bad tidings became\" followed by \"cent. 2 cura 90\"",
+      "locus": "cent. 2 cura 90",
+      "status": "burton-cites",
       "verified": false,
-      "work": null
+      "work": "Curationum medicinalium centuriae"
     },
-    "text": "Hydrophobia",
-    "text_sha1": "3b2a957d67f09772355ff7b0378107fcdb39f984",
+    "text": "Epilepticus",
+    "text_sha1": "f6d41c338d5183f4edba3c2a062fbfd9ff83047e",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-26",
+        "date": "2026-11-20",
         "flags": [
           "technical-medical"
         ],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "\"Hydrophobia\" is Greek for fear of water. It is the old name for rabies.",
+        "note": "A single Latin word set into Burton's English sentence: the patient 'became epileptic', that is, began to suffer from the falling sickness.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
           "status": "none"
         },
         "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
+          "author": "Amatus Lusitanus",
+          "basis": "text \"Amatus Lusitanus had a patient, that by reason of bad tidings became\" followed by \"cent. 2 cura 90\"",
+          "locus": "cent. 2 cura 90",
+          "status": "burton-cites",
           "verified": false,
-          "work": null
+          "work": "Curationum medicinalium centuriae"
         },
-        "text": "hydrophobia",
+        "text": "epileptic",
         "warnings": []
       }
     ]

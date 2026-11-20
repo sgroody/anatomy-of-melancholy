@@ -1,45 +1,4 @@
 {
-  "1.1.3.2-f10": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "Erasmus vindicates fools from this Melancholy Catalogue, because they have most part moist brains, and light hearts, they are free from ambition, envy, shame and fear, they are neither troubled in conscience, nor macerated with cares, to which our whole",
-          "in": "1.1.3.2-p3",
-          "prefix": "dolore, similes fere diis sunt. ",
-          "suffix": " life is so much subject."
-        },
-        "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "I cannot except any complexion, any condition, sex, or age, but fools and Stoics, which according to Synesius, are never troubled with any manner of passion, but as",
-          "in": "1.1.3.2-p3",
-          "prefix": " before others obnoxious to it; ",
-          "suffix": " Anacreon’s cicada, sine sanguin"
-        },
-        "words": 28
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "c91692d2ccfd956a73ef52ce1cafc0f2ad1f4fbb"
-  },
   "1.1.3.2-f14": {
     "bracket": "present",
     "by": "rules",
@@ -96,6 +55,47 @@
       "english-at-anchor"
     ],
     "text_sha1": "a943c94fcc1c1bf856b7e7af103a531931eef926"
+  },
+  "1.1.3.2-f16": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Erasmus vindicates fools from this Melancholy Catalogue, because they have most part moist brains, and light hearts, they are free from ambition, envy, shame and fear, they are neither troubled in conscience, nor macerated with cares, to which our whole",
+          "in": "1.1.3.2-p3",
+          "prefix": "dolore, similes fere diis sunt. ",
+          "suffix": " life is so much subject."
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "I cannot except any complexion, any condition, sex, or age, but fools and Stoics, which according to Synesius, are never troubled with any manner of passion, but as Anacreon’s cicada",
+          "in": "1.1.3.2-p3",
+          "prefix": " before others obnoxious to it; ",
+          "suffix": ", sine sanguine & dolore, simile"
+        },
+        "words": 30
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "73a4f408695f6784b63c950171bc1dfe6be3b218"
   },
   "1.1.3.2-f2": {
     "bracket": "present",
@@ -288,12 +288,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "fools and Stoics, which according to Synesius, are never troubled with any manner of passion, but as",
+          "exact": "fools and Stoics, which according to Synesius, are never troubled with any manner of passion, but as Anacreon’s cicada",
           "in": "1.1.3.2-p3",
           "prefix": "any condition, sex, or age, but ",
-          "suffix": " Anacreon’s cicada, sine sanguin"
+          "suffix": ", sine sanguine & dolore, simile"
         },
-        "words": 17
+        "words": 19
       }
     ],
     "lang": "la",

@@ -115,63 +115,6 @@
       }
     ]
   },
-  "3.1.2.3-f12": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Charites",
-    "text_sha1": "859d75c68a76beb02a9f08ddd48d265c3534a873",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The Greek name of the Graces.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Graces",
-        "warnings": []
-      }
-    ]
-  },
   "3.1.2.3-f13": {
     "kind": "phrase",
     "lang": "la",
@@ -493,65 +436,6 @@
           "work": null
         },
         "text": "It is worth while to hear, etc.",
-        "warnings": []
-      }
-    ]
-  },
-  "3.1.2.3-f18": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Suetonius",
-      "basis": "Suetonius's well-known description of Titus as 'amor ac deliciae generis humani'",
-      "locus": "1",
-      "status": "probable",
-      "verified": false,
-      "work": "Life of Titus"
-    },
-    "text": "Titus deliciae humani generis",
-    "text_sha1": "ee7d424fccd21a534fff83295c2e5ad9cb43af04",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "misquotation-suspected"
-        ],
-        "literal": "Titus, the delight of the human race",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Suetonius (Titus 1) calls Titus 'amor ac deliciae generis humani'. Burton shortens the phrase and changes the word order.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Suetonius",
-          "basis": "Suetonius's well-known description of Titus as 'amor ac deliciae generis humani'",
-          "locus": "1",
-          "status": "probable",
-          "verified": false,
-          "work": "Life of Titus"
-        },
-        "text": "Titus, the darling of the human race",
         "warnings": []
       }
     ]
@@ -1406,63 +1290,6 @@
           "work": null
         },
         "text": "now, looking on him, they sought for Alcibiades",
-        "warnings": []
-      }
-    ]
-  },
-  "3.1.2.3-f33": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "low",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Solinus",
-      "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Solinus, Pulchri nulla est facies",
-    "text_sha1": "6ada9f987b69f3e9e11429bb3bca4c034aa0bed1",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "low",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The sense is uncertain. It may mean that true beauty, the beauty of virtue, has no bodily face, or no face that time can change. Read beside 'virtue's lustre never fades' in the text, this seems likely.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Solinus",
-          "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Solinus: The beautiful has no face.",
         "warnings": []
       }
     ]
@@ -2808,6 +2635,195 @@
       }
     ]
   },
+  "3.1.2.3-f77": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a purple embroidered garment was put upon him",
+        "in": "3.1.2.3",
+        "near": "3.1.2.3-f77",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Quintus Curtius Rufus",
+      "basis": "text \"Abdalonymus in Curtius\"; sidenote \"Curtius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "History of Alexander"
+    },
+    "text": "injecta ei vestis purpura auroque distincta",
+    "text_sha1": "5e8a0fa643016e236d82fb976d7c67a1ab718838",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "thrown on him a garment with purple and gold distinguished",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Abdalonymus, the gardener made king of Sidon in Quintus Curtius' history of Alexander.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a purple embroidered garment was put upon him",
+            "in": "3.1.2.3",
+            "near": "3.1.2.3-f77",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Quintus Curtius Rufus",
+          "basis": "text \"Abdalonymus in Curtius\"; sidenote \"Curtius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "History of Alexander"
+        },
+        "text": "a garment of purple picked out with gold was put upon him",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f78": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Suetonius",
+      "basis": "Suetonius' well-known description of Titus as 'amor ac deliciae generis humani'",
+      "locus": "1",
+      "status": "probable",
+      "verified": false,
+      "work": "Life of Titus"
+    },
+    "text": "deliciae humani generis",
+    "text_sha1": "c8fc2df98592c86bfe27e058875e720fb75485b1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Said of the emperor Titus. Suetonius' wording is 'amor ac deliciae generis humani' ('the love and darling of the human race'); Burton gives a shortened form. Burton's following phrase 'the dilling of his time' refers to Vespasian, so it does not render this passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Suetonius",
+          "basis": "Suetonius' well-known description of Titus as 'amor ac deliciae generis humani'",
+          "locus": "1",
+          "status": "probable",
+          "verified": false,
+          "work": "Life of Titus"
+        },
+        "text": "the darling of the human race",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f79": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pars inscrip.",
+    "text_sha1": "e3dba02b52fa2ecc4aba82ae1702fabe112fa327",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'inscrip.' is short for inscriptionis. The rest of the sidenote, 'Tit. Livii statuae Patavii', is also Latin and means 'on the statue of Titus Livius at Padua'. It falls outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Part of the inscription",
+        "warnings": []
+      }
+    ]
+  },
   "3.1.2.3-f8": {
     "kind": "phrase",
     "lang": "la",
@@ -2863,6 +2879,136 @@
           "work": "Aeneid"
         },
         "text": "Virtue is more pleasing when it comes from a beautiful body.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f80": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Solinus",
+      "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pulchri nulla est facies",
+    "text_sha1": "1f95b24c989435312ffc5583d527186986f7093e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Of the beautiful there is no face",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sense is uncertain. The sidenote seems to mean that true beauty, the beauty of virtue, has no visible face and cannot be pictured, which fits the main text's 'no Painter, no Graver, no Carver can express virtue's lustre'. It is not certain that the name Solinus refers to this phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Solinus",
+          "basis": "sidenote \"Solinus, Pulchri nulla est facies.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "The beautiful has no face",
+        "warnings": []
+      }
+    ]
+  },
+  "3.1.2.3-f81": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "He did express his friend in colours, in wax, in brass",
+        "in": "3.1.2.3",
+        "near": "3.1.2.3-f81",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Pliny the Younger",
+      "basis": "text \"as Pliny reports of a Citizen in Rome\"; sidenote \"Plinius.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "Illum coloribus, illum cera, illum aere",
+    "text_sha1": "d4064dd40c82f80bcbfcb291a62988a3bfecb832",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The quotation is cut off at 'etc.'. Burton's English goes on to the other materials (ivory, marble, gold, silver). Pliny the Younger describes a man who had his dead son portrayed in many media.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "He did express his friend in colours, in wax, in brass",
+            "in": "3.1.2.3",
+            "near": "3.1.2.3-f81",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Pliny the Younger",
+          "basis": "text \"as Pliny reports of a Citizen in Rome\"; sidenote \"Plinius.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "Him in colours, him in wax, him in bronze",
         "warnings": []
       }
     ]

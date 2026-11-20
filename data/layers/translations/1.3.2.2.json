@@ -495,6 +495,79 @@
       }
     ]
   },
+  "1.3.2.2-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "unseasonable sweat all over the body",
+        "in": "1.3.2.2",
+        "near": "1.3.2.2-f20",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Octavius Horatianus",
+      "basis": "text \"as Octavius Horatianus lib. 2 cap. 5 calls it\"",
+      "locus": "lib. 2 cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "importunus sudor",
+    "text_sha1": "3c1f2e8f2d33a8e1a5dea3c446d2541f974c9f9e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Importunus can also mean 'troublesome' or 'ill-timed'. Burton's own English, which follows, adds 'all over the body'. 'Octavius Horatianus' is the name under which the late-antique physician Theodorus Priscianus's work was printed.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "unseasonable sweat all over the body",
+            "in": "1.3.2.2",
+            "near": "1.3.2.2-f20",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Octavius Horatianus",
+          "basis": "text \"as Octavius Horatianus lib. 2 cap. 5 calls it\"",
+          "locus": "lib. 2 cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "unseasonable sweat",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.2.2-f3": {
     "kind": "phrase",
     "lang": "la",

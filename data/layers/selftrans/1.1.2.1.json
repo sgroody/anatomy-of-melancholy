@@ -1,1 +1,44 @@
-{}
+{
+  "1.1.2.1-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which of the vulgar will not so easily be perceived, what they are, how sited, and to what end they serve",
+          "in": "1.1.2.1-p1",
+          "prefix": "ins, Arteries, Chylus, Pituita; ",
+          "suffix": ". And besides, it may peradventu"
+        },
+        "words": 21
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "because many hard words will often occur, as Mirach, Hypochondries, Haemorrhoids, &c., Imagination, Reason, Humours, Spirits, Vital, Natural, Animal, Nerves, Veins, Arteries",
+          "in": "1.1.2.1-p1",
+          "prefix": "ing of that which is to follow; ",
+          "suffix": ", Chylus, Pituita; which of the "
+        },
+        "words": 22
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "35c6179bc702017423d895be9cc99af966342468"
+  }
+}

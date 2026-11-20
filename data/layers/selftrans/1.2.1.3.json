@@ -615,6 +615,65 @@
     ],
     "text_sha1": "a60ce87c13a2e7b8c48ad28255cce708b4909932"
   },
+  "1.2.1.3-f31": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Pasetes, Iamblichus, Eudo de Stellis, that for a time can build Castles in the air, represent armies, &c., as they are said to have done, command wealth and treasure, feed thousands with all variety of meats upon a sudden, protect",
+          "in": "1.2.1.3-p2",
+          "prefix": "imon Magus, Apollonius Tyaneus, ",
+          "suffix": " themselves and their followers "
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "91b44a1bb86ebdfa95568515cb74eb6b05f541e2"
+  },
+  "1.2.1.3-f32": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Iamblichus, Eudo de Stellis, that for a time can build Castles in the air, represent armies, &c., as they are said to have done, command wealth and treasure, feed thousands with all variety of meats upon a sudden, protect themselves",
+          "in": "1.2.1.3-p2",
+          "prefix": "s, Apollonius Tyaneus, Pasetes, ",
+          "suffix": " and their followers from all Pr"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6143458a064ee4cac9b2b4e7ef0aa8272acb240b"
+  },
   "1.2.1.3-f36": {
     "bracket": "none",
     "by": "rules",
@@ -829,6 +888,18 @@
     ],
     "text_sha1": "62fcb623824022d4280ee5caa4da9239c9123007"
   },
+  "1.2.1.3-f49": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5d47124d102b31a51f8b76969960d8d91793d4c3"
+  },
   "1.2.1.3-f5": {
     "bracket": "present",
     "by": "rules",
@@ -838,6 +909,89 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "b1dc664a67d5e82ff7a008dbc8e3560aa845ec26"
+  },
+  "1.2.1.3-f50": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "00012286247eaacc1b570e985ea90b8bae7d3578"
+  },
+  "1.2.1.3-f51": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Eudo de Stellis, that for a time can build Castles in the air, represent armies, &c., as they are said to have done, command wealth and treasure, feed thousands with all variety of meats upon a sudden, protect themselves and",
+          "in": "1.2.1.3-p2",
+          "prefix": "s Tyaneus, Pasetes, Iamblichus, ",
+          "suffix": " their followers from all Prince"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9b01f7a098dc523a630b9f3b22189e597314b4aa"
+  },
+  "1.2.1.3-f52": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "by touch alone",
+          "in": "1.2.1.3-p2",
+          "prefix": " Physic could help, solo tactu, ",
+          "suffix": ". Ruland in his 3rd Cent. Cura 9"
+        },
+        "words": 3
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "this and Apoplexy, Falling sickness, which no Physic could help",
+          "in": "1.2.1.3-p2",
+          "prefix": "omen’s Paps, cured Gout, Palsy; ",
+          "suffix": ", solo tactu, by touch alone. Ru"
+        },
+        "words": 10
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c8d4dd9b496edbda78dae7adc87ba1087a3a4714"
   },
   "1.2.1.3-f6": {
     "bracket": "present",

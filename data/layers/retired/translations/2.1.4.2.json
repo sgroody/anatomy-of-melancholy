@@ -1,0 +1,80 @@
+{
+  "2.1.4.2-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’Tis a part of his cure to wish his own health",
+        "in": "2.1.4.2",
+        "near": "2.1.4.2-f2",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"(Seneca\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Phaedra"
+    },
+    "text": "Pars sanitatis velle sanari fuit (Seneca",
+    "text_sha1": "ec2751d703eab4c1b1d8708302a903e86728f516",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "The passage includes Burton's citation '(Seneca', with the closing parenthesis left outside the marked span. The line is from Seneca's Phaedra, where it reads 'pars sanitatis velle sanari fuit'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’Tis a part of his cure to wish his own health",
+            "in": "2.1.4.2",
+            "near": "2.1.4.2-f2",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"(Seneca\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Phaedra"
+        },
+        "text": "It has been part of health to wish to be healed (Seneca",
+        "warnings": []
+      }
+    ]
+  }
+}

@@ -279,6 +279,18 @@
     ],
     "text_sha1": "96d219e2039e5200a26d27def6eb67702ce1433f"
   },
+  "2.4.2.3-f20": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d75a8364ed2bb3309955f1d29e21f8ff83224ee5"
+  },
   "2.4.2.3-f21": {
     "bracket": "none",
     "by": "rules",
@@ -344,6 +356,117 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "cb1b43bd68d341d99602d5801fb5440fbccc1716"
+  },
+  "2.4.2.3-f24": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d9ee611e2914ed6579c11c16426b4bc20217dbdc"
+  },
+  "2.4.2.3-f25": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "of fumitory, &c.",
+          "in": "2.4.2.3-p2",
+          "prefix": "ide Lazulo, Armeno, Pil. Indae, ",
+          "suffix": " Confection of Hamech, which tho"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1503062b61ce5caf9cf323ddf81253122f3cbf37"
+  },
+  "2.4.2.3-f26": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "22bedebdd74572d82583e539d20f89e09925ddfc"
+  },
+  "2.4.2.3-f27": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Ptolemy’s Hieralogodion, of which diverse receipts are daily made",
+          "in": "2.4.2.3-p2",
+          "prefix": "Wecker’s Electuary de Epithymo, ",
+          "suffix": "."
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "15562318fd68a3c2bf309eeebe05d487eaf164bf"
+  },
+  "2.4.2.3-f28": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Mesue, described in the Florentine Antidotary",
+          "in": "2.4.2.3-p3",
+          "prefix": "., pills de Epithymo, Pil. Ind. ",
+          "suffix": ", Pilulae sine quibus esse nolo,"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "690e03e7c7cc84aad36379d6ff5a450f6b09a948"
   },
   "2.4.2.3-f5": {
     "bracket": "none",

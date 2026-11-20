@@ -266,48 +266,6 @@
     ],
     "text_sha1": "17d072b86a178fee0afc3b41ffad5ac8b98580a4"
   },
-  "2.2.2.1-f28": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "is to be kept, which cannot easily be determined",
-          "in": "2.2.2.1-p4",
-          "prefix": "emes being both bad, the medium ",
-          "suffix": ". Some are better able to sustai"
-        },
-        "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The extremes being both bad, the",
-          "in": "2.2.2.1-p4",
-          "prefix": "iapeiis will better inform you. ",
-          "suffix": " medium is to be kept, which can"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "20af418657698863db8d966f4b42ed8dc7d0bd54"
-  },
   "2.2.2.1-f29": {
     "bracket": "present",
     "by": "rules",
@@ -335,6 +293,34 @@
       "english-at-anchor"
     ],
     "text_sha1": "ce6674b429771910baf0c0e1bef6404e880e6b31"
+  },
+  "2.2.2.1-f3": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "will have his patient continually loose, and to that end sets down there many forms of Potions and Clysters",
+          "in": "2.2.2.1-p1",
+          "prefix": "ation of his pro hypocondriaco, ",
+          "suffix": ". Mercurialis, consil. 88, if th"
+        },
+        "words": 19
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "942f5ce8bead9f374b94dde8d33052bef2300326"
   },
   "2.2.2.1-f30": {
     "bracket": "present",
@@ -459,12 +445,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Peter Cnemiander in a consultation of his pro hypocondriaco, will have his patient continually loose, and to that end sets down there many forms of Potions and Clysters",
+          "exact": "Peter Cnemiander in a consultation of his",
           "in": "2.2.2.1-p1",
           "prefix": " to be used as occasion serves, ",
-          "suffix": ". Mercurialis, consil. 88, if th"
+          "suffix": " pro hypocondriaco, will have hi"
         },
-        "words": 28
+        "words": 7
       }
     ],
     "lang": "la",
@@ -648,11 +634,29 @@
   "2.2.2.1-f45": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "the medium is to be kept, which cannot easily be determined",
+          "in": "2.2.2.1-p4",
+          "prefix": "u. The extremes being both bad, ",
+          "suffix": ". Some are better able to sustai"
+        },
+        "words": 11
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "english-at-anchor"
+    ],
     "text_sha1": "bfed0e799d912e7ab5452a6a08b351ca415589f1"
   },
   "2.2.2.1-f47": {
@@ -683,6 +687,77 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "1ef583467cd1cf58c70b24f57f8e18d523ad6003"
+  },
+  "2.2.2.1-f48": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "of fair building, they are still frequented in that City by the Turks of all sorts, men and women, and all over Greece and those hot countries",
+          "in": "2.2.2.1-p2",
+          "prefix": "public Baths in Constantinople, ",
+          "suffix": "; to absterge belike that fulsom"
+        },
+        "words": 27
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0ed31fcbd7d0e01ecfb2cdaab4b59bfb0fa72d5a"
+  },
+  "2.2.2.1-f49": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "are three most healthful things",
+          "in": "2.2.2.1-p4",
+          "prefix": " from venery, tria saluberrima, ",
+          "suffix": ". We see their opposites how per"
+        },
+        "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "to rise with an appetite, to be ready to work, and abstain from venery",
+          "in": "2.2.2.1-p4",
+          "prefix": "ealth, temperance in this kind; ",
+          "suffix": ", tria saluberrima, are three mo"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9e83d187568a1cf3bce1dc6db804a8c2f5f6427d"
   },
   "2.2.2.1-f5": {
     "bracket": "present",

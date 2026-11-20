@@ -441,48 +441,6 @@
     ],
     "text_sha1": "bc2c18bdfdb48020720185208c9c8ca58379d4f3"
   },
-  "1.2.4.6-f120": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "they cannot live in some countries",
-          "in": "1.2.4.6-p10",
-          "prefix": " hard, and starve their Genius, ",
-          "suffix": "; but what they have is instantl"
-        },
-        "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "yet they are commonly so preyed upon by polling officers for breaking laws, by their tyrannizing Landlords, so flayed and fleeced by perpetual exactions, that though they do drudge, fare hard, and starve their",
-          "in": "1.2.4.6-p10",
-          "prefix": "ves, and day-labouring drudges; ",
-          "suffix": " Genius, they cannot live in som"
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "1.2.4.6-f126": {
     "bracket": "none",
     "by": "rules",
@@ -507,12 +465,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "S., but he scorned him any answer",
+          "exact": "., but he scorned him any answer",
           "in": "1.2.4.6-p20",
-          "prefix": "an General; Perseus P. Consuli. ",
+          "prefix": "n General; Perseus P. Consuli. S",
           "suffix": ", tacite exprobans fortunam suam"
         },
-        "words": 7
+        "words": 6
       }
     ],
     "lang": "la",
@@ -909,6 +867,60 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "47efbd4d3e025d3bbd1814883f07c63f41d17f9d"
+  },
+  "1.2.4.6-f148": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "His brethren hate him if he be poor",
+          "in": "1.2.4.6-p14",
+          "prefix": "d dearest friends, Prov. 19. 7. ",
+          "suffix": ", omnes vicini oderunt, his neig"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "af9cfac0da378fbe67bac97f1cd56f3cb28029b4"
+  },
+  "1.2.4.6-f149": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "but he scorned him any answer",
+          "in": "1.2.4.6-p20",
+          "prefix": "eneral; Perseus P. Consuli. S., ",
+          "suffix": ", tacite exprobans fortunam suam"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "3f12bf30c6f0dea2ff540ea043d73c985aa4dad6"
   },
   "1.2.4.6-f15": {
     "bracket": "present",
@@ -2814,12 +2826,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "polling officers for breaking laws, by their tyrannizing Landlords, so flayed and fleeced by perpetual exactions, that though they do drudge, fare hard, and starve their",
+          "exact": "polling officers for breaking laws, by their tyrannizing Landlords, so flayed and fleeced by perpetual exactions, that though they do drudge, fare hard, and starve their Genius, they cannot live in some countries",
           "in": "1.2.4.6-p10",
           "prefix": " are commonly so preyed upon by ",
-          "suffix": " Genius, they cannot live in som"
+          "suffix": "; but what they have is instantl"
         },
-        "words": 26
+        "words": 33
       }
     ],
     "lang": "la",
@@ -2842,12 +2854,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "exactions, that though they do drudge, fare hard, and starve their",
+          "exact": "exactions, that though they do drudge, fare hard, and starve their Genius, they cannot live in some countries",
           "in": "1.2.4.6-p10",
           "prefix": "flayed and fleeced by perpetual ",
-          "suffix": " Genius, they cannot live in som"
+          "suffix": "; but what they have is instantl"
         },
-        "words": 11
+        "words": 18
       }
     ],
     "lang": "la",

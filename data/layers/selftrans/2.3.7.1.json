@@ -122,16 +122,6 @@
     ],
     "text_sha1": "229a0a3a7b1df5f7fec071a41bcb868d4afedc14"
   },
-  "2.3.7.1-f103": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "881a63985e863bf15521a841a725539bf5cad42d"
-  },
   "2.3.7.1-f104": {
     "bracket": "present",
     "by": "rules",
@@ -880,34 +870,6 @@
     ],
     "text_sha1": "15754ec2b8babeec45805545c70e15694970fe94"
   },
-  "2.3.7.1-f154": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "not be moved",
-          "in": "2.3.7.1-p13",
-          "prefix": "and bad reports to immortality, ",
-          "suffix": ": for honesty is a sufficient re"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "f9a3a0f5f0b48ebf6b679cb6752085cc6fc17c4f"
-  },
   "2.3.7.1-f156": {
     "bracket": "present",
     "by": "rules",
@@ -1328,6 +1290,73 @@
       "english-follows"
     ],
     "text_sha1": "7b0c0ea507464a56876ddb12d52cc6f35471d6e3"
+  },
+  "2.3.7.1-f171": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "not be moved",
+          "in": "2.3.7.1-p13",
+          "prefix": "and bad reports to immortality, ",
+          "suffix": ": for honesty is a sufficient re"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "f8c94b3976a79cea956ac0aaf7ed8c4aadee841f"
+  },
+  "2.3.7.1-f172": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "1b16cfc5e0c1c250fb372975e909afdbbb62ec29"
+  },
+  "2.3.7.1-f173": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Give not ear to tale-tellers, babblers, be not scurrilous in conversation",
+          "in": "2.3.7.1-p21",
+          "prefix": " be silent in thine intentions. ",
+          "suffix": ": Jest without bitterness: give "
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cc4bc6ff857f3cb130b06aa94a2bfd3cf273bfa1"
   },
   "2.3.7.1-f18": {
     "bracket": "present",

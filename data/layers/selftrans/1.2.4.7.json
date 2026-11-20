@@ -448,12 +448,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "O Clotho, Megapenthus the tyrant in Lucian exclaims, now ready to depart",
+          "exact": "O Clotho, Megapenthus the tyrant in Lucian exclaims, now ready to depart, let me live a while longer",
           "in": "1.2.4.7-p13",
           "prefix": "bellis pavor & impatientia, &c. ",
-          "suffix": ", let me live a while longer. I "
+          "suffix": ". I will give thee a thousand ta"
         },
-        "words": 12
+        "words": 18
       },
       {
         "by": "rules",
@@ -489,18 +489,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "56b0c348a8a851ad3596a623ff31d57ae2b50859"
-  },
-  "1.2.4.7-f137": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
   },
   "1.2.4.7-f14": {
     "bracket": "none",
@@ -2178,48 +2166,6 @@
       "english-precedes"
     ],
     "text_sha1": "a92a3f1928bfe916e60a674c633ef7259389d43a"
-  },
-  "1.2.4.7-f54": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "I will give thee a thousand talents of gold, and two bowls besides, which I took from Cleocritus, worth an hundred talents apiece",
-          "in": "1.2.4.7-p13",
-          "prefix": "rt, let me live a while longer. ",
-          "suffix": ": Woe’s me, saith another, what "
-        },
-        "words": 23
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "O Clotho, Megapenthus the tyrant in Lucian exclaims, now ready to depart",
-          "in": "1.2.4.7-p13",
-          "prefix": "bellis pavor & impatientia, &c. ",
-          "suffix": ", let me live a while longer. I "
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "aed20356d2548eff808f1a840eb5868a5e428ec4"
   },
   "1.2.4.7-f55": {
     "bracket": "present",

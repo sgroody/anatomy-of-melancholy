@@ -549,16 +549,6 @@
     ],
     "text_sha1": "b77303cd66199d9f3dc4b46f957d5dcb56a1cae8"
   },
-  "1.2.1.6-f40": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "a805a443bf68906ff44f40fcee5fcb2101635167"
-  },
   "1.2.1.6-f41": {
     "bracket": "present",
     "by": "rules",
@@ -607,34 +597,6 @@
     ],
     "text_sha1": "3ad71cf554d5326f415fa11e88bd89536be7c9b1"
   },
-  "1.2.1.6-f44": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Countries have been so chary in this behalf, so stern, that if a child were crooked or deformed in body or mind, they made him away",
-          "in": "1.2.1.6-p5",
-          "prefix": " children? In former times some ",
-          "suffix": "; so did the Indians of old by t"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor"
-    ],
-    "text_sha1": "73774df8bd44d06d600e906f36a5c23961847bc8"
-  },
   "1.2.1.6-f46": {
     "bracket": "none",
     "by": "rules",
@@ -662,28 +624,11 @@
   "1.2.1.6-f49": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "immunda muliere",
-          "in": "1.2.1.6-p3",
-          "prefix": "pidatus, quod non contineret ab ",
-          "suffix": ". Gregorius Magnus, petenti Augu"
-        },
-        "words": 2
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "8d5ab16c78e9e78afd0a4c844fff62188b9e3f85"
@@ -834,6 +779,18 @@
     ],
     "text_sha1": "c2d2113077cef4e5d1753e104b83de8345291d31"
   },
+  "1.2.1.6-f59": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "565c5ce49c306ab95c1f82f7dbc38a7525dbb9d6"
+  },
   "1.2.1.6-f6": {
     "bracket": "present",
     "by": "rules",
@@ -862,6 +819,94 @@
       "english-follows"
     ],
     "text_sha1": "21ff13a6fe2567dcc69c27c952d154a69b9d6520"
+  },
+  "1.2.1.6-f60": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1fdb22f8ca73bbc2ccc7e3d047650ca332afe835"
+  },
+  "1.2.1.6-f61": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7096648e77b3f186677dcc3b616b8d4e856961d2"
+  },
+  "1.2.1.6-f62": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5e0e86a4f9ae34f5c6675c518a9d747f5c7ff3a0"
+  },
+  "1.2.1.6-f63": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4daae5c892f9a2c181b463cbe6c77dd698e7ac51"
+  },
+  "1.2.1.6-f64": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b36c1eabfdf51da73fe6297689a55892811f51b8"
+  },
+  "1.2.1.6-f65": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Countries have been so chary in this behalf, so stern, that if a child were crooked or deformed in body or mind, they made him away",
+          "in": "1.2.1.6-p5",
+          "prefix": " children? In former times some ",
+          "suffix": "; so did the Indians of old by t"
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "67f0690196a4c44f33b07119cf853ecc39d13b1c"
   },
   "1.2.1.6-f7": {
     "bracket": "none",

@@ -912,6 +912,68 @@
       }
     ]
   },
+  "1.2.4.5-f30": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vies",
+    "text_sha1": "0195254a1657a94ca4e247fe9b1d8b4240719264",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "language-mismatch"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "\"Vies\" is not Latin. It is a place-name: \"the Vies\", the old popular name for Devizes in Wiltshire (from the Latin Divisae). It is left as written. The full sidenote reads \"Vies hodie.\", meaning \"now called the Vies\" or \"the Vies today\". It glosses Burton's \"Devizes\" in the main text. The only Latin word, \"hodie\" (\"today, nowadays\"), falls outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Vies",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.4.5-f4": {
     "kind": "phrase",
     "lang": "la",

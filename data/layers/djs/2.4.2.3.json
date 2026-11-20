@@ -43,8 +43,8 @@
     "left_anchor": ". Trincavellius consil. 12 lib. 1 approves of Hiera;",
     "left_score": 0.705,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", I find no better medicine, he saith. Heurnius adds pil. Aggregat.,",
-    "right_score": 0.904,
+    "right_anchor": ", I find no better medicine, he saith. Heurnius adds",
+    "right_score": 1.0,
     "status": "below-threshold",
     "text_sha1": "c2174f031f023607fe49d5a11c8b6d770d4027fa",
     "threshold": 0.85
@@ -73,16 +73,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31013, p. 581"
   },
   "2.4.2.3-f18": {
-    "align_score": 0.805,
+    "align_score": 0.922,
     "by": "djs1927",
-    "left_anchor": "Aggregat., pills de Epithymo, Pil. Ind. Mesue, described in the Florentine Antidotary,",
-    "left_score": 0.805,
+    "left_anchor": ", Pil. Ind. Mesue, described in the Florentine Antidotary,",
+    "left_score": 0.922,
     "method": "rules/djs-align-v3",
     "right_anchor": "., more proper to melancholy: not excluding in the meantime, Turbith, Manna,",
     "right_score": 0.957,
-    "status": "below-threshold",
+    "status": "aligned",
+    "text": "pills one would not wish to be without. Cochia with Hellebore, Arabian Pills, Foetida [or Assafoetida], of five kinds of Myrobalans [or Indian Plums], &c.",
     "text_sha1": "34dff2fa9ce6e0e21cf7fcbe334a7ac84f0217f0",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 31029, p. 581"
   },
   "2.4.2.3-f19": {
     "align_score": 0.942,
@@ -111,14 +113,23 @@
     "text_sha1": "96d219e2039e5200a26d27def6eb67702ce1433f",
     "threshold": 0.85
   },
+  "2.4.2.3-f20": {
+    "by": "djs1927",
+    "left_anchor": ", I find no better medicine, he saith. Heurnius adds",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "., pills I might here insert many receipts of prescribed potions, boles,",
+    "right_score": 0.953125,
+    "status": "not-found",
+    "text_sha1": "d75a8364ed2bb3309955f1d29e21f8ff83224ee5",
+    "threshold": 0.85
+  },
   "2.4.2.3-f21": {
     "by": "djs1927",
-    "left_anchor": "head, with little pieces of linen dipped warm in it. Oxymel Scilliticum,",
-    "left_score": 0.9852941176470589,
+    "left_anchor": "Compound Purgers. ,",
     "method": "rules/djs-align-v3",
     "right_anchor": "and Solid purgers are confections, electuaries, pills by themselves, or compound with",
-    "right_score": 0.9939393939393939,
-    "status": "not-found",
+    "status": "no-anchor",
     "text_sha1": "43f2d8c8f707c8dd72e9711bb6a6b57bc48f5750",
     "threshold": 0.85
   },
@@ -148,6 +159,63 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31070, p. 582"
   },
+  "2.4.2.3-f24": {
+    "by": "djs1927",
+    "left_anchor": "to the head, with little pieces of linen dipped warm in it.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Solid purgers are confections, electuaries, pills by themselves, or compound with",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "d9ee611e2914ed6579c11c16426b4bc20217dbdc",
+    "threshold": 0.85
+  },
+  "2.4.2.3-f25": {
+    "align_score": 0.924,
+    "by": "djs1927",
+    "gap_words": 81,
+    "left_anchor": "Succory, of Fumitory, Polypody, &c., Heurnius his purging Cock-broth. Some ex ,",
+    "left_score": 0.924,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", of fumitory, &c. Confection of Hamech, which though most approve, Solenander",
+    "right_score": 1.0,
+    "status": "implausible-length",
+    "text_sha1": "1503062b61ce5caf9cf323ddf81253122f3cbf37",
+    "threshold": 0.85
+  },
+  "2.4.2.3-f26": {
+    "by": "djs1927",
+    "left_anchor": "22 bitterly inveighs against, so doth Rondoletius Pharmacop. officina, Fernelius and others;",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Wecker’s Electuary Aetius 22. 33 commends",
+    "status": "not-found",
+    "text_sha1": "22bedebdd74572d82583e539d20f89e09925ddfc",
+    "threshold": 0.85
+  },
+  "2.4.2.3-f27": {
+    "by": "djs1927",
+    "left_anchor": "Fumitory, Polypody, &c., Heurnius his purging Cock-broth. Some ex , Wecker’s Electuary",
+    "left_score": 0.8648648648648648,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Ptolemy’s Hieralogodion, of which diverse receipts are daily made.",
+    "right_score": 0.944,
+    "status": "not-found",
+    "text_sha1": "15562318fd68a3c2bf309eeebe05d487eaf164bf",
+    "threshold": 0.85
+  },
+  "2.4.2.3-f28": {
+    "align_score": 0.901,
+    "by": "djs1927",
+    "gap_words": 28,
+    "left_anchor": ", Ptolemy’s Hieralogodion, of which diverse receipts are daily made. ., pills",
+    "left_score": 0.901,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Mesue, described in the Florentine Antidotary,",
+    "right_score": 0.977,
+    "status": "implausible-length",
+    "text_sha1": "690e03e7c7cc84aad36379d6ff5a450f6b09a948",
+    "threshold": 0.85
+  },
   "2.4.2.3-f5": {
     "by": "djs1927",
     "left_anchor": "purgers are confections, electuaries, pills by themselves, or compound with others, as",
@@ -158,15 +226,11 @@
     "threshold": 0.85
   },
   "2.4.2.3-f6": {
-    "align_score": 0.924,
     "by": "djs1927",
-    "gap_words": 80,
     "left_anchor": "Succory, of Fumitory, Polypody, &c., Heurnius his purging Cock-broth. Some ex ,",
-    "left_score": 0.924,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Pil. Indae, of fumitory, &c. Confection of Hamech, which though most",
-    "right_score": 0.937,
-    "status": "implausible-length",
+    "right_anchor": ", Aetius 22. 33 commends",
+    "status": "not-found",
     "text_sha1": "03f0c8aae523c391f89e78230a4e738f8ec71d53",
     "threshold": 0.85
   }

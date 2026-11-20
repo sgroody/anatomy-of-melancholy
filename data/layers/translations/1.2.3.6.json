@@ -305,7 +305,7 @@
       }
     ]
   },
-  "1.2.3.6-f18": {
+  "1.2.3.6-f19": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -317,9 +317,9 @@
     },
     "self_translation": {
       "burton_span": {
-        "exact": "generous minds are often moved with shame, to despair for some public disgrace.",
+        "exact": "generous minds are often moved with shame, to despair for some public disgrace",
         "in": "1.2.3.6",
-        "near": "1.2.3.6-f18",
+        "near": "1.2.3.6-f19",
         "prefix": "",
         "suffix": ""
       },
@@ -331,49 +331,47 @@
       "status": "partial"
     },
     "source": {
-      "author": "Felix Plater",
+      "author": "Felix Platter",
       "basis": "text \"Felix Plater lib. 3 de alienat. mentis\"",
       "locus": "lib. 3",
       "status": "burton-cites",
       "verified": false,
-      "work": "de alienat. mentis"
+      "work": "De mentis alienatione"
     },
-    "text": "Ob pudorem & dedecus publicum, ob errorem commissum saepe moventur generosi animi (Felix Plater lib. 3 de alienat. mentis",
-    "text_sha1": "d2ccfc8fffe7dd32e6543793b516fa468ccf0449",
+    "text": "Ob pudorem & dedecus publicum, ob errorem commissum saepe moventur generosi animi",
+    "text_sha1": "d0723f6853f6e6e7d767f615333a4fcb3657eeda",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
         "date": "2026-11-20",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
+        "flags": [],
+        "literal": "On account of shame and public disgrace, on account of an error committed, generous minds are often moved",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "The marked passage includes Burton's citation with its opening parenthesis; the closing parenthesis falls outside the marked text, so the citation is translated but left open as in the source. 'Generosi animi' means minds of noble temper. Burton's English that follows adds 'to despair', which is not in the Latin, and leaves out 'ob errorem commissum'.",
+        "note": "Burton's English follows the Latin closely but adds 'to despair' and leaves out 'ob errorem commissum' ('for a fault committed').",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": {
-            "exact": "generous minds are often moved with shame, to despair for some public disgrace.",
+            "exact": "generous minds are often moved with shame, to despair for some public disgrace",
             "in": "1.2.3.6",
-            "near": "1.2.3.6-f18",
+            "near": "1.2.3.6-f19",
             "prefix": "",
             "suffix": ""
           },
           "status": "partial"
         },
         "source": {
-          "author": "Felix Plater",
+          "author": "Felix Platter",
           "basis": "text \"Felix Plater lib. 3 de alienat. mentis\"",
           "locus": "lib. 3",
           "status": "burton-cites",
           "verified": false,
-          "work": "de alienat. mentis"
+          "work": "De mentis alienatione"
         },
-        "text": "Generous minds are often moved by shame and public disgrace, and by an error they have committed (Felix Plater, book 3, On Alienation of the Mind",
+        "text": "Noble minds are often deeply moved by shame and public disgrace, or by a fault they have committed",
         "warnings": []
       }
     ]
@@ -444,6 +442,311 @@
           "work": null
         },
         "text": "It breaks lofty and generous spirits.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.6-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "siquidem vita & fama pari passu ambulant",
+    "text_sha1": "22800aecef67aec2aebaf11155ffd8a3f824311a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "That is, the loss of good name is felt like the loss of life itself.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "since life and reputation walk at an equal pace",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.6-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "was swallowed up with this passion of shame",
+        "in": "1.2.3.6",
+        "near": "1.2.3.6-f21",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Homerus pudore consumptus",
+    "text_sha1": "191f083907be0cbb03c1c4b4e843b0ce2ee6ae11",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Refers to the ancient story that Homer died of grief because he could not solve the fishermen's riddle about lice.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "was swallowed up with this passion of shame",
+            "in": "1.2.3.6",
+            "near": "1.2.3.6-f21",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Homer, consumed by shame",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.6-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plautus",
+      "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+      "locus": "Act. 1 Scen. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pseudolus"
+    },
+    "text": "Impudice",
+    "text_sha1": "c9a4ebd1be3f266358dbd0b7b86fedb46d80a6a2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Pseudolus (Ps.) begins an exchange of insults with the pimp Ballio (B.), who cheerfully agrees with every one of them.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plautus",
+          "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+          "locus": "Act. 1 Scen. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pseudolus"
+        },
+        "text": "Shameless!",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.6-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plautus",
+      "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+      "locus": "Act. 1 Scen. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pseudolus"
+    },
+    "text": "Ita est",
+    "text_sha1": "14f0424c040d7a735a339e6aba22e86e349a0f4f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "So it is.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Ballio's reply, accepting the insult 'Shameless!'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plautus",
+          "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+          "locus": "Act. 1 Scen. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pseudolus"
+        },
+        "text": "So I am.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.6-f24": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plautus",
+      "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+      "locus": "Act. 1 Scen. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pseudolus"
+    },
+    "text": "sceleste",
+    "text_sha1": "2d9c01ff6507e6df39c176020d237cb105c19036",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Wicked one!",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Pseudolus's next insult, which Ballio answers with 'dicis vera' ('you speak the truth').",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plautus",
+          "basis": "sidenote \"Pseudolus Act. 1 Scen. 3.\"; text \"Ballio the Bawd in Plautus\"",
+          "locus": "Act. 1 Scen. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pseudolus"
+        },
+        "text": "Villain!",
         "warnings": []
       }
     ]

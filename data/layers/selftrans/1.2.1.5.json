@@ -49,34 +49,6 @@
     "signals": [],
     "text_sha1": "edda461ec1cdbdcc95d2042e38a2602a4c761bbe"
   },
-  "1.2.1.5-f18": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "they do no such wonders at all, only their Brains are crazed",
-          "in": "1.2.1.5-p1",
-          "prefix": "lam vitiatam habent phantasiam; ",
-          "suffix": ". They think they are Witches, a"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows"
-    ],
-    "text_sha1": "e2978dd115a1db5991dfad302f9103dc3233be08"
-  },
   "1.2.1.5-f19": {
     "bracket": "present",
     "by": "rules",
@@ -175,6 +147,46 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b3213c4cc50cf161f55a2fb4895a75e1d68659d5"
+  },
+  "1.2.1.5-f23": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "81fd5f3f3d1ca818135f9afc75279633c5e710de"
+  },
+  "1.2.1.5-f24": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "they do no such wonders at all, only their Brains are crazed",
+          "in": "1.2.1.5-p1",
+          "prefix": "lam vitiatam habent phantasiam; ",
+          "suffix": ". They think they are Witches, a"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "fabb5201aba82f0438629d6700863025f2ab20b6"
   },
   "1.2.1.5-f4": {
     "bracket": "present",

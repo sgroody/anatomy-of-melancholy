@@ -1565,6 +1565,65 @@
       }
     ]
   },
+  "2.2.3.1-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Mare mortuum",
+    "text_sha1": "1bdaa68eb6557921ca95dd7604e12252c640063d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the Dead Sea",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.3.1-f130": {
     "kind": "phrase",
     "lang": "la",
@@ -1925,66 +1984,6 @@
       }
     ]
   },
-  "2.2.3.1-f138": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Leandro Alberti; Plutarch",
-      "basis": "sidenote \"Leander Albertus in Campania, e Plutarcho vita Luculli.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Life of Lucullus"
-    },
-    "text": "Leander Albertus in Campania, e Plutarcho vita Luculli",
-    "text_sha1": "3be63d57c0ed426d27fb2d8ce2315a5ddfee5a90",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Leandro Alberti's Descrittione di tutta Italia, in the section on Campania. The anecdote comes from Plutarch.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Leandro Alberti; Plutarch",
-          "basis": "sidenote \"Leander Albertus in Campania, e Plutarcho vita Luculli.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Life of Lucullus"
-        },
-        "text": "Leandro Alberti, under Campania, from Plutarch's Life of Lucullus.",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.3.1-f14": {
     "kind": "phrase",
     "lang": "la",
@@ -2297,64 +2296,6 @@
           "work": null
         },
         "text": "Spring will paint the budding meadows with varied colour",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f144": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Orton super montem",
-    "text_sha1": "b77860b3aea47fad1297955f90631bf865ffbff0",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "Orton upon the hill",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The Latin form of the name of Orton-on-the-Hill, a Leicestershire village near the river Anker.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Orton on the Hill",
         "warnings": []
       }
     ]
@@ -3899,78 +3840,6 @@
           "work": "Ars Poetica"
         },
         "text": "Could you keep from laughing, friends?",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f223": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "burton",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "Spirits",
-        "in": "2.2.3.1",
-        "near": "2.2.3.1-f223",
-        "prefix": " Genii, ",
-        "suffix": ", Angels"
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "full"
-    },
-    "source": {
-      "author": "Jean Bodin",
-      "basis": "text \"Bodin Theat. nat. lib. 2 and some others\"",
-      "locus": "lib. 2",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Theatrum naturae"
-    },
-    "text": "Genii",
-    "text_sha1": "e559138c3872ed0ad68a42b2c371b1cd19e9ab45",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Genii are the guardian or presiding spirits of places.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "Spirits",
-            "in": "2.2.3.1",
-            "near": "2.2.3.1-f223",
-            "prefix": " Genii, ",
-            "suffix": ", Angels"
-          },
-          "status": "full"
-        },
-        "source": {
-          "author": "Jean Bodin",
-          "basis": "text \"Bodin Theat. nat. lib. 2 and some others\"",
-          "locus": "lib. 2",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Theatrum naturae"
-        },
-        "text": "Genii",
         "warnings": []
       }
     ]
@@ -5772,66 +5641,6 @@
       }
     ]
   },
-  "2.2.3.1-f335": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "45 Danubii",
-    "text_sha1": "0b9704d8b74591fec54fa674101976fca0c2610a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The full note reads 'Lat. 45 Danubii': the Danube (Ister) lies at latitude 45. 'Lat.' stands outside the marked text.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "45, of the Danube",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.3.1-f336": {
     "kind": "phrase",
     "lang": "la",
@@ -6141,66 +5950,6 @@
       }
     ]
   },
-  "2.2.3.1-f342": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "½ a Polo",
-    "text_sha1": "49ae6523a58ec271df9b3d0df169c44bc0aea05b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The marked passage is only part of the sidenote 'Dist. 3. gr. ½ a Polo', which means 'Distant 3½ degrees from the Pole' and refers to the Pole star at the anchor. The '½' belongs with the '3' outside the marked passage.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "½ from the Pole",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.3.1-f343": {
     "kind": "phrase",
     "lang": "la",
@@ -6383,66 +6132,6 @@
           "work": "Exotericae exercitationes"
         },
         "text": "We are by no means men, but parts of a man; out of all of us together something can be made, and that not great; out of each one singly, almost nothing.",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f348": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Francis Godwin",
-      "basis": "sidenote \"Godwin vita Jo. Voysye al. Harman.\"",
-      "locus": "vita Jo. Voysye",
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Harman",
-    "text_sha1": "60fab162005efd90d830be3b69339359691d38bf",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "This is a proper name, not a Latin word. The full sidenote reads 'Godwin, Life of John Voysey, alias Harman': John Veysey, Bishop of Exeter, was also called Harman. Godwin is Francis Godwin's catalogue of English bishops.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Francis Godwin",
-          "basis": "sidenote \"Godwin vita Jo. Voysye al. Harman.\"",
-          "locus": "vita Jo. Voysye",
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Harman",
         "warnings": []
       }
     ]
@@ -6634,66 +6323,6 @@
           "work": "Commentary on Genesis"
         },
         "text": "Now they try to persuade people that the theologians are sunk in the deepest ignorance, refuse to admit the true sciences, and exercise a tyranny, so as to hold men fast in false dogmas, superstitions, and the Catholic religion.",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f355": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "viz",
-    "text_sha1": "e468b29e40f0ef5995c55d4d309519c3c389fe8d",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "viz. abbreviates videlicet.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "namely",
         "warnings": []
       }
     ]
@@ -6902,76 +6531,6 @@
       }
     ]
   },
-  "2.2.3.1-f359": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": {
-        "exact": "50 fathom deep a ship was digged out of a mountain, where they got metal ore, in which were 48 carcasses of men, with other merchandise",
-        "in": "2.2.3.1",
-        "near": "2.2.3.1-f359",
-        "prefix": "",
-        "suffix": ""
-      },
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "paraphrase"
-    },
-    "source": {
-      "author": "Josias Simler; Abraham Ortelius",
-      "basis": "sidenote \"Simlerus, Ortelius\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Simlerus, Ortelius, Brachiis centum sub terra reperta est, in qua 48 cadavera inerant, anchorae, &c",
-    "text_sha1": "4c63040875bf2d9a15c28f975e63fce4dbd1e4ec",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [],
-        "literal": "Simlerus, Ortelius. At a hundred arm-lengths under earth it was found, in which 48 corpses were, anchors, etc.",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Brachia are arm-lengths, roughly fathoms. The sidenote says a hundred, but Burton's text says 50 fathom.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": {
-            "exact": "50 fathom deep a ship was digged out of a mountain, where they got metal ore, in which were 48 carcasses of men, with other merchandise",
-            "in": "2.2.3.1",
-            "near": "2.2.3.1-f359",
-            "prefix": "",
-            "suffix": ""
-          },
-          "status": "paraphrase"
-        },
-        "source": {
-          "author": "Josias Simler; Abraham Ortelius",
-          "basis": "sidenote \"Simlerus, Ortelius\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Simler, Ortelius. It was found a hundred fathoms under the earth, and in it were 48 corpses, anchors, etc.",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.3.1-f36": {
     "kind": "phrase",
     "lang": "la",
@@ -7165,7 +6724,7 @@
       }
     ]
   },
-  "2.2.3.1-f362": {
+  "2.2.3.1-f366": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -7192,8 +6751,8 @@
       "verified": false,
       "work": null
     },
-    "text": "superficies",
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6",
+    "text": "Zona Torrida",
+    "text_sha1": "038e2039928e740e2720e9acd8cbc31fb5ca430b",
     "translations": [
       {
         "by": "machine",
@@ -7219,184 +6778,7 @@
           "verified": false,
           "work": null
         },
-        "text": "surface",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f363": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "superficies",
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "surface",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f364": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "superficies",
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "surface",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f365": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "superficies",
-    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "surface",
+        "text": "the Torrid Zone",
         "warnings": []
       }
     ]
@@ -7574,125 +6956,6 @@
           "work": null
         },
         "text": "peninsulas",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f37": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Girava",
-      "basis": "sidenote \"Girava.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "At Quito in Peru, plus auri quam terrae foditur in Aurifodinis",
-    "text_sha1": "cae1987907659fdee22dc9c4d0736c7290071c5a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The opening words 'At Quito in Peru' are Burton's English; only the Latin is translated.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Girava",
-          "basis": "sidenote \"Girava.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "more gold than earth is dug out in the gold-mines",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f370": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Remora",
-    "text_sha1": "88305e347f0e73cfd99d2580e61d0d282a0fabeb",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The sucking-fish, which ancient writers such as Pliny believed could hold a ship fast in the water.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the remora",
         "warnings": []
       }
     ]
@@ -8026,65 +7289,6 @@
       }
     ]
   },
-  "2.2.3.1-f376": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "in Zona Torrida",
-    "text_sha1": "7e49e4e1d0ff91f7bfd2e7e74596635805aa9bcf",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "in the Torrid Zone",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.3.1-f377": {
     "kind": "phrase",
     "lang": "la",
@@ -8330,6 +7534,612 @@
       }
     ]
   },
+  "2.2.3.1-f380": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lege",
+    "text_sha1": "5093ce2e9e2b577aeae89b36505a8f47329e1f3b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Opening word of a sidenote directing the reader to book 1, chapters 23 and 24, and book 3, chapter 4, of Cabeus's Philosophia magnetica.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Read",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f381": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "fretum",
+    "text_sha1": "78c0e1b0f6c39a8fe0d510e29cca99d27d75694f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "\"fretum Davis\" is the Davis Strait, between Greenland and Baffin Island.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "strait",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f382": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "M. Polus Venetus puts him in Asia",
+        "in": "2.2.3.1",
+        "near": "2.2.3.1-f382",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Marco Polo",
+      "basis": "sidenote \"M. Polus in Asia Presb. Joh. meminit. lib. 2 cap. 30.\"",
+      "locus": "lib. 2 cap. 30",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "in Asia Presb. Joh. meminit",
+    "text_sha1": "2f8dfca99fe7b20af69b3b765f5ce9d4fbc6f361",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in Asia mentions Presbyter John",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads: Marco Polo mentions Prester John in Asia, book 2, chapter 30.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "M. Polus Venetus puts him in Asia",
+            "in": "2.2.3.1",
+            "near": "2.2.3.1-f382",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Marco Polo",
+          "basis": "sidenote \"M. Polus in Asia Presb. Joh. meminit. lib. 2 cap. 30.\"",
+          "locus": "lib. 2 cap. 30",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "mentions Prester John in Asia",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f383": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "alii",
+    "text_sha1": "4227a84953c4e547198deeef05c7b571a464b35f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads: Alvarez and others. It supports the opinion that Prester John is the Emperor of the Abyssinians.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "others",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f384": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "alios",
+    "text_sha1": "a1f45d157a7a28870d7d573de373c5592f926139",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads: See Pererius on Genesis, Cornelius à Lapide, and others. It is anchored to the seat of the terrestrial Paradise.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "others",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f385": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Anno 1460 at Berne in Switzerland 50 fathom deep a ship was digged out of a mountain, where they got metal ore, in which were 48 carcasses of men, with other merchandise.",
+        "in": "2.2.3.1",
+        "near": "2.2.3.1-f385",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Josias Simler; Abraham Ortelius",
+      "basis": "sidenote \"Simlerus, Ortelius,\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Brachiis centum sub terra reperta est, in qua 48 cadavera inerant, anchorae, &c",
+    "text_sha1": "eff0e06d38effe818df71818cc41f4195fdc1dd5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "By a hundred arm-lengths under earth it was found, in which 48 corpses were, anchors, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject is understood: the ship (navis) of Burton's main text. Brachia are 'arm-lengths' (Italian braccia), rendered here as fathoms. The sidenote says 100 where the main text says 50 fathoms, and it adds anchors.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Anno 1460 at Berne in Switzerland 50 fathom deep a ship was digged out of a mountain, where they got metal ore, in which were 48 carcasses of men, with other merchandise.",
+            "in": "2.2.3.1",
+            "near": "2.2.3.1-f385",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Josias Simler; Abraham Ortelius",
+          "basis": "sidenote \"Simlerus, Ortelius,\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "It was found a hundred fathoms under the earth, and in it were 48 corpses, anchors, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f386": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Girava",
+      "basis": "sidenote \"Girava.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "plus auri quam terrae foditur in Aurifodinis",
+    "text_sha1": "21a9498f662bc9b3af5f04606c07027b18db75fd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Said of Quito in Peru.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Girava",
+          "basis": "sidenote \"Girava.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "more gold than earth is dug up in the gold-mines",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f387": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "male audiunt",
+    "text_sha1": "4d26b6275f9fede8eb10fcdf11e08cc2e2372196",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "hear badly",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An idiom: to be ill spoken of. Here Hungary and Ireland are notorious for lice. The paragraph's sidenote \"Lansius orat. contra Hungaros\" probably supports the claim about Hungary.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "have a bad name",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f388": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "a Polo",
+    "text_sha1": "dbf1d1198d916636ecdac1b3b995fe29175c4fb6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads: distance 3½ degrees from the Pole. It refers to the Pole star.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "from the Pole",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f389": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "anno tertio",
+    "text_sha1": "fbea66dbce629a23a960f175819edc2d5851979a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The third year of the 84th Olympiad.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the third year",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.3.1-f39": {
     "kind": "phrase",
     "lang": "la",
@@ -8388,6 +8198,193 @@
       }
     ]
   },
+  "2.2.3.1-f390": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Lege somnium Kepleri",
+    "text_sha1": "e19af9f1ea3233056eb291f831ecce030d3444d0",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This refers to Kepler's Somnium, published after his death. Burton's sidenote gives the edition as 1635.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Read Kepler's Dream",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f391": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "’tis hard to determine",
+        "in": "2.2.3.1",
+        "near": "2.2.3.1-f391",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Johannes Kepler",
+      "basis": "text \"as Kepler demands\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Difficile est nodum hunc expedire, eo quod nondum omnia quae huc pertinent explorata habemus",
+    "text_sha1": "c576583713a0631cdaac2711366358a73326848c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's English \"’tis hard to determine\" renders only the first clause.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "’tis hard to determine",
+            "in": "2.2.3.1",
+            "near": "2.2.3.1-f391",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Johannes Kepler",
+          "basis": "text \"as Kepler demands\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "It is hard to untie this knot, because we have not yet explored all the things that pertain to it",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f392": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Plutarch",
+      "basis": "sidenote \"Leander Albertus in Campania, e Plutarcho vita Luculli.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Life of Lucullus"
+    },
+    "text": "e Plutarcho vita Luculli",
+    "text_sha1": "06594a28e157dfbbb55498c88092bb5d34ed6983",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The full sidenote reads: Leander Alberti, on Campania, from Plutarch's Life of Lucullus.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Plutarch",
+          "basis": "sidenote \"Leander Albertus in Campania, e Plutarcho vita Luculli.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Life of Lucullus"
+        },
+        "text": "from Plutarch, Life of Lucullus",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.3.1-f42": {
     "kind": "phrase",
     "lang": "la",
@@ -8442,66 +8439,6 @@
           "work": null
         },
         "text": "cold regions",
-        "warnings": []
-      }
-    ]
-  },
-  "2.2.3.1-f43": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ireland male audiunt",
-    "text_sha1": "57e3d1688b35072a529daa7a1120b771434382e1",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "hear ill",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "'Ireland' is Burton's English, and only 'male audiunt' is Latin. The idiom means 'are ill spoken of'; here it means they are notorious for lice.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "have a bad name",
         "warnings": []
       }
     ]
@@ -8892,6 +8829,65 @@
           "work": null
         },
         "text": "that it may rightly exercise men's wits",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.3.1-f5": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Mare pacificum",
+    "text_sha1": "6980011aef41c9a7c9ed8c438004482aed181510",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "the peaceful sea",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the Pacific Ocean",
         "warnings": []
       }
     ]

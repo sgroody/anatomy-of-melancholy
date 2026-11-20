@@ -43,15 +43,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27214, p. 507"
   },
-  "2.3.2.1-f11": {
-    "by": "djs1927",
-    "left_anchor": "to say the best of them, great men are proper, and tall,",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; but",
-    "status": "no-anchor",
-    "text_sha1": "863779117a56f4d0d331ace9035e48b8e2716558",
-    "threshold": 0.85
-  },
   "2.3.2.1-f111": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -247,6 +238,52 @@
     "text_sha1": "530abee4a2825abc058084b69712ae0849d483ce",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26769, p. 498"
+  },
+  "2.3.2.1-f134": {
+    "align_score": 0.982,
+    "by": "djs1927",
+    "left_anchor": "a little man of stature, Augustus Caesar of the same pitch: Agesilaus",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; Bocchoris a most deformed prince as ever Egypt had, yet as",
+    "right_score": 0.982,
+    "status": "aligned",
+    "text": "of despicable figure;",
+    "text_sha1": "cc6ae91cd220a85251ec0e4bb748cd497cf3a83e",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 26767, p. 498"
+  },
+  "2.3.2.1-f135": {
+    "by": "djs1927",
+    "left_anchor": "the best of them, great men are proper, and tall, I grant,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; but",
+    "status": "no-anchor",
+    "text_sha1": "0c416c5cde31bbea9cc1d4c40ca96503357cac4e",
+    "threshold": 0.85
+  },
+  "2.3.2.1-f136": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "illiterate idiot, an outside, a glow-worm, a proud fool, an arrant ass,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", a slave to his lust and belly,",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "bbda6cdc00a482b0560e0704db9fa7dc84b8743b",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 26974, p. 502"
+  },
+  "2.3.2.1-f137": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "de48ee9ea4893feb6a5d29227dbd06b43c048063",
+    "threshold": 0.85
   },
   "2.3.2.1-f15": {
     "by": "djs1927",
@@ -446,16 +483,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26748, p. 498"
   },
   "2.3.2.1-f30": {
-    "align_score": 0.692,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "ass, Ventris & inguinis mancipium, a slave to his lust and belly,",
-    "left_score": 0.692,
+    "left_anchor": ", a slave to his lust and belly,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ". And as Salvianus observed of his Countrymen the Aquitaines in France,",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "aligned",
+    "text": "strong only in wantonness.",
     "text_sha1": "167b18a5bc22ea04fd99745c76e62e8c440b5140",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 26975, p. 502"
   },
   "2.3.2.1-f32": {
     "by": "djs1927",
@@ -794,20 +833,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27202, p. 507"
   },
-  "2.3.2.1-f6": {
-    "align_score": 0.982,
-    "by": "djs1927",
-    "left_anchor": "Alexander a little man of stature, Augustus Caesar of the same pitch:",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; Bocchoris a most deformed prince as ever Egypt had, yet as",
-    "right_score": 0.982,
-    "status": "aligned",
-    "text": "Agesilaus of despicable figure;",
-    "text_sha1": "85ec2bb4b041b1e9cee109695c539a3c4d08124b",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 26767, p. 498"
-  },
   "2.3.2.1-f60": {
     "align_score": 0.986,
     "by": "djs1927",
@@ -845,14 +870,6 @@
     "text_sha1": "2a9cb8f059c9ebf5491a1d50fdd77d688981e16c",
     "threshold": 0.85
   },
-  "2.3.2.1-f63": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "74a3fefa6f9c40bd61a634766f2cb882066e3bf2",
-    "threshold": 0.85
-  },
   "2.3.2.1-f64": {
     "align_score": 0.971,
     "by": "djs1927",
@@ -867,14 +884,6 @@
     "text_sha1": "3e2c37b9885f28f218137fa0073891924cd4c179",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26726, p. 497"
-  },
-  "2.3.2.1-f67": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "3062fa3a43a078f4de1011248533951d56008029",
-    "threshold": 0.85
   },
   "2.3.2.1-f72": {
     "align_score": 1.0,
@@ -900,14 +909,6 @@
     "text_sha1": "4a34ce0c7c67e0dab060f9e6f2a565d8b5fadc7d",
     "threshold": 0.85
   },
-  "2.3.2.1-f76": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "e1b1987fde1bd8daf58e9454ea01fbebff0a67d2",
-    "threshold": 0.85
-  },
   "2.3.2.1-f77": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -931,14 +932,6 @@
     "right_score": 1.0,
     "status": "not-found",
     "text_sha1": "de4d8ca2f6f9747588966dadee14b1c7d1436741",
-    "threshold": 0.85
-  },
-  "2.3.2.1-f80": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "517d3cdf6e5901b08bdd755639498c3b09c78998",
     "threshold": 0.85
   },
   "2.3.2.1-f88": {

@@ -204,29 +204,11 @@
   "3.2.1.2-f114": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "Sileo interim turpes",
-          "in": "3.2.1.2-p7",
-          "prefix": "oeditatem, quam non spurcitiem? ",
-          "suffix": " illas, & ne nominandas quidem m"
-        },
-        "words": 3
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "cognate-overlap",
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "ee5f10e4cfd02b86712e22d264961edafeecf5c2"
@@ -282,29 +264,11 @@
   "3.2.1.2-f120": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in speculo",
-          "in": "3.2.1.2-p7",
-          "prefix": " aversus omnes admissarii motus ",
-          "suffix": " videret, ac deinde falsa magnit"
-        },
-        "words": 2
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "cognate-overlap",
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "af2b1d7b8fc45a53343f2cbb537a51a8452285b0"
@@ -324,28 +288,11 @@
   "3.2.1.2-f122": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "foeminam passus",
-          "in": "3.2.1.2-p7",
-          "prefix": "am vera gauderet, simul virum & ",
-          "suffix": ", quod dictu foedum & abominandu"
-        },
-        "words": 2
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "8345c522c487457503998f1a97d0b9b9a82176d1"
@@ -438,48 +385,6 @@
       "english-precedes"
     ],
     "text_sha1": "3e72d52de85ffb317416cc4f93de2568256dca38"
-  },
-  "3.2.1.2-f128": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "convulsions, aches, combustions, &c., which torment the body, that feral melancholy which crucifies the Soul in this life, and everlastingly torments in the world to come",
-          "in": "3.2.1.2-p3",
-          "prefix": "tis, palsies, cramps, Sciatica, ",
-          "suffix": "."
-        },
-        "words": 26
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "daily monomachies, murders, effusion of blood, rapes, riot and immoderate expense, to satisfy their lusts, beggary, shame, loss, torture, punishment, disgrace, loathsome diseases that proceed from thence, worse than calentures and pestilent fevers, those often Gouts, Pox, Arthritis, palsies, cramps",
-          "in": "3.2.1.2-p3",
-          "prefix": " these Basilisks. Besides those ",
-          "suffix": ", Sciatica, convulsions, aches, "
-        },
-        "words": 40
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "35958a63a5644071ff859a5954e43198fae359cc"
   },
   "3.2.1.2-f129": {
     "bracket": "none",
@@ -589,6 +494,30 @@
     ],
     "text_sha1": "3c38ec071a5a389f9cc5d7e31911425ac556003c"
   },
+  "3.2.1.2-f138": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d47f578bf95149bb89c1cfd21743e43b8880c3e4"
+  },
+  "3.2.1.2-f139": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "916b9112d465af9c686fd87cae80814be950a060"
+  },
   "3.2.1.2-f14": {
     "bracket": "none",
     "by": "rules",
@@ -600,6 +529,246 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "2a2c1063d1320351f04f292892f281578d5783eb"
+  },
+  "3.2.1.2-f140": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "687d8fbdff34986cefbabf08ffe21599e5a0c7e3"
+  },
+  "3.2.1.2-f141": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d696c660e172512829472831ae66acce575ea412"
+  },
+  "3.2.1.2-f142": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "814a98227ef8cc01971e28b73b1b04bbbc647b68"
+  },
+  "3.2.1.2-f143": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "25d0e5cc91eea6c09601dd721e34b64c126ae236"
+  },
+  "3.2.1.2-f144": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "21e3263bce9d8c57a1cef22e594d04d324bd0e1c"
+  },
+  "3.2.1.2-f145": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fb1e02240a337202e18fbd1a319eb0da490f8581"
+  },
+  "3.2.1.2-f146": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fe6892a918db38716d0dce335e897dcf6e4c808a"
+  },
+  "3.2.1.2-f147": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4f676e72e815f1295d61eae82460d6f86840aad1"
+  },
+  "3.2.1.2-f148": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7a09c4e9bfe0b0ecc899491e5b944c3d563e9612"
+  },
+  "3.2.1.2-f149": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ba8a27059e6a9c96d2d3f52feaaf2dd73dcd5c38"
+  },
+  "3.2.1.2-f150": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "bc09c7945376c59d24f967eea311e5665add0806"
+  },
+  "3.2.1.2-f151": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3edeb900b4f08516f272ccc325de6dad3928895d"
+  },
+  "3.2.1.2-f152": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "27ec5af41bea5a232ef9d6c70a98d5c7ed348b79"
+  },
+  "3.2.1.2-f153": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "975190bd41a33541f160f47f0e297f885aadb84f"
+  },
+  "3.2.1.2-f154": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "643c6902b8a14bcf5399001c136d319b92dfa747"
+  },
+  "3.2.1.2-f155": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "af26caaad92f4c287ed08243d1555a2415e44b9b"
+  },
+  "3.2.1.2-f156": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9b341fe37e097231abb41e1ed1b4d771d1a3c9a5"
+  },
+  "3.2.1.2-f157": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "03869582e8c5e8a5f5ead9f06b8e25fb61a4c673"
+  },
+  "3.2.1.2-f158": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ce045a5ed59a069ccfd10ca14815989a1fc014aa"
+  },
+  "3.2.1.2-f159": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a0ad18bcf40f25ccdfe74461022348f268669247"
   },
   "3.2.1.2-f16": {
     "bracket": "none",
@@ -643,6 +812,149 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "c626e08766b3fc587fc039763136d1b665bd515e"
+  },
+  "3.2.1.2-f160": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4cb98239176991591d1dd8ab1aee0dedd2dedb47"
+  },
+  "3.2.1.2-f161": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4f0481ca0ea2e4d81b56852c087fbc92999f22e0"
+  },
+  "3.2.1.2-f162": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a433d3464fe71332c516fd601ff1fdcf85707001"
+  },
+  "3.2.1.2-f163": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "a4ef87dfbb5797bac46b753c91f47908523bd0fa"
+  },
+  "3.2.1.2-f164": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2455e959e9c461a297aea8e91daf2c71a0add9a9"
+  },
+  "3.2.1.2-f165": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "85e6c8a840e9db7bb3e5392200f9fbc26c5a0f04"
+  },
+  "3.2.1.2-f166": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "at fourteen years old, then they do offer themselves, and some plainly rage",
+          "in": "3.2.1.2-p18",
+          "prefix": "3 onomast. out of Aristophanes, ",
+          "suffix": ". Leo Afer saith, that in Africk"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3ea207ab66d5063432b602afdab795666a4c5031"
+  },
+  "3.2.1.2-f167": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "whether this heroical love be a disease",
+          "in": "3.2.1.2-p23",
+          "prefix": "es a doubt, an amor sit morbus, ",
+          "suffix": ": Julius Pollux Onomast. lib. 6 "
+        },
+        "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Carolus à Lorme in his Questions makes a doubt",
+          "in": "3.2.1.2-p23",
+          "prefix": " without all hope of attaining. ",
+          "suffix": ", an amor sit morbus, whether th"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1ebe8b716555e5507dcd00ccf929f9768299d188"
   },
   "3.2.1.2-f17": {
     "bracket": "present",
@@ -1114,35 +1426,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "32504d3328ee9714ad68cd7605a2a28db26fddfe"
-  },
-  "3.2.1.2-f37": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Aretine’s Lucretia sold her maidenhead a thousand times before she was twenty-four years old",
-          "in": "3.2.1.2-p18",
-          "prefix": "",
-          "suffix": ", plus millies vendideram virgin"
-        },
-        "words": 15
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d2ff6084ca18805243b5e60d0055c055cef84677"
   },
   "3.2.1.2-f38": {
     "bracket": "present",
@@ -1760,18 +2043,6 @@
     ],
     "text_sha1": "99974deb98e1cff17c39db210a3bb386914a40e6"
   },
-  "3.2.1.2-f67": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "92f8293073fb539b54ff7aa42e5c3fb943f60037"
-  },
   "3.2.1.2-f7": {
     "bracket": "present",
     "by": "rules",
@@ -1953,48 +2224,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "35fd8f2d58f7fa41b040bf63edeefb600c1765f2"
-  },
-  "3.2.1.2-f78": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "but a symptom of love",
-          "in": "3.2.1.2-p23",
-          "prefix": "al cogitation is not the genus, ",
-          "suffix": "; we continually think of that w"
-        },
-        "words": 5
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "For continual cogitation is not the",
-          "in": "3.2.1.2-p23",
-          "prefix": "tion his Commentator cavils at. ",
-          "suffix": " genus, but a symptom of love; w"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "834549b9b43b4b28cd5ba46fa3895c17c5fda6ba"
   },
   "3.2.1.2-f8": {
     "bracket": "none",

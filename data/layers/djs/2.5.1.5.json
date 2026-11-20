@@ -112,14 +112,14 @@
     "threshold": 0.85
   },
   "2.5.1.5-f20": {
-    "align_score": 0.968,
+    "align_score": 0.971,
     "by": "djs1927",
     "gap_words": 109,
     "left_anchor": "traveller omit to see it made. But it is not so gene",
     "left_score": 0.971,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", conserves of Roses, Violets, Fumitory, Enula camp",
-    "right_score": 0.968,
+    "right_anchor": ", conserves of Roses, Violets, Fumitory,",
+    "right_score": 1.0,
     "status": "implausible-length",
     "text_sha1": "622fb258e9a1d0f8571a5566b0cf0004f0e1af10",
     "threshold": 0.85
@@ -310,22 +310,14 @@
     "text_sha1": "37ed568261f1ec29f3a19d47ab5d0494555aa61b",
     "threshold": 0.85
   },
-  "2.5.1.5-f48": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "d1299c198e092df286334d4ca4fff3dfad38865e",
-    "threshold": 0.85
-  },
   "2.5.1.5-f49": {
-    "align_score": 0.972,
+    "align_score": 0.962,
     "by": "djs1927",
     "left_anchor": "about, I find prescribed, taxed by some, approved by Renodaeus, Platerus (",
     "left_score": 0.993,
     "method": "rules/djs-align-v3",
-    "right_anchor": "), and others; look for them in Mizaldus,",
-    "right_score": 0.972,
+    "right_anchor": "), and others; look for them in Mizaldus, Porta, Albertus, &c. Besardus",
+    "right_score": 0.962,
     "status": "aligned",
     "text": "(amulets, he saith, are not to be neglected),",
     "text_sha1": "1c3974c882980d91f4655063c84dff2867e10c3b",
@@ -360,41 +352,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31618, pp. 592-593"
   },
-  "2.5.1.5-f53": {
-    "align_score": 0.983,
-    "by": "djs1927",
-    "left_anchor": "may say the same of the decoction of China roots, Sassafras, Sarsaparilla,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ": China, saith Monardus, makes a good colour in the face, takes",
-    "right_score": 0.983,
-    "status": "kept-original",
-    "text": "Guaiacum.",
-    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31661, pp. 592-593"
-  },
-  "2.5.1.5-f54": {
-    "by": "djs1927",
-    "left_anchor": "and all infirmities proceeding from cold, even so Sarsaparilla provokes sweat mightily,",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "dries, Claudinus consult. 89 & 46, Montanus, Capivaccius consult. 188 Scholtzii, make",
-    "status": "not-found",
-    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
-    "threshold": 0.85
-  },
-  "2.5.1.5-f55": {
-    "align_score": 0.704,
-    "by": "djs1927",
-    "left_anchor": "46, Montanus, Capivaccius consult. 188 Scholtzii, make frequent and good use of",
-    "left_score": 0.704,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", and China, so that the liver be not incensed, good for",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "cc4eaacc9f52c9a01b93ac50112b82c79c6c7b65",
-    "threshold": 0.85
-  },
   "2.5.1.5-f56": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -418,35 +375,6 @@
     "text_sha1": "3648eba380d4cd573642bfc5a87314efad179c53",
     "threshold": 0.85
   },
-  "2.5.1.5-f58": {
-    "align_score": 0.972,
-    "by": "djs1927",
-    "left_anchor": "), and others; look for them in Mizaldus,",
-    "left_score": 0.972,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". commends Hypericon, or St. John’s wort gathered on a Friday in",
-    "right_score": 0.991,
-    "status": "aligned",
-    "text": "Porta, Albertus, &c. Bassardus Visontinus",
-    "text_sha1": "e36673d1e11251df5e1cc8edb8a35b2da5929482",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31827, p. 596"
-  },
-  "2.5.1.5-f59": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "clean. Of the same mind is Seneca the Philosopher in his book",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "residue": "On Tranquillity,",
-    "right_anchor": ", it is good sometimes to be drunk, it helps sorrow, depresseth",
-    "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
-    "text_sha1": "b25ba20d36ec61a0c98144799ffb7dbba9c49449",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31594, pp. 592-593"
-  },
   "2.5.1.5-f6": {
     "align_score": 0.982,
     "by": "djs1927",
@@ -463,18 +391,59 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31572, p. 591"
   },
   "2.5.1.5-f60": {
-    "align_score": 0.944,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "the vigour of our souls with a moderate cup of wine, Natis",
-    "left_score": 0.944,
+    "gap_words": 28,
+    "left_anchor": "we lack, / And Scio wines that have so good a smack.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ", and drink to refresh our mind; if there be any cold",
     "right_score": 1.0,
-    "status": "aligned",
-    "text": "(cups made to give gladness, &c.),",
+    "status": "implausible-length",
     "text_sha1": "823a22bcce2af81760f5fe55aca6aee7f8f88462",
+    "threshold": 0.85
+  },
+  "2.5.1.5-f61": {
+    "by": "djs1927",
+    "left_anchor": "Seneca the Philosopher in his book de tranquil. animae lib. 1 cap",
+    "left_score": 0.8067226890756303,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", it is good sometimes to be drunk, it helps sorrow, depresseth",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "c20c2f62bb061ef87eb0bcb77b241d5564d99a49",
+    "threshold": 0.85
+  },
+  "2.5.1.5-f62": {
+    "by": "djs1927",
+    "left_anchor": "maintain the vigour of our souls with a moderate cup of wine,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "",
+    "status": "no-anchor",
+    "text_sha1": "95db9967fc345d379856dc4ade3b56ccb3ef3fbc",
+    "threshold": 0.85
+  },
+  "2.5.1.5-f63": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": ", conserves of Roses, Violets, Fumitory,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Satyrion, Lemons, Orange-pills condite, &c., have their good use.",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "Enula campana.",
+    "text_sha1": "b2db936c10ad208581202e808c43c9e08e148840",
     "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31616, pp. 592-593"
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 31728, p. 594"
+  },
+  "2.5.1.5-f64": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "d919d936335db5c91f1efe0b2fa4774b9feb0624",
+    "threshold": 0.85
   },
   "2.5.1.5-f7": {
     "align_score": 0.973,
