@@ -175,31 +175,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47051, pp. 879-880"
   },
-  "3.4.1.2-f121": {
-    "align_score": 0.985,
-    "by": "djs1927",
-    "left_anchor": "up in a silver cap-case: another time in the same Author, St.",
-    "left_score": 0.991,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "fought for them. Now for visions, revelations, miracles, not only out of",
-    "right_score": 0.985,
-    "status": "kept-original",
-    "text": "^Magnus",
-    "text_sha1": "d5ce1b67edd7df0346fc13ed125635d39d24183d",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 47096, p. 881"
-  },
-  "3.4.1.2-f122": {
-    "by": "djs1927",
-    "left_anchor": "Navy was overthrown by Proserpina, for neglecting of her holy , as",
-    "left_score": 0.9682539682539683,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and Tully hold. Austin lib. 4 de civitat. Dei cap. 9 censures",
-    "right_score": 0.5563909774436091,
-    "status": "not-found",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "threshold": 0.85
-  },
   "3.4.1.2-f123": {
     "align_score": 0.738,
     "by": "djs1927",
@@ -306,20 +281,6 @@
     "text_sha1": "8519eee27abece61191818273c86402079ab393f",
     "threshold": 0.85
   },
-  "3.4.1.2-f157": {
-    "align_score": 0.979,
-    "by": "djs1927",
-    "left_anchor": "in a combustion, all at variance, to be revenged of their adversaries.",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "when he saw Caecilianus preferred before him in the bishopric of Carthage,",
-    "right_score": 0.979,
-    "status": "kept-original",
-    "text": "Donatus,",
-    "text_sha1": "a47401c3e109d39b488e3601a6c2eb29e10c13bc",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 47644, p. 892"
-  },
   "3.4.1.2-f159": {
     "by": "djs1927",
     "left_anchor": "more eminent, of better parts than the rest, more learned, eloquent, ,",
@@ -344,20 +305,6 @@
     "text_sha1": "a3f781dff5e47e44aedfc01e0f643f53bd332479",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47069, pp. 879-880"
-  },
-  "3.4.1.2-f163": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "strange wonders, like those tales Ulysses related to Alcinous in Homer, or",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "itself), was still after much solitariness, fasting, or long sickness, when their",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Lucian's True Story",
-    "text_sha1": "71e6563a54ae72ecfea856e44ebd865172e34a77",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 47801, pp. 894-895"
   },
   "3.4.1.2-f166": {
     "align_score": 0.994,
@@ -510,19 +457,15 @@
     "threshold": 0.85
   },
   "3.4.1.2-f184": {
-    "align_score": 0.943,
     "by": "djs1927",
-    "left_anchor": "doth batter and work upon the strongest constitutions. Nonnulli (saith Peter Forestus)",
-    "left_score": 0.943,
+    "left_anchor": "of better parts than the rest, more learned, eloquent, (saith Peter Forestus)",
+    "left_score": 0.8636363636363636,
     "method": "rules/djs-align-v3",
-    "residue": "some",
     "right_anchor": ", by fasting overmuch, and divine meditations, are overcome. Not that fasting",
     "right_score": 1.0,
-    "status": "omitted",
-    "text": "",
+    "status": "not-found",
     "text_sha1": "07590ae1414f245aa1d13c7d90dd99ccd8780a02",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 47692, p. 893"
+    "threshold": 0.85
   },
   "3.4.1.2-f185": {
     "by": "djs1927",
@@ -614,14 +557,36 @@
     "text_sha1": "ec63da9e01ec263cf3085f2013abe3681580b9c3",
     "threshold": 0.85
   },
+  "3.4.1.2-f196": {
+    "by": "djs1927",
+    "left_anchor": "by which the devil doth batter and work upon the strongest constitutions.",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(saith Peter Forestus)",
+    "status": "no-anchor",
+    "text_sha1": "b6f4599bfb0fc02aba10e60c18d20df8ee72b154",
+    "threshold": 0.85
+  },
+  "3.4.1.2-f197": {
+    "align_score": 0.719,
+    "by": "djs1927",
+    "left_anchor": "the same cause. Fracastorius lib. 2 de intellect. will have all your",
+    "left_score": 0.719,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Sibyls, and pseudoprophets to be mere melancholy; so doth Wierus prove,",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04",
+    "threshold": 0.85
+  },
   "3.4.1.2-f21": {
+    "align_score": 0.727,
     "by": "djs1927",
     "left_anchor": "best, they make Religion a mere policy, a cloak, a human invention;",
-    "left_score": 0.9838709677419355,
+    "left_score": 0.984,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", as Next to Politicians, if I may distinguish them, are some",
-    "right_score": 0.972972972972973,
-    "status": "not-found",
+    "right_anchor": ", as Tacitus and Tully hold. Austin lib. 4 de civitat. Dei",
+    "right_score": 0.727,
+    "status": "below-threshold",
     "text_sha1": "6c65172febbd1af51fbc55f7b90bc2bc5384c835",
     "threshold": 0.85
   },
@@ -1201,18 +1166,6 @@
     "text_sha1": "30f0a0b8f3727e7e5e68b21cad5f1971cd6716e8",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 47420, p. 887"
-  },
-  "3.4.1.2-f69": {
-    "align_score": 0.765,
-    "by": "djs1927",
-    "left_anchor": "an army together of forty thousand men, and did much harm: with",
-    "left_score": 0.832,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", of whom Nubrigensis speaks, lib. 1 cap. 19, that in King",
-    "right_score": 0.765,
-    "status": "below-threshold",
-    "text_sha1": "da50344bf6702f265a8b1b70bdd33af18634db43",
-    "threshold": 0.85
   },
   "3.4.1.2-f7": {
     "by": "djs1927",

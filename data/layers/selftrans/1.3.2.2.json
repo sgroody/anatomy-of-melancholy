@@ -154,6 +154,77 @@
     ],
     "text_sha1": "983e512fb9d6a20b3a91280ce899708df02cf45b"
   },
+  "1.3.2.2-f18": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "much spitting, &c.",
+          "in": "1.3.2.2-p1",
+          "prefix": "ainerius adds, vertigo, nausea, ",
+          "suffix": " If from the mirach, a swelling "
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4b65a84fa6f8dd706c58db68c31bb95869a358af"
+  },
+  "1.3.2.2-f19": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and giddiness come by fits, turbulent dreams, dryness, leanness, apt they are to sweat upon all occasions, of all colours and complexions",
+          "in": "1.3.2.2-p1",
+          "prefix": "ears sing now and then, Vertigo ",
+          "suffix": ". Many of them are high-coloured"
+        },
+        "words": 22
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Their ears sing now and then",
+          "in": "1.3.2.2-p1",
+          "prefix": "nd swell from vapours and wind. ",
+          "suffix": ", Vertigo and giddiness come by "
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3c471d5d4efb37d0c039ffdb5aaf4551589d7945"
+  },
   "1.3.2.2-f2": {
     "bracket": "present",
     "by": "rules",

@@ -206,12 +206,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "for what sick man (as",
+          "exact": "for what sick man (as Secundus expostulates with Rufus) was ever lascivious, covetous, or ambitious",
           "in": "2.3.2.1-p5",
           "prefix": "um infirmi sumus, optimi sumus; ",
-          "suffix": " Secundus expostulates with Rufu"
+          "suffix": "? He envies no man, admires no m"
         },
-        "words": 5
+        "words": 15
       }
     ],
     "lang": "la",
@@ -536,6 +536,18 @@
     ],
     "text_sha1": "f0d9a773de3e4d2f745fd16c8ae16dee2700e5a5"
   },
+  "2.3.2.1-f133": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "530abee4a2825abc058084b69712ae0849d483ce"
+  },
   "2.3.2.1-f15": {
     "bracket": "present",
     "by": "rules",
@@ -765,48 +777,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3d5a2c8fc02e0cacd6003fc9dd8f38be5386533b"
-  },
-  "2.3.2.1-f22": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "so much",
-          "in": "2.3.2.1-p8",
-          "prefix": "if they could dispend per annum ",
-          "suffix": ". In the kingdom of Naples and F"
-        },
-        "words": 2
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Those Roman knights were so called, if they could dispend",
-          "in": "2.3.2.1-p8",
-          "prefix": "h continueth and increaseth it. ",
-          "suffix": " per annum so much. In the kingd"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8"
   },
   "2.3.2.1-f23": {
     "bracket": "none",
@@ -2201,48 +2171,6 @@
     ],
     "text_sha1": "4a34ce0c7c67e0dab060f9e6f2a565d8b5fadc7d"
   },
-  "2.3.2.1-f74": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "expostulates with Rufus) was ever lascivious, covetous, or ambitious",
-          "in": "2.3.2.1-p5",
-          "prefix": " for what sick man (as Secundus ",
-          "suffix": "? He envies no man, admires no m"
-        },
-        "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "for what sick man (as",
-          "in": "2.3.2.1-p5",
-          "prefix": "um infirmi sumus, optimi sumus; ",
-          "suffix": " Secundus expostulates with Rufu"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ca66645246d3249fdb74e6c48b9c05aceddc7cbe"
-  },
   "2.3.2.1-f76": {
     "bracket": "none",
     "by": "rules",
@@ -2450,35 +2378,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "6b4c7179577f93bbd40666d29e07e22626aeac5f"
-  },
-  "2.3.2.1-f92": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Aurelius, &c., from common soldiers, became Emperors",
-          "in": "2.3.2.1-p8",
-          "prefix": "ippus Arabs, Maximinus, Probus, ",
-          "suffix": ". Cato, Cincinnatus, &c., Consul"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "3cf4e1a196141611fd1fda99f92e047c10ba839e"
   },
   "2.3.2.1-f93": {
     "bracket": "none",

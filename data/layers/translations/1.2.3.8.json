@@ -547,6 +547,65 @@
       }
     ]
   },
+  "1.2.3.8-f18": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Anno",
+    "text_sha1": "1918526e4846c88b027e7f94c20e607b19a0d263",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only the Latin word 'Anno' is translated. The rest of the sidenote ('1519 betwixt Ardes and Guines') is Burton's English. The sidenote dates the meeting of Henry VIII and Francis I between Ardres and Guînes, known as the Field of Cloth of Gold. That meeting actually took place in 1520, not 1519 as Burton gives it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "In the year",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.3.8-f2": {
     "kind": "verse",
     "lang": "la",

@@ -64,5 +64,137 @@
         "warnings": []
       }
     ]
+  },
+  "2.3.1.1-f40": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Stella",
+    "text_sha1": "0ab73ab5f1ffe95b96a02d91a5831ebb860ac9ab",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is not a Latin phrase but the name of an author in Burton's list of modern writers on consolation, probably Diego de Estella (Didacus Stella). It is given unchanged.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Stella",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f7": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero, Girolamo Cardano, Boethius",
+      "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De consolatione"
+    },
+    "text": "de consol",
+    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "An abbreviated title, De consolatione. Burton uses it for consolatory works by Cicero, Cardano and Boethius.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero, Girolamo Cardano, Boethius",
+          "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De consolatione"
+        },
+        "text": "On Consolation",
+        "warnings": []
+      }
+    ]
   }
 }

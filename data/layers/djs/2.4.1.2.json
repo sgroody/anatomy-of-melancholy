@@ -28,17 +28,19 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 30096, pp. 564-566"
   },
-  "2.4.1.2-f11": {
-    "align_score": 0.633,
+  "2.4.1.2-f12": {
+    "align_score": 0.97,
     "by": "djs1927",
-    "left_anchor": "us in Germany and Poland, great store of it in every waste.",
-    "left_score": 1.0,
+    "left_anchor": "Turkey doth scarce offend, with us in a small quantity it stupefies:",
+    "left_score": 0.97,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", and Baptista Porta Physiognomicae, lib. 6 cap. 23, give many instances",
-    "right_score": 0.633,
-    "status": "below-threshold",
-    "text_sha1": "1f112fac082f04d60b1874fc7eb84320990857bf",
-    "threshold": 0.85
+    "right_anchor": "or hemlock is a strong poison in Greece, but with us it",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "cicuta",
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 30069, p. 563"
   },
   "2.4.1.2-f2": {
     "align_score": 1.0,
@@ -61,19 +63,5 @@
     "status": "no-anchor",
     "text_sha1": "3ad5569554230170b6bee82c81d52f79bfe09721",
     "threshold": 0.85
-  },
-  "2.4.1.2-f6": {
-    "align_score": 0.989,
-    "by": "djs1927",
-    "left_anchor": "all the herbalists in the country continually flock: Ortelius one in Apulia,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "in Histria: others Montpellier in France; Prosper Alpinus prefers Egyptian simples, Garcia",
-    "right_score": 0.989,
-    "status": "kept-original",
-    "text": "Munster mons Major",
-    "text_sha1": "e8e70ec54a3f90c5988281d69a2958f8a06ff972",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 30051, p. 563"
   }
 }

@@ -1281,6 +1281,65 @@
       }
     ]
   },
+  "1.2.2.3-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cicuta",
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Cicuta is poison hemlock. Burton names it alongside aconite (Aconitum, wolfsbane) and hellebore as examples of poisons. The surrounding sentence draws on the author Burton cites in the sidenote \"Suidas vict. Herod.\", but the single word cannot be traced to a specific text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Hemlock",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.2.3-f4": {
     "kind": "phrase",
     "lang": "la",

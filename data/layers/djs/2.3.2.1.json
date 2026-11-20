@@ -97,13 +97,13 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26810, p. 499"
   },
   "2.3.2.1-f117": {
-    "align_score": 1.0,
+    "align_score": 0.937,
     "by": "djs1927",
     "left_anchor": "but perform that in our health, which we promise in our sickness.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "; for what sick man (as",
-    "right_score": 1.0,
+    "right_anchor": "; for what sick man (as Secundus expostulates with Rufus) was ever",
+    "right_score": 0.937,
     "status": "aligned",
     "text": "'Tis when we are sick that we are most virtuous;",
     "text_sha1": "5efea05c581e4afce4f6569012685cbb6f5de7f0",
@@ -234,6 +234,20 @@
     "text_sha1": "f0d9a773de3e4d2f745fd16c8ae16dee2700e5a5",
     "threshold": 0.85
   },
+  "2.3.2.1-f133": {
+    "align_score": 0.957,
+    "by": "djs1927",
+    "left_anchor": "Siculus records of him, in wisdom and knowledge far beyond his predecessors.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". 1306, Vladislaus Cubitalis that pygmy king of Poland reigned and fought",
+    "right_score": 0.957,
+    "status": "aligned",
+    "text": "In the year of our Lord",
+    "text_sha1": "530abee4a2825abc058084b69712ae0849d483ce",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 26769, p. 498"
+  },
   "2.3.2.1-f15": {
     "by": "djs1927",
     "left_anchor": "so many beggars of his kin, and set the house on fir",
@@ -326,20 +340,6 @@
     "text_sha1": "3d5a2c8fc02e0cacd6003fc9dd8f38be5386533b",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26940, p. 502"
-  },
-  "2.3.2.1-f22": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "increaseth it. Those Roman knights were so called, if they could dispend",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "so much. In the kingdom of Naples and France, he that buys",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "annually",
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 26946, p. 502"
   },
   "2.3.2.1-f23": {
     "align_score": 1.0,
@@ -900,20 +900,6 @@
     "text_sha1": "4a34ce0c7c67e0dab060f9e6f2a565d8b5fadc7d",
     "threshold": 0.85
   },
-  "2.3.2.1-f74": {
-    "align_score": 0.949,
-    "by": "djs1927",
-    "left_anchor": "; for what sick man (as",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "expostulates with Rufus) was ever lascivious, covetous, or ambitious? He envies no",
-    "right_score": 0.949,
-    "status": "kept-original",
-    "text": "Secundus",
-    "text_sha1": "ca66645246d3249fdb74e6c48b9c05aceddc7cbe",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 26817, p. 499"
-  },
   "2.3.2.1-f76": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -994,24 +980,10 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27012, p. 503"
   },
-  "2.3.2.1-f92": {
-    "align_score": 0.968,
-    "by": "djs1927",
-    "left_anchor": "of Anatillo; the Turkey Bashaws are all such. Pertinax, Philippus Arabs, Maximinus,",
-    "left_score": 0.968,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Aurelius, &c., from common soldiers, became Emperors. Cato, Cincinnatus, &c., Consuls.",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Probus,",
-    "text_sha1": "3cf4e1a196141611fd1fda99f92e047c10ba839e",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 27037, p. 504"
-  },
   "2.3.2.1-f93": {
     "align_score": 0.889,
     "by": "djs1927",
-    "left_anchor": ", Aurelius, &c., from common soldiers, became Emperors. Cato, Cincinnatus, &c., Consuls.",
+    "left_anchor": "Probus, Aurelius, &c., from common soldiers, became Emperors. Cato, Cincinnatus, &c., Consuls.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "., Popes. Socrates, Virgil, Horace, Let no",

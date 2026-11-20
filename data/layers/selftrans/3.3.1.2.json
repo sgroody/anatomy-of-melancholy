@@ -37,32 +37,6 @@
     ],
     "text_sha1": "f2e78867001c989b478aa7f63de317cd6f8564c3"
   },
-  "3.3.1.2-f102": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Lot lay with his daughters in his drink, as Cinyras with",
-          "in": "3.3.1.2-p40",
-          "prefix": "rs he had covered in soberness. ",
-          "suffix": " Myrrha,"
-        },
-        "words": 11
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "25d048406795c2e34a31f3d9a9e90a236ba6e7b8"
-  },
   "3.3.1.2-f103": {
     "bracket": "present",
     "by": "rules",
@@ -389,6 +363,18 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "a9cff791b6636f670ba3381bce4f94fecace47e0"
+  },
+  "3.3.1.2-f116": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0eea009dd6afe4336c81b620d5770b5a8b168b85"
   },
   "3.3.1.2-f12": {
     "bracket": "present",
@@ -2514,48 +2500,6 @@
     ],
     "text_sha1": "909987ddbe0ffb0c2ba682bade6ef84217d5dfd8"
   },
-  "3.3.1.2-f89": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "one persuaded a new-married man, to forbear the three first nights, and he should all his lifetime after be fortunate in cattle, but his impatient wife would not tarry so long",
-          "in": "3.3.1.2-p11",
-          "prefix": "other he hath out of Abstemius, ",
-          "suffix": ": well he might speed in cattle,"
-        },
-        "words": 32
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Such another he hath out of",
-          "in": "3.3.1.2-p11",
-          "prefix": "et a pair of horns on his head. ",
-          "suffix": " Abstemius, one persuaded a new-"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "b62a7b17ff6b5af9a0c6c7729c4d5c9bcfd6562f"
-  },
   "3.3.1.2-f9": {
     "bracket": "present",
     "by": "rules",
@@ -2597,116 +2541,33 @@
     ],
     "text_sha1": "89d32adfae3d631e23b07c4483aebf298297a002"
   },
-  "3.3.1.2-f96": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "for no better success than Vulcan had with Venus, or Claudius with Messalina",
-          "in": "3.3.1.2-p13",
-          "prefix": ", let him look, saith Barbarus, ",
-          "suffix": ". And ’tis impossible almost in "
-        },
-        "words": 13
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "He that marries a wife that is snout-fair alone, let him look, saith",
-          "in": "3.3.1.2-p13",
-          "prefix": "",
-          "suffix": " Barbarus, for no better success"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "8ca9f442a6ec56b13a6769680b010c69cc535fec"
-  },
-  "3.3.1.2-f97": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "abhorred Octavia his own wife, a noble virtuous Lady, and loved Acte a base quean in respect",
-          "in": "3.3.1.2-p18",
-          "prefix": "npleasant. Nero (saith Tacitus) ",
-          "suffix": ". Cerinthus rejected Sulpicia, a"
-        },
-        "words": 17
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
-  },
   "3.3.1.2-f98": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Philippus bonus left fourteen bastards",
+          "in": "3.3.1.2-p23",
+          "prefix": "enteen alone lawfully begotten. ",
+          "suffix": ". Laurence Medices a good Prince"
+        },
+        "words": 5
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-at-anchor",
       "no-gowland-bracket"
     ],
     "text_sha1": "464eef94e18dd0c61efa32c77361022d2a6f5091"
-  },
-  "3.3.1.2-f99": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "left fourteen bastards",
-          "in": "3.3.1.2-p23",
-          "prefix": "fully begotten. Philippus bonus ",
-          "suffix": ". Laurence Medices a good Prince"
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "5e4ff0bdea94837c85e38ce9ba5679aeca4dc148"
   }
 }

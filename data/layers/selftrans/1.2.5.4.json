@@ -208,5 +208,48 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "bf307d7d712c6842b258a8013cc59c6fcfe4c295"
+  },
+  "1.2.5.4-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": "which is",
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which is the nether mouth of the Ventricle",
+          "in": "1.2.5.4-p1",
+          "prefix": "he inflammation of the Pylorus, ",
+          "suffix": ". Others assign the Mesenterium "
+        },
+        "words": 8
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Diocles supposed the ground of this kind of Melancholy, to proceed from the inflammation of the",
+          "in": "1.2.5.4-p1",
+          "prefix": "and the fountain of melancholy. ",
+          "suffix": " Pylorus, which is the nether mo"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "gloss-cue",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "96f2a20ca7db09387af764667f0b76ff37f63cc4"
   }
 }

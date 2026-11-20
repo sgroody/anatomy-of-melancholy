@@ -156,6 +156,18 @@
     ],
     "text_sha1": "88d029f4c7d69265bad571da8cfc1a15a3978b00"
   },
+  "3.2.2.1-f107": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "00134194f1009852667437727c5c7eb3becb9620"
+  },
   "3.2.2.1-f11": {
     "bracket": "present",
     "by": "rules",
@@ -1018,32 +1030,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "03a1de8a71acc5bccb8114a456529d357462cee0"
-  },
-  "3.2.2.1-f64": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Ismenodora stole Bacchon, a woman forced a man, as",
-          "in": "3.2.2.1-p7",
-          "prefix": "ou need not ask a reason of it. ",
-          "suffix": " Aurora did Cephalus: no marvel,"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "eeee9b76ec5d1cfa27c511f2def4981c9c5b667c"
   },
   "3.2.2.1-f66": {
     "bracket": "none",

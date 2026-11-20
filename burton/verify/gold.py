@@ -151,7 +151,17 @@ HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tunin
     {"name": "h5", "seed": 20261120, "prefix": "h5-",
      "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
      "sample": paths.DATA / "eval" / "langid-holdout5-sample.jsonl",
-     "gold": paths.DATA / "eval" / "langid-holdout5-gold.jsonl"},
+     "gold": paths.DATA / "eval" / "langid-holdout5-gold.jsonl",
+     "seen": "2026-11-20: its errors were studied to change the rules (short runs decided on thin evidence take the "
+             "model's ruling)"},
+    # 2026-11-20 (owner: "just do the remainder of V5 yourself; I can't hand check it"): drawn after the fourth cycle's
+    # change, labelled blind by the first rater (gold-audit-v1, opus) and again blind by a second (gold-audit-v1,
+    # sonnet); where they disagree on whether an item is foreign, Claude settled it in session from the text, recorded
+    # with a reason (data/eval/langid-holdout6-settled.yaml). That stands in for the owner's hand check (PLAN D7).
+    {"name": "h6", "seed": 20261121, "prefix": "h6-",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout6-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout6-gold.jsonl"},
 ]
 GATE = HOLDOUTS[-1]["name"]
 HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]

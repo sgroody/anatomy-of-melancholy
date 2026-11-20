@@ -1,0 +1,60 @@
+# Round h6 (the V5 gate): where the two blind raters disagree on whether an item is foreign, or on the foreign part of
+# a mixed item, Claude settled the label in session from the item's full text and context (2026-11-20; owner: "just do
+# the remainder of V5 yourself; I can't hand check it"). Raters: gold-audit-v1 with claude-opus-5-5 (first) and
+# claude-sonnet-5-5 (second), both blind. 13 disagreements of 300. Separate stretches of a mixed item are joined
+# with " | " (the scorer measures them one by one). Applied with `burton gold-audit --settle h6`.
+settled_by: Claude (claude-opus-5-5) in session, reading the text; not a model call
+date: '2026-11-20'
+items:
+  h6-italic-133:
+    gold: en
+    reason: English throughout ("& produceth milder symptoms" is Burton's English with an ampersand); first rater right
+  h6-roman-before-bracket-001:
+    gold: mixed
+    foreign_part: summum mortalitatis bonum ——— hominum divumque voluptas, Alma Venus
+    reason: one Latin stretch across Burton's dash; the raters differ only by the trailing dash
+  h6-roman-before-bracket-003:
+    gold: mixed
+    foreign_part: de praeterito | de futuro
+    reason: both phrases are Latin; the second rater named only the first
+  h6-roman-before-bracket-006:
+    gold: mixed
+    foreign_part: sed viderint politici | quae nunc in aurem susurrare non libet
+    reason: both clauses are Latin; the second rater named only the first
+  h6-roman-before-bracket-028:
+    gold: mixed
+    foreign_part: φιλεῖν | ἐρᾶν | κατʼ ἐξοχὴν
+    reason: the two Greek verbs are foreign too, not only κατʼ ἐξοχὴν
+  h6-roman-before-bracket-029:
+    gold: mixed
+    foreign_part: non ex corrupta massa, praevisa fide | ex praevisis operibus
+    reason: both phrases are Latin; the second rater named only the first
+  h6-roman-before-bracket-031:
+    gold: mixed
+    foreign_part: repugnans osculatur | Totus qui saniem, totus ut hircus olet
+    reason: the phrase "repugnans osculatur" is Latin too, not only the verse
+  h6-roman-before-bracket-033:
+    gold: mixed
+    foreign_part: Attendenda semper uxoris forma | ne si alteram aspexeris, mox eam sordere putes
+    reason: both are John of Salisbury's Latin; the second rater named only the first
+  h6-roman-before-bracket-038:
+    gold: mixed
+    foreign_part: Trulli
+    reason: Burton's Latinised plural, set apart (italic) in a list of spirit names; first rater right
+  h6-roman-before-bracket-041:
+    gold: mixed
+    foreign_part: summum bonum
+    reason: a Latin phrase in the English, glossed by Burton ("or chiefest good"); first rater right
+  h6-roman-before-bracket-047:
+    gold: mixed
+    foreign_part: puellae scitulae ministrantes | ad stuporem usque spectantium
+    reason: both phrases are Latin; the second rater named only the first
+  h6-roman-before-bracket-049:
+    gold: mixed
+    foreign_part: Speciali siquidem gratia, se a Deo donari asserunt magi, a Geniis caelestibus instrui, ab iis doceri | ineptae & fabulosae nugae
+    reason: >-
+      the quotation and "ineptae & fabulosae nugae" are Latin; "Arcanis prudentiae civilis" after the locator 128 is a
+      title used as a reference (LABELLING.md: citation), which both raters took into the foreign part
+  h6-sidenote-006:
+    gold: la
+    reason: a Latin sentence of the note ("Elvarum choreas Olaus lib. 3. vocat"); first rater right

@@ -140,14 +140,6 @@
     "text_sha1": "77d104460414a9496400379de04c9a1c00270881",
     "threshold": 0.85
   },
-  "2.2.5.1-f22": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
   "2.2.5.1-f25": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -185,6 +177,18 @@
     "text_sha1": "309f3a6e4c961ab896bfee9c571f916670b3acc5",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 25121, pp. 464-465"
+  },
+  "2.2.5.1-f31": {
+    "align_score": 0.734,
+    "by": "djs1927",
+    "left_anchor": ", some flood-gates, arches, falls of wat Against fearful and troublesome dreams,",
+    "left_score": 0.734,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "and such inconveniences, wherewith melancholy men are molested, the best remedy is",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "ea6e41bbc7f749bc47ed5effa93e7eacdc17b320",
+    "threshold": 0.85
   },
   "2.2.5.1-f4": {
     "align_score": 0.99,

@@ -1,0 +1,130 @@
+{
+  "2.2.1.2-f20": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jerome",
+      "basis": "text \"St. Jerome enjoins Rusticus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letter to Rusticus"
+    },
+    "text": "Rusticus",
+    "text_sha1": "962707724eb908d7a6674d792480e6b6e0dd2ab9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A proper name: Rusticus, the monk to whom Jerome addressed a letter of advice on the monastic life.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jerome",
+          "basis": "text \"St. Jerome enjoins Rusticus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letter to Rusticus"
+        },
+        "text": "Rusticus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.1.2-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Tacitus",
+      "basis": "sidenote \"Annal. 6.\"",
+      "locus": "Annal. 6.",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Annals"
+    },
+    "text": "Tacitus",
+    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A proper name, the Roman historian. The story of Tiberius is in the Annals.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Tacitus",
+          "basis": "sidenote \"Annal. 6.\"",
+          "locus": "Annal. 6.",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Annals"
+        },
+        "text": "Tacitus",
+        "warnings": []
+      }
+    ]
+  }
+}

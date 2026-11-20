@@ -351,35 +351,6 @@
     ],
     "text_sha1": "e331df13ac9b6d5c0d41a38cf9e7e182a4872038"
   },
-  "3.3.1.1-f26": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "at Terracina, bit him by the arm, which fact of his was so famous, that it afterwards grew to a proverb in those parts",
-          "in": "3.3.1.1-p8",
-          "prefix": ". 2) being corrival with Largus ",
-          "suffix": ". Phaedria could not abide his c"
-        },
-        "words": 24
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "051e345400eb4d35548bfc02535e4f08165ba861"
-  },
   "3.3.1.1-f27": {
     "bracket": "none",
     "by": "rules",
@@ -552,6 +523,32 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "9d470497e8d85c1f0f5165162bb29b638e6fc125"
+  },
+  "3.3.1.1-f34": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Henry the third of France, jealous of Henry of Lorraine Duke of Guise",
+          "in": "3.3.1.1-p4",
+          "prefix": "fford us many notable examples. ",
+          "suffix": ", Anno 1588, caused him to be mu"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1918526e4846c88b027e7f94c20e607b19a0d263"
   },
   "3.3.1.1-f4": {
     "bracket": "present",

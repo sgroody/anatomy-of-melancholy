@@ -53,48 +53,6 @@
     ],
     "text_sha1": "bd21101804ea57a279d4f68691c39b903d0a184e"
   },
-  "3.3.4.2-f104": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "ingeminates, and let them have liberty with discretion, as time and place requires",
-          "in": "3.3.4.2-p23",
-          "prefix": "to their means, which Patritius ",
-          "suffix": ": many women turn queans by comp"
-        },
-        "words": 13
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Let them do their endeavour likewise to maintain them to their means, which",
-          "in": "3.3.4.2-p23",
-          "prefix": "curtain-sermons in the morning. ",
-          "suffix": " Patritius ingeminates, and let "
-        },
-        "words": 13
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a"
-  },
   "3.3.4.2-f11": {
     "bracket": "present",
     "by": "rules",
@@ -500,6 +458,35 @@
       "english-follows"
     ],
     "text_sha1": "43fc26128e5869a1a8d2c3c225723a85721b31b0"
+  },
+  "3.3.4.2-f131": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Varro writ Satyram Menippeam, but it is lost",
+          "in": "3.3.4.2-p3",
+          "prefix": " and occasions. To this purpose ",
+          "suffix": ". Patritius prescribes four rule"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7ca8dd7f1aa84d37ae87fc73a4b46b5322bfbd77"
   },
   "3.3.4.2-f14": {
     "bracket": "present",
@@ -2766,18 +2753,6 @@
       "english-precedes"
     ],
     "text_sha1": "b412e06c011da3a94d592cbf34e011f46c7fad46"
-  },
-  "3.3.4.2-f91": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a"
   },
   "3.3.4.2-f96": {
     "bracket": "none",

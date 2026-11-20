@@ -371,93 +371,6 @@
     ],
     "text_sha1": "a14d1f062309e61ef7b00e5f8a5f25d55a89d012"
   },
-  "1.2.4.6-f111": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "coming in more than others, scorns him that hath less, and is a better man",
-          "in": "1.2.4.6-n99",
-          "prefix": "He that hath 5 l. per annum ",
-          "suffix": "."
-        },
-        "words": 15
-      },
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "’tis the common fashion of the world",
-          "in": "1.2.4.6-p20",
-          "prefix": "nd would take no notice of him: ",
-          "suffix": ". So that such men as are poor m"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8"
-  },
-  "1.2.4.6-f112": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "he saw his soul go to Heaven, and be miserably lamented at his funeral",
-          "in": "1.2.4.6-p7",
-          "prefix": "laudius the Emperor in Tacitus, ",
-          "suffix": ", ambubaiarum collegia, &c. Trim"
-        },
-        "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "If he be bountiful in his life, & liberal at his death, he shall have one to swear, as he did by Claudius the Emperor in",
-          "in": "1.2.4.6-p7",
-          "prefix": "illis ——— nascentur violae ———. ",
-          "suffix": " Tacitus, he saw his soul go to "
-        },
-        "words": 25
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
-  },
   "1.2.4.6-f117": {
     "bracket": "none",
     "by": "rules",
@@ -954,6 +867,48 @@
       "english-precedes"
     ],
     "text_sha1": "1a094073f11e06a89b24ae967daaf507a1b36713"
+  },
+  "1.2.4.6-f145": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and observing their hard fare, said it was no marvel if the Lacedaemonians were valiant men",
+          "in": "1.2.4.6-p16",
+          "prefix": "supping in Phiditiis in Sparta, ",
+          "suffix": "; for his part he would rather r"
+        },
+        "words": 16
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "A Sybarite of old, as I find it registered in Athenaeus, supping in",
+          "in": "1.2.4.6-p16",
+          "prefix": "",
+          "suffix": " Phiditiis in Sparta, and observ"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4420a8c970f31586d769f728039842ca7a8cc189"
   },
   "1.2.4.6-f15": {
     "bracket": "present",
@@ -1746,12 +1701,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "If he be bountiful in his life, & liberal at his death, he shall have one to swear, as he did by Claudius the Emperor in",
+          "exact": "If he be bountiful in his life, & liberal at his death, he shall have one to swear, as he did by Claudius the Emperor in Tacitus, he saw his soul go to Heaven, and be miserably lamented at his",
           "in": "1.2.4.6-p7",
           "prefix": "illis ——— nascentur violae ———. ",
-          "suffix": " Tacitus, he saw his soul go to "
+          "suffix": " funeral, ambubaiarum collegia, "
         },
-        "words": 25
+        "words": 39
       },
       {
         "by": "rules",
@@ -1785,12 +1740,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "he saw his soul go to Heaven, and be miserably lamented at his funeral",
+          "exact": "he be bountiful in his life, & liberal at his death, he shall have one to swear, as he did by Claudius the Emperor in Tacitus, he saw his soul go to Heaven, and be miserably lamented at his funeral",
           "in": "1.2.4.6-p7",
-          "prefix": "laudius the Emperor in Tacitus, ",
+          "prefix": "is ——— nascentur violae ———. If ",
           "suffix": ", ambubaiarum collegia, &c. Trim"
         },
-        "words": 14
+        "words": 39
       }
     ],
     "lang": "la",

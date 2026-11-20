@@ -465,7 +465,7 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
                     last = k
                     break
         lang, resp = "la", "#rules"
-        if verdict in ("undetermined", "name"):
+        if verdict in ("undetermined", "name") or (not bracket and verdict in ("la", "en") and thin(text, why)):
             # the rules cannot decide: use the model's ruling if there is one (machine layer, labelled)
             adj = adjudicated(unit, text)
             if adj and adj["confidence"] == "low":
@@ -487,6 +487,11 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
         if verdict == "la" and j - i > 1 and resp == "#rules":
             i, j = _trim_run(items, i, j, in_note, bracket)
             text = text_of(items[i:j])
+            # trimmed to a short run on thin evidence ("Panormitan. rebus gestis Alph" -> "rebus gestis Alph"): the
+            # model's ruling on the trimmed run decides, as above (2026-11-20)
+            if not bracket and thin(text, why) and (adj := adjudicated(unit, text)) and adj["confidence"] != "low" \
+                    and adj["label"] not in MODEL_LANGS:
+                verdict, why = adj["label"], f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
         if verdict == "la" and resp == "#rules" and (tw := _title_after(items, i_run, i, j, bracket)):
             verdict, conf, why = "citation", "medium", tw
             for k in range(i, j, 2):
@@ -514,6 +519,23 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
 
 
 MODEL_LANGS = {"la", "grc", "it", "fr", "es", "de", "nl", "enm", "he"}
+
+# 2026-11-20, V5's fourth cycle (owner: "just do the remainder of V5 yourself"): three cycles of rule changes on fresh
+# rounds stopped at P 0.95-0.96, R 0.94-0.97, nearly every error a short run the rules decided on one or two lexicon
+# hits ("Genius" and "per annum" as Latin because Burton's Latin has the words; "inquis" as English). Such a run, of
+# three words or fewer with no Gowland bracket to confirm it, now takes the model's ruling (prompt la-v2, labelled
+# resp="#model"); a low-confidence ruling still leaves the rules' verdict.
+THIN_WHY = re.compile(r"(?:no function words; lexicon )?la=(\d) en=(\d)|"
+                      r"(?:capitalised term|sidenote run) attested in Burton's Latin \(lexicon la=(\d)\)")
+
+
+def thin(text: str, why: str) -> bool:
+    """A short run decided on one or two lexicon hits."""
+    m = THIN_WHY.fullmatch(why)
+    if not m or len(WORD.findall(text)) > 3:
+        return False
+    hits = sum(int(x) for x in m.groups() if x)
+    return 0 < hits <= 2
 
 # 2026-11-18, after held-out h3: a Latin title in the running text ("Prosper Calanius in his book de atra bile",
 # "in a consultation of his pro hypocondriaco") or after an author or a title abbreviation in a note ("Tr. de morbis

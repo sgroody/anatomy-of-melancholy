@@ -125,65 +125,6 @@
       }
     ]
   },
-  "3.3.1.2-f102": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Myrrha",
-    "text_sha1": "25d048406795c2e34a31f3d9a9e90a236ba6e7b8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a proper name: Myrrha, who lay with her father Cinyras (Ovid, Metamorphoses 10).",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Myrrha",
-        "warnings": []
-      }
-    ]
-  },
   "3.3.1.2-f103": {
     "kind": "phrase",
     "lang": "la",
@@ -877,6 +818,65 @@
           "work": null
         },
         "text": "Mars took it ill",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.1.2-f116": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Simonides",
+      "basis": "sidenote \"E Graeco Simonidis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "E Graeco Simonidis",
+    "text_sha1": "0eea009dd6afe4336c81b620d5770b5a8b168b85",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A source note for the Latin verses in the main text ('Et conjugalis negligens tori…'), which are a Latin rendering of a Greek original. The Simonides meant is almost certainly the iambic poet Semonides of Amorgos, whose satire on the types of women (fragment 7) is the likely source. Ancient and Renaissance writers often confused him with Simonides of Ceos.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Simonides",
+          "basis": "sidenote \"E Graeco Simonidis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "From the Greek of Simonides",
         "warnings": []
       }
     ]
@@ -5701,67 +5701,6 @@
       }
     ]
   },
-  "3.3.1.2-f89": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Abstemius",
-    "text_sha1": "b62a7b17ff6b5af9a0c6c7729c4d5c9bcfd6562f",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a proper name, not a Latin phrase: Laurentius Abstemius, the Italian humanist who wrote fables. It is kept as it stands.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Abstemius",
-        "warnings": []
-      }
-    ]
-  },
   "3.3.1.2-f9": {
     "kind": "phrase",
     "lang": "la",
@@ -5831,128 +5770,6 @@
       }
     ]
   },
-  "3.3.1.2-f96": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Francesco Barbaro",
-      "basis": "sidenote \"De re uxoria lib. 1 cap. 5.\"",
-      "locus": "lib. 1 cap. 5",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De re uxoria"
-    },
-    "text": "Barbarus",
-    "text_sha1": "8ca9f442a6ec56b13a6769680b010c69cc535fec",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a proper name: Francesco Barbaro, author of De re uxoria (On Marriage). It is kept as it stands.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Francesco Barbaro",
-          "basis": "sidenote \"De re uxoria lib. 1 cap. 5.\"",
-          "locus": "lib. 1 cap. 5",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De re uxoria"
-        },
-        "text": "Barbarus",
-        "warnings": []
-      }
-    ]
-  },
-  "3.3.1.2-f97": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Tacitus",
-      "basis": "text \"saith Tacitus\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Tacitus",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is only the historian's name inside Burton's English ('saith Tacitus'). There is nothing to translate.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Tacitus",
-          "basis": "text \"saith Tacitus\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Tacitus",
-        "warnings": []
-      }
-    ]
-  },
   "3.3.1.2-f98": {
     "kind": "phrase",
     "lang": "la",
@@ -6008,65 +5825,6 @@
           "work": null
         },
         "text": "Pontus Heuterus, in his life of him",
-        "warnings": []
-      }
-    ]
-  },
-  "3.3.1.2-f99": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Pontus Heuterus",
-      "basis": "sidenote \"Pontus Heuter vita ejus.\"",
-      "locus": "vita ejus",
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Philippus bonus",
-    "text_sha1": "5e4ff0bdea94837c85e38ce9ba5679aeca4dc148",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Philip the Good, Duke of Burgundy.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Pontus Heuterus",
-          "basis": "sidenote \"Pontus Heuter vita ejus.\"",
-          "locus": "vita ejus",
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Philip the Good",
         "warnings": []
       }
     ]

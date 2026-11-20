@@ -370,48 +370,6 @@
     "signals": [],
     "text_sha1": "4285661f90a6dc9e9b47ffa5da5be5bfb6ec30fa"
   },
-  "1.3.1.3-f25": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "that would sit after the same fashion, as if he had been upon a stage, and sometimes act himself",
-          "in": "1.3.1.3-p6",
-          "prefix": "at Abydos a town of Asia minor, ",
-          "suffix": "; now clap his hands, and laugh,"
-        },
-        "words": 19
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Such another is mentioned by Aristotle, living at Abydos a town of",
-          "in": "1.3.1.3-p6",
-          "prefix": "as if he had been at a Theatre. ",
-          "suffix": " Asia minor, that would sit afte"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ad97131939e4af9d99412223e8425a65cbba143"
-  },
   "1.3.1.3-f27": {
     "bracket": "none",
     "by": "rules",
@@ -646,6 +604,48 @@
       "english-at-anchor"
     ],
     "text_sha1": "a84ab3d8dccbf601bb50b3eb9646bc113bcfe0ea"
+  },
+  "1.3.1.3-f36": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which stirreth them up to be excellent Philosophers, Poets, Prophets, &c.",
+          "in": "1.3.1.3-p6",
+          "prefix": "ment, & a kind of Enthusiasmus, ",
+          "suffix": " Mercurialis, consil. 110, gives"
+        },
+        "words": 11
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "of melancholy, which is a little adust with some mixture of blood, to be that which Aristotle meant, when he said Melancholy men of all others are most witty, which causeth many times a divine ravishment, & a kind of",
+          "in": "1.3.1.3-p6",
+          "prefix": ". 3 de melan., thinks this kind ",
+          "suffix": " Enthusiasmus, which stirreth th"
+        },
+        "words": 39
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "83b6672cef7a9c0726231d2b90fe0c1a92779518"
   },
   "1.3.1.3-f4": {
     "bracket": "present",

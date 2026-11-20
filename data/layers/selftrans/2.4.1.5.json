@@ -202,28 +202,11 @@
   "2.4.1.5-f19": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Diacorolli, Diarrhodon Abbatis, Diacodion, &c., as every",
-          "in": "2.4.1.5-p5",
-          "prefix": "old, as Diamargaritum frigidum, ",
-          "suffix": " Pharmacopoeia will show you, wi"
-        },
-        "words": 7
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "01173f56ad950fce555d37d170a8ac56f09edcfc"
@@ -522,12 +505,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Diacorolli, Diarrhodon Abbatis, Diacodion, &c., as every",
+          "exact": "&c., as every",
           "in": "2.4.1.5-p5",
-          "prefix": "old, as Diamargaritum frigidum, ",
+          "prefix": " Diarrhodon Abbatis, Diacodion, ",
           "suffix": " Pharmacopoeia will show you, wi"
         },
-        "words": 7
+        "words": 3
       }
     ],
     "lang": "la",
@@ -566,6 +549,204 @@
     ],
     "text_sha1": "7b82605da86bd6cd4907cd86ebbbea8c7d023469"
   },
+  "2.4.1.5-f42": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 2,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which Hamech an Arabian, and Philonius a Roman long since composed, but",
+          "in": "2.4.1.5-p1",
+          "prefix": " Hamech, and Philonium Romanum, ",
+          "suffix": " crasse as the rest. If they be "
+        },
+        "words": 12
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Mercurialis in his book de composit. medicin. gives instance in Hamech, and",
+          "in": "2.4.1.5-p1",
+          "prefix": "d some things, but not cleared. ",
+          "suffix": " Philonium Romanum, which Hamech"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "282c6024714c5215bef4b34358d3b7d5edb2e03f"
+  },
+  "2.4.1.5-f43": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and we as justly may carp at all the rest",
+          "in": "2.4.1.5-p1",
+          "prefix": "o correct Theriacum Andromachi, ",
+          "suffix": ". Galen’s medicines are now expl"
+        },
+        "words": 10
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Cardan taxeth Galen for presuming out of his ambition to correct",
+          "in": "2.4.1.5-p1",
+          "prefix": " and why is the other obsolete? ",
+          "suffix": " Theriacum Andromachi, and we as"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "44502f1c549c6a04441107ffc59aef394884c5e6"
+  },
+  "2.4.1.5-f44": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fdd8bdaa161174410e2dcf75e284c6d43a1262c9"
+  },
+  "2.4.1.5-f45": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f61a338724dd9bc89913417aa2a038b120469307"
+  },
+  "2.4.1.5-f46": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "70eb3b376f88fc5532c665887b3f18feb9cecedf"
+  },
+  "2.4.1.5-f47": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "da6a09584a34d7c5bc15f50761acca37d6e123cd"
+  },
+  "2.4.1.5-f48": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "f9d7b47f761d7d64733a0ec91e3a9156258301e4"
+  },
+  "2.4.1.5-f49": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "98c8cd7492e5264e7738c150cc1cda03b799823d"
+  },
+  "2.4.1.5-f50": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "874bffb4eb99de83a01b4b4abc9e9c551a5b708c"
+  },
+  "2.4.1.5-f51": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "&c., as every",
+          "in": "2.4.1.5-p5",
+          "prefix": " Diarrhodon Abbatis, Diacodion, ",
+          "suffix": " Pharmacopoeia will show you, wi"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3a4ce8fb1678de722002be462224f6c9353986dd"
+  },
   "2.4.1.5-f6": {
     "bracket": "present",
     "by": "rules",
@@ -590,12 +771,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Mercurialis in his book de composit. medicin. gives instance in Hamech, and Philonium Romanum, which Hamech an Arabian, and Philonius a Roman long since composed, but",
+          "exact": "which Hamech an Arabian, and Philonius a Roman long since composed, but",
           "in": "2.4.1.5-p1",
-          "prefix": "d some things, but not cleared. ",
+          "prefix": " Hamech, and Philonium Romanum, ",
           "suffix": " crasse as the rest. If they be "
         },
-        "words": 26
+        "words": 12
       }
     ],
     "lang": "la",

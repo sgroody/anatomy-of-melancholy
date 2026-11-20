@@ -12,25 +12,34 @@
     "text_sha1": "3410a49cc4d5b59809b818aa12bbf4bcd1397fbd",
     "threshold": 0.85
   },
-  "1.1.2.10-f2": {
-    "align_score": 0.909,
+  "1.1.2.10-f10": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "Opinion, Science, to which are added Art, Prudency, Wisdom: as also Synteresis,",
-    "left_score": 0.986,
+    "left_anchor": "he should return again, or pay so much for his ransom. The",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "proposeth the question; his word, oath, promise, is to be religiously kept,",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "synteresis",
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 8712, p. 146"
+  },
+  "1.1.2.10-f2": {
+    "by": "djs1927",
+    "left_anchor": "Of the Understanding. ,",
     "method": "rules/djs-align-v3",
     "right_anchor": ", Conscience; so that in all there be 14 species of the",
-    "right_score": 0.909,
-    "status": "kept-original",
-    "text": "dictamen rationis,T",
+    "status": "not-found",
     "text_sha1": "bfefeed7f32657ee8eacd00e182a897b218f80cd",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 8678, p. 145"
+    "threshold": 0.85
   },
   "1.1.2.10-f3": {
-    "align_score": 0.987,
+    "align_score": 0.993,
     "by": "djs1927",
-    "left_anchor": "proposition in a practic Syllogism. The",
-    "left_score": 0.987,
+    "left_anchor": "the will. This makes the major proposition in a practic Syllogism. The",
+    "left_score": 0.993,
     "method": "rules/djs-align-v3",
     "right_anchor": "is that which doth admonish us to do good or evil, and",
     "right_score": 1.0,
@@ -39,34 +48,6 @@
     "text_sha1": "bfefeed7f32657ee8eacd00e182a897b218f80cd",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 8695, p. 145"
-  },
-  "1.1.2.10-f4": {
-    "align_score": 0.987,
-    "by": "djs1927",
-    "left_anchor": "is rather in the understanding, than in the will. This makes the",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "proposition in a practic Syllogism. The",
-    "right_score": 0.987,
-    "status": "kept-original",
-    "text": "major",
-    "text_sha1": "18c9d4621ef6c3113ce1f960346d7603e88406e8",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 8694, p. 145"
-  },
-  "1.1.2.10-f6": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "which doth admonish us to do good or evil, and is the",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "in the Syllogism. The Conscience is that which approves good or evil,",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "minor",
-    "text_sha1": "fee63d97ca760412103b668617f8b29605625b7d",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 8696, p. 145"
   },
   "1.1.2.10-f7": {
     "align_score": 1.0,
@@ -81,5 +62,27 @@
     "text_sha1": "de515d54b70acb1ad63222d2627fd1dfa6f64a93",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 8663, p. 145"
+  },
+  "1.1.2.10-f8": {
+    "by": "djs1927",
+    "left_anchor": "Error, Opinion, Science, to which are added Art, Prudency, Wisdom: as also",
+    "left_score": 0.9852941176470589,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Synteresis, or the purer part of the conscience, is an innate",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd",
+    "threshold": 0.85
+  },
+  "1.1.2.10-f9": {
+    "by": "djs1927",
+    "left_anchor": "Bees indeed make neat and curious works and many other creatures beside",
+    "left_score": 0.993006993006993,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", or the purer part of the conscience, is an innate habit,",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd",
+    "threshold": 0.85
   }
 }

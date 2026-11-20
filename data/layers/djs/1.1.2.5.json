@@ -47,6 +47,43 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 8170, p. 135"
   },
+  "1.1.2.5-f17": {
+    "align_score": 0.562,
+    "by": "djs1927",
+    "left_anchor": "another like unto itself. In which definition, three several operations are specified,",
+    "left_score": 0.562,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", As this Nutritive faculty serves to nourish the body, so doth",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "1ca9b670712a9f812182a1a90b282e743f687061",
+    "threshold": 0.85
+  },
+  "1.1.2.5-f18": {
+    "by": "djs1927",
+    "left_anchor": "Some therefore make one Soul, divided into three principal faculties; others, ,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", As this Nutritive faculty serves to nourish the body, so doth",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "0aafd1676a9f2a154b96adb230ec906b781ccc17",
+    "threshold": 0.85
+  },
+  "1.1.2.5-f19": {
+    "align_score": 0.981,
+    "by": "djs1927",
+    "left_anchor": "in the stomach; the third is in the Liver, to turn this",
+    "left_score": 0.981,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "into blood, called Sanguification; the last is Assimilation, which is in every",
+    "right_score": 0.987,
+    "status": "kept-original",
+    "text": "chylus",
+    "text_sha1": "7c097608a57a971ea504a4d86842b50d94c2f350",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 8213, p. 136"
+  },
   "1.1.2.5-f2": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -54,20 +91,6 @@
     "status": "no-anchor",
     "text_sha1": "1ba8456557597c1918e045acfa57cf654cad1d01",
     "threshold": 0.85
-  },
-  "1.1.2.5-f4": {
-    "align_score": 0.976,
-    "by": "djs1927",
-    "left_anchor": "a Spiritual Soul: which opinion of his, Campanella in his book de",
-    "left_score": 0.976,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", much labours to demonstrate and prove, because Carcasses bleed at the",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "^Meaning Of Things,",
-    "text_sha1": "1a0e3785eb5698f62d2528f6675171bf6bb5bf98",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 8156, p. 135"
   },
   "1.1.2.5-f5": {
     "align_score": 0.994,
@@ -85,18 +108,15 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 8166, p. 135"
   },
   "1.1.2.5-f7": {
-    "align_score": 0.903,
     "by": "djs1927",
-    "left_anchor": "unto itself. In which definition, three several operations are specified, Altrix, Auctrix,",
-    "left_score": 0.903,
+    "left_anchor": "Some therefore make one Soul, divided into three principal faculties; others, ,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "; the first is Nutrition, whose object is nourishment, meat, drink, and",
     "right_score": 1.0,
-    "status": "aligned",
-    "text": "sustainer, producer, creator.",
+    "status": "not-found",
     "text_sha1": "74a48b76f2378369e539ed502a6084884102ebcf",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 8186, p. 136"
+    "threshold": 0.85
   },
   "1.1.2.5-f8": {
     "by": "djs1927",

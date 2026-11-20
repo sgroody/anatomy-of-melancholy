@@ -1,4 +1,46 @@
 {
+  "1.1.3.3-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "dull, swinish Melancholy, and saith that he was an eyewitness of it",
+          "in": "1.1.3.3-p2",
+          "prefix": " humours; he calls it Asininam, ",
+          "suffix": ": so is Wecker. From melancholy "
+        },
+        "words": 12
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "he calls it",
+          "in": "1.1.3.3-p2",
+          "prefix": "de Anima, and Chap. of humours; ",
+          "suffix": " Asininam, dull, swinish Melanch"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "28f919c08fd498f2d9b91f1706fe1cb22f3969de"
+  },
   "1.1.3.3-f2": {
     "bracket": "present",
     "by": "rules",

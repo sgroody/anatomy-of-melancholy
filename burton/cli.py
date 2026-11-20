@@ -144,6 +144,8 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--budget-usd", type=float, default=None)
     s.add_argument("--report", action="store_true", help="compare the raters -> state/review/d7-gold-audit.md")
     s.add_argument("--label-round", help="label a drawn hold-out round that has no gold yet (e.g. h3)")
+    s.add_argument("--second-rater", metavar="ROUND", help="label a labelled round again, blind, with a second model")
+    s.add_argument("--settle", metavar="ROUND", help="write the settled disagreements into the round's gold")
     s.add_argument("--dry-run", action="store_true", help="count the items and run the leak test, no model")
 
     s = sub.add_parser("obsolete", help="obsolete-word glosses: Webster 1913 candidates, model ruling -> "
@@ -419,7 +421,11 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "gold-audit":
         from .layers import gold_audit
 
-        if args.label_round:
+        if args.second_rater:
+            print(gold_audit.second_rater(args.second_rater))
+        elif args.settle:
+            print(gold_audit.apply_settlement(args.settle))
+        elif args.label_round:
             print(gold_audit.label_round(args.label_round, model=args.model))
         elif args.report:
             print(gold_audit.report())

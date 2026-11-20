@@ -2133,68 +2133,6 @@
       }
     ]
   },
-  "2.3.1.1-f40": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Stella",
-    "text_sha1": "0ab73ab5f1ffe95b96a02d91a5831ebb860ac9ab",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "This is not a Latin phrase but the name of an author in Burton's list of modern writers on consolation, probably Diego de Estella (Didacus Stella). It is given unchanged.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Stella",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.1.1-f48": {
     "kind": "phrase",
     "lang": "la",
@@ -2817,7 +2755,78 @@
       }
     ]
   },
-  "2.3.1.1-f7": {
+  "2.3.1.1-f60": {
+    "kind": "phrase",
+    "lang": "grc-Latn",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "a bitter-sweet passion",
+        "in": "2.3.1.1",
+        "near": "2.3.1.1-f60",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Glycypicron",
+    "text_sha1": "d5d7d1885b4b8dad3a971da8db1c246665444b59",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "sweet-bitter",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Greek glykypikron, 'sweet-bitter', written in Latin letters; best known as Sappho's word for love. Burton glosses it himself as 'a bitter-sweet passion'. The sidenote 'Apuleius 4 florid.' probably belongs to 'as he saith', but this is not certain, so no source is recorded.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "a bitter-sweet passion",
+            "in": "2.3.1.1",
+            "near": "2.3.1.1-f60",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "a sweet-bitter thing",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f61": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -2837,44 +2846,100 @@
       "status": "none"
     },
     "source": {
-      "author": "Cicero, Girolamo Cardano, Boethius",
-      "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+      "author": null,
+      "basis": null,
       "locus": null,
-      "status": "burton-cites",
+      "status": "unidentified",
       "verified": false,
-      "work": "De consolatione"
+      "work": null
     },
-    "text": "de consol",
-    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19",
+    "text": "Apogeo",
+    "text_sha1": "debb434ef16ed1fc7a748d1c5b173414e22af3ac",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "truncated"
-        ],
-        "literal": null,
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in apogee",
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "An abbreviated title, De consolatione. Burton uses it for consolatory works by Cicero, Cardano and Boethius.",
+        "note": "Latin ablative of apogeum, governed by Burton's 'in'. In astronomy this is a planet's point farthest from the earth.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
           "status": "none"
         },
         "source": {
-          "author": "Cicero, Girolamo Cardano, Boethius",
-          "basis": "text \"so Tully, Cardan, and Boethius wrote de consol.\"",
+          "author": null,
+          "basis": null,
           "locus": null,
-          "status": "burton-cites",
+          "status": "unidentified",
           "verified": false,
-          "work": "De consolatione"
+          "work": null
         },
-        "text": "On Consolation",
+        "text": "apogee",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f62": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Perigeo",
+    "text_sha1": "20ef5c5490538bb27c83a55b988be5688137226b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in perigee",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Latin ablative of perigeum, which still depends on Burton's 'in'. In astronomy this is a planet's point nearest the earth.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "perigee",
         "warnings": []
       }
     ]

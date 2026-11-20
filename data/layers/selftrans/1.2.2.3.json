@@ -539,18 +539,6 @@
           "suffix": ". At this day in China the commo"
         },
         "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "if any man should so feed with us, it would be all one to nourish, as Cicuta",
-          "in": "1.2.2.3-p1",
-          "prefix": "ictum apud nos aemulari vellet; ",
-          "suffix": ", Aconitum, or Hellebore itself."
-        },
-        "words": 17
       }
     ],
     "lang": "la",
@@ -558,10 +546,35 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
-      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "4cc279d5aae4654857b0fff83cc2235b4cbfbad5"
+  },
+  "1.2.2.3-f37": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "if any man should so feed with us, it would be all one to nourish, as",
+          "in": "1.2.2.3-p1",
+          "prefix": "ictum apud nos aemulari vellet; ",
+          "suffix": " Cicuta, Aconitum, or Hellebore "
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278"
   },
   "1.2.2.3-f4": {
     "bracket": "present",
@@ -654,12 +667,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "if any man should so feed with us, it would be all one to nourish, as Cicuta",
+          "exact": "if any man should so feed with us, it would be all one to nourish, as",
           "in": "1.2.2.3-p1",
           "prefix": "ictum apud nos aemulari vellet; ",
-          "suffix": ", Aconitum, or Hellebore itself."
+          "suffix": " Cicuta, Aconitum, or Hellebore "
         },
-        "words": 17
+        "words": 16
       },
       {
         "by": "rules",

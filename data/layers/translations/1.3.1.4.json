@@ -992,65 +992,6 @@
       }
     ]
   },
-  "1.3.1.4-f37": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Jacob Sprenger (with Heinrich Kramer)",
-      "basis": "sidenote \"Malleo Malef.\"; text \"that woman in Sprenger\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Malleus Maleficarum"
-    },
-    "text": "Malleo Malef",
-    "text_sha1": "91449986f83dceb9620040582168b4bfbe519f2a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "In the Hammer of Witches",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Malef. abbreviates Maleficarum. The Malleus Maleficarum (Hammer of Witches) is the witch-hunters' manual by Jacob Sprenger and Heinrich Kramer, so the title is kept.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Jacob Sprenger (with Heinrich Kramer)",
-          "basis": "sidenote \"Malleo Malef.\"; text \"that woman in Sprenger\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Malleus Maleficarum"
-        },
-        "text": "In the Malleus Maleficarum",
-        "warnings": []
-      }
-    ]
-  },
   "1.3.1.4-f38": {
     "kind": "phrase",
     "lang": "la",
@@ -1812,6 +1753,128 @@
           "work": null
         },
         "text": "melancholic to the eighth degree",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.4-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Priapismus",
+    "text_sha1": "3dbc52e71a76b2312de5fd96384181b9333a0fdd",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Priapismus is the medical term for a persistent, painful erection of the penis. Burton lists it as one of the diseases that Mercurialis's case reports show alongside melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "priapism",
+        "warnings": []
+      }
+    ]
+  },
+  "1.3.1.4-f51": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Vertigo",
+    "text_sha1": "3c471d5d4efb37d0c039ffdb5aaf4551589d7945",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Vertigo is the Latin medical term for giddiness or dizziness. It was already used in English in Burton's day. Here it is one of the conditions Burton lists, from Montanus's case reports, as occurring together with melancholy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "vertigo",
         "warnings": []
       }
     ]

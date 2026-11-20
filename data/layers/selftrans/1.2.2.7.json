@@ -54,5 +54,47 @@
       "english-at-anchor"
     ],
     "text_sha1": "310ec192763fa715739b37ad99187e5a69292a16"
+  },
+  "1.2.2.7-f3": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "night-walking, crying out, & much unquietness",
+          "in": "1.2.2.7-p1",
+          "prefix": "easeth fearful dreams, Incubus, ",
+          "suffix": "; such sleep prepares the body, "
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Or if it be used in the daytime, upon a full stomach, the body ill composed to rest, or after hard meats, it increaseth fearful dreams",
+          "in": "1.2.2.7-p1",
+          "prefix": "hat sleep like so many Dormice. ",
+          "suffix": ", Incubus, night-walking, crying"
+        },
+        "words": 26
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ea6e41bbc7f749bc47ed5effa93e7eacdc17b320"
   }
 }

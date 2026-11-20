@@ -110,5 +110,60 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "d2d832991ed7a4fc7ce8bbfed25ade3c3ba00849"
+  },
+  "2.4.3.1-f4": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Cauteries or searing with hot irons, combustions, borings, lancings, which because they are terrible",
+          "in": "2.4.3.1-p7",
+          "prefix": "",
+          "suffix": ", Dropax and Sinapismus are inve"
+        },
+        "words": 14
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "554e111f23fd4188201ad6d65f9dc5fae407ed03"
+  },
+  "2.4.3.1-f5": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "are invented, by plasters to raise blisters, and eating medicines of pitch, mustard seed and the like",
+          "in": "2.4.3.1-p7",
+          "prefix": "terrible, Dropax and Sinapismus ",
+          "suffix": "."
+        },
+        "words": 17
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9bcf4f2dc53f66bfd78483f6687e013d9606c32b"
   }
 }

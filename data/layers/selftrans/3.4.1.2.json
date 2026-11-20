@@ -468,77 +468,6 @@
     ],
     "text_sha1": "f381850772f2b9c8be47f7051c9444b4a0e0b901"
   },
-  "3.4.1.2-f121": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "fought for them",
-          "in": "3.4.1.2-p3",
-          "prefix": " in the same Author, St. Magnus ",
-          "suffix": ". Now for visions, revelations, "
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "another time in the same Author, St",
-          "in": "3.4.1.2-p3",
-          "prefix": "e shut up in a silver cap-case: ",
-          "suffix": ". Magnus fought for them. Now fo"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "d5ce1b67edd7df0346fc13ed125635d39d24183d"
-  },
-  "3.4.1.2-f122": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Tully hold",
-          "in": "3.4.1.2-p4",
-          "prefix": "imos ac superstitio, as Tacitus ",
-          "suffix": ". Austin lib. 4 de civitat. Dei "
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
-  },
   "3.4.1.2-f123": {
     "bracket": "none",
     "by": "rules",
@@ -792,35 +721,6 @@
     ],
     "text_sha1": "8519eee27abece61191818273c86402079ab393f"
   },
-  "3.4.1.2-f157": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "when he saw Caecilianus preferred before him in the bishopric of Carthage, turned heretic, and so did Arian, because Alexander was advanced",
-          "in": "3.4.1.2-p14",
-          "prefix": "d of their adversaries. Donatus ",
-          "suffix": ": we have examples at home, and "
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a47401c3e109d39b488e3601a6c2eb29e10c13bc"
-  },
   "3.4.1.2-f159": {
     "bracket": "none",
     "by": "rules",
@@ -890,48 +790,6 @@
       "english-precedes"
     ],
     "text_sha1": "a3f781dff5e47e44aedfc01e0f643f53bd332479"
-  },
-  "3.4.1.2-f163": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "itself), was still after much solitariness, fasting, or long sickness, when their brains were addle, and their bellies as empty of meat as their heads of wit",
-          "in": "3.4.1.2-p15",
-          "prefix": "omer, or Lucian’s vera historia ",
-          "suffix": ". Florilegus hath many such exam"
-        },
-        "words": 27
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "out as probable as that of Eris Armenius, in Plato’s tenth dialogue de Repub., that revived again ten days after he was killed in a battle, and told strange wonders, like those tales Ulysses related to Alcinous in Homer, or",
-          "in": "3.4.1.2-p15",
-          "prefix": "an Enthusiastical prisoner (all ",
-          "suffix": " Lucian’s vera historia itself),"
-        },
-        "words": 40
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "71e6563a54ae72ecfea856e44ebd865172e34a77"
   },
   "3.4.1.2-f166": {
     "bracket": "none",
@@ -1660,14 +1518,73 @@
     ],
     "text_sha1": "ec63da9e01ec263cf3085f2013abe3681580b9c3"
   },
-  "3.4.1.2-f21": {
-    "bracket": "present",
+  "3.4.1.2-f196": {
+    "bracket": "none",
     "by": "rules",
     "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b6f4599bfb0fc02aba10e60c18d20df8ee72b154"
+  },
+  "3.4.1.2-f197": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Sibyls, and pseudoprophets to be mere melancholy",
+          "in": "3.4.1.2-p15",
+          "prefix": "will have all your Pythonissas, ",
+          "suffix": "; so doth Wierus prove, lib. 1 c"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04"
+  },
+  "3.4.1.2-f21": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "as Tacitus and Tully hold",
+          "in": "3.4.1.2-p4",
+          "prefix": "os vulgi animos ac superstitio, ",
+          "suffix": ". Austin lib. 4 de civitat. Dei "
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
     "text_sha1": "6c65172febbd1af51fbc55f7b90bc2bc5384c835"
   },
   "3.4.1.2-f22": {
@@ -3011,18 +2928,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "30f0a0b8f3727e7e5e68b21cad5f1971cd6716e8"
-  },
-  "3.4.1.2-f69": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "da50344bf6702f265a8b1b70bdd33af18634db43"
   },
   "3.4.1.2-f7": {
     "bracket": "none",

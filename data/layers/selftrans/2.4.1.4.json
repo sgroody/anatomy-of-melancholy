@@ -366,28 +366,11 @@
   "2.4.1.4-f24": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Armenus because they purge, shall be mentioned in their place",
-          "in": "2.4.1.4-p8",
-          "prefix": "Lapis Lazuli ",
-          "suffix": "."
-        },
-        "words": 11
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "681b24920e79982ca319304d8cb48333e92c2f6f"
@@ -586,6 +569,118 @@
       "english-at-anchor"
     ],
     "text_sha1": "f006b25eb51edc6d2e93563ab0770275b88b26f4"
+  },
+  "2.4.1.4-f36": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "a precious stone so called, because it is like the kernels of a Pomegranate, an unperfect kind of Ruby, though somewhat ruddy, yet more obscure than a Ruby, it comes from Calicut",
+          "in": "2.4.1.4-p2",
+          "prefix": "Granatus ",
+          "suffix": "; if hung about the neck, or tak"
+        },
+        "words": 32
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b55c1957c11d3868719136b6c6b951734cd44a7e"
+  },
+  "2.4.1.4-f37": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which, if it be lapped in a fair cloth, and tied to the right arm, will cure lunatics, madmen, make them amiable and merry",
+          "in": "2.4.1.4-p2",
+          "prefix": "stone found called Chelidonius, ",
+          "suffix": "."
+        },
+        "words": 24
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "In the belly of a swallow there is a stone found called",
+          "in": "2.4.1.4-p2",
+          "prefix": "il thoughts, causeth mirth, &c. ",
+          "suffix": " Chelidonius, which, if it be la"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8c2523ff5f617967e368b4a0e07e990569d94338"
+  },
+  "2.4.1.4-f38": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "because they purge, shall be mentioned in their place",
+          "in": "2.4.1.4-p8",
+          "prefix": "Lapis Lazuli and Armenus ",
+          "suffix": "."
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "910b3cdf9b47fd5c648164d45b7d3ab8d7fbfc52"
+  },
+  "2.4.1.4-f39": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "447a08b13292ace8be5cdbcf7977fdaef3dc2ca9"
   },
   "2.4.1.4-f4": {
     "bracket": "present",

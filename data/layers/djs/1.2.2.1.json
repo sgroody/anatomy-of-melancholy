@@ -292,7 +292,7 @@
     "left_anchor": "Aleacman now Peleca, another stream in Thessaly, turns Cattle most part white,",
     "left_score": 0.973,
     "method": "rules/djs-align-v3",
-    "right_anchor": ". J. Aubanus Bohemus refers that Struma, or Poke of the Bavarians",
+    "right_anchor": ". J. Aubanus Bohemus refers that",
     "right_score": 1.0,
     "status": "aligned",
     "text": "if you take them there to drink.",
@@ -328,18 +328,6 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "8c14e0b4cbd2f8dd55feeb77296ab4f2ee301f7c",
-    "threshold": 0.85
-  },
-  "1.2.2.1-f41": {
-    "align_score": 0.814,
-    "by": "djs1927",
-    "left_anchor": "Book de Piscium natura & praeparatione, which was printed at Rome in",
-    "left_score": 0.814,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", 1554, with most elegant Pictures, esteems Carp no better than a",
-    "right_score": 1.0,
-    "status": "below-threshold",
-    "text_sha1": "800f824868827855ce2c1600ecf5a7cfc54ac09a",
     "threshold": 0.85
   },
   "1.2.2.1-f43": {
@@ -472,6 +460,34 @@
     "status": "below-threshold",
     "text_sha1": "96823ae6f4f36983ae3b72179ba5b171d952bef3",
     "threshold": 0.85
+  },
+  "1.2.2.1-f60": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "Hare, a black meat, melancholy, and hard of digestion, it breeds",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", often eaten, and causeth fearful dreams, so doth all Venison, and",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "incubus,",
+    "text_sha1": "ea6e41bbc7f749bc47ed5effa93e7eacdc17b320",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 10948, pp. 189-190"
+  },
+  "1.2.2.1-f61": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": ". J. Aubanus Bohemus refers that",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", or Poke of the Bavarians and Styrians to the nature of",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "struma,",
+    "text_sha1": "64db1efb9144231d72ffe2ed1121f008bf184f51",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 11240, p. 196"
   },
   "1.2.2.1-f7": {
     "align_score": 0.985,

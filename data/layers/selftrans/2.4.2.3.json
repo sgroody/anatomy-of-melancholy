@@ -291,6 +291,60 @@
     ],
     "text_sha1": "43f2d8c8f707c8dd72e9711bb6a6b57bc48f5750"
   },
+  "2.4.2.3-f22": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "55313444ba5f2a15c483e87abcdf658e117c05aa"
+  },
+  "2.4.2.3-f23": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "are liquid or dry, juice of Pimpernel, Onions, &c., Castor, Pepper, white Hellebore, &c.",
+          "in": "2.4.2.3-p6",
+          "prefix": "aken into the nostrils, Errhina ",
+          "suffix": " To these you may add odoraments"
+        },
+        "words": 14
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Such as are taken into the nostrils",
+          "in": "2.4.2.3-p6",
+          "prefix": "",
+          "suffix": ", Errhina are liquid or dry, jui"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cb1b43bd68d341d99602d5801fb5440fbccc1716"
+  },
   "2.4.2.3-f5": {
     "bracket": "none",
     "by": "rules",

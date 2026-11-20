@@ -11,6 +11,30 @@
     ],
     "text_sha1": "15b5d62a542556e3af929a03c434cc4f4c6ab29a"
   },
+  "table-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7b53e8bcda90678ea53cd741601acf8b297af500"
+  },
+  "table-f11": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3dc2ef6c5a5754cc64f5994183b2f56c2705f453"
+  },
   "table-f2": {
     "bracket": "none",
     "by": "rules",
@@ -55,28 +79,11 @@
   "table-f4": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or Agnus castus good against love-mel",
-          "in": "table-p542",
-          "prefix": "Vitex ",
-          "suffix": "."
-        },
-        "words": 7
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "ea47ac5cedfb0194611a44f862ec94be2a3818ce"
@@ -109,5 +116,87 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "1775c3a643e91aa12ad3f92f8b961001a8fe9bb0"
+  },
+  "table-f6": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9c903ae0fff217ffb06dea90ed8e798f7ef57abd"
+  },
+  "table-f7": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "958213ebd38955cb035481743d707c3d15daf12a"
+  },
+  "table-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "his virtues against melancholy",
+          "in": "table-p284",
+          "prefix": "Lapis Armenus, ",
+          "suffix": ""
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "69b889618b8033c9cc478e0f2a2b99b9c1cea78c"
+  },
+  "table-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "good against love-mel",
+          "in": "table-p542",
+          "prefix": "Vitex or Agnus castus ",
+          "suffix": "."
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "cf42217d28dc52211073037f9f43e34f3bf7deff"
   }
 }

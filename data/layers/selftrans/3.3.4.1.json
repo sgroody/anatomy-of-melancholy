@@ -215,17 +215,17 @@
       {
         "after_attribution": false,
         "by": "rules",
-        "cognates": 0,
+        "cognates": 1,
         "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "but neighbour",
+          "exact": "but neighbour Candidus your wife is common",
           "in": "3.3.4.1-p4",
           "prefix": "m sed habes Candide cum populo; ",
-          "suffix": " Candidus your wife is common: H"
+          "suffix": ": Husband and Cuckold in that ag"
         },
-        "words": 2
+        "words": 7
       },
       {
         "by": "rules",
@@ -244,6 +244,7 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "cognate-overlap",
       "english-follows",
       "english-precedes",
       "no-gowland-bracket"
@@ -1555,35 +1556,6 @@
       "english-precedes"
     ],
     "text_sha1": "84d4a82e676b72bf045508dee927f5e5bd544e82"
-  },
-  "3.3.4.1-f62": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "your wife is common",
-          "in": "3.3.4.1-p4",
-          "prefix": " populo; but neighbour Candidus ",
-          "suffix": ": Husband and Cuckold in that ag"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cb5fedf371f630726dfbf365184ed8f9ed35ed2d"
   },
   "3.3.4.1-f64": {
     "bracket": "none",

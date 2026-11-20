@@ -913,6 +913,69 @@
       }
     ]
   },
+  "3.2.5.2-f114": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "low",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "his ignis",
+    "text_sha1": "a67a1ce0174008b60907b24a4576636ba3f4f28f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "low",
+        "date": "2026-11-20",
+        "flags": [
+          "corrupt-text",
+          "wordplay",
+          "boundary-suspect"
+        ],
+        "literal": "to these / by these, fire",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin here doesn't parse. 'his' is the dative/ablative plural 'to/by these', and 'ignis' is the nominative singular 'fire'. Burton seems to be making a grammar-school joke. 'Haec' (the feminine 'this', so 'this woman') is set against 'ignis' (a fire), a masculine noun ('hic ignis'). The point fits his simile about leaving one good fire for another: one woman is as good as another fire. The text probably meant 'hic ignis' ('this fire'), and 'his' may be a corruption of it. The rendering assumes that reading. The contrasting word 'haec' stands just outside the marked passage.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "this fire",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.2-f13": {
     "kind": "verse",
     "lang": "la",
@@ -4741,301 +4804,6 @@
           "work": "De rerum natura"
         },
         "text": "And it is fitting to shun the images and the food of love, / to keep oneself from them, and turn the mind elsewhere.",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f81": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Rusticus",
-    "text_sha1": "962707724eb908d7a6674d792480e6b6e0dd2ab9",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A personal name: Jerome's correspondent, Rusticus the monk. It needs no translation.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Rusticus",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f82": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Terence",
-      "basis": "sidenote \"Ter.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ter",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton's sidenote citing Terence for 'redeam? Non si me obsecret'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Terence",
-          "basis": "sidenote \"Ter.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Terence",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f83": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Terence",
-      "basis": "sidenote \"Ter.\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": null
-    },
-    "text": "Ter",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Burton's sidenote citing Terence for 'Egone illam, quae illum, quae me, quae non?'",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Terence",
-          "basis": "sidenote \"Ter.\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": null
-        },
-        "text": "Terence",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f84": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Hyacinthus",
-    "text_sha1": "fcd4e7f7e51db496bfe5dd98c9b6f66849d6c5ee",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A proper name: Hyacinthus, the youth loved by Apollo and Zephyrus. It is left as it stands.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Hyacinthus",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.2-f88": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Dia",
-    "text_sha1": "8fb2bb1ac38fbfbb80714020c37d73bba8dea401",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A place name: Dia, the island (usually identified with Naxos) where Theseus abandoned Ariadne.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Dia",
         "warnings": []
       }
     ]

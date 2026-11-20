@@ -11,12 +11,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "skin covers the rest, and hath Cuticulam, or a little skin under it",
+          "exact": "skin covers the rest, and hath",
           "in": "1.1.2.3-p8",
           "prefix": "ctuous matter of the blood. The ",
-          "suffix": ". Flesh is soft and ruddy, compo"
+          "suffix": " Cuticulam, or a little skin und"
         },
-        "words": 13
+        "words": 6
       }
     ],
     "lang": "la",
@@ -26,6 +26,161 @@
       "english-at-anchor"
     ],
     "text_sha1": "2d5aebaf4954f2a006364eb40f5401d11fd398ed"
+  },
+  "1.1.2.3-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "is the root of all the other, which serves the whole body",
+          "in": "1.1.2.3-p6",
+          "prefix": "rived, Aorta, and Venosa; Aorta ",
+          "suffix": "; the other goes to the Lungs, t"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7ed7cca943001b57442500c8244baa9d1e930453"
+  },
+  "1.1.2.3-f11": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "from the stomach and guts, and conveys it to the Liver",
+          "in": "1.1.2.3-p7",
+          "prefix": "ns, by whom he takes the Chylus ",
+          "suffix": ". The other derives blood from t"
+        },
+        "words": 11
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "is a Vein coming from the concave of the Liver, and receiving those meseraical Veins, by whom he takes the",
+          "in": "1.1.2.3-p7",
+          "prefix": "are corrivated. That Vena porta ",
+          "suffix": " Chylus from the stomach and gut"
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7c097608a57a971ea504a4d86842b50d94c2f350"
+  },
+  "1.1.2.3-f12": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "are inward or outward",
+          "in": "1.1.2.3-p7",
+          "prefix": "oides. The branches of the Cava ",
+          "suffix": ". Inward, seminal or emulgent. O"
+        },
+        "words": 4
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The branches of the",
+          "in": "1.1.2.3-p7",
+          "prefix": "e Meseraical and Haemorrhoides. ",
+          "suffix": " Cava are inward or outward. Inw"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6399ac50be71f59792e9d643c43e0e7b12b6ffed"
+  },
+  "1.1.2.3-f13": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or a little skin under it",
+          "in": "1.1.2.3-p8",
+          "prefix": "s the rest, and hath Cuticulam, ",
+          "suffix": ". Flesh is soft and ruddy, compo"
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The skin covers the rest, and hath",
+          "in": "1.1.2.3-p8",
+          "prefix": "d unctuous matter of the blood. ",
+          "suffix": " Cuticulam, or a little skin und"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "75183f169607ee5db252c55fb4b376502af8daf9"
   },
   "1.1.2.3-f2": {
     "bracket": "none",
@@ -94,12 +249,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "is a Vein coming from the concave of the Liver, and receiving those meseraical Veins, by whom he takes the Chylus from the stomach and guts, and conveys it to the Liver",
+          "exact": "is a Vein coming from the concave of the Liver, and receiving those meseraical Veins, by whom he takes the",
           "in": "1.1.2.3-p7",
           "prefix": "are corrivated. That Vena porta ",
-          "suffix": ". The other derives blood from t"
+          "suffix": " Chylus from the stomach and gut"
         },
-        "words": 32
+        "words": 20
       }
     ],
     "lang": "la",
@@ -165,12 +320,12 @@
         "position": "following",
         "relation": "sentence",
         "selector": {
-          "exact": "The branches of the Cava are inward or outward",
+          "exact": "The branches of the",
           "in": "1.1.2.3-p7",
           "prefix": "e Meseraical and Haemorrhoides. ",
-          "suffix": ". Inward, seminal or emulgent. O"
+          "suffix": " Cava are inward or outward. Inw"
         },
-        "words": 9
+        "words": 4
       },
       {
         "by": "rules",
@@ -223,5 +378,43 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "e3cfb08a2ba4657c04033421749cf9d2d61c45b1"
+  },
+  "1.1.2.3-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "They arise in the left side of the heart, & are principally two, from which the rest are derived",
+          "in": "1.1.2.3-p6",
+          "prefix": "t was wont to cut up men alive. ",
+          "suffix": ", Aorta, and Venosa; Aorta is th"
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7ed7cca943001b57442500c8244baa9d1e930453"
+  },
+  "1.1.2.3-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b4f6f0d8d1ed2f8942d4a073d89c1451127a72fb"
   }
 }

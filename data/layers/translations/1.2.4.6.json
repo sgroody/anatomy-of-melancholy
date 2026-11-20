@@ -903,128 +903,6 @@
       }
     ]
   },
-  "1.2.4.6-f111": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "per annum",
-    "text_sha1": "d962940c94d0e5efa8db284b80b6b7986a99c0e8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": null,
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "a year",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.4.6-f112": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Tacitus",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "This is only a proper name inside Burton's English, so nothing needs translating. The story of a man swearing he saw the emperor's soul go up to heaven is usually linked with Seneca's satire on Claudius (the Apocolocyntosis), not with Tacitus, so Burton's reference may be wrong.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Tacitus",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.4.6-f117": {
     "kind": "phrase",
     "lang": "la",
@@ -1999,6 +1877,65 @@
           "work": "Descriptio Americae"
         },
         "text": "who daily sink under the burdens they must carry this way and that; for what with us oxen and asses carry and draw, etc., all that falls to the wretched Indians, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.4.6-f145": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Athenaeus",
+      "basis": "text \"as I find it registered in Athenaeus\"; sidenote \"Dipnosophist. lib. 12.\"",
+      "locus": "lib. 12",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Deipnosophistae"
+    },
+    "text": "Phiditiis",
+    "text_sha1": "4420a8c970f31586d769f728039842ca7a8cc189",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Phiditia (ablative plural)",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Phiditia (also spelled phiditia or syssitia) were the common public meals of the Spartans, at which citizens ate the plain fare of black broth. The word stands in the ablative after the Latin-style 'in', so 'supping in Phiditiis' means 'dining at the public messes'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Athenaeus",
+          "basis": "text \"as I find it registered in Athenaeus\"; sidenote \"Dipnosophist. lib. 12.\"",
+          "locus": "lib. 12",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Deipnosophistae"
+        },
+        "text": "the public messes",
         "warnings": []
       }
     ]

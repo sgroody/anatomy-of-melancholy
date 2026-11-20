@@ -232,16 +232,16 @@
     "threshold": 0.85
   },
   "3.2.2.4-f117": {
-    "align_score": 0.895,
-    "attribution": "ovid",
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": ", and they put it well in practice, as Apollo to Daphne,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "Delphos, The poorest swains will do as much,",
-    "right_score": 0.895,
-    "status": "aligned",
-    "text": "Delphos, Claros, and Tenedos serve me. And Jupiter is known my sire to be.",
+    "residue": "",
+    "right_anchor": "Delphos, Claros and Tenedos serve me, / And Jupiter is known my",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "d1404de15ae19fd30035c2bc8de8601201d3f42d",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 38187, p. 711"
@@ -771,20 +771,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 37410, p. 697"
   },
-  "3.2.2.4-f161": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "elegant Musaeus; observe but with me those amorous proceedings of Leander and",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ": they began first to look one on the other with a",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Hero.",
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 37767, p. 703"
-  },
   "3.2.2.4-f162": {
     "by": "djs1927",
     "left_anchor": "Inde",
@@ -802,20 +788,6 @@
     "status": "no-anchor",
     "text_sha1": "e9c57efed3cf3525aa066c88936414f7e5b54e63",
     "threshold": 0.85
-  },
-  "3.2.2.4-f164": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "but would be seen / With all her heart before, God knows.",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "so tripped away from Leander as one displeased,",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "(virgil) Hero",
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 37814, pp. 704-706"
   },
   "3.2.2.4-f167": {
     "align_score": 1.0,
@@ -846,20 +818,6 @@
     "text_sha1": "131e95588a847674d348176633a64a8f3281608d",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 37421, p. 697"
-  },
-  "3.2.2.4-f171": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "and they put it well in practice, as Apollo to Daphne, Delphos,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and Tenedos serve me, / And Jupiter is known my Sire to",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Claros,",
-    "text_sha1": "39de113eb0110c09931c74842805ec40a3aed04a",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 38187, p. 711"
   },
   "3.2.2.4-f172": {
     "align_score": 1.0,
@@ -1160,6 +1118,20 @@
     "status": "no-anchor",
     "text_sha1": "6adc5b44cc91939973603bbedb23f611b8aa252c",
     "threshold": 0.85
+  },
+  "3.2.2.4-f206": {
+    "align_score": 0.978,
+    "by": "djs1927",
+    "left_anchor": "company of gulls and swaggering companions, that frequently belie noblemen’s favours, rhyming",
+    "left_score": 0.983,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Thrasonean Rodomonts or Bombomachides, that have nothing in them but a",
+    "right_score": 0.978,
+    "status": "kept-original",
+    "text": "Corybantiasmics,",
+    "text_sha1": "da138ca515b95b405531e41e7a4d39e1940f0a6b",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 37595, pp. 700-701"
   },
   "3.2.2.4-f21": {
     "align_score": 0.976,

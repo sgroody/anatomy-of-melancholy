@@ -9,6 +9,7 @@ Context sent to the model is the public text of the surrounding block: no Gowlan
 Resumable: items already in the layer (same text, same prompt) are skipped; layer written atomically.
 """
 
+import functools
 import hashlib
 import json
 import os
@@ -89,6 +90,17 @@ VERN = {"it": set("che il della delle dello degli gli lo uno una è ma per con n
         "es": set("el los las del que y en un una es por con para su lo al como más".split())}
 
 
+@functools.cache
+def _not_names() -> frozenset[str]:
+    """Forms the names sweep (data/layers/names/) ruled `not-a-name`."""
+    from ..layers import names_sweep
+
+    if not names_sweep.LAYER.exists():
+        return frozenset()
+    forms = json.loads(names_sweep.LAYER.read_text(encoding="utf-8"))
+    return frozenset(k for k, v in forms.items() if v.get("kind") == "not-a-name")
+
+
 def candidates(units: list[str]) -> list[dict]:
     out, seen = [], set()
     for unit in units:
@@ -100,6 +112,14 @@ def candidates(units: list[str]) -> list[dict]:
         blocks = [(b, public_text(b, notes=b.tag == T("note"))) for b in root.iter(T("p"), T("l"), T("note"))]
         todo = [d["text"] for d in r["langid_decisions"]
                 if d["verdict"] == "undetermined" and not d["why"].startswith("roman text")]
+        # short runs the rules decided on one or two lexicon hits (2026-11-20, V5's fourth cycle; see langid.thin)
+        from ..ingest.langid import thin
+
+        todo += [d["text"] for d in r["langid_decisions"] if d["verdict"] in ("la", "en") and thin(d["text"], d["why"])]
+        # capitalised runs the rules called names, which the names sweep ruled not to be names ("Pythonissas",
+        # "Napthe", "Cachexia"): Latin terms, or English ones; the ruling decides which (2026-11-20, V5)
+        todo += [d["text"] for d in r["langid_decisions"]
+                 if d["verdict"] == "name" and d["text"].strip(" ,.;:") in _not_names()]
         # capitalised runs the rules called names but that may be Latin terms ("Morbus Gallicus",
         # "Scorbutum", "Cachexia"): a Latin-attested word, or one word with a Latin common-noun ending
         for d in r["langid_decisions"]:

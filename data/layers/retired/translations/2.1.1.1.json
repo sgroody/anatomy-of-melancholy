@@ -1,0 +1,66 @@
+{
+  "2.1.1.1-f34": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Thomas Erastus",
+      "basis": "text \"Erastus de lamiis\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De lamiis"
+    },
+    "text": "Erastus de lamiis",
+    "text_sha1": "423b64a03ca253873c5209edf8e05d8bab6c37d7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A reference to Thomas Erastus's treatise on witches (lamiae).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Thomas Erastus",
+          "basis": "text \"Erastus de lamiis\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De lamiis"
+        },
+        "text": "Erastus, On Witches",
+        "warnings": []
+      }
+    ]
+  }
+}

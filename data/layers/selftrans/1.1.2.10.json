@@ -27,6 +27,35 @@
     ],
     "text_sha1": "3410a49cc4d5b59809b818aa12bbf4bcd1397fbd"
   },
+  "1.1.2.10-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "proposeth the question",
+          "in": "1.1.2.10-p2",
+          "prefix": " for his ransom. The Synteresis ",
+          "suffix": "; his word, oath, promise, is to"
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd"
+  },
   "1.1.2.10-f2": {
     "bracket": "present",
     "by": "rules",
@@ -49,12 +78,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "is that which doth admonish us to do good or evil, and is the",
+          "exact": "is that which doth admonish us to do good or evil, and is the minor in the Syllogism",
           "in": "1.1.2.10-p2",
           "prefix": "yllogism. The Dictamen rationis ",
-          "suffix": " minor in the Syllogism. The Con"
+          "suffix": ". The Conscience is that which a"
         },
-        "words": 14
+        "words": 18
       }
     ],
     "lang": "la",
@@ -64,77 +93,6 @@
       "english-follows"
     ],
     "text_sha1": "bfefeed7f32657ee8eacd00e182a897b218f80cd"
-  },
-  "1.1.2.10-f4": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "proposition in a practic Syllogism",
-          "in": "1.1.2.10-p2",
-          "prefix": " the will. This makes the major ",
-          "suffix": ". The Dictamen rationis is that "
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "18c9d4621ef6c3113ce1f960346d7603e88406e8"
-  },
-  "1.1.2.10-f6": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in the Syllogism",
-          "in": "1.1.2.10-p2",
-          "prefix": " good or evil, and is the minor ",
-          "suffix": ". The Conscience is that which a"
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "is that which doth admonish us to do good or evil, and is the",
-          "in": "1.1.2.10-p2",
-          "prefix": "yllogism. The Dictamen rationis ",
-          "suffix": " minor in the Syllogism. The Con"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "fee63d97ca760412103b668617f8b29605625b7d"
   },
   "1.1.2.10-f7": {
     "bracket": "none",
@@ -177,5 +135,46 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "de515d54b70acb1ad63222d2627fd1dfa6f64a93"
+  },
+  "1.1.2.10-f8": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd"
+  },
+  "1.1.2.10-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or the purer part of the conscience, is an innate habit, and doth signify a conservation of the knowledge of the law of God and Nature, to know good or evil",
+          "in": "1.1.2.10-p2",
+          "prefix": "Synteresis, ",
+          "suffix": ": and (as our Divines hold) it i"
+        },
+        "words": 31
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "189f892404c4ca239991b45f8b2ea1285cece8fd"
   }
 }

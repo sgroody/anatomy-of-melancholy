@@ -531,6 +531,48 @@
     ],
     "text_sha1": "1ef9ef4dc28f778dab169a2a34d8de9239825170"
   },
+  "2.4.1.1-f28": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or that kind of Physic which cureth by Medicines, which Apothecaries most part make, mingle, or sell in their shops",
+          "in": "2.4.1.1-p1",
+          "prefix": "e now at last to Pharmaceutice, ",
+          "suffix": ". Many cavil at this kind of Phy"
+        },
+        "words": 20
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "After a long and tedious discourse of these six non-natural things, and their several rectifications, all which are comprehended in Diet, I am come now at last to",
+          "in": "2.4.1.1-p1",
+          "prefix": "",
+          "suffix": " Pharmaceutice, or that kind of "
+        },
+        "words": 29
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d051f435ad80620ae60cccc6847544ead6d28b36"
+  },
   "2.4.1.1-f3": {
     "bracket": "none",
     "by": "rules",

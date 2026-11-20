@@ -1,0 +1,66 @@
+{
+  "1.3.1.1-f2": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hippocrates",
+      "basis": "text \"Hippocrates in his book\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De insania et melancholia"
+    },
+    "text": "de insania & melan",
+    "text_sha1": "ceb60ae8d752991dd33504b452923bed5b54d854",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "A book title; 'melan.' is Burton's abbreviation, read here as melancholia. The title is as Burton gives it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hippocrates",
+          "basis": "text \"Hippocrates in his book\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De insania et melancholia"
+        },
+        "text": "On Madness and Melancholy",
+        "warnings": []
+      }
+    ]
+  }
+}

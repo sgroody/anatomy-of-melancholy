@@ -359,6 +359,32 @@
     ],
     "text_sha1": "79eea9201f669db6bb35098a5c106ed5e9fcf6f4"
   },
+  "2.4.1.3-f29": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "For the liver, Darthspine or",
+          "in": "2.4.1.3-p1",
+          "prefix": "lm, Centaury, Sorrel, Purslane. ",
+          "suffix": " Camaepitis, Germander, Agrimony"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "39ac597f22f7df9a80a9621a5de10498af9d5529"
+  },
   "2.4.1.3-f3": {
     "bracket": "present",
     "by": "rules",
@@ -386,6 +412,106 @@
       "english-at-anchor"
     ],
     "text_sha1": "57cc9dea5d84692d2fa7555ac75a910602ee50d4"
+  },
+  "2.4.1.3-f30": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "of Homer, which Polydamna Thonis’ wife (then King of Thebes in Egypt) sent Helena for a token, of such rare virtue, that if taken steeped in wine, if wife and children, father and mother, brother and sister, and all thy",
+          "in": "2.4.1.3-p2",
+          "prefix": "e, it was that famous Nepenthes ",
+          "suffix": " dearest friends should die befo"
+        },
+        "words": 40
+      }
+    ],
+    "lang": "grc-Latn",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7c6936771c40f4ab39af7057102fcfd056794a5c"
+  },
+  "2.4.1.3-f31": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "hop, is a sovereign remedy",
+          "in": "2.4.1.3-p8",
+          "prefix": "Lupulus, ",
+          "suffix": "; Fuchsius cap. 58 Plant. hist. "
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "005e397c580e8407aaa4f0c1700a9ec7ebf90899"
+  },
+  "2.4.1.3-f32": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which I find much used by Montanus in his consultations, Julius Alexandrinus, Laelius Eugubinus, and others",
+          "in": "2.4.1.3-p11",
+          "prefix": " flowers of Carduus Benedictus, ",
+          "suffix": ". Bernardus Penottus prefers his"
+        },
+        "words": 16
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and to such as are cold, the decoction of Guaiacum, China, Sarsaparilla, Sassafras, the flowers of",
+          "in": "2.4.1.3-p11",
+          "prefix": "tate, &c., Linschoten’s Datura; ",
+          "suffix": " Carduus Benedictus, which I fin"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d6c4291379099f2b383260ddab9cf818d866f03c"
   },
   "2.4.1.3-f5": {
     "bracket": "present",

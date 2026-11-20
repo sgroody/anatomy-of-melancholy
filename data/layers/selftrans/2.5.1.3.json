@@ -584,6 +584,59 @@
     ],
     "text_sha1": "3c48bd2735c175a985480e6b8e7b6bad229100f4"
   },
+  "2.5.1.3-f40": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "efa127c8e3f5844d7b562014df29a582dc2f53f8"
+  },
+  "2.5.1.3-f41": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "11c443e838745eec2ea78d32271ac75b22d1ad97"
+  },
+  "2.5.1.3-f42": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "Or if pills be too dry",
+          "in": "2.5.1.3-p1",
+          "prefix": "s Armenus and Lazuli, Diasenna. ",
+          "suffix": "; some prescribe both Hellebores"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b86ce26f06d190b45aaef8ee27a7bf906a6944c1"
+  },
   "2.5.1.3-f5": {
     "bracket": "none",
     "by": "rules",

@@ -1334,12 +1334,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "Matrimony makes us immortal, and according to",
+          "exact": "Matrimony makes us immortal, and according to Tacitus, ’tis",
           "in": "3.2.5.5-p58",
           "prefix": "tatem tribuit, saith Nevisanus, ",
-          "suffix": " Tacitus, ’tis firmissimum imper"
+          "suffix": " firmissimum imperii munimentum,"
         },
-        "words": 7
+        "words": 9
       }
     ],
     "lang": "la",
@@ -1370,6 +1370,18 @@
           "suffix": "."
         },
         "words": 8
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "saith Nevisanus, Matrimony makes us immortal, and according to Tacitus, ’tis",
+          "in": "3.2.5.5-p58",
+          "prefix": " generi immortalitatem tribuit, ",
+          "suffix": " firmissimum imperii munimentum,"
+        },
+        "words": 11
       }
     ],
     "lang": "la",
@@ -1377,6 +1389,7 @@
     "method": "rules/selftrans-v1",
     "signals": [
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "ac561737f46bc410c02537d47c3702d42f4f407a"
@@ -2471,35 +2484,6 @@
     "signals": [],
     "text_sha1": "5ffc069829bdc3e33fbb855e091c9295f9235c4b"
   },
-  "3.2.5.5-f210": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "was beloved of many, but one did enjoy her",
-          "in": "3.2.5.5-p30",
-          "prefix": " shall become of the rest? Hero ",
-          "suffix": "; Penelope had a company of suit"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
-  },
   "3.2.5.5-f211": {
     "bracket": "none",
     "by": "rules",
@@ -2624,18 +2608,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "e8cdba3d9b1b5fcdd2681c4d72d0221622410de9"
-  },
-  "3.2.5.5-f217": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
   },
   "3.2.5.5-f22": {
     "bracket": "present",
@@ -2908,48 +2880,6 @@
     ],
     "text_sha1": "ee0a1590862b7ebfa9576c7ecafb84814ada2036"
   },
-  "3.2.5.5-f259": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Africa, may be sent",
-          "in": "3.2.5.5-p48",
-          "prefix": "ica, Terra Australis incognita, ",
-          "suffix": "? Let them consult with Sir Will"
-        },
-        "words": 4
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "but these are hard-hearted, unnatural, monsters of men, shallow politicians, they do not consider that a great part of the world is not yet inhabited as it ought, how many Colonies into America",
-          "in": "3.2.5.5-p48",
-          "prefix": "s, & the world full of beggars: ",
-          "suffix": ", Terra Australis incognita, Afr"
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a37c99670a7abab0e4ea75ca5e7586ff508601b7"
-  },
   "3.2.5.5-f26": {
     "bracket": "present",
     "by": "rules",
@@ -3043,32 +2973,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b49f6cc1bb8739d648bbbd87d7c6aa921ba0a9fe"
-  },
-  "3.2.5.5-f269": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "saith Nevisanus, Matrimony makes us immortal, and according to",
-          "in": "3.2.5.5-p58",
-          "prefix": " generi immortalitatem tribuit, ",
-          "suffix": " Tacitus, ’tis firmissimum imper"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
   },
   "3.2.5.5-f27": {
     "bracket": "present",

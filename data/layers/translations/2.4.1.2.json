@@ -134,61 +134,73 @@
       }
     ]
   },
-  "2.4.1.2-f11": {
+  "2.4.1.2-f12": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
-    "preferred": "machine",
+    "preferred": "burton",
     "review": {
       "by": null,
       "date": null,
       "state": "unreviewed"
     },
     "self_translation": {
-      "burton_span": null,
+      "burton_span": {
+        "exact": "hemlock",
+        "in": "2.4.1.2",
+        "near": "2.4.1.2-f12",
+        "prefix": "",
+        "suffix": ""
+      },
       "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [
         "no-gowland-bracket"
       ],
-      "status": "none"
+      "status": "full"
     },
     "source": {
-      "author": "Giulio Cesare Baricelli (Baricellus)",
-      "basis": "text \"Baricellus Horto geniali\"",
+      "author": null,
+      "basis": null,
       "locus": null,
-      "status": "burton-cites",
+      "status": "unidentified",
       "verified": false,
-      "work": "Hortus genialis"
+      "work": null
     },
-    "text": "Baricellus Horto geniali",
-    "text_sha1": "1f112fac082f04d60b1874fc7eb84320990857bf",
+    "text": "Cicuta",
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
-        "date": "2026-10-27",
+        "date": "2026-11-20",
         "flags": [],
-        "literal": "Baricellus in the Genial Garden",
+        "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "Hortus genialis is the title of a book by Giulio Cesare Baricelli; Burton gives it in the ablative ('in the Hortus genialis').",
+        "note": "Cicuta is the Latin name for poison hemlock. Burton glosses it himself straight away: \"or hemlock\".",
         "prompt": "tr-v2",
         "self_translation": {
-          "burton_span": null,
-          "status": "none"
+          "burton_span": {
+            "exact": "hemlock",
+            "in": "2.4.1.2",
+            "near": "2.4.1.2-f12",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
         },
         "source": {
-          "author": "Giulio Cesare Baricelli (Baricellus)",
-          "basis": "text \"Baricellus Horto geniali\"",
+          "author": null,
+          "basis": null,
           "locus": null,
-          "status": "burton-cites",
+          "status": "unidentified",
           "verified": false,
-          "work": "Hortus genialis"
+          "work": null
         },
-        "text": "Baricellus, in his Hortus Genialis",
+        "text": "Hemlock",
         "warnings": []
       }
     ]
@@ -315,67 +327,6 @@
           "work": "Life of Cornarius (in his Vitae)"
         },
         "text": "He rejected exotic remedies, and wanted us to be content with home-grown ones alone.",
-        "warnings": []
-      }
-    ]
-  },
-  "2.4.1.2-f6": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Munster Mons maior",
-    "text_sha1": "e8e70ec54a3f90c5988281d69a2958f8a06ff972",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "Munster, the Greater Mountain",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "'Munster' is Sebastian Münster, the cosmographer, not Latin. Mons maior ('the greater mountain') is the Monte Maggiore (Učka) in Istria, which Münster commends for its simples. The verb 'commends' carries over from earlier in Burton's sentence.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Münster, Monte Maggiore",
         "warnings": []
       }
     ]

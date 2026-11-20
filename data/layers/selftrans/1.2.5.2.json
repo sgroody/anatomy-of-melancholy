@@ -9,6 +9,35 @@
     "signals": [],
     "text_sha1": "3df2efc3b41eaeb5b80995e6a652da49eea1d9b2"
   },
+  "1.2.5.2-f10": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "is a cause which the Greeks called",
+          "in": "1.2.5.2-p4",
+          "prefix": "terium, or Midriff, Diaphragma, ",
+          "suffix": " φρένες: because by his inflamma"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2f22e35d80215f6dc6a9ba958addbe98cab0d75c"
+  },
   "1.2.5.2-f2": {
     "bracket": "present",
     "by": "rules",
@@ -135,12 +164,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "or Midriff, Diaphragma, is a cause which the Greeks called",
+          "exact": "is a cause which the Greeks called",
           "in": "1.2.5.2-p4",
-          "prefix": "The Mesenterium, ",
+          "prefix": "terium, or Midriff, Diaphragma, ",
           "suffix": " φρένες: because by his inflamma"
         },
-        "words": 10
+        "words": 7
       }
     ],
     "lang": "grc",
@@ -156,28 +185,11 @@
   "1.2.5.2-f9": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "or Midriff, Diaphragma, is a cause which the Greeks called",
-          "in": "1.2.5.2-p4",
-          "prefix": "The Mesenterium, ",
-          "suffix": " φρένες: because by his inflamma"
-        },
-        "words": 10
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "61c922bd5c79c50b10b9c77858386a9e67b823d3"

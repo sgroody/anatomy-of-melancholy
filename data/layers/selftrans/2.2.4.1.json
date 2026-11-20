@@ -1608,48 +1608,6 @@
     ],
     "text_sha1": "7d41113281b2f9dcdf5a8ccf036be0d81c7f62ca"
   },
-  "2.2.4.1-f157": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "the Nubian Geography, or upon Aelia Laelia Crispis, as many idle fellows have assayed",
-          "in": "2.2.4.1-p28",
-          "prefix": " Capella, Tertullian de pallio, ",
-          "suffix": "; and rather than do nothing, va"
-        },
-        "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "or write a Comment on Martianus Capella",
-          "in": "2.2.4.1-p28",
-          "prefix": "stics, upon his friends’ names; ",
-          "suffix": ", Tertullian de pallio, the Nubi"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a4eab6d9a942c363d79c5c170f26c47d32393de5"
-  },
   "2.2.4.1-f158": {
     "bracket": "present",
     "by": "rules",
@@ -1794,48 +1752,6 @@
     ],
     "text_sha1": "3b99b87165e2cf1b5ca4b6cdf0c5d2cd104e6c08"
   },
-  "2.2.4.1-f163": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "the Monk, that he be always occupied about some business or other, that the Devil do not find him idle",
-          "in": "2.2.4.1-p1",
-          "prefix": "ause Jerome prescribes Rusticus ",
-          "suffix": ". Seneca would have a man do som"
-        },
-        "words": 20
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "For which cause Jerome prescribes",
-          "in": "2.2.4.1-p1",
-          "prefix": "at we should ever be in action. ",
-          "suffix": " Rusticus the Monk, that he be a"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "962707724eb908d7a6674d792480e6b6e0dd2ab9"
-  },
   "2.2.4.1-f169": {
     "bracket": "none",
     "by": "rules",
@@ -1893,72 +1809,32 @@
     ],
     "text_sha1": "9bbfefb778796923e3f346df41a0c875af543f89"
   },
-  "2.2.4.1-f172": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in his preface to Cato, Varro, Columella, &c., put out by him, confesseth of himself, that he was mightily delighted with these husbandry studies, and took extraordinary pleasure in them",
-          "in": "2.2.4.1-p15",
-          "prefix": "Jucundus ",
-          "suffix": ": if the Theoric or speculation "
-        },
-        "words": 30
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "6c9ce29e65256439a43e1b6d0c187c64c8d22706"
-  },
-  "2.2.4.1-f173": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Camerarius, and many others, which have written of that subject",
-          "in": "2.2.4.1-p15",
-          "prefix": "n I find in Herberstein, Porta, ",
-          "suffix": ". If my testimony were aught wor"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "933d4f277e28d5b9401169dfcf1ea983f57f64ed"
-  },
   "2.2.4.1-f175": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Romans had their feasts, as the Athenians, and Lacedaemonians held their public banquets, in Prytanaeo",
+          "in": "2.2.4.1-p17",
+          "prefix": "ing, like our silver games. The ",
+          "suffix": ", Panathenaeis, Thesperiis, Phid"
+        },
+        "words": 15
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "english-at-anchor"
+    ],
     "text_sha1": "daf882e2ed2792f5a8b0e9d8569728f6703298e8"
   },
   "2.2.4.1-f176": {
@@ -2061,32 +1937,6 @@
     ],
     "text_sha1": "7e397eca18ac21a2933300dda5cbd9288e21aebc"
   },
-  "2.2.4.1-f179": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "For some such reason it is belike, that",
-          "in": "2.2.4.1-p22",
-          "prefix": "rd of much enmity betwixt them. ",
-          "suffix": " Patritius in his 3rd book Tit. "
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a"
-  },
   "2.2.4.1-f180": {
     "bracket": "present",
     "by": "rules",
@@ -2127,35 +1977,6 @@
       "english-precedes"
     ],
     "text_sha1": "edb6c497ee7983043175577c24eec5b37cf7c4e6"
-  },
-  "2.2.4.1-f184": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "we may say of them",
-          "in": "2.2.4.1-p23",
-          "prefix": "aid of the Astrologers in Rome, ",
-          "suffix": ", genus hominum est quod in civi"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
   },
   "2.2.4.1-f187": {
     "bracket": "none",
@@ -2340,32 +2161,6 @@
     ],
     "text_sha1": "cc2717f4e2e9e137d034fba73b3f11b50d4813a5"
   },
-  "2.2.4.1-f200": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "What greater pleasure can there now be, than to view those elaborate Maps of Ortelius",
-          "in": "2.2.4.1-p26",
-          "prefix": "d much delight he took in them. ",
-          "suffix": ", Mercator, Hondius, &c. To peru"
-        },
-        "words": 15
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "82e3d22f235267570627f035339a8eecddfd5294"
-  },
   "2.2.4.1-f209": {
     "bracket": "none",
     "by": "rules",
@@ -2475,35 +2270,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "c07480cc9254740e72ab802ad68f560dae6002c8"
-  },
-  "2.2.4.1-f227": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "the Monk, continually to read the Scripture, and to meditate on that which he hath read",
-          "in": "2.2.4.1-p28",
-          "prefix": "fore Jerome prescribes Rusticus ",
-          "suffix": "; for as mastication is to meat,"
-        },
-        "words": 16
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "962707724eb908d7a6674d792480e6b6e0dd2ab9"
   },
   "2.2.4.1-f23": {
     "bracket": "present",
@@ -3955,6 +3721,68 @@
     ],
     "text_sha1": "39b97ccb609b8edc41d28bf5d06a9c7dcc1b4bea"
   },
+  "2.2.4.1-f341": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The Romans had their feasts, as the Athenians, and Lacedaemonians held their public banquets, in Prytanaeo",
+          "in": "2.2.4.1-p17",
+          "prefix": "leaping, like our silver games. ",
+          "suffix": ", Panathenaeis, Thesperiis, Phid"
+        },
+        "words": 16
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1a266f69a0454e253efad92e6dc443115bc496fd"
+  },
+  "2.2.4.1-f342": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "b3f8473a609905e0e7cda988d2b2fc90b239cb6d"
+  },
+  "2.2.4.1-f343": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4420a8c970f31586d769f728039842ca7a8cc189"
+  },
+  "2.2.4.1-f344": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "8c18837df5f00c3921e75e4234b512ae6a653ae2"
+  },
   "2.2.4.1-f35": {
     "bracket": "present",
     "by": "rules",
@@ -5222,12 +5050,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "said of the Astrologers in Rome, we may say of them",
+          "exact": "So that as Tacitus said of the Astrologers in Rome, we may say of them",
           "in": "2.2.4.1-p23",
-          "prefix": "sly be idle. So that as Tacitus ",
+          "prefix": "wise more perniciously be idle. ",
           "suffix": ", genus hominum est quod in civi"
         },
-        "words": 11
+        "words": 15
       }
     ],
     "lang": "la",

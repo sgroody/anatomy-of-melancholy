@@ -1,4 +1,68 @@
 {
+  "1.4.1.1-f111": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pieter van Foreest (Forestus)",
+      "basis": "text \"P. Forestus hath a story\" with sidenote \"Observat.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Observationes"
+    },
+    "text": "Observat",
+    "text_sha1": "e634dbc81bab0e6bf2cddcb5efa26cf33ef07df2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "Abbreviation of 'Observationes'. This probably refers to Pieter van Foreest (Forestus), Observationum et curationum medicinalium libri, which the main text names at this point. No book is given.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pieter van Foreest (Forestus)",
+          "basis": "text \"P. Forestus hath a story\" with sidenote \"Observat.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Observationes"
+        },
+        "text": "Observations",
+        "warnings": []
+      }
+    ]
+  },
   "1.4.1.1-f113": {
     "kind": "phrase",
     "lang": "la",
@@ -187,6 +251,134 @@
           "work": null
         },
         "text": "The Cut Noose, Controversiae 1, book 5. A certain man, after a shipwreck in which he lost his three children and his wife, hanged himself; one of the passers-by cut the noose for him, and is accused of wrongdoing by the man he freed",
+        "warnings": []
+      }
+    ]
+  },
+  "1.4.1.1-f86": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Felix",
+    "text_sha1": "cc03f13cc5734109940d0f453dda2157645a3a77",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is the forename of the physician Felix Platter (Platerus), not a quotation. As a Latin word it means 'happy'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Felix",
+        "warnings": []
+      }
+    ]
+  },
+  "1.4.1.1-f94": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Publius Crassi filius",
+    "text_sha1": "299530e3bd4d8d553494f31cba7a730c841a3104",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-26",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-haiku-5-5",
+          "claude-opus-5-5"
+        ],
+        "note": "This is Publius Licinius Crassus, who had himself killed at the defeat at Carrhae.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Publius, son of Crassus",
         "warnings": []
       }
     ]

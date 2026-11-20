@@ -203,18 +203,25 @@
     "threshold": 0.85
   },
   "1.2.2.3-f36": {
-    "align_score": 0.929,
+    "align_score": 0.504,
     "by": "djs1927",
-    "left_anchor": "feed with us, it would be all one to nourish, as Cicuta,",
-    "left_score": 0.929,
+    "left_anchor": "Custom of Diet, Delight, Appetite, Necessity, how they cause or hinder. ,",
+    "left_score": 0.504,
     "method": "rules/djs-align-v3",
     "right_anchor": ", or Hellebore itself. At this day in China the common people",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "hemlock, aconite,",
+    "right_score": 0.512,
+    "status": "below-threshold",
     "text_sha1": "4cc279d5aae4654857b0fff83cc2235b4cbfbad5",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 11507, p. 201"
+    "threshold": 0.85
+  },
+  "1.2.2.3-f37": {
+    "by": "djs1927",
+    "left_anchor": "so feed with us, it would be all one to nourish, as",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278",
+    "threshold": 0.85
   },
   "1.2.2.3-f4": {
     "align_score": 0.986,

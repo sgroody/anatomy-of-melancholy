@@ -1866,35 +1866,6 @@
     ],
     "text_sha1": "7073a7c91ab8acd46777d5ca0d6a7c0f93d99024"
   },
-  "1.2.3.15-f176": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "therefore in the institution of Princes, would not have them to be great Students",
-          "in": "1.2.3.15-p1",
-          "prefix": "hets to Scholars: and Patritius ",
-          "suffix": ". For (as Machiavel holds) Study"
-        },
-        "words": 14
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a"
-  },
   "1.2.3.15-f178": {
     "bracket": "none",
     "by": "rules",
@@ -2013,12 +1984,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "an old torn gown, an ensign of his infelicity, he hath his labour for his pain, a",
+          "exact": "an old torn gown, an ensign of his infelicity, he hath his labour for his pain, a modicum to keep him till he be decrepit, and that is all",
           "in": "1.2.3.15-p9",
           "prefix": "tritam & laceram, saith Haedus, ",
-          "suffix": " modicum to keep him till he be "
+          "suffix": ". Grammaticus non est foelix, &c"
         },
-        "words": 17
+        "words": 29
       },
       {
         "by": "rules",
@@ -2170,48 +2141,6 @@
     ],
     "text_sha1": "612747df4a4cdfe9750d23573e843728e2fa37ed"
   },
-  "1.2.3.15-f191": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "I may not deny, but that we have a sprinkling of our Gentry, here, and there one, excellently well-learned, like those Fuggeri in Germany, Du Bartas, Du Plessis, Sadael in France, Picus Mirandula, Schottus, Barocius in Italy",
-          "in": "1.2.3.15-p27",
-          "prefix": "ous, and lie against my Genius, ",
-          "suffix": ";"
-        },
-        "words": 38
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Let me not be malicious, and lie against my",
-          "in": "1.2.3.15-p27",
-          "prefix": "",
-          "suffix": " Genius, I may not deny, but tha"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "1.2.3.15-f192": {
     "bracket": "none",
     "by": "rules",
@@ -2223,18 +2152,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "f2a2386d0414930541c86a0effe490a4396b0569"
-  },
-  "1.2.3.15-f194": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "749c6d26b1b7e3df27e3eb031e123cb752007197"
   },
   "1.2.3.15-f197": {
     "bracket": "none",
@@ -3800,6 +3717,18 @@
     ],
     "text_sha1": "ca8f24d891f5101ed72cae9c32074a498d15309d"
   },
+  "1.2.3.15-f282": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "verse",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "38cdb819006484a8a82b7a7c594d0bbfe8901c90"
+  },
   "1.2.3.15-f29": {
     "bracket": "present",
     "by": "rules",
@@ -3813,11 +3742,29 @@
   "1.2.3.15-f3": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Patritius therefore in the institution of Princes, would not have them to be great Students",
+          "in": "1.2.3.15-p1",
+          "prefix": "ommon Epithets to Scholars: and ",
+          "suffix": ". For (as Machiavel holds) Study"
+        },
+        "words": 15
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "english-at-anchor"
+    ],
     "text_sha1": "345fb81aa81ffe0054efe9a01b34d0fde4c1999e"
   },
   "1.2.3.15-f30": {
@@ -4052,48 +3999,6 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "21fc912fee9d1e6a35bbba8daa5f37278f538210"
-  },
-  "1.2.3.15-f37": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "to keep him till he be decrepit, and that is all",
-          "in": "1.2.3.15-p9",
-          "prefix": " labour for his pain, a modicum ",
-          "suffix": ". Grammaticus non est foelix, &c"
-        },
-        "words": 11
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "saith Haedus, an old torn gown, an ensign of his infelicity, he hath his labour for his pain, a",
-          "in": "1.2.3.15-p9",
-          "prefix": "mp rod, togam tritam & laceram, ",
-          "suffix": " modicum to keep him till he be "
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "222b2374c9734ebabb8cef9f4d708f34d1093904"
   },
   "1.2.3.15-f38": {
     "bracket": "present",

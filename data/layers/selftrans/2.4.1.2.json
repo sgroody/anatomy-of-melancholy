@@ -67,17 +67,34 @@
     ],
     "text_sha1": "a946c946c8fc609b011cbfcb212d94851f46b66b"
   },
-  "2.4.1.2-f11": {
+  "2.4.1.2-f12": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": true,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "but with us it hath no such violent effects",
+          "in": "2.4.1.2-p2",
+          "prefix": "k is a strong poison in Greece, ",
+          "suffix": ": I conclude with J. Voschius, w"
+        },
+        "words": 9
+      }
+    ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-follows",
       "no-gowland-bracket"
     ],
-    "text_sha1": "1f112fac082f04d60b1874fc7eb84320990857bf"
+    "text_sha1": "dd788cdff48328b191d52a59f32189a688b49278"
   },
   "2.4.1.2-f2": {
     "bracket": "short",
@@ -117,34 +134,5 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "3ad5569554230170b6bee82c81d52f79bfe09721"
-  },
-  "2.4.1.2-f6": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "others Montpellier in France",
-          "in": "2.4.1.2-p2",
-          "prefix": " Munster Mons maior in Histria: ",
-          "suffix": "; Prosper Alpinus prefers Egypti"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e8e70ec54a3f90c5988281d69a2958f8a06ff972"
   }
 }

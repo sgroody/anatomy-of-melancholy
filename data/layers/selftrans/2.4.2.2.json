@@ -152,6 +152,18 @@
           "suffix": ". Quercetan in his Spagir. Phar."
         },
         "words": 7
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Baricellus horto geniali, terms it",
+          "in": "2.4.2.2-p6",
+          "prefix": "women, children, and weaklings. ",
+          "suffix": " maxima praestantia medicamentum"
+        },
+        "words": 5
       }
     ],
     "lang": "la",
@@ -160,6 +172,7 @@
     "signals": [
       "cognate-overlap",
       "english-follows",
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "24909b34df3d01e6e6a6681a8198855a6610e3ec"
@@ -371,48 +384,6 @@
     ],
     "text_sha1": "233ca9a0912f393d680386b3340a50cc4a02d56a"
   },
-  "2.4.2.2-f23": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Ballio, two doting fellows, that they had need to be purged with this plant",
-          "in": "2.4.2.2-p6",
-          "prefix": "rpax in the Comedian, told Simo ",
-          "suffix": ". When that proud Menecrates ὁ ζ"
-        },
-        "words": 15
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "drink Hellebore, &c., and Harpax in the Comedian, told",
-          "in": "2.4.2.2-p6",
-          "prefix": "ixture. Aristophanes in vespis, ",
-          "suffix": " Simo and Ballio, two doting fel"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "63974d4617e2dd6054af9f70e416589d31d34a46"
-  },
   "2.4.2.2-f3": {
     "bracket": "present",
     "by": "rules",
@@ -453,35 +424,6 @@
       "english-precedes"
     ],
     "text_sha1": "781eb4e380048e4c453698698c3a9c18520ffe2c"
-  },
-  "2.4.2.2-f30": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "terms it",
-          "in": "2.4.2.2-p6",
-          "prefix": "ings. Baricellus horto geniali, ",
-          "suffix": " maxima praestantia medicamentum"
-        },
-        "words": 2
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "c28734db6c46a56cbcc8c25e8137a63e860d74d4"
   },
   "2.4.2.2-f34": {
     "bracket": "present",
@@ -544,11 +486,29 @@
   "2.4.2.2-f36": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Comedian, told Simo and Ballio, two doting fellows, that they had need to be purged with this plant",
+          "in": "2.4.2.2-p6",
+          "prefix": "llebore, &c., and Harpax in the ",
+          "suffix": ". When that proud Menecrates ὁ ζ"
+        },
+        "words": 18
+      }
+    ],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [],
+    "signals": [
+      "english-at-anchor"
+    ],
     "text_sha1": "6b7953f864c9af2627de79b9e31ff445dbbedb6b"
   },
   "2.4.2.2-f37": {
@@ -607,6 +567,18 @@
     ],
     "text_sha1": "3b951c97b54f3c455cc2dabd3be10e3bad8c89cc"
   },
+  "2.4.2.2-f40": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "11c443e838745eec2ea78d32271ac75b22d1ad97"
+  },
   "2.4.2.2-f5": {
     "bracket": "present",
     "by": "rules",
@@ -619,12 +591,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "drink Hellebore, &c., and Harpax in the Comedian, told",
+          "exact": "drink Hellebore, &c., and Harpax in the Comedian, told Simo and Ballio, two doting fellows, that they had need to be purged with this plant",
           "in": "2.4.2.2-p6",
           "prefix": "ixture. Aristophanes in vespis, ",
-          "suffix": " Simo and Ballio, two doting fel"
+          "suffix": ". When that proud Menecrates ὁ ζ"
         },
-        "words": 9
+        "words": 25
       }
     ],
     "lang": "la",

@@ -91,35 +91,6 @@
     ],
     "text_sha1": "858f4c2629c5190060a69c857b47174feabd82b1"
   },
-  "1.4.1.1-f111": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "P. Forestus hath a story of two melancholy brethren, that made away themselves, and for so foul a fact, were accordingly censured, to be infamously buried, as in such cases they use",
-          "in": "1.4.1.1-p10",
-          "prefix": "or sands, and suffer shipwreck. ",
-          "suffix": ": to terrify others, as it did t"
-        },
-        "words": 32
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e634dbc81bab0e6bf2cddcb5efa26cf33ef07df2"
-  },
   "1.4.1.1-f114": {
     "bracket": "present",
     "by": "rules",
@@ -586,6 +557,35 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "b8fc588dd682ca702a90d316b96b7e5d578d9ef8"
+  },
+  "1.4.1.1-f138": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or water began to arise in his thighs, and he was freed from his madness",
+          "in": "1.4.1.1-p1",
+          "prefix": " year of his age, these varices ",
+          "suffix": ". Marius the Roman was so cured,"
+        },
+        "words": 15
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0c66d39e895e0d35fceb5f5d7a9870f941696ae7"
   },
   "1.4.1.1-f14": {
     "bracket": "none",
@@ -2568,35 +2568,6 @@
     ],
     "text_sha1": "8158a6c1b8e39030730a7b2dc5243b0e46e7592e"
   },
-  "1.4.1.1-f86": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Platerus) after many tedious days at last, either by drowning, hanging, or some such fearful end, they precipitate, or make away themselves",
-          "in": "1.4.1.1-p4",
-          "prefix": "ans; and therefore (saith Felix ",
-          "suffix": ": many lamentable examples are d"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cc03f13cc5734109940d0f453dda2157645a3a77"
-  },
   "1.4.1.1-f89": {
     "bracket": "present",
     "by": "rules",
@@ -2664,47 +2635,5 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
-  },
-  "1.4.1.1-f94": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Censorius and Plancus, those heroical Romans to make away themselves, than to fall into their enemies’ hands",
-          "in": "1.4.1.1-p9",
-          "prefix": " poison, Publius Crassi filius, ",
-          "suffix": ". How many myriads besides in al"
-        },
-        "words": 17
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Themistocles drank Bull’s blood, rather than he would fight against his Country, and Demosthenes chose rather to drink poison",
-          "in": "1.4.1.1-p9",
-          "prefix": "anny, that poisoned themselves. ",
-          "suffix": ", Publius Crassi filius, Censori"
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "299530e3bd4d8d553494f31cba7a730c841a3104"
   }
 }

@@ -226,12 +226,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "in Finland, in the Kingdom of Sweden, there is a Lake, in which, before the Governor of the Castle dies, a",
+          "exact": "Near Rupes nova in Finland, in the Kingdom of Sweden, there is a Lake, in which, before the Governor of the Castle dies, a",
           "in": "1.2.1.2-p12",
-          "prefix": "lvester’s tomb. Near Rupes nova ",
+          "prefix": "e foretold by Sylvester’s tomb. ",
           "suffix": " spectrum in the habit of Arion "
         },
-        "words": 21
+        "words": 24
       }
     ],
     "lang": "la",
@@ -1136,24 +1136,23 @@
       {
         "after_attribution": false,
         "by": "rules",
-        "cognates": 1,
+        "cognates": 0,
         "cue": null,
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "he that is Saturninus, shall never likely be preferred",
+          "exact": "he that is",
           "in": "1.2.1.2-p16",
           "prefix": "non conveniunt Jovialibus, &c., ",
-          "suffix": ". That base fellows are often ad"
+          "suffix": " Saturninus, shall never likely "
         },
-        "words": 9
+        "words": 3
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "cognate-overlap",
       "english-follows"
     ],
     "text_sha1": "7f7e3e2b791b27bc983905969a76bc67da057725"
@@ -2186,11 +2185,25 @@
   "1.2.1.2-f207": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "or half-gods beneath",
+          "in": "1.2.1.2-p5",
+          "prefix": " some will, gods above, Semidei ",
+          "suffix": ", Lares, Heroes, Genii, which cl"
+        },
+        "words": 4
+      }
+    ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-precedes",
       "no-gowland-bracket"
     ],
     "text_sha1": "78a9cc35e023cecd7f1e89497d47dc826380ce25"
@@ -2535,35 +2548,6 @@
     ],
     "text_sha1": "d87c121e51fd0cdb9022ad91d1b50b7a262d785b"
   },
-  "1.2.1.2-f242": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in the Kingdom of Sweden, there is a Lake, in which, before the Governor of the Castle dies, a",
-          "in": "1.2.1.2-p12",
-          "prefix": "mb. Near Rupes nova in Finland, ",
-          "suffix": " spectrum in the habit of Arion "
-        },
-        "words": 19
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a2c7bee212875349a465d03373360ba1336fb5ba"
-  },
   "1.2.1.2-f249": {
     "bracket": "none",
     "by": "rules",
@@ -2605,48 +2589,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "437d7c2822227713c7d607a81d2b5383624b5425"
-  },
-  "1.2.1.2-f253": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "&c., because many shrieks and fearful cries are continually heard thereabouts, and familiar apparitions of dead men, Ghosts and Goblins",
-          "in": "1.2.1.2-p14",
-          "prefix": "and, Vesuvius, Terra del Fuego, ",
-          "suffix": "."
-        },
-        "words": 20
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The last are conversant about the Centre of the earth to torture the souls of damned men to the day of Judgement, their egress and regress some suppose to be about Etna, Lipari, Mons Hecla in Iceland, Vesuvius",
-          "in": "1.2.1.2-p14",
-          "prefix": "",
-          "suffix": ", Terra del Fuego, &c., because "
-        },
-        "words": 38
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1fd64ffd5a33fd0c643bd2a04d72379c10908c3d"
   },
   "1.2.1.2-f255": {
     "bracket": "none",
@@ -3953,6 +3895,220 @@
     ],
     "text_sha1": "717d7d1a62a147f551066d04826b3c1b3328006b"
   },
+  "1.2.1.2-f311": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "these heathen writers agree not in this point among themselves, as Dandinus notes",
+          "in": "1.2.1.2-p5",
+          "prefix": "mali Genii, are to be exploded: ",
+          "suffix": ", An sint mali non conveniunt, s"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "715e3ecfefd66e2b274495b67337e55edb5bb12a"
+  },
+  "1.2.1.2-f312": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "765759c52c9e47d45d5b8a2ea65d7a6efab8a506"
+  },
+  "1.2.1.2-f313": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or half-gods beneath",
+          "in": "1.2.1.2-p5",
+          "prefix": " some will, gods above, Semidei ",
+          "suffix": ", Lares, Heroes, Genii, which cl"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "722a776ad889df0d40a50ebbd021fa29f409465a"
+  },
+  "1.2.1.2-f314": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "765759c52c9e47d45d5b8a2ea65d7a6efab8a506"
+  },
+  "1.2.1.2-f315": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "These are they which Cardan thinks, desire so much carnal copulation with Witches",
+          "in": "1.2.1.2-p10",
+          "prefix": "rius) under the name of Saints. ",
+          "suffix": " (Incubi and Succubi), transform"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "3dc2ef6c5a5754cc64f5994183b2f56c2705f453"
+  },
+  "1.2.1.2-f316": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "transform bodies, and are so very cold, if they be touched",
+          "in": "1.2.1.2-p10",
+          "prefix": "h Witches (Incubi and Succubi), ",
+          "suffix": "; and that serve Magicians. His "
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "2d07b5d0dd1a91291b8f7f10944d5040d71ba1b2"
+  },
+  "1.2.1.2-f317": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "or otherwise, appearing most part (saith Trithemius) in women’s shapes",
+          "in": "1.2.1.2-p11",
+          "prefix": "e men diverse ways, as Succuba, ",
+          "suffix": ". Paracelsus hath several storie"
+        },
+        "words": 10
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "these cause Inundations, many times shipwrecks, and deceive men diverse ways, as",
+          "in": "1.2.1.2-p11",
+          "prefix": "y that Habundia is their Queen; ",
+          "suffix": " Succuba, or otherwise, appearin"
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "db2cfd405df06e86fd33f3203036506252078f53"
+  },
+  "1.2.1.2-f318": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e3b5d9b902edc7da4dedb1b6f538561a7335d24e"
+  },
+  "1.2.1.2-f319": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Whether I may call these",
+          "in": "1.2.1.2-p12",
+          "prefix": "ormicar. lib. 5 cap. 12. 3, &c. ",
+          "suffix": " Ziim and Ochim, which Isaiah ca"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "he-Latn",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e0bd1a48471fc0d592db31de5b46844f57fd8be5"
+  },
   "1.2.1.2-f32": {
     "bracket": "present",
     "by": "rules",
@@ -3980,6 +4136,48 @@
       "english-at-anchor"
     ],
     "text_sha1": "5098f1a4a827f6f41604ec6c172de2678bea3693"
+  },
+  "1.2.1.2-f320": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "shall never likely be preferred",
+          "in": "1.2.1.2-p16",
+          "prefix": "us, &c., he that is Saturninus, ",
+          "suffix": ". That base fellows are often ad"
+        },
+        "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "., he that is",
+          "in": "1.2.1.2-p16",
+          "prefix": "ni non conveniunt Jovialibus, &c",
+          "suffix": " Saturninus, shall never likely "
+        },
+        "words": 3
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "fe7957c865f9dce0385eabcc196a1f299e765ac9"
   },
   "1.2.1.2-f33": {
     "bracket": "present",
@@ -4598,26 +4796,13 @@
           "suffix": " him; an Hunter preserves and ye"
         },
         "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "these heathen writers agree not in this point among themselves, as Dandinus notes, An sint",
-          "in": "1.2.1.2-p5",
-          "prefix": "mali Genii, are to be exploded: ",
-          "suffix": " mali non conveniunt, some will "
-        },
-        "words": 15
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "5d542d7f1da11e86dbc52a2a6bde4e448d015654"
   },
@@ -4881,12 +5066,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "the celestial Devils above, and aerial beneath, or as some will, gods above, Semidei or half-gods beneath",
+          "exact": "the celestial Devils above, and aerial beneath, or as some will, gods above",
           "in": "1.2.1.2-p5",
           "prefix": "arro lib. 7 de Civ. Dei cap. 6, ",
-          "suffix": ", Lares, Heroes, Genii, which cl"
+          "suffix": ", Semidei or half-gods beneath, "
         },
-        "words": 18
+        "words": 13
       }
     ],
     "lang": "la",

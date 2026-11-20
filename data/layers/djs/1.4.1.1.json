@@ -35,14 +35,6 @@
     "text_sha1": "858f4c2629c5190060a69c857b47174feabd82b1",
     "threshold": 0.85
   },
-  "1.4.1.1-f111": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "e634dbc81bab0e6bf2cddcb5efa26cf33ef07df2",
-    "threshold": 0.85
-  },
   "1.4.1.1-f114": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -221,6 +213,20 @@
     "status": "below-threshold",
     "text_sha1": "b8fc588dd682ca702a90d316b96b7e5d578d9ef8",
     "threshold": 0.85
+  },
+  "1.4.1.1-f138": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "in the end mad about the 27th year of his age, these",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "or water began to arise in his thighs, and he was freed",
+    "right_score": 1.0,
+    "status": "kept-original",
+    "text": "varices",
+    "text_sha1": "0c66d39e895e0d35fceb5f5d7a9870f941696ae7",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 19821, pp. 366-367"
   },
   "1.4.1.1-f14": {
     "align_score": 0.989,
@@ -1022,20 +1028,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 19917, p. 368"
   },
-  "1.4.1.1-f86": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "yet they hope to be eased by this means; and therefore (saith",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "Platerus) after many tedious days at last, either by drowning, hanging, or",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Felix",
-    "text_sha1": "cc03f13cc5734109940d0f453dda2157645a3a77",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 19924, p. 368"
-  },
   "1.4.1.1-f89": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -1059,19 +1051,5 @@
     "status": "no-anchor",
     "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
     "threshold": 0.85
-  },
-  "1.4.1.1-f94": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "would fight against his Country, and Demosthenes chose rather to drink poison,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Censorius and Plancus, those heroical Romans to make away themselves, than",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Publius Crassus,",
-    "text_sha1": "299530e3bd4d8d553494f31cba7a730c841a3104",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 20086, p. 371"
   }
 }

@@ -233,32 +233,6 @@
     ],
     "text_sha1": "d0166c305b5040e4ba96f9724d9c291019f7eca5"
   },
-  "2.2.1.1-f23": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Galen takes exception at Mutton, but without question he means that rammy mutton, which is in Turkey, and",
-          "in": "2.2.1.1-p2",
-          "prefix": " Boors and Clowns in Palestina. ",
-          "suffix": " Asia minor, which have those gr"
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ad97131939e4af9d99412223e8425a65cbba143"
-  },
   "2.2.1.1-f24": {
     "bracket": "none",
     "by": "rules",
@@ -565,6 +539,64 @@
       "english-precedes"
     ],
     "text_sha1": "ed9ecf11da4a8b6b974a1350863de7faab6e632f"
+  },
+  "2.2.1.1-f41": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "the brown we call it, be pared off",
+          "in": "2.2.1.1-p2",
+          "prefix": "urned and scorched superficies, ",
+          "suffix": ". Salvianus lib. 2 cap. 1 cries "
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "02d82dfd2029c0870127101d1a67f2ac7ab835e6"
+  },
+  "2.2.1.1-f42": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "is much commended by Oribasius, Aetius, and most of our late writers",
+          "in": "2.2.1.1-p5",
+          "prefix": "avoury taste. Erinaceus Marinus ",
+          "suffix": "."
+        },
+        "words": 12
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e994d193d922f4b60583fd8198be3778790e0f7f"
   },
   "2.2.1.1-f5": {
     "bracket": "present",

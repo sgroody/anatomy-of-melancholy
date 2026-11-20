@@ -151,6 +151,15 @@
     "text_sha1": "28ca0d8089795c6b8f3ce733eb87e8f1074e2e5e",
     "threshold": 0.85
   },
+  "3.2.5.2-f114": {
+    "by": "djs1927",
+    "left_anchor": "as",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; or bring him some public shows, plays, meetings, where he may",
+    "status": "no-anchor",
+    "text_sha1": "a67a1ce0174008b60907b24a4576636ba3f4f28f",
+    "threshold": 0.85
+  },
   "3.2.5.2-f13": {
     "align_score": 0.992,
     "by": "djs1927",
@@ -647,10 +656,12 @@
   },
   "3.2.5.2-f51": {
     "by": "djs1927",
-    "left_anchor": "the Mo",
+    "left_anchor": "forget it. Saint Jerome lib. 2 epist. 16 to Rusticus the Mo",
+    "left_score": 0.8521739130434782,
     "method": "rules/djs-align-v3",
     "right_anchor": "are very forcible means to withdraw men’s affections,",
-    "status": "no-anchor",
+    "right_score": 1.0,
+    "status": "not-found",
     "text_sha1": "3662fbdb905503137facf6b50d751119aba253a3",
     "threshold": 0.85
   },
@@ -684,16 +695,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41625, p. 775"
   },
   "3.2.5.2-f54": {
-    "align_score": 0.646,
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": ", I’ll never love thee more.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "So Zephyrus hated Withal as they do discommend the old, for the",
-    "right_score": 0.646,
-    "status": "below-threshold",
+    "right_anchor": "So Zephyrus hated Hyacinthus because he scorned him, and preferred his corrival",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "What's she to me?",
     "text_sha1": "6f2f593052c9997c86e90706cd11057e1869a7b1",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 41626, p. 775"
   },
   "3.2.5.2-f55": {
     "align_score": 0.615,
@@ -817,23 +830,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41680, p. 776"
   },
   "3.2.5.2-f64": {
-    "align_score": 0.875,
     "by": "djs1927",
     "left_anchor": "better, which will refresh him as much; there’s as much difference of",
-    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "as his ignis; or bring him some public shows, plays, meetings, where",
-    "right_score": 0.875,
-    "status": "aligned",
-    "text": "shes",
+    "right_anchor": "as",
+    "status": "no-anchor",
     "text_sha1": "3158d457d2e93765fe65a09b3c2ad89b0bf152bb",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 41685, p. 776"
+    "threshold": 0.85
   },
   "3.2.5.2-f65": {
     "align_score": 0.866,
     "by": "djs1927",
-    "left_anchor": ", to seek her fortune, that was erst his loving Mistress.",
+    "left_anchor": "of Dia, to seek her fortune, that was erst his loving Mistress.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
@@ -918,59 +926,6 @@
     "text_sha1": "0477d2344495cfbfcaf025e62d8d042dfe2176ef",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41427, pp. 770-771"
-  },
-  "3.2.5.2-f81": {
-    "align_score": 0.86,
-    "by": "djs1927",
-    "left_anchor": "to make them forget it. Saint Jerome lib. 2 epist. 16 to",
-    "left_score": 0.86,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "the Monk, hath an instance of a young man of Greece, that",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Rusticus",
-    "text_sha1": "962707724eb908d7a6674d792480e6b6e0dd2ab9",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 41609, p. 775"
-  },
-  "3.2.5.2-f82": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
-  "3.2.5.2-f83": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
-  "3.2.5.2-f84": {
-    "by": "djs1927",
-    "left_anchor": "So Zephyrus hated",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "because he scorned him, and preferred his corrival Apollo (Palaephatus fab. Nar.),",
-    "status": "no-anchor",
-    "text_sha1": "fcd4e7f7e51db496bfe5dd98c9b6f66849d6c5ee",
-    "threshold": 0.85
-  },
-  "3.2.5.2-f88": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "behind him, as Theseus left Ariadne fast asleep in the Island of",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", to seek her fortune, that was erst his loving Mistress.",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Dia,",
-    "text_sha1": "8fb2bb1ac38fbfbb80714020c37d73bba8dea401",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 41691, p. 776"
   },
   "3.2.5.2-f9": {
     "align_score": 0.897,

@@ -669,6 +669,140 @@
       }
     ]
   },
+  "2.4.2.3-f22": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aetius",
+      "basis": "text \"Aetius 22. 33 commends\"",
+      "locus": "22. 33",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Hieram Rufi",
+    "text_sha1": "55313444ba5f2a15c483e87abcdf658e117c05aa",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hiera ('holy') was the name of a class of compound purgatives, such as hiera picra, which was based on aloes. This version is attributed to Rufus of Ephesus. The Latin is accusative because it is the object of 'commends'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aetius",
+          "basis": "text \"Aetius 22. 33 commends\"",
+          "locus": "22. 33",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "the Hiera of Rufus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.2.3-f23": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Such as are taken into the nostrils",
+        "in": "2.4.2.3",
+        "near": "2.4.2.3-f23",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Errhina",
+    "text_sha1": "cb1b43bd68d341d99602d5801fb5440fbccc1716",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "things for the nose",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Errhina, from the Greek, means medicines put into the nostrils to draw out phlegm, usually by making the patient sneeze. Burton's own English just before the word describes them.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Such as are taken into the nostrils",
+            "in": "2.4.2.3",
+            "near": "2.4.2.3-f23",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "errhines",
+        "warnings": []
+      }
+    ]
+  },
   "2.4.2.3-f5": {
     "kind": "phrase",
     "lang": "la",

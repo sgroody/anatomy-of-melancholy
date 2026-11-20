@@ -360,28 +360,11 @@
   "3.4.2.6-f149": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "paenitentiam age, if thou daily offend, daily repent",
-          "in": "3.4.2.6-p4",
-          "prefix": "s, quotidies, saith Chrysostom, ",
-          "suffix": ": if twice, thrice, an hundred, "
-        },
-        "words": 8
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "d93d4b574b272a92c34896288ab7cf2098fd0863"
@@ -622,26 +605,13 @@
           "suffix": ". And as a mother doth handle he"
         },
         "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "the Lord will not quench the smoking flax, or break the bruised reed, Tentat (saith Austin)",
-          "in": "3.4.2.6-p15",
-          "prefix": "all numero, pondere, & mensura, ",
-          "suffix": " non ut obruat, sed ut coronet, "
-        },
-        "words": 16
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "6c6b2e3ca3c2ec31638ff6bb7828f03a639dd838"
   },
@@ -982,6 +952,61 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "6205b0fd729bc1309b814cebe27ef70fa54093ee"
+  },
+  "3.4.2.6-f191": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "if thou daily offend, daily repent",
+          "in": "3.4.2.6-p4",
+          "prefix": "h Chrysostom, paenitentiam age, ",
+          "suffix": ": if twice, thrice, an hundred, "
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "36c03061b9d5ae7dca3d8c0edec71a4e51bca5ff"
+  },
+  "3.4.2.6-f192": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "the Lord will not quench the smoking flax, or break the bruised reed",
+          "in": "3.4.2.6-p15",
+          "prefix": "all numero, pondere, & mensura, ",
+          "suffix": ", Tentat (saith Austin) non ut o"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "5e57bb16d598e82d5a682ef1871986a66082ab46"
   },
   "3.4.2.6-f2": {
     "bracket": "present",
@@ -1980,12 +2005,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "the Lord will not quench the smoking flax, or break the bruised reed, Tentat (saith Austin)",
+          "exact": "the Lord will not quench the smoking flax, or break the bruised reed",
           "in": "3.4.2.6-p15",
           "prefix": "all numero, pondere, & mensura, ",
-          "suffix": " non ut obruat, sed ut coronet, "
+          "suffix": ", Tentat (saith Austin) non ut o"
         },
-        "words": 16
+        "words": 13
       },
       {
         "by": "rules",

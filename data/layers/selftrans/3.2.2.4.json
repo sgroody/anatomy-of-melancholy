@@ -1633,48 +1633,6 @@
     ],
     "text_sha1": "76713125aecccc52bbd19966701618ba7f4949c6"
   },
-  "3.2.2.4-f161": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "they began first to look one on the other with a lascivious look",
-          "in": "3.2.2.4-p32",
-          "prefix": "roceedings of Leander and Hero: ",
-          "suffix": ","
-        },
-        "words": 13
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "observe but with me those amorous proceedings of Leander and",
-          "in": "3.2.2.4-p32",
-          "prefix": "le out of that elegant Musaeus; ",
-          "suffix": " Hero: they began first to look "
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
-  },
   "3.2.2.4-f162": {
     "bracket": "none",
     "by": "rules",
@@ -1698,18 +1656,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "e9c57efed3cf3525aa066c88936414f7e5b54e63"
-  },
-  "3.2.2.4-f164": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe"
   },
   "3.2.2.4-f167": {
     "bracket": "none",
@@ -1781,35 +1727,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "131e95588a847674d348176633a64a8f3281608d"
-  },
-  "3.2.2.4-f171": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and Tenedos serve me, / And Jupiter is known my Sire to be",
-          "in": "3.2.2.4-lg71",
-          "prefix": "Delphos, Claros ",
-          "suffix": "."
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "verse",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "39de113eb0110c09931c74842805ec40a3aed04a"
   },
   "3.2.2.4-f172": {
     "bracket": "none",
@@ -2589,6 +2506,48 @@
     "method": "rules/selftrans-v1",
     "signals": [],
     "text_sha1": "6adc5b44cc91939973603bbedb23f611b8aa252c"
+  },
+  "3.2.2.4-f206": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Thrasonean Rodomonts or Bombomachides, that have nothing in them but a few player’s ends and compliments, vain braggadocians, impudent intruders, that can discourse at table of Knights and Lords’ combats, like Lucian’s Leontichus, of other men’s travels, brave adventures, and",
+          "in": "3.2.2.4-p17",
+          "prefix": "favours, rhyming Corybantiasmi, ",
+          "suffix": " such common trivial news, ride,"
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Many silly Gentlewomen are fetched over in like sort, by a company of gulls and swaggering companions, that frequently belie noblemen’s favours, rhyming",
+          "in": "3.2.2.4-p17",
+          "prefix": "like so many stocks and stones. ",
+          "suffix": " Corybantiasmi, Thrasonean Rodom"
+        },
+        "words": 23
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "da138ca515b95b405531e41e7a4d39e1940f0a6b"
   },
   "3.2.2.4-f21": {
     "bracket": "none",

@@ -682,11 +682,11 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39554, p. 736"
   },
   "3.2.3.1-f149": {
-    "align_score": 0.974,
+    "align_score": 1.0,
     "attribution": "mantuan",
     "by": "djs1927",
-    "left_anchor": "s, unbefitting their gravity and persons.",
-    "left_score": 0.974,
+    "left_anchor": "in this commit many absurdities, many indecorums, unbefitting their gravity and persons.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": "Samson, David, Solomon, Hercules, Socrates, &c., are justly taxed of indiscretion in",
     "right_score": 1.0,
@@ -717,14 +717,14 @@
     "by": "djs1927",
     "left_anchor": "Phaedra in Seneca,",
     "method": "rules/djs-align-v3",
-    "right_anchor": "",
+    "right_anchor": "Myrrha in Ovid,",
     "status": "no-anchor",
     "text_sha1": "fa7e787eda0709ee76060aae6ed2fdd0ba85053b",
     "threshold": 0.85
   },
   "3.2.3.1-f152": {
     "by": "djs1927",
-    "left_anchor": "in Ovid,",
+    "left_anchor": "Myrrha in Ovid,",
     "method": "rules/djs-align-v3",
     "right_anchor": "She sees and knows her fault, and doth resist, / Against her",
     "status": "no-anchor",
@@ -1457,13 +1457,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39989, pp. 744-745"
   },
   "3.2.3.1-f206": {
+    "align_score": 0.983,
     "by": "djs1927",
     "left_anchor": "cut bucklers in two like pippins, and flap down men like flies,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "",
-    "status": "no-anchor",
+    "right_anchor": "Galeatus of Mantua did a little more: for when he was almost",
+    "right_score": 0.983,
+    "status": "aligned",
+    "text": "saying to her, Choose how^ you will have him killed.",
     "text_sha1": "57051c7674e9894553d52f21fd34c77c304fc77a",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 40005, pp. 744-745"
   },
   "3.2.3.1-f207": {
     "by": "djs1927",
@@ -2408,19 +2413,13 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 40519, p. 754"
   },
   "3.2.3.1-f272": {
-    "align_score": 0.955,
     "by": "djs1927",
     "left_anchor": "meadow, no so gracious aspect in Nature’s storehouse as a young maid,",
-    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "residue": "",
-    "right_anchor": ", a Novizza or Venetian Bride, that looks for an husband, or",
-    "right_score": 0.955,
-    "status": "omitted",
-    "text": "",
+    "right_anchor": ", a",
+    "status": "no-anchor",
     "text_sha1": "4f1a0a879e8053e5ccb986d7968b72cc5f519585",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 40522, p. 754"
+    "threshold": 0.85
   },
   "3.2.3.1-f273": {
     "align_score": 0.993,
@@ -2663,20 +2662,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 38919, p. 724"
   },
-  "3.2.3.1-f290": {
-    "align_score": 0.969,
-    "by": "djs1927",
-    "left_anchor": "And ’tis no news this, no",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; for why? A good reason may given of it. Cupid and",
-    "right_score": 0.969,
-    "status": "kept-original",
-    "text": "indecorum",
-    "text_sha1": "9859b7592fc57a46c6dce9707ca9d503de1b480c",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 40676, pp. 757-758"
-  },
   "3.2.3.1-f291": {
     "align_score": 1.0,
     "attribution": "bellius",
@@ -2693,17 +2678,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 40681, pp. 757-758"
   },
   "3.2.3.1-f292": {
-    "align_score": 0.971,
+    "align_score": 0.964,
     "by": "djs1927",
-    "gap_words": 49,
     "left_anchor": "night’s lodging, as they did of old to Lais of Corinth, or",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", as But above all the other Symptoms of Lovers, this is",
-    "right_score": 0.971,
-    "status": "implausible-length",
+    "right_anchor": ", as Mundus to Paulina, spend all his fortunes (as too many",
+    "right_score": 0.964,
+    "status": "aligned",
+    "text": "two hundred drachmas for a single night,",
     "text_sha1": "59a700f87e068f038d08cb0eff2744ab0dc563ac",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 40695, pp. 757-758"
   },
   "3.2.3.1-f293": {
     "align_score": 0.94,
@@ -2785,15 +2771,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 40764, pp. 757-758"
   },
   "3.2.3.1-f299": {
+    "align_score": 0.961,
     "by": "djs1927",
-    "left_anchor": "his bride, / Why stand we so, and do not go? ,",
+    "left_anchor": "arts and sciences, painting amongst the rest, was first invented, saith Patritius,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", for love’s sake. For when the daughter of Dibutades the Sicyonian,",
-    "right_score": 0.9606299212598425,
-    "status": "not-found",
+    "right_score": 0.961,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "d4a13cefb7d315e08d17defd8d85be4d32885591",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 40778, pp. 759-760"
   },
   "3.2.3.1-f3": {
     "by": "djs1927",
@@ -3144,14 +3134,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39240, p. 730"
   },
-  "3.2.3.1-f335": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
   "3.2.3.1-f336": {
     "by": "djs1927",
     "left_anchor": ", or",
@@ -3204,14 +3186,6 @@
     "text_sha1": "edfc06e46b4caae43fc39027c907800f7a4c5f7e",
     "threshold": 0.85
   },
-  "3.2.3.1-f342": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
   "3.2.3.1-f346": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -3240,15 +3214,6 @@
     "text_sha1": "d45eab557c0d4865d9572798ac278e622aaee8bf",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39519, p. 735"
-  },
-  "3.2.3.1-f349": {
-    "by": "djs1927",
-    "left_anchor": "",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "in Ovid,",
-    "status": "no-anchor",
-    "text_sha1": "25d048406795c2e34a31f3d9a9e90a236ba6e7b8",
-    "threshold": 0.85
   },
   "3.2.3.1-f35": {
     "align_score": 1.0,
@@ -3280,20 +3245,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39607, p. 737"
   },
-  "3.2.3.1-f352": {
-    "align_score": 0.983,
-    "by": "djs1927",
-    "left_anchor": "as silver, the ankles of Hebe clearer than Crystal, the arms of",
-    "left_score": 0.984,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "as ruddy as the Rose, Juno’s breasts as white as snow, Minerva",
-    "right_score": 0.983,
-    "status": "kept-original",
-    "text": "Aurora",
-    "text_sha1": "eeee9b76ec5d1cfa27c511f2def4981c9c5b667c",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 39700, p. 739"
-  },
   "3.2.3.1-f353": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -3307,15 +3258,6 @@
     "text_sha1": "7253d709aff40eb56075212ec29150a13489cace",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39733, p. 739"
-  },
-  "3.2.3.1-f355": {
-    "by": "djs1927",
-    "left_anchor": "",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "of Mantua did a little more: for when he was almost mad",
-    "status": "no-anchor",
-    "text_sha1": "f993d4c62dcc8c90d6b0a97e264493db145e2895",
-    "threshold": 0.85
   },
   "3.2.3.1-f357": {
     "align_score": 0.991,
@@ -3509,15 +3451,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 40687, pp. 757-758"
   },
-  "3.2.3.1-f379": {
-    "by": "djs1927",
-    "left_anchor": ", as",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "to Paulina, spend all his fortunes (as too many do in like",
-    "status": "no-anchor",
-    "text_sha1": "e5ab70413a2101971e108c0cf78772122679816f",
-    "threshold": 0.85
-  },
   "3.2.3.1-f38": {
     "align_score": 0.938,
     "by": "djs1927",
@@ -3532,35 +3465,12 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 38974, p. 725"
   },
-  "3.2.3.1-f380": {
-    "align_score": 0.964,
-    "by": "djs1927",
-    "left_anchor": "chafed, till at length impatient as he was, he prayed to St.",
-    "left_score": 0.964,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", patron of the Church, they might all there sing and dance",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Magnus,",
-    "text_sha1": "d5ce1b67edd7df0346fc13ed125635d39d24183d",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 40740, pp. 757-758"
-  },
   "3.2.3.1-f382": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "49105ed38c159af0a6f218d844ee6589eb5d0567",
-    "threshold": 0.85
-  },
-  "3.2.3.1-f385": {
-    "by": "djs1927",
-    "left_anchor": "our arts and sciences, painting amongst the rest, was first invented, saith",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ",",
-    "status": "no-anchor",
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a",
     "threshold": 0.85
   },
   "3.2.3.1-f39": {
@@ -4057,6 +3967,15 @@
     "text_sha1": "5a536eec01f8e75105db394666a0daa19b1a2475",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 39831, p. 741"
+  },
+  "3.2.3.1-f445": {
+    "by": "djs1927",
+    "left_anchor": ", a",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "or Venetian Bride, that looks for an husband, or a young man",
+    "status": "no-anchor",
+    "text_sha1": "ae8a5af63394ef51e30f6268ecb5c0b26040d126",
+    "threshold": 0.85
   },
   "3.2.3.1-f45": {
     "align_score": 0.984,

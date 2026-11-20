@@ -129,65 +129,6 @@
       }
     ]
   },
-  "3.3.4.2-f104": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Francesco Patrizi of Siena",
-      "basis": "sidenote \"Lib. 4 tit. 4 de institut. Reipub. cap. de officio mariti & uxoris.\"",
-      "locus": "Lib. 4 tit. 4, cap. de officio mariti & uxoris",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De institutione reipublicae"
-    },
-    "text": "Patritius",
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A proper name, not a phrase to translate: Francesco Patrizi of Siena, author of De institutione reipublicae, which the sidenote cites.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Francesco Patrizi of Siena",
-          "basis": "sidenote \"Lib. 4 tit. 4 de institut. Reipub. cap. de officio mariti & uxoris.\"",
-          "locus": "Lib. 4 tit. 4, cap. de officio mariti & uxoris",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De institutione reipublicae"
-        },
-        "text": "Patritius",
-        "warnings": []
-      }
-    ]
-  },
   "3.3.4.2-f11": {
     "kind": "verse",
     "lang": "la",
@@ -1091,6 +1032,65 @@
           "work": "De secretis"
         },
         "text": "So that a woman will admit no man other than her own: take the gall of a he-goat, and its fat, and dry them; let it be warmed in oil, etc., and she will love no one but you. In Alexis, Porta, etc., you will find more of these, and far more absurd, as also in Rhazes, so that a woman will not admit a man and will love her husband alone, etc.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.3.4.2-f131": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Citatur a Gellio",
+    "text_sha1": "7ca8dd7f1aa84d37ae87fc73a4b46b5322bfbd77",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's sidenote to his remark that Varro wrote a Menippean satire, now lost, on avoiding the troubles of marriage. Aulus Gellius quotes from Varro's Menippean satire on the duty of a husband, probably at Attic Nights 1.17. The note is a reference, not a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Cited by Gellius",
         "warnings": []
       }
     ]
@@ -5931,65 +5931,6 @@
           "work": null
         },
         "text": "to have God as the guardian of the marriage",
-        "warnings": []
-      }
-    ]
-  },
-  "3.3.4.2-f91": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Francesco Patrizi of Siena",
-      "basis": "sidenote \"Lib. 4 Tit. 4 de Instit. reipub. de officio mariti.\"",
-      "locus": "book 4, title 4, on the duty of a husband",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De institutione reipublicae"
-    },
-    "text": "Patritius",
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Francesco Patrizi of Siena, author of De institutione reipublicae. The name is given in its vernacular form.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Francesco Patrizi of Siena",
-          "basis": "sidenote \"Lib. 4 Tit. 4 de Instit. reipub. de officio mariti.\"",
-          "locus": "book 4, title 4, on the duty of a husband",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De institutione reipublicae"
-        },
-        "text": "Patrizi",
         "warnings": []
       }
     ]

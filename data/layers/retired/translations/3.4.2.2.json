@@ -1,0 +1,65 @@
+{
+  "3.4.2.2-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Francesco Patrizi of Siena",
+      "basis": "sidenote \"Lib. 5 tit. 21 de regis institut.\"",
+      "locus": "Lib. 5 tit. 21",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De regno et regis institutione"
+    },
+    "text": "Patritius",
+    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proper name, not a phrase to translate: Francesco Patrizi of Siena, whose De regno et regis institutione is cited in the sidenote.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Francesco Patrizi of Siena",
+          "basis": "sidenote \"Lib. 5 tit. 21 de regis institut.\"",
+          "locus": "Lib. 5 tit. 21",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De regno et regis institutione"
+        },
+        "text": "Patritius",
+        "warnings": []
+      }
+    ]
+  }
+}

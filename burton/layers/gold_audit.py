@@ -223,3 +223,108 @@ def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) ->
         rows.append(row)
     atomic_write_text(h["gold"], "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in rows))
     return {"labelled": len(rows) - 1, "of": len(sample), "cost_usd_list": round(spent, 2)}
+
+
+# ---- a second rater on a round, and the settlement of their disagreements (2026-11-20, round h6: the owner cannot
+# hand-check, so a different model labels the round blind as well, and Claude settles in session, from the text, each
+# item where the two disagree on whether it is foreign; every settlement is recorded with its reason)
+FOREIGN = {"la", "grc", "it", "fr", "es", "de", "nl", "enm", "he", "mixed"}
+
+
+def rater2_path(name: str):
+    return EVAL / f"langid-holdout{name.removeprefix('h')}-rater2.jsonl"
+
+
+def settled_path(name: str):
+    return EVAL / f"langid-holdout{name.removeprefix('h')}-settled.yaml"
+
+
+def second_rater(name: str, model: str = "claude-sonnet-5-5", packet_size: int = 40) -> dict:
+    from ..verify import gold as goldmod
+
+    h = goldmod.holdout_round(name)
+    sample = goldmod.read_sample(h["sample"])
+    out = rater2_path(name)
+    done = {r["sid"]: r for r in map(json.loads, out.read_text(encoding="utf-8").splitlines())} if out.exists() else {}
+    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{PROMPT}.md").read_text(encoding="utf-8")
+    ask = [{"id": f"{name}:{r['sid']}", "unit": r["unit"], "in_sidenote": r["stratum"] == "sidenote",
+            "text": clean(r["unit"], r["text"]), "context": clean(r["unit"], r.get("context", ""))}
+           for r in sample if r["sid"] not in done]
+    spent = 0.0
+    for k in range(0, len(ask), packet_size):
+        pk = ask[k:k + packet_size]
+        bad = [(i["id"], g) for i in pk for g in leaks(i["unit"], i["text"] + " " + i["context"])]
+        if bad:
+            raise SystemExit(f"packet refused: Gowland text in {bad[:3]}")
+        user = "Label these items.\n\n" + json.dumps({"items": pk}, ensure_ascii=False, indent=2)
+        res = runner.call_claude(model, sys_prompt, user, SCHEMA)
+        status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
+        runner.append(LEDGER, {"ids": [i["id"] for i in pk], "model": model, "prompt": PROMPT, "role": "second rater",
+                               "input_hash": packets.input_hash({"items": pk}, PROMPT, model, 0), "ts": runner.now(),
+                               "status": status,
+                               **{x: res.get(x) for x in ("seconds", "cost_usd_list", "usage", "error")}})
+        spent += res.get("cost_usd_list") or 0
+        if not res["ok"]:
+            raise SystemExit(f"call {status}: {res.get('error')} (re-run to resume)")
+        date = datetime.now(UTC).date().isoformat()
+        for g in res["output"]["items"]:
+            sid = g["id"].split(":", 1)[1]
+            done[sid] = {"sid": sid, "label": g["label"], "kind": g["kind"], "foreign_part": g["foreign_part"],
+                         "reason": g["reason"], "by": "machine", "model": model, "prompt": PROMPT, "date": date}
+        atomic_write_text(out, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
+                                       for x in sorted(done)))
+        print(f"  {k + len(pk)}/{len(ask)} labelled (${spent:.2f})", flush=True)
+    return {"labelled": len(done), "of": len(sample), "cost_usd_list": round(spent, 2)}
+
+
+def disagreements(name: str) -> list[dict]:
+    """Items where the two raters disagree on whether the item is foreign, or on the foreign part of a mixed one."""
+    from ..verify import gold as goldmod
+
+    h = goldmod.holdout_round(name)
+    first = {r["sid"]: r for r in goldmod.read_gold(h["gold"])}
+    second = {r["sid"]: r for r in map(json.loads, rater2_path(name).read_text(encoding="utf-8").splitlines())}
+    sample = {r["sid"]: r for r in goldmod.read_sample(h["sample"])}
+    out = []
+    for sid, a in first.items():
+        b = second.get(sid)
+        if not b:
+            continue
+        fa, fb = a["gold"] in FOREIGN, b["label"] in FOREIGN
+        part = a["gold"] == b["label"] == "mixed" and \
+            " ".join((a.get("foreign_part") or "").split()) != " ".join((b.get("foreign_part") or "").split())
+        if fa != fb or part:
+            out.append({"sid": sid, "unit": a["unit"], "text": sample[sid]["text"],
+                        "context": sample[sid].get("context", ""), "first": [a["gold"], a.get("foreign_part")],
+                        "second": [b["label"], b.get("foreign_part"), b["reason"]]})
+    return out
+
+
+def apply_settlement(name: str) -> dict:
+    """Write the settled labels into the round's gold, each marked as settled, with its reason."""
+    import yaml
+
+    from ..verify import gold as goldmod
+
+    h = goldmod.holdout_round(name)
+    settled = yaml.safe_load(settled_path(name).read_text(encoding="utf-8"))["items"]
+    lines = h["gold"].read_text(encoding="utf-8").splitlines()
+    rows = [json.loads(x) for x in lines if x]
+    n = 0
+    for r in rows:
+        if "_meta" in r:
+            r["_meta"]["owner_review"] = ("replaced (owner, 2026-11-20: \"just do the remainder of V5 yourself\"): a "
+                                          "second blind rater (claude-sonnet-5-5) and, where the raters disagree, "
+                                          f"Claude's settlement in session ({settled_path(name).name})")
+            continue
+        st = settled.get(r["sid"])
+        if not st:
+            continue
+        r["gold"], r["settled"] = st["gold"], st["reason"]
+        r.pop("foreign_part", None)
+        r.pop("mixed_lang", None)
+        if st["gold"] == "mixed":
+            r["foreign_part"], r["mixed_lang"] = st["foreign_part"], "la"
+        n += 1
+    atomic_write_text(h["gold"], "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in rows))
+    return {"settled": n, "of": len(settled)}

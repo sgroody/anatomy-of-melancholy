@@ -515,12 +515,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Laudanum Paracelsi is prescribed in two or three grains, with a dram of",
+          "exact": "is prescribed in two or three grains, with a dram of",
           "in": "2.5.1.6-p4",
-          "prefix": "",
+          "prefix": "Laudanum Paracelsi ",
           "suffix": " Dioscordium, which Oswald. Crol"
         },
-        "words": 13
+        "words": 11
       }
     ],
     "lang": "la",
@@ -560,6 +560,59 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3ceb5f50cda04a0f1ef990e0a67c002620aceaf2"
+  },
+  "2.5.1.6-f44": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "282c6024714c5215bef4b34358d3b7d5edb2e03f"
+  },
+  "2.5.1.6-f45": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "55fb985438daf4dbd2fa6fef47f7642813b168e3"
+  },
+  "2.5.1.6-f46": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "is prescribed in two or three grains, with a dram of",
+          "in": "2.5.1.6-p4",
+          "prefix": "Laudanum Paracelsi ",
+          "suffix": " Dioscordium, which Oswald. Crol"
+        },
+        "words": 11
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "55fb985438daf4dbd2fa6fef47f7642813b168e3"
   },
   "2.5.1.6-f5": {
     "bracket": "present",

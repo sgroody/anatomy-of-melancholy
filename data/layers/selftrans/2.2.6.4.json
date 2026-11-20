@@ -652,48 +652,6 @@
     ],
     "text_sha1": "2cb415cfbe302d741870b717fcf7ec3167d81243"
   },
-  "2.2.6.4-f34": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
-          "in": "2.2.6.4-p10",
-          "prefix": "us’ neck, Jupiter’s trinoctium, ",
-          "suffix": " dies noctesque pergraecari & bi"
-        },
-        "words": 18
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "They wish for Philoxenus’ neck",
-          "in": "2.2.6.4-p10",
-          "prefix": "Mellona, is all their religion. ",
-          "suffix": ", Jupiter’s trinoctium, and that"
-        },
-        "words": 5
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "868cdd43decd382be550695af92272544712d939"
-  },
   "2.2.6.4-f35": {
     "bracket": "present",
     "by": "rules",
@@ -718,12 +676,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
+          "exact": "They wish for Philoxenus’ neck, Jupiter’s trinoctium, and that the Sun would stand still as in Joshua’s time, to satisfy their lust, that they might",
           "in": "2.2.6.4-p10",
-          "prefix": "us’ neck, Jupiter’s trinoctium, ",
+          "prefix": "Mellona, is all their religion. ",
           "suffix": " dies noctesque pergraecari & bi"
         },
-        "words": 18
+        "words": 25
       }
     ],
     "lang": "la",
@@ -1005,48 +963,6 @@
     ],
     "text_sha1": "dd2d5b735fc24aa6a9df05d0e0711db53f040e2f"
   },
-  "2.2.6.4-f50": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "of Commodus, and so did the Greeks",
-          "in": "2.2.6.4-p5",
-          "prefix": "tonius relates of Tiberius, Dio ",
-          "suffix": ". Besides Music, in Xenophon’s S"
-        },
-        "words": 7
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The Romans at every supper (for they had no solemn dinner) used Music, Gladiators, Jesters, &c., as Suetonius relates of Tiberius",
-          "in": "2.2.6.4-p5",
-          "prefix": "ters of revels in their courts. ",
-          "suffix": ", Dio of Commodus, and so did th"
-        },
-        "words": 21
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "eaa36ec1567e704ab1f5125781cf409fa7feed8e"
-  },
   "2.2.6.4-f53": {
     "bracket": "none",
     "by": "rules",
@@ -1075,18 +991,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "739ce830311f1c7ac3401e2df72082595947e02b"
-  },
-  "2.2.6.4-f55": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
   },
   "2.2.6.4-f56": {
     "bracket": "present",
@@ -1261,12 +1165,12 @@
         "position": "note-anchor",
         "relation": "clause",
         "selector": {
-          "exact": "Suetonius relates of Tiberius",
+          "exact": "Suetonius relates of Tiberius, Dio of Commodus, and so did the Greeks",
           "in": "2.2.6.4-p5",
           "prefix": "c, Gladiators, Jesters, &c., as ",
-          "suffix": ", Dio of Commodus, and so did th"
+          "suffix": ". Besides Music, in Xenophon’s S"
         },
-        "words": 4
+        "words": 12
       }
     ],
     "lang": "la",

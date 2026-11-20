@@ -19,35 +19,6 @@
     "signals": [],
     "text_sha1": "d7e81f867b5341c04239bbb4d82eb55a0708fffb"
   },
-  "3.4.2.1-f100": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "when he was now by Nero’s command bleeding to death",
-          "in": "3.4.2.1-p9",
-          "prefix": "reject it. Petronius in Tacitus ",
-          "suffix": ", audiebat amicos nihil referent"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
-  },
   "3.4.2.1-f11": {
     "bracket": "none",
     "by": "rules",
@@ -131,32 +102,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "72bce29d597364a8157306958b6e81080084a4fa"
-  },
-  "3.4.2.1-f115": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "Pomponatius in his Tract (so styled at least) De immortalitate Animae, Scaliger (who would forswear himself at any time, saith",
-          "in": "3.4.2.1-p15",
-          "prefix": "ec., Origen lib. de principiis. ",
-          "suffix": " Patritius, in defence of his gr"
-        },
-        "words": 20
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a"
   },
   "3.4.2.1-f122": {
     "bracket": "none",
@@ -515,26 +460,13 @@
           "suffix": ","
         },
         "words": 6
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "yea, and many of those holy Friars, sanctified men, Cappam, saith Jerome",
-          "in": "3.4.2.1-p19",
-          "prefix": "sau’s hands, and Jacob’s voice; ",
-          "suffix": ", & cilicium induunt, sed intus "
-        },
-        "words": 12
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "2721c6a2c687d608ccfa6a502cab7e52968cf15c"
   },
@@ -743,14 +675,58 @@
     ],
     "text_sha1": "28d5b61336073392a8252d12034ca2df093771c7"
   },
-  "3.4.2.1-f16": {
+  "3.4.2.1-f151": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [],
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "yea, and many of those holy Friars, sanctified men",
+          "in": "3.4.2.1-p19",
+          "prefix": "sau’s hands, and Jacob’s voice; ",
+          "suffix": ", Cappam, saith Jerome, & cilici"
+        },
+        "words": 9
+      }
+    ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e23ce6494dc117b8c943670078a0e9538f4449df"
+  },
+  "3.4.2.1-f16": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 1,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which Tacitus reports of some Germans, they need not pray, fear, hope, for they are secure to their thinking, both from God and men",
+          "in": "3.4.2.1-p8",
+          "prefix": "us homines, votis non est opus, ",
+          "suffix": ". Bulco Opoliensis, sometimes Du"
+        },
+        "words": 24
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "cognate-overlap",
+      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "ced7559ab05f40bdde5a0ea614f98013e845aafd"
@@ -830,12 +806,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "when he was now by Nero’s command bleeding to death",
+          "exact": "Petronius in Tacitus when he was now by Nero’s command bleeding to death",
           "in": "3.4.2.1-p9",
-          "prefix": "reject it. Petronius in Tacitus ",
+          "prefix": "off at it, or wholly reject it. ",
           "suffix": ", audiebat amicos nihil referent"
         },
-        "words": 10
+        "words": 13
       }
     ],
     "lang": "la",
@@ -2819,34 +2795,5 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
-  "3.4.2.1-f99": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "reports of some Germans, they need not pray, fear, hope, for they are secure to their thinking, both from God and men",
-          "in": "3.4.2.1-p8",
-          "prefix": "tis non est opus, which Tacitus ",
-          "suffix": ". Bulco Opoliensis, sometimes Du"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
   }
 }

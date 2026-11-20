@@ -1096,6 +1096,79 @@
       }
     ]
   },
+  "2.4.1.1-f28": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "that kind of Physic which cureth by Medicines",
+        "in": "2.4.1.1",
+        "near": "2.4.1.1-f28",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Pharmaceutice",
+    "text_sha1": "d051f435ad80620ae60cccc6847544ead6d28b36",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "the pharmaceutical art",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Latinised form of the Greek pharmakeutikē (technē), the branch of medicine that cures with drugs, as distinct from diet and surgery. Burton glosses it himself straight afterwards.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "that kind of Physic which cureth by Medicines",
+            "in": "2.4.1.1",
+            "near": "2.4.1.1-f28",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Pharmaceutics",
+        "warnings": []
+      }
+    ]
+  },
   "2.4.1.1-f3": {
     "kind": "phrase",
     "lang": "la",

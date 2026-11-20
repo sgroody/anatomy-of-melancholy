@@ -564,7 +564,7 @@
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": ", saith Nevisanus, Matrimony makes us immortal, and according to",
+    "right_anchor": ", saith Nevisanus, Matrimony makes us immortal, and according to Tacitus, ’tis",
     "right_score": 1.0,
     "status": "omitted",
     "text": "",
@@ -573,13 +573,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43731, pp. 815-816"
   },
   "3.2.5.5-f149": {
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": ". , ’tis",
+    "left_anchor": ", saith Nevisanus, Matrimony makes us immortal, and according to Tacitus, ’tis",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", the sole and chief",
-    "status": "no-anchor",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "ac561737f46bc410c02537d47c3702d42f4f407a",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43732, pp. 815-816"
   },
   "3.2.5.5-f15": {
     "align_score": 1.0,
@@ -1217,20 +1223,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42934, pp. 799-801"
   },
-  "3.2.5.5-f210": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "and where one alone must speed, what shall become of the rest?",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "was beloved of many, but one did enjoy her; Penelope had a",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Hero",
-    "text_sha1": "17f5d4f0fb0dc9752cb7d21eca6aab2f6d3dcfbe",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 43056, p. 802"
-  },
   "3.2.5.5-f211": {
     "align_score": 0.976,
     "by": "djs1927",
@@ -1277,14 +1269,6 @@
     "right_anchor": "",
     "status": "no-anchor",
     "text_sha1": "e8cdba3d9b1b5fcdd2681c4d72d0221622410de9",
-    "threshold": 0.85
-  },
-  "3.2.5.5-f217": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
     "threshold": 0.85
   },
   "3.2.5.5-f22": {
@@ -1400,20 +1384,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43371, pp. 807-812"
   },
-  "3.2.5.5-f259": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "is not yet inhabited as it ought, how many Colonies into America,",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Africa, may be sent? Let them consult with Sir William Alexander’s",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Terra Australis Incognita,",
-    "text_sha1": "a37c99670a7abab0e4ea75ca5e7586ff508601b7",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 43524, pp. 807-812"
-  },
   "3.2.5.5-f26": {
     "align_score": 0.927,
     "by": "djs1927",
@@ -1451,15 +1421,6 @@
     "right_anchor": ", pretty children,",
     "status": "no-anchor",
     "text_sha1": "b49f6cc1bb8739d648bbbd87d7c6aa921ba0a9fe",
-    "threshold": 0.85
-  },
-  "3.2.5.5-f269": {
-    "by": "djs1927",
-    "left_anchor": ", saith Nevisanus, Matrimony makes us immortal, and according to",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", ’tis",
-    "status": "no-anchor",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
     "threshold": 0.85
   },
   "3.2.5.5-f27": {
@@ -1658,15 +1619,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 43280, pp. 807-812"
   },
   "3.2.5.5-f294": {
+    "align_score": 0.993,
     "by": "djs1927",
-    "left_anchor": "the wooing, / That is not long a-doing, ical Duke of Milan,",
-    "left_score": 0.7766990291262136,
+    "left_anchor": "Jovius gives instance in Galeatius the second, that Heroical Duke of Milan,",
+    "left_score": 0.993,
     "method": "rules/djs-align-v3",
     "right_anchor": "; he married his eldest son John Galeatius to Isabella the King",
     "right_score": 1.0,
-    "status": "not-found",
+    "status": "aligned",
+    "text": "who sought foreign matrimonial alliances, honourable indeed and of royal state, but hurtful and almost fatal to him and his successors",
     "text_sha1": "968cf15cbdbccd3659efeb88bba6bbe0875fda59",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 43340, pp. 807-812"
   },
   "3.2.5.5-f295": {
     "align_score": 0.923,

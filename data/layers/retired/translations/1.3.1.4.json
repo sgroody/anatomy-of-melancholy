@@ -1,0 +1,65 @@
+{
+  "1.3.1.4-f37": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Jacob Sprenger (with Heinrich Kramer)",
+      "basis": "sidenote \"Malleo Malef.\"; text \"that woman in Sprenger\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Malleus Maleficarum"
+    },
+    "text": "Malleo Malef",
+    "text_sha1": "91449986f83dceb9620040582168b4bfbe519f2a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": "In the Hammer of Witches",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Malef. abbreviates Maleficarum. The Malleus Maleficarum (Hammer of Witches) is the witch-hunters' manual by Jacob Sprenger and Heinrich Kramer, so the title is kept.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Jacob Sprenger (with Heinrich Kramer)",
+          "basis": "sidenote \"Malleo Malef.\"; text \"that woman in Sprenger\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Malleus Maleficarum"
+        },
+        "text": "In the Malleus Maleficarum",
+        "warnings": []
+      }
+    ]
+  }
+}

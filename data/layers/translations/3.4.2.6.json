@@ -2458,6 +2458,154 @@
       }
     ]
   },
+  "3.4.2.6-f191": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "if thou daily offend, daily repent",
+        "in": "3.4.2.6",
+        "near": "3.4.2.6-f191",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "John Chrysostom",
+      "basis": "text \"saith Chrysostom\"; sidenote \"Chrys. hom. 3 de poenitat.\"",
+      "locus": "hom. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Homilies on Repentance (De paenitentia)"
+    },
+    "text": "paenitentiam age",
+    "text_sha1": "36c03061b9d5ae7dca3d8c0edec71a4e51bca5ff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "do penance",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the end of a Latin sentence that Burton splits with \"saith Chrysostom\": \"si quotidie peccas, quotidie[s] … paenitentiam age\", meaning \"if you sin daily, repent daily.\" Only the closing words are marked here. \"quotidies\" in the preceding text is evidently a misprint for \"quotidie\". \"paenitentiam age\" can also mean \"do penance\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "if thou daily offend, daily repent",
+            "in": "3.4.2.6",
+            "near": "3.4.2.6-f191",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "John Chrysostom",
+          "basis": "text \"saith Chrysostom\"; sidenote \"Chrys. hom. 3 de poenitat.\"",
+          "locus": "hom. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Homilies on Repentance (De paenitentia)"
+        },
+        "text": "repent",
+        "warnings": [
+          "length ratio 0.38"
+        ]
+      }
+    ]
+  },
+  "3.4.2.6-f192": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "he suffers thee to be tempted for thy good",
+        "in": "3.4.2.6",
+        "near": "3.4.2.6-f192",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Augustine",
+      "basis": "text \"(saith Austin)\"; sidenote \"Austin.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Tentat",
+    "text_sha1": "5e57bb16d598e82d5a682ef1871986a66082ab46",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "He tempts",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the first word of a Latin sentence that Burton splits with \"(saith Austin)\": \"Tentat non ut obruat, sed ut coronet\", meaning \"He tries us, not to overwhelm us but to crown us.\" Only \"Tentat\" is marked here. Burton's English gives the gist loosely.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "he suffers thee to be tempted for thy good",
+            "in": "3.4.2.6",
+            "near": "3.4.2.6-f192",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Augustine",
+          "basis": "text \"(saith Austin)\"; sidenote \"Austin.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "He tries us",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f2": {
     "kind": "phrase",
     "lang": "la",

@@ -120,6 +120,67 @@
       }
     ]
   },
+  "2.5.3.2-f14": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Agnus Castus",
+    "text_sha1": "17bc809cf325b9a8643870d72ac1dd0feec8c651",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "chaste lamb",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Agnus castus is the standard herbal name for Vitex agnus-castus, the chaste tree, a shrub whose seeds and leaves were used in medicine. The name is a doubled 'chaste'. The Greek name 'agnos' was confused with Greek 'hagnos' ('chaste') and with Latin 'agnus' ('lamb'), and Latin 'castus' ('chaste') was then added. In English the name was often kept as 'Agnus Castus'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "chaste tree",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.3.2-f2": {
     "kind": "phrase",
     "lang": "la",

@@ -470,7 +470,7 @@
       }
     ]
   },
-  "1.3.1.1-f2": {
+  "1.3.1.1-f18": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -482,7 +482,7 @@
     },
     "self_translation": {
       "burton_span": null,
-      "confidence": "medium",
+      "confidence": "high",
       "method": "model:claude-opus-5-5/tr-v2",
       "signals": [
         "no-gowland-bracket"
@@ -490,42 +490,43 @@
       "status": "none"
     },
     "source": {
-      "author": "Hippocrates",
-      "basis": "text \"Hippocrates in his book\"",
+      "author": null,
+      "basis": null,
       "locus": null,
-      "status": "burton-cites",
+      "status": "unidentified",
       "verified": false,
-      "work": "De insania et melancholia"
+      "work": null
     },
-    "text": "de insania & melan",
-    "text_sha1": "ceb60ae8d752991dd33504b452923bed5b54d854",
+    "text": "Carotides",
+    "text_sha1": "ee5d6a1f23bf2d956c7c5c665628d71911d45ac9",
     "translations": [
       {
         "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-26",
-        "flags": [],
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
         "literal": null,
         "model": "claude-opus-5-5",
         "models_reported": [
-          "claude-haiku-5-5",
           "claude-opus-5-5"
         ],
-        "note": "A book title; 'melan.' is Burton's abbreviation, read here as melancholia. The title is as Burton gives it.",
+        "note": "The carotid arteries of the neck. Burton means the pulse felt there, which in melancholy he says is strong while the pulse elsewhere is rare and slow. A sidenote to the paragraph, \"Nic. Piso. Inflatio carotidum, &c.\" (\"swelling of the carotids\"), seems to bear on this point. The passage is a single technical term, not a quotation.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
           "status": "none"
         },
         "source": {
-          "author": "Hippocrates",
-          "basis": "text \"Hippocrates in his book\"",
+          "author": null,
+          "basis": null,
           "locus": null,
-          "status": "burton-cites",
+          "status": "unidentified",
           "verified": false,
-          "work": "De insania et melancholia"
+          "work": null
         },
-        "text": "On Madness and Melancholy",
+        "text": "carotids",
         "warnings": []
       }
     ]

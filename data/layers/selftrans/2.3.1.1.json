@@ -830,48 +830,6 @@
     "signals": [],
     "text_sha1": "5de44acd797912c95cdd8a09710dff78f5593ab7"
   },
-  "2.3.1.1-f40": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Petrarch, Erasmus, besides Austin, Cyprian, Bernard, &c.",
-          "in": "2.3.1.1-p1",
-          "prefix": "letus, Cardan, Budaeus, Stella, ",
-          "suffix": " And they so well, that as Jerom"
-        },
-        "words": 7
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "and some of late, Sadoletus, Cardan, Budaeus",
-          "in": "2.3.1.1-p1",
-          "prefix": "tes, Crantor, Lucian, Boethius: ",
-          "suffix": ", Stella, Petrarch, Erasmus, bes"
-        },
-        "words": 7
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "0ab73ab5f1ffe95b96a02d91a5831ebb860ac9ab"
-  },
   "2.3.1.1-f48": {
     "bracket": "present",
     "by": "rules",
@@ -1137,7 +1095,7 @@
     ],
     "text_sha1": "ab5a1a819a94d4b92c1fa82425d19c47b3ca7fcf"
   },
-  "2.3.1.1-f7": {
+  "2.3.1.1-f60": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -1149,12 +1107,67 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "as well to help themselves, as others",
-          "in": "2.3.1.1-p2",
-          "prefix": ", and Boethius wrote de consol. ",
-          "suffix": "; be it as it may, I will essay."
+          "exact": "a bitter-sweet passion, honey and gall mixed together, we are all miserable and discontent, who can deny it",
+          "in": "2.3.1.1-p3",
+          "prefix": "ur whole life is a Glycypicron, ",
+          "suffix": "? If all, and that it be a commo"
         },
-        "words": 7
+        "words": 19
+      }
+    ],
+    "lang": "grc-Latn",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d5d7d1885b4b8dad3a971da8db1c246665444b59"
+  },
+  "2.3.1.1-f61": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "And as those errant planets in their distinct orbs, have their several motions, sometimes direct, stationary, Retrograde, in",
+          "in": "2.3.1.1-p5",
+          "prefix": "s, calumnies, such is our fate. ",
+          "suffix": " Apogeo, Perigeo, oriental, occi"
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "debb434ef16ed1fc7a748d1c5b173414e22af3ac"
+  },
+  "2.3.1.1-f62": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "oriental, occidental, combust, feral, free, and as our Astrologers will, have their fortitudes & debilities, by reason of those good and bad irradiations, conferred to each other’s site in the heavens, in their terms, houses, case, detriments, &c.",
+          "in": "2.3.1.1-p5",
+          "prefix": "Retrograde, in Apogeo, Perigeo, ",
+          "suffix": "; so we rise and fall in this wo"
+        },
+        "words": 37
       }
     ],
     "lang": "la",
@@ -1164,7 +1177,7 @@
       "english-follows",
       "no-gowland-bracket"
     ],
-    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19"
+    "text_sha1": "20ef5c5490538bb27c83a55b988be5688137226b"
   },
   "2.3.1.1-f8": {
     "bracket": "present",

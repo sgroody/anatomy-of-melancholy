@@ -112,6 +112,86 @@
     ],
     "text_sha1": "79f05d0ec73d86fff89f66eb35e6c31b8274fcd6"
   },
+  "1.1.2.5-f17": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "In which definition, three several operations are specified",
+          "in": "1.1.2.5-p2",
+          "prefix": "egets another like unto itself. ",
+          "suffix": ", Altrix, Auctrix, Procreatrix; "
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1ca9b670712a9f812182a1a90b282e743f687061"
+  },
+  "1.1.2.5-f18": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0aafd1676a9f2a154b96adb230ec906b781ccc17"
+  },
+  "1.1.2.5-f19": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "into blood, called Sanguification",
+          "in": "1.1.2.5-p2",
+          "prefix": " the Liver, to turn this Chylus ",
+          "suffix": "; the last is Assimilation, whic"
+        },
+        "words": 4
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "the third is in the Liver, to turn this",
+          "in": "1.1.2.5-p2",
+          "prefix": " so chewed meat in the stomach; ",
+          "suffix": " Chylus into blood, called Sangu"
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "7c097608a57a971ea504a4d86842b50d94c2f350"
+  },
   "1.1.2.5-f2": {
     "bracket": "present",
     "by": "rules",
@@ -140,48 +220,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "1ba8456557597c1918e045acfa57cf654cad1d01"
-  },
-  "1.1.2.5-f4": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "much labours to demonstrate and prove, because Carcasses bleed at the sight of the murderer",
-          "in": "1.1.2.5-p1",
-          "prefix": "lla in his book de Sensu rerum, ",
-          "suffix": "; with many such arguments: and "
-        },
-        "words": 15
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "which opinion of his, Campanella in his book de",
-          "in": "1.1.2.5-p1",
-          "prefix": "ed faculties, a Spiritual Soul: ",
-          "suffix": " Sensu rerum, much labours to de"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1a0e3785eb5698f62d2528f6675171bf6bb5bf98"
   },
   "1.1.2.5-f5": {
     "bracket": "none",
@@ -244,26 +282,13 @@
           "suffix": "; his Organ the Liver in sensibl"
         },
         "words": 13
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "In which definition, three several operations are specified, Altrix, Auctrix",
-          "in": "1.1.2.5-p2",
-          "prefix": "egets another like unto itself. ",
-          "suffix": ", Procreatrix; the first is Nutr"
-        },
-        "words": 10
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "74a48b76f2378369e539ed502a6084884102ebcf"
   },

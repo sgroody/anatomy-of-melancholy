@@ -38,10 +38,10 @@
     "threshold": 0.85
   },
   "2.4.2.3-f15": {
-    "align_score": 0.608,
+    "align_score": 0.705,
     "by": "djs1927",
-    "left_anchor": "33 commends Hieram Rufi. Trincavellius consil. 12 lib. 1 approves of Hiera;",
-    "left_score": 0.608,
+    "left_anchor": ". Trincavellius consil. 12 lib. 1 approves of Hiera;",
+    "left_score": 0.705,
     "method": "rules/djs-align-v3",
     "right_anchor": ", I find no better medicine, he saith. Heurnius adds pil. Aggregat.,",
     "right_score": 0.904,
@@ -122,11 +122,37 @@
     "text_sha1": "43f2d8c8f707c8dd72e9711bb6a6b57bc48f5750",
     "threshold": 0.85
   },
+  "2.4.2.3-f22": {
+    "align_score": 0.705,
+    "by": "djs1927",
+    "left_anchor": "Hieralogodion, of which diverse receipts are daily made. Aetius 22. 33 commends",
+    "left_score": 0.91,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Trincavellius consil. 12 lib. 1 approves of Hiera;",
+    "right_score": 0.705,
+    "status": "below-threshold",
+    "text_sha1": "55313444ba5f2a15c483e87abcdf658e117c05aa",
+    "threshold": 0.85
+  },
+  "2.4.2.3-f23": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "Such as are taken into the nostrils,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "are liquid or dry, juice of Pimpernel, Onions, &c., Castor, Pepper, white",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "Errhina [or Nose Medicines]",
+    "text_sha1": "cb1b43bd68d341d99602d5801fb5440fbccc1716",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 31070, p. 582"
+  },
   "2.4.2.3-f5": {
     "by": "djs1927",
     "left_anchor": "purgers are confections, electuaries, pills by themselves, or compound with others, as",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Aetius 22. 33 commends Hieram Rufi. Trincavellius consil. 12 lib. 1",
+    "right_anchor": ", Aetius 22. 33 commends",
     "status": "not-found",
     "text_sha1": "81c54efb93739f8172993fda13e0d95a20625cac",
     "threshold": 0.85

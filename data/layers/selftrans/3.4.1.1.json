@@ -651,6 +651,35 @@
     ],
     "text_sha1": "0e2f8c39ef3fd91eeaf2fca8c0441eed2c94ab82"
   },
+  "3.4.1.1-f121": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Sibyls, Enthusiasts, Pseudoprophets, Heretics and Schismatics in these our latter ages), shall instantly confess, that all the world again cannot afford so much matter of madness, so many stupend symptoms, as superstition, heresy, schism hath brought out",
+          "in": "3.4.1.1-p2",
+          "prefix": " our Fatidici dii, Pythonissas, ",
+          "suffix": ": that this Species alone may be"
+        },
+        "words": 37
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "1011a7b4ae7be1d9b5b5c5f9f443740effa74c04"
+  },
   "3.4.1.1-f13": {
     "bracket": "none",
     "by": "rules",
@@ -1635,21 +1664,6 @@
     "by": "rules",
     "candidates": [
       {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Pythonissas, Sibyls, Enthusiasts, Pseudoprophets, Heretics and Schismatics in these our latter ages), shall instantly confess, that all the world again cannot afford so much matter of madness, so many stupend symptoms, as superstition, heresy, schism hath brought out",
-          "in": "3.4.1.1-p2",
-          "prefix": "ral furies of our Fatidici dii, ",
-          "suffix": ": that this Species alone may be"
-        },
-        "words": 38
-      },
-      {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
@@ -1666,7 +1680,6 @@
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "english-precedes"
     ],
     "text_sha1": "d875ed44b1de54cb3f9c03cf493ac6c5b287f699"
@@ -1975,35 +1988,6 @@
     ],
     "text_sha1": "594e1e44a23a70ca6cf14d05f79e5f5163555d03"
   },
-  "3.4.1.1-f61": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "makes mention of two distinct furies",
-          "in": "3.4.1.1-p2",
-          "prefix": "ject is God. Plato in Convivio, ",
-          "suffix": "; and amongst our Neoterics, Her"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7f7c916b1a6ab89c707ccf2ce02131bec2d544c0"
-  },
   "3.4.1.1-f64": {
     "bracket": "none",
     "by": "rules",
@@ -2140,157 +2124,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "2767a6c485b298b0cd9d9bcdab957b80eff23f1e"
-  },
-  "3.4.1.1-f80": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "most of America, Pagans, differing all in their several superstitions",
-          "in": "3.4.1.1-p11",
-          "prefix": " all Terra Australis incognita, ",
-          "suffix": "; and yet all Idolaters. The Mah"
-        },
-        "words": 10
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The Kings of China, great Cham, Siam, and Borneo, Pegu, Deccan, Narsinga, Japan, &c., are Gentiles, Idolaters, and many other petty Princes in Asia, Manamotapa, Congo, and I know not how many Negro Princes in Africk, all",
-          "in": "3.4.1.1-p11",
-          "prefix": ", Africk, America, Magellanica. ",
-          "suffix": " Terra Australis incognita, most"
-        },
-        "words": 37
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a37c99670a7abab0e4ea75ca5e7586ff508601b7"
-  },
-  "3.4.1.1-f81": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Syria, Egypt, &c., Greece, Wallachia, Circassia, Bulgary, Bosnia, Albania, Illyricum, Slavonia, Croatia, Thrace, Serbia, Rascia, and a sprinkling amongst the Tartars",
-          "in": "3.4.1.1-p11",
-          "prefix": "&c., scattered over Asia minor, ",
-          "suffix": ". The Russians, Muscovites, and "
-        },
-        "words": 21
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "The Greek or Eastern Church is rent from this of the West, and as they have four chief Patriarchs, so have they four subdivisions, besides those Nestorians, Jacobins, Syrians, Armenians, Georgians, &c., scattered over",
-          "in": "3.4.1.1-p11",
-          "prefix": "n Thomas Didymus before Christ. ",
-          "suffix": " Asia minor, Syria, Egypt, &c., "
-        },
-        "words": 34
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7ad97131939e4af9d99412223e8425a65cbba143"
-  },
-  "3.4.1.1-f83": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "In America they hold all that which Spaniards inhabit",
-          "in": "3.4.1.1-p11",
-          "prefix": "rinkling in the rest of Europe. ",
-          "suffix": ", Hispania nova, Castella Aurea,"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "1f7fec1dd9002bd5e7ed4d7845424f92e25aba6f"
-  },
-  "3.4.1.1-f84": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "607689259210e37e2661b49ce2df84f6015b8531"
-  },
-  "3.4.1.1-f86": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": true,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "is verified in them, A people subject to superstition, contrary to Religion",
-          "in": "3.4.1.1-p11",
-          "prefix": "formerly said of a like nation, ",
-          "suffix": ". And some of them as about Lapl"
-        },
-        "words": 12
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662"
   },
   "3.4.1.1-f9": {
     "bracket": "none",

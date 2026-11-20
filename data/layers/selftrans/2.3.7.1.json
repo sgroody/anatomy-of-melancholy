@@ -685,47 +685,6 @@
     ],
     "text_sha1": "f8ed33ad0b64945ed3df0a7e938b53e425c75c23"
   },
-  "2.3.7.1-f125": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "44e21f88df5a361dd925b8415a1ef2ac48675625"
-  },
-  "2.3.7.1-f126": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "I know not whether, nor how long since, nor in what Cathedral Church, a fat Prebend fell void",
-          "in": "2.3.7.1-p5",
-          "prefix": "Moronia pia, or Moronia faelix, ",
-          "suffix": ". The carcass scarce cold, many "
-        },
-        "words": 18
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "365fe12540df9ee36bcc8cff80913aa43fb96cf3"
-  },
   "2.3.7.1-f128": {
     "bracket": "none",
     "by": "rules",
@@ -836,35 +795,6 @@
       "english-precedes"
     ],
     "text_sha1": "4dca1fdc12771e0373fc2f22aed181ceb2f51848"
-  },
-  "2.3.7.1-f140": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Take heed by other men’s examples",
-          "in": "2.3.7.1-p21",
-          "prefix": "to. Live merrily as thou canst. ",
-          "suffix": ". Go as thou wouldst be met, sit"
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-at-anchor",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
   },
   "2.3.7.1-f141": {
     "bracket": "present",

@@ -69,6 +69,79 @@
       }
     ]
   },
+  "1.2.5.2-f10": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "Midriff",
+        "in": "1.2.5.2",
+        "near": "1.2.5.2-f10",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Diaphragma",
+    "text_sha1": "2f22e35d80215f6dc6a9ba958addbe98cab0d75c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is an anatomical term, not a quotation. Burton gives the English 'Midriff' just before it. He seems to run the mesentery and the diaphragm together. The Greek φρένες (phrenes) means the diaphragm and also the mind, which is why its inflammation was linked with phrensy.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "Midriff",
+            "in": "1.2.5.2",
+            "near": "1.2.5.2-f10",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Diaphragm",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.5.2-f2": {
     "kind": "phrase",
     "lang": "la",

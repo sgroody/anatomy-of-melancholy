@@ -192,18 +192,15 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 19353, p. 357"
   },
   "1.3.2.4-f25": {
-    "align_score": 0.889,
     "by": "djs1927",
-    "left_anchor": "their Nunneries (read Kemnitius and others), their notorious fornications, those Spintrias, Tribadas,",
-    "left_score": 0.889,
+    "left_anchor": ", that’s the primary cause, and this the ready cure, ,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ", &c., those rapes, incests, adulteries, mastuprations, Sodomies, buggeries of Monks and",
-    "right_score": 0.982,
-    "status": "aligned",
-    "text": "maleprostitutes, masturbators, strumpets,",
+    "right_score": 0.9815950920245399,
+    "status": "not-found",
     "text_sha1": "4add50c8da2913b280a30a1df0e543c9760c7c0d",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 19357, p. 357"
+    "threshold": 0.85
   },
   "1.3.2.4-f26": {
     "align_score": 0.994,
@@ -265,7 +262,7 @@
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
-    "right_anchor": "saith Mercatus, by reason of the midriff or Diaphragma, heart and brain",
+    "right_anchor": "saith Mercatus, by reason of the midriff or",
     "right_score": 1.0,
     "status": "omitted",
     "text": "",
@@ -353,6 +350,38 @@
     "reason": "sidenote: no English of Burton's around it to anchor on",
     "status": "no-anchor",
     "text_sha1": "6ccdf1c174edc984876e65d92b14c78df4cd09fd",
+    "threshold": 0.85
+  },
+  "1.3.2.4-f45": {
+    "align_score": 0.977,
+    "by": "djs1927",
+    "left_anchor": "saith Mercatus, by reason of the midriff or",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", heart and brain offended with those vicious vapours which come from",
+    "right_score": 0.977,
+    "status": "kept-original",
+    "text": "diaphragma,",
+    "text_sha1": "2f22e35d80215f6dc6a9ba958addbe98cab0d75c",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 19168, p. 353"
+  },
+  "1.3.2.4-f46": {
+    "by": "djs1927",
+    "left_anchor": "infants in their Nunneries (read Kemnitius and others), their notorious fornications, those",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "3e03b8eca7ecd612b8c33e08ca6e2c07bf4f25b7",
+    "threshold": 0.85
+  },
+  "1.3.2.4-f47": {
+    "by": "djs1927",
+    "left_anchor": ", that’s the primary cause, and this the ready cure, ,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "941bf1908b661a40da443f0b65c02346950816c9",
     "threshold": 0.85
   },
   "1.3.2.4-f5": {

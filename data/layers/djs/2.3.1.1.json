@@ -418,20 +418,6 @@
     "text_sha1": "5de44acd797912c95cdd8a09710dff78f5593ab7",
     "threshold": 0.85
   },
-  "2.3.1.1-f40": {
-    "align_score": 0.989,
-    "by": "djs1927",
-    "left_anchor": "Theophrastus, Xenocrates, Crantor, Lucian, Boethius: and some of late, Sadoletus, Cardan, Budaeus,",
-    "left_score": 0.989,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", Petrarch, Erasmus, besides Austin, Cyprian, Bernard, &c. And they so well,",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Stella,",
-    "text_sha1": "0ab73ab5f1ffe95b96a02d91a5831ebb860ac9ab",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 26393, pp. 487-491"
-  },
   "2.3.1.1-f48": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -541,19 +527,45 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 26450, p. 492"
   },
-  "2.3.1.1-f7": {
-    "align_score": 1.0,
+  "2.3.1.1-f60": {
+    "align_score": 0.968,
     "by": "djs1927",
-    "left_anchor": "ease, it may for mine own; so Tully, Cardan, and Boethius wrote",
+    "left_anchor": "some grudging, some complaint; as he saith, our whole life is a",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ". as well to help themselves, as others; be it as it",
-    "right_score": 1.0,
+    "right_anchor": ", a bitter-sweet passion, honey and gall mixed together, we are all",
+    "right_score": 0.968,
     "status": "aligned",
-    "text": "their Consolations",
-    "text_sha1": "626724a160f87dedab8ce15c17ab05b858496b19",
+    "text": "glucupicron,",
+    "text_sha1": "d5d7d1885b4b8dad3a971da8db1c246665444b59",
     "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 26456, p. 492"
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 26476, p. 493"
+  },
+  "2.3.1.1-f61": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "gap_words": 79,
+    "left_anchor": "their distinct orbs, have their several motions, sometimes direct, stationary, Retrograde, in",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Yea, but thou thinkest thou art more miserable than the rest,",
+    "right_score": 1.0,
+    "status": "implausible-length",
+    "text_sha1": "debb434ef16ed1fc7a748d1c5b173414e22af3ac",
+    "threshold": 0.85
+  },
+  "2.3.1.1-f62": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "gap_words": 63,
+    "left_anchor": "perfection is so absolute, / That some impurity doth not pollute. ,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", oriental, occidental, combust, feral, free, and as our Astrologers will, have",
+    "right_score": 1.0,
+    "status": "implausible-length",
+    "text_sha1": "20ef5c5490538bb27c83a55b988be5688137226b",
+    "threshold": 0.85
   },
   "2.3.1.1-f8": {
     "by": "djs1927",

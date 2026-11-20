@@ -64,18 +64,16 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31332, pp. 387-588"
   },
   "2.5.1.3-f14": {
-    "align_score": 0.97,
+    "align_score": 0.581,
     "by": "djs1927",
-    "left_anchor": "To these I may add",
-    "left_score": 1.0,
+    "left_anchor": "ipsius pulveris scrup. 4 singulis septimanis assumat. To these I may add",
+    "left_score": 0.581,
     "method": "rules/djs-align-v3",
     "right_anchor": ", or Borage wine before mentioned, which Mizaldus calls",
     "right_score": 0.97,
-    "status": "aligned",
-    "text": "Arnold's",
+    "status": "below-threshold",
     "text_sha1": "38a03cae42d3dfc1640d563911b349ab8f81b9bf",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31335, pp. 387-588"
+    "threshold": 0.85
   },
   "2.5.1.3-f15": {
     "align_score": 0.876,
@@ -175,16 +173,15 @@
   "2.5.1.3-f26": {
     "align_score": 0.865,
     "by": "djs1927",
+    "gap_words": 82,
     "left_anchor": "stronger, as the confection of Hamech, Pil. Indae, Fumitoria, de Assaieret, of",
     "left_score": 0.865,
     "method": "rules/djs-align-v3",
-    "right_anchor": "and Lazuli, Diasenna. Or if pills be too dry; some prescribe both",
-    "right_score": 0.908,
-    "status": "aligned",
-    "text": "Armenian Stone,",
+    "right_anchor": "and I find a vast Chaos of medicines, a confusion of receipts",
+    "right_score": 0.966,
+    "status": "implausible-length",
     "text_sha1": "69b889618b8033c9cc478e0f2a2b99b9c1cea78c",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 31272, p. 586"
+    "threshold": 0.85
   },
   "2.5.1.3-f27": {
     "align_score": 1.0,
@@ -249,7 +246,7 @@
     "by": "djs1927",
     "left_anchor": "Preparatives and Purgers. ,",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Diacatholicon, &c. Preparatives are usually Syrups of Borage, Bugloss, Apples, Fumitory,",
+    "right_anchor": ", I find a vast Chaos of medicines, a confusion of receipts",
     "status": "not-found",
     "text_sha1": "cbff1c190aaf887cf42615c227507dad41ee56d5",
     "threshold": 0.85
@@ -282,6 +279,35 @@
     "text_sha1": "3c48bd2735c175a985480e6b8e7b6bad229100f4",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 31261, p. 585"
+  },
+  "2.5.1.3-f40": {
+    "by": "djs1927",
+    "left_anchor": "Preparatives and Purgers. ,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", &c. Preparatives are usually Syrups of Borage, Bugloss, Apples, Fumitory, Thyme",
+    "status": "not-found",
+    "text_sha1": "efa127c8e3f5844d7b562014df29a582dc2f53f8",
+    "threshold": 0.85
+  },
+  "2.5.1.3-f41": {
+    "by": "djs1927",
+    "left_anchor": "Preparatives and Purgers. and",
+    "left_score": 0.9259259259259259,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", I find a vast Chaos of medicines, a confusion of receipts",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "11c443e838745eec2ea78d32271ac75b22d1ad97",
+    "threshold": 0.85
+  },
+  "2.5.1.3-f42": {
+    "by": "djs1927",
+    "left_anchor": "Preparatives and Purgers. ,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Or if pills be too dry; some prescribe both Hellebores in",
+    "status": "not-found",
+    "text_sha1": "b86ce26f06d190b45aaef8ee27a7bf906a6944c1",
+    "threshold": 0.85
   },
   "2.5.1.3-f5": {
     "align_score": 0.992,

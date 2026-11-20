@@ -26,20 +26,6 @@
     "text_sha1": "d7e81f867b5341c04239bbb4d82eb55a0708fffb",
     "threshold": 0.85
   },
-  "3.4.2.1-f100": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "they will but scoff at it, or wholly reject it. Petronius in",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "when he was now by Nero’s command bleeding to death,",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Tacitus,",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49316, p. 927"
-  },
   "3.4.2.1-f11": {
     "align_score": 0.992,
     "by": "djs1927",
@@ -69,20 +55,6 @@
     "text_sha1": "72bce29d597364a8157306958b6e81080084a4fa",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49507, p. 931"
-  },
-  "3.4.2.1-f115": {
-    "align_score": 0.873,
-    "by": "djs1927",
-    "left_anchor": "De immortalitate Animae, Scaliger (who would forswear himself at any time, saith",
-    "left_score": 0.873,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", in defence of his great master Aristotle), and Dandinus, lib. 3",
-    "right_score": 0.946,
-    "status": "kept-original",
-    "text": "Patritius,",
-    "text_sha1": "e2667a24d138b3109c1fa39c81bb3c88115a782a",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49567, pp. 932-933"
   },
   "3.4.2.1-f122": {
     "align_score": 0.71,
@@ -220,18 +192,13 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49594, pp. 932-933"
   },
   "3.4.2.1-f139": {
-    "align_score": 0.915,
     "by": "djs1927",
-    "left_anchor": "yea, and many of those holy Friars, sanctified men, Cappam, saith Jerome,",
-    "left_score": 0.915,
+    "left_anchor": ", saith Jerome,",
     "method": "rules/djs-align-v3",
     "right_anchor": ". They are Wolves in sheep’s clothing,",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "conceal a bandit within their robes.",
+    "status": "no-anchor",
     "text_sha1": "2721c6a2c687d608ccfa6a502cab7e52968cf15c",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 49658, pp. 934-935"
+    "threshold": 0.85
   },
   "3.4.2.1-f14": {
     "align_score": 0.967,
@@ -329,14 +296,29 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49290, p. 927"
   },
+  "3.4.2.1-f151": {
+    "by": "djs1927",
+    "left_anchor": "and Jacob’s voice; yea, and many of those holy Friars, sanctified men,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", saith Jerome,",
+    "status": "no-anchor",
+    "text_sha1": "e23ce6494dc117b8c943670078a0e9538f4449df",
+    "threshold": 0.85
+  },
   "3.4.2.1-f16": {
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "as they shall find them expedient or behoveful to their own ends.",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", which",
-    "status": "no-anchor",
+    "residue": "",
+    "right_anchor": ", which Tacitus reports of some Germans, they need not pray, fear,",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "ced7559ab05f40bdde5a0ea614f98013e845aafd",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 49301, p. 927"
   },
   "3.4.2.1-f17": {
     "by": "djs1927",
@@ -366,7 +348,7 @@
   "3.4.2.1-f19": {
     "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "when he was now by Nero’s command bleeding to death,",
+    "left_anchor": "in Tacitus when he was now by Nero’s command bleeding to death,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "",
@@ -1242,14 +1224,5 @@
     "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 49241, p. 926"
-  },
-  "3.4.2.1-f99": {
-    "by": "djs1927",
-    "left_anchor": ", which",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "reports of some Germans, they need not pray, fear, hope, for they",
-    "status": "no-anchor",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "threshold": 0.85
   }
 }

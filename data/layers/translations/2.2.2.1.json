@@ -1712,6 +1712,77 @@
       }
     ]
   },
+  "2.2.2.1-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "nastiness defiles",
+        "in": "2.2.2.1",
+        "near": "2.2.2.1-f47",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "sordes vitiant",
+    "text_sha1": "1ef583467cd1cf58c70b24f57f8e18d523ad6003",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton translates this himself straight afterwards. 'Vitiant' means 'spoil' or 'corrupt'. The plural 'sordes' means 'dirt' or 'squalor'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "nastiness defiles",
+            "in": "2.2.2.1",
+            "near": "2.2.2.1-f47",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "filth corrupts",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.2.1-f5": {
     "kind": "phrase",
     "lang": "la",

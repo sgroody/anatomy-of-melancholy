@@ -240,18 +240,6 @@
     ],
     "text_sha1": "77d104460414a9496400379de04c9a1c00270881"
   },
-  "2.2.5.1-f22": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "sidenote",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c"
-  },
   "2.2.5.1-f25": {
     "bracket": "none",
     "by": "rules",
@@ -348,6 +336,48 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "309f3a6e4c961ab896bfee9c571f916670b3acc5"
+  },
+  "2.2.5.1-f31": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "and such inconveniences, wherewith melancholy men are molested, the best remedy is to eat a light supper, and of such meats as are easy of digestion, no Hare, Venison, Beef, &c., not to lie on his back, not to meditate",
+          "in": "2.2.5.1-p4",
+          "prefix": "and troublesome dreams, Incubus ",
+          "suffix": " or think in the daytime of any "
+        },
+        "words": 40
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "Against fearful and troublesome dreams",
+          "in": "2.2.5.1-p4",
+          "prefix": "",
+          "suffix": ", Incubus and such inconvenience"
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ea6e41bbc7f749bc47ed5effa93e7eacdc17b320"
   },
   "2.2.5.1-f4": {
     "bracket": "present",

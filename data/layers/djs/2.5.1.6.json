@@ -100,7 +100,7 @@
     "by": "djs1927",
     "left_anchor": ",",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Laudanum Paracelsi is prescribed in two or three grains, with a",
+    "right_anchor": ",",
     "status": "no-anchor",
     "text_sha1": "36edc71f38a2663b7ab17d958fa4209f8fc35e68",
     "threshold": 0.85
@@ -161,16 +161,16 @@
     "by": "djs1927",
     "left_anchor": "",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Philonium Romanum, Laudanum Paracelsi is prescribed in two or three grains,",
+    "right_anchor": ",",
     "status": "no-anchor",
     "text_sha1": "e6befac5019973356e829d65f42fac81cb60dcd9",
     "threshold": 0.85
   },
   "2.5.1.6-f25": {
     "by": "djs1927",
-    "left_anchor": ", Philonium Romanum,",
+    "left_anchor": ",",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Laudanum Paracelsi is prescribed in two or three grains, with a",
+    "right_anchor": ",",
     "status": "no-anchor",
     "text_sha1": "d66786aac39262961f50ee59317db80317cbb9d2",
     "threshold": 0.85
@@ -235,14 +235,14 @@
     "by": "djs1927",
     "left_anchor": ",",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Laudanum Paracelsi, Laudanum Paracelsi is prescribed in two or three grains,",
+    "right_anchor": ",",
     "status": "no-anchor",
     "text_sha1": "b763f038062bc13afb96b70b0725a10965bdcaed",
     "threshold": 0.85
   },
   "2.5.1.6-f41": {
     "by": "djs1927",
-    "left_anchor": ", Laudanum Paracelsi,",
+    "left_anchor": ",",
     "method": "rules/djs-align-v3",
     "right_anchor": ", are in use, &c. Countryfolks commonly make a posset of hempseed,",
     "status": "no-anchor",
@@ -251,7 +251,7 @@
   },
   "2.5.1.6-f42": {
     "by": "djs1927",
-    "left_anchor": "Paracelsi is prescribed in two or three grains, with a dram of",
+    "left_anchor": "is prescribed in two or three grains, with a dram of",
     "method": "rules/djs-align-v3",
     "right_anchor": ", which Oswald. Crollius commends. Rulandus calls",
     "status": "not-found",
@@ -268,6 +268,37 @@
     "right_score": 0.98,
     "status": "below-threshold",
     "text_sha1": "3ceb5f50cda04a0f1ef990e0a67c002620aceaf2",
+    "threshold": 0.85
+  },
+  "2.5.1.6-f44": {
+    "by": "djs1927",
+    "left_anchor": ",",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "282c6024714c5215bef4b34358d3b7d5edb2e03f",
+    "threshold": 0.85
+  },
+  "2.5.1.6-f45": {
+    "by": "djs1927",
+    "left_anchor": ",",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Laudanum Paracelsi is prescribed in two or three grains, with a",
+    "status": "no-anchor",
+    "text_sha1": "55fb985438daf4dbd2fa6fef47f7642813b168e3",
+    "threshold": 0.85
+  },
+  "2.5.1.6-f46": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "gap_words": 55,
+    "left_anchor": "it may be used where better medicines are not to be had.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "is prescribed in two or three grains, with a dram of",
+    "right_score": 1.0,
+    "status": "implausible-length",
+    "text_sha1": "55fb985438daf4dbd2fa6fef47f7642813b168e3",
     "threshold": 0.85
   },
   "2.5.1.6-f5": {

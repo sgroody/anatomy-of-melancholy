@@ -191,17 +191,9 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 18835, p. 346"
   },
-  "1.3.1.4-f37": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "91449986f83dceb9620040582168b4bfbe519f2a",
-    "threshold": 0.85
-  },
   "1.3.1.4-f38": {
     "by": "djs1927",
-    "left_anchor": "Priapismus; Trincavellius consil. 12 lib. 1, lib. 3 consil. 49, with gout,",
+    "left_anchor": "; Trincavellius consil. 12 lib. 1, lib. 3 consil. 49, with gout,",
     "method": "rules/djs-align-v3",
     "right_anchor": "; Montanus consil. 26 & 23. 234, 249, with falling sickness, headache,",
     "status": "not-found",
@@ -298,8 +290,8 @@
   },
   "1.3.1.4-f48": {
     "by": "djs1927",
-    "left_anchor": "Montanus consil. 26 & 23. 234, 249, with falling sickness, headache, Vertigo,",
-    "left_score": 0.6666666666666667,
+    "left_anchor": "confirms as much, when he begins to express that in words, ,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "right_anchor": ", &c.; J. Caesar Claudinus consult. 4 consult. 89 & 116, with",
     "right_score": 0.6111111111111112,
@@ -334,6 +326,26 @@
     "text_sha1": "c782c7ae12a3a760cbca29f9155c444201931862",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 18767, pp. 344-345"
+  },
+  "1.3.1.4-f50": {
+    "by": "djs1927",
+    "left_anchor": "spicil. 2, Mercurialis consil. 110 cap. 6 & 11, with headache, Epilepsy,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; Trincavellius consil. 12 lib. 1, lib. 3 consil. 49, with gout,",
+    "status": "not-found",
+    "text_sha1": "3dbc52e71a76b2312de5fd96384181b9333a0fdd",
+    "threshold": 0.85
+  },
+  "1.3.1.4-f51": {
+    "by": "djs1927",
+    "left_anchor": "; Montanus consil. 26 & 23. 234, 249, with falling sickness, headache,",
+    "left_score": 0.6259541984732824,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Which I have been the more curious to express and report,",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "3c471d5d4efb37d0c039ffdb5aaf4551589d7945",
+    "threshold": 0.85
   },
   "1.3.1.4-f6": {
     "by": "djs1927",

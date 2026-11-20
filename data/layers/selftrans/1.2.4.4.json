@@ -642,48 +642,6 @@
     ],
     "text_sha1": "b707e8572b619f79b4fb41689674804a901c7bde"
   },
-  "1.2.4.4-f28": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "in this they alone excel, please themselves and others",
-          "in": "1.2.4.4-p2",
-          "prefix": " heavy, here lies their Genius, ",
-          "suffix": ". Leo Decimus, that scoffing Pop"
-        },
-        "words": 9
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "the froth of wit, as Tully holds, & for this they are often applauded, in all other discourse, dry, barren, stramineous, dull and heavy, here lies their",
-          "in": "1.2.4.4-p2",
-          "prefix": " is levissimus ingenii fructus, ",
-          "suffix": " Genius, in this they alone exce"
-        },
-        "words": 26
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "cca9b4dd37782139940b9420e75892cbb33e9103"
-  },
   "1.2.4.4-f3": {
     "bracket": "present",
     "by": "rules",
@@ -866,6 +824,48 @@
     ],
     "text_sha1": "913f5a45fe6bd706d860c4fb9328e332412ee67c"
   },
+  "1.2.4.4-f41": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "so often in their mouths, so bitter, so foolish, as Balthasar Castilio notes of them, that they cannot speak, but they must bite",
+          "in": "1.2.4.4-p1",
+          "prefix": " and have that figure Sarcasmus ",
+          "suffix": "; they had rather lose a friend "
+        },
+        "words": 23
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "and have that figure",
+          "in": "1.2.4.4-p1",
+          "prefix": "ny are of so petulant a spleen; ",
+          "suffix": " Sarcasmus so often in their mou"
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "e8579635c534f735b12cca97f4f59e5410ce1bba"
+  },
   "1.2.4.4-f5": {
     "bracket": "present",
     "by": "rules",
@@ -968,12 +968,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "the froth of wit, as Tully holds, & for this they are often applauded, in all other discourse, dry, barren, stramineous, dull and heavy, here lies their",
+          "exact": "the froth of wit, as Tully holds, & for this they are often applauded, in all other discourse, dry, barren, stramineous, dull and heavy, here lies their Genius, in this they alone excel, please themselves and others",
           "in": "1.2.4.4-p2",
           "prefix": " is levissimus ingenii fructus, ",
-          "suffix": " Genius, in this they alone exce"
+          "suffix": ". Leo Decimus, that scoffing Pop"
         },
-        "words": 26
+        "words": 36
       },
       {
         "by": "rules",

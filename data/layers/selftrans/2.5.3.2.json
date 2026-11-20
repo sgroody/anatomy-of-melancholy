@@ -38,6 +38,48 @@
     ],
     "text_sha1": "f448d3febaf22d0f8298e8b1606dd4e8523989a3"
   },
+  "2.5.3.2-f14": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "Broom-flowers, Origan, Orange pills, &c.",
+          "in": "2.5.3.2-p2",
+          "prefix": "momile, Stoechas, Agnus Castus, ",
+          "suffix": " Spices, as Saffron, Cinnamon, B"
+        },
+        "words": 6
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "simples are herbs, roots, &c., as Galanga, Gentian, Angelica, Enula, Calamus Aromaticus, Valerian, Zedoary, Iris, condite Ginger, Aristolochia, Cicliminus, China, Dittander, Pennyroyal, Rue, Calamint, Bayberries, & Bay-leaves, Betony, Rosemary, Hyssop, Sabine, Centaury, Mint, Camomile, Stoechas",
+          "in": "2.5.3.2-p2",
+          "prefix": "wind, are simples or compounds: ",
+          "suffix": ", Agnus Castus, Broom-flowers, O"
+        },
+        "words": 35
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "17bc809cf325b9a8643870d72ac1dd0feec8c651"
+  },
   "2.5.3.2-f2": {
     "bracket": "present",
     "by": "rules",

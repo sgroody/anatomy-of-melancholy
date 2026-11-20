@@ -419,14 +419,14 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42561, p. 793"
   },
   "3.2.5.3-f132": {
-    "align_score": 1.0,
+    "align_score": 0.944,
     "attribution": "juvenal",
     "by": "djs1927",
     "left_anchor": ", she will be so proud, so high-minded, so imperious. For",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "there’s nothing so intolerable, thou shalt be as the",
-    "right_score": 1.0,
+    "right_anchor": "there’s nothing so intolerable, thou shalt be as the Tercel of a",
+    "right_score": 0.944,
     "status": "aligned",
     "text": "Sure, of all ills with which mankind are curst, A wife who brings you money is the worst,",
     "text_sha1": "ad6bc22c5bc33659fb5ddcead167808103b7acbb",
@@ -578,13 +578,19 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42621, p. 794"
   },
   "3.2.5.3-f146": {
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "how well he is esteemed, how heartily welcome to all his friends,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", as",
-    "status": "no-anchor",
+    "residue": "",
+    "right_anchor": ", as Tertullian observes, with what counterfeit courtesies they will adore him,",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "2cff4abc1d65396cd8e95e20570160df72068d80",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 42635, p. 795"
   },
   "3.2.5.3-f147": {
     "align_score": 1.0,
@@ -913,28 +919,6 @@
     "text_sha1": "ef6646ab3062dd3e8a7bbae8d25fdbec4e34fae3",
     "threshold": 0.85
   },
-  "3.2.5.3-f185": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
-  },
-  "3.2.5.3-f186": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": "or executor: Arruntius and Haterius, those famous parasites in this kind, as",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and Seneca have recorded, shall not go beyond them. Periplectomenes that good",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Tacitus",
-    "text_sha1": "19f00ec5854e412fde075a263f1d6a413fbdd662",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 42654, p. 795"
-  },
   "3.2.5.3-f188": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -944,11 +928,14 @@
     "threshold": 0.85
   },
   "3.2.5.3-f189": {
+    "align_score": 0.844,
     "by": "djs1927",
     "left_anchor": "A woman and death are two the bitterest things in the world:",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ",",
-    "status": "no-anchor",
+    "right_anchor": ", Ter. And. 1. 5. And yet for all this we Bachelors",
+    "right_score": 0.844,
+    "status": "below-threshold",
     "text_sha1": "2d15eae4254c85365ccd0d1d4bcfe127ca819f87",
     "threshold": 0.85
   },
@@ -1231,10 +1218,10 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42218, p. 787"
   },
   "3.2.5.3-f215": {
-    "align_score": 0.972,
+    "align_score": 1.0,
     "by": "djs1927",
-    "left_anchor": "tullian, Cyprian, Austin, Chrysostom, Prosper, Gaudentius,",
-    "left_score": 0.972,
+    "left_anchor": "wife, as Pineda proves out of Tertullian, Cyprian, Austin, Chrysostom, Prosper, Gaudentius,",
+    "left_score": 1.0,
     "method": "rules/djs-align-v3",
     "residue": "&c.,",
     "right_anchor": ", to vex and gall him worse",
@@ -1244,14 +1231,6 @@
     "text_sha1": "9087c73879fc6444f99ae6f790f1e7b6f9999f99",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42323, p. 789"
-  },
-  "3.2.5.3-f217": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "a60e1ea0ea06acd344a208d71752d6354db0ad9c",
-    "threshold": 0.85
   },
   "3.2.5.3-f22": {
     "align_score": 1.0,

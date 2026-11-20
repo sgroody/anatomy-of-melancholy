@@ -49,15 +49,19 @@
     "threshold": 0.85
   },
   "2.4.2.2-f16": {
+    "align_score": 0.868,
     "by": "djs1927",
-    "left_anchor": "Matthiolus ep. lib. 3 brags of that happy success , terms it",
-    "left_score": 0.7476635514018694,
+    "left_anchor": "securely given to women, children, and weaklings. Baricellus horto geniali, terms it",
+    "left_score": 0.89,
     "method": "rules/djs-align-v3",
+    "residue": "",
     "right_anchor": ", a medicine of great worth and note. Quercetan in his Spagir.",
-    "right_score": 0.8679245283018868,
-    "status": "not-found",
+    "right_score": 0.868,
+    "status": "omitted",
+    "text": "",
     "text_sha1": "24909b34df3d01e6e6a6681a8198855a6610e3ec",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 30972, pp. 579-580"
   },
   "2.4.2.2-f17": {
     "align_score": 1.0,
@@ -106,14 +110,13 @@
     "threshold": 0.85
   },
   "2.4.2.2-f20": {
-    "align_score": 0.803,
     "by": "djs1927",
     "left_anchor": "Dodonaeus defend Mesue out of their experience; let Valesius end the controversy.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "and Lazuli are much magnified by Alexander lib. 1 cap. 16, Avicenna,",
-    "right_score": 0.803,
-    "status": "below-threshold",
+    "right_anchor": "and Black Hellebore, that most renowned plant, and famous purger of melancholy,",
+    "right_score": 0.972972972972973,
+    "status": "not-found",
     "text_sha1": "69b889618b8033c9cc478e0f2a2b99b9c1cea78c",
     "threshold": 0.85
   },
@@ -143,20 +146,6 @@
     "text_sha1": "233ca9a0912f393d680386b3340a50cc4a02d56a",
     "threshold": 0.85
   },
-  "2.4.2.2-f23": {
-    "align_score": 1.0,
-    "by": "djs1927",
-    "left_anchor": ", drink Hellebore, &c., and Harpax in the Comedian, told",
-    "left_score": 1.0,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "and Ballio, two doting fellows, that they had need to be purged",
-    "right_score": 1.0,
-    "status": "kept-original",
-    "text": "Simo",
-    "text_sha1": "63974d4617e2dd6054af9f70e416589d31d34a46",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 30909, pp. 579-580"
-  },
   "2.4.2.2-f3": {
     "align_score": 0.924,
     "by": "djs1927",
@@ -170,15 +159,6 @@
     "text_sha1": "781eb4e380048e4c453698698c3a9c18520ffe2c",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 30904, pp. 579-580"
-  },
-  "2.4.2.2-f30": {
-    "by": "djs1927",
-    "left_anchor": "an easy, that may be securely given to women, children, and weaklings.",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", terms it",
-    "status": "no-anchor",
-    "text_sha1": "c28734db6c46a56cbcc8c25e8137a63e860d74d4",
-    "threshold": 0.85
   },
   "2.4.2.2-f34": {
     "by": "djs1927",
@@ -227,13 +207,25 @@
     "text_sha1": "3b951c97b54f3c455cc2dabd3be10e3bad8c89cc",
     "threshold": 0.85
   },
+  "2.4.2.2-f40": {
+    "align_score": 0.797,
+    "by": "djs1927",
+    "left_anchor": "defend Mesue out of their experience; let Valesius end the controversy. and",
+    "left_score": 0.972,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "are much magnified by Alexander lib. 1 cap. 16, Avicenna, Aetius, and",
+    "right_score": 0.797,
+    "status": "below-threshold",
+    "text_sha1": "11c443e838745eec2ea78d32271ac75b22d1ad97",
+    "threshold": 0.85
+  },
   "2.4.2.2-f5": {
     "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": "wit O Tantalus, and must needs drink Hellebore, and that without mixture.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", drink Hellebore, &c., and Harpax in the Comedian, told",
+    "right_anchor": ", drink Hellebore, &c., and Harpax in the Comedian, told Simo and",
     "right_score": 1.0,
     "status": "kept-original",
     "text": "Aristophanes in Vespis,",

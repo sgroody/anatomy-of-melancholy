@@ -152,30 +152,11 @@
   "1.3.1.1-f16": {
     "bracket": "present",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 1,
-        "cue": null,
-        "position": "note-anchor",
-        "relation": "clause",
-        "selector": {
-          "exact": "Carotides which is very strong",
-          "in": "1.3.1.1-p3",
-          "prefix": "are & slow, except it be of the ",
-          "suffix": "; but that varies according to t"
-        },
-        "words": 5
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "sidenote",
     "method": "rules/selftrans-v1",
-    "signals": [
-      "cognate-overlap",
-      "english-at-anchor"
-    ],
+    "signals": [],
     "text_sha1": "93fa49afda53d7bf68260cced7c6883ac68fba01"
   },
   "1.3.1.1-f17": {
@@ -204,7 +185,7 @@
     ],
     "text_sha1": "368261c4f9b9cd35fa09ca29d78f9c4303e3528c"
   },
-  "1.3.1.1-f2": {
+  "1.3.1.1-f18": {
     "bracket": "none",
     "by": "rules",
     "candidates": [
@@ -212,28 +193,28 @@
         "after_attribution": false,
         "by": "rules",
         "cognates": 0,
-        "cue": null,
+        "cue": "which is",
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "reckons up these signs, that they are lean, withered, hollow-eyed, look old, wrinkled, harsh, much troubled with wind, and a griping in their bellies, or belly-ache, belch often, dry bellies and hard, dejected looks, flaggy beards, singing of the ears",
+          "exact": "which is very strong",
           "in": "1.3.1.1-p3",
-          "prefix": "in his book de insania & melan. ",
-          "suffix": ", vertigo, light-headed, little "
+          "prefix": ", except it be of the Carotides ",
+          "suffix": "; but that varies according to t"
         },
-        "words": 42
+        "words": 4
       },
       {
         "by": "rules",
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Hippocrates in his book",
+          "exact": "Their pulse is rare & slow, except it be of the",
           "in": "1.3.1.1-p3",
-          "prefix": "is, very red and high-coloured. ",
-          "suffix": " de insania & melan. reckons up "
+          "prefix": "ations, spitting, belching, &c. ",
+          "suffix": " Carotides which is very strong;"
         },
-        "words": 4
+        "words": 10
       }
     ],
     "lang": "la",
@@ -242,9 +223,10 @@
     "signals": [
       "english-follows",
       "english-precedes",
+      "gloss-cue",
       "no-gowland-bracket"
     ],
-    "text_sha1": "ceb60ae8d752991dd33504b452923bed5b54d854"
+    "text_sha1": "ee5d6a1f23bf2d956c7c5c665628d71911d45ac9"
   },
   "1.3.1.1-f3": {
     "bracket": "present",

@@ -260,12 +260,12 @@
         "cognates": 0,
         "position": "preceding",
         "selector": {
-          "exact": "Phrenitis, which the Greeks derive from the word",
+          "exact": "which the Greeks derive from the word",
           "in": "1.1.1.4-p2",
-          "prefix": "",
+          "prefix": "Phrenitis, ",
           "suffix": " φρήν, is a Disease of the Mind,"
         },
-        "words": 8
+        "words": 7
       }
     ],
     "lang": "grc",
@@ -347,6 +347,47 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "3b2a957d67f09772355ff7b0378107fcdb39f984"
+  },
+  "1.1.1.4-f22": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "which the Greeks derive from the word",
+          "in": "1.1.1.4-p2",
+          "prefix": "Phrenitis, ",
+          "suffix": " φρήν, is a Disease of the Mind,"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d41583c85044938f579d6ec80009e41553787c25"
+  },
+  "1.1.1.4-f23": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "9b02d3d30d5a6fdadcac665ac83c71691a641fc1"
   },
   "1.1.1.4-f3": {
     "bracket": "present",
