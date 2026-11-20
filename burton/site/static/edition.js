@@ -770,7 +770,7 @@ if (synSheets.length) {
     const d = Math.min(...c.map(depth));
     return c.filter((n) => depth(n) === d);
   };
-  // open everything in a branch at once (the ⁂ sign of a Partition), or fold it back to its first layer
+  // open everything in a branch at once (the ⁜ sign of a Partition), or fold it back to its first layer
   const openAll = (li) => {
     for (const n of [li, ...li.querySelectorAll(".syn-n")]) if (kidsOf(n)) { setShut(n, false); fix(n); }
     settle(li.closest(".syn-sheet"));

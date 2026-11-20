@@ -531,10 +531,12 @@ code { font-size: 0.85em; }
 .syn-part > .syn-nb > .syn-hd, .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd { cursor: pointer; }
 .syn-part.syn-filling > .syn-nb > .syn-hd .syn-pt, .syn-root.syn-filling > .syn-nb > .syn-hd > .syn-t {
   background-size: 100% 1px; animation: syn-under var(--syn-fill, .65s) linear both; }
-/* every brace at once: the printer's asterism after a Partition's name */
+/* every brace at once: the dotted cross after a Partition's name; red under the pointer, so it reads as a button */
 .syn-all { border: 0; background: none; padding: 0 .25em; margin-left: .35em; font: inherit; font-size: .95em; line-height: 1;
-  color: var(--muted); cursor: pointer; font-variant-caps: normal; vertical-align: .05em; border-radius: 2px; }
+  color: var(--muted); cursor: pointer; font-variant-caps: normal; vertical-align: .05em; border-radius: 2px;
+  transition: color .15s, background-color .15s; }
 .syn-all:hover, .syn-all:focus-visible, .syn-all[aria-pressed="true"] { color: var(--accent); }
+.syn-all:hover, .syn-all:focus-visible { background-color: color-mix(in srgb, var(--accent) 10%, transparent); }
 .syn-shut > .syn-nb > .syn-hd { max-width: min(26em, calc(100cqi - 7.6em)); }
 /* folded sheets in a chain stand with their stubs in one column, as a printer aligns a column of braces */
 .syn-root.syn-shut > .syn-nb > .syn-hd { width: min(22em, calc(100cqi - 7.6em)); }
