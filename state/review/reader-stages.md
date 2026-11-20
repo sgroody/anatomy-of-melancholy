@@ -422,3 +422,30 @@ Reworked (prototype only; the switches for H, C and L are gone, the choices are 
 * Checked in the pane (1400 x 900): sheet A grew to 9/9 inner braces while rested on; on ♈, moving off after one inner
   brace left 1 open 4 s later, the branch fixed; the front page's First Partition opened, fixed, 0 sheets opened, page
   still fits its 900 px frame. No console errors.
+* **Locators (owner, 2026-11-19): "A is fine."** Burton's words stay as printed and the small box with the division's
+  number follows them as the link, as the edition does now (361 boxes on the review page). Burton's own "Subsect. 4" is
+  no longer made the link; `link_locators` stays in proto.py, unused.
+
+## The synopses as Burton's sheets, in the reader (2026-11-19)
+
+Owner: "Looks solid, add it to the reader." Ported from the prototype (tools/synopsis_sheets) with the settled choices:
+* `burton/site/synopsis.py`: `tree_html(tree, root, titles, fold)` sets the sheet (classes `syn-*`); `front_html` the
+  front page's three keyed Partitions. A folded branch is only marked (`data-fold`); edition.js folds it, so without
+  script every brace is open. Links into the book are the number boxes (`syn-ref`), as before; signs are `syn-see`.
+* `edition.css`: the sheet, the brace pieces, the hold fill, the fixed tint, "&c." stubs, the no-script width rules;
+  the old outline, the 2026-11-18 sheet view and its "As a sheet / As an outline" switch are gone.
+* `edition.js`: fit (R7, measured), turned heads only where a branch lacks room upright (the first port turned three
+  heads at 1.1.1.1's 760 px that the printer kept upright), folding on load, rest -> fill -> open -> fill -> fixed ->
+  inner braces one at a time, click, signs and "where this stands" links open the way to their node.
+* Places: the synopsis pages (every brace open; page up to 90rem wide; "Open all" / "Fold to the first brace");
+  the head of each Partition's first page (first sheet open, the rest folded; reaches into the margin from 1,100 px);
+  the front page (three Partitions folded, rubric numerals; resting on a name opens its sheets under it, across the
+  column; links to the three synopsis pages below).
+* Checked in the pane at 1400 x 900: front page fits above Contents; 1.1.1.1 760 px wide, 7/8 sheets folded, one head
+  turned ("Habits, as Subsect. 4."); p1 synopsis 1,321 px wide, sheet A wholly in Burton's form; resting on "The
+  Second Partition" opens and fixes it with 0/9 sheets opened. V10k's synopsis steps now use the brace buttons.
+* `burton check --all` (2026-11-20): 21 PASS, V5 DEFER (D10), 0 FAIL. V6 846 pages, 192,631 links, 0 broken; V10a 0
+  serious (the sign links are underlined again: colour alone failed it, 10 findings, in the first run); V10k 22/22;
+  V11 561/561; L1 3.2.4.1 79 notes, 37 shortened, 0 held back. L1 now waits for the page to lay its notes out (up to
+  10 s) instead of a fixed 150 ms: on a busy machine it had measured 3.2.4.1 and 1.1.3.2 before layout, and the
+  committed edition.css/js failed the same way.

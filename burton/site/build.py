@@ -345,13 +345,14 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         if unit in part_first and (tree := synopsis.load(part_first[unit].key)):
             # the Partition's synopsis at the head of its first page, folded (owner, 2026-11-04): the click-through goes
             # from the front matter straight into the text, past the landing and synopsis pages
+            # As Burton's sheet (2026-11-19): the first sheet open, the later ones folded to their opening lines,
+            # each opening when the reader rests on its brace
             pt = part_first[unit]
-            body = (f'<details class="part-syn"><summary><span class="ps-k" aria-hidden="true">{{</span> '
-                    f'The Synopsis of '
-                    f'the {esc(pt.title.removeprefix("The "))}<span class="ps-hint">Burton’s map of this Partition: '
-                    f'open it</span></summary>{synopsis.tree_html(tree, "../", shown_titles)}'
+            of = esc(pt.title.removeprefix("The "))
+            body = (f'<section class="part-syn" aria-label="Burton’s synopsis of the {of}">'
+                    f'<p class="ps-h">Burton’s synopsis</p>{synopsis.tree_html(tree, "../", shown_titles, "sheets")}'
                     f'<p class="ps-all"><a href="../{pt.key}/synopsis/">The synopsis on its own page, with the printed '
-                    'sheets</a></p></details>\n' + body)
+                    'sheets</a></p></section>\n' + body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
         words = len(public_text(div).split())
@@ -398,11 +399,13 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         cap = f'The engraved title page of 1628; <a href="{attr(arg.href)}">{esc(arg.title)}</a> describes its panels'
         front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=cap))
         stanzas = Markup(frontispiece.stanzas_html())
-    # the three synopses, collapsed, on the front page (owner, 2026-11-03: T13, R4 B)
+    # the three synopses on the front page, folded so the page fits one screen; resting on a Partition's name opens
+    # it onto its sheets (owner, 2026-11-19: rubric numerals, "&c.")
     shown = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
-    synopses = [{"title": f"The Synopsis of the {part.title.removeprefix('The ')}", "href": f"{part.key}/synopsis/",
-                 "tree": Markup(synopsis.tree_html(synopsis.load(part.key), "", shown))}
-                for part in book.partitions if (paths.DATA / "synopses" / f"{part.key}.json").exists()]
+    have = [p for p in book.partitions if (paths.DATA / "synopses" / f"{p.key}.json").exists()]
+    synopses = {"sheet": Markup(synopsis.front_html([(p.key, p.title, synopsis.load(p.key)) for p in have], "", shown)),
+                "pages": [{"n": synopsis.ROMAN.get(p.key, p.key), "href": f"{p.key}/synopsis/"} for p in have]
+                } if have else None
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
         toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,

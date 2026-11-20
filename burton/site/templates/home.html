@@ -17,7 +17,8 @@
     {% if synopses %}
     <section class="front-syn" aria-labelledby="syn-h">
       <h2 id="syn-h">The Synopses</h2>
-      {% for s in synopses %}<details class="front-syn-d"><summary>{{ s.title }}</summary><p class="syn-here"><a href="{{ s.href }}">Open as its own page</a></p>{{ s.tree }}</details>{% endfor %}
+      {{ synopses.sheet }}
+      <p class="syn-here">Each on its own page, with the printed sheets: {% for s in synopses.pages %}<a href="{{ s.href }}">{{ s.n }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
     </section>
     {% endif %}
     <section aria-labelledby="contents-h">

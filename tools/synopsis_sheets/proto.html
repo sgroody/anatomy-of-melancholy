@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" data-count="etc" data-label="keys">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Synopsis Sheets, Re-set</title>
+<link rel="stylesheet" href="{{SITE}}assets/fonts.css">
+<style>
+:root {
+  --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d;
+  --hot: color-mix(in srgb, #d9a520 26%, transparent);
+  --brace-ink: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  --ed-ink: color-mix(in srgb, var(--muted) 55%, var(--paper));
+  color-scheme: light;
+  interpolate-size: allow-keywords; /* lets a branch's height grow from nothing to its content */
+  --ease: cubic-bezier(.32, .72, .24, 1); --t-open: 1.15s; --t-shut: .75s;
+  /* the compositor's brace: fixed curls and a fixed beak, a plain rule between, never stretched (R3) */
+  --pt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 .9C6.2 .9 5 2.6 5 6.5V10' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --pb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 9.1C6.2 9.1 5 7.4 5 3.5V0' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --pk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cpath d='M5 0V3.5C5 7.6 4 9.3 .7 10C4 10.7 5 12.4 5 16.5V20' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+  --cap: min(0.5em, 26%);
+  --bk: min(1.05em, 42%);
+  --sw: 0.081em;
+  --m-brace:
+    var(--pt) left top / 100% var(--cap) no-repeat,
+    var(--pb) left bottom / 100% var(--cap) no-repeat,
+    var(--pk) left center / 100% var(--bk) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--cap) / var(--sw) calc(50% - var(--cap) - var(--bk) / 2 + 1px) no-repeat,
+    linear-gradient(#000 0 0) left 50% bottom var(--cap) / var(--sw) calc(50% - var(--cap) - var(--bk) / 2 + 1px) no-repeat;
+  --m-bracket:
+    var(--pt) left top / 100% var(--cap) no-repeat,
+    var(--pb) left bottom / 100% var(--cap) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--cap) / var(--sw) calc(100% - 2 * var(--cap) + 1px) no-repeat;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --hot: color-mix(in srgb, #e0b040 24%, transparent); color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-text, "EB Garamond", Georgia, serif);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem); line-height: 1.5; font-variant-numeric: oldstyle-nums proportional-nums; }
+a { color: inherit; text-underline-offset: 0.15em; text-decoration-color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+button { font: inherit; color: inherit; }
+
+/* ------------------------------------------------------------ the review page around the prototypes */
+.page { max-width: 74rem; margin: 0 auto; padding: 1.5rem 16px 5rem; }
+.page > header h1 { font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .08em; margin: .5rem 0 .2rem; font-size: 1.9em; }
+.page > header p { margin: .2rem 0; max-width: 46rem; }
+.prose { max-width: 46rem; }
+h2 { font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .07em; font-size: 1.35em; margin: 3rem 0 .4rem;
+  border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+h2 .tag { color: var(--accent); }
+.note { color: var(--muted); font-size: .9em; }
+.rules { list-style: none; padding: 0; margin: 1rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); gap: .6rem 1.6rem; }
+.rules li { padding-left: 2.2em; text-indent: -2.2em; }
+.rules b { display: inline-block; width: 2.2em; text-indent: 0; color: var(--accent); font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .05em; }
+.toolbar { display: flex; flex-wrap: wrap; gap: .35rem .5rem; align-items: center; margin: .8rem 0 .5rem; font-size: .85em; }
+.toolbar button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: .05rem .55rem; cursor: pointer; }
+.toolbar button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.toolbar .lab { color: var(--muted); margin-right: .1rem; }
+.toolbar .sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 .3rem; }
+.frame { width: var(--w, 100%); max-width: 100%; min-width: 300px; resize: horizontal; overflow: auto; border: 1px dashed var(--rule);
+  padding: 1.2rem 1rem 1.4rem; transition: width .35s ease; }
+.frame.screen { height: var(--fh); overflow: auto; width: min(1400px, 100vw - 32px); max-width: none;
+  margin-left: 50%; translate: -50% 0; }
+.ab { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap;
+  gap: .3rem .45rem; align-items: center; padding: .55rem 0; margin-top: 1rem; font-size: .82em; }
+.ab button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: .05rem .5rem; cursor: pointer; }
+.ab button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.ab .ab-q { color: var(--muted); margin-left: .2rem; }
+.ab .ab-q b { color: var(--accent); font-weight: 400; font-variant-caps: all-small-caps; }
+.ab .sep { width: 1px; align-self: stretch; background: var(--rule); margin: 0 .2rem; }
+.ab-key { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; max-width: 50rem; font-size: .92em; margin: 1rem 0; }
+.ab-key dt { color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: .04em; }
+.ab-key dd { margin: 0; }
+@media (max-width: 40rem) { .ab-key { grid-template-columns: 1fr; } .ab-key dd { margin-bottom: .4rem; } }
+.frame-w { font-size: .78em; color: var(--muted); text-align: right; margin: .2rem 0 0; font-variant-numeric: lining-nums tabular-nums; }
+.fax { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .8rem; }
+.fax img { max-width: min(100%, 34rem); height: auto; background: #fff; border: 1px solid var(--rule); }
+:root[data-theme="dark"] .fax img { filter: invert(.88) sepia(.2); }
+.choices { display: grid; gap: .5rem; margin: 1rem 0; max-width: 50rem; padding: 0; list-style: none; counter-reset: q; }
+.choices li { counter-increment: q; padding-left: 2.2em; text-indent: -2.2em; }
+.loc-ab { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: .6rem 1.4rem; margin: .5rem 0 0; text-indent: 0; }
+.loc-ab p { margin: 0; border: 1px solid var(--rule); border-radius: 4px; padding: .5rem .8rem; font-size: 1em; line-height: 1.4; }
+.loc-ab .lab { display: block; font-size: .8em; color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: .04em; }
+.loc-ab .why { font-size: .8em; color: var(--muted); }
+.chip { font-size: .72em; font-variant-numeric: lining-nums; padding: 0 .3em; margin-left: .15em; border: 1px solid var(--rule);
+  border-radius: 3px; color: var(--muted); vertical-align: .1em; }
+.choices li::before { content: "Q" counter(q); display: inline-block; width: 2.2em; text-indent: 0; color: var(--accent); font-variant-caps: all-small-caps; }
+
+/* ------------------------------------------------------------ THE SHEET (what would move into edition.css) */
+.sheet, .sheet ul { list-style: none; margin: 0; padding: 0; }
+.sheet { font-size: .94em; line-height: 1.26; hyphens: manual; font-variant-emoji: text; }
+.sheet .n { container-type: inline-size; }
+/* R1 + R2: a head is set narrow and centred on its brace; its members take the rest of the line */
+.sheet .nb { display: flex; align-items: center; }
+.sheet .hd { flex: 0 0 auto; width: max-content; max-width: clamp(5em, 20cqi, 9.5em); padding: .05em .28em .05em 0; }
+/* R5: a leaf runs to the right edge and hangs its turnovers */
+.sheet .leaf > .nb > .hd { flex: 1 1 auto; width: auto; max-width: none; padding-left: 1.1em; text-indent: -1.1em; }
+.sheet .kw { flex: 1 1 0; min-width: 0; position: relative; padding-left: .82em; min-height: 1.35em; }
+/* unfolding: the brace grows from its stub as the members' height opens; the members come in from the beak outward
+   (--d is a member's distance from the middle of the brace); folding is quicker, members first, then the height */
+.sheet .kids { padding: .12em 0; overflow: clip; overflow-clip-margin: .5em;
+  transition: height var(--t-open) var(--ease), padding var(--t-open) var(--ease), visibility 0s; }
+.sheet .kids > .n { transition: opacity .7s ease calc(var(--t-open) * .3 + var(--d, 0) * 90ms),
+  translate .8s var(--ease) calc(var(--t-open) * .3 + var(--d, 0) * 90ms); }
+.sheet .shut > .nb > .kw > .kids { height: 0; padding-block: 0; visibility: hidden;
+  transition: height var(--t-shut) var(--ease) .18s, padding var(--t-shut) var(--ease) .18s,
+  visibility 0s linear calc(var(--t-shut) + .18s); }
+.sheet .shut > .nb > .kw > .kids > .n { opacity: 0; translate: -.7em 0; transition: opacity .25s ease, translate .3s ease; }
+.sheet .hd { transition: width var(--t-open) var(--ease), max-width var(--t-open) var(--ease), color .3s; }
+/* R3: the brace, as a button that folds its branch */
+.sheet .brace { position: absolute; left: 0; top: 0; bottom: 0; width: .74em; padding: 0; margin: 0; border: 0;
+  background: none; cursor: pointer; border-radius: 2px; }
+.sheet .brace::before { content: ""; position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em;
+  background: var(--brace-ink); -webkit-mask: var(--bm, var(--m-brace)); mask: var(--bm, var(--m-brace)); }
+.sheet .brace.ed::before { background: var(--ed-ink); }
+.sheet button.brace:hover::before, .sheet button.brace:focus-visible::before { background: var(--accent); }
+.sheet button.brace::after { content: ""; position: absolute; inset: 0 0 0 -.45em; min-height: 1.6em; } /* a wider target */
+/* the count beside a folded brace, in one of four wordings (round 8, C) */
+.sheet .cnt { position: absolute; left: 1.05em; top: 50%; translate: 0 -50%; white-space: nowrap; font-size: .78em;
+  font-style: italic; color: var(--muted); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.sheet .shut > .nb > .kw > .brace .cnt { opacity: 1; transition: opacity .45s ease var(--t-shut); }
+.sheet .shut > .nb > .kw > .brace { width: 6.5em; } /* the stub and its count are one target */
+.sheet .shut > .nb > .kw { min-width: 7.2em; }
+.sheet .shut > .nb > .kw > .brace:hover .cnt, .sheet .filling > .nb > .kw > .brace .cnt { color: var(--accent); }
+.sheet .cnt::after { content: attr(data-n) " parts"; }
+:root[data-count="branches"] .sheet .cnt::after { content: attr(data-n) " branches"; }
+:root[data-count="etc"] .sheet .cnt::after { content: "&c."; font-style: normal; font-size: 1.15em; }
+:root[data-count="num"] .sheet .cnt::after { content: attr(data-n); }
+:root:not([data-count="etc"]) .sheet .cnt[data-kind="sheets"]::after { content: attr(data-n) " sheets"; }
+/* the hold indicator, as a name's window fills its bar: resting on a brace inks it in rubric from the beak outward
+   (--fill long); when full, the brace opens its branch, or, already open, fixes it in place */
+.sheet .brace .ink { position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em; background: var(--accent);
+  -webkit-mask: var(--bm, var(--m-brace)); mask: var(--bm, var(--m-brace)); clip-path: inset(50% 0 50% 0); opacity: 0;
+  pointer-events: none; }
+.sheet .filling > .nb > .kw > .brace .ink { opacity: 1; clip-path: inset(0 0 0 0); transition: clip-path var(--fill, .65s) linear; }
+.sheet .filling > .nb > .hd .pt { color: var(--accent); transition: color var(--fill, .65s); }
+/* fixed in place: the brace keeps a faint rubric, as a fixed window keeps its bar */
+.sheet .fixed > .nb > .kw > .brace::before { background: color-mix(in srgb, var(--accent) 45%, var(--brace-ink)); }
+.sheet .fixed > .nb > .kw > .brace.ed::before { background: color-mix(in srgb, var(--accent) 40%, var(--ed-ink)); }
+@media (prefers-reduced-motion: reduce) { .sheet .filling > .nb > .kw > .brace .ink { transition: none; opacity: .5; } }
+/* R4: "Or" in the brace's column, between the members it divides */
+.sheet .or { margin: .08em 0 .08em 1.6em; font-size: .94em; }
+/* R6: Burton's locator words are the link; his signs are links in rubric */
+/* where a head links into the book (owner, 2026-11-19: A): a small box with the division's number after his words */
+.sheet .syn-ref { font-size: .72em; font-variant-numeric: lining-nums; white-space: nowrap; padding: 0 .3em; margin-left: .1em;
+  border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; color: var(--muted); vertical-align: .1em; text-indent: 0; }
+.sheet a.syn-ref:hover, .sheet a.syn-ref:focus-visible { border-color: var(--accent); color: var(--ink); }
+.sheet a.see { color: var(--accent); text-decoration: none; padding: 0 .1em; }
+.sheet a.see:hover { text-decoration: underline; }
+.sheet .key { display: inline-block; width: 1.5em; margin-left: -1.5em; text-indent: 0; text-align: center; color: var(--accent); }
+.sheet .key.supplied { color: var(--muted); font-size: .9em; }
+.sheet .root > .nb > .hd { padding-left: 1.5em; }
+.sheet.top > .root + .root, .sheet .part .root + .root { margin-top: .9em; }
+.sheet.top > .part + .part { margin-top: 1.4em; }
+.sheet .colhead { display: block; font-size: .92em; }
+.sheet .ednote { color: var(--muted); cursor: help; padding-left: .15em; vertical-align: super; font-size: .75em; }
+.sheet .pt { font-variant-caps: all-small-caps; letter-spacing: .07em; }
+/* a folded branch: its head may run wider; folded sheets in a chain stand with their stubs in one column, as a
+   printer aligns a column of braces */
+.sheet .shut > .nb > .hd { max-width: min(26em, calc(100cqi - 7.6em)); }
+.sheet .root.shut > .nb > .hd { width: min(22em, calc(100cqi - 7.6em)); }
+/* the front page (round 8, L): the three Partitions folded; resting on a name opens it */
+.sheet .part > .nb > .hd { width: 11.6em; max-width: none; white-space: nowrap; cursor: pointer; }
+.sheet .part + .part { margin-top: .3em; }
+/* a Partition's name stays where it was as its chain opens below it (the brace is the edition's: a bracket, no beak) */
+.sheet .part > .nb { align-items: flex-start; }
+.sheet .part:not(.shut) > .nb > .kw > .brace { --bm: var(--m-bracket); }
+.sheet .top-syn > .nb > .hd { max-width: 6em; text-align: center; }
+.sheet .pk { display: none; font-variant-caps: normal; }
+:root[data-label="keys"] .sheet .top-syn > .nb > .hd, :root[data-label="keys"] .sheet .top-syn > .nb > .kw > .brace { display: none; }
+:root[data-label="keys"] .sheet .top-syn > .nb > .kw { padding-left: 0; }
+:root[data-label="keys"] .sheet .pk { display: inline-block; }
+:root[data-label="keys"] .sheet .part > .nb > .hd { padding-left: 1.6em; width: 13.2em; }
+:root:not([data-label="keys"]) .front h4 { display: none; }
+:root:not([data-label="keys"]) .front .chain { margin-top: 1.6rem; }
+/* R7b: a tall head turned on its side, read upward, as the printer turned "General, as Memb. 1." */
+.sheet .hd.rot { writing-mode: vertical-rl; transform: rotate(180deg); max-width: none; width: auto; white-space: nowrap;
+  padding: .2em .1em; text-align: center; }
+/* the path: pointing at a head inks the braces above it */
+.sheet .n:has(> .nb > .hd:hover) > .nb > .kw > .brace::before,
+.sheet .n:has(.n > .nb > .hd:hover) > .nb > .kw > .brace::before { background: var(--accent); }
+.sheet .n:has(:target) > .nb > .kw > .brace::before { background: var(--accent); }
+.sheet .n:target > .nb > .hd { background: var(--hot); border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .sheet *, .sheet *::before, .sheet *::after { transition-duration: 0s !important; transition-delay: 0s !important; }
+  .frame { transition: none; } }
+@media print { .sheet .brace::before { background: #000; } }
+/* R7: a branch without room for its columns sets its head over its members, deepest branches first */
+{{CQ}}
+
+/* ------------------------------------------------------------ the two mock pages */
+.mock { container: mock / inline-size; border: 1px solid var(--rule); background: var(--paper); }
+.mock-bar { font-size: .78em; border-bottom: 1px solid var(--rule); padding: .45rem 1rem; display: flex; justify-content: space-between;
+  font-variant-caps: all-small-caps; letter-spacing: .06em; color: var(--muted); }
+.front { display: grid; grid-template-columns: minmax(16rem, 30rem) minmax(0, 1fr); gap: 2.4rem; padding: 1.2rem 1.4rem 2rem; align-items: start; }
+.front .eng img { width: 100%; height: auto; display: block; }
+.front .eng { position: sticky; top: 1rem; }
+.front .side h3 { font-weight: 400; text-align: center; margin: .6rem 0 .1rem; line-height: 1.1; }
+.front .side h3 .a { display: block; font-variant-caps: all-small-caps; letter-spacing: .1em; font-size: .95em; }
+.front .side h3 .b { display: block; font-variant-caps: all-small-caps; letter-spacing: .06em; font-size: 2.1em; }
+.front .what { font-style: italic; text-align: center; margin: .4rem 0; }
+.front .by { text-align: center; font-variant-caps: all-small-caps; letter-spacing: .05em; margin: 0 0 1rem; }
+.front .enter { text-align: center; margin: 0 0 1.6rem; }
+.front .enter span { border: 1px solid var(--rule); padding: .15rem .9rem; color: var(--accent); }
+.front .guide { margin: 0 0 .6rem; font-size: .85em; } .front .guide span { text-decoration: underline 1px var(--rule); }
+.front .hint { margin: 0; font-size: .85em; color: var(--muted); }
+.front .hint span { text-decoration: underline 1px var(--rule); }
+.front h4.contents { display: block !important; text-align: left; margin-top: 1.8rem; }
+.front h4.contents::before, .front h4.contents::after { display: none; }
+.front h4, .opening h4 { font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .09em; text-align: center; margin: 1.6rem 0 1rem; font-size: 1.05em; }
+.front h4::before, .front h4::after { content: ""; display: inline-block; width: 2.5em; border-top: 1px solid var(--rule); vertical-align: .35em; margin: 0 .7em; }
+@container mock (width < 50rem) { .front { grid-template-columns: 1fr; } .front .eng { position: static; max-width: 22rem; margin: 0 auto; } }
+.opening { padding: 1.2rem clamp(1rem, 4cqi, 3rem) 2rem; }
+.opening .pt-title { text-align: center; font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .1em; font-size: 1.7em; margin: .6rem 0 .1rem; }
+.opening .pt-sub { text-align: center; color: var(--muted); font-size: .85em; margin: 0 0 1.2rem; }
+.opening .unit-start { border-top: 1px solid var(--rule); margin-top: 1.8rem; padding-top: 1rem; text-align: center; color: var(--muted); }
+.opening .unit-start b { display: block; font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: .08em; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <p class="note">Review page · 2026-11-19 · prototype, not the edition · third version (round 8, reworked)</p>
+  <h1>Burton’s synopses, re-set by the printer’s rules</h1>
+  <p>The printed sheets are not a grid of columns. They follow a few rules a compositor applies by eye, and those rules are what make them read. Re-set as live type, the same rules can also tell each branch how to give way when the window narrows. So one sheet serves the full page, the head of a Partition and the front page, from a wide screen down to a phone, with no sideways scrolling and no separate outline.</p>
+</header>
+<div class="ab" role="group" aria-label="Page settings"><span class="ab-q">Theme</span><button type="button" data-theme-set="light">Day</button><button type="button" data-theme-set="dark">Night</button><button type="button" data-theme-set="">System</button></div>
+<dl class="ab-key">
+  <dt>Settled</dt><dd>This form wherever the synopses appear, the front page with its own differences; tall heads turned, as the printer turned them; no ◇ on the synopses; a folded brace says “&amp;c.”; the front page’s Partitions keyed with rubric numerals (I, II, III), folded, so the page fits one screen.</dd>
+  <dt>Opening (H2, reworked)</dt><dd>Rest the pointer on a folded brace and it fills with rubric from the beak outward, as a name’s window fills its bar before it stays. When it is full the branch opens one brace deep, its own braces folded. Keep resting on the same brace and it fills again: the branch is now <em>fixed</em> (its brace keeps a faint rubric) and stays when you leave. Rest on still and its inner braces open one at a time, in reading order, each filling before it opens. Move off the brace and the growing stops. Rest on an inner brace to open just that one. A branch opened but not fixed folds a moment after the pointer leaves it. A click opens and fixes at once, or folds a fixed branch; on a touch screen or with the keyboard, a tap or Enter does the same.</dd>
+  <dt>On the front page</dt><dd>Rest on a Partition’s name (or its brace): it opens onto the chain of its sheets and stops there, each sheet folded, so the page never runs away; rest on a sheet’s brace to open that sheet.</dd>
+</dl>
+
+<h2>What the printed sheets do</h2>
+<ul class="rules">
+  <li><b>R1</b> A head that divides is set <em>narrow</em> (“Definition, / Member, / Division,”). A leaf runs out to the edge of the page. Width goes to the words at the ends of the branches, not evenly to the levels.</li>
+  <li><b>R2</b> A head stands at the <em>middle</em> of its brace, and the brace spans exactly its members, so the beak points at the head.</li>
+  <li><b>R3</b> A brace is built from pieces: two curls, a beak and straight rule between them. A tall brace is a longer rule, not a stretched curl.</li>
+  <li><b>R4</b> “Or” is set in the members’ column, in the gap between the two members it divides.</li>
+  <li><b>R5</b> A leaf that turns over hangs its second line (“Particular; as Gout, Dropsy, &amp;c.”).</li>
+  <li><b>R6</b> Burton’s italic locators (<i>Subsect.</i> 4) and his signs (♈, A, ♊) are the finding aids, so they should be the links. A key stands to the left of the head it marks.</li>
+  <li><b>R7</b> When a table runs short of width, the printer gives way <em>branch by branch</em>. He narrows the heads, then turns a tall head on its side (“Secondary, as”, “Not necessary, as <i>Memb.</i> 4 <i>Sect.</i> 2.” on sheet A), and finally starts a new sheet, chained by a sign.</li>
+</ul>
+<p class="prose">The prototype keeps R1–R6 as they are printed. For R7 each branch compares its width with what its words need. A tall head with room along its brace is turned, as the printer turned it. A branch that still lacks room for its columns sets its head <em>over</em> its members, with a bracket instead of a beaked brace. The deepest branches give way first, so the outer braces keep Burton’s form longest. (A short script does the measuring; without it, CSS container queries give a rougher version of the same rule.) At phone width the same sheet has become a braced outline, made of the same pieces and the same words, with nothing swapped. Folding uses the brace itself. Click a brace (or Tab to it and press Enter) to fold its branch into a small stub with its count; rest on a stub to open it for a look, or click it to open it for good. Pointing at any head inks the braces above it in rubric, which shows the path down to it.</p>
+
+<h2><span class="tag">I</span> · The sheet itself</h2>
+<p class="prose">First Partition, sheets ♈ and A (pg131_02, pg132_01), all open. Drag the frame’s lower-right corner or choose a width, and watch the branches give way. Fold it to the first brace, then rest on the stubs to try H1 and H2.</p>
+<div class="toolbar" data-for="f1">
+  <span class="lab">Width</span><button type="button" data-w="100%">Full</button><button type="button" data-w="900px">900</button><button type="button" data-w="640px">640</button><button type="button" data-w="390px">390 (phone)</button>
+  <span class="sep"></span><button type="button" data-all="open">Open all</button><button type="button" data-all="shut">Fold to the first brace</button>
+  <span class="sep"></span><button type="button" data-fax="pg131_02.png pg132_01.png" aria-pressed="false">The printed sheets</button>
+</div>
+<div class="frame" id="f1"><ul class="sheet top">{{SHEET_A}}</ul></div>
+<p class="frame-w" data-for="f1"></p>
+<div class="fax" data-for="f1" hidden></div>
+
+<h2><span class="tag">II</span> · At the opening of a Partition</h2>
+<p class="prose">This sits at the head of the Partition’s first page, where the folded “Synopsis” box is now. The first sheet is open. Each later sheet is one line: its sign in a rubric column, Burton’s words for it, and a folded brace with its count. The column of signs (♈ A ♊ ♉ B ♋ C) reads as the chain the printer made. Rest on a sheet’s folded brace to open it; a sign inside a sheet (“See ♈”) opens and goes to the sheet it names. The page then carries on into the text.</p>
+<div class="toolbar" data-for="f2">
+  <span class="lab">Width</span><button type="button" data-w="100%">Full</button><button type="button" data-w="900px">900</button><button type="button" data-w="640px">640</button><button type="button" data-w="390px">390 (phone)</button>
+  <span class="sep"></span><span class="lab">Partition</span><button type="button" data-part="p1" aria-pressed="true">First</button><button type="button" data-part="p2" aria-pressed="false">Second</button>
+</div>
+<div class="frame" id="f2" style="padding:0">
+  <div class="mock"><div class="mock-bar"><span>The Anatomy of Melancholy</span><span>1.1.1.1</span></div>
+  <div class="opening">
+    <p class="pt-title" data-pt="p1">The First Partition</p>
+    <p class="pt-title" data-pt="p2" hidden>The Second Partition</p>
+    <p class="pt-sub">Burton’s synopsis</p>
+    <div data-pt="p1">{{OPENING}}</div>
+    <div data-pt="p2" hidden>{{OPENING_P2}}</div>
+    <p class="unit-start"><b>Section 1 · Member 1 · Subsection 1</b>the text of the Partition begins here</p>
+  </div></div>
+</div>
+<p class="frame-w" data-for="f2"></p>
+
+<h2><span class="tag">III</span> · On the front page</h2>
+<p class="prose">The front page keeps its present shape: the engraving, the title, the way in, and the three synopses folded to one line each, so the whole page fits one screen when it opens. Rest on a Partition’s name (or its brace) and, after a moment, it opens onto the chain of its sheets, each still folded; rest on a sheet’s brace to open that sheet. Move away and they fold again; click to keep one open. The braces joining the Partitions and their sheets are this edition’s, so they are drawn lighter; every other brace and every word is Burton’s. Choose L1 or L2 above for the labels. The mock opens as one 1400 × 900 window (narrower if your window is), to show that it fits.</p>
+<div class="toolbar" data-for="f3">
+  <span class="lab">Width</span><button type="button" data-w="100%" data-h="900px">One screen (up to 1400 × 900)</button><button type="button" data-w="1000px" data-h="">1000</button><button type="button" data-w="390px" data-h="">390 (phone)</button>
+</div>
+<div class="frame" id="f3" style="padding:0">
+  <div class="mock"><div class="mock-bar"><span>The Anatomy of Melancholy · An Englished Reader</span><span>⌕ Aa ☾</span></div>
+  <div class="front">
+    <figure class="eng" style="margin:0"><img src="{{SITE}}assets/images/pg003.png" alt="The engraved title page of 1628" loading="lazy"></figure>
+    <div class="side">
+      <h3><span class="a">The Anatomy of</span><span class="b">Melancholy,</span></h3>
+      <p class="what">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</p>
+      <p class="by">By Democritus Junior.</p>
+      <p class="enter"><span>Enter, gentle Reader ☞</span></p>
+      <p class="guide"><span>How to read this book</span></p>
+      <p class="hint">Point at a panel of the engraving to read its stanza from <span>The Argument of the Frontispiece</span>.</p>
+      <h4>The Synopses</h4>
+      {{FRONT}}
+      <h4 class="contents">Contents</h4>
+      <p class="hint">The Dedication · Democritus Junior to the Reader · The First Partition · …</p>
+    </div>
+  </div></div>
+</div>
+<p class="frame-w" data-for="f3"></p>
+
+<h2>For the owner to decide</h2>
+<ol class="choices">
+  <li><b>The pace of opening.</b> The brace fills in 0.65 s before it opens (the same time a name’s window takes to stay), fills again in 0.9 s to fix the branch, then opens one inner brace about every 0.75 s. A branch not fixed folds 0.9 s after the pointer leaves it. Faster, slower, or right?</li>
+</ol>
+<p class="prose"><b>Settled:</b> where a head names a part of the book, a small box with the division’s number follows Burton’s words and is the link, as the edition does now (“Habits, as <i>Subsect.</i> 4. <span class="chip">1.1.1.4</span>”).</p>
+<p class="note">Built by <code>tools/synopsis_sheets/proto.py</code> from <code>data/synopses/pN.json</code>. The words are taken verbatim; only the layout is new.</p>
+</div>
+
+<script>
+const IMGS = {{IMGS}};
+const root = document.documentElement;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+const turnOn = true;  // settled 2026-11-19: tall heads are turned, as the printer turned them
+
+
+/* the visible height of every branch (a folded one counts as one level), for the container rules (R7) */
+function relevel(sheet) {
+  const all = [...sheet.querySelectorAll(".n")].reverse();  // children before parents
+  const h = new Map();
+  for (const li of all) {
+    const kw = li.querySelector(":scope > .nb > .kw");
+    if (!kw) { h.set(li, 0); continue; }
+    if (li.classList.contains("shut")) { h.set(li, 1); continue; }
+    let m = 0;
+    for (const c of kw.querySelectorAll(":scope > .kids > .n")) m = Math.max(m, h.get(c) ?? 0);
+    h.set(li, 1 + m);
+  }
+  for (const [li, v] of h) li.dataset.h = v;
+}
+
+/* R7b: a head that would wrap to three lines or more, beside a brace taller than its one-line length, is turned */
+const meter = Object.assign(document.createElement("span"), { style: "position:absolute;visibility:hidden;white-space:nowrap;left:-9999px" });
+document.body.append(meter);
+function turn(sheet) {
+  const hds = [...sheet.querySelectorAll(".n:not(.leaf):not(.shut):not(.part):not(.root):not(.top-syn) > .nb > .hd")];
+  hds.forEach((hd) => hd.classList.remove("rot"));
+  if (!turnOn) return;
+  const pick = [];
+  for (const hd of hds) {
+    const nb = hd.parentElement;
+    if (nb.closest(".shut")) continue;
+    if (getComputedStyle(nb).flexDirection !== "row") continue;
+    const cs = getComputedStyle(hd);
+    const lh = parseFloat(cs.lineHeight) || 20;
+    if (hd.getBoundingClientRect().height < lh * 2.5) continue;
+    // the `font` shorthand reads empty under these numeral settings, so copy its parts
+    for (const p of ["fontFamily", "fontSize", "fontStyle", "fontWeight", "letterSpacing"]) meter.style[p] = cs[p];
+    meter.innerHTML = hd.innerHTML;
+    const one = meter.getBoundingClientRect().width;
+    const tall = nb.querySelector(":scope > .kw").getBoundingClientRect().height;
+    if (one + lh * 0.5 < tall) pick.push(hd);
+  }
+  pick.forEach((hd) => hd.classList.add("rot"));
+}
+
+/* R7, measured: a branch keeps its head beside its members while its width holds what it needs: its head (at most
+   7em, as heads wrap narrow) and brace plus what its members need at least; a leaf needs 11em. */
+const ctx = document.createElement("canvas").getContext("2d");
+function fit(sheet) {
+  sheet.classList.add("fitted");
+  const fs = parseFloat(getComputedStyle(sheet).fontSize);
+  ctx.font = `${fs}px ${getComputedStyle(sheet).fontFamily}`;
+  const lis = [...sheet.querySelectorAll(".n")];
+  // need: the least width that keeps this head beside its members (members folding as they must); best: the least
+  // width this branch can take either way. So the deepest branches give way first, as on the printed sheets.
+  const need = new Map(), best = new Map();
+  for (const li of [...lis].reverse()) {
+    const kw = li.querySelector(":scope > .nb > .kw");
+    if (!kw) { need.set(li, 11 * fs); best.set(li, 11 * fs); continue; }
+    const hd = li.querySelector(":scope > .nb > .hd");
+    const one = ctx.measureText(hd.textContent.trim()).width;
+    let hw = Math.min(one, 7 * fs) + 0.3 * fs;
+    if (li.classList.contains("part")) hw = 10 * fs;
+    if (li.classList.contains("shut")) { need.set(li, hw + 7.4 * fs); best.set(li, need.get(li)); continue; }
+    // a head that can be turned (R7b) takes one line's width: its members are at least one line each
+    const lines = kw.querySelectorAll(":scope > .kids > .n").length + kw.querySelectorAll(":scope > .kids .leaf").length;
+    if (turnOn && !li.matches(".root, .part, .top-syn") && one + 0.6 * fs < lines * 1.26 * fs * 0.6) hw = 1.6 * fs;
+    let m = 0;
+    for (const c of kw.querySelectorAll(":scope > .kids > .n")) m = Math.max(m, best.get(c) ?? 0);
+    need.set(li, hw + 0.82 * fs + m);
+    best.set(li, Math.min(need.get(li), Math.max(11 * fs, m + 0.9 * fs)));
+  }
+  for (const li of lis) delete li.dataset.fit;
+  for (const li of lis) {  // document order: parents first, so each width read already reflects the parents' choice
+    if (!li.querySelector(":scope > .nb > .kw") || li.offsetParent === null) continue;
+    li.dataset.fit = li.getBoundingClientRect().width < need.get(li) ? "stack" : "side";
+  }
+}
+
+function refresh(sheet) { relevel(sheet); fit(sheet); turn(sheet); }
+/* after a branch opens or folds: the columns at once; the turned heads once the heights have settled */
+function settle(sheet) {
+  relevel(sheet); fit(sheet);
+  clearTimeout(sheet._st);
+  sheet._st = setTimeout(() => turn(sheet), reduce.matches ? 0 : 1700);
+}
+
+function setShut(li, shut) {
+  li.classList.toggle("shut", shut);
+  li.querySelector(":scope > .nb > .kw > .brace")?.setAttribute("aria-expanded", String(!shut));
+}
+
+/* ------------------------------------------------ opening on rest (round 8: H2 Grow, reworked 2026-11-19)
+   Resting on a folded brace fills it with rubric (the hold indicator the name windows use), then opens it one brace
+   deep. Resting on: it fills again and the branch is fixed in place. Resting on still: its inner braces open one at a
+   time, each filling first. Leaving the brace stops the growing; leaving a branch that is open but not fixed folds it. */
+const T_OPEN = 650;   // the fill before a folded brace opens (a name's window takes 0.65 s to stay)
+const T_FIX = 900;    // the second fill, which fixes the branch in place
+const T_INNER = 450;  // the fill of each inner brace before it opens
+const T_PAUSE = 300;  // between one inner brace opening and the next brace starting to fill
+const LINGER = 900;   // after the pointer leaves a branch opened but not fixed, wait this long, then fold it
+const peeked = new Set();
+let rest = null;      // the brace being rested on: {li, timers: []}
+
+function fill(li, ms) {
+  li.style.setProperty("--fill", `${reduce.matches ? 0 : ms}ms`);
+  li.classList.remove("filling"); void li.offsetWidth; li.classList.add("filling");
+}
+function unfill(li) { li.classList.remove("filling"); }
+function later(fn, ms) { const t = setTimeout(fn, reduce.matches ? 0 : ms); rest?.timers.push(t); return t; }
+
+/* open one brace deep: the branch's own inner braces are folded, to be opened by resting or by a click */
+function open(li, how) {
+  for (const n of li.querySelectorAll(".n")) if (n.querySelector(":scope > .nb > .kw > .kids")) setShut(n, true);
+  setShut(li, false);
+  if (how === "peek") { li.dataset.peek = "1"; peeked.add(li); }
+  else fix(li);
+  settle(li.closest(".sheet"));
+}
+function fix(li) {
+  delete li.dataset.peek; peeked.delete(li); clearTimeout(li._lv); li._lv = null;
+  li.classList.add("fixed");
+}
+function fold(li) {
+  clearTimeout(li._lv); li._lv = null;
+  for (const p of [li, ...li.querySelectorAll(".n")]) { delete p.dataset.peek; peeked.delete(p); p.classList.remove("fixed", "filling"); }
+  setShut(li, true);
+  settle(li.closest(".sheet"));
+}
+/* the inner braces still folded, in reading order, level by level: the next one whose way to it is open */
+function nextInner(li) {
+  const depth = (n) => { let d = 0; for (let p = n.parentElement.closest(".n"); p && p !== li; p = p.parentElement.closest(".n")) d++; return d; };
+  const cands = [...li.querySelectorAll(".n.shut")].filter((n) => n.parentElement.closest(".n.shut") === null || !li.contains(n.parentElement.closest(".n.shut")));
+  cands.sort((a, b) => depth(a) - depth(b));
+  return cands[0] || null;
+}
+
+function startRest(li, x, y) {
+  stopRest();
+  rest = { li, timers: [], x, y };
+  if (li.classList.contains("shut")) {
+    fill(li, T_OPEN);
+    later(() => { unfill(li); open(li, "peek"); stepFix(li); }, T_OPEN);
+  } else if (li.dataset.peek) stepFix(li);
+  else stepGrow(li);
+}
+function stepFix(li) {
+  later(() => {
+    fill(li, T_FIX);
+    later(() => { unfill(li); fix(li); stepGrow(li); }, T_FIX);
+  }, 120);
+}
+function stepGrow(li) {
+  if (li.classList.contains("part")) return;  // a Partition opens onto its sheets and stops there
+  const n = nextInner(li);
+  if (!n) return;
+  later(() => {
+    fill(n, T_INNER);
+    later(() => { unfill(n); setShut(n, false); settle(li.closest(".sheet")); stepGrow(li); }, T_INNER);
+  }, T_PAUSE);
+}
+function stopRest() {
+  if (!rest) return;
+  rest.timers.forEach(clearTimeout);
+  for (const n of [rest.li, ...rest.li.querySelectorAll(".filling")]) unfill(n);
+  rest = null;
+}
+function triggerOf(el) { return el?.closest?.(".sheet button.brace, .sheet .part > .nb > .hd") || null; }
+
+/* Only the reader's own movement counts. An opening branch moves the page under a still pointer (a head narrows to
+   Burton's measure and its brace slides away), and the browser then reports the pointer leaving and entering things
+   it never moved over; those reports are ignored, so a rest goes on until the pointer itself moves off the brace. */
+let lastX = -1, lastY = -1, movedAt = 0;
+const moving = () => performance.now() - movedAt < 160;
+document.addEventListener("pointermove", (ev) => {
+  if (ev.pointerType === "touch") return;
+  if (Math.hypot(ev.clientX - lastX, ev.clientY - lastY) > 1.5) movedAt = performance.now();
+  lastX = ev.clientX; lastY = ev.clientY;
+  if (!rest || Math.hypot(ev.clientX - rest.x, ev.clientY - rest.y) < 6) return;
+  const tr = triggerOf(ev.target);
+  if (tr && tr.closest(".n") === rest.li) { rest.x = ev.clientX; rest.y = ev.clientY; } else stopRest();
+});
+document.addEventListener("pointerover", (ev) => {
+  if (ev.pointerType === "touch" || (rest && !moving())) return;
+  for (const p of peeked) if (p.contains(ev.target)) { clearTimeout(p._lv); p._lv = null; }
+  const tr = triggerOf(ev.target);
+  if (!tr) return;
+  const li = tr.closest(".n");
+  if (rest?.li === li) return;
+  startRest(li, ev.clientX, ev.clientY);
+});
+document.addEventListener("pointerout", (ev) => {
+  if (ev.pointerType === "touch") return;
+  const to = ev.relatedTarget;
+  if (!to) { stopRest(); }                 // out of the window
+  else if (!moving()) return;              // the page moved, not the pointer
+  for (const p of peeked) {
+    if (p.contains(ev.target) && !(to && p.contains(to)) && !p._lv) p._lv = setTimeout(() => fold(p), LINGER);
+  }
+});
+
+/* keep the clicked brace where it was on screen while the sheet changes around it */
+function anchored(el, fn) {
+  const y = el.getBoundingClientRect().top;
+  fn();
+  window.scrollBy(0, el.getBoundingClientRect().top - y);
+}
+
+document.addEventListener("click", (ev) => {
+  const tr = triggerOf(ev.target);
+  if (tr) {
+    const li = tr.closest(".n");
+    stopRest();
+    if (li.classList.contains("shut")) open(li, "pin");  // opens one brace deep, fixed
+    else if (li.dataset.peek) fix(li);                    // opened by resting: now fixed
+    else anchored(tr, () => fold(li));
+    return;
+  }
+  const see = ev.target.closest(".sheet a.see");
+  if (see) {
+    ev.preventDefault();
+    const id = see.getAttribute("href").slice(1);
+    const tgt = see.closest(".sheet").querySelector(`[id="${CSS.escape(id)}"]`) || document.getElementById(id);
+    if (!tgt) return;
+    // open the way to it as it stands (no inner folding), fixed
+    for (let n = tgt; n; n = n.parentElement?.closest(".n")) if (n.classList.contains("shut")) { setShut(n, false); fix(n); }
+    settle(tgt.closest(".sheet"));
+    history.replaceState(null, "", "#" + id);
+    tgt.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "start" });
+    return;
+  }
+  const t = ev.target.closest("[data-theme-set]");
+  if (t) { t.dataset.themeSet ? root.dataset.theme = t.dataset.themeSet : delete root.dataset.theme; document.querySelectorAll(".sheet").forEach(refresh); return; }
+  const bar = ev.target.closest(".toolbar[data-for]");
+  if (!bar) return;
+  const frame = document.getElementById(bar.dataset.for);
+  const w = ev.target.closest("[data-w]");
+  if (w) { size(frame, w); return; }
+  const a = ev.target.closest("[data-all]");
+  if (a) {
+    const sheet = frame.querySelector(".sheet");
+    for (const li of sheet.querySelectorAll(".n")) {
+      if (!li.querySelector(":scope > .nb > .kw > button.brace")) continue;
+      delete li.dataset.peek; peeked.delete(li); li.classList.remove("fixed");
+      setShut(li, a.dataset.all === "shut" && !li.classList.contains("root") && li.parentElement.closest(".n")?.classList.contains("root"));
+    }
+    settle(sheet); return;
+  }
+  const p = ev.target.closest("[data-part]");
+  if (p) {
+    bar.querySelectorAll("[data-part]").forEach((x) => x.setAttribute("aria-pressed", String(x === p)));
+    frame.querySelectorAll("[data-pt]").forEach((x) => x.hidden = x.dataset.pt !== p.dataset.part);
+    frame.querySelectorAll(".sheet").forEach(refresh); return;
+  }
+  const f = ev.target.closest("[data-fax]");
+  if (f) {
+    const box = document.querySelector(`.fax[data-for="${bar.dataset.for}"]`);
+    const on = box.hidden;
+    if (on && !box.childElementCount) for (const i of f.dataset.fax.split(" "))
+      box.insertAdjacentHTML("beforeend", `<img src="${IMGS[i]}" alt="The printed sheet ${i}" loading="lazy">`);
+    box.hidden = !on; f.setAttribute("aria-pressed", String(on));
+  }
+});
+
+function size(frame, btn) {
+  frame.style.setProperty("--w", btn.dataset.w); frame.style.width = "";
+  frame.classList.toggle("screen", !!btn.dataset.h);
+  if (btn.dataset.h) frame.style.setProperty("--fh", btn.dataset.h);
+}
+/* the front page mock opens as one 1400 x 900 screen, to show it fits */
+const first3 = document.querySelector('.toolbar[data-for="f3"] [data-h]');
+if (first3) size(document.getElementById("f3"), first3);
+
+/* each frame reports its width and re-measures its sheets as it changes */
+const ro = new ResizeObserver((entries) => {
+  for (const e of entries) {
+    const f = e.target;
+    const out = document.querySelector(`.frame-w[data-for="${f.id}"]`);
+    if (out) out.textContent = `${Math.round(f.getBoundingClientRect().width)} px`;
+    clearTimeout(f._t);
+    f._t = setTimeout(() => f.querySelectorAll(".sheet").forEach(refresh), 120);
+  }
+});
+document.querySelectorAll(".frame").forEach((f) => ro.observe(f));
+document.fonts.ready.then(() => document.querySelectorAll(".sheet").forEach(refresh));
+</script>
+</body>
+</html>

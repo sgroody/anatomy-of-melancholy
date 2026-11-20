@@ -246,14 +246,17 @@ def keyboard_check(profile: str = "private") -> Result:
         if syn:
             ctx, pg = new_page(b)
             pg.goto(base + syn[0])
-            btn = pg.locator(".syn-tg").nth(1)
+            # the sheet (2026-11-19): each brace is the button that folds and opens its branch
+            btn = pg.locator(".syn-brace").nth(1)
             btn.focus()
             pg.keyboard.press("Enter")
             kids = btn.get_attribute("aria-controls")
-            step(btn.get_attribute("aria-expanded") == "false" and pg.evaluate(f"document.getElementById({kids!r}).hidden"),
-                 "Enter on a branch button should close its list")
+            pg.wait_for_timeout(1300)  # the fold's own motion
+            step(btn.get_attribute("aria-expanded") == "false"
+                 and pg.evaluate(f"getComputedStyle(document.getElementById({kids!r})).visibility") == "hidden",
+                 "Enter on a brace should fold its branch")
             pg.keyboard.press("Space")
-            step(btn.get_attribute("aria-expanded") == "true", "Space on a closed branch button should open it")
+            step(btn.get_attribute("aria-expanded") == "true", "Space on a folded brace should open it")
             pg.click('button[data-syn="close"]')
             pg.click('button[data-syn="open"]')
             see = pg.locator("a.syn-see").first
@@ -261,7 +264,7 @@ def keyboard_check(profile: str = "private") -> Result:
             pg.click('button[data-syn="close"]')
             pg.evaluate(f"location.hash = {('#' + target)!r}")
             pg.wait_for_timeout(200)
-            step(focused(pg).startswith(f"li#{target}") and pg.is_visible(f"#{target} > .syn-row"),
+            step(focused(pg).startswith(f"li#{target}") and pg.is_visible(f"#{target} > .syn-nb > .syn-hd"),
                  f"a cross-key should reveal and focus its branch, got {focused(pg)}")
             link = pg.evaluate("""async () => { const r = await fetch('../../1.2.3.12/'); if (!r.ok) return null;
                 const m = (await r.text()).match(/class="sb-step syn-node"[^>]*href="([^"]+)"/); return m && m[1]; }""")
@@ -341,6 +344,14 @@ def layout_check(profile: str = "private") -> Result:
             for u in units:
                 pg.goto(base + f"{u}/", wait_until="load")
                 pg.evaluate("document.fonts.ready")
+                # the page lays its notes out in an animation frame after load; on a busy machine that came after a
+                # fixed 150 ms wait (2026-11-19: 3.2.4.1 measured unlaid, 37 notes "over the text"), so wait for it
+                try:
+                    pg.wait_for_function("() => { const a = document.querySelector('article.unit');"
+                                         " return !a || innerWidth < 1100 || a.classList.contains('sn-laid'); }",
+                                         timeout=10000)
+                except Exception:  # noqa: BLE001 - a page that never lays out is a failure, reported below
+                    r.fail(f"{u} at {width}px ({mode}): the notes were not laid out within 10 s")
                 pg.wait_for_timeout(150)
                 m = pg.evaluate(LAYOUT_JS)
                 tot["pages"] += 1

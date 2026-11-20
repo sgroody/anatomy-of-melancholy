@@ -424,38 +424,150 @@ table.counts th, table.counts td { border-bottom: 1px solid var(--rule); padding
 table.counts td:last-child { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
 code { font-size: 0.85em; }
 
-/* ------------------------------------------------------------ synopsis tree (M7) */
-.syn-tree, .syn-kids { list-style: none; margin: 0; padding: 0; }
-.syn-tree { margin: 1.2rem 0 2rem; padding-left: 1.4em; }
-.syn-tree > .syn-n { margin-bottom: 1.6rem; }
-.syn-n { margin: 0.15rem 0; }
-.syn-n:target > .syn-row, .syn-n:focus > .syn-row { background: var(--tr-bg); outline: none; }
-.syn-n:focus { outline: none; }
-.syn-row { line-height: 1.4; }
-/* each brace: a curved rule down the left of the list it groups */
-.syn-kids { position: relative; margin: 0.25rem 0 0.4rem 0.6rem; padding: 0.1rem 0 0.1rem 1.5em; }
-.syn-kids::before { content: ""; position: absolute; left: 0; top: 0.25em; bottom: 0.25em; width: 0.45rem;
-  border: 1.5px solid var(--muted); border-right: 0; border-radius: 0.5rem 0 0 0.5rem; }
-.syn-kids[hidden] { display: none; }
-.syn-or { display: block; font-style: italic; color: var(--muted); font-size: 0.85em; margin: 0.25rem 0 0.05rem; }
-.syn-head { display: block; font-size: 0.9em; color: var(--muted); }
-.syn-key, .syn-see { color: var(--accent); }
-.syn-key { margin-right: 0.1em; }
-.syn-see { text-decoration: underline; text-decoration-color: currentColor; padding: 0 0.15em; }
-.syn-ref { font-size: 0.72em; font-variant-numeric: lining-nums; white-space: nowrap; padding: 0 0.3em; margin-left: 0.15em;
-  border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; color: var(--muted); vertical-align: 0.1em; }
+/* ------------------------------------------------------------ the synopses as Burton's sheets (2026-11-19) */
+/* Re-set by the printer's own rules (prototype: tools/synopsis_sheets; notes: state/review/reader-stages.md).
+   R1 a head that divides is set narrow and a leaf runs to the edge; R2 a head stands at the middle of its brace;
+   R3 a brace is built of pieces (two curls, a beak, a rule between), never stretched; R4 "Or" stands in the members'
+   column; R5 a leaf hangs its turnovers; R6 the signs (♈, A …) lead to their sheets; R7 short of width a branch gives
+   way: a tall head is turned on its side, then a head is set over its members, the deepest branches first
+   (edition.js measures; without script, the container rules at the end of this block). */
+:root {
+  --syn-brace-ink: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  --syn-ed-ink: color-mix(in srgb, var(--muted) 55%, var(--paper));
+  --syn-pt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 .9C6.2 .9 5 2.6 5 6.5V10' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --syn-pb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 9.1C6.2 9.1 5 7.4 5 3.5V0' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --syn-pk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cpath d='M5 0V3.5C5 7.6 4 9.3 .7 10C4 10.7 5 12.4 5 16.5V20' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+  --syn-cap: min(0.5em, 26%);
+  --syn-bk: min(1.05em, 42%);
+  --syn-sw: 0.081em;
+  --syn-m-brace:
+    var(--syn-pt) left top / 100% var(--syn-cap) no-repeat,
+    var(--syn-pb) left bottom / 100% var(--syn-cap) no-repeat,
+    var(--syn-pk) left center / 100% var(--syn-bk) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--syn-cap) / var(--syn-sw) calc(50% - var(--syn-cap) - var(--syn-bk) / 2 + 1px) no-repeat,
+    linear-gradient(#000 0 0) left 50% bottom var(--syn-cap) / var(--syn-sw) calc(50% - var(--syn-cap) - var(--syn-bk) / 2 + 1px) no-repeat;
+  --syn-m-bracket:
+    var(--syn-pt) left top / 100% var(--syn-cap) no-repeat,
+    var(--syn-pb) left bottom / 100% var(--syn-cap) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--syn-cap) / var(--syn-sw) calc(100% - 2 * var(--syn-cap) + 1px) no-repeat;
+  --syn-ease: cubic-bezier(.32, .72, .24, 1); --syn-t-open: 1.15s; --syn-t-shut: .75s;
+}
+.syn-sheet, .syn-sheet ul { list-style: none; margin: 0; padding: 0; }
+.syn-sheet { margin: 1rem 0 1.4rem; font-size: 0.94em; line-height: 1.26; hyphens: manual; text-indent: 0; text-align: left;
+  font-variant-emoji: text; interpolate-size: allow-keywords; /* lets a branch's height grow from nothing */ }
+.syn-sheet .syn-n { container-type: inline-size; }
+/* R1 + R2 */
+.syn-nb { display: flex; align-items: center; }
+.syn-hd { flex: 0 0 auto; width: max-content; max-width: clamp(5em, 20cqi, 9.5em); padding: .05em .28em .05em 0;
+  transition: width var(--syn-t-open) var(--syn-ease), max-width var(--syn-t-open) var(--syn-ease), color .3s; }
+/* R5 */
+.syn-leaf > .syn-nb > .syn-hd { flex: 1 1 auto; width: auto; max-width: none; padding-left: 1.1em; text-indent: -1.1em; }
+.syn-kw { flex: 1 1 0; min-width: 0; position: relative; padding-left: .82em; min-height: 1.35em; }
+/* unfolding: the brace grows from its stub as the members' height opens; the members come in from the beak outward
+   (--d, a member's distance from the middle of its brace); folding is quicker, the members first, then the height */
+.syn-kids { padding: .12em 0; overflow: clip; overflow-clip-margin: .5em;
+  transition: height var(--syn-t-open) var(--syn-ease), padding var(--syn-t-open) var(--syn-ease), visibility 0s; }
+.syn-kids > .syn-n { transition: opacity .7s ease calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms),
+  translate .8s var(--syn-ease) calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms); }
+.syn-shut > .syn-nb > .syn-kw > .syn-kids { height: 0; padding-block: 0; visibility: hidden;
+  transition: height var(--syn-t-shut) var(--syn-ease) .18s, padding var(--syn-t-shut) var(--syn-ease) .18s,
+  visibility 0s linear calc(var(--syn-t-shut) + .18s); }
+.syn-shut > .syn-nb > .syn-kw > .syn-kids > .syn-n { opacity: 0; translate: -.7em 0; transition: opacity .25s ease, translate .3s ease; }
+.syn-sheet.syn-still, .syn-sheet.syn-still * { transition: none !important; } /* folding on load, before the first paint */
+/* R3: the brace, a button that folds and opens its branch */
+.syn-brace { position: absolute; left: 0; top: 0; bottom: 0; width: .74em; padding: 0; margin: 0; border: 0; background: none;
+  cursor: pointer; border-radius: 2px; color: inherit; font: inherit; }
+.syn-brace::before { content: ""; position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em;
+  background: var(--syn-brace-ink); -webkit-mask: var(--syn-bm, var(--syn-m-brace)); mask: var(--syn-bm, var(--syn-m-brace)); }
+.syn-brace.syn-ed::before { background: var(--syn-ed-ink); }
+.syn-brace:hover::before, .syn-brace:focus-visible::before { background: var(--accent); }
+.syn-brace::after { content: ""; position: absolute; inset: 0 0 0 -.45em; min-height: 1.6em; } /* a wider target */
+/* the hold indicator, as a name's window fills its bar: resting on a brace inks it from the beak outward; when full,
+   the brace opens its branch, or, already open, fixes it in place */
+.syn-ink { position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em; background: var(--accent);
+  -webkit-mask: var(--syn-bm, var(--syn-m-brace)); mask: var(--syn-bm, var(--syn-m-brace));
+  clip-path: inset(50% 0 50% 0); opacity: 0; pointer-events: none; }
+.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: 1; clip-path: inset(0 0 0 0); transition: clip-path var(--syn-fill, .65s) linear; }
+.syn-filling > .syn-nb > .syn-hd .syn-pt { color: var(--accent); transition: color var(--syn-fill, .65s); }
+/* fixed in place: the brace keeps a faint rubric, as a fixed window keeps its bar */
+.syn-fixed > .syn-nb > .syn-kw > .syn-brace::before { background: color-mix(in srgb, var(--accent) 45%, var(--syn-brace-ink)); }
+.syn-fixed > .syn-nb > .syn-kw > .syn-brace.syn-ed::before { background: color-mix(in srgb, var(--accent) 40%, var(--syn-ed-ink)); }
+/* a folded brace: a stub, and "&c." for what it holds (owner, 2026-11-19); the count is in its name */
+.syn-cnt { position: absolute; left: 1.05em; top: 50%; translate: 0 -50%; white-space: nowrap; color: var(--muted); font-size: .9em;
+  opacity: 0; pointer-events: none; transition: opacity .25s; }
+.syn-cnt::after { content: "&c."; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace .syn-cnt { opacity: 1; transition: opacity .45s ease var(--syn-t-shut); }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 6.5em; }
+.syn-shut > .syn-nb > .syn-kw { min-width: 7.2em; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace:hover .syn-cnt, .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { color: var(--accent); }
+.syn-shut > .syn-nb > .syn-hd { max-width: min(26em, calc(100cqi - 7.6em)); }
+/* folded sheets in a chain stand with their stubs in one column, as a printer aligns a column of braces */
+.syn-root.syn-shut > .syn-nb > .syn-hd { width: min(22em, calc(100cqi - 7.6em)); }
+/* R4, R6 */
+.syn-or { margin: .08em 0 .08em 1.6em; font-size: .94em; }
+.syn-see { color: var(--accent); text-decoration: underline 1px; text-underline-offset: .15em; padding: 0 .1em; } /* not colour alone (V10a) */
+.syn-see:hover { text-decoration-thickness: 2px; }
+.syn-key { display: inline-block; width: 1.5em; margin-left: -1.5em; text-indent: 0; text-align: center; color: var(--accent); }
+.syn-key.syn-supplied { color: var(--muted); font-size: .9em; }
+.syn-root > .syn-nb > .syn-hd { padding-left: 1.5em; }
+.syn-sheet > .syn-root + .syn-root, .syn-part .syn-root + .syn-root { margin-top: .9em; }
+.syn-head { display: block; font-size: .92em; }
+.syn-note { color: var(--muted); cursor: help; padding-left: .15em; vertical-align: super; font-size: .75em; }
+/* where a head names a part of the book: a small box with its number, the link (owner, 2026-11-19: A) */
+.syn-ref { font-size: 0.72em; font-variant-numeric: lining-nums; white-space: nowrap; padding: 0 0.3em; margin-left: 0.1em;
+  border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; color: var(--muted); vertical-align: 0.1em; text-indent: 0; }
 a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: var(--ink); }
-.syn-note, .syn-flag { font-size: 0.78em; color: var(--muted); }
-.syn-tg { display: inline-block; width: 1.3em; height: 1.2em; padding: 0; margin: 0 0.15em 0 -1.45em; border: 0;
-  background: none; color: var(--muted); cursor: pointer; vertical-align: -0.1em; }
-.syn-tg::before { content: ""; display: inline-block; border: 0.32em solid transparent; border-top-color: currentColor;
-  border-bottom-width: 0; transition: transform 0.12s; }
-.syn-tg[aria-expanded="false"]::before { transform: rotate(-90deg); }
-.syn-tg:hover { color: var(--accent); }
+/* R7b: a tall head turned on its side, read upward, as the printer turned "Not necessary, as Memb. 4 Sect. 2." */
+.syn-hd.syn-rot { writing-mode: vertical-rl; transform: rotate(180deg); max-width: none; width: auto; white-space: nowrap;
+  padding: .2em .1em; text-align: center; }
+/* the path: pointing at a head inks the braces above it; a node reached by a link is lit */
+.syn-n:has(> .syn-nb > .syn-hd:hover) > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-n:has(.syn-n > .syn-nb > .syn-hd:hover) > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-n:has(:target) > .syn-nb > .syn-kw > .syn-brace::before { background: var(--accent); }
+.syn-n:target > .syn-nb > .syn-hd, .syn-n:focus > .syn-nb > .syn-hd { background: var(--hot); border-radius: 2px; }
+.syn-n:focus { outline: none; }
+/* the front page: the three Partitions folded, keyed with rubric numerals (owner, 2026-11-19); a name stays where it
+   is as its chain opens below it, on the edition's bracket */
+.syn-front { margin-top: .4rem; }
+.syn-pt { font-variant-caps: all-small-caps; letter-spacing: .07em; }
+.syn-part + .syn-part { margin-top: .3em; }
+.syn-part > .syn-nb { align-items: flex-start; }
+.syn-part > .syn-nb > .syn-hd { width: 13.2em; max-width: none; padding-left: 1.6em; white-space: nowrap; cursor: pointer; }
+.syn-pk { font-variant-caps: normal; }
+.syn-part:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); }
+/* an open Partition sets its sheets under its name, across the column, so their lines are not squeezed */
+.syn-sheet .syn-part:not(.syn-shut) > .syn-nb { flex-direction: column; align-items: stretch; }
+.syn-sheet .syn-part:not(.syn-shut) > .syn-nb > .syn-kw { flex: 0 0 auto; margin: .15em 0 .2em 1.1em; }
 .syn-tools { display: flex; gap: 0.5rem; font-size: 0.85em; }
 .syn-tools[hidden] { display: none; }
 .syn-tools button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; color: inherit; font: inherit; }
 .syn-here { font-size: 0.85em; color: var(--muted); margin: 0.8rem 0; }
+/* the synopsis pages take the width of the page, not the measure of the text */
+.landing.synopsis { max-width: none; }
+main:has(.landing.synopsis) { max-width: 90rem; }
+/* a Partition's synopsis at the head of its first page reaches into the margin beside the text */
+.part-syn { margin: 0 0 1.6rem; border-bottom: 1px solid var(--rule); padding-bottom: .6rem; }
+.part-syn .ps-h { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); margin: 0; text-indent: 0; }
+.ps-all { font-size: 0.85em; margin: 0; text-indent: 0; }
+@media (min-width: 1100px) { .unit > .part-syn { margin-right: calc(-1 * (var(--margin-col) + var(--gap))); } }
+@media (min-width: 1380px) { .two-side .unit > .part-syn { margin-left: calc(-1 * (var(--margin-col) + var(--gap))); } }
+@media (prefers-reduced-motion: reduce) { .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: .5; } }
+@media print { .syn-brace::before { background: #000; } .syn-shut > .syn-nb > .syn-kw > .syn-kids { height: auto; visibility: visible; }
+  .syn-kids > .syn-n { opacity: 1 !important; translate: none !important; } .syn-cnt { display: none; } }
+/* R7 without script: a rule per subtree height (a branch needs ~11em for its leaves and ~6.2em for each head column) */
+.syn-n[data-fit="stack"] > .syn-nb { flex-direction: column; align-items: stretch; }
+.syn-n[data-fit="stack"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; }
+.syn-n[data-fit="stack"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } /* in a column, basis 0 would collapse it */
+.syn-n[data-fit="stack"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); }
+@container (width < 17.2em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 23.4em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 29.6em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 35.8em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 42em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 48.2em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 54.4em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 60.6em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 66.8em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 /* Print (M8): light colours whatever the theme; Burton's sidenotes in a printed right margin, floated as in the
@@ -604,9 +716,6 @@ main:has(> .front) { max-width: 82rem; }
 .front-stanza:has(.fs-st:not([hidden])) .fs-hint { display: none; }
 .fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
 .fs-st-l { font-style: italic; margin: 0; line-height: 1.45; }
-.front-syn details { border-bottom: 1px solid var(--rule); padding: 0.3rem 0; }
-.front-syn summary { cursor: pointer; }
-.front-syn .syn-tree { margin-top: 0.6rem; font-size: 0.92em; }
 @media (max-width: 60rem) { .front { grid-template-columns: 1fr; } .front .front-eng { position: static; } }
 
 /* ------------------------------------------------------------ facing translations (stage 4) */
@@ -831,17 +940,6 @@ main:has(.fp-wide) { max-width: calc(60rem + var(--margin-col) + var(--gap) + 4r
   .mode-gloss .fp-facing .ftr-n { grid-column: 1; grid-row: calc(var(--r) * 2); align-self: end; }
 }
 
-/* ------------------------------------------------------------ a Partition's synopsis at the head of its first page */
-.part-syn { margin: 0 0 1.6rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.4rem 0; }
-.part-syn > summary { cursor: pointer; list-style: none; font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); }
-.part-syn > summary::-webkit-details-marker { display: none; }
-.part-syn > summary:hover, .part-syn[open] > summary { color: var(--accent); }
-.part-syn .ps-k { color: var(--accent); font-size: 1.3em; }
-.part-syn .ps-hint { margin-left: 0.6em; font-variant-caps: normal; letter-spacing: 0; font-style: italic; font-size: 0.85em; }
-.part-syn[open] .ps-hint { display: none; }
-.part-syn .syn-tree { font-size: 0.9em; margin: 0.8rem 0 0.4rem; }
-.ps-all { font-size: 0.85em; margin: 0; }
-
 /* ------------------------------------------------------------ the Dedication, as an inscription (stage 9) */
 /* Burton's Latin dedication set as a tablet: a double rubric rule, the tiers of capitals kept, the dedicatee in red;
    Gowland's English beside it, in italic */
@@ -1010,30 +1108,6 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .text-only .unit .lucida { color: inherit !important; background: none !important; box-shadow: none !important; }
 .text-only .unit a.nm, .text-only .unit a.xref, .text-only .unit .gl-w { color: inherit !important;
   text-decoration: none !important; pointer-events: none; }
-
-/* ------------------------------------------------------------ the synopsis as a sheet (2026-11-18) */
-/* Burton's braces read left to right, one column per level: each branch's words, then a drawn brace holding its
-   parts; a sheet wider than the window scrolls sideways. The outline stays for narrow windows and by choice. */
-.synopsis.sheet-on { max-width: none; }
-main:has(.synopsis.sheet-on) { max-width: none; }
-.syn-scroll { overflow-x: auto; padding-bottom: 0.6rem; }
-.syn-views { display: inline-flex; margin-right: 0.8rem; }
-.syn-views button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
-.syn-tree.syn-sheet { padding-left: 0; display: table; font-size: 0.86em; line-height: 1.3; }
-.syn-tree.syn-sheet > .syn-n { margin-bottom: 1.2rem; }
-.syn-sheet .syn-n { display: grid; grid-template-columns: minmax(7rem, 13.5rem) auto; align-items: center; column-gap: 0.15rem; margin: 0.12rem 0; }
-.syn-sheet .syn-n > .syn-or, .syn-sheet .syn-n > .syn-head, .syn-sheet .syn-n > .syn-row { grid-column: 1; }
-.syn-sheet .syn-n > .syn-kids { grid-column: 2; grid-row: 1 / span 3; margin: 0; padding: 0.1rem 0 0.1rem 1.05rem;
-  background: var(--brace) left center / 0.7rem 100% no-repeat; }
-.syn-sheet .syn-kids::before { display: none; }
-.syn-sheet .syn-or { margin: 0; }
-.syn-sheet .syn-tg { margin-left: -1.3em; }
-.syn-sheet .syn-row { padding-right: 0.3rem; }
-.syn-sheet .syn-n:not(:has(> .syn-kids)) { grid-template-columns: minmax(7rem, 20rem); }
-:root { --brace: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 100' preserveAspectRatio='none'%3E%3Cpath d='M9 1 C4 1 5 6 5 20 C5 40 5 46 1 50 C5 54 5 60 5 80 C5 94 4 99 9 99' fill='none' stroke='%23857a6a' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
-:root[data-theme="dark"] { --brace: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 100' preserveAspectRatio='none'%3E%3Cpath d='M9 1 C4 1 5 6 5 20 C5 40 5 46 1 50 C5 54 5 60 5 80 C5 94 4 99 9 99' fill='none' stroke='%23a89e8e' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --brace: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 100' preserveAspectRatio='none'%3E%3Cpath d='M9 1 C4 1 5 6 5 20 C5 40 5 46 1 50 C5 54 5 60 5 80 C5 94 4 99 9 99' fill='none' stroke='%23a89e8e' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); } }
-@media print { .syn-sheet .syn-n > .syn-kids { background-image: none; border-left: 1px solid #999; } }
 
 /* the signs float at the top right once the running head has gone (owner, 2026-11-19); the options open under them */
 body.bar-float header.site .bar-r { position: fixed; top: 0.6rem; right: 1rem; z-index: 45; display: flex; gap: 0.6rem;

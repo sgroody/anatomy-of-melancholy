@@ -3,14 +3,13 @@
 <article class="landing synopsis">
   <h1 class="landing-title">{{ page.title }}</h1>
   <p class="note machine-label">{{ label }}</p>
-  <p class="note">Each head links to the place in the book it names; a sign such as ♈ leads to the branch carrying the same sign.</p>
+  <p class="note">A small box after a head leads to the place in the book it names; a sign such as ♈ leads to the sheet carrying the same sign. Click a brace to fold its branch; rest on a folded brace to open it.</p>
   <div class="syn-tools" hidden>
-    <span class="syn-views" role="group" aria-label="View"><button type="button" data-view="sheet" aria-pressed="false">As a sheet</button><button type="button" data-view="outline" aria-pressed="false">As an outline</button></span>
     <button type="button" data-syn="open">Open all</button>
-    <button type="button" data-syn="close">Close all</button>
+    <button type="button" data-syn="close">Fold to the first brace</button>
   </div>
-  {# the sheet: Burton's braces, read left to right, one column per level (2026-11-18, after the synopsis research) #}
-  <div class="syn-scroll">{{ tree }}</div>
+  {# Burton's sheets, re-set by the printer's rules (2026-11-19; prototype in tools/synopsis_sheets) #}
+  {{ tree }}
   <section aria-labelledby="sheets-h">
     <h2 id="sheets-h">The printed sheets</h2>
     <p class="note">The printed sheets ({{ sheets|length }}).</p>

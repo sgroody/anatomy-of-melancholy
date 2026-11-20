@@ -1,8 +1,9 @@
-"""The synopsis pages (M7): data/synopses/<pN>.json as a nested, collapsible tree, and the unit -> node map
-behind each unit page's "where this stands in the synopsis" link.
+"""The synopses: data/synopses/<pN>.json set as Burton's sheets (braces read left to right), and the unit -> node
+map behind each unit page's "where this stands in the synopsis" link.
 
-Without script the tree is fully open; edition.js adds a disclosure button to every node that has children.
-Words are rendered from the tree's runs exactly (italic, symbols, Greek tagged with lang="grc").
+Without script every brace is open; edition.js fits the sheet to its width, folds the braces marked to start folded,
+and opens a folded brace when the reader rests on it or clicks it. Words are rendered from the tree's runs exactly
+(italic, symbols, Greek tagged with lang="grc").
 """
 
 import json
@@ -39,71 +40,128 @@ def runs_html(runs: list[dict]) -> str:
     return "".join(out)
 
 
+ROMAN = {"p1": "I", "p2": "II", "p3": "III"}
+
+
 def _plain(runs: list[dict]) -> str:
     return " ".join("".join(r["t"] for r in runs).split())
 
 
-def tree_html(tree: dict, root: str, titles: dict[str, str]) -> str:
-    """The tree as nested lists. `root` is the relative path to the site root; `titles` maps each built unit to
-    its title."""
+def _height(n: dict) -> int:
+    """Levels below a node (a leaf is 0): the starting value for the sheet's width rules."""
+    return 1 + max(map(_height, n["children"])) if n.get("children") else 0
+
+
+def _count(n: dict) -> int:
+    return sum(1 + _count(c) for c in n.get("children", []))
+
+
+def tree_html(tree: dict, root: str, titles: dict[str, str], fold: str = "none") -> str:
+    """The synopsis as Burton's sheet (2026-11-19, from tools/synopsis_sheets): each node a head beside a drawn
+    brace holding its members, read left to right; edition.js fits the sheet to its width branch by branch (a head
+    set over its members where there is no room, a tall head turned, as the printer did) and folds and opens the
+    braces. `root` is the relative path to the site root; `titles` maps each built unit to its title.
+
+    fold: "none", every brace open (the synopsis pages); "sheets", the first sheet open and the later ones folded to
+    their opening lines (the head of a Partition's first page). A folded branch is only marked (data-fold); the
+    script folds it, so without script the whole sheet is open."""
     by_id = {n["id"]: n for n, _ in _nodes(tree)}
+    roots = tree["children"]
+    shut = {r["id"] for r in roots[1:]} if fold == "sheets" else set()
+    rows = "".join(_node(r, by_id, root, titles, shut, is_root=True) for r in roots)
+    return f'<ul class="syn-sheet">{rows}</ul>'
 
-    def node(n: dict) -> str:
-        nid = attr(n["id"])
-        parts = []
-        if "or" in n:
-            parts.append(f'<span class="syn-or">{esc(n["or"]["text"])}</span>')
-        if "head" in n:
-            parts.append(f'<span class="syn-head">{runs_html(n["head"]["runs"])}</span>')
-        row = []
-        if "key" in n:
-            k = n["key"]
-            if k.get("supplied"):  # the reason follows the text as an edition's note
-                row.append(f'<span class="syn-key syn-supplied" data-resp="editor">{esc(k["sign"])}'
-                           '<span class="syn-flag"> (sign supplied by this edition)</span></span> ')
-            elif "src_p" in k:
-                row.append(f'<span class="syn-key">{esc(k["text"])}</span> ')
-        text = runs_html(n["text"])
-        linked = set()
-        for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
-            # the sign Burton prints ("See ♋ ♌ ♍") is itself the link (owner, 2026-11-03), not a copy after it
-            i = text.find(esc(sign))
-            if i >= 0 and "<" not in text[i:i + len(esc(sign))] and text.count("<", 0, i) == text.count(">", 0, i):
-                where = _plain(by_id[tgt]["text"]) if tgt in by_id else ""
-                text = (text[:i] + f'<a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
-                        f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>'
-                        + text[i + len(esc(sign)):])
-                linked.add(tgt)
-        row.append(f'<span class="syn-t" id="{nid}-t">{text}</span>')
-        if "label" in n:
-            row.append(f' <span class="syn-label">{runs_html(n["label"]["runs"])}</span>')
-        seen = []
-        for ref in n.get("ref", []):
-            u = ref["unit"]
-            if u and u not in seen:
-                seen.append(u)
-                if u in titles:  # a partial build links only the units it has
-                    row.append(f' <a class="syn-ref" href="{root}{attr(u)}/" title="{attr(titles[u])}">'
-                               f'<span class="sr-only">to </span>{esc(ref["div"])}</a>')
-                else:
-                    row.append(f' <span class="syn-ref">{esc(ref["div"])}</span>')
-        for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
-            if tgt in linked:
-                continue
+
+def _node(n: dict, by_id: dict, root: str, titles: dict[str, str], shut: set[str], is_root: bool = False,
+          d: float = 0) -> str:
+    """One node. `d`: its distance from the middle of its parent's brace, so members unfold from the beak outward."""
+    nid = attr(n["id"])
+    kids = n.get("children", [])
+    hd = []
+    if "head" in n:  # a column heading printed above ("Memb.", "Subsect.")
+        hd.append(f'<span class="syn-head">{runs_html(n["head"]["runs"])}</span>')
+    text = runs_html(n["text"])
+    if "key" in n:
+        k = n["key"]
+        if k.get("supplied"):
+            hd.append(f'<span class="syn-key syn-supplied" data-resp="editor" title="{attr(k["supplied"])}">'
+                      f'[{esc(k["sign"])}]<span class="sr-only"> (sign supplied by this edition)</span></span>')
+        elif "src_p" in k:
+            hd.append(f'<span class="syn-key">{esc(k["text"])}</span>')
+        elif text.startswith(esc(k["sign"])):  # the sign printed at the head of the root's own words: its column
+            text = f'<span class="syn-key">{esc(k["sign"])}</span>' + text[len(esc(k["sign"])):].lstrip()
+    linked = set()
+    for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
+        # the sign Burton prints ("See ♋ ♌ ♍") is itself the link (owner, 2026-11-03), not a copy after it
+        i = text.find(esc(sign))
+        if i >= 0 and "<" not in text[i:i + len(esc(sign))] and text.count("<", 0, i) == text.count(">", 0, i):
             where = _plain(by_id[tgt]["text"]) if tgt in by_id else ""
-            row.append(f' <a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
-                       f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>')
-        for note in (n.get("key", {}).get("supplied"), n.get("note")):
-            if note:
-                row.append(f' <span class="syn-note" data-resp="editor">Edition’s note: {esc(note)}</span>')
-        parts.append(f'<div class="syn-row">{"".join(row)}</div>')
-        kids = n.get("children", [])
-        if kids:
-            parts.append(f'<ul class="syn-kids" id="{nid}-c">' + "".join(node(c) for c in kids) + "</ul>")
-        rel = ' data-rel="or"' if n.get("relation") == "or" else ""
-        return f'<li class="syn-n" id="{nid}"{rel}>{"".join(parts)}</li>'
+            text = (text[:i] + f'<a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
+                    f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>'
+                    + text[i + len(esc(sign)):])
+            linked.add(tgt)
+    hd.append(f'<span class="syn-t" id="{nid}-t">{text}</span>')
+    if "label" in n:
+        hd.append(f' <span class="syn-label">{runs_html(n["label"]["runs"])}</span>')
+    # where a head names a part of the book, the small box with its number follows Burton's words and is the link
+    # (owner, 2026-11-19: "A is fine")
+    seen = []
+    for ref in n.get("ref", []):
+        u = ref["unit"]
+        if u and u not in seen:
+            seen.append(u)
+            if u in titles:  # a partial build links only the units it has
+                hd.append(f' <a class="syn-ref" href="{root}{attr(u)}/" title="{attr(titles[u])}">'
+                          f'<span class="sr-only">to </span>{esc(ref["div"])}</a>')
+            else:
+                hd.append(f' <span class="syn-ref">{esc(ref["div"])}</span>')
+    for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
+        if tgt in linked:
+            continue
+        where = _plain(by_id[tgt]["text"]) if tgt in by_id else ""
+        hd.append(f' <a class="syn-see" href="#{attr(tgt)}" title="{attr(where)}">'
+                  f'<span class="sr-only">go to the branch marked </span>{esc(sign)}</a>')
+    if n.get("note"):
+        note = esc(n["note"])
+        hd.append(f'<span class="syn-note" data-resp="editor" tabindex="0" title="Edition’s note: {attr(n["note"])}">'
+                  f'*<span class="sr-only"> Edition’s note: {note}</span></span>')
+    body = [f'<div class="syn-hd">{"".join(hd)}</div>']
+    if kids:
+        c = _count(n)
+        members = "".join(_node(k, by_id, root, titles, shut, d=abs(i - (len(kids) - 1) / 2))
+                          for i, k in enumerate(kids))
+        body.append(f'<div class="syn-kw"><button type="button" class="syn-brace" aria-controls="{nid}-c" '
+                    f'aria-expanded="true" aria-label="{attr(_plain(n["text"]))}: open or fold ({c} parts)">'
+                    '<span class="syn-ink" aria-hidden="true"></span><span class="syn-cnt" aria-hidden="true"></span>'
+                    f'</button><ul class="syn-kids" id="{nid}-c">{members}</ul></div>')
+    cls = "syn-n" + ("" if kids else " syn-leaf") + (" syn-root" if is_root else "")
+    fold = ' data-fold="shut"' if n["id"] in shut else ""
+    rel = ' data-rel="or"' if n.get("relation") == "or" else ""
+    orp = f'<p class="syn-or">{esc(n["or"]["text"])}</p>' if n.get("relation") == "or" and "or" in n else ""
+    return (f'<li class="{cls}" id="{nid}" data-h="{_height(n)}" style="--d:{d:g}"{fold}{rel}>{orp}'
+            f'<div class="syn-nb">{"".join(body)}</div></li>')
 
-    return '<ul class="syn-tree">' + "".join(node(t) for t in tree["children"]) + "</ul>"
+
+def front_html(parts: list[tuple[str, str, dict]], root: str, titles: dict[str, str]) -> str:
+    """The front page (owner, 2026-11-19): the three Partitions folded, each keyed with a rubric numeral; resting on
+    a name opens it onto the chain of its sheets, each folded to its opening line. The brackets joining a Partition to
+    its sheets are the edition's, drawn lighter. parts: (key, title, tree)."""
+    out = []
+    for i, (key, title, tree) in enumerate(parts):
+        by_id = {n["id"]: n for n, _ in _nodes(tree)}
+        roots = tree["children"]
+        rows = "".join(_node(r, by_id, root, titles, {r["id"] for r in roots}, is_root=True) for r in roots)
+        d = abs(i - (len(parts) - 1) / 2)
+        k = attr(key)
+        out.append(
+            f'<li class="syn-n syn-part" id="front-{k}" data-h="1" style="--d:{d:g}" data-fold="shut">'
+            f'<div class="syn-nb"><div class="syn-hd"><span class="syn-key syn-pk">{ROMAN.get(key, "")}</span>'
+            f'<span class="syn-pt">{esc(title)}</span></div><div class="syn-kw"><button type="button" '
+            f'class="syn-brace syn-ed" aria-controls="front-{k}-c" aria-expanded="true" '
+            f'aria-label="{attr(title)}: Burton’s synopsis, {len(roots)} sheets: open or fold">'
+            '<span class="syn-ink" aria-hidden="true"></span><span class="syn-cnt" aria-hidden="true"></span>'
+            f'</button><ul class="syn-kids" id="front-{k}-c">{rows}</ul></div></div></li>')
+    return f'<ul class="syn-sheet syn-front">{"".join(out)}</ul>'
 
 
 def back_links(parts: list[str], units: list[str]) -> dict[str, tuple[str, str]]:
@@ -128,7 +186,6 @@ def back_links(parts: list[str], units: list[str]) -> dict[str, tuple[str, str]]
 
 
 LOCATORS = re.compile(r"^(?:(?:Part|Sect|Memb|Subsect|Subs)\.?\s*\d+\.?\s*)+")
-ROMAN = {"p1": "I", "p2": "II", "p3": "III"}
 CUR = 'class="sb-cur" aria-current="page"'
 
 
