@@ -1,0 +1,195 @@
+purpose: Blind check of what the stage-14 sweeps would show, before the reader shows it. Drawn, and the rule fixed, before
+  any judgement.
+drawn: '2026-11-20'
+seed: 20261119
+population:
+  names: 2677
+  cites: 918
+  restored: 1144
+rater: 'a model, blind (prompt sweep-audit-v1): the claim and Burton''s text only, never how the claim was made. Same model
+  family as the sweeps, so errors they share may be missed.'
+rule: per layer, at most 3 % of the sample judged `wrong`; a failed layer is not shown until the owner decides
+samples:
+  names:
+  - names:Achaicis
+  - names:Ad Marciam
+  - names:Albumazar
+  - names:Alexander Massaria
+  - names:Alkindus
+  - names:Anteros
+  - names:Anytus
+  - names:Apuleius Apol
+  - names:Araspas
+  - names:Ardes
+  - names:Aristarchus Samius
+  - names:Barry
+  - names:Battle Abbey
+  - names:Besardus
+  - names:Censor Fulvius
+  - names:Cornelius Agrippa
+  - names:Culmannus
+  - names:D. Hadrianus
+  - names:Dudithus
+  - names:Edmund Gunter
+  - names:Emilia
+  - names:Erythrae
+  - names:Eteocles
+  - names:Euhemerus
+  - names:Fabii
+  - names:Garcaeus
+  - names:Gismunda
+  - names:Gualter Bruele
+  - names:Hamech
+  - names:Hieronymus Mengus
+  - names:Hippolytus à Collibus
+  - names:In Gallo
+  - names:In Phoeniss
+  - names:Jo. Voschius
+  - names:Laelius à Fonte Eugubinus
+  - names:Leochaeus Panthea
+  - names:Lysis
+  - names:Matenesius
+  - names:Mentz
+  - names:Musonius
+  - names:Nicias
+  - names:Nova Albion
+  - names:Parthenis
+  - names:Persina
+  - names:Peter Dunnius
+  - names:Pharmacop
+  - names:Polynices
+  - names:Protervia
+  - names:Raimarus
+  - names:Roger
+  - names:Schola Salernitana
+  - names:Sesostris
+  - names:Sierras
+  - names:Spagirica Pharmac
+  - names:Thracian Rodophe
+  - names:Thyraeus
+  - names:Tigranes
+  - names:Tim. Bright
+  - names:Timaea
+  - names:Vestal
+  cites:
+  - cites:1.1.2.9-p7-icm913
+  - cites:1.2.1.2-p16-icm4776
+  - cites:1.2.1.2-p17-icm2841
+  - cites:1.2.1.2-p3-icm4637
+  - cites:1.2.1.3-p2-icm2620
+  - cites:1.2.2.1-p24-icm866
+  - cites:1.2.2.5-p2-icm1207
+  - cites:1.2.2.6-p1-icm1286
+  - cites:1.2.3.15-p3-icm448
+  - cites:1.2.4.4-p1-icm1733
+  - cites:1.2.5.2-p1-icm580
+  - cites:1.3.1.1-p2-icm300
+  - cites:1.3.1.2-p2-icm1377
+  - cites:1.3.2.1-p1-icm1704
+  - cites:2.1.1.1-p2-icm4522
+  - cites:2.2.3.1-p2-icm3267
+  - cites:2.2.3.1-p2-icm3348
+  - cites:2.2.3.1-p4-icm3087
+  - cites:2.2.3.1-p5-icm9901
+  - cites:2.2.4.1-p3-icm342
+  - cites:2.2.4.1-p6-icm384
+  - cites:2.2.6.2-p6-icm1661
+  - cites:2.3.1.1-p8-icm46
+  - cites:2.3.3.1-p10-icm1212
+  - cites:2.3.7.1-p12-icm1141
+  - cites:2.4.1.1-p3-icm3185
+  - cites:2.4.1.4-p1-icm569
+  - cites:2.4.1.4-p7-icm532
+  - cites:2.4.2.1-p5-icm1775
+  - cites:2.4.2.3-p3-icm570
+  - cites:2.5.1.6-p14-icm1244
+  - cites:2.5.3.2-p4-icm311
+  - cites:3.1.1.1-p3-icm2722
+  - cites:3.1.1.2-p2-icm1295
+  - cites:3.2.1.1-p13-icm1396
+  - cites:3.2.2.3-p29-icm2928
+  - cites:3.2.2.4-p43-icm3656
+  - cites:3.2.2.5-p9-icm3145
+  - cites:3.2.5.1-p4-icm138
+  - cites:3.2.5.5-p35-icm1957
+  - cites:3.2.5.5-p47-icm874
+  - cites:3.4.1.1-p7-icm80
+  - cites:3.4.1.2-p1-icm3727
+  - cites:3.4.1.3-p9-icm12638
+  - cites:3.4.2.1-p15-icm831
+  - cites:3.4.2.2-p1-icm380
+  - cites:3.4.2.6-p14-icm944
+  - cites:3.4.2.6-p16-icm3514
+  - cites:djr-p113-icm137
+  - cites:djr-p132-icm1950
+  restored:
+  - restored:1.1.1.5-r1
+  - restored:1.2.1.5-r1
+  - restored:1.2.2.4-r13
+  - restored:1.2.2.4-r20
+  - restored:1.2.3.1-r2
+  - restored:1.2.3.11-r1
+  - restored:1.2.3.11-r4
+  - restored:1.2.3.14-r2
+  - restored:1.2.3.15-r13
+  - restored:1.2.3.9-r3
+  - restored:1.2.4.4-r4
+  - restored:1.2.5.4-r3
+  - restored:1.3.2.2-r4
+  - restored:2.1.3.1-r2
+  - restored:2.2.1.2-r3
+  - restored:2.2.2.1-r7
+  - restored:2.2.6.2-r10
+  - restored:2.2.6.4-r5
+  - restored:2.3.1.1-r1
+  - restored:2.3.2.1-r5
+  - restored:2.4.2.1-r2
+  - restored:2.4.2.2-r11
+  - restored:2.5.1.5-r15
+  - restored:2.5.1.5-r16
+  - restored:2.5.1.5-r4
+  - restored:2.5.1.6-r2
+  - restored:2.5.2.1-r4
+  - restored:2.5.3.1-r11
+  - restored:3.1.1.1-r12
+  - restored:3.1.1.2-r6
+  - restored:3.2.2.2-r5
+  - restored:3.2.2.3-r10
+  - restored:3.2.2.3-r11
+  - restored:3.2.2.4-r23
+  - restored:3.2.2.4-r26
+  - restored:3.2.3.1-r13
+  - restored:3.2.5.5-r17
+  - restored:3.2.5.5-r29
+  - restored:3.2.5.5-r9
+  - restored:3.3.4.1-r5
+  - restored:3.3.4.2-r11
+  - restored:3.3.4.2-r4
+  - restored:3.4.1.2-r17
+  - restored:3.4.1.3-r8
+  - restored:3.4.2.3-r3
+  - restored:3.4.2.6-r10
+  - restored:3.4.2.6-r22
+  - restored:3.4.2.6-r24
+  - restored:djr-r25
+  - restored:djr-r80
+outcome:
+  date: '2026-11-20'
+  names:
+    sample: 60
+    judged: 60
+    passed: true
+    wrong: 0
+    doubtful: 0
+  cites:
+    sample: 50
+    judged: 50
+    passed: false
+    wrong: 2
+    doubtful: 8
+  restored:
+    sample: 50
+    judged: 50
+    passed: true
+    wrong: 0
+    doubtful: 2

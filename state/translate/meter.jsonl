@@ -75,3 +75,7 @@
 {"ts": "2026-11-19T18:33:00Z", "event": "before", "run": "translate --all (9 passages changed by the V5 re-ingest)", "plan": "Pro", "window_5h_pct": 25, "weekly_pct": 57}
 {"ts": "2026-11-19T18:46:00Z", "event": "before", "run": "notes spot check 2, second rater (claude-sonnet-5-5, 60 notes), alongside names-sweep", "plan": "Pro", "window_5h_pct": 54, "weekly_pct": 61}
 {"ts": "2026-11-19T23:12:00Z", "event": "after", "run": "note-rate --audit-shown finished (604, $7.39); h5 labelled ($1.09); translate 9 passages ($0.38); spot check 2 rater ($0.45); names-sweep stopped at the 5-hour limit (1,438/5,092 ruled, $7.78)", "plan": "Pro", "window_5h_pct": 7, "weekly_pct": 68}
+{"ts": "2026-11-19T23:15:00Z", "event": "before", "run": "names-sweep (resume, 3,654 left), then sweep-audit --draw --run --report", "plan": "Pro", "window_5h_pct": 7, "weekly_pct": 68}
+{"ts": "2026-11-20T04:12:00Z", "event": "after", "run": "names-sweep resume (3,692 ruled, $20.46 list) + sweep-audit 45/160 before the 5h limit", "plan": "Pro", "window_5h_pct": 100, "weekly_pct": 80, "note": "5h window read at 1% after reset"}
+{"ts": "2026-11-20T04:12:30Z", "event": "before", "run": "sweep-audit --run resume (115 left) --report", "plan": "Pro", "window_5h_pct": 1, "weekly_pct": 80}
+{"ts": "2026-11-20T04:40:00Z", "event": "after", "run": "sweep-audit resume (115 judged, $0.98 list)", "plan": "Pro"}
