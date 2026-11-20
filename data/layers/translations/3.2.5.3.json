@@ -6387,6 +6387,144 @@
       }
     ]
   },
+  "3.2.5.3-f218": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "bad in the superlative degree",
+        "in": "3.2.5.3",
+        "near": "3.2.5.3-f218",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Pietro Aretino",
+      "basis": "text \"as Pet. Aretine’s Lucretia, a notable quean, confesseth\"; sidenote \"Pornodidasc. dial. Ital.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Pornodidascalus"
+    },
+    "text": "mala, pejor, pessima",
+    "text_sha1": "af1d376a823455d04bbf07c1b463110d64ee5515",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The three degrees of comparison of 'bad'. Burton glosses them in the next words as 'bad in the superlative degree'. The Latin is part of Burton's rendering of the courtesan Lucretia's confession in the dialogue he attributes to Aretino.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "bad in the superlative degree",
+            "in": "3.2.5.3",
+            "near": "3.2.5.3-f218",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Pietro Aretino",
+          "basis": "text \"as Pet. Aretine’s Lucretia, a notable quean, confesseth\"; sidenote \"Pornodidasc. dial. Ital.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Pornodidascalus"
+        },
+        "text": "bad, worse, worst",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f219": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I confess",
+        "in": "3.2.5.3",
+        "near": "3.2.5.3-f219",
+        "prefix": "n love, ",
+        "suffix": " (nec pu"
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Aristaenetus",
+      "basis": "text \"as she asked her sister in Aristaenetus\"; sidenote \"Epist. 11.\"",
+      "locus": "Epist. 11",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters"
+    },
+    "text": "nec pudet fateri",
+    "text_sha1": "5fbff1310257d8d57c4936f3b2ae0792ec1d3125",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "nor does it shame me to confess",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's own English 'I confess' renders only the verb. The Latin adds 'nor am I ashamed'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I confess",
+            "in": "3.2.5.3",
+            "near": "3.2.5.3-f219",
+            "prefix": "n love, ",
+            "suffix": " (nec pu"
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Aristaenetus",
+          "basis": "text \"as she asked her sister in Aristaenetus\"; sidenote \"Epist. 11.\"",
+          "locus": "Epist. 11",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters"
+        },
+        "text": "nor am I ashamed to confess it",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.3-f22": {
     "kind": "phrase",
     "lang": "la",
@@ -6452,6 +6590,122 @@
           "work": null
         },
         "text": "so pretty a figure",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f220": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Michele Savonarola",
+      "basis": "text \"quam Savonarola proponit regula septima\"",
+      "locus": "regula septima",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Savonarola proponit regula septima penitus observanda",
+    "text_sha1": "281d6c2019fa1b1d3537b3b44c8f73dd9f5bba9f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "Savonarola proposes, by the seventh rule, to be thoroughly observed",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text leaves out the relative 'quam' ('which') that comes just before it and governs the clause. Its antecedent is the 'consideration of the foulness of women, especially of their menses, how unclean they are'. I have supplied 'which' so the English reads correctly. 'Savonarola' here is the physician Michele Savonarola.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Michele Savonarola",
+          "basis": "text \"quam Savonarola proponit regula septima\"",
+          "locus": "regula septima",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "which Savonarola sets out in his seventh rule, to be most carefully observed",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.5.3-f221": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bartolomeo Platina",
+      "basis": "text \"Platina dial. amoris fuse perstringit\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Dialogus de amore"
+    },
+    "text": "fuse perstringit",
+    "text_sha1": "f75d24dae63eef4e4a713ec6074723b8768eebdf",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "diffusely touches upon",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The subject is Platina, in his dialogue on love. 'Perstringit' can also mean 'censures', which also fits the context.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bartolomeo Platina",
+          "basis": "text \"Platina dial. amoris fuse perstringit\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Dialogus de amore"
+        },
+        "text": "touches on it at length",
         "warnings": []
       }
     ]

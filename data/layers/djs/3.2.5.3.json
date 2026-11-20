@@ -1000,9 +1000,11 @@
   },
   "3.2.5.3-f196": {
     "by": "djs1927",
-    "left_anchor": "Savonarola proponit regula septima penitus observanda; & Platina dial.",
+    "left_anchor": "will do it when they come to it. ; & Platina dial.",
+    "left_score": 0.8539325842696628,
     "method": "rules/djs-align-v3",
-    "right_anchor": "fuse perstringit, Lodovicus Bonaciolus mulieb. lib. 2 cap. 2, Pet. Haedus, Albertus,",
+    "right_anchor": "I will say nothing of the vices of their minds, their pride,",
+    "right_score": 1.0,
     "status": "not-found",
     "text_sha1": "40d420cbfb9f3424c49c3f68201925b67d4725c0",
     "threshold": 0.85
@@ -1129,10 +1131,10 @@
     "threshold": 0.85
   },
   "3.2.5.3-f208": {
-    "align_score": 0.667,
+    "align_score": 0.65,
     "by": "djs1927",
-    "left_anchor": "fuse perstringit, Lodovicus Bonaciolus mulieb. lib. 2 cap. 2, Pet. Haedus, Albertus,",
-    "left_score": 0.667,
+    "left_anchor": ", Lodovicus Bonaciolus mulieb. lib. 2 cap. 2, Pet. Haedus, Albertus,",
+    "left_score": 0.65,
     "method": "rules/djs-align-v3",
     "right_anchor": ". A Lover in Calcagninus’ Apologues, wishes with all his heart he",
     "right_score": 0.967,
@@ -1176,11 +1178,15 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42546, p. 793"
   },
   "3.2.5.3-f211": {
+    "align_score": 0.854,
     "by": "djs1927",
+    "gap_words": 93,
     "left_anchor": "qualities, filthy diseases, in this case fit to be considered; consideratio faeditatis",
+    "left_score": 0.854,
     "method": "rules/djs-align-v3",
-    "right_anchor": "Savonarola proponit regula septima penitus observanda; & Platina dial.",
-    "status": "not-found",
+    "right_anchor": "I will say nothing of the vices of their minds, their pride,",
+    "right_score": 1.0,
+    "status": "implausible-length",
     "text_sha1": "8c0c6a753d9c31c5fe6d7c0a4a45531136be158f",
     "threshold": 0.85
   },
@@ -1232,6 +1238,32 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 42323, p. 789"
   },
+  "3.2.5.3-f218": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "covetous as hell. If from the beginning of the world any were",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", bad in the superlative degree, ’tis a whore; how many have",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "bad, worse, worst,",
+    "text_sha1": "af1d376a823455d04bbf07c1b463110d64ee5515",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 41822, p. 779"
+  },
+  "3.2.5.3-f219": {
+    "align_score": 0.708,
+    "by": "djs1927",
+    "left_anchor": "that ever I saw: but I am in love, I confess (",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "), and cannot therefore well judge. She suspects her judgement, as well",
+    "right_score": 0.708,
+    "status": "below-threshold",
+    "text_sha1": "5fbff1310257d8d57c4936f3b2ae0792ec1d3125",
+    "threshold": 0.85
+  },
   "3.2.5.3-f22": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -1245,6 +1277,28 @@
     "text_sha1": "d1b626ac2f6d4047ce518c09b20e259c805079a3",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 41912, pp. 780-782"
+  },
+  "3.2.5.3-f220": {
+    "by": "djs1927",
+    "left_anchor": "Young men will do it when they come to it.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; & Platina dial. I will say nothing of the vices of",
+    "right_score": 0.8,
+    "status": "not-found",
+    "text_sha1": "281d6c2019fa1b1d3537b3b44c8f73dd9f5bba9f",
+    "threshold": 0.85
+  },
+  "3.2.5.3-f221": {
+    "by": "djs1927",
+    "left_anchor": "Young men will do it when they come to it.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Lodovicus Bonaciolus mulieb. lib. 2 cap. 2, Pet. Haedus, Albertus,",
+    "right_score": 0.6495726495726495,
+    "status": "not-found",
+    "text_sha1": "f75d24dae63eef4e4a713ec6074723b8768eebdf",
+    "threshold": 0.85
   },
   "3.2.5.3-f23": {
     "align_score": 0.961,

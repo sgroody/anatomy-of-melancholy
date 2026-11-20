@@ -416,6 +416,20 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 50615, p. 953"
   },
+  "3.4.2.6-f189": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "be so hard, angry, cruel or unjust as to condemn any man",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". They alone (he holds) are in the state of damnation that",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "without a hearing.",
+    "text_sha1": "c0ea1cb28d314b64708cf63ec55b8d26e7f81228",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 51073, p. 962"
+  },
   "3.4.2.6-f19": {
     "by": "djs1927",
     "left_anchor": "and implic",
@@ -460,6 +474,17 @@
     "right_score": 0.8849557522123894,
     "status": "not-found",
     "text_sha1": "5e57bb16d598e82d5a682ef1871986a66082ab46",
+    "threshold": 0.85
+  },
+  "3.4.2.6-f193": {
+    "by": "djs1927",
+    "left_anchor": ": all which rightly used by their",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", Last of all: if the party affected shall certainly know this",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "02e0acb2114c55c9d186fd3cb72cc12e745d847b",
     "threshold": 0.85
   },
   "3.4.2.6-f2": {
@@ -1061,7 +1086,7 @@
     "left_anchor": "which by a divine virtue drives away devils, and is therefore called",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ": all which rightly used by their suffitus,",
+    "right_anchor": ": all which rightly used by their",
     "right_score": 1.0,
     "status": "aligned",
     "text": "Expeller of Demons",
@@ -1070,19 +1095,15 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 51402, p. 968"
   },
   "3.4.2.6-f68": {
-    "align_score": 0.943,
     "by": "djs1927",
-    "left_anchor": ": all which rightly used by their suffitus,",
-    "left_score": 1.0,
+    "left_anchor": "expelleth all those feculent matters by vomit, sweat, or some suc ,",
+    "left_score": 0.9921259842519686,
     "method": "rules/djs-align-v3",
-    "residue": "[or fumigation]",
     "right_anchor": ", which expel devils themselves, and all devilish illusions. Anthony Musa the",
-    "right_score": 0.943,
-    "status": "omitted",
-    "text": "",
+    "right_score": 0.9428571428571427,
+    "status": "not-found",
     "text_sha1": "428e25dba493b2bfb0573cd13ba53486b482f776",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 51403, p. 968"
+    "threshold": 0.85
   },
   "3.4.2.6-f69": {
     "align_score": 0.992,

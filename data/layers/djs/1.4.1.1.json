@@ -228,6 +228,21 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 19821, pp. 366-367"
   },
+  "1.4.1.1-f139": {
+    "align_score": 0.967,
+    "by": "djs1927",
+    "left_anchor": ", so many causes there are ———",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": "———, love, grief, anger, madness, shame, &c. ’Tis a common calamity, a",
+    "right_score": 0.967,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "95bfdd6c5d09be6bbbefb31c6ba6bd3754ebe1fe",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 19941, p. 369"
+  },
   "1.4.1.1-f14": {
     "align_score": 0.989,
     "by": "djs1927",
@@ -242,6 +257,29 @@
     "text_sha1": "2caace764bb010f5b17ea85a8b37356c1add2440",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 19894, p. 368"
+  },
+  "1.4.1.1-f140": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "370baf6f7ff3b86fc0aa39dd174daa77e4514f94",
+    "threshold": 0.85
+  },
+  "1.4.1.1-f141": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": "No evil is to be done that good may come of it;",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", God, and all good men are against it: he that stabs",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "54f3994e5629c110de1cd199ff2fd0147831798a",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 20176, p. 373"
   },
   "1.4.1.1-f15": {
     "by": "djs1927",
@@ -302,8 +340,8 @@
     "left_anchor": "heart, / He voluntary dies to ease his smart. (as Seneca notes),",
     "left_score": 0.576,
     "method": "rules/djs-align-v3",
-    "right_anchor": ", so many causes there are ——— His amor exitio est, furor",
-    "right_score": 0.681,
+    "right_anchor": ", so many causes there are ———",
+    "right_score": 1.0,
     "status": "below-threshold",
     "text_sha1": "597dda40776f035de5b251da90f842e565c43ae7",
     "threshold": 0.85

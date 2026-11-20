@@ -2318,6 +2318,65 @@
       }
     ]
   },
+  "3.4.2.6-f189": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "indicta causa",
+    "text_sha1": "c0ea1cb28d314b64708cf63ec55b8d26e7f81228",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "the case not having been pleaded",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A Roman legal formula for condemning someone without letting them plead their case. Burton gives it as part of his English paraphrase of Origen. He takes that paraphrase from the pseudo-Caelius, so the Latin phrase itself can't safely be credited to Origen's text.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "without a hearing",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.6-f19": {
     "kind": "verse",
     "lang": "la",
@@ -2602,6 +2661,65 @@
           "work": null
         },
         "text": "He tries us",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.2.6-f193": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "suffitus",
+    "text_sha1": "02e0acb2114c55c9d186fd3cb72cc12e745d847b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The word suffitus means the act of burning herbs and stones so that their smoke drives away devils. In Burton's sentence 'by their suffitus' means 'by fumigating with them'. Only this one word is marked; the Latin that follows ('daemonum vexationibus obsistunt…') carries on the same quoted phrase. Medium confidence because the single marked word has been cut out of that longer phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "fumigation",
         "warnings": []
       }
     ]

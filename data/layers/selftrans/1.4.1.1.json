@@ -587,6 +587,48 @@
     ],
     "text_sha1": "0c66d39e895e0d35fceb5f5d7a9870f941696ae7"
   },
+  "1.4.1.1-f139": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "love, grief, anger, madness, shame, &c. ’Tis a common calamity, a fatal end to this disease, they are condemned to a violent death, by a jury of Physicians, furiously disposed, carried headlong by their tyrannizing wills, enforced by miseries, &",
+          "in": "1.4.1.1-p4",
+          "prefix": "amor exitio est, furor his ———, ",
+          "suffix": " there remains no more to such p"
+        },
+        "words": 39
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "so many causes there are",
+          "in": "1.4.1.1-p4",
+          "prefix": "fuga ferrum redegit in viscera, ",
+          "suffix": " ——— His amor exitio est, furor "
+        },
+        "words": 5
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "95bfdd6c5d09be6bbbefb31c6ba6bd3754ebe1fe"
+  },
   "1.4.1.1-f14": {
     "bracket": "none",
     "by": "rules",
@@ -612,6 +654,45 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "2caace764bb010f5b17ea85a8b37356c1add2440"
+  },
+  "1.4.1.1-f140": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "370baf6f7ff3b86fc0aa39dd174daa77e4514f94"
+  },
+  "1.4.1.1-f141": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "God, and all good men are against it",
+          "in": "1.4.1.1-p10",
+          "prefix": "t Christus, reclamat Scriptura, ",
+          "suffix": ": he that stabs another can kill"
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "54f3994e5629c110de1cd199ff2fd0147831798a"
   },
   "1.4.1.1-f15": {
     "bracket": "present",
@@ -778,12 +859,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "so many causes there are ——— His amor exitio est, furor his ———, love, grief, anger, madness, shame, &c. ’Tis a common calamity, a fatal end to this disease, they are condemned to a violent death, by a jury of",
+          "exact": "so many causes there are",
           "in": "1.4.1.1-p4",
           "prefix": "fuga ferrum redegit in viscera, ",
-          "suffix": " Physicians, furiously disposed,"
+          "suffix": " ——— His amor exitio est, furor "
         },
-        "words": 38
+        "words": 5
       }
     ],
     "lang": "la",

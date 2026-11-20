@@ -3636,28 +3636,11 @@
   "3.2.5.5-f306": {
     "bracket": "none",
     "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "Jasonem Pratensem, Arnaldum, Montaltum, Savonarolum, Langium, Valescum, Cermisonum, Alexandrum Benedictum, Laurentium, Valleriolam, e Poetis Nasonem, e nostratibus Chaucerum, &c., with whom I conclude",
-          "in": "3.2.5.5-p81",
-          "prefix": "volet de remediis amoris, legat ",
-          "suffix": ","
-        },
-        "words": 23
-      }
-    ],
+    "candidates": [],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
       "no-gowland-bracket"
     ],
     "text_sha1": "9a4d9eef602acab8b49ac81a1921e138fa78e08a"
@@ -3820,6 +3803,34 @@
       "english-precedes"
     ],
     "text_sha1": "8217c743ca7751b5cbd0d985b13feb86c72d345c"
+  },
+  "3.2.5.5-f316": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "with whom I conclude",
+          "in": "3.2.5.5-p81",
+          "prefix": ", e nostratibus Chaucerum, &c., ",
+          "suffix": ","
+        },
+        "words": 4
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows"
+    ],
+    "text_sha1": "722ffd767c61903bc3ece66a1bdbe7fa804f80f6"
   },
   "3.2.5.5-f32": {
     "bracket": "present",

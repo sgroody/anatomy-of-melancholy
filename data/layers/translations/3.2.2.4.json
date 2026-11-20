@@ -5807,6 +5807,66 @@
       }
     ]
   },
+  "3.2.2.4-f207": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Musaeus",
+      "basis": "The verses around it name Leander and tell of his secret courtship of Hero. This follows Musaeus' poem, here quoted in a Latin translation.",
+      "locus": null,
+      "status": "probable",
+      "verified": false,
+      "work": "Hero and Leander (Latin version)"
+    },
+    "text": "Inde",
+    "text_sha1": "cd54aadfbfb445507a63200c93f010d170e2a447",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a single word cut off from the Latin verse around it. It is a Latin version of Musaeus' Hero and Leander, and the word links the earlier lines (Leander's silent nods to Hero, which she does not reject) to the next ones (\"he came to her in the darkness, silently pressing the girl's rosy fingers, and sighed deeply…\"). Read in that context it means \"Then\" or \"Thereupon\". Medium confidence because the word stands alone.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Musaeus",
+          "basis": "The verses around it name Leander and tell of his secret courtship of Hero. This follows Musaeus' poem, here quoted in a Latin translation.",
+          "locus": null,
+          "status": "probable",
+          "verified": false,
+          "work": "Hero and Leander (Latin version)"
+        },
+        "text": "Then",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.2.4-f21": {
     "kind": "phrase",
     "lang": "la",

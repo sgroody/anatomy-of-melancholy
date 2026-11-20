@@ -3011,6 +3011,34 @@
     "text_sha1": "c94af689b44939761d8828a340b4a99ca2ba0bcb",
     "threshold": 0.85
   },
+  "djr-f1517": {
+    "align_score": 1.0,
+    "by": "djs1927",
+    "left_anchor": ". Thou sayest as much of me,",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "as thou art, & grantest peradventure this which I have written in",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "peevish fellow",
+    "text_sha1": "1037ddedb1487ef025906bb455a4584dd016daff",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 2216, pp. 27-28"
+  },
+  "djr-f1518": {
+    "align_score": 0.975,
+    "by": "djs1927",
+    "left_anchor": "one must highly offend God if he be conformable to the world,",
+    "left_score": 0.975,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", or else live in contempt, disgrace, and misery. One takes upon",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "be a Cretan \\^-ith the Cretans,",
+    "text_sha1": "b40d539afb910504864b4df99b27a1b551e82533",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 3556, pp. 53-55"
+  },
   "djr-f152": {
     "align_score": 0.98,
     "by": "djs1927",
@@ -3024,6 +3052,17 @@
     "text_sha1": "945ad113ff174dd9769a490e3396f1855008594e",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 1998, pp. 22-33"
+  },
+  "djr-f1521": {
+    "by": "djs1927",
+    "left_anchor": "bird in a cage, he will die for , Polybius lib. 6.",
+    "left_score": 0.7792207792207794,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ", that country is free from melancholy; as it was in Italy",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "1d7669e53dddfe2797a6e007e655d65d6958897e",
+    "threshold": 0.85
   },
   "djr-f153": {
     "align_score": 0.98,
@@ -3788,16 +3827,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 2214, pp. 27-28"
   },
   "djr-f214": {
-    "align_score": 0.826,
+    "align_score": 1.0,
     "by": "djs1927",
     "left_anchor": ", and it was registered forthwith,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ". Thou sayest as much of me, stomachosus as thou art, &",
-    "right_score": 0.826,
-    "status": "below-threshold",
+    "right_anchor": ". Thou sayest as much of me,",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "And so the good advice was taken, the bad adviser was changed.",
     "text_sha1": "6d624b2ed4d3e981ffa8f234d6012245bf15a2fe",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 2215, pp. 27-28"
   },
   "djr-f215": {
     "align_score": 1.0,
@@ -8263,7 +8304,7 @@
     "by": "djs1927",
     "left_anchor": ". lib. 3 cap. 4 calls",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", Polybius lib. 6. optabilem & selectum statum, that country is free",
+    "right_anchor": ", Polybius lib. 6. Now that cannot well be effected, till the",
     "status": "not-found",
     "text_sha1": "e028caf08eb7f32265c10a35cc46c9b30d38d78e",
     "threshold": 0.85

@@ -2850,6 +2850,177 @@
       }
     ]
   },
+  "2.3.7.1-f166": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Aulus Gellius, reporting Epictetus",
+      "basis": "Gellius gives Epictetus' two words ἀνέχου καὶ ἀπέχου, which were traditionally rendered in Latin as 'sustine et abstine'.",
+      "locus": "17.19",
+      "status": "probable",
+      "verified": false,
+      "work": "Noctes Atticae"
+    },
+    "text": "Sustine & abstine",
+    "text_sha1": "87aaf7ddbeb45c53a2bf5c6c00b6ddd908c4bdf6",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Endure and abstain.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The Latin form of Epictetus' maxim ἀνέχου καὶ ἀπέχου, which Aulus Gellius reports.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Aulus Gellius, reporting Epictetus",
+          "basis": "Gellius gives Epictetus' two words ἀνέχου καὶ ἀπέχου, which were traditionally rendered in Latin as 'sustine et abstine'.",
+          "locus": "17.19",
+          "status": "probable",
+          "verified": false,
+          "work": "Noctes Atticae"
+        },
+        "text": "Bear and forbear.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f167": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Cicero, reporting Bias",
+      "basis": "Cicero cites Bias's saying that one should love 'ut si aliquando esset osurus' ('as if one would some day hate'), and Aristotle mentions it in the Rhetoric. Burton gives a condensed form.",
+      "locus": "16.59",
+      "status": "probable",
+      "verified": false,
+      "work": "De amicitia"
+    },
+    "text": "Ama tanquam osurus",
+    "text_sha1": "178e0f7c862507cff3f935f4b31f3c4fc95c7527",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Love as if about to hate.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The precept attributed to Bias, one of the Seven Sages: love a friend as though you may later become his enemy. Burton's wording is the usual short form, not an exact quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Cicero, reporting Bias",
+          "basis": "Cicero cites Bias's saying that one should love 'ut si aliquando esset osurus' ('as if one would some day hate'), and Aristotle mentions it in the Rhetoric. Burton gives a condensed form.",
+          "locus": "16.59",
+          "status": "probable",
+          "verified": false,
+          "work": "De amicitia"
+        },
+        "text": "Love as one who will one day hate.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f169": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Noli irritare crabrones",
+    "text_sha1": "b00b9c699eb699eadc5f559e57058927d5952c9b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A proverb, 'irritare crabrones', meaning do not provoke dangerous or spiteful people. It appears in Plautus and in Erasmus's Adagia.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Do not stir up hornets.",
+        "warnings": []
+      }
+    ]
+  },
   "2.3.7.1-f17": {
     "kind": "phrase",
     "lang": "la",
@@ -2903,6 +3074,65 @@
           "work": null
         },
         "text": "so it pleased the gods above",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.7.1-f170": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Amicus tardo fias",
+    "text_sha1": "7b0c0ea507464a56876ddb12d52cc6f35471d6e3",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": "Become a friend slowly.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'Tardo' is irregular. One would expect the adverb 'tarde' or the adjective 'tardus' ('may you be a slow friend'). Either way the sense is clear. The maxim, 'be slow to make friends, but keep them once made', was a commonplace in collections of sayings of the sages.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Be slow to become a friend.",
         "warnings": []
       }
     ]

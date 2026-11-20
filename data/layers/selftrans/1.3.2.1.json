@@ -259,5 +259,47 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "19080df4c5cb51929961a32954dfc07fade9ae9b"
+  },
+  "1.3.2.1-f9": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "one calls it, a blueish, and sometimes full of pimples, with red eyes",
+          "in": "1.3.2.1-p1",
+          "prefix": "ion, most part rubore saturato, ",
+          "suffix": ". Avicenna lib. 3 Fen 2 Tract. 4"
+        },
+        "words": 13
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "The common signs, if it be by essence in the head, are ruddiness of face, high sanguine complexion, most part",
+          "in": "1.3.2.1-p1",
+          "prefix": "eir several symptoms and cures. ",
+          "suffix": " rubore saturato, one calls it, "
+        },
+        "words": 20
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "ad08ab7ac015905af70b7f19de53250dcf5c8b5e"
   }
 }

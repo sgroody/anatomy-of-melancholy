@@ -913,6 +913,48 @@
     ],
     "text_sha1": "a3acd93ab3a0d9afa8fdc5ff7d739e50daa08b65"
   },
+  "3.4.2.6-f189": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "They alone (he holds) are in the state of damnation that refuse Christ’s mercy and grace, when it is offered",
+          "in": "3.4.2.6-p14",
+          "prefix": " condemn any man indicta causa. ",
+          "suffix": ". Many worthy Greeks and Romans,"
+        },
+        "words": 20
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "we may not think God will be so hard, angry, cruel or unjust as to condemn any man",
+          "in": "3.4.2.6-p14",
+          "prefix": "be excused for their ignorance: ",
+          "suffix": " indicta causa. They alone (he h"
+        },
+        "words": 18
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "c0ea1cb28d314b64708cf63ec55b8d26e7f81228"
+  },
   "3.4.2.6-f19": {
     "bracket": "present",
     "by": "rules",
@@ -1007,6 +1049,31 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "5e57bb16d598e82d5a682ef1871986a66082ab46"
+  },
+  "3.4.2.6-f193": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "all which rightly used by their",
+          "in": "3.4.2.6-p17",
+          "prefix": "therefore called fuga daemonum: ",
+          "suffix": " suffitus, daemonum vexationibus"
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-precedes"
+    ],
+    "text_sha1": "02e0acb2114c55c9d186fd3cb72cc12e745d847b"
   },
   "3.4.2.6-f2": {
     "bracket": "present",
@@ -2422,12 +2489,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "all which rightly used by their suffitus",
+          "exact": "all which rightly used by their",
           "in": "3.4.2.6-p17",
           "prefix": "therefore called fuga daemonum: ",
-          "suffix": ", daemonum vexationibus obsistun"
+          "suffix": " suffitus, daemonum vexationibus"
         },
-        "words": 7
+        "words": 6
       },
       {
         "by": "rules",
@@ -2469,26 +2536,13 @@
           "suffix": ". Anthony Musa the Emperor Augus"
         },
         "words": 8
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "all which rightly used by their suffitus",
-          "in": "3.4.2.6-p17",
-          "prefix": "therefore called fuga daemonum: ",
-          "suffix": ", daemonum vexationibus obsistun"
-        },
-        "words": 7
       }
     ],
     "lang": "la",
     "location": "text",
     "method": "rules/selftrans-v1",
     "signals": [
-      "english-follows",
-      "english-precedes"
+      "english-follows"
     ],
     "text_sha1": "428e25dba493b2bfb0573cd13ba53486b482f776"
   },

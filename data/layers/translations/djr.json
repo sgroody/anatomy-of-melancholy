@@ -17348,6 +17348,122 @@
       }
     ]
   },
+  "djr-f1517": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "stomachosus",
+    "text_sha1": "1037ddedb1487ef025906bb455a4584dd016daff",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "full of spleen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Stomachosus means irritable or peevish. It comes from stomachus, the stomach, which was thought to be the seat of anger. Burton applies it to the carping reader: \"testy as thou art.\"",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "testy",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1518": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Cretizare cum Crete",
+    "text_sha1": "b40d539afb910504864b4df99b27a1b551e82533",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "wordplay"
+        ],
+        "literal": "to cretize with a Cretan",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is proverbial. The ancients counted Cretans as notorious liars, so 'to play the Cretan with a Cretan' means to lie to a liar, or to deceive deceivers in their own way. Here it means fitting in with a dishonest world. The coined verb cretizare ('to cretize', to act like a Cretan) is the play on words. The usual form of the proverb is 'cum Cretensi'. Burton's 'Crete' may be his own variant.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "to play the Cretan with the Cretan",
+        "warnings": []
+      }
+    ]
+  },
   "djr-f152": {
     "kind": "phrase",
     "lang": "la",
@@ -17413,6 +17529,65 @@
           "work": "Attic Nights"
         },
         "text": "an unlaboured style",
+        "warnings": []
+      }
+    ]
+  },
+  "djr-f1521": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Polybius",
+      "basis": "text \"Polybius lib. 6.\"",
+      "locus": "lib. 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "optabilem & selectum statum",
+    "text_sha1": "1d7669e53dddfe2797a6e007e655d65d6958897e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "a desirable and selected state",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton gives this as Polybius's term for the goal of a commonwealth, alongside Aristotle's 'common good'. Status could also be read as 'state' in the political sense.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Polybius",
+          "basis": "text \"Polybius lib. 6.\"",
+          "locus": "lib. 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "a desirable and choice condition",
         "warnings": []
       }
     ]

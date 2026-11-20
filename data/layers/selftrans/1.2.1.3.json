@@ -761,6 +761,16 @@
     ],
     "text_sha1": "db85275b2493e74f6076134ab624b1576ccb150f"
   },
+  "1.2.1.3-f45": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "73498030cd117ffe500affd5481774798c97ed5d"
+  },
   "1.2.1.3-f47": {
     "bracket": "none",
     "by": "rules",
@@ -790,6 +800,34 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "8ba717fef9b1ef6114520b2be8c0b104d9f902e2"
+  },
+  "1.2.1.3-f48": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "note-anchor",
+        "relation": "clause",
+        "selector": {
+          "exact": "Universities, and now generally contradicted, though practised by some still, maintained and excused",
+          "in": "1.2.1.3-p2",
+          "prefix": "hough after censured by several ",
+          "suffix": ", tanquam res secreta quae non n"
+        },
+        "words": 13
+      }
+    ],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-at-anchor"
+    ],
+    "text_sha1": "62fcb623824022d4280ee5caa4da9239c9123007"
   },
   "1.2.1.3-f5": {
     "bracket": "present",

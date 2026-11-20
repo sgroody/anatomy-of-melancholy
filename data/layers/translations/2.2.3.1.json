@@ -8215,6 +8215,63 @@
       }
     ]
   },
+  "2.2.3.1-f379": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Olaus Magnus",
+      "basis": "text \"as Olaus affirms\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "spiritum continentes",
+    "text_sha1": "9c7de66e14fa4aaf682370deba188b515feb311f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "containing their breath",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Said of birds thought to spend the winter under water. Here spiritus means breath, not the physiological spirits. The nearby sidenote reads \"Immergunt se fluminibus, lacubusque per hiemem totam, &c.\", which means \"They plunge themselves into rivers and lakes for the whole winter, etc.\"",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Olaus Magnus",
+          "basis": "text \"as Olaus affirms\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "holding their breath",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.3.1-f38": {
     "kind": "phrase",
     "lang": "la",

@@ -2569,6 +2569,63 @@
       }
     ]
   },
+  "1.3.3.1-f69": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Pietro Bairo (Petrus Bayrus)",
+      "basis": "text \"P. Bayrus Tract. de pest. gives instance (as I have said), and put case (saith he)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Tractatus de peste"
+    },
+    "text": "forma cadendi impressa",
+    "text_sha1": "c629724086fde9e6932739c0e067ad0107808704",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "the form of falling impressed",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An ablative absolute explaining Burton's 'his imagination': the image of falling has been impressed on the imagination, and the body's other members and faculties obey it. 'Forma' here means the mental image or impression.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Pietro Bairo (Petrus Bayrus)",
+          "basis": "text \"P. Bayrus Tract. de pest. gives instance (as I have said), and put case (saith he)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Tractatus de peste"
+        },
+        "text": "the image of falling being stamped upon it",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.3.1-f7": {
     "kind": "phrase",
     "lang": "la",

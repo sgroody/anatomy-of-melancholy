@@ -576,5 +576,66 @@
         "warnings": []
       }
     ]
+  },
+  "1.3.2.1-f9": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "rubore saturato",
+    "text_sha1": "ad08ab7ac015905af70b7f19de53250dcf5c8b5e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "with saturated redness",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Describes a deep, dark red complexion. Burton's next words, \"a blueish\", seem to describe this dark red as shading into livid. That matches the sidenote \"Facie sunt rubente & livescente\" (their faces are red and turning livid). They are a comment, not a rendering of the phrase. Burton says only \"one calls it\" and does not name the author.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "with a deep, saturated redness",
+        "warnings": []
+      }
+    ]
   }
 }

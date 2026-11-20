@@ -336,13 +336,13 @@
     "threshold": 0.85
   },
   "2.3.7.1-f159": {
-    "align_score": 0.924,
+    "align_score": 0.984,
     "by": "djs1927",
     "left_anchor": "Honour thy parents, speak well of friends. Be temperate in four things,",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": ". Watch thine eye. Moderate thine expenses. Hear much, speak little. Sustine",
-    "right_score": 0.924,
+    "right_anchor": ". Watch thine eye. Moderate thine expenses. Hear much, speak little.",
+    "right_score": 0.984,
     "status": "aligned",
     "text": "talking, spending, looking and drinking.",
     "text_sha1": "fe1602a4372671146e14a9930a8de338e0b63cbb",
@@ -437,6 +437,41 @@
     "text_sha1": "16fb8de9dd063f521f30eb2c220bec4118fe580c",
     "threshold": 0.85
   },
+  "2.3.7.1-f166": {
+    "align_score": 0.982,
+    "by": "djs1927",
+    "left_anchor": ". Watch thine eye. Moderate thine expenses. Hear much, speak little.",
+    "left_score": 0.984,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". If thou seest aught amiss in another, mend it in thyself.",
+    "right_score": 0.982,
+    "status": "aligned",
+    "text": "Bear and forbear.",
+    "text_sha1": "87aaf7ddbeb45c53a2bf5c6c00b6ddd908c4bdf6",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 29646, pp. 555-556"
+  },
+  "2.3.7.1-f167": {
+    "by": "djs1927",
+    "left_anchor": "him in public. Keep good company. Love others to be beloved thyself.",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ".",
+    "status": "no-anchor",
+    "text_sha1": "178e0f7c862507cff3f935f4b31f3c4fc95c7527",
+    "threshold": 0.85
+  },
+  "2.3.7.1-f169": {
+    "align_score": 0.625,
+    "by": "djs1927",
+    "left_anchor": "Apostles, live after God’s laws, these mischi . Provide for a tempest.",
+    "left_score": 0.625,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Do not prostitute thy soul for gain. Make not a fool",
+    "right_score": 1.0,
+    "status": "below-threshold",
+    "text_sha1": "b00b9c699eb699eadc5f559e57058927d5952c9b",
+    "threshold": 0.85
+  },
   "2.3.7.1-f17": {
     "align_score": 1.0,
     "by": "djs1927",
@@ -450,6 +485,17 @@
     "text_sha1": "8206afb1c654592976d37b9c24e532cb90a9257b",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 29201, pp. 546-547"
+  },
+  "2.3.7.1-f170": {
+    "by": "djs1927",
+    "left_anchor": "imitate Christ and his Apostles, live after God’s laws, these mischi .",
+    "left_score": 0.9774436090225564,
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Provide for a tempest.",
+    "right_score": 1.0,
+    "status": "not-found",
+    "text_sha1": "7b0c0ea507464a56876ddb12d52cc6f35471d6e3",
+    "threshold": 0.85
   },
   "2.3.7.1-f18": {
     "align_score": 1.0,

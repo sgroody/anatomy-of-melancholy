@@ -2208,6 +2208,63 @@
       }
     ]
   },
+  "1.2.1.6-f58": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Bede (reporting Gregory the Great)",
+      "basis": "sidenote \"Beda Eccl. hist. lib. 1 cap. 27 respons. 10.\"",
+      "locus": "lib. 1 cap. 27 respons. 10",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Ecclesiastical History"
+    },
+    "text": "in consuetis suis menstruis, &c",
+    "text_sha1": "c2d2113077cef4e5d1753e104b83de8345291d31",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in their accustomed menses, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The phrase ends Burton's Latin sentence: Gregory the Great 'strictly forbade women to have intercourse with their husbands then', that is, during their usual periods. Burton deliberately leaves the whole passage in Latin ('I spare to English this which I have said'; sidenote 'Good Master Schoolmaster do not English this'). Burton's wording is a loose summary of Gregory's reply to Augustine as given in Bede, not an exact quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Bede (reporting Gregory the Great)",
+          "basis": "sidenote \"Beda Eccl. hist. lib. 1 cap. 27 respons. 10.\"",
+          "locus": "lib. 1 cap. 27 respons. 10",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Ecclesiastical History"
+        },
+        "text": "during their customary monthly courses, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.6-f6": {
     "kind": "phrase",
     "lang": "la",

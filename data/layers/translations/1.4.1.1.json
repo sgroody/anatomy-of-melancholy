@@ -1354,6 +1354,77 @@
       }
     ]
   },
+  "1.4.1.1-f139": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "love, grief, anger, madness, shame, &c.",
+        "in": "1.4.1.1",
+        "near": "1.4.1.1-f139",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "His amor exitio est, furor his",
+    "text_sha1": "95bfdd6c5d09be6bbbefb31c6ba6bd3754ebe1fe",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": "To these love is for destruction, madness to these",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A verse fragment, set off by Burton's dashes. His following list, \"love, grief, anger, madness, shame, &c.\", expands on it rather than translating it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "love, grief, anger, madness, shame, &c.",
+            "in": "1.4.1.1",
+            "near": "1.4.1.1-f139",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "For some, love is their ruin; for others, madness",
+        "warnings": []
+      }
+    ]
+  },
   "1.4.1.1-f14": {
     "kind": "verse",
     "lang": "la",
@@ -1425,6 +1496,122 @@
           "work": "De rerum natura"
         },
         "text": "And often, through fear of death, the unhappy man is seized by such hatred of life and of seeing the light / that with grieving heart / he brings death upon himself.",
+        "warnings": []
+      }
+    ]
+  },
+  "1.4.1.1-f140": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "Et paulo post",
+    "text_sha1": "370baf6f7ff3b86fc0aa39dd174daa77e4514f94",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's note that some lines of the quoted poem have been left out before the line \"Non Jupiter ferit tale telum fulminis\".",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "And a little after",
+        "warnings": []
+      }
+    ]
+  },
+  "1.4.1.1-f141": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "reclamat Christus, reclamat Scriptura",
+    "text_sha1": "54f3994e5629c110de1cd199ff2fd0147831798a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's following words, \"God, and all good men are against it\", carry the argument on rather than translating the phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "Christ cries out against it, Scripture cries out against it",
         "warnings": []
       }
     ]

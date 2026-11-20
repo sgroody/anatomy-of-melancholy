@@ -657,6 +657,123 @@ def _regain(items: list, unit: str, s: int, e: int, at_end: bool, decisions: lis
     return new
 
 
+def _plain(x) -> str:
+    """Burton's text of an item: Gowland's matter and sidenotes count for nothing."""
+    if isinstance(x, str):
+        return x
+    if x.tag in (T("note"), ED("trans"), ED("verse-trans"), ED("block")) or \
+            (x.tag == T("supplied") and x.get("resp") == "#gowland"):
+        return ""
+    return text_of([x])
+
+
+def tag_before_unattached_brackets(div, decisions: list, unit: str) -> None:
+    """Gowland translated nearly everything he judged foreign. Where one of his brackets follows no passage (V5's
+    census, 2026-11-20: 96 of 4,345), the clause before it takes the model's ruling, which sees Burton's text only,
+    never Gowland's words. A ruling of Latin (or the foreign part of a mixed one) is wrapped as a passage when it
+    begins and ends on whole fragments; otherwise the rules' text is left as it is and the decision says why."""
+    from . import gowland
+
+    for t in gowland.trans_without_foreign(div):
+        parent = t.getparent()
+        items = take_items(parent)
+        idx = next(k for k, x in enumerate(items) if x is t)
+        a = idx
+        while a > 0 and not (not isinstance(items[a - 1], str) and (
+                items[a - 1].tag in (ED("trans"), ED("verse-trans"), ED("block"), T("foreign"), T("lb"))
+                or items[a - 1].get("ana") == "foreign")):
+            a -= 1
+        texts = [_plain(x) for x in items[a:idx]]
+        s = "".join(texts)
+        clause = re.split(r"[;:()!?]|(?<=\p{Ll})\.\s", s.rstrip())[-1].strip(" ,")
+        in_note = any(x.tag == T("note") for x in t.iterancestors())
+        if len(WORD.findall(clause)) < 1:
+            put_items(parent, items)
+            continue
+        adj = _ruling(unit, clause)
+        part = None
+        if _latin_ruling(adj):
+            part = clause
+        elif adj and adj["label"] == "mixed" and adj["foreign_part"] and \
+                " ".join(adj["foreign_part"].split()) in " ".join(clause.split()):
+            part = adj["foreign_part"]
+        why = "text before an unattached Gowland bracket" + \
+            (f"; model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}" if adj else " (no ruling)")
+        if part:
+            part = part.strip(" .,;:").lstrip("0123456789 .,")
+            words = [w for w in WORD.findall(ETC.sub(" ", part)) if len(w) >= 3]
+            # the conventions (LABELLING.md): "&c" alone is "etc."; a title ("de Anima") is a reference; a list of
+            # Latin-form names ("Carolus Sapiens, Philippus Bonus") is names
+            if not words:
+                part, why = None, why + "; not a passage (no word)"
+            elif re.match(r"[Dd]e\s", part) and len(words) <= 6:
+                part, why = None, why + "; a title (de …), a reference"
+            elif len(words) >= 2 and all(w[0].isupper() for w in words):
+                part, why = None, why + "; capitalised words only (names)"
+        placed = None
+        if part:
+            pat = r"\s+".join(map(re.escape, part.split()))
+            hits = list(re.finditer(pat, s))
+            if hits:
+                placed = _wrap_span(items, a, texts, hits[-1].start(), hits[-1].end(),
+                                    _model_lang(adj, part) if adj["label"] in MODEL_LANGS else "la")
+        if placed is not None:
+            items = placed
+            decisions.append({"unit": unit, "text": " ".join(part.split()), "verdict": "la", "confidence": "medium",
+                              "why": why + "; tagged", "in_note": in_note})
+        else:
+            decisions.append({"unit": unit, "text": " ".join(clause.split()),
+                              "verdict": "undetermined" if not adj else ("la" if part else adj["label"]),
+                              "confidence": "low" if not adj else "medium", "in_note": in_note,
+                              "why": why + ("; not placed (it does not begin and end on whole fragments)" if part
+                                            else "")})
+        put_items(parent, items)
+
+
+def _wrap_span(items: list, a: int, texts: list[str], cs: int, ce: int, lang: str) -> list | None:
+    """Wrap the characters [cs, ce) of the items from a on (whose texts are `texts`) in a passage. A boundary may
+    split a string, but not an element. Returns the new item list, or None."""
+    pos, first, last = 0, None, None
+    for k, tx in enumerate(texts):
+        start, end = pos, pos + len(tx)
+        x = items[a + k]
+        if start <= cs and ce <= end and not isinstance(x, str) and x.tag == T("hi") and not len(x) \
+                and x.text == tx and (cs, ce) != (start, end):
+            # the whole stretch inside one italic fragment: wrap it inside the fragment (markup only)
+            f = el("foreign", {"lang-tmp": lang, "resp": "#model", "cert": "medium", "ana": "foreign"})
+            f.text, f.tail = tx[cs - start:ce - start], tx[ce - start:] or None
+            x.text = tx[:cs - start] or None
+            x.append(f)
+            return items
+        if first is None and cs < end:
+            if not isinstance(items[a + k], str) and cs != start:
+                return None
+            first = (a + k, cs - start)
+        if first is not None and ce <= end:
+            if not isinstance(items[a + k], str) and ce != end:
+                return None
+            last = (a + k, ce - start)
+            break
+        pos = end
+    if first is None or last is None:
+        return None
+    (i, io), (j, jo) = first, last
+    inner = []
+    for k in range(i, j + 1):
+        x = items[k]
+        if isinstance(x, str):
+            lo = io if k == i else 0
+            hi = jo if k == j else len(x)
+            inner.append(x[lo:hi])
+        else:
+            inner.append(x)
+    f = el("foreign", {"lang-tmp": lang, "resp": "#model", "cert": "medium", "ana": "foreign"})
+    put_items(f, inner)
+    before = [items[i][:io]] if isinstance(items[i], str) else []
+    after = [items[j][jo:]] if isinstance(items[j], str) else []
+    return items[:i] + before + [f] + after + items[j + 1:]
+
+
 ROMAN_PREP = re.compile(r"(?<![\p{L}\p{M}’'])(in|ad|a|de|ex|e|cum|pro|per|sine|apud|sub|inter|ob)\s$")
 
 
@@ -1055,6 +1172,7 @@ def run(div, unit: str, stats, *, gowland_unit: bool = False) -> list[dict]:
     tag_roman_before_brackets(div, decisions, unit)
     tag_roman_runs(div, decisions, unit)
     join_roman_prepositions(div, decisions, unit)
+    tag_before_unattached_brackets(div, decisions, unit)
     finalize_lang(div)
     correct_languages(div, unit, stats)
     for d in decisions:

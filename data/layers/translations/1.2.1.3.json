@@ -1627,6 +1627,63 @@
       }
     ]
   },
+  "1.2.1.3-f45": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Sigismund Scherertzius",
+      "basis": "text \"saith Scherertzius, part. 1 cap. 6\" in the same sentence, though this may refer to the whole claim about changelings rather than to this exact phrase",
+      "locus": "part. 1 cap. 6",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De spectris"
+    },
+    "text": "ministerio daemonum",
+    "text_sha1": "73498030cd117ffe500affd5481774798c97ed5d",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "by the ministry of demons",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "daemones here means devils or evil spirits, as Burton uses the word throughout.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Sigismund Scherertzius",
+          "basis": "text \"saith Scherertzius, part. 1 cap. 6\" in the same sentence, though this may refer to the whole claim about changelings rather than to this exact phrase",
+          "locus": "part. 1 cap. 6",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De spectris"
+        },
+        "text": "by the agency of devils",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.3-f47": {
     "kind": "phrase",
     "lang": "la",
@@ -1692,6 +1749,63 @@
           "work": "de sortiariis"
         },
         "text": "I have seen, says he, those who brought on the most grievous melancholic diseases",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.1.3-f48": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "finem",
+    "text_sha1": "62fcb623824022d4280ee5caa4da9239c9123007",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Part of a reference: \"see finem P. Lumbardi\" means \"see the end of Peter Lombard\", probably the condemned articles of the Universities of Oxford and Paris printed at the end of editions of Peter Lombard's Sentences. Burton gives no fuller reference. The sense of the reference is likely, though not certain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "the end",
         "warnings": []
       }
     ]
