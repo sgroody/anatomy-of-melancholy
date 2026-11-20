@@ -542,3 +542,48 @@ Owner: "Start now anyway" (past the 90 % weekly stop). The remedy, as for the tr
   "probably", one book title) are withheld too. Limit: 5 doubtful in 50 suggests about one shown record in ten
   states its author or work more surely than the passage alone allows; none in the sample was wrong.
 * The reader shows the layer (§ with its ◇ card) less the withheld records (build.py, `sweep_audit.withheld`).
+
+# The owner's notes of 2026-11-20 (second set)
+
+1. A fitting "expand all" sign (seventeenth-century if possible) for the synopses' Partition sections.
+2. A way to close the reading options (at least on the front page).
+3. The underline on resting (front page synopses) runs twice, the second time seemingly doing nothing. "Multiple
+   underlines are good! Each time they finish they should open up another full bracket layer." It should also work on
+   the heads of the first bracket layer, not only the brace (which moves as it opens, making a steady rest awkward).
+4. Names and authors in the margins underlined, with their windows (especially noting their associated text).
+5. "Now that the model's notes are rated by significance, give me samples of them to judge what the cutoff for
+   inclusion should be."
+
+## The second set of 2026-11-20, carried out
+
+* 3 (the rest, reworked): every completed fill now opens one more full layer of the branch: first the branch, then
+  every brace at its next depth together, and so on while the pointer stays (T 0.65 s for the first, 0.9 s for each
+  layer after, 0.25 s between). What resting opens stays open; a click folds it. No more second fill that only
+  "fixes". The heads of the Partitions and of each sheet's first layer are places to rest as well (they do not move as
+  the branch opens; the brace does), underlined as they fill, once per layer. The fills are animations now, so each
+  layer's underline runs from the start. Measured on the front page, resting on "The First Partition": 1 open at
+  1.0 s, then 9, 29, 56, 65 braces at 2.0, 3.2, 4.4, 5.6 s (66 in all).
+* 1: the expand-all sign is the printer's **asterism ⁂** (three stars, which seventeenth-century printers set to mark
+  the whole of a thing or a passage passed over), after each Partition's name on the front page and at the head of
+  each Partition's first page: a click opens every brace (65 of 65), again folds the Partition. Shown only with
+  script.
+* 2: the reading options close by a × at the panel's corner, by Escape, or by a click anywhere outside (front page
+  and the floating panel elsewhere).
+* 4: names in the margin: Burton's written-out citations in his notes and in the § cards link to the author, with
+  the same window as a name in the text, which adds "Cited here: …" where the citation names a work; names in the
+  restored notes are linked as in his own. On 3.2.3.1: 243 citation links and 9 restored-note names; 75 authors'
+  window data on the page.
+* 5: samples to judge the translator notes' cutoff: state/review/note-cutoff-2026-11-20.html (tools/
+  note_cutoff_samples.py, seed 20261120): 14 rated 3, 14 rated 2, 12 rated 1, 8 flagged doubtful, each with its
+  passage, the machine translation and the note, its kind and audit verdict, and the table of ratings by kind (3:
+  1,456; 2: 1,866; 1: 1,755, not doubtful). Shown now: 1,396 (rated 3, sound; 36 of the 1,432 sat on passages the
+  V5 re-ingest changed).
+
+## V5, the fourth cycle (2026-11-20; owner: "just do the remainder of V5 yourself")
+
+Done without the owner's hand check: the gate h6 was labelled blind by two models (opus, sonnet) and their 13
+disagreements settled by Claude from the text (data/eval/langid-holdout6-settled.yaml). The lever: short runs decided on
+one or two lexicon hits, and capitalised runs the names sweep ruled not a name, take a model ruling (2,361 rulings).
+**h6: P 0.990, R 0.941, B 0.947** (targets 0.98 / 0.97 / 0.95): precision passes, recall and boundaries do not; V5
+stays DEFER. The re-ingest changed 129 units; 182 passages re-translated ($5.06), selftrans and Dell & Jordan-Smith
+re-run. Details and the misses: data/manual/deferred-checks.yaml.

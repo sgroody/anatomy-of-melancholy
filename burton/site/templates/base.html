@@ -47,6 +47,7 @@
 {% endif %}
 {% if key not in ("settings", "home") %}
 <div id="settings" class="settings" hidden>
+  <button type="button" class="settings-close" aria-label="Close the reading options" title="Close">×</button>
   {% include "options.html" %}
   <p class="settings-more"><a href="{{ root }}settings/">All reading options</a></p>
 </div>

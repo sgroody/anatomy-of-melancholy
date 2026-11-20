@@ -155,6 +155,11 @@ function setPanel(open, focusToggle) {
 }
 if (panel && toggle) {
   toggle.addEventListener("click", () => setPanel(panel.hidden, false));
+  // a way out (owner, 2026-11-20): the × at the panel's corner, Escape, or a click anywhere outside it
+  panel.querySelector(".settings-close")?.addEventListener("click", () => setPanel(false, true));
+  document.addEventListener("click", (ev) => {
+    if (!panel.hidden && !panel.contains(ev.target) && !toggle.contains(ev.target)) setPanel(false, false);
+  });
   panel.addEventListener("keydown", (ev) => {
     if (ev.key === "Escape") { ev.stopPropagation(); setPanel(false, true); }
   });
@@ -650,7 +655,7 @@ for (const fp of document.querySelectorAll(".fp-facing")) {
 const synSheets = [...document.querySelectorAll(".syn-sheet")];
 if (synSheets.length) {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-  const T_OPEN = 650, T_FIX = 900, T_INNER = 450, T_PAUSE = 300, LINGER = 900;  // ms; 650 is the windows' fill
+  const T_OPEN = 650, T_LAYER = 900, T_PAUSE = 250;  // ms; 650 is the windows' fill; each further layer 900
   const kidsOf = (li) => li.querySelector(":scope > .syn-nb > .syn-kw > .syn-kids");
   const setShut = (li, shut) => {
     li.classList.toggle("syn-shut", shut);
@@ -684,7 +689,7 @@ if (synSheets.length) {
       const kids = kidsOf(li);
       if (!kids) { need.set(li, 11 * fs); best.set(li, 11 * fs); continue; }
       const one = ctx.measureText(li.querySelector(":scope > .syn-nb > .syn-hd").textContent.trim()).width;
-      let hw = li.classList.contains("syn-part") ? 13.4 * fs : Math.min(one, 7 * fs) + 0.3 * fs;
+      let hw = li.classList.contains("syn-part") ? 14.6 * fs : Math.min(one, 7 * fs) + 0.3 * fs;
       if (li.classList.contains("syn-shut")) { need.set(li, hw + 7.4 * fs); best.set(li, need.get(li)); continue; }
       let m = 0;
       for (const c of kids.children) m = Math.max(m, best.get(c) ?? 0);
@@ -731,56 +736,73 @@ if (synSheets.length) {
   };
 
   // ---- opening and folding
-  const peeked = new Set();
-  let rest = null;  // the brace rested on: {li, timers, x, y}
+  // Resting fills the brace (and underlines its head) with rubric, as a name's window fills its bar; each time the
+  // fill completes, the branch opens one more full layer: first the branch itself, then every brace at its next
+  // depth together, and so on while the pointer stays (owner, 2026-11-20: "multiple underlines are good! Each time
+  // they finish they should open up another full bracket layer"). What resting opens stays open; a click folds it.
+  // The heads of the Partitions and of each sheet's first layer are places to rest too, as they do not move when
+  // their branch opens (the brace does).
+  let rest = null;  // the trigger rested on: {li, timers, x, y}
   const fill = (li, ms) => {
     li.style.setProperty("--syn-fill", `${reduce.matches ? 0 : ms}ms`);
     li.classList.remove("syn-filling"); void li.offsetWidth; li.classList.add("syn-filling");
   };
   const unfill = (li) => li.classList.remove("syn-filling");
   const later = (fn, ms) => { const t = setTimeout(fn, reduce.matches ? 0 : ms); rest?.timers.push(t); return t; };
-  const fix = (li) => { delete li.dataset.peek; peeked.delete(li); clearTimeout(li._lv); li._lv = null; li.classList.add("syn-fixed"); };
-  // open one brace deep: the branch's own inner braces folded, to be opened by resting or by a click
-  const open = (li, how) => {
+  const fix = (li) => li.classList.add("syn-fixed");
+  // open one brace deep: the branch's own inner braces folded
+  const open = (li) => {
     for (const n of li.querySelectorAll(".syn-n")) if (kidsOf(n)) setShut(n, true);
     setShut(li, false);
-    if (how === "peek") { li.dataset.peek = "1"; peeked.add(li); } else fix(li);
+    fix(li);
     settle(li.closest(".syn-sheet"));
   };
   const fold = (li) => {
-    clearTimeout(li._lv); li._lv = null;
-    for (const p of [li, ...li.querySelectorAll(".syn-n")]) { delete p.dataset.peek; peeked.delete(p); p.classList.remove("syn-fixed", "syn-filling"); }
+    for (const p of [li, ...li.querySelectorAll(".syn-n")]) p.classList.remove("syn-fixed", "syn-filling");
     setShut(li, true);
     settle(li.closest(".syn-sheet"));
   };
-  // the inner braces still folded, level by level in reading order: the next one whose way to it is open
-  const nextInner = (li) => {
+  // the next full layer inside an open branch: every folded brace at the shallowest depth whose way to it is open
+  const nextLayer = (li) => {
     const depth = (n) => { let d = 0; for (let p = n.parentElement.closest(".syn-n"); p && p !== li; p = p.parentElement.closest(".syn-n")) d++; return d; };
     const c = [...li.querySelectorAll(".syn-n.syn-shut")].filter((n) => { const a = n.parentElement.closest(".syn-n.syn-shut"); return !a || !li.contains(a); });
-    c.sort((a, b) => depth(a) - depth(b));
-    return c[0] || null;
+    if (!c.length) return [];
+    const d = Math.min(...c.map(depth));
+    return c.filter((n) => depth(n) === d);
   };
+  // open everything in a branch at once (the ⁂ sign of a Partition), or fold it back to its first layer
+  const openAll = (li) => {
+    for (const n of [li, ...li.querySelectorAll(".syn-n")]) if (kidsOf(n)) { setShut(n, false); fix(n); }
+    settle(li.closest(".syn-sheet"));
+  };
+  const allOpen = (li) => !li.querySelector(".syn-n.syn-shut") && !li.classList.contains("syn-shut");
   const stopRest = () => {
     if (!rest) return;
     rest.timers.forEach(clearTimeout);
     for (const n of [rest.li, ...rest.li.querySelectorAll(".syn-filling")]) unfill(n);
     rest = null;
   };
-  const stepGrow = (li) => {
-    if (li.classList.contains("syn-part")) return;  // a Partition opens onto its sheets and stops there
-    const n = nextInner(li);
-    if (!n) return;
-    later(() => { fill(n, T_INNER); later(() => { unfill(n); setShut(n, false); settle(li.closest(".syn-sheet")); stepGrow(li); }, T_INNER); }, T_PAUSE);
+  const step = (li, first) => {
+    const shut = li.classList.contains("syn-shut");
+    if (!shut && !nextLayer(li).length) return;  // nothing more to open
+    fill(li, first ? T_OPEN : T_LAYER);
+    later(() => {
+      unfill(li);
+      if (li.classList.contains("syn-shut")) open(li);
+      else { for (const n of nextLayer(li)) { setShut(n, false); fix(n); } settle(li.closest(".syn-sheet")); }
+      later(() => step(li, false), T_PAUSE);
+    }, first ? T_OPEN : T_LAYER);
   };
-  const stepFix = (li) => later(() => { fill(li, T_FIX); later(() => { unfill(li); fix(li); stepGrow(li); }, T_FIX); }, 120);
   const startRest = (li, x, y) => {
     stopRest();
     rest = { li, timers: [], x, y };
-    if (li.classList.contains("syn-shut")) { fill(li, T_OPEN); later(() => { unfill(li); open(li, "peek"); stepFix(li); }, T_OPEN); }
-    else if (li.dataset.peek) stepFix(li);
-    else stepGrow(li);
+    step(li, true);
   };
-  const triggerOf = (el) => el?.closest?.(".syn-sheet .syn-brace, .syn-sheet .syn-part > .syn-nb > .syn-hd") || null;
+  const HEADS = ".syn-sheet .syn-part > .syn-nb > .syn-hd, .syn-sheet .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd";
+  const triggerOf = (el) => {
+    if (el?.closest?.("a, .syn-all, .syn-note")) return null;  // a link or a sign in a head keeps its own work
+    return el?.closest?.(`.syn-sheet .syn-brace, ${HEADS}`) || null;
+  };
 
   // Only the reader's own movement counts: an opening branch moves the page under a still pointer (a head narrows to
   // Burton's measure and its brace slides away), and the browser then reports leaving and entering things the pointer
@@ -797,7 +819,6 @@ if (synSheets.length) {
   });
   document.addEventListener("pointerover", (ev) => {
     if (ev.pointerType === "touch" || (rest && !moving())) return;
-    for (const p of peeked) if (p.contains(ev.target)) { clearTimeout(p._lv); p._lv = null; }
     const tr = triggerOf(ev.target);
     if (!tr) return;
     const li = tr.closest(".syn-n");
@@ -805,23 +826,27 @@ if (synSheets.length) {
   });
   document.addEventListener("pointerout", (ev) => {
     if (ev.pointerType === "touch") return;
-    const to = ev.relatedTarget;
-    if (!to) stopRest();             // out of the window
-    else if (!moving()) return;      // the page moved, not the pointer
-    for (const p of peeked) {
-      if (p.contains(ev.target) && !p.contains(to) && !p._lv) p._lv = setTimeout(() => fold(p), LINGER);
-    }
+    if (!ev.relatedTarget) stopRest();  // out of the window
   });
   // keep the clicked brace where it was on screen while the sheet changes around it
   const anchored = (el, fn) => { const y = el.getBoundingClientRect().top; fn(); window.scrollBy(0, el.getBoundingClientRect().top - y); };
   document.addEventListener("click", (ev) => {
+    const all = ev.target.closest(".syn-sheet .syn-all");
+    if (all) {
+      const li = all.closest(".syn-n");
+      stopRest();
+      if (allOpen(li)) anchored(all, () => { fold(li); });
+      else openAll(li);
+      all.setAttribute("aria-pressed", String(allOpen(li)));
+      return;
+    }
     const tr = triggerOf(ev.target);
     if (tr) {
       const li = tr.closest(".syn-n");
       stopRest();
-      if (li.classList.contains("syn-shut")) open(li, "pin");  // one brace deep, fixed
-      else if (li.dataset.peek) fix(li);                        // opened by resting: now fixed
+      if (li.classList.contains("syn-shut")) open(li);  // one brace deep
       else anchored(tr, () => fold(li));
+      li.querySelector(":scope > .syn-nb .syn-all")?.setAttribute("aria-pressed", "false");
       return;
     }
     const see = ev.target.closest(".syn-sheet a.syn-see");
@@ -842,6 +867,7 @@ if (synSheets.length) {
   window.addEventListener("hashchange", () => reveal(true));
   window.addEventListener("popstate", () => reveal(true));
 
+  document.querySelectorAll(".syn-sheet .syn-all").forEach((b) => { b.hidden = false; });
   // fold what the page marks to start folded, without motion, then fit each sheet and keep it fitted
   for (const sheet of synSheets) {
     sheet.classList.add("syn-still");
@@ -864,7 +890,7 @@ if (synSheets.length) {
       for (const sheet of synSheets) {
         for (const li of sheet.querySelectorAll(".syn-n")) {
           if (!kidsOf(li)) continue;
-          delete li.dataset.peek; peeked.delete(li); li.classList.remove("syn-fixed");
+          li.classList.remove("syn-fixed");
           setShut(li, b.dataset.syn === "close" && !li.classList.contains("syn-root") && li.parentElement.closest(".syn-n")?.classList.contains("syn-root"));
         }
         settle(sheet);
@@ -926,6 +952,9 @@ async function windowFor(trig) {
     const a = authorsData[trig.dataset.author];
     if (!a) return null;
     box.append(el("p", "pw-h", a.name + (a.dates ? `, ${a.dates}` : "")));
+    // from the margin, a written-out citation: the work cited there (owner, 2026-11-20: "noting their associated text")
+    const cited = trig.classList.contains("cx-a") ? trig.textContent.replace(/­/g, "").trim() : "";
+    if (cited && cited !== a.name && !a.name.includes(cited)) box.append(el("p", "pw-c", `Cited here: ${cited}`));
     if (a.about) {
       const p = el("p", "pw-t", a.about + " ");
       if (a.by) {

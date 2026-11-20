@@ -456,7 +456,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     report["authors"] = {"pages": len(alpha), **astats}
     # a name or an expansion links to an author's page only if this build made one (an entry whose author is cited
     # only outside the notes, or only in notes the public build withholds, has none): unwrap the rest
-    dead = re.compile(r'<a class="(?:nm|cx-a)" href="\.\./authors/([^/"]+)/"[^>]*>(.*?)</a>', re.S)
+    dead = re.compile(r'<a class="(?:nm|cx-a|cx-a nm)" href="\.\./authors/([^/"]+)/"[^>]*>(.*?)</a>', re.S)
     unwrapped = 0
     for rel in pages:
         def keep(m):

@@ -90,6 +90,10 @@ header.site .home-s { font-variant-caps: normal; letter-spacing: 0.02em; font-st
 }
 .settings { max-width: var(--page); margin: 0 auto; padding: 0.5rem 16px 1rem; font-size: 0.85em; border-bottom: 1px solid var(--rule); display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
 .settings[hidden] { display: none; }
+.settings { position: relative; }
+.settings-close { position: absolute; top: 0.3rem; right: 0.4rem; z-index: 1; border: 0; background: none; font: inherit;
+  font-size: 1.5rem; line-height: 1; padding: 0.1rem 0.45rem; color: var(--muted); cursor: pointer; border-radius: 3px; }
+.settings-close:hover, .settings-close:focus-visible { color: var(--accent); }
 .settings fieldset { border: none; margin: 0; padding: 0; }
 .settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .settings label { display: block; }
@@ -487,7 +491,11 @@ code { font-size: 0.85em; }
 .syn-ink { position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em; background: var(--accent);
   -webkit-mask: var(--syn-bm, var(--syn-m-brace)); mask: var(--syn-bm, var(--syn-m-brace));
   clip-path: inset(50% 0 50% 0); opacity: 0; pointer-events: none; }
-.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: 1; clip-path: inset(0 0 0 0); transition: clip-path var(--syn-fill, .65s) linear; }
+/* each fill runs as an animation, so that it starts again for every layer a long rest opens (2026-11-20) */
+@keyframes syn-ink { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes syn-under { from { background-size: 0% 1px; } to { background-size: 100% 1px; } }
+.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: 1; clip-path: inset(0 0 0 0);
+  animation: syn-ink var(--syn-fill, .65s) linear both; }
 .syn-filling > .syn-nb > .syn-hd .syn-pt { color: var(--accent); transition: color var(--syn-fill, .65s); }
 /* fixed in place: the brace keeps a faint rubric, as a fixed window keeps its bar */
 .syn-fixed > .syn-nb > .syn-kw > .syn-brace::before { background: color-mix(in srgb, var(--accent) 45%, var(--syn-brace-ink)); }
@@ -510,17 +518,23 @@ code { font-size: 0.85em; }
 .syn-shut > .syn-nb > .syn-kw > .syn-brace .syn-cnt { transition: opacity .45s ease var(--syn-t-shut), letter-spacing .25s,
   translate .25s, background-size .15s; }
 .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { background-size: 100% 1px; letter-spacing: .2em; translate: .3em -50%;
-  transition: background-size var(--syn-fill, .65s) linear, letter-spacing var(--syn-fill, .65s) ease-out,
-  translate var(--syn-fill, .65s) ease-out, opacity .2s; }
+  animation: syn-under var(--syn-fill, .65s) linear both;
+  transition: letter-spacing var(--syn-fill, .65s) ease-out, translate var(--syn-fill, .65s) ease-out, opacity .2s; }
 .syn-brace::before, .syn-ink { transition: transform .25s ease, filter .25s; }
 .syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace::before,
 .syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleY(1.45); transition: transform var(--syn-fill, .65s) ease-out; }
 .syn-filling:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleX(1.25);
   filter: drop-shadow(0 0 1.5px var(--accent)); }
-.syn-part > .syn-nb > .syn-hd .syn-pt { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat;
-  transition: background-size .15s, color .3s; }
-.syn-part.syn-filling > .syn-nb > .syn-hd .syn-pt { background-size: 100% 1px;
-  transition: background-size var(--syn-fill, .65s) linear, color var(--syn-fill, .65s); }
+/* a head one may rest on (a Partition's name; a sheet's first head) underlines as the time fills, once per layer */
+.syn-part > .syn-nb > .syn-hd .syn-pt, .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd > .syn-t {
+  background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat; transition: color .3s; }
+.syn-part > .syn-nb > .syn-hd, .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd { cursor: pointer; }
+.syn-part.syn-filling > .syn-nb > .syn-hd .syn-pt, .syn-root.syn-filling > .syn-nb > .syn-hd > .syn-t {
+  background-size: 100% 1px; animation: syn-under var(--syn-fill, .65s) linear both; }
+/* every brace at once: the printer's asterism after a Partition's name */
+.syn-all { border: 0; background: none; padding: 0 .25em; margin-left: .35em; font: inherit; font-size: .95em; line-height: 1;
+  color: var(--muted); cursor: pointer; font-variant-caps: normal; vertical-align: .05em; border-radius: 2px; }
+.syn-all:hover, .syn-all:focus-visible, .syn-all[aria-pressed="true"] { color: var(--accent); }
 .syn-shut > .syn-nb > .syn-hd { max-width: min(26em, calc(100cqi - 7.6em)); }
 /* folded sheets in a chain stand with their stubs in one column, as a printer aligns a column of braces */
 .syn-root.syn-shut > .syn-nb > .syn-hd { width: min(22em, calc(100cqi - 7.6em)); }
@@ -554,7 +568,7 @@ a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: v
 .syn-pt { font-variant-caps: all-small-caps; letter-spacing: .07em; }
 .syn-part + .syn-part { margin-top: .3em; }
 .syn-part > .syn-nb { align-items: flex-start; }
-.syn-part > .syn-nb > .syn-hd { width: 13.2em; max-width: none; padding-left: 1.6em; white-space: nowrap; cursor: pointer; }
+.syn-part > .syn-nb > .syn-hd { width: 14.4em; max-width: none; padding-left: 1.6em; white-space: nowrap; cursor: pointer; }
 .syn-pk { font-variant-caps: normal; }
 .syn-part:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); }
 /* an open Partition sets its sheets under its name, across the column, so their lines are not squeezed */
@@ -766,10 +780,10 @@ main:has(> .front) { max-width: 82rem; }
 .front-rh { display: flex; align-items: center; gap: 0.7em; margin: 0 0 0.35rem; font-size: 0.95em; font-weight: 400;
   font-variant-caps: all-small-caps; letter-spacing: 0.12em; }
 .front-rh::before, .front-rh::after { content: ""; flex: 1 1 0; height: 1px; background: var(--accent); }
-.front-syn { width: 21.5em; max-width: 100%; margin: 0 0 0.9rem; } /* room for a name and its folded brace (edition.js: 20.8em of the sheet) */
+.front-syn { width: 22.7em; max-width: 100%; margin: 0 0 0.9rem; } /* room for a name and its folded brace (edition.js: 22em of the sheet) */
 .front-syn:has(.syn-part:not(.syn-shut)) { width: auto; } /* an open Partition's sheets take the column */
 .front-syn .syn-sheet { margin: 0; }
-.front-contents { width: 21.5em; max-width: 100%; }
+.front-contents { width: 22.7em; max-width: 100%; }
 .front-contents[open] { width: auto; }
 .front-contents > summary { list-style: none; cursor: pointer; }
 .front-contents > summary::-webkit-details-marker { display: none; }
@@ -826,6 +840,7 @@ a.nm-x { cursor: help; } /* an identified name with no index page: the window is
   font-size: 0.9rem; line-height: 1.4; text-align: left; text-indent: 0; font-style: normal; }
 .pw p { margin: 0 0 0.35rem; text-indent: 0; text-align: left; }
 .pw-h { font-style: italic; font-size: 1.05em; }
+.pw-c { font-size: 0.92em; color: var(--muted); margin: 0.1em 0 0.3em; } /* the work cited where the window was opened */
 .pw-l { font-size: 0.9em; margin-bottom: 0 !important; }
 .pw-l a, .pw-open { color: var(--accent); }
 .pw-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); border-radius: 0 0 0 6px; }

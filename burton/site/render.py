@@ -578,7 +578,9 @@ class Renderer:
         """The expansion, linked to the author's page where the edition has one (data/authors/)."""
         if not author or author == "bible" or not (paths.DATA / "authors" / f"{author}.yaml").exists():
             return esc(display)
-        return f'<a class="cx-a" href="../authors/{attr(author)}/">{esc(display)}</a>'
+        # a window on the author, as for a name in the text (owner, 2026-11-20: names in the margins underlined, "with
+        # their associated text"): the window adds the work cited here
+        return f'<a class="cx-a nm" href="../authors/{attr(author)}/" data-author="{attr(author)}">{esc(display)}</a>'
 
     def expand_citations(self, nid: str, seg: str) -> tuple[str, str]:
         """Burton's abbreviated citations in a note, each shown expanded in its place, his own words on hover and
@@ -1095,7 +1097,7 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
 
 # names are linked in Burton's notes too (owner, 2026-11-18), but not in the lines the edition adds to them
 SKIP_NAMES = (*(x for x in SKIP_MAIN if x != "sidenote"), "xref", "xref-unresolved", "unit-title", "pageref", "cx",
-              "gl-s", "nm", "cx-b", "sn-n", "sn-k", "sn-tr", "sn-bible", "sn-restored")
+              "gl-s", "nm", "cx-b", "sn-n", "sn-k", "sn-tr", "sn-bible", "mn-src")
 
 
 def mark_names(html_text: str, names: re.Pattern | None, ids: dict[str, str], counts: dict) -> tuple[str, set[str]]:
@@ -1536,14 +1538,17 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
             data = json.dumps({k: name_extra[1][k] for k in sorted(shown)}, ensure_ascii=False)
             script = f'<script type="application/json" class="names-data">{data.replace("</", "<\\/")}</script>'
             body = body.replace("</article>\n", script + "\n</article>\n")
-    if used and author_info:  # what the name windows show, for the authors named on this page (edition.js)
-        data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
-        script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
-        body = body.replace("</article>\n", script + "\n</article>\n")
     cards = list(r.cards) + ic_cards + gl_cards
     if profile == "private" and gowland_entries:
         body, gw = mark_gowland(body, gowland_entries, r.counts)
         cards += gw
+    # what the name windows show, for every author linked on this page: in the text, in Burton's notes and in the
+    # written-out citations of the margin (edition.js)
+    used |= set(re.findall(r'data-author="([^"]+)"', body + "".join(cards)))
+    if used and author_info:
+        data = json.dumps({a: author_info[a] for a in sorted(used) if a in author_info}, ensure_ascii=False)
+        script = f'<script type="application/json" class="authors-data">{data.replace("</", "<\\/")}</script>'
+        body = body.replace("</article>\n", script + "\n</article>\n")
     if cards:  # the margin items, laid out by edition.js beside their anchors (in reading order for no-script)
         body = body.replace("</article>\n", f'<div class="mn-pool">{"".join(cards)}</div>\n</article>\n')
     for fid, rec in layer.items():

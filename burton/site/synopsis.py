@@ -166,7 +166,12 @@ def front_html(parts: list[tuple[str, str, dict]], root: str, titles: dict[str, 
         out.append(
             f'<li class="syn-n syn-part" id="front-{k}" data-h="1" style="--d:{d:g}" data-fold="shut">'
             f'<div class="syn-nb"><div class="syn-hd"><span class="syn-key syn-pk">{ROMAN.get(key, "")}</span>'
-            f'<span class="syn-pt">{esc(title)}</span></div><div class="syn-kw"><button type="button" '
+            f'<span class="syn-pt">{esc(title)}</span>'
+            # every brace at once (owner, 2026-11-20: a fitting, seventeenth-century "expand all" sign): the printer's
+            # asterism, three stars, which marks the whole of a thing; shown by the script, which alone can open braces
+            f'<button type="button" class="syn-all" hidden aria-pressed="false" '
+            f'aria-label="Open every brace of {attr(title)}" title="Open every brace (again to fold)">⁂</button>'
+            f'</div><div class="syn-kw"><button type="button" '
             f'class="syn-brace syn-ed" aria-controls="front-{k}-c" aria-expanded="true" '
             f'aria-label="{attr(title)}: Burton’s synopsis, {len(roots)} sheets: open or fold">'
             '<span class="syn-ink" aria-hidden="true"></span><span class="syn-cnt" aria-hidden="true"></span>'
