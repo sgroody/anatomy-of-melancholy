@@ -28,12 +28,19 @@ def _nodes(n: dict, depth: int = 0):
         yield from _nodes(c, depth + 1)
 
 
+# the astrological and alchemical signs in Burton's words (the planets in "under ♄"), set in rubric like the keys
+# (owner, 2026-11-20: "not all the alchemical symbols on the front page synopses are properly red")
+SIGNS = re.compile("([☉☽-♓⊕🜀-🝿]+)")
+
+
 def runs_html(runs: list[dict]) -> str:
     out = []
     for r in runs:
         t = esc_tagged(r["t"])
         if r.get("sym"):
             t = f'<span class="sym">{t}</span>'
+        else:
+            t = SIGNS.sub(lambda m: f'<span class="sym">{m.group(1)}</span>', t)
         if r.get("i"):
             t = f"<i>{t}</i>"
         out.append(t)
@@ -88,8 +95,11 @@ def _node(n: dict, by_id: dict, root: str, titles: dict[str, str], shut: set[str
                       f'[{esc(k["sign"])}]<span class="sr-only"> (sign supplied by this edition)</span></span>')
         elif "src_p" in k:
             hd.append(f'<span class="syn-key">{esc(k["text"])}</span>')
-        elif text.startswith(esc(k["sign"])):  # the sign printed at the head of the root's own words: its column
-            text = f'<span class="syn-key">{esc(k["sign"])}</span>' + text[len(esc(k["sign"])):].lstrip()
+        else:  # the sign printed at the head of the root's own words: its column
+            for lead in (esc(k["sign"]), f'<span class="sym">{esc(k["sign"])}</span>'):
+                if text.startswith(lead):
+                    text = f'<span class="syn-key">{esc(k["sign"])}</span>' + text[len(lead):].lstrip()
+                    break
     linked = set()
     for sign, tgt in zip(n.get("see", []), n.get("see_target", []), strict=True):
         # the sign Burton prints ("See ♋ ♌ ♍") is itself the link (owner, 2026-11-03), not a copy after it

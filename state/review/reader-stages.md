@@ -449,3 +449,79 @@ Owner: "Looks solid, add it to the reader." Ported from the prototype (tools/syn
   V11 561/561; L1 3.2.4.1 79 notes, 37 shortened, 0 held back. L1 now waits for the page to lay its notes out (up to
   10 s) instead of a fixed 150 ms: on a busy machine it had measured 3.2.4.1 and 1.1.3.2 before layout, and the
   committed edition.css/js failed the same way.
+
+# The owner's notes of 2026-11-20
+
+1. Glosses must not exist when everything but the core text is toggled away (re-stated; see 2026-11-19, third set).
+2. The key: no hedera line; the section reads "Who made it"; Webster, like every source, a sign (re-stated).
+3. "Hide in-line citations" should switch between Burton's own abbreviated citations in the line and the § with its
+   note in the margin (as now), not between the § and nothing.
+4. The foot: Authors Cited, About, Table. "About this edition" and "How to read this book" rewritten as one shorter
+   page, and a very short version made to sit in the front page's blank space. The colophon sentence (Gowland's
+   edition; every translation labelled …) goes: the informational pages say it.
+5. In *Despair* (3.4.2.2) "Joseph. lib. 1 de bello Jud. cap. 14, L. Danaeus in Aphoris. polit. pag. 226" stands in the
+   line with nothing: "clearly some things have been missed" (it is in the held-back citation sweep).
+6. The front page "in one page", without the running head or the foot.
+7. Remove "Each on its own page, with the printed sheets: I · II · III".
+8. Clearer signs that resting the pointer will open something: perhaps the "&c." brace moving, and something on the
+   main brace.
+9. The front page's Contents folded by default.
+10. The front-matter box halfway between before and now: not out over the sides, not so tall.
+11. At the head of each Partition the synopsis folded wholly, as on the front page, with no "Burton's synopsis" and no
+    "The synopsis on its own page …": just "I The First Partition {&c."
+12. With the front page on one screen, the options widget fixed (not floating), perhaps in the about box.
+13. The live sample at the foot of the options, called "Example passage" (not "As you choose").
+14. Choices to include the marginal notes of each source, each one on or off.
+15. "The Synopses" as —— Synopses —— (rubric rules either side), better aligned.
+16. Not every sign on the front page's synopses is red.
+17. "Point at a panel …" no wider than the rules above and below "Enter, gentle Reader".
+18. The restored notes cite Project Gutenberg; if its text is an edition of the *Anatomy*, cite that edition.
+19. The subtitle a little smaller, so "of it." does not wrap.
+20. V5: "Just do the remainder of V5 yourself; I can't hand check it."
+
+## The notes of 2026-11-20, carried out (reader)
+
+* 1, 2 were already so in the build (counted with "None: the text as printed" on 3.2.3.1, 1.2.2.1, 3.2.2.1 and Ad
+  Librum: 0 margin notes, glosses, translations or § visible; the key has no hedera line and ends "Who made it", w for
+  Webster). The owner was most likely shown an older build by the service worker, which answered from its cache first.
+  It now asks the network first and falls back to the precache offline, so a rebuilt edition shows on the first load.
+* 3, 14: "What to show" became **Notes in the margin**, one switch per source: Burton's notes, his notes restored from
+  Democritus Minor's edition (°), Gowland's notes (private), translations, citations in his text written out (§; off:
+  as he printed them, in the line), Bible verses, obsolete-word glosses, and "None: the text as printed". A source
+  switched off takes its markers with it and no room in the margin (the layout skips it). Settings saved under the old
+  names carry over ("Hide in-line citations" -> citations off; "Only Gowland's notes" -> every other source off).
+  Counted on 3.2.3.1, each switch alone: Burton's 281 -> 0, restored 50 -> 0, Gowland's 253 -> 0, translations 180 +
+  87 "Author trans." -> 0, § 9 -> 0 with Burton's own words back in the line (48 spans, none inside his notes),
+  Bible verses 2 + 1 -> 0; the other sources unchanged each time.
+* 13: the live sample is at the foot of the options as "Example passage" (no longer sticky).
+* 4: the foot reads Authors cited · About · The Table; the colophon sentence is gone. "About this edition" and "How to
+  read this book" are one page, About (1,243 words against 1,829); guide/ is no more. The front page carries a short
+  version in its about box.
+* 18: the restored notes cite **Democritus Minor's edition**: Project Gutenberg #10800 is the nineteenth-century "new
+  edition, corrected, and enriched by translations of the numerous classical extracts, by Democritus Minor" (its title
+  page; PG gives no date and a web search did not settle one, so none is given), re-edited by Karl Hagen against the
+  1638 edition. Sign **dm**; the hover names PG #10800 and the note's number there.
+* 6, 7, 9, 12, 15, 16, 17, 19 (the front page): no running head or foot; the engraving the window's height; the
+  subtitle on one line (scaled with the window); the hint as wide as the rules of "Enter, gentle Reader"; an about box
+  with the short text, the search / options / light-dark signs (the options open over the page from there) and About ·
+  Authors cited · The Table; a panel's stanza takes the box's place while the pointer is on the engraving;
+  —— Synopses —— between rubric rules, the three Partitions on one line each; Contents folded the same way (a link
+  into them opens them). "Each on its own page …" is gone (About says where the synopsis pages are). Measured: one
+  screen at 1920 x 1080, 1400 x 900, 1366 x 768 and 1280 x 720 (page height = window height; short windows set
+  tighter), no sideways scroll, every stanza within its box. Every sign in the synopses is red now: the planets and
+  signs in Burton's words were ink (♄ ♃ ♂ and four `sym` runs), and the supplied [☾] was grey (its brackets mark it).
+* 10: the front-matter tablet runs on in three centred lines inside the page (was one a line, seven lines; before
+  that one row as wide as 64rem).
+* 11: at the head of each Partition's first page, "I The First Partition {&c." alone, folded as on the front page.
+* 8: resting on a folded brace now shows what will happen as it fills: the stub draws itself taller, the "&c." spreads
+  in rubric with a rule running under it; a Partition's name is underlined as it fills; an open brace filling to stay
+  fixed thickens and glows. Frames at 0.35 s / 0.9 s / 1.7 s on the First Partition: filling, opened, fixed.
+* Not done here, for the meter (weekly 86 % at 2026-11-20 06:00 UTC, against the 90 % stop): 5, the held-back
+  citation sweep (918 records; a full blind audit is about $8), and 20, the V5 cycle. See the closing note.
+* Counted after the last build: the front page's synopses (all opened) have 43 signs, 43 in rubric.
+* Fixed on the way: the first build of the sign rule wrote a control character for its back-reference, which replaced
+  every sign in the synopses (V10's parser stopped on it); the rule now inserts the sign itself. V9 failed once on ▸ ▾
+  (no glyph in the fonts) in the Contents' fold mark; it is drawn now.
+* `burton check --all` (2026-11-20): 21 PASS, V5 DEFER, 0 FAIL. V6 844 pages, 190,569 links, 0 broken; V9 266/266;
+  V10 0 parse errors; V10a 0 serious; V10k 22/22; L1 3.2.4.1 79 notes, 37 shortened, 0 held back; OFF 499/499
+  precached, 6/6 pages offline.

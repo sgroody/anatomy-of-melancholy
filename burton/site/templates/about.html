@@ -1,35 +1,40 @@
 {% extends "base.html" %}
 {% block main %}
-<article class="prose">
-  <h1>About this edition</h1>
-  <p>A reading edition of Robert Burton’s <cite>The Anatomy of Melancholy</cite>, generated from a structured base text with separate layers for translations and notes. This build ({{ profile }} profile, {{ built }}) contains {{ n_units }} text pages.</p>
+{# "About this edition" and "How to read this book" as one shorter page (owner, 2026-11-20) #}
+<article class="prose guide">
+  <h1>About</h1>
+  <p class="guide-lead">Robert Burton’s <cite>The Anatomy of Melancholy</cite>, first published in 1621 under the name of Democritus Junior, dissects melancholy (its kinds, causes, symptoms and cures) with everything Burton had read. This edition gives his sixth edition (1651) in the text Angus Gowland edited for Penguin Classics (2021), word for word{% if profile == "public" %}, without Gowland’s editorial matter{% endif %}, and sets beside it what helps to read him.</p>
 
-  <h2>The text</h2>
-  <p>The base text is Burton’s sixth edition (1651) as edited and modernised by Angus Gowland (Penguin Classics, 2021), taken from the publisher’s EPUB (sha256 <code>{{ source_hash[:16] }}…</code>). Burton’s words, spelling as Gowland gives it, his sidenotes and his headings are kept exactly; corrections appear only as marked corrections with the source’s reading available. Gowland pruned some of Burton’s sidenotes, so the sidenotes here are those of his edition.</p>
-
-  <h2>What the labels mean</h2>
+  <h2>Reading the page</h2>
+  <p>Burton’s text runs down the middle; everything the edition adds stands in the margin beside the words it belongs to. Point at a note to light its words, or at the words to light the note; click either to keep them lit. On a narrow screen a note opens when you tap its marker. Where a paragraph has more notes than its margin holds, the rest wait behind “more notes”.</p>
   <dl class="labels">
-    <dt>Burton</dt><dd>The text, sidenotes and headings, as edited by Gowland.</dd>
+    <dt><span class="g-burton">a b c …</span> Burton’s notes</dt><dd>Lettered as in the Penguin edition, with a red rule beside his words; <span class="g-k">cites</span> marks a note that only gives references, <span class="g-k">note</span> one that says more. A translation or a Bible verse the edition adds hangs below on a dotted rule.</dd>
+    <dt>° restored notes</dt><dd>Burton’s notes that Gowland’s edition leaves out, in grey, from an older edition (below).</dd>
+    <dt><span class="g-k">trans.</span></dt><dd>A translation of a foreign passage, in its language’s colour: <span class="g-la">Latin</span>, <span class="g-grc">Greek</span>, <span class="g-enm">Middle English</span> (Chaucer, in small capitals) and <span class="g-modern">the modern languages</span>. So a translation is never taken for Burton’s own English. The arrow after it opens the other translations and the passage’s source where it is known. Where Burton translates a passage himself, the margin says <span class="g-k">Author trans.</span> and his English takes the original’s colour. A long verse passage translated line for line is set facing it.</dd>
+    <dt><span class="g-k g-cite">cites</span> · <span class="g-k g-bible">Bible</span> · <span class="g-cite">§</span></dt><dd>Burton’s abbreviated citations written out (“Hor. lib. 3 Od. 6” becomes Horace, Odes, book 3, ode 6), his own abbreviation on hover. In his running text the author’s name stays and a raised <span class="g-cite">§</span> stands where the reference was, the reference in the margin. A Bible reference gives the verse in the King James Version, folded after three lines.</dd>
     {% if profile == "private" %}
-    <dt>Gowland 2021</dt><dd>Gowland’s bracketed translations, interpolations, translation pages, endnote anchors and Penguin page numbers. Labelled wherever they appear; his bracketed translations in the text are hidden by default. His translations are also offered beside the others in each passage’s box, without his brackets, and can stand in for the original; “Reading options” sets which translation comes first.</dd>
+    <dt><span class="g-k">gloss</span> · <span class="g-k">note</span> · <span class="g-k">about</span> · <span class="g-k">source</span> · <span class="g-k">see</span></dt><dd>Gowland’s endnotes, beside the words they are on, by kind: the sense of an old word, an explanation, who someone is, where a quotation comes from, a pointer to another note. On a wide window they stand in the left margin.</dd>
     {% endif %}
-    <dt>Language colours</dt><dd>Latin is set in oxblood by day and candle-gold by night (Reading options can change it), Greek in blue, Middle English in brown and the modern languages in violet, and each passage’s translation in the margin takes its colour. With “Translations in the line”, the English stands in place of the original in that colour and in italic, so it is never mistaken for Burton’s own English; the original shows on hover. In the interlinear mode a translation is set on a faint tint and introduced by its language. A long verse passage whose translation goes line for line is set facing it.</dd>
-    <dt>Burton’s own rendering</dt><dd>Where Burton translates a quotation himself, his English takes the original’s colour and is linked to it, and the margin says “Author trans.” instead of adding a new translation.</dd>
-    <dt>Machine translation</dt><dd>Drafted by a language model. Each one names the model, the prompt version and the date, and is unreviewed unless it says otherwise.</dd>
-    <dt>Dell &amp; Jordan-Smith (1927)</dt><dd>The human translations of the 1927 all-English edition, public domain in the USA, preferred where available.</dd>
-    <dt>Expanded citations</dt><dd>Burton’s abbreviated sidenote citations, read by rule (“Hor. lib. 3 Od. 6” becomes Horace, Odes, book 3, ode 6). The abbreviation and title tables are a machine draft that names its model. Where the rules leave a citation unresolved, a model’s expansion is shown with its ◇ label, and only for the very words it was made for; an unidentified citation is left as Burton wrote it. Burton’s own abbreviations show on hover, or in place of the expansions with “Burton’s abbreviations” in Reading options. A citation in his running text keeps the author’s name, with a raised § where the reference stood; the reference itself is in the margin. See <a href="{{ root }}authors/">Authors cited</a>.</dd>
-    <dt>Bible verses (KJV)</dt><dd>Where Burton cites a chapter and verse, the margin gives the verse in the King James Version (Project Gutenberg #10 and #124, its Apocrypha; public domain), under his reference. Burton sometimes numbers the Psalms as the Vulgate does, so a Psalm verse may be the one next to the one he meant.</dd>
-    <dt>Wikidata</dt><dd>Authors’ dates and identifiers, from Wikidata (CC0), taken only where exactly one candidate matched by rule.</dd>
-    <dt>Obsolete-word glosses</dt><dd>Off by default (Reading options). Each gloss carries its source’s sign, the name on hover.{% if profile == "private" %} <i>g</i> (Gowland 2021) is Gowland’s own endnote gloss, found by rule where his note glosses a word just before its anchor (private build only).{% endif %} <i>w</i> (Webster 1913) is a sense from Webster’s Revised Unabridged Dictionary of 1913 (public domain), offered only for words whose every sense Webster marks obsolete or archaic; a model ({{ gloss_model }}) chose, in each sentence, whether Burton uses one of those senses, and which. Where Burton uses an obsolete sense Webster lacks, the gloss is “drafted by” the model, which names itself. Common archaisms such as <i>hath</i> and <i>saith</i> are not glossed.</dd>
-    <dt>° Restored notes</dt><dd>Gowland’s edition leaves out some of Burton’s sidenotes. Where the nineteenth-century text of Project Gutenberg #10800 (public domain, checked by its editor against the 1638 edition) has a note at a place where Gowland has none, it is restored, placed by rule from the words around its marker, and shown in grey with a ° marker and its source. That editor added English translations to some notes; notes in English without a reference are therefore left out, as most likely his and not Burton’s. Some notes may also differ between editions.</dd>
-    <dt>Burton cites / Probably / Source</dt><dd>“Burton cites” repeats Burton’s own attribution, which is not proof. “Probably” is a stated guess with its basis. “Source” is used only for a verified match. Unidentified quotations say so.</dd>
+    <dt>A name, finely underlined</dt><dd>Opens a window on that author; held still for a moment, it stays, and its own names open windows in turn. A cross-reference opens the passage it points to.</dd>
   </dl>
+  <p>The <a href="{{ root }}settings/">reading options</a> (<span aria-hidden="true">Aa</span> at the top of each page) choose which notes stand in the margin, source by source; how the foreign passages are read (in the margin, under the original, or in place of it with the original on hover); which translation comes first; Burton’s abbreviations instead of the written-out citations; glosses for obsolete words; the Latin’s colour, the theme and the type size{% if profile == "private" %}; and Gowland’s bracketed translations and the Penguin page numbers{% endif %}. “None: the text as printed” leaves only Burton’s words.</p>
 
-  <h2>Finding things</h2>
-  <p><a href="{{ root }}search/">Search</a> looks through Burton’s text, his sidenotes and, if asked, the translations, each found translation labelled with its source. Its index is loaded the first time you search and then kept for offline use. <a href="{{ root }}table/">Burton’s Table</a>, his alphabetical index of 1624, follows the text{% if profile == "private" %}; its page numbers are the Penguin edition’s, each linked to the place where that page begins{% else %}; this build leaves out its page numbers, which are the Penguin edition’s{% endif %}. On the home page and in <a href="{{ root }}argument/">The Argument of the Frontispiece</a>, each panel of the engraved title page links to the stanza that describes it; the panels’ outlines were drawn by machine from the image and are labelled so.</p>
+  <h2>Where it comes from</h2>
+  <p>Every addition carries the sign of its source; point at the sign for its full name.</p>
+  <dl class="labels">
+    {% if profile == "private" %}
+    <dt><span class="mn-src"><span class="src-m">g</span></span> Gowland (2021)</dt><dd>His translations and notes, from the Penguin edition. His translations are offered in each passage’s box without his brackets; the brackets in the text and the Penguin page numbers are off by default.</dd>
+    {% endif %}
+    <dt><span class="mn-src"><span class="src-m">dj</span></span> Dell &amp; Jordan-Smith (1927)</dt><dd>The human translations of their all-English edition, public domain in the USA, preferred where they exist.</dd>
+    <dt><span class="mn-src"><span class="src-m">dm</span></span> Democritus Minor’s edition</dt><dd>The restored notes come from the nineteenth-century “new edition, corrected, and enriched by translations of the numerous classical extracts, by Democritus Minor”, as Karl Hagen re-edited it against the 1638 edition for Project Gutenberg (#10800; public domain). A note is restored where that edition has one and Gowland’s has none, placed by rule from the words around its marker. Its editor added English to some notes, so notes in English without a reference are left out as most likely his; some notes may differ between editions.</dd>
+    <dt><span class="mn-src"><span class="src-m">w</span></span> Webster (1913)</dt><dd>Senses of obsolete words from Webster’s Revised Unabridged Dictionary (public domain), offered only for words whose every sense Webster marks obsolete or archaic; a model ({{ gloss_model }}) chose, sentence by sentence, whether Burton uses one, and which. Where he uses a sense Webster lacks, the gloss is the model’s, with its ◇. Common archaisms such as <i>hath</i> are not glossed.{% if profile == "private" %} Gowland’s own glosses come with his notes.{% endif %}</dd>
+    <dt><span class="mn-src"><span class="src-m">kjv</span></span> King James Bible</dt><dd>Project Gutenberg #10 and #124 (its Apocrypha). Burton sometimes numbers the Psalms as the Vulgate does, so a Psalm verse may be the one next to the one he meant.</dd>
+    <dt><span class="prov"></span> a model</dt><dd>A translation, a citation the rules could not write out, an identification or a gloss made by a language model. Point at the sign for the model, the prompt and the date; it is unreviewed unless it says otherwise.</dd>
+  </dl>
+  <p>Authors’ dates and identifiers come from Wikidata (CC0), only where exactly one candidate matched by rule. Of a quotation’s source, “Burton cites” repeats Burton’s own attribution, which is not proof; “probably” is a stated guess with its basis; “source” is used only for a verified match; an unidentified quotation says so.</p>
 
-  <h2>How machine-produced items are made</h2>
-  <p>Translations and language rulings are produced by a resumable script that calls a model with a fixed, versioned prompt and records the model, prompt version, date and input for every result. Gowland’s translations are never given to the model. The records in this build:</p>
+  <h2>How the machine’s work is made</h2>
+  <p>By resumable scripts that call a model with a fixed, versioned prompt and record the model, prompt, date and input of every result. Gowland’s translations are never given to the model. The records in this build:</p>
   <table class="counts">
     <caption>Machine-produced records in the layers</caption>
     <thead><tr><th scope="col">Kind</th><th scope="col">Model</th><th scope="col">Prompt</th><th scope="col">Date</th><th scope="col">Records</th></tr></thead>
@@ -43,14 +48,16 @@
     </tbody>
   </table>
 
-  <h2>Rights</h2>
+  <h2>Finding your way</h2>
+  <p><a href="{{ root }}search/">Search</a> looks through Burton’s text, his notes and, if asked, the translations; its index is loaded the first time you search and kept for offline use. Burton’s synopses stand folded on the front page and at the head of each Partition; rest on a brace to open it. Each Partition’s synopsis also has a page of its own, with the printed sheets. <a href="{{ root }}authors/">Authors cited</a> lists everyone Burton cites, and <a href="{{ root }}table/">The Table</a>, his alphabetical index of 1624, follows the text{% if profile == "private" %}, its page numbers the Penguin edition’s, each linked to the place where that page begins{% else %}; this build leaves out its page numbers, which are the Penguin edition’s{% endif %}. On the front page and in <a href="{{ root }}argument/">The Argument of the Frontispiece</a>, each panel of the engraved title page leads to its stanza; the panels’ outlines were drawn by machine.</p>
+
+  <h2>The text</h2>
+  <p>From the publisher’s EPUB (sha256 <code>{{ source_hash[:16] }}…</code>). Burton’s words, Gowland’s modernised spelling, the sidenotes and the headings are kept exactly; a correction appears only as a marked correction, with the source’s reading available. Gowland pruned some of Burton’s sidenotes, so the sidenotes are his edition’s, with the restored ones marked °. This build ({{ profile }}, {{ built }}) has {{ n_units }} text pages and works offline once loaded.</p>
   {% if profile == "private" %}
-  <p>This is a <strong>private build</strong> for personal study. It includes text and editorial matter from Gowland’s edition, which is © Penguin Books and Angus Gowland, and must not be distributed.</p>
+  <p>This is a <strong>private build</strong> for personal study. It includes text and editorial matter from Gowland’s edition, © Penguin Books and Angus Gowland, and must not be distributed.</p>
   {% else %}
   <p>This is the <strong>public build</strong>: Gowland’s editorial matter (translations, interpolations, notes and page numbers) is removed, and the build is checked for any trace of it. The base text is still Gowland’s edited text, so whether this build may be published is an open decision.</p>
   {% endif %}
-
-  <h2>Type and tools</h2>
-  <p>Set in EB Garamond, with Greek in GFS Didot (the Greek Font Society) and Cardo for the apothecary and astrological signs EB Garamond lacks (all SIL Open Font License, subset to the characters used). Chaucer is set in small capitals. Latin and Greek are hyphenated at build time with Claudio Beccari’s Latin patterns (MIT licence) and Pyphen’s Greek patterns. The site works offline once loaded.</p>
+  <p>Set in EB Garamond, with Greek in GFS Didot and Cardo for the apothecary and astrological signs (all SIL Open Font License, subset to the characters used). Latin and Greek are hyphenated at build time with Claudio Beccari’s Latin patterns (MIT licence) and Pyphen’s Greek patterns.</p>
 </article>
 {% endblock %}

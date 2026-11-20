@@ -79,8 +79,13 @@ SOURCES = {
     "djs1927": ("dj", "Dell & Jordan-Smith (1927)", "Dell and Jordan-Smith"),
     "webster1913": ("w", "Webster’s Revised Unabridged Dictionary (1913)", "Webster 1913"),
     "kjv": ("kjv", "The King James Bible (1611)", "King James Bible"),
-    "pg": ("pg", "Project Gutenberg #10800", "Project Gutenberg"),
+    # the restored notes' text is an edition of the Anatomy, so it is cited as that edition (owner, 2026-11-20): the
+    # nineteenth-century "new edition … by Democritus Minor" (its title page; no date given), as Karl Hagen re-edited it
+    # against the 1638 edition for Project Gutenberg (#10800)
+    "pg": ("dm", "Democritus Minor’s edition (19th century), re-edited against the 1638 edition (Project Gutenberg "
+                 "#10800)", "Democritus Minor’s edition"),
 }
+PG_EDITION = "Democritus Minor’s edition (19th century), re-edited against the 1638 edition"
 
 
 def src_mark(key: str, title: str | None = None) -> str:
@@ -1278,8 +1283,8 @@ def mark_restored(html_text: str, notes: dict, counts: dict, reads: dict | None 
                 f'aria-label="Note not in Gowland’s edition">°</a>'
                 f'<span class="sidenote sn-restored" id="{attr(rid)}" role="doc-footnote">'
                 f'<span class="sn-body"><span class="sn-n">°</span> {kind}{esc_tagged(rec["text"])} '
-                + '<span class="mn-src">' + src_mark("pg", f'{RESTORED_LABEL} {rec["source"]}, note {rec["pg_note"]} '
-                                                    f'(a 19th-century text checked against the 1638 edition)')
+                + '<span class="mn-src">' + src_mark("pg", f'{RESTORED_LABEL} {PG_EDITION}, note {rec["pg_note"]} '
+                                                    f'({rec["source"]})')
                 + f'</span></span>{lines}</span>')
         if hoisted:  # before a passage box, held to its first line as Gowland's lifted-out notes are
             note = f'<span class="hoisted">{note}</span>'

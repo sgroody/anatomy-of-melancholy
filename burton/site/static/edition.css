@@ -500,6 +500,27 @@ code { font-size: 0.85em; }
 .syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 6.5em; }
 .syn-shut > .syn-nb > .syn-kw { min-width: 7.2em; }
 .syn-shut > .syn-nb > .syn-kw > .syn-brace:hover .syn-cnt, .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { color: var(--accent); }
+/* what resting will do, shown while it fills (owner, 2026-11-20: "clearer visual signifiers that your cursor is going
+   to open something if it stays there … the &c. bracket having some animation, along with something on the main
+   bracket"): on a folded brace the stub draws itself taller and the "&c." spreads, a rubric rule running under it as
+   the time fills, as a name's window fills its bar; a Partition's name is underlined the same way; an open brace that
+   is filling to stay fixed thickens and glows. */
+.syn-cnt { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat; padding-bottom: .1em;
+  transition: opacity .25s, letter-spacing .25s, translate .25s, background-size .15s; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace .syn-cnt { transition: opacity .45s ease var(--syn-t-shut), letter-spacing .25s,
+  translate .25s, background-size .15s; }
+.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { background-size: 100% 1px; letter-spacing: .2em; translate: .3em -50%;
+  transition: background-size var(--syn-fill, .65s) linear, letter-spacing var(--syn-fill, .65s) ease-out,
+  translate var(--syn-fill, .65s) ease-out, opacity .2s; }
+.syn-brace::before, .syn-ink { transition: transform .25s ease, filter .25s; }
+.syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleY(1.45); transition: transform var(--syn-fill, .65s) ease-out; }
+.syn-filling:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleX(1.25);
+  filter: drop-shadow(0 0 1.5px var(--accent)); }
+.syn-part > .syn-nb > .syn-hd .syn-pt { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat;
+  transition: background-size .15s, color .3s; }
+.syn-part.syn-filling > .syn-nb > .syn-hd .syn-pt { background-size: 100% 1px;
+  transition: background-size var(--syn-fill, .65s) linear, color var(--syn-fill, .65s); }
 .syn-shut > .syn-nb > .syn-hd { max-width: min(26em, calc(100cqi - 7.6em)); }
 /* folded sheets in a chain stand with their stubs in one column, as a printer aligns a column of braces */
 .syn-root.syn-shut > .syn-nb > .syn-hd { width: min(22em, calc(100cqi - 7.6em)); }
@@ -508,7 +529,8 @@ code { font-size: 0.85em; }
 .syn-see { color: var(--accent); text-decoration: underline 1px; text-underline-offset: .15em; padding: 0 .1em; } /* not colour alone (V10a) */
 .syn-see:hover { text-decoration-thickness: 2px; }
 .syn-key { display: inline-block; width: 1.5em; margin-left: -1.5em; text-indent: 0; text-align: center; color: var(--accent); }
-.syn-key.syn-supplied { color: var(--muted); font-size: .9em; }
+.syn-key.syn-supplied { font-size: .9em; } /* the brackets say the edition supplied it; the sign is red like the rest */
+.syn-sheet .sym { color: var(--accent); } /* the signs in Burton's words, as the keys (owner, 2026-11-20) */
 .syn-root > .syn-nb > .syn-hd { padding-left: 1.5em; }
 .syn-sheet > .syn-root + .syn-root, .syn-part .syn-root + .syn-root { margin-top: .9em; }
 .syn-head { display: block; font-size: .92em; }
@@ -695,28 +717,88 @@ h1.unit-title { font-style: italic; font-size: 1.4em; max-width: 28rem; margin-l
 :root[data-theme="dark"] .ini-d { display: block !important; }
 @media print { .ini-d { display: none !important; } .ini-l { display: block !important; } }
 
-/* ------------------------------------------------------------ the front page (stage 4, R4 B) */
+/* ------------------------------------------------------------ the front page (stage 4, R4 B)
+   One screen, no running head or foot (owner, 2026-11-20): the engraving the height of the window; beside it the title,
+   the way in, a short word about the edition with the widget, the synopses and the contents, folded */
 main:has(> .front) { max-width: 82rem; }
-.front { display: grid; grid-template-columns: minmax(16rem, 36rem) minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: none; }
-.front .front-eng { position: sticky; top: 1rem; margin: 1.2rem 0; }
-.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem); width: auto; max-width: 100%; }
+.front { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: none;
+  min-height: 100vh; box-sizing: border-box; padding: 1rem 0; }
+.front .front-eng { position: sticky; top: 1rem; margin: 0; }
+.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem - 2.6em); width: auto; max-width: 100%; }
 .front .fs-label { line-height: 1.4; }
-.front-side { padding-top: 1.6rem; max-width: 40rem; }
-.front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.6rem; text-align: left; font-variant-caps: normal; }
+.front-side { padding-top: 0.4rem; max-width: 40rem; }
+@media (min-width: 1100px) and (hover: hover) { .front-side { padding-right: 2.4rem; } } /* clear of the ❧ at the window's edge */
+.front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.5rem; text-align: left; font-variant-caps: normal; }
 .front-title .ft-1 { display: block; font-size: 0.75em; }
 .front-title .ft-2 { display: block; font-size: 1.35em; }
-.front-what { font-style: italic; margin: 0.2rem 0; }
+/* one line (owner, 2026-11-20: "of it" hung on a line of its own) */
+.front-what { font-style: italic; margin: 0.2rem 0; font-size: 0.9em; }
+@media (min-width: 60rem) { .front-what { font-size: min(0.9em, 1.36vw); white-space: nowrap; } }
 .front-by { font-variant-caps: small-caps; letter-spacing: 0.06em; margin: 0.2rem 0 0; }
-.front-enter { margin: 1.2rem 0; }
+/* the hint no wider than the rules of the way in (owner, 2026-11-20) */
+.front-door { width: fit-content; margin: 1rem 0 0.9rem; }
+.front-enter { margin: 0; }
+.front-door .fs-hint { width: 0; min-width: 100%; margin: 0.45rem 0 0; color: var(--muted); font-size: 0.82em; line-height: 1.4; }
 .enter { display: inline-block; font-size: 1.25em; color: var(--accent); text-decoration: none; border-top: 1px solid var(--accent);
   border-bottom: 1px solid var(--accent); padding: 0.2rem 1.1rem; letter-spacing: 0.06em; }
 .enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
-.front-stanza { min-height: 11rem; border-left: 2px solid var(--rule); padding-left: 0.9rem; margin: 1rem 0 1.4rem; }
-.front-stanza .fs-hint { color: var(--muted); font-size: 0.9em; margin: 0; }
-.front-stanza:has(.fs-st:not([hidden])) .fs-hint { display: none; }
+/* the about box; a panel's stanza takes its place while the reader points at the engraving */
+.front-box { position: relative; min-height: 14rem; /* holds a stanza: 8 lines, 219 px */ border-left: 2px solid var(--rule); padding-left: 0.9rem; margin: 0 0 1.1rem; }
+.front-about { font-size: 0.88em; line-height: 1.45; }
+.front-about > p { margin: 0 0 0.5rem; }
+.prov-sign { color: var(--muted); }
+.front-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 1rem; }
+.front-tools .bar-r { justify-self: start; padding: 0; margin-left: -0.45rem; }
+.front-tools .hsearch.open { order: 9; }
+.front-links { margin: 0; }
+.front-stanza { position: absolute; inset: 0 0 auto 0.9rem; background: var(--paper); font-size: 0.84em; }
+.front-stanza .fs-st-l { line-height: 1.36; }
+.front-stanza:not(:has(.fs-st:not([hidden]))) { display: none; }
+.front-box:has(.fs-st:not([hidden])) .front-about { visibility: hidden; }
 .fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
 .fs-st-l { font-style: italic; margin: 0; line-height: 1.45; }
-@media (max-width: 60rem) { .front { grid-template-columns: 1fr; } .front .front-eng { position: static; } }
+/* the options open over the page from the widget, as from the floating one elsewhere */
+.front-settings { position: fixed; top: 1rem; right: 1rem; z-index: 44; width: min(60rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem); overflow: auto; background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); box-sizing: border-box; }
+@media (min-width: 1100px) and (hover: hover) { .front-settings { right: 3.2rem; width: min(60rem, calc(100vw - 6.4rem)); } }
+/* the section heads between rubric rules: —— Synopses —— (owner, 2026-11-20) */
+.front-rh { display: flex; align-items: center; gap: 0.7em; margin: 0 0 0.35rem; font-size: 0.95em; font-weight: 400;
+  font-variant-caps: all-small-caps; letter-spacing: 0.12em; }
+.front-rh::before, .front-rh::after { content: ""; flex: 1 1 0; height: 1px; background: var(--accent); }
+.front-syn { width: 21.5em; max-width: 100%; margin: 0 0 0.9rem; } /* room for a name and its folded brace (edition.js: 20.8em of the sheet) */
+.front-syn:has(.syn-part:not(.syn-shut)) { width: auto; } /* an open Partition's sheets take the column */
+.front-syn .syn-sheet { margin: 0; }
+.front-contents { width: 21.5em; max-width: 100%; }
+.front-contents[open] { width: auto; }
+.front-contents > summary { list-style: none; cursor: pointer; }
+.front-contents > summary::-webkit-details-marker { display: none; }
+.front-contents > summary .front-rh::after { flex: 1 1 0; }
+.front-contents > summary:hover .front-rh, .front-contents > summary:focus-visible .front-rh { color: var(--accent); }
+/* a drawn chevron (the fonts have no small triangles, V9): right when folded, down when open */
+.front-contents > summary .front-rh span::after { content: ""; display: inline-block; width: 0.32em; height: 0.32em;
+  margin: 0 0 0.12em 0.45em; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); rotate: -45deg;
+  transition: rotate .2s; }
+.front-contents[open] > summary .front-rh span::after { rotate: 45deg; }
+/* a short window (a laptop's 720 px): the same page, set tighter */
+@media (min-width: 60rem) and (max-height: 820px) {
+  .front { padding: 0.5rem 0; }
+  .front .front-eng { top: 0.5rem; }
+  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 1rem - 2.6em); }
+  .front-side { padding-top: 0; }
+  .front-title { font-size: 1.7rem; margin-bottom: 0.3rem; }
+  .front-door { margin: 0.6rem 0 0.6rem; }
+  .enter { font-size: 1.1em; }
+  .front-box { min-height: 12.2rem; margin-bottom: 0.7rem; }
+  .front-stanza { font-size: 0.74em; }
+  .front-about { font-size: 0.84em; line-height: 1.38; }
+  .front-syn { margin-bottom: 0.5rem; }
+}
+@media (max-width: 60rem) {
+  .front { grid-template-columns: 1fr; min-height: 0; }
+  .front .front-eng { position: static; }
+  .front .front-eng img, .front .fs-map img { max-height: 85vh; }
+}
 
 /* ------------------------------------------------------------ facing translations (stage 4) */
 .facing-link { font-size: 0.9em; margin: 1rem 0 0; }
@@ -830,7 +912,6 @@ a.nm-x { cursor: help; } /* an identified name with no index page: the window is
 .guide .g-cite { color: var(--k-cite); } .guide .g-bible { color: var(--k-bible); }
 .guide .g-la { color: var(--la); font-style: italic; } .guide .g-grc { color: var(--grc); font-style: italic; }
 .guide .g-enm { color: var(--enm); font-variant-caps: small-caps; } .guide .g-modern { color: var(--modern); font-style: italic; }
-.front-guide { margin: -0.4rem 0 1rem; font-size: 0.9em; }
 
 /* ------------------------------------------------------------ the running head (stage 8: N2 C, N1 D) */
 header.site .bar { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: 0.5rem 1rem; }
@@ -999,7 +1080,10 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .front-nav { --cur-front: #8a2f1d; margin: 0.4rem auto 1.2rem; text-align: center; }
 :root[data-theme="dark"] .front-nav { --cur-front: #e0c27a; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .front-nav { --cur-front: #e0c27a; } }
-.front-nav ol { list-style: none; margin: 0; display: inline-block; text-align: center; border: 1px solid var(--rule);
+/* (owner, 2026-11-20: "halfway between how it was and is now": within the text's measure, the pieces running on in
+   a few centred lines rather than one a line) */
+.front-nav ol { list-style: none; margin: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 0 1.3rem;
+  max-width: min(46rem, 100%); box-sizing: border-box; text-align: center; border: 1px solid var(--rule);
   outline: 1px solid var(--rule); outline-offset: 2px; padding: 0.35rem 1.4rem; font-variant-caps: all-small-caps;
   letter-spacing: 0.04em; font-size: 0.76em; line-height: 1.55; }
 .front-nav a { color: var(--muted); text-decoration: none; }
@@ -1018,7 +1102,7 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 @media (min-width: 1100px) {
   [data-fm="D"] .front-nav { position: fixed; left: 3.4rem; top: 7rem; width: 10rem; margin: 0; text-align: left;
     z-index: 3; }
-  [data-fm="D"] .front-nav ol { display: block; text-align: left; border: 0; outline: 0; padding: 0 0.6rem 0 0;
+  [data-fm="D"] .front-nav ol { display: block; max-width: none; text-align: left; border: 0; outline: 0; padding: 0 0.6rem 0 0;
     border-right: 1px solid var(--rule); line-height: 1.45; font-size: 0.8em; }
   [data-fm="D"] .front-nav li { margin: 0.3rem 0; }
   [data-fm="D"] .front-nav a[aria-current="page"] { display: block; border-right: 2px solid var(--cur-front);
@@ -1056,10 +1140,9 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .ok-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
   text-underline-offset: 0.22em; }
 /* the options' live sample (round 8, D1 A; owner, 2026-11-19): a few lines of Burton that change with every option */
-.opt-sample { grid-column: 1 / -1; border: 1px solid var(--rule); padding: 0.45rem 0.8rem 0.55rem; margin: 0 0 0.9rem;
+/* at the foot of the options (owner, 2026-11-20: "on the bottom", called "Example passage") */
+.opt-sample { grid-column: 1 / -1; border: 1px solid var(--rule); padding: 0.45rem 0.8rem 0.55rem; margin: 0.6rem 0 0.4rem;
   font-size: 0.92rem; line-height: 1.45; background: var(--paper); }
-/* kept in view while the options below it are changed, where the window is tall enough */
-@media (min-height: 700px) { .opt-sample { position: sticky; top: 0; z-index: 2; } }
 .opt-sample .os-body { max-width: 52rem; }
 .os-h { margin: 0 0 0.25rem; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .os-where { margin-left: 0.5em; font-variant-caps: normal; letter-spacing: 0; font-style: italic; }
@@ -1085,15 +1168,20 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .mode-english .os-en { display: inline; }
 .show-glosses .os-gl { display: block; }
 .show-glosses .os-glw { text-decoration: underline dotted var(--muted); text-underline-offset: 0.2em; }
-.hide-ic .os-ic, .hide-ic .os-icc { display: none; }
-.only-gw :is(.os-sn, .os-ref, .os-ic, .os-icc, .os-tr, .os-gl) { display: none; }
+.no-cites .os-ic, .no-cites .os-icc, .no-burton .os-sn, .no-burton .os-ref, .no-trans .os-tr { display: none; }
+.no-cites .os-abbr { display: inline; }
 .text-only .os-m, .text-only .os-ref, .text-only .os-ic { display: none; }
 .text-only .os-body { grid-template-columns: minmax(0, 1fr); }
 .text-only .os-ul, .text-only .os-glw { text-decoration: none; }
 .text-only .os-la { color: inherit; }
 /* what to show */
-.hide-ic .ic-m, .hide-ic .mn-ic { display: none !important; }
-.only-gw .unit .sidenote, .only-gw .unit a.nref, .only-gw .unit .mn:not(.mn-gw), .only-gw .unit .ic-m { display: none !important; }
+/* the margin's notes by source (owner, 2026-11-20); a note switched off takes its marker with it */
+.no-burton .unit .sidenote:not(.sn-restored), .no-burton .unit a.nref:not(.nref-restored),
+.no-restored .unit .sn-restored, .no-restored .unit a.nref-restored, .no-gowland .unit .mn-gw,
+.no-trans .unit .mn-tr, .no-trans .unit .mn-own, .no-trans .unit .sn-tr:not([data-src="burton"]), .no-kjv .unit .sn-bible, .no-kjv .unit .mn-ic .kjv,
+.no-cites .ic-m, .no-cites .mn-ic { display: none !important; }
+/* without the written-out citations, Burton's own stand in the line as he printed them */
+.no-cites :not(.cx) > .cx-b { display: inline; } /* in the line only: a note's own (in .cx) follow "As he abbreviated them" */
 .text-only .unit .sidenote, .text-only .unit a.nref, .text-only .unit .mn, .text-only .unit .ic-m,
 .text-only .unit .ftr-n { display: none !important; }
 /* no translations or glosses either, in the line, on hover or facing (owner, 2026-11-19: "glosses should not exist when

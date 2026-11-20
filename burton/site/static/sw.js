@@ -14,9 +14,12 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// The network first, so a rebuilt edition shows at once (2026-11-20: a cache-first worker showed the owner the build
+// before last); offline, the copy precached at install, which holds every file of the build.
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
+  if (event.request.method !== "GET" || !event.request.url.startsWith(self.location.origin)) return;
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true }).then((hit) => hit || fetch(event.request)),
+    fetch(event.request).catch(() => caches.match(event.request, { ignoreSearch: true })
+      .then((hit) => hit || Response.error())),
   );
 });

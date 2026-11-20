@@ -11,7 +11,11 @@ const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin o
 const isWide = () => wide.matches && !body.classList.contains("facing-on");
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false,
   latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a", // the colour of the Latin (round 5, F2)
-  hideic: false, onlygw: false, textonly: false }; // what to show (owner, 2026-11-18)
+  textonly: false, // what to show (owner, 2026-11-18)
+  // the margin's notes, each source on or off (owner, 2026-11-20); nCites off puts Burton's own citations back in the line
+  nBurton: true, nRestored: true, nGowland: true, nTrans: true, nCites: true, nKjv: true };
+const NOTE_SOURCES = { nBurton: "burton", nRestored: "restored", nGowland: "gowland", nTrans: "trans", nCites: "cites",
+  nKjv: "kjv" };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
 // come first there (owner, 2026-11-03); "gowland" is kept as an alias for settings saved before that.
 const ORDERS = {
@@ -28,7 +32,16 @@ function save(s) {
   try { localStorage.setItem(KEY, JSON.stringify(s)); return true; } catch { return false; /* private window */ }
 }
 
+// which source a margin note is from, for the switches above (the class names are the build's)
+const noteSource = (n) => n.classList.contains("sn-restored") ? "restored" : n.classList.contains("sidenote") ? "burton"
+  : n.classList.contains("mn-gw") ? "gowland" : n.matches(".mn-tr, .mn-own") ? "trans" : n.classList.contains("mn-ic") ? "cites"
+  : "other";
 const settings = Object.assign({}, DEFAULTS, load());
+// settings saved before 2026-11-20: "Hide in-line citations" now means Burton's own citations in the line, and "Only
+// Gowland's notes" is the margin with every other source switched off
+if (settings.hideic) settings.nCites = false;
+if (settings.onlygw) Object.assign(settings, { nBurton: false, nRestored: false, nTrans: false, nCites: false, nKjv: false });
+delete settings.hideic; delete settings.onlygw;
 
 // round 8, F1: the front matter's contents as A (the default), or B or D to compare on the real pages; ?fm=B or ?fm=D
 // is remembered from page to page, ?fm=A goes back (owner, 2026-11-19: "I want to see how A, B and D look")
@@ -60,8 +73,7 @@ function apply() {
   body.classList.toggle("show-pages", !bare && !!settings.pages);
   body.classList.toggle("show-abbr", bare || !!settings.cites); // "Burton's abbreviations" in place of the expansions
   body.classList.toggle("show-glosses", !bare && !!settings.glosses);
-  body.classList.toggle("hide-ic", !!settings.hideic);
-  body.classList.toggle("only-gw", !!settings.onlygw);
+  for (const [k, cls] of Object.entries(NOTE_SOURCES)) body.classList.toggle(`no-${cls}`, !bare && !settings[k]);
   body.classList.toggle("text-only", !!settings.textonly);
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
@@ -304,8 +316,7 @@ function layoutNotes() {
   const inLine = body.classList.contains("mode-english");
   // and what the reader chose not to see takes no room either (owner, 2026-11-18)
   const shown = (n) => !body.classList.contains("text-only") &&
-    !(body.classList.contains("only-gw") && !n.classList.contains("mn-gw")) &&
-    !(body.classList.contains("hide-ic") && n.classList.contains("mn-ic")) &&
+    !body.classList.contains(`no-${noteSource(n)}`) &&
     !(n.classList.contains("mn-gl") && !body.classList.contains("show-glosses"));
   const all = markers.map((m) => [m, noteOf(m)])
     .filter(([, n]) => n && shown(n) && !(inLine && n.classList.contains("mn-tr")));
@@ -1021,6 +1032,20 @@ if (stanzaBox) {
     a.addEventListener("mouseenter", () => show(a.dataset.st));
     a.addEventListener("focus", () => show(a.dataset.st));
   }
+  // the stanza stands in the about box only while the reader is on the engraving (2026-11-20)
+  const eng = document.querySelector(".front .front-eng");
+  eng?.addEventListener("mouseleave", () => show(""));
+  eng?.addEventListener("focusout", (ev) => { if (!eng.contains(ev.relatedTarget)) show(""); });
+}
+// the front page's contents start folded (owner, 2026-11-20); a link to a place in them opens them
+const frontContents = document.querySelector(".front-contents");
+if (frontContents) {
+  const openTo = () => {
+    const t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (t && frontContents.contains(t)) { frontContents.open = true; t.scrollIntoView(); }
+  };
+  openTo();
+  window.addEventListener("hashchange", openTo);
 }
 
 // ---------------------------------------------------------------- facing translations (stage 4)

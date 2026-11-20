@@ -16,6 +16,7 @@
 </head>
 <body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'settings', 'search') else (page.kind if page else 'other') }}">
 <a class="skip" href="#main">Skip to text</a>
+{% if key != "home" %}
 <header class="site">
   {# the running head (owner, 2026-11-04: N2 C): the page's place on the left, the title in the middle, two quiet
      signs and the light/dark switch on the right #}
@@ -31,13 +32,7 @@
     </div>
     <a class="home" href="{{ root or './' }}"{% if key == "home" %} aria-current="page"{% endif %}><span class="home-t">The Anatomy of Melancholy</span> <span class="home-s">An Englished Reader</span></a>
     <div class="bar-r">
-      {# the search box opens in place; Enter goes to the results (owner, 2026-11-18); without script, the link #}
-      <form class="hsearch" action="{{ root }}search/" method="get" role="search"><input name="q" type="search" placeholder="Search the Anatomy" aria-label="Search the Anatomy" autocomplete="off"></form>
-      <a class="search-link" href="{{ root }}search/" aria-label="Search" title="Search"{% if key == "search" %} aria-current="page"{% endif %}><svg class="ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5"/></svg></a>
-      {% if key != "settings" %}
-      <button class="settings-toggle" type="button" aria-expanded="false" aria-controls="settings" aria-label="Reading options" title="Reading options">Aa</button>
-      {% endif %}
-      <button class="theme-toggle" type="button" aria-label="Dark or light" title="Dark or light"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M15.5 12.5A6.5 6.5 0 0 1 7.5 4.5a6.5 6.5 0 1 0 8 8z"/></svg></button>
+      {% include "tools.html" %}
     </div>
   </div>
   {% if crumbs and not place %}
@@ -49,7 +44,8 @@
   </ol></nav>
   {% endif %}
 </header>
-{% if key != "settings" %}
+{% endif %}
+{% if key not in ("settings", "home") %}
 <div id="settings" class="settings" hidden>
   {% include "options.html" %}
   <p class="settings-more"><a href="{{ root }}settings/">All reading options</a></p>
@@ -64,6 +60,7 @@
 {% if prev %}<a class="side-zone sz-prev" rel="prev" href="{{ root }}{{ prev.href }}" aria-label="Previous: {% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">☙</span><span class="sz-t" aria-hidden="true">{% if prev.number %}{{ prev.number }} {% endif %}{{ prev.title_html }}</span></a>{% endif %}
 {% if next %}<a class="side-zone sz-next" rel="next" href="{{ root }}{{ next.href }}" aria-label="Next: {% if next.number %}{{ next.number }} {% endif %}{{ next.title_html|striptags }}"><span class="sz-sym" aria-hidden="true">❧</span><span class="sz-t" aria-hidden="true">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
 </nav>{% endif %}
+{% if key != "home" %}
 <footer class="site">
   {% if prev or next %}
   <nav class="pager" aria-label="Previous and next">
@@ -71,7 +68,9 @@
     {% if next %}<a rel="next" href="{{ root }}{{ next.href }}"><span class="pager-dir">Next</span> <span class="pager-t">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
   </nav>
   {% endif %}
-  <p class="colophon">Text: Burton’s sixth edition as edited by Angus Gowland (Penguin, 2021){% if profile == "public" %}, without Gowland’s editorial matter{% endif %}. Every translation is labelled with its source; machine translations name the model and prompt that produced them and are unreviewed unless marked otherwise. <a href="{{ root }}guide/">How to read this book</a> · <a href="{{ root }}about/">About this edition</a> · <a href="{{ root }}authors/">Authors cited</a> · <a href="{{ root }}search/">Search</a> · <a href="{{ root }}settings/">Reading options</a></p>
+  {# the foot: the informational pages (owner, 2026-11-20: "Authors Cited, About, Table"); the rest is in the widget #}
+  <p class="colophon"><a href="{{ root }}authors/">Authors cited</a> · <a href="{{ root }}about/">About</a> · <a href="{{ root }}table/">The Table</a></p>
 </footer>
+{% endif %}
 </body>
 </html>

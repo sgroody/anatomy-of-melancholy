@@ -67,7 +67,7 @@ def options_sample() -> Markup:
     pv = prov(label_of(mt))
     html_ = (
         '<div class="opt-sample" role="group" aria-label="A few lines of Burton, as these options show them">'
-        f'<p class="os-h">As you choose <span class="os-where">Burton, {SAMPLE_UNIT}</span></p>'
+        f'<p class="os-h">Example passage <span class="os-where">Burton, {SAMPLE_UNIT}</span></p>'
         f'<div class="os-body"><p class="os-text">… {t[0]}<i class="os-ul">{t[1]}</i>'
         f'<span class="os-abbr"><i>{t[2]}</i></span><span class="os-ic" aria-hidden="true">§</span>{t[3].rstrip()}'
         '<sup class="os-ref" aria-hidden="true">e</sup> '
@@ -345,14 +345,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         if unit in part_first and (tree := synopsis.load(part_first[unit].key)):
             # the Partition's synopsis at the head of its first page, folded (owner, 2026-11-04): the click-through goes
             # from the front matter straight into the text, past the landing and synopsis pages
-            # As Burton's sheet (2026-11-19): the first sheet open, the later ones folded to their opening lines,
-            # each opening when the reader rests on its brace
+            # Folded wholly, as on the front page, with no heading or link of its own (owner, 2026-11-20: just
+            # "I The First Partition {&c."): resting on it opens its sheets, each folded to its opening line
             pt = part_first[unit]
             of = esc(pt.title.removeprefix("The "))
             body = (f'<section class="part-syn" aria-label="Burton’s synopsis of the {of}">'
-                    f'<p class="ps-h">Burton’s synopsis</p>{synopsis.tree_html(tree, "../", shown_titles, "sheets")}'
-                    f'<p class="ps-all"><a href="../{pt.key}/synopsis/">The synopsis on its own page, with the printed '
-                    'sheets</a></p></section>\n' + body)
+                    f'{synopsis.front_html([(pt.key, pt.title, tree)], "../", shown_titles)}</section>\n' + body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
         words = len(public_text(div).split())
@@ -413,13 +411,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         synopses=synopses, title="The Anatomy of Melancholy",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
-    page("about", "about/index.html", "about.html", page=book.pages["about"], crumbs=[("About this edition", None)],
-         title="About this edition", description="Sources, provenance labels and rights",
+    page("about", "about/index.html", "about.html", page=book.pages["about"], crumbs=[("About", None)],
+         title="About", description="How to read this edition, where each part comes from, and its rights",
          labels=machine_labels(), source_hash=source_hash(), n_units=len(book.units), gloss_model=gloss_model(),
          built=date.today().isoformat())
-    page("guide", "guide/index.html", "guide.html", page=book.pages["guide"],
-         crumbs=[("How to read this book", None)], title="How to read this book",
-         description="The margin, the marks, the colours and the reading options")
     page("settings", "settings/index.html", "settings.html", page=book.pages["settings"],
          crumbs=[("Reading options", None)], title="Reading options",
          description="Language mode, theme and type size")
