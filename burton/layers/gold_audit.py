@@ -93,6 +93,15 @@ def _done(prompt: str = PROMPT) -> dict[str, dict]:
     return {r["id"]: r for r in map(json.loads, OUT.read_text(encoding="utf-8").splitlines()) if r["prompt"] == prompt}
 
 
+def _write_out(done: dict[str, dict], prompt: str = PROMPT) -> None:
+    """Write one prompt's labels, keeping every other prompt's records in the file (2026-11-20: labelling h7 with
+    gold-audit-v2 had rewritten the file with its own labels only, dropping the v1 records of every earlier round)."""
+    keep = [] if not OUT.exists() else [r for r in map(json.loads, OUT.read_text(encoding="utf-8").splitlines())
+                                         if r["prompt"] != prompt]
+    rows = sorted(keep + list(done.values()), key=lambda r: (r["id"], r["prompt"]))
+    atomic_write_text(OUT, "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows))
+
+
 def round_prompt(h: dict) -> str:
     """The rater prompt of a hold-out round: gold-audit-v1 up to h6; from h7, gold-audit-v2, which spells out what
     belongs to a reference and how separate foreign stretches are given (2026-11-20, set before h7 was drawn)."""
@@ -132,8 +141,7 @@ def run(model: str = PRIMARY_MODEL, packet_size: int = 40, budget_usd: float | N
                 done[i["id"]] = {"id": i["id"], "label": g["label"], "kind": g["kind"],
                                  "foreign_part": g["foreign_part"], "reason": g["reason"], "by": "machine",
                                  "model": model, "prompt": PROMPT, "date": date}
-        atomic_write_text(OUT, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
-                                       for x in sorted(done)))
+        _write_out(done)
         print(f"  {len(done)} labelled (${spent:.2f})", flush=True)
     return {"labelled": len(done), "cost_usd_list": round(spent, 2)}
 
@@ -208,8 +216,7 @@ def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) ->
         for g in res["output"]["items"]:
             done[g["id"]] = {"id": g["id"], "label": g["label"], "kind": g["kind"], "foreign_part": g["foreign_part"],
                              "reason": g["reason"], "by": "machine", "model": model, "prompt": prompt, "date": date}
-        atomic_write_text(OUT, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
-                                       for x in sorted(done)))
+        _write_out(done, prompt)
         print(f"  {k + len(pk)}/{len(ask)} labelled (${spent:.2f})", flush=True)
     rows = [{"_meta": {"round": name, "seed": h["seed"], "date": datetime.now(UTC).date().isoformat(),
                        "labelled_by": f"machine, blind (prompt {prompt}, model {model}): item text and context only, "
