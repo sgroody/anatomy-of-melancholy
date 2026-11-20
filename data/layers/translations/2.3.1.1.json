@@ -2826,65 +2826,6 @@
       }
     ]
   },
-  "2.3.1.1-f61": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Apogeo",
-    "text_sha1": "debb434ef16ed1fc7a748d1c5b173414e22af3ac",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-11-20",
-        "flags": [],
-        "literal": "in apogee",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Latin ablative of apogeum, governed by Burton's 'in'. In astronomy this is a planet's point farthest from the earth.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "apogee",
-        "warnings": []
-      }
-    ]
-  },
   "2.3.1.1-f62": {
     "kind": "phrase",
     "lang": "la",
@@ -2940,6 +2881,67 @@
           "work": null
         },
         "text": "perigee",
+        "warnings": []
+      }
+    ]
+  },
+  "2.3.1.1-f63": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in Apogeo",
+    "text_sha1": "9db6eb7aa67eb1bafb16d327e5a6e6309aded6ae",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "in Apogee",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "An astronomical term: a planet's position farthest from the earth. Apogeum is a Latinised Greek word, and Burton uses it in the ablative after 'in'. The next word, 'Perigeo' (nearest the earth), belongs to the same list and is governed by the same 'in', so the marked span covers only part of the phrase.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "at apogee",
         "warnings": []
       }
     ]

@@ -133,6 +133,14 @@ def candidates(units: list[str]) -> list[dict]:
             if any(lexicon.latinness(x) == "la" for x in w if len(x) >= 3) or \
                     (len(w) == 1 and LATIN_NOUN_END.search(w[0].lower())):
                 todo.append(d["text"])
+        # the line between a reference and Latin (2026-11-20, V5's fifth cycle; see langid.latin_content): reference
+        # runs holding Latin words (with the pieces a trim cut off a Latin run), and a roman preposition before a
+        # Latin passage
+        from ..ingest.langid import latin_content
+
+        todo += [d["text"] for d in r["langid_decisions"] if d["verdict"] == "citation"
+                 and not d["why"].startswith("model ruling") and latin_content(d["text"]) >= 2]
+        todo += [d["text"] for d in r["langid_decisions"] if d["why"].startswith("a roman word before a Latin passage")]
         # Latin-tagged passages that look vernacular
         for e in root.iter():
             if isinstance(e.tag, str) and e.get("ana") == "foreign" and e.get(XML_LANG) == "la":

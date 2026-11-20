@@ -1845,6 +1845,79 @@
       }
     ]
   },
+  "3.4.2.3-f56": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I tremble as often as I think of it",
+        "in": "3.4.2.3",
+        "near": "3.4.2.3-f56",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Jerome",
+      "basis": "text \"(saith Jerome)\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "Quoties diem illum cogito",
+    "text_sha1": "2afb3dfbab1c8561d64fa05bb32da2f3c7f3406e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "truncated"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Only the first half of the sentence is marked. It continues outside the passage with 'toto corpore contremisco', 'I tremble in my whole body'. 'That day' is the Day of Judgement. Burton's English 'it' is looser than the Latin. The saying is traditionally attributed to Jerome, though its exact source is uncertain.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I tremble as often as I think of it",
+            "in": "3.4.2.3",
+            "near": "3.4.2.3-f56",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Jerome",
+          "basis": "text \"(saith Jerome)\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "As often as I think of that day",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.2.3-f6": {
     "kind": "phrase",
     "lang": "la",

@@ -3924,65 +3924,6 @@
       }
     ]
   },
-  "1.2.1.2-f172": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Juan Luis de la Cerda",
-      "basis": "text \"Lodovicus de La Cerda the Jesuit in his Voluminous Tract de Angelo Custode\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "De angelo custode"
-    },
-    "text": "de Angelo Custode",
-    "text_sha1": "8a34463e65285035e1006345351cd1f1be7cc6cc",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Book title.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Juan Luis de la Cerda",
-          "basis": "text \"Lodovicus de La Cerda the Jesuit in his Voluminous Tract de Angelo Custode\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "De angelo custode"
-        },
-        "text": "On the Guardian Angel",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.1.2-f174": {
     "kind": "phrase",
     "lang": "la",
@@ -4463,67 +4404,6 @@
           "work": "Theatrum Naturae; Hermeticae Philosophiae"
         },
         "text": "They are finite",
-        "warnings": []
-      }
-    ]
-  },
-  "1.2.1.2-f206": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Johann Weyer (Wierus)",
-      "basis": "text \"Wierus in his Pseudomonarchia Daemonis\"",
-      "locus": null,
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Pseudomonarchia daemonum"
-    },
-    "text": "Pseudomonarchia Daemonis",
-    "text_sha1": "63a1519ebe2863415896e9c848f142260d527858",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-24",
-        "flags": [
-          "misquotation-suspected"
-        ],
-        "literal": "Pseudo-monarchy of the Demon",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is Johann Weyer's catalogue of demons, printed in 1577 with his De praestigiis daemonum. Its title is 'Pseudomonarchia daemonum' (plural, 'of demons'); Burton writes the singular 'Daemonis'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Johann Weyer (Wierus)",
-          "basis": "text \"Wierus in his Pseudomonarchia Daemonis\"",
-          "locus": null,
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Pseudomonarchia daemonum"
-        },
-        "text": "The False Monarchy of the Devil",
         "warnings": []
       }
     ]

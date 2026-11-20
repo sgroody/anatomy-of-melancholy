@@ -63,5 +63,71 @@
         "warnings": []
       }
     ]
+  },
+  "2.5.1.6-f38": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Laurent Joubert",
+      "basis": "text \"by Joubertus thus\"; \"as Joubertus observes med. pract. lib. 1 cap. 7\"",
+      "locus": "lib. 1 cap. 7",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Medicinae practicae"
+    },
+    "text": "unc: i cerussae candissimae",
+    "text_sha1": "5c85ad046a8bbfb65c9650aea6acedb817f5ad20",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment of Joubert's recipe. 'unc. i' gives the amount of the litharge of silver that comes before it. The ceruse (white lead) has its amount after it, 'ʒ iii' (3 drachms), which falls outside the marked text. The whole recipe reads: take litharge of silver 1 ounce, whitest ceruse 3 drachms, camphor 2 scruples, and so on.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Laurent Joubert",
+          "basis": "text \"by Joubertus thus\"; \"as Joubertus observes med. pract. lib. 1 cap. 7\"",
+          "locus": "lib. 1 cap. 7",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Medicinae practicae"
+        },
+        "text": "1 ounce; of the whitest ceruse",
+        "warnings": []
+      }
+    ]
   }
 }

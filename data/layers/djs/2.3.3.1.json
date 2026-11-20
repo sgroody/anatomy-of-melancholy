@@ -1548,13 +1548,13 @@
     "threshold": 0.85
   },
   "2.3.3.1-f249": {
-    "align_score": 0.788,
+    "align_score": 0.792,
     "by": "djs1927",
     "left_anchor": "like a beast, vers. 20, his way utters his folly, vers. 13,",
     "left_score": 0.792,
     "method": "rules/djs-align-v3",
-    "right_anchor": "; like sheep they lie in the grave, 14. Puncto descendunt ad",
-    "right_score": 0.788,
+    "right_anchor": "; like sheep they lie in the grave, 14.",
+    "right_score": 0.955,
     "status": "below-threshold",
     "text_sha1": "57515b910fb353ad6d031b4288ba078abe33531a",
     "threshold": 0.85
@@ -1872,6 +1872,21 @@
     "text_sha1": "19f464f4c6e6ca889de86855be7261bda2319b61",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 27376, pp. 508-511"
+  },
+  "2.3.3.1-f279": {
+    "align_score": 0.955,
+    "by": "djs1927",
+    "left_anchor": "; like sheep they lie in the grave, 14.",
+    "left_score": 0.955,
+    "method": "rules/djs-align-v3",
+    "residue": "",
+    "right_anchor": ", They spend their days in wealth, and go suddenly down to",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "1f62c6ba8d86b37f17e10f2cdc032d48f2145d6e",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 27489, p. 512"
   },
   "2.3.3.1-f29": {
     "align_score": 1.0,

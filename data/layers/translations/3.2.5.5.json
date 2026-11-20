@@ -9676,6 +9676,66 @@
       }
     ]
   },
+  "3.2.5.5-f314": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in vena Hymenea",
+    "text_sha1": "8217c743ca7751b5cbd0d985b13feb86c72d345c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "wordplay",
+          "technical-medical"
+        ],
+        "literal": "in the vein of Hymen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a medical joke. Pleurisy was treated by bleeding from a particular vein, and Burton has just called love a pleurisy. So the 'vein' he prescribes is marriage, after Hymen, the god of weddings. The phrase may also hint at the bodily hymen, so the cure is marriage and its consummation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the Hymeneal vein",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.5.5-f32": {
     "kind": "verse",
     "lang": "la",
@@ -10215,65 +10275,6 @@
           "work": "Amatorius"
         },
         "text": "suffered herself to be mounted by an ass",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.5.5-f4": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "vena Hymenea",
-    "text_sha1": "0693ec52482e73e063a9f7c5833ffc4cd46558a3",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "wordplay"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A joke on bloodletting: the 'vein' opened is marriage, Hymen being the god of marriage.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the vein of Hymen",
         "warnings": []
       }
     ]

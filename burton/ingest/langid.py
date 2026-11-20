@@ -473,7 +473,11 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
             if re.fullmatch(r"\s*&c\.?\s*", text):
                 adj = None  # "&c" alone is "etc.": not a passage to translate
                 verdict, why = "en", "&c alone (etc.)"
-            if adj and adj["label"] in MODEL_LANGS:
+            if adj and adj["label"] in MODEL_LANGS and adj["kind"] == "title":
+                # a book's title cited as a source is a reference, though its words are Latin (LABELLING.md; V5's
+                # fifth cycle: "de rebus caelestibus", ruled la/title, had become a passage)
+                verdict, why = "citation", f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']} title"
+            elif adj and adj["label"] in MODEL_LANGS:
                 verdict, lang, resp = "la", adj["label"], "#model"
                 if lang == "grc" and not re.search(r"\p{Script=Greek}", text):
                     lang = "grc-Latn"  # Greek written in Latin letters (e.g. Aristophanes' frogs)
@@ -483,8 +487,35 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
                 why = f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']} {adj['kind']}"
             elif adj:
                 verdict, why = adj["label"], f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
+        # a reference run holding Latin words: the model's ruling may find a Latin sentence in it (V5's fifth cycle)
+        if verdict == "citation" and resp == "#rules" and not why.startswith("model ruling") \
+                and latin_content(text) >= 2 and (adj := _ruling(unit, text)):
+            mwhy = f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
+            rng = None
+            if _latin_ruling(adj):
+                rng = _shed(items, i, j, in_note)
+                if rng == (i, j):
+                    verdict, lang, resp, conf, why = "la", _model_lang(adj, text), "#model", "medium", mwhy
+                    rng = None
+            elif adj["label"] == "mixed":
+                rng = _part_range(items, i, j, adj["foreign_part"])
+            if rng:
+                k, m = rng
+                decisions.append({"unit": unit, "text": text, "verdict": "citation", "confidence": conf,
+                                  "why": mwhy + "; its Latin part tagged", "in_note": in_note})
+                decisions.append({"unit": unit, "text": text_of(items[k:m]), "verdict": "la", "confidence": "medium",
+                                  "why": mwhy + " (the Latin part of a reference run)", "in_note": in_note})
+                out.extend(items[last:k])
+                lg = _model_lang(adj, text) if adj["label"] in MODEL_LANGS else "la"
+                f = el("foreign", {"lang-tmp": lg, "resp": "#model", "cert": "medium", "ana": "foreign"})
+                put_items(f, items[k:m])
+                out.append(f)
+                out.extend(items[m:j])
+                last = j
+                continue
         i_run = i
         if verdict == "la" and j - i > 1 and resp == "#rules":
+            j_run = j
             i, j = _trim_run(items, i, j, in_note, bracket)
             text = text_of(items[i:j])
             # trimmed to a short run on thin evidence ("Panormitan. rebus gestis Alph" -> "rebus gestis Alph"): the
@@ -492,6 +523,13 @@ def tag_latin(e, decisions: list, unit: str, in_note: bool = False) -> None:
             if not bracket and thin(text, why) and (adj := adjudicated(unit, text)) and adj["confidence"] != "low" \
                     and adj["label"] not in MODEL_LANGS:
                 verdict, why = adj["label"], f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}"
+            # what the trim cut off may itself be Latin ("Elvarum choreas Olaus lib. 3. vocat. Saltum adeo…")
+            if verdict == "la":
+                if i > i_run and (new_i := _regain(items, unit, i_run, i - 1, True, decisions, in_note)) is not None:
+                    i, resp, why = new_i, "#model", why + "; a cut piece joined by model ruling"
+                if j < j_run and (new_j := _regain(items, unit, j + 1, j_run, False, decisions, in_note)) is not None:
+                    j, resp, why = new_j, "#model", why + "; a cut piece joined by model ruling"
+                text = text_of(items[i:j])
         if verdict == "la" and resp == "#rules" and (tw := _title_after(items, i_run, i, j, bracket)):
             verdict, conf, why = "citation", "medium", tw
             for k in range(i, j, 2):
@@ -536,6 +574,122 @@ def thin(text: str, why: str) -> bool:
         return False
     hits = sum(int(x) for x in m.groups() if x)
     return 0 < hits <= 2
+
+
+# 2026-11-20, V5's fifth cycle: the errors left on the fresh round h6 sat on the line between a reference and Latin. A
+# Latin sentence inside a reference run ("Elvarum choreas Olaus lib. 3. vocat", "Herodotus lib. 2 Euterpe: Uxores
+# insignium virorum…") was left a citation, or cut off a Latin run by the trim and never recorded; a roman preposition
+# before a Latin word ("in secundis") stayed outside the passage. Each such run now takes the model's ruling (la-v2,
+# resp="#model"); without a ruling, or with a low one, the rules' verdict stands.
+def latin_content(text: str) -> int:
+    """Latin content words of a run: lowercase, >= 4 letters, attested in Burton's Latin, not an abbreviation."""
+    return sum(1 for w in WORD.findall(text) if len(w) >= 4 and w[0].islower() and w.lower() not in ABBREV
+               and lexicon.latinness(w) == "la")
+
+
+def _ruling(unit: str, text: str) -> dict | None:
+    adj = adjudicated(unit, text)
+    return adj if adj and adj["confidence"] != "low" else None
+
+
+def _model_lang(adj: dict, text: str) -> str:
+    lang = adj["label"]
+    if lang == "grc" and not re.search(r"\p{Script=Greek}", text):
+        return "grc-Latn"
+    if lang == "he" and not re.search(r"\p{Script=Hebrew}", text):
+        return "he-Latn"
+    return lang
+
+
+def _part_range(items: list, s: int, e: int, part: str | None) -> tuple[int, int] | None:
+    """The items [k, l) of the run items[s:e] whose text is exactly `part` (whole italic fragments only)."""
+    want = " ".join((part or "").split()).strip(" ,.;:")
+    if not want:
+        return None
+    for k in range(s, e, 2):
+        for m in range(k + 1, e + 1, 2):
+            got = " ".join(text_of(items[k:m]).split()).strip(" ,.;:")
+            if got == want:
+                return k, m
+            if len(got) > len(want):
+                break
+    return None
+
+
+def _latin_ruling(adj: dict | None) -> bool:
+    """A ruling that makes a reference run (or a piece cut off one) Latin: a language, and not a title or a reference
+    (LABELLING.md: a book's title cited as a source is `citation`, though its words are Latin)."""
+    return bool(adj) and adj["label"] in MODEL_LANGS and adj["kind"] not in ("title", "citation")
+
+
+def _shed(items: list, s: int, e: int, in_note: bool) -> tuple[int, int]:
+    """Leading and trailing reference fragments ("Danaeus lib. 3 de sortiariis, | Vidi, inquit…"; "…animi (Felix
+    Plater lib. 3 | de alienat. mentis") shed from a run the model ruled Latin as a whole: fragments that are
+    citation-like and hold fewer than two Latin content words. At least one fragment is kept."""
+    while e - s > 1 and latin_content(text_of([items[s]])) < 2 and _citation_like(items, s, in_note):
+        s += 2
+    while e - s > 1 and latin_content(text_of([items[e - 1]])) < 2 and _citation_like(items, e - 1, in_note):
+        e -= 2
+    return s, e
+
+
+def _regain(items: list, unit: str, s: int, e: int, at_end: bool, decisions: list, in_note: bool) -> int | None:
+    """Fragments items[s:e] that the trim cut off a Latin run: if they hold Latin words, the model's ruling may join
+    them (all, or the part next to the run) back to it. Returns the run's new start (at_end: the cut piece precedes
+    the run) or new end, or None."""
+    ctext = text_of(items[s:e])
+    if latin_content(ctext) < 2:
+        return None
+    adj = _ruling(unit, ctext)
+    new, verdict, why = None, "citation", "cut from a Latin run by the rules (a reference with Latin words)"
+    if _latin_ruling(adj):
+        a, b = _shed(items, s, e, in_note)
+        if (b == e) if at_end else (a == s):  # the Latin must still touch the run
+            new, verdict = (a if at_end else b), "la"
+    elif adj and adj["label"] == "mixed" and (rng := _part_range(items, s, e, adj["foreign_part"])):
+        if (rng[1] == e) if at_end else (rng[0] == s):
+            new, verdict = (rng[0] if at_end else rng[1]), "mixed"
+    if adj:
+        why = f"model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}" + \
+            ("; joined to the Latin run" if new is not None else "")
+    decisions.append({"unit": unit, "text": ctext, "verdict": verdict, "confidence": "medium", "why": why,
+                      "in_note": in_note})
+    return new
+
+
+ROMAN_PREP = re.compile(r"(?<![\p{L}\p{M}’'])(in|ad|a|de|ex|e|cum|pro|per|sine|apud|sub|inter|ob)\s$")
+
+
+def join_roman_prepositions(div, decisions: list, unit: str) -> None:
+    """A roman Latin preposition directly before a Latin passage ("to be in *secundis*"): the model's ruling on the
+    two together decides whether it belongs to the Latin; if so it joins the passage (markup only)."""
+    for f in list(div.iter(T("foreign"))):
+        if f.get("ana") != "foreign" or (f.get("lang-tmp") or f.get(XML_LANG)) != "la":
+            continue
+        p = f.getprevious()
+        holder = (p.tail if p is not None else f.getparent().text) or ""
+        m = ROMAN_PREP.search(holder)
+        if not m:
+            continue
+        text = f"{m.group(1)} {text_of([f]).strip()}"
+        in_note = any(a.tag == T("note") for a in f.iterancestors())
+        adj = _ruling(unit, text)
+        if adj and adj["label"] == "la":
+            rest = holder[:m.start()]
+            if p is not None:
+                p.tail = rest
+            else:
+                f.getparent().text = rest
+            f.text = m.group(0) + (f.text or "")
+            f.set("resp", "#model")
+            decisions.append({"unit": unit, "text": text, "verdict": "la", "confidence": "medium", "in_note": in_note,
+                              "why": f"a roman word before a Latin passage; model ruling ({adj['model']}/"
+                                     f"{adj['prompt']}): la, joined"})
+        else:
+            decisions.append({"unit": unit, "text": text, "verdict": "en", "confidence": "medium", "in_note": in_note,
+                              "why": "a roman word before a Latin passage" +
+                                     (f"; model ruling ({adj['model']}/{adj['prompt']}): {adj['label']}" if adj
+                                      else " (no ruling)")})
 
 # 2026-11-18, after held-out h3: a Latin title in the running text ("Prosper Calanius in his book de atra bile",
 # "in a consultation of his pro hypocondriaco") or after an author or a title abbreviation in a note ("Tr. de morbis
@@ -900,6 +1054,7 @@ def run(div, unit: str, stats, *, gowland_unit: bool = False) -> list[dict]:
     tag_latin(div, decisions, unit)
     tag_roman_before_brackets(div, decisions, unit)
     tag_roman_runs(div, decisions, unit)
+    join_roman_prepositions(div, decisions, unit)
     finalize_lang(div)
     correct_languages(div, unit, stats)
     for d in decisions:

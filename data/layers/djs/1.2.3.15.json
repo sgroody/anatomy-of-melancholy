@@ -657,7 +657,7 @@
     "by": "djs1927",
     "left_anchor": "(quod ait ille)",
     "method": "rules/djs-align-v3",
-    "right_anchor": ". Id solum in ———",
+    "right_anchor": ". Id solum ———",
     "status": "no-anchor",
     "text_sha1": "e57a0f8274e0726b3a06b36363120554fe4d2976",
     "threshold": 0.85
@@ -717,7 +717,7 @@
     "by": "djs1927",
     "left_anchor": "(sic enim Lutherus alicubi vocat)",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", cujuslibet honoris, officii, in ———",
+    "right_anchor": ", cujuslibet honoris, officii, ———",
     "status": "not-found",
     "text_sha1": "d9b0596fc6a1982788b5e2be9695817ea50e153c",
     "threshold": 0.85
@@ -1324,27 +1324,9 @@
     "by": "djs1927",
     "left_anchor": ": addo",
     "method": "rules/djs-align-v3",
-    "right_anchor": "; & jam valedicturi testimonialibus hisce litteris, amplissime conscriptis in",
+    "right_anchor": "; & jam valedicturi testimonialibus hisce litteris, amplissime conscriptis",
     "status": "no-anchor",
     "text_sha1": "1febc79ccdf8fed841b5ac68c1017395ab95b291",
-    "threshold": 0.85
-  },
-  "1.2.3.15-f242": {
-    "by": "djs1927",
-    "left_anchor": "; & jam valedicturi testimonialibus hisce litteris, amplissime conscriptis in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "proculdubio faciunt. ———",
-    "status": "no-anchor",
-    "text_sha1": "8377cddcc151b64e806ca034be490732c865d0fb",
-    "threshold": 0.85
-  },
-  "1.2.3.15-f243": {
-    "by": "djs1927",
-    "left_anchor": ". Id solum in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "pecunias emungant, nec multum interest qui sint, literatores an literati, modo pingues,",
-    "status": "not-found",
-    "text_sha1": "f1efac289f1262ba79c5d4eaff93302f683bf427",
     "threshold": 0.85
   },
   "1.2.3.15-f244": {
@@ -1374,31 +1356,13 @@
     "text_sha1": "73ce66b2d87ada909a8c8fb1b831fc54e8230956",
     "threshold": 0.85
   },
-  "1.2.3.15-f247": {
-    "by": "djs1927",
-    "left_anchor": "vulgares quasdam quisquilias, & scholarium quaedam nugamenta, indigna quae vel recipiantur in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "; ———",
-    "status": "no-anchor",
-    "text_sha1": "5ce703582eeb544e7258fc8722217368954719b7",
-    "threshold": 0.85
-  },
   "1.2.3.15-f248": {
     "by": "djs1927",
     "left_anchor": ";",
     "method": "rules/djs-align-v3",
-    "right_anchor": ", in ———",
+    "right_anchor": ", ———",
     "status": "no-anchor",
     "text_sha1": "b81b976379b0c404cfe68a6f8f792ddb7fe702ba",
-    "threshold": 0.85
-  },
-  "1.2.3.15-f249": {
-    "by": "djs1927",
-    "left_anchor": ", in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "in Repub. partium minime capaces sint; ad sacram hanc anchoram confugiunt, sacerdotium",
-    "status": "no-anchor",
-    "text_sha1": "e6ceb81f83425a60a53fbaa33c3d25992ce16471",
     "threshold": 0.85
   },
   "1.2.3.15-f250": {
@@ -1464,15 +1428,6 @@
     "text_sha1": "7b7ff86b9d043b6b44e2370ccf07dbb71358573c",
     "threshold": 0.85
   },
-  "1.2.3.15-f257": {
-    "by": "djs1927",
-    "left_anchor": ", cujuslibet honoris, officii, in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". ———",
-    "status": "no-anchor",
-    "text_sha1": "ba24c1ca48f10df980b4caa5cee6d1da73c87aee",
-    "threshold": 0.85
-  },
   "1.2.3.15-f258": {
     "by": "djs1927",
     "left_anchor": "——— .",
@@ -1531,18 +1486,9 @@
     "by": "djs1927",
     "left_anchor": ":",
     "method": "rules/djs-align-v3",
-    "right_anchor": "summos, sed a",
+    "right_anchor": "summos, sed",
     "status": "no-anchor",
     "text_sha1": "42ed85f2279231abef3cf9801cf27a850962e585",
-    "threshold": 0.85
-  },
-  "1.2.3.15-f265": {
-    "by": "djs1927",
-    "left_anchor": "summos, sed a",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ",",
-    "status": "no-anchor",
-    "text_sha1": "5f6528129bb1d04c0b36be7f230eb3ce7d5e14f6",
     "threshold": 0.85
   },
   "1.2.3.15-f266": {
@@ -1737,6 +1683,60 @@
     "text_sha1": "38cdb819006484a8a82b7a7c594d0bbfe8901c90",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 14734, p. 264"
+  },
+  "1.2.3.15-f283": {
+    "by": "djs1927",
+    "left_anchor": "; & jam valedicturi testimonialibus hisce litteris, amplissime conscriptis",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "proculdubio faciunt. ———",
+    "status": "no-anchor",
+    "text_sha1": "45b0f75728e451e04ee70be3adfe24587ee3678a",
+    "threshold": 0.85
+  },
+  "1.2.3.15-f284": {
+    "by": "djs1927",
+    "left_anchor": ". Id solum",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "pecunias emungant, nec multum interest qui sint, literatores an literati, modo pingues,",
+    "status": "no-anchor",
+    "text_sha1": "ecba2ce7f8c68ba4aebe9b0f7ae1dc8ecca4edbc",
+    "threshold": 0.85
+  },
+  "1.2.3.15-f285": {
+    "by": "djs1927",
+    "left_anchor": "nihil, vulgares quasdam quisquilias, & scholarium quaedam nugamenta, indigna quae vel recipiantur",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "; ———",
+    "status": "no-anchor",
+    "text_sha1": "bfb9c2feac83a3d1c63959b9349f116e30c38774",
+    "threshold": 0.85
+  },
+  "1.2.3.15-f286": {
+    "by": "djs1927",
+    "left_anchor": ",",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "in Repub. partium minime capaces sint; ad sacram hanc anchoram confugiunt, sacerdotium",
+    "status": "no-anchor",
+    "text_sha1": "a854a7ca85092c72d6de91626f0c419d9e9dae78",
+    "threshold": 0.85
+  },
+  "1.2.3.15-f287": {
+    "by": "djs1927",
+    "left_anchor": ", cujuslibet honoris, officii,",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". ———",
+    "status": "no-anchor",
+    "text_sha1": "7c48d72d2f043291e040a7f19a94f7453cb97579",
+    "threshold": 0.85
+  },
+  "1.2.3.15-f288": {
+    "by": "djs1927",
+    "left_anchor": "summos, sed",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ",",
+    "status": "no-anchor",
+    "text_sha1": "c403930042411c3471cd9cd00539c608bad9b18f",
+    "threshold": 0.85
   },
   "1.2.3.15-f29": {
     "by": "djs1927",

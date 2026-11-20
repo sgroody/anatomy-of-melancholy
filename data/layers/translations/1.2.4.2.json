@@ -779,6 +779,77 @@
       }
     ]
   },
+  "1.2.4.2-f25": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "for fear they fall into many diseases, and cry out in their sleep",
+        "in": "1.2.4.2",
+        "near": "1.2.4.2-f25",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Ludwig Lavater",
+      "basis": "text \"saith Lavater de spectris, part. 1 cap. 5\"",
+      "locus": "part. 1 cap. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De spectris"
+    },
+    "text": "Lavater de spectris, part. 1 cap. 5, ex metu in morbos graves incidunt & noctu dormientes clamant",
+    "text_sha1": "01b9731bf39b29c143cf38034c33f87f8e6a1966",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage includes Burton's own in-text reference to Ludwig Lavater's De spectris (1570), a treatise on ghosts and apparitions.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "for fear they fall into many diseases, and cry out in their sleep",
+            "in": "1.2.4.2",
+            "near": "1.2.4.2-f25",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Ludwig Lavater",
+          "basis": "text \"saith Lavater de spectris, part. 1 cap. 5\"",
+          "locus": "part. 1 cap. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De spectris"
+        },
+        "text": "Lavater, On Spectres, part 1, chapter 5: from fear they fall into serious diseases, and cry out at night in their sleep.",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.4.2-f3": {
     "kind": "phrase",
     "lang": "la",

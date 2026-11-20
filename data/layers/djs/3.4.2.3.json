@@ -310,14 +310,13 @@
     "threshold": 0.85
   },
   "3.4.2.3-f52": {
-    "align_score": 0.739,
     "by": "djs1927",
-    "left_anchor": "I am afraid of thy judgements. Quoties diem illum cogito (saith Jerome)",
-    "left_score": 0.739,
+    "left_anchor": "weakness of faith, rigid Ministers, misunderstanding Scriptures, guilty consciences, &c. (saith Jerome)",
+    "left_score": 0.946236559139785,
     "method": "rules/djs-align-v3",
     "right_anchor": ", I tremble as often as I think of it. The terrible",
     "right_score": 1.0,
-    "status": "below-threshold",
+    "status": "not-found",
     "text_sha1": "1a170dec4a9391e1a99a9477e126d4184b234014",
     "threshold": 0.85
   },
@@ -349,6 +348,15 @@
     "text_sha1": "a9856160a4bea7935b9d00bfa5cb1696d22b7d55",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 50034, pp. 940-942"
+  },
+  "3.4.2.3-f56": {
+    "by": "djs1927",
+    "left_anchor": "trembleth for fear of thee, and I am afraid of thy judgements.",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(saith Jerome)",
+    "status": "no-anchor",
+    "text_sha1": "2afb3dfbab1c8561d64fa05bb32da2f3c7f3406e",
+    "threshold": 0.85
   },
   "3.4.2.3-f6": {
     "align_score": 1.0,

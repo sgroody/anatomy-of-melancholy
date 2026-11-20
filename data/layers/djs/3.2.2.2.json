@@ -1054,6 +1054,32 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 35794, pp. 666-667"
   },
+  "3.2.2.2-f212": {
+    "by": "djs1927",
+    "left_anchor": "are taken with it, as I have already proved.",
+    "left_score": 1.0,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "(Heliodor. lib. 5). The Barbarians stand in awe of a fair woman,",
+    "right_score": 0.8518518518518519,
+    "status": "not-found",
+    "text_sha1": "4b51e483f04196d0a574aaf9e35e37ee5a684a0a",
+    "threshold": 0.85
+  },
+  "3.2.2.2-f213": {
+    "align_score": 0.889,
+    "by": "djs1927",
+    "left_anchor": "the perfection of it; for as Seneca saith, Ep. 33 lib. 4,",
+    "left_score": 0.889,
+    "method": "rules/djs-align-v3",
+    "residue": "no Beauty a",
+    "right_anchor": "; she is no fair woman, whose arm, thigh, &c., are commended,",
+    "right_score": 0.906,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "61c0ab1fd4db699bc7fc07efdf4c722ef7ebc7c5",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 36330, p. 676"
+  },
   "3.2.2.2-f22": {
     "align_score": 0.986,
     "by": "djs1927",
@@ -1227,7 +1253,7 @@
     "by": "djs1927",
     "left_anchor": "And those",
     "method": "rules/djs-align-v3",
-    "right_anchor": "are taken with it, as I have already proved. Formosam Barbari verentur,",
+    "right_anchor": "are taken with it, as I have already proved.",
     "status": "no-anchor",
     "text_sha1": "1179be599acee8f15baf941b00d03fe61d19cbfc",
     "threshold": 0.85

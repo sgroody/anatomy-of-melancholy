@@ -3780,6 +3780,47 @@
     ],
     "text_sha1": "6b20b49bfd9a88a30d4b7ca02adbd28913f75a8c"
   },
+  "3.2.5.5-f314": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "for love is a pleurisy, and if it be possible, so let it be",
+          "in": "3.2.5.5-p2",
+          "prefix": "let them bleed in vena Hymenea, ",
+          "suffix": ","
+        },
+        "words": 14
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "’Tis the special cure, to let them bleed",
+          "in": "3.2.5.5-p2",
+          "prefix": "",
+          "suffix": " in vena Hymenea, for love is a "
+        },
+        "words": 8
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "8217c743ca7751b5cbd0d985b13feb86c72d345c"
+  },
   "3.2.5.5-f32": {
     "bracket": "present",
     "by": "rules",
@@ -3955,47 +3996,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "957bc202fcffa113709f3a194ec3f469e35bbaa7"
-  },
-  "3.2.5.5-f4": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "for love is a pleurisy, and if it be possible, so let it be",
-          "in": "3.2.5.5-p2",
-          "prefix": "let them bleed in vena Hymenea, ",
-          "suffix": ","
-        },
-        "words": 14
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "’Tis the special cure, to let them bleed in",
-          "in": "3.2.5.5-p2",
-          "prefix": "",
-          "suffix": " vena Hymenea, for love is a ple"
-        },
-        "words": 9
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "0693ec52482e73e063a9f7c5833ffc4cd46558a3"
   },
   "3.2.5.5-f40": {
     "bracket": "none",

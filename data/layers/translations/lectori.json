@@ -267,5 +267,64 @@
         "warnings": []
       }
     ]
+  },
+  "lectori-f6": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Hippocrates (pseudo-Hippocratic letters)",
+      "basis": "sidenote \"Hippoc. epist.\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Letters (to Damagetus)"
+    },
+    "text": "Damageto, accersitus sum ut Democritum tanquam insanum curarem, sed postquam conveni non per Jovem desipientiae negotium, sed rerum omnium receptaculum deprehendi, ejusque ingenium demiratus sum",
+    "text_sha1": "e420dce560ffe8892655875305196f96f83f01b9",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "To Damagetus, I was summoned that I might cure Democritus as if insane, but after I met him I found not, by Jove, a business of foolishness, but a receptacle of all things, and I wondered at his intellect",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Damageto is a dative of address, the heading of a letter. The words come from the pseudo-Hippocratic letters about Democritus and the people of Abdera, in which Hippocrates writes to his friend Damagetus. Burton's Latin reads as a condensed summary of that letter, not a word-for-word quotation. The sentence that follows in the sidenote, outside this passage, says that Hippocrates instead blamed the Abderites, who needed hellebore more than Democritus did.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Hippocrates (pseudo-Hippocratic letters)",
+          "basis": "sidenote \"Hippoc. epist.\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Letters (to Damagetus)"
+        },
+        "text": "To Damagetus: I was summoned to cure Democritus as a madman, but after I had met him I found, by Jupiter, no case of folly but a storehouse of all things, and I marvelled at his genius",
+        "warnings": []
+      }
+    ]
   }
 }

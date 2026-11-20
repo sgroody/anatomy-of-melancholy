@@ -52,3 +52,21 @@ V5:
     detector missed would bias the score (corrected, R would be 0.950). Four cycles: precision is fixed by the model
     lever; recall stays at 0.94-0.95, its misses now mostly Latin in roman type, which neither the rules nor this lever
     reach.
+    Updated 2026-11-20 (fifth cycle; owner: "Run a fifth"): h6 became a seen round. Read closely, h6's errors sat on the
+    line between a reference and Latin, not in roman type as such: three were the raters putting a cited title's words
+    or a locator into the foreign part ("dei" in "Austin de civ. dei", "Jesu & Mariae" in a title, "lib"), against
+    LABELLING.md. Two changes, both made before h7 was drawn. (1) The detector: a reference run holding two or more
+    Latin words, a piece the trim cut off a Latin run, and a roman preposition before a Latin passage ("in secundis")
+    take the model's ruling (la-v2, 310 rulings; a ruling of kind title keeps a cited title a reference, which also
+    returned 10 earlier title passages to references; reference fragments at either end of a run ruled Latin are
+    shed). (2) The raters' prompt, gold-audit-v2: v1 plus LABELLING.md's conventions on what belongs to a reference,
+    and separate foreign stretches joined by " | ". The h6 gold is unchanged. Seen rounds after: h2 R 0.976 -> 0.988,
+    h5 R 0.950 -> 0.960, none lower. A fresh round h7 (300 items, seed 20261122, drawn after the change) labelled blind
+    by gold-audit-v2 with claude-opus-5-5 and with claude-sonnet-5-5; Claude settled their 11 disagreements from the
+    text before scoring (data/eval/langid-holdout7-settled.yaml). h7 scores P 0.958, R 0.968, B 0.967 (targets 0.98 /
+    0.97 / 0.95): boundaries pass, recall is one item short, precision fails, so it stays deferred. h7's errors:
+    4 false, none made by this cycle (all four tagged in the text before it): abbreviations in references ("cap",
+    "Ter"), a cited title ("Tully pro Archia Poeta"), and "Phoebades", where Gowland's bracket ("prophetesses") makes
+    Claude's settlement as a name doubtful (recorded, not changed: it was settled before scoring); 3 missed, all single
+    capitalised Latin words read as names ("Hieralogodion", "Rusticus", "Indae" in "Pil. Indae"). Five cycles: each
+    fresh round draws a few rare errors the earlier ones did not, and the scores move within P 0.95-0.99, R 0.94-0.97.

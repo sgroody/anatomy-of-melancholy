@@ -1061,12 +1061,12 @@
         "position": "following",
         "relation": "clause",
         "selector": {
-          "exact": "they have impregnable wits many of them, and discreet otherwise, but in this their madness and folly breaks out beyond measure, in",
+          "exact": "they have impregnable wits many of them, and discreet otherwise, but in this their madness and folly breaks out beyond measure",
           "in": "3.4.1.3-p19",
           "prefix": "where they blaze, caetera sani, ",
-          "suffix": " infinitum erumpit stultitia. Th"
+          "suffix": ", in infinitum erumpit stultitia"
         },
-        "words": 22
+        "words": 21
       },
       {
         "by": "rules",
@@ -1089,48 +1089,6 @@
       "english-precedes"
     ],
     "text_sha1": "ae326e6752e2d31dc6701c460f4323a834bcadad"
-  },
-  "3.4.1.3-f136": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "sentence",
-        "selector": {
-          "exact": "They are certainly far gone with melancholy, if not quite mad, and have more need of physic than many a man that keeps his bed, more need of Hellebore than those that are in Bedlam",
-          "in": "3.4.1.3-p19",
-          "prefix": "in infinitum erumpit stultitia. ",
-          "suffix": "."
-        },
-        "words": 35
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "they have impregnable wits many of them, and discreet otherwise, but in this their madness and folly breaks out beyond measure, in",
-          "in": "3.4.1.3-p19",
-          "prefix": "where they blaze, caetera sani, ",
-          "suffix": " infinitum erumpit stultitia. Th"
-        },
-        "words": 22
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "58e52ea32fdc03630d401ac25b3a59bb85f5ad2f"
   },
   "3.4.1.3-f139": {
     "bracket": "none",
@@ -1282,48 +1240,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "ea8ad7245829c0a5a13064efc36174a0c027c0b6"
-  },
-  "3.4.1.3-f155": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "which as he confesseth himself was not persuasively written as a truth, but in Comical fashion to glance at the monstrous dictions, and gross absurdities of writers and nations, to deride without doubt this prodigious Egyptian Idolatry, feigns this story",
-          "in": "3.4.1.3-p7",
-          "prefix": "ng Lucian in his vera Historia: ",
-          "suffix": " of himself; that when he had se"
-        },
-        "words": 40
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "scoffing Lucian in his",
-          "in": "3.4.1.3-p7",
-          "prefix": "",
-          "suffix": " vera Historia: which as he conf"
-        },
-        "words": 4
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "7fab1144b83e6e749da117756420d4b334b2cf33"
   },
   "3.4.1.3-f16": {
     "bracket": "none",
@@ -2540,6 +2456,70 @@
       "english-at-anchor"
     ],
     "text_sha1": "a1628e145bad09b46a1a6cbcaaaaa4945900c017"
+  },
+  "3.4.1.3-f243": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "593f888ac2a46ed6f9fc5311a13fb09bb17508e2"
+  },
+  "3.4.1.3-f244": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "sentence",
+        "selector": {
+          "exact": "They are certainly far gone with melancholy, if not quite mad, and have more need of physic than many a man that keeps his bed, more need of Hellebore than those that are in Bedlam",
+          "in": "3.4.1.3-p19",
+          "prefix": "in infinitum erumpit stultitia. ",
+          "suffix": "."
+        },
+        "words": 35
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "they have impregnable wits many of them, and discreet otherwise, but in this their madness and folly breaks out beyond measure",
+          "in": "3.4.1.3-p19",
+          "prefix": "where they blaze, caetera sani, ",
+          "suffix": ", in infinitum erumpit stultitia"
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "0d6c483a02fa1cffaa5074a5ae252fa8083fb425"
+  },
+  "3.4.1.3-f245": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "47b75262f106b8fe1414157d55fdc1712f95b84a"
   },
   "3.4.1.3-f25": {
     "bracket": "present",
@@ -4680,16 +4660,6 @@
       "english-precedes"
     ],
     "text_sha1": "25550c31ffd07fd79fda0a44920b39b3e98a0250"
-  },
-  "3.4.1.3-f97": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [],
-    "text_sha1": "f95ddf7d2c81b9d7c063a1d041744721426b3a68"
   },
   "3.4.1.3-f98": {
     "bracket": "present",

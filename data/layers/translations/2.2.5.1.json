@@ -1032,6 +1032,79 @@
       }
     ]
   },
+  "2.2.5.1-f33": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "many cannot sleep for witches and fascinations",
+        "in": "2.2.5.1",
+        "near": "2.2.5.1-f33",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Jean-Jacques Boissard (Boissardus)",
+      "basis": "text \"saith Boissardus in his Tract de magia cap. 4\"",
+      "locus": "cap. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De magia"
+    },
+    "text": "multos ita fascinari ut nocte integras exigant insomnes, summa inquietudine animorum & corporum",
+    "text_sha1": "113928f3fad8747f36ba654aeea8db0c461dff95",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "corrupt-text"
+        ],
+        "literal": "many so to be bewitched that whole nights they pass sleepless, with highest unquiet of minds and bodies",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This passage continues Burton's \"Constat hodie\" (\"it is well known today\"), which is why it is an indirect statement. \"nocte integras\" is presumably a misprint for \"noctes integras\" (\"whole nights\"), and it is translated that way. \"Fascinari\" means bewitched by the evil eye or by charms, which matches Burton's \"fascinations\". Burton's English gives the gist but leaves out the restlessness of mind and body.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "many cannot sleep for witches and fascinations",
+            "in": "2.2.5.1",
+            "near": "2.2.5.1-f33",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Jean-Jacques Boissard (Boissardus)",
+          "basis": "text \"saith Boissardus in his Tract de magia cap. 4\"",
+          "locus": "cap. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De magia"
+        },
+        "text": "that many are so bewitched that they spend whole nights sleepless, in the greatest restlessness of mind and body",
+        "warnings": []
+      }
+    ]
+  },
   "2.2.5.1-f4": {
     "kind": "phrase",
     "lang": "la",

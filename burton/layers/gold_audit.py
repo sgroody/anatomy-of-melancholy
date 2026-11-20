@@ -87,10 +87,16 @@ def items() -> list[dict]:
     return out
 
 
-def _done() -> dict[str, dict]:
+def _done(prompt: str = PROMPT) -> dict[str, dict]:
     if not OUT.exists():
         return {}
-    return {r["id"]: r for r in map(json.loads, OUT.read_text(encoding="utf-8").splitlines()) if r["prompt"] == PROMPT}
+    return {r["id"]: r for r in map(json.loads, OUT.read_text(encoding="utf-8").splitlines()) if r["prompt"] == prompt}
+
+
+def round_prompt(h: dict) -> str:
+    """The rater prompt of a hold-out round: gold-audit-v1 up to h6; from h7, gold-audit-v2, which spells out what
+    belongs to a reference and how separate foreign stretches are given (2026-11-20, set before h7 was drawn)."""
+    return h.get("prompt", PROMPT)
 
 
 def run(model: str = PRIMARY_MODEL, packet_size: int = 40, budget_usd: float | None = None) -> dict:
@@ -175,8 +181,9 @@ def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) ->
     if h["gold"].exists():
         raise SystemExit(f"round {name} already has gold ({h['gold'].name})")
     sample = goldmod.read_sample(h["sample"])
-    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{PROMPT}.md").read_text(encoding="utf-8")
-    done = _done()
+    prompt = round_prompt(h)
+    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{prompt}.md").read_text(encoding="utf-8")
+    done = _done(prompt)
     todo = [{"id": f"{name}:{r['sid']}", "unit": r["unit"], "in_sidenote": r["stratum"] == "sidenote",
              "text": clean(r["unit"], r["text"]), "context": clean(r["unit"], r.get("context", ""))}
             for r in sample]
@@ -188,8 +195,8 @@ def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) ->
         if bad:
             raise SystemExit(f"packet refused: Gowland text in {bad[:3]}")
         user = "Label these items.\n\n" + json.dumps({"items": pk}, ensure_ascii=False, indent=2)
-        meta = {"ids": [i["id"] for i in pk], "model": model, "prompt": PROMPT,
-                "input_hash": packets.input_hash({"items": pk}, PROMPT, model, 0)}
+        meta = {"ids": [i["id"] for i in pk], "model": model, "prompt": prompt,
+                "input_hash": packets.input_hash({"items": pk}, prompt, model, 0)}
         res = runner.call_claude(model, sys_prompt, user, SCHEMA)
         status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
         runner.append(LEDGER, {**meta, "ts": runner.now(), "status": status,
@@ -200,12 +207,12 @@ def label_round(name: str, model: str = PRIMARY_MODEL, packet_size: int = 40) ->
         date = datetime.now(UTC).date().isoformat()
         for g in res["output"]["items"]:
             done[g["id"]] = {"id": g["id"], "label": g["label"], "kind": g["kind"], "foreign_part": g["foreign_part"],
-                             "reason": g["reason"], "by": "machine", "model": model, "prompt": PROMPT, "date": date}
+                             "reason": g["reason"], "by": "machine", "model": model, "prompt": prompt, "date": date}
         atomic_write_text(OUT, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
                                        for x in sorted(done)))
         print(f"  {k + len(pk)}/{len(ask)} labelled (${spent:.2f})", flush=True)
     rows = [{"_meta": {"round": name, "seed": h["seed"], "date": datetime.now(UTC).date().isoformat(),
-                       "labelled_by": f"machine, blind (prompt {PROMPT}, model {model}): item text and context only, "
+                       "labelled_by": f"machine, blind (prompt {prompt}, model {model}): item text and context only, "
                                       "detector output not shown",
                        "purpose": f"held-out round {name} (V5 gate): never used to tune the rules",
                        "mixed_lang": "a 'mixed' item's foreign part is taken as Latin (the rater names no language)",
@@ -246,7 +253,8 @@ def second_rater(name: str, model: str = "claude-sonnet-5-5", packet_size: int =
     sample = goldmod.read_sample(h["sample"])
     out = rater2_path(name)
     done = {r["sid"]: r for r in map(json.loads, out.read_text(encoding="utf-8").splitlines())} if out.exists() else {}
-    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{PROMPT}.md").read_text(encoding="utf-8")
+    prompt = round_prompt(h)
+    sys_prompt = (paths.ROOT / "burton" / "translate" / "prompts" / f"{prompt}.md").read_text(encoding="utf-8")
     ask = [{"id": f"{name}:{r['sid']}", "unit": r["unit"], "in_sidenote": r["stratum"] == "sidenote",
             "text": clean(r["unit"], r["text"]), "context": clean(r["unit"], r.get("context", ""))}
            for r in sample if r["sid"] not in done]
@@ -259,8 +267,8 @@ def second_rater(name: str, model: str = "claude-sonnet-5-5", packet_size: int =
         user = "Label these items.\n\n" + json.dumps({"items": pk}, ensure_ascii=False, indent=2)
         res = runner.call_claude(model, sys_prompt, user, SCHEMA)
         status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
-        runner.append(LEDGER, {"ids": [i["id"] for i in pk], "model": model, "prompt": PROMPT, "role": "second rater",
-                               "input_hash": packets.input_hash({"items": pk}, PROMPT, model, 0), "ts": runner.now(),
+        runner.append(LEDGER, {"ids": [i["id"] for i in pk], "model": model, "prompt": prompt, "role": "second rater",
+                               "input_hash": packets.input_hash({"items": pk}, prompt, model, 0), "ts": runner.now(),
                                "status": status,
                                **{x: res.get(x) for x in ("seconds", "cost_usd_list", "usage", "error")}})
         spent += res.get("cost_usd_list") or 0
@@ -270,7 +278,7 @@ def second_rater(name: str, model: str = "claude-sonnet-5-5", packet_size: int =
         for g in res["output"]["items"]:
             sid = g["id"].split(":", 1)[1]
             done[sid] = {"sid": sid, "label": g["label"], "kind": g["kind"], "foreign_part": g["foreign_part"],
-                         "reason": g["reason"], "by": "machine", "model": model, "prompt": PROMPT, "date": date}
+                         "reason": g["reason"], "by": "machine", "model": model, "prompt": prompt, "date": date}
         atomic_write_text(out, "".join(json.dumps(done[x], ensure_ascii=False, sort_keys=True) + "\n"
                                        for x in sorted(done)))
         print(f"  {k + len(pk)}/{len(ask)} labelled (${spent:.2f})", flush=True)

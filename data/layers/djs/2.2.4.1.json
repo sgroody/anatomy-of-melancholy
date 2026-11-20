@@ -412,33 +412,17 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24949, pp. 461-462"
   },
-  "2.2.4.1-f138": {
-    "align_score": 0.978,
-    "by": "djs1927",
-    "left_anchor": "such experiments intimated long since by Roger Bacon in his Tract de",
-    "left_score": 0.978,
-    "method": "rules/djs-align-v3",
-    "right_anchor": ", as to make a chariot to move",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "Secrets of Nature and Art,",
-    "text_sha1": "4675615a31a1e405b89ae1843868d9776ccc2bd7",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24953, pp. 461-462"
-  },
   "2.2.4.1-f139": {
-    "align_score": 0.99,
+    "align_score": 0.828,
     "by": "djs1927",
-    "left_anchor": ", as to make a chariot to move",
-    "left_score": 1.0,
+    "left_anchor": "de Secretis artis & naturae, as to make a chariot to move",
+    "left_score": 0.828,
     "method": "rules/djs-align-v3",
     "right_anchor": ", diving-boats, to walk on the water by art and to fly",
     "right_score": 0.99,
-    "status": "aligned",
-    "text": "without an animal,",
+    "status": "below-threshold",
     "text_sha1": "c41bfd75eecba0b483aed9f9c181dd971c13cf28",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24954, pp. 461-462"
+    "threshold": 0.85
   },
   "2.2.4.1-f14": {
     "align_score": 0.895,
@@ -868,20 +852,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24028, p. 443"
   },
-  "2.2.4.1-f224": {
-    "align_score": 0.97,
-    "by": "djs1927",
-    "left_anchor": "St. John’s College in Cambridge, that in Westminster, is now likewise in",
-    "left_score": 0.97,
-    "method": "rules/djs-align-v3",
-    "right_anchor": "with a library at Lincoln (a noble precedent for all corporate towns",
-    "right_score": 1.0,
-    "status": "aligned",
-    "text": "engaged",
-    "text_sha1": "c07480cc9254740e72ab802ad68f560dae6002c8",
-    "threshold": 0.85,
-    "where": "IA anatomyofmelanch1927burt djvu.txt line 24808, p. 458"
-  },
   "2.2.4.1-f23": {
     "by": "djs1927",
     "method": "rules/djs-align-v3",
@@ -1121,14 +1091,6 @@
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24024, p. 443"
   },
-  "2.2.4.1-f312": {
-    "by": "djs1927",
-    "method": "rules/djs-align-v3",
-    "reason": "sidenote: no English of Burton's around it to anchor on",
-    "status": "no-anchor",
-    "text_sha1": "7c1c69eb8a5c71b049e1674c441a92539eb0d3fc",
-    "threshold": 0.85
-  },
   "2.2.4.1-f313": {
     "by": "djs1927",
     "left_anchor": "(saith Froissart)",
@@ -1197,6 +1159,14 @@
     "text_sha1": "99481176da6c1758f80227cc4479bc51a0803881",
     "threshold": 0.85,
     "where": "IA anatomyofmelanch1927burt djvu.txt line 24629, pp. 454-455"
+  },
+  "2.2.4.1-f32": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "f86ce2f1041e4c35418f599f26fb2c5e4e4b7589",
+    "threshold": 0.85
   },
   "2.2.4.1-f320": {
     "by": "djs1927",
@@ -1465,6 +1435,20 @@
     "status": "not-found",
     "text_sha1": "8c18837df5f00c3921e75e4234b512ae6a653ae2",
     "threshold": 0.85
+  },
+  "2.2.4.1-f345": {
+    "align_score": 0.993,
+    "by": "djs1927",
+    "left_anchor": "at St. John’s College in Cambridge, that in Westminster, is now likewise",
+    "left_score": 0.993,
+    "method": "rules/djs-align-v3",
+    "right_anchor": "with a library at Lincoln (a noble precedent for all corporate towns",
+    "right_score": 1.0,
+    "status": "aligned",
+    "text": "engaged",
+    "text_sha1": "15224a8605337ccfeddd784614a35ea218d5c88c",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 24808, p. 458"
   },
   "2.2.4.1-f35": {
     "by": "djs1927",

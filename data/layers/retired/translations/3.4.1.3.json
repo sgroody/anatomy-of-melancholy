@@ -125,6 +125,146 @@
       }
     ]
   },
+  "3.4.1.3-f136": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "their madness and folly breaks out beyond measure",
+        "in": "3.4.1.3",
+        "near": "3.4.1.3-f136",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "infinitum erumpit stultitia",
+    "text_sha1": "58e52ea32fdc03630d401ac25b3a59bb85f5ad2f",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "to infinity breaks out folly",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage leaves out the first word of the Latin phrase, 'in' ('in infinitum erumpit stultitia'), which stands just outside the brackets. The translation covers the whole phrase. Burton's English just before it renders it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "their madness and folly breaks out beyond measure",
+            "in": "3.4.1.3",
+            "near": "3.4.1.3-f136",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "folly breaks out without limit",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.3-f155": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Lucian",
+      "basis": "text \"scoffing Lucian in his vera Historia\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": "True History"
+    },
+    "text": "vera Historia",
+    "text_sha1": "7fab1144b83e6e749da117756420d4b334b2cf33",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-27",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the title of Lucian's satirical fantasy, usually called 'A True Story' or 'True History' (Verae Historiae).",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Lucian",
+          "basis": "text \"scoffing Lucian in his vera Historia\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": "True History"
+        },
+        "text": "True History",
+        "warnings": []
+      }
+    ]
+  },
   "3.4.1.3-f159": {
     "kind": "phrase",
     "lang": "la",
@@ -1074,6 +1214,67 @@
           "work": "De sacrificiis"
         },
         "text": "On Sacrifices",
+        "warnings": []
+      }
+    ]
+  },
+  "3.4.1.3-f97": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "coeundi & comedendi voluptate",
+    "text_sha1": "f95ddf7d2c81b9d7c063a1d041744721426b3a68",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-10-28",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the pleasure of copulating and eating",
         "warnings": []
       }
     ]

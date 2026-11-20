@@ -235,65 +235,6 @@
       }
     ]
   },
-  "3.2.2.1-f102": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "hos scopulos impingat, sed pro",
-    "text_sha1": "ca054d117173d11694cec4f9f5b04c74ce986b2c",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "A fragment, cut in the middle of the idiom 'pro virili' (as far as one can). In context: 'lest some less experienced person run upon these rocks, but rather deliberately avoid them, as far as he can, as quicksands and reefs'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "strike upon these rocks, but to the best of",
-        "warnings": []
-      }
-    ]
-  },
   "3.2.2.1-f103": {
     "kind": "phrase",
     "lang": "la",
@@ -477,7 +418,7 @@
       }
     ]
   },
-  "3.2.2.1-f107": {
+  "3.2.2.1-f108": {
     "kind": "phrase",
     "lang": "la",
     "location": "text",
@@ -504,20 +445,20 @@
       "verified": false,
       "work": null
     },
-    "text": "Venerem",
-    "text_sha1": "00134194f1009852667437727c5c7eb3becb9620",
+    "text": "ad Venerem",
+    "text_sha1": "2e1d97aa7a5b76a3a966fcfd1c1b40f70edffebf",
     "translations": [
       {
         "by": "machine",
         "confidence": "high",
         "date": "2026-11-20",
         "flags": [],
-        "literal": null,
+        "literal": "to Venus",
         "model": "claude-opus-5-5",
         "models_reported": [
           "claude-opus-5-5"
         ],
-        "note": "A single word from Burton's long Latin passage: \"etiam ad Venerem se parent\", \"and also prepare themselves for Venus.\" Here Venus stands for the act of love (venery). It is in the accusative because it follows \"ad\".",
+        "note": "Venus here stands for sexual love; the full clause means that they train themselves for lovemaking.",
         "prompt": "tr-v2",
         "self_translation": {
           "burton_span": null,
@@ -531,7 +472,68 @@
           "verified": false,
           "work": null
         },
-        "text": "Venus",
+        "text": "for lovemaking",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.1-f109": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in amoribus praevaluerunt, ut coronae ex illis statuae Bacchi ponerentur",
+    "text_sha1": "6a470f16bea30953cde639482e098481306e7c34",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "prevailed so much in loves, that crowns from them were placed on the statue of Bacchus",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is the second half of a sentence. The subject, 'Mala Bacchica tantum olim' ('Bacchic apples once [were] so ...'), stands just before the marked words and is not translated here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "were so powerful in love affairs that garlands made of them were placed on statues of Bacchus",
         "warnings": []
       }
     ]
@@ -603,6 +605,127 @@
           "work": "Anacreontea"
         },
         "text": "if all the leaves",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.1-f110": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Giambattista della Porta",
+      "basis": "main text at the sidenote's anchor: \"Baptista Porta ex India allatae\"",
+      "locus": "lib. 2 cap. 16",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Magia naturalis"
+    },
+    "text": "Quae non solum edentibus sed & genitale tangentibus tantum valet, ut coire summe desiderent, quoties fere velint, possint, alios duodecies profecisse, alios ad 60 vices pervenisse refert",
+    "text_sha1": "6d8630b81b5492e90eb8fba95b11efcc72fc2cf1",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": "Which not only for those eating but also for those touching the genital is so strong, that they most greatly desire to copulate, as often almost as they wish they are able; he reports some to have accomplished twelve times, others to have reached 60 times",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The note is about the Indian herb that Porta mentions in the main text. 'Refert' ('he reports') refers to Porta.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Giambattista della Porta",
+          "basis": "main text at the sidenote's anchor: \"Baptista Porta ex India allatae\"",
+          "locus": "lib. 2 cap. 16",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Magia naturalis"
+        },
+        "text": "It is so powerful, not only for those who eat it but even for those who merely touch their genitals with it, that they desire intercourse intensely and can manage it almost as often as they wish; he reports that some have done so twelve times, and others have reached as many as sixty.",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.1-f111": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in hos scopulos impingat, sed pro",
+    "text_sha1": "d8ae813c04e916e2d506600a001fc26df45ac593",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "strike upon these rocks, but for [his] manly",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked passage breaks the idiom 'pro virili' ('with all one's might') in half; 'virili' stands just outside the brackets. The full clause reads: 'so that no inexperienced person may run aground on these rocks, but may deliberately avoid them with all his might, as quicksands and reefs.'",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "run aground on these rocks, but with all his",
         "warnings": []
       }
     ]
@@ -4563,67 +4686,6 @@
           "work": null
         },
         "text": "Bacchic apples once so much",
-        "warnings": []
-      }
-    ]
-  },
-  "3.2.2.1-f98": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "amoribus praevaluerunt, ut coronae ex illis statuae Bacchi ponerentur",
-    "text_sha1": "71cac5684bbeb41fbaeb392e090f714a97263264",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The preceding 'in' is cut off. The full clause reads: '(Bacchic apples) once prevailed so much in love affairs that crowns made of them were placed on statues of Bacchus'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "love affairs prevailed, that crowns made from them were placed on statues of Bacchus",
         "warnings": []
       }
     ]

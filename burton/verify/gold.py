@@ -161,7 +161,16 @@ HOLDOUTS = [  # in the order drawn; the last is the gate (never seen while tunin
     {"name": "h6", "seed": 20261121, "prefix": "h6-",
      "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
      "sample": paths.DATA / "eval" / "langid-holdout6-sample.jsonl",
-     "gold": paths.DATA / "eval" / "langid-holdout6-gold.jsonl"},
+     "gold": paths.DATA / "eval" / "langid-holdout6-gold.jsonl",
+     "seen": "2026-11-20: its errors were studied to change the rules (the line between a reference and Latin takes "
+             "the model's ruling) and the rater's prompt (gold-audit-v2)"},
+    # 2026-11-20 (fifth cycle): drawn after the change, labelled blind by two raters with gold-audit-v2 (the v1 rules,
+    # plus what belongs to a reference and how separate foreign stretches are given; LABELLING.md's conventions,
+    # which the h6 raters missed), their disagreements settled by Claude in session as for h6
+    {"name": "h7", "seed": 20261122, "prefix": "h7-", "prompt": "gold-audit-v2",
+     "strata": {"italic": 150, "roman-before-bracket": 50, "sidenote": 50, "verse": 25, "english": 25},
+     "sample": paths.DATA / "eval" / "langid-holdout7-sample.jsonl",
+     "gold": paths.DATA / "eval" / "langid-holdout7-gold.jsonl"},
 ]
 GATE = HOLDOUTS[-1]["name"]
 HOLDOUT_SAMPLE, HOLDOUT_GOLD = HOLDOUTS[-1]["sample"], HOLDOUTS[-1]["gold"]

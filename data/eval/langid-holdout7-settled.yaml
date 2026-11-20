@@ -1,0 +1,58 @@
+# Round h7 (the V5 gate, fifth cycle): where the two blind raters disagree on whether an item is foreign, or on the
+# foreign part of a mixed item, Claude settled the label in session from the item's full text and context (2026-11-20;
+# owner: "just do the remainder of V5 yourself; I can't hand check it"), before scoring the round, without looking at
+# the detector's output for these items. Raters: gold-audit-v2 with claude-opus-5-5 (first) and claude-sonnet-5-5
+# (second), both blind. 11 disagreements of 300. Separate stretches of a mixed item are joined with " | " (the scorer
+# measures them one by one); a trailing "&c" is "etc." and is not part of a foreign stretch (the scorer ignores it).
+# Applied with `burton gold-audit --settle h7`.
+settled_by: Claude (claude-opus-5-5) in session, reading the text; not a model call
+date: '2026-11-20'
+items:
+  h7-italic-027:
+    gold: mixed
+    foreign_part: manibusque attrectare
+    reason: the Latin is "manibusque attrectare"; the trailing "&c" is "etc."; the raters differ only by it
+  h7-roman-before-bracket-004:
+    gold: mixed
+    foreign_part: quae aegro assideat & curet aegrotum, fomentum paret, roget medicum
+    reason: the raters differ only by the trailing "&c."
+  h7-roman-before-bracket-019:
+    gold: mixed
+    foreign_part: parvamque exortamque puellam ——— Europen
+    reason: >-
+      one quotation (Juvenal) with Burton's dash marking an omission, not English between; as in h6's
+      roman-before-bracket-001, a dash inside one quotation does not split it
+  # after scoring (label not changed, since changing gold only where the detector disagrees would bias the score):
+  # doubtful. Gowland's bracket translates "Phoebades" as "prophetesses", a common noun, so the second rater's
+  # `mixed` / "Phoebades" may be the better label; with it, h7 would score P 0.969, R 0.969 (93 of 96 either way), still short of both targets.
+  h7-roman-before-bracket-029:
+    gold: en
+    reason: >-
+      "Phoebades" (Apollo's priestesses) is a Latin-form name for a class of people, labelled `name` by the
+      conventions, inside English; nothing else is foreign; first rater right
+  h7-roman-before-bracket-033:
+    gold: mixed
+    foreign_part: averruncandae deorum irae causa | de montis praecipitio dejecerunt
+    reason: two Latin stretches with English between; the raters differ only by the trailing "&c."
+  h7-roman-before-bracket-036:
+    gold: mixed
+    foreign_part: nec satis medico | suum fecisse officium, nisi suum quoque aegrotus, suum astantes
+    reason: two Latin stretches around "saith Hippocrates"; the raters differ only by the trailing "&c."
+  h7-roman-before-bracket-046:
+    gold: mixed
+    foreign_part: Animae Aristotelismo innutritae, & minutis speculationibus assutae, secus forsan
+    reason: the raters differ only by the trailing "&c."
+  h7-english-003:
+    gold: mixed
+    foreign_part: '& adhuc subjudice lis est'
+    reason: Horace's "et adhuc sub iudice lis est", so the "&" is his "et" and belongs to the quotation; first rater right
+  h7-english-012:
+    gold: mixed
+    foreign_part: ἡρώων τέκνα πήματα | Heroum filii noxae
+    reason: a Greek proverb and its Latin rendering, two languages and so two stretches; second rater right
+  h7-english-013:
+    gold: en
+    reason: '"de Pudore" is the title of the book cited as the source, a citation by the conventions; first rater right'
+  h7-english-015:
+    gold: en
+    reason: '"pro Archia Poeta" is the title of the speech cited as the source, a citation by the conventions; first rater right'

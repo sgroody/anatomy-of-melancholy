@@ -2186,68 +2186,6 @@
       }
     ]
   },
-  "2.2.4.1-f138": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Secretis artis & naturae",
-    "text_sha1": "4675615a31a1e405b89ae1843868d9776ccc2bd7",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The rest of a title that begins with 'de' in the previous passage. Burton means Roger Bacon's Epistola de secretis operibus artis et naturae, his letter on the secret works of art and nature.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "Secrets of Art and Nature",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.4.1-f139": {
     "kind": "phrase",
     "lang": "la",
@@ -4554,66 +4492,6 @@
       }
     ]
   },
-  "2.2.4.1-f224": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Fieri",
-    "text_sha1": "c07480cc9254740e72ab802ad68f560dae6002c8",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "to be made",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "\"In fieri\" is a scholastic phrase meaning \"in the process of coming to be\". Williams's library at Lincoln was still being built.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the making",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.4.1-f23": {
     "kind": "phrase",
     "lang": "la",
@@ -5933,64 +5811,6 @@
       }
     ]
   },
-  "2.2.4.1-f312": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "sidenote",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "ex omnium pulchritudine delecti",
-    "text_sha1": "7c1c69eb8a5c71b049e1674c441a92539eb0d3fc",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [],
-        "literal": "chosen out of the beauty of all",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The end of a longer sidenote: '300 concubines, cupbearers and butlers without number, boys washed and dressed in purple, etc.'",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "chosen from all for their beauty",
-        "warnings": []
-      }
-    ]
-  },
   "2.2.4.1-f313": {
     "kind": "phrase",
     "lang": "la",
@@ -6373,6 +6193,63 @@
           "work": null
         },
         "text": "where a certain delight flows gently, joined with cheerfulness?",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.4.1-f32": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "300 pellices, pocillatores & pincernae innumeri, pueri loti purpura induti, &c., ex omnium pulchritudine delecti",
+    "text_sha1": "f86ce2f1041e4c35418f599f26fb2c5e4e4b7589",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "300 concubines, cup-bearers and wine-pourers innumerable, boys washed clothed in purple, etc., from all for beauty chosen",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The sidenote fills out Burton's description of a luxurious court. 'Pocillatores' and 'pincernae' both mean cupbearers or wine-servers, so they are given here as 'cupbearers and butlers'. 'Loti' means 'washed' or 'bathed'. 'Ex omnium pulchritudine delecti' is compressed, and probably means 'picked out from all for their beauty'. Burton names no source.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "300 concubines, cupbearers and butlers without number, boys freshly bathed and dressed in purple, etc., chosen out of all for their beauty",
         "warnings": []
       }
     ]
@@ -7868,6 +7745,65 @@
           "work": null
         },
         "text": "Sculpture",
+        "warnings": []
+      }
+    ]
+  },
+  "2.2.4.1-f345": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in Fieri",
+    "text_sha1": "15224a8605337ccfeddd784614a35ea218d5c88c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in becoming",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "'In fieri' is a scholastic phrase meaning 'in the process of coming to be' (as opposed to 'in facto esse', already finished). Burton means that the bishop's library at Lincoln was then being founded. The capital F is in the source.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the making",
         "warnings": []
       }
     ]

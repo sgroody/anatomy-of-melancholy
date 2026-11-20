@@ -5457,6 +5457,150 @@
       }
     ]
   },
+  "3.2.2.2-f212": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "The Barbarians stand in awe of a fair woman, and at a beautiful aspect a fierce spirit is pacified.",
+        "in": "3.2.2.2",
+        "near": "3.2.2.2-f212",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Heliodorus",
+      "basis": "text \"(Heliodor. lib. 5)\"",
+      "locus": "lib. 5",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Aethiopica"
+    },
+    "text": "Formosam Barbari verentur, & ad aspectum pulchrum immanis animus mansuescit",
+    "text_sha1": "4b51e483f04196d0a574aaf9e35e37ee5a684a0a",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "The Barbarians stand in awe of a fair woman, and at a beautiful aspect a fierce spirit is pacified.",
+            "in": "3.2.2.2",
+            "near": "3.2.2.2-f212",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Heliodorus",
+          "basis": "text \"(Heliodor. lib. 5)\"",
+          "locus": "lib. 5",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Aethiopica"
+        },
+        "text": "Barbarians stand in awe of a beautiful woman, and at a beautiful sight a savage spirit grows gentle",
+        "warnings": []
+      }
+    ]
+  },
+  "3.2.2.2-f213": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "she is no fair woman, whose arm, thigh, &c., are commended, except the face and all the other parts be correspondent.",
+        "in": "3.2.2.2",
+        "near": "3.2.2.2-f213",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "paraphrase"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"as Seneca saith, Ep. 33 lib. 4\"",
+      "locus": "Ep. 33 lib. 4",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Epistles"
+    },
+    "text": "Non est formosa mulier cujus crus laudatur & brachium, sed illa cujus simul universa facies admirationem singulis partibus dedit",
+    "text_sha1": "61c0ab1fd4db699bc7fc07efdf4c722ef7ebc7c5",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Seneca's text (Epistles 33.5) reads 'admirationem partibus singulis abstulit', i.e. the beauty of the whole takes admiration away from the single parts; Burton's 'dedit' ('gave') reverses the point. Seneca also has 'aut brachium' for Burton's '& brachium'. 'Facies' here means the whole appearance, though Burton takes it as the face.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "she is no fair woman, whose arm, thigh, &c., are commended, except the face and all the other parts be correspondent.",
+            "in": "3.2.2.2",
+            "near": "3.2.2.2-f213",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "paraphrase"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"as Seneca saith, Ep. 33 lib. 4\"",
+          "locus": "Ep. 33 lib. 4",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Epistles"
+        },
+        "text": "A woman is not beautiful whose leg and arm are praised, but she whose whole appearance taken together has given admiration to each single part",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.2.2-f22": {
     "kind": "phrase",
     "lang": "la",

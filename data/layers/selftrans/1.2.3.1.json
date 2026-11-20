@@ -543,6 +543,47 @@
     ],
     "text_sha1": "a94c7811441cf71e16022f181138b40599719a36"
   },
+  "1.2.3.1-f38": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "give precepts to the contrary",
+          "in": "1.2.3.1-p2",
+          "prefix": "w they will, set down in Thesi, ",
+          "suffix": "; we find that of Lemnius true b"
+        },
+        "words": 5
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "But let them dispute how they will, set down",
+          "in": "1.2.3.1-p2",
+          "prefix": "ll, some the greatest passions. ",
+          "suffix": " in Thesi, give precepts to the "
+        },
+        "words": 9
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "2edfde7cad3c6e3c1d952d1a9a074f4eb675efee"
+  },
   "1.2.3.1-f5": {
     "bracket": "present",
     "by": "rules",
@@ -612,47 +653,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "811740e37ed0f99cabfaa8bfe5132fa0acce9d6d"
-  },
-  "1.2.3.1-f8": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "give precepts to the contrary",
-          "in": "1.2.3.1-p2",
-          "prefix": "w they will, set down in Thesi, ",
-          "suffix": "; we find that of Lemnius true b"
-        },
-        "words": 5
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "But let them dispute how they will, set down in",
-          "in": "1.2.3.1-p2",
-          "prefix": "ll, some the greatest passions. ",
-          "suffix": " Thesi, give precepts to the con"
-        },
-        "words": 10
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "7e279a9ab4790c7f96618c00facf58dfcec537dc"
   },
   "1.2.3.1-f9": {
     "bracket": "none",

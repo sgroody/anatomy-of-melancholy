@@ -55,5 +55,11 @@ change the rules, it is seen: add a new round (new seed, new files) rather than 
 - *(h2)* In the roman-before-bracket stratum, when the Latin nearest the bracket is a list of Latin-form names
   (*Carolus Sapiens, Philippus Bonus*), `foreign_part` is the nearest real Latin and a `note` says so.
 - Any item whose detector output the labeller saw before labelling gets a `note` saying so (h2 has one).
+- *(h6, written into the rater prompt gold-audit-v2 before h7 was drawn)* **What belongs to a reference**: words of a
+  title cited as a source are `citation`, even a single word (*dei* in *Austin de civ. dei*); locators, abbreviated
+  authors and authors listed as sources never go into `foreign_part` (*Pet. Haedus, Albertus, & infiniti fere
+  medici* → *& infiniti fere medici*); a Latin sentence that names its source inside it is Latin (*Elvarum choreas
+  Olaus lib. 3. vocat*). **Separate foreign stretches** of a `mixed` item are given as they stand, joined by " | ",
+  without the English between them (*in secundis | in tertiis*). The h6 gold is left as its raters labelled it.
 
 Owner review of all labels is pending (PLAN D7).

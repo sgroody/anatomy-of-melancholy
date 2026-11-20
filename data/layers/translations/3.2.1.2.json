@@ -2409,6 +2409,67 @@
       }
     ]
   },
+  "3.2.1.2-f137": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "sidenote",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Herodotus",
+      "basis": "sidenote \"Herodotus lib. 2 Euterpe\", anchored at the main text \"Omitto Salinarios illos Aegyptiacos\"",
+      "locus": "lib. 2 (Euterpe)",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Histories"
+    },
+    "text": "2 Euterpe: Uxores insignium virorum non statim vita functas tradunt condiendas, ac ne eas quidem foeminas quae formosae sunt, sed quatriduo ante defunctas, ne cum iis salinarii concumbant, &c",
+    "text_sha1": "3c38ec071a5a389f9cc5d7e31911425ac556003c",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect"
+        ],
+        "literal": "2 Euterpe: Wives of distinguished men not immediately having-ended life they hand over to-be-embalmed, and not even those women who are beautiful, but four-days before dead, lest with them the salters lie, etc.",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage starts in the middle of Burton's reference: 'Herodotus lib.' stands outside the marked text, so '2 Euterpe' means Book 2, which is named after the Muse Euterpe. 'Salinarii' literally means 'salters'; here it refers to the Egyptian embalmers, who preserved bodies with natron. 'Condiendas' means 'to be embalmed' (literally 'seasoned' or 'pickled'). Herodotus says three or four days; this Latin gives four. It reads as a Latin paraphrase rather than a close translation, so I have not flagged it as a misquotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Herodotus",
+          "basis": "sidenote \"Herodotus lib. 2 Euterpe\", anchored at the main text \"Omitto Salinarios illos Aegyptiacos\"",
+          "locus": "lib. 2 (Euterpe)",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Histories"
+        },
+        "text": "2, Euterpe: The wives of distinguished men, they report, are not handed over for embalming as soon as they have died, nor are those women who are beautiful, but only when they have been dead four days, so that the embalmers may not lie with them, etc.",
+        "warnings": []
+      }
+    ]
+  },
   "3.2.1.2-f14": {
     "kind": "phrase",
     "lang": "la",

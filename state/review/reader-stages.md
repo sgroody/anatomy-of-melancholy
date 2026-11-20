@@ -587,3 +587,14 @@ one or two lexicon hits, and capitalised runs the names sweep ruled not a name, 
 **h6: P 0.990, R 0.941, B 0.947** (targets 0.98 / 0.97 / 0.95): precision passes, recall and boundaries do not; V5
 stays DEFER. The re-ingest changed 129 units; 182 passages re-translated ($5.06), selftrans and Dell & Jordan-Smith
 re-run. Details and the misses: data/manual/deferred-checks.yaml.
+
+## V5, fifth cycle (2026-11-20; owner: "Run a fifth")
+
+h6's errors, read closely, were on the line between a reference and Latin (three of them raters putting a cited title's
+words or a locator into the foreign part). Lever: reference runs with two or more Latin words, pieces the trim cut off a
+Latin run, and roman prepositions before a Latin passage ("in secundis") take a model ruling (310 rulings); a ruling of
+kind title keeps a cited title a reference (which returned 10 older title passages to references). The raters' prompt
+became gold-audit-v2 (LABELLING.md's reference conventions spelled out), set before h7 was drawn; h6's gold is unchanged.
+**h7: P 0.958, R 0.968, B 0.967** (targets 0.98 / 0.97 / 0.95): boundaries pass, recall one item short, precision
+fails; V5 stays DEFER. None of h7's four false positives was made by this cycle. 11 rater disagreements settled
+(data/eval/langid-holdout7-settled.yaml); one settlement doubtful ("Phoebades"), recorded, not changed.

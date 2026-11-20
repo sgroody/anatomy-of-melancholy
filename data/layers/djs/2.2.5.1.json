@@ -129,16 +129,18 @@
     "where": "IA anatomyofmelanch1927burt djvu.txt line 25215, p. 466"
   },
   "2.2.5.1-f20": {
-    "align_score": 0.718,
+    "align_score": 0.878,
     "by": "djs1927",
     "left_anchor": "then to use such inward or outward remedies, which may cause it.",
     "left_score": 1.0,
     "method": "rules/djs-align-v3",
-    "right_anchor": "(saith Boissardus in his Tract de magia cap. 4) multos ita fascinari",
-    "right_score": 0.718,
-    "status": "below-threshold",
+    "right_anchor": "(saith Boissardus in his Tract de magia cap. 4)",
+    "right_score": 0.878,
+    "status": "aligned",
+    "text": "It is w^ell known, even at this day,",
     "text_sha1": "77d104460414a9496400379de04c9a1c00270881",
-    "threshold": 0.85
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 25148, pp. 464-465"
   },
   "2.2.5.1-f25": {
     "align_score": 1.0,
@@ -189,6 +191,21 @@
     "status": "below-threshold",
     "text_sha1": "ea6e41bbc7f749bc47ed5effa93e7eacdc17b320",
     "threshold": 0.85
+  },
+  "2.2.5.1-f33": {
+    "align_score": 0.878,
+    "by": "djs1927",
+    "left_anchor": "(saith Boissardus in his Tract de magia cap. 4)",
+    "left_score": 0.878,
+    "method": "rules/djs-align-v3",
+    "residue": "that",
+    "right_anchor": "; many cannot sleep for witches and fascinations, which are too familiar",
+    "right_score": 1.0,
+    "status": "omitted",
+    "text": "",
+    "text_sha1": "113928f3fad8747f36ba654aeea8db0c461dff95",
+    "threshold": 0.85,
+    "where": "IA anatomyofmelanch1927burt djvu.txt line 25150, pp. 464-465"
   },
   "2.2.5.1-f4": {
     "align_score": 0.99,

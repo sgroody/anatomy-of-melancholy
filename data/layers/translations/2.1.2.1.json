@@ -1,64 +1,4 @@
 {
-  "2.1.2.1-f14": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "nomine Dei",
-    "text_sha1": "dba95dfc6770062526e052099295e082fb674f59",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "The full Latin phrase is 'in nomine Dei' (in the name of God). The preposition 'in' stands just outside the marked passage, where it doubles as Burton's English 'begin in'.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the name of God",
-        "warnings": []
-      }
-    ]
-  },
   "2.1.2.1-f15": {
     "kind": "phrase",
     "lang": "la",
@@ -513,6 +453,63 @@
           "work": null
         },
         "text": "Our ears ring with the cries of our weeping allies, who call on us for help more often than on the gods.",
+        "warnings": []
+      }
+    ]
+  },
+  "2.1.2.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in nomine Dei",
+    "text_sha1": "dc9838b234c9842c9f17d3d9a22e8204dd781e73",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Mesue's medical writings open with an invocation of God, which is the practice Burton refers to here.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the name of God",
         "warnings": []
       }
     ]

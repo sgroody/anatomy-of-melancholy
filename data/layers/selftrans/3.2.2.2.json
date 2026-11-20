@@ -2144,6 +2144,47 @@
     ],
     "text_sha1": "bf1839fbce5afb2fac628cce5648e8b48425cdcf"
   },
+  "3.2.2.2-f212": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "4b51e483f04196d0a574aaf9e35e37ee5a684a0a"
+  },
+  "3.2.2.2-f213": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "she is no fair woman, whose arm, thigh, &c., are commended, except the face and all the other parts be correspondent",
+          "in": "3.2.2.2-p32",
+          "prefix": "tionem singulis partibus dedit; ",
+          "suffix": ". And the face especially gives "
+        },
+        "words": 21
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "61c0ab1fd4db699bc7fc07efdf4c722ef7ebc7c5"
+  },
   "3.2.2.2-f22": {
     "bracket": "present",
     "by": "rules",

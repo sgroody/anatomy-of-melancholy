@@ -1557,6 +1557,77 @@
       }
     ]
   },
+  "1.3.1.2-f143": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "some fear all alike, some certain men",
+        "in": "1.3.1.2",
+        "near": "1.3.1.2-f143",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "full"
+    },
+    "source": {
+      "author": "Fracastorius",
+      "basis": "text \"(Fracastorius lib. 2 de Intellect.)\"",
+      "locus": "lib. 2",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de Intellectione"
+    },
+    "text": "Alii formidolosi omnium, alii quorundam",
+    "text_sha1": "365155cedb2a4a68f83d87a0bdfb096f50ed69d4",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "Some fearful of all, others of certain ones",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "some fear all alike, some certain men",
+            "in": "1.3.1.2",
+            "near": "1.3.1.2-f143",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Fracastorius",
+          "basis": "text \"(Fracastorius lib. 2 de Intellect.)\"",
+          "locus": "lib. 2",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de Intellectione"
+        },
+        "text": "Some are fearful of everyone, others of certain people",
+        "warnings": []
+      }
+    ]
+  },
   "1.3.1.2-f16": {
     "kind": "phrase",
     "lang": "la",

@@ -1232,68 +1232,6 @@
       }
     ]
   },
-  "2.5.1.6-f38": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": "Laurent Joubert",
-      "basis": "text \"by Joubertus thus\"; \"as Joubertus observes med. pract. lib. 1 cap. 7\"",
-      "locus": "lib. 1 cap. 7",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Medicinae practicae"
-    },
-    "text": "unc: i cerussae candissimae",
-    "text_sha1": "5c85ad046a8bbfb65c9650aea6acedb817f5ad20",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect",
-          "technical-medical"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "This is a fragment of Joubert's recipe. 'unc. i' gives the amount of the litharge of silver that comes before it. The ceruse (white lead) has its amount after it, 'ʒ iii' (3 drachms), which falls outside the marked text. The whole recipe reads: take litharge of silver 1 ounce, whitest ceruse 3 drachms, camphor 2 scruples, and so on.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Laurent Joubert",
-          "basis": "text \"by Joubertus thus\"; \"as Joubertus observes med. pract. lib. 1 cap. 7\"",
-          "locus": "lib. 1 cap. 7",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Medicinae practicae"
-        },
-        "text": "1 ounce; of the whitest ceruse",
-        "warnings": []
-      }
-    ]
-  },
   "2.5.1.6-f4": {
     "kind": "phrase",
     "lang": "la",
@@ -1784,6 +1722,69 @@
           "work": null
         },
         "text": "Laudanum of Paracelsus",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.6-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": "Laurent Joubert (Joubertus)",
+      "basis": "text \"it is diversely prepared; by Joubertus thus\"",
+      "locus": null,
+      "status": "burton-cites",
+      "verified": false,
+      "work": null
+    },
+    "text": "argent. unc: i cerussae candissimae",
+    "text_sha1": "63ea0c3d2df169c9ecc0e2cfc3eed8c5fd252435",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical",
+          "boundary-suspect",
+          "corrupt-text"
+        ],
+        "literal": "of silver, ounce 1; of ceruse most white",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "This is a fragment cut out of Joubert's recipe. The whole thing runs: '℞. lithar. argent. unc. i, cerussae candidissimae ʒ iii', that is, 'Take 1 ounce of litharge of silver and 3 drachms of the whitest ceruse.' 'argent.' finishes the phrase 'lithar[gyri] argent[i]', litharge of silver (lead monoxide), which stands just before the marked passage. The quantity for the ceruse (white lead), 'ʒ iii', comes just after it. 'candissimae' is probably a slip for 'candidissimae', 'whitest'.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Laurent Joubert (Joubertus)",
+          "basis": "text \"it is diversely prepared; by Joubertus thus\"",
+          "locus": null,
+          "status": "burton-cites",
+          "verified": false,
+          "work": null
+        },
+        "text": "of silver, 1 ounce; of the whitest ceruse",
         "warnings": []
       }
     ]

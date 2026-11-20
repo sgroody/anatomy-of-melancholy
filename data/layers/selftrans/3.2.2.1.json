@@ -61,35 +61,6 @@
     ],
     "text_sha1": "2fcc4a6a7bcddaa113e0d3b5459f743c8c2d6fe9"
   },
-  "3.2.2.1-f102": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "virili tanquam syrtes & cautes consulto effugiat",
-          "in": "3.2.2.1-p10",
-          "prefix": " hos scopulos impingat, sed pro ",
-          "suffix": "."
-        },
-        "words": 6
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "ca054d117173d11694cec4f9f5b04c74ce986b2c"
-  },
   "3.2.2.1-f103": {
     "bracket": "none",
     "by": "rules",
@@ -156,7 +127,7 @@
     ],
     "text_sha1": "88d029f4c7d69265bad571da8cfc1a15a3978b00"
   },
-  "3.2.2.1-f107": {
+  "3.2.2.1-f108": {
     "bracket": "none",
     "by": "rules",
     "candidates": [],
@@ -166,7 +137,19 @@
     "signals": [
       "no-gowland-bracket"
     ],
-    "text_sha1": "00134194f1009852667437727c5c7eb3becb9620"
+    "text_sha1": "2e1d97aa7a5b76a3a966fcfd1c1b40f70edffebf"
+  },
+  "3.2.2.1-f109": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6a470f16bea30953cde639482e098481306e7c34"
   },
   "3.2.2.1-f11": {
     "bracket": "present",
@@ -192,6 +175,47 @@
       "english-precedes"
     ],
     "text_sha1": "f4b327b15dea9c2f168cbd839011d4a36124a2a1"
+  },
+  "3.2.2.1-f110": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "sidenote",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "6d8630b81b5492e90eb8fba95b11efcc72fc2cf1"
+  },
+  "3.2.2.1-f111": {
+    "bracket": "none",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "virili tanquam syrtes & cautes consulto effugiat",
+          "in": "3.2.2.1-p10",
+          "prefix": " hos scopulos impingat, sed pro ",
+          "suffix": "."
+        },
+        "words": 6
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "no-gowland-bracket"
+    ],
+    "text_sha1": "d8ae813c04e916e2d506600a001fc26df45ac593"
   },
   "3.2.2.1-f12": {
     "bracket": "none",
@@ -1569,18 +1593,6 @@
       "no-gowland-bracket"
     ],
     "text_sha1": "de8509f08703ce14b6c8139e944bb98de0794652"
-  },
-  "3.2.2.1-f98": {
-    "bracket": "none",
-    "by": "rules",
-    "candidates": [],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "no-gowland-bracket"
-    ],
-    "text_sha1": "71cac5684bbeb41fbaeb392e090f714a97263264"
   },
   "3.2.2.1-f99": {
     "bracket": "none",

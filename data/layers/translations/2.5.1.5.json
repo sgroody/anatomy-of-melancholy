@@ -1869,66 +1869,6 @@
       }
     ]
   },
-  "2.5.1.5-f50": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "medium",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [],
-      "status": "none"
-    },
-    "source": {
-      "author": "Horace",
-      "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
-      "locus": "lib. 1 Od. 27",
-      "status": "burton-cites",
-      "verified": false,
-      "work": "Odes"
-    },
-    "text": "usum laetitiae scyphis",
-    "text_sha1": "23cee81b7f61772f55a2e37c7aaaa5a99f303b2b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "medium",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect",
-          "truncated"
-        ],
-        "literal": "use of gladness, with cups",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "The marked text leaves out the first word, 'Natis'. The whole phrase, 'Natis in usum laetitiae scyphis', means 'with cups born for the service of gladness', and it opens Horace's ode against brawling over wine. Burton makes it part of his English sentence.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": "Horace",
-          "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
-          "locus": "lib. 1 Od. 27",
-          "status": "burton-cites",
-          "verified": false,
-          "work": "Odes"
-        },
-        "text": "the service of gladness, with cups",
-        "warnings": []
-      }
-    ]
-  },
   "2.5.1.5-f51": {
     "kind": "phrase",
     "lang": "la",
@@ -2352,6 +2292,79 @@
       }
     ]
   },
+  "2.5.1.5-f59": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "it is good sometimes to be drunk, it helps sorrow, depresseth cares",
+        "in": "2.5.1.5",
+        "near": "2.5.1.5-f59",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "partial"
+    },
+    "source": {
+      "author": "Seneca",
+      "basis": "text \"Of the same mind is Seneca the Philosopher in his book\", followed in the passage itself by \"de tranquil. animae lib. 1 cap. 15\"",
+      "locus": "lib. 1 cap. 15",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "De tranquillitate animi"
+    },
+    "text": "de tranquil. animae lib. 1 cap. 15, nonnumquam ut in aliis morbis ad ebrietatem usque veniendum; curas deprimit, tristitiae medetur",
+    "text_sha1": "b25ba20d36ec61a0c98144799ffb7dbba9c49449",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "misquotation-suspected"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Burton's reference is loose. The passage is Seneca, De tranquillitate animi 17.8–9, which is not divided into books. Seneca's text runs roughly 'nonnumquam et usque ad ebrietatem veniendum, non ut mergat nos, sed ut deprimat curas … tristitiae medetur, et ut quosdam morbos', so Burton has compressed and rearranged it.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "it is good sometimes to be drunk, it helps sorrow, depresseth cares",
+            "in": "2.5.1.5",
+            "near": "2.5.1.5-f59",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "partial"
+        },
+        "source": {
+          "author": "Seneca",
+          "basis": "text \"Of the same mind is Seneca the Philosopher in his book\", followed in the passage itself by \"de tranquil. animae lib. 1 cap. 15\"",
+          "locus": "lib. 1 cap. 15",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "De tranquillitate animi"
+        },
+        "text": "On Tranquillity of Mind, book 1, chapter 15: sometimes, as in other diseases, one must go as far as drunkenness; it presses down cares, it heals sadness",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.1.5-f6": {
     "kind": "phrase",
     "lang": "la",
@@ -2419,6 +2432,66 @@
           "work": "De proprietatibus rerum"
         },
         "text": "for the sake of good cheer, cups are offered again and again",
+        "warnings": []
+      }
+    ]
+  },
+  "2.5.1.5-f60": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+      "locus": "lib. 1 Od. 27",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "in usum laetitiae scyphis",
+    "text_sha1": "823a22bcce2af81760f5fe55aca6aee7f8f88462",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-11-20",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "into the use of gladness, with cups",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The passage leaves out the first word of the phrase, 'Natis', which comes just before it in the text. The full phrase 'Natis in usum laetitiae scyphis' means 'with cups made for the use of gladness'. It comes from the opening of Horace, Odes 1.27, where Horace says that fighting with such cups is a Thracian habit. Burton borrows the phrase to praise moderate drinking. Confidence is medium only because the phrase is cut off.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+          "locus": "lib. 1 Od. 27",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "for the use of gladness, with cups",
         "warnings": []
       }
     ]

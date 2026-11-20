@@ -73,67 +73,6 @@
       }
     ]
   },
-  "2.4.1.2-f10": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "fieri",
-    "text_sha1": "a946c946c8fc609b011cbfcb212d94851f46b66b",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-27",
-        "flags": [
-          "boundary-suspect"
-        ],
-        "literal": "to be made / to become",
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-opus-5-5"
-        ],
-        "note": "Only 'fieri' is marked, but the phrase is the scholastic 'in fieri', 'in the course of being made, not yet complete'. The Oxford Physic Garden was then being laid out. The English 'in' before it is part of the Latin phrase.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "the making",
-        "warnings": []
-      }
-    ]
-  },
   "2.4.1.2-f12": {
     "kind": "phrase",
     "lang": "la",
@@ -201,6 +140,65 @@
           "work": null
         },
         "text": "Hemlock",
+        "warnings": []
+      }
+    ]
+  },
+  "2.4.1.2-f13": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in fieri",
+    "text_sha1": "e8999e8cbd641f1941d7fff473bdb148235e1f9e",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": "in becoming",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "A scholastic phrase, the opposite of 'in facto esse' (already accomplished). Here it means the Oxford Physic Garden was still being laid out. Danby founded it in 1621.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in the making",
         "warnings": []
       }
     ]

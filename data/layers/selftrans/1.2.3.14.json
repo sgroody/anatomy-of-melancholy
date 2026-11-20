@@ -576,6 +576,57 @@
     ],
     "text_sha1": "f6604e6e83be0089cdeea57d847b7a2306261713"
   },
+  "1.2.3.14-f135": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [
+      {
+        "after_attribution": false,
+        "by": "rules",
+        "cognates": 0,
+        "cue": null,
+        "position": "following",
+        "relation": "clause",
+        "selector": {
+          "exact": "no not",
+          "in": "1.2.3.14-p2",
+          "prefix": " suffer them to be in secundis, ",
+          "suffix": " in tertiis; what, mecum confert"
+        },
+        "words": 2
+      },
+      {
+        "by": "rules",
+        "cognates": 0,
+        "position": "preceding",
+        "selector": {
+          "exact": "We will not suffer them to be",
+          "in": "1.2.3.14-p2",
+          "prefix": "e do over-highly prize our own. ",
+          "suffix": " in secundis, no not in tertiis;"
+        },
+        "words": 7
+      }
+    ],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [
+      "english-follows",
+      "english-precedes"
+    ],
+    "text_sha1": "98a35be8b18208df2e1a393da31e366813e168be"
+  },
+  "1.2.3.14-f136": {
+    "bracket": "present",
+    "by": "rules",
+    "candidates": [],
+    "lang": "la",
+    "location": "text",
+    "method": "rules/selftrans-v1",
+    "signals": [],
+    "text_sha1": "bb9f66f7697b39cd85f0a016257352e78f439dbf"
+  },
   "1.2.3.14-f14": {
     "bracket": "present",
     "by": "rules",
@@ -603,72 +654,6 @@
       "english-at-anchor"
     ],
     "text_sha1": "75f8976833b87fd5e4864f36ad1e52f00fc77d11"
-  },
-  "1.2.3.14-f15": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "after_attribution": false,
-        "by": "rules",
-        "cognates": 0,
-        "cue": null,
-        "position": "following",
-        "relation": "clause",
-        "selector": {
-          "exact": "no not in",
-          "in": "1.2.3.14-p2",
-          "prefix": " suffer them to be in secundis, ",
-          "suffix": " tertiis; what, mecum confertur "
-        },
-        "words": 3
-      },
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "We will not suffer them to be in",
-          "in": "1.2.3.14-p2",
-          "prefix": "e do over-highly prize our own. ",
-          "suffix": " secundis, no not in tertiis; wh"
-        },
-        "words": 8
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-follows",
-      "english-precedes"
-    ],
-    "text_sha1": "023c2260764c72cb52d05e1541bdff641dee50bd"
-  },
-  "1.2.3.14-f16": {
-    "bracket": "present",
-    "by": "rules",
-    "candidates": [
-      {
-        "by": "rules",
-        "cognates": 0,
-        "position": "preceding",
-        "selector": {
-          "exact": "no not in",
-          "in": "1.2.3.14-p2",
-          "prefix": " suffer them to be in secundis, ",
-          "suffix": " tertiis; what, mecum confertur "
-        },
-        "words": 3
-      }
-    ],
-    "lang": "la",
-    "location": "text",
-    "method": "rules/selftrans-v1",
-    "signals": [
-      "english-precedes"
-    ],
-    "text_sha1": "f392778d42a702ab56d77fa28a1bb604b081195e"
   },
   "1.2.3.14-f17": {
     "bracket": "present",

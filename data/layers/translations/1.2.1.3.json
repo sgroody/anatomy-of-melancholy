@@ -1627,6 +1627,75 @@
       }
     ]
   },
+  "1.2.1.3-f47": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "burton",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": {
+        "exact": "I have seen those that have caused Melancholy in the most grievous manner",
+        "in": "1.2.1.3",
+        "near": "1.2.1.3-f47",
+        "prefix": "",
+        "suffix": ""
+      },
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "full"
+    },
+    "source": {
+      "author": "Lambert Daneau (Danaeus)",
+      "basis": "text \"saith Danaeus lib. 3 de sortiariis\"",
+      "locus": "lib. 3",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "de sortiariis"
+    },
+    "text": "Vidi, inquit, qui Melancholicos morbos gravissimos induxerunt",
+    "text_sha1": "8ba717fef9b1ef6114520b2be8c0b104d9f902e2",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": null,
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": {
+            "exact": "I have seen those that have caused Melancholy in the most grievous manner",
+            "in": "1.2.1.3",
+            "near": "1.2.1.3-f47",
+            "prefix": "",
+            "suffix": ""
+          },
+          "status": "full"
+        },
+        "source": {
+          "author": "Lambert Daneau (Danaeus)",
+          "basis": "text \"saith Danaeus lib. 3 de sortiariis\"",
+          "locus": "lib. 3",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "de sortiariis"
+        },
+        "text": "I have seen, says he, those who brought on the most grievous melancholic diseases",
+        "warnings": []
+      }
+    ]
+  },
   "1.2.1.3-f5": {
     "kind": "phrase",
     "lang": "la",

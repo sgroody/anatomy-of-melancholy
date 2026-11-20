@@ -127,5 +127,69 @@
         "warnings": []
       }
     ]
+  },
+  "2.5.1.5-f50": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "retired": {
+      "date": "2026-11-20",
+      "reason": "passage id retired by re-ingest"
+    },
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "medium",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [],
+      "status": "none"
+    },
+    "source": {
+      "author": "Horace",
+      "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+      "locus": "lib. 1 Od. 27",
+      "status": "burton-cites",
+      "verified": false,
+      "work": "Odes"
+    },
+    "text": "usum laetitiae scyphis",
+    "text_sha1": "23cee81b7f61772f55a2e37c7aaaa5a99f303b2b",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "medium",
+        "date": "2026-10-27",
+        "flags": [
+          "boundary-suspect",
+          "truncated"
+        ],
+        "literal": "use of gladness, with cups",
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "The marked text leaves out the first word, 'Natis'. The whole phrase, 'Natis in usum laetitiae scyphis', means 'with cups born for the service of gladness', and it opens Horace's ode against brawling over wine. Burton makes it part of his English sentence.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": "Horace",
+          "basis": "sidenote \"Hor. lib. 1 Od. 27.\"",
+          "locus": "lib. 1 Od. 27",
+          "status": "burton-cites",
+          "verified": false,
+          "work": "Odes"
+        },
+        "text": "the service of gladness, with cups",
+        "warnings": []
+      }
+    ]
   }
 }

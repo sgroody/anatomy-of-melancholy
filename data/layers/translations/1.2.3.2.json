@@ -501,68 +501,6 @@
       }
     ]
   },
-  "1.2.3.2-f23": {
-    "kind": "phrase",
-    "lang": "la",
-    "location": "text",
-    "preferred": "machine",
-    "review": {
-      "by": null,
-      "date": null,
-      "state": "unreviewed"
-    },
-    "self_translation": {
-      "burton_span": null,
-      "confidence": "high",
-      "method": "model:claude-opus-5-5/tr-v2",
-      "signals": [
-        "no-gowland-bracket"
-      ],
-      "status": "none"
-    },
-    "source": {
-      "author": null,
-      "basis": null,
-      "locus": null,
-      "status": "unidentified",
-      "verified": false,
-      "work": null
-    },
-    "text": "Hydrophobia",
-    "text_sha1": "3b2a957d67f09772355ff7b0378107fcdb39f984",
-    "translations": [
-      {
-        "by": "machine",
-        "confidence": "high",
-        "date": "2026-10-26",
-        "flags": [
-          "technical-medical"
-        ],
-        "literal": null,
-        "model": "claude-opus-5-5",
-        "models_reported": [
-          "claude-haiku-5-5",
-          "claude-opus-5-5"
-        ],
-        "note": "Literally 'fear of water': rabies, which was believed to follow the bite of a mad dog.",
-        "prompt": "tr-v2",
-        "self_translation": {
-          "burton_span": null,
-          "status": "none"
-        },
-        "source": {
-          "author": null,
-          "basis": null,
-          "locus": null,
-          "status": "unidentified",
-          "verified": false,
-          "work": null
-        },
-        "text": "hydrophobia",
-        "warnings": []
-      }
-    ]
-  },
   "1.2.3.2-f24": {
     "kind": "phrase",
     "lang": "la",
@@ -756,6 +694,67 @@
           "work": null
         },
         "text": "the nightmare",
+        "warnings": []
+      }
+    ]
+  },
+  "1.2.3.2-f27": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "in Hydrophobia",
+    "text_sha1": "19248b6355287cbc96ebdfb027b7383c24a78a76",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "Hydrophobia, the 'fear of water', was the old name for rabies, caught from the bite of a mad dog. Patients were thought to see the image of a dog in water. 'Hydrophobia' is really a Greek medical term used as Latin.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "in hydrophobia",
         "warnings": []
       }
     ]

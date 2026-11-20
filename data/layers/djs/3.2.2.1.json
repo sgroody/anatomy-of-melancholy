@@ -34,15 +34,6 @@
     "text_sha1": "2fcc4a6a7bcddaa113e0d3b5459f743c8c2d6fe9",
     "threshold": 0.85
   },
-  "3.2.2.1-f102": {
-    "by": "djs1927",
-    "left_anchor": "Mizaldum, caeterosque medicos occurrunt, quorum ideo mentionem feci, ne quis imperitior in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": "virili tanquam syrtes & cautes consulto effugiat.",
-    "status": "not-found",
-    "text_sha1": "ca054d117173d11694cec4f9f5b04c74ce986b2c",
-    "threshold": 0.85
-  },
   "3.2.2.1-f103": {
     "align_score": 0.991,
     "by": "djs1927",
@@ -74,13 +65,22 @@
     "text_sha1": "88d029f4c7d69265bad571da8cfc1a15a3978b00",
     "threshold": 0.85
   },
-  "3.2.2.1-f107": {
+  "3.2.2.1-f108": {
     "by": "djs1927",
-    "left_anchor": "Creseida suam, se bulbis & cochleis curavit; etiam ad",
+    "left_anchor": "Creseida suam, se bulbis & cochleis curavit; etiam",
     "method": "rules/djs-align-v3",
     "right_anchor": "",
     "status": "no-anchor",
-    "text_sha1": "00134194f1009852667437727c5c7eb3becb9620",
+    "text_sha1": "2e1d97aa7a5b76a3a966fcfd1c1b40f70edffebf",
+    "threshold": 0.85
+  },
+  "3.2.2.1-f109": {
+    "by": "djs1927",
+    "left_anchor": ".",
+    "method": "rules/djs-align-v3",
+    "right_anchor": ". Cubebis in vino maceratis utuntur Indi orientales",
+    "status": "no-anchor",
+    "text_sha1": "6a470f16bea30953cde639482e098481306e7c34",
     "threshold": 0.85
   },
   "3.2.2.1-f11": {
@@ -90,6 +90,23 @@
     "right_anchor": ", &c.",
     "status": "no-anchor",
     "text_sha1": "f4b327b15dea9c2f168cbd839011d4a36124a2a1",
+    "threshold": 0.85
+  },
+  "3.2.2.1-f110": {
+    "by": "djs1927",
+    "method": "rules/djs-align-v3",
+    "reason": "sidenote: no English of Burton's around it to anchor on",
+    "status": "no-anchor",
+    "text_sha1": "6d8630b81b5492e90eb8fba95b11efcc72fc2cf1",
+    "threshold": 0.85
+  },
+  "3.2.2.1-f111": {
+    "by": "djs1927",
+    "left_anchor": "Matthiolum, Mizaldum, caeterosque medicos occurrunt, quorum ideo mentionem feci, ne quis imperitior",
+    "method": "rules/djs-align-v3",
+    "right_anchor": "virili tanquam syrtes & cautes consulto effugiat.",
+    "status": "not-found",
+    "text_sha1": "d8ae813c04e916e2d506600a001fc26df45ac593",
     "threshold": 0.85
   },
   "3.2.2.1-f12": {
@@ -689,7 +706,7 @@
     "by": "djs1927",
     "left_anchor": "fere officina subministrare possit. Et hoc plerumque victu quum se ganeones infarciant,",
     "method": "rules/djs-align-v3",
-    "right_anchor": "Creseida suam, se bulbis & cochleis curavit; etiam ad",
+    "right_anchor": "Creseida suam, se bulbis & cochleis curavit; etiam",
     "status": "not-found",
     "text_sha1": "073471c3eb97d783af4608e38f8b33c5790c5a8e",
     "threshold": 0.85
@@ -752,18 +769,9 @@
     "by": "djs1927",
     "left_anchor": ", verbumque fortasse salax a sale effluxit.",
     "method": "rules/djs-align-v3",
-    "right_anchor": "in",
+    "right_anchor": "",
     "status": "no-anchor",
     "text_sha1": "de8509f08703ce14b6c8139e944bb98de0794652",
-    "threshold": 0.85
-  },
-  "3.2.2.1-f98": {
-    "by": "djs1927",
-    "left_anchor": ". in",
-    "method": "rules/djs-align-v3",
-    "right_anchor": ". Cubebis in vino maceratis utuntur Indi orientales ad",
-    "status": "no-anchor",
-    "text_sha1": "71cac5684bbeb41fbaeb392e090f714a97263264",
     "threshold": 0.85
   },
   "3.2.2.1-f99": {
