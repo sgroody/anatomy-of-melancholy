@@ -525,3 +525,20 @@ Owner: "Looks solid, add it to the reader." Ported from the prototype (tools/syn
 * `burton check --all` (2026-11-20): 21 PASS, V5 DEFER, 0 FAIL. V6 844 pages, 190,569 links, 0 broken; V9 266/266;
   V10 0 parse errors; V10a 0 serious; V10k 22/22; L1 3.2.4.1 79 notes, 37 shortened, 0 held back; OFF 499/499
   precached, 6/6 pages offline.
+
+## The missed in-line citations (note 5): the sweep's remedy (2026-11-20)
+
+Owner, on *Despair* (3.4.2.2): "Joseph. lib. 1 de bello Jud. cap. 14, L. Danaeus in Aphoris. polit. pag. 226 … clearly
+some things have been missed." They were in the citation sweep (data/layers/citations-inline-model/, 918 records),
+held back since its blind sample failed (2 wrong of 50: two Aquinas write-outs with the wrong part of the Summa).
+Owner: "Start now anyway" (past the 90 % weekly stop). The remedy, as for the translator notes:
+* Every record judged blind (`sweep-audit --all cites`, prompt sweep-audit-v1, **claude-sonnet-5-5** to save the
+  meter, $3.05 list): 848 right, 64 doubtful, 6 wrong. Both Aquinas errors were caught (as doubtful). The Despair
+  example: right (Josephus, Jewish War 1.14; Daneau, Politici aphorismi).
+* Withheld: everything judged wrong or doubtful there, in the first sample, or in the recheck: 82. Shown: 836.
+* The gate (`sweep-audit --recheck cites`): a fresh sample of 50 of the survivors (seed 20261120, not in the first
+  sample), drawn after the full pass and before any judgement, judged blind by claude-opus-5-5 under the first rule
+  (at most 3 % wrong): **0 wrong, 5 doubtful: passed**. The 5 doubtful (a sure author where the text allows only
+  "probably", one book title) are withheld too. Limit: 5 doubtful in 50 suggests about one shown record in ten
+  states its author or work more surely than the passage alone allows; none in the sample was wrong.
+* The reader shows the layer (§ with its ◇ card) less the withheld records (build.py, `sweep_audit.withheld`).

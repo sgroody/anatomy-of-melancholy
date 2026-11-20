@@ -193,3 +193,92 @@ outcome:
     passed: true
     wrong: 0
     doubtful: 2
+recheck:
+  cites:
+    drawn: '2026-11-20'
+    seed: 20261120
+    full_pass:
+      model: claude-sonnet-5-5
+      judged: 918
+      right: 848
+      doubtful: 64
+      wrong: 6
+    withheld: 77
+    population: 803
+    rater: claude-opus-5-5, blind (prompt sweep-audit-v1), as the first sample
+    rule: at most 3 % of the sample judged `wrong`; the layer is then shown less what is withheld
+    sample:
+    - cites:1.1.3.1-p1-icm2137
+    - cites:1.2.1.2-p15-icm1400
+    - cites:1.2.1.2-p3-icm3156
+    - cites:1.2.1.2-p3-icm3869
+    - cites:1.2.1.6-p3-icm413
+    - cites:1.2.2.1-p21-icm788
+    - cites:1.2.2.2-p8-icm976
+    - cites:1.2.2.4-p3-icm1151
+    - cites:1.2.2.4-p7-icm935
+    - cites:1.2.2.5-p4-icm1142
+    - cites:1.2.3.15-p1-icm468
+    - cites:1.2.5.1-p2-icm1060
+    - cites:1.2.5.2-p2-icm420
+    - cites:1.2.5.4-p1-icm1695
+    - cites:1.3.1.2-p12-icm1424
+    - cites:1.4.1.1-p8-icm1518
+    - cites:1.4.1.1-p9-icm5229
+    - cites:2.1.1.1-p3-icm1255
+    - cites:2.1.2.1-p3-icm542
+    - cites:2.2.1.2-p2-icm2153
+    - cites:2.2.2.1-p4-icm2181
+    - cites:2.2.3.1-p1-icm8299
+    - cites:2.2.3.1-p12-icm6354
+    - cites:2.2.3.1-p2-icm2753
+    - cites:2.2.3.1-p2-icm2831
+    - cites:2.2.3.1-p3-icm419
+    - cites:2.2.3.1-p6-icm1128
+    - cites:2.2.4.1-p3-icm240
+    - cites:2.2.6.3-p1-icm1361
+    - cites:2.2.6.3-p2-icm419
+    - cites:2.2.6.3-p3-icm3263
+    - cites:2.3.7.1-p12-icm346
+    - cites:2.4.1.4-p11-icm2308
+    - cites:2.4.2.2-p6-icm4400
+    - cites:2.5.1.5-p20-icm1185
+    - cites:2.5.3.2-p8-icm148
+    - cites:3.2.1.1-p14-icm7820
+    - cites:3.2.2.3-p2-icm0
+    - cites:3.2.2.4-p39-icm144
+    - cites:3.2.2.4-p44-icm1981
+    - cites:3.2.2.5-p8-icm438
+    - cites:3.2.5.2-p20-icm4
+    - cites:3.3.1.2-p14-icm0
+    - cites:3.4.1.2-p15-icm6020
+    - cites:3.4.1.3-p19-icm3995
+    - cites:3.4.1.3-p9-icm5333
+    - cites:3.4.1.4-p1-icm5780
+    - cites:3.4.2.1-p15-icm79
+    - cites:djr-p172-icm3278
+    - cites:djr-p49-icm926
+    outcome:
+      date: '2026-11-20'
+      judged: 50
+      right: 45
+      doubtful: 5
+      passed: true
+      wrong_items: []
+      doubtful_items:
+      - id: cites:1.2.2.1-p21-icm788
+        reason: 'Work: this passage is probably about the harm done by bad waters, so Burton more likely means Bacci''s
+          De thermis than De naturali vinorum historia. The claim names the wine book as sure.'
+      - id: cites:1.2.5.1-p2-icm1060
+        reason: 'Work title: Botallo is the right author, but his book on the pox was published as Luis venereae curandae
+          ratio (1563), not De lue venerea. The italic title the claim gives is not the real one.'
+      - id: cites:1.2.5.4-p1-icm1695
+        reason: 'Author: the quoted text does not name who wrote ''con. 89'' and ''con. 106''. Claudini is possible, but
+          Montano''s consilia are just as likely. The claim states Claudini as sure without support from the text.'
+      - id: cites:2.2.1.2-p2-icm2153
+        reason: The 'he' in Burton's sentence comes before the quoted text, so the reference can't be tied to Montano with
+          certainty. It could be another consiliator such as Crato. 'Sure' is overstated.
+      - id: cites:3.4.1.3-p19-icm3995
+        reason: The excerpt doesn't show which work this bare 'cap. 7' belongs to. It could be Lavater's De spectris, but
+          it could equally be another author cited just before (e.g. Wierus). Calling it 'sure' goes beyond what the evidence
+          shows.

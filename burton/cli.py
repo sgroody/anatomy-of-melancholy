@@ -111,6 +111,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--run", action="store_true", help="judge the samples")
     s.add_argument("--report", action="store_true", help="counts and the rule's outcome -> data/eval/sweep-audit.yaml")
     s.add_argument("--model", default="claude-opus-5-5")
+    s.add_argument("--all", metavar="LAYER", help="the remedy: judge every record of LAYER blind (resumable)")
+    s.add_argument("--recheck", metavar="LAYER", help="the remedy's gate: draw (once), judge and report a fresh sample")
+    s.add_argument("--budget-usd", type=float, default=None)
     s = sub.add_parser("note-rate", help="the translation passes' notes: spot check, blind audit, rating for the "
                                          "margin (model, ledgered) -> data/layers/note-ratings/")
     s.add_argument("--draw", action="store_true", help="draw the spot-check sample (once)")
@@ -359,6 +362,16 @@ def main(argv: list[str] | None = None) -> int:
             print(sweep_audit.run(model=args.model))
         if args.report:
             print(json.dumps(sweep_audit.report(), ensure_ascii=False, indent=1))
+        if args.all:
+            print(sweep_audit.run_all(args.all, args.model, budget=args.budget_usd))
+        if args.recheck:
+            import yaml
+
+            doc = yaml.safe_load(sweep_audit.DOC.read_text(encoding="utf-8"))
+            if not (doc.get("recheck") or {}).get(args.recheck):
+                print(sweep_audit.draw_recheck(args.recheck))
+            print(sweep_audit.run_recheck(args.recheck))
+            print(json.dumps(sweep_audit.report_recheck(args.recheck), ensure_ascii=False, indent=1))
     elif args.cmd == "note-rate":
         import json
 

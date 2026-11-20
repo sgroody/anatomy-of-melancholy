@@ -1,6 +1,6 @@
 {
-  "when": "2026-11-20T07:09:33+00:00",
-  "ok": true,
+  "when": "2026-11-20T08:05:22+00:00",
+  "ok": false,
   "results": [
     {
       "code": "V1",
@@ -42,7 +42,7 @@
       "deferred": null,
       "counts": {
         "sidenotes_resolved": "5703/5703",
-        "ids": 17235,
+        "ids": 17237,
         "units": 159
       },
       "problems": []
@@ -145,10 +145,10 @@
     {
       "code": "V7",
       "name": "layers keyed, labelled and honest",
-      "ok": true,
+      "ok": false,
       "deferred": null,
       "counts": {
-        "foreign": 7677,
+        "foreign": 7679,
         "with_record": 7677,
         "machine_labelled": 7729,
         "stale": 0,
@@ -161,11 +161,11 @@
         "selftrans_selectors_ok": 8315,
         "selftrans_selectors_bad": 0,
         "selftrans_stale": 0,
-        "selftrans_missing": 0,
+        "selftrans_missing": 2,
         "selftrans_orphan_keys": 0,
         "selftrans_units_missing": 0,
         "selftrans_gowland_overlap": 0,
-        "untranslated": 0,
+        "untranslated": 2,
         "units_without_layer": 5,
         "djs_records": 7677,
         "djs_no-anchor": 2319,
@@ -212,7 +212,10 @@
         "gloss_records": 23,
         "gloss_selectors_ok": 98
       },
-      "problems": []
+      "problems": [
+        "2.2.4.1: 1 foreign passages without a self-translation record, e.g. 2.2.4.1-f340",
+        "2.5.3.1: 1 foreign passages without a self-translation record, e.g. 2.5.3.1-f21"
+      ]
     },
     {
       "code": "V11",
@@ -234,7 +237,7 @@
       "deferred": null,
       "counts": {
         "private:sidenotes": 5703,
-        "private:foreign": 7677,
+        "private:foreign": 7679,
         "private:enrefs": 3907,
         "private:pbs": 957,
         "private:gowland_versions": 4947,
@@ -242,7 +245,7 @@
         "private:pagerefs": 943,
         "private:gowland_versions_from_his_pages": 1,
         "public:sidenotes": 5687,
-        "public:foreign": 7677,
+        "public:foreign": 7679,
         "public:enrefs": 0,
         "public:pbs": 0,
         "public:gowland_versions": 0,
@@ -307,10 +310,10 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "private:glyphs": "266/266",
+        "private:glyphs": "271/271",
         "private:fallback": 20,
         "fallback_codepoints": "U+2042 U+2108 U+2125 U+2609 U+260C U+263E U+263F U+2640 U+2642 U+2643 U+2644 U+2648 U+2649 U+264A U+264B U+264C U+264D U+264E U+264F U+2653",
-        "public:glyphs": "245/245",
+        "public:glyphs": "251/251",
         "public:fallback": 20
       },
       "problems": []
@@ -358,14 +361,14 @@
       "ok": true,
       "deferred": null,
       "counts": {
-        "densest_3.2.4.1": "79 notes, 37 shortened, 0 held back",
+        "densest_3.2.4.1": "81 notes, 38 shortened, 0 held back",
         "pages": 20,
-        "notes": 10616,
+        "notes": 10720,
         "stacked": 0,
         "overlaps": 0,
         "max_drift_rem": 22.6,
         "marker_breaks": 0,
-        "left_margin": 2979,
+        "left_margin": 2992,
         "marker_checks": 12084
       },
       "problems": []
@@ -381,7 +384,7 @@
         "browser_grc": "no",
         "soft_hyphens_break_la": true,
         "soft_hyphens_break_grc": true,
-        "soft_hyphens": 47467,
+        "soft_hyphens": 47471,
         "stray_soft_hyphens": 0
       },
       "problems": []

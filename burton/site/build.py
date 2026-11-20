@@ -259,6 +259,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     # the stage-14 sweeps, each shown only if its blind audit passed (data/eval/sweep-audit.yaml)
     obscure_rx, obscure_info = names_sweep.reader_index() if sweep_audit.passed("names") else ({}, {})
     show_cites, show_restored = sweep_audit.passed("cites"), sweep_audit.passed("restored")
+    # what the full blind pass or the first sample judged wrong or doubtful is withheld (2026-11-20)
+    cites_withheld = {i.split(":", 1)[1] for i in sweep_audit.withheld("cites")} if show_cites else set()
     # the translator notes cleared for the margin (stage 14; owner's remedy, 2026-11-19): rated 3, not doubtful, judged
     # sound by the blind auditor, and only once the fresh spot check passed; keyed by the hash of the very note
     from ..translate import notes_rate
@@ -336,8 +338,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    facing_src=facing.sources(unit) if profile == "private" else None,
                                    names=name_rx, name_ids=name_ids, author_info=author_info,
                                    restored_read=layer_for(unit, "restored-read") if show_restored else None,
-                                   inline_cites_model=(layer_for(unit, "citations-inline-model")
-                                                       if show_cites else None),
+                                   inline_cites_model=({k: v for k, v in layer_for(unit, "citations-inline-model")
+                                                        .items() if k not in cites_withheld} if show_cites else None),
                                    note_hashes=note_hashes,
                                    name_extra=(obscure_rx.get(unit), obscure_info))
         if unit == "argument":

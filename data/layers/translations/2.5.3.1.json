@@ -556,6 +556,67 @@
       }
     ]
   },
+  "2.5.3.1-f21": {
+    "kind": "phrase",
+    "lang": "la",
+    "location": "text",
+    "preferred": "machine",
+    "review": {
+      "by": null,
+      "date": null,
+      "state": "unreviewed"
+    },
+    "self_translation": {
+      "burton_span": null,
+      "confidence": "high",
+      "method": "model:claude-opus-5-5/tr-v2",
+      "signals": [
+        "no-gowland-bracket"
+      ],
+      "status": "none"
+    },
+    "source": {
+      "author": null,
+      "basis": null,
+      "locus": null,
+      "status": "unidentified",
+      "verified": false,
+      "work": null
+    },
+    "text": "hiera, manna, cassia",
+    "text_sha1": "0b4badda96ee2f4a4e356bd34476453622952bd7",
+    "translations": [
+      {
+        "by": "machine",
+        "confidence": "high",
+        "date": "2026-11-20",
+        "flags": [
+          "technical-medical"
+        ],
+        "literal": null,
+        "model": "claude-opus-5-5",
+        "models_reported": [
+          "claude-opus-5-5"
+        ],
+        "note": "These are the names of three standard mild purgatives, kept as they appear in apothecaries' usage. Hiera is the 'holy' electuary, usually hiera picra, made with aloes. Manna is the sweet exudate of the manna ash. Cassia is the pulp of cassia fistula (purging cassia). Burton names Montanus, consil. 230, as preferring these simples, but the phrase is a list of drugs, not a quotation.",
+        "prompt": "tr-v2",
+        "self_translation": {
+          "burton_span": null,
+          "status": "none"
+        },
+        "source": {
+          "author": null,
+          "basis": null,
+          "locus": null,
+          "status": "unidentified",
+          "verified": false,
+          "work": null
+        },
+        "text": "hiera, manna, cassia",
+        "warnings": []
+      }
+    ]
+  },
   "2.5.3.1-f3": {
     "kind": "phrase",
     "lang": "la",

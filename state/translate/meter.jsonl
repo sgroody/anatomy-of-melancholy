@@ -80,3 +80,5 @@
 {"ts": "2026-11-20T04:12:30Z", "event": "before", "run": "sweep-audit --run resume (115 left) --report", "plan": "Pro", "window_5h_pct": 1, "weekly_pct": 80}
 {"ts": "2026-11-20T04:40:00Z", "event": "after", "run": "sweep-audit resume (115 judged, $0.98 list)", "plan": "Pro"}
 {"ts": "2026-11-20T05:06:00Z", "event": "after", "run": "sweep-audit resume (115 judged, $0.98 list) + check", "plan": "Pro", "window_5h_pct": 22, "weekly_pct": 83}
+{"ts": "2026-11-20T07:12:00Z", "event": "before", "run": "sweep-audit of every cites record (filter, claude-sonnet-5-5), then a fresh opus spot check; V5 cycle (h6). Owner: \"Start now anyway\" past the 90 % stop", "plan": "Pro", "window_5h_pct": 57, "weekly_pct": 88}
+{"ts": "2026-11-20T08:05:00Z", "event": "after", "run": "sweep-audit --all cites (918, claude-sonnet-5-5, $3.05 list) + --recheck cites (50, opus): passed 0 wrong / 5 doubtful; adjudicate --all (thin runs) stopped by hand at the 5-hour window, resumable", "plan": "Pro", "window_5h_pct": 85, "weekly_pct": 91}
