@@ -139,6 +139,15 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("restore-notes", help="Burton's sidenotes missing from Gowland's edition, from Project Gutenberg "
                                          "#10800 (rules) -> data/layers/restored-notes/")
 
+    s = sub.add_parser("census", help="V5 by census (data/eval/CENSUS.md): second detector, judge, estimate")
+    s.add_argument("--unit", action="append")
+    s.add_argument("--all", action="store_true")
+    s.add_argument("--detect", action="store_true", help="run detector 2 (sonnet, census-v1)")
+    s.add_argument("--judge", action="store_true", help="judge the disagreements and the agreed sample (opus)")
+    s.add_argument("--agreed-n", type=int, default=None, help="size of the agreed sample (default 300)")
+    s.add_argument("--report", action="store_true", help="the estimate, with 90%% bootstrap bounds")
+    s.add_argument("--budget-usd", type=float, default=None)
+
     s = sub.add_parser("gold-audit", help="D7: blind second rater on the language-ID gold labels")
     s.add_argument("--model", default="claude-opus-5-5")
     s.add_argument("--budget-usd", type=float, default=None)
@@ -418,6 +427,21 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import restored_notes
 
         print(dict(restored_notes.run()))
+    elif args.cmd == "census":
+        from .layers import census
+
+        us = census.units() if args.all else args.unit
+        if not us:
+            raise SystemExit("name --unit U (repeatable) or --all")
+        if args.detect:
+            print(census.detect(us, budget=args.budget_usd))
+        if args.judge:
+            print(census.judge(us, budget=args.budget_usd, agreed_n=args.agreed_n))
+        if args.report:
+            import json as _json
+
+            print(_json.dumps(census.report(us), indent=1))
+        return 0
     elif args.cmd == "gold-audit":
         from .layers import gold_audit
 
