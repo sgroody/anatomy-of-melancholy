@@ -15,6 +15,7 @@ packet that still contains one of his strings is refused.
 import json
 import random
 import re
+import time
 from datetime import UTC, datetime
 
 from lxml import etree
@@ -82,7 +83,9 @@ def block_text(b) -> tuple[str, list[bool]]:
                 walk(c, inside)
             chars.extend((ch, inside) for ch in (c.tail or ""))
 
-    walk(b, _foreign_el(b) or any(_foreign_el(a) for a in b.iterancestors()))
+    # a verse line inherits its group's passage; a sidenote is Burton's own matter, read on its own even inside a
+    # Latin passage (the ingest tags notes separately: langid.tag_latin)
+    walk(b, _foreign_el(b) or (b.tag != T("note") and any(_foreign_el(a) for a in b.iterancestors())))
     # Chaucer (enm) is known from the source's own markup (span.lucida), not detected: left out of the count
     chaucer = [False] * len(chars)
     k = 0
@@ -116,6 +119,34 @@ def block_text(b) -> tuple[str, list[bool]]:
         text.append(c)
         mask.append(f)
     return "".join(text), mask
+
+
+def raw_index(b) -> list[int]:
+    """For each character of block_text(b), its offset in the block's counted text before whitespace is collapsed
+    (the offsets census_apply works in)."""
+    raw: list[str] = []
+
+    def walk(x):
+        if x is not b and (x.tag in BLOCKS or _skip(x)):
+            return
+        raw.extend(x.text or "")
+        for c in x:
+            if isinstance(c.tag, str):
+                walk(c)
+            raw.extend(c.tail or "")
+
+    walk(b)
+    out, space, started = [], False, False
+    for i, c in enumerate(raw):
+        if c.isspace():
+            space = started
+            continue
+        if space:
+            out.append(i - 1)  # the collapsed space stands for the whitespace just before this character
+            space = False
+        out.append(i)
+        started = True
+    return out
 
 
 def _block_id(b) -> str:
@@ -164,6 +195,27 @@ def _write(path, done: dict) -> None:
                                     for k in sorted(done)))
 
 
+def _call(model: str, sys_prompt: str, user: str, out_schema: dict, meta: dict) -> dict:
+    """One call; at the plan's usage limit it waits (runner.LIMIT_POLL) and tries again, and a transient failure is
+    retried twice. Each wait is ledgered."""
+    tries = 0
+    while True:
+        res = runner.call_claude(model, sys_prompt, user, out_schema)
+        if res["ok"]:
+            return res
+        if res.get("limit"):
+            runner.append(LEDGER, {**meta, "ts": runner.now(), "status": "waiting on the usage limit",
+                                   "error": str(res.get("error"))[:300]})
+            print(f"  usage limit: waiting {runner.LIMIT_POLL // 60} min", flush=True)
+            time.sleep(runner.LIMIT_POLL)
+            continue
+        tries += 1
+        if res.get("transient") and tries <= 2:
+            time.sleep(runner.TRANSIENT_WAITS[tries - 1])
+            continue
+        return res
+
+
 def place(text: str, spans: list[dict]) -> tuple[list[tuple[int, int, str]], int]:
     """Find each span in the block, in order (whitespace-insensitive). Returns the placed (start, end, lang) and the
     number not found."""
@@ -199,7 +251,7 @@ def detect(unit_list: list[str], *, model: str = D2_MODEL, words_per_packet: int
         user = "Mark the foreign stretches of these blocks.\n\n" + json.dumps({"blocks": send}, ensure_ascii=False)
         meta = {"role": "detector2", "ids": [b["id"] for b in pk], "model": model, "prompt": D2_PROMPT,
                 "input_hash": packets.input_hash({"blocks": send}, D2_PROMPT, model, 0)}
-        res = runner.call_claude(model, sys_prompt, user, D2_SCHEMA)
+        res = _call(model, sys_prompt, user, D2_SCHEMA, meta)
         status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
         runner.append(LEDGER, {**meta, "ts": runner.now(), "status": status,
                                **{x: res.get(x) for x in ("seconds", "cost_usd_list", "usage", "error")}})
@@ -222,7 +274,8 @@ def detect(unit_list: list[str], *, model: str = D2_MODEL, words_per_packet: int
     for b in todo:
         pk.append(b)
         n += len(words(b["text"]))
-        if n >= words_per_packet and not flush():
+        # many short blocks (Burton's Table) in one packet: the model drops some, so cap the count too
+        if (n >= words_per_packet or len(pk) >= 60) and not flush():
             break
     else:
         flush()
@@ -297,7 +350,7 @@ def judge(unit_list: list[str], *, model: str = JUDGE_MODEL, packet_size: int = 
         user = "Judge these stretches.\n\n" + json.dumps({"items": send}, ensure_ascii=False, indent=1)
         meta = {"role": "judge", "ids": [i["id"] for i in pk], "model": model, "prompt": JUDGE_PROMPT,
                 "input_hash": packets.input_hash({"items": send}, JUDGE_PROMPT, model, 0)}
-        res = runner.call_claude(model, sys_prompt, user, JUDGE_SCHEMA)
+        res = _call(model, sys_prompt, user, JUDGE_SCHEMA, meta)
         status = "done" if res["ok"] else ("deferred" if res.get("limit") else "failed")
         runner.append(LEDGER, {**meta, "ts": runner.now(), "status": status,
                                **{x: res.get(x) for x in ("seconds", "cost_usd_list", "usage", "error")}})
@@ -319,6 +372,65 @@ def judge(unit_list: list[str], *, model: str = JUDGE_MODEL, packet_size: int = 
         if budget is not None and spent >= budget:
             break
     return {"stretches": len(todo), "calls": calls, "cost_usd_list": round(spent, 2)}
+
+
+# ---- the rulings layer, and a snapshot of the edition before they are applied
+
+SNAPSHOT = DIR / "snapshot.jsonl"
+
+
+def snapshot(unit_list: list[str]) -> dict:
+    """The comparison as it stands before any ruling is applied (the estimate is measured against it). Written once:
+    it is refused if one exists, so a later run cannot overwrite the 'before'."""
+    if SNAPSHOT.exists():
+        raise SystemExit(f"{SNAPSHOT} exists: the edition before the rulings is already recorded")
+    cmp = compare(unit_list)
+    rows = [{"id": c["id"], "unit": c["unit"], "text": c["text"], "words": c["words"], "t1": c["t1"], "t2": c["t2"]}
+            for c in cmp]
+    atomic_write_text(SNAPSHOT, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+    return {"blocks": len(rows), "words": sum(len(r["words"]) for r in rows)}
+
+
+def read_snapshot() -> list[dict]:
+    return [json.loads(x) for x in SNAPSHOT.read_text(encoding="utf-8").splitlines()]
+
+
+def rulings() -> dict:
+    """data/layers/langid-census.json: the judge's answers on the disagreements, located by block text."""
+    from ..ingest import census_apply
+
+    judged = _read(JUDGE_OUT)
+    snap = read_snapshot()
+    nth: dict[tuple, int] = {}
+    pos: dict[str, tuple] = {}
+    for c in snap:  # occurrence of the same block text within its unit, in document order
+        k = (c["unit"], census_apply.sha(c["text"]))
+        pos[c["id"]] = (k[1], nth.get(k, 0))
+        nth[k] = nth.get(k, 0) + 1
+    by_id = {c["id"]: c for c in snap}
+    current = {s["id"] for c in snap for which in ("1", "2") for s in stretches(c, which)}
+    layer, kinds = {}, {"1": 0, "2": 0}
+    for i, r in judged.items():
+        if r["kind"] not in ("1", "2") or i not in current:
+            continue  # judged against another comparison: not a ruling on this one
+        first, last = (int(x) for x in i.rsplit(":", 1)[1].split("-"))
+        c = by_id[r["block"]]
+        if last >= len(c["words"]) or c["text"][c["words"][first][0]:c["words"][last][1]] != r["text"]:
+            continue  # judged against another comparison (stale): not a ruling on this one
+        foreign = bool(r["foreign_part"])
+        if (r["kind"] == "2" and not foreign) or (r["kind"] == "1" and foreign and
+                                                    all(_judged_words(r, last - first + 1))):
+            continue  # the judge sides with the edition: nothing to change
+        sha_, n = pos[r["block"]]
+        layer[i] = {"unit": r["unit"], "block": r["block"], "block_sha": sha_, "nth": n, "kind": r["kind"],
+                    "first": first, "last": last, "text": r["text"], "foreign_part": r["foreign_part"],
+                    "lang": r["lang"], "confidence": r["confidence"], "reason": r["reason"], "by": "machine",
+                    "model": r["model"], "prompt": r["prompt"], "date": r["date"], "id": i}
+        kinds[r["kind"]] += 1
+    census_apply.LAYER.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write_text(census_apply.LAYER, json.dumps(layer, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
+    return {"rulings": len(layer), "tag": kinds["2"], "narrow": kinds["1"],
+            "low (not applied)": sum(1 for v in layer.values() if v["confidence"] == "low")}
 
 
 # ---- the estimate
@@ -395,6 +507,102 @@ def estimate(rows: list[dict]) -> dict:
             "edition_now": {"precision": round(1 - (t["both"] * (1 - p_both) + t["only1"] - t["only1_true"]) /
                                                (t["both"] + t["only1"]), 4) if t["both"] + t["only1"] else None,
                             "recall": round(n1 / (found + missed), 4) if found + missed else None}}
+
+
+def _now_rows(snap: list[dict], judged: dict) -> list[dict]:
+    """Per block, counts for the edition as it stands now, against the truth recorded before the rulings: the judge's
+    words where the detectors disagreed, the agreed sample's rate where they agreed, capture-recapture where neither
+    tagged. A doubtful word counts against the edition; a word tagged now that neither detector tagged is counted
+    wrong (it has no ruling)."""
+    cur = {}
+    for u in sorted({c["unit"] for c in snap}):
+        for b in blocks(u):
+            cur[b["id"]] = b
+    rows = []
+    for c in snap:
+        b = cur.get(c["id"])
+        r = {"tagged": 0, "tagged_dis_true": 0, "tagged_dis_wrong": 0, "tagged_both": 0, "tagged_none": 0,
+             "dis_true": 0, "unsure_untagged": 0, "both": 0, "both_judged": 0, "both_true": 0, "only1_true": 0,
+             "only2_true": 0, "changed": 0}
+        if b is None or b["text"] != c["text"]:
+            r["changed"] = 1
+            rows.append(r)
+            continue
+        now = [b["mask"][s:e].count(1) * 2 > e - s for s, e in c["words"]]
+        truth: list = [None] * len(c["words"])
+        cc = {**c, "t1": c["t1"], "t2": c["t2"]}
+        for which in ("1", "2", "both"):
+            for s in stretches(cc, which):
+                rec = judged.get(s["id"])
+                n = s["last"] - s["first"] + 1
+                if which == "both":
+                    r["both"] += n
+                    if rec and rec["text"] == s["text"]:
+                        r["both_judged"] += n
+                        r["both_true"] += sum(1 for t in _judged_words(rec, n) if t is not False)
+                    for k in range(s["first"], s["last"] + 1):
+                        truth[k] = "both"
+                    continue
+                t = _judged_words(rec, n) if rec and rec["text"] == s["text"] else [None] * n
+                for k, v in zip(range(s["first"], s["last"] + 1), t, strict=False):
+                    truth[k] = v
+                    if v:
+                        r["only1_true" if which == "1" else "only2_true"] += 1
+        for k, tag in enumerate(now):
+            v = truth[k]
+            if v is True:
+                r["dis_true"] += 1
+            if tag:
+                r["tagged"] += 1
+                if v == "both":
+                    r["tagged_both"] += 1
+                elif v is True:
+                    r["tagged_dis_true"] += 1
+                elif v is None and not (c["t1"][k] or c["t2"][k]):
+                    r["tagged_none"] += 1
+                else:
+                    r["tagged_dis_wrong"] += 1
+            elif v is None and (c["t1"][k] or c["t2"][k]):
+                r["unsure_untagged"] += 1
+        rows.append(r)
+    return rows
+
+
+def _now_estimate(rows: list[dict]) -> dict:
+    t = {k: sum(r[k] for r in rows) for k in rows[0]}
+    if not t["both_judged"] or not t["tagged"]:
+        return {"totals": t}
+    p = t["both_true"] / t["both_judged"]
+    m = t["both"] * p
+    n1, n2 = m + t["only1_true"], m + t["only2_true"]
+    missed_both = max(0.0, (n1 + 1) * (n2 + 1) / (m + 1) - 1 - (n1 + n2 - m))
+    right = t["tagged_dis_true"] + t["tagged_both"] * p
+    foreign = t["dis_true"] + t["both"] * p + t["unsure_untagged"] + missed_both
+    return {"totals": t, "p_agreed": round(p, 4), "missed_by_both": round(missed_both, 1),
+            "precision": round(right / t["tagged"], 4), "recall": round(right / foreign, 4) if foreign else None}
+
+
+def final_report(resamples: int = 2000) -> dict:
+    """V5's gate (CENSUS.md): the edition as it stands now, with 90% bootstrap lower bounds over blocks."""
+    snap = read_snapshot()
+    rows = _now_rows(snap, _read(JUDGE_OUT))
+    est = _now_estimate(rows)
+    rng = random.Random(AGREED_SEED)
+    ps, rs = [], []
+    for _ in range(resamples):
+        e = _now_estimate([rows[rng.randrange(len(rows))] for _ in rows])
+        if e.get("precision") is not None:
+            ps.append(e["precision"])
+            rs.append(e["recall"])
+    ps.sort()
+    rs.sort()
+    lo = int(0.05 * len(ps))
+    est.update({"precision_90_lower": ps[lo] if ps else None, "recall_90_lower": rs[lo] if rs else None,
+                "blocks": len(rows), "words": sum(len(c["words"]) for c in snap),
+                "blocks_changed_since": est["totals"]["changed"],
+                "passes": bool(ps and rs and ps[lo] >= 0.98 and rs[lo] >= 0.97)})
+    atomic_write_text(DIR / "report.json", json.dumps(est, indent=1, sort_keys=True) + "\n")
+    return est
 
 
 def report(unit_list: list[str], resamples: int = 2000) -> dict:

@@ -237,6 +237,24 @@ def v5_langid(units: list[str]) -> Result:
     r.problems = ([f"held-out {gold.GATE}: " + m for m in held["misses"]]
                   + [f"seen {s['sample']}: " + m for s in seen for m in s["misses"]]
                   + ["tuning: " + m for m in tune["misses"]])
+    # D13 (2026-11-20): on a whole-book run the gate is the census (data/eval/CENSUS.md), once its snapshot exists;
+    # the held-out rounds are reported as a regression check and no longer gate.
+    from ..layers import census
+
+    if (units is None or len(units) > 100) and census.SNAPSHOT.exists():
+        r.name = "language-ID by census (D13); held-out rounds reported"
+        est = census.final_report()
+        r.counts.update({"census_words": est["words"], "census_precision": est.get("precision"),
+                         "census_recall": est.get("recall"), "census_precision_90_lower": est["precision_90_lower"],
+                         "census_recall_90_lower": est["recall_90_lower"],
+                         "census_missed_by_both": est.get("missed_by_both"),
+                         "census_blocks_changed_since": est["blocks_changed_since"]})
+        r.ok = est["passes"] and not est["blocks_changed_since"]
+        if est["blocks_changed_since"]:
+            r.problems.insert(0, f"census: {est['blocks_changed_since']} block(s) changed since the snapshot")
+        if not est["passes"]:
+            r.problems.insert(0, "census below target: 90% lower bounds of word precision >= 0.98, recall >= 0.97")
+        return r
     # Only the newest hold-out round was never seen while the rules changed, so only it can show that
     # they meet the targets. The tuning sample and earlier rounds are reported, never gated on.
     if units is None or len(units) > 100:  # whole-book run: the gate round must exist and be labelled

@@ -1173,6 +1173,9 @@ def run(div, unit: str, stats, *, gowland_unit: bool = False) -> list[dict]:
     tag_roman_runs(div, decisions, unit)
     join_roman_prepositions(div, decisions, unit)
     tag_before_unattached_brackets(div, decisions, unit)
+    from . import census_apply  # V5 by census (D13): the judge's rulings, a labelled machine layer
+
+    census_apply.apply(div, decisions, unit)
     finalize_lang(div)
     correct_languages(div, unit, stats)
     for d in decisions:

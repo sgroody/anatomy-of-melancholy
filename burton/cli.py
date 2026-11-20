@@ -146,6 +146,9 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--judge", action="store_true", help="judge the disagreements and the agreed sample (opus)")
     s.add_argument("--agreed-n", type=int, default=None, help="size of the agreed sample (default 300)")
     s.add_argument("--report", action="store_true", help="the estimate, with 90%% bootstrap bounds")
+    s.add_argument("--snapshot", action="store_true", help="record the edition before the rulings (once)")
+    s.add_argument("--rulings", action="store_true", help="write data/layers/langid-census.json from the judge")
+    s.add_argument("--final", action="store_true", help="V5's gate: the edition now -> state/census/report.json")
     s.add_argument("--budget-usd", type=float, default=None)
 
     s = sub.add_parser("gold-audit", help="D7: blind second rater on the language-ID gold labels")
@@ -431,8 +434,16 @@ def main(argv: list[str] | None = None) -> int:
         from .layers import census
 
         us = census.units() if args.all else args.unit
-        if not us:
+        if not us and not (args.rulings or args.final):
             raise SystemExit("name --unit U (repeatable) or --all")
+        if args.snapshot:
+            print(census.snapshot(us))
+        if args.rulings:
+            print(census.rulings())
+        if args.final:
+            import json as _json
+
+            print(_json.dumps(census.final_report(), indent=1))
         if args.detect:
             print(census.detect(us, budget=args.budget_usd))
         if args.judge:
