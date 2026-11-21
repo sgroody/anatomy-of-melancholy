@@ -58,18 +58,6 @@ if ((settings.v || 1) < 2) { settings.nRestored = false; settings.v = 2; }
   if (v === "A") delete html.dataset.uid;
   else html.dataset.uid = v;
 })();
-// the front page's key in six forms to compare (front_key.html): ?fkey=B … ?fkey=F, remembered; ?fkey=A back
-// (owner, 2026-11-21: "extensive A/B test options of the key")
-(() => {
-  let v = new URLSearchParams(location.search).get("fkey");
-  try {
-    if (v) localStorage.setItem("burton-fkey", v.toUpperCase());
-    else v = localStorage.getItem("burton-fkey");
-  } catch { /* private window: this page only */ }
-  v = (v || "A").toUpperCase();
-  if (v === "A") delete html.dataset.fkey;
-  else html.dataset.fkey = v;
-})();
 
 // round 8, F1: the front matter's contents as A (the default), or B or D to compare on the real pages; ?fm=B or ?fm=D
 // is remembered from page to page, ?fm=A goes back (owner, 2026-11-19: "I want to see how A, B and D look")
@@ -1104,11 +1092,48 @@ document.addEventListener("keydown", openName);
 // pointed at stays when the pointer leaves the engraving, old Democritus's to begin with (owner, 2026-11-21)
 const stanzaBox = document.querySelector(".front-stanza");
 if (stanzaBox) {
-  const show = (st) => stanzaBox.querySelectorAll(".fs-st").forEach((d) => { d.hidden = d.dataset.st !== st; });
+  // the hint beside the first stanza goes once the reader has pointed at a panel, and stays gone (owner, 2026-11-21)
+  const hint = stanzaBox.querySelector(".fs-hint");
+  const HINT = "burton-hint-seen";
+  try { if (hint && localStorage.getItem(HINT)) hint.hidden = true; } catch { /* private window */ }
+  const show = (st) => {
+    stanzaBox.querySelectorAll(".fs-st").forEach((d) => { d.hidden = d.dataset.st !== st; });
+    if (hint && !hint.hidden) {
+      hint.hidden = true;
+      try { localStorage.setItem(HINT, "1"); } catch { /* private window */ }
+    }
+  };
   for (const a of document.querySelectorAll(".front .fs-panel")) {
     a.addEventListener("mouseenter", () => show(a.dataset.st));
     a.addEventListener("focus", () => show(a.dataset.st));
   }
+  // a stanza's margin items and the words they hang on light each other, as in the reader; a tap or click holds the
+  // pair lit until the next (owner, 2026-11-21)
+  const pair = (el) => {
+    const id = el.classList.contains("fs-anc") ? el.dataset.for : el.id;
+    return [stanzaBox.querySelector(`.fs-anc[data-for="${CSS.escape(id)}"]`), document.getElementById(id)].filter(Boolean);
+  };
+  let held = null;
+  for (const el of stanzaBox.querySelectorAll(".fs-anc, .fs-mn")) {
+    el.addEventListener("mouseenter", () => pair(el).forEach((x) => x.classList.add("hot")));
+    el.addEventListener("mouseleave", () => pair(el).forEach((x) => { if (!held?.includes(x)) x.classList.remove("hot"); }));
+    el.addEventListener("click", (ev) => {
+      if (ev.target.closest("a[href]")) return;  // a link in a note keeps its own work
+      const p = pair(el);
+      const same = held && held[0] === p[0];
+      held?.forEach((x) => x.classList.remove("hot", "pinned"));
+      held = same ? null : p;
+      held?.forEach((x) => x.classList.add("hot", "pinned"));
+    });
+  }
+}
+// The engraving's title panel (and only it) magnified while the pointer rests on it, within the engraving's own
+// bounds, until the pointer leaves the engraving (owner, 2026-11-21)
+const frontMap = document.querySelector(".front .fs-map");
+const titleZone = frontMap?.querySelector(".fs-title");
+if (frontMap && titleZone) {
+  titleZone.addEventListener("mouseenter", () => frontMap.classList.add("fs-zoomed"));
+  frontMap.addEventListener("mouseleave", () => frontMap.classList.remove("fs-zoomed"));
 }
 // the front page's contents start folded (owner, 2026-11-20); a link to a place in them opens them
 const frontContents = document.querySelector(".front-contents");

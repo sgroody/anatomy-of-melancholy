@@ -1,67 +1,53 @@
-{# The key to the signs in the front page's word to a new reader, in six forms to compare on the real page (owner,
-   2026-11-21: "rework and give extensive A/B test options of the key"). ?fkey=B … ?fkey=F shows one and is remembered;
-   ?fkey=A goes back. The forms differ in how much they show before the reader asks:
-   A  folded list, two columns                    D  folded diagram of a page, numbered
-   B  a strip of signs with a word each, open     E  no key: the signs stand in the copy beside what they mark
-   C  the signs alone, each explained on pointing F  folded, in two columns: in the line / in the margin
-   No machine's sign here: the front page shows none (owner, 2026-11-21). #}
-{% set trans_who %}{% if profile == "private" %}Gowland’s, {% endif %}Dell &amp; Jordan-Smith’s (1927) or a model’s{% endset %}
-{% set items = [
-  ("lang", '<i class="fi-la">Latin</i> <span class="fi-grc">Greek</span>', "languages", "his Latin and Greek, each in its own colour", "line"),
-  ("cite", '<span class="fi-k fi-cite">§</span>', "citation", "one of his citations in the line, written out", "line"),
-  ("name", '<span class="fi-ul">Name</span>', "who?", "a person he names: point at it to see who", "line"),
-  ("note", '<span class="fi-box">a</span>', "his note", "Burton’s own note, beside its line", "margin"),
-  ("trans", '<span class="fi-k">trans.</span>', "English", "a translation: " ~ trans_who, "margin"),
-  ("dm", '<span class="fi-dm">°</span>', "restored", "a note of his restored from an older edition (off unless chosen)", "margin"),
-] %}
+{# The key to the signs in the front page's word to a new reader (owner, 2026-11-21, from round 9's forms): B, each
+   sign with a word, always open; then D, a drawn page that opens, each sign labelled where it stands. No machine's
+   sign here: the front page shows none (owner, 2026-11-21). #}
 <div class="fi-keys fi-more">
-  {# A: folded, a list in two columns #}
-  <details class="fk fk-A fi-key">
-    <summary>Key</summary>
-    <ul class="fk-list">{% for k, sign, short, long, where in items %}
-      <li><span class="fk-sg">{{ sign|safe }}</span> {{ long|safe }}</li>{% endfor %}
-    </ul>
-  </details>
-  {# B: open, a strip: each sign with one word #}
-  <p class="fk fk-B fk-strip"><span class="fk-lab">Key</span>{% for k, sign, short, long, where in items %}
-    <span class="fk-it" title="{{ long|striptags }}">{{ sign|safe }} <span class="fk-w">{{ short }}</span></span>{% endfor %}</p>
-  {# C: the signs alone; pointing at one (or focusing it) explains it #}
-  <p class="fk fk-C fk-signs"><span class="fk-lab">Key</span>{% for k, sign, short, long, where in items %}
-    <span class="fk-s" tabindex="0" data-t="{{ long|striptags }}" aria-label="{{ (sign|striptags) }}: {{ long|striptags }}">{{ sign|safe }}</span>{% endfor %}</p>
-  {# D: folded, a diagram of a page with numbered signs, and their legend #}
-  <details class="fk fk-D fi-key">
+  <p class="fk-strip"><span class="fk-lab">Key</span>
+    <span class="fk-it"><i class="fi-la">Latin</i> <span class="fi-grc">Greek</span> <span class="fk-w">languages</span></span>
+    <span class="fk-it"><span class="fi-cite">§</span> <span class="fk-w">citation</span></span>
+    <span class="fk-it"><span class="fi-ul">Name</span> <span class="fk-w">Identification</span></span>
+    <span class="fk-it"><span class="fk-rule"><span class="fi-box">a</span></span> <span class="fk-w">Author’s Note</span></span>
+    <span class="fk-it">{% if profile == "private" %}<span class="fi-k fi-expl">note</span>|{% endif %}<span class="fi-k fi-gloss">gloss</span> <span class="fk-w">Explanatory Notes</span></span>
+  </p>
+  <details class="fi-key fk-page-d">
     <summary>How a page looks</summary>
-    <div class="fk-page" aria-hidden="true">
-      <div class="fk-text">
-        <span class="fk-l"><b></b><i class="fi-la">Latin</i><sup class="fk-n">1</sup><b></b></span>
-        <span class="fk-l"><b></b><span class="fk-ref">a</span><sup class="fk-n">4</sup><b class="fk-short"></b><span class="fi-cite">§</span><sup class="fk-n">2</sup><b></b></span>
-        <span class="fk-l"><b class="fk-short"></b><span class="fi-ul">Name</span><sup class="fk-n">3</sup><b></b></span>
-        <span class="fk-l"><b></b></span>
-      </div>
-      <div class="fk-marg">
-        <span class="fk-mn fk-mn-b"><span class="fi-box">a</span><b></b></span>
-        <span class="fk-mn fk-mn-t"><span class="fi-k">trans.</span><sup class="fk-n">5</sup><b></b></span>
-      </div>
-    </div>
-    <ol class="fk-legend">{% for k, sign, short, long, where in items[:5] %}
-      <li>{{ long|safe }}</li>{% endfor %}
-    </ol>
-  </details>
-  {# F: folded, two columns: what is in the line, what is in the margin #}
-  <details class="fk fk-F fi-key">
-    <summary>Key</summary>
-    <div class="fk-two">{% for where, head in (("line", "In the line"), ("margin", "In the margin")) %}
-      <div><p class="fk-h">{{ head }}</p><ul class="fk-list">{% for k, sign, short, long, w in items if w == where %}
-        <li><span class="fk-sg">{{ sign|safe }}</span> {{ long|safe }}</li>{% endfor %}</ul></div>{% endfor %}
-    </div>
+    {# a page drawn: grey lines of text and, in their places, the signs; each labelled, a thin line to it #}
+    <svg class="fk-svg" viewBox="0 0 560 236" role="img" aria-labelledby="fk-svg-t">
+      <title id="fk-svg-t">A page of this reader drawn: Burton’s Latin in colour in the line, the letter of his note raised after a word, a citation written out (§), a name to point at; in the margin his note with its red rule, an English translation and an explanatory note.</title>
+      <rect class="d-page" x="4" y="34" width="552" height="164" rx="3"/>
+      <g class="d-ln">
+        <rect x="18" y="52" width="352" height="5"/>
+        <rect x="18" y="76" width="96" height="5"/><rect x="166" y="76" width="70" height="5"/><rect x="252" y="76" width="118" height="5"/>
+        <rect x="18" y="100" width="352" height="5"/>
+        <rect x="18" y="124" width="36" height="5"/><rect x="70" y="124" width="140" height="5"/><rect x="262" y="124" width="108" height="5"/>
+        <rect x="18" y="148" width="352" height="5"/>
+        <rect x="18" y="172" width="250" height="5"/>
+        <rect x="416" y="70" width="128" height="4"/><rect x="398" y="82" width="146" height="4"/><rect x="398" y="94" width="110" height="4"/>
+        <rect x="446" y="118" width="98" height="4"/><rect x="412" y="130" width="132" height="4"/>
+        <rect x="446" y="160" width="98" height="4"/><rect x="398" y="172" width="120" height="4"/>
+      </g>
+      <text class="d-la" x="117" y="82">Latin</text>
+      <text class="d-ref" x="238" y="74">a</text>
+      <text class="d-cite" x="57" y="131">§</text>
+      <text class="d-name" x="214" y="130">Name</text><rect class="d-ul" x="214" y="133" width="44" height="1"/>
+      <rect class="d-rule" x="390" y="62" width="2" height="38"/>
+      <rect class="d-box" x="398" y="63" width="13" height="13" rx="2"/><text class="d-boxt" x="404.5" y="73.5">a</text>
+      <rect class="d-dot" x="402" y="110" width="1" height="26"/>
+      <text class="d-k" x="410" y="122">trans.</text>
+      <text class="d-k d-gloss" x="398" y="164">gloss</text>
+      <g class="d-lead">
+        <path d="M140 70V24"/><path d="M243 64V24"/><path d="M391 60V24"/>
+        <path d="M60 136V218"/><path d="M236 138V218"/><path d="M405 138V203"/><path d="M520 178V219"/>
+      </g>
+      <g class="d-lab">
+        <text x="140" y="18" class="d-mid">Latin &amp; Greek, in colour</text>
+        <text x="236" y="18">his note’s letter</text>
+        <text x="386" y="18">Author’s Note, red rule</text>
+        <text x="54" y="230">§ citation, written out</text>
+        <text x="230" y="230">a name: point to identify</text>
+        <text x="400" y="214">English translation</text>
+        <text x="556" y="230" class="d-end">Explanatory Note</text>
+      </g>
+    </svg>
   </details>
 </div>
-{# E: the signs in the copy itself, beside what they mark (this paragraph stands for The Reader under E) #}
-<p class="fi-part fi-more fk fk-E"><span class="fi-h" role="heading" aria-level="3">The Reader</span> This edition is
-  built on Angus Gowland’s text (2021), which follows the sixth edition of 1651. It gives translations
-  <span class="fk-in"><span class="fi-k">trans.</span></span> of the Latin <span class="fk-in"><i class="fi-la">Latin</i></span>
-  and Greek <span class="fk-in"><span class="fi-grc">Greek</span></span>, spells out Burton’s citations
-  <span class="fk-in"><span class="fi-cite">§</span></span>, identifies the people and books he names
-  <span class="fk-in"><span class="fi-ul">Name</span></span>, and sets the thousands of notes
-  <span class="fk-in"><span class="fi-box">a</span></span> in the margin beside the passages they explain. Anything a
-  machine produced is marked as such.</p>

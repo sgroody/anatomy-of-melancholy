@@ -36,10 +36,11 @@
   --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
   color-scheme: dark;
 }
-/* type size setting: scales everything, since sizes are in rem/em */
-:root[data-size="s"] { font-size: 90%; }
-:root[data-size="l"] { font-size: 112.5%; }
-:root[data-size="xl"] { font-size: 125%; }
+/* type size setting: scales everything, since sizes are in rem/em; not the front page, a title page that keeps to one
+   screen (owner, 2026-11-21: "no scroll bars"), its type sized by the window instead (.front-side) */
+:root[data-size="s"]:not(:has(body.page-home)) { font-size: 90%; }
+:root[data-size="l"]:not(:has(body.page-home)) { font-size: 112.5%; }
+:root[data-size="xl"]:not(:has(body.page-home)) { font-size: 125%; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -765,10 +766,20 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .front { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: none;
   min-height: 100vh; box-sizing: border-box; padding: 1rem 0; }
 .front .front-eng { position: sticky; top: 1rem; margin: 0; }
-.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem - 2.6em); width: auto; max-width: 100%; }
+.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem); width: auto; max-width: 100%; }
+/* the title panel magnified within the engraving while the pointer rests on it (owner, 2026-11-21) */
+.fs-title { position: absolute; z-index: 1; cursor: zoom-in; }
+.front .fs-map { overflow: hidden; vertical-align: top; } /* no baseline gap under it: the page is one screen, no scroll bar */
+.front .front-eng { line-height: 0; }
+.front .fs-map img { transform-origin: var(--zx, 50%) var(--zy, 50%); }
+@media (prefers-reduced-motion: no-preference) { .front .fs-map img { transition: transform 0.35s ease; } }
+.front .fs-map.fs-zoomed img { transform: translate(calc(50% - var(--zx)), calc(50% - var(--zy))) scale(var(--zs)); }
+.front .fs-map.fs-zoomed :is(.fs-panel, .fs-title) { visibility: hidden; }
 /* the side: the title across; below it the way in (and a panel's stanza) beside the word to a new reader; then the
    synopses and contents, their rules as long as the way in; the informational pages at the foot (owner, 2026-11-20) */
-.front-side { --fcol: 22.7em; container: front-side / inline-size; display: flex; flex-direction: column; padding-top: 0.4rem; max-width: 76rem;
+/* its type no larger than the window's height allows, so the front page is one screen at any type size: a title page,
+   taken in at once (owner, 2026-11-21: "no scroll bars ... until one opens synopses/contents") */
+.front-side { font-size: min(1em, 2.2vh); --fcol: 22.7em; container: front-side / inline-size; display: flex; flex-direction: column; padding-top: 0.4rem; max-width: 76rem;
   min-height: calc(100vh - 2rem); box-sizing: border-box; }
 @media (min-width: 1100px) and (hover: hover) { .front-side { padding-right: 2.4rem; } } /* clear of the ❧ at the window's edge */
 .front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.5rem; text-align: left; font-variant-caps: normal; }
@@ -798,12 +809,22 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
   border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 0.2rem 0.6rem; letter-spacing: 0.06em; }
 .enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
 /* the panels' stanzas under the way in (owner, 2026-11-21), stacked in one cell: the space is as tall as the longest,
-   so the synopses below never move as one stanza gives way to another */
+   so the synopses below never move as one stanza gives way to another; beside each, its margin items (Gowland's
+   glosses, private build), and beside the first the hint, until a panel has been pointed at */
 .front-stanza { display: grid; margin: 0 0 1rem; font-size: 0.84em; }
-.front-stanza > .fs-st { grid-area: 1 / 1; }
-.front-stanza > .fs-st[hidden] { display: block; visibility: hidden; }
+.front-stanza > .fs-st { grid-area: 1 / 1; display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 1.4rem;
+  align-items: start; }
+.front-stanza > .fs-st[hidden] { display: grid; visibility: hidden; }
 .fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
 .fs-st-l { font-style: italic; margin: 0; line-height: 1.36; }
+.fs-st-side { padding-top: 1.55em; min-width: 0; }
+.fs-hint { margin: 0; color: var(--muted); line-height: 1.4; border-left: 1px solid var(--rule); padding-left: 0.6rem; }
+.front-stanza .fs-mn { display: block; font-size: 0.92em; margin: 0 0 0.45rem; padding: 0.05rem 0.4rem; cursor: pointer;
+  border-left: 2px solid transparent; border-radius: 2px; }
+.front-stanza .fs-anc { text-decoration: underline dotted color-mix(in srgb, var(--k-gloss) 60%, transparent);
+  text-underline-offset: 0.2em; cursor: pointer; border-radius: 2px; }
+.front-stanza .hot { background: var(--hot); }
+.front-stanza .fs-mn.pinned { border-left-color: var(--k-gloss); }
 /* the word to a new reader: what the book is and what this reader gives, a key that opens, and the signs, named */
 /* its text no larger than 18px whatever the type size, so the box keeps beside the way in on one screen (owner,
    2026-11-21: at the largest sizes it ran off the bottom) */
@@ -820,54 +841,38 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .fi-grc { color: var(--grc); }
 .fi-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
 .fi-dm { color: var(--muted); font-size: 1.15em; line-height: 1; }
-.fi-keys .fi-cite, .fk-in .fi-cite { font-size: 1.1em; }
+.fi-keys .fi-cite { font-size: 1.1em; }
 .fi-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; background: var(--accent); color: var(--paper);
   border-radius: 2px; line-height: 1.25; font-size: 0.8em; font-style: normal; text-align: center; }
-/* the key in six forms to compare (front_key.html; edition.js: ?fkey=A…F, owner 2026-11-21); A unless chosen */
-.fk { display: none; }
-:root:not([data-fkey]) .fk-A, [data-fkey="A"] .fk-A, [data-fkey="B"] .fk-B, [data-fkey="C"] .fk-C, [data-fkey="D"] .fk-D,
-[data-fkey="F"] .fk-F { display: block; }
-[data-fkey="E"] .fi-reader { display: none; }
-[data-fkey="E"] .fi-part.fk-E { display: block; }
+/* the key (front_key.html; owner, 2026-11-21: round 9's B, then D drawn): each sign with a word, open; a drawn page */
 .fi-keys { margin-top: 0.45rem; }
 .fi-key > summary { cursor: pointer; width: fit-content; font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); }
 .fk-lab { font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); margin-right: 0.6em; }
-.fk-list { list-style: none; margin: 0.15rem 0 0; padding: 0; display: grid; column-gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
-.fk-list li { display: grid; grid-template-columns: 5.2em minmax(0, 1fr); column-gap: 0.35em; margin: 0.08rem 0; }
-.fk-sg { white-space: nowrap; }
-/* B: a strip */
 .fk-strip { margin: 0; line-height: 1.7; }
 .fk-it { white-space: nowrap; margin-right: 0.85em; }
 .fk-w { color: var(--muted); font-size: 0.92em; }
-/* C: the signs alone, each explained in a small window above it on pointing or focus */
-.fk-signs { margin: 0; line-height: 1.8; }
-.fk-s { position: relative; display: inline-block; margin-right: 0.7em; padding: 0 0.15em; border-radius: 3px; cursor: help; }
-.fk-s:hover, .fk-s:focus-visible { background: color-mix(in srgb, var(--accent) 10%, transparent); outline: none; }
-.fk-s::after { content: attr(data-t); position: absolute; left: 50%; bottom: calc(100% + 0.35rem); translate: -50% 0; z-index: 5;
-  width: max-content; max-width: 16rem; padding: 0.3rem 0.55rem; font-size: 0.92em; font-style: normal; line-height: 1.35;
-  color: var(--ink); background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow);
-  opacity: 0; pointer-events: none; transition: opacity .15s; text-decoration: none; }
-.fk-s:hover::after, .fk-s:focus-visible::after { opacity: 1; }
-/* D: a diagram of a page: grey lines of text, the signs in their places, numbered; the margin beside */
-.fk-page { display: grid; grid-template-columns: minmax(0, 1fr) 34%; gap: 0.9rem; margin: 0.35rem 0 0.3rem; padding: 0.5rem 0.7rem;
-  border: 1px solid var(--rule); border-radius: 3px; background: var(--paper); font-size: 0.95em; line-height: 1.6; }
-.fk-text, .fk-marg { display: flex; flex-direction: column; }
-.fk-l, .fk-mn { display: flex; align-items: center; gap: 0.35em; white-space: nowrap; }
-.fk-page b { flex: 1 1 auto; height: 0.32em; border-radius: 1px; background: color-mix(in srgb, var(--ink) 16%, transparent); }
-.fk-page b.fk-short { flex: 0 0 18%; }
-.fk-ref { font-size: 0.8em; vertical-align: 0.45em; color: var(--accent); font-weight: 600; }
-.fk-n { font-size: 0.7em; color: var(--accent); font-variant-numeric: lining-nums; margin-left: -0.15em; }
-.fk-mn-b { border-left: 2px solid var(--accent); padding-left: 0.3rem; }
-.fk-mn-t { margin-left: 0.5rem; border-left: 1px dotted var(--rule); padding-left: 0.3rem; }
-.fk-legend { margin: 0; padding-left: 1.3rem; columns: 2 12rem; column-gap: 1.2rem; }
-.fk-legend li { break-inside: avoid; }
-/* E: in the copy */
-.fk-in { font-size: 0.9em; margin: 0 0.05em; }
-/* F: in the line / in the margin */
-.fk-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); column-gap: 1.2rem; margin-top: 0.1rem; }
-.fk-two .fk-list { display: block; margin: 0; }
-.fk-h { margin: 0; font-size: 0.92em; font-style: italic; color: var(--muted); }
+.fk-rule { border-left: 2px solid var(--accent); padding-left: 0.3em; }
+.fi-expl { color: var(--k-expl); } .fi-gloss { color: var(--k-gloss); }
+.fk-page-d { position: relative; margin-top: 0.15rem; }
+/* the drawn page opens over the box, large enough to read, so the page does not grow (owner, 2026-11-21: no scroll bars) */
+.fk-svg { display: block; position: absolute; z-index: 6; bottom: 1.7em; right: -1.2rem; width: min(38rem, calc(100vw - 2rem));
+  height: auto; padding: 0.4rem 0.6rem; box-sizing: border-box; background: var(--pop-bg); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); font-size: 12px; }
+.fk-svg .d-page { fill: var(--paper); stroke: var(--rule); }
+.fk-svg .d-ln rect { fill: color-mix(in srgb, var(--ink) 16%, transparent); }
+.fk-svg .d-la { fill: var(--la); font-style: italic; font-size: 14px; }
+.fk-svg .d-ref { fill: var(--accent); font-size: 10px; font-weight: 600; }
+.fk-svg .d-cite { fill: var(--k-cite); font-size: 14px; }
+.fk-svg .d-name { fill: var(--ink); font-size: 14px; }
+.fk-svg .d-ul { fill: var(--muted); }
+.fk-svg .d-rule, .fk-svg .d-box { fill: var(--accent); }
+.fk-svg .d-boxt { fill: var(--paper); font-size: 10px; text-anchor: middle; }
+.fk-svg .d-dot { fill: var(--muted); }
+.fk-svg .d-k { fill: var(--muted); font-size: 11px; font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
+.fk-svg .d-gloss { fill: var(--k-gloss); }
+.fk-svg .d-lead path { fill: none; stroke: var(--muted); stroke-width: 0.7; stroke-dasharray: 2 2; }
+.fk-svg .d-lab text { fill: var(--muted); font-size: 12px; font-style: italic; }
+.fk-svg .d-lab .d-mid { text-anchor: middle; } .fk-svg .d-lab .d-end { text-anchor: end; }
 /* the signs and the informational pages on one line (owner, 2026-11-21) */
 .front-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.7rem; margin: 0.6rem -0.4rem 0;
   padding-top: 0.45rem; border-top: 1px solid var(--rule); }

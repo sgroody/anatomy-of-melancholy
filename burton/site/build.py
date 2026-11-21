@@ -396,8 +396,15 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     front_map = stanzas = None
     if "argument" in book.pages:
         # no caption and no machine's sign on the front page (owner, 2026-11-21); the Argument page carries the label
-        front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=None))
-        stanzas = Markup(frontispiece.stanzas_html())
+        front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=None,
+                                                       zoom_title=True))
+        # beside each stanza its margin items as the Argument page has them; beside the first, the hint, which goes
+        # once the reader has pointed at a panel (owner, 2026-11-21)
+        arg = book.pages["argument"]
+        hint = (f'<p class="fs-hint">Select a panel to the left to read the associated stanza from '
+                f'<a href="{attr(arg.href)}">{esc(arg.title)}</a>.</p>')
+        stanzas = Markup(frontispiece.stanzas_html(frontispiece.glosses_from(pages.get("argument/index.html", "")),
+                                                   hint))
     # the three synopses on the front page, folded so the page fits one screen; resting on a Partition's name opens
     # it onto its sheets (owner, 2026-11-19: rubric numerals, "&c.")
     shown = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
