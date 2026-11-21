@@ -624,6 +624,18 @@ class Renderer:
     def has_translation(self, fid: str) -> bool:
         return fid in self.layer or fid in self.gowland
 
+    def burton_renders(self, fid: str) -> bool:
+        """Burton gives the whole passage in English himself (the selftrans signals find his full rendering, and it is
+        preferred or Gowland judged it enough): the edition then shows no translation of its own, in the margin,
+        facing, on hover or beneath (owner, 2026-11-20: "a poem Burton himself provides a translation for
+        immediately"). Where Gowland translated it all the same, his version stays, his judgment that Burton's was
+        not enough (private build). A partial rendering keeps its completion. The layer keeps its translations; they
+        are only not shown."""
+        rec = self.layer.get(fid)
+        st = (rec or {}).get("self_translation") or {}
+        return bool(rec and st.get("status") == "full" and st.get("burton_span")
+                    and (rec.get("preferred") == "burton" or self.decided.get(fid) == "own"))
+
     def tr_markup(self, fid: str, block: bool, lang: str | None) -> str:
         rec = self.layer.get(fid)
         tag = "div" if block else "span"
@@ -638,6 +650,18 @@ class Renderer:
                 f'<span class="ft-from-short">{esc(abbr)}</span></span>')
         st = (rec or {}).get("self_translation") or {"status": "none"}
         burton = ""
+        if self.burton_renders(fid) and fid in self.gowland:  # Gowland translated it all the same: his alone
+            self.counts["own_gowland_kept"] = self.counts.get("own_gowland_kept", 0) + 1
+            vs = [v for v in vs if v["by"] == "gowland"]
+        elif self.burton_renders(fid):
+            # his English and nothing beside it; a block's rendering is set out in full near it, so it is only named
+            self.counts["own_edition_tr_hidden"] = self.counts.get("own_edition_tr_hidden", 0) + 1
+            if block:
+                return (f'<{tag} class="ft ft-own" id="tr-{attr(fid)}" role="note" lang="en">{head}'
+                        f'<span class="ft-label">Burton gives it in English himself</span></{tag}>')
+            return (f'<{tag} class="ft ft-own" id="tr-{attr(fid)}" role="note" lang="en">{head}'
+                    f'<span class="ft-burton-own"><span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
+                    f'<span class="ft-label">Burton’s own rendering</span></span></{tag}>')
         if rec and rec["preferred"] == "burton" and st.get("burton_span"):
             # placeholder: filled in after mark_burton_spans, so the quote is not matched twice
             burton = (f'<span class="ft-burton-own"><span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
@@ -827,6 +851,8 @@ class Renderer:
             n = len(list(e.iter(T("l")))) if e.tag == T("lg") else len(list(e.iter(T("p"))))
             return (src["rows"], {"by": "gowland", "text": ""}) if len(src["rows"]) == n else None
         n = len(list(e.iter(T("l"))))
+        if self.burton_renders(fid):  # his own English stands for it: nothing set facing (owner, 2026-11-20)
+            return None
         if self.in_note or n < FACING_MIN or e.tag != T("lg") or not (vs := self.versions(fid)):
             return None
         v, lines = vs[0], vs[0]["text"].split(" / ")
