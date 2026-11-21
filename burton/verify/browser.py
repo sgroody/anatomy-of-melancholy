@@ -377,7 +377,8 @@ def layout_check(profile: str = "private") -> Result:
         # word joiner after each marker, 62 markers in these pages part from their word
         for mode in ("gloss", "interlinear", "english"):
             for width in (360, 480, 760, 1280):
-                ctx, pg = new_page(b, width=width, settings={"mode": mode})
+                # the restored notes switched on (off by default since 2026-11-20), so their markers are tested too
+                ctx, pg = new_page(b, width=width, settings={"mode": mode, "nRestored": True, "v": 2})
                 for u in units:
                     pg.goto(base + f"{u}/", wait_until="load")
                     pg.evaluate("document.fonts.ready")

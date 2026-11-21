@@ -22,6 +22,11 @@
      signs and the light/dark switch on the right #}
   <div class="bar">
     <div class="bar-l">
+      {# the page's number, as A beside the contents, or B in the window's corner in the form of Burton's heads
+         (owner, 2026-11-20: "in the top left corner somehow", to compare: ?uid=B) #}
+      {% if page and page.kind == "unit" and key and key[0].isdigit() %}{% set parts = key.split(".") %}
+      <a class="uid" href="#main" title="Partition {{ parts[0] }}{% for n in parts[1:] %}, {{ ["Section", "Member", "Subsection"][loop.index0] }} {{ n }}{% endfor %}"><span class="uid-a">{{ key }}</span><span class="uid-b">{% for n in parts %}<span class="uid-s">{{ ["Part.", "Sect.", "Memb.", "Subs."][loop.index0] }} {{ n }}.</span>{% if not loop.last %} {% endif %}{% endfor %}</span></a>
+      {% endif %}
       {% if toc %}
       <details class="toc-panel">
         <summary>Contents</summary>

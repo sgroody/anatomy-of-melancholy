@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Front-page key A/B round 9</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; }
+:root { --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf; --accent: #8a2f1d; --panel: #efe9dc; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --panel: #24211d; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "EBG", Georgia, serif; font-size: 1.1rem; line-height: 1.5; }
+.wrap { max-width: 1700px; margin: 0 auto; padding: 1.5rem 16px 5rem; }
+h1 { font-weight: 400; margin: 0 0 0.3rem; } .intro { color: var(--muted); max-width: 60rem; margin: 0 0 0.8rem; }
+.bar { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: center; margin: 0 0 1.2rem; font-size: 0.95rem; }
+.bar button, .pick button { font: inherit; font-size: 0.92rem; background: var(--panel); color: var(--ink); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 0.2rem 0.75rem; cursor: pointer; }
+.bar button[aria-pressed="true"], .pick button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 33rem), 1fr)); gap: 1.4rem; }
+.opt { border: 1px solid var(--rule); border-radius: 6px; padding: 0.8rem 0.9rem 0.8rem; }
+.opt.chosen { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ol { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 0.2rem; } .ol b { color: var(--accent); font-size: 1.15em; }
+.what { margin: 0 0 0.6rem; font-size: 0.95rem; }
+/* a window onto the real front page (1600 x 900), at its own size, cropped to the box; or the whole page, scaled */
+.frame { position: relative; overflow: hidden; border: 1px solid var(--rule); border-radius: 3px; width: 100%; height: 600px; }
+.frame iframe { position: absolute; border: 0; width: 1600px; height: 900px; left: -1043px; top: -229px; }
+body.whole .frame { height: auto; aspect-ratio: 16 / 9; }
+body.whole .frame iframe { left: 0; top: 0; transform-origin: 0 0; transform: scale(var(--s, 0.33)); }
+.pick { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.6rem; }
+.summary { position: sticky; bottom: 0; background: var(--paper); border-top: 1px solid var(--rule); padding: 0.6rem 0; margin-top: 1.4rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.summary textarea { font: inherit; font-size: 0.95rem; flex: 1 1 24rem; min-height: 2.4rem; background: transparent; color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.3rem 0.5rem; }
+.summary button { font: inherit; font-size: 0.92rem; background: var(--accent); color: var(--paper); border: 0; border-radius: 4px; padding: 0.3rem 0.9rem; cursor: pointer; }
+code { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Front-page key: six forms</h1>
+<p class="intro">Each window is the real front page from your running edition (<code>localhost:8765</code>, the “View the edition”
+window), at 1600 × 900, showing the box at its own size. Click inside a window to use it: open its key, point at the signs
+(form C explains each on pointing). “Whole page” shows each page entire, scaled down. Pick one, add a note if you like, and
+copy the result back to me. If a window is blank, start the edition (double-click <i>View the edition.cmd</i>) and reload.</p>
+<div class="bar">
+  <span>Show:</span>
+  <button type="button" data-view="box" aria-pressed="true">The box, actual size</button>
+  <button type="button" data-view="whole" aria-pressed="false">Whole page</button>
+</div>
+<div class="grid" id="grid"></div>
+<div class="summary">
+  <span id="sum">No form picked yet.</span>
+  <textarea id="note" placeholder="A note (optional): what to change in the one you pick"></textarea>
+  <button type="button" id="copy">Copy my choice</button>
+</div>
+</div>
+<script>
+const FORMS = [
+  ["A", "Folded list, two columns", "“Key” opens a list: each sign, then what it means. One line until opened."],
+  ["B", "A strip, always open", "Each sign with one word beside it (“§ citation”, “Name who?”). One or two lines, nothing to open."],
+  ["C", "The signs alone", "A row of the signs; pointing at one, or tabbing to it, explains it in a small window. One line."],
+  ["D", "How a page looks", "Opens a numbered diagram of a page (grey lines of text, the signs where they stand, the margin beside) with a legend."],
+  ["E", "No key: signs in the copy", "Each sign stands in “The Reader” beside what it marks; your words unchanged. Takes no extra room."],
+  ["F", "Folded, line and margin", "“Key” opens two columns: what you meet in the line, what you meet in the margin."],
+];
+const grid = document.getElementById("grid");
+let chosen = null;
+for (const [k, name, what] of FORMS) {
+  const d = document.createElement("section");
+  d.className = "opt"; d.dataset.k = k;
+  d.innerHTML = `<p class="ol"><b>${k}</b> &nbsp;${name}</p><p class="what">${what}</p>
+    <div class="frame"><iframe loading="lazy" title="Front page, key form ${k}" src="http://localhost:8765/?fkey=${k}"></iframe></div>
+    <div class="pick"><button type="button" aria-pressed="false">Pick ${k}</button></div>`;
+  d.querySelector(".pick button").addEventListener("click", () => {
+    chosen = k;
+    for (const o of grid.children) {
+      o.classList.toggle("chosen", o.dataset.k === k);
+      o.querySelector(".pick button").setAttribute("aria-pressed", String(o.dataset.k === k));
+    }
+    document.getElementById("sum").textContent = `Front-page key: ${k} (${name}).`;
+  });
+  grid.append(d);
+}
+const fit = () => { for (const f of document.querySelectorAll(".frame")) f.style.setProperty("--s", f.clientWidth / 1600); };
+for (const b of document.querySelectorAll("[data-view]")) b.addEventListener("click", () => {
+  document.body.classList.toggle("whole", b.dataset.view === "whole");
+  for (const x of document.querySelectorAll("[data-view]")) x.setAttribute("aria-pressed", String(x === b));
+  fit();
+});
+addEventListener("resize", fit);
+document.getElementById("copy").addEventListener("click", async () => {
+  const note = document.getElementById("note").value.trim();
+  const text = (chosen ? `Front-page key: ${chosen}.` : "Front-page key: none picked.") + (note ? ` Note: ${note}` : "");
+  try { await navigator.clipboard.writeText(text); document.getElementById("copy").textContent = "Copied"; }
+  catch { prompt("Copy this:", text); }
+});
+</script>
+</body>
+</html>

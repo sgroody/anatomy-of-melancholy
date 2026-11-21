@@ -11,9 +11,10 @@ const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin o
 const isWide = () => wide.matches && !body.classList.contains("facing-on");
 const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false,
   latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a", // the colour of the Latin (round 5, F2)
-  textonly: false, // what to show (owner, 2026-11-18)
-  // the margin's notes, each source on or off (owner, 2026-11-20); nCites off puts Burton's own citations back in the line
-  nBurton: true, nRestored: true, nGowland: true, nTrans: true, nCites: true, nKjv: true };
+  textonly: false, // the text as printed, with Burton's own notes only (owner, 2026-11-18; his notes kept 2026-11-20)
+  // the margin's notes, each source on or off (owner, 2026-11-20); nCites off puts Burton's own citations back in the line;
+  // the notes restored from Democritus Minor's edition start off (owner, 2026-11-20)
+  nBurton: true, nRestored: false, nGowland: true, nTrans: true, nCites: true, nKjv: true, v: 2 };
 const NOTE_SOURCES = { nBurton: "burton", nRestored: "restored", nGowland: "gowland", nTrans: "trans", nCites: "cites",
   nKjv: "kjv" };
 // Translation sources, first shown first (SPEC §6.3). Gowland's exist in the private build only, and
@@ -42,6 +43,33 @@ const settings = Object.assign({}, DEFAULTS, load());
 if (settings.hideic) settings.nCites = false;
 if (settings.onlygw) Object.assign(settings, { nBurton: false, nRestored: false, nTrans: false, nCites: false, nKjv: false });
 delete settings.hideic; delete settings.onlygw;
+// settings saved before v2 stored the old default for the restored notes (on); the new default stands once
+if ((settings.v || 1) < 2) { settings.nRestored = false; settings.v = 2; }
+
+// the page's number in the top left corner: A beside the contents in the running head (the default), B in the window's
+// corner as Burton's own heads print it, following the reader down; ?uid=B to compare, ?uid=A back (owner, 2026-11-20)
+(() => {
+  let v = new URLSearchParams(location.search).get("uid");
+  try {
+    if (v) localStorage.setItem("burton-uid", v.toUpperCase());
+    else v = localStorage.getItem("burton-uid");
+  } catch { /* private window: this page only */ }
+  v = (v || "A").toUpperCase();
+  if (v === "A") delete html.dataset.uid;
+  else html.dataset.uid = v;
+})();
+// the front page's key in six forms to compare (front_key.html): ?fkey=B … ?fkey=F, remembered; ?fkey=A back
+// (owner, 2026-11-21: "extensive A/B test options of the key")
+(() => {
+  let v = new URLSearchParams(location.search).get("fkey");
+  try {
+    if (v) localStorage.setItem("burton-fkey", v.toUpperCase());
+    else v = localStorage.getItem("burton-fkey");
+  } catch { /* private window: this page only */ }
+  v = (v || "A").toUpperCase();
+  if (v === "A") delete html.dataset.fkey;
+  else html.dataset.fkey = v;
+})();
 
 // round 8, F1: the front matter's contents as A (the default), or B or D to compare on the real pages; ?fm=B or ?fm=D
 // is remembered from page to page, ?fm=A goes back (owner, 2026-11-19: "I want to see how A, B and D look")
@@ -75,6 +103,7 @@ function apply() {
   body.classList.toggle("show-glosses", !bare && !!settings.glosses);
   for (const [k, cls] of Object.entries(NOTE_SOURCES)) body.classList.toggle(`no-${cls}`, !bare && !settings[k]);
   body.classList.toggle("text-only", !!settings.textonly);
+  document.querySelectorAll(".print-toggle").forEach((b) => b.setAttribute("aria-pressed", String(bare)));
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
   scheduleLayout();
@@ -131,6 +160,13 @@ document.querySelector(".theme-toggle")?.addEventListener("click", () => {
   syncInputs();
   apply();
 });
+// beside it, the text as printed: Burton's words and his own notes, nothing the edition adds (owner, 2026-11-20)
+document.querySelector(".print-toggle")?.addEventListener("click", () => {
+  settings.textonly = !settings.textonly;
+  save(settings);
+  syncInputs();
+  apply();
+});
 
 // the search box opens in the running head; Enter goes to the results (owner, 2026-11-18)
 const hsearch = document.querySelector(".hsearch");
@@ -163,6 +199,11 @@ if (panel && toggle) {
   panel.addEventListener("keydown", (ev) => {
     if (ev.key === "Escape") { ev.stopPropagation(); setPanel(false, true); }
   });
+  // the wheel over the open options scrolls the options, never the page behind them (owner, 2026-11-20); the CSS's
+  // overscroll-behavior stops the page at the panel's ends, this stops it where the panel has nothing to scroll
+  panel.addEventListener("wheel", (ev) => {
+    if (panel.scrollHeight <= panel.clientHeight + 1) ev.preventDefault();
+  }, { passive: false });
 }
 
 // The search, options and light/dark signs follow the reader down the page once the running head has scrolled away
@@ -320,7 +361,8 @@ function layoutNotes() {
   // With translations in the line (stage 7), their margin cards are not shown and take no room.
   const inLine = body.classList.contains("mode-english");
   // and what the reader chose not to see takes no room either (owner, 2026-11-18)
-  const shown = (n) => !body.classList.contains("text-only") &&
+  // as printed, Burton's own notes and nothing else (owner, 2026-11-20)
+  const shown = (n) => body.classList.contains("text-only") ? noteSource(n) === "burton" :
     !body.classList.contains(`no-${noteSource(n)}`) &&
     !(n.classList.contains("mn-gl") && !body.classList.contains("show-glosses"));
   const all = markers.map((m) => [m, noteOf(m)])
@@ -782,21 +824,26 @@ if (synSheets.length) {
     for (const n of [rest.li, ...rest.li.querySelectorAll(".syn-filling")]) unfill(n);
     rest = null;
   };
-  const step = (li, first) => {
+  // on the front page every brace after the first (a Partition's sheets, once its name has opened, and the layers
+  // inside) takes three times as long as the first, so a passing pointer opens the Partition without spilling its
+  // sheets (owner, 2026-11-20: twice; 2026-11-21: three times, and for every later brace)
+  const stepMs = (li, k) => k === 0 ? T_OPEN : li.closest(".syn-front") ? 3 * T_OPEN : T_LAYER;
+  const step = (li, k) => {
     const shut = li.classList.contains("syn-shut");
     if (!shut && !nextLayer(li).length) return;  // nothing more to open
-    fill(li, first ? T_OPEN : T_LAYER);
+    const ms = stepMs(li, k);
+    fill(li, ms);
     later(() => {
       unfill(li);
       if (li.classList.contains("syn-shut")) open(li);
       else { for (const n of nextLayer(li)) { setShut(n, false); fix(n); } settle(li.closest(".syn-sheet")); }
-      later(() => step(li, false), T_PAUSE);
-    }, first ? T_OPEN : T_LAYER);
+      later(() => step(li, k + 1), T_PAUSE);
+    }, ms);
   };
   const startRest = (li, x, y) => {
     stopRest();
     rest = { li, timers: [], x, y };
-    step(li, true);
+    step(li, 0);
   };
   const HEADS = ".syn-sheet .syn-part > .syn-nb > .syn-hd, .syn-sheet .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd";
   const triggerOf = (el) => {
@@ -1053,7 +1100,8 @@ document.addEventListener("click", openName);
 document.addEventListener("keydown", openName);
 
 // ---------------------------------------------------------------- the front page (stage 4)
-// Pointing at a panel of the engraving shows its stanza beside it (owner, 2026-11-03: T14, R4 B).
+// Pointing at a panel of the engraving shows its stanza under the way in (owner, 2026-11-03: T14, R4 B); the last one
+// pointed at stays when the pointer leaves the engraving, old Democritus's to begin with (owner, 2026-11-21)
 const stanzaBox = document.querySelector(".front-stanza");
 if (stanzaBox) {
   const show = (st) => stanzaBox.querySelectorAll(".fs-st").forEach((d) => { d.hidden = d.dataset.st !== st; });
@@ -1061,10 +1109,6 @@ if (stanzaBox) {
     a.addEventListener("mouseenter", () => show(a.dataset.st));
     a.addEventListener("focus", () => show(a.dataset.st));
   }
-  // the stanza stands in the about box only while the reader is on the engraving (2026-11-20)
-  const eng = document.querySelector(".front .front-eng");
-  eng?.addEventListener("mouseleave", () => show(""));
-  eng?.addEventListener("focusout", (ev) => { if (!eng.contains(ev.relatedTarget)) show(""); });
 }
 // the front page's contents start folded (owner, 2026-11-20); a link to a place in them opens them
 const frontContents = document.querySelector(".front-contents");

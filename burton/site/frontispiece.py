@@ -39,10 +39,13 @@ def label() -> str:
     return f"Panels outlined from the engraving by machine ({p['model']}, {p['date']}), {p['status'].replace('-', ' ')}"
 
 
-def figure_html(src: str, alt: str, w: int, h: int, argument_href: str, *, here: bool, caption: str = "") -> str:
+def figure_html(src: str, alt: str, w: int, h: int, argument_href: str, *, here: bool,
+                caption: str | None = "") -> str:
     """The engraving with one link per panel. `argument_href` is the Argument page ("" when this is
     it). `here` gives each panel an id, so a stanza can link back to it. `caption` (HTML) opens the
-    figure's caption."""
+    figure's caption, with the machine's label for the panels' outlines; None leaves the caption out (the front page:
+    owner, 2026-11-21, "no diamond at all on the front page, it's clutter"; the label stands on the Argument page,
+    where the panels lead, and in About)."""
     data = load()
     nums = stanza_numbers()
     W, H = data["size"]
@@ -61,14 +64,15 @@ def figure_html(src: str, alt: str, w: int, h: int, argument_href: str, *, here:
         links.append(f'<a class="fs-panel"{pid} href="{attr(argument_href)}#{attr(st)}" data-st="{attr(st)}" '
                      f'style="{style}" '
                      f'aria-label="{attr(name)}"><span class="fs-n" aria-hidden="true">{pn["n"]}</span></a>')
+    cap = "" if caption is None else f'<figcaption class="fs-label">{caption} {prov(label())}</figcaption>'
     return (f'<div class="fs-map"><img src="{attr(src)}" alt="{attr(alt)}" width="{w}" height="{h}" '
-            f'decoding="async">{"".join(links)}</div>'
-            f'<figcaption class="fs-label">{caption} {prov(label())}</figcaption>')
+            f'decoding="async">{"".join(links)}</div>{cap}')
 
 
 def stanzas_html() -> str:
     """Each described stanza of the Argument, Burton's lines as the base text has them, for the front page: one
-    shows at a time beside the engraving, as the reader points at a panel (owner, 2026-11-03: T14, R4 B)."""
+    shows at a time under the way in, as the reader points at a panel (owner, 2026-11-03: T14, R4 B), the first
+    (Democritus Abderites, old Democritus under his tree) shown to begin with (owner, 2026-11-21)."""
     root = etree.parse(str(paths.TEXT / "argument.xml")).getroot()
     names = {pn["stanza"]: [] for pn in load()["panels"]}
     for pn in load()["panels"]:
@@ -81,8 +85,10 @@ def stanzas_html() -> str:
         lines = [esc(" ".join(public_text(ln).split())) for ln in lg.iter(T("l"))]
         if lines:  # the stanza number Burton prints, said by the heading instead
             lines[0] = re.sub(r"^\d+(?: \d+)* ", "", lines[0])
-        out.append(f'<div class="fs-st" data-st="{attr(sid)}" hidden><p class="fs-st-h">{esc(" and ".join(names[sid]))}'
-                   f'</p><p class="fs-st-l">{"<br>".join(lines)}</p></div>')
+        hidden = " hidden" if out else ""
+        out.append(f'<div class="fs-st" data-st="{attr(sid)}"{hidden}><p class="fs-st-h">'
+                   f'{esc(" and ".join(names[sid]))}</p>'
+                   f'<p class="fs-st-l">{"<br>".join(lines)}</p></div>')
     return "".join(out)
 
 

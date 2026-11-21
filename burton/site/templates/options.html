@@ -1,5 +1,66 @@
-<div class="opt-key" aria-label="Key to the colours and signs">
-  <p class="ok-h">Key</p>
+{# the reading options, packed in columns (owner, 2026-11-20: "lots of wasted space … be more economical"); the key to
+   the colours and signs folded at the end #}
+<fieldset class="opt-notes">
+  <legend>Notes in the margin</legend>
+  {# each source's notes on or off (owner, 2026-11-20: "include marginal notes from x, y, z, each togglable") #}
+  <label><input type="checkbox" name="nBurton"> Burton’s notes</label>
+  {% if profile == "private" %}<label><input type="checkbox" name="nGowland"> Gowland’s notes</label>{% endif %}
+  <label><input type="checkbox" name="nTrans"> Translations</label>
+  <label><input type="checkbox" name="nCites"> His citations in the line, written out (§)</label>
+  <label><input type="checkbox" name="nKjv"> Bible verses (King James)</label>
+  <label><input type="checkbox" name="glosses"> Obsolete words glossed</label>
+  {# off by default since 2026-11-20, so near the foot of the list (owner, 2026-11-21) #}
+  <label><input type="checkbox" name="nRestored"> His notes restored from Democritus Minor (°)</label>
+  <label class="opt-bare"><input type="checkbox" name="textonly"> As printed: his text and his own notes only</label>
+</fieldset>
+<fieldset>
+  <legend>Latin and other languages</legend>
+  <label><input type="radio" name="mode" value="gloss" checked> Translation in the margin</label>
+  <label><input type="radio" name="mode" value="interlinear"> Translation beneath</label>
+  <label><input type="radio" name="mode" value="english"> Translation in place (original on hover)</label>
+</fieldset>
+<fieldset>
+  <legend>Translation first</legend>
+  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland’s{% else %}A human one{% endif %}</label>
+  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Dell &amp; Jordan-Smith’s</label>{% endif %}
+  <label><input type="radio" name="order" value="machine"> The machine’s</label>
+</fieldset>
+<fieldset>
+  <legend>Citations in his notes</legend>
+  <label><input type="checkbox" name="cites"> As he abbreviated them</label>
+</fieldset>
+<fieldset class="opt-row">
+  <legend>Colour of the Latin</legend>
+  <label><input type="radio" name="latin" value="oxblood" checked> Oxblood</label>
+  <label><input type="radio" name="latin" value="green"> Green</label>
+  <label><input type="radio" name="latin" value="plain"> Ink</label>
+  <label><input type="radio" name="latin" value="custom"> My own:</label>
+  <span class="la-custom"><label>day <input type="color" name="laLight" value="#7a2230"></label> <label>night <input type="color" name="laDark" value="#e0c27a"></label></span>
+</fieldset>
+<fieldset class="opt-row">
+  <legend>Theme</legend>
+  <label><input type="radio" name="theme" value="auto" checked> System</label>
+  <label><input type="radio" name="theme" value="light"> Light</label>
+  <label><input type="radio" name="theme" value="dark"> Dark</label>
+</fieldset>
+<fieldset class="opt-row">
+  <legend>Type size</legend>
+  <label><input type="radio" name="size" value="s"> S</label>
+  <label><input type="radio" name="size" value="m" checked> M</label>
+  <label><input type="radio" name="size" value="l"> L</label>
+  <label><input type="radio" name="size" value="xl"> XL</label>
+</fieldset>
+{% if profile == "private" %}
+<fieldset>
+  <legend>Gowland’s edition (2021)</legend>
+  <label><input type="checkbox" name="gowland"> His bracketed translations in the line</label>
+  <label><input type="checkbox" name="pages"> Penguin page numbers</label>
+</fieldset>
+{% endif %}
+<details class="opt-key">
+  <summary>Key to the colours and signs</summary>
+  {# the groups side by side (owner, 2026-11-21: "multiple columns rather than all one") #}
+  <div class="ok-cols">
   <div class="ok-g"><p class="ok-t">Languages</p>
   <ul class="ok-l">
     <li><span class="ok-sw" style="background:var(--la)"></span><i style="color:var(--la)">Latin</i></li>
@@ -29,63 +90,9 @@
     <li><span class="mn-src"><span class="src-m">w</span></span> Webster’s dictionary (1913)</li>
     <li><span class="mn-src"><span class="src-m">kjv</span></span> the King James Bible</li>
     <li><span class="mn-src"><span class="src-m">dm</span></span> Democritus Minor’s edition (19th century)</li>
-    <li><span class="prov"></span> a model: point at it to see which</li>
+    {% if key != "home" %}<li><span class="prov"></span> a model: point at it to see which</li>{% endif %}
   </ul></div>
-</div>
-<fieldset class="opt-notes">
-  <legend>Notes in the margin</legend>
-  {# each source's notes on or off (owner, 2026-11-20: "include marginal notes from x, y, z, each togglable") #}
-  <label><input type="checkbox" name="nBurton"> Burton’s notes</label>
-  <label><input type="checkbox" name="nRestored"> His notes restored from Democritus Minor’s edition (°)</label>
-  {% if profile == "private" %}<label><input type="checkbox" name="nGowland"> Gowland’s notes</label>{% endif %}
-  <label><input type="checkbox" name="nTrans"> Translations</label>
-  <label><input type="checkbox" name="nCites"> Citations in his text, written out (§); otherwise as he printed them, in the line</label>
-  <label><input type="checkbox" name="nKjv"> Bible verses (King James)</label>
-  <label><input type="checkbox" name="glosses"> Obsolete words glossed (w or ◇){% if profile == "private" %}; Gowland’s glosses come with his notes{% endif %}</label>
-  <label class="opt-bare"><input type="checkbox" name="textonly"> None: the text as printed</label>
-</fieldset>
-<fieldset>
-  <legend>Latin and other languages</legend>
-  <label><input type="radio" name="mode" value="gloss" checked> Original; translation in the margin</label>
-  <label><input type="radio" name="mode" value="interlinear"> Translation beneath the original</label>
-  <label><input type="radio" name="mode" value="english"> Translation in place of the original (original on hover)</label>
-</fieldset>
-<fieldset>
-  <legend>Translation first</legend>
-  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland’s{% else %}A human translation{% endif %}</label>
-  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Dell &amp; Jordan-Smith’s</label>{% endif %}
-  <label><input type="radio" name="order" value="machine"> The machine translation</label>
-</fieldset>
-<fieldset>
-  <legend>Citations in his notes</legend>
-  <label><input type="checkbox" name="cites"> As he abbreviated them (“Scalig. exercit. 365”), not written out</label>
-</fieldset>
-<fieldset>
-  <legend>Colour of the Latin</legend>
-  <label><input type="radio" name="latin" value="oxblood" checked> Oxblood; candle-gold at night</label>
-  <label><input type="radio" name="latin" value="green"> Green; sea-green at night</label>
-  <label><input type="radio" name="latin" value="plain"> Ink, like the text</label>
-  <label><input type="radio" name="latin" value="custom"> My own colours:</label>
-  <span class="la-custom"><label>day <input type="color" name="laLight" value="#7a2230"></label> <label>night <input type="color" name="laDark" value="#e0c27a"></label></span>
-</fieldset>
-<fieldset>
-  <legend>Theme</legend>
-  <label><input type="radio" name="theme" value="auto" checked> Follow the system</label>
-  <label><input type="radio" name="theme" value="light"> Light</label>
-  <label><input type="radio" name="theme" value="dark"> Dark</label>
-</fieldset>
-<fieldset>
-  <legend>Type size</legend>
-  <label><input type="radio" name="size" value="s"> Smaller</label>
-  <label><input type="radio" name="size" value="m" checked> Normal</label>
-  <label><input type="radio" name="size" value="l"> Larger</label>
-  <label><input type="radio" name="size" value="xl"> Largest</label>
-</fieldset>
-{% if profile == "private" %}
-<fieldset>
-  <legend>Gowland’s edition (2021)</legend>
-  <label><input type="checkbox" name="gowland"> His bracketed translations in the line</label>
-  <label><input type="checkbox" name="pages"> Penguin page numbers</label>
-</fieldset>
-{% endif %}
-{{ opt_sample }}
+  </div>
+</details>
+{# the example passage on the pages of the book; the front page shows no machine's sign (owner, 2026-11-21) #}
+{% if key != "home" %}{{ opt_sample }}{% endif %}

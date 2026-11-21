@@ -30,7 +30,7 @@ Read `SPEC.md` for the design, `PLAN.md` for the current milestone, and `SURVEY.
   * `identified` requires `verified: true`, which only the source verifier sets.
   * `probable` requires a stated `basis`, and the UI must say "probably".
   * Burton's own attribution in a sidenote is recorded as `burton-cites`. It is not proof, because Burton misquotes and mis-cites.
-* **Every machine-produced item is labelled** in the data (`by: machine`, `model`, `prompt` version, `date`) and in the UI (a visible ◇ whose tooltip and accessible name give the model, prompt and date; owner, 2026-11-03/04: the icon alone, not the model's name in the line). This covers translations, source guesses, citation expansions, author entries, glosses and cross-reference proposals. Templates read the label from the data and never hard-code it.
+* **Every machine-produced item is labelled** in the data (`by: machine`, `model`, `prompt` version, `date`) and in the UI (a visible ◇ whose tooltip and accessible name give the model, prompt and date; owner, 2026-11-03/04: the icon alone, not the model's name in the line). This covers translations, source guesses, citation expansions, author entries, glosses and cross-reference proposals. Templates read the label from the data and never hard-code it. One exception (owner, 2026-11-21: "no diamond at all on the front page, it's clutter"): the front page shows no ◇; the machine-drawn panel outlines of its engraving are labelled on the Argument page and in About.
 * **Prefer public-domain human translation.**
   * Dell & Jordan-Smith (1927) is public domain in the USA. Record it alongside the machine version.
   * Show it by default per the preference order in SPEC §6.3, unless [D1] restricts it.

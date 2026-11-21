@@ -395,9 +395,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     front = images.get("pg003.png", "")
     front_map = stanzas = None
     if "argument" in book.pages:
-        arg = book.pages["argument"]
-        cap = f'The engraved title page of 1628; <a href="{attr(arg.href)}">{esc(arg.title)}</a> describes its panels'
-        front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=cap))
+        # no caption and no machine's sign on the front page (owner, 2026-11-21); the Argument page carries the label
+        front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=None))
         stanzas = Markup(frontispiece.stanzas_html())
     # the three synopses on the front page, folded so the page fits one screen; resting on a Partition's name opens
     # it onto its sheets (owner, 2026-11-19: rubric numerals, "&c.")
@@ -406,12 +405,6 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     synopses = {"sheet": Markup(synopsis.front_html([(p.key, p.title, synopsis.load(p.key)) for p in have], "", shown)),
                 "pages": [{"n": synopsis.ROMAN.get(p.key, p.key), "href": f"{p.key}/synopsis/"} for p in have]
                 } if have else None
-    pages["index.html"] = jenv.get_template("home.html").render(
-        root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
-        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
-        argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
-        synopses=synopses, title="The Anatomy of Melancholy",
-        description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
     page("about", "about/index.html", "about.html", page=book.pages["about"], crumbs=[("About", None)],
          title="About", description="How to read this edition, where each part comes from, and its rights",
@@ -467,6 +460,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             return m.group(2)
         pages[rel] = dead.sub(keep, pages[rel])
     report["authors"]["links_without_page_unwrapped"] = unwrapped
+    pages["index.html"] = jenv.get_template("home.html").render(
+        root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
+        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
+        argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
+        synopses=synopses, title="The Anatomy of Melancholy",
+        description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
     # fonts: subset to exactly what the pages and the stylesheet show
     css_src = (HERE / "static" / "edition.css").read_text(encoding="utf-8")

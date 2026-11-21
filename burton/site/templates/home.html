@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block main %}
-{# The front page (owner, 2026-11-03: T13 A, R4 B; 2026-11-20: "in one page", without the running head or the foot):
-   the engraved title page held large beside the way in; a short word about the edition, with the search, options and
-   light/dark signs, where a panel's stanza shows while the reader points at it; the synopses and the contents folded. #}
+{# The front page (owner, 2026-11-03: T13 A, R4 B; 2026-11-20: "in one page", without the running head or the foot;
+   2026-11-20/21: a box for the reader who has never seen the book, with the signs in it; the informational pages at
+   the foot; the rules of the synopses and contents as long as the way in):
+   the engraved title page held large beside the way in; under the way in, the stanza of the panel last pointed at
+   (old Democritus under his tree to begin with), in a space as tall as the longest, so nothing below it moves; then
+   the synopses and the contents, folded; beside them, what the book is and what this reader gives, a key, the signs. #}
 <div class="home-page front">
   {% set src, alt, w, h = frontispiece %}
   <figure class="frontispiece front-eng">
@@ -12,16 +15,38 @@
     <h1 class="front-title"><span class="ft-1">The Anatomy of</span> <span class="ft-2">Melancholy,</span></h1>
     <p class="front-what">What it is. With all the Kinds, Causes, Symptoms, Prognostics, and several Cures of it.</p>
     <p class="front-by">By Democritus Junior.</p>
-    {% if dedication %}
-    <div class="front-door">
-      <p class="front-enter"><a class="enter" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a></p>
-      {% if stanzas %}<p class="fs-hint">Point at a panel of the engraving to read its stanza{% if argument %} from <a href="{{ argument.href }}">{{ argument.title }}</a>{% endif %}.</p>{% endif %}
-    </div>
-    {% endif %}
-    <div class="front-box">
-      <section class="front-about" aria-label="About this edition">
-        {# the about page in brief (owner, 2026-11-20: "a very short version, that can fit in the blank space") #}
-        <p>Burton’s sixth edition (1651), in the text Angus Gowland edited (Penguin, 2021). Beside Burton’s words stand English for his Latin and Greek, his citations written out, and {% if profile == "private" %}notes from Gowland and from an older edition{% else %}his notes from an older edition{% endif %}; each says where it comes from, and <span class="prov-sign" aria-hidden="true">◇</span><span class="sr-only">a diamond</span> marks a machine’s work.</p>
+    {# a grid: the way in and the stanza top left; the word to a new reader beside them, spanning down (its height
+       taken by the last, flexible row, so it never pushes the synopses down); the synopses and contents under the
+       stanza. Once a brace inside a Partition opens, the box shortens to the top row and the synopses take the width
+       to the right of the engraving (owner, 2026-11-21) #}
+    <div class="front-row">
+      <div class="front-left">
+        {% if dedication %}
+        <div class="front-door">
+          <p class="front-enter"><a class="enter" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a></p>
+        </div>
+        {% endif %}
+        {# the panels' stanzas from the Argument (owner, 2026-11-21: under the way in, above the synopses; the last
+           pointed at stays; Democritus Abderites first) #}
+        {% if stanzas %}<div class="front-stanza" aria-live="polite"{% if argument %} aria-label="From {{ argument.title }}"{% endif %}>{{ stanzas }}</div>{% endif %}
+      </div>
+      {# the word to a new reader (owner, 2026-11-20: "The visitor should come away knowing what the Anatomy is, why
+         this reader is a useful artifact, and how to read it"; 2026-11-21: the owner's copy, a key that opens) #}
+      <section class="front-info" aria-labelledby="fi-h">
+        <h2 id="fi-h" class="sr-only">About the book and this reader</h2>
+        {# run-in heads, red (owner, 2026-11-21: "saves space") #}
+        <p class="fi-part"><span class="fi-h" role="heading" aria-level="3">The Book</span> In 1621 an Oxford scholar
+          calling himself Democritus Junior set out to anatomize sadness, and he ended up writing about everything:
+          love, air, diet, scholars, religion, the madness of the whole world. Robert Burton’s <i>Anatomy of
+          Melancholy</i> is one of the great books in English, and one of the hardest to read. Every page is thick with
+          Latin and dotted with Greek, and the margins are crowded with citations in a shorthand no living reader was
+          taught.</p>
+        <p class="fi-part fi-more fi-reader"><span class="fi-h" role="heading" aria-level="3">The Reader</span> This edition is
+          built on Angus Gowland’s text (2021), which follows the sixth edition of 1651. It gives translations of the
+          Latin and Greek, spells out Burton’s citations, identifies the people and books he names, and sets the
+          thousands of notes in the margin beside the passages they explain. Anything a machine produced is marked as
+          such.</p>
+        {% include "front_key.html" %}
         <div class="front-tools">
           <div class="bar-r">{% include "tools.html" %}</div>
           <p class="front-links"><a href="about/">About</a> · <a href="authors/">Authors cited</a> · <a href="table/">The Table</a></p>
@@ -32,18 +57,17 @@
           <p class="settings-more"><a href="settings/">All reading options</a></p>
         </div>
       </section>
-      {% if stanzas %}<div class="front-stanza" aria-live="polite">{{ stanzas }}</div>{% endif %}
+      {% if synopses %}
+      <section class="front-syn" aria-labelledby="syn-h">
+        <h2 id="syn-h" class="front-rh"><span>Synopses</span></h2>
+        {{ synopses.sheet }}
+      </section>
+      {% endif %}
+      <details class="front-contents">
+        <summary><h2 id="contents-h" class="front-rh"><span>Contents</span></h2></summary>
+        <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
+      </details>
     </div>
-    {% if synopses %}
-    <section class="front-syn" aria-labelledby="syn-h">
-      <h2 id="syn-h" class="front-rh"><span>Synopses</span></h2>
-      {{ synopses.sheet }}
-    </section>
-    {% endif %}
-    <details class="front-contents">
-      <summary><h2 id="contents-h" class="front-rh"><span>Contents</span></h2></summary>
-      <nav aria-labelledby="contents-h" class="toc-main">{{ contents }}</nav>
-    </details>
   </div>
 </div>
 {% endblock %}
