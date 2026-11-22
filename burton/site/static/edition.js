@@ -571,7 +571,13 @@ if (article) {
     try { const r = spanOf(m); if (r && !r.collapsed) spans.set(item, r); } catch { /* a block the walker cannot read */ }
     item.addEventListener("mouseenter", () => light(item));
     item.addEventListener("mouseleave", () => light(pinned));
-    item.addEventListener("click", (ev) => { if (!ev.target.closest("a, summary, .prov, button")) pin(item); });
+    item.addEventListener("click", (ev) => {
+      if (ev.target.closest("a, summary, .prov, button")) return;
+      // a shortened note opens whole where it is clicked, not only at its "more" (owner, 2026-11-21); not a translation
+      // with its own ▾ for the other versions
+      if (item.classList.contains("mn-fold") && !item.querySelector(".mn-more")) { opened.add(item); scheduleLayout(); }
+      pin(item);
+    });
   }
   const at = (ev) => {
     const pos = document.caretPositionFromPoint?.(ev.clientX, ev.clientY);
@@ -1135,6 +1141,35 @@ if (frontMap && titleZone) {
   titleZone.addEventListener("mouseenter", () => frontMap.classList.add("fs-zoomed"));
   frontMap.addEventListener("mouseleave", () => frontMap.classList.remove("fs-zoomed"));
 }
+// the front page's specimen: each sign lights its pair (Latin and its translation, a note's letter and the note, §
+// and the citation written out) on pointing, a tap or click holds it, as in the reader; a tap on a name opens who
+// it was (owner, 2026-11-21)
+const spec = document.querySelector(".sp");
+if (spec) {
+  const mates = (el) => [...spec.querySelectorAll(`[data-k="${el.dataset.k}"]`)];
+  let held = null;
+  for (const el of spec.querySelectorAll("[data-k]")) {
+    el.addEventListener("mouseenter", () => mates(el).forEach((x) => x.classList.add("hot")));
+    el.addEventListener("mouseleave", () => mates(el).forEach((x) => { if (held !== el.dataset.k) x.classList.remove("hot"); }));
+    el.addEventListener("click", (ev) => {
+      if (ev.target.closest(".sp-nm")) return;
+      spec.querySelectorAll(".hot, .pinned").forEach((x) => x.classList.remove("hot", "pinned"));
+      held = held === el.dataset.k ? null : el.dataset.k;
+      if (held) mates(el).forEach((x) => x.classList.add("hot", "pinned"));
+    });
+  }
+  for (const nm of spec.querySelectorAll(".sp-nm")) {
+    nm.addEventListener("click", (ev) => { ev.stopPropagation(); nm.classList.toggle("open"); });
+  }
+}
+// the front page's box, shortened while a Partition's braces are open, opens again on asking (owner, 2026-11-21)
+const fiExpand = document.querySelector(".fi-expand");
+fiExpand?.addEventListener("click", () => {
+  const box = fiExpand.closest(".front-info");
+  const full = box.classList.toggle("fi-full");
+  fiExpand.setAttribute("aria-expanded", String(full));
+  fiExpand.textContent = full ? "Read less" : "Read more";
+});
 // the front page's contents start folded (owner, 2026-11-20); a link to a place in them opens them
 const frontContents = document.querySelector(".front-contents");
 if (frontContents) {

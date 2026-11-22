@@ -85,6 +85,56 @@ def options_sample() -> Markup:
     return Markup(html_)
 
 
+def front_specimen(unit_html: str, author_info: dict) -> Markup:
+    """The front page's "How a page looks" (owner, 2026-11-21: "a representative text that responds in the same way
+    when you interact with it"): the options' sample lines of Burton set as a page of this reader sets them, his text
+    and its margin, each sign lighting its pair as in the reader, the names opening who they were. The translation
+    is the one the reader shows first (Gowland's in the private build), taken from the rendered page; the citation
+    and the names from their layers. No machine's sign: the front page shows none (owner, 2026-11-21, recorded in
+    CLAUDE.md); each item carries its sign on its own page."""
+    from lxml import html as lhtml
+
+    from .render import esc as resc
+    from .render import src_mark
+    tr = json.loads((paths.LAYERS / "translations" / f"{SAMPLE_UNIT}.json").read_text(encoding="utf-8"))
+    fid = next(k for k, r in tr.items() if r["text"] == SAMPLE_TEXT[4])
+    tree = lhtml.fromstring(unit_html)
+    ft = tree.xpath(f'//*[@id="tr-{fid}"]')
+    v = ft[0].xpath('.//span[contains(concat(" ", @class, " "), " ft-v ")]')[0] if ft else None
+    if v is None:
+        raise SystemExit(f"front specimen: no translation of {fid} on the {SAMPLE_UNIT} page")
+    en = " ".join(v.xpath('.//span[@class="ft-text"]')[0].text_content().split()).strip("[] ")
+    mark = f' <span class="mn-src">{src_mark(v.get("data-src"))}</span>' if v.get("data-src") != "machine" else ""
+    ic = json.loads((paths.LAYERS / "citations-inline" / f"{SAMPLE_UNIT}.json").read_text(encoding="utf-8"))
+    cite = next(c for c in ic.values() if c["selector"]["in"] == SAMPLE_P and c["raw"].startswith("Hercules"))
+    root = etree.parse(str(paths.TEXT / f"{SAMPLE_UNIT}.xml")).getroot()
+    p = next(e for e in root.iter(T("p")) if e.get("{http://www.w3.org/XML/1998/namespace}id") == "u" + SAMPLE_P)
+    notes = [" ".join(public_text(n).split()) for n in p.iter(T("note"))]
+    if "Ovid." not in notes:
+        raise SystemExit(f"front specimen: Burton's note \"Ovid.\" is no longer in {SAMPLE_P}")
+
+    def name(key: str, shown: str) -> str:
+        a = author_info[key]
+        return (f'<span class="sp-nm" tabindex="0">{resc(shown)}<span class="sp-who" role="tooltip">'
+                f'<b>{resc(a["name"])}</b> <span class="sp-dates">{resc(a.get("dates") or "")}</span> '
+                f'{resc(a.get("about") or "")}</span></span>')
+    t = [resc(x) for x in SAMPLE_TEXT]
+    html_ = (
+        '<div class="sp" role="group" aria-label="A few lines of Burton as a page of this reader shows them">'
+        f'<p class="sp-h">Burton, {SAMPLE_UNIT} <span class="sp-hint">point at the marked words, or tap them</span></p>'
+        f'<div class="sp-body"><p class="sp-text">… {t[0]}<i>{t[1]}</i>'
+        '<span class="sp-ic" data-k="c" tabindex="0" aria-label="citation">§</span>'
+        f'{t[3].rstrip()}<sup class="sp-ref" data-k="n" tabindex="0" aria-label="Note e">e</sup> '
+        f'<i class="sp-la" data-k="t" tabindex="0" lang="la">{t[4]}</i>{t[5]}<i>{name("hesiod", SAMPLE_TEXT[6])}</i>'
+        f'{t[7]}{t[8]}{t[9]} …</p>'
+        '<div class="sp-m">'
+        f'<p class="sp-card sp-sn" data-k="n"><span class="sp-n">e</span> <span class="sp-k">cites</span> '
+        f'<i>{name("ovid", "Ovid")}</i>.</p>'
+        f'<p class="sp-card sp-tr" data-k="t"><span class="sp-k">trans.</span> {resc(en)}{mark}</p>'
+        f'<p class="sp-card sp-cc" data-k="c"><span class="sp-k sp-k-c">§ cites</span> {resc(cite["display"])}</p>'
+        "</div></div></div>")
+    return Markup(html_)
+
 def env() -> Environment:
     e = Environment(loader=FileSystemLoader(HERE / "templates"), autoescape=select_autoescape(["html"]),
                     keep_trailing_newline=True, trim_blocks=True, lstrip_blocks=True)
@@ -471,7 +521,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
         toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
         argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
-        synopses=synopses, title="The Anatomy of Melancholy",
+        synopses=synopses, specimen=front_specimen(pages["3.2.3.1/index.html"], author_info),
+        title="The Anatomy of Melancholy",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 
     # fonts: subset to exactly what the pages and the stylesheet show
