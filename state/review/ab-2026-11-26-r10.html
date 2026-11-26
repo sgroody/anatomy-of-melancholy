@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Round 10 Design &amp; A/B Workbench · The Anatomy of Melancholy</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "GFSDidot"; src: url("../../site/private/assets/fonts/GFSDidot-Regular.woff2") format("woff2"); font-style: normal; font-display: swap; }
+@font-face { font-family: "Cardo"; src: url("../../site/private/assets/fonts/Cardo-Regular.woff2") format("woff2"); font-style: normal; font-display: swap; }
+
+:root {
+  --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf;
+  --accent: #8a2f1d; --la: #7a2230; --grc: #2a4a8c; --enm: #8a4b1c;
+  --k-cite: #2a55a8; --k-gloss: #a04f00; --k-expl: #8a2f9a; --k-bible: #556b00;
+  --panel: #efe9dc; --card: #fbf8f1; --pop-bg: #fffdf8; --hot: rgba(217, 165, 32, 0.24);
+  --shadow: 0 6px 24px rgba(40, 30, 10, 0.14); --ok: #2e5e3e;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e;
+  --accent: #e5927a; --la: #e0c27a; --grc: #a9c8f0; --enm: #e6a57a;
+  --k-cite: #9fb0d4; --k-gloss: #e2b45c; --k-expl: #c3a3d6; --k-bible: #c7c77a;
+  --panel: #25221d; --card: #221f1b; --pop-bg: #26231f; --hot: rgba(224, 176, 64, 0.22);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.5); --ok: #8cc9a3;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "EBG", "EB Garamond", Georgia, serif; font-size: 1.08rem; line-height: 1.5;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+[lang="grc"] { font-family: "GFSDidot", "EBG", serif; }
+.sym { font-family: "Cardo", "EBG", serif; color: var(--accent); }
+.sc { font-variant-caps: all-small-caps; letter-spacing: 0.08em; }
+.rubric { color: var(--accent); }
+.muted { color: var(--muted); }
+.la { color: var(--la); font-style: italic; }
+.wrap { max-width: 78rem; margin: 0 auto; padding: 1.3rem 1.2rem 7.5rem; }
+
+header.top {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.8rem;
+  border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 1rem;
+}
+h1 { font-weight: 400; font-size: 1.7rem; margin: 0; letter-spacing: 0.02em; }
+.sub { color: var(--muted); font-style: italic; margin: 0.15rem 0 0; }
+.nav-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.8rem 0 1.2rem; }
+.nav-pills a {
+  text-decoration: none; font-size: 0.88rem; padding: 0.16rem 0.55rem; border: 1px solid var(--rule);
+  border-radius: 3px; color: var(--muted); background: var(--card);
+}
+.nav-pills a:hover { border-color: var(--accent); color: var(--accent); }
+
+button {
+  font: inherit; font-size: 0.92rem; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.22rem 0.7rem; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+.sec-h {
+  display: flex; align-items: center; gap: 0.75rem; margin: 2.1rem 0 0.45rem;
+  font-weight: 400; font-size: 1.24rem; font-variant-caps: all-small-caps; letter-spacing: 0.09em; color: var(--accent);
+}
+.sec-h::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.sec-desc { margin: 0 0 0.85rem; color: var(--muted); font-size: 0.96rem; max-width: 62rem; }
+
+.ab-grid { display: grid; gap: 0.95rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.ab-grid.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); }
+.ab-grid.stack { grid-template-columns: 1fr; }
+.card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 0.85rem 1rem;
+  display: flex; flex-direction: column; min-width: 0;
+}
+.card.picked { border-color: var(--accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent); }
+.card-h { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.35rem; }
+.tag { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; }
+.rec-badge {
+  font-size: 0.76rem; font-variant-caps: all-small-caps; letter-spacing: 0.06em;
+  color: var(--ok); border: 1px solid color-mix(in srgb, var(--ok) 45%, transparent);
+  padding: 0.02rem 0.4rem; border-radius: 3px;
+}
+.why { font-size: 0.92rem; color: var(--muted); margin: 0 0 0.6rem; }
+.stage {
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.75rem 0.85rem; margin: 0 0 0.7rem; flex: 1 1 auto; position: relative;
+}
+.pick-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: auto; padding-top: 0.35rem; }
+.note-inp {
+  flex: 1 1 12rem; min-width: 0; font: inherit; font-size: 0.88rem; padding: 0.2rem 0.5rem;
+  background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 4px;
+}
+
+/* --- AB-1: Header bars --- */
+.h-mock { border-bottom: 1px solid var(--rule); padding-bottom: 0.45rem; font-size: 0.78rem; }
+.h-row { display: grid; grid-template-columns: minmax(0, 1.3fr) auto minmax(4.8rem, 0.7fr); align-items: start; gap: 0.35rem 0.6rem; }
+.h-left { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: center; min-width: 0; }
+.h-left.nowrap { flex-wrap: nowrap; }
+.h-title { text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.06em; line-height: 1.1; white-space: nowrap; }
+.h-title small { display: block; font-variant-caps: normal; font-style: italic; font-size: 0.74em; color: var(--muted); }
+.h-right { justify-self: end; color: var(--muted); font-size: 0.9em; letter-spacing: 0.25em; white-space: nowrap; }
+.uid-box {
+  font-variant-numeric: lining-nums; font-size: 0.88em; padding: 0.02rem 0.36rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); color: var(--accent); border-radius: 3px; white-space: nowrap;
+}
+.pill-uni {
+  display: inline-flex; align-items: center; gap: 0.32rem; padding: 0.04rem 0.45rem; min-width: 0; overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); border-radius: 3px;
+  font-size: 0.86em; color: var(--muted); cursor: pointer; position: relative; max-width: 100%;
+}
+.pill-uni .uid-n { color: var(--accent); font-variant-numeric: lining-nums; white-space: nowrap; }
+.pill-uni .crumb-short { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pill-uni:hover { overflow: visible; z-index: 25; }
+.pill-uni:hover .pop-mini { display: block; }
+.pop-mini {
+  display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 20; width: 16.5rem;
+  background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--shadow);
+  padding: 0.45rem 0.65rem; font-size: 0.9rem; color: var(--ink); line-height: 1.35;
+}
+.h-subband {
+  margin-top: 0.3rem; padding-top: 0.25rem; border-top: 1px dotted var(--rule);
+  font-size: 0.84em; color: var(--muted); display: flex; align-items: baseline; gap: 0.3rem;
+}
+
+/* --- AB-2: Front-page stanza size --- */
+.stanza-cur { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.8rem; font-size: 0.81rem; line-height: 1.35; }
+.stanza-cur .poem { font-style: italic; }
+.stanza-cur .side { border-left: 1px solid var(--rule); padding-left: 0.55rem; font-size: 0.88em; color: var(--muted); }
+.stanza-lg { font-size: 1.02rem; line-height: 1.44; }
+.stanza-lg .poem { font-style: italic; margin: 0; }
+.stanza-h { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 0.2rem; font-style: normal; font-size: 0.92em; }
+.st-tip {
+  position: relative; text-decoration: underline dotted var(--k-gloss); text-underline-offset: 0.2em; cursor: help;
+}
+.st-tip:hover .st-pop, .st-tip.open .st-pop { display: block; }
+.st-pop {
+  display: none; position: absolute; left: 0; bottom: calc(100% + 4px); z-index: 15; min-width: 10rem;
+  background: var(--pop-bg); border: 1px solid var(--rule); border-left: 2px solid var(--k-gloss);
+  border-radius: 4px; padding: 0.25rem 0.5rem; font-style: normal; font-size: 0.84rem; color: var(--ink); box-shadow: var(--shadow);
+}
+.plate-foot {
+  margin-top: 0.55rem; padding-top: 0.35rem; border-top: 1px dashed var(--rule);
+  font-size: 0.84rem; color: var(--muted); font-style: italic;
+}
+
+/* --- AB-3: Frontispiece zoom --- */
+.fs-demo-box { display: grid; grid-template-columns: 185px minmax(0, 1fr); gap: 0.8rem; align-items: start; }
+.fs-wrap { position: relative; width: 185px; aspect-ratio: 1151 / 1900; overflow: hidden; border: 1px solid var(--rule); border-radius: 3px; }
+.fs-wrap img { width: 100%; height: 100%; display: block; transform-origin: 49.8% 46.5%; }
+.fs-zone {
+  position: absolute; left: 25.3%; top: 26.6%; width: 48.9%; height: 39.8%;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 2px; cursor: zoom-in;
+}
+.fs-zone:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); border-color: var(--accent); }
+.fs-a img { transition: transform 0.58s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease; }
+.fs-a.zoomed img { transform: translate(0.2%, 3.5%) scale(1.72); }
+.fs-a::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.45s;
+  background: radial-gradient(circle at 50% 48%, transparent 45%, rgba(0,0,0,0.28) 100%);
+}
+.fs-a.zoomed::after { opacity: 1; }
+.fs-loupe-card {
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.4rem; background: var(--pop-bg);
+  opacity: 0.35; transition: opacity 0.25s; font-size: 0.84rem;
+}
+.fs-loupe-card.active { opacity: 1; border-color: var(--accent); }
+.fs-loupe-crop {
+  width: 100%; height: 155px; overflow: hidden; border: 1px solid var(--rule); margin-bottom: 0.3rem;
+  background: url("../../site/private/assets/images/pg003.png") 50% 45% / 205% no-repeat;
+}
+
+/* --- AB-4: Front page whole/crop views for Sortes + Ways --- */
+.fp-bar { display: flex; gap: 0.45rem; margin-bottom: 0.6rem; align-items: center; font-size: 0.9rem; }
+.fp-mini {
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); padding: 0.65rem;
+  display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: 0.7rem; font-size: 0.86rem;
+}
+body.fp-whole .fp-mini { font-size: 0.76rem; grid-template-columns: 5.8rem minmax(0, 1fr); }
+.fp-mini-img img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.fp-enter-btn {
+  display: block; text-align: center; color: var(--accent); border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent); padding: 0.16rem 0.4rem; letter-spacing: 0.05em; text-decoration: none;
+}
+.fp-subdoor { margin: 0.32rem 0 0; font-size: 0.84em; color: var(--muted); text-align: center; }
+.fp-subdoor button { font-size: 1em; border: 0; background: none; padding: 0; color: var(--accent); text-decoration: underline dotted; }
+.fp-strip {
+  display: flex; flex-wrap: wrap; gap: 0.3rem 0.7rem; align-items: center; margin: 0.45rem 0;
+  padding: 0.28rem 0.45rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 0.85em;
+}
+.fp-info-box { border: 1px solid var(--rule); border-radius: 4px; padding: 0.45rem 0.65rem; background: var(--card); font-size: 0.88em; }
+.fp-hr { display: flex; align-items: center; gap: 0.5em; font-variant-caps: all-small-caps; letter-spacing: 0.1em; margin: 0.45rem 0 0.2rem; }
+.fp-hr::before, .fp-hr::after { content: ""; flex: 1; height: 1px; background: var(--accent); }
+
+/* --- AB-6: Redesigned Aa Options --- */
+.aa-panel {
+  border: 1px solid var(--rule); border-radius: 6px; padding: 0.75rem 0.9rem; background: var(--pop-bg);
+  box-shadow: var(--shadow); font-size: 0.92rem;
+}
+.aa-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0.7rem 1.1rem; }
+.aa-g h4 { margin: 0 0 0.35rem; font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); font-size: 0.92em; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin-bottom: 0.45rem; }
+.seg button { border: 0; border-right: 1px solid var(--rule); border-radius: 0; padding: 0.14rem 0.55rem; background: transparent; font-size: 0.86em; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
+.sw-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.45rem; }
+.sw-btn { display: inline-flex; align-items: center; gap: 0.32rem; font-size: 0.84em; padding: 0.12rem 0.48rem; }
+.sw-dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; display: inline-block; border: 1px solid var(--rule); }
+.badge-tog { display: flex; align-items: center; gap: 0.4rem; margin: 0.22rem 0; font-size: 0.88em; cursor: pointer; }
+.mini-b { display: inline-block; min-width: 1.25em; text-align: center; border-radius: 2px; font-size: 0.82em; padding: 0 0.2em; }
+.new-opt-demo {
+  margin-top: 0.7rem; padding: 0.6rem 0.75rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--card);
+}
+.demo-calm .m-item.quiet { opacity: 0.32; transition: opacity 0.2s; }
+.demo-calm:hover .m-item.quiet { opacity: 1; }
+.demo-prog { height: 2px; background: var(--rule); border-radius: 1px; margin-bottom: 0.45rem; overflow: hidden; }
+.demo-prog > i { display: block; height: 100%; width: 38%; background: var(--accent); }
+
+/* --- AB-7: Synopsis bracket demos --- */
+.syn-demo { font-size: 0.9rem; line-height: 1.32; }
+.syn-branch { display: flex; align-items: center; gap: 0.4rem; margin: 0.22rem 0; }
+.syn-trigger {
+  background: none; border: 0; padding: 0.1rem 0.35rem; color: var(--ink); text-align: left;
+  border-left: 2px solid var(--rule); border-radius: 0; font-size: 0.92rem; position: relative;
+}
+.syn-trigger:hover { color: var(--accent); border-left-color: var(--accent); }
+.syn-trigger .fillbar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); transition: width 0.6s linear; }
+.syn-kids-d { margin: 0.15rem 0 0.35rem 1.4rem; padding-left: 0.65rem; border-left: 1px solid var(--ink); }
+
+/* --- AB-8 & AB-9: About & Reader Inspirations --- */
+.about-split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 0.9rem; align-items: start; font-size: 0.9rem; }
+.about-margin-card { border-left: 2px solid var(--accent); padding-left: 0.5rem; font-size: 0.84rem; margin-bottom: 0.45rem; }
+.matrix { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.5rem 0 0.9rem; }
+.matrix th, .matrix td { border-bottom: 1px solid var(--rule); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+.matrix th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); font-weight: 400; }
+.split-peek { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 0.7rem; }
+.peek-pane { background: var(--card); border: 1px solid var(--rule); border-left: 2px solid var(--accent); border-radius: 4px; padding: 0.5rem 0.7rem; font-size: 0.88rem; }
+.nut-btn { background: none; border: 0; border-bottom: 1px dotted var(--accent); padding: 0 0.1em; color: var(--accent); font-size: inherit; border-radius: 0; }
+.nut-drawer { margin: 0.3rem 0 0.4rem 0.6rem; padding: 0.35rem 0.6rem; border-left: 2px solid var(--k-gloss); background: var(--card); font-size: 0.88rem; }
+
+/* Sticky dock */
+.dock {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+  background: var(--paper); border-top: 1px solid var(--rule); padding: 0.55rem 1.2rem;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.09);
+}
+.dock-in { max-width: 78rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.copy-box { max-width: 78rem; margin: 0.45rem auto 0; display: none; }
+.copy-box textarea { width: 100%; min-height: 4rem; font: inherit; font-size: 0.88rem; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.35rem; }
+@media (max-width: 700px) {
+  .fs-demo-box, .fp-mini, .about-split, .split-peek { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Round 10 Visual A/B &amp; Design-Principles Workbench · <span class="rubric">The Anatomy of Melancholy</span></h1>
+      <p class="sub">Actual-scale interactive prototypes for your design decisions. Picks auto-save locally; nothing in the reader is redesigned until you choose.</p>
+    </div>
+    <div>
+      <button type="button" id="themeBtn">Dark / Light</button>
+    </div>
+  </header>
+
+  <nav class="nav-pills" aria-label="Sections">
+    <a href="#ab1">AB-1 · Top-Left Header</a>
+    <a href="#ab2">AB-2 · Front-Page Poems</a>
+    <a href="#ab3">AB-3 · Frontispiece Zoom</a>
+    <a href="#ab4">AB-4 · Sortes &amp; Doorways</a>
+    <a href="#ab5">AB-5 · Homepage Copy</a>
+    <a href="#ab6">AB-6 · Options Panel &amp; New Controls</a>
+    <a href="#ab7">AB-7 · Synopsis Brackets</a>
+    <a href="#ab8">AB-8 · About Page</a>
+    <a href="#ab9">AB-9 · Ideas from 7 Readers</a>
+  </nav>
+
+  <!-- AB-1: TOP-LEFT HEADER -->
+  <h2 class="sec-h" id="ab1">AB-1 · Top-Left Header Bar Under Space Constraints</h2>
+  <p class="sec-desc">In your screenshot, <code>1.1.1.1</code> + <code>CONTENTS ▾</code> fills the top row and forces <code>{ I · In diseases consider…</code> onto a second line. Compare three clean ways to keep the header crisp (hover the locus pill in A/C to preview the synopsis path):</p>
+  <div class="ab-grid two" data-group="AB-1 · Top-Left Header">
+    <section class="card" data-opt="Current">
+      <div class="card-h"><span class="tag">Current · Wrapped Second Line</span></div>
+      <p class="why">What ships now: <code>1.1.1.1</code> and <code>CONTENTS ▾</code> share line 1, forcing the synopsis path onto line 2.</p>
+      <div class="stage">
+        <div class="h-mock">
+          <div class="h-row">
+            <div class="h-left">
+              <span class="uid-box">1.1.1.1</span>
+              <span class="sc muted">Contents ▾</span>
+              <span class="muted" style="flex-basis:100%;font-size:0.86em"><span class="rubric">{</span> I · In diseases consider Sect · <span class="rubric">Man’s Excellency</span></span>
+            </div>
+            <div class="h-title">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+            <div class="h-right">⌕ Aa ☾ ▤</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Keep Current</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="A: Unified Locus Pill + Contents">
+      <div class="card-h"><span class="tag">A · Unified Locus Pill + Contents</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">Fuses <code>{ 1.1.1.1</code> and the active Partition/Subsection into one clean single-line rubric pill right beside <code>Contents ▾</code>. Hover to open the full synopsis path.</p>
+      <div class="stage">
+        <div class="h-mock">
+          <div class="h-row">
+            <div class="h-left nowrap">
+              <span class="pill-uni" tabindex="0">
+                <span class="rubric">{</span>
+                <span class="uid-n">1.1.1.1</span>
+                <span class="crumb-short">· <span class="rubric">Man’s Excellency</span></span>
+                <span class="pop-mini"><b>Partition I</b><br>{ In diseases consider Sect. 1 Memb. 1.<br>&nbsp;&nbsp;{ Causes · <span class="rubric">Man’s Excellency (1.1.1.1)</span></span>
+              </span>
+              <span class="sc muted" style="white-space:nowrap">Contents ▾</span>
+            </div>
+            <div class="h-title">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+            <div class="h-right">⌕ Aa ☾ ▤</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Clean Top Row + Full Sub-Ribbon">
+      <div class="card-h"><span class="tag">B · Clean Top Row + Deliberate Path Line</span></div>
+      <p class="why">Accepts the second line intentionally as a subtle full-width rubric hairline ribbon below the title bar, so neither line ever truncates.</p>
+      <div class="stage">
+        <div class="h-mock">
+          <div class="h-row">
+            <div class="h-left nowrap"><span class="uid-box">1.1.1.1</span> <span class="sc muted">Contents ▾</span></div>
+            <div class="h-title">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+            <div class="h-right">⌕ Aa ☾ ▤</div>
+          </div>
+          <div class="h-subband"><span class="rubric">{</span> I · In diseases consider Sect. 1 Memb. 1. · <span class="rubric">Man’s Excellency, Fall, Miseries, Infirmities</span></div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="C: Minimalist Single Line (Icon-Only { )">
+      <div class="card-h"><span class="tag">C · Minimalist Single Line ({ Trigger Only)</span></div>
+      <p class="why">Keeps only <code>1.1.1.1</code>, a clickable rubric <code>{</code> badge, and <code>Contents ▾</code> — zero truncation on laptops; hover <code>{</code> for the full branch.</p>
+      <div class="stage">
+        <div class="h-mock">
+          <div class="h-row">
+            <div class="h-left nowrap">
+              <span class="uid-box">1.1.1.1</span>
+              <span class="pill-uni" tabindex="0" title="Where this stands in Burton’s synopsis">
+                <span class="rubric" style="font-size:1.1em">{</span>
+                <span class="pop-mini">I · In diseases consider Sect. 1 Memb. 1.<br><span class="rubric">Man’s Excellency, Fall, Miseries (1.1.1.1)</span></span>
+              </span>
+              <span class="sc muted" style="white-space:nowrap">Contents ▾</span>
+            </div>
+            <div class="h-title">The Anatomy of Melancholy<small>An Englished Reader</small></div>
+            <div class="h-right">⌕ Aa ☾ ▤</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick C</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-2: FRONT-PAGE POEMS LARGER -->
+  <h2 class="sec-h" id="ab2">AB-2 · Making the Front-Page Poems Larger (“Have Your Cake &amp; Eat It Too”)</h2>
+  <p class="sec-desc">Removing the margin notes column beside the stanza lets the verse expand back to full readable type — while still keeping Gowland’s glosses available on hover/tap (hover <b>Hern</b> or <b>hie</b> below):</p>
+  <div class="ab-grid two" data-group="AB-2 · Front-Page Poems">
+    <section class="card" data-opt="Current">
+      <div class="card-h"><span class="tag">Current · Split 2-Column Stanza</span></div>
+      <p class="why">Side margin column forces verse down to ~0.76em–0.84em so the longest panel fits.</p>
+      <div class="stage">
+        <div class="stanza-cur">
+          <div>
+            <p class="stanza-h">Zelotypia</p>
+            <div class="poem">To th’ left a landscape of Jealousy,<br>Presents itself unto thine eye.<br>A Kingfisher, a Swan, an <span class="st-tip">Hern</span>,<br>Two fighting Cocks you may discern,<br>Two roaring Bulls each other <span class="st-tip">hie</span>…</div>
+          </div>
+          <div class="side">
+            <div style="margin-bottom:0.35rem"><span class="sc" style="color:var(--k-gloss)">gloss</span> <i>Hern</i> Heron.</div>
+            <div><span class="sc" style="color:var(--k-gloss)">gloss</span> <i>hie</i> Urge, hasten.</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Keep Current</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="A: Full-Width Larger Verse + Hover Glosses + Plate Caption">
+      <div class="card-h"><span class="tag">A · Full-Width Verse + Inline Hover Glosses</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">Removes the side column completely so the poems sit ~25% larger; moves <i>“Point at a panel…”</i> neatly under the engraving; keeps Gowland’s glosses right on the words on hover/tap.</p>
+      <div class="stage">
+        <div class="stanza-lg">
+          <p class="stanza-h">Zelotypia</p>
+          <p class="poem">To th’ left a landscape of Jealousy,<br>Presents itself unto thine eye.<br>A Kingfisher, a Swan, an <span class="st-tip" tabindex="0">Hern<span class="st-pop"><span class="sc" style="color:var(--k-gloss)">gloss</span> Heron.</span></span>,<br>Two fighting Cocks you may discern,<br>Two roaring Bulls each other <span class="st-tip" tabindex="0">hie<span class="st-pop"><span class="sc" style="color:var(--k-gloss)">gloss</span> Urge, hasten.</span></span>,<br>To assault concerning Venery.</p>
+        </div>
+        <p class="plate-foot">Caption relocated under engraving: “Point at any panel to read its stanza from <a href='#' onclick='return false'>The Argument of the Frontispiece</a>.”</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Pure Full-Width Verse + Stanza Eyebrow Hint">
+      <div class="card-h"><span class="tag">B · Pure Unadorned Verse + Stanza Eyebrow</span></div>
+      <p class="why">Maximum typographic serenity: no inline dotted underlines on the front page; glosses wait on the full Argument page.</p>
+      <div class="stage">
+        <div class="stanza-lg" style="font-size:1.05rem">
+          <p class="stanza-h">Zelotypia · <span class="muted" style="font-variant-caps:normal;font-style:italic;letter-spacing:0">point at a panel to change</span></p>
+          <p class="poem">To th’ left a landscape of Jealousy,<br>Presents itself unto thine eye.<br>A Kingfisher, a Swan, an Hern,<br>Two fighting Cocks you may discern,<br>Two roaring Bulls each other hie,<br>To assault concerning Venery.</p>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="C: Full-Width Verse + 1-Line Gloss Footnote Strip">
+      <div class="card-h"><span class="tag">C · Full-Width Verse + 1-Line Footnote Strip</span></div>
+      <p class="why">Verse still gets the full column width; glosses tuck cleanly into one tiny line directly underneath.</p>
+      <div class="stage">
+        <div class="stanza-lg">
+          <p class="stanza-h">Zelotypia</p>
+          <p class="poem">To th’ left a landscape of Jealousy,<br>Presents itself unto thine eye.<br>A Kingfisher, a Swan, an Hern,<br>Two fighting Cocks you may discern,<br>Two roaring Bulls each other hie…</p>
+          <p style="margin:0.45rem 0 0;font-size:0.78rem;color:var(--muted)"><span class="sc" style="color:var(--k-gloss)">gloss</span> <i>Hern</i> Heron · <i>hie</i> Urge, hasten.</p>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick C</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-3: FRONTISPIECE MAGNIFICATION -->
+  <h2 class="sec-h" id="ab3">AB-3 · Less Jarring Central Title Magnification on the Frontispiece</h2>
+  <p class="sec-desc">Move your pointer over the dashed central title rectangle on each live miniature engraving to compare how calm the zoom feels:</p>
+  <div class="ab-grid" data-group="AB-3 · Title Magnification">
+    <section class="card" data-opt="A: 280ms Dwell + 1.72x Gentle Loupe + Vignette">
+      <div class="card-h"><span class="tag">A · Dwell + Gentler 1.72× Zoom</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">A 280ms pause ignores passing mouse sweeps; slower 0.58s ease-out and soft edge vignette eliminate the sudden snap.</p>
+      <div class="stage">
+        <div class="fs-wrap fs-a" id="fsDemoA">
+          <img src="../../site/private/assets/images/pg003.png" alt="Frontispiece zoom demo A">
+          <div class="fs-zone" id="fsZoneA" title="Rest cursor here"></div>
+        </div>
+        <p class="muted" style="font-size:0.84rem;margin:0.4rem 0 0">Rest on the title panel for 280 ms.</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Steady Plate + Floating Magnified Cartouche">
+      <div class="card-h"><span class="tag">B · Steady Plate + Side Cartouche Loupe</span></div>
+      <p class="why">The main engraving never shifts or stretches; hovering the title wakes a sharp magnified inset right beside it.</p>
+      <div class="stage">
+        <div class="fs-demo-box">
+          <div class="fs-wrap" style="width:140px">
+            <img src="../../site/private/assets/images/pg003.png" alt="Frontispiece steady plate">
+            <div class="fs-zone" id="fsZoneB" title="Hover to sharpen inset"></div>
+          </div>
+          <div class="fs-loupe-card" id="fsLoupeB">
+            <div class="fs-loupe-crop"></div>
+            <span class="muted">Title cartouche (2×)</span>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="C: Click/Tap Magnifier Badge Only">
+      <div class="card-h"><span class="tag">C · Explicit Click/Tap Toggle Only</span></div>
+      <p class="why">Never zooms unexpectedly on hover; clicking the title or its magnifying pill toggles the close-up.</p>
+      <div class="stage">
+        <div class="fs-wrap fs-a" id="fsDemoC">
+          <img src="../../site/private/assets/images/pg003.png" alt="Frontispiece click toggle">
+          <div class="fs-zone" id="fsZoneC" style="cursor:pointer" title="Click to zoom"></div>
+        </div>
+        <p style="margin:0.45rem 0 0"><button type="button" id="fsBtnC">Toggle Title Close-Up</button></p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick C</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-4: SORTES BURTONIANAE & DOORWAYS ON FRONT PAGE -->
+  <h2 class="sec-h" id="ab4">AB-4 · <i>Sortes Burtonianae</i> (with Explainer) &amp; Doorways Outside Contents</h2>
+  <p class="sec-desc">Putting Burton’s great set-pieces and random dip (<i>Sortes Burtonianae</i> — “lots taken from Burton, like ancient <i>Sortes Virgilianae</i>”) right on the front door, outside the Contents fold, without breaking the one-screen layout:</p>
+  <div class="fp-bar">
+    <span>Preview scale:</span>
+    <button type="button" id="fpCropBtn" aria-pressed="true">Actual-Size Threshold Crop</button>
+    <button type="button" id="fpWholeBtn" aria-pressed="false">Compact 1-Screen Context</button>
+  </div>
+  <div class="ab-grid" data-group="AB-4 · Sortes &amp; Doorways Placement">
+    <section class="card" data-opt="A: Inside Infobox (+ Famous Passages + Sortes)">
+      <div class="card-h"><span class="tag">A · Inside Infobox (+ Famous Passages + Sortes)</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">Adds a clean <code>+ Famous passages</code> popover (like <i>How a page looks</i>) + a quiet <i>Sortes Burtonianae</i> button with a 1-line explainer inside the right-hand card — zero vertical bloat.</p>
+      <div class="stage">
+        <div class="fp-mini">
+          <div class="fp-mini-img"><img src="../../site/private/assets/images/pg003.png" alt=""></div>
+          <div>
+            <a class="fp-enter-btn" href="#" onclick="return false">Enter, gentle Reader ☞</a>
+            <div class="fp-info-box" style="margin-top:0.5rem">
+              <p style="margin:0 0 0.35rem"><span class="sc rubric">The Book</span> … <span class="sc rubric">The Reader</span> …</p>
+              <p style="margin:0 0 0.35rem;border-top:1px solid var(--rule);padding-top:0.35rem">
+                <button type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">+ Famous passages</button>
+                <span hidden style="display:block;font-size:0.84em;color:var(--muted);margin-top:0.25rem">• <i>Digression of Air</i> (~18 min) · • <i>Misery of Scholars</i> (~24 min) · • <i>Love-Melancholy</i> (~131 min)</span>
+              </p>
+              <p style="margin:0;font-size:0.86em">
+                <button type="button" style="border-color:var(--accent);color:var(--accent)">Sortes Burtonianae ☞</button>
+                <span class="muted"> — open at random, as older readers sought counsel by chance in Virgil or Burton.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Threshold Sub-Doorway Below Enter">
+      <div class="card-h"><span class="tag">B · Sub-Doorway Under “Enter, gentle Reader”</span></div>
+      <p class="why">Keeps every entry path stacked under the main door: Enter linearly, dip at random (<i>Sortes</i>), or open famous digressions.</p>
+      <div class="stage">
+        <div class="fp-mini">
+          <div class="fp-mini-img"><img src="../../site/private/assets/images/pg003.png" alt=""></div>
+          <div>
+            <a class="fp-enter-btn" href="#" onclick="return false">Enter, gentle Reader ☞</a>
+            <p class="fp-subdoor">or <button type="button" title="In the old custom of Sortes Virgilianae: open the book at a hazard page">Sortes Burtonianae</button> <i>(open at random)</i> · <button type="button">Famous digressions +</button></p>
+            <div class="fp-hr">Synopses</div>
+            <p class="muted" style="margin:0">I The First Partition { &amp;c.</p>
+            <div class="fp-hr">Contents ▸</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="C: Dedicated Strip Above Contents">
+      <div class="card-h"><span class="tag">C · Ruled Strip Above Contents</span></div>
+      <p class="why">Creates a clear structural trio down the left column: Synopses → Doorways &amp; Sortes → Contents.</p>
+      <div class="stage">
+        <div class="fp-mini">
+          <div class="fp-mini-img"><img src="../../site/private/assets/images/pg003.png" alt=""></div>
+          <div>
+            <a class="fp-enter-btn" href="#" onclick="return false">Enter, gentle Reader ☞</a>
+            <div class="fp-hr">Synopses</div>
+            <p class="muted" style="margin:0">I The First Partition { &amp;c.</p>
+            <div class="fp-strip">
+              <span class="sc rubric">Famous Set-Pieces ▸</span>
+              <span class="muted">·</span>
+              <span><button type="button" style="padding:0.06rem 0.45rem;border-color:var(--accent);color:var(--accent)">Sortes Burtonianae</button> <span class="muted" style="font-size:0.86em">(dip at random)</span></span>
+            </div>
+            <div class="fp-hr">Contents ▸</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick C</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-5: HOMEPAGE COPY & VISUAL EDITS -->
+  <h2 class="sec-h" id="ab5">AB-5 · Homepage Copy Rewrite &amp; Spacing Polish</h2>
+  <p class="sec-desc">Tightening the infobox prose by ~20% while giving newcomers a clearer sense of Burton’s warmth, humor, and labyrinthine wit:</p>
+  <div class="ab-grid two" data-group="AB-5 · Homepage Copy">
+    <section class="card" data-opt="Current Copy">
+      <div class="card-h"><span class="tag">Current Infobox Prose</span></div>
+      <div class="stage" style="font-size:0.92rem">
+        <p style="margin:0 0 0.5rem"><span class="sc rubric">The Book</span> In 1621 an Oxford scholar calling himself Democritus Junior set out to anatomize sadness, and he ended up writing about everything: love, air, diet, scholars, religion, the madness of the whole world. Robert Burton’s <i>Anatomy of Melancholy</i> is one of the great books in English, and one of the hardest to read. Every page is thick with Latin and dotted with Greek, and the margins are crowded with citations in a shorthand no living reader was taught.</p>
+        <p style="margin:0"><span class="sc rubric">The Reader</span> This edition is built on Angus Gowland’s text (2021), which follows the sixth edition of 1651. It gives translations of the Latin and Greek, spells out Burton’s citations, identifies the people and books he names, and sets the thousands of notes in the margin beside the passages they explain. Anything a machine produced is marked as such.</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Keep Current</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="Proposed Tighter & Warmer Copy">
+      <div class="card-h"><span class="tag">Proposed · Tighter, Warmer, Clearer Hierarchy</span><span class="rec-badge">Recommended</span></div>
+      <div class="stage" style="font-size:0.92rem">
+        <p style="margin:0 0 0.5rem"><span class="sc rubric">The Book</span> In 1621, an Oxford don calling himself Democritus Junior set out to write a medical treatise on melancholy—and ended up writing an encyclopaedia of human folly: love, stars, diet, ghosts, scholars’ miseries, and the cure of sorrow. Burton’s prose is hilarious, tender, and notoriously dense with untranslated Latin, Greek, and abbreviated marginalia.</p>
+        <p style="margin:0"><span class="sc rubric">This Reader</span> Built faithfully on Angus Gowland’s text of the 1651 sixth edition, it brings every translation, expanded citation, and biographical note quietly into the margins beside Burton’s words. Any machine-generated help stays visibly marked with ◇ on its reading page.</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick Proposed Copy</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-6: READER OPTIONS UI + 4 NEW OPTIONS -->
+  <h2 class="sec-h" id="ab6">AB-6 · Redesigned Reading Options (<code>Aa</code>) &amp; Four New Reader Controls</h2>
+  <p class="sec-desc">Replacing raw browser checkboxes with segmented pills, live color swatches, and miniature margin badges — plus 4 interactive new options you can test live right inside the sample below:</p>
+  <div class="ab-grid stack" data-group="AB-6 · Reader Options Design + New Controls">
+    <section class="card" data-opt="A: Redesigned Aa Panel + All 4 New Controls">
+      <div class="card-h"><span class="tag">Proposed <code>Aa</code> Drawer Layout + Interactive New Controls</span><span class="rec-badge">Recommended</span></div>
+      <div class="stage">
+        <div class="aa-panel">
+          <div class="aa-cols">
+            <div class="aa-g">
+              <h4>Page &amp; Type</h4>
+              <div class="seg" role="group" aria-label="Theme">
+                <button type="button" aria-pressed="true" onclick="segPick(this)">System</button>
+                <button type="button" aria-pressed="false" onclick="segPick(this)">Paper</button>
+                <button type="button" aria-pressed="false" onclick="segPick(this)">Candlelit</button>
+              </div><br>
+              <div class="seg" role="group" aria-label="Type size">
+                <button type="button" aria-pressed="false" onclick="segPick(this)">S</button>
+                <button type="button" aria-pressed="true" onclick="segPick(this)">M</button>
+                <button type="button" aria-pressed="false" onclick="segPick(this)">L</button>
+                <button type="button" aria-pressed="false" onclick="segPick(this)">XL</button>
+              </div><br>
+              <span class="muted" style="font-size:0.84em;display:block;margin-bottom:0.2rem">Line spacing &amp; measure (new):</span>
+              <div class="seg" role="group" aria-label="Line spacing">
+                <button type="button" aria-pressed="false" onclick="setSpacing(this,'1.38')">Compact</button>
+                <button type="button" aria-pressed="true" onclick="setSpacing(this,'1.5')">Book</button>
+                <button type="button" aria-pressed="false" onclick="setSpacing(this,'1.7')">Airy</button>
+              </div>
+              <span class="muted" style="font-size:0.84em;display:block;margin-bottom:0.2rem">Latin colour:</span>
+              <div class="sw-row">
+                <button type="button" class="sw-btn" aria-pressed="true" onclick="swPick(this)"><span class="sw-dot" style="background:#7a2230"></span>Oxblood</button>
+                <button type="button" class="sw-btn" aria-pressed="false" onclick="swPick(this)"><span class="sw-dot" style="background:#23584a"></span>Sage</button>
+                <button type="button" class="sw-btn" aria-pressed="false" onclick="swPick(this)"><span class="sw-dot" style="background:var(--ink)"></span>Ink</button>
+              </div>
+            </div>
+
+            <div class="aa-g">
+              <h4>In the Margins</h4>
+              <label class="badge-tog"><input type="checkbox" checked> <span class="mini-b" style="background:var(--accent);color:var(--paper)">a</span> Burton’s notes</label>
+              <label class="badge-tog"><input type="checkbox" checked> <span class="mini-b" style="color:var(--k-expl)">g</span> Gowland’s notes</label>
+              <label class="badge-tog"><input type="checkbox" checked> <span class="mini-b" style="color:var(--la);font-style:italic">tr.</span> Translations</label>
+              <label class="badge-tog"><input type="checkbox" checked> <span class="mini-b" style="color:var(--k-cite)">§</span> In-line citations</label>
+              <label class="badge-tog"><input type="checkbox" checked> <span class="mini-b" style="color:var(--k-bible)">kjv</span> Bible verses</label>
+              <label class="badge-tog"><input type="checkbox"> <span class="mini-b" style="color:var(--k-gloss)">w</span> Obsolete words</label>
+              <label class="badge-tog"><input type="checkbox"> <span class="mini-b">°</span> Restored notes (DM)</label>
+            </div>
+
+            <div class="aa-g">
+              <h4>Reading Calm &amp; Aids (New)</h4>
+              <label class="badge-tog"><input type="checkbox" id="calmChk" onchange="toggleCalm()"> <b>Calm Margins:</b> dim extra notes until hovered</label>
+              <label class="badge-tog"><input type="checkbox" id="ulChk" onchange="toggleUl()"> <b>Clean Prose:</b> show name underlines only on hover</label>
+              <label class="badge-tog"><input type="checkbox" id="progChk" checked onchange="toggleProg()"> <b>Chapter Hairline:</b> quiet rubric thread on long units</label>
+              <label class="badge-tog" style="margin-top:0.5rem;padding-top:0.4rem;border-top:1px solid var(--rule)"><input type="checkbox"> <b>As printed (1651):</b> pure text &amp; Burton’s notes only</label>
+            </div>
+          </div>
+
+          <div class="new-opt-demo" id="optLiveBox">
+            <div class="demo-prog" id="optProg"><i></i></div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:0.8rem">
+              <p id="optProse" style="margin:0;line-height:1.5">Though <span class="ul-demo" style="text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:0.2em">Hercules de Saxonia</span><span style="color:var(--k-cite);font-size:0.75em;vertical-align:super">§</span> will exclude fear from Love-Melancholy, <span class="la">Res est solliciti plena timoris amor</span>…</p>
+              <div style="font-size:0.82em">
+                <div class="m-item" style="border-left:2px solid var(--accent);padding-left:0.4rem;margin-bottom:0.25rem"><span class="sc muted">note</span> <span class="la" style="font-style:normal">Love is full of anxious fear.</span></div>
+                <div class="m-item quiet muted"><span class="sc" style="color:var(--k-cite)">§ cites</span> Ercole Sassonia, ch. 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick New Aa Panel + Options</button><input class="note-inp" placeholder="Tell me which of the 4 new options to keep…"></div>
+    </section>
+  </div>
+
+  <!-- AB-7: SYNOPSIS BRACKETS REWORK -->
+  <h2 class="sec-h" id="ab7">AB-7 · Reworking How Synopsis Brackets Function</h2>
+  <p class="sec-desc">Try interacting with the Partition I branches below. Notice how removing surprise auto-cascades keeps the page still until you choose to look deeper:</p>
+  <div class="ab-grid" data-group="AB-7 · Synopsis Brackets Behavior">
+    <section class="card" data-opt="A: Intentional Click + Instant Rubric Hover">
+      <div class="card-h"><span class="tag">A · Click to Open + Rubric Hover Cue</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">Zero accidental jumping when crossing the page: hovering turns the brace &amp; head rubric immediately; clicking opens 1 level (⁜ or Shift-click opens all).</p>
+      <div class="stage syn-demo">
+        <div class="syn-branch"><button type="button" class="syn-trigger" onclick="togSynA(this)">I The First Partition <span class="muted">{ &amp;c.</span></button></div>
+        <div class="syn-kids-d" hidden>
+          <div>• In diseases consider <i>Sect. 1 Memb. 1.</i> <span class="uid-box">1.1.1</span></div>
+          <div>• Causes of Melancholy <span class="uid-box">1.2.1</span></div>
+        </div>
+        <p class="muted" style="font-size:0.82rem;margin:0.5rem 0 0">Click to test — zero timer shift.</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Single-Brace Dwell (No Cascade)">
+      <div class="card-h"><span class="tag">B · Single-Level Dwell (No Deep Cascade)</span></div>
+      <p class="why">Keeping a gentle 0.6s rest opens <i>only</i> the brace you rested on, then stops — never expanding nested subtrees underneath you.</p>
+      <div class="stage syn-demo">
+        <div class="syn-branch"><button type="button" class="syn-trigger" id="synDwellBtn">I The First Partition <span class="muted">{ &amp;c.</span><span class="fillbar"></span></button></div>
+        <div class="syn-kids-d" id="synDwellKids" hidden>
+          <div>• Sheet A: Diseases &amp; Causes (stops here)</div>
+          <div>• Sheet B: Symptoms &amp; Signs</div>
+        </div>
+        <p class="muted" style="font-size:0.82rem;margin:0.5rem 0 0">Hover for 0.6s to open one layer cleanly.</p>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="C: Accordion Single-Branch Focus">
+      <div class="card-h"><span class="tag">C · Accordion (One Partition Open at a Time)</span></div>
+      <p class="why">Opening Partition II automatically folds Partition I so the front page stays calm and compact.</p>
+      <div class="stage syn-demo" id="synAcc">
+        <div><button type="button" class="syn-trigger" onclick="togAcc(0)">I The First Partition <span class="muted">{ &amp;c.</span></button><div class="syn-kids-d" hidden>First Partition sheets…</div></div>
+        <div><button type="button" class="syn-trigger" onclick="togAcc(1)">II The Second Partition <span class="muted">{ &amp;c.</span></button><div class="syn-kids-d" hidden>Second Partition sheets (cures)…</div></div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick C</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-8: REWORKED ABOUT PAGE -->
+  <h2 class="sec-h" id="ab8">AB-8 · Reworked About Page</h2>
+  <p class="sec-desc">Turning <code>about/</code> from a wall of prose &amp; technical hashes into an inviting, self-demonstrating reading guide (with technical ledgers collapsed at the bottom):</p>
+  <div class="ab-grid two" data-group="AB-8 · About Page Redesign">
+    <section class="card" data-opt="A: Self-Demonstrating Margin Essay">
+      <div class="card-h"><span class="tag">A · Self-Demonstrating Margin Essay (“Show, Don’t Tell”)</span><span class="rec-badge">Recommended</span></div>
+      <p class="why">Sets the About page in the edition’s own margin layout: live Burton notes, oxblood Latin, <code>§</code> citations, and underlined names sit right beside the paragraphs explaining them.</p>
+      <div class="stage">
+        <div class="about-split">
+          <div>
+            <h4 style="margin:0 0 0.25rem;font-weight:400;font-size:1.05rem">How to Read Burton Here</h4>
+            <p style="margin:0 0 0.45rem">Burton argues in two voices: his nimble seventeenth-century English and a tide of <span class="la">verba antiqua</span> from <span style="text-decoration:underline;text-decoration-color:var(--muted)">Galen</span><span style="color:var(--k-cite);font-size:0.75em;vertical-align:super">§</span> and the schools. Everything the edition adds waits quietly at the page’s edge.</p>
+            <details style="font-size:0.84rem;color:var(--muted)"><summary style="cursor:pointer;color:var(--accent)">Technical Colophon, Corpus &amp; Model Provenance</summary><div style="margin-top:0.25rem">EPUB SHA-256, 159 units, machine translation ledger &amp; font licences tucked neatly here.</div></details>
+          </div>
+          <div>
+            <div class="about-margin-card"><span class="mini-b" style="background:var(--accent);color:var(--paper)">a</span> <span class="sc muted">note</span> Burton’s own marginalia keep a rubric rule.</div>
+            <div class="about-margin-card" style="border-left:1px dotted var(--rule)"><span class="sc muted">trans.</span> <span class="la" style="font-style:normal">ancient words</span> ◇</div>
+            <div class="about-margin-card" style="border-left-color:var(--k-cite)"><span class="sc" style="color:var(--k-cite)">§ cites</span> Galen, <i>De locis affectis</i>, bk 3</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick A</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="B: Annotated Page Diagram + Clean Guide">
+      <div class="card-h"><span class="tag">B · Annotated Visual Page Map + 2-Column Key</span></div>
+      <p class="why">Opens with a full annotated specimen diagram pointing to each part of the page, followed by concise two-column prose and collapsed technical metadata.</p>
+      <div class="stage">
+        <div style="border:1px solid var(--rule);padding:0.5rem;border-radius:4px;font-size:0.86rem">
+          <div style="display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:0.5rem;text-align:center">
+            <div class="muted" style="border-right:1px dashed var(--rule);padding-right:0.3rem"><b>Left Margin</b><br>Gowland’s notes (on wide screens)</div>
+            <div><b>Burton’s 1651 Text</b><br><span class="la">Oxblood Latin</span> · <span style="color:var(--k-cite)">§</span> citations · underlined names</div>
+            <div class="muted" style="border-left:1px dashed var(--rule);padding-left:0.3rem"><b>Right Margin</b><br>Burton’s notes + translations</div>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick B</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+
+  <!-- AB-9: 7 READER LINKS & BROAD PRINCIPLES -->
+  <h2 class="sec-h" id="ab9">AB-9 · Worth Borrowing from Your Friend’s 7 Reader Links + Design Critique</h2>
+  <p class="sec-desc">Broad take: our edition already executes Tufte-style parallel margins and dark/light typography better than almost every literary web edition — our main friction now is <b>margin visual noise</b> (too many repeated small-caps labels and long chains) and <b>context switching</b> when following links in 50+ page chapters. Here is what each of the 7 sites teaches us, plus 3 interactive prototypes you can pick:</p>
+
+  <table class="matrix">
+    <thead><tr><th>Site Studied</th><th>Core Principle</th><th>Verdict for Burton</th></tr></thead>
+    <tbody>
+      <tr><td><b>Tufte CSS</b></td><td>Abundant margins, low ink chrome, letting typography signal note roles instead of heavy labels.</td><td><b>Adopt (S1):</b> Drop redundant <code>NOTE</code> / <code>GLOSS</code> small-caps headers when layout/italic lemma already signals it.</td></tr>
+      <tr><td><b>Power Moby-Dick</b></td><td>Clean 19th-c. serif book column with parallel glosses &amp; zero jarring modal popups.</td><td><b>Already beaten on desktop;</b> validates our calm margin column and quiet hover-linking.</td></tr>
+      <tr><td><b>The Joyce Project</b></td><td>Semantic subtle cue colors by annotation type + rich non-linear allusion popups.</td><td><b>Keep our restraint:</b> our oxblood/cite/gloss colors work; avoid rainbow prose links.</td></tr>
+      <tr><td><b>Andy Matuschak’s Notes</b></td><td>Horizontal sliding panes keep your chapter open beside the reference you clicked (zero context loss).</td><td><b>Adopt (S2):</b> Optional in-page <b>Side Peek</b> pane when clicking cross-refs or author links in long chapters.</td></tr>
+      <tr><td><b>STEPBible</b></td><td>Word-order interlinear + hover context + side lexicon panel for Greek/terms.</td><td><b>Adopt (S2/S3):</b> Clickable side/inline term inspection without leaving the chapter.</td></tr>
+      <tr><td><b>Nicky Case’s Nutshell</b></td><td>Recursive, expandable in-place explanations (click a link to unfold context inline).</td><td><b>Adopt (S3):</b> Expandable humoral &amp; apothecary chips (<i>atra bilis</i>, <i>per consensum</i>, ℞, ß) inside cards.</td></tr>
+      <tr><td><b>Waste Land (Winding Way)</b></td><td>Deep multi-paragraph commentary housed on separate full pages.</td><td><b>Avoid for main flow:</b> leaving the page breaks long reading (except for deep Author index pages).</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ab-grid" data-group="AB-9 · Stealable Patterns (Multi-Pick Note)">
+    <section class="card" data-opt="S1: De-Noised Tufte Margin Labels">
+      <div class="card-h"><span class="tag">S1 · De-Noised Margin Cards (Tufte / Power Moby-Dick)</span></div>
+      <p class="why">Removes repetitive <code>GLOSS</code> / <code>NOTE</code> uppercase tags when an italic lemma or rubric rule already makes the role obvious — cutting visual clutter ~25%.</p>
+      <div class="stage" style="font-size:0.86rem">
+        <div class="muted" style="margin-bottom:0.35rem"><b>Before:</b> <span class="sc" style="color:var(--k-gloss)">gloss</span> <i>Ligatures</i> Parts of plants…</div>
+        <div><b>After:</b> <i style="color:var(--k-gloss)">Ligatures</i> — Parts of plants or animals tied to the body…</div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick S1</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="S2: Matuschak / STEPBible Split Side-Peek">
+      <div class="card-h"><span class="tag">S2 · In-Page Split Peek (Matuschak / STEPBible)</span></div>
+      <p class="why">Clicking a cross-reference or author entry slides it open in a clean side column beside your current paragraph so you never lose your spot in <code>djr</code>.</p>
+      <div class="stage">
+        <div class="split-peek">
+          <div>Read on: “…as I have shown <button type="button" style="border:0;background:none;padding:0;text-decoration:underline dotted;color:var(--accent)" onclick="document.getElementById('peekPane').hidden=false">above in 1.1.2.4</button>…”</div>
+          <div class="peek-pane" id="peekPane" hidden>
+            <div style="display:flex;justify-content:space-between"><b>1.1.2.4 · Of the Humours</b><button type="button" style="border:0;background:none;padding:0" onclick="this.closest('.peek-pane').hidden=true">×</button></div>
+            <p class="muted" style="margin:0.25rem 0 0;font-size:0.9em">Blood is a hot, sweet, temperate, red humour… <a href="#" onclick="return false">Open full section →</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick S2</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+
+    <section class="card" data-opt="S3: Nutshell Expandable Humoral Chips">
+      <div class="card-h"><span class="tag">S3 · Expandable Term Chips (Nutshell)</span></div>
+      <p class="why">Click any underlined humoral term or apothecary sign in a translation card to unfold its concise definition inline from <code>data/glossary.yaml</code>:</p>
+      <div class="stage" style="font-size:0.88rem">
+        <div>“Melancholy <button type="button" class="nut-btn" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">by consent</button><span class="nut-drawer" hidden><b>per consensum:</b> medical sympathy between organs (e.g. brain troubled by <button type="button" class="nut-btn" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">hypochondries</button><span class="nut-drawer" hidden><b>hypochondries:</b> upper abdomen below the ribs — not modern “health anxiety”.</span>).</span> of the liver…”</div>
+      </div>
+      <div class="pick-row"><button type="button" class="pick-btn">Pick S3</button><input class="note-inp" placeholder="Optional note…"></div>
+    </section>
+  </div>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <span id="summaryTxt" class="muted">No choices picked yet — click any Pick button above.</span>
+    <div style="display:flex;gap:0.5rem">
+      <button type="button" id="clearBtn">Clear picks</button>
+      <button type="button" id="copyBtn" style="background:var(--accent);color:var(--paper);border-color:var(--accent)">Copy my choices</button>
+    </div>
+  </div>
+  <div class="copy-box" id="copyBox"><textarea id="copyArea" readonly></textarea></div>
+</div>
+
+<script>
+const KEY = "burton-r10-choices";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch {}
+const saveState = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} };
+
+// Theme toggle
+document.getElementById("themeBtn").addEventListener("click", () => {
+  const d = document.documentElement;
+  d.dataset.theme = d.dataset.theme === "dark" ? "light" : "dark";
+});
+
+// AB-3 interactive frontispiece demos
+let tA = 0;
+const fsA = document.getElementById("fsDemoA");
+document.getElementById("fsZoneA").addEventListener("mouseenter", () => { tA = setTimeout(() => fsA.classList.add("zoomed"), 280); });
+fsA.addEventListener("mouseleave", () => { clearTimeout(tA); fsA.classList.remove("zoomed"); });
+const loupeB = document.getElementById("fsLoupeB");
+document.getElementById("fsZoneB").addEventListener("mouseenter", () => loupeB.classList.add("active"));
+document.getElementById("fsZoneB").addEventListener("mouseleave", () => loupeB.classList.remove("active"));
+const fsC = document.getElementById("fsDemoC");
+document.getElementById("fsZoneC").addEventListener("click", () => fsC.classList.toggle("zoomed"));
+document.getElementById("fsBtnC").addEventListener("click", () => fsC.classList.toggle("zoomed"));
+
+// AB-4 crop/whole toggle
+document.getElementById("fpCropBtn").addEventListener("click", (e) => {
+  document.body.classList.remove("fp-whole");
+  e.target.setAttribute("aria-pressed", "true");
+  document.getElementById("fpWholeBtn").setAttribute("aria-pressed", "false");
+});
+document.getElementById("fpWholeBtn").addEventListener("click", (e) => {
+  document.body.classList.add("fp-whole");
+  e.target.setAttribute("aria-pressed", "true");
+  document.getElementById("fpCropBtn").setAttribute("aria-pressed", "false");
+});
+
+// AB-6 controls
+function segPick(btn) {
+  [...btn.parentElement.children].forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+}
+function swPick(btn) {
+  [...btn.parentElement.children].forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+}
+function setSpacing(btn, lh) { segPick(btn); document.getElementById("optProse").style.lineHeight = lh; }
+function toggleCalm() { document.getElementById("optLiveBox").classList.toggle("demo-calm", document.getElementById("calmChk").checked); }
+function toggleUl() {
+  const hide = document.getElementById("ulChk").checked;
+  document.querySelectorAll(".ul-demo").forEach((el) => { el.style.textDecoration = hide ? "none" : "underline"; });
+}
+function toggleProg() { document.getElementById("optProg").style.display = document.getElementById("progChk").checked ? "block" : "none"; }
+
+// AB-7 synopsis demos
+function togSynA(btn) {
+  const kids = btn.parentElement.nextElementSibling;
+  kids.hidden = !kids.hidden;
+}
+let dTimer = 0;
+const dBtn = document.getElementById("synDwellBtn"), dKids = document.getElementById("synDwellKids");
+dBtn.addEventListener("mouseenter", () => {
+  dBtn.querySelector(".fillbar").style.width = "100%";
+  dTimer = setTimeout(() => { dKids.hidden = false; }, 600);
+});
+dBtn.addEventListener("mouseleave", () => {
+  clearTimeout(dTimer);
+  dBtn.querySelector(".fillbar").style.width = "0";
+});
+dBtn.addEventListener("click", () => { dKids.hidden = !dKids.hidden; });
+function togAcc(idx) {
+  const rows = [...document.querySelectorAll("#synAcc > div")];
+  rows.forEach((r, i) => {
+    const k = r.querySelector(".syn-kids-d");
+    k.hidden = i === idx ? !k.hidden : true;
+  });
+}
+
+// Choice tracking across all AB groups
+function renderSummary() {
+  const keys = Object.keys(state).filter(
+    (k) => state[k]?.opt || Object.values(state[k]?.notes || {}).some((v) => v.trim())
+  );
+  document.getElementById("summaryTxt").textContent = keys.length
+    ? `${keys.length} section(s) annotated`
+    : "No choices picked yet — click any Pick button above.";
+  document.querySelectorAll("[data-group]").forEach((grp) => {
+    const g = grp.dataset.group, picked = state[g]?.opt;
+    grp.querySelectorAll(".card").forEach((c) => {
+      const hit = c.dataset.opt === picked;
+      c.classList.toggle("picked", hit);
+      c.querySelector(".pick-btn")?.setAttribute("aria-pressed", String(hit));
+      const inp = c.querySelector(".note-inp");
+      if (inp && state[g]?.notes?.[c.dataset.opt] != null && document.activeElement !== inp) {
+        inp.value = state[g].notes[c.dataset.opt];
+      }
+    });
+  });
+}
+
+document.querySelectorAll("[data-group]").forEach((grp) => {
+  const g = grp.dataset.group;
+  grp.querySelectorAll(".card").forEach((c) => {
+    const opt = c.dataset.opt;
+    c.querySelector(".pick-btn")?.addEventListener("click", () => {
+      state[g] = state[g] || {};
+      state[g].opt = state[g].opt === opt ? null : opt;
+      saveState(); renderSummary();
+    });
+    c.querySelector(".note-inp")?.addEventListener("input", (e) => {
+      state[g] = state[g] || {};
+      state[g].notes = state[g].notes || {};
+      state[g].notes[opt] = e.target.value;
+      saveState(); renderSummary();
+    });
+  });
+});
+
+document.getElementById("clearBtn").addEventListener("click", () => { state = {}; saveState(); renderSummary(); });
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  const lines = [];
+  document.querySelectorAll("[data-group]").forEach((grp) => {
+    const g = grp.dataset.group, st = state[g];
+    if (!st) return;
+    const notes = Object.entries(st.notes || {}).filter(([, v]) => v.trim()).map(([k, v]) => `${k}: ${v.trim()}`).join("; ");
+    if (st.opt || notes) lines.push(`- ${g}: ${st.opt || "(no button picked)"}${notes ? " — Notes: " + notes : ""}`);
+  });
+  const txt = lines.join("\n") || "No choices picked yet.";
+  const box = document.getElementById("copyBox"), area = document.getElementById("copyArea");
+  area.value = txt; box.style.display = "block";
+  try { await navigator.clipboard.writeText(txt); document.getElementById("copyBtn").textContent = "Copied!"; } catch {}
+});
+renderSummary();
+</script>
+</body>
+</html>

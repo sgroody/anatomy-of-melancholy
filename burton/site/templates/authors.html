@@ -2,8 +2,6 @@
 {% block main %}
 <article class="prose authors">
   <h1>Authors cited in the sidenotes</h1>
-  <p>Burton’s sidenotes name {{ "{:,}".format(stats.authors) }} authors in {{ "{:,}".format(stats.citations) }} citations that the edition’s rules could tie to an author, plus {{ "{:,}".format(stats.bible) }} citations of Scripture. The citations were read by rule from the sidenotes’ text, using abbreviation and title tables that are a {{ tables.label }}. Of the {{ "{:,}".format(stats.notes) }} sidenotes, {{ "{:,}".format(stats.parsed) }} are fully parsed, {{ "{:,}".format(stats.partial) }} partly, {{ "{:,}".format(stats.unidentified) }} cite someone the rules could not identify, and {{ "{:,}".format(stats.none) }} carry no citation. Unidentified citations are not guessed.</p>
-  <p>Dates and identifiers come from Wikidata (CC0) where one candidate matched by rule. Descriptions marked “machine draft” were written by a language model, which the entry names, and are unreviewed unless the entry says otherwise.</p>
   <div class="idx-tools" hidden>
     <label class="idx-f-wrap"><span class="sr-only">Filter authors</span><input type="search" class="idx-filter" placeholder="Filter by name, abbreviation, or field…" autocomplete="off"></label>
     <span class="idx-count" aria-live="polite"></span>
@@ -18,5 +16,9 @@
     {% endfor %}
     </tbody>
   </table>
+  <footer class="authors-meta" aria-label="About these counts and descriptions">
+    <p>Burton’s sidenotes name {{ "{:,}".format(stats.authors) }} authors in {{ "{:,}".format(stats.citations) }} citations that the edition’s rules could tie to an author, plus {{ "{:,}".format(stats.bible) }} citations of Scripture. The citations were read by rule from the sidenotes’ text, using abbreviation and title tables that are a {{ tables.label }}. Of the {{ "{:,}".format(stats.notes) }} sidenotes, {{ "{:,}".format(stats.parsed) }} are fully parsed, {{ "{:,}".format(stats.partial) }} partly, {{ "{:,}".format(stats.unidentified) }} cite someone the rules could not identify, and {{ "{:,}".format(stats.none) }} carry no citation. Unidentified citations are not guessed.</p>
+    <p>Dates and identifiers come from Wikidata (CC0) where one candidate matched by rule. Descriptions marked “machine draft” were written by a language model, which the entry names, and are unreviewed unless the entry says otherwise.</p>
+  </footer>
 </article>
 {% endblock %}

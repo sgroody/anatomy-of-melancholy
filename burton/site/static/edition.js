@@ -125,8 +125,19 @@ function apply() {
 
 // Each passage's translations, reordered to the chosen source order: the box lists them all, and
 // the interlinear and English modes show the first. Without this script the build's default order stands.
+let appliedOrder = "default";
 function orderVersions() {
-  const order = ORDERS[settings.order] || ORDERS.default;
+  const target = settings.order || "default";
+  if (target === appliedOrder) {
+    if (!applyDone) {
+      for (const vs of document.querySelectorAll(".ft-vs")) {
+        vs.closest(".fp")?.classList.toggle("first-gowland", vs.firstElementChild?.dataset.src === "gowland");
+      }
+    }
+    return;
+  }
+  appliedOrder = target;
+  const order = ORDERS[target] || ORDERS.default;
   const rank = (v) => { const i = order.indexOf(v.dataset.src); return i < 0 ? order.length : i; };
   for (const vs of document.querySelectorAll(".ft-vs")) {
     const items = [...vs.children].sort((a, b) => rank(a) - rank(b));
@@ -261,6 +272,8 @@ function noteOf(marker) {
   return marker.classList.contains("mref") ? document.getElementById(marker.dataset.for)
     : document.getElementById(marker.getAttribute("href").slice(1));
 }
+const markerPairs = markers.map((m) => [m, noteOf(m)]).filter(([, n]) => n);
+const markerByNote = new Map(markerPairs.map(([m, n]) => [n, m]));
 function blockOf(marker) { return marker.closest("p, li, .lg, blockquote, h1") || article; }
 
 function asPopover(note, on) {
@@ -310,9 +323,14 @@ function openAsPopover(note, marker) {
 // Bible verses (KJV, stage 6) are folded after three lines; "more" shows only where the fold hides something.
 // Without this script they are shown whole.
 function checkFolds(scope) {
+  const checks = [];
   for (const k of scope.querySelectorAll(".kjv.fold:not(.open)")) {
     const t = k.querySelector(".kjv-t");
-    k.querySelector(".kjv-more").hidden = !(t && t.scrollHeight > t.clientHeight + 1);
+    const btn = k.querySelector(".kjv-more");
+    if (btn) checks.push([btn, !(t && t.scrollHeight > t.clientHeight + 1)]);
+  }
+  for (const [btn, hide] of checks) {
+    if (btn.hidden !== hide) btn.hidden = hide;
   }
 }
 for (const k of document.querySelectorAll(".kjv")) {
@@ -378,16 +396,26 @@ document.addEventListener("keydown", (ev) => {
   document.querySelectorAll(".fp.pinned").forEach((f) => f.classList.remove("pinned"));
 });
 
+function anchorTop(m, artTop) {
+  if (m.getClientRects().length) return Math.max(0, m.getBoundingClientRect().top - artTop);
+  let cur = m;
+  while (cur && cur !== article && !cur.getClientRects().length) {
+    cur = cur.previousElementSibling || cur.parentElement;
+  }
+  const ref = cur && cur !== article && cur.getClientRects().length ? cur : blockOf(m);
+  return Math.max(0, ref.getBoundingClientRect().top - artTop);
+}
+
 function layoutNotes() {
   if (!article) return;
   article.querySelectorAll(".sn-more").forEach((b) => b.remove());
-  const notes = markers.map(noteOf).filter(Boolean);
+  const notes = markerPairs.map(([, n]) => n);
   body.classList.toggle("mn-on", isWide());
   if (!isWide()) {
     article.classList.remove("sn-laid");
     article.style.minHeight = "";
     notes.forEach((n) => { n.classList.remove("sn-stacked", "mn-fold"); n.style.top = ""; asPopover(n, true); });
-    updateNarrowCues();
+    scheduleSpanWarmup(() => updateNarrowCues());
     if (pendingAnchor) {
       window.scrollBy(0, pendingAnchor.el.getBoundingClientRect().top - pendingAnchor.top);
       pendingAnchor = null;
@@ -407,8 +435,7 @@ function layoutNotes() {
   const shown = (n) => body.classList.contains("text-only") ? noteSource(n) === "burton" :
     !body.classList.contains(`no-${noteSource(n)}`) &&
     !(n.classList.contains("mn-gl") && !body.classList.contains("show-glosses"));
-  const all = markers.map((m) => [m, noteOf(m)])
-    .filter(([, n]) => n && shown(n) && !(inLine && n.classList.contains("mn-tr")));
+  const all = markerPairs.filter(([, n]) => shown(n) && !(inLine && n.classList.contains("mn-tr")));
   for (const [, note] of all) {
     note.classList.remove("sn-stacked", "mn-fold", "mn-fold2", "mn-fold3", "mn-l");
     asPopover(note, false);
@@ -420,7 +447,7 @@ function layoutNotes() {
   const GAP = 0.4 * rem;
   const art = article.getBoundingClientRect();
   // Burton's markers and the margin anchors are interleaved by where they stand on the page, Burton's first on a tie
-  const tops = new Map(all.map(([m]) => [m, m.getBoundingClientRect().top - art.top]));
+  const tops = new Map(all.map(([m]) => [m, anchorTop(m, art.top)]));
   const pairs = all.map((p, i) => [p, i]).sort(([[a], i], [[b], j]) => (tops.get(a) - tops.get(b)) ||
     (a.matches("a.nref") ? 0 : 1) - (b.matches("a.nref") ? 0 : 1) || i - j).map(([p]) => p);
   // Two margins on wide windows (owner, 2026-11-03, R3): Gowland's commentary on the left, Burton's notes and the
@@ -442,7 +469,7 @@ function layoutNotes() {
   const place = (h, fold) => {
     const floors = { r: -Infinity, l: -Infinity }, ys = [], sides = [];
     pairs.forEach(([, note], i) => {
-      const anchor = anchors[i];
+      const anchor = Math.max(0, anchors[i]);
       let side = "r";
       if (two) {
         const pref = note.classList.contains("mn-gw") ? "l" : "r", other = pref === "l" ? "r" : "l";
@@ -494,6 +521,7 @@ function layoutNotes() {
   const end = Math.max(p.floors.r, p.floors.l);
   article.style.minHeight = end > 0 ? `${Math.ceil(end)}px` : "";
   updateNarrowCues();
+  scheduleSpanWarmup();
   if (pendingAnchor) {
     window.scrollBy(0, pendingAnchor.el.getBoundingClientRect().top - pendingAnchor.top);
     pendingAnchor = null;
@@ -515,7 +543,13 @@ if (article) {
   window.addEventListener("resize", scheduleLayout);
   document.fonts?.ready.then(scheduleLayout);
   window.addEventListener("load", scheduleLayout);
-  new ResizeObserver(scheduleLayout).observe(article);
+  let lastArtW = article.clientWidth;
+  new ResizeObserver(() => {
+    if (Math.abs(article.clientWidth - lastArtW) > 0.5) {
+      lastArtW = article.clientWidth;
+      scheduleLayout();
+    }
+  }).observe(article);
 }
 
 // ---------------------------------------------------------------- what each note is on
@@ -649,6 +683,41 @@ function updateNarrowCues() {
   for (const [item, r] of spans) if (item.classList.contains("mn-gw") && r) ranges.push(r);
   CSS.highlights.set("gw-cues", new Highlight(...ranges));
 }
+const spansDone = new WeakSet();
+function getSpan(item) {
+  if (!item) return null;
+  if (!spansDone.has(item)) {
+    spansDone.add(item);
+    const m = markerByNote.get(item);
+    if (m) {
+      try { const r = spanOf(m); if (r && !r.collapsed) spans.set(item, r); } catch { /* a block the walker cannot read */ }
+    }
+  }
+  return spans.get(item) || null;
+}
+let warmupIdx = 0, warmupScheduled = false;
+function scheduleSpanWarmup(onDone) {
+  if (warmupIdx >= markerPairs.length) { onDone?.(); return; }
+  if (warmupScheduled && !onDone) return;
+  warmupScheduled = true;
+  const run = (deadline) => {
+    const start = performance.now();
+    while (warmupIdx < markerPairs.length && ((deadline && deadline.timeRemaining() > 3) || (!deadline && performance.now() - start < 10))) {
+      const [, item] = markerPairs[warmupIdx++];
+      getSpan(item);
+    }
+    if (warmupIdx < markerPairs.length) {
+      if (window.requestIdleCallback) requestIdleCallback(run, { timeout: 250 });
+      else setTimeout(() => run(null), 16);
+    } else {
+      warmupScheduled = false;
+      updateNarrowCues();
+      onDone?.();
+    }
+  };
+  if (window.requestIdleCallback) requestIdleCallback(run, { timeout: 250 });
+  else setTimeout(() => run(null), 16);
+}
 // A word with several notes (a gloss inside a passage with a broader note) lights all of them (owner, 2026-11-04).
 let hot = [], pinned = null;
 function light(items) {
@@ -658,7 +727,7 @@ function light(items) {
   hot = items;
   hot.forEach((x) => x.classList.add("hot"));
   if (!canHighlight) return;
-  const ranges = [...hot, pinned].filter(Boolean).map((i) => spans.get(i)).filter(Boolean);
+  const ranges = [...hot, pinned].filter(Boolean).map((i) => getSpan(i)).filter(Boolean);
   CSS.highlights.set("note-words", new Highlight(...ranges));
 }
 function pin(item) {
@@ -670,10 +739,7 @@ function pin(item) {
 }
 
 if (article) {
-  for (const m of markers) {
-    const item = noteOf(m);
-    if (!item) continue;
-    try { const r = spanOf(m); if (r && !r.collapsed) spans.set(item, r); } catch { /* a block the walker cannot read */ }
+  for (const [, item] of markerPairs) {
     item.addEventListener("mouseenter", () => light(item));
     item.addEventListener("mouseleave", () => light(pinned));
     item.addEventListener("click", (ev) => {
@@ -689,6 +755,10 @@ if (article) {
     const node = pos ? pos.offsetNode : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startContainer;
     const off = pos ? pos.offset : document.caretRangeFromPoint?.(ev.clientX, ev.clientY)?.startOffset;
     if (!node) return [];
+    const blk = (node.nodeType === 1 ? node : node.parentElement)?.closest?.("p, li, .lg, blockquote, h1");
+    if (blk) {
+      for (const m of blk.querySelectorAll("a.nref, span.mref")) getSpan(noteOf(m));
+    }
     const found = [];
     for (const [item, r] of spans) {
       try { if (r.isPointInRange(node, off)) found.push([r.toString().length, item]); } catch { /* another tree */ }
@@ -725,9 +795,16 @@ if (article) {
 }
 
 // ---------------------------------------------------------------- translations
+const burtonByFid = new Map();
+for (const s of document.querySelectorAll(".burton-tr[data-for]")) {
+  const k = s.dataset.for;
+  let arr = burtonByFid.get(k);
+  if (!arr) { arr = []; burtonByFid.set(k, arr); }
+  arr.push(s);
+}
 for (const fp of document.querySelectorAll(".fp")) {
   const fid = fp.dataset.fid;
-  const mine = document.querySelectorAll(`.burton-tr[data-for="${CSS.escape(fid)}"]`);
+  const mine = burtonByFid.get(fid) || [];
   const link = (on) => {
     fp.classList.toggle("linked", on);
     mine.forEach((s) => s.classList.toggle("linked", on));
@@ -854,7 +931,7 @@ if (synSheets.length) {
     }
     for (const li of lis) { delete li.dataset.fit; delete li.dataset.turn; }
     for (const li of lis) {  // parents first, so each width read already reflects the parents' choice
-      if (!kidsOf(li) || li.offsetParent === null) continue;
+      if (!kidsOf(li) || li.offsetParent === null || li.classList.contains("syn-shut")) continue;
       const w = li.getBoundingClientRect().width;
       li.dataset.fit = w < need.get(li) ? "stack" : "side";
       // a head is turned only where the branch has no room for it upright, as the printer turned only to save width
@@ -1408,13 +1485,23 @@ applyDone = true;
       frontEnter.classList.add("has-ribbon");
     }
   }
-  // Contents drawer & front contents: quiet Silk Ribbon shortcut
+  // Contents drawer & front contents: quiet Silk Ribbon shortcut (icon only, no literal "Silk ribbon:" label)
   if (rb?.latest?.unit) {
     for (const ex of document.querySelectorAll(".toc-extras")) {
-      const p = el("p", "toc-ribbon", "Silk ribbon: ");
+      const p = el("p", "toc-ribbon");
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("class", "ic-ribbon");
+      svg.setAttribute("viewBox", "0 0 12 16");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("focusable", "false");
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", "M2 1.2h8v13.3L6 11.2 2 14.5z");
+      svg.append(path);
+      const sr = el("span", "sr-only", "Saved reading place: ");
       const a = el("a", null, rb.latest.title || rb.latest.unit);
       a.href = new URL(`${rb.latest.unit}/${rb.latest.pid ? `#${rb.latest.pid}` : ""}`, root).href;
-      p.append(a);
+      a.title = `Saved reading place: ${rb.latest.title || rb.latest.unit}`;
+      p.append(svg, sr, a);
       ex.prepend(p);
     }
   }

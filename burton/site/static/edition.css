@@ -602,6 +602,8 @@ a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: v
 /* an open Partition sets its sheets under its name, across the column, so their lines are not squeezed */
 .syn-sheet .syn-part:not(.syn-shut) > .syn-nb { flex-direction: column; align-items: stretch; }
 .syn-sheet .syn-part:not(.syn-shut) > .syn-nb > .syn-kw { flex: 0 0 auto; margin: .15em 0 .2em 1.1em; }
+.syn-sheet .syn-part.syn-shut > .syn-nb { flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { top: 50%; translate: 0 -50%; }
 .syn-tools { display: flex; gap: 0.5rem; font-size: 0.85em; }
 .syn-tools[hidden] { display: none; }
 .syn-tools button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; color: inherit; font: inherit; }
@@ -610,7 +612,8 @@ a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: v
 .landing.synopsis { max-width: none; }
 main:has(.landing.synopsis) { max-width: 90rem; }
 /* a Partition's synopsis at the head of its first page reaches into the margin beside the text */
-.part-syn { margin: 0 0 1.6rem; border-bottom: 1px solid var(--rule); padding-bottom: .6rem; }
+.part-syn { margin: 0 0 1.6rem; border-bottom: 1px solid var(--rule); padding: .65rem 0; }
+.part-syn > .syn-front { margin: 0; }
 .part-syn .ps-h { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); margin: 0; text-indent: 0; }
 .ps-all { font-size: 0.85em; margin: 0; text-indent: 0; }
 @media (min-width: 1100px) { .unit > .part-syn { margin-right: calc(-1 * (var(--margin-col) + var(--gap))); } }
@@ -1424,9 +1427,11 @@ body.bar-float .settings:not(.settings-page) { top: 3.4rem; }
 
 /* E2: silk ribbon in Contents & quiet unit-top resume banner */
 .toc-ribbon { margin: 0 0 0.5rem; padding: 0.3rem 0.5rem; border-left: 2px solid var(--accent);
-  background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 0.9em; }
+  background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 0.9em; display: flex; align-items: baseline; }
 .toc-ribbon a { color: var(--accent); text-decoration: none; }
 .toc-ribbon a:hover { text-decoration: underline; }
+.ic-ribbon { width: 0.72em; height: 0.98em; flex: 0 0 auto; align-self: center; margin-right: 0.42em;
+  fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 1.3; stroke-linejoin: round; }
 .unit-resume { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; justify-content: space-between;
   margin: 0 0 1rem; padding: 0.35rem 0.7rem; border-left: 2px solid var(--accent);
   background: color-mix(in srgb, var(--paper) 94%, var(--ink)); font-size: 0.85em; color: var(--muted); text-indent: 0; }
@@ -1516,12 +1521,17 @@ table.counts.gloss-table td:last-child { text-align: left; font-variant-numeric:
   }
 }
 
+/* Authors cited: table first, methodological & provenance note cleanly below */
+.prose.authors { max-width: min(46rem, 100%); }
+.authors-meta { margin-top: 1.8rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); font-size: 0.88em; color: var(--muted); }
+.authors-meta p:last-child { margin-bottom: 0; }
+
 /* F1 narrow phone fit: keep title ("MELANCHOLY,") and folded synopses cleanly within 390px viewports */
 @media (max-width: 28rem) {
   .front-side { --fcol: 100%; }
   .home-page h1.front-title, .front-title { font-size: clamp(1.15rem, 4.6vw, 1.45rem); letter-spacing: 0.08em; }
-  .syn-part > .syn-nb > .syn-hd { width: 12.6em; padding-left: 1.3em; }
-  .syn-shut > .syn-nb > .syn-kw { min-width: 4.8em; }
-  .syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 4.5em; }
-  .syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { left: calc(15.8em / 0.95); }
+  .syn-part.syn-shut > .syn-nb > .syn-hd { width: min(12.6em, calc(100% - 5.2em)); padding-left: 1.3em; }
+  .syn-shut > .syn-nb > .syn-kw { min-width: 4.4em; }
+  .syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 4.2em; }
+  .syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { left: min(calc(15.8em / 0.95), calc(100% - 1.3em)); }
 }

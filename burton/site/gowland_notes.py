@@ -111,6 +111,60 @@ def segments(en) -> list[tuple[str, str]]:
     return out
 
 
+_STOP_WORDS = frozenset({
+    "the", "and", "for", "with", "from", "that", "this", "his", "her", "into",
+    "after", "see", "above", "below", "note", "kind", "new", "their", "them",
+})
+
+
+def _norm_plain(s: str) -> str:
+    return " ".join(re.sub(r"[^\w\s]", " ", s.lower()).split())
+
+
+def _content_words(s: str) -> list[str]:
+    return [_norm(w) for w in WORD.findall(s) if len(w) >= 3 and w.lower() not in _STOP_WORDS]
+
+
+def _shares_stem(wa: list[str], wb: list[str]) -> bool:
+    for x in wa:
+        need = max(4, -(-len(x) * 3 // 5))
+        if any(len(_common(x, y)) >= need for y in wb):
+            return True
+    return False
+
+
+def match_pointer_segments(lemma: str, segs: list[tuple[str, str]]) -> list[int]:
+    """Find which segment(s) of a target endnote a pointer's lemma refers to.
+    Never falls back to segment 0 when a multi-segment target has no match.
+    """
+    if len(segs) <= 1:
+        return [0] if segs else []
+    nl = _norm_plain(lemma)
+    if nl:
+        exact = [i for i, (lem, _) in enumerate(segs) if _norm_plain(lem) == nl]
+        if exact:
+            return exact
+        if len(nl) >= 4:
+            sub = [
+                i for i, (lem, _) in enumerate(segs)
+                if len(_norm_plain(lem)) >= 4 and (
+                    re.search(rf"(?<!\w){re.escape(nl)}(?!\w)", _norm_plain(lem))
+                    or re.search(rf"(?<!\w){re.escape(_norm_plain(lem))}(?!\w)", nl)
+                )
+            ]
+            if sub:
+                return sub
+    wa = _content_words(lemma)
+    if wa:
+        stem_hits = [i for i, (lem, _) in enumerate(segs) if _shares_stem(wa, _content_words(lem))]
+        if stem_hits:
+            return stem_hits
+        txt_hits = [i for i, (_, txt) in enumerate(segs) if _shares_stem(wa, _content_words(txt))]
+        if len(txt_hits) == 1:
+            return txt_hits
+    return []
+
+
 def _short_sense(lemma: str, note: str) -> bool:
     """A sense of an English word even where it opens "A …" or "That is, …" ("A very ugly person."), or where
     the word is one of Burton's capitalised common nouns ("Schools: Universities.", "Chemist: Alchemist.")."""

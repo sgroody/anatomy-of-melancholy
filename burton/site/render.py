@@ -214,6 +214,18 @@ def penguin_head(seg: str, kind: str | None) -> str:
     return seg
 
 
+_NOTE_STOPWORDS = frozenset({
+    "that", "this", "with", "from", "burton", "cites", "note", "gloss", "about", "source", "trans",
+    "book", "chapter", "section", "part", "quoted", "quotation", "lines", "line", "verse", "latin",
+    "greek", "english", "means", "meaning", "here", "also", "above", "below", "unverified", "probably",
+    "author", "gives", "himself", "literal", "written", "wrote", "calls", "called", "same", "passage",
+})
+
+
+def _content_word_set(s: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z]{4,}", s.lower()) if w not in _NOTE_STOPWORDS}
+
+
 class Renderer:
     def __init__(self, unit: str, profile: str, layer: dict, image=None, h1_head=None, djs: dict | None = None,
                  cites: dict | None = None, cite_label: str = "", verified: dict | None = None,
@@ -251,6 +263,10 @@ class Renderer:
         self.gowland_from: dict[str, str] = {}  # passage id -> the page of Gowland's its translation comes from
         self.block_passage = False  # the passage being carded is a block (verse group, quotation), not in a line
         self.asides: dict[str, list[str]] = {}  # passage id -> his translation lines, set beside it (the Dedication)
+        self.current_block_id: str = ""
+        self.seen_own_cards: set[tuple[str, str]] = set()
+        self.seen_short_tr: set[tuple[str, str, str]] = set()
+        self.gw_block_words: dict[str, list[set[str]]] = {}
 
     # ---------------------------------------------------------------- helpers
     def w(self, s: str) -> None:
@@ -329,13 +345,18 @@ class Renderer:
         if tag == T("p"):
             if self.initial == "pending" and not self.in_note:
                 self.initial = "open"
+            pid = self.pid(e)
+            prev_blk = self.current_block_id
+            if pid and not self.in_note:
+                self.current_block_id = pid
             row = ""
             if self.facing_row is not None and self.facing_unit == "p" and not self.in_note:  # prose set facing
                 self.facing_row += 1
                 row = f' data-r="{self.facing_row}" style="--r:{self.facing_row}"'
-            self.w(f'<p id="{attr(self.pid(e))}"{self.cls(e.get("rend"))}{row}>')
+            self.w(f'<p id="{attr(pid)}"{self.cls(e.get("rend"))}{row}>')
             self.children(e)
             self.w("</p>\n")
+            self.current_block_id = prev_blk
         elif tag == T("quote"):
             if e.get("ana") == "foreign":
                 self.foreign_block(e, "blockquote", "bq")
@@ -805,6 +826,13 @@ class Renderer:
             if self.block_passage:  # he renders a whole block himself, set right after it: no card (2026-11-18)
                 self.counts["own_block_no_card"] = self.counts.get("own_block_no_card", 0) + 1
                 return
+            sel_exact = (st["burton_span"] or {}).get("exact", "")
+            own_key = (self.current_block_id, sel_exact)
+            if self.current_block_id and sel_exact and own_key in self.seen_own_cards:
+                self.counts["own_dup_card_skipped"] = self.counts.get("own_dup_card_skipped", 0) + 1
+                return
+            if self.current_block_id and sel_exact:
+                self.seen_own_cards.add(own_key)
             # "Author trans." and his words only: a note saying the same again is not wanted (owner, 2026-11-18)
             head = '<span class="mn-k">Author trans.</span> '
             body = f'“\x00Q{fid}\x00”{self.literal_peek_html(fid, "mn-lit")}'
@@ -830,7 +858,16 @@ class Renderer:
             notes = [t for t in vs if t["by"] == "machine" and t.get("note")]
             open_note = ""
             cleared = getattr(self, "note_hashes", {}).get(fid)
-            if notes and rec and cleared and cleared == notes_rate.note_hash(fid, rec):
+            note_promoted = bool(notes and rec and cleared and cleared == notes_rate.note_hash(fid, rec))
+            if note_promoted and self.profile == "private" and self.current_block_id in self.gw_block_words:
+                mw = _content_word_set(notes[0]["note"])
+                if len(mw) >= 3 and any(
+                    len(mw & gw) >= 4 and len(mw & gw) / min(len(mw), len(gw)) >= 0.45
+                    for gw in self.gw_block_words[self.current_block_id]
+                ):
+                    note_promoted = False
+                    self.counts["notes_open_folded_overlap"] = self.counts.get("notes_open_folded_overlap", 0) + 1
+            if note_promoted:
                 # rated among the most useful, judged sound by a second reader: open in the card (stage 14)
                 open_note = (f'<span class="mn-note">{esc_tagged(notes[0]["note"])} '
                              f'{prov(label_of(notes[0]) + "; note rated and audited for the margin")}</span>')
@@ -838,6 +875,17 @@ class Renderer:
             elif notes:
                 more.append(f'<span class="mn-alt"><span class="mn-h">Notes</span> {esc_tagged(notes[0]["note"])} '
                             f'{prov(label_of(notes[0]))}</span>')
+            orig_words = ((rec or {}).get("text") or "").split()
+            short_key = (
+                self.current_block_id,
+                " ".join(orig_words).lower(),
+                v0["text"].strip().lower(),
+            )
+            if self.current_block_id and not open_note and 1 <= len(orig_words) <= 2:
+                if short_key in self.seen_short_tr:
+                    self.counts["short_tr_dup_card_skipped"] = self.counts.get("short_tr_dup_card_skipped", 0) + 1
+                    return
+                self.seen_short_tr.add(short_key)
             if more:
                 body += f'<details class="mn-more"><summary>more</summary>{"".join(more)}</details>'
             body += open_note
@@ -946,10 +994,14 @@ class Renderer:
         if e.get("ana") == "foreign":
             self.foreign_block(e, "div", "lg")
             return
+        prev_blk = self.current_block_id
+        if lgid and not self.in_note:
+            self.current_block_id = lgid
         kind = " burton-verse-tr" if e.get("type") == "translation-block" else ""
         self.w(f'<div class="lg{kind}" id="{attr(lgid)}">')
         self.children(e)
         self.w("</div>")
+        self.current_block_id = prev_blk
 
 
 def mark_burton_spans(html_text: str, layer: dict, counts: dict, langs: dict | None = None) -> str:
@@ -1088,18 +1140,53 @@ def _find_in(seg: str, raw: str) -> tuple[int, int] | None:
 GW_LABELS = {"gloss": "gloss", "source": "source", "identity": "about", "explanation": "note", "pointer": "see"}
 
 
+def _outside_hidden(html_text: str, at: int) -> int:
+    """`at`, or the start of the outermost hidden/collapsed span or div open there (fp, cx-b, gowland-tr,
+    gowland-verse, gowland-block) so no anchor inside a hidden container reads boundingClientRect.top == 0."""
+    hidden = {"fp", "cx-b", "gowland-tr", "gowland-verse", "gowland-block"}
+    stack: list[tuple[str, int, bool]] = []
+    for m in TAG.finditer(html_text, 0, at):
+        close, tag, rest = m.groups()
+        if rest.endswith("/") or tag in ("br", "img", "wbr"):
+            continue
+        if close:
+            while stack and stack.pop()[0] != tag:
+                pass
+        else:
+            c = re.search(r'class="([^"]*)"', rest)
+            stack.append((tag, m.start(), bool(c) and bool(set(c.group(1).split()) & hidden)))
+    outer = [start for _, start, is_h in stack if is_h]
+    return outer[0] if outer else at
+
+
 def gowland_card(e: dict, notes, cid: str) -> str:
     """One of Gowland's endnote entries as a margin item, labelled by its kind (private build only). A pointer
-    shows the note it points to, in place."""
+    shows the note(s) it points to, in place, matched by lemma/stem (never defaulting blindly to seg 0)."""
     text = notes.note_text(e["endnote"], e["seg"])
     kind = e["kind"]
     if kind == "pointer" and e.get("targets"):
         t = e["targets"][0]
         if t in notes.endnotes():
             segs = notes.segments(notes.endnotes()[t])
-            k = next((i for i, (lem, _) in enumerate(segs) if lem.lower() == e["lemma"].lower()), 0)
-            text = segs[k][1] if segs else text
-            kind = notes.kind(segs[k][0], segs[k][1]) if segs else kind
+            idxs = notes.match_pointer_segments(e["lemma"], segs)
+            if len(idxs) == 1:
+                seg_lem, text = segs[idxs[0]]
+                kind = notes.kind(seg_lem, text)
+            elif len(idxs) > 1:
+                first_lem, text = segs[idxs[0]]
+                kind = notes.kind(first_lem, text)
+                extra_parts = [f'<em class="mn-lem">{esc_tagged(segs[i][0])}</em> {esc_tagged(segs[i][1])}'
+                               for i in idxs[1:]]
+                lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] else ""
+                return (
+                    f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="{attr(kind)}" '
+                    f'data-resp="gowland" role="note">'
+                    f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{esc_tagged(text)} · '
+                    + " · ".join(extra_parts) + "</span>"
+                )
+            else:
+                # No confident segment match in multi-segment target: keep Gowland's own pointer text cleanly
+                kind = "pointer"
         elif re.fullmatch(r"\d\.\d\.\d(?:\.\d+)?", t):
             text = f'<a class="xref" href="../{attr(t)}/">{esc(t)}</a>'
             return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="pointer" data-resp="gowland" role="note">'
@@ -1134,12 +1221,14 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
             at, pos = found[0], found[1]
             hs = pos[at]
             ln = len(sel["exact"])
+            if (outside := _outside_hidden(html_text, hs)) != hs:
+                hs, ln = outside, 0
         if hs is None:
             m = re.search(rf'<span class="enref"[^>]*data-target="{re.escape(e["endnote"])}"[^>]*></span>', html_text)
             if not m:
                 counts["gowland_notes_unplaced"] = counts.get("gowland_notes_unplaced", 0) + 1
                 continue
-            hs = m.end()
+            hs = _outside_hidden(html_text, m.end())
             grouped.setdefault((e["endnote"], hs), []).append((cid, e["kind"], gowland_card(e, notes, cid)))
         else:
             edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}"{extra} '
@@ -1212,15 +1301,28 @@ def mark_obscure_names(html_text: str, rx: re.Pattern, counts: dict) -> tuple[st
     return html_text, used
 
 
-def mark_glosses(html_text: str, items: list[dict], counts: dict) -> tuple[str, list[str]]:
+def mark_glosses(html_text: str, items: list[dict], counts: dict,
+                 covered: set[tuple[str, str]] | None = None) -> tuple[str, list[str]]:
     """Obsolete-word glosses (M8): the word is wrapped, and its sense follows it, hidden until the reader turns
     glosses on. Placed like cross-references, in the main text only (all found on the page as it is, then
     inserted from the end); a gloss that cannot be placed, is split by other markup or overlaps another is
-    counted and left out."""
+    counted and left out. Entries already glossed by Gowland or repeated in the same block are skipped."""
     views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
     edits = []
+    seen_in_block: set[tuple[str, str, str]] = set()
     for it in items:
-        found = _locate(html_text, it["selector"], (SKIP_MAIN,), views)
+        sel = it["selector"]
+        bid = sel.get("in", "")
+        hw = it["headword"].strip(" ,.;:").lower()
+        ex_low = sel["exact"].strip(" ,.;:").lower()
+        if covered and ((bid, hw) in covered or (bid, ex_low) in covered):
+            counts["glosses_deduped"] = counts.get("glosses_deduped", 0) + 1
+            continue
+        bkey = (bid, hw, it["sense"])
+        if bid and bkey in seen_in_block:
+            counts["glosses_deduped"] = counts.get("glosses_deduped", 0) + 1
+            continue
+        found = _locate(html_text, sel, (SKIP_MAIN,), views)
         why = None
         if found is None:
             why = "notfound"
@@ -1230,7 +1332,7 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> tuple[str, 
             if not _balanced(inner) or "<a " in inner:
                 # the tags taken in around the words do not balance (a word that ends an italic run): wrap the
                 # word's own characters instead, if no tag stands inside them
-                n = len(it["selector"]["exact"])
+                n = len(sel["exact"])
                 hs, he = pos[at], pos[at + n - 1]
                 he = html_text.index(";", he) + 1 if html_text[he] == "&" else he + 1
                 if "<" in html_text[hs:he]:
@@ -1239,6 +1341,8 @@ def mark_glosses(html_text: str, items: list[dict], counts: dict) -> tuple[str, 
             counts["glosses_unplaced"] = counts.get("glosses_unplaced", 0) + 1
             counts[f"glosses_unplaced_{why}"] = counts.get(f"glosses_unplaced_{why}", 0) + 1
             continue
+        if bid:
+            seen_in_block.add(bkey)
         edits.append((hs, he, it))
     edits.sort(key=lambda x: x[0])
     keep, end = [], -1
@@ -1383,6 +1487,115 @@ def _runs(html_text: str, pos: list[int], a: int, b: int) -> list[tuple[int, int
 SKIP_IC = (*SKIP_MAIN, "gl-s")
 CLOSE_STOPS = ",;:"
 
+_IC_GRAMMAR_PRE = re.compile(
+    r"\b(?:in|his|her|their|its|that|this|these|those|my|our|your|the|a|an|"
+    r"book|books|tract|tracts|treatise|treatises|epistle|epistles|commentary|commentaries|"
+    r"sermon|sermons|dialogue|dialogues|chapter|called|entitled|titled|named|unto|of|from|out)\s*$",
+    re.I,
+)
+_IC_BIBLES = (
+    "lam", "psal", "ecclus", "eccl", "prov", "sap", "matt", "mat", "mar", "luc", "joh",
+    "act", "acts", "rom", "cor", "gal", "eph", "phil", "col", "thess", "tim", "tit",
+    "heb", "jac", "pet", "jud", "apoc", "gen", "exod", "lev", "levit", "num", "deut",
+    "jos", "judg", "sam", "reg", "par", "esdr", "neh", "est", "job", "cant", "isa",
+    "jer", "ezek", "dan", "hos", "joel", "amos", "obad", "jon", "mic", "nah", "hab",
+    "zeph", "hag", "zech", "mal", "sirac", "wisd",
+)
+_IC_LOC_STEMS = (
+    r"lib|cap|sect|pag|pp?|cent|tract|consil|consult|con|cons|epist|ep|"
+    r"tom|vol|part|par|decad|aphoris|institut|geog|mag|confess|apolog|apol|"
+    r"antiq|contradict|omnif|ausoniarum|posthumo|spec|theat|onomasticon|arcanis|"
+    r"comment|com|annot|homil|serm|oratt?|hist|dial|enarrat|qu?aest|"
+    r"disp|exercit|praefat|prooem|opp?|opera|declam|sat|odes|od|aen|eclog|"
+    r"georg|met|fast|trist|chron|iliad|odys|"
+    + "|".join(_IC_BIBLES)
+)
+_IC_TITLE_WORDS = (
+    r"Civ\.|Repub\.|Anima|Sensu|Spiritu|Bello|Praestig|Morb|Mirac|Locis|Rebus|Secret|"
+    r"Natura|Orbis|Lue|Immort|Opif|Mundi|Sortit|Hermat|Daemon|Spect|Cael|Gemmis|urb\."
+)
+_IC_LOC_PHRASE = rf"(?:(?i:{_IC_LOC_STEMS})\.?(?!\w)|(?i:de|in|ad|pro|ex|ab)\s+(?=[a-z]|{_IC_TITLE_WORDS}))"
+_IC_LOC_START = re.compile(rf"^(?:{_IC_LOC_PHRASE}|\d+\b)")
+_IC_PARTICLE = rf"(?:(?:à|a|ab|von|van|du|di|da|la|le)\s+[A-Z][\w’'.-]*|de\s+(?!{_IC_TITLE_WORDS})[A-Z][\w’'.-]*)"
+_IC_AUTHOR = rf"[A-Z][\w’'.-]*(?:\s+{_IC_PARTICLE}|\s+(?!(?i:{_IC_LOC_STEMS})\.?(?!\w))[A-Z][\w’'.-]*){{0,3}}"
+_IC_TITLE_THEN_NUM = (
+    r"[A-Za-z][\w’'.-]*(?:,\s*[A-Za-z][\w’'.-]*|\s+[A-Za-z][\w’'.-]*){0,5}\s+"
+    r"(?:lib|cap|sect|pag|cent|tract|consil|consult|con|cons|epist|ep|tom|vol|part)\b\.?"
+)
+_IC_AUTHOR_LEAD = re.compile(
+    rf"^(?P<auth>{_IC_AUTHOR})(?P<sep>\s*,\s*|\s+)(?P<rest>(?:{_IC_LOC_PHRASE}|{_IC_TITLE_THEN_NUM}|\d+).*)$",
+    re.S,
+)
+_IC_SEG_LEAD = re.compile(rf"^(?P<auth>\s*{_IC_AUTHOR})(?P<sep>\s+)(?P<rest>(?:{_IC_LOC_PHRASE}|\d+).*)$")
+_IC_PROSE = re.compile(
+    r"\b(?:is|are|was|were|be|been|being|that|which|who|whom|whose|this|these|those|not|"
+    r"never|always|often|takes|away|their|they|have|hath|will|shall|may|can|must|cannot|"
+    r"for|but|all|some|many|saith|writes|says)\b",
+    re.I,
+)
+
+
+def _model_cite_hide_spans(prefix: str, exact: str, suffix: str) -> list[tuple[int, int]]:
+    """Relative (start, end) ranges inside `exact` to tuck behind `.cx-b` (keeping leading author names
+    and never hiding prose clauses or grammatically required titles)."""
+    if _IC_PROSE.search(exact) or _IC_GRAMMAR_PRE.search(prefix):
+        return []
+    trim_end = len(exact)
+    if exact.endswith(".") and (not suffix or suffix.lstrip()[:1].isupper()):
+        trim_end -= 1
+    body = exact[:trim_end]
+    if body.count(",") >= 2:
+        parts, pos = [], 0
+        for seg in body.split(","):
+            parts.append((pos, pos + len(seg), seg))
+            pos += len(seg) + 1
+        name_segs = sum(
+            1 for _, _, p in parts
+            if p.strip() and not p.strip().startswith("&")
+            and p.strip()[:1].isupper() and not _IC_LOC_START.match(p.strip())
+        )
+        if name_segs >= 2:
+            spans = []
+            for s, e, p in parts:
+                m = _IC_SEG_LEAD.match(p)
+                if m and not _IC_LOC_START.match(m.group("auth").strip()):
+                    spans.append((s + m.start("sep"), e))
+            if spans:
+                return spans
+    if _IC_LOC_START.match(body):
+        return [(0, trim_end)]
+    m = _IC_AUTHOR_LEAD.match(body)
+    if m and not _IC_LOC_START.match(m.group("auth")):
+        a = m.start("sep")
+        if body[a] == "," and not suffix.lstrip().startswith((",", ";", ".", ":", "?")):
+            a += 1
+        return [(a, trim_end)]
+    return []
+
+
+_AUTHOR_BY_NAME: dict[str, str] | None = None
+
+
+def _author_by_name() -> dict[str, str]:
+    global _AUTHOR_BY_NAME
+    if _AUTHOR_BY_NAME is None:
+        t = cit_rules.tables()
+        _AUTHOR_BY_NAME = {
+            spec["name"].lower(): aid
+            for aid, spec in t["authors"].items()
+            if (paths.DATA / "authors" / f"{aid}.yaml").exists()
+        }
+    return _AUTHOR_BY_NAME
+
+
+def _model_display_html(display: str) -> str:
+    """Escape a machine inline-citation display string, linking its leading canonical author if known."""
+    first = re.split(r"[,(;]", display, maxsplit=1)[0].strip()
+    aid = _author_by_name().get(first.lower())
+    if aid and display.startswith(first):
+        return Renderer.cite_link(aid, first) + _md_italics(display[len(first):])
+    return _md_italics(display)
+
 
 def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | None = None) -> tuple[str, list[str]]:
     """Burton's citations in his running text (data/layers/citations-inline/; owner, 2026-11-03: C1 C). The author's
@@ -1409,24 +1622,58 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | N
     for at, key, rec, pos in sorted(located, key=lambda x: x[0]):
         sel = rec["selector"]
         if rec.get("by") == "machine":
-            # found by the citation sweep (stage 14): its words may include Burton's own, so none are hidden; the §
-            # after them and the card, labelled machine, are all it adds
+            # found by the citation sweep (stage 14): hide clear locator/reference spans behind cx-b when outside .fp
             if at < hidden_to:
                 counts["inline_cites_unplaced"] = counts.get("inline_cites_unplaced", 0) + 1
                 continue
-            runs = _runs(html_text, pos, at, at + len(sel["exact"]))
+            ex = sel["exact"]
+            full_runs = _runs(html_text, pos, at, at + len(ex))
+            outside_start = _outside_passage(html_text, pos[at])
+            inside_fp = outside_start != pos[at]
+            hide_rel = [] if inside_fp else _model_cite_hide_spans(sel["prefix"], ex, sel["suffix"])
+            hide_runs: list[tuple[int, int]] = []
+            for ra, rb in hide_rel:
+                aa, bb = max(at + ra, hidden_to), at + rb
+                if bb > aa:
+                    hide_runs.extend(_runs(html_text, pos, aa, bb))
+            # Only insert cx-b spans if none intersect an <a> tag or leave unbalanced fragments
+            if hide_runs and all(
+                _balanced(html_text[hs:he]) and "<a " not in html_text[hs:he]
+                for hs, he in hide_runs
+            ):
+                for hs, he in hide_runs:
+                    edits.setdefault(hs, []).append('<span class="cx-b">')
+                    edits.setdefault(he, []).append("</span>")
+                hidden_to = max(hidden_to, at + hide_rel[-1][1])
+                drop_dot = 1 if ex.endswith(".") and (not sel["suffix"] or sel["suffix"].lstrip()[:1].isupper()) else 0
+                trim_end = len(ex) - drop_dot
+                mark_at = full_runs[-1][1] if (len(hide_rel) > 1 or hide_rel[-1][1] < trim_end) else hide_runs[-1][1]
+                if hide_rel[0][0] == 0:
+                    anchor_at, length = mark_at, 1
+                else:
+                    anchor_at, length = pos[at], hide_rel[0][0]
+            else:
+                mark_at = full_runs[-1][1]
+                if inside_fp:
+                    anchor_at, length = outside_start, 0
+                    counts["inline_cites_in_passage"] = counts.get("inline_cites_in_passage", 0) + 1
+                else:
+                    anchor_at, length = pos[at], len(ex)
             cid = f"ic-{key}"
             full = f"Citation found and expanded by machine ({rec['model']}, prompt {rec['prompt']}, {rec['date']})"
             word = "probably " if rec["status"] == "probable" else ""
-            edits.setdefault(pos[at], []).append(f'<span class="mref" data-for="{attr(cid)}" '
-                                                 f'data-len="{len(sel["exact"])}" aria-hidden="true"></span>')
-            edits.setdefault(runs[-1][1], []).append(
+            edits.setdefault(anchor_at, []).append(
+                f'<span class="mref" data-for="{attr(cid)}" data-len="{length}" aria-hidden="true"></span>'
+            )
+            edits.setdefault(mark_at, []).append(
                 f'<span class="ic-m" data-kind="cites" data-for="{attr(cid)}" role="button" tabindex="0" '
                 f'aria-expanded="false" aria-label="{attr("citation: " + rec["display"])}" '
                 f'title="{attr("Burton: " + rec["raw"])}">§</span>')
-            cards.append(f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="cites" role="note" aria-label="Citation">'
-                         f'<span class="mn-k">cites</span> <span class="ic-e">{word}{_md_italics(rec["display"])} '
-                         f'{prov(full)}</span></span>')
+            cards.append(
+                f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="cites" role="note" aria-label="Citation">'
+                f'<span class="mn-k">cites</span> <span class="ic-e">{word}{_model_display_html(rec["display"])} '
+                f'{prov(full)}</span></span>'
+            )
             counts["inline_cites_machine"] = counts.get("inline_cites_machine", 0) + 1
             continue
         ex, bible = sel["exact"], rec["author"] == "bible"
@@ -1585,9 +1832,24 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
     r.psalms = psalms or {}  # data/layers/psalm-check/: which Psalm verse Burton means (2026-11-18)
     r.note_hashes = note_hashes or {}  # translator notes cleared for the margin (stage 14)
+    gw_covered: set[tuple[str, str]] = set()
     if profile == "private":
         r.gowland = gowland_versions(div)
         r.decided = gowland_decisions(div, r.gowland, layer, gowland_entries)
+        if gowland_entries:
+            from . import gowland_notes as gw_notes
+            for ge in gowland_entries:
+                sel = ge.get("selector")
+                if not sel:
+                    continue
+                bid = sel.get("in", "")
+                if ge["kind"] in ("gloss", "explanation", "identity"):
+                    for w in (ge["lemma"].strip(" ,.;:").lower(), sel["exact"].strip(" ,.;:").lower()):
+                        if w:
+                            gw_covered.add((bid, w))
+                if bid:
+                    ntxt = gw_notes.note_text(ge["endnote"], ge["seg"])
+                    r.gw_block_words.setdefault(bid, []).append(_content_word_set(f"{ge['lemma']} {ntxt}"))
         if facing_src:  # Gowland's translation page, set facing the original (stage 9)
             r.facing_src = facing_src.get("facing", {})
             r.gowland.update(facing_src.get("heads", {}))
@@ -1599,7 +1861,7 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
     r.w("</article>\n")
     body = mark_burton_spans("".join(r.out), layer, r.counts, r.fp_lang)
     body = mark_xrefs(body, xrefs or [], r.counts)
-    body, gl_cards = mark_glosses(body, glosses or [], r.counts)
+    body, gl_cards = mark_glosses(body, glosses or [], r.counts, covered=gw_covered)
     body = mark_restored(body, restored or {}, r.counts, restored_read)
     body, ic_cards = mark_inline_cites(body, {**(inline_cites or {}), **(inline_cites_model or {})}, r.counts, psalms)
     body, used = mark_names(body, names, name_ids or {}, r.counts)

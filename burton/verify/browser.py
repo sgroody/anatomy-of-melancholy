@@ -284,30 +284,42 @@ def keyboard_check(profile: str = "private") -> Result:
 # ---------------------------------------------------------------- sidenote layout
 LAYOUT_JS = """() => {
   // Burton's notes and the edition's margin items (2026-11-03), in one or two margins: no item may overlap another in
-  // the same column, nor the text column; drift is measured from each item's anchor
+  // the same column, nor the text column, nor float above the article; drift is measured from each item's anchor
   const art = document.querySelector('article.unit');
   const rem = parseFloat(getComputedStyle(art).fontSize);
   const of = m => m.classList.contains('mref') ? document.getElementById(m.dataset.for)
                                                 : document.getElementById(m.getAttribute('href').slice(1));
+  const anchorRectTop = m => {
+    if (m.getClientRects().length) return m.getBoundingClientRect().top;
+    let cur = m;
+    while (cur && cur !== art && !cur.getClientRects().length) {
+      cur = cur.previousElementSibling || cur.parentElement;
+    }
+    const ref = cur && cur !== art && cur.getClientRects().length ? cur : (m.closest('p, li, .lg, blockquote, h1') || art);
+    return ref.getBoundingClientRect().top;
+  };
   const notes = [...document.querySelectorAll('a.nref, span.mref')].map(m => [m, of(m)]).filter(([, n]) => n);
   const laid = notes.filter(([m, n]) => !n.classList.contains('sn-stacked'));
   const rects = laid.map(([m, n]) => n.getBoundingClientRect());
-  let overlaps = 0, maxDrift = 0, outside = 0;
+  let overlaps = 0, maxDrift = 0, outside = 0, aboveTop = 0;
   const box = art.getBoundingClientRect();
   for (let i = 0; i < laid.length; i++) {
     const [m] = laid[i]; const r = rects[i];
+    if (r.width <= 0 || r.height <= 0) continue;
+    if (r.top < box.top - 1) aboveTop++;
     if (r.left < box.right - 0.5 && r.right > box.left + 0.5) outside++;
-    maxDrift = Math.max(maxDrift, (r.top - m.getBoundingClientRect().top) / rem);
+    maxDrift = Math.max(maxDrift, (r.top - anchorRectTop(m)) / rem);
     for (let j = i + 1; j < laid.length; j++) {
       const q = rects[j];
+      if (q.width <= 0 || q.height <= 0) continue;
       if (Math.abs(r.left - q.left) < 2 && r.top < q.bottom - 0.5 && q.top < r.bottom - 0.5) overlaps++;
     }
   }
   const more = [...document.querySelectorAll('.sn-more')];
   return {notes: notes.length, laid: laid.length, stacked: notes.length - laid.length, stacks: more.length,
           folded: document.querySelectorAll('.mn-fold').length,
-          overlaps, maxDrift: Math.round(maxDrift * 10) / 10, inText: outside,
-          left: rects.filter(r => r.right <= box.left + 0.5).length};
+          overlaps, maxDrift: Math.round(maxDrift * 10) / 10, inText: outside, aboveTop,
+          left: rects.filter(r => r.width > 0 && r.height > 0 && r.right <= box.left + 0.5).length};
 }"""
 
 MARKER_LINE_JS = """() => {
@@ -368,6 +380,8 @@ def layout_check(profile: str = "private") -> Result:
                     r.fail(f"{u} at {width}px ({mode}): {m['stacked']} notes held back in {m['stacks']} stacks")
                 if m["inText"]:
                     r.fail(f"{u} at {width}px: {m['inText']} notes overlap the text column")
+                if m["aboveTop"]:
+                    r.fail(f"{u} at {width}px ({mode}): {m['aboveTop']} notes float above the top of the unit")
                 if width >= 1600 and not m["left"] and m["notes"] > 10:
                     r.fail(f"{u} at {width}px: no item in the left margin")
                 if u == "3.2.4.1" and width == 1280:

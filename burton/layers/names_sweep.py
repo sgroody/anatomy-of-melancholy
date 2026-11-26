@@ -170,20 +170,52 @@ def shown(rec: dict) -> bool:
 
 
 def reader_index() -> tuple[dict[str, re.Pattern], dict[str, dict]]:
-    """For the reader: per unit, a pattern over the forms shown there (only in the units where the ruling saw them
-    stand as names), and what each form's window says (with its machine label)."""
+    """For the reader: per unit, a pattern over the forms shown there, and what each form's window says
+    (with its machine label). Unambiguous forms (multi-word or never lower-case in Burton) apply across
+    all text units so later citations of an identified name are underlined too; ambiguous single-word
+    forms stay scoped to the units where the ruling saw them stand as names."""
     if not LAYER.exists():
         return {}, {}
+    from ..ingest.epub import all_units
+    from ..site.names import lower_words
+
     recs = {k: v for k, v in json.loads(LAYER.read_text(encoding="utf-8")).items() if shown(v)}
     info = {k: {"who": v["who"], "probable": v["status"] == "probable",
                 "label": f"Identified by machine ({v['model']}, prompt {v['prompt']}, {v['date']})"}
             for k, v in recs.items()}
+    low = lower_words()
+    global_forms: list[str] = []
     by_unit: dict[str, list[str]] = defaultdict(list)
     for form, v in recs.items():
-        for u in v["units"]:
-            by_unit[u].append(form)
-    pats = {u: re.compile(r"(?<![\w’'-])(?:" + "|".join(re.escape(f) for f in sorted(fs, key=len, reverse=True))
-                          + r")(?![\w’'-])") for u, fs in by_unit.items()}
+        words = WORD.findall(form)
+        if len(words) >= 2 or not any(w.lower() in low for w in words):
+            global_forms.append(form)
+        else:
+            for u in v["units"]:
+                by_unit[u].append(form)
+
+    def compile_pat(forms: list[str]) -> re.Pattern | None:
+        if not forms:
+            return None
+        return re.compile(
+            r"(?<![\w’'-])(?:" + "|".join(re.escape(f) for f in sorted(forms, key=len, reverse=True)) + r")(?![\w’'-])"
+        )
+
+    global_pat = compile_pat(global_forms)
+    pats: dict[str, re.Pattern] = {}
+    for u in all_units():
+        extra = by_unit.get(u)
+        if extra:
+            p = compile_pat(global_forms + extra)
+            if p is not None:
+                pats[u] = p
+        elif global_pat is not None:
+            pats[u] = global_pat
+    for u, extra in by_unit.items():
+        if u not in pats:
+            p = compile_pat(global_forms + extra)
+            if p is not None:
+                pats[u] = p
     return pats, info
 
 
