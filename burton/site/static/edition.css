@@ -41,6 +41,8 @@
 :root[data-size="s"]:not(:has(body.page-home)) { font-size: 90%; }
 :root[data-size="l"]:not(:has(body.page-home)) { font-size: 112.5%; }
 :root[data-size="xl"]:not(:has(body.page-home)) { font-size: 125%; }
+:root[data-spacing="compact"]:not(:has(body.page-home)) body { line-height: 1.38; }
+:root[data-spacing="airy"]:not(:has(body.page-home)) body { line-height: 1.68; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -89,16 +91,42 @@ header.site .home-s { font-variant-caps: normal; letter-spacing: 0.02em; font-st
   max-height: 70vh; overflow: auto; padding: 0.6rem 0.9rem; background: var(--pop-bg); border: 1px solid var(--rule);
   border-radius: 4px; box-shadow: var(--pop-shadow);
 }
-/* the options packed in columns, each group whole, not a grid whose rows wait for their tallest (owner, 2026-11-20:
-   "lots of wasted space") */
-.settings { max-width: var(--page); margin: 0 auto; padding: 0.5rem 16px 0.8rem; font-size: 0.85em; line-height: 1.35;
-  border-bottom: 1px solid var(--rule); columns: 12.5rem; column-gap: 1.4rem; }
-.settings > * { break-inside: avoid; }
-.settings > fieldset { margin-bottom: 0.45rem !important; }
-.settings > .opt-key, .settings > .opt-sample, .settings > .settings-more, .settings > p { column-span: all; }
-.settings fieldset.opt-row label { display: inline-block; margin-right: 0.55rem; }
+/* AB-6 A: Redesigned 3-column Reading Options drawer with segmented pills, swatches & calm aids */
+.settings { max-width: var(--page); margin: 0 auto; padding: 0.7rem 16px 0.85rem; font-size: 0.85em; line-height: 1.35;
+  border-bottom: 1px solid var(--rule); position: relative; }
+.opt-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem 1.4rem; align-items: start; }
+@media (max-width: 50rem) { .opt-grid { grid-template-columns: 1fr; } }
+.opt-col-h { margin: 0 0 0.45rem; font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: 0.08em;
+  color: var(--accent); font-size: 0.96em; border-bottom: 1px solid var(--rule); padding-bottom: 0.15rem; }
+.settings > * + * { margin-top: 0.45rem; }
+.settings fieldset { border: none; margin: 0 0 0.5rem; padding: 0; }
+.settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.22rem; font-size: 0.92em; }
+.seg-group { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; max-width: 100%; }
+.seg-opt { display: inline-flex; cursor: pointer; position: relative; border-right: 1px solid var(--rule); padding: 0 !important; margin: 0 !important; }
+.seg-opt:last-child { border-right: 0; }
+.seg-opt > span { padding: 0.18rem 0.56rem; font-size: 0.9em; white-space: nowrap; }
+.seg-opt:has(> input:checked) > span { background: var(--accent); color: var(--paper); }
+.seg-opt:has(> input:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sw-group { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.3rem; }
+.sw-opt { display: inline-flex !important; align-items: center; gap: 0.3rem; padding: 0.15rem 0.48rem !important;
+  border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; font-size: 0.88em; position: relative; }
+.sw-opt:has(> input:checked) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.sw-opt:has(> input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sw-dot { width: 0.72rem; height: 0.72rem; border-radius: 50%; display: inline-block; border: 1px solid var(--rule); flex: 0 0 auto; }
+.opt-badge { display: flex !important; align-items: baseline; gap: 0.42rem; margin: 0.22rem 0; font-size: 0.92em; cursor: pointer; }
+.opt-mb { display: inline-block; min-width: 1.3em; text-align: center; border-radius: 2px; font-size: 0.8em;
+  line-height: 1.25; padding: 0 0.2em; font-style: normal; flex: 0 0 auto; }
+.opt-mb-a { background: var(--accent); color: var(--paper); }
+.opt-mb-g { color: var(--k-expl); font-variant-caps: all-small-caps; }
+.opt-mb-tr { color: var(--la); font-style: italic; }
+.opt-mb-c { color: var(--k-cite); }
+.opt-mb-k { color: var(--k-bible); font-variant-caps: all-small-caps; }
+.opt-mb-w { color: var(--k-gloss); font-variant-caps: all-small-caps; }
+.opt-mb-r { color: var(--muted); }
+.opt-calm { margin-top: 0.35rem; padding-top: 0.45rem; border-top: 1px dashed var(--rule); }
+.opt-bare { margin-top: 0.35rem; padding-top: 0.35rem; border-top: 1px dotted var(--rule); }
+.settings > .opt-key, .settings > .opt-sample, .settings > .settings-more, .settings > p { margin-top: 0.55rem; }
 .settings[hidden] { display: none; }
-.settings { position: relative; }
 /* the options open over the page under the signs, and the wheel over them scrolls them alone (owner, 2026-11-20:
    "scrolling down should scroll down on the reader options window") */
 .settings:not(.settings-page) { overscroll-behavior: contain; }
@@ -113,12 +141,9 @@ body:not(.page-home) .settings:not(.settings-page) { position: fixed; top: 3.2re
 .settings-close { position: absolute; top: 0.3rem; right: 0.4rem; z-index: 1; border: 0; background: none; font: inherit;
   font-size: 1.5rem; line-height: 1; padding: 0.1rem 0.45rem; color: var(--muted); cursor: pointer; border-radius: 3px; }
 .settings-close:hover, .settings-close:focus-visible { color: var(--accent); }
-.settings fieldset { border: none; margin: 0; padding: 0; }
-.settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
 .settings label { display: block; }
-.settings-more { grid-column: 1 / -1; margin: 0; }
+.settings-more { margin: 0; }
 .settings-page { border: none; padding: 0; font-size: 1em; max-width: none; }
-.settings-page > p { grid-column: 1 / -1; }
 footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.8em; color: var(--muted); }
 .pager { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
 .pager a { display: block; max-width: 48%; text-decoration: none; color: var(--ink); }
@@ -775,7 +800,10 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .front .fs-map { overflow: hidden; vertical-align: top; } /* no baseline gap under it: the page is one screen, no scroll bar */
 .front .front-eng { line-height: 0; }
 .front .fs-map img { transform-origin: var(--zx, 50%) var(--zy, 50%); }
-@media (prefers-reduced-motion: no-preference) { .front .fs-map img { transition: transform 0.35s ease; } }
+.front .fs-map::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.45s ease;
+  background: radial-gradient(circle at 50% 48%, transparent 46%, rgb(0 0 0 / 0.28) 100%); }
+.front .fs-map.fs-zoomed::after { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) { .front .fs-map img { transition: transform 0.58s cubic-bezier(0.22, 1, 0.36, 1); } }
 .front .fs-map.fs-zoomed img { transform: translate(calc(50% - var(--zx)), calc(50% - var(--zy))) scale(var(--zs)); }
 .front .fs-map.fs-zoomed :is(.fs-panel, .fs-title) { visibility: hidden; }
 /* the side: the title across; below it the way in (and a panel's stanza) beside the word to a new reader; then the
@@ -820,30 +848,21 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .front-enter.has-ribbon { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0.45rem; }
 .front-enter.has-ribbon .enter { padding: 0.2rem 0.35rem; font-size: 1.12em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-/* the panels' stanzas under the way in (owner, 2026-11-21), stacked in one cell: the space is as tall as the longest,
-   so the synopses below never move as one stanza gives way to another; beside each, its margin items (Gowland's
-   glosses, private build), and beside the first the hint, until a panel has been pointed at */
-.front-stanza { display: grid; margin: 0 0 0.75rem; font-size: 0.84em; }
-.front-stanza > .fs-st { grid-area: 1 / 1; display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 0.95rem;
-  align-items: start; }
-.front-stanza > .fs-st[hidden] { display: grid; visibility: hidden; }
-.fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
-.fs-st-l { font-style: italic; margin: 0; line-height: 1.36; }
-.fs-st-side { padding-top: 1.35em; min-width: 0; }
-.fs-hint { margin: 0; color: var(--muted); line-height: 1.35; border-left: 1px solid var(--rule); padding-left: 0.6rem; }
-.front-stanza .fs-mn { display: block; font-size: 0.88em; line-height: 1.28; margin: 0 0 0.28rem; padding: 0.04rem 0.35rem; cursor: pointer;
-  border-left: 2px solid transparent; border-radius: 2px; }
-.front-stanza .fs-anc { text-decoration: underline dotted color-mix(in srgb, var(--k-gloss) 60%, transparent);
-  text-underline-offset: 0.2em; cursor: pointer; border-radius: 2px; }
-.front-stanza .hot { background: var(--hot); }
-.front-stanza .fs-mn.pinned { border-left-color: var(--k-gloss); }
+/* AB-2 B: Pure full-width verse under the way in, stanza eyebrow hint on first panel */
+.front-stanza { display: grid; margin: 0 0 0.85rem; font-size: 0.98em; }
+.front-stanza > .fs-st { grid-area: 1 / 1; display: block; }
+.front-stanza > .fs-st[hidden] { display: block; visibility: hidden; }
+.fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.25rem; font-size: 0.92em; }
+.fs-st-hint { color: var(--muted); font-variant-caps: normal; letter-spacing: 0; font-style: italic; font-weight: 400; font-size: 0.92em; }
+.fs-st-l { font-style: italic; margin: 0; line-height: 1.42; }
+.fs-st-side { display: none; }
 /* the word to a new reader: what the book is and what this reader gives, a key that opens, and the signs, named */
 /* its text no larger than 18px whatever the type size, so the box keeps beside the way in on one screen (owner,
    2026-11-21: at the largest sizes it ran off the bottom) */
-.front-info { position: relative; font-size: min(0.8em, 18px); line-height: 1.42; border: 1px solid var(--rule); border-radius: 4px;
-  padding: 0.7rem 1rem 0.5rem; background: color-mix(in srgb, var(--paper) 94%, var(--ink)); }
+.front-info { position: relative; font-size: min(0.8em, 18px); line-height: 1.4; border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.65rem 0.95rem 0.45rem; background: color-mix(in srgb, var(--paper) 94%, var(--ink)); }
 .fi-part { margin: 0; hyphens: auto; }
-.fi-part + .fi-part { margin-top: 0.45rem; }
+.fi-part + .fi-part { margin-top: 0.4rem; }
 /* run-in heads, red (owner, 2026-11-21) */
 .fi-h { margin-right: 0.3em; font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); }
 /* the signs, drawn as on the page */
@@ -937,17 +956,31 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .front-contents[open] > summary .front-rh span::after { rotate: 45deg; }
 /* a short window (laptops 720–900 px high): the same page, set tighter with zero scrollbars */
 @media (min-width: 60rem) and (max-height: 920px) {
-  .front { padding: 0.45rem 0; }
-  .front .front-eng { top: 0.45rem; }
-  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 0.9rem); }
+  .front { padding: 0.4rem 0; }
+  .front .front-eng { top: 0.4rem; }
+  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 0.8rem); }
   .front-side { padding-top: 0; min-height: 0; }
-  .home-page h1.front-title, .front-title { font-size: 1.7rem; margin: 0 0 0.25rem; }
-  .front-row { margin: 0.55rem 0 0.7rem; }
-  .enter { font-size: 1.1em; }
-  .front-info { font-size: min(0.78em, 17px); line-height: 1.38; padding: 0.55rem 0.8rem 0.45rem; }
-  .front-stanza { font-size: 0.76em; margin-bottom: 0.6rem; }
-  .front-syn { margin: 0.6rem 0 0.55rem; }
+  .home-page h1.front-title, .front-title { font-size: 1.65rem; margin: 0 0 0.2rem; }
+  .front-row { margin: 0.45rem 0 0.6rem; }
+  .enter { font-size: 1.08em; }
+  .front-info { font-size: min(0.77em, 16.5px); line-height: 1.35; padding: 0.5rem 0.78rem 0.4rem; }
+  .front-stanza { font-size: 0.88em; margin-bottom: 0.55rem; }
+  .front-syn { margin: 0.55rem 0 0.5rem; }
 }
+/* AB-4 A: Florilegium + Sortes Burtonianae inside the right-hand infobox */
+.fi-doors { margin-top: 0.4rem; padding-top: 0.35rem; border-top: 1px dotted var(--rule); }
+.fi-flor { margin-top: 0; }
+.fi-flor > summary { cursor: pointer; width: fit-content; }
+.fi-flor .fl-t { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); }
+.fi-flor .fl-sub { font-variant-caps: normal; font-style: italic; color: var(--muted); font-size: 0.94em; margin-left: 0.35em; }
+.fl-pop { position: absolute; z-index: 7; bottom: 1.7em; right: -1.2rem; width: min(38rem, calc(100vw - 2rem));
+  max-height: min(60vh, 26rem); overflow: auto; padding: 0.65rem 0.9rem; box-sizing: border-box;
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow);
+  font-size: 15px; line-height: 1.4; }
+.fl-pop .lab-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr)); gap: 0.45rem 1rem; margin: 0; }
+.fi-sortes { margin: 0.35rem 0 0; line-height: 1.35; }
+.fi-sortes .sortes-btn { font-size: 0.9em; padding: 0.08rem 0.52rem; vertical-align: baseline; }
+.fi-sortes-note { color: var(--muted); font-size: 0.92em; font-style: italic; margin-left: 0.25em; }
 /* narrower: the word to a new reader under the way in */
 /* too little room for the box beside the column of the way in (a narrow window, or a large type size on a laptop:
    the box would be squeezed under ~15em and run off the screen): one column, the box straight after the way in */
@@ -1082,10 +1115,11 @@ a.nm-x { cursor: help; } /* an identified name with no index page: the window is
 .guide .g-la { color: var(--la); font-style: italic; } .guide .g-grc { color: var(--grc); font-style: italic; }
 .guide .g-enm { color: var(--enm); font-variant-caps: small-caps; } .guide .g-modern { color: var(--modern); font-style: italic; }
 
-/* ------------------------------------------------------------ the running head (stage 8: N2 C, N1 D) */
-header.site .bar { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: 0.5rem 1rem; }
+/* ------------------------------------------------------------ the running head (AB-1 A: unified locus pill + Contents) */
+header.site { position: relative; }
+header.site .bar { display: grid; grid-template-columns: minmax(0, 1.15fr) auto minmax(0, 0.85fr); align-items: start; gap: 0.5rem 1rem; }
 header.site .home { margin: 0; text-align: center; }
-.bar-l { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; align-items: center; min-width: 0; padding-top: 0.15rem; }
+.bar-l { display: flex; flex-wrap: nowrap; gap: 0.3rem 0.65rem; align-items: center; min-width: 0; padding-top: 0.15rem; }
 .bar-r { justify-self: end; display: flex; gap: 0.35rem; align-items: center; padding-top: 0.1rem; }
 .bar-r a, .bar-r button { display: inline-flex; align-items: center; justify-content: center; min-width: 1.9rem; height: 1.9rem;
   padding: 0 0.3rem; border: 1px solid transparent; border-radius: 4px; background: none; color: var(--muted);
@@ -1093,8 +1127,9 @@ header.site .home { margin: 0; text-align: center; }
 .bar-r a:hover, .bar-r button:hover, .bar-r [aria-expanded="true"], .bar-r [aria-current="page"] { color: var(--accent); border-color: var(--rule); }
 .bar-r .settings-toggle { font-size: 1.1em; letter-spacing: 0.02em; }
 .ic { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+header.site .toc-panel { flex: 0 0 auto; }
 header.site .toc-panel > summary { border-color: transparent; padding: 0.05rem 0.2rem; color: var(--muted);
-  font-variant-caps: all-small-caps; letter-spacing: 0.08em; }
+  font-variant-caps: all-small-caps; letter-spacing: 0.08em; white-space: nowrap; }
 header.site .toc-panel > summary:hover, header.site .toc-panel[open] > summary { color: var(--accent); }
 header.site .toc-panel > nav { left: 0; right: auto; }
 @media (max-width: 40rem) {
@@ -1102,16 +1137,22 @@ header.site .toc-panel > nav { left: 0; right: auto; }
   header.site .home { grid-column: 1 / -1; grid-row: 1; }
   .bar-l { grid-row: 2; } .bar-r { grid-row: 2; }
 }
-/* where the page stands in Burton's synopsis: a brace, the Partition and the branches above; the path on hover */
-.syn-badge { position: relative; display: inline-flex; gap: 0.35rem; align-items: baseline; font-size: 0.8em; color: var(--muted);
-  max-width: 100%; cursor: default; border-radius: 3px; }
-.sb-ico { color: var(--accent); font-size: 1.35em; line-height: 0.8; }
+/* Unified locus pill: { 1.1.1.1 · Short title } with full path on hover/focus */
+:root:not([data-uid="B"]) .bar-l:has(.syn-badge) > .uid { display: none; }
+.syn-badge { position: relative; display: inline-flex; gap: 0.32rem; align-items: baseline; font-size: 0.82em; color: var(--muted);
+  min-width: 0; max-width: 100%; cursor: default; border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  border-radius: 3px; padding: 0.06rem 0.45rem; }
+.syn-badge:hover, .syn-badge:focus-within { border-color: var(--accent); }
+.sb-ico { color: var(--accent); font-size: 1.18em; line-height: 0.9; flex: 0 0 auto; }
+.sb-uid { color: var(--accent); font-variant-numeric: lining-nums; letter-spacing: 0.04em; flex: 0 0 auto; white-space: nowrap; }
+.sb-sep { color: var(--rule); flex: 0 0 auto; }
 .sb-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .sb-cur { color: var(--accent); }
-.sb-pop { display: none; position: absolute; top: 100%; left: 0; z-index: 40; width: min(25rem, calc(100vw - 32px));
+.sb-part { margin: 0 0 0.25rem; font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); font-size: 0.85em; }
+.sb-pop { display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 40; width: min(25rem, calc(100vw - 32px));
   max-height: min(72vh, 28rem); overflow-y: auto;
   background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow);
-  padding: 0.55rem 0.75rem; color: var(--ink); font-size: 1.08em; line-height: 1.35; white-space: normal; }
+  padding: 0.55rem 0.75rem; color: var(--ink); font-size: 1.04em; line-height: 1.35; white-space: normal; }
 .syn-badge:hover .sb-pop, .syn-badge:focus-within .sb-pop { display: block; }
 .sb-step { display: block; padding-left: calc(var(--d) * 0.85rem); color: var(--muted); text-decoration: none; }
 .sb-step::before { content: "{ "; color: var(--rule); }
@@ -1297,9 +1338,11 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .hsearch input::placeholder { color: var(--muted); font-style: italic; }
 /* the reading options, quieter, with a key */
 .settings { accent-color: var(--accent); }
-.settings fieldset { padding: 0.2rem 0; }
-.settings label { padding: 0.08rem 0; cursor: pointer; }
-.settings label:hover { color: var(--accent); }
+.settings fieldset { padding: 0.15rem 0; }
+.settings label:not(.seg-opt):not(.sw-opt) { padding: 0.08rem 0; cursor: pointer; }
+.settings label:not(.seg-opt):not(.sw-opt):hover { color: var(--accent); }
+.seg-opt:hover > span { color: var(--accent); }
+.seg-opt:has(> input:checked):hover > span { color: var(--paper); }
 .settings legend { color: var(--accent); }
 .settings .reset, .settings-toggle { border-color: transparent; }
 .opt-key { padding: 0.3rem 0; border-top: 1px solid var(--rule); }
@@ -1525,6 +1568,108 @@ table.counts.gloss-table td:last-child { text-align: left; font-variant-numeric:
 .prose.authors { max-width: min(46rem, 100%); }
 .authors-meta { margin-top: 1.8rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); font-size: 0.88em; color: var(--muted); }
 .authors-meta p:last-child { margin-bottom: 0; }
+
+/* AB-6 Calm Controls, Chapter Hairline, AB-8 About Essay, & AB-9 Stealable Patterns (S1, S2, S3) */
+.chapter-hairline { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; pointer-events: none; overflow: hidden; }
+.chapter-hairline > i { display: block; height: 100%; width: 0; background: var(--accent); opacity: 0.72; transition: width 0.08s linear; }
+body.no-hairline .chapter-hairline, body.text-only .chapter-hairline { display: none; }
+
+body.calm-margins .unit .mn:not(.mn-own, :hover, :focus-within, .hot, .pinned),
+body.calm-margins .unit .sidenote.sn-restored:not(:hover, :focus-within, .hot, .pinned) {
+  opacity: 0.42; transition: opacity 0.2s ease;
+}
+body.calm-margins .unit :is(.mn, .sidenote):hover,
+body.calm-margins .unit :is(.mn, .sidenote):focus-within { opacity: 1; }
+
+body.clean-prose .unit a.nm { text-decoration-color: transparent; }
+body.clean-prose .unit a.nm:hover,
+body.clean-prose .unit a.nm:focus-visible,
+body.clean-prose .unit :is(p, li, .lg, blockquote):hover a.nm { text-decoration-color: var(--rule); }
+body.clean-prose .unit a.nm:hover { text-decoration-color: var(--accent); }
+
+/* AB-9 S1: De-noised Tufte Margin Labels (visually clip redundant caps tags; keep accessible labels intact) */
+.unit .sidenote .sn-k,
+.unit .mn-gw:not([data-kind="pointer"]):has(> .mn-lem) > .mn-k,
+.unit .mn-gw-seg:not([data-kind="pointer"]):has(> .mn-lem) > .mn-k,
+.unit .mn-gl:has(> i) > .mn-k,
+.unit .mn-ic > .mn-k,
+.unit.sn-laid .mn-tr > .mn-k {
+  position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.unit .mn-gw > .mn-lem::after,
+.unit .mn-gw-seg > .mn-lem::after,
+.unit .mn-gl > i::after { content: " — "; font-style: normal; color: var(--muted); }
+.unit .mn-gw[data-kind="gloss"] > .mn-lem,
+.unit .mn-gw-seg[data-kind="gloss"] > .mn-lem,
+.unit .mn-gl > i { color: var(--k-gloss); }
+.unit .mn-gw[data-kind="source"] > .mn-lem,
+.unit .mn-gw-seg[data-kind="source"] > .mn-lem { color: var(--k-cite); }
+.unit .mn-gw:is([data-kind="identity"], [data-kind="explanation"]) > .mn-lem,
+.unit .mn-gw-seg:is([data-kind="identity"], [data-kind="explanation"]) > .mn-lem { color: var(--k-expl); }
+.unit .mn-ic[data-kind="cites"] > .ic-e::before { content: "§ "; color: var(--k-cite); font-style: normal; }
+.unit .mn-ic[data-kind="bible"] > .ic-e::before { content: "§ "; color: var(--k-bible); font-style: normal; }
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-tr { padding-left: 0.45rem; border-left: 1px dotted color-mix(in srgb, var(--tr-ink, var(--rule)) 55%, var(--paper)); }
+  .unit.sn-laid .mn-tr.mn-l { padding-left: 0; border-left: none; padding-right: 0.45rem;
+    border-right: 1px dotted color-mix(in srgb, var(--tr-ink, var(--rule)) 55%, var(--paper)); }
+}
+
+/* AB-8 A: Self-demonstrating About page */
+.prose.about-essay { max-width: min(58rem, 100%); }
+.ae-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 1fr); gap: 1rem 1.8rem; align-items: start; margin: 0.6rem 0 1.4rem; }
+@media (max-width: 48rem) { .ae-grid { grid-template-columns: 1fr; } }
+.ae-prose > p:last-child { margin-bottom: 0; }
+.ae-margin { display: grid; gap: 0.55rem; font-size: 0.82em; line-height: 1.38; color: var(--note-ink); }
+.ae-card { padding: 0.2rem 0.55rem; border-left: 2px solid var(--rule); border-radius: 2px; cursor: pointer; }
+.ae-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center; background: var(--accent);
+  color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.85em; font-style: normal; }
+.ae-card-bur { border-left-color: var(--accent); }
+.ae-card-tr { border-left: 1px dotted var(--la); }
+.ae-card-cit { border-left-color: var(--k-cite); }
+.ae-card-gw { border-left-color: var(--k-expl); }
+.ae-card .ae-sub { color: var(--muted); }
+.ae-hi { cursor: pointer; border-radius: 2px; }
+.about-essay .hot { background: var(--hot); }
+.about-essay .ae-card.pinned { outline: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.ae-sources { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+.ae-sources li { margin: 0.3rem 0; }
+.about-colophon { margin-top: 1.4rem; padding-top: 0.7rem; border-top: 1px solid var(--rule); font-size: 0.9em; }
+.about-colophon > summary { cursor: pointer; color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: 0.06em; width: fit-content; }
+.about-colophon[open] > summary { margin-bottom: 0.6rem; }
+
+/* AB-9 S2: In-page split Side-Peek pane */
+.pw-peek { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline dotted; }
+.side-peek { position: fixed; top: 3.4rem; right: 0.9rem; bottom: 0.9rem; z-index: 65; width: min(29rem, 42vw);
+  display: flex; flex-direction: column; background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent); border-radius: 6px; box-shadow: var(--pop-shadow); }
+.side-peek[hidden] { display: none; }
+.sp-pane-hd { display: flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule);
+  background: var(--paper); border-radius: 4px 6px 0 0; font-size: 0.84em; }
+.sp-pane-title { margin: 0 auto 0 0; font-weight: 600; font-variant-caps: all-small-caps; letter-spacing: 0.05em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sp-pane-back, .sp-pane-close { border: 1px solid var(--rule); background: none; border-radius: 3px; padding: 0.05rem 0.45rem;
+  cursor: pointer; color: var(--muted); font-size: 0.92em; flex: 0 0 auto; }
+.sp-pane-back:hover, .sp-pane-close:hover { color: var(--accent); border-color: var(--accent); }
+.sp-pane-full { color: var(--accent); text-decoration: none; white-space: nowrap; font-size: 0.92em; flex: 0 0 auto; }
+.sp-pane-full:hover { text-decoration: underline; }
+.sp-pane-body { flex: 1 1 auto; overflow: auto; padding: 0.75rem 0.95rem 1.4rem; font-size: 0.88em; line-height: 1.46; }
+.sp-pane-body .sidenote, .sp-pane-body .mn-pool, .sp-pane-body .mref, .sp-pane-body .nref,
+.sp-pane-body .ft, .sp-pane-body .ftr, .sp-pane-body .gowland-tr, .sp-pane-body .cx-b,
+.sp-pane-body .ic-m, .sp-pane-body .para-cite, .sp-pane-body .part-syn { display: none !important; }
+.sp-pane-body h1 { font-size: 1.25em; margin-top: 0.2rem; }
+@media (max-width: 56rem) {
+  .side-peek { left: 0.6rem; right: 0.6rem; width: auto; top: 3.2rem; bottom: 0.6rem; }
+}
+
+/* AB-9 S3: Nutshell expandable humoral & apothecary term chips */
+.term-chip { display: inline; line-height: inherit; vertical-align: baseline; border: 0; background: none; padding: 0;
+  margin: 0; font: inherit; color: inherit; cursor: pointer; border-radius: 0;
+  text-decoration: underline dotted var(--k-gloss); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.term-chip:hover, .term-chip[aria-expanded="true"] { color: var(--accent); text-decoration-color: var(--accent); }
+.term-drawer { display: block; margin: 0.22rem 0 0.28rem 0.25rem; padding: 0.24rem 0.5rem; border-left: 2px solid var(--k-gloss);
+  background: color-mix(in srgb, var(--paper) 92%, var(--ink)); color: var(--ink); font-size: 0.92em; font-style: normal;
+  line-height: 1.35; border-radius: 0 3px 3px 0; }
+@media print { .chapter-hairline, .side-peek, .term-drawer { display: none !important; } }
 
 /* F1 narrow phone fit: keep title ("MELANCHOLY,") and folded synopses cleanly within 390px viewports */
 @media (max-width: 28rem) {

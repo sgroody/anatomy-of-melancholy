@@ -47,6 +47,41 @@ def _author_lookup(apages: dict) -> dict[str, str]:
     return by_form
 
 
+SKIP_CHIP_FORMS = {
+    "take", "each", "half", "disease", "diseases", "malady", "maladies", "spirit", "spirits",
+    "shade", "shades", "ghost", "ghosts", "punishment", "stomach", "ounce", "ounces", "grain", "grains",
+    "melancholy",
+}
+
+
+def chips_data() -> list[dict]:
+    """Curated humoral & apothecary glossary items for inline Nutshell term chips (AB-9 S3)."""
+    raw = yaml.safe_load((paths.DATA / "glossary.yaml").read_text(encoding="utf-8"))
+    out = []
+    for item in raw.get("terms", []):
+        raw_forms = [str(f) for f in (item.get("latin") or []) + (item.get("render") or [])]
+        forms = []
+        seen = set()
+        for f in raw_forms:
+            fl = f.strip()
+            if not fl or fl.lower() in SKIP_CHIP_FORMS or fl.lower() in seen:
+                continue
+            seen.add(fl.lower())
+            forms.append(fl)
+        if not forms:
+            continue
+        renders = [str(r) for r in (item.get("render") or [])]
+        head = str((item.get("latin") or [forms[0]])[0])
+        note = str(item.get("note") or "").strip() or f'Burton / humoral rendering: {", ".join(renders)}'
+        out.append({
+            "head": head,
+            "render": ", ".join(renders),
+            "note": note,
+            "forms": forms,
+        })
+    return out
+
+
 def collect(apages: dict | None = None) -> dict:
     """Load data/glossary.yaml and return sections for glossary.html."""
     raw = yaml.safe_load((paths.DATA / "glossary.yaml").read_text(encoding="utf-8"))

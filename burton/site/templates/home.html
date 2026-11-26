@@ -48,6 +48,19 @@
           thousands of notes in the margin beside the passages they explain. Anything a machine produced is marked as
           such.</p>
         {% include "front_key.html" %}
+        {% if florilegium or has_sortes %}
+        <div class="fi-doors fi-more">
+          {% if florilegium %}
+          <details class="fi-key fk-page-d fi-flor">
+            <summary><span class="fl-t">Florilegium</span> <span class="fl-sub">Celebrated passages, and where to find them</span></summary>
+            <div class="fl-pop" role="region" aria-label="Florilegium">{{ florilegium }}</div>
+          </details>
+          {% endif %}
+          {% if has_sortes %}
+          <p class="fi-sortes"><button type="button" class="sortes-btn">Sortes Burtonianae <span aria-hidden="true">☞</span></button> <span class="fi-sortes-note">open at random, as older readers sought counsel by chance in Virgil or Burton.</span></p>
+          {% endif %}
+        </div>
+        {% endif %}
         <div class="front-tools">
           <div class="bar-r">{% include "tools.html" %}</div>
           <p class="front-links"><a href="about/">About</a> · <a href="authors/">Authors cited</a> · <a href="glossary/">Glossary</a> · <a href="table/">The Table</a></p>

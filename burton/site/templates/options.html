@@ -1,65 +1,98 @@
-{# the reading options, packed in columns (owner, 2026-11-20: "lots of wasted space … be more economical"); the key to
-   the colours and signs folded at the end #}
-<fieldset class="opt-notes">
-  <legend>Notes in the margin</legend>
-  {# each source's notes on or off (owner, 2026-11-20: "include marginal notes from x, y, z, each togglable") #}
-  <label><input type="checkbox" name="nBurton"> Burton’s notes</label>
-  {% if profile == "private" %}<label><input type="checkbox" name="nGowland"> Gowland’s notes</label>{% endif %}
-  <label><input type="checkbox" name="nTrans"> Translations</label>
-  <label><input type="checkbox" name="nCites"> His citations in the line, written out (§)</label>
-  <label><input type="checkbox" name="nKjv"> Bible verses (King James)</label>
-  <label><input type="checkbox" name="glosses"> Obsolete words glossed</label>
-  {# off by default since 2026-11-20, so near the foot of the list (owner, 2026-11-21) #}
-  <label><input type="checkbox" name="nRestored"> His notes restored from Democritus Minor (°)</label>
-  <label class="opt-bare"><input type="checkbox" name="textonly"> As printed: his text and his own notes only</label>
-</fieldset>
-<fieldset>
-  <legend>Latin and other languages</legend>
-  <label><input type="radio" name="mode" value="gloss" checked> Translation in the margin</label>
-  <label><input type="radio" name="mode" value="interlinear"> Translation beneath</label>
-  <label><input type="radio" name="mode" value="english"> Translation in place (original on hover)</label>
-</fieldset>
-<fieldset>
-  <legend>Translation first</legend>
-  <label><input type="radio" name="order" value="default" checked> {% if profile == "private" %}Gowland’s{% else %}A human one{% endif %}</label>
-  {% if profile == "private" %}<label><input type="radio" name="order" value="human"> Dell &amp; Jordan-Smith’s</label>{% endif %}
-  <label><input type="radio" name="order" value="machine"> The machine’s</label>
-</fieldset>
-<fieldset>
-  <legend>Citations in his notes</legend>
-  <label><input type="checkbox" name="cites"> As he abbreviated them</label>
-</fieldset>
-<fieldset class="opt-row">
-  <legend>Colour of the Latin</legend>
-  <label><input type="radio" name="latin" value="oxblood" checked> Oxblood</label>
-  <label><input type="radio" name="latin" value="green"> Green</label>
-  <label><input type="radio" name="latin" value="plain"> Ink</label>
-  <label><input type="radio" name="latin" value="custom"> My own:</label>
-  <span class="la-custom"><label>day <input type="color" name="laLight" value="#7a2230"></label> <label>night <input type="color" name="laDark" value="#e0c27a"></label></span>
-</fieldset>
-<fieldset class="opt-row">
-  <legend>Theme</legend>
-  <label><input type="radio" name="theme" value="auto" checked> System</label>
-  <label><input type="radio" name="theme" value="light"> Light</label>
-  <label><input type="radio" name="theme" value="dark"> Dark</label>
-</fieldset>
-<fieldset class="opt-row">
-  <legend>Type size</legend>
-  <label><input type="radio" name="size" value="s"> S</label>
-  <label><input type="radio" name="size" value="m" checked> M</label>
-  <label><input type="radio" name="size" value="l"> L</label>
-  <label><input type="radio" name="size" value="xl"> XL</label>
-</fieldset>
-{% if profile == "private" %}
-<fieldset>
-  <legend>Gowland’s edition (2021)</legend>
-  <label><input type="checkbox" name="gowland"> His bracketed translations in the line</label>
-  <label><input type="checkbox" name="pages"> Penguin page numbers</label>
-</fieldset>
-{% endif %}
+{# The reading options (AB-6 A): three crisp columns of segmented pills, swatches, miniature margin badges,
+   and four reading calm controls, with the key and live Example passage below. All underlying radios/checkboxes stay
+   semantic and keyboard-focusable for WCAG and V10k parity. #}
+<div class="opt-grid">
+  <div class="opt-col">
+    <p class="opt-col-h">Page &amp; Type</p>
+    <fieldset class="opt-seg">
+      <legend>Theme</legend>
+      <div class="seg-group">
+        <label class="seg-opt"><input class="sr-only" type="radio" name="theme" value="auto" checked><span>System</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="theme" value="light"><span>Paper</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="theme" value="dark"><span>Candlelit</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="opt-seg">
+      <legend>Type size</legend>
+      <div class="seg-group">
+        <label class="seg-opt"><input class="sr-only" type="radio" name="size" value="s"><span>S</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="size" value="m" checked><span>M</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="size" value="l"><span>L</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="size" value="xl"><span>XL</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="opt-seg">
+      <legend>Line spacing</legend>
+      <div class="seg-group">
+        <label class="seg-opt"><input class="sr-only" type="radio" name="spacing" value="compact"><span>Compact</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="spacing" value="book" checked><span>Book</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="spacing" value="airy"><span>Airy</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="opt-sw">
+      <legend>Colour of the Latin</legend>
+      <div class="sw-group">
+        <label class="sw-opt"><input class="sr-only" type="radio" name="latin" value="oxblood" checked><span class="sw-dot" style="background:#7a2230" aria-hidden="true"></span><span>Oxblood</span></label>
+        <label class="sw-opt"><input class="sr-only" type="radio" name="latin" value="green"><span class="sw-dot" style="background:#23584a" aria-hidden="true"></span><span>Sage</span></label>
+        <label class="sw-opt"><input class="sr-only" type="radio" name="latin" value="plain"><span class="sw-dot" style="background:var(--ink)" aria-hidden="true"></span><span>Ink</span></label>
+        <label class="sw-opt"><input class="sr-only" type="radio" name="latin" value="custom"><span>My own</span></label>
+      </div>
+      <span class="la-custom"><label>day <input type="color" name="laLight" value="#7a2230"></label> <label>night <input type="color" name="laDark" value="#e0c27a"></label></span>
+    </fieldset>
+  </div>
+
+  <div class="opt-col">
+    <p class="opt-col-h">Languages &amp; Citations</p>
+    <fieldset class="opt-seg opt-seg-wrap">
+      <legend>Latin and other languages</legend>
+      <div class="seg-group">
+        <label class="seg-opt"><input class="sr-only" type="radio" name="mode" value="gloss" checked><span>In margin</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="mode" value="interlinear"><span>Beneath</span></label>
+        <label class="seg-opt"><input class="sr-only" type="radio" name="mode" value="english"><span>In place</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="opt-seg opt-seg-wrap">
+      <legend>Translation first</legend>
+      <div class="seg-group">
+        <label class="seg-opt"><input class="sr-only" type="radio" name="order" value="default" checked><span>{% if profile == "private" %}Gowland’s{% else %}Human{% endif %}</span></label>
+        {% if profile == "private" %}<label class="seg-opt"><input class="sr-only" type="radio" name="order" value="human"><span>Dell &amp; J.-S.</span></label>{% endif %}
+        <label class="seg-opt"><input class="sr-only" type="radio" name="order" value="machine"><span>Machine</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="opt-checks">
+      <legend>Citations{% if profile == "private" %} &amp; 2021 edition{% endif %}</legend>
+      <label class="opt-badge"><input type="checkbox" name="cites"> <span class="opt-bt">As Burton abbreviated citations</span></label>
+      {% if profile == "private" %}
+      <label class="opt-badge"><input type="checkbox" name="gowland"> <span class="opt-bt">Gowland’s bracketed translations in line</span></label>
+      <label class="opt-badge"><input type="checkbox" name="pages"> <span class="opt-bt">Penguin page numbers</span></label>
+      {% endif %}
+    </fieldset>
+  </div>
+
+  <div class="opt-col">
+    <p class="opt-col-h">Margins &amp; Reading Calm</p>
+    <fieldset class="opt-notes opt-checks">
+      <legend>In the margins</legend>
+      <label class="opt-badge"><input type="checkbox" name="nBurton"> <span class="opt-mb opt-mb-a" aria-hidden="true">a</span> <span class="opt-bt">Burton’s notes</span></label>
+      {% if profile == "private" %}<label class="opt-badge"><input type="checkbox" name="nGowland"> <span class="opt-mb opt-mb-g" aria-hidden="true">g</span> <span class="opt-bt">Gowland’s notes</span></label>{% endif %}
+      <label class="opt-badge"><input type="checkbox" name="nTrans"> <span class="opt-mb opt-mb-tr" aria-hidden="true">tr.</span> <span class="opt-bt">Translations</span></label>
+      <label class="opt-badge"><input type="checkbox" name="nCites"> <span class="opt-mb opt-mb-c" aria-hidden="true">§</span> <span class="opt-bt">In-line citations written out</span></label>
+      <label class="opt-badge"><input type="checkbox" name="nKjv"> <span class="opt-mb opt-mb-k" aria-hidden="true">kjv</span> <span class="opt-bt">Bible verses (KJV)</span></label>
+      <label class="opt-badge"><input type="checkbox" name="glosses"> <span class="opt-mb opt-mb-w" aria-hidden="true">w</span> <span class="opt-bt">Obsolete words glossed</span></label>
+      <label class="opt-badge"><input type="checkbox" name="nRestored"> <span class="opt-mb opt-mb-r" aria-hidden="true">°</span> <span class="opt-bt">Restored notes (DM)</span></label>
+    </fieldset>
+    <fieldset class="opt-calm opt-checks">
+      <legend>Reading calm &amp; aids</legend>
+      <label class="opt-badge"><input type="checkbox" name="calm"> <span class="opt-bt"><b>Calm margins:</b> dim extra notes until hovered</span></label>
+      <label class="opt-badge"><input type="checkbox" name="cleanProse"> <span class="opt-bt"><b>Clean prose:</b> name underlines on hover only</span></label>
+      <label class="opt-badge"><input type="checkbox" name="hairline"> <span class="opt-bt"><b>Chapter hairline:</b> quiet progress thread</span></label>
+      <label class="opt-badge opt-bare"><input type="checkbox" name="textonly"> <span class="opt-bt"><b>As printed (1651):</b> his text &amp; notes only</span></label>
+    </fieldset>
+  </div>
+</div>
+
 <details class="opt-key">
   <summary>Key to the colours and signs</summary>
-  {# the groups side by side (owner, 2026-11-21: "multiple columns rather than all one") #}
   <div class="ok-cols">
   <div class="ok-g"><p class="ok-t">Languages</p>
   <ul class="ok-l">
@@ -91,7 +124,7 @@
     <li><span class="mn-src"><span class="src-m">w</span></span> Webster’s dictionary (1913)</li>
     <li><span class="mn-src"><span class="src-m">kjv</span></span> the King James Bible</li>
     <li><span class="mn-src"><span class="src-m">dm</span></span> Democritus Minor’s edition (19th century)</li>
-    {% if key != "home" %}<li><span class="prov"></span> a model: point at it to see which</li>{% endif %}
+    {% if key != "home" %}<li><span class="prov" role="img" aria-label="Model provenance sign"></span> a model: point at it to see which</li>{% endif %}
   </ul></div>
   </div>
 </details>

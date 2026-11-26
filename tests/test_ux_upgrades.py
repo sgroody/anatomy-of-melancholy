@@ -147,3 +147,50 @@ def test_authors_template_puts_provenance_below_table_and_ribbon_uses_svg():
     ejs = (paths.ROOT / "burton" / "site" / "static" / "edition.js").read_text(encoding="utf-8")
     assert '"Silk ribbon: "' not in ejs
     assert "ic-ribbon" in ejs
+
+
+def test_r10_ab_picks_templates_and_glossary_chips():
+    from burton.site import frontispiece
+
+    # AB-1 A: unified locus pill before Contents in base.html + unit badge in branch_html
+    base_tpl = (paths.ROOT / "burton" / "site" / "templates" / "base.html").read_text(encoding="utf-8")
+    assert base_tpl.index("{{ place or") < base_tpl.index('class="toc-panel"')
+    assert 'class="chapter-hairline"' in base_tpl
+    back = synopsis.back_links(["p1"], ["1.1.1.1"])
+    unit, (part, nid) = next(iter(back.items()))
+    badge = synopsis.branch_html(unit, part, nid, "../", {"1.1.1.1": "Man's Excellency"})
+    assert '<span class="sb-uid">1.1.1.1</span>' in badge
+    assert 'class="sb-step syn-node"' in badge
+
+    # AB-2 B & AB-3 A: full-width front-page verse + eyebrow hint, zoom cap 1.72
+    stz = frontispiece.stanzas_html(None, "point at a panel to change")
+    assert "fs-st-hint" in stz
+    assert "fs-st-side" not in stz
+    fig = frontispiece.figure_html("assets/images/pg003.png", "Frontispiece", 1151, 1900, "argument/",
+                                   here=False, caption=None, zoom_title=True)
+    assert "--zs:1.720" in fig
+
+    # AB-4 A & AB-5 Current Copy: Florilegium + Sortes in home.html; original copy preserved
+    home_tpl = (paths.ROOT / "burton" / "site" / "templates" / "home.html").read_text(encoding="utf-8")
+    assert "Florilegium" in home_tpl
+    assert "Celebrated passages, and where to find them" in home_tpl
+    assert "Sortes Burtonianae" in home_tpl
+    assert "In 1621 an Oxford scholar" in home_tpl
+
+    # AB-6 A: Redesigned Aa panel + 4 new controls
+    opt_tpl = (paths.ROOT / "burton" / "site" / "templates" / "options.html").read_text(encoding="utf-8")
+    for ctrl in ('name="spacing"', 'name="calm"', 'name="cleanProse"', 'name="hairline"'):
+        assert ctrl in opt_tpl
+
+    # AB-8 A: Self-demonstrating About essay with public/private safety
+    about_tpl = (paths.ROOT / "burton" / "site" / "templates" / "about.html").read_text(encoding="utf-8")
+    assert "about-essay" in about_tpl
+    assert 'data-resp="gowland"' not in about_tpl
+
+    # AB-9 S3: Glossary chips exclude overly generic words and include humoral terms + apothecary signs
+    chips = glossary_page.chips_data()
+    heads = {c["head"] for c in chips}
+    assert "per consensum" in heads
+    assert "atra bilis" in heads
+    assert "℞" in heads
+    assert all("melancholy" not in c["forms"] for c in chips)

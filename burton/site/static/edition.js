@@ -9,8 +9,9 @@ const wide = window.matchMedia("(min-width: 1100px)");
 const twoSide = window.matchMedia("(min-width: 1380px)"); // room for a margin on each side (R3)
 // the margins are in use: a wide window, and no facing translation taking their room (stage 4)
 const isWide = () => wide.matches && !body.classList.contains("facing-on");
-const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", gowland: false, pages: false, order: "default", cites: false, glosses: false,
+const DEFAULTS = { mode: "gloss", theme: "auto", size: "m", spacing: "book", gowland: false, pages: false, order: "default", cites: false, glosses: false,
   latin: "oxblood", laLight: "#7a2230", laDark: "#e0c27a", // the colour of the Latin (round 5, F2)
+  calm: false, cleanProse: false, hairline: true,
   textonly: false, // the text as printed, with Burton's own notes only (owner, 2026-11-18; his notes kept 2026-11-20)
   // the margin's notes, each source on or off (owner, 2026-11-20); nCites off puts Burton's own citations back in the line;
   // the notes restored from Democritus Minor's edition start off (owner, 2026-11-20)
@@ -103,6 +104,8 @@ function apply() {
   else html.dataset.theme = settings.theme;
   if (settings.size === "m") delete html.dataset.size;
   else html.dataset.size = settings.size;
+  if (!settings.spacing || settings.spacing === "book") delete html.dataset.spacing;
+  else html.dataset.spacing = settings.spacing;
   if (settings.latin === "oxblood") delete html.dataset.latin;
   else html.dataset.latin = settings.latin;
   html.style.setProperty("--la-c-light", settings.laLight);
@@ -111,6 +114,9 @@ function apply() {
   body.classList.toggle("show-pages", !bare && !!settings.pages);
   body.classList.toggle("show-abbr", bare || !!settings.cites); // "Burton's abbreviations" in place of the expansions
   body.classList.toggle("show-glosses", !bare && !!settings.glosses);
+  body.classList.toggle("calm-margins", !bare && !!settings.calm);
+  body.classList.toggle("clean-prose", !bare && !!settings.cleanProse);
+  body.classList.toggle("no-hairline", bare || !settings.hairline);
   for (const [k, cls] of Object.entries(NOTE_SOURCES)) body.classList.toggle(`no-${cls}`, !bare && !settings[k]);
   body.classList.toggle("text-only", !!settings.textonly);
   document.querySelectorAll(".print-toggle").forEach((b) => b.setAttribute("aria-pressed", String(bare)));
@@ -121,6 +127,7 @@ function apply() {
     pendingAnchor = snap;
   }
   scheduleLayout();
+  updateHairline();
 }
 
 // Each passage's translations, reordered to the chosen source order: the box lists them all, and
@@ -210,8 +217,8 @@ const toggle = document.querySelector(".settings-toggle");
 function setPanel(open, focusToggle) {
   panel.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
-  // the chosen way of reading the foreign passages first (the first checked radio), not a switch above it
-  if (open) (panel.querySelector('input[type="radio"]:checked') || panel.querySelector("input"))?.focus();
+  // focus the language reading mode radios first (also relied upon by V10k ArrowDown)
+  if (open) (panel.querySelector('input[name="mode"]:checked') || panel.querySelector('input[type="radio"]:checked') || panel.querySelector("input"))?.focus();
   else if (focusToggle) toggle.focus();
 }
 if (panel && toggle) {
@@ -260,6 +267,18 @@ if (tocPanel) {
 // and the rest of its paragraph's notes collapse into a "more notes" stack at that paragraph.
 // Narrow screens (and stacked notes): the marker opens the note as a popover beside it.
 const article = document.querySelector("article.unit");
+const hairlineBar = document.querySelector(".chapter-hairline > i");
+function updateHairline() {
+  if (!hairlineBar || !article) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (max < window.innerHeight * 0.4) { hairlineBar.style.width = "0"; return; }
+  const pct = Math.max(0, Math.min(100, Math.round((window.scrollY / max) * 1000) / 10));
+  hairlineBar.style.width = `${pct}%`;
+}
+if (hairlineBar && article) {
+  window.addEventListener("scroll", updateHairline, { passive: true });
+  window.addEventListener("resize", updateHairline, { passive: true });
+}
 // Burton's markers (a.nref) and the anchors of the edition's margin items (span.mref: translations of the text,
 // Gowland's notes), in reading order; each is laid out beside its anchor by the same pass.
 const markers = [...document.querySelectorAll("a.nref, span.mref")];
@@ -522,6 +541,8 @@ function layoutNotes() {
   article.style.minHeight = end > 0 ? `${Math.ceil(end)}px` : "";
   updateNarrowCues();
   scheduleSpanWarmup();
+  updateHairline();
+  scheduleChipHydration();
   if (pendingAnchor) {
     window.scrollBy(0, pendingAnchor.el.getBoundingClientRect().top - pendingAnchor.top);
     pendingAnchor = null;
@@ -885,7 +906,7 @@ for (const fp of document.querySelectorAll(".fp-facing")) {
 const synSheets = [...document.querySelectorAll(".syn-sheet")];
 if (synSheets.length) {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-  const T_OPEN = 650, T_LAYER = 900, T_PAUSE = 620;  // H2: settle-first cadence (650 ms fill, 620 ms pause)
+  const T_OPEN = 600;  // AB-7 B: single-brace dwell (600ms opens 1 level only, no deep cascade)
   const kidsOf = (li) => li.querySelector(":scope > .syn-nb > .syn-kw > .syn-kids");
   const setShut = (li, shut) => {
     li.classList.toggle("syn-shut", shut);
@@ -1012,26 +1033,20 @@ if (synSheets.length) {
     for (const n of [rest.li, ...rest.li.querySelectorAll(".syn-filling")]) unfill(n);
     rest = null;
   };
-  // on the front page every brace after the first (a Partition's sheets, once its name has opened, and the layers
-  // inside) takes three times as long as the first, so a passing pointer opens the Partition without spilling its
-  // sheets (owner, 2026-11-20: twice; 2026-11-21: three times, and for every later brace)
-  const stepMs = (li, k) => k === 0 ? T_OPEN : li.closest(".syn-front") ? 3 * T_OPEN : T_LAYER;
-  const step = (li, k) => {
-    const shut = li.classList.contains("syn-shut");
-    if (!shut && !nextLayer(li).length) return;  // nothing more to open
-    const ms = stepMs(li, k);
-    fill(li, ms);
+  // AB-7 B: single-level dwell — resting on a folded brace for 600ms opens one layer cleanly and stops (no cascade).
+  const step = (li) => {
+    if (!li.classList.contains("syn-shut")) return;
+    fill(li, T_OPEN);
     later(() => {
       unfill(li);
       if (li.classList.contains("syn-shut")) open(li);
-      else { for (const n of nextLayer(li)) { setShut(n, false); fix(n); } settle(li.closest(".syn-sheet")); }
-      later(() => step(li, k + 1), T_PAUSE);
-    }, ms);
+    }, T_OPEN);
   };
   const startRest = (li, x, y) => {
     stopRest();
+    if (!li.classList.contains("syn-shut")) return;
     rest = { li, timers: [], x, y };
-    step(li, 0);
+    step(li);
   };
   const HEADS = ".syn-sheet .syn-part > .syn-nb > .syn-hd, .syn-sheet .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd";
   const triggerOf = (el) => {
@@ -1206,6 +1221,12 @@ async function windowFor(trig) {
     const entry = el("a", null, "Index entry");
     entry.href = trig.href;
     links.append(entry);
+    if (article) {
+      const pk = el("button", "pw-peek", "Side peek");
+      pk.type = "button";
+      pk.dataset.href = trig.href;
+      links.append(" · ", pk);
+    }
     if (a.qid) {
       const w = el("a", null, "Wikipedia");
       w.href = `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${encodeURIComponent(a.qid)}`;
@@ -1223,6 +1244,12 @@ async function windowFor(trig) {
   open.href = trig.href;
   box.append(el("p", "pw-l"));
   box.lastChild.append(open);
+  if (article) {
+    const pk = el("button", "pw-peek", "Side peek");
+    pk.type = "button";
+    pk.dataset.href = trig.href;
+    box.lastChild.append(" · ", pk);
+  }
   return box;
 }
 const pops = []; // the open windows, outermost first: {el, trig, locked, lt, ct}
@@ -1273,6 +1300,7 @@ document.addEventListener("pointermove", () => { pointerMovedAt = performance.no
 document.addEventListener("mouseover", (ev) => {
   const t = ev.target.closest?.(POP);
   if (!t || !wide.matches || performance.now() - pointerMovedAt > 250) return;
+  if (peekPane && !peekPane.hidden && !t.closest(".side-peek")) return;
   clearTimeout(hoverTimer);
   hoverTimer = setTimeout(() => openWindow(t), 120);
 });
@@ -1321,7 +1349,7 @@ document.addEventListener("keydown", openName);
 const stanzaBox = document.querySelector(".front-stanza");
 if (stanzaBox) {
   // the hint beside the first stanza goes once the reader has pointed at a panel, and stays gone (owner, 2026-11-21)
-  const hint = stanzaBox.querySelector(".fs-hint");
+  const hint = stanzaBox.querySelector(".fs-hint, .fs-st-hint");
   const HINT = "burton-hint-seen";
   try { if (hint && localStorage.getItem(HINT)) hint.hidden = true; } catch { /* private window */ }
   let currentSt = stanzaBox.querySelector(".fs-st:not([hidden])")?.dataset.st || "1";
@@ -1366,14 +1394,24 @@ if (stanzaBox) {
     });
   }
 }
-// The engraving's title panel (and only it) magnified while the pointer rests on it, within the engraving's own
-// bounds, until the pointer leaves the engraving (owner, 2026-11-21)
+// AB-3 A: The engraving's title panel wakes gently after a 280ms dwell at 1.72x with radial vignette
 const frontMap = document.querySelector(".front .fs-map");
 const titleZone = frontMap?.querySelector(".fs-title");
 if (frontMap && titleZone) {
-  titleZone.addEventListener("mouseenter", () => frontMap.classList.add("fs-zoomed"));
-  frontMap.addEventListener("mouseleave", () => frontMap.classList.remove("fs-zoomed"));
+  let zoomTimer = 0;
+  const dwellMs = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 280;
+  titleZone.addEventListener("mouseenter", () => {
+    if (touchOrNarrow()) return;
+    clearTimeout(zoomTimer);
+    zoomTimer = setTimeout(() => frontMap.classList.add("fs-zoomed"), dwellMs);
+  });
+  titleZone.addEventListener("mouseleave", () => clearTimeout(zoomTimer));
+  frontMap.addEventListener("mouseleave", () => {
+    clearTimeout(zoomTimer);
+    frontMap.classList.remove("fs-zoomed");
+  });
   titleZone.addEventListener("click", (ev) => {
+    clearTimeout(zoomTimer);
     if (touchOrNarrow()) {
       ev.preventDefault();
       ev.stopPropagation();
@@ -1382,6 +1420,21 @@ if (frontMap && titleZone) {
   });
   document.addEventListener("click", (ev) => {
     if (!frontMap.contains(ev.target)) frontMap.classList.remove("fs-zoomed");
+  });
+}
+// Front-info disclosure popovers ("How a page looks" and "Florilegium"): one open at a time, Esc/click-away closes
+const frontInfos = [...document.querySelectorAll(".front-info details.fk-page-d")];
+if (frontInfos.length) {
+  for (const det of frontInfos) {
+    det.addEventListener("toggle", () => {
+      if (det.open) frontInfos.forEach((other) => { if (other !== det) other.open = false; });
+    });
+  }
+  document.addEventListener("click", (ev) => {
+    if (!ev.target.closest?.("details.fk-page-d")) frontInfos.forEach((d) => { d.open = false; });
+  });
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") frontInfos.forEach((d) => { d.open = false; });
   });
 }
 // the front page's specimen: each sign lights its pair (Latin and its translation, a note's letter and the note, §
@@ -1722,6 +1775,309 @@ document.addEventListener("click", async (ev) => {
     const pick = pool[Math.floor(Math.random() * pool.length)];
     location.href = new URL(pick.href, root).href;
   } catch { /* offline without cache */ }
+});
+
+// ---------------------------------------------------------------- AB-8 A: About essay pair lighting
+const aboutEssay = document.querySelector(".about-essay");
+if (aboutEssay) {
+  const aePairs = (k) => [...aboutEssay.querySelectorAll(`[data-ae="${CSS.escape(k)}"]`)];
+  let aeHeld = null;
+  for (const item of aboutEssay.querySelectorAll("[data-ae]")) {
+    item.addEventListener("mouseenter", () => aePairs(item.dataset.ae).forEach((x) => x.classList.add("hot")));
+    item.addEventListener("mouseleave", () => aePairs(item.dataset.ae).forEach((x) => {
+      if (aeHeld !== item.dataset.ae) x.classList.remove("hot");
+    }));
+    item.addEventListener("focusin", () => aePairs(item.dataset.ae).forEach((x) => x.classList.add("hot")));
+    item.addEventListener("focusout", () => aePairs(item.dataset.ae).forEach((x) => {
+      if (aeHeld !== item.dataset.ae) x.classList.remove("hot");
+    }));
+    item.addEventListener("click", (ev) => {
+      if (ev.target.closest("a, button")) return;
+      aboutEssay.querySelectorAll(".hot, .pinned").forEach((x) => x.classList.remove("hot", "pinned"));
+      aeHeld = aeHeld === item.dataset.ae ? null : item.dataset.ae;
+      if (aeHeld) aePairs(aeHeld).forEach((x) => x.classList.add("hot", "pinned"));
+    });
+  }
+}
+
+// ---------------------------------------------------------------- AB-9 S2: In-page split Side-Peek pane
+let peekPane = null, peekStack = [], lastPeekTrigger = null;
+const peekHtmlCache = new Map();
+function ensurePeekPane() {
+  if (peekPane) return peekPane;
+  peekPane = document.createElement("aside");
+  peekPane.className = "side-peek";
+  peekPane.hidden = true;
+  peekPane.setAttribute("aria-label", "Side peek");
+  const hd = el("div", "sp-pane-hd");
+  const back = el("button", "sp-pane-back", "← Back");
+  back.type = "button";
+  back.hidden = true;
+  const title = el("span", "sp-pane-title", "");
+  const full = el("a", "sp-pane-full", "Open full page →");
+  const close = el("button", "sp-pane-close", "×");
+  close.type = "button";
+  close.setAttribute("aria-label", "Close side peek");
+  const bodyEl = el("div", "sp-pane-body");
+  bodyEl.tabIndex = -1;
+  hd.append(back, title, full, close);
+  peekPane.append(hd, bodyEl);
+  document.body.append(peekPane);
+  back.addEventListener("click", () => {
+    if (peekStack.length > 1) {
+      peekStack.pop();
+      loadPeekUrl(peekStack[peekStack.length - 1], false);
+    }
+  });
+  close.addEventListener("click", () => closeSidePeek(true));
+  bodyEl.addEventListener("click", (ev) => {
+    const a = ev.target.closest?.("a[href]");
+    if (!a || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+    if (a.target === "_blank") return;
+    const base = peekStack[peekStack.length - 1] || location.href;
+    const dest = new URL(a.getAttribute("href"), base);
+    if (dest.origin !== location.origin) return;
+    ev.preventDefault();
+    if (dest.pathname === location.pathname && dest.hash) {
+      location.hash = dest.hash;
+      return;
+    }
+    loadPeekUrl(dest.href, true);
+  });
+  return peekPane;
+}
+function closeSidePeek(restoreFocus) {
+  if (!peekPane || peekPane.hidden) return;
+  peekPane.hidden = true;
+  peekStack = [];
+  if (restoreFocus && lastPeekTrigger?.isConnected) lastPeekTrigger.focus();
+  lastPeekTrigger = null;
+}
+async function loadPeekUrl(url, push = true) {
+  const pane = ensurePeekPane();
+  const back = pane.querySelector(".sp-pane-back");
+  const titleEl = pane.querySelector(".sp-pane-title");
+  const fullEl = pane.querySelector(".sp-pane-full");
+  const bodyEl = pane.querySelector(".sp-pane-body");
+  const parsed = new URL(url, location.href);
+  if (push && peekStack[peekStack.length - 1] !== parsed.href) peekStack.push(parsed.href);
+  back.hidden = peekStack.length <= 1;
+  fullEl.href = parsed.href;
+  titleEl.textContent = "Loading…";
+  bodyEl.innerHTML = "";
+  pane.hidden = false;
+  try {
+    const pageUrl = parsed.href.split("#")[0];
+    if (!peekHtmlCache.has(pageUrl)) {
+      peekHtmlCache.set(pageUrl, fetch(pageUrl).then((r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.text();
+      }));
+    }
+    const rawHtml = await peekHtmlCache.get(pageUrl);
+    if (peekStack[peekStack.length - 1] !== parsed.href) return;
+    const doc = new DOMParser().parseFromString(rawHtml, "text/html");
+    const src = doc.querySelector("article.unit, article.prose");
+    if (!src) { location.href = parsed.href; return; }
+    const clone = src.cloneNode(true);
+    clone.querySelectorAll("script, .part-syn, .mn-pool").forEach((x) => x.remove());
+    clone.querySelectorAll("[id]").forEach((e) => {
+      e.setAttribute("data-orig-id", e.id);
+      e.removeAttribute("id");
+    });
+    clone.querySelectorAll("a[href]").forEach((a) => {
+      const h = a.getAttribute("href");
+      if (h && !h.startsWith("#")) a.href = new URL(h, parsed).href;
+    });
+    const heading = doc.querySelector("h1")?.textContent.trim() || doc.title.split(" · ")[0];
+    titleEl.textContent = heading;
+    bodyEl.replaceChildren(...clone.childNodes);
+    const frag = parsed.hash ? decodeURIComponent(parsed.hash.slice(1)) : "";
+    const target = frag && bodyEl.querySelector(`[data-orig-id="${CSS.escape(frag)}"]`);
+    if (target) {
+      target.scrollIntoView({ block: "center", behavior: "auto" });
+      pulseArrival(target);
+    } else {
+      bodyEl.scrollTop = 0;
+    }
+  } catch {
+    closeSidePeek(false);
+    location.href = parsed.href;
+  }
+}
+if (article) {
+  document.addEventListener("click", (ev) => {
+    if (ev.defaultPrevented || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+    const peekBtn = ev.target.closest?.(".pw-peek");
+    if (peekBtn?.dataset.href) {
+      ev.preventDefault();
+      lastPeekTrigger = peekBtn;
+      clearTimeout(hoverTimer);
+      pointerMovedAt = 0;
+      closeFrom(0);
+      loadPeekUrl(peekBtn.dataset.href, true);
+      return;
+    }
+    if (!wide.matches || body.classList.contains("text-only")) return;
+    const a = ev.target.closest?.("a.xref, a.nm:not(.nm-x)");
+    if (!a || !article.contains(a) || a.closest(".part-syn, .syn-badge, .toc-panel, .unit-resume")) return;
+    const dest = new URL(a.href, location.href);
+    if (dest.origin !== location.origin || dest.pathname === location.pathname) return;
+    ev.preventDefault();
+    lastPeekTrigger = a;
+    clearTimeout(hoverTimer);
+    pointerMovedAt = 0;
+    closeFrom(0);
+    loadPeekUrl(dest.href, true);
+  });
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && peekPane && !peekPane.hidden) {
+      ev.stopPropagation();
+      closeSidePeek(true);
+    }
+  });
+}
+
+// ---------------------------------------------------------------- AB-9 S3: Nutshell expandable humoral & apothecary term chips
+let termsPromise = null, compiledTerms = null;
+function ensureTerms() {
+  if (termsPromise) return termsPromise;
+  termsPromise = fetch(new URL("assets/glossary-terms.json", root))
+    .then((r) => (r.ok ? r.json() : []))
+    .then((list) => {
+      const byKey = new Map();
+      const formToKey = new Map();
+      const forms = [];
+      for (const item of list) {
+        const key = item.head.toLowerCase();
+        byKey.set(key, item);
+        for (const f of item.forms || []) {
+          const fl = f.toLowerCase();
+          if (!formToKey.has(fl)) {
+            formToKey.set(fl, key);
+            forms.push(f);
+          }
+        }
+      }
+      forms.sort((a, b) => b.length - a.length);
+      const escRx = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const rx = forms.length
+        ? new RegExp(`(?<![A-Za-z])(${forms.map(escRx).join("|")})(?![A-Za-z])`, "gi")
+        : null;
+      compiledTerms = { byKey, formToKey, rx };
+      return compiledTerms;
+    })
+    .catch(() => {
+      compiledTerms = { byKey: new Map(), formToKey: new Map(), rx: null };
+      return compiledTerms;
+    });
+  return termsPromise;
+}
+function hydrateChipsIn(rootEl, skipKeys = new Set()) {
+  if (!compiledTerms?.rx) return;
+  const { formToKey, rx } = compiledTerms;
+  const seenCard = new Set(skipKeys);
+  const w = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => n.parentElement?.closest(".term-chip, .term-drawer, .mn-k, .mn-lem, .mn-src, .prov, .sr-only, a, button")
+      ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const nodes = [];
+  for (let n = w.nextNode(); n; n = w.nextNode()) nodes.push(n);
+  let replaced = false;
+  for (const txt of nodes) {
+    const val = txt.nodeValue;
+    rx.lastIndex = 0;
+    let m, last = 0;
+    const parts = [];
+    while ((m = rx.exec(val))) {
+      const matched = m[1];
+      const tkey = formToKey.get(matched.toLowerCase());
+      if (!tkey || seenCard.has(tkey)) continue;
+      seenCard.add(tkey);
+      if (m.index > last) parts.push(document.createTextNode(val.slice(last, m.index)));
+      const btn = el("button", "term-chip", matched);
+      btn.type = "button";
+      btn.dataset.term = tkey;
+      btn.setAttribute("aria-expanded", "false");
+      parts.push(btn);
+      last = m.index + matched.length;
+    }
+    if (parts.length) {
+      replaced = true;
+      if (last < val.length) parts.push(document.createTextNode(val.slice(last)));
+      const frag = document.createDocumentFragment();
+      for (const p of parts) frag.append(p);
+      txt.parentNode.replaceChild(frag, txt);
+    }
+  }
+  return replaced;
+}
+let chipsScheduled = false;
+function scheduleChipHydration() {
+  if (chipsScheduled || !article || body.classList.contains("text-only")) return;
+  chipsScheduled = true;
+  ensureTerms().then((data) => {
+    if (!data?.rx) return;
+    const cards = [...article.querySelectorAll(".mn-tr .mn-tx, .mn-note, .mn-gw, .sn-tr .mn-tx")];
+    let idx = 0, any = false;
+    const work = (deadline) => {
+      const t0 = performance.now();
+      while (idx < cards.length && ((deadline && deadline.timeRemaining() > 3) || (!deadline && performance.now() - t0 < 8))) {
+        const c = cards[idx++];
+        if (!c.dataset.chipped) {
+          c.dataset.chipped = "1";
+          if (hydrateChipsIn(c)) any = true;
+        }
+      }
+      if (idx < cards.length) {
+        if (window.requestIdleCallback) requestIdleCallback(work, { timeout: 300 });
+        else setTimeout(() => work(null), 16);
+      } else if (any && isWide()) {
+        scheduleLayout();
+      }
+    };
+    if (window.requestIdleCallback) requestIdleCallback(work, { timeout: 300 });
+    else setTimeout(() => work(null), 16);
+  });
+}
+if (!isWide() || aboutEssay) scheduleChipHydration();
+document.addEventListener("click", async (ev) => {
+  const chip = ev.target.closest?.(".term-chip");
+  if (!chip) return;
+  ev.stopPropagation();
+  const data = await ensureTerms();
+  const key = (chip.dataset.term || "").toLowerCase();
+  const info = data.byKey.get(key);
+  if (!info) return;
+  const open = chip.getAttribute("aria-expanded") !== "true";
+  chip.setAttribute("aria-expanded", String(open));
+  const next = chip.nextElementSibling;
+  if (open) {
+    if (next?.classList.contains("term-drawer")) {
+      next.hidden = false;
+    } else {
+      const drawer = el("span", "term-drawer");
+      drawer.lang = "en";
+      const b = el("b", null, info.head);
+      const ren = info.render && info.render.toLowerCase() !== info.head.toLowerCase() ? ` (${info.render})` : "";
+      drawer.append(b, `${ren} — ${info.note}`);
+      const used = new Set([key]);
+      let cur = chip.parentElement;
+      while (cur && cur.classList?.contains("term-drawer")) {
+        const prevBtn = cur.previousElementSibling;
+        if (prevBtn?.dataset?.term) used.add(prevBtn.dataset.term.toLowerCase());
+        cur = cur.parentElement;
+      }
+      hydrateChipsIn(drawer, used);
+      chip.after(drawer);
+    }
+    const card = chip.closest(".mn, .sidenote");
+    if (card?.classList.contains("mn-fold")) { opened.add(card); scheduleLayout(); }
+    else if (card) scheduleLayout();
+  } else if (next?.classList.contains("term-drawer")) {
+    next.hidden = true;
+    if (chip.closest(".mn, .sidenote")) scheduleLayout();
+  }
 });
 
 // ---------------------------------------------------------------- offline (installable app)

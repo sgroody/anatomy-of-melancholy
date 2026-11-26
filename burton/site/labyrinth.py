@@ -43,7 +43,8 @@ def read_minutes(words: int) -> int:
     return max(1, round(words / WPM)) if words > 0 else 1
 
 
-def doorways_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None) -> str:
+def florilegium_list_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None) -> str:
+    """List of curated Florilegium passages with reading times."""
     items = []
     for uid, label, blurb in DOORWAYS:
         pg = book_pages.get(uid)
@@ -58,10 +59,17 @@ def doorways_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | N
         )
     if not items:
         return ""
+    return f'<ul class="lab-list">{"".join(items)}</ul>'
+
+
+def doorways_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None) -> str:
+    lst = florilegium_list_html(root, book_pages, words_by_unit)
+    if not lst:
+        return ""
     return (
         '<details class="toc-ways">'
-        '<summary>Ways into the Labyrinth</summary>'
-        f'<ul class="lab-list">{"".join(items)}</ul>'
+        '<summary>Florilegium — celebrated passages</summary>'
+        f'{lst}'
         '</details>'
     )
 

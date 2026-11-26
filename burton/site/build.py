@@ -471,13 +471,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         # no caption and no machine's sign on the front page (owner, 2026-11-21); the Argument page carries the label
         front_map = Markup(frontispiece.figure_html(*front, "argument/", here=False, caption=None,
                                                        zoom_title=True))
-        # beside each stanza its margin items as the Argument page has them; beside the first, the hint, which goes
-        # once the reader has pointed at a panel (owner, 2026-11-21)
-        arg = book.pages["argument"]
-        hint = (f'<p class="fs-hint">Select a panel to the left to read the associated stanza from '
-                f'<a href="{attr(arg.href)}">{esc(arg.title)}</a>.</p>')
-        stanzas = Markup(frontispiece.stanzas_html(frontispiece.glosses_from(pages.get("argument/index.html", "")),
-                                                   hint))
+        # AB-2 B: pure full-width verse on the front page with a quiet stanza eyebrow hint
+        stanzas = Markup(frontispiece.stanzas_html(None, "point at a panel to change"))
     # the three synopses on the front page, folded so the page fits one screen; resting on a Partition's name opens
     # it onto its sheets (owner, 2026-11-19: rubric numerals, "&c.")
     shown = {u: f"{u} {book.pages[u].title}" for u in book.units if u in book.pages}
@@ -527,7 +522,13 @@ def build(units: list[str] | None, *, profile: str) -> dict:
              crumbs=[("Authors cited", "authors/"), (a["name"], None)], title=a["name"],
              description=f"{a['name']}, as cited by Burton in The Anatomy of Melancholy", a=a)
     report["authors"] = {"pages": len(alpha), **astats}
-    labyrinth.write_sortes(labyrinth.sortes_pool(book, words_by_unit), out / "assets" / "sortes.json")
+    s_pool = labyrinth.sortes_pool(book, words_by_unit)
+    labyrinth.write_sortes(s_pool, out / "assets" / "sortes.json")
+    (out / "assets" / "glossary-terms.json").write_text(
+        json.dumps(glossary_page.chips_data(), ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+        newline="\n",
+    )
     page("glossary", "glossary/index.html", "glossary.html", page=book.pages["glossary"],
          crumbs=[("Glossary", None)], title="Glossary",
          description=("Humoral terms, apothecary signs, citation locators, and recurring authorities "
@@ -547,12 +548,15 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         pages[rel] = dead.sub(keep, pages[rel])
     report["authors"]["links_without_page_unwrapped"] = unwrapped
     home_extras = labyrinth.contents_extras_html("", book, words_by_unit)
+    flor = labyrinth.florilegium_list_html("", book.pages, words_by_unit)
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
         toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True, extras=home_extras)),
         frontispiece=front, front_map=front_map,
         argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
         synopses=synopses,
+        florilegium=Markup(flor) if flor else None,
+        has_sortes=bool(s_pool),
         specimen=front_specimen(pages["3.2.3.1/index.html"], author_info) if "3.2.3.1/index.html" in pages else "",
         title="The Anatomy of Melancholy",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")

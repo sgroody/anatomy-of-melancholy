@@ -298,8 +298,11 @@ def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str
     # the last step is the node that stands for this page; it often names several sections ("Sorrow … Discontents"),
     # so it is labelled with the page's own title
     labels = [short(_plain(n.get("text", []))) for n in path[:-1]] + [here]
-    line = " · ".join([ROMAN.get(part, part), *[esc_tagged(x) for x in labels[-3:-1]],
-                       f'<span class="sb-cur">{esc_tagged(here)}</span>'])
+    uid = (
+        f'<span class="sb-uid">{esc(unit)}</span><span class="sb-sep" aria-hidden="true">·</span>'
+        if unit[:1].isdigit() else ""
+    )
+    line = f'<span class="sb-cur">{esc_tagged(here)}</span>'
     steps = "".join(f'<a class="sb-step{" syn-node" if n is path[-1] else ""}" style="--d:{k}" '
                     f'href="{attr(syn)}#{attr(n["id"])}">{esc_tagged(lab)}</a>'
                     for k, (n, lab) in enumerate(zip(path, labels, strict=True)))
@@ -308,8 +311,9 @@ def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str
                       f'{esc_tagged(short(titles[u], 3))}</a>' for u in dict.fromkeys(units))
     signs = _signposts_html(signposts, "Notes on this page")
     return (f'<div class="syn-badge" tabindex="0" aria-label="Where this page stands in Burton’s synopsis">'
-            f'<span class="sb-ico" aria-hidden="true">{{</span><span class="sb-line">{line}</span>'
-            f'<div class="sb-pop">{steps}{f"<p class=\"sb-sibs\">{sibs}</p>" if sibs else ""}'
+            f'<span class="sb-ico" aria-hidden="true">{{</span>{uid}<span class="sb-line">{line}</span>'
+            f'<div class="sb-pop"><p class="sb-part">Partition {ROMAN.get(part, part)}</p>'
+            f'{steps}{f"<p class=\"sb-sibs\">{sibs}</p>" if sibs else ""}'
             f'{signs}'
             f'<a class="sb-all" href="{attr(syn)}">The whole synopsis of Partition {ROMAN.get(part, part)}</a>'
             '</div></div>')

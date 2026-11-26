@@ -68,7 +68,7 @@ def figure_html(src: str, alt: str, w: int, h: int, argument_href: str, *, here:
     zone, zvars = "", ""
     if zoom_title and data.get("title"):
         x, y, tw, th = data["title"]
-        s = min(W / tw, H / th)  # as large as the engraving holds it
+        s = min(1.72, W / tw, H / th)  # gentle 1.72x loupe without snapping too hard
         cx, cy = 100 * (x + tw / 2) / W, 100 * (y + th / 2) / H
         zvars = f' style="--zx:{cx:.2f}%;--zy:{cy:.2f}%;--zs:{s:.3f}"'
         zone = (f'<span class="fs-title" aria-hidden="true" style="left:{100 * x / W:.2f}%;top:{100 * y / H:.2f}%;'
@@ -123,8 +123,9 @@ def glosses_from(page_html: str) -> dict[str, list[tuple[int, str, str, str]]]:
 def stanzas_html(glosses: dict | None = None, hint: str = "") -> str:
     """Each described stanza of the Argument, Burton's lines as the base text has them, for the front page: one
     shows at a time under the way in, as the reader points at a panel (owner, 2026-11-03: T14, R4 B), the first
-    (Democritus Abderites, old Democritus under his tree) shown to begin with (owner, 2026-11-21). Beside each, its
-    margin items (`glosses`, from `glosses_from`), the words they hang on marked; beside the first, `hint` (HTML)."""
+    (Democritus Abderites, old Democritus under his tree) shown to begin with (owner, 2026-11-21). When `glosses`
+    is None (AB-2 B), sets the verse full-width without side margin notes and places `hint` gently beside the
+    first stanza's heading."""
     root = etree.parse(str(paths.TEXT / "argument.xml")).getroot()
     names = {pn["stanza"]: [] for pn in load()["panels"]}
     for pn in load()["panels"]:
@@ -137,15 +138,21 @@ def stanzas_html(glosses: dict | None = None, hint: str = "") -> str:
         lines = [esc(" ".join(public_text(ln).split())) for ln in lg.iter(T("l"))]
         if lines:  # the stanza number Burton prints, said by the heading instead
             lines[0] = re.sub(r"^\d+(?: \d+)* ", "", lines[0])
+        hidden = " hidden" if out else ""
+        if glosses is None:
+            eyebrow = f'<span class="fs-st-hint"> · {esc(hint)}</span>' if (not out and hint) else ""
+            out.append(f'<div class="fs-st" data-st="{attr(sid)}"{hidden}><div class="fs-st-main">'
+                       f'<p class="fs-st-h">{esc(" and ".join(names[sid]))}{eyebrow}</p>'
+                       f'<p class="fs-st-l">{"<br>".join(lines)}</p></div></div>')
+            continue
         side = []
-        for i, word, nid, note in (glosses or {}).get(sid, []):
+        for i, word, nid, note in glosses.get(sid, []):
             w = esc(word)
             if i < len(lines) and w in lines[i]:
                 lines[i] = lines[i].replace(w, f'<span class="fs-anc" data-for="{attr(nid)}">{w}</span>', 1)
                 side.append(note)
         if not out and hint:
             side.insert(0, hint)
-        hidden = " hidden" if out else ""
         out.append(f'<div class="fs-st" data-st="{attr(sid)}"{hidden}><div class="fs-st-main"><p class="fs-st-h">'
                    f'{esc(" and ".join(names[sid]))}</p>'
                    f'<p class="fs-st-l">{"<br>".join(lines)}</p></div>'

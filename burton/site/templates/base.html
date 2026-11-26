@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#1c1a17" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ root }}assets/fonts.css">
 <link rel="stylesheet" href="{{ root }}assets/edition.css">
-<script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;if(s.latin&&s.latin!=="oxblood")d.dataset.latin=s.latin;if(s.laLight)d.style.setProperty("--la-c-light",s.laLight);if(s.laDark)d.style.setProperty("--la-c-dark",s.laDark);}catch(e){}</script>
+<script>try{var s=JSON.parse(localStorage.getItem("burton-settings")||"{}"),d=document.documentElement;if(s.theme&&s.theme!=="auto")d.dataset.theme=s.theme;if(s.size&&s.size!=="m")d.dataset.size=s.size;if(s.spacing&&s.spacing!=="book")d.dataset.spacing=s.spacing;if(s.latin&&s.latin!=="oxblood")d.dataset.latin=s.latin;if(s.laLight)d.style.setProperty("--la-c-light",s.laLight);if(s.laDark)d.style.setProperty("--la-c-dark",s.laDark);}catch(e){}</script>
 <script type="module" src="{{ root }}assets/edition.js"></script>
 </head>
 <body class="mode-gloss profile-{{ profile }} page-{{ key if key in ('home', 'about', 'glossary', 'settings', 'search') else (page.kind if page else 'other') }}">
@@ -27,13 +27,13 @@
       {% if page and page.kind == "unit" and key and key[0].isdigit() %}{% set parts = key.split(".") %}
       <a class="uid" href="#main" title="Partition {{ parts[0] }}{% for n in parts[1:] %}, {{ ["Section", "Member", "Subsection"][loop.index0] }} {{ n }}{% endfor %}"><span class="uid-a">{{ key }}</span><span class="uid-b">{% for n in parts %}<span class="uid-s">{{ ["Part.", "Sect.", "Memb.", "Subs."][loop.index0] }} {{ n }}.</span>{% if not loop.last %} {% endif %}{% endfor %}</span></a>
       {% endif %}
+      {{ place or "" }}
       {% if toc %}
       <details class="toc-panel">
         <summary>Contents</summary>
         <nav aria-label="Contents">{{ toc }}</nav>
       </details>
       {% endif %}
-      {{ place or "" }}
     </div>
     <a class="home" href="{{ root or './' }}"{% if key == "home" %} aria-current="page"{% endif %}><span class="home-t">The Anatomy of Melancholy</span> <span class="home-s">An Englished Reader</span></a>
     <div class="bar-r">
@@ -48,6 +48,7 @@
     {% endfor %}
   </ol></nav>
   {% endif %}
+  <div class="chapter-hairline" aria-hidden="true"><i></i></div>
 </header>
 {% endif %}
 {% if key not in ("settings", "home") %}
