@@ -32,38 +32,32 @@
       </div>
       {# the word to a new reader (owner, 2026-11-20: "The visitor should come away knowing what the Anatomy is, why
          this reader is a useful artifact, and how to read it"; 2026-11-21: the owner's copy, a key that opens) #}
+      <div class="front-aside">
       <section class="front-info" aria-labelledby="fi-h">
         <h2 id="fi-h" class="sr-only">About the book and this reader</h2>
-        {# run-in heads, red (owner, 2026-11-21: "saves space") #}
-        <p class="fi-part"><span class="fi-h" role="heading" aria-level="3">The Book</span> In 1621 an Oxford scholar
-          calling himself Democritus Junior set out to anatomize sadness, and he ended up writing about everything:
-          love, air, diet, scholars, religion, the madness of the whole world. Robert Burton’s <i>Anatomy of
-          Melancholy</i> is one of the great books in English, and one of the hardest to read. Every page is thick with
-          Latin and dotted with Greek, and the margins are crowded with citations in a shorthand no living reader was
-          taught.</p>
-        <button type="button" class="fi-expand" aria-expanded="false">Read more</button>
-        <p class="fi-part fi-more"><span class="fi-h" role="heading" aria-level="3">The Reader</span> This edition is
-          built on Angus Gowland’s text (2021), which follows the sixth edition of 1651. It gives translations of the
-          Latin and Greek, spells out Burton’s citations, identifies the people and books he names, and sets the
-          thousands of notes in the margin beside the passages they explain. Anything a machine produced is marked as
-          such.</p>
-        {% include "front_key.html" %}
-        {% if florilegium or has_sortes %}
-        <div class="fi-doors fi-more">
-          {% if florilegium %}
-          <details class="fi-key fk-page-d fi-flor">
-            <summary><span class="fl-t">Florilegium</span> <span class="fl-sub">Celebrated passages, and where to find them</span></summary>
-            <div class="fl-pop" role="region" aria-label="Florilegium">{{ florilegium }}</div>
-          </details>
-          {% endif %}
-          {% if has_sortes %}
-          <p class="fi-sortes"><button type="button" class="sortes-btn">Sortes Burtonianae <span aria-hidden="true">☞</span></button> <span class="fi-sortes-note">open at random, as older readers sought counsel by chance in Virgil or Burton.</span></p>
-          {% endif %}
+        <div class="fi-blurb fi-more" aria-label="Praise for The Anatomy of Melancholy">
+          <button type="button" class="fb-nav fb-prev" aria-label="Previous quotation"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M7.8 2.2L4 6l3.8 3.8"/></svg></button>
+          <div class="fb-track">
+            <blockquote class="fb-q"><span class="fb-tx">“The best book ever written.”</span> <cite class="fb-by">— Nicholas Lezard</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“This is one of the indispensable books; for my money, it is the best of all.”</span> <cite class="fb-by">— Philip Pullman</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“The only book that ever took him out of bed two hours sooner than he wished to rise.”</span> <cite class="fb-by">— James Boswell, on Samuel Johnson</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“<i>The Anatomy of Melancholy</i> is, by a magnificent and somehow very English irony, one of the great comic works of the world.”</span> <cite class="fb-by">— Anthony Burgess</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“The most amusing and instructive medley of quotations and classical anecdotes I ever perused.”</span> <cite class="fb-by">— Lord Byron</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“…the tone of a tirade that, in the midst of its fury, smiles at itself.”</span> <cite class="fb-by">— William H. Gass</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“His manner is to shroud and carry off his feelings under a cloud of learned words.”</span> <cite class="fb-by">— Charles Lamb</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“A medical treatise, the greatest indeed written by a layman.”</span> <cite class="fb-by">— Sir William Osler</cite></blockquote>
+            <blockquote class="fb-q" hidden><span class="fb-tx">“An excellent book… wherein he hath piled up variety of much excellent learning.”</span> <cite class="fb-by">— Thomas Fuller</cite></blockquote>
+          </div>
+          <button type="button" class="fb-nav fb-next" aria-label="Next quotation"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4.2 2.2L8 6l-3.8 3.8"/></svg></button>
         </div>
-        {% endif %}
+        <p class="fi-part"><span class="fi-h" role="heading" aria-level="3">The Book</span> In 1621, an Oxford scholar calling himself Democritus Junior set out to anatomize sadness—and ended up writing about everything: love, stars, diet, ghosts, and the cure of sorrow. Robert Burton’s book is hilarious, tender, and notoriously hard to finish, thick with Latin, Greek, and archaic allusions.</p>
+        <button type="button" class="fi-expand" aria-expanded="false">Read more</button>
+        <p class="fi-part fi-more"><span class="fi-h" role="heading" aria-level="3">The Reader</span> This edition keeps his prose unbroken without changing a word: every foreign passage translated beside the text, cryptic shorthand (“Hor.,” “Consil. 23.”) spelled out with his authors identified, and explanatory notes sitting quietly in the margin alongside Burton’s own.</p>
+        <p class="fi-part fi-more fi-coda">Burton read everything. Now you can read him.</p>
+        {% include "front_key.html" %}
         <div class="front-tools">
           <div class="bar-r">{% include "tools.html" %}</div>
-          <p class="front-links"><a href="about/">About</a> · <a href="authors/">Authors cited</a> · <a href="glossary/">Glossary</a> · <a href="table/">The Table</a></p>
+          <p class="front-links"><a href="about/">About</a> · <a href="authors/">Sources</a> · <a href="glossary/">Glossary</a> · <a href="table/">Index</a></p>
         </div>
         <div id="settings" class="settings front-settings" hidden>
           <button type="button" class="settings-close" aria-label="Close the reading options" title="Close">×</button>
@@ -71,10 +65,24 @@
           <p class="settings-more"><button type="button" class="reset">Reset</button> · <a href="settings/">All reading options</a> · <a href="glossary/">Glossary</a> <span class="saved" role="status" aria-live="polite"></span></p>
         </div>
       </section>
+      {% if has_sortes %}
+      <div class="front-sortes">
+        <button type="button" class="sortes-btn sortes-hero">Sortes Burtonianae <span aria-hidden="true">☞</span></button>
+        <p class="front-sortes-sub">A page at random; take it as counsel</p>
+      </div>
+      {% endif %}
+      </div>
       {% if synopses %}
       <section class="front-syn" aria-labelledby="syn-h">
         <h2 id="syn-h" class="front-rh"><span>Synopses</span></h2>
         {{ synopses.sheet }}
+      </section>
+      {% endif %}
+      {% if florilegium %}
+      <section class="front-flor" aria-labelledby="flor-h">
+        <h2 id="flor-h" class="front-rh"><span>Florilegium</span></h2>
+        <p class="flor-sub">Celebrated passages</p>
+        {{ florilegium }}
       </section>
       {% endif %}
       <details class="front-contents">

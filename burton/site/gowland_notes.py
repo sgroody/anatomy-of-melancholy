@@ -29,7 +29,8 @@ from . import glosses
 
 RULE = "gowland-kind-v1"
 KINDS = ("gloss", "source", "identity", "explanation", "pointer")
-REF = r"nn?\. ?(\d+(?:(?:, | and )\d+)*) \(([^)]+)\)"  # "n. 38 (1.2.1)", "nn. 181, 187 (1.2.3)"
+# "n. 38 (1.2.1)", "note 32 (DJR)", "nn. 181, 187 (1.2.3)"
+REF = r"(?:notes?|nn?\.) ?(\d+(?:(?:, | and | or )\d+)*) \(([^)]+)\)"
 # the whole note only points elsewhere: "See above, n. 38 (1.2.1).", "… n. 175 (DJR) and n. 30 (2.2.4)."
 POINTER = re.compile(rf"^(?:In note ‘\w’, )?[Ss]ee (?:above|below),? {REF}(?:,? (?:and|or) {REF})*\.?$")
 POINTER_ANY = re.compile(REF)
@@ -82,6 +83,44 @@ def pointer_target(num: str, label: str) -> str | None:
     p = prefixes().get(label.strip())
     tid = f"{p}_en_{num}" if p else None
     return tid if tid in endnotes() else None
+
+
+@cache
+def endnote_locations() -> dict[str, tuple[str, str]]:
+    """Target endnote id -> (unit id, enclosing block public id) where that endnote is anchored."""
+    out: dict[str, tuple[str, str]] = {}
+    block_tags = {T("p"), T("lg"), T("item"), T("head"), T("quote")}
+    for f in paths.TEXT.glob("*.xml"):
+        if f.stem == "gowland-endnotes":
+            continue
+        root = etree.parse(str(f)).getroot()
+        for a in root.iter(ED("enref")):
+            tid = a.get("target")
+            if not tid or tid in out:
+                continue
+            blk = next((anc for anc in a.iterancestors() if anc.tag in block_tags and anc.get(XML_ID)), None)
+            if blk is not None:
+                out[tid] = (f.stem, public_id(blk.get(XML_ID)))
+    return out
+
+
+def resolve_ref_items(target_id: str, hint_clause: str, fallback_lemma: str = "") -> list[tuple[int, str, str]]:
+    """Resolve the specific segment(s) of `target_id` referenced by an embedded cross-note citation."""
+    en = endnotes().get(target_id)
+    if en is None:
+        return []
+    segs = segments(en)
+    if len(segs) <= 1:
+        return [(0, segs[0][0], segs[0][1])] if segs else []
+    q = re.findall(r"[‘']([^’']+)[’']", hint_clause)
+    for cand in (*q, hint_clause, fallback_lemma):
+        cand = cand.strip()
+        if not cand:
+            continue
+        idxs = match_pointer_segments(cand, segs)
+        if idxs:
+            return [(i, segs[i][0], segs[i][1]) for i in idxs]
+    return [(i, lem, txt) for i, (lem, txt) in enumerate(segs)]
 
 
 def segments(en) -> list[tuple[str, str]]:
@@ -335,4 +374,4 @@ def other_pointers(note: str) -> list[str]:
 
 def refs_in(note: str) -> list[tuple[str, str]]:
     """(number, chapter label) for every note Gowland points to, "nn. 181, 187 (1.2.3)" giving two."""
-    return [(n, lab) for nums, lab in POINTER_ANY.findall(note) for n in re.split(r", | and ", nums)]
+    return [(n, lab) for nums, lab in POINTER_ANY.findall(note) for n in re.split(r", | and | or ", nums)]

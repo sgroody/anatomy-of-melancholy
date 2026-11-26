@@ -23,9 +23,13 @@ def test_glossary_page_collect_covers_all_sections():
 def test_labyrinth_doorways_and_sortes_pool():
     book = Book("public", text_units())
     words = {u: 1200 for u in book.units}
-    html_ = labyrinth.doorways_html("", book.pages, words)
+    html_ = labyrinth.florilegium_home_html("", book.pages, words, preview_n=3)
     assert 'href="2.2.3.1/"' in html_
     assert "~5 min" in html_
+    assert 'class="list' not in html_
+    assert "See more" in html_
+    assert "See less" in html_
+    assert html_.index('class="flor-more"') > html_.index('class="lab-list flor-top"')
     pool = labyrinth.sortes_pool(book, words)
     keys = {entry["key"] for entry in pool}
     assert "3.2.3.1" in keys
@@ -150,6 +154,7 @@ def test_authors_template_puts_provenance_below_table_and_ribbon_uses_svg():
 
 
 def test_r10_ab_picks_templates_and_glossary_chips():
+    from burton.site import build as build_mod
     from burton.site import frontispiece
 
     # AB-1 A: unified locus pill before Contents in base.html + unit badge in branch_html
@@ -170,22 +175,56 @@ def test_r10_ab_picks_templates_and_glossary_chips():
                                    here=False, caption=None, zoom_title=True)
     assert "--zs:1.720" in fig
 
-    # AB-4 A & AB-5 Current Copy: Florilegium + Sortes in home.html; original copy preserved
+    # Homepage placement, Lezard short quote, The Book/The Reader run-in heads, Celebrated passages, & header centering
     home_tpl = (paths.ROOT / "burton" / "site" / "templates" / "home.html").read_text(encoding="utf-8")
     assert "Florilegium" in home_tpl
-    assert "Celebrated passages, and where to find them" in home_tpl
+    assert (
+        home_tpl.index('class="front-syn"')
+        < home_tpl.index('class="front-flor"')
+        < home_tpl.index('class="front-contents"')
+    )
+    assert '<p class="flor-sub">Celebrated passages</p>' in home_tpl
+    assert 'class="fi-flor"' not in home_tpl
+    assert 'class="front-aside"' in home_tpl
+    assert 'class="fi-doors"' not in home_tpl
+    assert home_tpl.index("</section>") < home_tpl.index('class="front-sortes"') < home_tpl.index('class="front-syn"')
     assert "Sortes Burtonianae" in home_tpl
-    assert "In 1621 an Oxford scholar" in home_tpl
+    assert "A page at random; take it as counsel" in home_tpl
+    assert '<span class="fb-tx">“The best book ever written.”</span>' in home_tpl
+    assert '<span class="fi-h" role="heading" aria-level="3">The Book</span>' in home_tpl
+    assert '<span class="fi-h" role="heading" aria-level="3">The Reader</span>' in home_tpl
+    assert "Burton read everything. Now you can read him." in home_tpl
+    assert "Nicholas Lezard" in home_tpl and "Thomas Fuller" in home_tpl
+    assert '<a href="authors/">Sources</a>' in home_tpl
+    assert '<a href="table/">Index</a>' in home_tpl
+    assert '<a href="{{ root }}authors/">Sources</a>' in base_tpl
+    assert '<a href="{{ root }}table/">Index</a>' in base_tpl
+    css = (paths.ROOT / "burton" / "site" / "static" / "edition.css").read_text(encoding="utf-8")
+    assert "--k-gloss: #1f6657;" in css
+    assert "--k-gloss: #7ecab8;" in css
+    assert "#a04f00" not in css
+    assert "#e2b45c" not in css
+    assert ".front-sortes .sortes-btn.sortes-hero" in css
+    assert ".fi-part ~ .fi-part" in css
+    assert "grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr)" in css
+    assert ".chapter-hairline { position: fixed;" in css
+    book = Book("public", text_units())
+    toc = build_mod.toc_html(book, "", None, ids=False)
+    assert "Open at a venture" not in toc
+    assert "Florilegium" not in toc
 
-    # AB-6 A: Redesigned Aa panel + 4 new controls
+    # AB-6 A: Redesigned Aa panel + plain-English comfort labels
     opt_tpl = (paths.ROOT / "burton" / "site" / "templates" / "options.html").read_text(encoding="utf-8")
     for ctrl in ('name="spacing"', 'name="calm"', 'name="cleanProse"', 'name="hairline"'):
         assert ctrl in opt_tpl
+    assert "Progress bar:" in opt_tpl
+    assert "Margins &amp; Reading Comfort" in opt_tpl
 
     # AB-8 A: Self-demonstrating About essay with public/private safety
     about_tpl = (paths.ROOT / "burton" / "site" / "templates" / "about.html").read_text(encoding="utf-8")
     assert "about-essay" in about_tpl
     assert 'data-resp="gowland"' not in about_tpl
+    assert "calm Tufte" not in about_tpl
 
     # AB-9 S3: Glossary chips exclude overly generic words and include humoral terms + apothecary signs
     chips = glossary_page.chips_data()
@@ -194,3 +233,27 @@ def test_r10_ab_picks_templates_and_glossary_chips():
     assert "atra bilis" in heads
     assert "℞" in heads
     assert all("melancholy" not in c["forms"] for c in chips)
+
+
+def test_gowland_embedded_cross_note_refs_render_clickable_popups_and_no_public_leak():
+    from lxml import etree
+
+    unit = "2.2.3.1"
+    div = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot().find(".//{http://www.tei-c.org/ns/1.0}div")
+    layer = json.loads((paths.LAYERS / "translations" / f"{unit}.json").read_text(encoding="utf-8"))
+    gw_entries = gowland_notes.entries(unit, {})
+    body_priv, _ = render.render_unit(div, unit, "private", layer, gowland_entries=gw_entries)
+    assert 'class="gw-ref"' in body_priv
+    assert 'class="gw-refs-data"' in body_priv
+    m = re.search(r'<script type="application/json" class="gw-refs-data"[^>]*>(.*?)</script>', body_priv)
+    assert m is not None
+    refs_data = json.loads(m.group(1))
+    elias = next((v for v in refs_data.values() if "350" in v["cite"] and "DJR" in v["cite"]), None)
+    assert elias is not None
+    assert len(elias["items"]) == 1
+    assert "Elias Artifex" in elias["items"][0]["text"]
+    assert elias["href"].startswith("../djr/#")
+
+    body_pub, _ = render.render_unit(div, unit, "public", layer, gowland_entries=None)
+    assert "gw-ref" not in body_pub
+    assert 'data-resp="gowland"' not in body_pub

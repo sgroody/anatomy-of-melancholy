@@ -105,13 +105,13 @@ class Book:
             self._add(pg)
         for u in self.units:
             if u in BACK:
-                pg = Page(u, "back", BACK[u][1], f"{u}/")
+                pg = Page(u, "back", "Index" if u == "table" else BACK[u][1], f"{u}/")
                 self.back.append(pg)
                 self._add(pg)
         self.extra = [Page("about", "about", "About", "about/"),
                       Page("glossary", "glossary", "Glossary", "glossary/"),
                       Page("settings", "settings", "Reading options", "settings/"),
-                      Page("authors", "authors", "Authors cited", "authors/"),
+                      Page("authors", "authors", "Sources", "authors/"),
                       Page("search", "search", "Search", "search/")]
         for pg in self.extra:
             self.pages[pg.key] = pg

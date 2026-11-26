@@ -1,16 +1,14 @@
-{# The key to the signs in the front page's word to a new reader (owner, 2026-11-21, from round 9's forms): B, each
-   sign with a word, always open; then a few real lines of Burton that open, set and responding as on a page of the
-   reader (build.front_specimen). No machine's sign here: the front page shows none (owner, 2026-11-21). #}
+{# The key to the signs in the front page's infobox, kept in sync with the post-R10 reader UX: each sign with a plain
+   word, always open; then "How a page looks" specimen (build.front_specimen). No machine's ◇ sign on the front page. #}
 <div class="fi-keys fi-more">
   <p class="fk-strip"><span class="fk-lab">Key</span>
-    <span class="fk-it"><i class="fi-la">Latin</i> <span class="fi-grc">Greek</span> <span class="fk-w">languages</span></span>
+    <span class="fk-it"><i class="fi-la">Latin</i> <span class="fi-grc">Greek</span> <span class="fk-w">translations</span></span>
     <span class="fk-it"><span class="fi-cite">§</span> <span class="fk-w">citation</span></span>
-    <span class="fk-it"><span class="fi-ul">Name</span> <span class="fk-w">Identification</span></span>
-    <span class="fk-it"><span class="fk-rule"><span class="fi-box">a</span></span> <span class="fk-w">Author’s Note</span></span>
-    <span class="fk-it">{% if profile == "private" %}<span class="fi-k fi-expl">note</span> | {% endif %}<span class="fi-k fi-gloss">gloss</span> <span class="fk-w">Explanatory Notes</span></span>
+    <span class="fk-it"><span class="fi-ul">Name</span> <span class="fk-w">who / side peek</span></span>
+    <span class="fk-it"><span class="fk-rule"><span class="fi-box">a</span></span> <span class="fk-w">Burton’s note</span></span>
+    <span class="fk-it">{% if profile == "private" %}<i class="fi-expl">note</i> · {% endif %}<i class="fi-gloss">word</i> <span class="fk-w">{% if profile == "private" %}notes &amp; glosses{% else %}glosses{% endif %}</span></span>
+    <span class="fk-it"><span class="fk-term">term</span> <span class="fk-w">definition</span></span>
   </p>
-  {# a few real lines set as a page of the reader sets them, responding as it does (owner, 2026-11-21); opened by a
-     plus that turns to a cross, not a disclosure triangle #}
   <details class="fi-key fk-page-d">
     <summary>How a page looks</summary>
     {{ specimen }}

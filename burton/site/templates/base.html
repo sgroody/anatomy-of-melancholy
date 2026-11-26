@@ -75,8 +75,8 @@
     {% if next %}<a rel="next" href="{{ root }}{{ next.href }}"><span class="pager-dir">Next</span> <span class="pager-t">{% if next.number %}{{ next.number }} {% endif %}{{ next.title_html }}</span></a>{% endif %}
   </nav>
   {% endif %}
-  {# the foot: the informational pages (owner, 2026-11-20: "Authors Cited, About, Table"); the rest is in the widget #}
-  <p class="colophon"><a href="{{ root }}authors/">Authors cited</a> · <a href="{{ root }}glossary/">Glossary</a> · <a href="{{ root }}about/">About</a> · <a href="{{ root }}table/">The Table</a></p>
+  {# the foot: the informational pages (owner, 2026-11-20: "Sources, Glossary, About, Index") #}
+  <p class="colophon"><a href="{{ root }}authors/">Sources</a> · <a href="{{ root }}glossary/">Glossary</a> · <a href="{{ root }}about/">About</a> · <a href="{{ root }}table/">Index</a></p>
 </footer>
 {% endif %}
 </body>

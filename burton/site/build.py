@@ -86,11 +86,11 @@ def options_sample() -> Markup:
         f'<i class="os-la" lang="la">{la}</i><span class="os-il">{en_in}</span><span class="os-en">{en_in}</span>'
         f'{t[5]}<span class="os-ul">{t[6]}</span>{t[7]}<span class="os-glw">{t[8]}</span>{t[9]} …</p>'
         '<div class="os-m">'
-        '<p class="os-card os-sn"><span class="os-n">e</span> <span class="os-k">cites</span> '
+        '<p class="os-card os-sn"><span class="os-n">e</span> '
         '<span class="os-abbr-n"><i>Ovid</i>.</span><span class="os-exp-n os-ul">Ovid</span></p>'
-        f'<p class="os-card os-tr"><span class="os-k">trans.</span> {en} {pv}</p>'
-        f'<p class="os-card os-icc"><span class="os-k os-k-c">§ cites</span> {esc(cite["display"])}</p>'
-        f'<p class="os-card os-gl"><span class="os-k">gloss</span> <i>belike</i> {esc(gl["sense"])} '
+        f'<p class="os-card os-tr"><span class="os-tx">{en}</span> {pv}</p>'
+        f'<p class="os-card os-icc"><span class="os-k-c" aria-hidden="true">§</span> {esc(cite["display"])}</p>'
+        f'<p class="os-card os-gl"><i class="os-lem-gl">belike</i> — {esc(gl["sense"])} '
         f'<span class="mn-src">{src_mark("webster1913")}</span> '
         f'{prov("Sense chosen from Webster 1913 by machine: " + gl["label"])}</p>'
         "</div></div></div>")
@@ -101,9 +101,9 @@ def front_specimen(unit_html: str, author_info: dict) -> Markup:
     """The front page's "How a page looks" (owner, 2026-11-21: "a representative text that responds in the same way
     when you interact with it"): the options' sample lines of Burton set as a page of this reader sets them, his text
     and its margin, each sign lighting its pair as in the reader, the names opening who they were. The translation
-    is the one the reader shows first (Gowland's in the private build), taken from the rendered page; the citation
-    and the names from their layers. No machine's sign: the front page shows none (owner, 2026-11-21, recorded in
-    CLAUDE.md); each item carries its sign on its own page."""
+    is the one the reader shows first (Gowland's in the private build), taken from the rendered page; the citation,
+    obsolete-word gloss, and the names from their layers. No machine's sign: the front page shows none (owner,
+    2026-11-21, recorded in CLAUDE.md); each item carries its sign on its own page."""
     from lxml import html as lhtml
 
     from .render import esc as resc
@@ -119,6 +119,8 @@ def front_specimen(unit_html: str, author_info: dict) -> Markup:
     mark = f' <span class="mn-src">{src_mark(v.get("data-src"))}</span>' if v.get("data-src") != "machine" else ""
     ic = json.loads((paths.LAYERS / "citations-inline" / f"{SAMPLE_UNIT}.json").read_text(encoding="utf-8"))
     cite = next(c for c in ic.values() if c["selector"]["in"] == SAMPLE_P and c["raw"].startswith("Hercules"))
+    gl = next(g for g in glosses.layer_items(SAMPLE_UNIT)
+              if g["headword"] == "belike" and g["selector"]["in"] == SAMPLE_P)
     root = etree.parse(str(paths.TEXT / f"{SAMPLE_UNIT}.xml")).getroot()
     p = next(e for e in root.iter(T("p")) if e.get("{http://www.w3.org/XML/1998/namespace}id") == "u" + SAMPLE_P)
     notes = [" ".join(public_text(n).split()) for n in p.iter(T("note"))]
@@ -129,7 +131,9 @@ def front_specimen(unit_html: str, author_info: dict) -> Markup:
         a = author_info[key]
         return (f'<span class="sp-nm" tabindex="0">{resc(shown)}<span class="sp-who" role="tooltip">'
                 f'<b>{resc(a["name"])}</b> <span class="sp-dates">{resc(a.get("dates") or "")}</span> '
-                f'{resc(a.get("about") or "")}</span></span>')
+                f'{resc(a.get("about") or "")} '
+                '<span class="sp-peek-hint">On a reading page, click a name to open it in Side Peek.</span>'
+                '</span></span>')
     t = [resc(x) for x in SAMPLE_TEXT]
     html_ = (
         '<div class="sp" role="group" aria-label="A few lines of Burton as a page of this reader shows them">'
@@ -138,12 +142,15 @@ def front_specimen(unit_html: str, author_info: dict) -> Markup:
         '<span class="sp-ic" data-k="c" tabindex="0" aria-label="citation">§</span>'
         f'{t[3].rstrip()}<sup class="sp-ref" data-k="n" tabindex="0" aria-label="Note e">e</sup> '
         f'<i class="sp-la" data-k="t" tabindex="0" lang="la">{t[4]}</i>{t[5]}<i>{name("hesiod", SAMPLE_TEXT[6])}</i>'
-        f'{t[7]}{t[8]}{t[9]} …</p>'
+        f'{t[7]}<span class="sp-glw" data-k="g" tabindex="0">{t[8]}</span>{t[9]} …</p>'
         '<div class="sp-m">'
-        f'<p class="sp-card sp-sn" data-k="n"><span class="sp-n">e</span> <span class="sp-k">cites</span> '
+        f'<p class="sp-card sp-sn" data-k="n"><span class="sp-n">e</span> '
         f'<i>{name("ovid", "Ovid")}</i>.</p>'
-        f'<p class="sp-card sp-tr" data-k="t"><span class="sp-k">trans.</span> {resc(en)}{mark}</p>'
-        f'<p class="sp-card sp-cc" data-k="c"><span class="sp-k sp-k-c">§ cites</span> {resc(cite["display"])}</p>'
+        f'<p class="sp-card sp-tr" data-k="t"><span class="sp-tx">{resc(en)}</span>{mark}</p>'
+        f'<p class="sp-card sp-cc" data-k="c"><span class="sp-k-c" aria-hidden="true">§</span> '
+        f'{resc(cite["display"])}</p>'
+        f'<p class="sp-card sp-gl" data-k="g"><i class="sp-lem-gl">belike</i> — {resc(gl["sense"])} '
+        f'<span class="mn-src">{src_mark("webster1913")}</span></p>'
         "</div></div></div>")
     return Markup(html_)
 
@@ -352,10 +359,9 @@ def build(units: list[str] | None, *, profile: str) -> dict:
         pg = book.pages.get(key)
         prev, nxt = book.neighbours(key)
         kw.setdefault("crumbs", book.crumbs(key) if pg else [])
-        extras = labyrinth.contents_extras_html(root, book, words_by_unit)
         pages[rel] = jenv.get_template(template).render(
             root=root, profile=profile, key=key, prev=prev, next=nxt,
-            toc=Markup(toc_html(book, root, key, ids=False, extras=extras)), **kw)
+            toc=Markup(toc_html(book, root, key, ids=False)), **kw)
 
     def front_nav(current: str) -> Markup:
         """Every page of the front matter, the reader's own marked (owner, 2026-11-18): after "Enter, gentle Reader"
@@ -411,7 +417,8 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                                    inline_cites_model=({k: v for k, v in layer_for(unit, "citations-inline-model")
                                                         .items() if k not in cites_withheld} if show_cites else None),
                                    note_hashes=note_hashes,
-                                   name_extra=(obscure_rx.get(unit), obscure_info))
+                                   name_extra=(obscure_rx.get(unit), obscure_info),
+                                   built_units=set(book.units))
         if unit == "argument":
             body, counts["panel_links"] = frontispiece.add_back_links(body)
         if unit in part_first and (tree := synopsis.load(part_first[unit].key)):
@@ -510,16 +517,16 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     page("search", "search/index.html", "search.html", page=book.pages["search"], crumbs=[("Search", None)],
          title="Search", description="Search Burton’s text, sidenotes and translations", stats=sstats)
 
-    # the author index and one page per cited author (M6)
+    # the author index ("Sources") and one page per cited author (M6)
     apages, astats = authors_pages.collect(book.units, shown_notes)
     alpha = sorted(apages.values(), key=lambda a: a["name"].lower())
     page("authors", "authors/index.html", "authors.html", page=book.pages["authors"],
-         crumbs=[("Authors cited", None)], title="Authors cited",
+         crumbs=[("Sources", None)], title="Sources",
          description="The authors Burton cites in his sidenotes", authors=alpha, stats=astats,
          tables=authors_pages.tables_label())
     for a in alpha:
         page(f"author:{a['id']}", f"authors/{a['id']}/index.html", "author.html", page=None,
-             crumbs=[("Authors cited", "authors/"), (a["name"], None)], title=a["name"],
+             crumbs=[("Sources", "authors/"), (a["name"], None)], title=a["name"],
              description=f"{a['name']}, as cited by Burton in The Anatomy of Melancholy", a=a)
     report["authors"] = {"pages": len(alpha), **astats}
     s_pool = labyrinth.sortes_pool(book, words_by_unit)
@@ -547,11 +554,10 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             return m.group(2)
         pages[rel] = dead.sub(keep, pages[rel])
     report["authors"]["links_without_page_unwrapped"] = unwrapped
-    home_extras = labyrinth.contents_extras_html("", book, words_by_unit)
-    flor = labyrinth.florilegium_list_html("", book.pages, words_by_unit)
+    flor = labyrinth.florilegium_home_html("", book.pages, words_by_unit, preview_n=3)
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
-        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True, extras=home_extras)),
+        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)),
         frontispiece=front, front_map=front_map,
         argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
         synopses=synopses,

@@ -6,13 +6,13 @@
 {% if page.kind == "back" and profile == "private" %}
 <p class="banner" data-resp="gowland">The page numbers are those of the Penguin edition (2021). Each links to the place where that page begins.</p>
 {% elif page.kind == "back" %}
-<p class="banner">Burton’s Table refers to pages of a printed edition. This build leaves out those page numbers, so the entries are not linked; use <a href="../search/">Search</a> to find a subject.</p>
+<p class="banner">Burton’s Index (<i>The Table</i>) refers to pages of a printed edition. This build leaves out those page numbers, so the entries are not linked; use <a href="../search/">Search</a> to find a subject.</p>
 {% endif %}
 {% if front_nav %}{{ front_nav }}{% endif %}
 {% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
 {% if key == "table" %}
 <div class="idx-tools table-tools" hidden>
-  <label class="idx-f-wrap"><span class="sr-only">Filter the Table</span><input type="search" class="idx-filter" placeholder="Filter Burton’s Table…" autocomplete="off"></label>
+  <label class="idx-f-wrap"><span class="sr-only">Filter the Index</span><input type="search" class="idx-filter" placeholder="Filter the Index (Burton’s Table)…" autocomplete="off"></label>
   <span class="idx-count" aria-live="polite"></span>
   <nav class="alpha-bar" aria-label="Jump to letter"></nav>
 </div>

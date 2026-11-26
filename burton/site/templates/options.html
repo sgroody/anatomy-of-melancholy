@@ -1,6 +1,6 @@
-{# The reading options (AB-6 A): three crisp columns of segmented pills, swatches, miniature margin badges,
-   and four reading calm controls, with the key and live Example passage below. All underlying radios/checkboxes stay
-   semantic and keyboard-focusable for WCAG and V10k parity. #}
+{# The reading options (AB-6 A, refined): three crisp columns of segmented pills, swatches, miniature margin badges,
+   and four plain-English reading comfort controls, with the key and live Example passage below. All underlying
+   radios/checkboxes stay semantic and keyboard-focusable for WCAG and V10k parity. #}
 <div class="opt-grid">
   <div class="opt-col">
     <p class="opt-col-h">Page &amp; Type</p>
@@ -52,7 +52,7 @@
       </div>
     </fieldset>
     <fieldset class="opt-seg opt-seg-wrap">
-      <legend>Translation first</legend>
+      <legend>Preferred translation</legend>
       <div class="seg-group">
         <label class="seg-opt"><input class="sr-only" type="radio" name="order" value="default" checked><span>{% if profile == "private" %}Gowland’s{% else %}Human{% endif %}</span></label>
         {% if profile == "private" %}<label class="seg-opt"><input class="sr-only" type="radio" name="order" value="human"><span>Dell &amp; J.-S.</span></label>{% endif %}
@@ -61,7 +61,7 @@
     </fieldset>
     <fieldset class="opt-checks">
       <legend>Citations{% if profile == "private" %} &amp; 2021 edition{% endif %}</legend>
-      <label class="opt-badge"><input type="checkbox" name="cites"> <span class="opt-bt">As Burton abbreviated citations</span></label>
+      <label class="opt-badge"><input type="checkbox" name="cites"> <span class="opt-bt">Keep Burton’s abbreviated citations</span></label>
       {% if profile == "private" %}
       <label class="opt-badge"><input type="checkbox" name="gowland"> <span class="opt-bt">Gowland’s bracketed translations in line</span></label>
       <label class="opt-badge"><input type="checkbox" name="pages"> <span class="opt-bt">Penguin page numbers</span></label>
@@ -70,23 +70,23 @@
   </div>
 
   <div class="opt-col">
-    <p class="opt-col-h">Margins &amp; Reading Calm</p>
+    <p class="opt-col-h">Margins &amp; Reading Comfort</p>
     <fieldset class="opt-notes opt-checks">
-      <legend>In the margins</legend>
+      <legend>Shown in the margins</legend>
       <label class="opt-badge"><input type="checkbox" name="nBurton"> <span class="opt-mb opt-mb-a" aria-hidden="true">a</span> <span class="opt-bt">Burton’s notes</span></label>
-      {% if profile == "private" %}<label class="opt-badge"><input type="checkbox" name="nGowland"> <span class="opt-mb opt-mb-g" aria-hidden="true">g</span> <span class="opt-bt">Gowland’s notes</span></label>{% endif %}
-      <label class="opt-badge"><input type="checkbox" name="nTrans"> <span class="opt-mb opt-mb-tr" aria-hidden="true">tr.</span> <span class="opt-bt">Translations</span></label>
+      {% if profile == "private" %}<label class="opt-badge"><input type="checkbox" name="nGowland"> <span class="opt-mb opt-mb-g" aria-hidden="true">note</span> <span class="opt-bt">Gowland’s notes</span></label>{% endif %}
+      <label class="opt-badge"><input type="checkbox" name="nTrans"> <span class="opt-mb opt-mb-tr" aria-hidden="true">tr</span> <span class="opt-bt">Translations</span></label>
       <label class="opt-badge"><input type="checkbox" name="nCites"> <span class="opt-mb opt-mb-c" aria-hidden="true">§</span> <span class="opt-bt">In-line citations written out</span></label>
-      <label class="opt-badge"><input type="checkbox" name="nKjv"> <span class="opt-mb opt-mb-k" aria-hidden="true">kjv</span> <span class="opt-bt">Bible verses (KJV)</span></label>
-      <label class="opt-badge"><input type="checkbox" name="glosses"> <span class="opt-mb opt-mb-w" aria-hidden="true">w</span> <span class="opt-bt">Obsolete words glossed</span></label>
+      <label class="opt-badge"><input type="checkbox" name="nKjv"> <span class="opt-mb opt-mb-k" aria-hidden="true">§</span> <span class="opt-bt">Bible verses (KJV)</span></label>
+      <label class="opt-badge"><input type="checkbox" name="glosses"> <span class="opt-mb opt-mb-w" aria-hidden="true">word</span> <span class="opt-bt">Obsolete words glossed</span></label>
       <label class="opt-badge"><input type="checkbox" name="nRestored"> <span class="opt-mb opt-mb-r" aria-hidden="true">°</span> <span class="opt-bt">Restored notes (DM)</span></label>
     </fieldset>
     <fieldset class="opt-calm opt-checks">
-      <legend>Reading calm &amp; aids</legend>
-      <label class="opt-badge"><input type="checkbox" name="calm"> <span class="opt-bt"><b>Calm margins:</b> dim extra notes until hovered</span></label>
-      <label class="opt-badge"><input type="checkbox" name="cleanProse"> <span class="opt-bt"><b>Clean prose:</b> name underlines on hover only</span></label>
-      <label class="opt-badge"><input type="checkbox" name="hairline"> <span class="opt-bt"><b>Chapter hairline:</b> quiet progress thread</span></label>
-      <label class="opt-badge opt-bare"><input type="checkbox" name="textonly"> <span class="opt-bt"><b>As printed (1651):</b> his text &amp; notes only</span></label>
+      <legend>Reading comfort</legend>
+      <label class="opt-badge"><input type="checkbox" name="calm"> <span class="opt-bt"><b>Dim side notes:</b> fade extra margin notes until pointed at</span></label>
+      <label class="opt-badge"><input type="checkbox" name="cleanProse"> <span class="opt-bt"><b>Quiet links:</b> show name underlines only when pointing</span></label>
+      <label class="opt-badge"><input type="checkbox" name="hairline"> <span class="opt-bt"><b>Progress bar:</b> thin line at the top showing how far you’ve read</span></label>
+      <label class="opt-badge opt-bare"><input type="checkbox" name="textonly"> <span class="opt-bt"><b>As printed (1651):</b> Burton’s text &amp; own notes only</span></label>
     </fieldset>
   </div>
 </div>
@@ -101,21 +101,21 @@
     <li><span class="ok-sw" style="background:var(--enm)"></span><span style="color:var(--enm);font-variant-caps:small-caps">Middle English</span></li>
     <li><span class="ok-sw" style="background:var(--modern)"></span><i style="color:var(--modern)">Italian, French …</i></li>
   </ul></div>
-  <div class="ok-g"><p class="ok-t">Burton’s notes</p>
+  <div class="ok-g"><p class="ok-t">Burton’s notes &amp; header</p>
   <ul class="ok-l">
-    <li><span class="ok-rule"><span class="ok-box">a</span> his words</span>, with the red rule</li>
-    <li><span class="ok-k">cites</span> the note only gives references</li>
-    <li><span class="ok-k">note</span> it says something more</li>
+    <li><span class="ok-rule"><span class="ok-box">a</span> his words</span>, beside the red rule</li>
     <li><span class="ok-k">Author trans.</span> his own English for his Latin</li>
     <li><span class="ok-mark">°</span> a note Gowland left out, restored</li>
+    <li><span class="ok-pill">{ 1.1.1.1</span> at top left: where you stand in Burton’s outline</li>
   </ul></div>
   <div class="ok-g"><p class="ok-t">Added by this edition</p>
   <ul class="ok-l">
-    <li><span class="ok-dot"><span class="ok-k">trans.</span></span> a translation, hung below on a dotted line</li>
-    <li><span style="color:var(--k-cite)">§</span> <span class="ok-k" style="color:var(--k-cite)">cites</span> <span class="ok-k" style="color:var(--k-bible)">Bible</span> a reference in his text, written out</li>
-    <li><span class="ok-ul">Name</span> point at it to see who</li>
+    <li><span class="ok-dot" style="border-left-color:var(--la)"><span style="color:var(--la)">translation</span></span> in its language’s colour, on a dotted line</li>
+    <li><span style="color:var(--k-cite)">§</span> <span style="color:var(--k-bible)">§</span> a reference or Bible verse, written out</li>
+    <li><span class="ok-ul">Name</span> point for who; click on a page for <b>Side Peek</b></li>
+    <li><span class="fk-term">term</span> click dotted terms inside notes for humoral/apothecary definitions</li>
     <li><span class="ok-k">¶</span> at a paragraph’s edge: copy a citation link</li>
-    {% if profile == "private" %}<li><span class="ok-k" style="color:var(--k-gloss)">gloss</span> <span class="ok-k" style="color:var(--k-expl)">about</span> <span class="ok-k" style="color:var(--k-expl)">note</span> <span class="ok-k" style="color:var(--k-cite)">source</span> Gowland’s notes, in his colours</li>{% endif %}
+    <li><i style="color:var(--k-gloss)">word</i> obsolete-word glosses{% if profile == "private" %}; <i style="color:var(--k-expl)">note</i> <i style="color:var(--k-cite)">source</i> Gowland’s notes{% endif %}</li>
   </ul></div>
   <div class="ok-g"><p class="ok-t">Who made it</p>
   <ul class="ok-l">

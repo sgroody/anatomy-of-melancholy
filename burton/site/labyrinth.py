@@ -38,28 +38,58 @@ DOORWAYS: list[tuple[str, str, str]] = [
      "False zeal, superstition, despair, and the closing counsel: be not solitary, be not idle."),
 ]
 
+FEATURED_DOORWAYS: tuple[str, ...] = ("djr", "2.2.3.1", "3.2.3.1")
+
 
 def read_minutes(words: int) -> int:
     return max(1, round(words / WPM)) if words > 0 else 1
 
 
+def _doorway_li(uid: str, label: str, blurb: str, root: str, book_pages: dict,
+                words_by_unit: dict[str, int] | None) -> str:
+    pg = book_pages.get(uid)
+    if not pg:
+        return ""
+    w = (words_by_unit or {}).get(uid, 0)
+    mins = f' <span class="lab-time">~{read_minutes(w)} min</span>' if w else ""
+    return (
+        f'<li class="lab-item"><a href="{attr(root + pg.href)}">'
+        f'<span class="lab-t">{esc(label)}</span>{mins}</a>'
+        f'<span class="lab-note">{esc(blurb)}</span></li>'
+    )
+
+
 def florilegium_list_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None) -> str:
     """List of curated Florilegium passages with reading times."""
-    items = []
-    for uid, label, blurb in DOORWAYS:
-        pg = book_pages.get(uid)
-        if not pg:
-            continue
-        w = (words_by_unit or {}).get(uid, 0)
-        mins = f' <span class="lab-time">~{read_minutes(w)} min</span>' if w else ""
-        items.append(
-            f'<li class="lab-item"><a href="{attr(root + pg.href)}">'
-            f'<span class="lab-t">{esc(label)}</span>{mins}</a>'
-            f'<span class="lab-note">{esc(blurb)}</span></li>'
-        )
+    items = [li for uid, label, blurb in DOORWAYS
+             if (li := _doorway_li(uid, label, blurb, root, book_pages, words_by_unit))]
     if not items:
         return ""
     return f'<ul class="lab-list">{"".join(items)}</ul>'
+
+
+def florilegium_home_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None,
+                          *, preview_n: int = 3) -> str:
+    """Homepage Florilegium: featured passages open by default with a disclosure for the rest."""
+    by_uid = {uid: (uid, label, blurb) for uid, label, blurb in DOORWAYS}
+    ordered = [by_uid[uid] for uid in FEATURED_DOORWAYS if uid in by_uid]
+    ordered += [row for row in DOORWAYS if row[0] not in FEATURED_DOORWAYS]
+    items = [li for uid, label, blurb in ordered
+             if (li := _doorway_li(uid, label, blurb, root, book_pages, words_by_unit))]
+    if not items:
+        return ""
+    head = "".join(items[:preview_n])
+    rest = "".join(items[preview_n:])
+    out = f'<ul class="lab-list flor-top">{head}</ul>'
+    if rest:
+        out += (
+            '<details class="flor-more">'
+            '<summary><span class="flor-more-closed">See more</span>'
+            '<span class="flor-more-open">See less</span></summary>'
+            f'<ul class="lab-list flor-rest">{rest}</ul>'
+            '</details>'
+        )
+    return out
 
 
 def doorways_html(root: str, book_pages: dict, words_by_unit: dict[str, int] | None = None) -> str:

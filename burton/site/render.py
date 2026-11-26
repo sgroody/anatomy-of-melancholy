@@ -1159,14 +1159,67 @@ def _outside_hidden(html_text: str, at: int) -> int:
     return outer[0] if outer else at
 
 
-def gowland_card(e: dict, notes, cid: str) -> str:
-    """One of Gowland's endnote entries as a margin item, labelled by its kind (private build only). A pointer
-    shows the note(s) it points to, in place, matched by lemma/stem (never defaulting blindly to seg 0)."""
+GW_LINK_RX = re.compile(
+    r"(?P<note>(?:notes?|nn?\.) ?\d+(?:(?:, | and | or )\d+)* \([^)]+\))"
+    r"|(?P<sec>(?<=\b(?:[Ss]ee|[Cc]f\.) )(?:(?:also )?(?:above|below),? )?(?P<uid>\d\.\d\.\d(?:\.\d+)?)\b)"
+)
+
+
+def link_gw_text(raw_text: str, card_lemma: str, notes, gw_refs: dict[str, dict] | None,
+                 built_units: set[str] | None = None) -> str:
+    """Format Gowland's note text, turning embedded cross-note refs and section citations into interactive links."""
+    out: list[str] = []
+    pos = 0
+    locs = notes.endnote_locations()
+    for m in GW_LINK_RX.finditer(raw_text):
+        out.append(esc_tagged(raw_text[pos:m.start()]))
+        if m.group("sec"):
+            sec = m.group("uid")
+            prefix = m.group(0)[:-len(sec)]
+            out.append(esc_tagged(prefix))
+            if (built_units is None or sec in built_units) and (paths.TEXT / f"{sec}.xml").exists():
+                out.append(f'<a class="xref" href="../{attr(sec)}/">{esc(sec)}</a>')
+            else:
+                out.append(esc(sec))
+        elif gw_refs is None:
+            out.append(esc_tagged(m.group("note")))
+        else:
+            ref_str = m.group("note")
+            clause = raw_text[max(0, m.start() - 90):m.start()]
+            clause = re.split(r"[.;:–—(]", clause)[-1]
+            resolved_items = []
+            first_href = first_where = None
+            for num, lab in notes.refs_in(ref_str):
+                tid = notes.pointer_target(num, lab)
+                if not tid:
+                    continue
+                if first_href is None and tid in locs:
+                    tu, blk = locs[tid]
+                    if built_units is None or tu in built_units:
+                        first_href = f"../{tu}/#{blk}"
+                        first_where = "DJR" if tu == "djr" else tu
+                for _si, s_lem, s_txt in notes.resolve_ref_items(tid, clause, card_lemma):
+                    resolved_items.append({"n": num, "lab": lab, "lemma": s_lem, "text": s_txt})
+            if resolved_items:
+                key = f"r{len(gw_refs) + 1}"
+                gw_refs[key] = {"cite": ref_str, "items": resolved_items, "href": first_href, "where": first_where}
+                out.append(f'<button type="button" class="gw-ref" data-gw-ref="{attr(key)}">{esc(ref_str)}</button>')
+            else:
+                out.append(esc_tagged(ref_str))
+        pos = m.end()
+    out.append(esc_tagged(raw_text[pos:]))
+    return "".join(out)
+
+
+def gowland_card(e: dict, notes, cid: str, gw_refs: dict[str, dict] | None = None,
+                 built_units: set[str] | None = None) -> str:
+    """One of Gowland's endnote entries as a margin item, labelled by its kind (private build only). A single-target
+    pointer shows its matched target note(s) in place; embedded cross-note refs open interactive popups (.gw-ref)."""
     text = notes.note_text(e["endnote"], e["seg"])
     kind = e["kind"]
     if kind == "pointer" and e.get("targets"):
-        t = e["targets"][0]
-        if t in notes.endnotes():
+        if len(e["targets"]) == 1 and e["targets"][0] in notes.endnotes():
+            t = e["targets"][0]
             segs = notes.segments(notes.endnotes()[t])
             idxs = notes.match_pointer_segments(e["lemma"], segs)
             if len(idxs) == 1:
@@ -1175,33 +1228,41 @@ def gowland_card(e: dict, notes, cid: str) -> str:
             elif len(idxs) > 1:
                 first_lem, text = segs[idxs[0]]
                 kind = notes.kind(first_lem, text)
-                extra_parts = [f'<em class="mn-lem">{esc_tagged(segs[i][0])}</em> {esc_tagged(segs[i][1])}'
-                               for i in idxs[1:]]
+                extra_parts = [
+                    f'<em class="mn-lem">{esc_tagged(segs[i][0])}</em> '
+                    f'{link_gw_text(segs[i][1], segs[i][0] or e["lemma"], notes, gw_refs, built_units)}'
+                    for i in idxs[1:]
+                ]
                 lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] else ""
+                body_html = link_gw_text(text, e["lemma"], notes, gw_refs, built_units)
                 return (
                     f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="{attr(kind)}" '
                     f'data-resp="gowland" role="note">'
-                    f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{esc_tagged(text)} · '
+                    f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{body_html} · '
                     + " · ".join(extra_parts) + "</span>"
                 )
-            else:
-                # No confident segment match in multi-segment target: keep Gowland's own pointer text cleanly
-                kind = "pointer"
-        elif re.fullmatch(r"\d\.\d\.\d(?:\.\d+)?", t):
-            text = f'<a class="xref" href="../{attr(t)}/">{esc(t)}</a>'
+        elif len(e["targets"]) == 1 and re.fullmatch(r"\d\.\d\.\d(?:\.\d+)?", e["targets"][0]):
+            t = e["targets"][0]
+            link = (f'<a class="xref" href="../{attr(t)}/">{esc(t)}</a>'
+                    if (built_units is None or t in built_units) and (paths.TEXT / f"{t}.xml").exists() else esc(t))
             return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="pointer" data-resp="gowland" role="note">'
-                    f'<span class="mn-k">see</span> {text}</span>')
+                    f'<span class="mn-k">see</span> {link}</span>')
     lem = f'<em class="mn-lem">{esc_tagged(e["lemma"])}</em> ' if e["lemma"] else ""
+    body_html = link_gw_text(text, e["lemma"], notes, gw_refs, built_units)
     return (f'<span class="mn mn-gw" id="{attr(cid)}" data-kind="{attr(kind)}" data-resp="gowland" role="note">'
-            f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{esc_tagged(text)}</span>')
+            f'<span class="mn-k">{GW_LABELS.get(kind, "note")}</span> {lem}{body_html}</span>')
 
 
-def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str, list[str]]:
+def mark_gowland(html_text: str, entries: list[dict], counts: dict,
+                 built_units: set[str] | None = None,
+                 gw_refs: dict[str, dict] | None = None) -> tuple[str, list[str]]:
     """Gowland's endnote entries in the margin (private build; burton/site/gowland_notes.py): an anchor before the
     words each is on (`data-len` of them, for the highlight), or, where the words are not found, after his own
     endnote anchor; the items themselves are returned to be laid out beside their anchors. Unanchored sibling
     segments of the same endnote share one margin card (V6)."""
     from . import gowland_notes as notes
+    if gw_refs is None:
+        gw_refs = {}
     views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
     edits, cards = [], []
     grouped: dict[tuple[str, int], list[tuple[str, str, str]]] = {}
@@ -1229,11 +1290,13 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
                 counts["gowland_notes_unplaced"] = counts.get("gowland_notes_unplaced", 0) + 1
                 continue
             hs = _outside_hidden(html_text, m.end())
-            grouped.setdefault((e["endnote"], hs), []).append((cid, e["kind"], gowland_card(e, notes, cid)))
+            grouped.setdefault((e["endnote"], hs), []).append(
+                (cid, e["kind"], gowland_card(e, notes, cid, gw_refs, built_units))
+            )
         else:
             edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}"{extra} '
                               'aria-hidden="true"></span>'))
-            cards.append(gowland_card(e, notes, cid))
+            cards.append(gowland_card(e, notes, cid, gw_refs, built_units))
         counts["gowland_notes"] = counts.get("gowland_notes", 0) + 1
         counts[f"gowland_notes_{e['kind']}"] = counts.get(f"gowland_notes_{e['kind']}", 0) + 1
     for (_endnote, hs), group in grouped.items():
@@ -1826,7 +1889,8 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
                 inline_cites: dict | None = None, facing_src: dict | None = None,
                 psalms: dict | None = None, restored_read: dict | None = None,
                 inline_cites_model: dict | None = None, note_hashes: dict | None = None,
-                name_extra: tuple[re.Pattern | None, dict] | None = None) -> tuple[str, dict]:
+                name_extra: tuple[re.Pattern | None, dict] | None = None,
+                built_units: set[str] | None = None) -> tuple[str, dict]:
     r = Renderer(unit, profile, layer, image=image, h1_head=h1_head(div), djs=djs, cites=cites, cite_label=cite_label,
                  verified=verified, findings=findings)
     r.plate, r.pagemap, r.cexp, r.initials = plate, pagemap or {}, cexp or {}, initials or set()
@@ -1872,9 +1936,14 @@ def render_unit(div, unit: str, profile: str, layer: dict, image=None, djs: dict
             script = f'<script type="application/json" class="names-data">{data.replace("</", "<\\/")}</script>'
             body = body.replace("</article>\n", script + "\n</article>\n")
     cards = list(r.cards) + ic_cards + gl_cards
+    gw_refs: dict[str, dict] = {}
     if profile == "private" and gowland_entries:
-        body, gw = mark_gowland(body, gowland_entries, r.counts)
+        body, gw = mark_gowland(body, gowland_entries, r.counts, built_units=built_units, gw_refs=gw_refs)
         cards += gw
+    if profile == "private" and gw_refs:
+        rdata = json.dumps(gw_refs, ensure_ascii=False).replace("</", "<\\/")
+        rscript = f'<script type="application/json" class="gw-refs-data" data-resp="gowland">{rdata}</script>'
+        body = body.replace("</article>\n", rscript + "\n</article>\n")
     # what the name windows show, for every author linked on this page: in the text, in Burton's notes and in the
     # written-out citations of the margin (edition.js)
     used |= set(re.findall(r'data-author="([^"]+)"', body + "".join(cards)))

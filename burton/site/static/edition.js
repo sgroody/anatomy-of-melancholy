@@ -1161,6 +1161,10 @@ const authorsData = Object.assign({}, ...[...document.querySelectorAll("script.a
 const namesData = Object.assign({}, ...[...document.querySelectorAll("script.names-data")].map((s) => {
   try { return JSON.parse(s.textContent); } catch { return {}; }
 }));
+// Gowland embedded cross-note refs ("see above, n. 350 (DJR)"): {key: {cite, items, href, where}}
+const gwRefsData = Object.assign({}, ...[...document.querySelectorAll("script.gw-refs-data")].map((s) => {
+  try { return JSON.parse(s.textContent); } catch { return {}; }
+}));
 const previews = new Map(); // href -> Promise of {title, text}
 function el(tag, cls, text) {
   const e = document.createElement(tag);
@@ -1218,7 +1222,7 @@ async function windowFor(trig) {
       box.append(p);
     }
     const links = el("p", "pw-l");
-    const entry = el("a", null, "Index entry");
+    const entry = el("a", null, "All citations");
     entry.href = trig.href;
     links.append(entry);
     if (article) {
@@ -1235,6 +1239,43 @@ async function windowFor(trig) {
       links.append(" · ", w);
     }
     box.append(links);
+    return box;
+  }
+  if (trig.classList.contains("gw-ref")) {
+    const d = gwRefsData[trig.dataset.gwRef];
+    if (!d) return null;
+    box.append(el("p", "pw-h", `Gowland’s note: ${d.cite}`));
+    const multi = d.items.length > 1;
+    for (const it of d.items) {
+      const p = el("p", "pw-t");
+      if (multi) {
+        p.append(el("b", null, `n. ${it.n}`), " · ");
+      }
+      if (it.lemma) {
+        p.append(el("i", null, it.lemma), " — ");
+      }
+      p.append(it.text + " ");
+      const ms = el("span", "mn-src");
+      const sm = el("span", "src-m src-g", "g");
+      sm.title = "Gowland 2021";
+      ms.append(sm);
+      p.append(ms);
+      box.append(p);
+    }
+    if (d.href) {
+      const links = el("p", "pw-l");
+      const open = el("a", "pw-open", `Open in ${d.where || "context"} →`);
+      open.href = d.href;
+      links.append(open);
+      const dest = new URL(d.href, location.href);
+      if (article && dest.pathname !== location.pathname) {
+        const pk = el("button", "pw-peek", "Side peek");
+        pk.type = "button";
+        pk.dataset.href = d.href;
+        links.append(" · ", pk);
+      }
+      box.append(links);
+    }
     return box;
   }
   const pv = await preview(trig.href);
@@ -1293,7 +1334,7 @@ async function openWindow(trig, lock = false) {
     p.ct = setTimeout(() => closeFrom(lvl), 300);
   });
 }
-const POP = "a.nm, a.xref";
+const POP = "a.nm, a.xref, button.gw-ref";
 const touchOrNarrow = () => !wide.matches || matchMedia("(hover: none), (pointer: coarse)").matches;
 let hoverTimer = 0, pointerMovedAt = 0;
 document.addEventListener("pointermove", () => { pointerMovedAt = performance.now(); }, { passive: true });
@@ -1325,7 +1366,7 @@ document.addEventListener("keydown", (ev) => {
 document.addEventListener("click", (ev) => {
   const a = ev.target.closest?.("a.nm:not(.nm-x), a.xref");
   if (!a) {
-    if (pops.length && !ev.target.closest(".pw")) closeFrom(0);
+    if (pops.length && !ev.target.closest(".pw, button.gw-ref, a.nm-x")) closeFrom(0);
     return;
   }
   if (!touchOrNarrow() || body.classList.contains("text-only")) return;
@@ -1333,12 +1374,17 @@ document.addEventListener("click", (ev) => {
   ev.preventDefault();
   openWindow(a, true);
 });
-// an identified name has no page of its own: a click, Enter or Space opens (and locks) its window
+// an identified name with no page of its own, or an embedded Gowland cross-note ref: click/Enter/Space locks/toggles popup
 function openName(ev) {
-  const t = ev.target.closest?.("a.nm-x");
+  const t = ev.target.closest?.("a.nm-x, button.gw-ref");
   if (!t || (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ")) return;
   ev.preventDefault();
-  openWindow(t, true);
+  ev.stopPropagation();
+  clearTimeout(hoverTimer);
+  pointerMovedAt = 0;
+  const lvl = levelOf(t);
+  if (pops[lvl]?.trig === t && pops[lvl]?.locked) closeFrom(lvl);
+  else openWindow(t, true);
 }
 document.addEventListener("click", openName);
 document.addEventListener("keydown", openName);
@@ -1422,7 +1468,34 @@ if (frontMap && titleZone) {
     if (!frontMap.contains(ev.target)) frontMap.classList.remove("fs-zoomed");
   });
 }
-// Front-info disclosure popovers ("How a page looks" and "Florilegium"): one open at a time, Esc/click-away closes
+// the front page's rotating praise strip (click or hover arrows to cycle; auto-rotates gently when idle)
+const blurbBox = document.querySelector(".fi-blurb");
+if (blurbBox) {
+  const quotes = [...blurbBox.querySelectorAll(".fb-q")];
+  const prevBtn = blurbBox.querySelector(".fb-prev");
+  const nextBtn = blurbBox.querySelector(".fb-next");
+  const track = blurbBox.querySelector(".fb-track");
+  if (quotes.length > 1) {
+    let qi = 0, qTimer = 0;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    const showQuote = (idx) => {
+      qi = (idx + quotes.length) % quotes.length;
+      quotes.forEach((q, i) => { q.hidden = i !== qi; });
+    };
+    const arm = () => {
+      clearInterval(qTimer);
+      if (reduce.matches) return;
+      qTimer = setInterval(() => {
+        if (!document.hidden && !blurbBox.matches(":hover, :focus-within")) showQuote(qi + 1);
+      }, 8500);
+    };
+    prevBtn?.addEventListener("click", (ev) => { ev.stopPropagation(); showQuote(qi - 1); arm(); });
+    nextBtn?.addEventListener("click", (ev) => { ev.stopPropagation(); showQuote(qi + 1); arm(); });
+    track?.addEventListener("click", () => { showQuote(qi + 1); arm(); });
+    arm();
+  }
+}
+// Front-info disclosure popovers ("How a page looks"): click-away or Esc closes
 const frontInfos = [...document.querySelectorAll(".front-info details.fk-page-d")];
 if (frontInfos.length) {
   for (const det of frontInfos) {
@@ -1540,7 +1613,7 @@ applyDone = true;
   }
   // Contents drawer & front contents: quiet Silk Ribbon shortcut (icon only, no literal "Silk ribbon:" label)
   if (rb?.latest?.unit) {
-    for (const ex of document.querySelectorAll(".toc-extras")) {
+    for (const nav of document.querySelectorAll(".toc-panel > nav, .front-contents > nav")) {
       const p = el("p", "toc-ribbon");
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.setAttribute("class", "ic-ribbon");
@@ -1555,7 +1628,7 @@ applyDone = true;
       a.href = new URL(`${rb.latest.unit}/${rb.latest.pid ? `#${rb.latest.pid}` : ""}`, root).href;
       a.title = `Saved reading place: ${rb.latest.title || rb.latest.unit}`;
       p.append(svg, sr, a);
-      ex.prepend(p);
+      nav.prepend(p);
     }
   }
   // Unit page: save place as reader scrolls; offer quiet resume banner when returning higher up
@@ -1753,7 +1826,7 @@ document.addEventListener("keydown", (ev) => {
     const sel = ev.key === "[" ? 'a.sz-prev, .pager a[rel="prev"]' : 'a.sz-next, .pager a[rel="next"]';
     const link = document.querySelector(sel);
     if (link) { ev.preventDefault(); location.href = link.href; }
-  } else if ((ev.key === "p" || (ev.key === "Enter" && ev.shiftKey)) && document.activeElement?.matches("a.nm, a.xref")) {
+  } else if ((ev.key === "p" || (ev.key === "Enter" && ev.shiftKey)) && document.activeElement?.matches("a.nm, a.xref, button.gw-ref")) {
     ev.preventDefault();
     clearTimeout(hoverTimer);
     pointerMovedAt = 0;
