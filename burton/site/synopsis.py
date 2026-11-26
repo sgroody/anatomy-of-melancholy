@@ -10,6 +10,7 @@ import json
 import re
 from functools import cache
 
+from lxml import html as lhtml
 from markupsafe import Markup
 
 from .. import paths
@@ -214,7 +215,70 @@ def short(text: str, words: int = 4) -> str:
     return " ".join(w[:words]) + ("…" if len(w) > words else "")
 
 
-def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str]) -> str:
+def _note_plain(el) -> str:
+    """Visible text inside a sidenote's .sn-body, skipping letter, kind label, abbr, translation boxes, and prov."""
+    out = []
+    skip = {"sn-n", "sn-k", "cx-b", "prov", "mn-src", "ft", "ftr", "sr-only", "ft-lit", "mn-lit"}
+
+    def walk(node, top=False):
+        if not top:
+            cls = set((node.get("class") or "").split())
+            if cls & skip:
+                if node.tail:
+                    out.append(node.tail)
+                return
+        if node.text:
+            out.append(node.text)
+        for child in node:
+            walk(child)
+        if not top and node.tail:
+            out.append(node.tail)
+
+    walk(el, top=True)
+    return " ".join("".join(out).replace("\u00ad", "").split()).strip()
+
+
+def extract_signposts(body_html: str, limit: int = 14) -> list[dict]:
+    """Harvest Burton's own substantive 'note'-kind sidenotes as in-page compass signposts (V5)."""
+    if not body_html:
+        return []
+    doc = lhtml.fromstring(f"<div>{body_html}</div>")
+    found = []
+    for sn in doc.xpath('.//span[contains(concat(" ", @class, " "), " sidenote ") '
+                        'and not(contains(concat(" ", @class, " "), " sn-restored "))]'):
+        if not sn.xpath('.//span[@class="sn-k" and @data-kind="note"]'):
+            continue
+        nid = sn.get("id")
+        body = next(iter(sn.xpath('./span[contains(concat(" ", @class, " "), " sn-body ")]')), None)
+        if not nid or body is None:
+            continue
+        lt = "".join(n.text_content() for n in body.xpath('./span[@class="sn-n"]')).strip()
+        txt = _note_plain(body)
+        if len(txt) < 12:
+            continue
+        found.append((nid, lt, txt))
+    if len(found) > limit:
+        found = [found[round(i * (len(found) - 1) / (limit - 1))] for i in range(limit)]
+    out = []
+    for nid, lt, txt in found:
+        if len(txt) > 68:
+            txt = (txt[:68].rsplit(" ", 1)[0].rstrip(" ,;:") or txt[:68]) + "…"
+        out.append({"id": nid, "n": lt, "html": esc_tagged(txt)})
+    return out
+
+
+def _signposts_html(signposts: list[dict] | None, heading: str) -> str:
+    if not signposts:
+        return ""
+    items = "".join(
+        f'<a class="sb-sign" href="#{attr(s["id"])}"><span class="sb-sn">{esc(s["n"])}</span> {s["html"]}</a>'
+        for s in signposts
+    )
+    return f'<div class="sb-signs"><p class="sb-sh">{esc(heading)}</p>{items}</div>'
+
+
+def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str],
+                signposts: list[dict] | None = None) -> str:
     """Where a page stands in Burton's synopsis (owner, 2026-11-04: N1 D): a small mark at the top left naming the
     Partition and the branches above the page; pointing at it (or focusing it) opens the path, each step linked to its
     node in the synopsis, and the sections the page's node names, the page's own in red, each linked to its page."""
@@ -242,11 +306,26 @@ def branch_html(unit: str, part: str, nid: str, root: str, titles: dict[str, str
     units = [r["unit"] for r in path[-1].get("ref", []) if r.get("unit") and r["unit"] in titles]
     sibs = " · ".join(f'<a href="{root}{attr(u)}/"{chr(32) + CUR if u == unit else ""}>'
                       f'{esc_tagged(short(titles[u], 3))}</a>' for u in dict.fromkeys(units))
+    signs = _signposts_html(signposts, "Notes on this page")
     return (f'<div class="syn-badge" tabindex="0" aria-label="Where this page stands in Burton’s synopsis">'
             f'<span class="sb-ico" aria-hidden="true">{{</span><span class="sb-line">{line}</span>'
             f'<div class="sb-pop">{steps}{f"<p class=\"sb-sibs\">{sibs}</p>" if sibs else ""}'
+            f'{signs}'
             f'<a class="sb-all" href="{attr(syn)}">The whole synopsis of Partition {ROMAN.get(part, part)}</a>'
             '</div></div>')
+
+
+def compass_html(title: str, signposts: list[dict]) -> str:
+    """In-page marginal signpost compass for long front-matter units without a synoptic branch (V5)."""
+    if not signposts:
+        return ""
+    signs = _signposts_html(signposts, "Burton’s marginal signposts")
+    return (f'<div class="syn-badge syn-compass" tabindex="0" '
+            f'aria-label="Burton’s marginal signposts on this page">'
+            f'<span class="sb-ico" aria-hidden="true">{{</span>'
+            f'<span class="sb-line"><span class="sb-cur">{esc_tagged(short(title, 4))}</span>'
+            f' · {len(signposts)} notes</span>'
+            f'<div class="sb-pop">{signs}</div></div>')
 
 
 def label(tree: dict) -> Markup:

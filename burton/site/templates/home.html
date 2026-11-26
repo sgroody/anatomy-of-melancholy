@@ -23,7 +23,7 @@
       <div class="front-left">
         {% if dedication %}
         <div class="front-door">
-          <p class="front-enter"><a class="enter" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a></p>
+          <p class="front-enter"><a class="enter enter-first" href="{{ dedication.href }}">Enter, gentle Reader <span aria-hidden="true">☞</span></a><a class="enter enter-cont" href="{{ dedication.href }}" hidden>Continue <span aria-hidden="true">☞</span></a></p>
         </div>
         {% endif %}
         {# the panels' stanzas from the Argument (owner, 2026-11-21: under the way in, above the synopses; the last
@@ -50,12 +50,12 @@
         {% include "front_key.html" %}
         <div class="front-tools">
           <div class="bar-r">{% include "tools.html" %}</div>
-          <p class="front-links"><a href="about/">About</a> · <a href="authors/">Authors cited</a> · <a href="table/">The Table</a></p>
+          <p class="front-links"><a href="about/">About</a> · <a href="authors/">Authors cited</a> · <a href="glossary/">Glossary</a> · <a href="table/">The Table</a></p>
         </div>
         <div id="settings" class="settings front-settings" hidden>
           <button type="button" class="settings-close" aria-label="Close the reading options" title="Close">×</button>
           {% include "options.html" %}
-          <p class="settings-more"><a href="settings/">All reading options</a></p>
+          <p class="settings-more"><button type="button" class="reset">Reset</button> · <a href="settings/">All reading options</a> · <a href="glossary/">Glossary</a> <span class="saved" role="status" aria-live="polite"></span></p>
         </div>
       </section>
       {% if synopses %}

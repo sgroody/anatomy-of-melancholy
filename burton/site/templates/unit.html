@@ -10,5 +10,12 @@
 {% endif %}
 {% if front_nav %}{{ front_nav }}{% endif %}
 {% if hidden_h1 %}<h1 class="sr-only" data-resp="editor">{{ hidden_h1 }}</h1>{% endif %}
+{% if key == "table" %}
+<div class="idx-tools table-tools" hidden>
+  <label class="idx-f-wrap"><span class="sr-only">Filter the Table</span><input type="search" class="idx-filter" placeholder="Filter Burton’s Table…" autocomplete="off"></label>
+  <span class="idx-count" aria-live="polite"></span>
+  <nav class="alpha-bar" aria-label="Jump to letter"></nav>
+</div>
+{% endif %}
 {{ body }}
 {% endblock %}

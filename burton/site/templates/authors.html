@@ -4,12 +4,17 @@
   <h1>Authors cited in the sidenotes</h1>
   <p>Burton’s sidenotes name {{ "{:,}".format(stats.authors) }} authors in {{ "{:,}".format(stats.citations) }} citations that the edition’s rules could tie to an author, plus {{ "{:,}".format(stats.bible) }} citations of Scripture. The citations were read by rule from the sidenotes’ text, using abbreviation and title tables that are a {{ tables.label }}. Of the {{ "{:,}".format(stats.notes) }} sidenotes, {{ "{:,}".format(stats.parsed) }} are fully parsed, {{ "{:,}".format(stats.partial) }} partly, {{ "{:,}".format(stats.unidentified) }} cite someone the rules could not identify, and {{ "{:,}".format(stats.none) }} carry no citation. Unidentified citations are not guessed.</p>
   <p>Dates and identifiers come from Wikidata (CC0) where one candidate matched by rule. Descriptions marked “machine draft” were written by a language model, which the entry names, and are unreviewed unless the entry says otherwise.</p>
+  <div class="idx-tools" hidden>
+    <label class="idx-f-wrap"><span class="sr-only">Filter authors</span><input type="search" class="idx-filter" placeholder="Filter by name, abbreviation, or field…" autocomplete="off"></label>
+    <span class="idx-count" aria-live="polite"></span>
+    <nav class="alpha-bar" aria-label="Jump to letter"></nav>
+  </div>
   <table class="counts author-index">
     <caption>Authors, alphabetically</caption>
-    <thead><tr><th scope="col">Author</th><th scope="col">Dates</th><th scope="col">Field</th><th scope="col">Citations</th></tr></thead>
+    <thead><tr><th scope="col"><button type="button" class="sort-btn" data-sort="name" aria-label="Sort by author">Author</button></th><th scope="col">Dates</th><th scope="col">Field</th><th scope="col"><button type="button" class="sort-btn" data-sort="cites" aria-label="Sort by citations">Citations</button></th></tr></thead>
     <tbody>
     {% for a in authors %}
-      <tr><td><a href="{{ a.id }}/">{{ a.name }}</a></td><td>{{ a.dates or "" }}</td><td>{% if a.field %}{{ a.field }} <span class="lbl">machine draft</span>{% endif %}</td><td>{{ a.citations }}</td></tr>
+      <tr data-name="{{ a.name|lower }}" data-forms="{{ a.forms|lower }}" data-field="{{ (a.field or '')|lower }}" data-cites="{{ a.citations }}" data-letter="{{ a.name[:1]|upper }}"><td><a href="{{ a.id }}/">{{ a.name }}</a></td><td>{{ a.dates or "" }}</td><td>{% if a.field %}{{ a.field }} <span class="lbl">machine draft</span>{% endif %}</td><td>{{ a.citations }}</td></tr>
     {% endfor %}
     </tbody>
   </table>

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose glossary">
+  <h1>Glossary of terms &amp; signs</h1>
+  <p>A guide to the Latin medical terms, apothecary weights, citation abbreviations, and recurring authorities that appear throughout Burton’s <i>Anatomy</i> and its margins.</p>
+
+  <nav class="gloss-jump" aria-label="Glossary sections">
+    <a href="#gloss-medical">Humoral &amp; medical terms</a> ·
+    <a href="#gloss-apothecary">Apothecary signs</a> ·
+    <a href="#gloss-locators">Locators &amp; formulae</a> ·
+    <a href="#gloss-authorities">Recurring authorities</a>
+  </nav>
+
+  <section id="gloss-medical" aria-labelledby="h-medical">
+    <h2 id="h-medical">Humoral &amp; medical terms</h2>
+    <table class="counts gloss-table">
+      <thead><tr><th scope="col">Latin term</th><th scope="col">English rendering</th><th scope="col">Usage note</th></tr></thead>
+      <tbody>
+      {% for item in glossary.medical %}
+        <tr><td><i>{{ item.forms }}</i></td><td>{{ item.render }}</td><td>{{ item.note }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section id="gloss-apothecary" aria-labelledby="h-apothecary">
+    <h2 id="h-apothecary">Apothecary signs &amp; measures</h2>
+    <table class="counts gloss-table">
+      <thead><tr><th scope="col">Sign or form</th><th scope="col">Meaning</th><th scope="col">Note</th></tr></thead>
+      <tbody>
+      {% for item in glossary.apothecary %}
+        <tr><td>{% for p in item.forms_parts %}{% if p.sym %}<span class="symbol">{{ p.text }}</span>{% else %}{{ p.text }}{% endif %}{% endfor %}</td><td>{{ item.render }}</td><td>{{ item.note }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section id="gloss-locators" aria-labelledby="h-locators">
+    <h2 id="h-locators">Citation locators &amp; formulae</h2>
+    <table class="counts gloss-table">
+      <thead><tr><th scope="col">Abbreviation</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+      {% for item in glossary.locators %}
+        <tr><td>{{ item.term }}</td><td>{{ item.meaning }}</td></tr>
+      {% endfor %}
+      {% for item in glossary.formulae %}
+        <tr><td><i>{{ item.term }}</i></td><td>{{ item.meaning }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section id="gloss-authorities" aria-labelledby="h-authorities">
+    <h2 id="h-authorities">Recurring authorities</h2>
+    <table class="counts gloss-table">
+      <thead><tr><th scope="col">Burton’s shorthand</th><th scope="col">Authority</th></tr></thead>
+      <tbody>
+      {% for item in glossary.authorities %}
+        <tr><td>{{ item.forms }}</td><td>{% if item.author_id %}<a href="../authors/{{ item.author_id }}/">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</article>
+{% endblock %}

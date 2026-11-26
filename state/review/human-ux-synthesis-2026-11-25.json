@@ -1,0 +1,234 @@
+{
+  "executive_verdict": "The digital edition is already remarkably strong where it matters most: the base text is strictly faithful, machine work and translations carry honest provenance without cluttering the front page, dark and light typography feel genuinely bookish, and small mobile screens fit cleanly with zero horizontal spillover. At the same time, automated measurements across 11 screen sizes and 6 reading personas uncover five concrete bugs that trip real readers today—most notably 16:10 MacBook and 13-inch laptops collapsing the front page into a scrolling single column, deep links from Search and Authors Cited landing off-screen without highlighting, inline citations and private-build Gowland cues becoming unreachable on screens narrower than 1100 px, touch taps jumping away before showing frontispiece stanzas or author previews, and printing from a wide window leaving a 21rem blank gap on the left. Once those five quiet repairs are made, five focused ergonomic upgrades (mid-chapter scroll anchoring, a silk-ribbon place memory, hover/focus paragraph citing and private page jumping, searchable Authors and Table indexes, and full keyboard preview/page-turn support) plus six understated Burtonian enhancements will elevate long-form reading across the 423-page labyrinth without breaking a single rule of the edition or Rounds 1-9 taste.",
+  "preserved_strengths": [
+    "Constitutional text and provenance discipline: the EPUB base text in 'data/text/' remains untouched, unverified attributions stay honestly marked as 'partial' or 'unidentified', machine work carries quiet '◇' tooltips on reading pages while omitting '◇' completely on 'home.html' and 'front_key.html', and public builds stay free of Gowland material and server dependencies.",
+    "Front-door theatre and specimen craft: 'home.html' pairs plain-English framing with an interactive '+ How a page looks' specimen and a fixed-height stanza stage ('.front-stanza') where hovering over the engraved frontispiece magnifies titles smoothly without shifting the folded Synopses or Contents below.",
+    "Book typography and pure 'As printed' mode: EB Garamond, GFS Didot Greek, Chaucer small-caps, oxblood ('#7a2230') by day and candle-gold ('#e0c27a') on dark paper by night give real period presence, while composite unstretched SVG synopsis braces, the double-rubric Dedication tablet, and the 'As printed' toggle strip away every modern note, link, and colour cleanly while keeping Burton's own prose and italic sidenotes intact.",
+    "Two-rail scholarship and respect for Burton's voice: at 1380 px and wider, Gowland's left margin and Burton's notes plus translations on the right separate cleanly without blocking prose, long notes fold gently behind 'more' rather than hiding, '3,435' passages where Burton translates Latin himself suppress redundant translations by default, and '25' facing-translation units align verse and prose row-for-row.",
+    "Offline search and mobile layout foundation: 'search.js' searches across all '423' pages completely offline via 'search-index.json' while normalizing ligatures ('æ'/'œ') and diacritics only in matching logic, '390x844' iPhone and '768x1024' iPad layouts measure '0 px' horizontal overflow, and mode changes at the top of a paragraph ('3.2.3.1-p60') keep '0 px' scroll drift."
+  ],
+  "revisit_items_assessment": [
+    {
+      "code": "P3",
+      "current_choice": "Option B chosen provisionally on 2026-11-19: the rubric red line on Burton's left-margin sidenotes ('.sidenote.mn-l') sits on the inner text-facing edge (right side of the left margin, mirroring the left side of the right margin), with standard left-aligned note text inside 'burton/site/static/edition.css' lines 1132-1135.",
+      "options": [
+        "Keep Option B with left-aligned text as already built: keeps the red rule cleanly separating Burton's voice from Gowland's left-rail notes while prioritizing standard easy left-to-right scanning.",
+        "Test Option B with flush-right text inside '.sidenote.mn-l': aligns the right ends of lines directly against the text-facing rubric rule so ragged line ends do not float inside the gutter, checking whether multi-line sidenotes remain pleasant to read.",
+        "Switch to Option A (outer left-edge rubric rule): places the red line on the far left edge of the card so left-aligned text hugs the rule tightly, though it breaks mirror symmetry around the main text column."
+      ],
+      "recommendation": "Keep Option B (the rubric rule on the side facing the main prose) because it visually fences Burton's own words off from Gowland's notes in the same left rail. Do a quick visual A/B comparison adding flush-right alignment to '.sidenote.mn-l' so the sidenote lines sit neatly against that rule rather than floating raggedly beside it.",
+      "title": "Rubric rule edge on left-margin Burton sidenotes ('.sidenote.mn-l')"
+    },
+    {
+      "code": "H2",
+      "current_choice": "H2 Grow with brace hold indicator chosen provisionally on 2026-11-19 in 'burton/site/static/edition.js' (lines 694, 771, 824-836), 'burton/site/static/edition.css' (line 476, '.syn-filling'), and 'tools/synopsis_sheets/proto.html': 650 ms fill to open, 900 ms to fix, roughly 750 ms per inner brace, and 900 ms fold delay. Measurements show 'T_OPEN' (650 ms) plus 'T_PAUSE' (250 ms) starts the next brace fill 900 ms into a 1150 ms CSS unfold ('--syn-t-open') before 'settle' (1700 ms) finishes, creating the slight feeling of rush or chaos.",
+      "options": [
+        "Settle-first cadence (recommended): keep the brisk 650 ms first hold-to-open fill, and either raise 'T_PAUSE' from 250 ms to 650 ms or shorten '--syn-t-open' from 1.15 s to 0.8 s so each opening brace settles calmly before the next layer begins filling.",
+        "Single-layer rest plus click or nudge to grow deeper: let hovering open and pin the current brace cleanly, waiting for an intentional move or click onto an inner brace rather than auto-cascading down multiple nested branches.",
+        "Keep the current 650 ms / 250 ms pace as-is if the lively continuous cascade feels better during real reading than a slower step-by-step unfold."
+      ],
+      "recommendation": "Keep the H2 Grow hold-indicator design—it feels organic to a folded printer's table—and fix the mechanical cause of the chaotic overlap by synchronizing the JavaScript pause with the CSS opening animation (raising 'T_PAUSE' to 650 ms or tightening '--syn-t-open' to 0.8 s) so every branch lands cleanly before the next one starts filling.",
+      "title": "Rest-to-open synopsis brace pacing and animation overlap ('.syn-filling')"
+    }
+  ],
+  "tier1_silent_fixes": [
+    {
+      "code": "F1",
+      "evidence": "In 'front_page_viewports', '1440x900_macbook' measures 'gridCols: 1', 'scrollH: 1120', 'overflowY: 220', 'synVisibleWithoutScroll: false', 'contentsVisibleWithoutScroll: false', and 'infoRightGapPx: 202'; '1280x800_laptop13' measures 'gridCols: 1', 'scrollH: 913', 'overflowY: 113', and 'infoRightGapPx: 93'; '1024x900_halfscreen' shows 'overflowX: 2'. By contrast, '1366x768_laptop' and '1280x720_win150pct' achieve 'gridCols: 2' and 'fitsOneScreen: true'. Driven by '@container front-side (width < 39em)', '.front-side' max width, and height-limited compact rules in 'burton/site/static/edition.css' lines 782, 792, 932, and 947-953.",
+      "files_touched_if_adopted": [
+        "burton/site/static/edition.css"
+      ],
+      "problem": "On common 16:10 laptops (1440x900 MacBook and 1280x800 13-inch laptops), the front page collapses into a single vertical column, pushing Synopses and Contents below the fold with vertical scrollbars even though shorter 1366x768 and 1280x720 laptop screens fit cleanly in two columns on one screen. A half-screen 1024x900 window also leaks 2 px horizontally.",
+      "remedy": "Lower the '@container front-side' single-column cutoff from '39em' to roughly '33em' (or use stable 'rem'), allow '.front-side' to expand slightly past '76rem' so it uses the wasted '202 px' gap on 1440x900 screens, extend the compact vertical-tightening rule at line 932 up to 'max-height: 920px', and clamp horizontal padding around 1024 px to erase the '2 px' horizontal spill.",
+      "risk": "Low. Pure front-page CSS adjustment; verify all 11 tested screen sizes afterward so folded Synopses and Contents still sit inside one screen on 1280x720 through 1920x1080 without clipping the engraving.",
+      "title": "Fix 16:10 laptop front page collapse to one column (and 2 px half-screen overflow)"
+    },
+    {
+      "code": "F2",
+      "evidence": "In 'deep_link_arrival', navigating from 'burton/site/templates/author.html' line 28 to a sidenote hash at '1440' leaves 'inViewport: false', 'refInViewport: false', and 'isHotOrPinned: false'; at '390', 'refInViewport: false', 'isHotOrPinned: false', and 'popoverOpen: false'. Navigating from 'burton/site/static/search.js' line 134 to a paragraph hash shows 'hasTargetHighlightStyle: false' in both wide and narrow views. Caused by 'layoutNotes()' calling 'closeNote(false)' and resetting 'note.style.top' after browser scroll in 'burton/site/static/edition.js' lines 333-458, plus missing ':target' styling in 'burton/site/static/edition.css'.",
+      "files_touched_if_adopted": [
+        "burton/site/static/edition.js",
+        "burton/site/static/edition.css",
+        "burton/site/static/search.js"
+      ],
+      "problem": "Jumping directly to a sidenote from an author page or to a paragraph from offline Search leaves readers stranded off-screen or squinting at an unmarked wall of text—because margin layout runs after the browser's initial scroll, closes popovers, and offers no visual highlight on the destination paragraph.",
+      "remedy": "After 'layoutNotes()' finishes placing margin cards—and whenever 'hashchange' fires—check if the URL targets a sidenote ('-n...') or paragraph ('-p...'): on wide screens, smoothly center and highlight-pin the target sidenote; below 1100 px, scroll the corresponding '#ref-' marker into view and open its popover with 'asPopover()' instead of closing it. Add a gentle, fadeable ':target' background glow in 'edition.css' (disabled in 'As printed'), and allow 'search.js' links to briefly spotlight the arriving paragraph.",
+      "risk": "Low to medium. Carefully guard scroll centering so it runs only on initial load with a hash or explicit 'hashchange', never hijacking scroll when toggling reading modes or resizing the window.",
+      "title": "Center and highlight deep-link arrivals to sidenotes and search hits"
+    },
+    {
+      "code": "F3",
+      "evidence": "On '3.2.3.1' in 'narrow_touch_parity_3_2_3_1', 'inlineCiteCount: 18' ('1,814' across the corpus) reports 'inlineCiteTapOpensPopover: false' and 'inlineCiteKeyboardFocusable: false', and 'gowlandRefsWithVisibleCueInSample20: 1' out of '253' Gowland notes ('5,797' across the corpus). In 'burton/site/static/edition.js' lines 228, 338-343, 607-618, and 1067-1074, hover previews require 'wide.matches' and 'edition.css' lines 262, 1342, and 1345 provide no visible tap cue on 'span.mref' below 1100 px.",
+      "files_touched_if_adopted": [
+        "burton/site/static/edition.js",
+        "burton/site/static/edition.css"
+      ],
+      "problem": "On phones, tablets, and narrow windows below 1100 px—where margin notes turn into tap popovers—inline citation chips ('.ic-m') cannot be tapped or reached by keyboard, and 95 percent of Gowland's notes have no visible cue in the text so readers have no idea anything is waiting to be tapped there.",
+      "remedy": "Give '.ic-m' inline citations keyboard focus ('tabindex' and button semantics) and wire tap, Enter, and Space below 1100 px to 'openAsPopover()'. When below 1100 px and not in 'As printed' mode, add a delicate dotted underline cue on 'span.mref' anchors where Gowland notes exist (strictly present only in private builds, since public builds carry zero Gowland markers).",
+      "risk": "Low. Strictly keep 'span.mref' cues conditional on non-'text-only' CSS so 'As printed' remains untouched and public builds remain 100 percent leak-free.",
+      "title": "Restore tap and keyboard access to inline citations and narrow-screen Gowland cues"
+    },
+    {
+      "code": "F4",
+      "evidence": "'touch_frontispiece' records 'panel_tag: a', 'panel_href: argument/#argument-lg2', and 'tap_navigates_away_immediately_instead_of_previewing_stanza: true' (from 'burton/site/frontispiece.py' lines 65-67, 'burton/site/templates/home.html' line 31, and 'burton/site/static/edition.js' lines 1112-1115 binding only 'mouseenter' and 'focus'). 'narrow_touch_parity_3_2_3_1' records 'authorLinksNavigateAwayImmediatelyBelow1100px: true' across '12,665' author links because 'POP = a.nm, a.xref' is gated on 'wide.matches' in 'edition.js' lines 1067-1094.",
+      "files_touched_if_adopted": [
+        "burton/site/static/edition.js",
+        "burton/site/frontispiece.py",
+        "burton/site/templates/home.html",
+        "burton/site/static/edition.css"
+      ],
+      "problem": "On touchscreens and narrow windows below 1100 px, tapping a panel of the engraved frontispiece jumps away to the Argument page before showing its poem stanza, and tapping an author's name or cross-reference navigates straight off the chapter instead of letting readers glance at the floating preview card first.",
+      "remedy": "For coarse touch pointers (and below 1100 px for 'a.nm' and 'a.xref'), make the first tap on an 'a.fs-panel' update '.front-stanza' with the stanza and a clear tap-again or link cue to visit 'argument/', and make the first tap on 'a.nm' or 'a.xref' open the floating '.pw' preview card; tapping the card's title link or tapping the same target a second time navigates normally. Keep single-click navigation intact for mouse users on wide screens.",
+      "risk": "Low. Test carefully with hybrid touch-and-mouse laptops so mouse clicks on wide desktops still follow links on the first click while touch taps preview first.",
+      "title": "Add two-tap preview parity on touch for frontispiece panels and author links"
+    },
+    {
+      "code": "F5",
+      "evidence": "In 'burton/site/static/edition.css' lines 648-654 versus line 727, '@media print' resets '.unit' with 'margin: 0; margin-right: 31% !important;', which is beaten by the higher-specificity '.two-side .unit' rule ('margin-left: calc(var(--margin-col) + var(--gap))') whenever a user prints from a window 1380 px or wider. Separately, 'edition.css' lines 1125-1126 set '.unit.sn-laid .mn-fold.hot .fold-more' with 'var(--paper)' instead of 'var(--hot)', painting a cream/paper patch across highlighted gold cards.",
+      "files_touched_if_adopted": [
+        "burton/site/static/edition.css"
+      ],
+      "problem": "Two crisp CSS oversights hurt polish: printing a reading page from a wide desktop window keeps an unwanted 21rem blank left margin, and folded margin cards that are highlighted in warm gold show an awkward paper-coloured notch over their 'more' fadeout.",
+      "remedy": "Inside '@media print' in 'edition.css', add '.two-side .unit { margin-left: 0 !important; }' so printed pages use full left paper width regardless of browser window width; and on line 1126, replace 'var(--paper)' with 'var(--hot)' on '.mn-fold.hot .fold-more'. Optionally include a quiet print-only section running title above 'article.unit' sourced from '.syn-badge'.",
+      "risk": "Very low. Isolated CSS rules with no layout side effects on interactive screen modes.",
+      "title": "Fix wide-window '@media print' left-margin leak and '.mn-fold.hot' fade colour"
+    }
+  ],
+  "tier2_reading_ergonomics": [
+    {
+      "code": "E1",
+      "design_proposal": "Inside 'apply()' in 'burton/site/static/edition.js' (before updating 'mode-gloss', 'mode-interlinear', 'mode-english', or font-size attributes and invoking 'layoutNotes()'), capture the top visible '[id]' paragraph or verse element and record its current vertical offset from the top of the viewport. Immediately after 'layoutNotes()' finishes reflowing the margins and inline blocks, adjust 'window.scrollBy' silently so that exact anchor element returns to the same pixel offset without animation lag.",
+      "guardrail_check": "Zero visible UI added; completely offline; does not modify stored base text; preserves 'As printed' instant toggling.",
+      "human_need": "Mid-chapter readers toggling between gloss, interlinear, facing, or text sizes inside 44 chapters over 5,000 words (up to 292 minutes in 'djr') need their exact sentence to stay under their eyes rather than jumping several paragraphs away when translations expand or collapse.",
+      "title": "Scroll-anchoring safety across reading-mode and text-size toggles",
+      "variants_to_ab": [
+        "Variant A (top-edge anchor): anchor to the highest paragraph '[id]' intersecting the top edge of the viewport, ideal when reading steadily downward.",
+        "Variant B (reading-line midpoint anchor): anchor to the '[id]' block closest to roughly 30 percent down from the top of the screen, which prevents downward drift when switching into taller 'interlinear' mode."
+      ]
+    },
+    {
+      "code": "E2",
+      "design_proposal": "On scroll idle inside reading units, quietly save the current unit URL, unit title, and topmost visible permanent paragraph ID into 'localStorage' under a dedicated key ('burton-ribbon') alongside 'burton-settings'. Surface a single calm 'Resume: ...' link inside the folded 'Contents' drawer (and optionally in the unit bar's contents menu) that jumps straight to that paragraph via F2's scroll-and-highlight landing, plus a quiet 'Forget' button.",
+      "guardrail_check": "Pure 'localStorage' with zero server calls; never injects banners or scrollbars onto the 1-screen folded 'home.html'; completely hidden in 'As printed'; never touches 'data/text/*.xml'.",
+      "human_need": "Commuters, bedtime readers, and readers working across multi-week chapters like 'djr' ('64,162' words) or '3.2.3.1' ('28,873' words) need a reliable digital ribbon so closing a browser tab or restarting a device never loses their place.",
+      "title": "Quiet silk-ribbon place memory across reading sessions",
+      "variants_to_ab": [
+        "Variant A (purely inside folded Contents): show 'Continue where you left off' at the top inside the folded Contents panel so the resting front page stays 100 percent unchanged.",
+        "Variant B (per-unit memory + subtle front hint): save the last paragraph per chapter plus global latest, and test whether a single quiet text line inside '.front-info' stays within zero scrollbars across all 2-column laptops."
+      ]
+    },
+    {
+      "code": "E3",
+      "design_proposal": "On hover or keyboard focus of any of the '2,476' permanently IDed paragraphs (remaining completely invisible at rest and absent in 'As printed'), reveal a subtle marginal pilcrow icon that copies a ready-to-paste citation (Partition locator, page number where allowed, and permalink hash) with a brief 'Copied' confirmation. Pair this with a compact locator-jump box in 'Contents' and '/search/' resolving 'Part.Sect.Memb.Subsect.' paths (e.g. '3.2.3.1') in all builds, and Penguin page numbers ('p. 412') strictly in private builds only, plus a quiet print-only section headline above printed pages.",
+      "guardrail_check": "Constitutional rule check: Gowland/Penguin 'pb' numbers ('[141]') are strictly excluded from public builds and verified by the leak check; the marginal pilcrow stays hidden until hover/focus and disappears in 'As printed'.",
+      "human_need": "Scholars, seminar students, and serious readers need to copy permanent citations or jump straight to a seminar reference like '3.2.3.1' or 'p. 412' without scrolling blindly through thousands of words or assembling URLs by hand.",
+      "title": "Hover-only paragraph citation copier, locator jumper, and print running head",
+      "variants_to_ab": [
+        "Variant A (single-click pilcrow): hovering or focusing a paragraph exposes one small pilcrow that copies 'Burton, Anatomy [Unit], [para] + URL' on click.",
+        "Variant B (pilcrow + private page-jump box): adds a lightweight 'Jump to section or p.' input tucked inside 'Contents' / '/search/' (publicly section-only; privately section plus Penguin pagebreak)."
+      ]
+    },
+    {
+      "code": "E4",
+      "design_proposal": "Add lightweight, zero-server client-side filter boxes and clickable A-Z jump strips to 'burton/site/templates/authors.html' ('253' rows) and 'The Table' ('574' entries across '24' letter headings). Index Burton's variant name spellings ('forms' from 'author.html') inside hidden filter attributes on each row so typing a Latinized or early-modern spelling finds the right entry immediately, and make the 'Authors' and 'Citations' column headers sortable on '.author-index'.",
+      "guardrail_check": "100 percent static HTML plus tiny client script; preserves honest 'parsed' / 'partial' / 'unidentified' breakdown and 'Wikidata (CC0)' / 'machine draft' source labels; public 'Table' builds never add Gowland pagination links.",
+      "human_need": "Finding one authority among '253' cited authors (especially when Burton spells a name several ways) or locating a subject among '574' index items in 'The Table' currently forces tedious manual scrolling.",
+      "title": "Filter, sort, and A-Z jump bar for 'Authors Cited' and 'The Table'",
+      "variants_to_ab": [
+        "Variant A (instant text filter + sticky A-Z strip): simple live filter input plus horizontal letter strip above each list and clickable sort headers on 'Authors Cited'.",
+        "Variant B (add status filter on Authors): optionally filter 'Authors Cited' by verified/identified entries versus entries still awaiting verification, keeping all counts transparent."
+      ]
+    },
+    {
+      "code": "E5",
+      "design_proposal": "Extend 'burton/site/static/edition.js' lines 1067-1094 so keyboard users moving across '12,665' author links ('a.nm') and '69' cross-references ('a.xref') can trigger a locked '.pw' preview card without leaving their place (for example via 'p' or Shift+Enter while plain Enter still navigates normally), dismissing on 'Escape' and returning focus cleanly back to the triggering link. Add '/' outside inputs to focus Search and '[' / ']' to trigger the '☙' / '❧' reading-order page turners across all '157' units.",
+      "guardrail_check": "Preserves default Enter link navigation; keeps reading pages visually untouched (no extra buttons); respects 'As printed' by keeping keyboard shortcuts helpful without adding visual chrome; keeps '◇' labels intact inside reading-page author previews.",
+      "human_need": "Keyboard readers and screen-reader users currently miss out on floating author and cross-reference previews (which require mouse hover on wide screens) and have no quick keystrokes to turn pages or jump to search across 157 chapters.",
+      "title": "Keyboard parity for '.pw' author previews, search focus, and page turning",
+      "variants_to_ab": [
+        "Variant A (explicit preview key 'p' or Shift+Enter): leaves standard Tab-then-Enter navigation 100 percent unchanged and opens previews only on demand.",
+        "Variant B (gentle focus dwell): opens the '.pw' preview softly after resting keyboard focus for ~450 ms, closing on 'Escape' and following the link immediately on Enter."
+      ]
+    }
+  ],
+  "tier3_unconsidered_visions": [
+    {
+      "code": "V1",
+      "how_it_stays_quiet": "At rest, nothing extra appears on the reading page or front page. A tiny '+' button appears strictly in the margin alongside a focused or hovered paragraph (or inside a newly opened sidenote/translation card), disappears altogether in 'As printed', and stores clips solely in 'localStorage' ('burton-commonplace').",
+      "implementation_shape": "Build a static '/commonplace/' template page and a small client script that reads existing paragraph IDs, '.syn-badge' path text, text snippets, and 'data-src' attribution markers into 'localStorage', offering filter-by-topic and clean Markdown export (retaining '◇' machine notes and excluding Gowland wording from public exports).",
+      "title": "Personal Commonplace Book ('/commonplace/') in localStorage",
+      "vision": "Let readers gather favourite passages, Burton sidenotes, and labelled translations across all 423 pages into a private offline commonplace book organized under their own topical headings, browsable at '/commonplace/' and exportable as formatted Markdown with complete Burton citations.",
+      "why_burtonian": "The Anatomy itself grew out of Burton's lifetime habit of collecting thousands of extracts under commonplace heads—giving readers an offline notebook lets them read Burton the exact way Burton read the world."
+    },
+    {
+      "code": "V2",
+      "how_it_stays_quiet": "All doorways, reading-time hints, and the Sortes button stay tucked cleanly inside the folded 'Contents' drawer (never bloating the one-screen resting 'home.html' or adding a single '◇' to the front page), and landing passages clear all added chrome in 'As printed'.",
+      "implementation_shape": "Emit a small static manifest at build time in 'burton/site/build.py' pairing key digressions and word-count-derived reading times with curated memorable paragraph IDs, rendered quietly inside the folded 'Contents' template and linked to a 20-line random-pick handler in 'edition.js'.",
+      "title": "Ways into the Labyrinth & Sortes Burtonianae",
+      "vision": "Pair the traditional front-to-back 'Enter, gentle Reader' threshold with a quiet 'Doorways' shelf to Burton's iconic set-pieces (Air Rectified, Misery of Scholars, Nature of Spirits, Love-Melancholy) with honest reading-time whispers, plus a 'Sortes Burtonianae' link that opens the book at a weighted-random memorable paragraph.",
+      "why_burtonian": "Burton explicitly warns readers not to lose heart in his winding 64,162-word preface and invites them to dip through his synopses; Renaissance readers genuinely practiced sortes—consulting a great folio at hazard for wit or counsel."
+    },
+    {
+      "code": "V3",
+      "how_it_stays_quiet": "Lives as its own quiet static page ('/glossary/') reached through 'footer.site' and 'Aa' options ('options.html'), leaving the main reading column clean and unburdened by unsolicited inline definitions unless the reader turns glosses on.",
+      "implementation_shape": "Add a small build step in 'burton/site/' reading 'data/glossary.yaml' into a new 'glossary.html' template organized into four sections—Humours & Faculties, Apothecary Signs, Citation Locators, and Authorities—with each term linking straight into offline '/search/?q=...'.",
+      "title": "Reader-Facing Humoral, Apothecary & Technical Glossary ('/glossary/')",
+      "vision": "Publish the edition's curated editorial key in 'data/glossary.yaml'—currently hidden from readers despite holding 25 humoral terms, 4 apothecary symbols (such as the dram, scruple, and half-ounce 'ß'), 9 citation locators, and 24 recurring authorities—as a dedicated static pocket glossary linked to live offline searches.",
+      "why_burtonian": "Every page of Burton assumes fluency in Galenic humours ('atra bilis', 'per consensum') and apothecary weights; turning the edition's translation standard into a compact Renaissance medical cabinet illuminates the text without changing a single word of it."
+    },
+    {
+      "code": "V4",
+      "how_it_stays_quiet": "Leaves all reading defaults serenely uncluttered ('own_edition_tr_hidden' stays on, obsolete glosses and restored notes remain opt-in). The 'literal' trigger is a muted single word inside '.ft-own' cards, absent from 'As printed', and the opt-in counts sit cleanly inside the 'Aa' drawer.",
+      "implementation_shape": "Update 'tr_markup' in 'burton/site/render.py' to output collapsed secondary 'dj' or '◇'-labelled machine literal wording inside '.ft-own' (never copying Gowland translations into public builds), and refine toggle descriptions in 'options.html' with live corpus counts.",
+      "title": "Burton's Self-Translation & Elucidation Lens",
+      "vision": "On the 3,435 passages where Burton paraphrases Latin into English himself ('.burton-tr'), add an optional collapsed 'literal' link that reveals Dell & Jordan-Smith or a clearly '◇'-marked machine literal version underneath so readers can watch Burton riffing—while surfacing clear toggles and counts in 'Aa' for the hidden 935 obsolete-word glosses and 1,181 restored Democritus Minor notes.",
+      "why_burtonian": "Half the delight of Burton's prose is hearing how cheekily he bends a solemn Latin maxim into racy 17th-century English; letting readers peek behind his paraphrase without interrupting the page honours his craft directly."
+    },
+    {
+      "code": "V5",
+      "how_it_stays_quiet": "Appears strictly inside the existing collapsible top-left '{' synopsis drawer alongside the Partition tree—never injected as modern headings inside the prose column and completely omitted in 'As printed'.",
+      "implementation_shape": "During site build in 'burton/site/render.py' and 'unit.html', filter '.sidenote' records for 'note_kind == note' (excluding pure citations) on units over ~2,500 words and render them as an anchor index inside the '{' drawer linking directly to each sidenote and its paragraph.",
+      "title": "Long-Unit Marginalia Signpost Compass",
+      "vision": "Harvest Burton's own 2,367 substantive topic sidenotes (filtering out the 3,336 pure source citations, so 'djr' yields 396 clean topic signposts and '3.2.3.1' yields 70) into a collapsible chapter outline inside the top-left '{' synopsis badge for any unit spanning thousands of words.",
+      "why_burtonian": "Rather than imposing anachronistic modern subheadings onto 1651 prose, this lets Burton's own rubricated margin headings serve as the exact navigational compass he printed for lost readers."
+    },
+    {
+      "code": "V6",
+      "how_it_stays_quiet": "Two-sided margins (1380 px and wider) and 'As printed' remain visually unchanged, and every single printed Burton sidenote stays in the margin; only non-authorial editorial overflow (Gowland pointer/identity chips in private builds) clusters cleanly when paragraphs stack tightly.",
+      "implementation_shape": "Update 'burton/site/gowland_notes.py' and 'layoutNotes()' in 'edition.js' to group consecutive short Gowland 'pointer' and 'identity' entries per paragraph into one expandable strip (private builds only), and tune narrow one-side packing spacing between 1100 px and 1379 px in 'edition.css'.",
+      "title": "Calm Margin Density Relief without Hiding Burton's Marginalia",
+      "vision": "Ease the vertical traffic jam on crowded chapters like '3.2.3.1'—where 811 margin items push 144 cards more than 120 px from their lines and fold 217 items in 1120 px one-side windows—by keeping every Burton sidenote proudly in the margin while letting consecutive Gowland pointer and identity notes group neatly when space grows scarce.",
+      "why_burtonian": "In a printed folio, the author's own marginalia belong right beside the words they gloss; when modern editorial notes crowd the rail, the modern apparatus should step lightly so Burton's margin voice stays steady beside his prose."
+    }
+  ],
+  "vetoed_or_quarantined": [
+    {
+      "idea": "Collapsing Burton's pure 'cites' sidenotes (3,336 notes) out of the margin into inline click-only triggers alongside Gowland pointer/identity entries (Persona 5 E1 partial remedy)",
+      "why_vetoed": "Violates Rounds 1-9 settled aesthetics and printed fidelity: Burton's own marginal citations belong visually in the margin alongside his prose (shortened gracefully with 'more', never held back) and are essential to keeping 'As printed' authentic. Only non-authorial Gowland pointers and translations may yield space under density pressure."
+    },
+    {
+      "idea": "Rendering a full passage specimen inside the front-page '#settings.front-settings' popover or reusing the reading-page 'opt_sample' on 'home.html' (Persona 1 V3 partial remedy)",
+      "why_vetoed": "Reusing the standard reading-page sample would introduce '◇' labels onto the front page, directly violating CLAUDE.md's strict rule against showing any '◇' on 'home.html' or 'front_key.html'. Even without '◇', embedding a second full specimen inside the 824x337 front-page popover duplicates '+ How a page looks' and risks overflowing compact 1280x720 and 1366x768 one-screen layouts. Keep only a clean 'Reset to defaults' button in 'options.html'."
+    },
+    {
+      "idea": "Exposing Penguin 'pb' page-number jumps ('[141]'), Gowland 'span.mref' touch cues, or Gowland translations in public builds (Persona 2 SR-4, Persona 3 S2/V2, Persona 4 DF3)",
+      "why_vetoed": "Violates CLAUDE.md Rule 5: all Gowland editorial matter ('ed:trans', 'ed:verse-trans', 'ed:enref', 'supplied[@resp=#gowland]', and 'pb') must never leak into a 'public' build. Page-number jumpers using Gowland pagination, 'span.mref' cues, and Gowland glosses must remain strictly conditional on private-only builds and pass the profile leak check."
+    },
+    {
+      "idea": "Turning all 935 obsolete-word glosses or 1,181 restored Democritus Minor notes on by default, or inserting modern subheadings into Burton's prose (Persona 1 V4, Persona 5 E3)",
+      "why_vetoed": "Violates quiet reading ergonomics and non-destructive text discipline: auto-marking 2,116 additional glosses and restored notes on first visit would visually overwhelm 17th-century prose, and invented modern headings break period fidelity. Keep them opt-in via 'Aa' options and '/glossary/', and build section outlines strictly from Burton's own 2,367 substantive sidenotes."
+    },
+    {
+      "idea": "Placing always-visible reading-time badges, resume banners, or 'Doorways' / 'Sortes' cards outside the folded 'Contents' on 'home.html' (Persona 1 V4/V6, Persona 2 UV-1/UV-2, Persona 4 DF3/DV2)",
+      "why_vetoed": "Reverses Rounds 1-9 front-page serenity: 'home.html' must fit cleanly on one screen with no running header/footer, no scrollbars, and 'Contents' folded by default. Any place-memory resume link, doorway shelf, or reading-time hint must live cleanly inside the folded 'Contents' drawer and disappear in 'As printed'."
+    },
+    {
+      "idea": "Displaying permanent anchor pilcrows, copy buttons, or commonplace '+' triggers continuously beside all 2,476 paragraphs (Persona 3 S2/V1, Persona 4 DF1/DV1)",
+      "why_vetoed": "Contradicts Rounds 1-9 clean-page typography and 'As printed' purity: scattering 2,476 always-on icons across the gutter would create persistent visual noise over Burton's prose. Citation and commonplace triggers must stay invisible until paragraph hover or keyboard focus and vanish completely in '.text-only'."
+    },
+    {
+      "idea": "Showing unlabelled machine literal translations inside Burton's self-translation compare toggle on reading pages (Persona 5 E2/V3)",
+      "why_vetoed": "Violates CLAUDE.md's honesty rule: every machine-produced rendering on a reading page (unlike the front-page specimen) must carry the visible '◇' provenance mark with model, prompt, and date tooltip, while keeping Gowland's wording strictly out of public builds."
+    }
+  ]
+}

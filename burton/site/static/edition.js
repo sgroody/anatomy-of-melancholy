@@ -72,7 +72,29 @@ if ((settings.v || 1) < 2) { settings.nRestored = false; settings.v = 2; }
   else html.dataset.fm = fm;
 })();
 
+// P3 comparison toggle (?p3=left / ?p3=right)
+(() => {
+  let p3 = new URLSearchParams(location.search).get("p3");
+  try {
+    if (p3) localStorage.setItem("burton-p3", p3.toLowerCase());
+    else p3 = localStorage.getItem("burton-p3");
+  } catch { /* private window */ }
+  if (p3 === "left") html.dataset.p3 = "left";
+  else delete html.dataset.p3;
+})();
+
+let applyDone = false, pendingAnchor = null;
+function topAnchor() {
+  if (!article || window.scrollY <= 80) return null;
+  for (const el of article.querySelectorAll("p[id], h2[id], blockquote[id], .lg[id]")) {
+    const r = el.getBoundingClientRect();
+    if (r.bottom > 48) return { el, top: r.top };
+  }
+  return null;
+}
+
 function apply() {
+  const snap = applyDone ? topAnchor() : null;
   body.classList.remove("mode-gloss", "mode-interlinear", "mode-english");
   // nothing but the text: the original as printed, whatever the other options say (owner, 2026-11-19)
   const bare = !!settings.textonly;
@@ -94,6 +116,10 @@ function apply() {
   document.querySelectorAll(".print-toggle").forEach((b) => b.setAttribute("aria-pressed", String(bare)));
   document.querySelectorAll(".fp.show-orig").forEach((f) => f.classList.remove("show-orig"));
   orderVersions();
+  if (snap) {
+    window.scrollBy(0, snap.el.getBoundingClientRect().top - snap.top);
+    pendingAnchor = snap;
+  }
   scheduleLayout();
 }
 
@@ -127,14 +153,14 @@ for (const input of document.querySelectorAll(".settings input")) {
     if (status) status.textContent = kept ? "Saved." : "Applied to this page only (this browser does not allow saving).";
   });
 }
-const reset = document.querySelector(".settings .reset");
-if (reset) {
+for (const reset of document.querySelectorAll(".settings .reset")) {
   reset.addEventListener("click", () => {
     Object.assign(settings, DEFAULTS);
     save(settings);
     syncInputs();
     apply();
-    document.querySelector(".settings .saved").textContent = "Defaults restored.";
+    const st = reset.closest(".settings")?.querySelector(".saved");
+    if (st) st.textContent = "Defaults restored.";
   });
 }
 syncInputs();
@@ -324,6 +350,28 @@ for (const marker of markers.filter((m) => m.matches("a.nref"))) {
   });
 }
 
+// F3: inline citation markers (§) interactive by tap and keyboard
+for (const ic of document.querySelectorAll(".ic-m[data-for]")) {
+  const note = document.getElementById(ic.dataset.for);
+  if (!note) continue;
+  const activate = (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    if (openNote && openNote.note === note) { closeNote(false); return; }
+    if (isWide() && !note.classList.contains("sn-stacked")) {
+      note.classList.add("flash");
+      setTimeout(() => note.classList.remove("flash"), 1200);
+      pin(note);
+    } else {
+      openAsPopover(note, ic);
+    }
+  };
+  ic.addEventListener("click", activate);
+  ic.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" || ev.key === " ") activate(ev);
+  });
+}
+
 document.addEventListener("keydown", (ev) => {
   if (ev.key !== "Escape") return;
   if (openNote) closeNote(true);
@@ -339,6 +387,12 @@ function layoutNotes() {
     article.classList.remove("sn-laid");
     article.style.minHeight = "";
     notes.forEach((n) => { n.classList.remove("sn-stacked", "mn-fold"); n.style.top = ""; asPopover(n, true); });
+    updateNarrowCues();
+    if (pendingAnchor) {
+      window.scrollBy(0, pendingAnchor.el.getBoundingClientRect().top - pendingAnchor.top);
+      pendingAnchor = null;
+    }
+    if (!hashFocused && location.hash) { hashFocused = true; focusHashTarget(false); }
     return;
   }
   closeNote(false);
@@ -412,6 +466,7 @@ function layoutNotes() {
       while (j > 0 && p.ys[j] > anchors[j] + 1) j--;
       const level = Math.min(3, 1 + Math.floor(round / 2)); // two rounds of each fold, shortest last
       for (let k = j; k <= i; k++) {
+        if (round < 4 && pairs[k][1].classList.contains("sidenote")) continue; // V6: fold editorial notes before Burton's
         if (fold[k] < level && !opened.has(pairs[k][1]) && full[k] > foldHs[level] * 1.3) {
           fold[k] = level; h[k] = foldHs[level]; changed = true;
         }
@@ -438,6 +493,12 @@ function layoutNotes() {
   });
   const end = Math.max(p.floors.r, p.floors.l);
   article.style.minHeight = end > 0 ? `${Math.ceil(end)}px` : "";
+  updateNarrowCues();
+  if (pendingAnchor) {
+    window.scrollBy(0, pendingAnchor.el.getBoundingClientRect().top - pendingAnchor.top);
+    pendingAnchor = null;
+  }
+  if (!hashFocused && location.hash) { hashFocused = true; focusHashTarget(false); }
 }
 
 let pending = 0;
@@ -544,6 +605,50 @@ function spanOf(marker) {
 }
 
 const canHighlight = typeof Highlight === "function" && CSS.highlights;
+let hashFocused = false, flashTimer = 0;
+function pulseArrival(el) {
+  document.querySelectorAll(".arrival-flash").forEach((x) => x.classList.remove("arrival-flash"));
+  el.classList.add("arrival-flash");
+  clearTimeout(flashTimer);
+  flashTimer = setTimeout(() => el.classList.remove("arrival-flash"), 2000);
+}
+function focusHashTarget(smooth) {
+  if (!location.hash || !article) return;
+  let id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  const target = id && document.getElementById(id);
+  if (!target || !article.contains(target)) return;
+  const beh = smooth && !matchMedia("(prefers-reduced-motion: reduce)").matches ? "smooth" : "auto";
+  if (target.matches(".sidenote, .mn")) {
+    if (target.classList.contains("mn-fold") && !opened.has(target)) { opened.add(target); layoutNotes(); }
+    const marker = document.querySelector(`a.nref[href="#${CSS.escape(id)}"], .mref[data-for="${CSS.escape(id)}"], .ic-m[data-for="${CSS.escape(id)}"]`);
+    if (isWide() && !target.classList.contains("sn-stacked")) {
+      target.scrollIntoView({ block: "center", behavior: beh });
+      pulseArrival(target);
+      light(target);
+    } else if (marker) {
+      marker.scrollIntoView({ block: "center", behavior: beh });
+      openAsPopover(target, marker);
+    } else {
+      target.scrollIntoView({ block: "center", behavior: beh });
+      pulseArrival(target);
+    }
+    return;
+  }
+  target.scrollIntoView({ block: "center", behavior: beh });
+  pulseArrival(target);
+}
+window.addEventListener("hashchange", () => focusHashTarget(true));
+function updateNarrowCues() {
+  if (!canHighlight || typeof spans === "undefined") return;
+  if (isWide() || body.classList.contains("no-gowland") || body.classList.contains("text-only")) {
+    CSS.highlights.delete("gw-cues");
+    return;
+  }
+  const ranges = [];
+  for (const [item, r] of spans) if (item.classList.contains("mn-gw") && r) ranges.push(r);
+  CSS.highlights.set("gw-cues", new Highlight(...ranges));
+}
 // A word with several notes (a gloss inside a passage with a broader note) lights all of them (owner, 2026-11-04).
 let hot = [], pinned = null;
 function light(items) {
@@ -669,9 +774,21 @@ for (const fp of document.querySelectorAll(".fp")) {
 // A long note between facing columns (stage 9) is shortened; "more" opens it, "less" shuts it.
 document.addEventListener("click", (ev) => {
   const b = ev.target.closest?.(".ftr-more");
-  if (!b) return;
-  const open = b.closest(".ftr-note").classList.toggle("open");
-  b.textContent = open ? "less" : "more";
+  if (b) {
+    const open = b.closest(".ftr-note").classList.toggle("open");
+    b.textContent = open ? "less" : "more";
+    return;
+  }
+  const lit = ev.target.closest?.(".ft-lit-btn");
+  if (lit) {
+    ev.stopPropagation();
+    const bodyEl = lit.parentElement?.querySelector(".ft-lit-v");
+    if (bodyEl) {
+      const open = bodyEl.hidden;
+      bodyEl.hidden = !open;
+      lit.setAttribute("aria-expanded", String(open));
+    }
+  }
 });
 
 // A long passage set facing its translation (stage 7, T12 B): pointing at a line lights it and its translation.
@@ -691,7 +808,7 @@ for (const fp of document.querySelectorAll(".fp-facing")) {
 const synSheets = [...document.querySelectorAll(".syn-sheet")];
 if (synSheets.length) {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-  const T_OPEN = 650, T_LAYER = 900, T_PAUSE = 250;  // ms; 650 is the windows' fill; each further layer 900
+  const T_OPEN = 650, T_LAYER = 900, T_PAUSE = 620;  // H2: settle-first cadence (650 ms fill, 620 ms pause)
   const kidsOf = (li) => li.querySelector(":scope > .syn-nb > .syn-kw > .syn-kids");
   const setShut = (li, shut) => {
     li.classList.toggle("syn-shut", shut);
@@ -768,7 +885,7 @@ if (synSheets.length) {
   const settle = (sheet) => {
     relevel(sheet); fit(sheet);
     clearTimeout(sheet._st);
-    sheet._st = setTimeout(() => turn(sheet), reduce.matches ? 0 : 1700);
+    sheet._st = setTimeout(() => turn(sheet), reduce.matches ? 0 : 1450);
   };
 
   // ---- opening and folding
@@ -1039,16 +1156,24 @@ function levelOf(node) {
   const w = node.closest?.(".pw");
   return w ? pops.findIndex((p) => p.el === w) + 1 : 0;
 }
-async function openWindow(trig) {
+async function openWindow(trig, lock = false) {
   const lvl = levelOf(trig);
-  if (pops[lvl]?.trig === trig) { clearTimeout(pops[lvl].ct); return; }
+  if (pops[lvl]?.trig === trig) {
+    clearTimeout(pops[lvl].ct);
+    if (lock) {
+      pops[lvl].locked = true;
+      pops[lvl].el?.classList.add("locked");
+    }
+    return;
+  }
   closeFrom(lvl);
-  const p = { trig, locked: false };
+  const p = { trig, locked: lock };
   pops.push(p);
   const content = await windowFor(trig);
   if (!content || pops[lvl] !== p) { if (pops[lvl] === p) closeFrom(lvl); return; }
   const w = el("div", "pw");
   w.setAttribute("role", "dialog");
+  if (p.locked) w.classList.add("locked");
   w.append(content, el("span", "pw-bar"));
   document.body.append(w);
   p.el = w;
@@ -1057,7 +1182,7 @@ async function openWindow(trig) {
   const below = r.bottom + 8 + w.offsetHeight < innerHeight || r.top < w.offsetHeight + 16;
   w.style.left = `${left + scrollX}px`;
   w.style.top = `${(below ? r.bottom + 6 : r.top - w.offsetHeight - 6) + scrollY}px`;
-  p.lt = setTimeout(() => { p.locked = true; w.classList.add("locked"); }, 650);
+  if (!p.locked) p.lt = setTimeout(() => { p.locked = true; w.classList.add("locked"); }, 650);
   w.addEventListener("mouseenter", () => { clearTimeout(p.ct); pops.slice(0, lvl).forEach((q) => clearTimeout(q.ct)); });
   w.addEventListener("mouseleave", (ev) => {
     if (ev.relatedTarget && pops.slice(lvl + 1).some((q) => q.el?.contains(ev.relatedTarget))) return;
@@ -1065,10 +1190,12 @@ async function openWindow(trig) {
   });
 }
 const POP = "a.nm, a.xref";
-let hoverTimer = 0;
+const touchOrNarrow = () => !wide.matches || matchMedia("(hover: none), (pointer: coarse)").matches;
+let hoverTimer = 0, pointerMovedAt = 0;
+document.addEventListener("pointermove", () => { pointerMovedAt = performance.now(); }, { passive: true });
 document.addEventListener("mouseover", (ev) => {
   const t = ev.target.closest?.(POP);
-  if (!t || !wide.matches) return;
+  if (!t || !wide.matches || performance.now() - pointerMovedAt > 250) return;
   clearTimeout(hoverTimer);
   hoverTimer = setTimeout(() => openWindow(t), 120);
 });
@@ -1082,13 +1209,31 @@ document.addEventListener("mouseout", (ev) => {
   if (ev.relatedTarget && p.el?.contains(ev.relatedTarget)) return;
   p.ct = setTimeout(() => closeFrom(lvl), 350);
 });
-document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closeFrom(0); });
+document.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape" && pops.length) {
+    const trig = pops[0]?.trig;
+    closeFrom(0);
+    trig?.focus();
+  }
+});
+// F4: two-tap preview parity for author and xref links on touch/narrow screens
+document.addEventListener("click", (ev) => {
+  const a = ev.target.closest?.("a.nm:not(.nm-x), a.xref");
+  if (!a) {
+    if (pops.length && !ev.target.closest(".pw")) closeFrom(0);
+    return;
+  }
+  if (!touchOrNarrow() || body.classList.contains("text-only")) return;
+  if (pops[levelOf(a)]?.trig === a) return; // second tap follows the link
+  ev.preventDefault();
+  openWindow(a, true);
+});
 // an identified name has no page of its own: a click, Enter or Space opens (and locks) its window
 function openName(ev) {
   const t = ev.target.closest?.("a.nm-x");
   if (!t || (ev.type === "keydown" && ev.key !== "Enter" && ev.key !== " ")) return;
   ev.preventDefault();
-  openWindow(t).then(() => { const p = pops.find((q) => q.trig === t); if (p?.el) { p.locked = true; p.el.classList.add("locked"); } });
+  openWindow(t, true);
 }
 document.addEventListener("click", openName);
 document.addEventListener("keydown", openName);
@@ -1102,7 +1247,10 @@ if (stanzaBox) {
   const hint = stanzaBox.querySelector(".fs-hint");
   const HINT = "burton-hint-seen";
   try { if (hint && localStorage.getItem(HINT)) hint.hidden = true; } catch { /* private window */ }
+  let currentSt = stanzaBox.querySelector(".fs-st:not([hidden])")?.dataset.st || "1";
+  let tapping = false;
   const show = (st) => {
+    currentSt = st;
     stanzaBox.querySelectorAll(".fs-st").forEach((d) => { d.hidden = d.dataset.st !== st; });
     if (hint && !hint.hidden) {
       hint.hidden = true;
@@ -1110,8 +1258,16 @@ if (stanzaBox) {
     }
   };
   for (const a of document.querySelectorAll(".front .fs-panel")) {
-    a.addEventListener("mouseenter", () => show(a.dataset.st));
-    a.addEventListener("focus", () => show(a.dataset.st));
+    a.addEventListener("pointerdown", () => { tapping = true; setTimeout(() => { tapping = false; }, 400); });
+    a.addEventListener("mouseenter", () => { if (!touchOrNarrow()) show(a.dataset.st); });
+    a.addEventListener("focus", () => { if (!tapping) show(a.dataset.st); });
+    a.addEventListener("click", (ev) => {
+      tapping = false;
+      if (touchOrNarrow() && currentSt !== a.dataset.st) {
+        ev.preventDefault();
+        show(a.dataset.st);
+      }
+    });
   }
   // a stanza's margin items and the words they hang on light each other, as in the reader; a tap or click holds the
   // pair lit until the next (owner, 2026-11-21)
@@ -1140,6 +1296,16 @@ const titleZone = frontMap?.querySelector(".fs-title");
 if (frontMap && titleZone) {
   titleZone.addEventListener("mouseenter", () => frontMap.classList.add("fs-zoomed"));
   frontMap.addEventListener("mouseleave", () => frontMap.classList.remove("fs-zoomed"));
+  titleZone.addEventListener("click", (ev) => {
+    if (touchOrNarrow()) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      frontMap.classList.toggle("fs-zoomed");
+    }
+  });
+  document.addEventListener("click", (ev) => {
+    if (!frontMap.contains(ev.target)) frontMap.classList.remove("fs-zoomed");
+  });
 }
 // the front page's specimen: each sign lights its pair (Latin and its translation, a note's letter and the note, §
 // and the citation written out) on pointing, a tap or click holds it, as in the reader; a tap on a name opens who
@@ -1221,6 +1387,255 @@ for (const a of document.querySelectorAll("a[data-facing]")) {
 }
 
 apply();
+applyDone = true;
+
+// ---------------------------------------------------------------- silk-ribbon place memory (E2)
+(() => {
+  const RIBBON = "burton-ribbon";
+  const loadRibbon = () => { try { return JSON.parse(localStorage.getItem(RIBBON) || "null"); } catch { return null; } };
+  const saveRibbon = (data) => { try { localStorage.setItem(RIBBON, JSON.stringify(data)); } catch { /* private */ } };
+  const rb = loadRibbon();
+  // home.html: returning reader sees Enter + Continue ☞ side by side
+  const frontEnter = document.querySelector(".front-enter");
+  if (frontEnter && rb?.latest?.unit) {
+    const first = frontEnter.querySelector(".enter-first");
+    const cont = frontEnter.querySelector(".enter-cont");
+    if (first && cont) {
+      first.textContent = "Enter";
+      cont.href = `${rb.latest.unit}/${rb.latest.pid ? `#${rb.latest.pid}` : ""}`;
+      cont.title = `Continue reading ${rb.latest.title || rb.latest.unit}`;
+      cont.hidden = false;
+      frontEnter.classList.add("has-ribbon");
+    }
+  }
+  // Contents drawer & front contents: quiet Silk Ribbon shortcut
+  if (rb?.latest?.unit) {
+    for (const ex of document.querySelectorAll(".toc-extras")) {
+      const p = el("p", "toc-ribbon", "Silk ribbon: ");
+      const a = el("a", null, rb.latest.title || rb.latest.unit);
+      a.href = new URL(`${rb.latest.unit}/${rb.latest.pid ? `#${rb.latest.pid}` : ""}`, root).href;
+      p.append(a);
+      ex.prepend(p);
+    }
+  }
+  // Unit page: save place as reader scrolls; offer quiet resume banner when returning higher up
+  if (article && !body.classList.contains("page-back") && article.id && article.id !== "table") {
+    const unitId = article.id;
+    const saved = rb?.units?.[unitId];
+    if (saved?.pid && !location.hash) {
+      const target = document.getElementById(saved.pid);
+      if (target && target.getBoundingClientRect().top > window.innerHeight * 0.85) {
+        const pnum = (saved.pid.match(/-p(\d+)$/)?.[1] || "");
+        const bar = el("p", "unit-resume", "Last read here: ");
+        const a = el("a", null, `Continue at ${pnum ? `¶${pnum}` : "your place"} →`);
+        a.href = `#${saved.pid}`;
+        const x = el("button", "ur-close", "×");
+        x.type = "button";
+        x.setAttribute("aria-label", "Dismiss");
+        x.addEventListener("click", () => bar.remove());
+        a.addEventListener("click", () => bar.remove());
+        bar.append(a, " ", x);
+        article.prepend(bar);
+      }
+    }
+    let saveTimer = 0;
+    const record = () => {
+      if (window.scrollY <= 180) return;
+      const top = [...article.querySelectorAll("p[id]")].find((p) => p.getBoundingClientRect().bottom > 56);
+      if (!top) return;
+      const data = loadRibbon() || { units: {} };
+      const title = document.querySelector("h1")?.textContent.trim() || unitId;
+      const pct = Math.round(100 * window.scrollY / Math.max(document.documentElement.scrollHeight - window.innerHeight, 1));
+      const rec = { pid: top.id, pct, ts: Date.now() };
+      data.units = data.units || {};
+      data.units[unitId] = rec;
+      data.latest = { unit: unitId, pid: top.id, title, ts: rec.ts };
+      saveRibbon(data);
+    };
+    window.addEventListener("scroll", () => {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(record, 350);
+    }, { passive: true });
+  }
+})();
+
+// ---------------------------------------------------------------- paragraph pilcrow citation copy (E3)
+if (article && article.querySelector("p[id]")) {
+  const btn = el("button", "para-cite", "¶");
+  btn.type = "button";
+  btn.hidden = true;
+  btn.setAttribute("aria-label", "Copy citation link to this paragraph");
+  btn.title = "Copy citation link";
+  article.append(btn);
+  let currentPara = null, copiedTimer = 0;
+  const moveTo = (p) => {
+    if (!p || body.classList.contains("text-only")) return;
+    currentPara = p;
+    btn.style.top = `${p.offsetTop}px`;
+    btn.hidden = false;
+  };
+  article.addEventListener("mouseover", (ev) => {
+    const p = ev.target.closest?.("p[id]");
+    if (p && !p.className.includes("head")) moveTo(p);
+  });
+  article.addEventListener("focusin", (ev) => {
+    const p = ev.target.closest?.("p[id]");
+    if (p && !p.className.includes("head")) moveTo(p);
+  });
+  btn.addEventListener("click", async () => {
+    if (!currentPara) return;
+    const unitTitle = document.querySelector("h1")?.textContent.trim() || article.id;
+    const unitLabel = /^\d/.test(article.id) ? `${article.id} ${unitTitle}` : unitTitle;
+    const pnum = currentPara.id.match(/-p(\d+)$/)?.[1];
+    let pb = "";
+    for (const x of article.querySelectorAll(".pb[data-n]")) {
+      if (x.compareDocumentPosition(currentPara) & Node.DOCUMENT_POSITION_FOLLOWING) pb = x.dataset.n;
+      else break;
+    }
+    const base = location.href.split("#")[0];
+    const cite = `Burton, The Anatomy of Melancholy, ${unitLabel}${pnum ? `, ¶${pnum}` : ""}${pb ? ` [p. ${pb}]` : ""} — ${base}#${currentPara.id}`;
+    try { await navigator.clipboard?.writeText(cite); } catch { /* clipboard unavailable */ }
+    btn.textContent = "✓";
+    btn.classList.add("copied");
+    btn.setAttribute("aria-label", "Copied citation");
+    clearTimeout(copiedTimer);
+    copiedTimer = setTimeout(() => {
+      btn.textContent = "¶";
+      btn.classList.remove("copied");
+      btn.setAttribute("aria-label", "Copy citation link to this paragraph");
+    }, 1200);
+  });
+}
+
+// ---------------------------------------------------------------- live filter, sort, A-Z jump bar (E4)
+(() => {
+  const tools = document.querySelector(".idx-tools");
+  const table = document.querySelector(".author-index");
+  if (tools && table) {
+    tools.hidden = false;
+    const input = tools.querySelector(".idx-filter");
+    const count = tools.querySelector(".idx-count");
+    const bar = tools.querySelector(".alpha-bar");
+    const tbody = table.querySelector("tbody");
+    const rows = [...tbody.querySelectorAll("tr")];
+    let activeLetter = "";
+    const letters = [...new Set(rows.map((r) => r.dataset.letter).filter(Boolean))].sort();
+    const applyFilter = () => {
+      const q = (input.value || "").trim().toLowerCase();
+      let shown = 0;
+      for (const r of rows) {
+        const hitL = !activeLetter || r.dataset.letter === activeLetter;
+        const hitQ = !q || r.dataset.name.includes(q) || r.dataset.forms.includes(q) || r.dataset.field.includes(q);
+        const vis = hitL && hitQ;
+        r.hidden = !vis;
+        if (vis) shown++;
+      }
+      count.textContent = `${shown} of ${rows.length} authors`;
+    };
+    const mkBtn = (label, ltr) => {
+      const b = el("button", null, label);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(ltr === activeLetter));
+      b.addEventListener("click", () => {
+        activeLetter = activeLetter === ltr ? "" : ltr;
+        bar.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b && !!activeLetter)));
+        if (!activeLetter) bar.firstChild?.setAttribute("aria-pressed", "true");
+        applyFilter();
+      });
+      return b;
+    };
+    bar.append(mkBtn("All", ""));
+    for (const l of letters) bar.append(mkBtn(l, l));
+    input.addEventListener("input", applyFilter);
+    for (const btn of table.querySelectorAll(".sort-btn")) {
+      btn.addEventListener("click", () => {
+        const key = btn.dataset.sort;
+        const nextDir = btn.dataset.dir === "asc" ? "desc" : btn.dataset.dir === "desc" ? "asc" : (key === "cites" ? "desc" : "asc");
+        table.querySelectorAll(".sort-btn").forEach((b) => delete b.dataset.dir);
+        btn.dataset.dir = nextDir;
+        rows.sort((a, b) => {
+          const cmp = key === "cites"
+            ? Number(a.dataset.cites) - Number(b.dataset.cites)
+            : a.dataset.name.localeCompare(b.dataset.name);
+          return nextDir === "asc" ? cmp : -cmp;
+        });
+        rows.forEach((r) => tbody.append(r));
+      });
+    }
+    applyFilter();
+  } else if (tools && article?.querySelector("h2[id^='table-']")) {
+    tools.hidden = false;
+    const input = tools.querySelector(".idx-filter");
+    const count = tools.querySelector(".idx-count");
+    const bar = tools.querySelector(".alpha-bar");
+    const headings = [...article.querySelectorAll("h2[id^='table-']")];
+    const items = [...article.querySelectorAll("p.tabl")];
+    for (const h of headings) {
+      const a = el("a", null, h.id.replace("table-", ""));
+      a.href = `#${h.id}`;
+      bar.append(a);
+    }
+    const applyTableFilter = () => {
+      const q = (input.value || "").trim().toLowerCase();
+      let shown = 0;
+      for (const p of items) {
+        const vis = !q || p.textContent.replace(/­/g, "").toLowerCase().includes(q);
+        p.hidden = !vis;
+        if (vis) shown++;
+      }
+      for (let i = 0; i < headings.length; i++) {
+        let cur = headings[i].nextElementSibling, any = false;
+        while (cur && !cur.matches("h2")) { if (cur.matches("p.tabl") && !cur.hidden) { any = true; break; } cur = cur.nextElementSibling; }
+        headings[i].hidden = !any;
+      }
+      count.textContent = q ? `${shown} matching entries` : `${items.length} entries`;
+    };
+    input.addEventListener("input", applyTableFilter);
+    applyTableFilter();
+  }
+})();
+
+// ---------------------------------------------------------------- keyboard parity (E5)
+document.addEventListener("keydown", (ev) => {
+  if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+  if (ev.target.matches("input, textarea, select, [contenteditable]")) return;
+  if (ev.key === "/") {
+    const hs = document.querySelector(".hsearch");
+    if (hs) {
+      ev.preventDefault();
+      hs.classList.add("open");
+      hs.querySelector("input")?.focus();
+      return;
+    }
+    const inp = document.querySelector('.idx-filter, input[type="search"]');
+    if (inp) { ev.preventDefault(); inp.focus(); }
+  } else if (ev.key === "[" || ev.key === "]") {
+    const sel = ev.key === "[" ? 'a.sz-prev, .pager a[rel="prev"]' : 'a.sz-next, .pager a[rel="next"]';
+    const link = document.querySelector(sel);
+    if (link) { ev.preventDefault(); location.href = link.href; }
+  } else if ((ev.key === "p" || (ev.key === "Enter" && ev.shiftKey)) && document.activeElement?.matches("a.nm, a.xref")) {
+    ev.preventDefault();
+    clearTimeout(hoverTimer);
+    pointerMovedAt = 0;
+    openWindow(document.activeElement, true);
+  }
+});
+
+// ---------------------------------------------------------------- Sortes Burtonianae (V2)
+let sortesCache = null;
+document.addEventListener("click", async (ev) => {
+  const b = ev.target.closest?.(".sortes-btn");
+  if (!b) return;
+  try {
+    sortesCache ||= await fetch(new URL("assets/sortes.json", root)).then((r) => r.json());
+    const pool = sortesCache.length > 1 && article?.id
+      ? sortesCache.filter((u) => u.key !== article.id)
+      : sortesCache;
+    if (!pool.length) return;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    location.href = new URL(pick.href, root).href;
+  } catch { /* offline without cache */ }
+});
 
 // ---------------------------------------------------------------- offline (installable app)
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {

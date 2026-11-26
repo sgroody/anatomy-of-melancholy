@@ -473,7 +473,7 @@ code { font-size: 0.85em; }
     var(--syn-pt) left top / 100% var(--syn-cap) no-repeat,
     var(--syn-pb) left bottom / 100% var(--syn-cap) no-repeat,
     linear-gradient(#000 0 0) left 50% top var(--syn-cap) / var(--syn-sw) calc(100% - 2 * var(--syn-cap) + 1px) no-repeat;
-  --syn-ease: cubic-bezier(.32, .72, .24, 1); --syn-t-open: 1.15s; --syn-t-shut: .75s;
+  --syn-ease: cubic-bezier(.32, .72, .24, 1); --syn-t-open: .82s; --syn-t-shut: .75s;
 }
 .syn-sheet, .syn-sheet ul { list-style: none; margin: 0; padding: 0; }
 .syn-sheet { margin: 1rem 0 1.4rem; font-size: 0.94em; line-height: 1.26; hyphens: manual; text-indent: 0; text-align: left;
@@ -492,7 +492,7 @@ code { font-size: 0.85em; }
   transition: height var(--syn-t-open) var(--syn-ease), padding var(--syn-t-open) var(--syn-ease), visibility 0s; }
 .syn-kids > .syn-n { transition: opacity .7s ease calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms),
   translate .8s var(--syn-ease) calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms); }
-.syn-shut > .syn-nb > .syn-kw > .syn-kids { height: 0; padding-block: 0; visibility: hidden;
+.syn-shut > .syn-nb > .syn-kw > .syn-kids { height: 0; padding-block: 0; visibility: hidden; overflow: hidden;
   transition: height var(--syn-t-shut) var(--syn-ease) .18s, padding var(--syn-t-shut) var(--syn-ease) .18s,
   visibility 0s linear calc(var(--syn-t-shut) + .18s); }
 .syn-shut > .syn-nb > .syn-kw > .syn-kids > .syn-n { opacity: 0; translate: -.7em 0; transition: opacity .25s ease, translate .3s ease; }
@@ -644,9 +644,9 @@ main:has(.landing.synopsis) { max-width: 90rem; }
   }
   body { font-size: 10.5pt; line-height: 1.38; background: #fff; }
   header.site, .settings, footer .pager, .side-zone, .sn-more, .skip, .syn-here, .search-form, .search-help, .sr-more,
-  .fs-n, .to-panel, .banner[data-resp] { display: none !important; }
+  .fs-n, .to-panel, .banner[data-resp], .para-cite, .unit-resume, .toc-extras, .idx-tools, .gloss-jump { display: none !important; }
   main, .unit, .prose, .home-page, .landing { max-width: none; padding: 0; margin: 0; }
-  .unit { margin-right: 31% !important; position: static !important; }
+  .unit, .two-side .unit { margin-left: 0 !important; margin-right: 31% !important; position: static !important; }
   .sidenote, .sidenote.open, .sidenote:target, .unit.sn-laid .sidenote, .unit.sn-laid .sidenote.sn-stacked {
     display: block !important; position: static !important; float: right; clear: right; width: 28%;
     margin: 0.1rem -31% 0.3rem 0 !important; padding: 0; border: none; background: none; box-shadow: none;
@@ -779,18 +779,19 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
    synopses and contents, their rules as long as the way in; the informational pages at the foot (owner, 2026-11-20) */
 /* its type no larger than the window's height allows, so the front page is one screen at any type size: a title page,
    taken in at once (owner, 2026-11-21: "no scroll bars ... until one opens synopses/contents") */
-.front-side { font-size: min(1em, 2.2vh); --fcol: 22.7em; container: front-side / inline-size; display: flex; flex-direction: column; padding-top: 0.4rem; max-width: 76rem;
+.front-side { font-size: min(1em, 2.2vh); --fcol: clamp(19.5em, 49cqi, 22.7em); container: front-side / inline-size; display: flex; flex-direction: column; padding-top: 0.25rem; max-width: 76rem;
   min-height: calc(100vh - 2rem); box-sizing: border-box; }
 @media (min-width: 1100px) and (hover: hover) { .front-side { padding-right: 2.4rem; } } /* clear of the ❧ at the window's edge */
-.front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.5rem; text-align: left; font-variant-caps: normal; }
+@media (min-width: 60rem) and (max-width: 1180px) { .front { gap: 1.4rem; } }
+.home-page h1.front-title, .front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.45rem; text-align: left; font-variant-caps: normal; }
 .front-title .ft-1 { display: block; font-size: 0.75em; }
 .front-title .ft-2 { display: block; font-size: 1.35em; }
 /* one line (owner, 2026-11-20: "of it" hung on a line of its own) */
 .front-what { font-style: italic; margin: 0.2rem 0; font-size: 0.9em; }
 @media (min-width: 60rem) { .front-what { font-size: min(0.9em, 1.36vw); white-space: nowrap; } }
 .front-by { font-variant-caps: small-caps; letter-spacing: 0.06em; margin: 0.2rem 0 0; }
-.front-row { display: grid; grid-template-columns: var(--fcol) minmax(16rem, 1fr);
-  grid-template-rows: auto auto auto 1fr; gap: 0 1.6rem; align-items: start; margin: 1rem 0 1.2rem; }
+.front-row { display: grid; grid-template-columns: var(--fcol) minmax(15rem, 1fr);
+  grid-template-rows: auto auto auto 1fr; gap: 0 1.4rem; align-items: start; margin: 0.8rem 0 1rem; }
 .front-left { grid-area: 1 / 1; min-width: 0; }
 .front-info { grid-column: 2; grid-row: 1 / 5; max-width: 40rem; } /* its height goes to the last, flexible row: it pushes nothing down */
 .front-syn { grid-area: 2 / 1; }
@@ -812,19 +813,22 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
 .front-enter { margin: 0; }
 .enter { display: block; text-align: center; font-size: 1.25em; color: var(--accent); text-decoration: none;
   border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 0.2rem 0.6rem; letter-spacing: 0.06em; }
+.enter[hidden] { display: none; }
 .enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.front-enter.has-ribbon { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0.45rem; }
+.front-enter.has-ribbon .enter { padding: 0.2rem 0.35rem; font-size: 1.12em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* the panels' stanzas under the way in (owner, 2026-11-21), stacked in one cell: the space is as tall as the longest,
    so the synopses below never move as one stanza gives way to another; beside each, its margin items (Gowland's
    glosses, private build), and beside the first the hint, until a panel has been pointed at */
-.front-stanza { display: grid; margin: 0 0 1rem; font-size: 0.84em; }
-.front-stanza > .fs-st { grid-area: 1 / 1; display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 1.4rem;
+.front-stanza { display: grid; margin: 0 0 0.75rem; font-size: 0.84em; }
+.front-stanza > .fs-st { grid-area: 1 / 1; display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 0.95rem;
   align-items: start; }
 .front-stanza > .fs-st[hidden] { display: grid; visibility: hidden; }
 .fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.2rem; }
 .fs-st-l { font-style: italic; margin: 0; line-height: 1.36; }
-.fs-st-side { padding-top: 1.55em; min-width: 0; }
-.fs-hint { margin: 0; color: var(--muted); line-height: 1.4; border-left: 1px solid var(--rule); padding-left: 0.6rem; }
-.front-stanza .fs-mn { display: block; font-size: 0.92em; margin: 0 0 0.45rem; padding: 0.05rem 0.4rem; cursor: pointer;
+.fs-st-side { padding-top: 1.35em; min-width: 0; }
+.fs-hint { margin: 0; color: var(--muted); line-height: 1.35; border-left: 1px solid var(--rule); padding-left: 0.6rem; }
+.front-stanza .fs-mn { display: block; font-size: 0.88em; line-height: 1.28; margin: 0 0 0.28rem; padding: 0.04rem 0.35rem; cursor: pointer;
   border-left: 2px solid transparent; border-radius: 2px; }
 .front-stanza .fs-anc { text-decoration: underline dotted color-mix(in srgb, var(--k-gloss) 60%, transparent);
   text-underline-offset: 0.2em; cursor: pointer; border-radius: 2px; }
@@ -928,29 +932,30 @@ main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader b
   margin: 0 0 0.12em 0.45em; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); rotate: -45deg;
   transition: rotate .2s; }
 .front-contents[open] > summary .front-rh span::after { rotate: 45deg; }
-/* a short window (a laptop's 720 px): the same page, set tighter */
-@media (min-width: 60rem) and (max-height: 820px) {
-  .front { padding: 0.5rem 0; }
-  .front .front-eng { top: 0.5rem; }
-  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 1rem); }
-  .front-side { padding-top: 0; min-height: calc(100vh - 1rem); }
-  .front-title { font-size: 1.7rem; margin-bottom: 0.3rem; }
-  .front-row { margin: 0.6rem 0 0.8rem; }
+/* a short window (laptops 720–900 px high): the same page, set tighter with zero scrollbars */
+@media (min-width: 60rem) and (max-height: 920px) {
+  .front { padding: 0.45rem 0; }
+  .front .front-eng { top: 0.45rem; }
+  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 0.9rem); }
+  .front-side { padding-top: 0; min-height: 0; }
+  .home-page h1.front-title, .front-title { font-size: 1.7rem; margin: 0 0 0.25rem; }
+  .front-row { margin: 0.55rem 0 0.7rem; }
   .enter { font-size: 1.1em; }
   .front-info { font-size: min(0.78em, 17px); line-height: 1.38; padding: 0.55rem 0.8rem 0.45rem; }
-  .front-stanza { font-size: 0.76em; }
-  .front-syn { margin-bottom: 0.5rem; }
+  .front-stanza { font-size: 0.76em; margin-bottom: 0.6rem; }
+  .front-syn { margin: 0.6rem 0 0.55rem; }
 }
 /* narrower: the word to a new reader under the way in */
 /* too little room for the box beside the column of the way in (a narrow window, or a large type size on a laptop:
-   the box would be squeezed under ~16em and run off the screen): one column, the box straight after the way in */
-@container front-side (width < 39em) {
+   the box would be squeezed under ~15em and run off the screen): one column, the box straight after the way in */
+@container front-side (width < 34em) {
   .front-row, .front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) { grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none; }
   .front-left { display: contents; }
   .front-row > *, .front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) > * { grid-area: auto / 1; }
   .front-door { order: 1; max-width: var(--fcol); } .front-info { order: 2; margin-bottom: 1rem; } .front-stanza { order: 3; }
-  .front-syn { order: 4; } .front-contents { order: 5; } }
+  .front-syn { order: 4; } .front-contents { order: 5; }
+  .front-links { white-space: normal; } }
 @media (max-width: 60rem) {
   .front { grid-template-columns: 1fr; min-height: 0; }
   .front-side { min-height: 0; }
@@ -998,8 +1003,9 @@ a.nm-x { cursor: help; } /* an identified name with no index page: the window is
 /* ------------------------------------------------------------ in-line citations and Bible verses (stage 6, C1 C) */
 /* the name stays in Burton's sentence, the reference goes to the margin (shown again under "Burton's abbreviations"),
    and a raised § in the citation colour marks the place; his own words are on the mark's title */
-.ic-m { color: var(--k-cite); font-size: 0.68em; vertical-align: 0.5em; line-height: 0; padding: 0 0.04em; cursor: help;
-  font-style: normal; }
+.ic-m { color: var(--k-cite); font-size: 0.68em; vertical-align: 0.5em; line-height: 0; padding: 0 0.08em; cursor: pointer;
+  font-style: normal; border-radius: 2px; }
+.ic-m:hover, .ic-m:focus-visible { text-decoration: underline; }
 .ic-m[data-kind="bible"] { color: var(--k-bible); }
 .mn-ic[data-kind="cites"] .mn-k { color: var(--k-cite); }
 .mn-ic[data-kind="bible"] .mn-k { color: var(--k-bible); }
@@ -1100,6 +1106,7 @@ header.site .toc-panel > nav { left: 0; right: auto; }
 .sb-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .sb-cur { color: var(--accent); }
 .sb-pop { display: none; position: absolute; top: 100%; left: 0; z-index: 40; width: min(25rem, calc(100vw - 32px));
+  max-height: min(72vh, 28rem); overflow-y: auto;
   background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow);
   padding: 0.55rem 0.75rem; color: var(--ink); font-size: 1.08em; line-height: 1.35; white-space: normal; }
 .syn-badge:hover .sb-pop, .syn-badge:focus-within .sb-pop { display: block; }
@@ -1123,7 +1130,16 @@ header.site .toc-panel > nav { left: 0; right: auto; }
   .unit.sn-laid .mn-fold > .fold-more { display: block; position: absolute; right: 0; bottom: 0; padding: 0 0 0 1.6em;
     border: none; font: inherit; font-size: 0.9em; line-height: 1.35; color: var(--accent); cursor: pointer;
     background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
-  .unit.sn-laid .mn-fold.hot > .fold-more { background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
+  .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #d9a520 26%, var(--paper)) 1.4em); }
+}
+@media (min-width: 1100px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #e0b040 24%, var(--paper)) 1.4em); }
+}
+@media (min-width: 1100px) {
+  :root[data-theme="dark"] .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #e0b040 24%, var(--paper)) 1.4em); }
 }
 /* Burton's own notes: a rubric rule beside them (owner, 2026-11-04: N5 C), on the side facing the text: right in the
    left margin (owner, 2026-11-19: P3 B, to be revisited, state/review/to-revisit.md) */
@@ -1364,6 +1380,7 @@ blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px doub
 .text-only .unit .lucida { color: inherit !important; background: none !important; box-shadow: none !important; }
 .text-only .unit a.nm, .text-only .unit a.xref, .text-only .unit .gl-w { color: inherit !important;
   text-decoration: none !important; pointer-events: none; }
+.text-only :is(.para-cite, .unit-resume, .toc-ribbon, .toc-extras, .mn-lit, .ft-lit, .syn-compass, .sb-signs) { display: none !important; }
 
 /* the signs float at the top right once the running head has gone (owner, 2026-11-19); the options open under them */
 body.bar-float header.site .bar-r { position: fixed; top: 0.6rem; right: 1rem; z-index: 45; display: flex; gap: 0.6rem;
@@ -1393,3 +1410,118 @@ body.bar-float .settings:not(.settings-page) { top: 3.4rem; }
 @media (max-width: 40rem) { [data-uid="B"] .uid-b { position: static; } [data-uid="B"] .uid-s { display: inline; }
   [data-uid="B"] header.site .bar-l { padding-left: 0; } }
 @media print { .uid-b { position: static !important; } }
+
+/* ------------------------------------------------------------ UX & elucidation upgrades (F2, F3, E2-E4, V2-V6, P3) */
+/* F2: deep-link arrival highlight */
+.arrival-flash { background: var(--hot); border-radius: 2px; transition: background-color 1.2s ease; }
+
+/* F3: subtle narrow-screen cue for Gowland's notes */
+::highlight(gw-cues) {
+  text-decoration: underline dotted color-mix(in srgb, var(--k-gloss) 68%, transparent);
+  text-underline-offset: 0.2em;
+  background-color: color-mix(in srgb, var(--k-gloss) 8%, transparent);
+}
+
+/* E2: silk ribbon in Contents & quiet unit-top resume banner */
+.toc-ribbon { margin: 0 0 0.5rem; padding: 0.3rem 0.5rem; border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 0.9em; }
+.toc-ribbon a { color: var(--accent); text-decoration: none; }
+.toc-ribbon a:hover { text-decoration: underline; }
+.unit-resume { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; justify-content: space-between;
+  margin: 0 0 1rem; padding: 0.35rem 0.7rem; border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--paper) 94%, var(--ink)); font-size: 0.85em; color: var(--muted); text-indent: 0; }
+.unit-resume a { color: var(--accent); }
+.ur-close { border: 0; background: none; padding: 0 0.25rem; cursor: pointer; font-size: 1.15em; line-height: 1; color: var(--muted); }
+.ur-close:hover { color: var(--accent); }
+
+/* E3: paragraph pilcrow citation copy button */
+.para-cite { position: absolute; left: -1.45rem; width: 1.25rem; padding: 0; border: 0; background: none;
+  color: var(--muted); opacity: 0.5; cursor: pointer; font-size: 0.85em; line-height: 1.4; text-align: center; }
+.para-cite:hover, .para-cite:focus-visible, .para-cite.copied { opacity: 1; color: var(--accent); }
+@media (max-width: 1099px) {
+  .unit { position: relative; }
+  .para-cite { left: auto; right: -0.2rem; opacity: 0.4; }
+}
+
+/* E4: live filter, sort headers & A-Z jump bar */
+.idx-tools { margin: 0.8rem 0 1rem; }
+.idx-tools:not([hidden]) { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center; }
+.idx-f-wrap { flex: 1 1 14rem; }
+.idx-filter { width: 100%; font: inherit; font-size: 0.92em; padding: 0.25rem 0.55rem; color: var(--ink);
+  background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 3px; }
+.idx-count { font-size: 0.85em; color: var(--muted); }
+.alpha-bar { display: flex; flex-wrap: wrap; gap: 0.15rem 0.35rem; flex-basis: 100%; font-size: 0.85em;
+  font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.alpha-bar a, .alpha-bar button { border: 0; background: none; padding: 0.05rem 0.28rem; border-radius: 2px;
+  cursor: pointer; color: var(--muted); text-decoration: none; }
+.alpha-bar a:hover, .alpha-bar button:hover, .alpha-bar button[aria-pressed="true"] { color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.sort-btn { border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: inherit;
+  text-decoration: underline dotted var(--rule); text-underline-offset: 0.2em; }
+.sort-btn:hover, .sort-btn[data-dir] { color: var(--accent); text-decoration-color: var(--accent); }
+.sort-btn[data-dir="asc"]::after { content: " ↑"; font-size: 0.85em; }
+.sort-btn[data-dir="desc"]::after { content: " ↓"; font-size: 0.85em; }
+
+/* V2: Ways into the Labyrinth & Sortes Burtonianae inside Contents */
+.toc-extras { margin: 0 0 0.65rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--rule); font-size: 0.92em; }
+.toc-ex-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem; }
+.sortes-btn { background: none; border: 1px solid var(--accent); border-radius: 3px; padding: 0.12rem 0.65rem;
+  color: var(--accent); cursor: pointer; font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.95em; }
+.sortes-btn:hover, .sortes-btn:focus-visible { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.toc-ways > summary { cursor: pointer; width: fit-content; font-variant-caps: all-small-caps; letter-spacing: 0.07em;
+  color: var(--accent); }
+.lab-list { list-style: none; margin: 0.35rem 0 0; padding: 0; }
+.lab-item { margin: 0.35rem 0; line-height: 1.3; }
+.lab-item a { font-weight: 500; text-decoration: none; }
+.lab-item a:hover .lab-t { text-decoration: underline; text-decoration-color: var(--accent); }
+.lab-time { font-size: 0.82em; color: var(--muted); margin-left: 0.25rem; font-variant-numeric: lining-nums; }
+.lab-note { display: block; font-size: 0.86em; color: var(--muted); }
+
+/* V3: Glossary page */
+.gloss-jump { margin: 0.5rem 0 1.2rem; font-size: 0.92em; color: var(--muted); }
+table.counts.gloss-table td:last-child { text-align: left; font-variant-numeric: normal; }
+
+/* V4: Self-translation literal comparison disclosure */
+.mn-lit, .ft-lit { display: block; margin-top: 0.18em; font-size: 0.9em; color: var(--note-ink); font-style: normal; }
+.mn-lit > summary, .ft-lit-btn { cursor: pointer; width: fit-content; color: var(--muted);
+  font-variant-caps: all-small-caps; letter-spacing: 0.07em; list-style: none; border: 0; background: none; padding: 0; }
+.mn-lit > summary::-webkit-details-marker { display: none; }
+.mn-lit > summary::before, .ft-lit-btn[aria-expanded="false"]::before { content: "+ "; color: var(--accent); }
+.mn-lit[open] > summary::before, .ft-lit-btn[aria-expanded="true"]::before { content: "− "; color: var(--accent); }
+.mn-lit-v, .ft-lit-v { display: block; margin-top: 0.12em; padding-left: 0.45rem; border-left: 1px dotted var(--rule); }
+.ft-lit-v[hidden] { display: none; }
+.mode-interlinear .fp:not(.pinned) .ft-lit, .mode-english .fp:not(.show-orig) .ft-lit { display: none; }
+
+/* V5: Marginal signpost compass inside header drawer */
+.sb-signs { margin-top: 0.45rem; padding-top: 0.35rem; border-top: 1px solid var(--rule); }
+.sb-sh { margin: 0 0 0.25rem; font-size: 0.8em; font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.sb-sign { display: block; margin: 0.2rem 0; color: var(--ink); text-decoration: none; font-size: 0.9em; line-height: 1.3; }
+.sb-sign:hover, .sb-sign:focus-visible { color: var(--accent); }
+.sb-sn { color: var(--accent); font-variant-numeric: lining-nums; margin-right: 0.25rem; }
+
+/* V6: Coalesced Gowland segments & 1100-1379px density relief */
+.mn-gw-seg[data-kind="gloss"] .mn-k { color: var(--k-gloss); }
+.mn-gw-seg[data-kind="source"] .mn-k { color: var(--k-cite); }
+.mn-gw-seg[data-kind="identity"] .mn-k, .mn-gw-seg[data-kind="explanation"] .mn-k { color: var(--k-expl); }
+@media (min-width: 1100px) and (max-width: 1379px) {
+  .unit.sn-laid .mn { font-size: 0.74em; line-height: 1.3; }
+}
+
+/* P3: Option B flush-right text inside left-margin Burton sidenotes (compare with ?p3=left) */
+@media (min-width: 1100px) {
+  :root:not([data-p3="left"]) .unit.sn-laid .sidenote.mn-l:not(.sn-restored) { text-align: right; }
+  :root:not([data-p3="left"]) .unit.sn-laid .sidenote.mn-l:not(.sn-restored) > :is(.sn-tr, .sn-bible) {
+    margin-left: 0; padding-left: 0; border-left: none;
+    margin-right: 0.6rem; padding-right: 0.45rem; border-right: 1px dotted var(--rule);
+  }
+}
+
+/* F1 narrow phone fit: keep title ("MELANCHOLY,") and folded synopses cleanly within 390px viewports */
+@media (max-width: 28rem) {
+  .front-side { --fcol: 100%; }
+  .home-page h1.front-title, .front-title { font-size: clamp(1.15rem, 4.6vw, 1.45rem); letter-spacing: 0.08em; }
+  .syn-part > .syn-nb > .syn-hd { width: 12.6em; padding-left: 1.3em; }
+  .syn-shut > .syn-nb > .syn-kw { min-width: 4.8em; }
+  .syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 4.5em; }
+  .syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { left: calc(15.8em / 0.95); }
+}

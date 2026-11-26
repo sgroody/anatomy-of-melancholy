@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Human-Centered UX Workbench &middot; The Anatomy of Melancholy</title>
+<style>
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Roman.woff2") format("woff2"); font-style: normal; font-display: swap; }
+@font-face { font-family: "EBG"; src: url("../../site/private/assets/fonts/EBGaramond-Italic.woff2") format("woff2"); font-style: italic; font-display: swap; }
+@font-face { font-family: "GFSDidot"; src: url("../../site/private/assets/fonts/GFSDidot-Regular.woff2") format("woff2"); font-style: normal; font-display: swap; }
+:root {
+  --paper: #f7f3ea; --ink: #23201b; --muted: #645c51; --rule: #d9d0bf;
+  --accent: #8a2f1d; --la: #7a2230; --grc: #2a4a8c; --k-cite: #2a55a8; --k-gloss: #a04f00;
+  --panel: #efe9dc; --card: #fbf8f1; --hot: rgba(217, 165, 32, 0.24); --ok: #2e5e3e;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e;
+  --accent: #e5927a; --la: #e0c27a; --grc: #a9c8f0; --k-cite: #9fb0d4; --k-gloss: #e2b45c;
+  --panel: #25221d; --card: #221f1b; --hot: rgba(224, 176, 64, 0.22); --ok: #8cc9a3;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "EBG", "EB Garamond", Georgia, serif; font-size: 1.1rem; line-height: 1.5;
+}
+.wrap { max-width: 72rem; margin: 0 auto; padding: 1.3rem 1rem 7.5rem; }
+header.top {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: 0.7rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 1rem;
+}
+h1 { font-weight: 400; font-size: 1.7rem; margin: 0; letter-spacing: 0.02em; }
+.sub { color: var(--muted); font-style: italic; margin: 0.2rem 0 0; }
+.sc { font-variant-caps: all-small-caps; letter-spacing: 0.08em; }
+.rubric { color: var(--accent); }
+.guard-banner {
+  background: var(--panel); border-left: 3px solid var(--accent); padding: 0.75rem 1rem;
+  border-radius: 0 5px 5px 0; margin: 0.8rem 0 1rem; font-size: 0.98rem;
+}
+button {
+  font: inherit; font-size: 0.92rem; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 4px; padding: 0.24rem 0.7rem; cursor: pointer;
+  max-width: 100%;
+}
+button:hover { border-color: var(--accent); }
+button[aria-pressed="true"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.score-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0.75rem; margin: 1rem 0 1.2rem;
+}
+.stat { background: var(--card); border: 1px solid var(--rule); border-radius: 5px; padding: 0.65rem 0.85rem; min-width: 0; }
+.stat b { font-size: 1.28rem; font-weight: 400; color: var(--accent); display: block; }
+.stat span { font-size: 0.9rem; color: var(--muted); }
+details.drawer { margin: 0.65rem 0; background: var(--card); border: 1px solid var(--rule); border-radius: 5px; padding: 0.55rem 0.85rem; }
+details.drawer > summary { cursor: pointer; font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); }
+.table-scroll { width: 100%; overflow-x: auto; }
+.vp-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 0.5rem 0; }
+.vp-table th, .vp-table td { border-bottom: 1px solid var(--rule); padding: 0.3rem 0.5rem; text-align: left; }
+.vp-table th { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); font-weight: 400; }
+.bad { color: var(--accent); font-weight: 600; }
+.good { color: var(--ok); }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.2rem 0 0.4rem; }
+.tier-h {
+  display: flex; align-items: center; gap: 0.8rem; margin: 1.8rem 0 0.8rem;
+  font-weight: 400; font-size: 1.22rem; font-variant-caps: all-small-caps; letter-spacing: 0.09em; color: var(--accent);
+}
+.tier-h::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.cards { display: grid; gap: 1rem; }
+.item {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 0.95rem 1.05rem; min-width: 0;
+}
+.item.picked { border-color: var(--accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent); }
+.item-code { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-right: 0.4rem; }
+.item-title { font-size: 1.18rem; }
+.meta { font-size: 0.88rem; color: var(--muted); margin: 0.2rem 0 0.5rem; overflow-wrap: anywhere; }
+.plain, .why-line { margin: 0.3rem 0; font-size: 0.98rem; }
+.demo {
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.75rem 0.9rem; margin: 0.65rem 0; font-size: 0.98rem;
+}
+.demo-label { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.82rem; color: var(--muted); margin: 0 0 0.4rem; }
+.demo-note { margin: 0.35rem 0 0; font-size: 0.88rem; color: var(--muted); }
+.proto-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.proto-prose { margin: 0.35rem 0; line-height: 1.55; }
+.mini-input {
+  font: inherit; font-size: 0.92rem; padding: 0.22rem 0.55rem; background: var(--card);
+  color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; min-width: 12rem; max-width: 100%;
+}
+.inline-btn { background: none; border: 0; padding: 0 0.08rem; font: inherit; color: inherit; cursor: pointer; }
+.nm-u { text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: 0.2em; }
+.gw-u { text-decoration: underline dotted var(--k-gloss); text-underline-offset: 0.22em; }
+.la-u, .la { color: var(--la); font-style: italic; }
+.cite-s { color: var(--k-cite); font-size: 0.78em; vertical-align: super; }
+.pop-preview { margin-top: 0.45rem; padding: 0.45rem 0.65rem; background: var(--panel); border-left: 2px solid var(--accent); border-radius: 3px; font-size: 0.9rem; }
+.fp-sim { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.6rem; margin-top: 0.55rem; border: 1px dashed var(--rule); padding: 0.55rem; border-radius: 4px; }
+.fp-sim-eng { background: var(--panel); padding: 0.6rem; text-align: center; border-radius: 3px; font-size: 0.85rem; color: var(--muted); }
+.fp-sim-side { display: grid; gap: 0.45rem; grid-template-columns: 1fr 1fr; }
+.fp-sim-side.is-wrapped { grid-template-columns: 1fr; }
+.fp-sim-door, .fp-sim-box, .fp-sim-syn { border: 1px solid var(--rule); padding: 0.35rem 0.5rem; border-radius: 3px; font-size: 0.86rem; background: var(--card); }
+.fp-sim-side.is-wrapped .fp-sim-syn { border-color: var(--accent); color: var(--accent); }
+.dl-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 0.75rem; align-items: start; margin-top: 0.4rem; }
+.dl-words.lit, .dl-margin.lit { background: var(--hot); border-radius: 3px; padding: 0.05rem 0.2rem; }
+.dl-margin { border-left: 2px solid var(--accent); padding-left: 0.45rem; font-size: 0.9rem; }
+.ok-box { display: inline-block; min-width: 1.15em; padding: 0 0.14em; background: var(--accent); color: var(--paper); border-radius: 2px; font-size: 0.8em; text-align: center; }
+.burton-sample { position: relative; max-width: 38rem; padding-left: 2.1rem; }
+.pilcrow { position: absolute; left: 0; top: 0.05rem; font-size: 0.84rem; color: var(--muted); background: none; border: 1px solid transparent; padding: 0 0.25rem; }
+.burton-sample:hover .pilcrow, .pilcrow:focus { color: var(--accent); border-color: var(--rule); }
+.bookmark-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.3rem 0.45rem; font-size: 0.92rem; }
+.eluc-own.lit { background: var(--hot); border-radius: 2px; padding: 0 0.15rem; }
+.eluc-gl.lit { text-decoration: underline dotted var(--k-gloss); text-underline-offset: 0.22em; cursor: help; }
+.gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0.45rem; margin-top: 0.5rem; }
+.gloss-card { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: 0.4rem 0.55rem; font-size: 0.88rem; }
+.md-pre { margin: 0.45rem 0 0; padding: 0.45rem; background: var(--card); border: 1px solid var(--rule); border-radius: 4px; white-space: pre-wrap; font-size: 0.84rem; overflow-wrap: anywhere; }
+.compass-list { display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-start; }
+.compass-step { text-align: left; width: 100%; }
+.p3-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr); gap: 0.7rem; margin-top: 0.5rem; font-size: 0.88rem; }
+.p3-left.p3-inner { border-right: 2px solid var(--accent); padding-right: 0.5rem; text-align: right; }
+.p3-left.p3-outer { border-left: 2px solid var(--accent); padding-left: 0.5rem; text-align: left; }
+.p3-right { border-left: 2px solid var(--accent); padding-left: 0.5rem; }
+.h2-box { margin-top: 0.5rem; padding: 0.5rem 0.7rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--card); }
+.h2-trig { position: relative; display: inline-block; cursor: pointer; color: var(--accent); padding-bottom: 3px; }
+.h2-bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); }
+.h2-layers { margin-top: 0.35rem; font-size: 0.88rem; color: var(--muted); }
+.pick { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; margin-top: 0.75rem; padding-top: 0.55rem; border-top: 1px solid var(--rule); }
+.item-note { flex: 1 1 13rem; min-width: 0; font: inherit; font-size: 0.9rem; background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.5rem; }
+.compact-list { margin: 0; padding-left: 1.2rem; }
+.dock {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+  background: var(--paper); border-top: 1px solid var(--rule); padding: 0.55rem 1rem;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+}
+.dock-in { max-width: 72rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.dock-actions { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; }
+.copy-box { max-width: 72rem; margin: 0.45rem auto 0; display: none; }
+.copy-box textarea { width: 100%; min-height: 4.5rem; font: inherit; font-size: 0.88rem; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.4rem; }
+@media (max-width: 640px) {
+  .dl-row, .p3-grid, .fp-sim { grid-template-columns: 1fr; }
+  .p3-left.p3-inner { text-align: left; border-right: 0; border-left: 2px solid var(--accent); padding-left: 0.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>The Anatomy of Melancholy &middot; <span class="rubric">Human UX Workbench</span></h1>
+      <p class="sub">Layered UX, design-principles &amp; Burton-elucidation proposals &mdash; vetted by Carbon against your <code>CLAUDE.md</code> &amp; Rounds 1&ndash;9 choices.</p>
+    </div>
+    <div>
+      <button type="button" id="themeBtn">Dark / Light</button>
+    </div>
+  </header>
+
+  <div class="guard-banner">
+    <b>Nothing in your edition was modified or redesigned.</b> The digital edition is already remarkably strong where it matters most: the base text is strictly faithful, machine work and translations carry honest provenance without cluttering the front page, dark and light typography feel genuinely bookish, and small mobile screens fit cleanly with zero horizontal spillover. At the same time, automated measurements across 11 screen sizes and 6 reading personas uncover five concrete bugs that trip real readers today—most notably 16:10 MacBook and 13-inch laptops collapsing the front page into a scrolling single column, deep links from Search and Authors Cited landing off-screen without highlighting, inline citations and private-build Gowland cues becoming unreachable on screens narrower than 1100 px, touch taps jumping away before showing frontispiece stanzas or author previews, and printing from a wide window leaving a 21rem blank gap on the left. Once those five quiet repairs are made, five focused ergonomic upgrades (mid-chapter scroll anchoring, a silk-ribbon place memory, hover/focus paragraph citing and private page jumping, searchable Authors and Table indexes, and full keyboard preview/page-turn support) plus six understated Burtonian enhancements will elevate long-form reading across the 423-page labyrinth without breaking a single rule of the edition or Rounds 1-9 taste.
+    Try the interactive prototypes below, pick what you want, and copy your choices back when ready.
+  </div>
+
+  <div class="score-grid">
+    <div class="stat"><b>22 / 22 PASS &middot; 159 pytest</b><span>Baseline verified intact (0 tracked edition files touched)</span></div>
+    <div class="stat"><b>1440&times;900 (+220 px) &amp; 1280&times;800 (+113 px)</b><span>16:10 laptops where the front page wraps &amp; pushes Synopses/Contents off-screen</span></div>
+    <div class="stat"><b>64,162 words (141 screens)</b><span>Length of <i>Democritus Junior</i> + 44 units &gt;5,000 words with no place-keeping</span></div>
+    <div class="stat"><b>253 Gowland &amp; 18 &sect; cites</b><span>Nearly invisible/unclickable on phone &amp; half-screen (&lt;1100 px) on <code>3.2.3.1</code></span></div>
+    <div class="stat"><b>281 px max note drift</b><span>Dense <code>3.2.3.1</code> margin at 1440&times;900 (85 notes drift &gt;120 px)</span></div>
+    <div class="stat"><b>25 terms + 935 glosses</b><span>+ 3435 Burton paraphrases ready for quieter elucidation</span></div>
+  </div>
+
+  <details class="drawer">
+    <summary>Measured 11-viewport front-page geometry &amp; deep-link probes</summary>
+    <div class="table-scroll">
+      <table class="vp-table">
+        <thead><tr><th>Viewport</th><th>Layout</th><th>Fits 1 Screen?</th><th>Synopses Visible?</th></tr></thead>
+        <tbody><tr><td>1920x1080_desktop</td><td>2 col(s)</td><td class='good'>Yes (0 px)</td><td class='good'>Yes</td></tr><tr><td>1680x1050_wsxga</td><td>2 col(s)</td><td class='good'>Yes (0 px)</td><td class='good'>Yes</td></tr><tr><td>1536x864_win125pct</td><td>2 col(s)</td><td class='good'>Yes (0 px)</td><td class='good'>Yes</td></tr><tr><td>1440x900_macbook</td><td>1 col(s)</td><td class='bad'>No (+220 px)</td><td class='bad'>Off-screen</td></tr><tr><td>1366x768_laptop</td><td>2 col(s)</td><td class='good'>Yes (0 px)</td><td class='good'>Yes</td></tr><tr><td>1280x800_laptop13</td><td>1 col(s)</td><td class='bad'>No (+113 px)</td><td class='bad'>Off-screen</td></tr><tr><td>1280x720_win150pct</td><td>2 col(s)</td><td class='good'>Yes (0 px)</td><td class='good'>Yes</td></tr><tr><td>1120x900_one_margin</td><td>1 col(s)</td><td class='bad'>No (+418 px)</td><td class='bad'>Off-screen</td></tr><tr><td>1024x900_halfscreen</td><td>1 col(s)</td><td class='bad'>No (+438 px)</td><td class='bad'>Off-screen</td></tr><tr><td>768x1024_ipad</td><td>1 col(s)</td><td class='bad'>No (+1007 px)</td><td class='bad'>Off-screen</td></tr><tr><td>390x844_iphone</td><td>1 col(s)</td><td class='bad'>No (+1244 px)</td><td class='bad'>Off-screen</td></tr></tbody>
+      </table>
+    </div>
+    <p class="demo-note">Deep link <code>/3.2.3.1/#3.2.3.1-n5</code> at 1440&times;900: note inViewport=False, highlighted=False.</p>
+  </details>
+
+  <details class="drawer">
+    <summary>6-Persona Field Trial Summary &amp; Carbon Guardrail Veto Log (7 rejected)</summary>
+    <p class="demo-label" style="margin-top:.4rem">6 Parallel Reader &amp; Design Passes (Flash Tier)</p>
+    <ul class="compact-list"><li><b>First-Time Cultural Visitor:</b> 4 friction findings, 2 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- **Plain-English front-door framing**: In &#x27;burton/site/templates/home.html&#x27; lines 38-49 and &#x27;burton/site/templates/front_key.html&#x27; lines 4-17, &#x27;.front-info&#x27; explains Burton&#x27;s 1621 project and Gowland&#x27;s 1651 text cleanly, pairs a compact key with the live &#x27;How a page looks&#x27; specimen, and keeps &#x27;◇&#x27; off the front page.
+- **Engraving-to-stanza theatre**: In &#x27;burton/site/frontispiece.py&#x27; lines 68-78 and &#x27;burton/site/static/edition.css&#x27; lines 771-777 and 819-832, &#x27;.fs-title&#x27; magnifies the title inside &#x27;.fs-map&#x27;, while &#x27;.front-stanza&#x27; holds the tallest stanza&#x27;s height so Synopses never jump during hover.
+
+### Friction Findings
+- [V1] 16:10 laptop front page collapses to 1 column (High) — Where: &#x27;burton/site/static/edition.css&#x27; lines 782, 792, 932, 947-953 — Evidence: Container query &#x27;@container front-side (width &lt; 39em)&#x27; triggers at &#x27;1440x900_macbook&#x27; (&#x27;gridCols: 1&#x27;, &#x27;scrollH: 1120&#x27;, &#x27;overflowY: 220&#x27;, &#x27;infoRightGapPx: 202&#x27;) and &#x27;1280x800_laptop13&#x27; (&#x27;gridCols: 1&#x27;, &#x27;scrollH: 913&#x27;, &#x27;overflowY: 113&#x27;, &#x27;infoRightGapPx: 93&#x27;), hiding Synopses and Contents below the fold (&#x27;synVisibleWithoutScroll: false&#x27;, &#x27;contentsVisibleWithoutScroll: false&#x27;). — Remedy: Lower the container threshold to roughly &#x27;33em&#x27; (or use &#x27;rem&#x27;), widen &#x27;.front-side&#x27; past &#x27;76rem&#x27; when room exists, and extend line 932&#x27;s compact rule to &#x27;max-height: 920px&#x27;.
+- [V2] Touch tap on frontispiece skips stanza preview (High) — Where: &#x27;burton/site/frontispiece.py&#x27; lines 65-67 and &#x27;burton/site/templates/home.html&#x27; line 31 — Evidence: Each panel is an &#x27;a.fs-panel&#x27; linking to &#x27;argument/#argument-lg2&#x27;; &#x27;touch_frontispiece&#x27; measures &#x27;tap_navigates_away_immediately_instead_of_previewing_stanza: true&#x27;, bypassing &#x27;.front-stanza&#x27; on touch screens. — Remedy: On non-hover pointers, let the first tap update &#x27;.front-stanza&#x27; with a link to the stanza&#x27;s Argument entry, and navigate on the second tap.
+- [V3] Front-page &#x27;Aa&#x27; options lack preview and Reset (Medium) — Where: &#x27;burton/site/templates/options.html&#x27; lines 97-98 and &#x27;burton/site/templates/home.html&#x27; lines 55-59 — Evidence: &#x27;front_settings_panel&#x27; (&#x27;824x337&#x27;) reports &#x27;hasExamplePassage: false&#x27; and &#x27;hasResetButton: false&#x27;; &#x27;key != &quot;home&quot;&#x27; omits &#x27;opt_sample&#x27;, leaving newcomers without live feedback for Latin colour, theme, or translation placement, or a way to reset. — Remedy: Render the unlabelled front-page specimen (&#x27;front_key.html&#x27;) inside &#x27;#settings.front-settings&#x27; without &#x27;◇&#x27; and add a &#x27;Reset to defaults&#x27; button in &#x27;options.html&#x27;.
+- [V4] &#x27;Enter, gentle Reader&#x27; leads into a 64,162-word preface unannounced (Medium) — Where: &#x27;burton/site/templates/home.html&#x27; line 26 and &#x27;burton/site/book.py&#x27; lines 86-105 — Evidence: Following &#x27;Enter, gentle Reader&#x27; through 5 short front pages reaches &#x27;djr&#x27; (&#x27;64,162&#x27; words, &#x27;291.6&#x27; minutes at 220 wpm, &#x27;820&#x27; sidenotes, &#x27;396&#x27; substantive topic notes, &#x27;202&#x27; paragraphs with no visible anchor UI). — Remedy: Show subtle word-count or reading-time labels inside &#x27;Contents&#x27; and add an in-page topic jump list built from &#x27;djr&#x27;&#x27;s &#x27;396&#x27; substantive sidenotes.
+
+### Unconsidered Visions
+- [V5] Democritus Junior&#x27;s Margin Trail — Human value: Helps newcomers navigate &#x27;292&#x27;-minute &#x27;djr&#x27; and &#x27;44&#x27; units over &#x27;5,000&#x27; words without losing their place. — Burtonian fit: Turns Burton&#x27;s own &#x27;2,367&#x27; substantive sidenotes into period-authentic chapter signposts instead of inventing modern headings. — Sketch: A quiet collapsible margin index inside long units linking substantive &#x27;.sidenote&#x27; headings to permanent paragraph anchors.
+- [V6] Two-Door Threshold Hint — Human value: Lets first-time visitors choose between reading front-to-back or jumping straight into Partition I. — Burtonian fit: Echoes Burton&#x27;s own invitation to inspect the synopses before wading through Democritus Junior&#x27;s preface. — Sketch: Keep &#x27;Enter, gentle Reader&#x27; dominant, and pair Partition I&#x27;s link in &#x27;Contents&#x27; with a subtle &#x27;Begin the Anatomy&#x27; cue.</div></details></li><li><b>Sustained Night, Commute &amp; Mobile/Tablet Reader:</b> 5 friction findings, 2 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- Night-reading ergonomics and zero-overflow responsiveness: &#x27;edition.css&#x27; lines 23-38 pair candle-gold Latin (&#x27;#e0c27a&#x27;) with dark paper (&#x27;#1c1a17&#x27;) via &#x27;prefers-color-scheme: dark&#x27; and &#x27;.theme-toggle&#x27; (&#x27;edition.js&#x27; lines 143-150), while 390 px phone and 768 px iPad viewports measure &#x27;overflowX: 0&#x27;.
+- Native popover fallback and floating controls: &#x27;edition.js&#x27; lines 249-282 and &#x27;edition.css&#x27; lines 231-236, 286-291 turn sidenotes and &#x27;at(ev)&#x27; prose taps (&#x27;edition.js&#x27; lines 607-618) into viewport-clamped popovers below 1100 px, while &#x27;.bar-r&#x27; and &#x27;.settings&#x27; (&#x27;edition.css&#x27; lines 1369-1379) stay reachable mid-chapter without background scroll bleed (&#x27;edition.js&#x27; lines 192-194).
+
+### Friction Findings
+- [SR-1] Mode and size switches lack explicit scroll anchoring (high) — Where: &#x27;edition.js&#x27; lines 75-98 (&#x27;apply()&#x27;), 121-128; &#x27;edition.css&#x27; lines 41-43, 360-415 — Evidence: &#x27;apply()&#x27; swaps &#x27;mode-gloss&#x27;, &#x27;mode-interlinear&#x27;, &#x27;mode-english&#x27;, and &#x27;html.dataset.size&#x27; then calls &#x27;scheduleLayout()&#x27; without saving viewport offset; &#x27;3.2.3.1-p60&#x27; held &#x27;delta_px: 0&#x27; only from &#x27;before_top_px: 0&#x27;, leaving mid-page reads across 44 units over 5,000 words vulnerable when &#x27;.fo&#x27; and &#x27;.ft&#x27; toggle — Remedy: Record the top visible &#x27;[id]&#x27; element offset before &#x27;apply()&#x27; and restore it after &#x27;layoutNotes()&#x27;.
+- [SR-2] No session place-keeping across multi-week chapters (high) — Where: &#x27;edition.js&#x27; lines 4-73 (&#x27;burton-settings&#x27;, &#x27;burton-uid&#x27;, &#x27;burton-fm&#x27;), 206-218 — Evidence: 44 reading units exceed 5,000 words (73 exceed 3,000; &#x27;djr&#x27; is 64,162 words or 291.6 min, &#x27;3.2.3.1&#x27; is 131.2 min) and 2,476 paragraphs carry permanent IDs with no visible anchor UI or stored position — Remedy: Save the topmost visible paragraph ID and unit URL in &#x27;localStorage&#x27; on scroll idle and surface a quiet resume link.
+- [SR-3] Inline citations (&#x27;.ic-m&#x27;) unfocusable and dead on tap below 1100 px (high) — Where: &#x27;edition.js&#x27; lines 228 (&#x27;markers&#x27;), 1067-1074 (&#x27;wide.matches&#x27; hover); &#x27;edition.css&#x27; lines 1342, 1345 — Evidence: On &#x27;3.2.3.1&#x27;, &#x27;inlineCiteCount: 18&#x27; (1,814 corpus-wide), &#x27;inlineCiteTapOpensPopover: false&#x27;, and &#x27;inlineCiteKeyboardFocusable: false&#x27;, locking out mobile and keyboard readers — Remedy: Make &#x27;.ic-m&#x27; focusable and bind tap, Enter, and Space below 1100 px to &#x27;openAsPopover()&#x27;.
+- [SR-4] Gowland notes lack visible cues below 1100 px (high) — Where: &#x27;edition.js&#x27; lines 228, 338-343, 607-618; &#x27;edition.css&#x27; line 262 (&#x27;.mref&#x27;) — Evidence: Below 1100 px, &#x27;layoutNotes()&#x27; moves 253 Gowland notes on &#x27;3.2.3.1&#x27; into popovers, yet &#x27;gowlandRefsWithVisibleCueInSample20: 1&#x27; leaves 252 of 253 notes unmarked in prose (5,797 corpus-wide) unless blindly tapped via &#x27;at(ev)&#x27; — Remedy: Add a subtle dotted cue on &#x27;span.mref&#x27; when &#x27;!isWide()&#x27; and not &#x27;text-only&#x27;.
+- [SR-5] Author links and frontispiece panels skip preview on touch (medium) — Where: &#x27;edition.js&#x27; lines 1067-1094 (&#x27;POP = &quot;a.nm, a.xref&quot;&#x27; gated on &#x27;wide.matches&#x27;), 1112-1115 (&#x27;.front .fs-panel&#x27; binds only &#x27;mouseenter&#x27; and &#x27;focus&#x27;) — Evidence: &#x27;authorLinksNavigateAwayImmediatelyBelow1100px: true&#x27; across 12,665 author links, and &#x27;tap_navigates_away_immediately_instead_of_previewing_stanza: true&#x27; on frontispiece panels (&#x27;argument/#argument-lg2&#x27;) — Remedy: On coarse pointers or below 1100 px, intercept first tap on &#x27;a.nm&#x27;, &#x27;a.xref&#x27;, and &#x27;.fs-panel&#x27; to show the preview or stanza, navigating on second tap.
+
+### Unconsidered Visions
+- [UV-1] Quiet Ribbon Place-Keeper — Human value: Commuters and bedtime readers resume mid-digression across multi-week chapters without hunting through menus. — Burtonian fit: Functions like a silk ribbon slipped into a pocket volume, invisible until needed. — Sketch: Store the topmost visible paragraph ID and timestamp in &#x27;localStorage&#x27; on scroll idle and show a muted &#x27;Resume&#x27; link in the header or front page.
+- [UV-2] Section Reading-Time Whisper — Human value: Commuters see whether a chapter takes 4 minutes or 131 minutes before stepping onto a train. — Burtonian fit: Complements Burton&#x27;s synopses with quiet scale before you enter. — Sketch: Show muted reading-minute estimates beside &#x27;.toc-panel&#x27; entries, hidden in &#x27;text-only&#x27; mode.</div></details></li><li><b>Early Modern Scholar, Philologist &amp; Seminar Student:</b> 3 friction findings, 2 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- Offline philological search that respects script and editorial integrity: &#x27;burton/site/static/search.js&#x27; (lines 1-47, 75-146) queries a cached &#x27;search-index.json&#x27; across 423 built pages with whole-word and prefix matching (&#x27;melanchol*&#x27;), folds case, diacritics, and &#x27;æ&#x27;/&#x27;œ&#x27; ligatures without altering stored text, preserves &#x27;lang&#x27; runs via &#x27;tagScripts()&#x27; for V4 compliance, and distinguishes Burton&#x27;s text, sidenotes, and source-labelled translations.
+- Honest provenance and note separation: &#x27;burton/site/authors_pages.py&#x27; (lines 53-97, 105-119), &#x27;burton/site/templates/authors.html&#x27; (lines 5-15), and &#x27;burton/site/templates/author.html&#x27; (lines 5-30) separate &#x27;parsed&#x27;, &#x27;partial&#x27;, and &#x27;unidentified&#x27; citations without guessing, surface &#x27;Wikidata (CC0)&#x27; and &#x27;machine draft&#x27; labels explicitly, and &#x27;burton/site/render.py&#x27; (lines 500-608) keeps Burton&#x27;s own words and &#x27;cites&#x27;/&#x27;note&#x27; classification (&#x27;note_kind&#x27;) distinct from added translations and KJV verses.
+
+### Friction Findings
+- [S1] Deep-link arrivals to sidenotes and search hits lose position and highlight (high) — Where: &#x27;burton/site/static/edition.js&#x27; lines 333-458 (&#x27;layoutNotes()&#x27;, &#x27;asPopover()&#x27;, &#x27;note.style.top&#x27;), &#x27;burton/site/static/search.js&#x27; line 134, and &#x27;deep_link_arrival&#x27; probes. Evidence: Because &#x27;layoutNotes()&#x27; closes popovers (&#x27;closeNote(false)&#x27;, line 344) and computes &#x27;note.style.top&#x27; after browser hash scrolling, arriving at &#x27;/3.2.3.1/#3.2.3.1-n5&#x27; from &#x27;author.html&#x27; (line 28) at 1440px leaves &#x27;inViewport: false&#x27;, &#x27;refInViewport: false&#x27;, and &#x27;isHotOrPinned: false&#x27;; at 390px, &#x27;popoverOpen: false&#x27; and &#x27;refInViewport: false&#x27;. Likewise, &#x27;search_to_paragraph_hash&#x27; records &#x27;hasTargetHighlightStyle: false&#x27; in both viewports, stranding readers inside 64,162-word &#x27;djr&#x27; or 28,873-word &#x27;3.2.3.1&#x27;. Remedy: After &#x27;layoutNotes()&#x27; finishes and on &#x27;hashchange&#x27;, scroll the target note or &#x27;#ref-&#x27; anchor into view, pin or open its popover, and transiently highlight arrived paragraphs and matched search terms via URL parameters.
+- [S2] Permanent paragraph IDs and Penguin pagebreaks lack citation-copy and jump UI (medium) — Where: &#x27;corpus_and_navigation&#x27; (&#x27;paragraphs_with_permanent_ids_but_no_visible_anchor_ui&#x27;: 2,476) and &#x27;deep_link_arrival&#x27; (&#x27;table_to_pagebreak_hash.beforeContent&#x27;: &#x27;&quot;[141]&quot;&#x27;). Evidence: None of the 2,476 permanently identified paragraphs expose a clickable permalink or citation string, forcing manual URL assembly; similarly, Penguin pagebreak markers exist in the DOM yet offer no direct jump from a seminar reference like &#x27;p. 412&#x27; in &#x27;3.2.3.1&#x27;. Remedy: Render a subtle focusable anchor trigger on each paragraph ID that copies &#x27;Part. Sect. Memb. Subsect.&#x27; plus pagebreak and URL, and add a static page-number jump resolver (withholding Gowland pagination from public builds).
+- [S3] Reference indices lack filtering, sorting, and A-Z jumps (medium) — Where: &#x27;burton/site/templates/authors.html&#x27; lines 7-15 (&#x27;.author-index&#x27;), &#x27;corpus_and_navigation.authors_page&#x27;, and &#x27;table_page&#x27;. Evidence: &#x27;Authors cited&#x27; has 253 rows with &#x27;has_search_or_filter_input: false&#x27;, &#x27;has_sortable_headers: false&#x27;, and &#x27;has_alpha_jump_bar: false&#x27;, preventing sorting by &#x27;Citations&#x27; or filtering by Burton&#x27;s &#x27;forms&#x27; aliases (&#x27;author.html&#x27; line 6); &#x27;The Table&#x27; has 574 entries across 24 letter headings with &#x27;has_alpha_jump_bar: false&#x27; and &#x27;has_filter_input: false&#x27;. Remedy: Add client-side filter inputs, sortable column headers on &#x27;.author-index&#x27; (indexing alias forms), and a sticky 24-letter A-Z jump bar on The Table.
+
+### Unconsidered Visions
+- [V1] Seminar Commonplace &amp; Citation Tray — Human value: Lets students gather permanent paragraph links, sidenotes, and labelled translations into an offline reading tray and copy formatted citations. Burtonian fit: Echoes Burton&#x27;s own florilegium practice while preserving source fidelity and provenance. Sketch: Persist chosen IDs in &#x27;localStorage&#x27; and build citations from existing DOM unit, pagebreak, and &#x27;data-src&#x27; attributes.
+- [V2] Multi-Edition Locator Bar — Human value: Jumps straight from &#x27;Part. Sect. Memb. Subsect.&#x27;, &#x27;p. 412&#x27;, or &#x27;author:ovid&#x27; to the exact anchor across 157 reading units. Burtonian fit: Unites seminar discussions across Gowland, Dell &amp; Jordan-Smith, and early printings. Sketch: Extend the cached offline index in &#x27;search.js&#x27; with a profile-aware section and pagebreak map.</div></details></li><li><b>Browsing Dipper, Bibliomancer &amp; Commonplacer:</b> 4 friction findings, 3 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- Synoptic orientation (`burton/site/synopsis.py` lines 33-47, 66-180, 183-220): Sets astrological and alchemical signs in rubric (`&#x27;span.sym&#x27;`), keeps `&#x27;syn-see&#x27;` and `&#x27;syn-ref&#x27;` links intact, and builds `&#x27;branch_html&#x27;` so any unit page stays rooted in Burton&#x27;s Partition tree.
+- Zero-server reader state (`burton/site/templates/page.html` lines 14, 24-44): Saving `&#x27;burton-settings&#x27;` in `&#x27;localStorage&#x27;` preserves mode and theme choices offline without touching base text.
+- Curated humoral vocabulary (`data/glossary.yaml` lines 8-140): 25 terms, 4 formulae, 9 locators, and 24 authorities already distinguish period senses like `&#x27;hypochondriaca&#x27;` and `&#x27;spiritus animales&#x27;` from modern usage.
+
+### Friction Findings
+- [DF1] Permanent paragraph IDs invisible for clipping and landing (high) — Where: Layer 1 `&#x27;paragraphs_with_permanent_ids_but_no_visible_anchor_ui&#x27;` and `&#x27;deep_link_arrival.search_to_paragraph_hash&#x27;` — Evidence: 2,476 paragraphs carry permanent IDs across 44 units over 5,000 words (up to 64,162 words in `&#x27;djr&#x27;`), yet lack visible anchor UI, and hash arrivals show `&#x27;hasTargetHighlightStyle: false&#x27;`. — Remedy: Show a subtle marginal pilcrow on hover or focus to copy or save the permanent ID, plus a `:target` highlight rule.
+- [DF2] Curated humoral glossary hidden from readers (medium) — Where: `data/glossary.yaml` lines 1-140 and Layer 1 `&#x27;elucidation_coverage&#x27;` — Evidence: 25 medical terms, 9 locators, and 24 authorities exist in YAML, yet `&#x27;reader_glossary_page_exists: false&#x27;` and `&#x27;obsolete_glosses_default_enabled: false&#x27;`, leaving dippers unassisted on `&#x27;atra bilis&#x27;`, `&#x27;per consensum&#x27;`, `&#x27;℞&#x27;`, and `&#x27;ß&#x27;`. — Remedy: Generate `&#x27;/glossary/&#x27;` from `data/glossary.yaml` and link it from `&#x27;footer.site&#x27;` or `&#x27;#settings&#x27;`.
+- [DF3] Set-piece doorways hidden below the fold (medium) — Where: `burton/site/build.py` lines 445-460, `burton/site/templates/unit.html` lines 6-10, and Layer 1 `&#x27;front_page_failing_1100plus&#x27;` — Evidence: At 1440x900, `&#x27;synVisibleWithoutScroll: false&#x27;` and `&#x27;contentsVisibleWithoutScroll: false&#x27;` (`&#x27;overflowY: 220&#x27;`), burying famous digressions (`&#x27;2.2.3.1&#x27;` Air, `&#x27;1.2.3.15&#x27;` Scholars, `&#x27;1.2.1.2&#x27;` Spirits, `&#x27;3.2.3.1&#x27;` Love) among 157 steps while public `&#x27;table&#x27;` entries lack links. — Remedy: Add curated set-piece doorways and a gentle random-dip link in Contents or the front page.
+- [DF4] Reference indexes lack jump bars and filters (low) — Where: Layer 1 `&#x27;authors_page&#x27;` and `&#x27;table_page&#x27;` — Evidence: `&#x27;authors&#x27;` (253 rows) and `&#x27;table&#x27;` (574 entries across 24 letter headings) both report `&#x27;has_alpha_jump_bar: false&#x27;` and `&#x27;has_filter_input: false&#x27;`. — Remedy: Add a compact A-Z jump bar and client-side filter input to both static pages.
+
+### Unconsidered Visions
+- [DV1] Period-Authentic Personal Commonplace Book — Human value: Lets dippers save passages, sidenotes, and translations across 423 pages without losing context. — Burtonian fit: Revives Renaissance commonplacing under topical heads while staying static and offline. — Sketch: A quiet marginal `&#x27;+&#x27;` on hover or focus saves unit title, permanent ID, synopsis path, quote, and optional head to `&#x27;localStorage&#x27;` (`&#x27;burton-commonplace&#x27;`), with `&#x27;/commonplace/&#x27;` exporting Markdown carrying full Burton citations.
+- [DV2] Curated Digression Doorways and Sortes Burtonianae — Human value: Offers joyful entry into Burton&#x27;s set-pieces before tackling 64,162 words of `&#x27;djr&#x27;`. — Burtonian fit: Mirrors Burton&#x27;s invitation to dip at hazard through Air, Spirits, Scholars, Love-Melancholy, and Remedies. — Sketch: A `&#x27;Doorways&#x27;` shelf plus `&#x27;Sortes Burtonianae&#x27;` button picks a curated or weighted-random paragraph ID from static metadata, landing on a highlighted `:target` passage with the `&#x27;{&#x27;` synopsis mark ready.
+- [DV3] Live Humoral and Apothecary Glossary — Human value: Unlocks medical Latin, humours, and recipe symbols (`&#x27;℞&#x27;`, `&#x27;℥&#x27;`, `&#x27;ʒ&#x27;`, `&#x27;℈&#x27;`, `&#x27;ß&#x27;`) for general readers. — Burtonian fit: Turns the edition&#x27;s translation standard into a Burtonian cabinet of terms without altering source text. — Sketch: Build `&#x27;/glossary/&#x27;` from `data/glossary.yaml` grouped into Humours, Apothecary Signs, Locators, and Authorities, linking each entry to `&#x27;/search/&#x27;`.</div></details></li><li><b>Burton Elucidation &amp; Human Design-Principles Critic:</b> 3 friction findings, 3 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- Quiet source signs and self-translation respect: &#x27;burton/site/render.py&#x27; (lines 77-110, 627-668) marks provenance with compact signs (&#x27;.src-m&#x27;, &#x27;.prov&#x27;) instead of prose clutter, and &#x27;burton_renders&#x27; honours his 3,435 &#x27;.burton-tr&#x27; passages by hiding redundant translations (&#x27;own_edition_tr_hidden&#x27;).
+- Facing rhythm and scroll stability: &#x27;burton/site/facing.py&#x27; (lines 36-91) pairs &#x27;ad-librum&#x27;, &#x27;lectori&#x27;, and &#x27;heraclite&#x27; row-for-row without &#x27;[Translation]&#x27; headings and folds &#x27;.ftr-note&#x27; entries over 200 characters under &#x27;.ftr-more&#x27;; switching modes on &#x27;3.2.3.1&#x27; (&#x27;#3.2.3.1-p60&#x27;) keeps zero scroll delta.
+
+### Friction Findings
+- [E1] Margin overload and vertical drift on long units (High) — Where: &#x27;burton/site/gowland_notes.py&#x27; (lines 31, 140-151) and &#x27;burton/site/render.py&#x27; (lines 585-607, 639-708) — Evidence: On &#x27;3.2.3.1&#x27; (28,873 words), 811 margin items crowd the rails; at 1440 px, 85 drift over 120 px (max 281 px) and 19 fold; at 1120 px one-side margins, 217 fold and 144 drift over 120 px. All 253 Gowland notes enter the margin regardless of kind (&#x27;pointer&#x27;, &#x27;source&#x27;, &#x27;identity&#x27;, &#x27;explanation&#x27;, &#x27;gloss&#x27;), competing with 281 Burton sidenotes and &#x27;.fp&#x27; cards — Remedy: Prioritize margin space: keep substantive Burton &#x27;.sidenote&#x27; topics and active &#x27;.fp&#x27; translations visible; collapse pure &#x27;cites&#x27; notes plus Gowland &#x27;pointer&#x27; and &#x27;identity&#x27; entries into inline click triggers.
+- [E2] Self-translations hide playful deviations from literal text (Medium) — Where: &#x27;burton/site/render.py&#x27; (&#x27;burton_renders&#x27;, &#x27;tr_markup&#x27;, lines 627-668, 728-743) — Evidence: Across 3,435 &#x27;.burton-tr&#x27; passages, when &#x27;burton_renders&#x27; is true, &#x27;tr_markup&#x27; suppresses &#x27;dj&#x27; and machine translations (&#x27;own_edition_tr_hidden&#x27;), showing only &#x27;Burton gives it in English himself&#x27; or his quoted span, hiding where Burton embellishes — Remedy: Keep the clean default, and add a collapsed &#x27;compare literal&#x27; toggle inside &#x27;.ft-own&#x27; when &#x27;djs1927&#x27; or machine versions exist.
+- [E3] Valuable elucidation layers stay hidden or unclickable (High) — Where: &#x27;burton/site/glosses.py&#x27; (lines 1-10, 155-167), &#x27;data/glossary.yaml&#x27; (lines 1-90), and &#x27;3.2.3.1&#x27; probes — Evidence: All 935 obsolete glosses and 1,181 restored notes ship off by default; &#x27;data/glossary.yaml&#x27; (25 entries including &#x27;ß&#x27; for half-ounce) lacks a reader page (&#x27;reader_glossary_page_exists: false&#x27;); below 1100 px, 18 &#x27;.ic-m&#x27; citations lack keyboard focus and tap popovers, only 1 of 20 Gowland refs shows a cue, and hash links land unhighlighted or off-viewport — Remedy: Publish a &#x27;Humours &amp; Measures&#x27; sheet from &#x27;data/glossary.yaml&#x27;, make &#x27;.ic-m&#x27; and Gowland refs keyboard-focusable with touch cues, and highlight plus center hash targets.
+
+### Unconsidered Visions
+- [V1] Burton&#x27;s Margin Index — Human value: Orients readers across long units like &#x27;djr&#x27; (291.6 min) and &#x27;3.2.3.1&#x27; (131.2 min) — Burtonian fit: Uses Burton&#x27;s own 2,367 substantive &#x27;note&#x27; marginalia (396 in &#x27;djr&#x27;, 70 in &#x27;3.2.3.1&#x27;) rather than modern subheadings — Sketch: Populate the top-left &#x27;{&#x27; synopsis drawer with a topic outline of &#x27;.sn-k&#x27; &#x27;note&#x27; anchors, excluding the 3,336 &#x27;cites&#x27;-only notes.
+- [V2] Apothecary &amp; Humoral Pocket Key — Human value: Clarifies Galenic terms (&#x27;hypochondriaca&#x27;, &#x27;per consensum&#x27;) and recipe signs (&#x27;℞&#x27;, &#x27;℥&#x27;, &#x27;ʒ&#x27;, &#x27;℈&#x27;, &#x27;ß&#x27;) without breaking flow — Burtonian fit: Surfaces &#x27;data/glossary.yaml&#x27; (lines 8-70) while keeping base text untouched — Sketch: Link apothecary signs and humoral terms to a compact &#x27;Humours &amp; Measures&#x27; drawer, with a gentle toggle for obsolete glosses and restored notes.
+- [V3] Soft Reveal of Burton&#x27;s Translation Craft — Human value: Shows how Burton reshapes classical tags into 17th-century English — Burtonian fit: Preserves the quiet &#x27;.st-full&#x27; reading surface — Sketch: A muted &#x27;literal&#x27; link inside &#x27;.ft-own&#x27; reveals &#x27;dj&#x27; or machine wording on demand, paired with &#x27;finding_line&#x27; (lines 710-726) where Burton&#x27;s memory diverges.</div></details></li><li><b>Book Typographer &amp; Interaction Craftsmanship Critic:</b> 4 friction findings, 2 new visions<details style='margin:0.25rem 0 0.4rem 0.6rem'><summary style='cursor:pointer;color:var(--muted)'>Read scout report</summary><div style='white-space:pre-wrap;font-size:0.88rem;padding:0.35rem 0.55rem;background:var(--paper);border-left:2px solid var(--rule);margin-top:0.25rem'>### Shines
+- **Composite printer&#x27;s synopses and front-matter craft**: Building braces from unstretched SVG curls, beaks, and rules (&#x27;edition.css:460-475&#x27;), turning tall heads (&#x27;edition.js:750-765&#x27;), setting the Dedication as a double-rubric tablet (&#x27;edition.css:1191-1205&#x27;), and honouring &#x27;As printed&#x27; by stripping added colours, links, and glosses while keeping Burton&#x27;s italic note letters (&#x27;edition.css:1347-1366&#x27;) achieve genuine typographic fidelity.
+- **Restrained dual-margin and print choreography**: Separating Gowland&#x27;s notes left and Burton&#x27;s notes plus translations right from 1380px (&#x27;edition.css:725-728&#x27;), shortening crowded margin notes non-destructively with &#x27;more&#x27; (&#x27;edition.css:1118-1126&#x27;), and floating printed sidenotes into a 31% right margin (&#x27;edition.css:649-654&#x27;) preserve page rhythm without hiding scholarship.
+
+### Friction Findings
+- [P1] Wide-window print retains a 21rem left margin (high) — Where: &#x27;edition.css:648-649&#x27; and &#x27;edition.css:727&#x27; — Evidence: &#x27;@media print&#x27; resets &#x27;.unit&#x27; with &#x27;margin: 0&#x27; then &#x27;margin-right: 31% !important&#x27;, but &#x27;.two-side .unit&#x27; at 1380px and wider has higher specificity and later source order, leaving &#x27;margin-left: calc(var(--margin-col) + var(--gap))&#x27; active when printing from wide windows. — Remedy: Add &#x27;margin-left: 0 !important;&#x27; inside &#x27;@media print&#x27; for &#x27;.unit&#x27; and &#x27;.two-side .unit&#x27;.
+- [P2] Folded &#x27;more&#x27; gradient ignores gold &#x27;.hot&#x27; highlight (low) — Where: &#x27;edition.css:1125-1126&#x27; — Evidence: &#x27;.unit.sn-laid .mn-fold.hot .fold-more&#x27; repeats &#x27;var(--paper)&#x27; instead of &#x27;var(--hot)&#x27;, leaving a paper-tinted notch over highlighted cards. — Remedy: Replace &#x27;var(--paper)&#x27; on line 1126 with &#x27;var(--hot)&#x27;.
+- [P3] Missing keyboard parity for &#x27;.pw&#x27; previews and page turning (medium) — Where: &#x27;edition.js:1067-1094&#x27; and Layer 1 &#x27;narrow_touch_parity_3_2_3_1&#x27; — Evidence: Hover previews on &#x27;a.nm, a.xref&#x27; require &#x27;wide.matches&#x27; and mouseover, &#x27;openName&#x27; only binds &#x27;a.nm-x&#x27;, &#x27;inlineCiteKeyboardFocusable&#x27; is false across 18 measured inline cites, and no &#x27;/&#x27; search or &#x27;[&#x27; / &#x27;]&#x27; page-turn keys exist across 157 reading-order units. — Remedy: Add focus-triggered or shortcut previews for &#x27;a.nm, a.xref&#x27;, restore trigger focus on &#x27;Escape&#x27;, and bind &#x27;/&#x27; and &#x27;[&#x27; / &#x27;]&#x27; outside inputs.
+- [P4] Left-margin rubric rule &#x27;P3&#x27; and synopsis rest pace &#x27;H2&#x27; need calibration (low) — Where: &#x27;to-revisit.md:8-9&#x27;, &#x27;edition.css:1132-1135&#x27;, and &#x27;edition.js:694, 771, 824-836&#x27; — Evidence: In &#x27;P3&#x27;, placing Burton&#x27;s rubric rule on the text-facing right edge of &#x27;.mn-l&#x27; separates his hand from Gowland&#x27;s, though ragged line ends float inside the gutter; in &#x27;H2&#x27;, &#x27;T_OPEN&#x27; (650ms) plus &#x27;T_PAUSE&#x27; (250ms) starts the next layer&#x27;s fill 900ms into a 1150ms CSS unfold (&#x27;--syn-t-open&#x27; at &#x27;edition.css:476&#x27;), before &#x27;settle&#x27; (1700ms) completes. — Remedy: Keep &#x27;P3 B&#x27; and test right-alignment on &#x27;.mn-l&#x27;; for &#x27;H2&#x27;, keep 650ms first fill and raise &#x27;T_PAUSE&#x27; to 650ms or shorten &#x27;--syn-t-open&#x27; to 0.8s so each brace settles first.
+
+### Unconsidered Visions
+- [V1] Typographic Print Running Head — Human value: Readers printing long units like &#x27;3.2.3.1&#x27; (131.2 estimated minutes, 331 sidenotes) get section context at the top of printed sheets. — Burtonian fit: Echoes early-modern running titles without adding screen UI. — Sketch: Expose a &#x27;@media print&#x27;-only running headline above &#x27;article.unit&#x27; derived from existing &#x27;.syn-badge&#x27; path text.
+- [V2] Quiet Keyboard Footstep Preview — Human value: Keyboard readers moving through &#x27;a.nm&#x27; or &#x27;a.xref&#x27; links can inspect author or cross-reference cards without losing their scroll place. — Burtonian fit: Treats every cited name as an inline marginal gloss rather than a forced page jump. — Sketch: Add a quiet preview key on focused &#x27;a.nm&#x27; and &#x27;a.xref&#x27; links that opens a locked &#x27;.pw&#x27; card and restores focus on &#x27;Escape&#x27;.</div></details></li></ul>
+    <p class="demo-label" style="margin-top:.65rem">Ideas Deliberately Vetoed by Carbon (Pro Guardrail Judge)</p>
+    <ul class="compact-list"><li><b>Collapsing Burton&#x27;s pure &#x27;cites&#x27; sidenotes (3,336 notes) out of the margin into inline click-only triggers alongside Gowland pointer/identity entries (Persona 5 E1 partial remedy)</b> &mdash; <i>Vetoed:</i> Violates Rounds 1-9 settled aesthetics and printed fidelity: Burton&#x27;s own marginal citations belong visually in the margin alongside his prose (shortened gracefully with &#x27;more&#x27;, never held back) and are essential to keeping &#x27;As printed&#x27; authentic. Only non-authorial Gowland pointers and translations may yield space under density pressure.</li><li><b>Rendering a full passage specimen inside the front-page &#x27;#settings.front-settings&#x27; popover or reusing the reading-page &#x27;opt_sample&#x27; on &#x27;home.html&#x27; (Persona 1 V3 partial remedy)</b> &mdash; <i>Vetoed:</i> Reusing the standard reading-page sample would introduce &#x27;◇&#x27; labels onto the front page, directly violating CLAUDE.md&#x27;s strict rule against showing any &#x27;◇&#x27; on &#x27;home.html&#x27; or &#x27;front_key.html&#x27;. Even without &#x27;◇&#x27;, embedding a second full specimen inside the 824x337 front-page popover duplicates &#x27;+ How a page looks&#x27; and risks overflowing compact 1280x720 and 1366x768 one-screen layouts. Keep only a clean &#x27;Reset to defaults&#x27; button in &#x27;options.html&#x27;.</li><li><b>Exposing Penguin &#x27;pb&#x27; page-number jumps (&#x27;[141]&#x27;), Gowland &#x27;span.mref&#x27; touch cues, or Gowland translations in public builds (Persona 2 SR-4, Persona 3 S2/V2, Persona 4 DF3)</b> &mdash; <i>Vetoed:</i> Violates CLAUDE.md Rule 5: all Gowland editorial matter (&#x27;ed:trans&#x27;, &#x27;ed:verse-trans&#x27;, &#x27;ed:enref&#x27;, &#x27;supplied[@resp=#gowland]&#x27;, and &#x27;pb&#x27;) must never leak into a &#x27;public&#x27; build. Page-number jumpers using Gowland pagination, &#x27;span.mref&#x27; cues, and Gowland glosses must remain strictly conditional on private-only builds and pass the profile leak check.</li><li><b>Turning all 935 obsolete-word glosses or 1,181 restored Democritus Minor notes on by default, or inserting modern subheadings into Burton&#x27;s prose (Persona 1 V4, Persona 5 E3)</b> &mdash; <i>Vetoed:</i> Violates quiet reading ergonomics and non-destructive text discipline: auto-marking 2,116 additional glosses and restored notes on first visit would visually overwhelm 17th-century prose, and invented modern headings break period fidelity. Keep them opt-in via &#x27;Aa&#x27; options and &#x27;/glossary/&#x27;, and build section outlines strictly from Burton&#x27;s own 2,367 substantive sidenotes.</li><li><b>Placing always-visible reading-time badges, resume banners, or &#x27;Doorways&#x27; / &#x27;Sortes&#x27; cards outside the folded &#x27;Contents&#x27; on &#x27;home.html&#x27; (Persona 1 V4/V6, Persona 2 UV-1/UV-2, Persona 4 DF3/DV2)</b> &mdash; <i>Vetoed:</i> Reverses Rounds 1-9 front-page serenity: &#x27;home.html&#x27; must fit cleanly on one screen with no running header/footer, no scrollbars, and &#x27;Contents&#x27; folded by default. Any place-memory resume link, doorway shelf, or reading-time hint must live cleanly inside the folded &#x27;Contents&#x27; drawer and disappear in &#x27;As printed&#x27;.</li><li><b>Displaying permanent anchor pilcrows, copy buttons, or commonplace &#x27;+&#x27; triggers continuously beside all 2,476 paragraphs (Persona 3 S2/V1, Persona 4 DF1/DV1)</b> &mdash; <i>Vetoed:</i> Contradicts Rounds 1-9 clean-page typography and &#x27;As printed&#x27; purity: scattering 2,476 always-on icons across the gutter would create persistent visual noise over Burton&#x27;s prose. Citation and commonplace triggers must stay invisible until paragraph hover or keyboard focus and vanish completely in &#x27;.text-only&#x27;.</li><li><b>Showing unlabelled machine literal translations inside Burton&#x27;s self-translation compare toggle on reading pages (Persona 5 E2/V3)</b> &mdash; <i>Vetoed:</i> Violates CLAUDE.md&#x27;s honesty rule: every machine-produced rendering on a reading page (unlike the front-page specimen) must carry the visible &#x27;◇&#x27; provenance mark with model, prompt, and date tooltip, while keeping Gowland&#x27;s wording strictly out of public builds.</li></ul>
+  </details>
+
+  <div class="filter-bar" role="group" aria-label="Filter proposals">
+    <button type="button" class="flt-btn" data-flt="all" aria-pressed="true">All (18)</button>
+    <button type="button" class="flt-btn" data-flt="tier1" aria-pressed="false">Tier 1 &middot; Silent Fixes (5)</button>
+    <button type="button" class="flt-btn" data-flt="tier2" aria-pressed="false">Tier 2 &middot; Reading Ergonomics (5)</button>
+    <button type="button" class="flt-btn" data-flt="tier3" aria-pressed="false">Tier 3 &middot; Elucidating Burton &amp; Visions (6)</button>
+    <button type="button" class="flt-btn" data-flt="revisit" aria-pressed="false">Revisit P3 &amp; H2 (2)</button>
+  </div>
+
+  <section data-sec="tier1">
+    <h2 class="tier-h">Tier 1 &middot; Silent Fixes (Preserve Exact Look, Repair Hidden Friction)</h2>
+    <div class="cards" id="tier1"><article class='item' data-bucket='tier1' data-code='F1'><div class='item-head'><div><span class='item-code'>F1</span><span class='item-title'>Fix 16:10 laptop front page collapse to one column (and 2 px half-screen overflow)</span></div></div><p class='meta'>Risk: Low. Pure front-page CSS adjustment; verify all 11 tested screen sizes afterward so folded Synopses and Contents still sit inside one screen on 1280x720 through 1920x1080 without clipping the engraving. · Evidence: In &#x27;front_page_viewports&#x27;, &#x27;1440x900_macbook&#x27; measures &#x27;gridCols: 1&#x27;, &#x27;scrollH: 1120&#x27;, &#x27;overflowY: 220&#x27;, &#x27;synVisibleWithoutScroll: false&#x27;, &#x27;contentsVisibleWithoutScroll: false&#x27;, and &#x27;infoRightGapPx: 202&#x27;; &#x27;1280x800_laptop13&#x27; measures &#x27;gridCols: 1&#x27;, &#x27;scrollH: 913&#x27;, &#x27;overflowY: 113&#x27;, and &#x27;infoRightGapPx: 93&#x27;; &#x27;1024x900_halfscreen&#x27; shows &#x27;overflowX: 2&#x27;. By contrast, &#x27;1366x768_laptop&#x27; and &#x27;1280x720_win150pct&#x27; achieve &#x27;gridCols: 2&#x27; and &#x27;fitsOneScreen: true&#x27;. Driven by &#x27;@container front-side (width &lt; 39em)&#x27;, &#x27;.front-side&#x27; max width, and height-limited compact rules in &#x27;burton/site/static/edition.css&#x27; lines 782, 792, 932, and 947-953. · Files if adopted: burton/site/static/edition.css</p><p class='plain'><b>What happens for a reader:</b> On common 16:10 laptops (1440x900 MacBook and 1280x800 13-inch laptops), the front page collapses into a single vertical column, pushing Synopses and Contents below the fold with vertical scrollbars even though shorter 1366x768 and 1280x720 laptop screens fit cleanly in two columns on one screen. A half-screen 1024x900 window also leaks 2 px horizontally.</p><p class='plain'><b>Proposed repair:</b> Lower the &#x27;@container front-side&#x27; single-column cutoff from &#x27;39em&#x27; to roughly &#x27;33em&#x27; (or use stable &#x27;rem&#x27;), allow &#x27;.front-side&#x27; to expand slightly past &#x27;76rem&#x27; so it uses the wasted &#x27;202 px&#x27; gap on 1440x900 screens, extend the compact vertical-tightening rule at line 932 up to &#x27;max-height: 920px&#x27;, and clamp horizontal padding around 1024 px to erase the &#x27;2 px&#x27; horizontal spill.</p><div class='demo'>
+<p class="demo-label">Interactive 16:10 Laptop Wireframe (1440&times;900 &amp; 1280&times;800)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" data-fpview="current" aria-pressed="true">Current 1440&times;900 (wrapped, +220 px scroll)</button>
+  <button type="button" class="proto-btn" data-fpview="proposed" aria-pressed="false">Proposed 1440&times;900 (2 cols, fits 1 screen)</button>
+</div>
+<div class="fp-sim" id="fpSim">
+  <div class="fp-sim-eng">Engraving<br><small>526 px wide</small></div>
+  <div class="fp-sim-side is-wrapped" id="fpSimSide">
+    <div class="fp-sim-door">Enter, gentle Reader &nbsp;|&nbsp; Stanza</div>
+    <div class="fp-sim-box">The Book &amp; The Reader box<br><small>(pushes Synopses below screen when wrapped)</small></div>
+    <div class="fp-sim-syn"><em>Synopses</em> &amp; <em>Contents</em></div>
+  </div>
+</div>
+<p class="demo-note" id="fpSimNote">Today at 1440&times;900, <code>.front-side</code> drops just under <code>39em</code>, forcing 1 column and leaving 202 px empty on the right.</p>
+</div><div class='pick'><button type='button' data-opt='Fix' aria-pressed='false'>Fix</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='F1' placeholder='Optional note on F1&hellip;' aria-label='Optional note on F1'></div></article><article class='item' data-bucket='tier1' data-code='F2'><div class='item-head'><div><span class='item-code'>F2</span><span class='item-title'>Center and highlight deep-link arrivals to sidenotes and search hits</span></div></div><p class='meta'>Risk: Low to medium. Carefully guard scroll centering so it runs only on initial load with a hash or explicit &#x27;hashchange&#x27;, never hijacking scroll when toggling reading modes or resizing the window. · Evidence: In &#x27;deep_link_arrival&#x27;, navigating from &#x27;burton/site/templates/author.html&#x27; line 28 to a sidenote hash at &#x27;1440&#x27; leaves &#x27;inViewport: false&#x27;, &#x27;refInViewport: false&#x27;, and &#x27;isHotOrPinned: false&#x27;; at &#x27;390&#x27;, &#x27;refInViewport: false&#x27;, &#x27;isHotOrPinned: false&#x27;, and &#x27;popoverOpen: false&#x27;. Navigating from &#x27;burton/site/static/search.js&#x27; line 134 to a paragraph hash shows &#x27;hasTargetHighlightStyle: false&#x27; in both wide and narrow views. Caused by &#x27;layoutNotes()&#x27; calling &#x27;closeNote(false)&#x27; and resetting &#x27;note.style.top&#x27; after browser scroll in &#x27;burton/site/static/edition.js&#x27; lines 333-458, plus missing &#x27;:target&#x27; styling in &#x27;burton/site/static/edition.css&#x27;. · Files if adopted: burton/site/static/edition.js, burton/site/static/edition.css, burton/site/static/search.js</p><p class='plain'><b>What happens for a reader:</b> Jumping directly to a sidenote from an author page or to a paragraph from offline Search leaves readers stranded off-screen or squinting at an unmarked wall of text—because margin layout runs after the browser&#x27;s initial scroll, closes popovers, and offers no visual highlight on the destination paragraph.</p><p class='plain'><b>Proposed repair:</b> After &#x27;layoutNotes()&#x27; finishes placing margin cards—and whenever &#x27;hashchange&#x27; fires—check if the URL targets a sidenote (&#x27;-n...&#x27;) or paragraph (&#x27;-p...&#x27;): on wide screens, smoothly center and highlight-pin the target sidenote; below 1100 px, scroll the corresponding &#x27;#ref-&#x27; marker into view and open its popover with &#x27;asPopover()&#x27; instead of closing it. Add a gentle, fadeable &#x27;:target&#x27; background glow in &#x27;edition.css&#x27; (disabled in &#x27;As printed&#x27;), and allow &#x27;search.js&#x27; links to briefly spotlight the arriving paragraph.</p><div class='demo'>
+<p class="demo-label">Deep-Link Arrival Simulator (<code>/3.2.3.1/#3.2.3.1-n5</code> at 1440&times;900)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" data-dl="before" aria-pressed="true">Current (browser scrolls before layoutNotes)</button>
+  <button type="button" class="proto-btn" data-dl="after" aria-pressed="false">Proposed (re-scroll after layout + light up both)</button>
+</div>
+<div class="dl-stage" id="dlStage">
+  <div class="dl-row">
+    <div class="dl-main">Burton&rsquo;s text: &ldquo;&hellip; <span class="dl-words" id="dlWords">Love is a species of melancholy</span> <sup class="dl-ref">e</sup> &hellip;&rdquo;</div>
+    <div class="dl-margin" id="dlNote"><span class="ok-box">e</span> <span class="sc">note</span> Avicenna, <i>lib. 3, fen. 1, tract. 4</i></div>
+  </div>
+  <p class="demo-note" id="dlMsg" style="margin:.45rem 0 0">Before fix: after <code>layoutNotes()</code> moves the note into absolute position, both anchor and note sit off-screen and unlit.</p>
+</div>
+</div><div class='pick'><button type='button' data-opt='Fix' aria-pressed='false'>Fix</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='F2' placeholder='Optional note on F2&hellip;' aria-label='Optional note on F2'></div></article><article class='item' data-bucket='tier1' data-code='F3'><div class='item-head'><div><span class='item-code'>F3</span><span class='item-title'>Restore tap and keyboard access to inline citations and narrow-screen Gowland cues</span></div></div><p class='meta'>Risk: Low. Strictly keep &#x27;span.mref&#x27; cues conditional on non-&#x27;text-only&#x27; CSS so &#x27;As printed&#x27; remains untouched and public builds remain 100 percent leak-free. · Evidence: On &#x27;3.2.3.1&#x27; in &#x27;narrow_touch_parity_3_2_3_1&#x27;, &#x27;inlineCiteCount: 18&#x27; (&#x27;1,814&#x27; across the corpus) reports &#x27;inlineCiteTapOpensPopover: false&#x27; and &#x27;inlineCiteKeyboardFocusable: false&#x27;, and &#x27;gowlandRefsWithVisibleCueInSample20: 1&#x27; out of &#x27;253&#x27; Gowland notes (&#x27;5,797&#x27; across the corpus). In &#x27;burton/site/static/edition.js&#x27; lines 228, 338-343, 607-618, and 1067-1074, hover previews require &#x27;wide.matches&#x27; and &#x27;edition.css&#x27; lines 262, 1342, and 1345 provide no visible tap cue on &#x27;span.mref&#x27; below 1100 px. · Files if adopted: burton/site/static/edition.js, burton/site/static/edition.css</p><p class='plain'><b>What happens for a reader:</b> On phones, tablets, and narrow windows below 1100 px—where margin notes turn into tap popovers—inline citation chips (&#x27;.ic-m&#x27;) cannot be tapped or reached by keyboard, and 95 percent of Gowland&#x27;s notes have no visible cue in the text so readers have no idea anything is waiting to be tapped there.</p><p class='plain'><b>Proposed repair:</b> Give &#x27;.ic-m&#x27; inline citations keyboard focus (&#x27;tabindex&#x27; and button semantics) and wire tap, Enter, and Space below 1100 px to &#x27;openAsPopover()&#x27;. When below 1100 px and not in &#x27;As printed&#x27; mode, add a delicate dotted underline cue on &#x27;span.mref&#x27; anchors where Gowland notes exist (strictly present only in private builds, since public builds carry zero Gowland markers).</p><div class='demo'>
+<p class="demo-label">Interactive Narrow-Window / Touch Tester (tap each underlined or marked phrase)</p>
+<p class="proto-prose">Though <button type="button" class="inline-btn nm-u" data-pop="<b>Hercules de Saxonia</b> (1551&ndash;1607) &middot; Paduan physician cited on melancholy.<br><a href='#'>Open author page &rarr;</a>"><em>Hercules de Saxonia</em></button><button type="button" class="inline-btn cite-s" data-pop="<b>&sect; cites</b> &middot; Hercules de Saxonia, <i>Tractatus de melancholia</i>, ch. 3"> &sect;</button> will exclude fear from Love-Melancholy, yet I am otherwise persuaded. <button type="button" class="inline-btn la-u" data-pop="<b>Translation (from Latin)</b> &middot; Love is a thing full of anxious fear <span class='sc'>g</span>"><em>Res est solliciti plena timoris amor</em></button>, which made Hesiod <button type="button" class="inline-btn gw-u" data-pop="<b>Gloss</b> &middot; <i>belike</i>: Probably; perhaps <span class='sc'>g</span>">belike</button> put fear and paleness Venus&rsquo; daughters.</p>
+<div class="pop-preview" id="f3Pop" aria-live="polite">Tap <em>Hercules de Saxonia</em>, <span style="color:var(--k-cite)">&sect;</span>, the Latin, or <em>belike</em> above to test unified phone/tablet popovers (first tap previews without leaving your chapter).</div>
+</div><div class='pick'><button type='button' data-opt='Fix' aria-pressed='false'>Fix</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='F3' placeholder='Optional note on F3&hellip;' aria-label='Optional note on F3'></div></article><article class='item' data-bucket='tier1' data-code='F4'><div class='item-head'><div><span class='item-code'>F4</span><span class='item-title'>Add two-tap preview parity on touch for frontispiece panels and author links</span></div></div><p class='meta'>Risk: Low. Test carefully with hybrid touch-and-mouse laptops so mouse clicks on wide desktops still follow links on the first click while touch taps preview first. · Evidence: &#x27;touch_frontispiece&#x27; records &#x27;panel_tag: a&#x27;, &#x27;panel_href: argument/#argument-lg2&#x27;, and &#x27;tap_navigates_away_immediately_instead_of_previewing_stanza: true&#x27; (from &#x27;burton/site/frontispiece.py&#x27; lines 65-67, &#x27;burton/site/templates/home.html&#x27; line 31, and &#x27;burton/site/static/edition.js&#x27; lines 1112-1115 binding only &#x27;mouseenter&#x27; and &#x27;focus&#x27;). &#x27;narrow_touch_parity_3_2_3_1&#x27; records &#x27;authorLinksNavigateAwayImmediatelyBelow1100px: true&#x27; across &#x27;12,665&#x27; author links because &#x27;POP = a.nm, a.xref&#x27; is gated on &#x27;wide.matches&#x27; in &#x27;edition.js&#x27; lines 1067-1094. · Files if adopted: burton/site/static/edition.js, burton/site/frontispiece.py, burton/site/templates/home.html, burton/site/static/edition.css</p><p class='plain'><b>What happens for a reader:</b> On touchscreens and narrow windows below 1100 px, tapping a panel of the engraved frontispiece jumps away to the Argument page before showing its poem stanza, and tapping an author&#x27;s name or cross-reference navigates straight off the chapter instead of letting readers glance at the floating preview card first.</p><p class='plain'><b>Proposed repair:</b> For coarse touch pointers (and below 1100 px for &#x27;a.nm&#x27; and &#x27;a.xref&#x27;), make the first tap on an &#x27;a.fs-panel&#x27; update &#x27;.front-stanza&#x27; with the stanza and a clear tap-again or link cue to visit &#x27;argument/&#x27;, and make the first tap on &#x27;a.nm&#x27; or &#x27;a.xref&#x27; open the floating &#x27;.pw&#x27; preview card; tapping the card&#x27;s title link or tapping the same target a second time navigates normally. Keep single-click navigation intact for mouse users on wide screens.</p><div class='demo'>
+<p class="demo-label">Interactive Narrow-Window / Touch Tester (tap each underlined or marked phrase)</p>
+<p class="proto-prose">Though <button type="button" class="inline-btn nm-u" data-pop="<b>Hercules de Saxonia</b> (1551&ndash;1607) &middot; Paduan physician cited on melancholy.<br><a href='#'>Open author page &rarr;</a>"><em>Hercules de Saxonia</em></button><button type="button" class="inline-btn cite-s" data-pop="<b>&sect; cites</b> &middot; Hercules de Saxonia, <i>Tractatus de melancholia</i>, ch. 3"> &sect;</button> will exclude fear from Love-Melancholy, yet I am otherwise persuaded. <button type="button" class="inline-btn la-u" data-pop="<b>Translation (from Latin)</b> &middot; Love is a thing full of anxious fear <span class='sc'>g</span>"><em>Res est solliciti plena timoris amor</em></button>, which made Hesiod <button type="button" class="inline-btn gw-u" data-pop="<b>Gloss</b> &middot; <i>belike</i>: Probably; perhaps <span class='sc'>g</span>">belike</button> put fear and paleness Venus&rsquo; daughters.</p>
+<div class="pop-preview" id="f3Pop" aria-live="polite">Tap <em>Hercules de Saxonia</em>, <span style="color:var(--k-cite)">&sect;</span>, the Latin, or <em>belike</em> above to test unified phone/tablet popovers (first tap previews without leaving your chapter).</div>
+</div><div class='pick'><button type='button' data-opt='Fix' aria-pressed='false'>Fix</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='F4' placeholder='Optional note on F4&hellip;' aria-label='Optional note on F4'></div></article><article class='item' data-bucket='tier1' data-code='F5'><div class='item-head'><div><span class='item-code'>F5</span><span class='item-title'>Fix wide-window &#x27;@media print&#x27; left-margin leak and &#x27;.mn-fold.hot&#x27; fade colour</span></div></div><p class='meta'>Risk: Very low. Isolated CSS rules with no layout side effects on interactive screen modes. · Evidence: In &#x27;burton/site/static/edition.css&#x27; lines 648-654 versus line 727, &#x27;@media print&#x27; resets &#x27;.unit&#x27; with &#x27;margin: 0; margin-right: 31% !important;&#x27;, which is beaten by the higher-specificity &#x27;.two-side .unit&#x27; rule (&#x27;margin-left: calc(var(--margin-col) + var(--gap))&#x27;) whenever a user prints from a window 1380 px or wider. Separately, &#x27;edition.css&#x27; lines 1125-1126 set &#x27;.unit.sn-laid .mn-fold.hot .fold-more&#x27; with &#x27;var(--paper)&#x27; instead of &#x27;var(--hot)&#x27;, painting a cream/paper patch across highlighted gold cards. · Files if adopted: burton/site/static/edition.css</p><p class='plain'><b>What happens for a reader:</b> Two crisp CSS oversights hurt polish: printing a reading page from a wide desktop window keeps an unwanted 21rem blank left margin, and folded margin cards that are highlighted in warm gold show an awkward paper-coloured notch over their &#x27;more&#x27; fadeout.</p><p class='plain'><b>Proposed repair:</b> Inside &#x27;@media print&#x27; in &#x27;edition.css&#x27;, add &#x27;.two-side .unit { margin-left: 0 !important; }&#x27; so printed pages use full left paper width regardless of browser window width; and on line 1126, replace &#x27;var(--paper)&#x27; with &#x27;var(--hot)&#x27; on &#x27;.mn-fold.hot .fold-more&#x27;. Optionally include a quiet print-only section running title above &#x27;article.unit&#x27; sourced from &#x27;.syn-badge&#x27;.</p><div class='demo'>
+<p class="demo-label">Three Silent Craftsmanship Repairs</p>
+<ul class="compact-list">
+  <li><b>Print on wide screens (&ge;1380 px):</b> Reset <code>.two-side .unit { margin-left: 0 !important }</code> inside <code>@media print</code> so two-margin padding never shifts printed paper off-centre.</li>
+  <li><b>Shortened-note highlight corner:</b> Match <code>.mn-fold.hot &gt; .fold-more</code> fade to the warm gold highlight instead of plain paper white.</li>
+  <li><b>Front-page <code>Aa</code> Options panel:</b> Include the <em>Restore defaults</em> button and subtle live preview strip just like reading pages.</li>
+</ul>
+</div><div class='pick'><button type='button' data-opt='Fix' aria-pressed='false'>Fix</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='F5' placeholder='Optional note on F5&hellip;' aria-label='Optional note on F5'></div></article></div>
+  </section>
+
+  <section data-sec="tier2">
+    <h2 class="tier-h">Tier 2 &middot; Reading &amp; Scholarly Ergonomics</h2>
+    <div class="cards" id="tier2"><article class='item' data-bucket='tier2' data-code='E1'><div class='item-head'><div><span class='item-code'>E1</span><span class='item-title'>Scroll-anchoring safety across reading-mode and text-size toggles</span></div></div><p class='meta'>Guardrail check: Zero visible UI added; completely offline; does not modify stored base text; preserves &#x27;As printed&#x27; instant toggling.</p><p class='plain'><b>Reader need:</b> Mid-chapter readers toggling between gloss, interlinear, facing, or text sizes inside 44 chapters over 5,000 words (up to 292 minutes in &#x27;djr&#x27;) need their exact sentence to stay under their eyes rather than jumping several paragraphs away when translations expand or collapse.</p><p class='plain'><b>Proposed design:</b> Inside &#x27;apply()&#x27; in &#x27;burton/site/static/edition.js&#x27; (before updating &#x27;mode-gloss&#x27;, &#x27;mode-interlinear&#x27;, &#x27;mode-english&#x27;, or font-size attributes and invoking &#x27;layoutNotes()&#x27;), capture the top visible &#x27;[id]&#x27; paragraph or verse element and record its current vertical offset from the top of the viewport. Immediately after &#x27;layoutNotes()&#x27; finishes reflowing the margins and inline blocks, adjust &#x27;window.scrollBy&#x27; silently so that exact anchor element returns to the same pixel offset without animation lag.</p><div class='demo'>
+<p class="demo-label">Deep-Link Arrival Simulator (<code>/3.2.3.1/#3.2.3.1-n5</code> at 1440&times;900)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" data-dl="before" aria-pressed="true">Current (browser scrolls before layoutNotes)</button>
+  <button type="button" class="proto-btn" data-dl="after" aria-pressed="false">Proposed (re-scroll after layout + light up both)</button>
+</div>
+<div class="dl-stage" id="dlStage">
+  <div class="dl-row">
+    <div class="dl-main">Burton&rsquo;s text: &ldquo;&hellip; <span class="dl-words" id="dlWords">Love is a species of melancholy</span> <sup class="dl-ref">e</sup> &hellip;&rdquo;</div>
+    <div class="dl-margin" id="dlNote"><span class="ok-box">e</span> <span class="sc">note</span> Avicenna, <i>lib. 3, fen. 1, tract. 4</i></div>
+  </div>
+  <p class="demo-note" id="dlMsg" style="margin:.45rem 0 0">Before fix: after <code>layoutNotes()</code> moves the note into absolute position, both anchor and note sit off-screen and unlit.</p>
+</div>
+</div><div class='pick'><button type='button' data-opt='Variant A (top-edge anchor): anchor to the highest paragraph &#x27;[id]&#x27; intersecting the top edge of the viewport, ideal when reading steadily downward.' aria-pressed='false'>Variant A (top-edge anchor): anchor to the highest paragraph &#x27;[id]&#x27; intersecting the top edge of the viewport, ideal when reading steadily downward.</button><button type='button' data-opt='Variant B (reading-line midpoint anchor): anchor to the &#x27;[id]&#x27; block closest to roughly 30 percent down from the top of the screen, which prevents downward drift when switching into taller &#x27;interlinear&#x27; mode.' aria-pressed='false'>Variant B (reading-line midpoint anchor): anchor to the &#x27;[id]&#x27; block closest to roughly 30 percent down from the top of the screen, which prevents downward drift when switching into taller &#x27;interlinear&#x27; mode.</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='E1' placeholder='Optional note on E1&hellip;' aria-label='Optional note on E1'></div></article><article class='item' data-bucket='tier2' data-code='E2'><div class='item-head'><div><span class='item-code'>E2</span><span class='item-title'>Quiet silk-ribbon place memory across reading sessions</span></div></div><p class='meta'>Guardrail check: Pure &#x27;localStorage&#x27; with zero server calls; never injects banners or scrollbars onto the 1-screen folded &#x27;home.html&#x27;; completely hidden in &#x27;As printed&#x27;; never touches &#x27;data/text/*.xml&#x27;.</p><p class='plain'><b>Reader need:</b> Commuters, bedtime readers, and readers working across multi-week chapters like &#x27;djr&#x27; (&#x27;64,162&#x27; words) or &#x27;3.2.3.1&#x27; (&#x27;28,873&#x27; words) need a reliable digital ribbon so closing a browser tab or restarting a device never loses their place.</p><p class='plain'><b>Proposed design:</b> On scroll idle inside reading units, quietly save the current unit URL, unit title, and topmost visible permanent paragraph ID into &#x27;localStorage&#x27; under a dedicated key (&#x27;burton-ribbon&#x27;) alongside &#x27;burton-settings&#x27;. Surface a single calm &#x27;Resume: ...&#x27; link inside the folded &#x27;Contents&#x27; drawer (and optionally in the unit bar&#x27;s contents menu) that jumps straight to that paragraph via F2&#x27;s scroll-and-highlight landing, plus a quiet &#x27;Forget&#x27; button.</p><div class='demo'>
+<p class="demo-label">Interactive Place-Keeping &amp; Mode-Switch Anchor</p>
+<div class="bookmark-bar" id="bkBar">
+  <span><span class="sc rubric">Place kept</span> &nbsp;Continue in <i>Democritus Junior to the Reader</i> (&para; 84 &middot; ~42% through) &rarr;</span>
+  <button type="button" class="proto-btn" id="bkDismiss">Dismiss</button>
+</div>
+<div class="proto-bar" style="margin-top:.55rem">
+  <button type="button" class="proto-btn" data-mode-sim="gloss" aria-pressed="true">Gloss mode</button>
+  <button type="button" class="proto-btn" data-mode-sim="interlinear" aria-pressed="false">Interlinear mode (anchored on &para; 60)</button>
+  <button type="button" class="proto-btn" data-mode-sim="printed" aria-pressed="false">As printed (bookmark hidden)</button>
+</div>
+<p class="demo-note" id="modeAnchorOut">Anchored on <code>#3.2.3.1-p60</code>: switching between Gloss and Interlinear preserves your exact reading line (0 px drift instead of throwing you off-screen).</p>
+</div><div class='pick'><button type='button' data-opt='Variant A (purely inside folded Contents): show &#x27;Continue where you left off&#x27; at the top inside the folded Contents panel so the resting front page stays 100 percent unchanged.' aria-pressed='false'>Variant A (purely inside folded Contents): show &#x27;Continue where you left off&#x27; at the top inside the folded Contents panel so the resting front page stays 100 percent unchanged.</button><button type='button' data-opt='Variant B (per-unit memory + subtle front hint): save the last paragraph per chapter plus global latest, and test whether a single quiet text line inside &#x27;.front-info&#x27; stays within zero scrollbars across all 2-column laptops.' aria-pressed='false'>Variant B (per-unit memory + subtle front hint): save the last paragraph per chapter plus global latest, and test whether a single quiet text line inside &#x27;.front-info&#x27; stays within zero scrollbars across all 2-column laptops.</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='E2' placeholder='Optional note on E2&hellip;' aria-label='Optional note on E2'></div></article><article class='item' data-bucket='tier2' data-code='E3'><div class='item-head'><div><span class='item-code'>E3</span><span class='item-title'>Hover-only paragraph citation copier, locator jumper, and print running head</span></div></div><p class='meta'>Guardrail check: Constitutional rule check: Gowland/Penguin &#x27;pb&#x27; numbers (&#x27;[141]&#x27;) are strictly excluded from public builds and verified by the leak check; the marginal pilcrow stays hidden until hover/focus and disappears in &#x27;As printed&#x27;.</p><p class='plain'><b>Reader need:</b> Scholars, seminar students, and serious readers need to copy permanent citations or jump straight to a seminar reference like &#x27;3.2.3.1&#x27; or &#x27;p. 412&#x27; without scrolling blindly through thousands of words or assembling URLs by hand.</p><p class='plain'><b>Proposed design:</b> On hover or keyboard focus of any of the &#x27;2,476&#x27; permanently IDed paragraphs (remaining completely invisible at rest and absent in &#x27;As printed&#x27;), reveal a subtle marginal pilcrow icon that copies a ready-to-paste citation (Partition locator, page number where allowed, and permalink hash) with a brief &#x27;Copied&#x27; confirmation. Pair this with a compact locator-jump box in &#x27;Contents&#x27; and &#x27;/search/&#x27; resolving &#x27;Part.Sect.Memb.Subsect.&#x27; paths (e.g. &#x27;3.2.3.1&#x27;) in all builds, and Penguin page numbers (&#x27;p. 412&#x27;) strictly in private builds only, plus a quiet print-only section headline above printed pages.</p><div class='demo'>
+<p class="demo-label">Deep-Link Arrival Simulator (<code>/3.2.3.1/#3.2.3.1-n5</code> at 1440&times;900)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" data-dl="before" aria-pressed="true">Current (browser scrolls before layoutNotes)</button>
+  <button type="button" class="proto-btn" data-dl="after" aria-pressed="false">Proposed (re-scroll after layout + light up both)</button>
+</div>
+<div class="dl-stage" id="dlStage">
+  <div class="dl-row">
+    <div class="dl-main">Burton&rsquo;s text: &ldquo;&hellip; <span class="dl-words" id="dlWords">Love is a species of melancholy</span> <sup class="dl-ref">e</sup> &hellip;&rdquo;</div>
+    <div class="dl-margin" id="dlNote"><span class="ok-box">e</span> <span class="sc">note</span> Avicenna, <i>lib. 3, fen. 1, tract. 4</i></div>
+  </div>
+  <p class="demo-note" id="dlMsg" style="margin:.45rem 0 0">Before fix: after <code>layoutNotes()</code> moves the note into absolute position, both anchor and note sit off-screen and unlit.</p>
+</div>
+</div><div class='pick'><button type='button' data-opt='Variant A (single-click pilcrow): hovering or focusing a paragraph exposes one small pilcrow that copies &#x27;Burton, Anatomy [Unit], [para] + URL&#x27; on click.' aria-pressed='false'>Variant A (single-click pilcrow): hovering or focusing a paragraph exposes one small pilcrow that copies &#x27;Burton, Anatomy [Unit], [para] + URL&#x27; on click.</button><button type='button' data-opt='Variant B (pilcrow + private page-jump box): adds a lightweight &#x27;Jump to section or p.&#x27; input tucked inside &#x27;Contents&#x27; / &#x27;/search/&#x27; (publicly section-only; privately section plus Penguin pagebreak).' aria-pressed='false'>Variant B (pilcrow + private page-jump box): adds a lightweight &#x27;Jump to section or p.&#x27; input tucked inside &#x27;Contents&#x27; / &#x27;/search/&#x27; (publicly section-only; privately section plus Penguin pagebreak).</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='E3' placeholder='Optional note on E3&hellip;' aria-label='Optional note on E3'></div></article><article class='item' data-bucket='tier2' data-code='E4'><div class='item-head'><div><span class='item-code'>E4</span><span class='item-title'>Filter, sort, and A-Z jump bar for &#x27;Authors Cited&#x27; and &#x27;The Table&#x27;</span></div></div><p class='meta'>Guardrail check: 100 percent static HTML plus tiny client script; preserves honest &#x27;parsed&#x27; / &#x27;partial&#x27; / &#x27;unidentified&#x27; breakdown and &#x27;Wikidata (CC0)&#x27; / &#x27;machine draft&#x27; source labels; public &#x27;Table&#x27; builds never add Gowland pagination links.</p><p class='plain'><b>Reader need:</b> Finding one authority among &#x27;253&#x27; cited authors (especially when Burton spells a name several ways) or locating a subject among &#x27;574&#x27; index items in &#x27;The Table&#x27; currently forces tedious manual scrolling.</p><p class='plain'><b>Proposed design:</b> Add lightweight, zero-server client-side filter boxes and clickable A-Z jump strips to &#x27;burton/site/templates/authors.html&#x27; (&#x27;253&#x27; rows) and &#x27;The Table&#x27; (&#x27;574&#x27; entries across &#x27;24&#x27; letter headings). Index Burton&#x27;s variant name spellings (&#x27;forms&#x27; from &#x27;author.html&#x27;) inside hidden filter attributes on each row so typing a Latinized or early-modern spelling finds the right entry immediately, and make the &#x27;Authors&#x27; and &#x27;Citations&#x27; column headers sortable on &#x27;.author-index&#x27;.</p><div class='demo'>
+<p class="demo-label">Interactive Place-Keeping &amp; Mode-Switch Anchor</p>
+<div class="bookmark-bar" id="bkBar">
+  <span><span class="sc rubric">Place kept</span> &nbsp;Continue in <i>Democritus Junior to the Reader</i> (&para; 84 &middot; ~42% through) &rarr;</span>
+  <button type="button" class="proto-btn" id="bkDismiss">Dismiss</button>
+</div>
+<div class="proto-bar" style="margin-top:.55rem">
+  <button type="button" class="proto-btn" data-mode-sim="gloss" aria-pressed="true">Gloss mode</button>
+  <button type="button" class="proto-btn" data-mode-sim="interlinear" aria-pressed="false">Interlinear mode (anchored on &para; 60)</button>
+  <button type="button" class="proto-btn" data-mode-sim="printed" aria-pressed="false">As printed (bookmark hidden)</button>
+</div>
+<p class="demo-note" id="modeAnchorOut">Anchored on <code>#3.2.3.1-p60</code>: switching between Gloss and Interlinear preserves your exact reading line (0 px drift instead of throwing you off-screen).</p>
+</div><div class='pick'><button type='button' data-opt='Variant A (instant text filter + sticky A-Z strip): simple live filter input plus horizontal letter strip above each list and clickable sort headers on &#x27;Authors Cited&#x27;.' aria-pressed='false'>Variant A (instant text filter + sticky A-Z strip): simple live filter input plus horizontal letter strip above each list and clickable sort headers on &#x27;Authors Cited&#x27;.</button><button type='button' data-opt='Variant B (add status filter on Authors): optionally filter &#x27;Authors Cited&#x27; by verified/identified entries versus entries still awaiting verification, keeping all counts transparent.' aria-pressed='false'>Variant B (add status filter on Authors): optionally filter &#x27;Authors Cited&#x27; by verified/identified entries versus entries still awaiting verification, keeping all counts transparent.</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='E4' placeholder='Optional note on E4&hellip;' aria-label='Optional note on E4'></div></article><article class='item' data-bucket='tier2' data-code='E5'><div class='item-head'><div><span class='item-code'>E5</span><span class='item-title'>Keyboard parity for &#x27;.pw&#x27; author previews, search focus, and page turning</span></div></div><p class='meta'>Guardrail check: Preserves default Enter link navigation; keeps reading pages visually untouched (no extra buttons); respects &#x27;As printed&#x27; by keeping keyboard shortcuts helpful without adding visual chrome; keeps &#x27;◇&#x27; labels intact inside reading-page author previews.</p><p class='plain'><b>Reader need:</b> Keyboard readers and screen-reader users currently miss out on floating author and cross-reference previews (which require mouse hover on wide screens) and have no quick keystrokes to turn pages or jump to search across 157 chapters.</p><p class='plain'><b>Proposed design:</b> Extend &#x27;burton/site/static/edition.js&#x27; lines 1067-1094 so keyboard users moving across &#x27;12,665&#x27; author links (&#x27;a.nm&#x27;) and &#x27;69&#x27; cross-references (&#x27;a.xref&#x27;) can trigger a locked &#x27;.pw&#x27; preview card without leaving their place (for example via &#x27;p&#x27; or Shift+Enter while plain Enter still navigates normally), dismissing on &#x27;Escape&#x27; and returning focus cleanly back to the triggering link. Add &#x27;/&#x27; outside inputs to focus Search and &#x27;[&#x27; / &#x27;]&#x27; to trigger the &#x27;☙&#x27; / &#x27;❧&#x27; reading-order page turners across all &#x27;157&#x27; units.</p><div class='demo'>
+<p class="demo-label">Interactive Place-Keeping &amp; Mode-Switch Anchor</p>
+<div class="bookmark-bar" id="bkBar">
+  <span><span class="sc rubric">Place kept</span> &nbsp;Continue in <i>Democritus Junior to the Reader</i> (&para; 84 &middot; ~42% through) &rarr;</span>
+  <button type="button" class="proto-btn" id="bkDismiss">Dismiss</button>
+</div>
+<div class="proto-bar" style="margin-top:.55rem">
+  <button type="button" class="proto-btn" data-mode-sim="gloss" aria-pressed="true">Gloss mode</button>
+  <button type="button" class="proto-btn" data-mode-sim="interlinear" aria-pressed="false">Interlinear mode (anchored on &para; 60)</button>
+  <button type="button" class="proto-btn" data-mode-sim="printed" aria-pressed="false">As printed (bookmark hidden)</button>
+</div>
+<p class="demo-note" id="modeAnchorOut">Anchored on <code>#3.2.3.1-p60</code>: switching between Gloss and Interlinear preserves your exact reading line (0 px drift instead of throwing you off-screen).</p>
+</div><div class='pick'><button type='button' data-opt='Variant A (explicit preview key &#x27;p&#x27; or Shift+Enter): leaves standard Tab-then-Enter navigation 100 percent unchanged and opens previews only on demand.' aria-pressed='false'>Variant A (explicit preview key &#x27;p&#x27; or Shift+Enter): leaves standard Tab-then-Enter navigation 100 percent unchanged and opens previews only on demand.</button><button type='button' data-opt='Variant B (gentle focus dwell): opens the &#x27;.pw&#x27; preview softly after resting keyboard focus for ~450 ms, closing on &#x27;Escape&#x27; and following the link immediately on Enter.' aria-pressed='false'>Variant B (gentle focus dwell): opens the &#x27;.pw&#x27; preview softly after resting keyboard focus for ~450 ms, closing on &#x27;Escape&#x27; and following the link immediately on Enter.</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='E5' placeholder='Optional note on E5&hellip;' aria-label='Optional note on E5'></div></article></div>
+  </section>
+
+  <section data-sec="tier3">
+    <h2 class="tier-h">Tier 3 &middot; Elucidating Burton &amp; Unconsidered Visions</h2>
+    <div class="cards" id="tier3"><article class='item' data-bucket='tier3' data-code='V1'><div class='item-head'><div><span class='item-code'>V1</span><span class='item-title'>Personal Commonplace Book (&#x27;/commonplace/&#x27;) in localStorage</span></div></div><p class='meta'>Build shape: Build a static &#x27;/commonplace/&#x27; template page and a small client script that reads existing paragraph IDs, &#x27;.syn-badge&#x27; path text, text snippets, and &#x27;data-src&#x27; attribution markers into &#x27;localStorage&#x27;, offering filter-by-topic and clean Markdown export (retaining &#x27;◇&#x27; machine notes and excluding Gowland wording from public exports).</p><p class='plain'><b>The vision:</b> Let readers gather favourite passages, Burton sidenotes, and labelled translations across all 423 pages into a private offline commonplace book organized under their own topical headings, browsable at &#x27;/commonplace/&#x27; and exportable as formatted Markdown with complete Burton citations.</p><p class='plain'><b>Why it fits Burton:</b> The Anatomy itself grew out of Burton&#x27;s lifetime habit of collecting thousands of extracts under commonplace heads—giving readers an offline notebook lets them read Burton the exact way Burton read the world.</p><p class='plain'><b>How it stays quiet:</b> At rest, nothing extra appears on the reading page or front page. A tiny &#x27;+&#x27; button appears strictly in the margin alongside a focused or hovered paragraph (or inside a newly opened sidenote/translation card), disappears altogether in &#x27;As printed&#x27;, and stores clips solely in &#x27;localStorage&#x27; (&#x27;burton-commonplace&#x27;).</p><div class='demo'>
+<p class="demo-label">Interactive Place-Keeping &amp; Mode-Switch Anchor</p>
+<div class="bookmark-bar" id="bkBar">
+  <span><span class="sc rubric">Place kept</span> &nbsp;Continue in <i>Democritus Junior to the Reader</i> (&para; 84 &middot; ~42% through) &rarr;</span>
+  <button type="button" class="proto-btn" id="bkDismiss">Dismiss</button>
+</div>
+<div class="proto-bar" style="margin-top:.55rem">
+  <button type="button" class="proto-btn" data-mode-sim="gloss" aria-pressed="true">Gloss mode</button>
+  <button type="button" class="proto-btn" data-mode-sim="interlinear" aria-pressed="false">Interlinear mode (anchored on &para; 60)</button>
+  <button type="button" class="proto-btn" data-mode-sim="printed" aria-pressed="false">As printed (bookmark hidden)</button>
+</div>
+<p class="demo-note" id="modeAnchorOut">Anchored on <code>#3.2.3.1-p60</code>: switching between Gloss and Interlinear preserves your exact reading line (0 px drift instead of throwing you off-screen).</p>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V1' placeholder='Optional note on V1&hellip;' aria-label='Optional note on V1'></div></article><article class='item' data-bucket='tier3' data-code='V2'><div class='item-head'><div><span class='item-code'>V2</span><span class='item-title'>Ways into the Labyrinth &amp; Sortes Burtonianae</span></div></div><p class='meta'>Build shape: Emit a small static manifest at build time in &#x27;burton/site/build.py&#x27; pairing key digressions and word-count-derived reading times with curated memorable paragraph IDs, rendered quietly inside the folded &#x27;Contents&#x27; template and linked to a 20-line random-pick handler in &#x27;edition.js&#x27;.</p><p class='plain'><b>The vision:</b> Pair the traditional front-to-back &#x27;Enter, gentle Reader&#x27; threshold with a quiet &#x27;Doorways&#x27; shelf to Burton&#x27;s iconic set-pieces (Air Rectified, Misery of Scholars, Nature of Spirits, Love-Melancholy) with honest reading-time whispers, plus a &#x27;Sortes Burtonianae&#x27; link that opens the book at a weighted-random memorable paragraph.</p><p class='plain'><b>Why it fits Burton:</b> Burton explicitly warns readers not to lose heart in his winding 64,162-word preface and invites them to dip through his synopses; Renaissance readers genuinely practiced sortes—consulting a great folio at hazard for wit or counsel.</p><p class='plain'><b>How it stays quiet:</b> All doorways, reading-time hints, and the Sortes button stay tucked cleanly inside the folded &#x27;Contents&#x27; drawer (never bloating the one-screen resting &#x27;home.html&#x27; or adding a single &#x27;◇&#x27; to the front page), and landing passages clear all added chrome in &#x27;As printed&#x27;.</p><div class='demo'>
+<p class="demo-label">Instant Filter &amp; Sort Prototype (253 Authors Cited &middot; 574 Table Entries)</p>
+<div class="proto-bar">
+  <input type="text" id="authFilter" class="mini-input" placeholder="Try &lsquo;Tully&rsquo;, &lsquo;Austin&rsquo;, or &lsquo;Medicine&rsquo;&hellip;" aria-label="Filter cited authors">
+  <button type="button" class="proto-btn" id="sortCount" aria-pressed="true">Most cited</button>
+  <button type="button" class="proto-btn" id="sortName" aria-pressed="false">A&ndash;Z</button>
+</div>
+<div class="table-scroll">
+  <table class="vp-table">
+    <thead><tr><th>Authority (Burton&rsquo;s short forms)</th><th>Field</th><th>Citations</th></tr></thead>
+    <tbody id="authRows"></tbody>
+  </table>
+</div>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V2' placeholder='Optional note on V2&hellip;' aria-label='Optional note on V2'></div></article><article class='item' data-bucket='tier3' data-code='V3'><div class='item-head'><div><span class='item-code'>V3</span><span class='item-title'>Reader-Facing Humoral, Apothecary &amp; Technical Glossary (&#x27;/glossary/&#x27;)</span></div></div><p class='meta'>Build shape: Add a small build step in &#x27;burton/site/&#x27; reading &#x27;data/glossary.yaml&#x27; into a new &#x27;glossary.html&#x27; template organized into four sections—Humours &amp; Faculties, Apothecary Signs, Citation Locators, and Authorities—with each term linking straight into offline &#x27;/search/?q=...&#x27;.</p><p class='plain'><b>The vision:</b> Publish the edition&#x27;s curated editorial key in &#x27;data/glossary.yaml&#x27;—currently hidden from readers despite holding 25 humoral terms, 4 apothecary symbols (such as the dram, scruple, and half-ounce &#x27;ß&#x27;), 9 citation locators, and 24 recurring authorities—as a dedicated static pocket glossary linked to live offline searches.</p><p class='plain'><b>Why it fits Burton:</b> Every page of Burton assumes fluency in Galenic humours (&#x27;atra bilis&#x27;, &#x27;per consensum&#x27;) and apothecary weights; turning the edition&#x27;s translation standard into a compact Renaissance medical cabinet illuminates the text without changing a single word of it.</p><p class='plain'><b>How it stays quiet:</b> Lives as its own quiet static page (&#x27;/glossary/&#x27;) reached through &#x27;footer.site&#x27; and &#x27;Aa&#x27; options (&#x27;options.html&#x27;), leaving the main reading column clean and unburdened by unsolicited inline definitions unless the reader turns glosses on.</p><div class='demo'>
+<p class="demo-label">Hover Pilcrow &para; Citation Copier &amp; Direct Locus / Penguin Page Jumper</p>
+<div class="burton-sample">
+  <button type="button" class="pilcrow" id="citeDemoBtn" title="Copy scholarly citation &amp; link">&para;35</button>
+  <p style="margin:0">&hellip; <span class="la">Res est solliciti plena timoris amor.</span> &rsquo;Tis full of fear, anxiety, doubt, care, peevishness, suspicion, it turns a man into a woman &hellip;</p>
+</div>
+<p class="demo-note" id="citeDemoOut">Click <b>&para;35</b> in the left gutter to preview the copied link &amp; standard scholarly citation.</p>
+<div class="proto-bar" style="margin-top:.55rem">
+  <input type="text" id="locusJumpIn" class="mini-input" placeholder="Try: p. 714, 3.2.3.1, or djr" value="p. 714" aria-label="Jump to Burton unit or Penguin page">
+  <button type="button" class="proto-btn" id="locusJumpBtn">Go</button>
+</div>
+<p class="demo-note" id="locusJumpOut"></p>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V3' placeholder='Optional note on V3&hellip;' aria-label='Optional note on V3'></div></article><article class='item' data-bucket='tier3' data-code='V4'><div class='item-head'><div><span class='item-code'>V4</span><span class='item-title'>Burton&#x27;s Self-Translation &amp; Elucidation Lens</span></div></div><p class='meta'>Build shape: Update &#x27;tr_markup&#x27; in &#x27;burton/site/render.py&#x27; to output collapsed secondary &#x27;dj&#x27; or &#x27;◇&#x27;-labelled machine literal wording inside &#x27;.ft-own&#x27; (never copying Gowland translations into public builds), and refine toggle descriptions in &#x27;options.html&#x27; with live corpus counts.</p><p class='plain'><b>The vision:</b> On the 3,435 passages where Burton paraphrases Latin into English himself (&#x27;.burton-tr&#x27;), add an optional collapsed &#x27;literal&#x27; link that reveals Dell &amp; Jordan-Smith or a clearly &#x27;◇&#x27;-marked machine literal version underneath so readers can watch Burton riffing—while surfacing clear toggles and counts in &#x27;Aa&#x27; for the hidden 935 obsolete-word glosses and 1,181 restored Democritus Minor notes.</p><p class='plain'><b>Why it fits Burton:</b> Half the delight of Burton&#x27;s prose is hearing how cheekily he bends a solemn Latin maxim into racy 17th-century English; letting readers peek behind his paraphrase without interrupting the page honours his craft directly.</p><p class='plain'><b>How it stays quiet:</b> Leaves all reading defaults serenely uncluttered (&#x27;own_edition_tr_hidden&#x27; stays on, obsolete glosses and restored notes remain opt-in). The &#x27;literal&#x27; trigger is a muted single word inside &#x27;.ft-own&#x27; cards, absent from &#x27;As printed&#x27;, and the opt-in counts sit cleanly inside the &#x27;Aa&#x27; drawer.</p><div class='demo'>
+<p class="demo-label">Burton&rsquo;s Own Paraphrase vs. Literal Glosses &amp; Obsolete Words (<code>3.2.3.1</code>)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" id="elucBurtonOnly" aria-pressed="true">Default: Burton&rsquo;s own English shines</button>
+  <button type="button" class="proto-btn" id="elucCompare" aria-pressed="false">Compare literal (g / dj / &#9671;) + humoral lens</button>
+</div>
+<p class="proto-prose" style="margin-top:.45rem">
+  <span class="eluc-lat"><em>Pallidus omnis amans, color hic est aptus amanti</em></span> &mdash; Every lover is pale, <span class="eluc-own">this colour suits a lover</span>, being <span class="eluc-gl" title="parched/burnt by heat (black bile adust)">adust</span> by excess of heat and <span class="eluc-gl" title="black bile (atra bilis): heavy, earthy melancholy humour">melancholy</span>.
+</p>
+<div class="pop-preview" id="elucDrawer" style="display:none">
+  <b>Literal vs. Burton&rsquo;s paraphrase:</b> &ldquo;Every lover is pale, and this complexion is fitting for a lover&rdquo; (<span class="sc">g</span>). &nbsp;|&nbsp; <b>Humoral note:</b> <i>Adust</i> means scorched or burnt in Galenic medicine, turning yellow bile or blood into unnatural <i>atra bilis</i>.
+</div>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V4' placeholder='Optional note on V4&hellip;' aria-label='Optional note on V4'></div></article><article class='item' data-bucket='tier3' data-code='V5'><div class='item-head'><div><span class='item-code'>V5</span><span class='item-title'>Long-Unit Marginalia Signpost Compass</span></div></div><p class='meta'>Build shape: During site build in &#x27;burton/site/render.py&#x27; and &#x27;unit.html&#x27;, filter &#x27;.sidenote&#x27; records for &#x27;note_kind == note&#x27; (excluding pure citations) on units over ~2,500 words and render them as an anchor index inside the &#x27;{&#x27; drawer linking directly to each sidenote and its paragraph.</p><p class='plain'><b>The vision:</b> Harvest Burton&#x27;s own 2,367 substantive topic sidenotes (filtering out the 3,336 pure source citations, so &#x27;djr&#x27; yields 396 clean topic signposts and &#x27;3.2.3.1&#x27; yields 70) into a collapsible chapter outline inside the top-left &#x27;{&#x27; synopsis badge for any unit spanning thousands of words.</p><p class='plain'><b>Why it fits Burton:</b> Rather than imposing anachronistic modern subheadings onto 1651 prose, this lets Burton&#x27;s own rubricated margin headings serve as the exact navigational compass he printed for lost readers.</p><p class='plain'><b>How it stays quiet:</b> Appears strictly inside the existing collapsible top-left &#x27;{&#x27; synopsis drawer alongside the Partition tree—never injected as modern headings inside the prose column and completely omitted in &#x27;As printed&#x27;.</p><div class='demo'>
+<p class="demo-label">Three Silent Craftsmanship Repairs</p>
+<ul class="compact-list">
+  <li><b>Print on wide screens (&ge;1380 px):</b> Reset <code>.two-side .unit { margin-left: 0 !important }</code> inside <code>@media print</code> so two-margin padding never shifts printed paper off-centre.</li>
+  <li><b>Shortened-note highlight corner:</b> Match <code>.mn-fold.hot &gt; .fold-more</code> fade to the warm gold highlight instead of plain paper white.</li>
+  <li><b>Front-page <code>Aa</code> Options panel:</b> Include the <em>Restore defaults</em> button and subtle live preview strip just like reading pages.</li>
+</ul>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V5' placeholder='Optional note on V5&hellip;' aria-label='Optional note on V5'></div></article><article class='item' data-bucket='tier3' data-code='V6'><div class='item-head'><div><span class='item-code'>V6</span><span class='item-title'>Calm Margin Density Relief without Hiding Burton&#x27;s Marginalia</span></div></div><p class='meta'>Build shape: Update &#x27;burton/site/gowland_notes.py&#x27; and &#x27;layoutNotes()&#x27; in &#x27;edition.js&#x27; to group consecutive short Gowland &#x27;pointer&#x27; and &#x27;identity&#x27; entries per paragraph into one expandable strip (private builds only), and tune narrow one-side packing spacing between 1100 px and 1379 px in &#x27;edition.css&#x27;.</p><p class='plain'><b>The vision:</b> Ease the vertical traffic jam on crowded chapters like &#x27;3.2.3.1&#x27;—where 811 margin items push 144 cards more than 120 px from their lines and fold 217 items in 1120 px one-side windows—by keeping every Burton sidenote proudly in the margin while letting consecutive Gowland pointer and identity notes group neatly when space grows scarce.</p><p class='plain'><b>Why it fits Burton:</b> In a printed folio, the author&#x27;s own marginalia belong right beside the words they gloss; when modern editorial notes crowd the rail, the modern apparatus should step lightly so Burton&#x27;s margin voice stays steady beside his prose.</p><p class='plain'><b>How it stays quiet:</b> Two-sided margins (1380 px and wider) and &#x27;As printed&#x27; remain visually unchanged, and every single printed Burton sidenote stays in the margin; only non-authorial editorial overflow (Gowland pointer/identity chips in private builds) clusters cleanly when paragraphs stack tightly.</p><div class='demo'>
+<p class="demo-label">Three Silent Craftsmanship Repairs</p>
+<ul class="compact-list">
+  <li><b>Print on wide screens (&ge;1380 px):</b> Reset <code>.two-side .unit { margin-left: 0 !important }</code> inside <code>@media print</code> so two-margin padding never shifts printed paper off-centre.</li>
+  <li><b>Shortened-note highlight corner:</b> Match <code>.mn-fold.hot &gt; .fold-more</code> fade to the warm gold highlight instead of plain paper white.</li>
+  <li><b>Front-page <code>Aa</code> Options panel:</b> Include the <em>Restore defaults</em> button and subtle live preview strip just like reading pages.</li>
+</ul>
+</div><div class='pick'><button type='button' data-opt='Prototype this' aria-pressed='false'>Prototype this</button><button type='button' data-opt='Park for later' aria-pressed='false'>Park for later</button><button type='button' data-opt='Skip' aria-pressed='false'>Skip</button><input type='text' class='item-note' data-note='V6' placeholder='Optional note on V6&hellip;' aria-label='Optional note on V6'></div></article></div>
+  </section>
+
+  <section data-sec="revisit">
+    <h2 class="tier-h">Open Revisit Items (from state/review/to-revisit.md)</h2>
+    <div class="cards" id="revisit"><article class='item' data-bucket='revisit' data-code='P3'><div class='item-head'><div><span class='item-code'>P3</span><span class='item-title'>Rubric rule edge on left-margin Burton sidenotes (&#x27;.sidenote.mn-l&#x27;)</span></div></div><p class='meta'>Provisional choice in state/review/to-revisit.md</p><p class='plain'><b>Current choice:</b> Option B chosen provisionally on 2026-11-19: the rubric red line on Burton&#x27;s left-margin sidenotes (&#x27;.sidenote.mn-l&#x27;) sits on the inner text-facing edge (right side of the left margin, mirroring the left side of the right margin), with standard left-aligned note text inside &#x27;burton/site/static/edition.css&#x27; lines 1132-1135.</p><p class='plain'><b>Recommendation:</b> Keep Option B (the rubric rule on the side facing the main prose) because it visually fences Burton&#x27;s own words off from Gowland&#x27;s notes in the same left rail. Do a quick visual A/B comparison adding flush-right alignment to &#x27;.sidenote.mn-l&#x27; so the sidenote lines sit neatly against that rule rather than floating raggedly beside it.</p><div class='demo'>
+<p class="demo-label">Live Revisit P3 Comparator (Two-Sided Margins at 1380 px+)</p>
+<div class="proto-bar">
+  <button type="button" class="proto-btn" data-p3="B" aria-pressed="true">B: Inner edge facing text (current)</button>
+  <button type="button" class="proto-btn" data-p3="A" aria-pressed="false">A: Outer left edge</button>
+</div>
+<div class="p3-grid">
+  <div class="p3-left p3-inner" id="p3Left"><span class="ok-box">a</span> <span class="sc">note</span> <i>Seneca</i>, Epist. 18 (crossed into left margin)</div>
+  <div class="p3-body">Burton&rsquo;s main column of prose sits cleanly between his two margins on screens 1380 px and wider.</div>
+  <div class="p3-right"><span class="ok-box">b</span> <span class="sc">cites</span> <i>Galen</i>, de loc. affect.</div>
+</div>
+</div><div class='pick'><button type='button' data-opt='Keep Option B with left-aligned text as already built: keeps the red rule cleanly separating Burton&#x27;s voice from Gowland&#x27;s left-rail notes while prioritizing standard easy left-to-right scanning.' aria-pressed='false'>Keep Option B with left-aligned text as already built: keeps the red rule cleanly separating Burton&#x27;s voice from Gowland&#x27;s left-rail notes while prioritizing standard easy left-to-right scanning.</button><button type='button' data-opt='Test Option B with flush-right text inside &#x27;.sidenote.mn-l&#x27;: aligns the right ends of lines directly against the text-facing rubric rule so ragged line ends do not float inside the gutter, checking whether multi-line sidenotes remain pleasant to read.' aria-pressed='false'>Test Option B with flush-right text inside &#x27;.sidenote.mn-l&#x27;: aligns the right ends of lines directly against the text-facing rubric rule so ragged line ends do not float inside the gutter, checking whether multi-line sidenotes remain pleasant to read.</button><button type='button' data-opt='Switch to Option A (outer left-edge rubric rule): places the red line on the far left edge of the card so left-aligned text hugs the rule tightly, though it breaks mirror symmetry around the main text column.' aria-pressed='false'>Switch to Option A (outer left-edge rubric rule): places the red line on the far left edge of the card so left-aligned text hugs the rule tightly, though it breaks mirror symmetry around the main text column.</button><input type='text' class='item-note' data-note='P3' placeholder='Optional note on P3&hellip;' aria-label='Optional note on P3'></div></article><article class='item' data-bucket='revisit' data-code='H2'><div class='item-head'><div><span class='item-code'>H2</span><span class='item-title'>Rest-to-open synopsis brace pacing and animation overlap (&#x27;.syn-filling&#x27;)</span></div></div><p class='meta'>Provisional choice in state/review/to-revisit.md</p><p class='plain'><b>Current choice:</b> H2 Grow with brace hold indicator chosen provisionally on 2026-11-19 in &#x27;burton/site/static/edition.js&#x27; (lines 694, 771, 824-836), &#x27;burton/site/static/edition.css&#x27; (line 476, &#x27;.syn-filling&#x27;), and &#x27;tools/synopsis_sheets/proto.html&#x27;: 650 ms fill to open, 900 ms to fix, roughly 750 ms per inner brace, and 900 ms fold delay. Measurements show &#x27;T_OPEN&#x27; (650 ms) plus &#x27;T_PAUSE&#x27; (250 ms) starts the next brace fill 900 ms into a 1150 ms CSS unfold (&#x27;--syn-t-open&#x27;) before &#x27;settle&#x27; (1700 ms) finishes, creating the slight feeling of rush or chaos.</p><p class='plain'><b>Recommendation:</b> Keep the H2 Grow hold-indicator design—it feels organic to a folded printer&#x27;s table—and fix the mechanical cause of the chaotic overlap by synchronizing the JavaScript pause with the CSS opening animation (raising &#x27;T_PAUSE&#x27; to 650 ms or tightening &#x27;--syn-t-open&#x27; to 0.8 s) so every branch lands cleanly before the next one starts filling.</p><div class='demo'>
+<p class="demo-label">Three Silent Craftsmanship Repairs</p>
+<ul class="compact-list">
+  <li><b>Print on wide screens (&ge;1380 px):</b> Reset <code>.two-side .unit { margin-left: 0 !important }</code> inside <code>@media print</code> so two-margin padding never shifts printed paper off-centre.</li>
+  <li><b>Shortened-note highlight corner:</b> Match <code>.mn-fold.hot &gt; .fold-more</code> fade to the warm gold highlight instead of plain paper white.</li>
+  <li><b>Front-page <code>Aa</code> Options panel:</b> Include the <em>Restore defaults</em> button and subtle live preview strip just like reading pages.</li>
+</ul>
+</div><div class='pick'><button type='button' data-opt='Settle-first cadence (recommended): keep the brisk 650 ms first hold-to-open fill, and either raise &#x27;T_PAUSE&#x27; from 250 ms to 650 ms or shorten &#x27;--syn-t-open&#x27; from 1.15 s to 0.8 s so each opening brace settles calmly before the next layer begins filling.' aria-pressed='false'>Settle-first cadence (recommended): keep the brisk 650 ms first hold-to-open fill, and either raise &#x27;T_PAUSE&#x27; from 250 ms to 650 ms or shorten &#x27;--syn-t-open&#x27; from 1.15 s to 0.8 s so each opening brace settles calmly before the next layer begins filling.</button><button type='button' data-opt='Single-layer rest plus click or nudge to grow deeper: let hovering open and pin the current brace cleanly, waiting for an intentional move or click onto an inner brace rather than auto-cascading down multiple nested branches.' aria-pressed='false'>Single-layer rest plus click or nudge to grow deeper: let hovering open and pin the current brace cleanly, waiting for an intentional move or click onto an inner brace rather than auto-cascading down multiple nested branches.</button><button type='button' data-opt='Keep the current 650 ms / 250 ms pace as-is if the lively continuous cascade feels better during real reading than a slower step-by-step unfold.' aria-pressed='false'>Keep the current 650 ms / 250 ms pace as-is if the lively continuous cascade feels better during real reading than a slower step-by-step unfold.</button><input type='text' class='item-note' data-note='H2' placeholder='Optional note on H2&hellip;' aria-label='Optional note on H2'></div></article></div>
+  </section>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <span id="tally" class="sc">No choices marked yet (saved offline automatically).</span>
+    <div class="dock-actions">
+      <button type="button" id="acceptTier1">Accept all Tier 1 fixes</button>
+      <button type="button" id="resetPicks">Clear choices</button>
+      <button type="button" id="copyBtn" style="background:var(--accent);color:var(--paper);border-color:var(--accent)">Copy my choices</button>
+      <span id="copiedMsg" class="sc rubric" aria-live="polite"></span>
+    </div>
+  </div>
+  <div class="copy-box" id="copyBox">
+    <textarea id="copyFallback" readonly aria-label="Copied choices summary"></textarea>
+  </div>
+</div>
+
+<script>
+const STORE_KEY = "burton-ux-workbench-2026-11-25";
+const ITEMS = [{"bucket": "tier1", "code": "F1", "title": "Fix 16:10 laptop front page collapse to one column (and 2 px half-screen overflow)", "opts": ["Fix", "Skip"]}, {"bucket": "tier1", "code": "F2", "title": "Center and highlight deep-link arrivals to sidenotes and search hits", "opts": ["Fix", "Skip"]}, {"bucket": "tier1", "code": "F3", "title": "Restore tap and keyboard access to inline citations and narrow-screen Gowland cues", "opts": ["Fix", "Skip"]}, {"bucket": "tier1", "code": "F4", "title": "Add two-tap preview parity on touch for frontispiece panels and author links", "opts": ["Fix", "Skip"]}, {"bucket": "tier1", "code": "F5", "title": "Fix wide-window '@media print' left-margin leak and '.mn-fold.hot' fade colour", "opts": ["Fix", "Skip"]}, {"bucket": "tier2", "code": "E1", "title": "Scroll-anchoring safety across reading-mode and text-size toggles", "opts": ["Variant A (top-edge anchor): anchor to the highest paragraph '[id]' intersecting the top edge of the viewport, ideal when reading steadily downward.", "Variant B (reading-line midpoint anchor): anchor to the '[id]' block closest to roughly 30 percent down from the top of the screen, which prevents downward drift when switching into taller 'interlinear' mode.", "Skip"]}, {"bucket": "tier2", "code": "E2", "title": "Quiet silk-ribbon place memory across reading sessions", "opts": ["Variant A (purely inside folded Contents): show 'Continue where you left off' at the top inside the folded Contents panel so the resting front page stays 100 percent unchanged.", "Variant B (per-unit memory + subtle front hint): save the last paragraph per chapter plus global latest, and test whether a single quiet text line inside '.front-info' stays within zero scrollbars across all 2-column laptops.", "Skip"]}, {"bucket": "tier2", "code": "E3", "title": "Hover-only paragraph citation copier, locator jumper, and print running head", "opts": ["Variant A (single-click pilcrow): hovering or focusing a paragraph exposes one small pilcrow that copies 'Burton, Anatomy [Unit], [para] + URL' on click.", "Variant B (pilcrow + private page-jump box): adds a lightweight 'Jump to section or p.' input tucked inside 'Contents' / '/search/' (publicly section-only; privately section plus Penguin pagebreak).", "Skip"]}, {"bucket": "tier2", "code": "E4", "title": "Filter, sort, and A-Z jump bar for 'Authors Cited' and 'The Table'", "opts": ["Variant A (instant text filter + sticky A-Z strip): simple live filter input plus horizontal letter strip above each list and clickable sort headers on 'Authors Cited'.", "Variant B (add status filter on Authors): optionally filter 'Authors Cited' by verified/identified entries versus entries still awaiting verification, keeping all counts transparent.", "Skip"]}, {"bucket": "tier2", "code": "E5", "title": "Keyboard parity for '.pw' author previews, search focus, and page turning", "opts": ["Variant A (explicit preview key 'p' or Shift+Enter): leaves standard Tab-then-Enter navigation 100 percent unchanged and opens previews only on demand.", "Variant B (gentle focus dwell): opens the '.pw' preview softly after resting keyboard focus for ~450 ms, closing on 'Escape' and following the link immediately on Enter.", "Skip"]}, {"bucket": "tier3", "code": "V1", "title": "Personal Commonplace Book ('/commonplace/') in localStorage", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "tier3", "code": "V2", "title": "Ways into the Labyrinth & Sortes Burtonianae", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "tier3", "code": "V3", "title": "Reader-Facing Humoral, Apothecary & Technical Glossary ('/glossary/')", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "tier3", "code": "V4", "title": "Burton's Self-Translation & Elucidation Lens", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "tier3", "code": "V5", "title": "Long-Unit Marginalia Signpost Compass", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "tier3", "code": "V6", "title": "Calm Margin Density Relief without Hiding Burton's Marginalia", "opts": ["Prototype this", "Park for later", "Skip"]}, {"bucket": "revisit", "code": "P3", "title": "Rubric rule edge on left-margin Burton sidenotes ('.sidenote.mn-l')", "opts": ["Keep Option B with left-aligned text as already built: keeps the red rule cleanly separating Burton's voice from Gowland's left-rail notes while prioritizing standard easy left-to-right scanning.", "Test Option B with flush-right text inside '.sidenote.mn-l': aligns the right ends of lines directly against the text-facing rubric rule so ragged line ends do not float inside the gutter, checking whether multi-line sidenotes remain pleasant to read.", "Switch to Option A (outer left-edge rubric rule): places the red line on the far left edge of the card so left-aligned text hugs the rule tightly, though it breaks mirror symmetry around the main text column."]}, {"bucket": "revisit", "code": "H2", "title": "Rest-to-open synopsis brace pacing and animation overlap ('.syn-filling')", "opts": ["Settle-first cadence (recommended): keep the brisk 650 ms first hold-to-open fill, and either raise 'T_PAUSE' from 250 ms to 650 ms or shorten '--syn-t-open' from 1.15 s to 0.8 s so each opening brace settles calmly before the next layer begins filling.", "Single-layer rest plus click or nudge to grow deeper: let hovering open and pin the current brace cleanly, waiting for an intentional move or click onto an inner brace rather than auto-cascading down multiple nested branches.", "Keep the current 650 ms / 250 ms pace as-is if the lively continuous cascade feels better during real reading than a slower step-by-step unfold."]}];
+const GLOSSARY = [{"term": "melancholia, melancholicus", "render": "melancholy, melancholic", "note": "Burton's own English word; do not modernise to \"depression\"."}, {"term": "hypochondriacus, hypochondria", "render": "hypochondriacal, hypochondria", "note": "Anatomical sense (the upper abdomen below the ribs), not the modern \"health anxiety\"."}, {"term": "humor, humores", "render": "humour, humours", "note": "A bodily humour. In weather or astronomy (coeli humor) it is moisture; say so in the note."}, {"term": "atra bilis, bilis atra", "render": "black bile", "note": ""}, {"term": "atra cura", "render": "black care", "note": "Horace's dark care, not black bile."}, {"term": "spiritus animales, spiritus animalis", "render": "animal spirits", "note": "Physiological spirits of the brain and nerves, not \"animal\" as in beasts."}, {"term": "spiritus vitales", "render": "vital spirits", "note": ""}, {"term": "phrenitis", "render": "phrensy, frenzy", "note": ""}, {"term": "morbus, morbi", "render": "disease, diseases, malady", "note": ""}, {"term": "manes", "render": "shade, shades, spirit", "note": "Spirits of the dead; in Virgil's 'quisque suos patimur manes' also the purgation each soul undergoes."}, {"term": "pituita, pituitosi", "render": "phlegm, phlegmatic", "note": ""}, {"term": "biliosi, biliosis", "render": "choleric", "note": "Of yellow bile (choler); \"bilious\" only if the context is digestive."}, {"term": "lienosi, lienosis", "render": "splenetic", "note": "Diseased in the spleen, the seat of black bile."}, {"term": "phlebotomia, phlebotomiae", "render": "bloodletting, blood-letting, letting blood", "note": ""}, {"term": "cucurbitula, cucurbitulae", "render": "cupping-glass, cupping-glasses, cupping", "note": ""}, {"term": "ventriculus, ventriculo", "render": "stomach", "note": "The stomach, not a ventricle of the heart or brain."}, {"term": "per consensum", "render": "by consent", "note": "The old medical \"consent\" (sympathy) between organs; explain in the note if needed."}, {"term": "per essentiam", "render": "in essence, essentially", "note": ""}, {"term": "℞", "render": "take", "note": ""}, {"term": "℥, unc.", "render": "ounce, ounces", "note": ""}, {"term": "ʒ, drachmam", "render": "drachm, drachms", "note": ""}, {"term": "℈, scrup.", "render": "scruple, scruples", "note": ""}, {"term": "ß, semunc.", "render": "half, ½", "note": "ß is the apothecary semis (a half), not German; \"℥ ß\" = half an ounce, \"℥ iii ß\" = three and a half ounces; semunc. = half an ounce."}, {"term": "ana", "render": "of each, each", "note": ""}, {"term": "gr.", "render": "grain, grains", "note": ""}];
+const state = (() => {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{"theme":"light","picks":{},"notes":{}}'); }
+  catch { return { theme: "light", picks: {}, notes: {} }; }
+})();
+if (state.theme === "dark") document.documentElement.dataset.theme = "dark";
+function persist() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch {}
+  updateTally();
+}
+
+document.getElementById("themeBtn").addEventListener("click", () => {
+  state.theme = state.theme === "dark" ? "light" : "dark";
+  if (state.theme === "dark") document.documentElement.dataset.theme = "dark";
+  else delete document.documentElement.dataset.theme;
+  persist();
+});
+
+function syncCards() {
+  document.querySelectorAll(".item").forEach(card => {
+    const code = card.dataset.code;
+    const picked = state.picks[code];
+    card.classList.toggle("picked", !!picked);
+    card.querySelectorAll("button[data-opt]").forEach(b => {
+      b.setAttribute("aria-pressed", String(b.dataset.opt === picked));
+    });
+    const inp = card.querySelector(".item-note");
+    if (inp) inp.value = state.notes[code] || "";
+  });
+}
+syncCards();
+
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("button[data-opt]");
+  if (!b) return;
+  const card = b.closest(".item");
+  const code = card.dataset.code;
+  state.picks[code] = state.picks[code] === b.dataset.opt ? "" : b.dataset.opt;
+  if (!state.picks[code]) delete state.picks[code];
+  syncCards();
+  persist();
+});
+document.addEventListener("input", ev => {
+  const inp = ev.target.closest(".item-note");
+  if (!inp) return;
+  state.notes[inp.dataset.note] = inp.value;
+  persist();
+});
+
+document.querySelectorAll(".flt-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const f = btn.dataset.flt;
+    document.querySelectorAll(".flt-btn").forEach(x => x.setAttribute("aria-pressed", String(x === btn)));
+    document.querySelectorAll("section[data-sec]").forEach(sec => {
+      sec.hidden = f !== "all" && sec.dataset.sec !== f;
+    });
+  });
+});
+
+// Interactive prototypes
+document.querySelectorAll("[data-fpview]").forEach(b => b.addEventListener("click", () => {
+  const prop = b.dataset.fpview === "proposed";
+  document.querySelectorAll("[data-fpview]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  document.getElementById("fpSimSide")?.classList.toggle("is-wrapped", !prop);
+  const note = document.getElementById("fpSimNote");
+  if (note) note.textContent = prop
+    ? "Proposed: adjusting .front-side proportion lets 16:10 laptops stay in 2 columns so Synopses and Contents sit comfortably on one screen."
+    : "Today at 1440x900, .front-side drops just under 39em, forcing 1 column and leaving 202 px empty on the right.";
+}));
+
+document.addEventListener("click", ev => {
+  const pop = ev.target.closest("[data-pop]");
+  if (pop) {
+    const out = document.getElementById("f3Pop");
+    if (out) out.innerHTML = pop.dataset.pop;
+  }
+});
+
+document.querySelectorAll("[data-dl]").forEach(b => b.addEventListener("click", () => {
+  const after = b.dataset.dl === "after";
+  document.querySelectorAll("[data-dl]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  document.getElementById("dlWords")?.classList.toggle("lit", after);
+  document.getElementById("dlNote")?.classList.toggle("lit", after);
+  const msg = document.getElementById("dlMsg");
+  if (msg) msg.textContent = after
+    ? "After fix: once layoutNotes() places the note in the margin, the anchor scrolls cleanly into view and both Burton's words and the note light up in gold."
+    : "Before fix: after layoutNotes() moves the note into absolute position, both anchor and note sit off-screen and unlit.";
+}));
+
+document.getElementById("bkDismiss")?.addEventListener("click", () => {
+  const bar = document.getElementById("bkBar");
+  if (bar) bar.style.opacity = bar.style.opacity === "0.35" ? "1" : "0.35";
+});
+document.querySelectorAll("[data-mode-sim]").forEach(b => b.addEventListener("click", () => {
+  const m = b.dataset.modeSim;
+  document.querySelectorAll("[data-mode-sim]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  const bar = document.getElementById("bkBar");
+  if (bar) bar.style.display = m === "printed" ? "none" : "flex";
+  const out = document.getElementById("modeAnchorOut");
+  if (out) out.textContent = m === "printed"
+    ? "In 'As printed' mode, the bookmark ribbon vanishes completely so only Burton's printed text remains."
+    : `Anchored on #3.2.3.1-p60 in ${m} mode: your current paragraph stays fixed in the viewport (0 px jump).`;
+}));
+
+document.getElementById("citeDemoBtn")?.addEventListener("click", () => {
+  const out = document.getElementById("citeDemoOut");
+  if (out) out.textContent = "Copied: Burton, Anatomy of Melancholy, Part. 3, Sect. 2, Memb. 3, Subsect. 1 [p. 714] (#3.2.3.1-p35)";
+});
+document.getElementById("locusJumpBtn")?.addEventListener("click", () => {
+  const q = (document.getElementById("locusJumpIn")?.value || "").trim().toLowerCase();
+  const out = document.getElementById("locusJumpOut");
+  if (!out) return;
+  if (q.includes("714")) out.textContent = "Resolves to /3.2.3.1/#pg-714 (Love-Melancholy, Symptoms).";
+  else if (q.includes("3.2.3.1")) out.textContent = "Resolves to /3.2.3.1/ (28,873 words, 331 sidenotes).";
+  else if (q.includes("djr")) out.textContent = "Resolves to /djr/ (Democritus Junior to the Reader, 64,162 words).";
+  else out.textContent = `Resolved jump target for "${q}" without hunting through nested menus.`;
+});
+
+const AUTHORS = [
+  { name: "Galen", forms: "Gal., Galenus", field: "Medicine", cites: 412 },
+  { name: "Seneca the Younger", forms: "Sen., Seneca", field: "Philosophy", cites: 298 },
+  { name: "Hippocrates", forms: "Hippoc., Hip.", field: "Medicine", cites: 241 },
+  { name: "Cicero", forms: "Tully, Cic.", field: "Philosophy / Rhetoric", cites: 229 },
+  { name: "Augustine of Hippo", forms: "Austin, Aug.", field: "Theology", cites: 194 },
+  { name: "Pliny the Elder", forms: "Plin., Plinius", field: "Natural history", cites: 186 },
+  { name: "Avicenna", forms: "Avicen.", field: "Medicine", cites: 143 }
+];
+let authSort = "cites";
+function renderAuthors() {
+  const body = document.getElementById("authRows");
+  if (!body) return;
+  const q = (document.getElementById("authFilter")?.value || "").toLowerCase();
+  const rows = AUTHORS.filter(a => !q || (a.name + " " + a.forms + " " + a.field).toLowerCase().includes(q))
+    .sort((a, b) => authSort === "cites" ? b.cites - a.cites : a.name.localeCompare(b.name));
+  body.innerHTML = rows.map(a =>
+    `<tr><td><b>${a.name}</b> <span style="color:var(--muted);font-size:0.85em">(${a.forms})</span></td><td>${a.field}</td><td>${a.cites}</td></tr>`
+  ).join("") || `<tr><td colspan="3" style="color:var(--muted)">No matching author.</td></tr>`;
+}
+document.getElementById("authFilter")?.addEventListener("input", renderAuthors);
+document.getElementById("sortName")?.addEventListener("click", () => {
+  authSort = "name";
+  document.getElementById("sortName")?.setAttribute("aria-pressed", "true");
+  document.getElementById("sortCount")?.setAttribute("aria-pressed", "false");
+  renderAuthors();
+});
+document.getElementById("sortCount")?.addEventListener("click", () => {
+  authSort = "cites";
+  document.getElementById("sortCount")?.setAttribute("aria-pressed", "true");
+  document.getElementById("sortName")?.setAttribute("aria-pressed", "false");
+  renderAuthors();
+});
+renderAuthors();
+
+document.getElementById("elucBurtonOnly")?.addEventListener("click", () => {
+  document.getElementById("elucBurtonOnly")?.setAttribute("aria-pressed", "true");
+  document.getElementById("elucCompare")?.setAttribute("aria-pressed", "false");
+  document.querySelectorAll(".eluc-own, .eluc-gl").forEach(x => x.classList.remove("lit"));
+  const d = document.getElementById("elucDrawer");
+  if (d) d.style.display = "none";
+});
+document.getElementById("elucCompare")?.addEventListener("click", () => {
+  document.getElementById("elucCompare")?.setAttribute("aria-pressed", "true");
+  document.getElementById("elucBurtonOnly")?.setAttribute("aria-pressed", "false");
+  document.querySelectorAll(".eluc-own, .eluc-gl").forEach(x => x.classList.add("lit"));
+  const d = document.getElementById("elucDrawer");
+  if (d) d.style.display = "block";
+});
+
+function renderGlossary() {
+  const box = document.getElementById("glossOut");
+  if (!box) return;
+  const q = (document.getElementById("glossFilter")?.value || "").toLowerCase();
+  const hits = GLOSSARY.filter(g => !q || (g.term + " " + g.render + " " + g.note).toLowerCase().includes(q)).slice(0, 8);
+  box.innerHTML = hits.map(g =>
+    `<div class="gloss-card"><b class="la">${g.term}</b> &rarr; <span>${g.render}</span><div style="color:var(--muted);font-size:0.84rem">${g.note || "Canonical rendering in edition glossary"}</div></div>`
+  ).join("") || `<p class="demo-note">No matching glossary entry.</p>`;
+}
+document.getElementById("glossFilter")?.addEventListener("input", renderGlossary);
+renderGlossary();
+
+function updateCpMd() {
+  const pre = document.getElementById("cpMdOut");
+  const note = document.getElementById("cpUserNote")?.value || "";
+  if (pre) pre.textContent = `> "I write of melancholy, by being busy to avoid melancholy."\n— Robert Burton, *Democritus Junior to the Reader*\n\nNote: ${note}`;
+}
+document.getElementById("cpToggle")?.addEventListener("click", ev => {
+  const b = ev.currentTarget;
+  const on = b.getAttribute("aria-pressed") !== "true";
+  b.setAttribute("aria-pressed", String(on));
+  b.textContent = on ? "☞ Kept in Commonplace Book" : "☞ Keep in Commonplace Book";
+  const d = document.getElementById("cpDrawer");
+  if (d) d.style.display = on ? "block" : "none";
+  updateCpMd();
+});
+document.getElementById("cpUserNote")?.addEventListener("input", updateCpMd);
+
+const LEAVES = ["2.2.3.1 · Digression of Air — \"As a long-winged hawk mounts aloft… so will I, having now come at last into these ample fields of air…\"", "1.2.3.15 · Misery of Scholars — \"Because they cannot ride an horse, which every clown can do; salute and court a gentlewoman…\"", "djr · Democritus Junior to the Reader — \"I write of melancholy, by being busy to avoid melancholy.\"", "2.2.4.1 · Exercise Rectified — \"A most incomparable delight it is so to melancholize, and build castles in the air…\"", "3.2.3.1 · Symptoms of Love-Melancholy — \"Res est solliciti plena timoris amor — ’Tis full of fear, anxiety, doubt, care…\""];
+let leafIdx = 0;
+document.getElementById("sortesBtn")?.addEventListener("click", () => {
+  const out = document.getElementById("sortesOut");
+  if (out) out.textContent = LEAVES[leafIdx++ % LEAVES.length];
+});
+
+document.querySelectorAll(".compass-step").forEach(b => b.addEventListener("click", () => {
+  const out = document.getElementById("compassOut");
+  if (out) out.textContent = `Compass would scroll smoothly to #djr-p${b.dataset.jump} using Burton's own substantive marginal signpost.`;
+}));
+
+document.querySelectorAll("[data-p3]").forEach(b => b.addEventListener("click", () => {
+  const isB = b.dataset.p3 === "B";
+  document.querySelectorAll("[data-p3]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  const left = document.getElementById("p3Left");
+  if (left) {
+    left.classList.toggle("p3-inner", isB);
+    left.classList.toggle("p3-outer", !isB);
+  }
+}));
+
+let h2Pace = 650, h2Timer = 0;
+document.querySelectorAll("[data-h2]").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll("[data-h2]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  h2Pace = b.dataset.h2 === "click" ? 0 : Number(b.dataset.h2);
+  const msg = document.getElementById("h2Layers");
+  if (msg) msg.textContent = h2Pace ? `Rest pointer on brace (${h2Pace} ms per layer) or click.` : "Hover disabled — click or use ⁂ asterism to open.";
+}));
+const h2Trig = document.getElementById("h2Trig"), h2Bar = document.getElementById("h2Bar"), h2Layers = document.getElementById("h2Layers");
+function runH2Demo() {
+  clearInterval(h2Timer);
+  if (!h2Pace) return;
+  let step = 0, pct = 0;
+  h2Timer = setInterval(() => {
+    pct += 10;
+    if (h2Bar) h2Bar.style.width = `${pct}%`;
+    if (pct >= 100) {
+      pct = 0; step++;
+      if (h2Layers) h2Layers.textContent = `Layer ${step} opened (Member ${step}) — keep resting for deeper branches.`;
+      if (step >= 3) clearInterval(h2Timer);
+    }
+  }, Math.max(40, Math.round(h2Pace / 10)));
+}
+h2Trig?.addEventListener("mouseenter", runH2Demo);
+h2Trig?.addEventListener("mouseleave", () => { clearInterval(h2Timer); if (h2Bar) h2Bar.style.width = "0"; });
+h2Trig?.addEventListener("click", () => {
+  clearInterval(h2Timer);
+  if (h2Layers) h2Layers.textContent = "Opened immediately on click (all layers available).";
+});
+
+document.getElementById("acceptTier1").addEventListener("click", () => {
+  for (const it of ITEMS.filter(x => x.bucket === "tier1")) {
+    state.picks[it.code] = it.opts[0];
+  }
+  syncCards();
+  persist();
+});
+
+document.getElementById("resetPicks").addEventListener("click", () => {
+  state.picks = {};
+  state.notes = {};
+  syncCards();
+  persist();
+});
+
+function updateTally() {
+  const keys = Object.keys(state.picks).filter(k => state.picks[k]);
+  document.getElementById("tally").textContent = keys.length
+    ? `${keys.length} of ${ITEMS.length} items decided (saved offline).`
+    : "No choices marked yet (saved offline automatically).";
+}
+updateTally();
+
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  const lines = ITEMS.map(it => {
+    const p = state.picks[it.code];
+    const n = (state.notes[it.code] || "").trim();
+    if (!p && !n) return null;
+    return `${it.code} (${it.title}): ${p || "undecided"}${n ? " — Note: " + n : ""}`;
+  }).filter(Boolean);
+  const out = lines.length ? "UX Workbench choices:\n" + lines.join("\n") : "UX Workbench: no choices selected yet.";
+  const box = document.getElementById("copyBox");
+  const fb = document.getElementById("copyFallback");
+  if (fb) fb.value = out;
+  try {
+    await navigator.clipboard.writeText(out);
+    document.getElementById("copiedMsg").textContent = "Copied!";
+    if (box) box.style.display = "none";
+  } catch {
+    document.getElementById("copiedMsg").textContent = "Copy from box below:";
+    if (box) box.style.display = "block";
+    fb?.select();
+  }
+});
+</script>
+</body>
+</html>

@@ -109,6 +109,7 @@ class Book:
                 self.back.append(pg)
                 self._add(pg)
         self.extra = [Page("about", "about", "About", "about/"),
+                      Page("glossary", "glossary", "Glossary", "glossary/"),
                       Page("settings", "settings", "Reading options", "settings/"),
                       Page("authors", "authors", "Authors cited", "authors/"),
                       Page("search", "search", "Search", "search/")]

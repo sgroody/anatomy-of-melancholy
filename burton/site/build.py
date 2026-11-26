@@ -25,7 +25,19 @@ from .. import paths
 from ..layers import names_sweep, sweep_audit
 from ..tei import T
 from ..textview import public_text
-from . import authors_pages, facing, fonts, frontispiece, glosses, gowland_notes, names, search, synopsis
+from . import (
+    authors_pages,
+    facing,
+    fonts,
+    frontispiece,
+    glossary_page,
+    glosses,
+    gowland_notes,
+    labyrinth,
+    names,
+    search,
+    synopsis,
+)
 from .book import Book, Page, text_units
 from .render import attr, esc, render_unit
 
@@ -220,7 +232,8 @@ class Images:
 # ---------------------------------------------------------------- contents tree
 
 
-def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Page | None = None) -> str:
+def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Page | None = None,
+             extras: str = "") -> str:
     """Nested contents list. `ids` puts anchor ids on groups (home and landing pages only)."""
 
     def link(pg: Page) -> str:
@@ -255,7 +268,7 @@ def toc_html(book: Book, root: str, current: str | None, *, ids: bool, only: Pag
         bid = ' id="toc-back"' if ids else ""
         back = (f'<li class="toc-part"{bid}><span class="toc-gl">Back matter</span>'
                 f'<ol>{"".join(item(p, 1) for p in book.back)}</ol></li>')
-    return (f'<ol class="toc"><li class="toc-part"{fid}><span class="toc-gl">Front matter</span>'
+    return (f'{extras}<ol class="toc"><li class="toc-part"{fid}><span class="toc-gl">Front matter</span>'
             f'<ol>{front}</ol></li>{parts}{back}</ol>')
 
 
@@ -327,14 +340,22 @@ def build(units: list[str] | None, *, profile: str) -> dict:
     report = {"profile": profile, "units": {}, "density": {}}
     shown_notes: set[str] = set()  # sidenote ids rendered in this profile, for the author pages' links
 
+    parsed_units = {}
+    words_by_unit: dict[str, int] = {}
+    for u in book.units:
+        div = etree.parse(str(paths.TEXT / f"{u}.xml")).getroot().find(f".//{T('div')}")
+        parsed_units[u] = div
+        words_by_unit[u] = len(public_text(div).split())
+
     def page(key: str, rel: str, template: str, **kw) -> None:
         root = "../" * rel.count("/")
         pg = book.pages.get(key)
         prev, nxt = book.neighbours(key)
         kw.setdefault("crumbs", book.crumbs(key) if pg else [])
+        extras = labyrinth.contents_extras_html(root, book, words_by_unit)
         pages[rel] = jenv.get_template(template).render(
             root=root, profile=profile, key=key, prev=prev, next=nxt,
-            toc=Markup(toc_html(book, root, key, ids=False)), **kw)
+            toc=Markup(toc_html(book, root, key, ids=False, extras=extras)), **kw)
 
     def front_nav(current: str) -> Markup:
         """Every page of the front matter, the reader's own marked (owner, 2026-11-18): after "Enter, gentle Reader"
@@ -368,8 +389,7 @@ def build(units: list[str] | None, *, profile: str) -> dict:
 
     # units and front matter
     for unit in book.units:
-        xml = etree.parse(str(paths.TEXT / f"{unit}.xml")).getroot()
-        div = xml.find(f".//{T('div')}")
+        div = parsed_units[unit]
         body, counts = render_unit(div, unit, profile, layer_for(unit),
                                    image=lambda n: images.get(n, "../"), djs=layer_for(unit, "djs"),
                                    cites=layer_for(unit, "citations"), cite_label=cite_label,
@@ -405,15 +425,18 @@ def build(units: list[str] | None, *, profile: str) -> dict:
                     f'{synopsis.front_html([(pt.key, pt.title, tree)], "../", shown_titles)}</section>\n' + body)
         report["units"][unit] = counts
         shown_notes.update(re.findall(r'<span class="sidenote" id="([^"]+)"', body))  # restored ones: "sidenote sn-…"
-        words = len(public_text(div).split())
+        words = words_by_unit[unit]
         if counts["sidenotes"]:
             report["density"][unit] = round(1000 * counts["sidenotes"] / max(words, 1), 1)
         pg = book.pages[unit]
         has_h1 = "<h1" in body
         here = back.get(unit)
+        signposts = synopsis.extract_signposts(body) if words >= 2500 else []
+        place = (Markup(synopsis.branch_html(unit, here[0], here[1], "../", plain, signposts=signposts))
+                 if here else (Markup(synopsis.compass_html(pg.title, signposts)) if signposts else None))
         page(unit, f"{unit}/index.html", "unit.html", page=pg, body=Markup(body),
              hidden_h1=None if has_h1 else pg.title,
-             place=Markup(synopsis.branch_html(unit, here[0], here[1], "../", plain)) if here else None,
+             place=place,
              front_nav=front_nav(unit) if pg.kind == "front" else None,
              title=pg.title if pg.kind in ("front", "back") else f"{unit} {pg.title}",
              description=f"Burton, The Anatomy of Melancholy, {pg.title}")
@@ -504,6 +527,12 @@ def build(units: list[str] | None, *, profile: str) -> dict:
              crumbs=[("Authors cited", "authors/"), (a["name"], None)], title=a["name"],
              description=f"{a['name']}, as cited by Burton in The Anatomy of Melancholy", a=a)
     report["authors"] = {"pages": len(alpha), **astats}
+    labyrinth.write_sortes(labyrinth.sortes_pool(book, words_by_unit), out / "assets" / "sortes.json")
+    page("glossary", "glossary/index.html", "glossary.html", page=book.pages["glossary"],
+         crumbs=[("Glossary", None)], title="Glossary",
+         description=("Humoral terms, apothecary signs, citation locators, and recurring authorities "
+                      "in The Anatomy of Melancholy"),
+         glossary=glossary_page.collect(apages))
     # a name or an expansion links to an author's page only if this build made one (an entry whose author is cited
     # only outside the notes, or only in notes the public build withholds, has none): unwrap the rest
     dead = re.compile(r'<a class="(?:nm|cx-a|cx-a nm)" href="\.\./authors/([^/"]+)/"[^>]*>(.*?)</a>', re.S)
@@ -517,11 +546,14 @@ def build(units: list[str] | None, *, profile: str) -> dict:
             return m.group(2)
         pages[rel] = dead.sub(keep, pages[rel])
     report["authors"]["links_without_page_unwrapped"] = unwrapped
+    home_extras = labyrinth.contents_extras_html("", book, words_by_unit)
     pages["index.html"] = jenv.get_template("home.html").render(
         root="", profile=profile, key="home", crumbs=[], prev=None, next=book.pages[book.order[0]],
-        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True)), frontispiece=front, front_map=front_map,
+        toc=Markup(""), contents=Markup(toc_html(book, "", None, ids=True, extras=home_extras)),
+        frontispiece=front, front_map=front_map,
         argument=book.pages.get("argument"), dedication=book.pages.get("dedication"), stanzas=stanzas,
-        synopses=synopses, specimen=front_specimen(pages["3.2.3.1/index.html"], author_info),
+        synopses=synopses,
+        specimen=front_specimen(pages["3.2.3.1/index.html"], author_info) if "3.2.3.1/index.html" in pages else "",
         title="The Anatomy of Melancholy",
         description="A reading edition of Robert Burton’s Anatomy of Melancholy")
 

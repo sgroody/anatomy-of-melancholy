@@ -471,9 +471,17 @@ class Renderer:
         source = ' data-source="image"' if e.get("facs") else ""
         sub = f" head-{attr(e.get('subtype'))}" if e.get("subtype") else ""
         tag, cls = ("h1", f"unit-title head-{attr(t)}") if e is self.h1_head else ("p", f"head-{attr(t)}{sub}")
+        aid = ""
         if e.get("subtype") == "tableHeadA":  # the Table's letters: real headings, for navigation
             tag = "h2"
-        self.w(f'<{tag} class="{cls}"{source}>')
+            ltr = re.sub(r"[^A-Za-z]", "", "".join(e.itertext())).upper()[:1]
+            seen = getattr(self, "table_letters", None)
+            if seen is None:
+                seen = self.table_letters = set()
+            if ltr and ltr not in seen:
+                seen.add(ltr)
+                aid = f' id="table-{ltr}"'
+        self.w(f'<{tag} class="{cls}"{aid}{source}>')
         start = len(self.out)
         if e.get("ana") == "foreign":  # a heading that is itself a foreign passage (Lectori male feriato)
             self.foreign(e)
@@ -636,6 +644,24 @@ class Renderer:
         return bool(rec and st.get("status") == "full" and st.get("burton_span")
                     and (rec.get("preferred") == "burton" or self.decided.get(fid) == "own"))
 
+    def literal_peek_html(self, fid: str, cls: str = "mn-lit") -> str:
+        """Collapsed literal comparison inside a self-translated passage (V4): Gowland (private only),
+        else Dell & Jordan-Smith, else machine (marked ◇). Hidden in 'As printed'.
+        Uses pure phrasing markup (.ft-lit) inside inline text boxes and <details> inside margin cards."""
+        vs = self.versions(fid)
+        if not vs:
+            return ""
+        v = vs[0]
+        src = v["by"]
+        resp = ' data-resp="gowland"' if src == "gowland" else ""
+        lab = (src_label(v) + (" " + prov(label_of(v)) if src == "machine" else "")).strip()
+        body = (f'<span class="{cls}-v"{" hidden" if cls == "ft-lit" else ""} lang="en" '
+                f'data-src="{attr(src)}"{resp}>{esc_tagged(v["text"])} <span class="mn-src">{lab}</span></span>')
+        if cls == "ft-lit":
+            return (f'<span class="{cls}"><button type="button" class="ft-lit-btn" '
+                    f'aria-expanded="false">literal</button> {body}</span>')
+        return f'<details class="{cls}"><summary>literal</summary>{body}</details>'
+
     def tr_markup(self, fid: str, block: bool, lang: str | None) -> str:
         rec = self.layer.get(fid)
         tag = "div" if block else "span"
@@ -656,12 +682,13 @@ class Renderer:
         elif self.burton_renders(fid):
             # his English and nothing beside it; a block's rendering is set out in full near it, so it is only named
             self.counts["own_edition_tr_hidden"] = self.counts.get("own_edition_tr_hidden", 0) + 1
+            lit = self.literal_peek_html(fid, "ft-lit")
             if block:
                 return (f'<{tag} class="ft ft-own" id="tr-{attr(fid)}" role="note" lang="en">{head}'
-                        f'<span class="ft-label">Burton gives it in English himself</span></{tag}>')
+                        f'<span class="ft-label">Burton gives it in English himself</span>{lit}</{tag}>')
             return (f'<{tag} class="ft ft-own" id="tr-{attr(fid)}" role="note" lang="en">{head}'
                     f'<span class="ft-burton-own"><span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
-                    f'<span class="ft-label">Burton’s own rendering</span></span></{tag}>')
+                    f'<span class="ft-label">Burton’s own rendering</span></span>{lit}</{tag}>')
         if rec and rec["preferred"] == "burton" and st.get("burton_span"):
             # placeholder: filled in after mark_burton_spans, so the quote is not matched twice
             burton = (f'<span class="ft-burton-own"><span class="ft-text">Burton translates: “\x00Q{fid}\x00”</span>'
@@ -780,7 +807,7 @@ class Renderer:
                 return
             # "Author trans." and his words only: a note saying the same again is not wanted (owner, 2026-11-18)
             head = '<span class="mn-k">Author trans.</span> '
-            body = f'“\x00Q{fid}\x00”'
+            body = f'“\x00Q{fid}\x00”{self.literal_peek_html(fid, "mn-lit")}'
             kind = "own"
         elif vs:
             v0, rest = vs[0], vs[1:]
@@ -1085,10 +1112,12 @@ def gowland_card(e: dict, notes, cid: str) -> str:
 def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str, list[str]]:
     """Gowland's endnote entries in the margin (private build; burton/site/gowland_notes.py): an anchor before the
     words each is on (`data-len` of them, for the highlight), or, where the words are not found, after his own
-    endnote anchor; the items themselves are returned to be laid out beside their anchors."""
+    endnote anchor; the items themselves are returned to be laid out beside their anchors. Unanchored sibling
+    segments of the same endnote share one margin card (V6)."""
     from . import gowland_notes as notes
     views = {SKIP_MAIN: _visible(html_text, SKIP_MAIN)}
     edits, cards = [], []
+    grouped: dict[tuple[str, int], list[tuple[str, str, str]]] = {}
     for e in entries:
         cid = f"gw-{e['endnote']}-{e['seg']}"
         hs, extra = None, ""
@@ -1110,12 +1139,26 @@ def mark_gowland(html_text: str, entries: list[dict], counts: dict) -> tuple[str
             if not m:
                 counts["gowland_notes_unplaced"] = counts.get("gowland_notes_unplaced", 0) + 1
                 continue
-            hs, ln = m.end(), 0
-        edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}"{extra} '
-                          'aria-hidden="true"></span>'))
-        cards.append(gowland_card(e, notes, cid))
+            hs = m.end()
+            grouped.setdefault((e["endnote"], hs), []).append((cid, e["kind"], gowland_card(e, notes, cid)))
+        else:
+            edits.append((hs, f'<span class="mref" data-for="{attr(cid)}" data-len="{ln}"{extra} '
+                              'aria-hidden="true"></span>'))
+            cards.append(gowland_card(e, notes, cid))
         counts["gowland_notes"] = counts.get("gowland_notes", 0) + 1
         counts[f"gowland_notes_{e['kind']}"] = counts.get(f"gowland_notes_{e['kind']}", 0) + 1
+    for (_endnote, hs), group in grouped.items():
+        cid0, _k0, card0 = group[0]
+        edits.append((hs, f'<span class="mref" data-for="{attr(cid0)}" data-len="0" aria-hidden="true"></span>'))
+        if len(group) == 1:
+            cards.append(card0)
+        else:
+            segs = []
+            for _cid, gk, ch in group[1:]:
+                inner = ch[ch.index(">") + 1:-len("</span>")]
+                segs.append(f'<span class="mn-gw-seg" data-kind="{attr(gk)}">{inner}</span>')
+            cards.append(card0[:-len("</span>")] + " · " + " · ".join(segs) + "</span>")
+            counts["gowland_notes_coalesced"] = counts.get("gowland_notes_coalesced", 0) + len(group) - 1
     for hs, mark in sorted(edits, key=lambda x: x[0], reverse=True):
         html_text = html_text[:hs] + mark + html_text[hs:]
     return html_text, cards
@@ -1378,7 +1421,8 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | N
             edits.setdefault(pos[at], []).append(f'<span class="mref" data-for="{attr(cid)}" '
                                                  f'data-len="{len(sel["exact"])}" aria-hidden="true"></span>')
             edits.setdefault(runs[-1][1], []).append(
-                f'<span class="ic-m" data-kind="cites" role="img" aria-label="{attr("citation: " + rec["display"])}" '
+                f'<span class="ic-m" data-kind="cites" data-for="{attr(cid)}" role="button" tabindex="0" '
+                f'aria-expanded="false" aria-label="{attr("citation: " + rec["display"])}" '
                 f'title="{attr("Burton: " + rec["raw"])}">§</span>')
             cards.append(f'<span class="mn mn-ic" id="{attr(cid)}" data-kind="cites" role="note" aria-label="Citation">'
                          f'<span class="mn-k">cites</span> <span class="ic-e">{word}{_md_italics(rec["display"])} '
@@ -1412,7 +1456,8 @@ def mark_inline_cites(html_text: str, recs: dict, counts: dict, psalms: dict | N
             edits.setdefault(he, []).append("</span>")
         cid = f"ic-{key}"
         kind = "bible" if bible else "cites"
-        mark = (f'<span class="ic-m" data-kind="{kind}" role="img" aria-label="{attr("citation: " + rec["display"])}" '
+        mark = (f'<span class="ic-m" data-kind="{kind}" data-for="{attr(cid)}" role="button" tabindex="0" '
+                f'aria-expanded="false" aria-label="{attr("citation: " + rec["display"])}" '
                 f'title="{attr("Burton: " + rec["raw"])}">§</span>')
         anchor_at, length = (runs[-1][1], 1) if bible else (pos[at], name + 1)
         if (outside := _outside_passage(html_text, anchor_at)) != anchor_at:
