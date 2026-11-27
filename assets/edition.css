@@ -1,0 +1,1752 @@
+/* The Anatomy of Melancholy — reading edition. Plain CSS, no build step. */
+
+:root {
+  --paper: #f7f3ea;
+  --ink: #23201b;
+  --muted: #645c51;
+  --rule: #d9d0bf;
+  --accent: #8a2f1d;        /* rubric red: marks, never the only signal */
+  --note-ink: #3d372f;
+  --pop-bg: #fffdf8;
+  --pop-shadow: 0 6px 24px rgb(40 30 10 / 0.16);
+  --tr-bg: color-mix(in srgb, var(--accent) 7%, transparent); /* a translation standing in for the original */
+  /* languages and the kinds of margin note (owner, 2026-11-03: T3 A, T7 A) */
+  --la: #7a2230; --grc: #2a4a8c; --enm: #8a4b1c; --modern: #5a3a6e; /* N4 D; Latin oxblood by day (F2 B) */
+  --k-gloss: #1f6657; --k-cite: #2a55a8; --k-expl: #8a2f9a; --k-bible: #556b00; /* more distinct (2026-11-18) */
+  --hot: color-mix(in srgb, #d9a520 26%, transparent);
+  --measure: 34rem;
+  --margin-col: 15rem;
+  --gap: 2.5rem;
+  --page: calc(var(--measure) + var(--margin-col) + var(--gap));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+    --la: #e0c27a; --grc: #a9c8f0; --enm: #e6a57a; --modern: #cdb6ef; --k-gloss: #7ecab8; --k-cite: #9fb0d4;
+    --k-expl: #c3a3d6; --k-bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent);
+    --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1a17; --ink: #e8e1d3; --muted: #a89e8e; --rule: #3a352e; --accent: #e5927a;
+  --la: #e0c27a; --grc: #a9c8f0; --enm: #e6a57a; --modern: #cdb6ef; --k-gloss: #7ecab8; --k-cite: #9fb0d4;
+  --k-expl: #c3a3d6; --k-bible: #c7c77a; --hot: color-mix(in srgb, #e0b040 24%, transparent);
+  --note-ink: #cfc6b5; --pop-bg: #26231f; --pop-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+/* type size setting: scales everything, since sizes are in rem/em; not the front page, a title page that keeps to one
+   screen (owner, 2026-11-21: "no scroll bars"), its type sized by the window instead (.front-side) */
+:root[data-size="s"]:not(:has(body.page-home)) { font-size: 90%; }
+:root[data-size="l"]:not(:has(body.page-home)) { font-size: 112.5%; }
+:root[data-size="xl"]:not(:has(body.page-home)) { font-size: 125%; }
+:root[data-spacing="compact"]:not(:has(body.page-home)) body { line-height: 1.38; }
+:root[data-spacing="airy"]:not(:has(body.page-home)) body { line-height: 1.68; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text, "EB Garamond", Georgia, serif);
+  font-size: clamp(1.1rem, 0.95rem + 0.6vw, 1.3rem);
+  line-height: 1.5;
+  font-kerning: normal;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration-color: var(--muted); text-underline-offset: 0.15em; }
+a:hover { text-decoration-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+main:focus { outline: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--paper); padding: 0.3rem 0.6rem; z-index: 30; }
+button { font: inherit; color: inherit; }
+
+/* ------------------------------------------------------------ chrome */
+header.site, footer.site { max-width: var(--page); margin: 0 auto; padding: 0.8rem 16px; }
+header.site { border-bottom: 1px solid var(--rule); font-size: 0.85em; }
+header.site .bar { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; }
+header.site .home { font-variant-caps: all-small-caps; letter-spacing: 0.06em; text-decoration: none; font-size: 1.15em; margin-right: auto; line-height: 1.15; }
+/* the reader's name under the title (owner, 2026-11-03) */
+header.site .home-t, header.site .home-s { display: block; }
+header.site .home-s { font-variant-caps: normal; letter-spacing: 0.02em; font-style: italic; font-size: 0.72em; color: var(--muted); }
+.crumbs ol { display: flex; flex-wrap: wrap; list-style: none; margin: 0.3rem 0 0; padding: 0; color: var(--muted); }
+.crumbs li + li::before { content: "›"; padding: 0 0.4em; }
+.crumbs a { text-decoration-color: var(--rule); }
+.settings-toggle, .toc-panel > summary, .sn-more, .settings .reset {
+  background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer;
+}
+.toc-panel { position: relative; }
+.toc-panel > summary { list-style: none; display: inline-block; }
+.toc-panel > summary::-webkit-details-marker { display: none; }
+.toc-panel > summary::after { content: ""; display: inline-block; margin-left: 0.4em; border: 0.28em solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: 0.15em; }
+.toc-panel[open] > summary::after { transform: rotate(180deg); }
+.toc-panel > nav {
+  position: absolute; z-index: 20; top: calc(100% + 0.3rem); right: 0; width: min(34rem, calc(100vw - 32px));
+  max-height: 70vh; overflow: auto; padding: 0.6rem 0.9rem; background: var(--pop-bg); border: 1px solid var(--rule);
+  border-radius: 4px; box-shadow: var(--pop-shadow);
+}
+/* AB-6 A: Redesigned 3-column Reading Options drawer with segmented pills, swatches & calm aids */
+.settings { max-width: var(--page); margin: 0 auto; padding: 0.7rem 16px 0.85rem; font-size: 0.85em; line-height: 1.35;
+  border-bottom: 1px solid var(--rule); position: relative; }
+.opt-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem 1.4rem; align-items: start; }
+@media (max-width: 50rem) { .opt-grid { grid-template-columns: 1fr; } }
+.opt-col-h { margin: 0 0 0.45rem; font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: 0.08em;
+  color: var(--accent); font-size: 0.96em; border-bottom: 1px solid var(--rule); padding-bottom: 0.15rem; }
+.settings > * + * { margin-top: 0.45rem; }
+.settings fieldset { border: none; margin: 0 0 0.5rem; padding: 0; }
+.settings legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.22rem; font-size: 0.92em; }
+.seg-group { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; max-width: 100%; }
+.seg-opt { display: inline-flex; cursor: pointer; position: relative; border-right: 1px solid var(--rule); padding: 0 !important; margin: 0 !important; }
+.seg-opt:last-child { border-right: 0; }
+.seg-opt > span { padding: 0.18rem 0.56rem; font-size: 0.9em; white-space: nowrap; }
+.seg-opt:has(> input:checked) > span { background: var(--accent); color: var(--paper); }
+.seg-opt:has(> input:focus-visible) { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sw-group { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.3rem; }
+.sw-opt { display: inline-flex !important; align-items: center; gap: 0.3rem; padding: 0.15rem 0.48rem !important;
+  border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; font-size: 0.88em; position: relative; }
+.sw-opt:has(> input:checked) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.sw-opt:has(> input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sw-dot { width: 0.72rem; height: 0.72rem; border-radius: 50%; display: inline-block; border: 1px solid var(--rule); flex: 0 0 auto; }
+.opt-badge { display: flex !important; align-items: baseline; gap: 0.42rem; margin: 0.22rem 0; font-size: 0.92em; cursor: pointer; }
+.opt-mb { display: inline-block; min-width: 1.3em; text-align: center; border-radius: 2px; font-size: 0.8em;
+  line-height: 1.25; padding: 0 0.2em; font-style: normal; flex: 0 0 auto; }
+.opt-mb-a { background: var(--accent); color: var(--paper); }
+.opt-mb-g { color: var(--k-expl); font-style: italic; }
+.opt-mb-tr { color: var(--la); font-style: normal; border-left: 2px dotted var(--la); padding-left: 0.35em; min-width: 1.5em; }
+.opt-mb-c { color: var(--k-cite); }
+.opt-mb-k { color: var(--k-bible); }
+.opt-mb-w { color: var(--k-gloss); font-style: italic; }
+.opt-mb-r { color: var(--muted); }
+.opt-calm { margin-top: 0.35rem; padding-top: 0.45rem; border-top: 1px dashed var(--rule); }
+.opt-bare { margin-top: 0.35rem; padding-top: 0.35rem; border-top: 1px dotted var(--rule); }
+.settings > .opt-key, .settings > .opt-sample, .settings > .settings-more, .settings > p { margin-top: 0.55rem; }
+.settings[hidden] { display: none; }
+/* the options open over the page under the signs, and the wheel over them scrolls them alone (owner, 2026-11-20:
+   "scrolling down should scroll down on the reader options window") */
+.settings:not(.settings-page) { overscroll-behavior: contain; }
+body:not(.page-home) .settings:not(.settings-page) { position: fixed; top: 3.2rem; right: 1rem; z-index: 44;
+  width: min(60rem, calc(100vw - 2rem)); max-height: calc(100vh - 4.2rem); overflow: auto; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); box-sizing: border-box; }
+@media (min-width: 1100px) and (hover: hover) {
+  body:not(.page-home) .settings:not(.settings-page) { right: 3.2rem; width: min(60rem, calc(100vw - 6.4rem)); } }
+.opt-key > summary { cursor: pointer; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--accent); }
+.opt-key .ok-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.3rem 1.6rem;
+  margin-top: 0.2rem; }
+.settings-close { position: absolute; top: 0.3rem; right: 0.4rem; z-index: 1; border: 0; background: none; font: inherit;
+  font-size: 1.5rem; line-height: 1; padding: 0.1rem 0.45rem; color: var(--muted); cursor: pointer; border-radius: 3px; }
+.settings-close:hover, .settings-close:focus-visible { color: var(--accent); }
+.settings label { display: block; }
+.settings-more { margin: 0; }
+.settings-page { border: none; padding: 0; font-size: 1em; max-width: none; }
+footer.site { border-top: 1px solid var(--rule); margin-top: 3rem; font-size: 0.8em; color: var(--muted); }
+.pager { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+.pager a { display: block; max-width: 48%; text-decoration: none; color: var(--ink); }
+.pager a[rel="next"] { text-align: right; margin-left: auto; }
+.pager-dir { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.pager-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pager a:hover .pager-t { text-decoration: underline; text-decoration-color: var(--accent); }
+/* Next and Previous as the window's edges (owner, 2026-11-19: P1 B): a faint hedera (☙ ❧) at mid-height; pointing at the
+   edge tints it and shows the title; on narrow or touch screens the pager at the foot stays */
+.side-zone { display: none; }
+@media (min-width: 1100px) and (hover: hover) {
+  .side-zone { display: flex; position: fixed; top: 0; bottom: 0; z-index: 20; width: 2.6rem; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.7rem; text-decoration: none; color: var(--muted); }
+  .sz-prev { left: 0; } .sz-next { right: 0; }
+  .sz-sym { font-size: 1.75rem; line-height: 1; opacity: 0.5; transition: opacity 0.15s, color 0.15s; }
+  /* the title out of the flow, so the hedera keeps the middle whatever the title's length */
+  .sz-t { position: absolute; top: calc(50% + 1.4rem); writing-mode: vertical-rl; max-height: calc(50vh - 2.4rem); overflow: hidden; font-variant-caps: all-small-caps;
+    letter-spacing: 0.06em; font-size: 0.85rem; line-height: 1.2; opacity: 0; transition: opacity 0.15s; }
+  .sz-prev .sz-t { transform: rotate(180deg); }
+  .side-zone:hover, .side-zone:focus-visible { background: color-mix(in srgb, var(--accent) 7%, transparent);
+    color: var(--accent); }
+  .side-zone:hover .sz-sym, .side-zone:focus-visible .sz-sym, .side-zone:hover .sz-t, .side-zone:focus-visible .sz-t {
+    opacity: 1; }
+  footer.site .pager { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .sz-sym, .sz-t { transition: none; } }
+
+main { max-width: var(--page); margin: 0 auto; padding: 0 16px; }
+.unit, .home-page, .landing, .prose { max-width: var(--measure); }
+@media (max-width: 1099px) { .unit, .landing, .prose { margin-left: auto; margin-right: auto; } }
+.banner { margin: 1rem 0; padding: 0.4rem 0.7rem; border-left: 3px solid var(--accent); background: var(--pop-bg); font-size: 0.9em; }
+
+/* ------------------------------------------------------------ contents tree */
+.toc, .toc ol { list-style: none; margin: 0; padding: 0; }
+.toc ol { padding-left: 1.1rem; }
+.toc li { margin: 0.15rem 0; line-height: 1.3; }
+.toc a { text-decoration: none; display: inline-block; }
+.toc a:hover .toc-t { text-decoration: underline; text-decoration-color: var(--accent); }
+.toc a[aria-current="page"] { font-weight: 600; }
+.toc a[aria-current="page"]::before { content: "›"; color: var(--accent); margin-left: -0.7em; width: 0.7em; display: inline-block; }
+.toc-n { color: var(--muted); font-variant-numeric: lining-nums tabular-nums; font-size: 0.85em; margin-right: 0.2em; }
+.toc-gl { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.toc-part { margin-top: 0.7rem !important; }
+.toc-part > a, .toc-part > .toc-gl { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 1.05em; }
+.toc-tag { font-size: 0.8em; color: var(--muted); }
+.toc-main { margin-top: 0.5rem; }
+
+/* ------------------------------------------------------------ text */
+.head-number, .head-partition, .head-other, .unit p.head-number, .unit p.head-partition, .unit p.head-other { text-align: center; margin: 2.2rem 0 0.2rem; letter-spacing: 0.08em; text-indent: 0; }
+.head-part_title3 { font-size: 1.15em; }
+.sc { font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+h1.unit-title { font-weight: 400; font-size: 1.35em; line-height: 1.25; text-align: center; margin: 0.3rem 0 1.6rem; hyphens: manual; }
+h1.head-partition, h1.head-other { font-size: 1.25em; letter-spacing: 0.06em; margin-top: 2rem; }
+.unit p { margin: 0; text-indent: 1.4em; hyphens: auto; -webkit-hyphens: auto; text-align: justify; text-justify: inter-word; hanging-punctuation: first; }
+.unit p.no_indent, .unit .head-number + p, .unit h1 + p, .unit blockquote + p.no_indent { text-indent: 0; }
+.unit p.indent { text-indent: 1em; }
+.unit p.center_content, .unit p[class^="ded"], .unit p[class*=" ded"] { text-align: center; text-indent: 0; hyphens: manual; }
+.unit p.ded1, .unit p.dedf { font-size: 1.35em; }
+.unit p.ded2 { font-size: 1.2em; }
+.unit p.ded4 { font-size: 1.08em; }
+.unit p.dedf { margin-top: 2rem; }
+.unit p.TS1, .unit .TS1 { margin-top: 0.8rem; }
+blockquote.bq { margin: 0.8rem 0 0.8rem 2rem; }
+.list { list-style: none; padding-left: 1.5em; margin: 0.6rem 0; }
+.list li { text-indent: -1em; padding-left: 1em; }
+.lg { margin: 0.35rem 0; }
+.lg .l { display: block; padding-left: 1.5em; text-indent: -1em; hyphens: manual; }
+/* verse indents follow the EPUB's classes, scaled to this measure */
+.lg .l.verse2 { padding-left: 0.5em; }
+.lg .l.verse1 { padding-left: 2.5em; }
+.lg .l.verse10, .lg .l.verse1_indent { padding-left: 4.5em; }
+.lg .l.verse10_indent { padding-left: 5.5em; }
+.lg .l.verse_R { padding-left: 30%; }
+.lg .l.verse_R1 { padding-left: 50%; }
+.lg .l.poetry_line { padding-left: 0.5em; text-indent: -0.5em; }
+.lg .l.poetry_line_indented, .lg .l.poemverse { padding-left: 1.5em; text-indent: -0.5em; }
+.lg .l.poemverse1 { padding-left: 2.5em; text-indent: -0.5em; }
+.lg .l.padd_left { padding-left: 6.5em; }
+.l.TS { margin-top: 0.3rem; }
+.l.TS1, .l.TS2 { margin-top: 0.6rem; }
+.burton-verse-tr { color: var(--ink); }
+[lang="grc"] { font-feature-settings: "liga" 0; }
+em [lang], [lang] em { font-style: italic; }
+.plate { margin: 1.2rem 0; text-align: center; }
+.plate img, .frontispiece img, .sheet img { max-width: 100%; height: auto; }
+.plate img, .frontispiece img { max-height: 85vh; width: auto; }
+.symbol { font-family: "Burton Symbols", var(--font-text, serif); }
+
+/* ------------------------------------------------------------ sidenotes (Burton's marginal notes) */
+/* The marker precedes the glossed word, as in the source; a word joiner keeps them on one line. */
+.nref {
+  font-size: 0.62em; vertical-align: 0.6em; line-height: 0; text-decoration: none;
+  color: var(--accent); padding: 0 0.12em; font-variant-numeric: lining-nums; white-space: nowrap;
+}
+.nref::after { content: "\2060"; }
+.sidenote {
+  display: none; text-indent: 0; text-align: left; hyphens: manual; white-space: normal;
+  font-size: 0.78em; line-height: 1.35; color: var(--note-ink); font-style: normal; font-weight: 400;
+}
+/* markers of notes that sit inside a foreign quotation are lifted out of it (so they survive
+   "Read in English"); a zero-height box keeps them at the start of the quotation's first line */
+blockquote .hoisted { display: block; height: 0; }
+blockquote .hoisted > .nref { position: relative; top: 1.05em; margin-left: -1em; }
+.sidenote .sn-n { color: var(--accent); font-variant-numeric: lining-nums; font-size: 0.85em; }
+.sidenote .sn-p { display: block; }
+.sidenote.open, .sidenote:target {
+  display: block; margin: 0.4rem 0 0.6rem 0.5rem; padding: 0.35rem 0.6rem;
+  border-left: 2px solid var(--accent); background: var(--pop-bg);
+}
+/* the popover form (narrow screens and stacked notes), placed beside its marker by edition.js */
+.sidenote[popover]:popover-open {
+  display: block; position: fixed; inset: auto; left: var(--pop-x, 16px); top: var(--pop-y, 16px);
+  width: var(--pop-w, 22rem); max-height: 60vh; overflow: auto; margin: 0; padding: 0.5rem 0.7rem;
+  color: var(--note-ink); background: var(--pop-bg); border: 1px solid var(--rule); border-left: 2px solid var(--accent);
+  border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.8rem;
+}
+@media (min-width: 1100px) {
+  main { padding: 0 2rem; }
+  .unit { margin-right: calc(var(--margin-col) + var(--gap)); position: relative; }
+  /* without script: floats, which never overlap but drift without limit */
+  .sidenote, .sidenote.open, .sidenote:target {
+    display: block; float: right; clear: right;
+    width: var(--margin-col); margin: 0.15rem calc(-1 * (var(--margin-col) + var(--gap))) 0.5rem 0;
+    padding: 0; border: none; background: none;
+  }
+  /* with script: each note beside its marker, pushed down to avoid the one above */
+  .unit.sn-laid .sidenote:not(.sn-stacked) {
+    float: none; position: absolute; left: calc(100% + var(--gap)); margin: 0; width: var(--margin-col);
+  }
+  .unit.sn-laid .sidenote.sn-stacked:not(:popover-open) { display: none; }
+  .sidenote.flash { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .sn-more {
+    position: absolute; left: calc(100% + var(--gap)); font-size: 0.75em; color: var(--note-ink);
+    padding: 0.05rem 0.5rem; text-indent: 0;
+  }
+  .sn-more::after { content: ""; display: inline-block; margin-left: 0.4em; border: 0.3em solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: 0.1em; }
+}
+
+/* ------------------------------------------------------------ the edition's margin items (owner, 2026-11-03) */
+/* translations of the text and Gowland's notes: laid out with Burton's notes beside their anchors (edition.js);
+   without script they follow the text as a list */
+.mref { display: inline; }
+.mn-pool { display: none; }
+.unit:not(.sn-laid) .mn-pool { display: block; margin-top: 2rem; padding-top: 0.6rem; border-top: 1px solid var(--rule); }
+.mn { display: block; font-size: 0.78em; line-height: 1.35; color: var(--note-ink); text-indent: 0; text-align: left;
+  hyphens: manual; font-style: normal; font-weight: 400; margin: 0 0 0.4rem; }
+.mn-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.95em; margin-right: 0.15em; color: var(--muted); }
+.mn-lem { color: var(--muted); }
+.mn-src, .mn-h { font-size: 0.88em; color: var(--muted); }
+.mn-h { font-variant-caps: all-small-caps; letter-spacing: 0.06em; margin-right: 0.3em; }
+.mn-sub, .mn-alt { display: block; margin-top: 0.15em; }
+/* a translator's note rated and audited for the margin, open under the translation (stage 14, 2026-11-19) */
+.mn-note { display: block; margin-top: 0.2em; color: var(--muted); font-size: 0.92em; }
+.mn-more { margin-top: 0.1em; }
+/* the other versions open from a small chevron after the translation, not "+ more" (owner, 2026-11-18) */
+.mn-more { display: inline; margin: 0; }
+.mn-more > summary { cursor: pointer; list-style: none; display: inline-block; font-size: 0; width: 1.1rem; height: 0.9rem; vertical-align: -0.05rem; }
+.mn-more > summary::-webkit-details-marker { display: none; }
+.mn-more > summary::after { content: ""; display: inline-block; width: 0.38rem; height: 0.38rem; margin-left: 0.35rem;
+  border-right: 1.5px solid var(--tr-ink, var(--accent)); border-bottom: 1.5px solid var(--tr-ink, var(--accent)); transform: rotate(45deg); transition: transform 0.15s; }
+.mn-more[open] > summary::after { transform: rotate(-135deg) translate(-0.1rem, -0.1rem); }
+.mn-more > summary:hover::after, .mn-more > summary:focus-visible::after { border-color: var(--accent); }
+.mn-gw[data-kind="gloss"] .mn-k { color: var(--k-gloss); }
+.mn-gw[data-kind="source"] .mn-k { color: var(--k-cite); }
+.mn-gw[data-kind="identity"] .mn-k, .mn-gw[data-kind="explanation"] .mn-k { color: var(--k-expl); }
+.mn[popover]:not(:popover-open) { display: none; } /* a closed pop-up stays closed whatever .mn says */
+.mn[popover]:popover-open {
+  position: fixed; inset: auto; left: var(--pop-x, 16px); top: var(--pop-y, 16px); width: var(--pop-w, 22rem);
+  max-height: 60vh; overflow: auto; margin: 0; padding: 0.5rem 0.7rem; background: var(--pop-bg);
+  border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.8rem;
+}
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-pool { display: contents; }
+  .unit.sn-laid .mn:not(.sn-stacked) { position: absolute; left: calc(100% + var(--gap)); margin: 0; width: var(--margin-col); }
+  .unit.sn-laid .mn.sn-stacked:not(:popover-open) { display: none; }
+}
+/* a translation and its passage share the passage's language colour (T7 A); "from Latin" is said by the colour
+   and the card's label, and by the accessible name */
+.mn-tr .mn-tx, .mn-own { color: var(--tr-ink, var(--ink)); }
+.mn[data-lang="la"] { --tr-ink: var(--la); } .mn[data-lang="grc"] { --tr-ink: var(--grc); } .mn[data-lang="enm"] { --tr-ink: var(--enm); }
+.mn[data-lang="it"], .mn[data-lang="fr"], .mn[data-lang="es"], .mn[data-lang="de"], .mn[data-lang="nl"] { --tr-ink: var(--modern); }
+.mn-tr .mn-k, .mn-own .mn-k { color: var(--tr-ink); }
+.mn-on .unit .fo[lang="la"] { color: var(--la); } .mn-on .unit .fo[lang="grc"] { color: var(--grc); }
+.mn-on .unit .fo[lang="enm"] { color: var(--enm); }
+.mn-on .unit .fo:is([lang="it"], [lang="fr"], [lang="es"], [lang="de"], [lang="nl"]) { color: var(--modern); }
+.mn-on .fo { text-decoration: none; cursor: inherit; }
+/* in the margin layout a passage's translation is its card, not a box over the text */
+.mn-on.mode-gloss .unit .fp:hover > .ft, .mn-on.mode-gloss .unit .fp:focus-within > .ft { display: none; }
+/* a note and the words it is on, lit together; a click pins them */
+::highlight(note-words) { background-color: var(--hot); }
+.sidenote.hot, .mn.hot { background: var(--hot); border-radius: 2px; }
+.sidenote.pinned, .mn.pinned { outline: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+/* the ◇ that carries a machine item's provenance (owner, 2026-11-03) */
+.prov { font-size: 0.8em; color: var(--muted); cursor: help; font-style: normal; }
+.prov::before { content: "◇"; }
+/* a citation in Burton's note, shown expanded in its place; his own abbreviation on hover or by option */
+.cx-b { display: none; }
+.show-abbr .cx-b { display: inline; }
+.show-abbr .cx-e { display: none; }
+.cx-e a.cx-a { color: inherit; text-decoration-color: var(--rule); }
+
+/* Latin in Burton's own notes: its preferred translation after the note, one line each, in the same colour; the
+   note's own box over the Latin is not used in the margin layout */
+.sn-tr { display: none; }
+.mn-on.mode-gloss .unit .sn-tr, .sidenote[popover] .sn-tr { display: block; margin-top: 0.1em; }
+.sn-tr .mn-tx { color: var(--tr-ink, var(--la)); }
+.sn-tr[data-lang="grc"] { --tr-ink: var(--grc); } .sn-tr[data-lang="enm"] { --tr-ink: var(--enm); }
+.mn-on.mode-gloss .unit .sidenote .fp:hover > .ft, .mn-on.mode-gloss .unit .sidenote .fp:focus-within > .ft { display: none; }
+.mn-on .unit .sidenote .fo[lang="la"] { color: var(--la); }
+.sn-more { white-space: nowrap; width: auto; }
+.cx-e a.cx-a { text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+
+/* ------------------------------------------------------------ foreign passages and translations */
+.fp { position: relative; }
+.fo { text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: 0.22em; cursor: help; }
+.fo:focus-visible { outline-offset: 1px; }
+.ft { display: none; }
+.ft-label, .ft-src, .ft-note { display: block; color: var(--muted); font-size: 0.85em; font-style: normal; }
+.ft-missing .ft-label { color: var(--accent); }
+/* every version of the passage, preferred first (edition.js reorders them to the chosen source order) */
+.ft-vs, .ft-v, .ft-burton-own { display: block; }
+.ft-burton-own { margin-bottom: 0.35rem; }
+.ft-v + .ft-v { margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px solid var(--rule); font-size: 0.92em; }
+/* the language a translation is from: "from Latin" (short form "Lat." under a word in interlinear mode) */
+.ft-from { display: block; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); font-size: 0.85em; font-style: normal; }
+.ft-from-short { display: none; }
+
+/* mode 1: original + gloss on hover / focus / tap */
+.mode-gloss .fp:hover > .ft, .mode-gloss .fp:focus-within > .ft, .mode-gloss .fp.pinned > .ft {
+  display: block; position: absolute; z-index: 5; left: 0; top: calc(100% + 0.2rem);
+  width: min(22rem, 80vw); padding: 0.5rem 0.7rem; text-indent: 0; text-align: left; hyphens: manual;
+  background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px;
+  box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; font-style: normal; font-weight: 400;
+}
+.mode-gloss .fp-block:hover > .ft, .mode-gloss .fp-block:focus-within > .ft, .mode-gloss .fp-block.pinned > .ft { top: 100%; }
+
+/* mode 2: interlinear */
+/* word and its punctuation on the first row, the gloss beneath across both columns; a gloss wider
+   than the word widens only the second column, so the comma stays against the word */
+.mode-interlinear .fp-short { display: inline-grid; grid-template-columns: max-content 1fr; vertical-align: top; text-indent: 0; }
+.mode-interlinear .fp-short > .fo { grid-row: 1; grid-column: 1; }
+.mode-interlinear .fp-short > .fp-p { grid-row: 1; grid-column: 2; }
+.mode-interlinear .fp-short > .ft { grid-row: 2; grid-column: 1 / span 2; display: block; font-size: 0.72em; line-height: 1.2; color: var(--muted); text-align: left; }
+.mode-interlinear .fp-short > .ft .ft-label, .mode-interlinear .fp-short > .ft .ft-src,
+.mode-interlinear .fp-short > .ft .ft-note { display: none; }
+.mode-interlinear .fp-long > .ft { display: inline; font-size: 0.85em; color: var(--muted); }
+.mode-interlinear .fp-long > .ft .ft-text::before { content: " ⟨"; }
+.mode-interlinear .fp-long > .ft .ft-text::after { content: "⟩"; }
+.mode-interlinear .fp-long > .ft .ft-label, .mode-interlinear .fp-long > .ft .ft-src, .mode-interlinear .fp-long > .ft .ft-note { display: none; }
+.mode-interlinear .fp-block > .ft { display: block; margin: 0.25rem 0 0.4rem 1.5rem; font-size: 0.9em; color: var(--muted); }
+.mode-interlinear .fp-block > .ft .ft-label { display: inline; margin-left: 0.5em; }
+.mode-interlinear .fp-block > .ft .ft-src, .mode-interlinear .fp-block > .ft .ft-note { display: none; }
+
+/* a translation standing in for the original (interlinear and English modes): only the first version,
+   set on a faint tint and introduced by its language, so it never passes for Burton's own English */
+.mode-interlinear .ft-vs, .mode-interlinear .ft-v, .mode-english .ft-vs, .mode-english .ft-v { display: inline; }
+.mode-interlinear .ft-vs > .ft-v ~ .ft-v, .mode-english .ft-vs > .ft-v ~ .ft-v { display: none; }
+.mode-interlinear .fp-block .ft-vs, .mode-interlinear .fp-block .ft-v,
+.mode-english .fp-block .ft-vs, .mode-english .fp-block .ft-v { display: block; }
+.mode-interlinear .ft-v + .ft-v, .mode-english .ft-v + .ft-v { margin: 0; padding: 0; border: none; font-size: 1em; }
+.mode-interlinear .ft-v .ft-text, .mode-english .ft-v .ft-text {
+  background: var(--tr-bg); border-radius: 2px; padding: 0 0.12em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.mode-interlinear .ft-from, .mode-english .ft-from { display: inline; font-size: 0.72em; margin-right: 0.3em; }
+.mode-interlinear .fp-block .ft-from, .mode-english .fp-block .ft-from { display: block; margin: 0; }
+.mode-interlinear .fp-long > .ft .ft-from { margin-left: 0.35em; }
+.mode-interlinear .fp-long > .ft .ft-text::before { content: "⟨"; }
+.mode-interlinear .fp-short .ft-from-long { display: none; }
+.mode-interlinear .fp-short .ft-from-short { display: inline; }
+.mode-interlinear .ft-own .ft-vs, .mode-interlinear .ft-own .ft-from { display: none; }
+.mode-interlinear .ft-partial { display: none; }
+/* Gowland's inline bracket repeats the translation when his version is the one shown in its place */
+.mode-interlinear .fp.first-gowland + .gowland-tr, .mode-english .fp.first-gowland + .gowland-tr { display: none; }
+
+/* mode 3: read in English — translations replace originals, visibly marked ⟨ ⟩ */
+.mode-english .fp > .fo { display: none; }
+.mode-english .fp > .ft { display: inline; cursor: pointer; }
+.mode-english .fp-block > .ft { display: block; margin: 0.25rem 0; }
+.mode-english .fp > .ft .ft-text::before { content: "⟨"; color: var(--accent); }
+.mode-english .fp > .ft .ft-text::after { content: "⟩"; color: var(--accent); }
+.mode-english .fp > .ft .ft-label, .mode-english .fp > .ft .ft-src, .mode-english .fp > .ft .ft-note { display: none; }
+.mode-english .fp.show-orig > .fo { display: inline; }
+.mode-english .fp-block.show-orig > .fo { display: block; }
+.mode-english .fp.show-orig > .ft .ft-label { display: inline; margin-left: 0.4em; }
+/* no translation yet: interlinear and English modes keep the original (the gloss says so on hover) */
+.mode-english .fp-untranslated > .fo, .mode-english .fp-untranslated.show-orig > .fo { display: inline; }
+.mode-english .fp-untranslated.fp-block > .fo { display: block; }
+.mode-english .fp-untranslated > .ft, .mode-interlinear .fp-untranslated > .ft { display: none; }
+.mode-interlinear .fp-untranslated.fp-short { display: inline; }
+/* Burton translates it himself: keep his English, hide the original behind a marker */
+.mode-english .st-full > .ft { display: none; }
+.st-mark { display: none; }
+.mode-english .st-full > .st-mark { display: inline; color: var(--accent); font-size: 0.7em; vertical-align: 0.3em; cursor: pointer; }
+.mode-english .st-full.show-orig > .st-mark { display: none; }
+
+/* Burton's own rendering, linked to its original */
+.burton-tr { text-decoration: underline solid transparent; text-decoration-thickness: 1px; text-underline-offset: 0.22em; transition: text-decoration-color 0.15s; }
+.burton-tr.linked, .fp.linked > .fo { text-decoration-color: var(--accent); text-decoration-style: solid; }
+
+/* ------------------------------------------------------------ Gowland material (private build only) */
+.gowland-tr, .enref { display: none; }
+.pb { display: inline; } /* empty unless page numbers are shown, but always a link target for the Table */
+.show-gowland .gowland-tr { display: inline; color: var(--muted); }
+.show-gowland .gowland-verse, .show-gowland .gowland-block { display: block; }
+.sn-cite { display: none; }
+a.xref { color: inherit; text-decoration-style: dotted; text-decoration-thickness: 1px; }
+.show-cites .sidenote .sn-cite { display: block; margin-top: 0.15em; color: var(--muted); }
+.lbl { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
+.cite-list li { margin: 0.15em 0; }
+.show-pages .pb::before, .pb:target::before { content: "[" attr(data-n) "]"; font-size: 0.65em; color: var(--muted); vertical-align: 0.4em; padding: 0 0.15em; }
+
+/* ------------------------------------------------------------ home, landings, prose pages */
+.home-page h1, .landing-title { font-weight: 400; text-align: center; font-variant-caps: all-small-caps; letter-spacing: 0.08em; margin: 2.2rem 0 0.4rem; }
+.home-page .sub, .landing-sub { text-align: center; color: var(--muted); margin-top: 0; letter-spacing: 0.04em; }
+.frontispiece { margin: 1.5rem 0; text-align: center; }
+.frontispiece figcaption { font-size: 0.85em; color: var(--muted); margin-top: 0.4rem; }
+h2 { font-weight: 400; font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 1.2em; margin: 2rem 0 0.5rem; }
+.landing .note { color: var(--muted); font-size: 0.9em; }
+.sheets { display: grid; gap: 0.8rem; }
+.sheet { margin: 0; padding: 0.4rem; background: #fff; border: 1px solid var(--rule); }
+.prose p { margin: 0 0 0.8rem; }
+.prose dl.labels dt { font-weight: 600; margin-top: 0.6rem; }
+.prose dl.labels dd { margin: 0 0 0 1.2rem; }
+table.counts { border-collapse: collapse; font-size: 0.85em; margin: 0.5rem 0 1rem; }
+table.counts caption { text-align: left; color: var(--muted); }
+table.counts th, table.counts td { border-bottom: 1px solid var(--rule); padding: 0.2rem 0.6rem 0.2rem 0; text-align: left; }
+table.counts td:last-child { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
+code { font-size: 0.85em; }
+
+/* ------------------------------------------------------------ the synopses as Burton's sheets (2026-11-19) */
+/* Re-set by the printer's own rules (prototype: tools/synopsis_sheets; notes: state/review/reader-stages.md).
+   R1 a head that divides is set narrow and a leaf runs to the edge; R2 a head stands at the middle of its brace;
+   R3 a brace is built of pieces (two curls, a beak, a rule between), never stretched; R4 "Or" stands in the members'
+   column; R5 a leaf hangs its turnovers; R6 the signs (♈, A …) lead to their sheets; R7 short of width a branch gives
+   way: a tall head is turned on its side, then a head is set over its members, the deepest branches first
+   (edition.js measures; without script, the container rules at the end of this block). */
+:root {
+  --syn-brace-ink: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  --syn-ed-ink: color-mix(in srgb, var(--muted) 55%, var(--paper));
+  --syn-pt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 .9C6.2 .9 5 2.6 5 6.5V10' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --syn-pb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' preserveAspectRatio='none'%3E%3Cpath d='M10 9.1C6.2 9.1 5 7.4 5 3.5V0' fill='none' stroke='black' stroke-width='1.35'/%3E%3C/svg%3E");
+  --syn-pk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cpath d='M5 0V3.5C5 7.6 4 9.3 .7 10C4 10.7 5 12.4 5 16.5V20' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+  --syn-cap: min(0.5em, 26%);
+  --syn-bk: min(1.05em, 42%);
+  --syn-sw: 0.081em;
+  --syn-m-brace:
+    var(--syn-pt) left top / 100% var(--syn-cap) no-repeat,
+    var(--syn-pb) left bottom / 100% var(--syn-cap) no-repeat,
+    var(--syn-pk) left center / 100% var(--syn-bk) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--syn-cap) / var(--syn-sw) calc(50% - var(--syn-cap) - var(--syn-bk) / 2 + 1px) no-repeat,
+    linear-gradient(#000 0 0) left 50% bottom var(--syn-cap) / var(--syn-sw) calc(50% - var(--syn-cap) - var(--syn-bk) / 2 + 1px) no-repeat;
+  --syn-m-bracket:
+    var(--syn-pt) left top / 100% var(--syn-cap) no-repeat,
+    var(--syn-pb) left bottom / 100% var(--syn-cap) no-repeat,
+    linear-gradient(#000 0 0) left 50% top var(--syn-cap) / var(--syn-sw) calc(100% - 2 * var(--syn-cap) + 1px) no-repeat;
+  --syn-ease: cubic-bezier(.32, .72, .24, 1); --syn-t-open: .82s; --syn-t-shut: .75s;
+}
+.syn-sheet, .syn-sheet ul { list-style: none; margin: 0; padding: 0; }
+.syn-sheet { margin: 1rem 0 1.4rem; font-size: 0.94em; line-height: 1.26; hyphens: manual; text-indent: 0; text-align: left;
+  font-variant-emoji: text; interpolate-size: allow-keywords; /* lets a branch's height grow from nothing */ }
+.syn-sheet .syn-n { container-type: inline-size; }
+/* R1 + R2 */
+.syn-nb { display: flex; align-items: center; }
+.syn-hd { flex: 0 0 auto; width: max-content; max-width: clamp(5em, 20cqi, 9.5em); padding: .05em .28em .05em 0;
+  transition: width var(--syn-t-open) var(--syn-ease), max-width var(--syn-t-open) var(--syn-ease), color .3s; }
+/* R5 */
+.syn-leaf > .syn-nb > .syn-hd { flex: 1 1 auto; width: auto; max-width: none; padding-left: 1.1em; text-indent: -1.1em; }
+.syn-kw { flex: 1 1 0; min-width: 0; position: relative; padding-left: .82em; min-height: 1.35em; }
+/* unfolding: the brace grows from its stub as the members' height opens; the members come in from the beak outward
+   (--d, a member's distance from the middle of its brace); folding is quicker, the members first, then the height */
+.syn-kids { padding: .12em 0; overflow: clip; overflow-clip-margin: .5em;
+  transition: height var(--syn-t-open) var(--syn-ease), padding var(--syn-t-open) var(--syn-ease), visibility 0s; }
+.syn-kids > .syn-n { transition: opacity .7s ease calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms),
+  translate .8s var(--syn-ease) calc(var(--syn-t-open) * .3 + var(--d, 0) * 90ms); }
+.syn-shut > .syn-nb > .syn-kw > .syn-kids { height: 0; padding-block: 0; visibility: hidden; overflow: hidden;
+  transition: height var(--syn-t-shut) var(--syn-ease) .18s, padding var(--syn-t-shut) var(--syn-ease) .18s,
+  visibility 0s linear calc(var(--syn-t-shut) + .18s); }
+.syn-shut > .syn-nb > .syn-kw > .syn-kids > .syn-n { opacity: 0; translate: -.7em 0; transition: opacity .25s ease, translate .3s ease; }
+.syn-sheet.syn-still, .syn-sheet.syn-still * { transition: none !important; } /* folding on load, before the first paint */
+/* R3: the brace, a button that folds and opens its branch */
+.syn-brace { position: absolute; left: 0; top: 0; bottom: 0; width: .74em; padding: 0; margin: 0; border: 0; background: none;
+  cursor: pointer; border-radius: 2px; color: inherit; font: inherit; }
+.syn-brace::before { content: ""; position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em;
+  background: var(--syn-brace-ink); -webkit-mask: var(--syn-bm, var(--syn-m-brace)); mask: var(--syn-bm, var(--syn-m-brace)); }
+.syn-brace.syn-ed::before { background: var(--syn-ed-ink); }
+.syn-brace:hover::before, .syn-brace:focus-visible::before { background: var(--accent); }
+.syn-brace::after { content: ""; position: absolute; inset: 0 0 0 -.45em; min-height: 1.6em; } /* a wider target */
+/* the hold indicator, as a name's window fills its bar: resting on a brace inks it from the beak outward; when full,
+   the brace opens its branch, or, already open, fixes it in place */
+.syn-ink { position: absolute; left: .06em; top: .1em; bottom: .1em; width: .58em; background: var(--accent);
+  -webkit-mask: var(--syn-bm, var(--syn-m-brace)); mask: var(--syn-bm, var(--syn-m-brace));
+  clip-path: inset(50% 0 50% 0); opacity: 0; pointer-events: none; }
+/* each fill runs as an animation, so that it starts again for every layer a long rest opens (2026-11-20) */
+@keyframes syn-ink { from { clip-path: inset(50% 0 50% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes syn-under { from { background-size: 0% 1px; } to { background-size: 100% 1px; } }
+.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: 1; clip-path: inset(0 0 0 0);
+  animation: syn-ink var(--syn-fill, .65s) linear both; }
+.syn-filling > .syn-nb > .syn-hd .syn-pt { color: var(--accent); transition: color var(--syn-fill, .65s); }
+/* fixed in place: the brace keeps a faint rubric, as a fixed window keeps its bar */
+.syn-fixed > .syn-nb > .syn-kw > .syn-brace::before { background: color-mix(in srgb, var(--accent) 45%, var(--syn-brace-ink)); }
+.syn-fixed > .syn-nb > .syn-kw > .syn-brace.syn-ed::before { background: color-mix(in srgb, var(--accent) 40%, var(--syn-ed-ink)); }
+/* a folded brace: a stub, and "&c." for what it holds (owner, 2026-11-19); the count is in its name */
+.syn-cnt { position: absolute; left: 1.05em; top: 50%; translate: 0 -50%; white-space: nowrap; color: var(--muted); font-size: .9em;
+  opacity: 0; pointer-events: none; transition: opacity .25s; }
+.syn-cnt::after { content: "&c."; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace .syn-cnt { opacity: 1; transition: opacity .45s ease var(--syn-t-shut); }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 6.5em; }
+.syn-shut > .syn-nb > .syn-kw { min-width: 7.2em; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace:hover .syn-cnt, .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { color: var(--accent); }
+/* what resting will do, shown while it fills (owner, 2026-11-20: "clearer visual signifiers that your cursor is going
+   to open something if it stays there … the &c. bracket having some animation, along with something on the main
+   bracket"): on a folded brace the stub draws itself taller and the "&c." spreads, a rubric rule running under it as
+   the time fills, as a name's window fills its bar; a Partition's name is underlined the same way; an open brace that
+   is filling to stay fixed thickens and glows. */
+.syn-cnt { background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat; padding-bottom: .1em;
+  transition: opacity .25s, letter-spacing .25s, translate .25s, background-size .15s; }
+.syn-shut > .syn-nb > .syn-kw > .syn-brace .syn-cnt { transition: opacity .45s ease var(--syn-t-shut), letter-spacing .25s,
+  translate .25s, background-size .15s; }
+.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-cnt { background-size: 100% 1px; letter-spacing: .2em; translate: .3em -50%;
+  animation: syn-under var(--syn-fill, .65s) linear both;
+  transition: letter-spacing var(--syn-fill, .65s) ease-out, translate var(--syn-fill, .65s) ease-out, opacity .2s; }
+.syn-brace::before, .syn-ink { transition: transform .25s ease, filter .25s; }
+.syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-shut.syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleY(1.45); transition: transform var(--syn-fill, .65s) ease-out; }
+.syn-filling:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace .syn-ink { transform: scaleX(1.25);
+  filter: drop-shadow(0 0 1.5px var(--accent)); }
+/* a head one may rest on (a Partition's name; a sheet's first head) underlines as the time fills, once per layer */
+.syn-part > .syn-nb > .syn-hd .syn-pt, .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd > .syn-t {
+  background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 1px no-repeat; transition: color .3s; }
+.syn-part > .syn-nb > .syn-hd, .syn-root:not(.syn-leaf) > .syn-nb > .syn-hd { cursor: pointer; }
+.syn-part.syn-filling > .syn-nb > .syn-hd .syn-pt, .syn-root.syn-filling > .syn-nb > .syn-hd > .syn-t {
+  background-size: 100% 1px; animation: syn-under var(--syn-fill, .65s) linear both; }
+/* every brace at once: the dotted cross after a Partition's name; red under the pointer, so it reads as a button */
+.syn-all { border: 0; background: none; padding: 0 .25em; margin-left: .35em; font: inherit; font-size: .95em; line-height: 1;
+  color: var(--muted); cursor: pointer; font-variant-caps: normal; vertical-align: .05em; border-radius: 2px;
+  transition: color .15s, background-color .15s; }
+.syn-all:hover, .syn-all:focus-visible, .syn-all[aria-pressed="true"] { color: var(--accent); }
+.syn-all:hover, .syn-all:focus-visible { background-color: color-mix(in srgb, var(--accent) 10%, transparent); }
+/* the three crosses in one column, as the braces stand in one (owner, 2026-11-20): to the right of a folded Partition's
+   "{ &c." (owner, 2026-11-21); at the end of its name once it is open */
+.syn-part > .syn-nb { position: relative; }
+.syn-part > .syn-nb > .syn-hd { display: flex; align-items: baseline; }
+.syn-part > .syn-nb > .syn-hd > .syn-all { margin-left: auto; }
+.syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { position: absolute; z-index: 1; top: 0.1em; left: calc(18.4em / 0.95);
+  margin: 0; }
+.syn-shut > .syn-nb > .syn-hd { max-width: min(26em, calc(100cqi - 7.6em)); }
+/* folded sheets in a chain stand with their stubs in one column, as a printer aligns a column of braces */
+.syn-root.syn-shut > .syn-nb > .syn-hd { width: min(22em, calc(100cqi - 7.6em)); }
+/* R4, R6 */
+.syn-or { margin: .08em 0 .08em 1.6em; font-size: .94em; }
+.syn-see { color: var(--accent); text-decoration: underline 1px; text-underline-offset: .15em; padding: 0 .1em; } /* not colour alone (V10a) */
+.syn-see:hover { text-decoration-thickness: 2px; }
+.syn-key { display: inline-block; width: 1.5em; margin-left: -1.5em; text-indent: 0; text-align: center; color: var(--accent); }
+.syn-key.syn-supplied { font-size: .9em; } /* the brackets say the edition supplied it; the sign is red like the rest */
+.syn-sheet .sym { color: var(--accent); } /* the signs in Burton's words, as the keys (owner, 2026-11-20) */
+.syn-root > .syn-nb > .syn-hd { padding-left: 1.5em; }
+.syn-sheet > .syn-root + .syn-root, .syn-part .syn-root + .syn-root { margin-top: .9em; }
+.syn-head { display: block; font-size: .92em; }
+.syn-note { color: var(--muted); cursor: help; padding-left: .15em; vertical-align: super; font-size: .75em; }
+/* where a head names a part of the book: a small box with its number, the link (owner, 2026-11-19: A) */
+.syn-ref { font-size: 0.72em; font-variant-numeric: lining-nums; white-space: nowrap; padding: 0 0.3em; margin-left: 0.1em;
+  border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; color: var(--muted); vertical-align: 0.1em; text-indent: 0; }
+a.syn-ref:hover, a.syn-ref:focus-visible { border-color: var(--accent); color: var(--ink); }
+/* R7b: a tall head turned on its side, read upward, as the printer turned "Not necessary, as Memb. 4 Sect. 2." */
+.syn-hd.syn-rot { writing-mode: vertical-rl; transform: rotate(180deg); max-width: none; width: auto; white-space: nowrap;
+  padding: .2em .1em; text-align: center; }
+/* the path: pointing at a head inks the braces above it; a node reached by a link is lit */
+.syn-n:has(> .syn-nb > .syn-hd:hover) > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-n:has(.syn-n > .syn-nb > .syn-hd:hover) > .syn-nb > .syn-kw > .syn-brace::before,
+.syn-n:has(:target) > .syn-nb > .syn-kw > .syn-brace::before { background: var(--accent); }
+.syn-n:target > .syn-nb > .syn-hd, .syn-n:focus > .syn-nb > .syn-hd { background: var(--hot); border-radius: 2px; }
+.syn-n:focus { outline: none; }
+/* the front page: the three Partitions folded, keyed with rubric numerals (owner, 2026-11-19); a name stays where it
+   is as its chain opens below it, on the edition's bracket */
+.syn-front { margin-top: .4rem; }
+.syn-pt { font-variant-caps: all-small-caps; letter-spacing: .07em; }
+.syn-part + .syn-part { margin-top: .3em; }
+.syn-part > .syn-nb { align-items: flex-start; }
+.syn-part > .syn-nb > .syn-hd { width: 14.4em; max-width: none; padding-left: 1.6em; white-space: nowrap; cursor: pointer; }
+.syn-pk { font-variant-caps: normal; }
+.syn-part:not(.syn-shut) > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); }
+/* an open Partition sets its sheets under its name, across the column, so their lines are not squeezed */
+.syn-sheet .syn-part:not(.syn-shut) > .syn-nb { flex-direction: column; align-items: stretch; }
+.syn-sheet .syn-part:not(.syn-shut) > .syn-nb > .syn-kw { flex: 0 0 auto; margin: .15em 0 .2em 1.1em; }
+.syn-sheet .syn-part.syn-shut > .syn-nb { flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { top: 50%; translate: 0 -50%; }
+.syn-tools { display: flex; gap: 0.5rem; font-size: 0.85em; }
+.syn-tools[hidden] { display: none; }
+.syn-tools button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.1rem 0.6rem; cursor: pointer; color: inherit; font: inherit; }
+.syn-here { font-size: 0.85em; color: var(--muted); margin: 0.8rem 0; }
+/* the synopsis pages take the width of the page, not the measure of the text */
+.landing.synopsis { max-width: none; }
+main:has(.landing.synopsis) { max-width: 90rem; }
+/* a Partition's synopsis at the head of its first page reaches into the margin beside the text */
+.part-syn { margin: 0 0 1.6rem; border-bottom: 1px solid var(--rule); padding: .65rem 0; }
+.part-syn > .syn-front { margin: 0; }
+.part-syn .ps-h { font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--muted); margin: 0; text-indent: 0; }
+.ps-all { font-size: 0.85em; margin: 0; text-indent: 0; }
+@media (min-width: 1100px) { .unit > .part-syn { margin-right: calc(-1 * (var(--margin-col) + var(--gap))); } }
+@media (min-width: 1380px) { .two-side .unit > .part-syn { margin-left: calc(-1 * (var(--margin-col) + var(--gap))); } }
+@media (prefers-reduced-motion: reduce) { .syn-filling > .syn-nb > .syn-kw > .syn-brace .syn-ink { opacity: .5; } }
+@media print { .syn-brace::before { background: #000; } .syn-shut > .syn-nb > .syn-kw > .syn-kids { height: auto; visibility: visible; }
+  .syn-kids > .syn-n { opacity: 1 !important; translate: none !important; } .syn-cnt { display: none; } }
+/* R7 without script: a rule per subtree height (a branch needs ~11em for its leaves and ~6.2em for each head column) */
+.syn-n[data-fit="stack"] > .syn-nb { flex-direction: column; align-items: stretch; }
+.syn-n[data-fit="stack"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; }
+.syn-n[data-fit="stack"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } /* in a column, basis 0 would collapse it */
+.syn-n[data-fit="stack"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); }
+@container (width < 17.2em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="1"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 23.4em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="2"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 29.6em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="3"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 35.8em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="4"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 42em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="5"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 48.2em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="6"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 54.4em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="7"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 60.6em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="8"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+@container (width < 66.8em) { .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb { flex-direction: column; align-items: stretch; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-hd { max-width: none; width: auto; writing-mode: horizontal-tb; transform: none; text-align: start; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-kw { margin-left: 0.2em; flex: 0 0 auto; } .syn-sheet:not(.syn-fitted) .syn-n[data-h="9"] > .syn-nb > .syn-kw > .syn-brace { --syn-bm: var(--syn-m-bracket); } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+/* Print (M8): light colours whatever the theme; Burton's sidenotes in a printed right margin, floated as in the
+   no-script wide layout so they never overlap; the site's controls left out, the provenance colophon kept. */
+@page { margin: 16mm 14mm 18mm; }
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    --paper: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #7a2414; --note-ink: #222;
+    --pop-bg: #fff; --tr-bg: #f1ece3; color-scheme: light;
+  }
+  body { font-size: 10.5pt; line-height: 1.38; background: #fff; }
+  header.site, .settings, footer .pager, .side-zone, .sn-more, .skip, .syn-here, .search-form, .search-help, .sr-more,
+  .fs-n, .to-panel, .banner[data-resp], .para-cite, .unit-resume, .toc-extras, .idx-tools, .gloss-jump { display: none !important; }
+  main, .unit, .prose, .home-page, .landing { max-width: none; padding: 0; margin: 0; }
+  .unit, .two-side .unit { margin-left: 0 !important; margin-right: 31% !important; position: static !important; }
+  .sidenote, .sidenote.open, .sidenote:target, .unit.sn-laid .sidenote, .unit.sn-laid .sidenote.sn-stacked {
+    display: block !important; position: static !important; float: right; clear: right; width: 28%;
+    margin: 0.1rem -31% 0.3rem 0 !important; padding: 0; border: none; background: none; box-shadow: none;
+    font-size: 7.8pt; line-height: 1.3; break-inside: avoid;
+  }
+  a { color: inherit; text-decoration: none; }
+  a.pageref { color: var(--accent); }
+  h1, h2, h3, .head-number, .head-title { break-after: avoid; }
+  .lg, figure, .ft-block, .gl { break-inside: avoid; }
+  p { orphans: 3; widows: 3; }
+  .plate img, .frontispiece img, .fs-map img { max-height: 24cm; }
+  .fs-panel { border: none !important; background: none !important; }
+  footer.site { border-top: 1px solid var(--rule); margin-top: 1.5rem; }
+}
+
+/* ------------------------------------------------------------ search (M8) */
+header.site .search-link { text-decoration-color: var(--rule); }
+.search-row { display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: baseline; }
+.search-row label { flex: 1 1 14rem; display: flex; flex-wrap: wrap; min-width: 0; }
+.search-lbl { flex-basis: 100%; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.search-row input { flex: 1 1 auto; min-width: 0; font: inherit; color: inherit; background: var(--pop-bg); border: 1px solid var(--muted); border-radius: 3px; padding: 0.2rem 0.5rem; }
+.search-row button, .sr-more button { background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0.15rem 0.8rem; cursor: pointer; }
+.search-scope { border: none; margin: 0.4rem 0 0; padding: 0; font-size: 0.9em; }
+.search-scope legend { font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); padding: 0; }
+.search-scope label { margin-right: 1rem; white-space: nowrap; }
+.search-status { color: var(--muted); }
+.search-results { list-style: none; padding: 0; margin: 0; }
+.sr { padding: 0.6rem 0; border-top: 1px solid var(--rule); }
+.sr > a { font-size: 0.9em; }
+.sr-kind { display: block; font-size: 0.8em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.sr-text { margin: 0.2rem 0 0; }
+.sr-translation .sr-text { background: var(--tr-bg); padding: 0 0.3em; }
+.sr mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: inherit; border-radius: 2px; }
+.sr-more { padding: 0.8rem 0; border-top: 1px solid var(--rule); }
+.search-help { font-size: 0.85em; color: var(--muted); }
+.sr-orig { display: block; font-style: italic; font-size: 0.9em; }
+
+/* ------------------------------------------------------------ restored sidenotes (not in Gowland's edition) */
+.nref-restored { color: var(--muted); }
+.sidenote.sn-restored { color: var(--muted); }
+.sidenote.sn-restored .sn-n { color: var(--muted); }
+.sn-restored .sn-src { display: block; margin-top: 0.15em; font-size: 0.85em; font-variant-caps: all-small-caps; letter-spacing: 0.02em; }
+.sidenote.sn-restored.open, .sidenote.sn-restored:target, .sidenote.sn-restored[popover]:popover-open { border-left-style: dashed; }
+@media (min-width: 1100px) { .unit.sn-laid .sidenote.sn-restored:not(.sn-stacked) { border-left: 1px dashed var(--rule); padding-left: 0.4rem; } }
+
+/* ------------------------------------------------------------ the Table (M8) */
+.page-back .unit p.tabl { margin: 0; padding-left: 1.2em; text-indent: -1.2em; text-align: left; hyphens: manual; }
+.page-back .unit h2.head-other { text-align: center; font-style: italic; margin: 1.4rem 0 0.4rem; }
+.pb { scroll-margin-top: 35vh; }
+.locs { font-variant-numeric: lining-nums tabular-nums; font-size: 0.9em; }
+a.pageref { color: var(--accent); text-decoration-color: var(--rule); }
+.pb:target::before { color: var(--accent); font-size: 0.8em; }
+
+/* ------------------------------------------------------------ the frontispiece's panels (M8) */
+.fs-map { position: relative; display: inline-block; max-width: 100%; line-height: 0; }
+.fs-map img { display: block; max-width: 100%; height: auto; }
+.plate-mapped .fs-map img { max-height: 85vh; width: auto; }
+.fs-panel { position: absolute; display: block; border: 2px solid transparent; border-radius: 2px; }
+.fs-panel:hover, .fs-panel:focus-visible, .fs-panel:target { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); outline: none; }
+.fs-n { position: absolute; top: 0.2rem; left: 0.2rem; line-height: 1.4; font-size: 0.8rem; padding: 0 0.35em; border-radius: 2px; background: var(--paper); color: var(--ink); opacity: 0; }
+.fs-panel:hover .fs-n, .fs-panel:focus-visible .fs-n, .fs-panel:target .fs-n { opacity: 1; }
+.fs-label { font-size: 0.8em; color: var(--muted); margin-top: 0.4rem; line-height: 1.4; }
+.to-panel { font-size: 0.8em; color: var(--muted); margin: 0 0 0.2rem; text-indent: 0; }
+@media (prefers-reduced-motion: no-preference) { .fs-panel { transition: border-color 0.15s, background 0.15s; } }
+
+/* ------------------------------------------------------------ obsolete-word glosses (M8), off by default */
+.gl-s { display: none; }
+.show-glosses .gl-w { text-decoration: underline dotted var(--k-gloss); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+/* obsolete-word glosses stand in the margin, shown with their option (owner, 2026-11-19) */
+body:not(.show-glosses) .unit .mn-gl { display: none !important; }
+.mn-gl .mn-k { color: var(--k-gloss); }
+
+/* ------------------------------------------------------------ two margins on wide windows (owner, 2026-11-03, R3) */
+/* Gowland's commentary on the left, Burton's notes and the translations on the right; edition.js places each item
+   and may cross it over when its side is full */
+@media (min-width: 1380px) {
+  .two-side main { max-width: calc(var(--measure) + 2 * (var(--margin-col) + var(--gap)) + 4rem); }
+  .two-side .unit { margin-left: calc(var(--margin-col) + var(--gap)); }
+  .two-side .unit.sn-laid :is(.mn, .sidenote, .sn-more).mn-l:not(.sn-stacked) { left: calc(-1 * (var(--margin-col) + var(--gap))); }
+  .two-side header.site, .two-side footer.site { max-width: calc(var(--measure) + 2 * (var(--margin-col) + var(--gap)) + 4rem); }
+}
+@media (min-width: 1700px) {
+  :root { --margin-col: 18rem; --gap: 3rem; }
+}
+
+/* ------------------------------------------------------------ headings as on the Penguin page (stage 3, R1 B) */
+.unit p.head-partition { font-size: 1em; letter-spacing: 0; margin: 2.4rem 0 0.6rem; }
+.hp-the, .hp-n { display: block; text-transform: uppercase; line-height: 1.15; }
+.hp-the { font-size: 1.55em; letter-spacing: 0.16em; }
+.hp-n { font-size: 2.15em; letter-spacing: 0.1em; }
+.hb { display: inline-grid; grid-template-columns: auto auto auto; align-items: center; column-gap: 0.4rem;
+  font-variant-caps: small-caps; letter-spacing: 0.12em; font-size: 1.12em; }
+.hb-brace svg { display: block; width: 0.7rem; height: 4.1em; }
+.hb-stack { text-align: left; line-height: 1.32; }
+.hb-stack > span { display: block; }
+.unit p.head-number { font-variant-caps: small-caps; letter-spacing: 0.12em; margin-top: 1.6rem; }
+h1.unit-title { font-style: italic; font-size: 1.4em; max-width: 28rem; margin-left: auto; margin-right: auto; }
+/* the decorated initial: the image beside three lines, the letter itself kept for readers and search */
+.ini { float: left; width: 4.4em; height: 4.4em; margin: 0.32em 0.5em 0 0; }
+.ini img { width: 100%; height: 100%; display: block; }
+.ini-d { display: none !important; }
+.ini-ch { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ini-sc { font-variant-caps: all-small-caps; letter-spacing: 0.05em; }
+.unit p:has(> .ini) { text-indent: 0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ini-l { display: none !important; }
+  :root:not([data-theme="light"]) .ini-d { display: block !important; }
+}
+:root[data-theme="dark"] .ini-l { display: none !important; }
+:root[data-theme="dark"] .ini-d { display: block !important; }
+@media print { .ini-d { display: none !important; } .ini-l { display: block !important; } }
+
+/* ------------------------------------------------------------ the front page (stage 4, R4 B)
+   One screen, no running head or foot (owner, 2026-11-20): the engraving the height of the window; beside it the title,
+   the way in, a short word about the edition with the widget, the synopses and the contents, folded */
+main:has(> .front) { max-width: 108rem; } /* room for the word to a new reader beside the way in (2026-11-20) */
+.front { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2.5rem; align-items: start; max-width: none;
+  min-height: 100vh; box-sizing: border-box; padding: 1rem 0; }
+.front .front-eng { position: sticky; top: 1rem; margin: 0; }
+.front .front-eng img, .front .fs-map img { max-height: calc(100vh - 2rem); width: auto; max-width: 100%; }
+/* the title panel magnified within the engraving while the pointer rests on it (owner, 2026-11-21) */
+.fs-title { position: absolute; z-index: 1; cursor: zoom-in; }
+.front .fs-map { overflow: hidden; vertical-align: top; } /* no baseline gap under it: the page is one screen, no scroll bar */
+.front .front-eng { line-height: 0; }
+.front .fs-map img { transform-origin: var(--zx, 50%) var(--zy, 50%); }
+.front .fs-map::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.45s ease;
+  background: radial-gradient(circle at 50% 48%, transparent 46%, rgb(0 0 0 / 0.28) 100%); }
+.front .fs-map.fs-zoomed::after { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) { .front .fs-map img { transition: transform 0.58s cubic-bezier(0.22, 1, 0.36, 1); } }
+.front .fs-map.fs-zoomed img { transform: translate(calc(50% - var(--zx)), calc(50% - var(--zy))) scale(var(--zs)); }
+.front .fs-map.fs-zoomed :is(.fs-panel, .fs-title) { visibility: hidden; }
+/* the side: the title across; below it the way in (and a panel's stanza) beside the word to a new reader; then the
+   synopses and contents, their rules as long as the way in; the informational pages at the foot (owner, 2026-11-20) */
+/* its type no larger than the window's height allows, so the front page is one screen at any type size: a title page,
+   taken in at once (owner, 2026-11-21: "no scroll bars ... until one opens synopses/contents") */
+.front-side { font-size: min(1em, 2.2vh); --fcol: clamp(19.5em, 49cqi, 22.7em); container: front-side / inline-size; display: flex; flex-direction: column; padding-top: 0.25rem; max-width: 76rem;
+  min-height: calc(100vh - 2rem); box-sizing: border-box; }
+@media (min-width: 1100px) and (hover: hover) { .front-side { padding-right: 2.4rem; } } /* clear of the ❧ at the window's edge */
+@media (min-width: 60rem) and (max-width: 1180px) { .front { gap: 1.4rem; } }
+.home-page h1.front-title, .front-title { font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1.15; margin: 0 0 0.45rem; text-align: left; font-variant-caps: normal; }
+.front-title .ft-1 { display: block; font-size: 0.75em; }
+.front-title .ft-2 { display: block; font-size: 1.35em; }
+/* one line (owner, 2026-11-20: "of it" hung on a line of its own) */
+.front-what { font-style: italic; margin: 0.2rem 0; font-size: 0.9em; }
+@media (min-width: 60rem) { .front-what { font-size: min(0.9em, 1.36vw); white-space: nowrap; } }
+.front-by { font-variant-caps: small-caps; letter-spacing: 0.06em; margin: 0.2rem 0 0; }
+.front-row { display: grid; grid-template-columns: var(--fcol) minmax(15rem, 1fr);
+  grid-template-rows: auto auto auto auto 1fr; gap: 0 1.4rem; align-items: start; margin: 0.8rem 0 1rem; }
+.front-left { grid-area: 1 / 1; min-width: 0; }
+.front-aside { grid-column: 2; grid-row: 1 / 6; max-width: 40rem; min-width: 0; } /* its height goes to the last, flexible row: it pushes nothing down */
+.front-syn { grid-area: 2 / 1; }
+.front-flor { grid-area: 3 / 1; width: var(--fcol); max-width: 100%; margin: 0 0 0.75rem; }
+.front-contents { grid-area: 4 / 1; }
+/* a brace inside a Partition open: the box keeps to the top row, its first paragraph only, and the synopses take the
+   width to the right of the engraving (owner, 2026-11-21) */
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .front-aside { grid-row: 1; }
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .front-info:not(.fi-full) .fi-more,
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .front-aside:not(:has(.front-info.fi-full)) .front-sortes { display: none; }
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .front-info:not(.fi-full) .fi-part:not(.fi-more) { display: -webkit-box; -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .front-syn { grid-column: 1 / -1; }
+/* shortened, the box can be opened again where it is; the synopses then stand below it (owner, 2026-11-21) */
+.fi-expand { display: none; }
+.front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) .fi-expand { display: inline-block; margin: 0.15rem 0 0; padding: 0; border: 0; background: none; font: inherit;
+  font-variant-caps: all-small-caps; letter-spacing: 0.08em; color: var(--accent); cursor: pointer; }
+.fi-expand:hover, .fi-expand:focus-visible { text-decoration: underline; text-underline-offset: 0.2em; }
+/* the way in as wide as the column, so the rules below end where its rules end (owner, 2026-11-20) */
+.front-door { margin: 0 0 0.8rem; }
+.front-enter { margin: 0; }
+.enter { display: block; text-align: center; font-size: 1.25em; color: var(--accent); text-decoration: none;
+  border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 0.2rem 0.6rem; letter-spacing: 0.06em; }
+.enter[hidden] { display: none; }
+.enter:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.front-enter.has-ribbon { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0.45rem; }
+.front-enter.has-ribbon .enter { padding: 0.2rem 0.35rem; font-size: 1.12em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* AB-2 B: Pure full-width verse under the way in, stanza eyebrow hint on first panel */
+.front-stanza { display: grid; margin: 0 0 0.85rem; font-size: 0.98em; }
+.front-stanza > .fs-st { grid-area: 1 / 1; display: block; }
+.front-stanza > .fs-st[hidden] { display: block; visibility: hidden; }
+.fs-st-h { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--accent); margin: 0 0 0.25rem; font-size: 0.92em; }
+.fs-st-hint { color: var(--muted); font-variant-caps: normal; letter-spacing: 0; font-style: italic; font-weight: 400; font-size: 0.92em; }
+.fs-st-l { font-style: italic; margin: 0; line-height: 1.42; }
+.fs-st-side { display: none; }
+/* the word to a new reader: rotating quotation strip, owner copy, key, and Sortes */
+.front-info { position: relative; font-size: min(0.8em, 18px); line-height: 1.38; border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.55rem 0.9rem 0.45rem; background: color-mix(in srgb, var(--paper) 94%, var(--ink)); }
+.fi-blurb { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.15rem;
+  margin: -0.05rem -0.35rem 0.42rem; padding-bottom: 0.38rem; border-bottom: 1px solid var(--rule); }
+.fb-track { display: grid; cursor: pointer; align-items: center; }
+.fb-q { grid-area: 1 / 1; margin: 0; font-size: 0.92em; line-height: 1.3; font-style: italic; text-align: center; color: var(--note-ink); }
+.fb-q[hidden] { display: block; visibility: hidden; pointer-events: none; }
+.fb-by { display: block; font-style: normal; font-variant-caps: all-small-caps; letter-spacing: 0.06em;
+  color: var(--muted); font-size: 0.9em; margin: 0.14rem 0 0; }
+.fb-nav { width: 1.25rem; height: 1.6rem; border: 0; background: none; padding: 0; color: var(--muted); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; opacity: 0.65; }
+.fb-nav svg { width: 0.72rem; height: 0.72rem; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@media (hover: hover) {
+  .fb-nav { opacity: 0; transition: opacity 0.18s ease, color 0.15s ease; }
+  .fi-blurb:hover .fb-nav, .fi-blurb:focus-within .fb-nav { opacity: 0.82; }
+}
+.fb-nav:hover, .fb-nav:focus-visible { opacity: 1 !important; color: var(--accent); }
+.fi-part { margin: 0; hyphens: auto; }
+.fi-part ~ .fi-part { margin-top: 0.65rem; }
+.fi-coda { font-style: italic; color: var(--accent); margin-top: 0.45rem !important; }
+/* run-in heads, red (owner, 2026-11-21) */
+.fi-h { margin-right: 0.3em; font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); }
+/* the signs, drawn as on the page */
+.fi-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.fi-cite { color: var(--k-cite); }
+.fi-la { color: var(--la); }
+.fi-grc { color: var(--grc); }
+.fi-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+.fi-dm { color: var(--muted); font-size: 1.15em; line-height: 1; }
+.fi-keys .fi-cite { font-size: 1.1em; }
+.fi-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; background: var(--accent); color: var(--paper);
+  border-radius: 2px; line-height: 1.25; font-size: 0.8em; font-style: normal; text-align: center; }
+/* the key (front_key.html): each sign with a plain word, matching current post-R10 UX */
+.fi-keys { margin-top: 0.4rem; }
+.fi-key > summary { cursor: pointer; width: fit-content; font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); }
+.fk-lab { font-variant-caps: all-small-caps; letter-spacing: 0.1em; color: var(--accent); margin-right: 0.6em; }
+.fk-strip { margin: 0; line-height: 1.65; }
+.fk-it { white-space: nowrap; margin-right: 0.78em; }
+.fk-w { color: var(--muted); font-size: 0.92em; }
+.fk-rule { border-left: 2px solid var(--accent); padding-left: 0.3em; }
+.fk-term { text-decoration: underline dotted var(--k-gloss); text-decoration-thickness: 1.5px; text-underline-offset: 0.18em; }
+.fi-expl { color: var(--k-expl); } .fi-gloss { color: var(--k-gloss); }
+.fk-page-d { position: relative; margin-top: 0.15rem; }
+/* opened by a plus that turns to a cross (owner, 2026-11-21: "something other than a triangle") */
+.fk-page-d > summary { list-style: none; }
+.fk-page-d > summary::-webkit-details-marker { display: none; }
+.fk-page-d > summary::before { content: "+"; display: inline-block; width: 0.9em; margin-right: 0.25em; text-align: center;
+  font-variant-caps: normal; font-size: 1.15em; line-height: 1; transition: rotate .2s; }
+.fk-page-d[open] > summary::before { rotate: 45deg; }
+/* the specimen: a few real lines of Burton set as the reader sets them, over the box, large enough to read; each sign
+   lights its pair, names open who they were (owner, 2026-11-21) */
+.sp { position: absolute; z-index: 6; bottom: 1.7em; right: -1.2rem; width: min(40rem, calc(100vw - 2rem));
+  padding: 0.55rem 0.8rem 0.65rem; box-sizing: border-box; background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); font-size: 15px; line-height: 1.45; }
+.sp-h { margin: 0 0 0.3rem; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); }
+.sp-hint { margin-left: 0.5em; font-variant-caps: normal; letter-spacing: 0; font-style: italic; }
+.sp-body { display: grid; grid-template-columns: minmax(0, 1fr) 13.5rem; gap: 0.3rem 1.1rem; }
+.sp-text { margin: 0; text-align: justify; hyphens: auto; }
+.sp-m { font-size: 0.85em; line-height: 1.35; color: var(--note-ink); }
+.sp-card { margin: 0 0 0.45rem; padding: 0.05rem 0.3rem 0.05rem 0.45rem; border-radius: 2px; cursor: pointer; }
+.sp-sn { border-left: 2px solid var(--accent); }
+.sp-tr { border-left: 1px dotted color-mix(in srgb, var(--la) 60%, var(--paper)); color: var(--la); }
+.sp-cc { border-left: 1px solid transparent; }
+.sp-gl { border-left: 1px solid transparent; }
+.sp-lem-gl { color: var(--k-gloss); font-style: italic; }
+.sp-glw { text-decoration: underline dotted var(--k-gloss); text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; cursor: pointer; border-radius: 2px; }
+.sp-n { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center; background: var(--accent); color: var(--paper);
+  border-radius: 2px; line-height: 1.25; font-size: 0.8em; }
+.sp-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.sp-k-c, .sp-ic { color: var(--k-cite); }
+.sp-ic { font-size: 0.8em; vertical-align: 0.35em; margin-left: 0.05em; cursor: pointer; }
+.sp-ref { color: var(--accent); font-size: 0.62em; vertical-align: 0.6em; line-height: 0; padding: 0 0.12em; cursor: pointer; }
+.sp-la { color: var(--la); cursor: pointer; border-radius: 2px; }
+.sp .hot { background: var(--hot); }
+.sp .pinned { outline: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 1px; }
+.sp-nm { position: relative; text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em; cursor: help; }
+.sp-who { display: none; position: absolute; left: 0; bottom: calc(100% + 0.3rem); z-index: 7; width: 17.5rem; padding: 0.38rem 0.58rem;
+  font-style: normal; font-size: 0.88rem; line-height: 1.35; color: var(--ink); text-align: left; background: var(--pop-bg);
+  border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow); white-space: normal; }
+.sp-peek-hint { display: block; margin-top: 0.22rem; font-style: italic; font-size: 0.9em; color: var(--muted); }
+.sp-m .sp-who { left: auto; right: 0; }
+.sp-nm:hover > .sp-who, .sp-nm:focus > .sp-who, .sp-nm.open > .sp-who { display: block; }
+.sp-dates { color: var(--muted); }
+@media (max-width: 40rem) { .sp-body { grid-template-columns: minmax(0, 1fr); } }
+/* the signs and the informational pages on one line (owner, 2026-11-21) */
+.front-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.7rem; margin: 0.45rem -0.4rem 0;
+  padding-top: 0.4rem; border-top: 1px solid var(--rule); }
+.front-tools .bar-r { justify-self: start; display: flex; flex-wrap: wrap; gap: 0.2rem 0.3rem; padding: 0; }
+.front-tools .bar-r a, .front-tools .bar-r button { width: auto; height: auto; min-height: 1.9rem; gap: 0.3rem; padding: 0.1rem 0.45rem; }
+.front-tools .hsearch.open { order: 9; flex-basis: 100%; }
+.front-tools .settings-toggle { font-size: 1em; }
+.front-links { margin: 0; white-space: nowrap; color: var(--muted); font-size: 0.95em; }
+/* the options open over the page from the widget, as from the floating one elsewhere */
+.front-settings { position: fixed; top: 1rem; right: 1rem; z-index: 44; width: min(60rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem); overflow: auto; background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); box-sizing: border-box; font-size: 0.85rem; line-height: 1.4; }
+@media (min-width: 1100px) and (hover: hover) { .front-settings { right: 3.2rem; width: min(60rem, calc(100vw - 6.4rem)); } }
+/* the section heads between rubric rules: —— Synopses —— (owner, 2026-11-20) */
+.front-rh { display: flex; align-items: center; gap: 0.7em; margin: 0 0 0.35rem; font-size: 0.95em; font-weight: 400;
+  font-variant-caps: all-small-caps; letter-spacing: 0.12em; }
+.front-rh::before, .front-rh::after { content: ""; flex: 1 1 0; height: 1px; background: var(--accent); }
+.front-syn { width: var(--fcol); max-width: 100%; margin: 0.8rem 0 0.7rem; } /* room for a name and its folded brace (edition.js: 22em of the sheet) */
+.front-syn:has(.syn-part:not(.syn-shut)) { width: auto; } /* an open Partition's sheets take the column */
+.front-syn .syn-sheet { margin: 0; }
+.front-flor .lab-list { margin: 0.12rem 0 0; }
+.front-flor .lab-item { margin: 0.24rem 0; font-size: 0.88em; line-height: 1.26; }
+.front-flor .lab-note { font-size: 0.9em; line-height: 1.22; }
+.flor-sub { margin: -0.22rem 0 0.24rem; text-align: center; font-style: italic; font-size: 0.86em; color: var(--muted); }
+.flor-more { margin-top: 0.3rem; }
+.flor-more > summary { list-style: none; cursor: pointer; width: fit-content; font-variant-caps: all-small-caps;
+  letter-spacing: 0.09em; font-size: 0.86em; color: var(--accent); }
+.flor-more > summary::-webkit-details-marker { display: none; }
+.flor-more > summary::after { content: ""; display: inline-block; width: 0.32em; height: 0.32em;
+  margin: 0 0 0.1em 0.42em; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); rotate: -45deg;
+  transition: rotate .2s; }
+.flor-more[open] > summary::after { rotate: 45deg; }
+.flor-more[open] .flor-more-closed { display: none; }
+.flor-more:not([open]) .flor-more-open { display: none; }
+.front-contents { width: var(--fcol); max-width: 100%; }
+.front-contents[open] { width: auto; }
+.front-contents > summary { list-style: none; cursor: pointer; }
+.front-contents > summary::-webkit-details-marker { display: none; }
+.front-contents > summary .front-rh::after { flex: 1 1 0; }
+.front-contents > summary:hover .front-rh, .front-contents > summary:focus-visible .front-rh { color: var(--accent); }
+/* a drawn chevron (the fonts have no small triangles, V9): right when folded, down when open */
+.front-contents > summary .front-rh span::after { content: ""; display: inline-block; width: 0.32em; height: 0.32em;
+  margin: 0 0 0.12em 0.45em; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); rotate: -45deg;
+  transition: rotate .2s; }
+.front-contents[open] > summary .front-rh span::after { rotate: 45deg; }
+/* a short window (laptops 720–900 px high): the same page, set tighter with zero scrollbars */
+@media (min-width: 60rem) and (max-height: 920px) {
+  .front { padding: 0.35rem 0; }
+  .front .front-eng { top: 0.35rem; }
+  .front .front-eng img, .front .fs-map img { max-height: calc(100vh - 0.7rem); }
+  .front-side { padding-top: 0; min-height: 0; }
+  .home-page h1.front-title, .front-title { font-size: 1.6rem; margin: 0 0 0.15rem; }
+  .front-row { margin: 0.35rem 0 0.4rem; }
+  .enter { font-size: 1.04em; }
+  .front-door { margin: 0 0 0.55rem; }
+  .front-stanza { font-size: 0.86em; margin-bottom: 0.45rem; }
+  .front-syn { margin: 0.35rem 0 0.42rem; }
+  .front-flor { margin: 0 0 0.45rem; }
+  .front-flor .lab-item { margin: 0.2rem 0; font-size: 0.84em; line-height: 1.22; }
+  .front-flor .lab-note { font-size: 0.88em; line-height: 1.22; }
+  .front-info { font-size: min(0.74em, 15.2px); line-height: 1.3; padding: 0.42rem 0.72rem 0.36rem; }
+  .fi-blurb { margin-bottom: 0.3rem; padding-bottom: 0.28rem; }
+  .fi-part ~ .fi-part { margin-top: 0.5rem; }
+  .fi-coda { margin-top: 0.34rem !important; }
+  .fi-keys { margin-top: 0.28rem; }
+  .fk-strip { line-height: 1.5; }
+  .front-sortes { margin-top: 0.38rem; padding: 0.3rem 0.5rem; font-size: min(0.74em, 15.2px); }
+  .front-sortes .sortes-btn.sortes-hero { padding: 0.22rem 0.68rem; font-size: 0.96em; }
+  .front-tools { margin-top: 0.34rem; padding-top: 0.3rem; }
+}
+/* Sortes Burtonianae beneath the right-hand infobox (R11-A Option C: filled accent button + side caption) */
+.front-sortes { margin-top: 0.48rem; padding: 0.36rem 0.58rem; border: 1px dotted var(--rule); border-radius: 4px;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.35rem 0.65rem;
+  font-size: min(0.8em, 18px); line-height: 1.25; }
+.front-sortes .sortes-btn.sortes-hero { flex: 0 0 auto; background: var(--accent); color: var(--paper);
+  border: 1.5px solid var(--accent); border-radius: 4px; padding: 0.24rem 0.74rem; font-size: 0.98em;
+  letter-spacing: 0.06em; white-space: nowrap; }
+.front-sortes .sortes-btn.sortes-hero:hover,
+.front-sortes .sortes-btn.sortes-hero:focus-visible {
+  background: color-mix(in srgb, var(--accent) 86%, var(--ink));
+  border-color: color-mix(in srgb, var(--accent) 86%, var(--ink));
+  color: var(--paper); }
+.front-sortes-sub { margin: 0; font-size: 0.88em; line-height: 1.24; font-style: italic; color: var(--muted);
+  text-align: right; text-wrap: balance; }
+@media (max-width: 24rem) {
+  .front-sortes { flex-wrap: wrap; justify-content: center; }
+  .front-sortes-sub { text-align: center; }
+}
+/* narrower: the word to a new reader under the way in */
+/* too little room for the box beside the column of the way in (a narrow window, or a large type size on a laptop:
+   the box would be squeezed under ~15em and run off the screen): one column, the box straight after the way in */
+@container front-side (width < 34em) {
+  .front-row, .front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) { grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none; }
+  .front-left { display: contents; }
+  .front-row > *, .front-row:has(.front-syn .syn-root:not(.syn-leaf, .syn-shut)) > * { grid-area: auto / 1; }
+  .front-door { order: 1; max-width: var(--fcol); } .front-aside { order: 2; margin-bottom: 1rem; } .front-stanza { order: 3; }
+  .front-syn { order: 4; } .front-flor { order: 5; width: 100%; } .front-contents { order: 6; }
+  .front-links { white-space: normal; } }
+@media (max-width: 60rem) {
+  .front { grid-template-columns: 1fr; min-height: 0; }
+  .front-side { min-height: 0; }
+  .front .front-eng { position: static; }
+  .front .front-eng img, .front .fs-map img { max-height: 85vh; }
+}
+}
+
+/* ------------------------------------------------------------ facing translations (stage 4) */
+.facing-link { font-size: 0.9em; margin: 1rem 0 0; }
+.facing-link a[aria-expanded="true"]::before { content: "× "; }
+.facing-t[hidden] { display: none; }
+/* while the facing column is open, Burton's notes on the page open as pop-ups, the margins being taken */
+.facing-on .unit .sidenote:not(:popover-open), .facing-on .unit .mn:not(:popover-open) { display: none !important; }
+@media (min-width: 1100px) {
+  main:has(.facing-t:not([hidden])) { max-width: 76rem; display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; align-items: start; }
+  main:has(.facing-t:not([hidden])) > :not(.unit, .facing-t) { grid-column: 1 / -1; }
+  .facing-on .unit { margin: 0 !important; max-width: none; }
+  .facing-t { font-size: 0.95em; border-left: 1px solid var(--rule); padding-left: 1.5rem; }
+}
+.facing-t .sidenote, .facing-t .nref, .facing-t .mn-pool, .facing-t .mref, .facing-t .enref { display: none !important; }
+@media (max-width: 1099px) { .facing-t { margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1rem; } }
+.facing-on .fo { text-decoration: none; }
+
+/* ------------------------------------------------------------ names and their windows (stage 5, R5 C) */
+a.nm { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em; }
+a.nm:hover, a.nm:focus-visible { text-decoration-color: var(--accent); }
+a.nm-x { cursor: help; } /* an identified name with no index page: the window is all it opens */
+.pw { position: absolute; z-index: 60; width: min(26rem, calc(100vw - 32px)); background: var(--pop-bg); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); padding: 0.6rem 0.9rem 0.7rem;
+  font-size: 0.9rem; line-height: 1.4; text-align: left; text-indent: 0; font-style: normal; }
+.pw p { margin: 0 0 0.35rem; text-indent: 0; text-align: left; }
+.pw-h { font-style: italic; font-size: 1.05em; }
+.pw-c { font-size: 0.92em; color: var(--muted); margin: 0.1em 0 0.3em; } /* the work cited where the window was opened */
+.pw-l { font-size: 0.9em; margin-bottom: 0 !important; }
+.pw-l a, .pw-open { color: var(--accent); }
+.pw-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); border-radius: 0 0 0 6px; }
+.pw:not(.locked) .pw-bar { animation: pw-lock 0.65s linear forwards; }
+.pw.locked .pw-bar { width: 100%; background: color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 0 0 6px 6px; }
+.pw.locked { border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); }
+@keyframes pw-lock { to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .pw:not(.locked) .pw-bar { animation: none; width: 100%; opacity: 0.4; } }
+
+/* ------------------------------------------------------------ in-line citations and Bible verses (stage 6, C1 C) */
+/* the name stays in Burton's sentence, the reference goes to the margin (shown again under "Burton's abbreviations"),
+   and a raised § in the citation colour marks the place; his own words are on the mark's title */
+.ic-m { color: var(--k-cite); font-size: 0.68em; vertical-align: 0.5em; line-height: 0; padding: 0 0.08em; cursor: pointer;
+  font-style: normal; border-radius: 2px; }
+.ic-m:hover, .ic-m:focus-visible { text-decoration: underline; }
+.ic-m[data-kind="bible"] { color: var(--k-bible); }
+.mn-ic[data-kind="cites"] .mn-k { color: var(--k-cite); }
+.mn-ic[data-kind="bible"] .mn-k { color: var(--k-bible); }
+.mn-ic .cx-a { color: inherit; text-decoration-color: var(--rule); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+/* the KJV text of a Bible citation: in the card, or one line after Burton's note; folded after three lines */
+.kjv { display: block; margin-top: 0.15em; }
+.kjv-t { font-style: italic; }
+.kjv.fold:not(.open) .kjv-t { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
+.kjv-n { font-size: 0.7em; font-style: normal; color: var(--muted); padding-right: 0.15em; }
+.kjv-l { font-size: 0.85em; color: var(--muted); font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.kjv-more { background: none; border: none; padding: 0; color: var(--k-bible); text-decoration: underline;
+  text-decoration-thickness: 1px; cursor: pointer; font-size: 0.88em; }
+.kjv-more[hidden] { display: none; }
+.sn-bible { display: block; }
+.sidenote .kjv { color: var(--note-ink); }
+
+/* ------------------------------------------------------------ languages in the line (stage 7) */
+/* a passage's language colours its translation where that stands in the line or facing it, and Burton's own
+   rendering of it (owner, 2026-11-03: R2 A + C, R6 B) */
+.fp[data-lang="la"], .burton-tr[data-lang="la"] { --tr-ink: var(--la); }
+.fp[data-lang="grc"], .burton-tr[data-lang="grc"] { --tr-ink: var(--grc); }
+.fp[data-lang="enm"], .burton-tr[data-lang="enm"] { --tr-ink: var(--enm); }
+.fp:is([data-lang="it"], [data-lang="fr"], [data-lang="es"], [data-lang="de"], [data-lang="nl"]),
+.burton-tr:is([data-lang="it"], [data-lang="fr"], [data-lang="es"], [data-lang="de"], [data-lang="nl"]) { --tr-ink: var(--modern); }
+.mn-on .unit .burton-tr, .mode-english .unit .burton-tr { color: var(--tr-ink, inherit); }
+/* "Translations in the line" (R6 B): the English in place of the original, coloured and italic like the original,
+   with no brackets and no language tag; the original on hover, or for good with a click */
+.mode-english .fp > .ft .ft-text::before, .mode-english .fp > .ft .ft-text::after { content: none; }
+.mode-english .fp > .ft .ft-from { display: none; }
+.mode-english .ft-v .ft-text { background: none; padding: 0; color: var(--tr-ink, var(--ink)); font-style: italic; }
+.mode-english .fp:not(.show-orig, .fp-untranslated):hover > .fo {
+  display: block; position: absolute; z-index: 5; left: 0; top: calc(100% + 0.2rem); width: min(24rem, 80vw);
+  padding: 0.4rem 0.6rem; background: var(--pop-bg); color: var(--tr-ink, var(--ink)); border: 1px solid var(--rule);
+  border-radius: 4px; box-shadow: var(--pop-shadow); font-size: 0.85em; line-height: 1.35; text-indent: 0;
+  text-align: left; font-style: italic; hyphens: manual; text-decoration: none;
+}
+.mode-english .fp-block:not(.show-orig, .fp-untranslated):hover > .fo { top: 100%; }
+.mode-english .fp.show-orig > .fo { color: var(--tr-ink, var(--ink)); }
+/* the translation is in the line, so its margin card is not shown (Burton's own renderings keep theirs) */
+.mode-english .unit .mn-tr { display: none !important; }
+
+/* ------------------------------------------------------------ long passages set facing (stage 7, T12 B) */
+/* a verse passage of four lines or more whose translation has one line for each of its own: the two side by side,
+   line against line; on a phone, each line with its translation under it */
+.ftr { display: none; }
+.mode-gloss .fp-facing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 1.4rem;
+  align-items: start; margin: 0.6rem 0; }
+.mode-gloss .fp-facing > .fo, .mode-gloss .fp-facing > .ftr, .mode-gloss .fp-facing .fo .lg { display: contents; }
+.mode-gloss .fp-facing .fo .l { grid-column: 1; grid-row: var(--r); }
+.mode-gloss .fp-facing .ftr-l { display: block; grid-column: 2; grid-row: var(--r); padding-left: 1em; text-indent: -1em;
+  font-size: 0.92em; line-height: 1.45; hyphens: manual; text-align: left; }
+.mode-gloss .fp-facing .ftr-src { grid-column: 2; grid-row: var(--r); font-size: 0.72em; color: var(--muted);
+  padding-left: 1em; }
+.mode-gloss .fp-facing > .ft { display: none !important; }
+.fp-facing .l.hot, .fp-facing .ftr-l.hot { background: var(--hot); border-radius: 2px; }
+@media (max-width: 700px) {
+  .mode-gloss .fp-facing { grid-template-columns: minmax(0, 1fr); }
+  .mode-gloss .fp-facing .fo .l { grid-row: calc(var(--r) * 2 - 1); }
+  .mode-gloss .fp-facing .ftr-l, .mode-gloss .fp-facing .ftr-src { grid-column: 1; grid-row: calc(var(--r) * 2);
+    padding-left: 2.5em; margin-bottom: 0.25rem; }
+}
+
+/* ------------------------------------------------------------ type for Greek and Chaucer (stage 7, T10 B for now) */
+[lang="grc"] { font-family: "GFS Didot", var(--font-text, serif); }
+.lucida { font-variant-caps: small-caps; letter-spacing: 0.02em; }
+
+/* ------------------------------------------------------------ "How to read this book" (stage 7) */
+.guide .g-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.guide .g-burton { color: var(--accent); font-variant-numeric: lining-nums; }
+.guide .g-cite { color: var(--k-cite); } .guide .g-bible { color: var(--k-bible); }
+.guide .g-la { color: var(--la); font-style: italic; } .guide .g-grc { color: var(--grc); font-style: italic; }
+.guide .g-enm { color: var(--enm); font-variant-caps: small-caps; } .guide .g-modern { color: var(--modern); font-style: italic; }
+
+/* ------------------------------------------------------------ the running head (AB-1 A: unified locus pill + Contents) */
+header.site { position: relative; }
+header.site .bar { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: start; gap: 0.5rem 1rem; }
+header.site .home { margin: 0; text-align: center; }
+.bar-l { display: flex; flex-wrap: nowrap; gap: 0.3rem 0.65rem; align-items: center; min-width: 0; padding-top: 0.15rem; }
+.bar-r { justify-self: end; display: flex; gap: 0.35rem; align-items: center; padding-top: 0.1rem; }
+.bar-r a, .bar-r button { display: inline-flex; align-items: center; justify-content: center; min-width: 1.9rem; height: 1.9rem;
+  padding: 0 0.3rem; border: 1px solid transparent; border-radius: 4px; background: none; color: var(--muted);
+  cursor: pointer; text-decoration: none; }
+.bar-r a:hover, .bar-r button:hover, .bar-r [aria-expanded="true"], .bar-r [aria-current="page"] { color: var(--accent); border-color: var(--rule); }
+.bar-r .settings-toggle { font-size: 1.1em; letter-spacing: 0.02em; }
+.ic { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+header.site .toc-panel { flex: 0 0 auto; }
+header.site .toc-panel > summary { border-color: transparent; padding: 0.05rem 0.2rem; color: var(--muted);
+  font-variant-caps: all-small-caps; letter-spacing: 0.08em; white-space: nowrap; }
+header.site .toc-panel > summary:hover, header.site .toc-panel[open] > summary { color: var(--accent); }
+header.site .toc-panel > nav { left: 0; right: auto; }
+@media (max-width: 40rem) {
+  header.site .bar { grid-template-columns: minmax(0, 1fr) auto; }
+  header.site .home { grid-column: 1 / -1; grid-row: 1; }
+  .bar-l { grid-row: 2; } .bar-r { grid-row: 2; }
+}
+/* Unified locus pill: { 1.1.1.1 · Short title } with full path on hover/focus */
+:root:not([data-uid="B"]) .bar-l:has(.syn-badge) > .uid { display: none; }
+.syn-badge { position: relative; display: inline-flex; gap: 0.32rem; align-items: baseline; font-size: 0.82em; color: var(--muted);
+  min-width: 0; max-width: 100%; cursor: default; border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  border-radius: 3px; padding: 0.06rem 0.45rem; }
+.syn-badge:hover, .syn-badge:focus-within { border-color: var(--accent); }
+.sb-ico { color: var(--accent); font-size: 1.18em; line-height: 0.9; flex: 0 0 auto; }
+.sb-uid { color: var(--accent); font-variant-numeric: lining-nums; letter-spacing: 0.04em; flex: 0 0 auto; white-space: nowrap; }
+.sb-sep { color: var(--rule); flex: 0 0 auto; }
+.sb-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sb-cur { color: var(--accent); }
+.sb-part { margin: 0 0 0.25rem; font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); font-size: 0.85em; }
+.sb-pop { display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 40; width: min(25rem, calc(100vw - 32px));
+  max-height: min(72vh, 28rem); overflow-y: auto;
+  background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: var(--pop-shadow);
+  padding: 0.55rem 0.75rem; color: var(--ink); font-size: 1.04em; line-height: 1.35; white-space: normal; }
+.syn-badge:hover .sb-pop, .syn-badge:focus-within .sb-pop { display: block; }
+.sb-step { display: block; padding-left: calc(var(--d) * 0.85rem); color: var(--muted); text-decoration: none; }
+.sb-step::before { content: "{ "; color: var(--rule); }
+.sb-step:hover, .sb-sibs a:hover { color: var(--accent); }
+.sb-step.syn-node { color: var(--ink); }
+.sb-sibs { margin: 0.4rem 0 0; padding-top: 0.35rem; border-top: 1px solid var(--rule); }
+.sb-sibs a { color: var(--ink); text-decoration: none; }
+.sb-sibs a.sb-cur { color: var(--accent); }
+.sb-all { display: block; margin-top: 0.35rem; font-size: 0.85em; color: var(--accent); }
+
+/* ------------------------------------------------------------ the margin never holds notes back (stage 8) */
+/* where notes would drift too far below their words, the long ones are shortened to four lines; "more" opens one */
+.fold-more { display: none; }
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-fold { max-height: 5.4em; overflow: hidden; }
+  .unit.sn-laid .mn-fold:not(:has(.mn-more)) { cursor: pointer; } /* a click opens it whole (owner, 2026-11-21) */
+  .unit.sn-laid .mn-fold2 { max-height: 2.7em; }
+  .unit.sn-laid .mn-fold3 { max-height: 1.35em; }
+  .unit.sn-laid .mn-fold > .fold-more { display: block; position: absolute; right: 0; bottom: 0; padding: 0 0 0 1.6em;
+    border: none; font: inherit; font-size: 0.9em; line-height: 1.35; color: var(--accent); cursor: pointer;
+    background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
+  .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #d9a520 26%, var(--paper)) 1.4em); }
+}
+@media (min-width: 1100px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #e0b040 24%, var(--paper)) 1.4em); }
+}
+@media (min-width: 1100px) {
+  :root[data-theme="dark"] .unit.sn-laid .mn-fold.hot > .fold-more {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, #e0b040 24%, var(--paper)) 1.4em); }
+}
+/* Burton's own notes: a rubric rule beside them (owner, 2026-11-04: N5 C), on the side facing the text: right in the
+   left margin (owner, 2026-11-19: P3 B, to be revisited, state/review/to-revisit.md) */
+@media (min-width: 1100px) {
+  .unit.sn-laid .sidenote:not(.sn-restored) > .sn-body { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+  .unit.sn-laid .sidenote.mn-l:not(.sn-restored) > .sn-body { border-left: none; padding-left: 0;
+    border-right: 2px solid var(--accent); padding-right: 0.45rem; }
+  .unit.sn-laid .sidenote.sn-restored.mn-l:not(.sn-stacked) { border-left: none; padding-left: 0;
+    border-right: 1px dashed var(--rule); padding-right: 0.4rem; }
+}
+/* Burton's note letters in a small filled red box, the letter in the page colour (owner, 2026-11-19: P2 C) */
+.sidenote:not(.sn-restored) .sn-n { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center;
+  background: var(--accent); color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.8em;
+  font-style: normal; }
+/* ascriptions (owner, 2026-11-04): who made a translation is set apart from it, raised and in small capitals; Gowland
+   as a small-capital g (N6 D), his name on hover */
+.mn-src, .ftr-src { font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.8em; vertical-align: 0.3em;
+  color: var(--muted); font-style: normal; margin-left: 0.15em; }
+.src-m { cursor: help; }
+/* a translation's kind label stays neutral, so the eye goes to the translation in its colour */
+.mn-tr .mn-k, .mn-own .mn-k { color: var(--muted); }
+.guide .guide-lead { font-size: 1.08em; }
+/* Gowland's decisions (stage 8): a passage his one bracket translates with the next has no translation of its own;
+   with translations in the line the next passage's English stands for both */
+.mode-english .fp-covered { display: none; }
+.mode-interlinear .fp-covered > .ft { display: none; }
+/* Burton's own rendering, marked in the margin as his notes are (owner, 2026-11-04) */
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-own { border-left: 2px solid var(--accent); padding-left: 0.45rem; }
+  /* in the left margin, on the side facing the text, like his notes (owner, 2026-11-19, with P3 B) */
+  .unit.sn-laid .mn-own.mn-l { border-left: none; padding-left: 0; border-right: 2px solid var(--accent);
+    padding-right: 0.45rem; }
+}
+
+/* ------------------------------------------------------------ the front matter facing Gowland (stage 9) */
+/* Ad librum, Lectori, Heraclite: Burton's Latin and Gowland's English line for line (or paragraph for paragraph),
+   his notes between them; wider than the text measure, with no heading and no divider */
+.unit:has(.fp-wide) { max-width: 60rem; }
+.two-side .unit:has(.fp-wide, .ded-wrap) { margin-left: 0; } /* his notes are between the columns */
+main:has(.fp-wide) { max-width: calc(60rem + var(--margin-col) + var(--gap) + 4rem); } /* one margin: centred */
+.mode-gloss .fp-facing.has-notes { grid-template-columns: minmax(0, 1fr) minmax(7rem, 11rem) minmax(0, 1fr); }
+.mode-gloss .fp-facing.has-notes .ftr-l, .mode-gloss .fp-facing.has-notes .ftr-src { grid-column: 3; }
+.mode-gloss .fp-facing .ftr-n { display: block; grid-column: 2; grid-row: var(--r) / span var(--span, 1); align-self: start; font-size: 0.74em; line-height: 1.3;
+  color: var(--note-ink); text-indent: 0; text-align: left; hyphens: manual; }
+.ftr-note { display: block; margin-bottom: 0.3rem; }
+.ftr-note[data-kind="gloss"] .mn-k { color: var(--k-gloss); } .ftr-note[data-kind="source"] .mn-k { color: var(--k-cite); }
+.ftr-note[data-kind="identity"] .mn-k, .ftr-note[data-kind="explanation"] .mn-k { color: var(--k-expl); }
+.fp-facing .ftr-n.hot { background: var(--hot); border-radius: 2px; }
+/* prose set facing: paragraphs as the rows */
+.mode-gloss .fp-facing .fo > p { grid-column: 1; grid-row: var(--r); margin: 0 0 0.6rem; }
+.mode-gloss .fp-facing .ftr-l { margin-bottom: 0; }
+.fp-wide .fo > p + p { text-indent: 1.4em; }
+@media (max-width: 700px) {
+  .mode-gloss .fp-facing.has-notes { grid-template-columns: minmax(0, 1fr); }
+  .mode-gloss .fp-facing .fo > p { grid-row: calc(var(--r) * 2 - 1); }
+  .mode-gloss .fp-facing .ftr-n { grid-column: 1; grid-row: calc(var(--r) * 2); align-self: end; }
+}
+
+/* ------------------------------------------------------------ the Dedication, as an inscription (stage 9) */
+/* Burton's Latin dedication set as a tablet: a double rubric rule, the tiers of capitals kept, the dedicatee in red;
+   Gowland's English beside it, in italic */
+.unit:has(.ded-wrap) { max-width: 58rem; }
+main:has(.ded-wrap) { max-width: calc(58rem + var(--margin-col) + var(--gap) + 4rem); }
+.ded-wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; margin: 1.5rem 0 2rem; }
+blockquote.ded-tablet { margin: 0; padding: 2.2rem 1.6rem 2rem; border: 3px double var(--accent); outline: 1px solid var(--rule);
+  outline-offset: 5px; background: color-mix(in srgb, var(--accent) 3%, var(--paper)); text-align: center; }
+.ded-tablet .fo { color: var(--ink) !important; text-decoration: none; }
+.unit .ded-tablet p { text-indent: 0; text-align: center; margin: 0.12rem 0; letter-spacing: 0.16em; line-height: 1.3; hyphens: manual; }
+.unit .ded-tablet p.dedf { font-size: 1.45em; letter-spacing: 0.2em; margin-top: 0; }
+.unit .ded-tablet p.ded1 { font-size: 1.55em; color: var(--accent); margin: 0.5rem 0; }
+.unit .ded-tablet p.ded2 { font-size: 1.25em; }
+.unit .ded-tablet p.ded4 { font-size: 1.05em; }
+.unit .ded-tablet p.ded6 { font-size: 0.88em; }
+.unit .ded-tablet p.TS1 { margin-top: 0.8rem; }
+.unit .ded-tablet p:last-child { margin-top: 1rem; font-variant-caps: small-caps; letter-spacing: 0.1em; }
+.ded-tr { font-style: italic; text-align: center; color: var(--note-ink); line-height: 1.65; font-size: 0.95em; }
+.ded-l { display: block; }
+.ded-tr .ftr-src { display: block; margin-top: 0.6rem; }
+@media (max-width: 760px) { .ded-wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
+.ftr-note.ftr-long:not(.open) { max-height: 5.2em; overflow: hidden; position: relative; }
+.ftr-more { display: none; }
+.ftr-long .ftr-more { display: block; position: absolute; right: 0; bottom: 0; padding: 0 0 0 1.6em; border: none;
+  font: inherit; color: var(--accent); cursor: pointer; background: linear-gradient(to right, transparent, var(--paper) 1.4em); }
+.ftr-long.open .ftr-more { position: static; padding: 0; background: none; display: inline; }
+
+/* ------------------------------------------------------------ the colour of the Latin, a reading option (round 5, F2) */
+/* default: oxblood by day, candle-gold by night; or green, or ink like the text, or the reader's own two colours */
+:root[data-latin="green"] { --la: #23584a; }
+:root[data-latin="plain"] { --la: var(--ink); }
+:root[data-latin="custom"] { --la: var(--la-c-light, #7a2230); }
+@media (prefers-color-scheme: dark) {
+  :root[data-latin="green"]:not([data-theme="light"]) { --la: #8cc9b3; }
+  :root[data-latin="custom"]:not([data-theme="light"]) { --la: var(--la-c-dark, #e0c27a); }
+}
+:root[data-latin="green"][data-theme="dark"] { --la: #8cc9b3; }
+:root[data-latin="custom"][data-theme="dark"] { --la: var(--la-c-dark, #e0c27a); }
+.settings .la-custom { display: inline-flex; gap: 0.4rem; align-items: center; margin-left: 1.4em; font-size: 0.92em; }
+.settings .la-custom input[type="color"] { width: 2rem; height: 1.4rem; padding: 0; border: 1px solid var(--rule); background: none; }
+
+/* ------------------------------------------------------------ stage 12 (owner, 2026-11-18) */
+/* Burton's own words in a note carry the rubric rule; the lines the edition adds (translations, KJV) hang from it on a
+   dotted rule: one note, two hands */
+.sn-body { display: block; }
+@media (min-width: 1100px) {
+  .unit.sn-laid .sidenote:not(.sn-restored) > .sn-tr, .unit.sn-laid .sidenote:not(.sn-restored) > .sn-bible {
+    margin-left: 0.6rem; padding-left: 0.45rem; border-left: 1px dotted var(--rule); }
+}
+.sn-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; font-size: 0.92em; color: var(--muted); margin-right: 0.1em; }
+.sn-k[data-kind="cites"] { color: var(--k-cite); }
+/* the front matter centred, with its own contents at the head of each page */
+.page-front main { max-width: none; }
+.page-front .unit { margin-left: auto !important; margin-right: auto !important; }
+/* the front matter's contents (round 8, F1; owner, 2026-11-19: A, with B and D to be seen on the real page).
+   A (default): a small ruled tablet, one piece a line, a hedera before the one you are on */
+.front-nav { --cur-front: #8a2f1d; margin: 0.4rem auto 1.2rem; text-align: center; }
+:root[data-theme="dark"] .front-nav { --cur-front: #e0c27a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .front-nav { --cur-front: #e0c27a; } }
+/* (owner, 2026-11-20: "halfway between how it was and is now": within the text's measure, the pieces running on in
+   a few centred lines rather than one a line) */
+.front-nav ol { list-style: none; margin: 0; display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 0 1.3rem;
+  max-width: min(46rem, 100%); box-sizing: border-box; text-align: center; border: 1px solid var(--rule);
+  outline: 1px solid var(--rule); outline-offset: 2px; padding: 0.35rem 1.4rem; font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em; font-size: 0.76em; line-height: 1.55; }
+.front-nav a { color: var(--muted); text-decoration: none; }
+.front-nav a:hover { color: var(--accent); }
+.front-nav a[aria-current="page"] { color: var(--cur-front); }
+.front-nav .fn-n { display: none; }
+.front-nav a[aria-current="page"] .fn-t::before { content: "❧ "; }
+/* B: the pieces as Roman numerals in one short line; yours spelled out, the others named on hover */
+[data-fm="B"] .front-nav ol { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 0.9rem; border: 0;
+  outline: 0; padding: 0; font-size: 0.82em; }
+[data-fm="B"] .front-nav .fn-n { display: inline; }
+[data-fm="B"] .front-nav a:not([aria-current]) .fn-t { position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; }
+[data-fm="B"] .front-nav a[aria-current="page"] .fn-t::before { content: "· "; }
+/* D: down the left margin like a thumb index, yours marked by the red rule (wide windows; narrower ones keep A) */
+@media (min-width: 1100px) {
+  [data-fm="D"] .front-nav { position: fixed; left: 3.4rem; top: 7rem; width: 10rem; margin: 0; text-align: left;
+    z-index: 3; }
+  [data-fm="D"] .front-nav ol { display: block; max-width: none; text-align: left; border: 0; outline: 0; padding: 0 0.6rem 0 0;
+    border-right: 1px solid var(--rule); line-height: 1.45; font-size: 0.8em; }
+  [data-fm="D"] .front-nav li { margin: 0.3rem 0; }
+  [data-fm="D"] .front-nav a[aria-current="page"] { display: block; border-right: 2px solid var(--cur-front);
+    margin-right: -0.65rem; padding-right: 0.5rem; }
+  [data-fm="D"] .front-nav a[aria-current="page"] .fn-t::before { content: none; }
+}
+/* the search box, opened in place */
+.hsearch { display: none; }
+.hsearch.open { display: block; }
+.hsearch input { font: inherit; font-size: 0.85em; width: 12rem; color: var(--ink); background: transparent; border: none;
+  border-bottom: 1px solid var(--accent); padding: 0.1rem 0.2rem; outline: none; }
+.hsearch input::placeholder { color: var(--muted); font-style: italic; }
+/* the reading options, quieter, with a key */
+.settings { accent-color: var(--accent); }
+.settings fieldset { padding: 0.15rem 0; }
+.settings label:not(.seg-opt):not(.sw-opt) { padding: 0.08rem 0; cursor: pointer; }
+.settings label:not(.seg-opt):not(.sw-opt):hover { color: var(--accent); }
+.seg-opt:hover > span { color: var(--accent); }
+.seg-opt:has(> input:checked):hover > span { color: var(--paper); }
+.settings legend { color: var(--accent); }
+.settings .reset, .settings-toggle { border-color: transparent; }
+.opt-key { padding: 0.3rem 0; border-top: 1px solid var(--rule); }
+.opt-key .ok-l { list-style: none; margin: 0; padding: 0; }
+.opt-key li { margin: 0.1rem 0; }
+.ok-sw { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: 0; }
+.ok-k { font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.ok-mark { color: var(--muted); display: inline-block; min-width: 0.8rem; }
+.ok-burton { color: var(--accent); border-left: 2px solid var(--accent); padding-left: 0.3rem; }
+/* the key in groups, each sign drawn as in the margin (owner, 2026-11-19: "the key is kind of unclear") */
+.opt-key .ok-g { min-width: 12rem; flex: 1 1 12rem; }
+.opt-key .ok-t { margin: 0 0 0.15rem; font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); }
+.ok-rule { border-left: 2px solid var(--accent); padding-left: 0.35rem; }
+.ok-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center; background: var(--accent);
+  color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.8em; }
+.ok-dot { border-left: 1px dotted var(--muted); padding-left: 0.35rem; }
+.ok-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em; }
+.ok-pill { display: inline-block; font-size: 0.85em; color: var(--accent); padding: 0 0.35em;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px; font-variant-numeric: lining-nums; }
+/* the options' live sample (round 8, D1 A; owner, 2026-11-19): a few lines of Burton that change with every option */
+/* at the foot of the options (owner, 2026-11-20: "on the bottom", called "Example passage") */
+.opt-sample { grid-column: 1 / -1; border: 1px solid var(--rule); padding: 0.45rem 0.8rem 0.55rem; margin: 0.6rem 0 0.4rem;
+  font-size: 0.92rem; line-height: 1.45; background: var(--paper); }
+.opt-sample .os-body { max-width: 52rem; }
+.os-h { margin: 0 0 0.25rem; font-variant-caps: all-small-caps; letter-spacing: 0.05em; color: var(--muted); }
+.os-where { margin-left: 0.5em; font-variant-caps: normal; letter-spacing: 0; font-style: italic; }
+.os-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(9rem, 13.5rem); gap: 0.3rem 1rem; }
+@media (max-width: 40rem) { .os-body { grid-template-columns: minmax(0, 1fr); } }
+.os-text { margin: 0; }
+.os-m { font-size: 0.82em; line-height: 1.35; }
+.os-card { margin: 0 0 0.35rem; transition: opacity 0.2s ease; }
+.os-k { font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--muted); }
+.os-k-c, .os-ic { color: var(--k-cite); }
+.os-ic { font-size: 0.8em; vertical-align: 0.35em; margin-left: 0.05em; }
+.os-ref { color: var(--accent); margin-left: 0.05em; }
+.os-sn { border-left: 2px solid var(--accent); padding-left: 0.4rem; }
+.os-tr { border-left: 1.5px dotted color-mix(in srgb, var(--la) 70%, var(--paper)); padding-left: 0.4rem; color: var(--la); }
+.os-lem-gl { color: var(--k-gloss); font-style: italic; }
+.os-n { background: var(--accent); color: var(--paper); border-radius: 2px; padding: 0 0.22em; font-size: 0.85em; }
+.os-ul { text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em; }
+.os-la { color: var(--la); }
+.os-abbr, .os-abbr-n, .os-il, .os-en, .os-gl { display: none; }
+.show-abbr .os-abbr, .show-abbr .os-abbr-n { display: inline; }
+.show-abbr .os-exp-n { display: none; }
+.mode-interlinear .os-il { display: block; font-size: 0.92em; }
+.mode-interlinear .os-tr, .mode-english .os-tr, .mode-english .os-la { display: none; }
+.mode-english .os-en { display: inline; }
+.show-glosses .os-gl { display: block; }
+.show-glosses .os-glw { text-decoration: underline dotted var(--k-gloss); text-underline-offset: 0.2em; }
+.no-cites .os-ic, .no-cites .os-icc, .no-burton .os-sn, .no-burton .os-ref, .no-trans .os-tr { display: none; }
+.no-cites .os-abbr { display: inline; }
+:root[data-spacing="compact"] .opt-sample { line-height: 1.32; }
+:root[data-spacing="airy"] .opt-sample { line-height: 1.65; }
+body.calm-margins .opt-sample .os-card:not(.os-sn, :hover) { opacity: 0.42; }
+body.clean-prose .opt-sample .os-ul { text-decoration-color: transparent; }
+.text-only .os-m :not(.os-sn), .text-only .os-ic { display: none; }
+.text-only .os-sn { border-left: 0; padding-left: 0; }
+.text-only .os-sn .os-n { background: none; color: inherit; font-style: italic; padding: 0; }
+.text-only .os-sn .os-exp-n { display: none; }
+.text-only .os-sn .os-abbr-n { display: inline; }
+.text-only .os-ul, .text-only .os-glw { text-decoration: none; }
+.text-only .os-la { color: inherit; }
+/* what to show */
+/* the margin's notes by source (owner, 2026-11-20); a note switched off takes its marker with it */
+.no-burton .unit .sidenote:not(.sn-restored), .no-burton .unit a.nref:not(.nref-restored),
+.no-restored .unit .sn-restored, .no-restored .unit a.nref-restored, .no-gowland .unit .mn-gw,
+.no-trans .unit .mn-tr, .no-trans .unit .mn-own, .no-trans .unit .sn-tr:not([data-src="burton"]), .no-kjv .unit .sn-bible, .no-kjv .unit .mn-ic .kjv,
+.no-cites .ic-m, .no-cites .mn-ic { display: none !important; }
+/* without the written-out citations, Burton's own stand in the line as he printed them */
+.no-cites :not(.cx) > .cx-b { display: inline; } /* in the line only: a note's own (in .cx) follow "As he abbreviated them" */
+.text-only .unit .sidenote.sn-restored, .text-only .unit a.nref-restored, .text-only .unit .mn, .text-only .unit .ic-m,
+.text-only .unit .ftr-n { display: none !important; }
+/* as printed, Burton's own notes stay, as he printed them: his words and his letter, without the edition's kinds,
+   translations, verses, rule or box (owner, 2026-11-20: "they are, technically, part of the original text") */
+.text-only .unit .sidenote:not(.sn-restored) :is(.sn-k, .sn-tr, .sn-bible, .sn-cite, .kjv) { display: none !important; }
+.text-only .unit .sidenote > .sn-body { border: none !important; padding: 0 !important; }
+.text-only .unit .sidenote .sn-n { background: none !important; color: inherit !important; font-style: italic;
+  font-size: 0.95em; min-width: 0; padding: 0; }
+.text-only .unit a.nref { color: inherit; font-style: italic; }
+.text-only .unit .sidenote { color: var(--ink); }
+/* no translations or glosses either, in the line, on hover or facing (owner, 2026-11-19: "glosses should not exist when
+   one toggles away everything but the core text") */
+.text-only .unit .ft, .text-only .unit .ftr, .text-only .unit .ftr-l, .text-only .unit .ftr-src, .text-only .unit .sn-tr,
+.text-only .ded-tr, .text-only .gowland-tr, .text-only .gowland-verse, .text-only .gowland-block { display: none !important; }
+.text-only .unit .fp-facing, .text-only .unit .fp-facing > .fo, .text-only .unit .fp-facing .fo .lg { display: block !important; }
+.text-only .unit .fp { cursor: auto; }
+/* and the text as it was printed: no language colours or tints, no underlines, no links in the line (owner, 2026-11-19:
+   "it should basically just be the text as one would have seen it originally, sans anything") */
+.text-only .unit [lang], .text-only .unit .fp, .text-only .unit .fo, .text-only .unit .burton-tr,
+.text-only .unit .lucida { color: inherit !important; background: none !important; box-shadow: none !important; }
+.text-only .unit a.nm, .text-only .unit a.xref, .text-only .unit .gl-w { color: inherit !important;
+  text-decoration: none !important; pointer-events: none; }
+.text-only :is(.para-cite, .unit-resume, .toc-ribbon, .toc-extras, .mn-lit, .ft-lit, .syn-compass, .sb-signs) { display: none !important; }
+
+/* the signs float at the top right once the running head has gone (owner, 2026-11-19); the options open under them */
+body.bar-float header.site .bar-r { position: fixed; top: 0.6rem; right: 1rem; z-index: 45; display: flex; gap: 0.6rem;
+  align-items: center; padding: 0.25rem 0.55rem; background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 6px; box-shadow: var(--pop-shadow); }
+@media (min-width: 1100px) and (hover: hover) { body.bar-float header.site .bar-r { right: 3.2rem; } } /* clear of ❧ */
+body.bar-float .settings:not(.settings-page) { position: fixed; top: 3.2rem; right: 1rem; z-index: 44;
+  width: min(60rem, calc(100vw - 2rem)); max-height: calc(100vh - 4.2rem); overflow: auto; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 6px; box-shadow: var(--pop-shadow); }
+@media (min-width: 1100px) and (hover: hover) {
+  body.bar-float .settings:not(.settings-page) { right: 3.2rem; width: min(60rem, calc(100vw - 6.4rem)); } }
+@media print { body.bar-float header.site .bar-r { position: static; box-shadow: none; border: none; } }
+body.bar-float .settings:not(.settings-page) { top: 3.4rem; }
+.bar-r .print-toggle[aria-pressed="true"] { color: var(--accent); border-color: var(--rule); }
+
+/* the page's number in the top left (owner, 2026-11-20, to compare): A, in the running head before the contents, in
+   rubric lining figures; B, in the window's corner as Burton's heads print it, following the reader down */
+.uid { text-decoration: none; color: var(--accent); }
+.uid-a { font-variant-numeric: lining-nums; letter-spacing: 0.06em; font-size: 0.95em; padding: 0.05rem 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px; }
+.uid-b { display: none; }
+[data-uid="B"] .uid-a { display: none; }
+[data-uid="B"] .uid-b { display: block; position: fixed; top: 0.7rem; left: 1rem; z-index: 43; font-style: italic;
+  font-size: 0.95rem; line-height: 1.25; color: var(--accent); }
+[data-uid="B"] .uid-s { display: block; }
+[data-uid="B"] header.site .bar-l { padding-left: 5.2rem; }
+@media (max-width: 40rem) { [data-uid="B"] .uid-b { position: static; } [data-uid="B"] .uid-s { display: inline; }
+  [data-uid="B"] header.site .bar-l { padding-left: 0; } }
+@media print { .uid-b { position: static !important; } }
+
+/* ------------------------------------------------------------ UX & elucidation upgrades (F2, F3, E2-E4, V2-V6, P3) */
+/* F2: deep-link arrival highlight */
+.arrival-flash { background: var(--hot); border-radius: 2px; transition: background-color 1.2s ease; }
+
+/* F3: subtle narrow-screen cue for Gowland's notes */
+::highlight(gw-cues) {
+  text-decoration: underline dotted color-mix(in srgb, var(--k-gloss) 68%, transparent);
+  text-underline-offset: 0.2em;
+  background-color: color-mix(in srgb, var(--k-gloss) 8%, transparent);
+}
+
+/* E2: silk ribbon in Contents & quiet unit-top resume banner */
+.toc-ribbon { margin: 0 0 0.5rem; padding: 0.3rem 0.5rem; border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 0.9em; display: flex; align-items: baseline; }
+.toc-ribbon a { color: var(--accent); text-decoration: none; }
+.toc-ribbon a:hover { text-decoration: underline; }
+.ic-ribbon { width: 0.72em; height: 0.98em; flex: 0 0 auto; align-self: center; margin-right: 0.42em;
+  fill: color-mix(in srgb, var(--accent) 22%, transparent); stroke: var(--accent); stroke-width: 1.3; stroke-linejoin: round; }
+.unit-resume { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: baseline; justify-content: space-between;
+  margin: 0 0 1rem; padding: 0.35rem 0.7rem; border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--paper) 94%, var(--ink)); font-size: 0.85em; color: var(--muted); text-indent: 0; }
+.unit-resume a { color: var(--accent); }
+.ur-close { border: 0; background: none; padding: 0 0.25rem; cursor: pointer; font-size: 1.15em; line-height: 1; color: var(--muted); }
+.ur-close:hover { color: var(--accent); }
+
+/* E3: paragraph pilcrow citation copy button */
+.para-cite { position: absolute; left: -1.45rem; width: 1.25rem; padding: 0; border: 0; background: none;
+  color: var(--muted); opacity: 0.5; cursor: pointer; font-size: 0.85em; line-height: 1.4; text-align: center; }
+.para-cite:hover, .para-cite:focus-visible, .para-cite.copied { opacity: 1; color: var(--accent); }
+@media (max-width: 1099px) {
+  .unit { position: relative; }
+  .para-cite { left: auto; right: -0.2rem; opacity: 0.4; }
+}
+
+/* E4: live filter, sort headers & A-Z jump bar */
+.idx-tools { margin: 0.8rem 0 1rem; }
+.idx-tools:not([hidden]) { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center; }
+.idx-f-wrap { flex: 1 1 14rem; }
+.idx-filter { width: 100%; font: inherit; font-size: 0.92em; padding: 0.25rem 0.55rem; color: var(--ink);
+  background: var(--pop-bg); border: 1px solid var(--rule); border-radius: 3px; }
+.idx-count { font-size: 0.85em; color: var(--muted); }
+.alpha-bar { display: flex; flex-wrap: wrap; gap: 0.15rem 0.35rem; flex-basis: 100%; font-size: 0.85em;
+  font-variant-caps: all-small-caps; letter-spacing: 0.04em; }
+.alpha-bar a, .alpha-bar button { border: 0; background: none; padding: 0.05rem 0.28rem; border-radius: 2px;
+  cursor: pointer; color: var(--muted); text-decoration: none; }
+.alpha-bar a:hover, .alpha-bar button:hover, .alpha-bar button[aria-pressed="true"] { color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.sort-btn { border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: inherit;
+  text-decoration: underline dotted var(--rule); text-underline-offset: 0.2em; }
+.sort-btn:hover, .sort-btn[data-dir] { color: var(--accent); text-decoration-color: var(--accent); }
+.sort-btn[data-dir="asc"]::after { content: " ↑"; font-size: 0.85em; }
+.sort-btn[data-dir="desc"]::after { content: " ↓"; font-size: 0.85em; }
+
+/* V2: Ways into the Labyrinth & Sortes Burtonianae inside Contents */
+.toc-extras { margin: 0 0 0.65rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--rule); font-size: 0.92em; }
+.toc-ex-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem; }
+.sortes-btn { background: none; border: 1px solid var(--accent); border-radius: 3px; padding: 0.12rem 0.65rem;
+  color: var(--accent); cursor: pointer; font-variant-caps: all-small-caps; letter-spacing: 0.06em; font-size: 0.95em; }
+.sortes-btn:hover, .sortes-btn:focus-visible { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.toc-ways > summary { cursor: pointer; width: fit-content; font-variant-caps: all-small-caps; letter-spacing: 0.07em;
+  color: var(--accent); }
+.lab-list { list-style: none; margin: 0.35rem 0 0; padding: 0; }
+.lab-item { margin: 0.35rem 0; line-height: 1.3; }
+.lab-item a { font-weight: 500; text-decoration: none; }
+.lab-item a:hover .lab-t { text-decoration: underline; text-decoration-color: var(--accent); }
+.lab-time { font-size: 0.82em; color: var(--muted); margin-left: 0.25rem; font-variant-numeric: lining-nums; }
+.lab-note { display: block; font-size: 0.86em; color: var(--muted); }
+
+/* V3: Glossary page */
+.gloss-jump { margin: 0.5rem 0 1.2rem; font-size: 0.92em; color: var(--muted); }
+table.counts.gloss-table td:last-child { text-align: left; font-variant-numeric: normal; }
+
+/* V4: Self-translation literal comparison disclosure */
+.mn-lit, .ft-lit { display: block; margin-top: 0.18em; font-size: 0.9em; color: var(--note-ink); font-style: normal; }
+.mn-lit > summary, .ft-lit-btn { cursor: pointer; width: fit-content; color: var(--muted);
+  font-variant-caps: all-small-caps; letter-spacing: 0.07em; list-style: none; border: 0; background: none; padding: 0; }
+.mn-lit > summary::-webkit-details-marker { display: none; }
+.mn-lit > summary::before, .ft-lit-btn[aria-expanded="false"]::before { content: "+ "; color: var(--accent); }
+.mn-lit[open] > summary::before, .ft-lit-btn[aria-expanded="true"]::before { content: "− "; color: var(--accent); }
+.mn-lit-v, .ft-lit-v { display: block; margin-top: 0.12em; padding-left: 0.45rem; border-left: 1px dotted var(--rule); }
+.ft-lit-v[hidden] { display: none; }
+.mode-interlinear .fp:not(.pinned) .ft-lit, .mode-english .fp:not(.show-orig) .ft-lit { display: none; }
+
+/* V5: Marginal signpost compass inside header drawer */
+.sb-signs { margin-top: 0.45rem; padding-top: 0.35rem; border-top: 1px solid var(--rule); }
+.sb-sh { margin: 0 0 0.25rem; font-size: 0.8em; font-variant-caps: all-small-caps; letter-spacing: 0.07em; color: var(--muted); }
+.sb-sign { display: block; margin: 0.2rem 0; color: var(--ink); text-decoration: none; font-size: 0.9em; line-height: 1.3; }
+.sb-sign:hover, .sb-sign:focus-visible { color: var(--accent); }
+.sb-sn { color: var(--accent); font-variant-numeric: lining-nums; margin-right: 0.25rem; }
+
+/* V6: Coalesced Gowland segments & 1100-1379px density relief */
+.mn-gw-seg[data-kind="gloss"] .mn-k { color: var(--k-gloss); }
+.mn-gw-seg[data-kind="source"] .mn-k { color: var(--k-cite); }
+.mn-gw-seg[data-kind="identity"] .mn-k, .mn-gw-seg[data-kind="explanation"] .mn-k { color: var(--k-expl); }
+@media (min-width: 1100px) and (max-width: 1379px) {
+  .unit.sn-laid .mn { font-size: 0.74em; line-height: 1.3; }
+}
+
+/* P3: Option B flush-right text inside left-margin Burton sidenotes (compare with ?p3=left) */
+@media (min-width: 1100px) {
+  :root:not([data-p3="left"]) .unit.sn-laid .sidenote.mn-l:not(.sn-restored) { text-align: right; }
+  :root:not([data-p3="left"]) .unit.sn-laid .sidenote.mn-l:not(.sn-restored) > :is(.sn-tr, .sn-bible) {
+    margin-left: 0; padding-left: 0; border-left: none;
+    margin-right: 0.6rem; padding-right: 0.45rem; border-right: 1px dotted var(--rule);
+  }
+}
+
+/* Authors cited: table first, methodological & provenance note cleanly below */
+.prose.authors { max-width: min(46rem, 100%); }
+.authors-meta { margin-top: 1.8rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); font-size: 0.88em; color: var(--muted); }
+.authors-meta p:last-child { margin-bottom: 0; }
+
+/* AB-6 Calm Controls, Chapter Hairline, AB-8 About Essay, & AB-9 Stealable Patterns (S1, S2, S3) */
+.chapter-hairline { position: fixed; top: 0; left: 0; right: 0; height: 2.5px; z-index: 50; pointer-events: none; overflow: hidden; }
+.chapter-hairline > i { display: block; height: 100%; width: 0; background: var(--accent); opacity: 0.82; transition: width 0.08s linear; }
+body.no-hairline .chapter-hairline, body.text-only .chapter-hairline { display: none; }
+
+body.calm-margins .unit .mn:not(.mn-own, :hover, :focus-within, .hot, .pinned),
+body.calm-margins .unit .sidenote.sn-restored:not(:hover, :focus-within, .hot, .pinned) {
+  opacity: 0.42; transition: opacity 0.2s ease;
+}
+body.calm-margins .unit :is(.mn, .sidenote):hover,
+body.calm-margins .unit :is(.mn, .sidenote):focus-within { opacity: 1; }
+
+body.clean-prose .unit a.nm { text-decoration-color: transparent; }
+body.clean-prose .unit a.nm:hover,
+body.clean-prose .unit a.nm:focus-visible,
+body.clean-prose .unit :is(p, li, .lg, blockquote):hover a.nm { text-decoration-color: var(--rule); }
+body.clean-prose .unit a.nm:hover { text-decoration-color: var(--accent); }
+
+/* AB-9 S1: De-noised Tufte Margin Labels (visually clip redundant caps tags; keep accessible labels intact) */
+.unit .sidenote .sn-k,
+.unit .mn-gw:not([data-kind="pointer"]):has(> .mn-lem) > .mn-k,
+.unit .mn-gw-seg:not([data-kind="pointer"]):has(> .mn-lem) > .mn-k,
+.unit .mn-gl:has(> i) > .mn-k,
+.unit .mn-ic > .mn-k,
+.unit.sn-laid .mn-tr > .mn-k {
+  position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.unit .mn-gw > .mn-lem::after,
+.unit .mn-gw-seg > .mn-lem::after,
+.unit .mn-gl > i::after { content: " — "; font-style: normal; color: var(--muted); }
+.unit .mn-gw[data-kind="gloss"] > .mn-lem,
+.unit .mn-gw-seg[data-kind="gloss"] > .mn-lem,
+.unit .mn-gl > i { color: var(--k-gloss); }
+.unit .mn-gw[data-kind="source"] > .mn-lem,
+.unit .mn-gw-seg[data-kind="source"] > .mn-lem { color: var(--k-cite); }
+.unit .mn-gw:is([data-kind="identity"], [data-kind="explanation"]) > .mn-lem,
+.unit .mn-gw-seg:is([data-kind="identity"], [data-kind="explanation"]) > .mn-lem { color: var(--k-expl); }
+.unit .mn-ic[data-kind="cites"] > .ic-e::before { content: "§ "; color: var(--k-cite); font-style: normal; }
+.unit .mn-ic[data-kind="bible"] > .ic-e::before { content: "§ "; color: var(--k-bible); font-style: normal; }
+@media (min-width: 1100px) {
+  .unit.sn-laid .mn-tr { padding-left: 0.45rem; border-left: 1px dotted color-mix(in srgb, var(--tr-ink, var(--rule)) 55%, var(--paper)); }
+  .unit.sn-laid .mn-tr.mn-l { padding-left: 0; border-left: none; padding-right: 0.45rem;
+    border-right: 1px dotted color-mix(in srgb, var(--tr-ink, var(--rule)) 55%, var(--paper)); }
+}
+
+/* AB-8 A: Self-demonstrating About page */
+.prose.about-essay { max-width: min(58rem, 100%); }
+.ae-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 1fr); gap: 1rem 1.8rem; align-items: start; margin: 0.6rem 0 1.4rem; }
+@media (max-width: 48rem) { .ae-grid { grid-template-columns: 1fr; } }
+.ae-prose > p:last-child { margin-bottom: 0; }
+.ae-margin { display: grid; gap: 0.55rem; font-size: 0.82em; line-height: 1.38; color: var(--note-ink); }
+.ae-card { padding: 0.2rem 0.55rem; border-left: 2px solid var(--rule); border-radius: 2px; cursor: pointer; }
+.ae-box { display: inline-block; min-width: 1.15em; padding: 0 0.12em; text-align: center; background: var(--accent);
+  color: var(--paper); border-radius: 2px; line-height: 1.25; font-size: 0.85em; font-style: normal; }
+.ae-card-bur { border-left-color: var(--accent); }
+.ae-card-tr { border-left: 1px dotted var(--la); }
+.ae-tx { color: var(--la); }
+.ae-card-cit { border-left-color: var(--k-cite); }
+.ae-card-gw { border-left-color: var(--k-expl); }
+.ae-card .ae-sub { color: var(--muted); }
+.ae-hi { cursor: pointer; border-radius: 2px; }
+.about-essay .hot { background: var(--hot); }
+.about-essay .ae-card.pinned { outline: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.ae-sources { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+.ae-sources li { margin: 0.3rem 0; }
+.about-colophon { margin-top: 1.4rem; padding-top: 0.7rem; border-top: 1px solid var(--rule); font-size: 0.9em; }
+.about-colophon > summary { cursor: pointer; color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: 0.06em; width: fit-content; }
+.about-colophon[open] > summary { margin-bottom: 0.6rem; }
+
+/* AB-9 S2: In-page split Side-Peek pane */
+.pw-peek { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline dotted; }
+.side-peek { position: fixed; top: 3.4rem; right: 0.9rem; bottom: 0.9rem; z-index: 65; width: min(29rem, 42vw);
+  display: flex; flex-direction: column; background: var(--pop-bg); color: var(--ink); border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent); border-radius: 6px; box-shadow: var(--pop-shadow); }
+.side-peek[hidden] { display: none; }
+.sp-pane-hd { display: flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule);
+  background: var(--paper); border-radius: 4px 6px 0 0; font-size: 0.84em; }
+.sp-pane-title { margin: 0 auto 0 0; font-weight: 600; font-variant-caps: all-small-caps; letter-spacing: 0.05em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sp-pane-back, .sp-pane-close { border: 1px solid var(--rule); background: none; border-radius: 3px; padding: 0.05rem 0.45rem;
+  cursor: pointer; color: var(--muted); font-size: 0.92em; flex: 0 0 auto; }
+.sp-pane-back:hover, .sp-pane-close:hover { color: var(--accent); border-color: var(--accent); }
+.sp-pane-full { color: var(--accent); text-decoration: none; white-space: nowrap; font-size: 0.92em; flex: 0 0 auto; }
+.sp-pane-full:hover { text-decoration: underline; }
+.sp-pane-body { flex: 1 1 auto; overflow: auto; padding: 0.75rem 0.95rem 1.4rem; font-size: 0.88em; line-height: 1.46; }
+.sp-pane-body .sidenote, .sp-pane-body .mn-pool, .sp-pane-body .mref, .sp-pane-body .nref,
+.sp-pane-body .ft, .sp-pane-body .ftr, .sp-pane-body .gowland-tr, .sp-pane-body .cx-b,
+.sp-pane-body .ic-m, .sp-pane-body .para-cite, .sp-pane-body .part-syn { display: none !important; }
+.sp-pane-body h1 { font-size: 1.25em; margin-top: 0.2rem; }
+@media (max-width: 56rem) {
+  .side-peek { left: 0.6rem; right: 0.6rem; width: auto; top: 3.2rem; bottom: 0.6rem; }
+}
+
+/* AB-9 S3: Nutshell expandable humoral & apothecary term chips + clickable Gowland cross-note refs */
+.term-chip { display: inline; line-height: inherit; vertical-align: baseline; border: 0; background: none; padding: 0;
+  margin: 0; font: inherit; color: inherit; cursor: pointer; border-radius: 0;
+  text-decoration: underline dotted var(--k-gloss); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.term-chip:hover, .term-chip[aria-expanded="true"] { color: var(--accent); text-decoration-color: var(--accent); }
+.term-drawer { display: block; margin: 0.22rem 0 0.28rem 0.25rem; padding: 0.24rem 0.5rem; border-left: 2px solid var(--k-gloss);
+  background: color-mix(in srgb, var(--paper) 92%, var(--ink)); color: var(--ink); font-size: 0.92em; font-style: normal;
+  line-height: 1.35; border-radius: 0 3px 3px 0; }
+.gw-ref { display: inline; line-height: inherit; vertical-align: baseline; border: 0; background: none; padding: 0; margin: 0;
+  font: inherit; color: var(--accent); cursor: pointer; border-radius: 0;
+  text-decoration: underline dotted color-mix(in srgb, var(--accent) 72%, transparent);
+  text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.gw-ref:hover, .gw-ref:focus-visible { text-decoration-style: solid; text-decoration-color: var(--accent); }
+.text-only .unit .gw-ref { color: inherit !important; text-decoration: none !important; pointer-events: none; }
+@media print { .chapter-hairline, .side-peek, .term-drawer { display: none !important; } }
+
+/* F1 narrow phone fit: keep title ("MELANCHOLY,") and folded synopses cleanly within 390px viewports */
+@media (max-width: 28rem) {
+  .front-side { --fcol: 100%; }
+  .home-page h1.front-title, .front-title { font-size: clamp(1.15rem, 4.6vw, 1.45rem); letter-spacing: 0.08em; }
+  .syn-part.syn-shut > .syn-nb > .syn-hd { width: min(12.6em, calc(100% - 5.2em)); padding-left: 1.3em; }
+  .syn-shut > .syn-nb > .syn-kw { min-width: 4.4em; }
+  .syn-shut > .syn-nb > .syn-kw > .syn-brace { width: 4.2em; }
+  .syn-part.syn-shut > .syn-nb > .syn-hd > .syn-all { left: min(calc(15.8em / 0.95), calc(100% - 1.3em)); }
+}
